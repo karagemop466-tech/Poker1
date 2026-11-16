@@ -1,0 +1,705 @@
+{
+  "meta": {
+    "as_of": "2026-11-16",
+    "timezone": "America/Los_Angeles",
+    "area": "Las Vegas Strip and immediately adjacent casino resorts",
+    "scope_dates": "2026-11-16 through the official future schedule information available through 2027-01-10",
+    "verification_standard": "Only resort, venue, or tournament-operator sources are used for populated values. A missing official value is null and must display as unverified.",
+    "strict_filter": "A tournament is eligible only when an official source explicitly confirms one entry per player/event and no re-entry, rebuy, add-on, or paid chip advantage. Late registration alone does not establish re-entry; silence is not treated as a prohibition.",
+    "ranking_metric": "Published guarantee divided by published buy-in. This is a descriptive ratio, not expected value, return, or odds of winning. Series-wide guarantees are never treated as event guarantees."
+  },
+  "summary": {
+    "confirmed_strict_single_entry_events": 0,
+    "confirmed_extra_entry_or_paid_advantage_records": 11,
+    "candidate_records_with_entry_terms_unverified": 17,
+    "decision": "No strict single-entry recommendation can be certified from the official schedules reviewed."
+  },
+  "strict_single_entry": [],
+  "extra_entry_or_paid_advantage": [
+    {
+      "id": "wynn-daily-weekday-noon",
+      "venue": "Wynn Las Vegas Poker Room (Encore)",
+      "event": "Daily NLH, Monday–Thursday",
+      "date_pattern": "Monday–Thursday, subject to series suspensions; exact November 16–26 operating dates are not separately published",
+      "start_time_local": "12:00",
+      "buy_in_usd": 200,
+      "guaranteed_prize_pool_usd": 10000,
+      "guarantee_scope": "event guarantee",
+      "guarantee_buy_in_multiple": 50,
+      "re_entry": "Re-entries allowed through the start of Level 9 (about 4:30 p.m.)",
+      "rebuy": "Not stated for this event",
+      "add_on": "Not stated for this event",
+      "paid_chip_advantage": null,
+      "strict_single_entry": false,
+      "status": "Excluded: re-entry is explicitly allowed. Recurring schedule may be suspended during tournament series.",
+      "sources": [
+        {"label": "Official Wynn daily schedule poster", "url": "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"},
+        {"label": "Official Wynn daily structure and rules", "url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf"},
+        {"label": "Wynn Poker Room and series notice", "url": "https://www.wynnlasvegas.com/casino/poker"}
+      ]
+    },
+    {
+      "id": "wynn-daily-friday-rebuy",
+      "venue": "Wynn Las Vegas Poker Room (Encore)",
+      "event": "Friday NLH Rebuy & Add-on",
+      "date_pattern": "Fridays, subject to series suspensions; exact November operating dates are not separately published",
+      "start_time_local": "12:00",
+      "buy_in_usd": 240,
+      "guaranteed_prize_pool_usd": 40000,
+      "guarantee_scope": "event guarantee",
+      "guarantee_buy_in_multiple": 166.67,
+      "re_entry": "Not allowed",
+      "rebuy": "Unlimited $200 rebuys for 25,000 chips are available while the player has 15,000 chips or fewer, through registration close",
+      "add_on": "One $100 add-on for 15,000 chips is available before registration closes",
+      "paid_chip_advantage": null,
+      "strict_single_entry": false,
+      "status": "Excluded: rebuy and add-on can increase the amount spent and chips received.",
+      "sources": [
+        {"label": "Official Wynn daily schedule poster", "url": "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"},
+        {"label": "Official Wynn daily structure and rules", "url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf"},
+        {"label": "Wynn Poker Room and series notice", "url": "https://www.wynnlasvegas.com/casino/poker"}
+      ]
+    },
+    {
+      "id": "wynn-daily-weekend-noon",
+      "venue": "Wynn Las Vegas Poker Room (Encore)",
+      "event": "Saturday/Sunday NLH",
+      "date_pattern": "Saturday and Sunday, subject to series suspensions; exact November operating dates are not separately published",
+      "start_time_local": "12:00",
+      "buy_in_usd": 200,
+      "guaranteed_prize_pool_usd": 25000,
+      "guarantee_scope": "event guarantee",
+      "guarantee_buy_in_multiple": 125,
+      "re_entry": "Re-entries allowed through the start of Level 11 (about 5:30 p.m.)",
+      "rebuy": "Not stated for this event",
+      "add_on": "One $100 add-on for 25,000 chips per entry is available before registration closes",
+      "paid_chip_advantage": null,
+      "strict_single_entry": false,
+      "status": "Excluded: re-entry and a paid add-on are explicitly allowed.",
+      "sources": [
+        {"label": "Official Wynn daily schedule poster", "url": "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"},
+        {"label": "Official Wynn daily structure and rules", "url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf"},
+        {"label": "Wynn Poker Room and series notice", "url": "https://www.wynnlasvegas.com/casino/poker"}
+      ]
+    },
+    {
+      "id": "wynn-daily-nightly",
+      "venue": "Wynn Las Vegas Poker Room (Encore)",
+      "event": "Nightly NLH",
+      "date_pattern": "Nightly Monday–Sunday, subject to series suspensions; exact November operating dates are not separately published",
+      "start_time_local": "18:00",
+      "buy_in_usd": 160,
+      "guaranteed_prize_pool_usd": 10000,
+      "guarantee_scope": "event guarantee",
+      "guarantee_buy_in_multiple": 62.5,
+      "re_entry": "Re-entries allowed through the start of Level 9 (about 9:00 p.m.)",
+      "rebuy": "Not stated for this event",
+      "add_on": "One $100 add-on for 25,000 chips is available before registration closes",
+      "paid_chip_advantage": null,
+      "strict_single_entry": false,
+      "status": "Excluded: re-entry and a paid add-on are explicitly allowed.",
+      "sources": [
+        {"label": "Official Wynn daily schedule poster", "url": "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"},
+        {"label": "Official Wynn daily structure and rules", "url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf"},
+        {"label": "Wynn Poker Room and series notice", "url": "https://www.wynnlasvegas.com/casino/poker"}
+      ]
+    },
+    {
+      "id": "wpt-super-gold-million",
+      "venue": "Wynn Las Vegas Poker Room (Encore)",
+      "event": "WPT Super Gold Million (Mystery Bounty)",
+      "dates": ["2026-12-10", "2026-12-11", "2026-12-12", "2026-12-13", "2026-12-14"],
+      "start_times_local": ["10:00", "18:00"],
+      "buy_in_usd": 400,
+      "guaranteed_prize_pool_usd": 3000000,
+      "guarantee_scope": "event guarantee",
+      "guarantee_buy_in_multiple": 7500,
+      "re_entry": "Unlimited re-entry",
+      "rebuy": null,
+      "add_on": null,
+      "paid_chip_advantage": "Mystery-bounty format pays additional bounty prizes for qualifying eliminations; the official source states the event is unlimited re-entry. No separate paid chip add-on was identified in the source checked.",
+      "strict_single_entry": false,
+      "status": "Excluded: unlimited re-entry is explicitly allowed.",
+      "sources": [
+        {"label": "Official WPT festival release with buy-in, dates, guarantee and re-entry terms", "url": "https://www.worldpokertour.com/article/wpt-world-championship-at-wynn-las-vegas-set-for-season-24-finale-with-over-85-events-and-20m-in-gte"},
+        {"label": "Official WPT event schedule", "url": "https://www.worldpokertour.com/event/main-tour-wpt-world-championship-at-wynn-las-vegas-season-2026"}
+      ]
+    },
+    {
+      "id": "wpt-600-nlh-400k",
+      "venue": "Wynn Las Vegas Poker Room (Encore)",
+      "event": "WPT $600 No-Limit Hold'em $400,000 Guarantee",
+      "dates": ["2026-11-27", "2026-11-28", "2026-11-29", "2026-11-30"],
+      "start_times_local": ["11:00", "17:00", "18:00"],
+      "buy_in_usd": 600,
+      "guaranteed_prize_pool_usd": 400000,
+      "guarantee_scope": "event guarantee",
+      "guarantee_buy_in_multiple": 666.67,
+      "re_entry": "Unlimited re-entry for each starting flight until the start of Level 9; a player who advances to Day 2 cannot enter a subsequent starting flight",
+      "rebuy": null,
+      "add_on": null,
+      "paid_chip_advantage": null,
+      "strict_single_entry": false,
+      "status": "Excluded: unlimited re-entry per starting flight is explicitly allowed.",
+      "sources": [
+        {"label": "Official WPT festival event schedule", "url": "https://www.worldpokertour.com/event/main-tour-wpt-world-championship-at-wynn-las-vegas-season-2026"},
+        {"label": "Official WPT structures and entry rules", "url": "https://wptmedia-mig.s3.amazonaws.com/wp-content/uploads/2026/11/WPT_World_Championship_Structures.pdf"}
+      ]
+    },
+    {
+      "id": "wpt-800-nlh-1m",
+      "venue": "Wynn Las Vegas Poker Room (Encore)",
+      "event": "WPT $800 No-Limit Hold'em $1,000,000 Guarantee",
+      "dates": ["2026-11-30", "2026-12-01", "2026-12-02", "2026-12-03", "2026-12-04"],
+      "start_times_local": ["11:00", "17:00", "18:00"],
+      "buy_in_usd": 800,
+      "guaranteed_prize_pool_usd": 1000000,
+      "guarantee_scope": "event guarantee",
+      "guarantee_buy_in_multiple": 1250,
+      "re_entry": "Unlimited re-entry for each starting flight until the start of Level 9; a player who advances to Day 2 cannot enter a subsequent starting flight",
+      "rebuy": null,
+      "add_on": null,
+      "paid_chip_advantage": null,
+      "strict_single_entry": false,
+      "status": "Excluded: unlimited re-entry per starting flight is explicitly allowed.",
+      "sources": [
+        {"label": "Official WPT festival event schedule", "url": "https://www.worldpokertour.com/event/main-tour-wpt-world-championship-at-wynn-las-vegas-season-2026"},
+        {"label": "Official WPT structures and entry rules", "url": "https://wptmedia-mig.s3.amazonaws.com/wp-content/uploads/2026/11/WPT_World_Championship_Structures.pdf"}
+      ]
+    },
+    {
+      "id": "wpt-prime-1100-5m",
+      "venue": "Wynn Las Vegas Poker Room (Encore)",
+      "event": "WPT Prime Championship",
+      "dates": ["2026-12-05", "2026-12-06", "2026-12-07", "2026-12-08", "2026-12-09", "2026-12-10", "2026-12-11", "2026-12-12"],
+      "start_times_local": ["11:00"],
+      "buy_in_usd": 1100,
+      "guaranteed_prize_pool_usd": 5000000,
+      "guarantee_scope": "event guarantee",
+      "guarantee_buy_in_multiple": 4545.45,
+      "re_entry": "One entry and one re-entry per starting flight until the start of Level 10; a player who advances to Day 2 may not enter a later starting flight",
+      "rebuy": null,
+      "add_on": null,
+      "paid_chip_advantage": null,
+      "strict_single_entry": false,
+      "status": "Excluded: a second paid entry per starting flight is explicitly allowed.",
+      "sources": [
+        {"label": "Official WPT festival event schedule", "url": "https://www.worldpokertour.com/event/main-tour-wpt-world-championship-at-wynn-las-vegas-season-2026"},
+        {"label": "Official WPT structures and entry rules", "url": "https://wptmedia-mig.s3.amazonaws.com/wp-content/uploads/2026/11/WPT_World_Championship_Structures.pdf"}
+      ]
+    },
+    {
+      "id": "wpt-main-10400",
+      "venue": "Wynn Las Vegas Poker Room (Encore)",
+      "event": "WPT World Championship",
+      "dates": ["2026-12-13", "2026-12-14", "2026-12-15", "2026-12-16", "2026-12-17", "2026-12-18", "2026-12-19", "2026-12-20"],
+      "start_times_local": ["11:00"],
+      "buy_in_usd": 10400,
+      "guaranteed_prize_pool_usd": null,
+      "added_prize_pool_usd": 1000000,
+      "guarantee_scope": "The official schedule/terms publish $1,000,000 added; a single-event guarantee value is left blank.",
+      "guarantee_buy_in_multiple": null,
+      "re_entry": "Four entries maximum: one per starting flight plus one Day 2 entry before Day 2 begins. Advancing to Day 2 prevents entry in a later starting flight.",
+      "rebuy": null,
+      "add_on": null,
+      "paid_chip_advantage": null,
+      "strict_single_entry": false,
+      "status": "Excluded: official terms allow up to four paid entries.",
+      "sources": [
+        {"label": "Official WPT event page and detailed entry limit", "url": "https://www.worldpokertour.com/event/main-tour-wpt-world-championship-at-wynn-las-vegas-season-2026"},
+        {"label": "Official WPT structures and fee breakdown", "url": "https://wptmedia-mig.s3.amazonaws.com/wp-content/uploads/2026/11/WPT_World_Championship_Structures.pdf"}
+      ]
+    },
+    {
+      "id": "mgm-120-nlh-daily",
+      "venue": "MGM Grand Poker Room",
+      "event": "$120 Daily No-Limit Hold'em",
+      "date_pattern": "Daily schedule shown on current official Poker Room page; linked schedule PDF is titled August Tournament Schedule and has no effective date",
+      "start_times_local": ["11:00", "19:00", "23:00"],
+      "buy_in_usd": 120,
+      "guaranteed_prize_pool_usd": null,
+      "guarantee_scope": "No event guarantee was confirmed in the official schedule/structure reviewed.",
+      "re_entry": null,
+      "rebuy": null,
+      "add_on": null,
+      "paid_chip_advantage": "$11 one-time voluntary staff gratuity in the linked $120 NLH structure provides an additional 10,000 tournament chips. The PDF's effective date is not stated; current availability must be reconfirmed.",
+      "strict_single_entry": false,
+      "status": "Excluded: official linked structure describes a paid optional extra-chip advantage; current applicability and entry limit are unverified.",
+      "source_time_note": "The current room page lists 11 a.m., 7 p.m. and 11 p.m.; the linked August schedule PDF lists 11:10 a.m., 7:10 p.m. and 11:10 p.m. The exact current start time is flagged for confirmation.",
+      "sources": [
+        {"label": "Current official MGM Grand poker page", "url": "https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html"},
+        {"label": "Official linked tournament schedule PDF", "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt5f25277b8918da08/mgm-grand-casino-poker-tournament_schedule.pdf"},
+        {"label": "Official linked $120 NLH structure PDF", "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf"}
+      ]
+    },
+    {
+      "id": "caesars-daily-nlh-article",
+      "venue": "Caesars Palace Poker Room",
+      "event": "Daily No-Limit Hold'em (as reported in Caesars article dated 2026-07-17)",
+      "date_pattern": "Article describes daily tournaments; no date-specific official calendar was found",
+      "start_times_local": ["10:00", "14:00", "18:00", "21:00"],
+      "buy_in_usd": 100,
+      "guaranteed_prize_pool_usd": 1000,
+      "guarantee_scope": "Official article's reported guarantee for each event; not a date-specific current booking quote.",
+      "re_entry": null,
+      "rebuy": null,
+      "add_on": "$50 for an additional 15,000 chips at the first break, according to the official article.",
+      "paid_chip_advantage": null,
+      "strict_single_entry": false,
+      "status": "Excluded: a paid add-on is explicitly described. Current date-specific values and entry policy are unverified.",
+      "source_note": "The published resort article is a dated editorial page, not a live calendar; do not use its listed price/guarantee as a current quote without reconfirming with Caesars.",
+      "sources": [
+        {"label": "Official Caesars Las Vegas poker-tournament article", "url": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"}
+      ]
+    }
+  ],
+  "entry_policy_unverified": [
+    {
+      "id": "venetian-2026-11-18-300-nlh",
+      "venue": "The Venetian Resort Poker Room",
+      "event": "$300 No-Limit Hold'em (1 Day)",
+      "dates": ["2026-11-18"],
+      "start_times_local": ["11:10"],
+      "buy_in_usd": 300,
+      "guaranteed_prize_pool_usd": 10000,
+      "guarantee_scope": "event guarantee",
+      "guarantee_buy_in_multiple": 33.33,
+      "re_entry": null,
+      "rebuy": null,
+      "add_on": null,
+      "strict_single_entry": false,
+      "status": "Entry policy unverified; official structure states late registration but does not confirm a one-entry cap or rule out re-entry/add-ons.",
+      "sources": [
+        {"label": "Official Venetian event schedule", "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"},
+        {"label": "Official Venetian $300 NLH structure", "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf"}
+      ]
+    },
+    {
+      "id": "venetian-2026-11-19-21-raceday",
+      "venue": "The Venetian Resort Poker Room",
+      "event": "$200 NLH RaceDay Stack (1 Day)",
+      "dates": ["2026-11-19", "2026-11-20", "2026-11-21"],
+      "start_times_local": ["10:10"],
+      "buy_in_usd": 200,
+      "guaranteed_prize_pool_usd": null,
+      "guarantee_scope": null,
+      "guarantee_buy_in_multiple": null,
+      "re_entry": null,
+      "rebuy": null,
+      "add_on": null,
+      "strict_single_entry": false,
+      "status": "Entry policy and event guarantee unverified; the official schedule/structure does not publish them.",
+      "sources": [
+        {"label": "Official Venetian event schedule", "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"},
+        {"label": "Official Venetian $200 RaceDay Stack structure", "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf"}
+      ]
+    },
+    {
+      "id": "venetian-2026-11-22-200-nlh",
+      "venue": "The Venetian Resort Poker Room",
+      "event": "$200 No-Limit Hold'em (1 Day)",
+      "dates": ["2026-11-22"],
+      "start_times_local": ["11:10"],
+      "buy_in_usd": 200,
+      "guaranteed_prize_pool_usd": null,
+      "guarantee_scope": null,
+      "guarantee_buy_in_multiple": null,
+      "re_entry": null,
+      "rebuy": null,
+      "add_on": null,
+      "strict_single_entry": false,
+      "status": "Entry policy and event guarantee unverified; the official structure gives chip levels and late registration but does not establish a single-entry rule.",
+      "sources": [
+        {"label": "Official Venetian event schedule", "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"},
+        {"label": "Official Venetian $200 NLH structure", "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_29.pdf"}
+      ]
+    },
+    {
+      "id": "venetian-2026-11-23-25-400-75k",
+      "venue": "The Venetian Resort Poker Room",
+      "event": "$400 No-Limit Hold'em $75,000 Guarantee",
+      "dates": ["2026-11-23", "2026-11-24", "2026-11-25"],
+      "start_times_local": ["11:10", "11:00"],
+      "buy_in_usd": 400,
+      "guaranteed_prize_pool_usd": 75000,
+      "guarantee_scope": "event guarantee",
+      "guarantee_buy_in_multiple": 187.5,
+      "re_entry": "The structure says a player who bags for Day 2 may not play a subsequent flight; allowed entry/re-entry count before bagging is not stated.",
+      "rebuy": null,
+      "add_on": null,
+      "strict_single_entry": false,
+      "status": "Multi-flight event; entry limit before bagging is unverified. Not certified as single-entry.",
+      "sources": [
+        {"label": "Official Venetian event schedule", "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"},
+        {"label": "Official Venetian $400 NLH structure", "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_2.pdf"}
+      ]
+    },
+    {
+      "id": "venetian-2026-11-24-200-bounty-8k",
+      "venue": "The Venetian Resort Poker Room",
+      "event": "$200 No-Limit Hold'em Bounty (1 Day)",
+      "dates": ["2026-11-24"],
+      "start_times_local": ["17:10"],
+      "buy_in_usd": 200,
+      "guaranteed_prize_pool_usd": 8000,
+      "guarantee_scope": "event guarantee includes the actual prize pool plus total $50 bounties",
+      "guarantee_buy_in_multiple": 40,
+      "re_entry": null,
+      "rebuy": null,
+      "add_on": null,
+      "strict_single_entry": false,
+      "status": "Entry policy unverified; official structure does not confirm single-entry or rule out extra entries.",
+      "sources": [
+        {"label": "Official Venetian event schedule", "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"},
+        {"label": "Official Venetian $200 NLH Bounty structure", "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"}
+      ]
+    },
+    {
+      "id": "venetian-2026-11-25-400-15k",
+      "venue": "The Venetian Resort Poker Room",
+      "event": "$400 No-Limit Hold'em (1 Day)",
+      "dates": ["2026-11-25"],
+      "start_times_local": ["11:10"],
+      "buy_in_usd": 400,
+      "guaranteed_prize_pool_usd": 15000,
+      "guarantee_scope": "event guarantee",
+      "guarantee_buy_in_multiple": 37.5,
+      "re_entry": null,
+      "rebuy": null,
+      "add_on": null,
+      "strict_single_entry": false,
+      "status": "Entry policy unverified; official structure does not confirm single-entry or rule out extra entries.",
+      "sources": [
+        {"label": "Official Venetian event schedule", "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"},
+        {"label": "Official Venetian $400 NLH structure", "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_6.pdf"}
+      ]
+    },
+    {
+      "id": "venetian-2026-11-26-300-10k",
+      "venue": "The Venetian Resort Poker Room",
+      "event": "$300 No-Limit Hold'em (1 Day)",
+      "dates": ["2026-11-26"],
+      "start_times_local": ["11:10"],
+      "buy_in_usd": 300,
+      "guaranteed_prize_pool_usd": 10000,
+      "guarantee_scope": "event guarantee",
+      "guarantee_buy_in_multiple": 33.33,
+      "re_entry": null,
+      "rebuy": null,
+      "add_on": null,
+      "strict_single_entry": false,
+      "status": "Entry policy unverified; official structure states late registration but does not confirm a one-entry cap or rule out re-entry/add-ons.",
+      "sources": [
+        {"label": "Official Venetian event schedule", "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"},
+        {"label": "Official Venetian $300 NLH structure", "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf"}
+      ]
+    },
+    {
+      "id": "venetian-2026-11-27-600-30k",
+      "venue": "The Venetian Resort Poker Room",
+      "event": "$600 No-Limit Hold'em (1 Day)",
+      "dates": ["2026-11-27"],
+      "start_times_local": ["11:10"],
+      "buy_in_usd": 600,
+      "guaranteed_prize_pool_usd": 30000,
+      "guarantee_scope": "event guarantee",
+      "guarantee_buy_in_multiple": 50,
+      "re_entry": null,
+      "rebuy": null,
+      "add_on": null,
+      "strict_single_entry": false,
+      "status": "Entry policy unverified; official structure does not confirm single-entry or rule out extra entries.",
+      "sources": [
+        {"label": "Official Venetian event schedule", "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"},
+        {"label": "Official Venetian $600 NLH structure", "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf"}
+      ]
+    },
+    {
+      "id": "venetian-2026-11-28-600-bounty",
+      "venue": "The Venetian Resort Poker Room",
+      "event": "$600 No-Limit Hold'em Bounty (1 Day)",
+      "dates": ["2026-11-28"],
+      "start_times_local": ["11:10"],
+      "buy_in_usd": 600,
+      "guaranteed_prize_pool_usd": 30000,
+      "guarantee_scope": "event guarantee includes the actual prize pool plus total bounties",
+      "guarantee_buy_in_multiple": 50,
+      "re_entry": null,
+      "rebuy": null,
+      "add_on": null,
+      "strict_single_entry": false,
+      "status": "Entry policy unverified. The official sheet lists $200 bounties to start and $500 bounties in the money; no extra purchase is stated for those bounties.",
+      "sources": [
+        {"label": "Official Venetian event schedule", "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"},
+        {"label": "Official Venetian $600 NLH Bounty structure", "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf"}
+      ]
+    },
+    {
+      "id": "venetian-2026-11-28-200-valuetown",
+      "venue": "The Venetian Resort Poker Room",
+      "event": "$200 NLH PokerAtlas Valuetown Bounty (1 Day)",
+      "dates": ["2026-11-28"],
+      "start_times_local": ["17:10"],
+      "buy_in_usd": 200,
+      "guaranteed_prize_pool_usd": 20000,
+      "guarantee_scope": "event guarantee includes the actual prize pool plus total $50 bounties",
+      "guarantee_buy_in_multiple": 100,
+      "re_entry": null,
+      "rebuy": null,
+      "add_on": null,
+      "strict_single_entry": false,
+      "status": "Entry policy unverified. Official structure offers a $20 initial-buy-in rake discount to PokerAtlas PRO members only; later buy-ins are $200.",
+      "sources": [
+        {"label": "Official Venetian event schedule", "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"},
+        {"label": "Official Venetian Valuetown Bounty structure", "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf"}
+      ]
+    },
+    {
+      "id": "venetian-2026-11-29-12-02-400-75k",
+      "venue": "The Venetian Resort Poker Room",
+      "event": "$400 No-Limit Hold'em $75,000 Guarantee",
+      "dates": ["2026-11-29", "2026-11-30", "2026-12-01", "2026-12-02"],
+      "start_times_local": ["11:10", "11:00"],
+      "buy_in_usd": 400,
+      "guaranteed_prize_pool_usd": 75000,
+      "guarantee_scope": "event guarantee",
+      "guarantee_buy_in_multiple": 187.5,
+      "re_entry": "The structure says a player who bags for Day 2 may not play a subsequent flight; allowed entry/re-entry count before bagging is not stated.",
+      "rebuy": null,
+      "add_on": null,
+      "strict_single_entry": false,
+      "status": "Multi-flight event; entry limit before bagging is unverified. Not certified as single-entry.",
+      "sources": [
+        {"label": "Official Venetian event schedule", "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"},
+        {"label": "Official Venetian $400 NLH $75K structure", "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf"}
+      ]
+    },
+    {
+      "id": "venetian-2026-11-29-300-plo",
+      "venue": "The Venetian Resort Poker Room",
+      "event": "$300 Pot-Limit Omaha (Double Board Bomb Pot)",
+      "dates": ["2026-11-29"],
+      "start_times_local": ["12:10"],
+      "buy_in_usd": 300,
+      "guaranteed_prize_pool_usd": 10000,
+      "guarantee_scope": "event guarantee",
+      "guarantee_buy_in_multiple": 33.33,
+      "re_entry": null,
+      "rebuy": null,
+      "add_on": null,
+      "strict_single_entry": false,
+      "status": "Entry policy unverified; official schedule/structure does not confirm a one-entry cap or rule out extra entries.",
+      "sources": [
+        {"label": "Official Venetian event schedule", "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"},
+        {"label": "Official Venetian PLO structure", "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_22.pdf"}
+      ]
+    },
+    {
+      "id": "venetian-2026-12-03-06-800-500k",
+      "venue": "The Venetian Resort Poker Room",
+      "event": "$800 No-Limit Hold'em $500,000 Guarantee",
+      "dates": ["2026-12-03", "2026-12-04", "2026-12-05", "2026-12-06"],
+      "start_times_local": ["11:10", "17:10", "12:00"],
+      "buy_in_usd": 800,
+      "guaranteed_prize_pool_usd": 500000,
+      "guarantee_scope": "event guarantee",
+      "guarantee_buy_in_multiple": 625,
+      "re_entry": "A player who bags chips for Day 2 may not play a subsequent flight; the structure does not state the number of entries/re-entries allowed before bagging.",
+      "rebuy": null,
+      "add_on": null,
+      "strict_single_entry": false,
+      "status": "Multi-flight event; entry limit before bagging is unverified. Not certified as single-entry.",
+      "sources": [
+        {"label": "Official Venetian event schedule", "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"},
+        {"label": "Official Venetian $800 NLH $500K structure", "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf"}
+      ]
+    },
+    {
+      "id": "venetian-2026-12-12-14-2200-1m",
+      "venue": "The Venetian Resort Poker Room",
+      "event": "$2,200 NLH PokerAtlas Championship Title Event",
+      "dates": ["2026-12-12", "2026-12-13", "2026-12-14"],
+      "start_times_local": ["10:10", "18:10", "13:00", "11:00"],
+      "buy_in_usd": 2200,
+      "guaranteed_prize_pool_usd": 1000000,
+      "guarantee_scope": "event guarantee",
+      "guarantee_buy_in_multiple": 454.55,
+      "re_entry": "A player who bags chips for Day 2 may not play a subsequent flight; the structure does not state the number of entries/re-entries allowed before bagging.",
+      "rebuy": null,
+      "add_on": null,
+      "strict_single_entry": false,
+      "status": "Multi-flight event; entry limit before bagging is unverified. Not certified as single-entry.",
+      "sources": [
+        {"label": "Official Venetian event schedule", "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"},
+        {"label": "Official Venetian $2,200 NLH structure", "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf"}
+      ]
+    },
+    {
+      "id": "venetian-2026-12-17-20-1100-500k",
+      "venue": "The Venetian Resort Poker Room",
+      "event": "$1,100 No-Limit Hold'em $500,000 Guarantee",
+      "dates": ["2026-12-17", "2026-12-18", "2026-12-19", "2026-12-20"],
+      "start_times_local": ["10:10", "18:10", "11:00"],
+      "buy_in_usd": 1100,
+      "guaranteed_prize_pool_usd": 500000,
+      "guarantee_scope": "event guarantee",
+      "guarantee_buy_in_multiple": 454.55,
+      "re_entry": "A player who bags chips for Day 2 may not play a subsequent flight; the structure does not state the number of entries/re-entries allowed before bagging.",
+      "rebuy": null,
+      "add_on": null,
+      "strict_single_entry": false,
+      "status": "Multi-flight event; entry limit before bagging is unverified. A $40 house-fee discount is offered only for players registered before the first Day 1A start; not a paid chip add-on.",
+      "sources": [
+        {"label": "Official Venetian event schedule", "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"},
+        {"label": "Official Venetian $1,100 NLH $500K structure", "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf"}
+      ]
+    },
+    {
+      "id": "venetian-2026-12-24-2027-01-10-2200-300k",
+      "venue": "The Venetian Resort Poker Room",
+      "event": "$2,200 NLH $300,000 Guarantee (DeepStack Extravaganza NYE headline event)",
+      "dates": ["2026-12-27", "2026-12-28", "2026-12-29", "2026-12-30", "2026-12-31"],
+      "start_times_local": [],
+      "buy_in_usd": 2200,
+      "guaranteed_prize_pool_usd": 300000,
+      "guarantee_scope": "event guarantee",
+      "guarantee_buy_in_multiple": 136.36,
+      "re_entry": null,
+      "rebuy": null,
+      "add_on": null,
+      "strict_single_entry": false,
+      "status": "Entry count, start time and paid-extra rules are not stated on the official series overview; full event schedule/structure must be checked when available.",
+      "sources": [
+        {"label": "Official Venetian DeepStack series page", "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html"}
+      ]
+    },
+    {
+      "id": "venetian-2027-01-01-04-1600-400k",
+      "venue": "The Venetian Resort Poker Room",
+      "event": "$1,600 NLH MSPT $400,000 Guarantee (DeepStack Extravaganza NYE headline event)",
+      "dates": ["2027-01-01", "2027-01-02", "2027-01-03", "2027-01-04"],
+      "start_times_local": [],
+      "buy_in_usd": 1600,
+      "guaranteed_prize_pool_usd": 400000,
+      "guarantee_scope": "event guarantee",
+      "guarantee_buy_in_multiple": 250,
+      "re_entry": null,
+      "rebuy": null,
+      "add_on": null,
+      "strict_single_entry": false,
+      "status": "Entry count, start time and paid-extra rules are not stated on the official series overview; full event schedule/structure must be checked when available.",
+      "sources": [
+        {"label": "Official Venetian DeepStack series page", "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html"}
+      ]
+    }
+  ],
+  "room_schedule_unverified": [
+    {
+      "id": "horseshoe-daily-schedule",
+      "venue": "Horseshoe Las Vegas Poker Room",
+      "event": "Daily tournament slate; individual event details not published in source",
+      "date_pattern": "Daily, according to a Caesars resort article dated 2026-07-17; no date-specific event calendar was found",
+      "start_times_local": ["09:00", "11:00", "14:00", "17:00", "20:00", "23:00"],
+      "buy_in_usd": null,
+      "guaranteed_prize_pool_usd": null,
+      "re_entry": null,
+      "rebuy": null,
+      "add_on": null,
+      "strict_single_entry": false,
+      "status": "Not rankable: buy-in, guarantee and entry rules are unverified.",
+      "sources": [
+        {"label": "Official Caesars Las Vegas poker-tournament article", "url": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"}
+      ]
+    },
+    {
+      "id": "aria-daily-schedule",
+      "venue": "ARIA Poker Room",
+      "event": "Daily and nightly tournament action; individual event details not published on current official page",
+      "date_pattern": "Daily/nightly events referenced by current ARIA Poker Room page; exact dates not published",
+      "start_times_local": [],
+      "buy_in_usd": null,
+      "guaranteed_prize_pool_usd": null,
+      "re_entry": null,
+      "rebuy": null,
+      "add_on": null,
+      "strict_single_entry": false,
+      "status": "Not rankable: official page directs players to call or @ARIAPoker for current operating status and does not publish tournament details.",
+      "sources": [
+        {"label": "Current official ARIA Poker Room page", "url": "https://aria.mgmresorts.com/en/casino/poker.html"}
+      ]
+    }
+  ],
+  "series_overview": [
+    {
+      "id": "venetian-dse-iv",
+      "venue": "The Venetian Resort Poker Room",
+      "series": "DeepStack Extravaganza IV",
+      "dates": ["2026-11-16", "2026-12-23"],
+      "series_guarantee_display": "More than $3.6 million (series-wide; not one tournament's guarantee)",
+      "status": "The official event calendar is published; entry eligibility varies by event and is not fully published for every event.",
+      "source": {"label": "Official Venetian series schedule", "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"}
+    },
+    {
+      "id": "venetian-dse-nye",
+      "venue": "The Venetian Resort Poker Room",
+      "series": "DeepStack Extravaganza NYE",
+      "dates": ["2026-12-24", "2027-01-10"],
+      "series_guarantee_display": "More than $1.1 million (series-wide; not one tournament's guarantee)",
+      "status": "The official overview names headline events but does not yet provide all event structures in the overview.",
+      "source": {"label": "Official Venetian series overview", "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html"}
+    },
+    {
+      "id": "wynn-wpt-world-championship-festival",
+      "venue": "Wynn Las Vegas Poker Room (Encore)",
+      "series": "WPT World Championship Festival",
+      "dates": ["2026-11-27", "2026-12-21"],
+      "series_guarantee_display": "More than $20 million across 85+ events (series-wide; not one tournament's guarantee)",
+      "status": "The festival page/structures publish many event-level terms. Wynn states regular daily tournaments are suspended during published tournament series.",
+      "source": {"label": "Official WPT festival release", "url": "https://www.worldpokertour.com/article/wpt-world-championship-at-wynn-las-vegas-set-for-season-24-finale-with-over-85-events-and-20m-in-gte"}
+    }
+  ],
+  "verification_flags": [
+    {
+      "id": "no-strict-single-entry-confirmed",
+      "severity": "high",
+      "message": "No checked event is explicitly certified by the official source as one entry only with no re-entry, rebuy, add-on or paid chip advantage. Do not publish an event as a strict recommendation until the operator's rule is confirmed.",
+      "source_links": []
+    },
+    {
+      "id": "venetian-entry-policy-silent",
+      "severity": "high",
+      "message": "Several Venetian structure sheets describe late registration, fee splits and levels but omit the re-entry/add-on policy. For multi-flight events, the sheets restrict later flights after advancing but do not state the complete allowed entry count before advancing.",
+      "source_links": [
+        {"label": "Venetian DSE IV event schedule", "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"},
+        {"label": "Venetian $300 NLH structure", "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf"},
+        {"label": "Venetian $400 NLH structure", "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_6.pdf"}
+      ]
+    },
+    {
+      "id": "mgm-august-pdf-date",
+      "severity": "medium",
+      "message": "MGM Grand's current Poker Room page links a schedule PDF titled August Tournament Schedule. The PDF has no effective date and its 11:10/7:10/11:10 times differ in precision from the page's 11 a.m./7 p.m./11 p.m. listing. The linked structure also includes an $11 optional gratuity for 10,000 chips.",
+      "source_links": [
+        {"label": "MGM Grand Poker Room page", "url": "https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html"},
+        {"label": "MGM Grand linked schedule PDF", "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt5f25277b8918da08/mgm-grand-casino-poker-tournament_schedule.pdf"},
+        {"label": "MGM Grand linked $120 NLH structure", "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf"}
+      ]
+    },
+    {
+      "id": "caesars-not-live-calendar",
+      "severity": "medium",
+      "message": "Caesars' official article describes daily tournament formats and an optional $50 add-on but is a dated article, not a date-specific current calendar. Current buy-in/guarantee data should be reconfirmed before decision.",
+      "source_links": [
+        {"label": "Caesars official article", "url": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"}
+      ]
+    },
+    {
+      "id": "aria-current-data-not-published",
+      "severity": "medium",
+      "message": "ARIA's current official Poker Room page confirms daily and nightly tournament play but does not publish a date-specific schedule, buy-in, guarantee or entry policy.",
+      "source_links": [
+        {"label": "ARIA official Poker Room page", "url": "https://aria.mgmresorts.com/en/casino/poker.html"}
+      ]
+    }
+  ]
+}
