@@ -79,6 +79,20 @@ def check_number(value, where, *, nonnegative=True):
         problems.append(f"{where}: value cannot be negative, got {value!r}")
 
 
+def check_official_https_url(url, where):
+    if not isinstance(url, str) or not url.strip():
+        problems.append(f"{where} has no URL")
+        return False
+    parsed = urlparse(url)
+    if parsed.scheme != "https" or not parsed.hostname:
+        problems.append(f"{where} must use an https URL: {url}")
+        return False
+    if parsed.hostname.lower() not in OFFICIAL_SOURCE_HOSTS:
+        problems.append(f"{where} has a non-approved source host: {parsed.hostname}")
+        return False
+    return True
+
+
 def check_sources(rel, record, identity):
     sources = record.get("sources")
     if not isinstance(sources, list) or not sources:
@@ -94,17 +108,8 @@ def check_sources(rel, record, identity):
         url = source.get("url")
         if not isinstance(label, str) or not label.strip():
             problems.append(f"{where} has no source label")
-        if not isinstance(url, str) or not url.strip():
-            problems.append(f"{where} has no URL")
-            continue
-        parsed = urlparse(url)
-        if parsed.scheme != "https" or not parsed.hostname:
-            problems.append(f"{where} must use an https URL: {url}")
-            continue
-        if parsed.hostname.lower() not in OFFICIAL_SOURCE_HOSTS:
-            problems.append(f"{where} has a non-approved source host: {parsed.hostname}")
-            continue
-        urls.append(url)
+        if check_official_https_url(url, where):
+            urls.append(url)
     return urls
 
 
@@ -155,16 +160,44 @@ for index, row in enumerate(tournament_rows, 1):
     for field in ("series", "name", "entry_rule"):
         if not isinstance(row.get(field), str) or not row[field].strip():
             problems.append(f"{where} {identity}: {field} must be non-empty text")
+    event_no = row.get("event_no")
+    if event_no is not None and (not isinstance(event_no, int) or isinstance(event_no, bool) or event_no < 0):
+        problems.append(f"{where} {identity}: event_no must be a non-negative integer or null")
     status = row.get("entry_status")
     if not isinstance(status, str) or status not in TOURNAMENT_STATUSES:
         problems.append(f"{where} {identity}: unsupported entry_status {status!r}")
     check_date(row.get("date"), f"{where} {identity}", required=status == "SE")
     check_time(row.get("start"), f"{where} {identity}", required=status == "SE")
     check_date(row.get("verified_on"), f"{where} {identity} verified_on", required=True)
+    check_date(row.get("last_checked"), f"{where} {identity} last_checked", required=True)
 
     check_sources("data/tournaments.json", row, identity)
     entry_rule = str(row.get("entry_rule", "")).lower()
     sources = row.get("sources") if isinstance(row.get("sources"), list) else []
+    rules = row.get("rules")
+    if not isinstance(rules, dict):
+        problems.append(f"{where} {identity}: rules must be an object")
+    else:
+        rule_fields = ("single_entry", "re_entry", "rebuy", "add_on", "flights")
+        for field in rule_fields:
+            value = rules.get(field)
+            if value is not None and not isinstance(value, bool):
+                problems.append(f"{where} {identity}: rules.{field} must be true, false, or null")
+        if status == "SE":
+            if rules.get("single_entry") is not True:
+                problems.append(f"{where} {identity}: SE row must set rules.single_entry to true")
+            for field in ("re_entry", "rebuy", "add_on", "flights"):
+                if rules.get(field) is not False:
+                    problems.append(f"{where} {identity}: SE row must explicitly set rules.{field} to false")
+            if not isinstance(rules.get("source_excerpt"), str) or not rules["source_excerpt"].strip():
+                problems.append(f"{where} {identity}: SE row must include a source excerpt for manual evidence review")
+            check_date(rules.get("retrieved_on"), f"{where} {identity} rules retrieved_on", required=True)
+        elif status == "RE":
+            if rules.get("re_entry") is not True:
+                problems.append(f"{where} {identity}: RE row must set rules.re_entry to true")
+            if not isinstance(rules.get("source_excerpt"), str) or not rules["source_excerpt"].strip():
+                problems.append(f"{where} {identity}: RE row must include a source excerpt")
+            check_date(rules.get("retrieved_on"), f"{where} {identity} rules retrieved_on", required=True)
     if status == "SE":
         if not any("structure" in str(source.get("label", "")).lower()
                    for source in sources if isinstance(source, dict)):
@@ -201,7 +234,7 @@ for index, row in enumerate(tournament_rows, 1):
     elif fee is None and fee_pct is not None:
         problems.append(f"{where} {identity}: house_fee_pct must be blank without a confirmed house fee")
 
-# Hotels: total cost is allowed only when all required, property-specific inputs are present.
+# Hotels: validate dated official rate logs, property-specific costs, and explicit nulls.
 hotel_by_id = {}
 for index, row in enumerate(hotel_rows, 1):
     where = f"data/hotels.json row {index}"
@@ -218,25 +251,68 @@ for index, row in enumerate(hotel_rows, 1):
         hotel_by_id[identity] = row
     if not isinstance(row.get("name"), str) or not row["name"].strip():
         problems.append(f"{where} {identity}: name must be non-empty text")
+    check_date(row.get("last_checked"), f"{where} {identity} last_checked", required=True)
     check_sources("data/hotels.json", row, identity)
 
     for field in ("room_rate_usd", "resort_fee_usd", "clark_county_tax_pct",
-                  "true_cost_per_night_usd", "walk_to_venetian_min"):
+                  "true_cost_per_night_usd", "checkout_total_usd", "nightly_average_usd",
+                  "parking_usd", "walk_to_venetian_min"):
         check_number(row.get(field), f"{where} {identity} {field}")
-    room = row.get("room_rate_usd")
     fee = row.get("resort_fee_usd")
     tax = row.get("clark_county_tax_pct")
     total = row.get("true_cost_per_night_usd")
     walk = row.get("walk_to_venetian_min")
     if is_number(walk) and walk > 30:
         problems.append(f"{where} {identity}: hotel is outside the 30-minute walking limit")
-    inputs_confirmed = all(is_number(value) for value in (room, fee, tax))
-    if total is not None and not inputs_confirmed:
-        problems.append(f"{where} {identity}: nightly total must be blank until room rate, resort fee, and tax are confirmed")
-    elif inputs_confirmed:
-        expected_total = round((room + fee) * (1 + tax / 100), 2)
-        if not is_number(total) or abs(total - expected_total) > 0.01:
-            problems.append(f"{where} {identity}: true_cost_per_night_usd should be {expected_total}")
+
+    rates = row.get("rates")
+    if not isinstance(rates, list):
+        problems.append(f"{where} {identity}: rates must be a list")
+        rates = []
+    rate_dates = set()
+    rate_costs = []
+    for rate_index, rate in enumerate(rates, 1):
+        rate_where = f"{where} {identity} rate {rate_index}"
+        if not isinstance(rate, dict):
+            problems.append(f"{rate_where}: rate must be an object")
+            continue
+        check_date(rate.get("date"), f"{rate_where} date", required=True)
+        check_date(rate.get("retrieved_on"), f"{rate_where} retrieved_on", required=True)
+        rate_date = rate.get("date")
+        if isinstance(rate_date, str):
+            if rate_date in rate_dates:
+                problems.append(f"{rate_where}: duplicate dated room-rate entry {rate_date!r}")
+            rate_dates.add(rate_date)
+        rate_amount = rate.get("rate_usd")
+        check_number(rate_amount, f"{rate_where} rate_usd")
+        if is_number(rate_amount) and rate_amount <= 0:
+            problems.append(f"{rate_where}: rate_usd must be positive")
+        check_official_https_url(rate.get("source"), rate_where)
+        rate_cost = rate.get("true_cost_usd")
+        check_number(rate_cost, f"{rate_where} true_cost_usd")
+        inputs_confirmed = all(is_number(value) for value in (rate_amount, fee, tax))
+        if inputs_confirmed:
+            expected_cost = round((rate_amount + fee) * (1 + tax / 100), 2)
+            if not is_number(rate_cost) or abs(rate_cost - expected_cost) > 0.01:
+                problems.append(f"{rate_where}: true_cost_usd should be {expected_cost}")
+        elif rate_cost is not None:
+            problems.append(f"{rate_where}: true_cost_usd must be blank until rate, resort fee, and property tax are confirmed")
+        if is_number(rate_cost):
+            rate_costs.append(rate_cost)
+
+    if is_number(total):
+        if not rates or not any(abs(total - rate_cost) <= 0.01 for rate_cost in rate_costs):
+            problems.append(f"{where} {identity}: true_cost_per_night_usd must match a source-backed dated rate entry")
+    if row.get("checkout_total_usd") is None and row.get("nightly_average_usd") is not None:
+        problems.append(f"{where} {identity}: nightly_average_usd must be blank without a checkout total")
+    if row.get("checkout_total_usd") is not None and (
+            not isinstance(row.get("checkout_total_note"), str) or not row["checkout_total_note"].strip()):
+        problems.append(f"{where} {identity}: checkout total requires a note identifying the quoted stay")
+    fee_status = row.get("resort_fee_status")
+    if fee_status not in ("verified", "unverified"):
+        problems.append(f"{where} {identity}: resort_fee_status must be verified or unverified")
+    if fee_status == "unverified" and fee is not None:
+        problems.append(f"{where} {identity}: resort_fee_usd must be blank when resort_fee_status is unverified")
 
 # Schedule: every listed option must exactly correspond to a verified-SE source row.
 if isinstance(schedule_data, dict):
@@ -289,7 +365,7 @@ if isinstance(schedule_data, dict):
             if event.get("source") not in valid_sources:
                 problems.append(f"{event_where}: source is not attached to tournament row {identity}")
             source_url = event.get("source")
-            if not isinstance(source_url, str) or urlparse(source_url).hostname not in OFFICIAL_SOURCE_HOSTS:
+            if not check_official_https_url(source_url, event_where):
                 problems.append(f"{event_where}: source is not an approved official host")
     expected_ids = {identity for identity, row in tournament_by_id.items()
                     if row.get("entry_status") == "SE"}
@@ -378,4 +454,4 @@ if problems:
     print("\n".join(problems))
     sys.exit(1)
 print(f"check_links: OK ({len(pages)} pages, {len(tournament_rows)} tournament rows, "
-      f"{len(hotel_rows)} hotels; source, schedule, hotel cost/walk-limit, and local-link checks passed)")
+      f"{len(hotel_rows)} hotels; source, rules, schedule, hotel-rate/cost, and page-link checks passed)")

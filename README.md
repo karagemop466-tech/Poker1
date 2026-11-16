@@ -17,7 +17,7 @@ Live site: https://karagemop466-tech.github.io/Poker1/
 
 - The ranking is reserved for events whose official terms confirm one paid entry total. A structure sheet that merely omits re-entry, rebuy, add-on, or flight language does not prove single-entry.
 - Events with re-entry, rebuy, add-ons, multiple flights, or unresolved entry terms stay outside the strict ranking and are shown separately or flagged. A source clause that bars players who bag Day 2 from later flights does not resolve whether players who bust may re-enter.
-- Hotel true cost includes resort fees and tax when both are confirmed for the property. A total stays blank until the dated room rate, fee, and property-specific tax are verified. Walking time stays blank unless supported; a listed hotel must be within 30 minutes on foot. Nothing is inferred.
+- Hotel room rates are kept in a dated log. A true nightly cost is shown only when a logged rate, resort fee, and property-specific tax are all confirmed. Walking-time fields stay blank unless supported; an unverified time is not a verified walkability claim.
 - Every table row links to an official source.
 
 ## Rebuild and check
@@ -25,9 +25,9 @@ Live site: https://karagemop466-tech.github.io/Poker1/
 ```
 python3 scripts/build_data.py     # regenerate data/*.json
 python3 scripts/build_site.py     # regenerate index.html and pages/*.html
-python3 scripts/check_links.py    # data schema, official hosts, SE schedule, hotel totals, local links
+python3 scripts/check_links.py    # data schema, official hosts, SE schedule, hotel rate/cost, page links
 ```
 
-The Pages workflow (`.github/workflows/pages.yml`) rebuilds and checks generated pages on each pull request, then deploys `index.html`, `pages/`, `assets/`, `data/`, and the Markdown content files used by the Executive Summary, Questions, Suggestions, Flagged for Review, and Repo Review pages after a push to `main`. `scripts/check_links.py` verifies that Markdown files are present, each data row has an HTTPS source on an approved official host, IDs and derived fields are consistent, the day schedule contains exactly the verified single-entry rows, hotel totals use confirmed rate/fee/tax inputs, and static page links resolve. Automated checks do not substitute for reading and verifying the official source documents.
+The Pages workflow (`.github/workflows/pages.yml`) rebuilds and checks generated pages on each pull request, then deploys `index.html`, `pages/`, `assets/`, `data/`, and the Markdown content files used by the Executive Summary, Questions, Suggestions, Flagged for Review, and Repo Review pages after a push to `main`. `scripts/check_links.py` verifies that Markdown files are present, each data row has an HTTPS source on an approved official host, IDs and derived fields are consistent, the day schedule contains exactly the rows classified as verified single-entry, dated hotel rate logs and computed costs are source-backed, and static page links resolve. Automated checks do not substitute for reading and verifying the official source documents or deciding whether the source is positive evidence of a single-entry cap.
 
 Coordination and open items: `COORDINATION.md`.
