@@ -370,162 +370,6 @@ def parse_structure(text):
     return facts
 
 
-def main():
-    os.makedirs(DATA, exist_ok=True)
-    os.makedirs(SNAP, exist_ok=True)
-    prev = {}
-    if os.path.exists(FACTS):
-        try:
-            prev = json.load(open(FACTS, encoding="utf-8"))
-        except Exception:  # noqa: BLE001
-            prev = {}
-    prev_docs = prev.get("documents", {})
-    changes = []
-    if os.path.exists(CHANGES):
-        try:
-            changes = json.load(open(CHANGES, encoding="utf-8")).get("records", [])
-        except Exception:  # noqa: BLE001
-            changes = []
-
-    documents = {}
-    structures = {}
-    series = {}
-
-    def record(slug, url, raw, kind):
-        h = sha(raw)
-        prev_h = prev_docs.get(url, {}).get("sha256")
-        old = prev_docs.get(url, {})
-        status = "new" if prev_h is None else ("unchanged" if prev_h == h else "changed")
-        documents[url] = {
-            "slug": slug,
-            "kind": kind,
-            "sha256": h,
-            "bytes": len(raw),
-            "fetched_utc": NOW,
-            "status": status,
-            "first_seen_utc": old.get("first_seen_utc", NOW),
-            "previous_sha256": prev_h,
-            "changed_since_first_seen": bool(prev_h and prev_h != h) or
-                                        bool(old.get("changed_since_first_seen")),
-        }
-        changes.append({
-            "checked_utc": NOW, "slug": slug, "url": url, "kind": kind,
-            "status": status, "sha256": h, "previous_sha256": prev_h,
-        })
-        return h
-
-    # ---- Venetian series pages ----
-    for slug, url, series_name in (
-            ("dse_nov_2026_page", DSE_NOV_PAGE, "Venetian DeepStack Extravaganza IV"),
-            ("dse_dec_2026_page", DSE_NYE_PAGE, "Venetian DeepStack Extravaganza NYE")):
-        raw, err = fetch(url)
-        if raw is None:
-            log("UNREACHABLE", slug, err)
-            documents[url] = {"slug": slug, "kind": "html", "fetched_utc": NOW,
-                              "status": "unreachable", "error": err,
-                              "sha256": prev_docs.get(url, {}).get("sha256")}
-            series[slug] = prev.get("series", {}).get(slug, {})
-            continue
-        record(slug, url, raw, "html")
-        html = raw.decode("utf-8", "replace")
-        rows = parse_venetian_rows(html)
-        with open(os.path.join(SNAP, slug + ".rows.txt"), "w", encoding="utf-8") as f:
-            for r in rows:
-                f.write("%s %s ev%s %s | %s\n" % (r["date"], r["start"],
-                        r["event_no"], r["printed_name"], r["structure_url"]))
-        header = re.search(r"<h1[^>]*>([\s\S]*?)</h1>", html)
-        dates = (re.search(r"<strong>\s*((?:January|February|March|April|May|June|July|"
-                          r"August|September|October|November|December)[^<]{0,60}?\d{4})\s*</strong>", html)
-                 or re.search(r"((?:January|February|March|April|May|June|July|August|"
-                              r"September|October|November|December)\s+\d{1,2},\s*\d{4}\s*[\u2013-]\s*"
-                              r"(?:January|February|March|April|May|June|July|August|September|"
-                              r"October|November|December)?\s*\d{1,2},\s*\d{4})", html))
-        blurb = re.search(r"More than \$[\d.,]+ [^<]+", html)
-        series[slug] = {
-            "name": series_name,
-            "url": url,
-            "page_title": strip_tags(header.group(1)) if header else None,
-            "printed_date_range": strip_tags(dates.group(1)) if dates else None,
-            "printed_guarantee_blurb": strip_tags(blurb.group(0)) if blurb else None,
-            "rows": rows,
-            "rows_count": len(rows),
-            "fetched_utc": NOW,
-        }
-        log("rows", slug, len(rows))
-
-    # ---- Venetian structure sheets ----
-    struct_urls = {}
-    for slug, s in series.items():
-        for r in s.get("rows", []):
-            if r.get("structure_url"):
-                struct_urls[r["structure_url"]] = (slug, r["event_no"])
-    for url in sorted(struct_urls):
-        slug, ev = struct_urls[url]
-        raw, err = fetch(url)
-        key = os.path.basename(url)
-        if raw is None:
-            log("UNREACHABLE structure", key, err)
-            documents[url] = {"slug": key, "kind": "pdf", "fetched_utc": NOW,
-                              "status": "unreachable", "error": err,
-                              "sha256": prev_docs.get(url, {}).get("sha256")}
-            if key in prev.get("structures", {}):
-                structures[key] = prev["structures"][key]
-            continue
-        record(key, url, raw, "pdf")
-        text = pdf_text(raw)
-        with open(os.path.join(SNAP, key + ".txt"), "w", encoding="utf-8") as f:
-            f.write(text)
-        facts = parse_structure(text)
-        facts.update({"url": url, "fetched_utc": NOW, "series_page": slug,
-                      "referenced_by_event_no": ev,
-                      "sha256": documents[url]["sha256"],
-                      "raw_text_chars": len(text)})
-        structures[key] = facts
-        log("structure", key, "->", facts.get("event_numbers"),
-            "kw", len(facts["keywords"]))
-
-    # ---- Wynn / WPT documents ----
-    for slug, url in (("wpt_schedule", WPT_SCHEDULE),
-                      ("wpt_structures", WPT_STRUCTURES),
-                      ("wynn_signature_schedule", WSS_SCHEDULE),
-                      ("wynn_signature_structures", WSS_STRUCTURES),
-                      ("wynn_poker_page", WYNN_POKER)):
-        raw, err = fetch(url)
-        if raw is None:
-            log("UNREACHABLE", slug, err)
-            documents[url] = {"slug": slug, "kind": "pdf" if url.endswith(".pdf") else "html",
-                              "fetched_utc": NOW, "status": "unreachable", "error": err,
-                              "sha256": prev_docs.get(url, {}).get("sha256")}
-            if slug in prev.get("wynn", {}):
-                series[slug] = prev["wynn"][slug]
-            continue
-        kind = "pdf" if url.lower().endswith(".pdf") or raw[:4] == b"%PDF" else "html"
-        record(slug, url, raw, kind)
-        if kind == "pdf":
-            text = pdf_text(raw)
-            with open(os.path.join(SNAP, slug + ".txt"), "w", encoding="utf-8") as f:
-                f.write(text)
-            hits = []
-            one = re.sub(r"\s+", " ", text)
-            for kw in RE_KEYWORDS:
-                for m in re.finditer(kw, one, flags=re.I):
-                    hits.append({"keyword": m.group(0),
-                                 "excerpt": excerpt(one, m.start(), m.end(), 140)})
-            series[slug] = {"url": url, "kind": "pdf", "chars": len(text),
-                            "re_entry_hits": hits[:40], "fetched_utc": NOW,
-                            "sha256": documents[url]["sha256"]}
-            if slug == "wynn_signature_schedule":
-                series[slug]["rows"] = parse_wynn_schedule(text, 2026)
-                series[slug]["rows_count"] = len(series[slug]["rows"])
-                log("wynn signature schedule rows", len(series[slug]["rows"]))
-            if slug in ("wpt_structures", "wynn_signature_structures"):
-                parsed = parse_wynn_structures(text)
-                series[slug]["events"] = parsed
-                log("wynn structures", slug, len(parsed), "events parsed")
-        else:
-            series[slug] = {"url": url, "kind": "html", "fetched_utc": NOW,
-                            "chars": len(raw), "sha256": documents[url]["sha256"]}
-
 def parse_wynn_schedule(text, default_year):
     """Parse the Wynn Signature Series schedule PDF by column position.
 
@@ -579,14 +423,154 @@ def parse_wynn_schedule(text, default_year):
     return rows
 
 
-    # ---- hotel / fee documents (monitored, not parsed into numbers) ----
+def main():
+    os.makedirs(DATA, exist_ok=True)
+    os.makedirs(SNAP, exist_ok=True)
+
+    prev = {}
+    if os.path.exists(FACTS):
+        try:
+            prev = json.load(open(FACTS, encoding="utf-8"))
+        except Exception:  # noqa: BLE001
+            prev = {}
+    prev_docs = prev.get("documents", {})
+    prev_series = prev.get("series", {})
+    prev_structs = prev.get("structures", {})
+    changes = []
+    if os.path.exists(CHANGES):
+        try:
+            changes = json.load(open(CHANGES, encoding="utf-8")).get("records", [])
+        except Exception:  # noqa: BLE001
+            changes = []
+
+    documents, structures, series = {}, {}, {}
+
+    def record(slug, url, raw, kind):
+        h = sha(raw)
+        old = prev_docs.get(url, {})
+        prev_h = old.get("sha256")
+        status = "new" if prev_h is None else ("unchanged" if prev_h == h else "changed")
+        documents[url] = {
+            "slug": slug, "kind": kind, "sha256": h, "bytes": len(raw),
+            "fetched_utc": NOW, "status": status,
+            "first_seen_utc": old.get("first_seen_utc", NOW),
+            "previous_sha256": prev_h,
+            "changed_since_first_seen": bool(prev_h and prev_h != h)
+                                        or bool(old.get("changed_since_first_seen")),
+        }
+        changes.append({"checked_utc": NOW, "slug": slug, "url": url, "kind": kind,
+                        "status": status, "sha256": h, "previous_sha256": prev_h})
+        return documents[url]
+
+    def unreachable(slug, url, err, kind):
+        log("UNREACHABLE", slug, err)
+        documents[url] = {"slug": slug, "kind": kind, "fetched_utc": NOW,
+                          "status": "unreachable", "error": err,
+                          "sha256": prev_docs.get(url, {}).get("sha256")}
+        changes.append({"checked_utc": NOW, "slug": slug, "url": url, "kind": kind,
+                        "status": "unreachable", "sha256": None,
+                        "previous_sha256": prev_docs.get(url, {}).get("sha256"),
+                        "error": err})
+
+    # ---- Venetian series pages ----
+    for slug, url, series_name in (
+            ("dse_nov_2026_page", DSE_NOV_PAGE, "Venetian DeepStack Extravaganza IV"),
+            ("dse_dec_2026_page", DSE_NYE_PAGE, "Venetian DeepStack Extravaganza NYE")):
+        raw, err = fetch(url)
+        if raw is None:
+            unreachable(slug, url, err, "html")
+            series[slug] = prev_series.get(slug, {})
+            continue
+        doc = record(slug, url, raw, "html")
+        html = raw.decode("utf-8", "replace")
+        rows = parse_venetian_rows(html)
+        with open(os.path.join(SNAP, slug + ".rows.txt"), "w", encoding="utf-8") as f:
+            for r in rows:
+                f.write("%s %s ev%s %s | %s\n" % (r["date"], r["start"], r["event_no"],
+                                                  r["printed_name"], r["structure_url"]))
+        h1 = re.search(r"<h1[^>]*>([\s\S]*?)</h1>", html)
+        daterange = re.search(
+            r"<strong>\s*((?:January|February|March|April|May|June|July|August|September|"
+            r"October|November|December)[^<]{0,80}?\d{4})\s*</strong>", html)
+        blurb = re.search(r"More than \$[\d.,]+ [^<]+", html)
+        series[slug] = {
+            "name": series_name, "url": url, "sha256": doc["sha256"],
+            "fetched_utc": NOW,
+            "page_title": strip_tags(h1.group(1)) if h1 else None,
+            "printed_date_range": strip_tags(daterange.group(1)) if daterange else None,
+            "printed_guarantee_blurb": strip_tags(blurb.group(0)) if blurb else None,
+            "rows": rows, "rows_count": len(rows),
+        }
+        log("rows", slug, len(rows))
+
+    # ---- Venetian structure sheets ----
+    struct_urls = {}
+    for slug, s in series.items():
+        for r in s.get("rows", []):
+            if r.get("structure_url"):
+                struct_urls.setdefault(r["structure_url"], (slug, r["event_no"]))
+    for url in sorted(struct_urls):
+        slug, ev = struct_urls[url]
+        key = os.path.basename(url)
+        raw, err = fetch(url)
+        if raw is None:
+            unreachable(key, url, err, "pdf")
+            if key in prev_structs:
+                structures[key] = prev_structs[key]
+            continue
+        doc = record(key, url, raw, "pdf")
+        text = pdf_text(raw)
+        with open(os.path.join(SNAP, key + ".txt"), "w", encoding="utf-8") as f:
+            f.write(text)
+        facts = parse_structure(text)
+        facts.update({"url": url, "fetched_utc": NOW, "series_page": slug,
+                      "referenced_by_event_no": ev, "sha256": doc["sha256"],
+                      "raw_text_chars": len(text)})
+        structures[key] = facts
+        log("structure", key, "->", facts.get("event_numbers"),
+            "kw", len(facts.get("keywords") or []))
+
+    # ---- Wynn / WPT documents ----
+    for slug, url in (("wpt_schedule", WPT_SCHEDULE),
+                      ("wpt_structures", WPT_STRUCTURES),
+                      ("wynn_signature_schedule", WSS_SCHEDULE),
+                      ("wynn_signature_structures", WSS_STRUCTURES),
+                      ("wynn_poker_page", WYNN_POKER)):
+        raw, err = fetch(url)
+        if raw is None:
+            unreachable(slug, url, err, "pdf")
+            series[slug] = prev_series.get(slug, {})
+            continue
+        kind = "pdf" if url.lower().endswith(".pdf") or raw[:4] == b"%PDF" else "html"
+        doc = record(slug, url, raw, kind)
+        entry = {"url": url, "kind": kind, "sha256": doc["sha256"], "fetched_utc": NOW}
+        if kind == "pdf":
+            text = pdf_text(raw)
+            with open(os.path.join(SNAP, slug + ".txt"), "w", encoding="utf-8") as f:
+                f.write(text)
+            one = re.sub(r"\s+", " ", text)
+            hits = []
+            for kw in RE_KEYWORDS:
+                for m in re.finditer(kw, one, flags=re.I):
+                    hits.append({"keyword": m.group(0),
+                                 "excerpt": excerpt(one, m.start(), m.end(), 140)})
+            entry.update({"chars": len(text), "re_entry_hits": hits[:60]})
+            if slug == "wynn_signature_schedule":
+                entry["rows"] = parse_wynn_schedule(text, 2026)
+                entry["rows_count"] = len(entry["rows"])
+                log("wynn signature schedule rows", entry["rows_count"])
+            if slug in ("wpt_structures", "wynn_signature_structures"):
+                entry["events"] = parse_wynn_structures(text)
+                log("wynn structures", slug, len(entry["events"]), "events parsed")
+        else:
+            entry["chars"] = len(raw)
+        series[slug] = entry
+
+    # ---- hotel / fee documents (hashed and monitored, not parsed into numbers) ----
     for slug, url in HOTEL_DOCS.items():
         raw, err = fetch(url)
         if raw is None:
-            log("UNREACHABLE", slug, err)
-            documents[url] = {"slug": slug, "kind": "html", "fetched_utc": NOW,
-                              "status": "unreachable", "error": err,
-                              "sha256": prev_docs.get(url, {}).get("sha256")}
+            unreachable(slug, url, err, "html")
             continue
         record(slug, url, raw, "html")
         if slug in ("venetian_resort_fee", "venetian_hotel_terms",
@@ -599,23 +583,27 @@ def parse_wynn_schedule(text, default_year):
         "generated_utc": NOW,
         "generated_date": TODAY,
         "author": "scripts/collect_official.py",
-        "note": ("Facts are copied verbatim from the official documents listed here. "
-                 "Null means the document does not print the value. Every document is "
-                 "hashed so a later run can detect a change."),
+        "note": ("Facts are copied verbatim from the official documents listed here. Null "
+                 "means the document does not print the value. Every document is hashed so "
+                 "a later run can detect a change."),
         "documents": documents,
         "series": series,
         "structures": structures,
     }
     with open(FACTS, "w", encoding="utf-8") as f:
         json.dump(out, f, indent=1, sort_keys=True)
-    # keep the log bounded but useful: newest 4000 records
     changes = changes[-4000:]
     with open(CHANGES, "w", encoding="utf-8") as f:
         json.dump({"updated_utc": NOW, "records": changes}, f, indent=1)
+
     ok = sum(1 for d in documents.values() if d.get("status") != "unreachable")
     bad = [d for d in documents.values() if d.get("status") == "unreachable"]
     log("done: %d documents fetched, %d unreachable, %d structures"
         % (ok, len(bad), len(structures)))
+    for k in ("wpt_structures", "wynn_signature_structures"):
+        log("  %s events: %d" % (k, len(series.get(k, {}).get("events", []))))
+    log("  signature schedule rows: %d"
+        % series.get("wynn_signature_schedule", {}).get("rows_count", 0))
     for u, d in documents.items():
         if d.get("status") == "unreachable":
             log("  unreachable:", u, d.get("error"))
