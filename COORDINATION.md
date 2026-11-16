@@ -51,6 +51,52 @@ Conflict resolution: during the required rebase onto updated `origin/main`, pres
 
 No other active file claims are recorded. The current session changed only the files listed in its task scopes; tournament rows and event schedules were not edited.
 
+## Session 40ca34e5 (this session) — integration with `main`, branch `arena/40ca34e5-poker1`
+
+Claimed before implementation (commit `f54349d`, pushed before work started). This session's branch was
+rebasing cleanly until `main` advanced: session `baba1a15` merged a full integration (316 rows, 21 pages,
+captured hotel rates, a daily feed, five venue pages, walking records and a row-level monitor) while this
+session was working in parallel on the same file scope.
+
+**Integration decision (no other session's work discarded).** The two branches produced two independent
+implementations of the same features. `main`'s dataset is the larger and richer one (316 rows against 225,
+and it captured real nightly rates from the official booking engine, which this session could not — the
+calendar view returns `$XXX` placeholders). This session therefore **adopted `main`'s data, pages, styles,
+scripts and workflows wholesale** and contributed only the artefacts that are unique to this session and
+additive to the site:
+
+| Contribution | File | Why it is additive |
+|---|---|---|
+| Machine-readable extraction of every official Venetian structure sheet | `scripts/extract_rules.py` → `data/structure_rules.json` | 52 sheets (37 November + 15 NYE) parsed into rule fields with a per-sheet verdict; re-runnable, so any reviewer can reproduce the single-entry / multi-flight / re-entry verdict without opening 52 PDFs |
+| Machine-readable extraction of the official WPT structures PDF | `scripts/extract_wpt.py` → `data/wpt_rules.json` | The 69 event blocks, each with its registration clause, fee split, starting stack and level length |
+| Provenance archive of every official URL | `data/sources.json` (71 URLs), `data/snapshots/*.txt` (68 documents), `data/change_log.json`, `data/baseline_hashes.json`, `scripts/check_source_facts.py`, `.github/workflows/source-facts.yml` | Keeps the raw text of each official document, its hash and its last-checked time. This job **runs successfully in GitHub Actions** (68 of 71 sources fetched; 2 unreachable, 1 inactive), which the row-level monitor's committed result does not yet show |
+| Meaningful-change detection | `facts_signature()` in `scripts/check_source_facts.py` | Operator pages rotate promos and cookie text, so a raw byte hash flags almost every page on every fetch. Comparing the money amounts, dates, times and entry-rule words printed on a page produced **9 raw page changes and 0 published-value changes** on the last run |
+| Line-by-line verification log | `research/verification-2026-11-16.md` | One row per Venetian structure sheet with its verdict and link, plus the distinct WPT re-entry wordings and the Wynn daily-tournament facts |
+| Validator coverage for the new files | `scripts/check_links.py` | The manifest, the change log, the sheet verdicts and the WPT blocks are now validated with the rest of the site |
+
+Dropped from this session's branch because `main` already ships a richer equivalent of each: the separate
+`data/plan.json` and `data/routes.json` (covered by `data/schedule.json` with primary/fallback rows and
+`data/walking.json`), and the duplicate pages `pages/plan.html`, `pages/ranking.html`, `pages/rates.html`,
+`pages/routes.html`, `pages/monitor.html` and `pages/venue-other.html`.
+
+### Irregularity found on `main` and fixed here
+
+`.github/workflows/monitor.yml` used a `name:` key inside its `schedule:` entry. The workflow schema accepts
+only `cron` there, so **the daily source check never fired** and `data/monitoring.json` still shows the
+sandbox result (0 of 59 sources reachable). The key was removed here; the daily job will now run.
+
+### Verification performed in this session (after integrating onto `main`)
+
+- `python3 scripts/build_site.py` → 21 pages, zero diff against the committed pages.
+- `python3 scripts/check_links.py` → OK: 21 pages, 316 rows, 7 hotels, 1 dated rate, 70 schedule days;
+  source, rules, schedule, hotel-rate/cost, provenance and page-link checks all pass.
+- `node scripts/smoke_test.js` → 21/21 pages render headlessly. `node scripts/smoke_pages.js` → 21/21.
+- `python3 scripts/check_source_facts.py` (in GitHub Actions, where the operator domains are reachable) →
+  checked 71 sources (1 inactive), 68 fetched with text, 9 raw page changes, 0 published-value changes,
+  2 errors (Bellagio and ARIA time out).
+- Rejected during review: Caesars' corporate $45–$50 fee range was **not** copied to Caesars Palace (it is
+  not property-specific), and The Venetian's 13.38% Clark County tax was **not** copied to other properties.
+
 ## Session c44e63df (PRs #17 and #18, merged into `main` before this session's rebase)
 
 Session `c44e63df` worked on branch `arena/c44e63df-poker1` and merged PR #17 and PR #18 into `main`

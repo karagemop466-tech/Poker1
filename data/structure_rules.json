@@ -1,0 +1,1784 @@
+{
+ "v_dec_struct_01": {
+  "sheet": "v_dec_struct_01",
+  "title": "$400 No Limit Hold\u2019em (1Day)",
+  "snapshot": "data/snapshots/v_dec_struct_01.txt",
+  "sheet_no": "01",
+  "effective_date": "10.21.26",
+  "event_no": "01, 03, and 17",
+  "start_time": "11:10 AM",
+  "chips": "30,000",
+  "levels": "30 minutes",
+  "late_reg": "8 levels + Break (~ 3:40 PM)",
+  "guarantee": "$15,000",
+  "house_fee_usd": 65,
+  "buy_in_usd": 400,
+  "fee_excerpt": "$65 of the $400 Buy-In",
+  "payout_pct": 12.5,
+  "payout_excerpt": "pays 12.5% of the field",
+  "keyword_lines": [],
+  "re_entry_excerpt": null,
+  "multi_flight_excerpt": null,
+  "add_on_excerpt": null,
+  "re_buy_excerpt": null,
+  "rule_count": 10,
+  "sheet_kind": "SINGLE_ENTRY"
+ },
+ "v_dec_struct_02": {
+  "sheet": "v_dec_struct_02",
+  "title": "$200 No Limit Hold\u2019em Bounty (1Day)",
+  "snapshot": "data/snapshots/v_dec_struct_02.txt",
+  "sheet_no": "01",
+  "effective_date": "10.06.26",
+  "event_no": "02, 04, 13, 22, 26, 29, and 32",
+  "start_time": "5:10 PM",
+  "chips": "25,000",
+  "levels": "30 minutes.",
+  "late_reg": "8 levels + Break (9:40 PM)",
+  "guarantee": "$8,000 (prize pool + total bounties) Event #29 - $10 Rake Discount for showing your CES Badge",
+  "house_fee_usd": 40,
+  "buy_in_usd": 200,
+  "fee_excerpt": "$40 of the $200 Buy-In",
+  "payout_pct": 12.5,
+  "payout_excerpt": "pays 12.5% of the field",
+  "keyword_lines": [
+   {
+    "line": 3,
+    "text": "$200 No Limit Hold\u2019em Bounty (1Day)"
+   },
+   {
+    "line": 48,
+    "text": "Guarantee: $8,000 (prize pool + total bounties)"
+   },
+   {
+    "line": 68,
+    "text": "subsequent re-entry"
+   },
+   {
+    "line": 72,
+    "text": "9. Players receive $50 bounty for each player they eliminate from the"
+   },
+   {
+    "line": 74,
+    "text": "exact same hand, the $50 bounty will be split equally amongst all"
+   },
+   {
+    "line": 78,
+    "text": "bounties that are awarded."
+   }
+  ],
+  "re_entry_excerpt": "$180 instead of $200. CES badge must be shown at the time of registration and can no longer be applied once the player has played one hand. The $20 discount can be applied to the initial entry or any subsequent re-entry 7. This event pays 12.5% of the field 8. Ante will come from the Big Blind Only. The Big Blind is posted before the Ant",
+  "multi_flight_excerpt": null,
+  "add_on_excerpt": null,
+  "re_buy_excerpt": null,
+  "rule_count": 12,
+  "sheet_kind": "RE_ENTRY"
+ },
+ "v_dec_struct_03": {
+  "sheet": "v_dec_struct_03",
+  "title": "$600 No Limit Hold\u2019em Bounty (1Day)",
+  "snapshot": "data/snapshots/v_dec_struct_03.txt",
+  "sheet_no": "3",
+  "effective_date": "10.21.26",
+  "event_no": "05",
+  "start_time": "11:10 AM",
+  "chips": "40,000",
+  "levels": "30 minutes",
+  "late_reg": "10 levels + Break (4:55 PM)",
+  "guarantee": "$40,000 (prize pool + total bounties)",
+  "house_fee_usd": 90,
+  "buy_in_usd": 600,
+  "fee_excerpt": "$90 of the $600 Buy-In",
+  "payout_pct": 12.5,
+  "payout_excerpt": "pays 12.5% of the field",
+  "keyword_lines": [
+   {
+    "line": 3,
+    "text": "$600 No Limit Hold\u2019em Bounty (1Day)"
+   },
+   {
+    "line": 48,
+    "text": "Guarantee: $40,000 (prize pool + total bounties)"
+   },
+   {
+    "line": 63,
+    "text": "7. Players receive $200 Bounty for each player they eliminate"
+   },
+   {
+    "line": 65,
+    "text": "payouts) \u2013 players receive a $500 Bounty for each player they"
+   },
+   {
+    "line": 68,
+    "text": "same hand, the Bounty will be split equally amongst all"
+   },
+   {
+    "line": 70,
+    "text": "own bounty."
+   }
+  ],
+  "re_entry_excerpt": null,
+  "multi_flight_excerpt": null,
+  "add_on_excerpt": null,
+  "re_buy_excerpt": null,
+  "rule_count": 11,
+  "sheet_kind": "SINGLE_ENTRY"
+ },
+ "v_dec_struct_04": {
+  "sheet": "v_dec_struct_04",
+  "title": "$260 No Limit Hold\u2019em (1Day)",
+  "snapshot": "data/snapshots/v_dec_struct_04.txt",
+  "sheet_no": "04",
+  "effective_date": "10.22.26",
+  "event_no": "06, 09, and 11",
+  "start_time": "3:10 PM",
+  "chips": "20,000",
+  "levels": "20 minutes.",
+  "late_reg": "6 levels + Break (~5:25 PM or ~ 8:25 PM)",
+  "guarantee": "4 Seats",
+  "house_fee_usd": 40,
+  "buy_in_usd": 260,
+  "fee_excerpt": "$40 of the $260 Buy-In",
+  "payout": null,
+  "keyword_lines": [],
+  "re_entry_excerpt": null,
+  "multi_flight_excerpt": null,
+  "add_on_excerpt": null,
+  "re_buy_excerpt": null,
+  "rule_count": 13,
+  "sheet_kind": "SINGLE_ENTRY"
+ },
+ "v_dec_struct_05": {
+  "sheet": "v_dec_struct_05",
+  "title": "$200 No Limit Hold\u2019em (1Day)",
+  "snapshot": "data/snapshots/v_dec_struct_05.txt",
+  "sheet_no": "05",
+  "effective_date": "10.22.26",
+  "event_no": "15, 18, 21, and 24",
+  "start_time": "3:10 PM",
+  "chips": "20,000",
+  "levels": "20 minutes.",
+  "late_reg": "6 levels + Break (~5:25 PM or 12:25 PM)",
+  "guarantee": "2 Seats",
+  "house_fee_usd": 35,
+  "buy_in_usd": 200,
+  "fee_excerpt": "$35 of the $200 Buy-In",
+  "payout": null,
+  "keyword_lines": [],
+  "re_entry_excerpt": null,
+  "multi_flight_excerpt": null,
+  "add_on_excerpt": null,
+  "re_buy_excerpt": null,
+  "rule_count": 13,
+  "sheet_kind": "SINGLE_ENTRY"
+ },
+ "v_dec_struct_06": {
+  "sheet": "v_dec_struct_06",
+  "title": "$1,100 No Limit Hold\u2019em",
+  "snapshot": "data/snapshots/v_dec_struct_06.txt",
+  "sheet_no": "06",
+  "effective_date": "10.22.26",
+  "event_no": "08",
+  "start_time": null,
+  "chips": "40,000",
+  "levels": "40 minutes",
+  "late_reg": "9 levels + Break (~ 5:55 PM)",
+  "guarantee": "$300,000",
+  "house_fee_usd": 140,
+  "buy_in_usd": 1100,
+  "fee_excerpt": "$140 of the $1,100 Buy-In",
+  "payout": null,
+  "keyword_lines": [
+   {
+    "line": 56,
+    "text": "3. Each starting flight will play until we are down to approximately 12.5% of the field"
+   },
+   {
+    "line": 70,
+    "text": "8. Any player who bags chips for Day 2 may not play a subsequent flight."
+   }
+  ],
+  "re_entry_excerpt": null,
+  "multi_flight_excerpt": "of age and have a Venetian Rewards card to participate. 3. Each starting flight will play until we are down to approximately 12.5% of the field remaining. Day 2 will resume at 11:00 AM combining all remaining players from 1A, 1B, and 1C, with all players being considered in the money & will continue until seven (7) players remain. To begin Day 2, the clock will revert to the earliest stoppage time of Day 1. Day 3 will resume at 10:00 AM for a produced and distributed streamed final table by",
+  "add_on_excerpt": null,
+  "re_buy_excerpt": null,
+  "rule_count": 13,
+  "sheet_kind": "MULTI_FLIGHT"
+ },
+ "v_dec_struct_07": {
+  "sheet": "v_dec_struct_07",
+  "title": "$200 No Limit Hold\u2019em Turbo (1Day)",
+  "snapshot": "data/snapshots/v_dec_struct_07.txt",
+  "sheet_no": "07",
+  "effective_date": "10.22.26",
+  "event_no": "16 and 19",
+  "start_time": "6:10 PM",
+  "chips": "20,000",
+  "levels": "15 minutes.",
+  "late_reg": "6 levels + Break (~7:55 PM)",
+  "guarantee": "2 Seats",
+  "house_fee_usd": 30,
+  "buy_in_usd": 200,
+  "fee_excerpt": "$30 of the $200 Buy-In",
+  "payout": null,
+  "keyword_lines": [],
+  "re_entry_excerpt": null,
+  "multi_flight_excerpt": null,
+  "add_on_excerpt": null,
+  "re_buy_excerpt": null,
+  "rule_count": 13,
+  "sheet_kind": "SINGLE_ENTRY"
+ },
+ "v_dec_struct_08": {
+  "sheet": "v_dec_struct_08",
+  "title": "SS# 08 Effective Date 10.22.26",
+  "snapshot": "data/snapshots/v_dec_struct_08.txt",
+  "sheet_no": "08",
+  "effective_date": "10.22.26",
+  "event_no": "20",
+  "start_time": null,
+  "chips": "40,000",
+  "levels": "40 minutes",
+  "late_reg": "9 levels + Break (~ 5:55 PM)",
+  "guarantee": "$400,000",
+  "house_fee_usd": 180,
+  "buy_in_usd": 1600,
+  "fee_excerpt": "$180 of the $1,600 Buy-In",
+  "payout": null,
+  "keyword_lines": [
+   {
+    "line": 62,
+    "text": "3. Each starting flight will play until we are down to approximately 11% of the field"
+   },
+   {
+    "line": 78,
+    "text": "8. Any player who bags chips for Day 2 may not play a subsequent flight."
+   }
+  ],
+  "re_entry_excerpt": null,
+  "multi_flight_excerpt": "of age and have a Venetian Rewards card to participate. 3. Each starting flight will play until we are down to approximately 11% of the field remaining. Day 2 will resume at 11:00 AM combining all remaining players from 1A, 1B, and 1C, with all players being considered in the money & will continue until a winner has been declared. To begin Day 2, the clock will revert to the earliest stoppage time of Day 1. 4. Management reserves the right to cancel or change the tournament. 5. Winners may",
+  "add_on_excerpt": null,
+  "re_buy_excerpt": null,
+  "rule_count": 13,
+  "sheet_kind": "MULTI_FLIGHT"
+ },
+ "v_dec_struct_09": {
+  "sheet": "v_dec_struct_09",
+  "title": "$200 No Limit Hold\u2019em Valuetown\u2122 Bounty (1Day)",
+  "snapshot": "data/snapshots/v_dec_struct_09.txt",
+  "event_no": "25",
+  "start_time": "5:10 PM",
+  "chips": "25,000",
+  "levels": "30 minutes.",
+  "late_reg": "8 levels + Break (9:40 PM)",
+  "guarantee": "$20,000 (prize pool + total bounties)",
+  "house_fee_usd": 40,
+  "buy_in_usd": 200,
+  "fee_excerpt": "$40 of the $200 Buy-In",
+  "payout_pct": 12.5,
+  "payout_excerpt": "pays 12.5% of the field",
+  "keyword_lines": [
+   {
+    "line": 3,
+    "text": "$200 No Limit Hold\u2019em Valuetown\u2122 Bounty (1Day)"
+   },
+   {
+    "line": 49,
+    "text": "Guarantee: $20,000 (prize pool + total bounties)"
+   },
+   {
+    "line": 73,
+    "text": "10. Players receive $50 bounty for each player they eliminate from the"
+   },
+   {
+    "line": 75,
+    "text": "exact same hand, the $50 bounty will be split equally amongst all"
+   },
+   {
+    "line": 79,
+    "text": "bounties that are awarded."
+   }
+  ],
+  "re_entry_excerpt": "PokerAtlas Valuetown discount offer in the PokerAtlas app when they are at the poker cage window and show confirmation to The Venetian Poker Room cage team member when registering for the event. All subsequent buy in\u2019s after the initial buy in will be $200. 8. This event pays 12.5% of the field 9. Ante will come from the Big Blind Only. The Big Blind is posted",
+  "multi_flight_excerpt": null,
+  "add_on_excerpt": null,
+  "re_buy_excerpt": null,
+  "rule_count": 13,
+  "sheet_kind": "RE_ENTRY"
+ },
+ "v_dec_struct_10": {
+  "sheet": "v_dec_struct_10",
+  "title": "$400 No Limit Hold\u2019em Seniors (1Day)",
+  "snapshot": "data/snapshots/v_dec_struct_10.txt",
+  "sheet_no": "10",
+  "effective_date": "10.22.26",
+  "event_no": "31",
+  "start_time": "10:10 AM",
+  "chips": "40,000",
+  "levels": "30 minutes",
+  "late_reg": "10 levels + Break (~ 3:55 PM)",
+  "guarantee": "$20,000",
+  "house_fee_usd": 65,
+  "buy_in_usd": 400,
+  "fee_excerpt": "$65 of the $400 Buy-In",
+  "payout_pct": 15.0,
+  "payout_excerpt": "pays 15% of the field",
+  "keyword_lines": [],
+  "re_entry_excerpt": null,
+  "multi_flight_excerpt": null,
+  "add_on_excerpt": null,
+  "re_buy_excerpt": null,
+  "rule_count": 10,
+  "sheet_kind": "SINGLE_ENTRY"
+ },
+ "v_dec_struct_11": {
+  "sheet": "v_dec_struct_11",
+  "title": "$400 No Limit Hold\u2019em (1Day)",
+  "snapshot": "data/snapshots/v_dec_struct_11.txt",
+  "sheet_no": "11",
+  "effective_date": "10.21.26",
+  "event_no": "28",
+  "start_time": "11:10 AM",
+  "chips": "40,000",
+  "levels": "30 minutes",
+  "late_reg": "10 levels + Break (~ 4:55 PM)",
+  "guarantee": "$15,000",
+  "house_fee_usd": 65,
+  "buy_in_usd": 400,
+  "fee_excerpt": "$65 of the $400 Buy-In",
+  "payout_pct": 12.5,
+  "payout_excerpt": "pays 12.5% of the field",
+  "keyword_lines": [],
+  "re_entry_excerpt": null,
+  "multi_flight_excerpt": null,
+  "add_on_excerpt": null,
+  "re_buy_excerpt": null,
+  "rule_count": 10,
+  "sheet_kind": "SINGLE_ENTRY"
+ },
+ "v_dec_struct_12": {
+  "sheet": "v_dec_struct_12",
+  "title": "$600 No Limit Hold\u2019em (1Day)",
+  "snapshot": "data/snapshots/v_dec_struct_12.txt",
+  "sheet_no": "12",
+  "effective_date": "10.22.26",
+  "event_no": "14",
+  "start_time": "11:10 AM",
+  "chips": "40,000",
+  "levels": "30 minutes",
+  "late_reg": "10 levels + Break (~ 4:55 PM)",
+  "guarantee": "$50,000",
+  "house_fee_usd": 90,
+  "buy_in_usd": 600,
+  "fee_excerpt": "$90 of the $600 Buy-In",
+  "payout_pct": 12.5,
+  "payout_excerpt": "pays 12.5% of the field",
+  "keyword_lines": [],
+  "re_entry_excerpt": null,
+  "multi_flight_excerpt": null,
+  "add_on_excerpt": null,
+  "re_buy_excerpt": null,
+  "rule_count": 10,
+  "sheet_kind": "SINGLE_ENTRY"
+ },
+ "v_dec_struct_13": {
+  "sheet": "v_dec_struct_13",
+  "title": "$300 No Limit Hold\u2019em",
+  "snapshot": "data/snapshots/v_dec_struct_13.txt",
+  "sheet_no": "13",
+  "effective_date": "10.26.26",
+  "event_no": "30",
+  "start_time": null,
+  "chips": "30,000",
+  "levels": "40 minutes",
+  "late_reg": "6 levels + Break (~ 3:40 PM)",
+  "guarantee": "$100,000",
+  "house_fee_usd": 60,
+  "buy_in_usd": 300,
+  "fee_excerpt": "$60 of the $300 Buy-In",
+  "payout": null,
+  "keyword_lines": [
+   {
+    "line": 57,
+    "text": "3. Each starting flight will play until we are down to approximately 12.5% of the field"
+   },
+   {
+    "line": 70,
+    "text": "8. Any player who bags chips for Day 2 may not play a subsequent flight."
+   }
+  ],
+  "re_entry_excerpt": null,
+  "multi_flight_excerpt": "of age and have a Venetian Rewards card to participate. 3. Each starting flight will play until we are down to approximately 12.5% of the field remaining. Day 2 will resume at 12:00 PM combining all remaining players from 1A, 1B, 1C, 1D, 1E, and 1F, with all players being considered in the money & will continue until a winner has been declared. To begin Day 2, the clock will revert to the earliest stoppage time of Day 1. 4. Management reserves the right to cancel or change the tournament. 5",
+  "add_on_excerpt": null,
+  "re_buy_excerpt": null,
+  "rule_count": 13,
+  "sheet_kind": "MULTI_FLIGHT"
+ },
+ "v_dec_struct_14": {
+  "sheet": "v_dec_struct_14",
+  "title": "$300 No Limit Hold\u2019em",
+  "snapshot": "data/snapshots/v_dec_struct_14.txt",
+  "sheet_no": "14",
+  "effective_date": "10.26.26",
+  "event_no": "30",
+  "start_time": null,
+  "chips": "30,000",
+  "levels": "30 minutes",
+  "late_reg": "6 levels + Break (~ 8:40 PM)",
+  "guarantee": "$100,000 CES Attendees: $10 Reduced Rake on Day 1B and 1D",
+  "house_fee_usd": 60,
+  "buy_in_usd": 300,
+  "fee_excerpt": "$60 of the $300 Buy-In",
+  "payout": null,
+  "keyword_lines": [
+   {
+    "line": 60,
+    "text": "3. Each starting flight will play until we are down to approximately 12.5% of the field"
+   },
+   {
+    "line": 77,
+    "text": "subsequent re-entry"
+   },
+   {
+    "line": 78,
+    "text": "8. Any player who bags chips for Day 2 may not play a subsequent flight."
+   }
+  ],
+  "re_entry_excerpt": "$290 instead of $300. CES badge must be shown at the time of registration and can no longer be applied once the player has played one hand. The $10 discount can be applied to the initial entry or any subsequent re-entry 8. Any player who bags chips for Day 2 may not play a subsequent flight. 9. Ante will come from the Big Blind Only. Big",
+  "multi_flight_excerpt": "of age and have a Venetian Rewards card to participate. 3. Each starting flight will play until we are down to approximately 12.5% of the field remaining. Day 2 will resume at 12:00 PM combining all remaining players from 1A, 1B, 1C, 1D, 1E, and 1F, with all players being considered in the money & will continue until a winner has been declared. To begin Day 2, the clock will revert to the earliest stoppage time of Day 1. 4. Management reserves the right to cancel or change the tournament. 5",
+  "add_on_excerpt": null,
+  "re_buy_excerpt": null,
+  "rule_count": 13,
+  "sheet_kind": "RE_ENTRY"
+ },
+ "v_dec_struct_15": {
+  "sheet": "v_dec_struct_15",
+  "title": "$250 No Limit Hold\u2019em",
+  "snapshot": "data/snapshots/v_dec_struct_15.txt",
+  "sheet_no": "15",
+  "effective_date": "10.26.26",
+  "event_no": "27",
+  "start_time": null,
+  "chips": "40,000 Level Duration Day 1: 30 minutes Level Duration Day 2: 40 minutes",
+  "levels": null,
+  "late_reg": "8 levels + Break (~ 3:40 PM or ~ 9:40 PM)",
+  "guarantee": "$75,000 Reduced Rake: $10 On Time reduced House Fees on Day 1A & 1B",
+  "house_fee_usd": 50,
+  "buy_in_usd": 250,
+  "fee_excerpt": "$50 of the $250 Buy-In",
+  "payout": null,
+  "keyword_lines": [
+   {
+    "line": 5,
+    "text": "Day 1 Payouts Start at 12.5% with 5% From Each Flight Advancing to Day 2"
+   },
+   {
+    "line": 64,
+    "text": "3. Each starting flight will play until we are down to approximately 5% of the field"
+   },
+   {
+    "line": 78,
+    "text": "buy in of $240 instead of $250. Once one (1) hand is played on either flight, the"
+   },
+   {
+    "line": 80,
+    "text": "8. Any player who bags chips for Day 2 may not play a subsequent flight. Players who"
+   },
+   {
+    "line": 81,
+    "text": "cash on Day 1 but bust before making Day 2 may play another flight."
+   }
+  ],
+  "re_entry_excerpt": null,
+  "multi_flight_excerpt": "of age and have a Venetian Rewards card to participate. 3. Each starting flight will play until we are down to approximately 5% of the field remaining with approximately 12.5% of each Day 1 Field being in the money. Day 2 will resume at 12:00 PM combining all remaining players from 1A, 1B, 1C, and 1D, and will continue until a winner has been declared. To begin Day 2, the clock will revert to the earliest stoppage time of Day 1. 4. Management reserves the right to cancel or change the tourn",
+  "add_on_excerpt": null,
+  "re_buy_excerpt": null,
+  "rule_count": 13,
+  "sheet_kind": "MULTI_FLIGHT"
+ },
+ "v_nov_struct_01": {
+  "sheet": "v_nov_struct_01",
+  "title": "$200 No Limit Hold\u2019em Bounty (1Day)",
+  "snapshot": "data/snapshots/v_nov_struct_01.txt",
+  "sheet_no": "01",
+  "effective_date": "10.06.26",
+  "event_no": "09, 11, 13, 15, 21, 22, 23, 25, 60, 61, 62, and 64",
+  "start_time": "5:10 PM",
+  "chips": "25,000",
+  "levels": "30 minutes.",
+  "late_reg": "8 levels + Break (9:40 PM)",
+  "guarantee": "$8,000 (prize pool + total bounties)",
+  "house_fee_usd": 40,
+  "buy_in_usd": 200,
+  "fee_excerpt": "$40 of the $200 Buy-In",
+  "payout_pct": 12.5,
+  "payout_excerpt": "pays 12.5% of the field",
+  "keyword_lines": [
+   {
+    "line": 3,
+    "text": "$200 No Limit Hold\u2019em Bounty (1Day)"
+   },
+   {
+    "line": 48,
+    "text": "Guarantee: $8,000 (prize pool + total bounties)"
+   },
+   {
+    "line": 66,
+    "text": "9. Players receive $50 bounty for each player they eliminate from"
+   },
+   {
+    "line": 68,
+    "text": "with the exact same hand, the $50 bounty will be split equally"
+   },
+   {
+    "line": 72,
+    "text": "amount of $50 bounties that are awarded."
+   }
+  ],
+  "re_entry_excerpt": null,
+  "multi_flight_excerpt": null,
+  "add_on_excerpt": null,
+  "re_buy_excerpt": null,
+  "rule_count": 12,
+  "sheet_kind": "SINGLE_ENTRY"
+ },
+ "v_nov_struct_02": {
+  "sheet": "v_nov_struct_02",
+  "title": "$400 No Limit Hold\u2019em",
+  "snapshot": "data/snapshots/v_nov_struct_02.txt",
+  "sheet_no": "02",
+  "effective_date": "10.06.26",
+  "event_no": "07",
+  "start_time": null,
+  "chips": "40,000",
+  "levels": "40 minutes",
+  "late_reg": "9 levels + Break (5:55 PM)",
+  "guarantee": "$75,000",
+  "house_fee_usd": 70,
+  "buy_in_usd": 400,
+  "fee_excerpt": "$70 of the $400 Buy-In",
+  "payout": null,
+  "keyword_lines": [
+   {
+    "line": 57,
+    "text": "3. Each starting flight will play until we are down to approximately 12.5% of the"
+   },
+   {
+    "line": 70,
+    "text": "8. Any player who bags chips for Day 2 may not play a subsequent flight."
+   }
+  ],
+  "re_entry_excerpt": null,
+  "multi_flight_excerpt": "of age and have a Venetian Rewards card to participate. 3. Each starting flight will play until we are down to approximately 12.5% of the field remaining. Day 2 will resume at 11:00 AM combining all remaining players from 1A and 1B with all players being considered in the money and will continue until a winner has been declared. To begin Day 2, the clock will revert to the earliest stoppage time of Day 1. 4. Management reserves the right to cancel or change the tournament. 5. Winners may ch",
+  "add_on_excerpt": null,
+  "re_buy_excerpt": null,
+  "rule_count": 13,
+  "sheet_kind": "MULTI_FLIGHT"
+ },
+ "v_nov_struct_03": {
+  "sheet": "v_nov_struct_03",
+  "title": "$400 No Limit Hold\u2019em",
+  "snapshot": "data/snapshots/v_nov_struct_03.txt",
+  "sheet_no": "03",
+  "effective_date": "10.06.26",
+  "event_no": "19",
+  "start_time": null,
+  "chips": "40,000",
+  "levels": "40 minutes",
+  "late_reg": "9 levels + Break (5:55 PM)",
+  "guarantee": "$75,000",
+  "house_fee_usd": 70,
+  "buy_in_usd": 400,
+  "fee_excerpt": "$70 of the $400 Buy-In",
+  "payout": null,
+  "keyword_lines": [
+   {
+    "line": 57,
+    "text": "3. Each starting flight will play until we are down to approximately 12.5% of the"
+   },
+   {
+    "line": 70,
+    "text": "8. Any player who bags chips for Day 2 may not play a subsequent flight."
+   }
+  ],
+  "re_entry_excerpt": null,
+  "multi_flight_excerpt": "of age and have a Venetian Rewards card to participate. 3. Each starting flight will play until we are down to approximately 12.5% of the field remaining. Day 2 will resume at 11:00 AM combining all remaining players from 1A, 1B, and 1C with all players being considered in the money and will continue until a winner has been declared. To begin Day 2, the clock will revert to the earliest stoppage time of Day 1. 4. Management reserves the right to cancel or change the tournament. 5. Winners m",
+  "add_on_excerpt": null,
+  "re_buy_excerpt": null,
+  "rule_count": 13,
+  "sheet_kind": "MULTI_FLIGHT"
+ },
+ "v_nov_struct_04": {
+  "sheet": "v_nov_struct_04",
+  "title": "$600 No Limit Hold\u2019em",
+  "snapshot": "data/snapshots/v_nov_struct_04.txt",
+  "sheet_no": "04",
+  "effective_date": "10.06.26",
+  "event_no": "59",
+  "start_time": null,
+  "chips": "40,000",
+  "levels": "40 minutes",
+  "late_reg": "9 levels + Break (5:55 PM)",
+  "guarantee": "$150,000",
+  "house_fee_usd": 95,
+  "buy_in_usd": 600,
+  "fee_excerpt": "$95 of the $600 Buy-In",
+  "payout": null,
+  "keyword_lines": [
+   {
+    "line": 57,
+    "text": "3. Each starting flight will play until we are down to approximately 12.5% of the"
+   },
+   {
+    "line": 73,
+    "text": "8. Any player who bags chips for Day 2 may not play a subsequent flight."
+   }
+  ],
+  "re_entry_excerpt": null,
+  "multi_flight_excerpt": "of age and have a Venetian Rewards card to participate. 3. Each starting flight will play until we are down to approximately 12.5% of the field remaining. Day 2 will resume at 11:00 AM combining all remaining players from 1A, 1B, and 1C with all players being considered in the money and will continue until a winner has been declared. To begin Day 2, the clock will revert to the earliest stoppage time of Day 1. 4. Management reserves the right to cancel or change the tournament. 5. Winners m",
+  "add_on_excerpt": null,
+  "re_buy_excerpt": null,
+  "rule_count": 13,
+  "sheet_kind": "MULTI_FLIGHT"
+ },
+ "v_nov_struct_05": {
+  "sheet": "v_nov_struct_05",
+  "title": "$300 No Limit Hold\u2019em (1Day)",
+  "snapshot": "data/snapshots/v_nov_struct_05.txt",
+  "sheet_no": "05",
+  "effective_date": "10.06.26",
+  "event_no": "02 and 12",
+  "start_time": "11:10 AM",
+  "chips": "40,000",
+  "levels": "30 minutes.",
+  "late_reg": "10 levels + Break (~ 4:55 PM)",
+  "guarantee": "$10,000",
+  "house_fee_usd": 58,
+  "buy_in_usd": 300,
+  "fee_excerpt": "$58 of the $300 Buy-In",
+  "payout_pct": 12.5,
+  "payout_excerpt": "pays 12.5% of the field",
+  "keyword_lines": [],
+  "re_entry_excerpt": null,
+  "multi_flight_excerpt": null,
+  "add_on_excerpt": null,
+  "re_buy_excerpt": null,
+  "rule_count": 10,
+  "sheet_kind": "SINGLE_ENTRY"
+ },
+ "v_nov_struct_06": {
+  "sheet": "v_nov_struct_06",
+  "title": "$400 No Limit Hold\u2019em (1Day)",
+  "snapshot": "data/snapshots/v_nov_struct_06.txt",
+  "sheet_no": "06",
+  "effective_date": "10.06.26",
+  "event_no": "10",
+  "start_time": "11:10 AM",
+  "chips": "40,000",
+  "levels": "30 minutes.",
+  "late_reg": "10 levels + Break (~ 4:55 PM)",
+  "guarantee": "$15,000",
+  "house_fee_usd": 65,
+  "buy_in_usd": 400,
+  "fee_excerpt": "$65 of the $400 Buy-In",
+  "payout_pct": 12.5,
+  "payout_excerpt": "pays 12.5% of the field",
+  "keyword_lines": [],
+  "re_entry_excerpt": null,
+  "multi_flight_excerpt": null,
+  "add_on_excerpt": null,
+  "re_buy_excerpt": null,
+  "rule_count": 10,
+  "sheet_kind": "SINGLE_ENTRY"
+ },
+ "v_nov_struct_07": {
+  "sheet": "v_nov_struct_07",
+  "title": "$600 No Limit Hold\u2019em (1Day)",
+  "snapshot": "data/snapshots/v_nov_struct_07.txt",
+  "sheet_no": "07",
+  "effective_date": "10.06.26",
+  "event_no": "14, 28, and 63",
+  "start_time": "11:10 AM",
+  "chips": "40,000",
+  "levels": "30 minutes.",
+  "late_reg": "10 levels + Break (~ 4:55 PM)",
+  "guarantee": "$30,000 for Event #14 and #63",
+  "house_fee_usd": 90,
+  "buy_in_usd": 600,
+  "fee_excerpt": "$90 of the $600 Buy-In",
+  "payout_pct": 12.5,
+  "payout_excerpt": "pays 12.5% of the field",
+  "keyword_lines": [],
+  "re_entry_excerpt": null,
+  "multi_flight_excerpt": null,
+  "add_on_excerpt": null,
+  "re_buy_excerpt": null,
+  "rule_count": 10,
+  "sheet_kind": "SINGLE_ENTRY"
+ },
+ "v_nov_struct_08": {
+  "sheet": "v_nov_struct_08",
+  "title": "$200 No Limit Hold\u2019em Valuetown\u2122 Bounty (1Day)",
+  "snapshot": "data/snapshots/v_nov_struct_08.txt",
+  "event_no": "18 and 58",
+  "start_time": "5:10 PM",
+  "chips": "25,000",
+  "levels": "30 minutes.",
+  "late_reg": "8 levels + Break (9:40 PM)",
+  "guarantee": "$20,000 (prize pool + total bounties)",
+  "house_fee_usd": 40,
+  "buy_in_usd": 200,
+  "fee_excerpt": "$40 of the $200 Buy-In",
+  "payout_pct": 12.5,
+  "payout_excerpt": "pays 12.5% of the field",
+  "keyword_lines": [
+   {
+    "line": 3,
+    "text": "$200 No Limit Hold\u2019em Valuetown\u2122 Bounty (1Day)"
+   },
+   {
+    "line": 49,
+    "text": "Guarantee: $20,000 (prize pool + total bounties)"
+   },
+   {
+    "line": 73,
+    "text": "10. Players receive $50 bounty for each player they eliminate from the"
+   },
+   {
+    "line": 75,
+    "text": "exact same hand, the $50 bounty will be split equally amongst all"
+   },
+   {
+    "line": 79,
+    "text": "bounties that are awarded."
+   }
+  ],
+  "re_entry_excerpt": "PokerAtlas Valuetown discount offer in the PokerAtlas app when they are at the poker cage window and show confirmation to The Venetian Poker Room cage team member when registering for the event. All subsequent buy in\u2019s after the initial buy in will be $200. 8. This event pays 12.5% of the field 9. Ante will come from the Big Blind Only. The Big Blind is posted",
+  "multi_flight_excerpt": null,
+  "add_on_excerpt": null,
+  "re_buy_excerpt": null,
+  "rule_count": 13,
+  "sheet_kind": "RE_ENTRY"
+ },
+ "v_nov_struct_09": {
+  "sheet": "v_nov_struct_09",
+  "title": "$300 No Limit Hold\u2019em",
+  "snapshot": "data/snapshots/v_nov_struct_09.txt",
+  "sheet_no": "09",
+  "effective_date": "10.06.26",
+  "event_no": "01",
+  "start_time": null,
+  "chips": "30,000",
+  "levels": "30 minutes",
+  "late_reg": "6 levels + Break (~ 8:40 PM)",
+  "guarantee": "$75,000",
+  "house_fee_usd": 60,
+  "buy_in_usd": 300,
+  "fee_excerpt": "$60 of the $300 Buy-In",
+  "payout": null,
+  "keyword_lines": [
+   {
+    "line": 54,
+    "text": "3. Each starting flight will play until we are down to approximately 12.5% of"
+   },
+   {
+    "line": 67,
+    "text": "8. Any player who bags chips for Day 2 may not play a subsequent flight."
+   }
+  ],
+  "re_entry_excerpt": null,
+  "multi_flight_excerpt": "of age and have a Venetian Rewards card to participate. 3. Each starting flight will play until we are down to approximately 12.5% of the field remaining. Day 2 will resume at 12:00 PM combining all remaining players from 1A, 1B, 1C, and 1D with all players being considered in the money & will continue until a winner has been declared. To begin Day 2, the clock will revert to the earliest stoppage time of Day 1. 4. Management reserves the right to cancel or change the tournament. 5. Winners",
+  "add_on_excerpt": null,
+  "re_buy_excerpt": null,
+  "rule_count": 13,
+  "sheet_kind": "MULTI_FLIGHT"
+ },
+ "v_nov_struct_10": {
+  "sheet": "v_nov_struct_10",
+  "title": "$300 No Limit Hold\u2019em",
+  "snapshot": "data/snapshots/v_nov_struct_10.txt",
+  "sheet_no": "10",
+  "effective_date": "10.06.26",
+  "event_no": "01",
+  "start_time": null,
+  "chips": "30,000",
+  "levels": "40 minutes",
+  "late_reg": "6 levels + Break (~ 3:40 PM)",
+  "guarantee": "$75,000",
+  "house_fee_usd": 60,
+  "buy_in_usd": 300,
+  "fee_excerpt": "$60 of the $300 Buy-In",
+  "payout": null,
+  "keyword_lines": [
+   {
+    "line": 57,
+    "text": "3. Each starting flight will play until we are down to approximately 12.5% of the field"
+   },
+   {
+    "line": 70,
+    "text": "8. Any player who bags chips for Day 2 may not play a subsequent flight."
+   }
+  ],
+  "re_entry_excerpt": null,
+  "multi_flight_excerpt": "of age and have a Venetian Rewards card to participate. 3. Each starting flight will play until we are down to approximately 12.5% of the field remaining. Day 2 will resume at 12:00 PM combining all remaining players from 1A, 1B, 1C, and 1D, with all players being considered in the money & will continue until a winner has been declared. To begin Day 2, the clock will revert to the earliest stoppage time of Day 1. 4. Management reserves the right to cancel or change the tournament. 5. Winner",
+  "add_on_excerpt": null,
+  "re_buy_excerpt": null,
+  "rule_count": 13,
+  "sheet_kind": "MULTI_FLIGHT"
+ },
+ "v_nov_struct_11": {
+  "sheet": "v_nov_struct_11",
+  "title": "$600 No Limit Hold\u2019em Bounty (1Day)",
+  "snapshot": "data/snapshots/v_nov_struct_11.txt",
+  "sheet_no": "11",
+  "effective_date": "10.09.26",
+  "event_no": "16, 30, and 54",
+  "start_time": "11:10 AM",
+  "chips": "40,000",
+  "levels": "30 minutes",
+  "late_reg": "10 levels + Break (4:55 PM)",
+  "guarantee": "$30,000 (prize pool + total bounties) Event #16",
+  "house_fee_usd": 90,
+  "buy_in_usd": 600,
+  "fee_excerpt": "$90 of the $600 Buy-In",
+  "payout_pct": 12.5,
+  "payout_excerpt": "pays 12.5% of the field",
+  "keyword_lines": [
+   {
+    "line": 3,
+    "text": "$600 No Limit Hold\u2019em Bounty (1Day)"
+   },
+   {
+    "line": 48,
+    "text": "Guarantee: $30,000 (prize pool + total bounties) Event #16"
+   },
+   {
+    "line": 49,
+    "text": "Guarantee: $40,000 (prize pool + total bounties) Event #30"
+   },
+   {
+    "line": 50,
+    "text": "Guarantee: $50,000 (prize pool + total bounties) Event #54"
+   },
+   {
+    "line": 65,
+    "text": "7. Players receive $200 Bounty for each player they eliminate"
+   },
+   {
+    "line": 67,
+    "text": "payouts) \u2013 players receive a $500 Bounty for each player they"
+   },
+   {
+    "line": 70,
+    "text": "same hand, the Bounty will be split equally amongst all"
+   },
+   {
+    "line": 72,
+    "text": "own bounty."
+   }
+  ],
+  "re_entry_excerpt": null,
+  "multi_flight_excerpt": null,
+  "add_on_excerpt": null,
+  "re_buy_excerpt": null,
+  "rule_count": 11,
+  "sheet_kind": "SINGLE_ENTRY"
+ },
+ "v_nov_struct_12": {
+  "sheet": "v_nov_struct_12",
+  "title": "$800 No Limit Hold\u2019em",
+  "snapshot": "data/snapshots/v_nov_struct_12.txt",
+  "sheet_no": "12",
+  "effective_date": "10.06.26",
+  "event_no": "26",
+  "start_time": null,
+  "chips": "40,000",
+  "levels": "40 minutes",
+  "late_reg": "6 levels + Break (~ 3:40 PM)",
+  "guarantee": "$500,000",
+  "house_fee_usd": 110,
+  "buy_in_usd": 800,
+  "fee_excerpt": "$110 of the $800 Buy-In",
+  "payout": null,
+  "keyword_lines": [
+   {
+    "line": 57,
+    "text": "3. Each starting flight will play until we are down to approximately 12.5% of the field"
+   },
+   {
+    "line": 70,
+    "text": "8. Any player who bags chips for Day 2 may not play a subsequent flight."
+   }
+  ],
+  "re_entry_excerpt": null,
+  "multi_flight_excerpt": "of age and have a Venetian Rewards card to participate. 3. Each starting flight will play until we are down to approximately 12.5% of the field remaining. Day 2 will resume at 12:00 PM combining all remaining players from 1A, 1B, 1C, 1D, 1E, and 1F, with all players being considered in the money & will continue until a winner has been declared. To begin Day 2, the clock will revert to the earliest stoppage time of Day 1. 4. Management reserves the right to cancel or change the tournament. 5",
+  "add_on_excerpt": null,
+  "re_buy_excerpt": null,
+  "rule_count": 13,
+  "sheet_kind": "MULTI_FLIGHT"
+ },
+ "v_nov_struct_13": {
+  "sheet": "v_nov_struct_13",
+  "title": "$800 No Limit Hold\u2019em",
+  "snapshot": "data/snapshots/v_nov_struct_13.txt",
+  "sheet_no": "13",
+  "effective_date": "10.06.26",
+  "event_no": "26",
+  "start_time": null,
+  "chips": "40,000",
+  "levels": "30 minutes",
+  "late_reg": "6 levels + Break (~ 8:40 PM)",
+  "guarantee": "$500,000",
+  "house_fee_usd": 110,
+  "buy_in_usd": 800,
+  "fee_excerpt": "$110 of the $800 Buy-In",
+  "payout": null,
+  "keyword_lines": [
+   {
+    "line": 54,
+    "text": "3. Each starting flight will play until we are down to approximately 12.5% of"
+   },
+   {
+    "line": 67,
+    "text": "8. Any player who bags chips for Day 2 may not play a subsequent flight."
+   }
+  ],
+  "re_entry_excerpt": null,
+  "multi_flight_excerpt": "of age and have a Venetian Rewards card to participate. 3. Each starting flight will play until we are down to approximately 12.5% of the field remaining. Day 2 will resume at 12:00 PM combining all remaining players from 1A, 1B, 1C, 1D, 1E, and 1F with all players being considered in the money & will continue until a winner has been declared. To begin Day 2, the clock will revert to the earliest stoppage time of Day 1. 4. Management reserves the right to cancel or change the tournament. 5.",
+  "add_on_excerpt": null,
+  "re_buy_excerpt": null,
+  "rule_count": 13,
+  "sheet_kind": "MULTI_FLIGHT"
+ },
+ "v_nov_struct_14": {
+  "sheet": "v_nov_struct_14",
+  "title": "$800 No Limit Hold\u2019em",
+  "snapshot": "data/snapshots/v_nov_struct_14.txt",
+  "sheet_no": "14",
+  "effective_date": "10.06.26",
+  "event_no": "26",
+  "start_time": null,
+  "chips": "40,000",
+  "levels": "20 minutes",
+  "late_reg": "6 levels + Break (~ 7:25 PM)",
+  "guarantee": "$500,000",
+  "house_fee_usd": 110,
+  "buy_in_usd": 800,
+  "fee_excerpt": "$110 of the $800 Buy-In",
+  "payout": null,
+  "keyword_lines": [
+   {
+    "line": 52,
+    "text": "3. Each starting flight will play until we are down to approximately 12.5% of"
+   },
+   {
+    "line": 65,
+    "text": "8. Any player who bags chips for Day 2 may not play a subsequent flight."
+   }
+  ],
+  "re_entry_excerpt": null,
+  "multi_flight_excerpt": "of age and have a Venetian Rewards card to participate. 3. Each starting flight will play until we are down to approximately 12.5% of the field remaining. Day 2 will resume at 12:00 PM combining all remaining players from 1A, 1B, 1C, 1D, 1E, and 1F with all players being considered in the money & will continue until a winner has been declared. To begin Day 2, the clock will revert to the earliest stoppage time of Day 1. 4. Management reserves the right to cancel or change the tournament. 5.",
+  "add_on_excerpt": null,
+  "re_buy_excerpt": null,
+  "rule_count": 13,
+  "sheet_kind": "MULTI_FLIGHT"
+ },
+ "v_nov_struct_15": {
+  "sheet": "v_nov_struct_15",
+  "title": "$300 No Limit Hold\u2019em Bounty (1Day)",
+  "snapshot": "data/snapshots/v_nov_struct_15.txt",
+  "sheet_no": "15",
+  "effective_date": "10.06.26",
+  "event_no": "29, 31, 34, 38, 42, 50, 51, 53, and 55",
+  "start_time": "5:10 PM",
+  "chips": "25,000",
+  "levels": "30 minutes.",
+  "late_reg": "8 levels + Break (9:40 PM)",
+  "guarantee": "$15,000 (prize pool + total bounties)",
+  "house_fee_usd": 50,
+  "buy_in_usd": 300,
+  "fee_excerpt": "$50 of the $300 Buy-In",
+  "payout_pct": 12.5,
+  "payout_excerpt": "pays 12.5% of the field",
+  "keyword_lines": [
+   {
+    "line": 3,
+    "text": "$300 No Limit Hold\u2019em Bounty (1Day)"
+   },
+   {
+    "line": 48,
+    "text": "Guarantee: $15,000 (prize pool + total bounties)"
+   },
+   {
+    "line": 66,
+    "text": "9. Players receive $100 bounty for each player they eliminate"
+   },
+   {
+    "line": 68,
+    "text": "player with the exact same hand, the $100 bounty will be split"
+   },
+   {
+    "line": 72,
+    "text": "amount of $100 bounties that are awarded."
+   }
+  ],
+  "re_entry_excerpt": null,
+  "multi_flight_excerpt": null,
+  "add_on_excerpt": null,
+  "re_buy_excerpt": null,
+  "rule_count": 12,
+  "sheet_kind": "SINGLE_ENTRY"
+ },
+ "v_nov_struct_16": {
+  "sheet": "v_nov_struct_16",
+  "title": "$800 No Limit Hold\u2019em Bounty (1Day)",
+  "snapshot": "data/snapshots/v_nov_struct_16.txt",
+  "sheet_no": "16",
+  "effective_date": "10.09.26",
+  "event_no": "36",
+  "start_time": "11:10 AM",
+  "chips": "40,000",
+  "levels": "30 minutes.",
+  "late_reg": "10 levels + Break (4:55 PM)",
+  "guarantee": "$75,000 (prize pool + total bounties)",
+  "house_fee_usd": 100,
+  "buy_in_usd": 800,
+  "fee_excerpt": "$100 of the $800 Buy-In",
+  "payout_pct": 12.5,
+  "payout_excerpt": "pays 12.5% of the field",
+  "keyword_lines": [
+   {
+    "line": 3,
+    "text": "$800 No Limit Hold\u2019em Bounty (1Day)"
+   },
+   {
+    "line": 48,
+    "text": "Guarantee: $75,000 (prize pool + total bounties)"
+   },
+   {
+    "line": 63,
+    "text": "7. Players receive $200 Bounty for each player they eliminate"
+   },
+   {
+    "line": 65,
+    "text": "payouts) \u2013 players receive a $500 Bounty for each player they"
+   },
+   {
+    "line": 68,
+    "text": "same hand, the Bounty will be split equally amongst all"
+   },
+   {
+    "line": 70,
+    "text": "own bounty."
+   }
+  ],
+  "re_entry_excerpt": null,
+  "multi_flight_excerpt": null,
+  "add_on_excerpt": null,
+  "re_buy_excerpt": null,
+  "rule_count": 11,
+  "sheet_kind": "SINGLE_ENTRY"
+ },
+ "v_nov_struct_17": {
+  "sheet": "v_nov_struct_17",
+  "title": "$600 No Limit Hold\u2019em Seniors (1Day)",
+  "snapshot": "data/snapshots/v_nov_struct_17.txt",
+  "sheet_no": "17",
+  "effective_date": "10.09.26",
+  "event_no": "24 and 32",
+  "start_time": "10:10 AM",
+  "chips": "40,000",
+  "levels": "30 minutes",
+  "late_reg": "10 levels + Break (~ 3:55 PM)",
+  "guarantee": "$40,000",
+  "house_fee_usd": 90,
+  "buy_in_usd": 600,
+  "fee_excerpt": "$90 of the $600 Buy-In",
+  "payout_pct": 15.0,
+  "payout_excerpt": "pays 15% of the field",
+  "keyword_lines": [],
+  "re_entry_excerpt": null,
+  "multi_flight_excerpt": null,
+  "add_on_excerpt": null,
+  "re_buy_excerpt": null,
+  "rule_count": 10,
+  "sheet_kind": "SINGLE_ENTRY"
+ },
+ "v_nov_struct_18": {
+  "sheet": "v_nov_struct_18",
+  "title": "$200 No Limit Hold\u2019em (1Day)",
+  "snapshot": "data/snapshots/v_nov_struct_18.txt",
+  "sheet_no": "18",
+  "effective_date": "10.06.26",
+  "event_no": "03, 04, and 05",
+  "start_time": "10:10 AM",
+  "chips": "30,000",
+  "levels": "20/15 minutes.",
+  "late_reg": "6 levels + Break (~ 12:25 PM)",
+  "guarantee": null,
+  "house_fee_usd": 35,
+  "buy_in_usd": 200,
+  "fee_excerpt": "$35 of the $200 Buy-In",
+  "payout_pct": 12.5,
+  "payout_excerpt": "pays 12.5% of the field",
+  "keyword_lines": [],
+  "re_entry_excerpt": null,
+  "multi_flight_excerpt": null,
+  "add_on_excerpt": null,
+  "re_buy_excerpt": null,
+  "rule_count": 10,
+  "sheet_kind": "SINGLE_ENTRY"
+ },
+ "v_nov_struct_19": {
+  "sheet": "v_nov_struct_19",
+  "title": "$100 NLH LIPS Ladies (1Day)",
+  "snapshot": "data/snapshots/v_nov_struct_19.txt",
+  "sheet_no": "19",
+  "effective_date": "10.09.26",
+  "event_no": "33 and 37",
+  "start_time": "4:10 PM",
+  "chips": "20,000",
+  "levels": "20 minutes.",
+  "late_reg": "6 levels + Break (~6:25 PM)",
+  "guarantee": "2 Seats",
+  "house_fee_usd": 20,
+  "buy_in_usd": 100,
+  "fee_excerpt": "$20 of the $100 Buy-In",
+  "payout": null,
+  "keyword_lines": [],
+  "re_entry_excerpt": null,
+  "multi_flight_excerpt": null,
+  "add_on_excerpt": null,
+  "re_buy_excerpt": null,
+  "rule_count": 13,
+  "sheet_kind": "SINGLE_ENTRY"
+ },
+ "v_nov_struct_20": {
+  "sheet": "v_nov_struct_20",
+  "title": "$1,100 No Limit Hold\u2019em Seniors",
+  "snapshot": "data/snapshots/v_nov_struct_20.txt",
+  "sheet_no": "20",
+  "effective_date": "10.09.26",
+  "event_no": "49",
+  "start_time": null,
+  "chips": "40,000",
+  "levels": "40 minutes",
+  "late_reg": "9 levels + Break (~ 4:55 PM)",
+  "guarantee": "$300,000",
+  "house_fee_usd": 140,
+  "buy_in_usd": 1100,
+  "fee_excerpt": "$140 of the $1,100 Buy-In",
+  "payout": null,
+  "keyword_lines": [
+   {
+    "line": 58,
+    "text": "3. Each starting flight will play until we are down to approximately 15% of the field"
+   },
+   {
+    "line": 71,
+    "text": "8. Any player who bags chips for Day 2 may not play a subsequent flight."
+   }
+  ],
+  "re_entry_excerpt": null,
+  "multi_flight_excerpt": "entitled to any prize money or a refund of their buy in. 3. Each starting flight will play until we are down to approximately 15% of the field remaining. Day 2 will resume at 10:00 AM combining all remaining players from 1A and 1B with all players being considered in the money and will continue until a winner has been declared. To begin Day 2, the clock will revert to the earliest stoppage time of Day 1. 4. Management reserves the right to cancel or change the tournament. 5. Winners may choo",
+  "add_on_excerpt": null,
+  "re_buy_excerpt": null,
+  "rule_count": 13,
+  "sheet_kind": "MULTI_FLIGHT"
+ },
+ "v_nov_struct_21": {
+  "sheet": "v_nov_struct_21",
+  "title": "$2,200 No Limit Hold\u2019em",
+  "snapshot": "data/snapshots/v_nov_struct_21.txt",
+  "sheet_no": "21",
+  "effective_date": "10.06.26",
+  "event_no": "47",
+  "start_time": null,
+  "chips": "40,000",
+  "levels": "40 minutes",
+  "late_reg": "9 levels + Break (~ 4:55 PM)",
+  "guarantee": "$1,000,000",
+  "house_fee_usd": 225,
+  "buy_in_usd": 2200,
+  "fee_excerpt": "$225 of the $2,200 Buy-In",
+  "payout": null,
+  "keyword_lines": [
+   {
+    "line": 57,
+    "text": "3. Each starting flight will play until we are down to approximately 12.5% of the field"
+   },
+   {
+    "line": 71,
+    "text": "8. Any player who bags chips for Day 2 may not play a subsequent flight."
+   }
+  ],
+  "re_entry_excerpt": null,
+  "multi_flight_excerpt": "of age and have a Venetian Rewards card to participate. 3. Each starting flight will play until we are down to approximately 12.5% of the field remaining. Day 2 will resume at 1:00 PM combining all remaining players from 1A and 1B with all players being considered in the money & will continue until seven (7) players remain. To begin Day 2, the clock will revert to the earliest stoppage time of Day 1.Day 3 will resume at 11:00 AM for a streamed and distributed Final Table produced by PokerGO",
+  "add_on_excerpt": null,
+  "re_buy_excerpt": null,
+  "rule_count": 13,
+  "sheet_kind": "MULTI_FLIGHT"
+ },
+ "v_nov_struct_22": {
+  "sheet": "v_nov_struct_22",
+  "title": "$300 Pot Limit Omaha",
+  "snapshot": "data/snapshots/v_nov_struct_22.txt",
+  "sheet_no": "22",
+  "effective_date": "10.12.26",
+  "event_no": "20",
+  "start_time": "12:10 PM",
+  "chips": "30,000",
+  "levels": "30 minutes",
+  "late_reg": "8 levels + break (~ 4:40 PM)",
+  "guarantee": "$10,000",
+  "house_fee_usd": 58,
+  "buy_in_usd": 300,
+  "fee_excerpt": "$58 of the $300 Buy-In",
+  "payout_pct": 12.5,
+  "payout_excerpt": "pay 12.5% of the field",
+  "keyword_lines": [],
+  "re_entry_excerpt": null,
+  "multi_flight_excerpt": null,
+  "add_on_excerpt": null,
+  "re_buy_excerpt": null,
+  "rule_count": 13,
+  "sheet_kind": "SINGLE_ENTRY"
+ },
+ "v_nov_struct_23": {
+  "sheet": "v_nov_struct_23",
+  "title": "$600 Pot Limit Omaha",
+  "snapshot": "data/snapshots/v_nov_struct_23.txt",
+  "sheet_no": "23",
+  "effective_date": "10.12.26",
+  "event_no": "57",
+  "start_time": "12:10 PM",
+  "chips": "30,000",
+  "levels": "30 minutes",
+  "late_reg": "8 levels + break (~ 4:40 PM)",
+  "guarantee": "$25,000",
+  "house_fee_usd": 90,
+  "buy_in_usd": 600,
+  "fee_excerpt": "$90 of the $600 Buy-In",
+  "payout_pct": 12.5,
+  "payout_excerpt": "pay 12.5% of the field",
+  "keyword_lines": [],
+  "re_entry_excerpt": null,
+  "multi_flight_excerpt": null,
+  "add_on_excerpt": null,
+  "re_buy_excerpt": null,
+  "rule_count": 13,
+  "sheet_kind": "SINGLE_ENTRY"
+ },
+ "v_nov_struct_24": {
+  "sheet": "v_nov_struct_24",
+  "title": "$260 No Limit Hold\u2019em (1Day)",
+  "snapshot": "data/snapshots/v_nov_struct_24.txt",
+  "sheet_no": "24",
+  "effective_date": "10.09.26",
+  "event_no": "41 and 44",
+  "start_time": "4:10 PM",
+  "chips": "20,000",
+  "levels": "20 minutes.",
+  "late_reg": "6 levels + Break (~6:25 PM)",
+  "guarantee": "2 Seats",
+  "house_fee_usd": 40,
+  "buy_in_usd": 260,
+  "fee_excerpt": "$40 of the $260 Buy-In",
+  "payout": null,
+  "keyword_lines": [],
+  "re_entry_excerpt": null,
+  "multi_flight_excerpt": null,
+  "add_on_excerpt": null,
+  "re_buy_excerpt": null,
+  "rule_count": 13,
+  "sheet_kind": "SINGLE_ENTRY"
+ },
+ "v_nov_struct_25": {
+  "sheet": "v_nov_struct_25",
+  "title": "$260 No Limit Hold\u2019em Turbo (1Day)",
+  "snapshot": "data/snapshots/v_nov_struct_25.txt",
+  "sheet_no": "25",
+  "effective_date": "10.09.26",
+  "event_no": "45, 46, and 48 Event # 45",
+  "start_time": "8:10 PM Event # 46",
+  "chips": "20,000",
+  "levels": "15 minutes.",
+  "late_reg": "6 levels",
+  "guarantee": "2 Seats",
+  "house_fee_usd": 35,
+  "buy_in_usd": 260,
+  "fee_excerpt": "$35 of the $260 Buy-In",
+  "payout": null,
+  "keyword_lines": [],
+  "re_entry_excerpt": null,
+  "multi_flight_excerpt": null,
+  "add_on_excerpt": null,
+  "re_buy_excerpt": null,
+  "rule_count": 13,
+  "sheet_kind": "SINGLE_ENTRY"
+ },
+ "v_nov_struct_26": {
+  "sheet": "v_nov_struct_26",
+  "title": "$400 Pot Limit Omaha Bounty (1Day)",
+  "snapshot": "data/snapshots/v_nov_struct_26.txt",
+  "sheet_no": "26",
+  "effective_date": "10.12.26",
+  "event_no": "17",
+  "start_time": "12:10 PM",
+  "chips": "30,000",
+  "levels": "30 minutes",
+  "late_reg": "8 levels + break (~ 4:40 PM)",
+  "guarantee": "$15,000 (prize pool + total bounties)",
+  "house_fee_usd": 60,
+  "buy_in_usd": 400,
+  "fee_excerpt": "$60 of the $400 Buy-In",
+  "payout_pct": 12.5,
+  "payout_excerpt": "pay 12.5% of the field",
+  "keyword_lines": [
+   {
+    "line": 3,
+    "text": "$400 Pot Limit Omaha Bounty (1Day)"
+   },
+   {
+    "line": 47,
+    "text": "Guarantee: $15,000 (prize pool + total bounties)"
+   },
+   {
+    "line": 64,
+    "text": "8. Players receive a $100 Bounty for each player they eliminate"
+   },
+   {
+    "line": 67,
+    "text": "the $100 Bounty Chips will be split equally. The winner of"
+   },
+   {
+    "line": 68,
+    "text": "the event will keep their own bounty chip."
+   },
+   {
+    "line": 74,
+    "text": "of $100 bounties that are awarded."
+   }
+  ],
+  "re_entry_excerpt": null,
+  "multi_flight_excerpt": null,
+  "add_on_excerpt": null,
+  "re_buy_excerpt": null,
+  "rule_count": 12,
+  "sheet_kind": "SINGLE_ENTRY"
+ },
+ "v_nov_struct_27": {
+  "sheet": "v_nov_struct_27",
+  "title": "$600 Pot Limit Omaha Bounty (1Day)",
+  "snapshot": "data/snapshots/v_nov_struct_27.txt",
+  "sheet_no": "27",
+  "effective_date": "10.12.26",
+  "event_no": "40",
+  "start_time": "12:10 PM",
+  "chips": "30,000",
+  "levels": "30 minutes",
+  "late_reg": "8 levels + break (~ 4:40 PM)",
+  "guarantee": "$25,000 (prize pool + total bounties)",
+  "house_fee_usd": 90,
+  "buy_in_usd": 600,
+  "fee_excerpt": "$90 of the $600 Buy-In",
+  "payout_pct": 12.5,
+  "payout_excerpt": "pay 12.5% of the field",
+  "keyword_lines": [
+   {
+    "line": 3,
+    "text": "$600 Pot Limit Omaha Bounty (1Day)"
+   },
+   {
+    "line": 47,
+    "text": "Guarantee: $25,000 (prize pool + total bounties)"
+   },
+   {
+    "line": 64,
+    "text": "8. Players receive a $200 Bounty for each player they eliminate"
+   },
+   {
+    "line": 67,
+    "text": "the $200 Bounty Chips will be split equally. The winner of"
+   },
+   {
+    "line": 68,
+    "text": "the event will keep their own bounty chip."
+   },
+   {
+    "line": 74,
+    "text": "of $200 bounties that are awarded."
+   }
+  ],
+  "re_entry_excerpt": null,
+  "multi_flight_excerpt": null,
+  "add_on_excerpt": null,
+  "re_buy_excerpt": null,
+  "rule_count": 12,
+  "sheet_kind": "SINGLE_ENTRY"
+ },
+ "v_nov_struct_28": {
+  "sheet": "v_nov_struct_28",
+  "title": "$600 BIG O (1Day)",
+  "snapshot": "data/snapshots/v_nov_struct_28.txt",
+  "sheet_no": "28",
+  "effective_date": "10.12.26",
+  "event_no": "27",
+  "start_time": "12:10 PM",
+  "chips": "30,000",
+  "levels": "30 minutes",
+  "late_reg": "8 levels + break (~ 4:40 PM)",
+  "guarantee": "$25,000",
+  "house_fee_usd": 90,
+  "buy_in_usd": 600,
+  "fee_excerpt": "$90 of the $600 Buy-In",
+  "payout_pct": 12.5,
+  "payout_excerpt": "pay 12.5% of the field",
+  "keyword_lines": [],
+  "re_entry_excerpt": null,
+  "multi_flight_excerpt": null,
+  "add_on_excerpt": null,
+  "re_buy_excerpt": null,
+  "rule_count": 10,
+  "sheet_kind": "SINGLE_ENTRY"
+ },
+ "v_nov_struct_29": {
+  "sheet": "v_nov_struct_29",
+  "title": "$200 No Limit Hold\u2019em (1Day)",
+  "snapshot": "data/snapshots/v_nov_struct_29.txt",
+  "sheet_no": "29",
+  "effective_date": "10.06.26",
+  "event_no": "06",
+  "start_time": "11:10 AM",
+  "chips": "30,000",
+  "levels": "30 minutes.",
+  "late_reg": "8 levels + Break (~ 3:40 PM)",
+  "guarantee": null,
+  "house_fee_usd": 40,
+  "buy_in_usd": 200,
+  "fee_excerpt": "$40 of the $200 Buy-In",
+  "payout_pct": 12.5,
+  "payout_excerpt": "pays 12.5% of the field",
+  "keyword_lines": [],
+  "re_entry_excerpt": null,
+  "multi_flight_excerpt": null,
+  "add_on_excerpt": null,
+  "re_buy_excerpt": null,
+  "rule_count": 10,
+  "sheet_kind": "SINGLE_ENTRY"
+ },
+ "v_nov_struct_30": {
+  "sheet": "v_nov_struct_30",
+  "title": "$200 No Limit Hold\u2019em (1Day)",
+  "snapshot": "data/snapshots/v_nov_struct_30.txt",
+  "sheet_no": "30",
+  "effective_date": "10.06.26",
+  "event_no": "08",
+  "start_time": "5:10 PM",
+  "chips": "25,000",
+  "levels": "30 minutes.",
+  "late_reg": "8 levels + Break (9:40 PM)",
+  "guarantee": "$8,000 (prize pool + total bounties)",
+  "house_fee_usd": 40,
+  "buy_in_usd": 200,
+  "fee_excerpt": "$40 of the $200 Buy-In",
+  "payout_pct": 12.5,
+  "payout_excerpt": "pays 12.5% of the field",
+  "keyword_lines": [
+   {
+    "line": 4,
+    "text": "Progressive Knock-Out Bounty (PKO)"
+   },
+   {
+    "line": 49,
+    "text": "Guarantee: $8,000 (prize pool + total bounties)"
+   },
+   {
+    "line": 60,
+    "text": "will be issued for all tournament or bounty prize money winnings"
+   },
+   {
+    "line": 67,
+    "text": "9. Players start the event as a $50 bounty. For each player they"
+   },
+   {
+    "line": 69,
+    "text": "players bounty to keep as prize money, and the other \u00bd of the"
+   },
+   {
+    "line": 70,
+    "text": "bounty will then be calculated into their own bounty elimination"
+   },
+   {
+    "line": 73,
+    "text": "hand, the bounty prize money will be split equally amongst all"
+   },
+   {
+    "line": 75,
+    "text": "own bounty elimination prize amount."
+   },
+   {
+    "line": 78,
+    "text": "amount of bounty prize money that is awarded."
+   }
+  ],
+  "re_entry_excerpt": null,
+  "multi_flight_excerpt": null,
+  "add_on_excerpt": null,
+  "re_buy_excerpt": null,
+  "rule_count": 12,
+  "sheet_kind": "SINGLE_ENTRY"
+ },
+ "v_nov_struct_31": {
+  "sheet": "v_nov_struct_31",
+  "title": "$600 No Limit Hold\u2019em (1Day)",
+  "snapshot": "data/snapshots/v_nov_struct_31.txt",
+  "sheet_no": "31",
+  "effective_date": "10.06.26",
+  "event_no": "35",
+  "start_time": "10:10 AM",
+  "chips": "40,000",
+  "levels": "30 minutes.",
+  "late_reg": "8 levels + Break (~ 2:40 PM)",
+  "guarantee": "$10,000 Teams: Female / Female OR Female / Male",
+  "house_fee_usd": 80,
+  "buy_in_usd": 600,
+  "fee_excerpt": "$80 of the $600 Buy-In",
+  "payout_pct": 12.5,
+  "payout_excerpt": "pays 12.5% of the field",
+  "keyword_lines": [],
+  "re_entry_excerpt": null,
+  "multi_flight_excerpt": null,
+  "add_on_excerpt": null,
+  "re_buy_excerpt": null,
+  "rule_count": 11,
+  "sheet_kind": "SINGLE_ENTRY"
+ },
+ "v_nov_struct_32": {
+  "sheet": "v_nov_struct_32",
+  "title": "$800 NLH LIPS Ladies (2Day)",
+  "snapshot": "data/snapshots/v_nov_struct_32.txt",
+  "sheet_no": "32",
+  "effective_date": "10.06.26",
+  "event_no": "39",
+  "start_time": null,
+  "chips": "40,000",
+  "levels": "40 minutes",
+  "late_reg": "9 levels + Break (~ 4:55 PM)",
+  "guarantee": "$40,000",
+  "house_fee_usd": 90,
+  "buy_in_usd": 800,
+  "fee_excerpt": "$90 of the $800 Buy-In",
+  "payout": null,
+  "keyword_lines": [],
+  "re_entry_excerpt": null,
+  "multi_flight_excerpt": null,
+  "add_on_excerpt": null,
+  "re_buy_excerpt": null,
+  "rule_count": 12,
+  "sheet_kind": "SINGLE_ENTRY"
+ },
+ "v_nov_struct_33": {
+  "sheet": "v_nov_struct_33",
+  "title": "$600 No Limit Hold\u2019em LIPS (1Day)",
+  "snapshot": "data/snapshots/v_nov_struct_33.txt",
+  "sheet_no": "33",
+  "effective_date": "10.09.26",
+  "event_no": "43",
+  "start_time": "11:10 AM",
+  "chips": "40,000",
+  "levels": "30 minutes.",
+  "late_reg": "10 levels + Break (4:55 PM)",
+  "guarantee": "$30,000 (prize pool + total bounties)",
+  "house_fee_usd": 80,
+  "buy_in_usd": 600,
+  "fee_excerpt": "$80 of the $600 Buy-In",
+  "payout_pct": 12.5,
+  "payout_excerpt": "pays 12.5% of the field",
+  "keyword_lines": [
+   {
+    "line": 4,
+    "text": "Kings and Queens Bounty \u2013 Open to all Players"
+   },
+   {
+    "line": 50,
+    "text": "Guarantee: $30,000 (prize pool + total bounties)"
+   },
+   {
+    "line": 67,
+    "text": "7. Players receive $200 Bounty for each player they eliminate"
+   },
+   {
+    "line": 69,
+    "text": "their own bounty."
+   }
+  ],
+  "re_entry_excerpt": null,
+  "multi_flight_excerpt": null,
+  "add_on_excerpt": null,
+  "re_buy_excerpt": null,
+  "rule_count": 11,
+  "sheet_kind": "SINGLE_ENTRY"
+ },
+ "v_nov_struct_34": {
+  "sheet": "v_nov_struct_34",
+  "title": "$1,100 No Limit Hold\u2019em (1Day)",
+  "snapshot": "data/snapshots/v_nov_struct_34.txt",
+  "sheet_no": "34",
+  "effective_date": "10.06.26",
+  "event_no": "52",
+  "start_time": "11:10 AM",
+  "chips": "40,000",
+  "levels": "30 minutes.",
+  "late_reg": "10 levels + Break (4:55 PM)",
+  "guarantee": "$75,000 (prize pool + total bounties)",
+  "house_fee_usd": 130,
+  "buy_in_usd": 1100,
+  "fee_excerpt": "$130 of the $1,100 Buy-In",
+  "payout_pct": 12.5,
+  "payout_excerpt": "pays 12.5% of the field",
+  "keyword_lines": [
+   {
+    "line": 4,
+    "text": "Progressive Knock-Out Bounty (PKO)"
+   },
+   {
+    "line": 49,
+    "text": "Guarantee: $75,000 (prize pool + total bounties)"
+   },
+   {
+    "line": 60,
+    "text": "will be issued for all tournament or bounty prize money winnings"
+   },
+   {
+    "line": 67,
+    "text": "9. Players start the event as a $200 bounty. For each player they"
+   },
+   {
+    "line": 69,
+    "text": "players bounty to keep as prize money, and the other \u00bd of the"
+   },
+   {
+    "line": 70,
+    "text": "bounty will then be calculated into their own bounty elimination"
+   },
+   {
+    "line": 73,
+    "text": "hand, the bounty prize money will be split equally amongst all"
+   },
+   {
+    "line": 75,
+    "text": "own bounty elimination prize amount."
+   },
+   {
+    "line": 78,
+    "text": "amount of bounty prize money that is awarded."
+   }
+  ],
+  "re_entry_excerpt": null,
+  "multi_flight_excerpt": null,
+  "add_on_excerpt": null,
+  "re_buy_excerpt": null,
+  "rule_count": 12,
+  "sheet_kind": "SINGLE_ENTRY"
+ },
+ "v_nov_struct_35": {
+  "sheet": "v_nov_struct_35",
+  "title": "$1,100 No Limit Hold\u2019em",
+  "snapshot": "data/snapshots/v_nov_struct_35.txt",
+  "sheet_no": "35",
+  "effective_date": "10.06.26",
+  "event_no": "56",
+  "start_time": null,
+  "chips": "40,000",
+  "levels": "40 minutes",
+  "late_reg": "9 levels + Break (~ 4:55 PM)",
+  "guarantee": "$500,000",
+  "house_fee_usd": 140,
+  "buy_in_usd": 1100,
+  "fee_excerpt": "$140 of the $1,100 Buy-In",
+  "payout": null,
+  "keyword_lines": [
+   {
+    "line": 61,
+    "text": "3. Each starting flight will play until we are down to approximately 12.5% of the field"
+   },
+   {
+    "line": 77,
+    "text": "8. Any player who bags chips for Day 2 may not play a subsequent flight."
+   }
+  ],
+  "re_entry_excerpt": null,
+  "multi_flight_excerpt": "of age and have a Venetian Rewards card to participate. 3. Each starting flight will play until we are down to approximately 12.5% of the field remaining. Day 2 will resume at 11:00 AM combining all remaining players from 1A, 1B, 1C, 1D, and 1E, with all players being considered in the money & will continue until a winner has been declared. To begin Day 2, the clock will revert to the earliest stoppage time of Day 1. 4. Management reserves the right to cancel or change the tournament. 5. Wi",
+  "add_on_excerpt": null,
+  "re_buy_excerpt": null,
+  "rule_count": 13,
+  "sheet_kind": "MULTI_FLIGHT"
+ },
+ "v_nov_struct_36": {
+  "sheet": "v_nov_struct_36",
+  "title": "$1,100 No Limit Hold\u2019em",
+  "snapshot": "data/snapshots/v_nov_struct_36.txt",
+  "sheet_no": "36",
+  "effective_date": "10.06.26",
+  "event_no": "56",
+  "start_time": null,
+  "chips": "40,000",
+  "levels": "30 minutes",
+  "late_reg": "9 levels + Break (~ 11:10 PM)",
+  "guarantee": "$500,000",
+  "house_fee_usd": 140,
+  "buy_in_usd": 1100,
+  "fee_excerpt": "$140 of the $1,100 Buy-In",
+  "payout": null,
+  "keyword_lines": [
+   {
+    "line": 58,
+    "text": "3. Each starting flight will play until we are down to approximately 12.5% of the"
+   },
+   {
+    "line": 74,
+    "text": "8. Any player who bags chips for Day 2 may not play a subsequent flight."
+   }
+  ],
+  "re_entry_excerpt": null,
+  "multi_flight_excerpt": "of age and have a Venetian Rewards card to participate. 3. Each starting flight will play until we are down to approximately 12.5% of the field remaining. Day 2 will resume at 11:00 AM combining all remaining players from 1A, 1B, 1C, 1D, and 1E with all players being considered in the money & will continue until a winner has been declared. To begin Day 2, the clock will revert to the earliest stoppage time of Day 1. 4. Management reserves the right to cancel or change the tournament. 5. Win",
+  "add_on_excerpt": null,
+  "re_buy_excerpt": null,
+  "rule_count": 13,
+  "sheet_kind": "MULTI_FLIGHT"
+ },
+ "v_nov_struct_37": {
+  "sheet": "v_nov_struct_37",
+  "title": "$2,200 No Limit Hold\u2019em",
+  "snapshot": "data/snapshots/v_nov_struct_37.txt",
+  "sheet_no": "37",
+  "effective_date": "10.06.26",
+  "event_no": "47",
+  "start_time": null,
+  "chips": "40,000",
+  "levels": "30 minutes",
+  "late_reg": "9 levels + Break (~ 11:10 PM)",
+  "guarantee": "$1,000,000",
+  "house_fee_usd": 225,
+  "buy_in_usd": 2200,
+  "fee_excerpt": "$225 of the $2,200 Buy-In",
+  "payout": null,
+  "keyword_lines": [
+   {
+    "line": 54,
+    "text": "3. Each starting flight will play until we are down to approximately 12.5% of the field"
+   },
+   {
+    "line": 68,
+    "text": "8. Any player who bags chips for Day 2 may not play a subsequent flight."
+   }
+  ],
+  "re_entry_excerpt": null,
+  "multi_flight_excerpt": "of age and have a Venetian Rewards card to participate. 3. Each starting flight will play until we are down to approximately 12.5% of the field remaining. Day 2 will resume at 1:00 PM combining all remaining players from 1A and 1B with all players being considered in the money & will continue until seven (7) players remain. To begin Day 2, the clock will revert to the earliest stoppage time of Day 1.Day 3 will resume at 11:00 AM for a streamed and distributed Final Table produced by PokerGO",
+  "add_on_excerpt": null,
+  "re_buy_excerpt": null,
+  "rule_count": 13,
+  "sheet_kind": "MULTI_FLIGHT"
+ }
+}
