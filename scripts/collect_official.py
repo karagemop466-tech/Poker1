@@ -198,10 +198,12 @@ def parse_wynn_structures(text):
         m = re.search(r"(\d+ minutes? per level[^.]{0,90})", one_terms)
         if m:
             facts["level_minutes"] = m.group(1).strip()
-        for dm in re.finditer(r"(Day \d[A-F]?):\s*[A-Z][a-z]+day,\s*([A-Z][a-z]+ \d{1,2}, \d{4}) at "
-                              r"(\d{1,2}(?::\d{2})?\s*[ap]\.?m\.?)", one_terms):
-            facts["day_listing"].append({"day": dm.group(1), "date_printed": dm.group(2),
-                                         "printed_time": dm.group(3)})
+        # The terms page prints every calendar day this structure applies to,
+        # with the start time. This is the only reliable discriminator between
+        # two events that share an entry fee.
+        facts["day_listing"] = parse_day_listing(one_terms)
+        facts["event_dates"] = [d["date"] for d in facts["day_listing"]]
+        facts["event_starts"] = sorted({d["start"] for d in facts["day_listing"]})
         reg = facts["registration_rule"] or ""
         joined = one_struct + " " + one_terms
         if re.search(r"re-?entr|rebu|add-?\s?on", reg, flags=re.I):
@@ -322,6 +324,39 @@ def numbered_clause(text, number):
     return re.sub(r"\s+", " ", m.group(1)).strip()
 
 
+MONTHS = {m: i for i, m in enumerate(
+    ["january", "february", "march", "april", "may", "june", "july", "august",
+     "september", "october", "november", "december"], start=1)}
+
+
+def parse_day_listing(one):
+    """Parse the 'This event will be held on the following day(s):' bullets.
+
+    The WPT terms pages print the exact calendar day and start time each
+    structure applies to, which is the only reliable way to tell two events
+    with the same fee apart.
+    """
+    out = []
+    seg = one
+    m = re.search(r"held on the following day\(s\)\s*:?(.{0,1200})", one, flags=re.I)
+    if m:
+        seg = m.group(1)
+    for dm in re.finditer(
+            r"(January|February|March|April|May|June|July|August|September|October|"
+            r"November|December)\s+(\d{1,2}),?\s*(\d{4})[^.]{0,40}?(\d{1,2})(?::(\d{2}))?\s*"
+            r"([ap])\.?\s*m", seg, flags=re.I):
+        mon = MONTHS[dm.group(1).lower()]
+        day = int(dm.group(2))
+        year = int(dm.group(3))
+        hh = int(dm.group(4)) % 12
+        if dm.group(6).lower() == "p":
+            hh += 12
+        mm = dm.group(5) or "00"
+        out.append({"date": "%04d-%02d-%02d" % (year, mon, day),
+                    "start": "%02d:%s" % (hh, mm)})
+    return out
+
+
 def parse_structure(text):
     """Extract the material facts from one official Venetian structure sheet."""
     flat = re.sub(r"[ \t]+", " ", text)
@@ -334,10 +369,12 @@ def parse_structure(text):
     facts = {
         "title": grab(r"^\s*(\$[\d,]+[^|\n]{0,70}?)\s*(?:\n|Level)"),
         "event_numbers_raw": grab(r"Event Numbers?:?\s*([0-9][0-9,\s&and]*)"),
-        "start_time": grab(r"Start Time:?\s*(\d{1,2}:\d{2}\s*[AP]\.?M\.?)"),
+        "start_time": (grab(r"Start Time:?\s*(\d{1,2}:\d{2}\s*[AP]\.?M\.?)")
+                       or grab(r"@\s*(\d{1,2}:\d{2}\s*[AP]\.?M\.?)")
+                       or grab(r"(\d{1,2}:\d{2}\s*[AP]\.?M\.?)\s+with", )),
         "starting_chips": grab(r"Starting Chips:?\s*([\d,]+)"),
         "level_minutes": grab(r"Level Duration:?\s*([\d]+)\s*min"),
-        "late_registration": grab(r"Late Registration:?\s*([^\n]{0,90})"),
+        "late_registration": grab(r"Late Registration:?\s*(\d+\s+levels?[^\n]{0,80})"),
         "guarantee": grab(r"Guarantee:?\s*(\$[\d,]+[^\n]{0,90})"),
         "house_fee_clause": grab(r"(\$[\d,]+ of the \$[\d,]+ Buy-?In[^\n]{0,400})"),
         "buy_in": None,
@@ -380,8 +417,13 @@ def parse_structure(text):
     facts["mentions_starting_flight"] = bool(re.search(r"starting flight|flight 1[ABCDEF]",
                                                        one, flags=re.I))
     facts["has_flight_language"] = bool(re.search(r"\bflight", one, flags=re.I))
+    # number of blind levels printed (first column of the level table)
+    lv = re.findall(r"(?:^|\n)\s*(\d{1,2})\s+\d{1,3}\s+[\d,]+\s+[\d,]+-", flat)
+    facts["levels_printed"] = max((int(x) for x in lv), default=None)
     facts["is_satellite"] = bool(re.search(r"satellite", one, flags=re.I))
     facts["is_tag_team"] = bool(re.search(r"tag\s*team", one, flags=re.I))
+    # The terms page prints the exact day(s) and start time this structure applies to.
+    facts["event_dates"] = parse_day_listing(one)
     return facts
 
 
@@ -460,8 +502,20 @@ def main():
 
     documents, structures, series = {}, {}, {}
 
+    def canonical(raw, kind):
+        """Hash-able form of a document: HTML is reduced to its visible text so a
+        change in markup or a rotating token is not reported as a source change."""
+        if kind == "pdf":
+            return raw
+        text = raw.decode("utf-8", "replace")
+        text = re.sub(r"<script[\s\S]*?</script>", " ", text, flags=re.I)
+        text = re.sub(r"<style[\s\S]*?</style>", " ", text, flags=re.I)
+        text = TAG.sub(" ", text)
+        return re.sub(r"\s+", " ", text).strip().encode("utf-8")
+
     def record(slug, url, raw, kind):
-        h = sha(raw)
+        h = sha(canonical(raw, kind))
+        raw_sha = sha(raw)
         old = prev_docs.get(url, {})
         prev_h = old.get("sha256")
         status = "new" if prev_h is None else ("unchanged" if prev_h == h else "changed")

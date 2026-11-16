@@ -28,16 +28,38 @@ for rel in REQUIRED_SITE_DOCS:
     if not os.path.isfile(os.path.join(ROOT, rel)):
         problems.append(f"{rel}: required Markdown content for the deployed dashboard is missing")
 
-for rel in ("data/tournaments.json", "data/hotels.json", "data/schedule.json"):
+DATA_FILES = ("data/tournaments.json", "data/hotels.json", "data/schedule.json",
+              "data/rates.json", "data/changes.json", "data/official_facts.json",
+              "data/change_log.json")
+GENERATED_PAGES = {
+    "index.html", "pages/tournaments.html", "pages/single-entry.html",
+    "pages/separate-section.html", "pages/unverified.html", "pages/schedule.html",
+    "pages/venues.html", "pages/hotels.html", "pages/cost.html", "pages/changes.html",
+    "pages/summary.html", "pages/questions.html", "pages/suggestions.html",
+    "pages/flagged.html", "pages/review.html",
+}
+
+for rel in DATA_FILES:
     try:
         json.load(open(os.path.join(ROOT, rel), encoding="utf-8"))
     except Exception as e:  # noqa: BLE001
         problems.append(f"{rel}: {e}")
 
-for rel in ("data/tournaments.json", "data/hotels.json"):
+def sources_of(row):
+    """A row's official links, whichever field the dataset uses."""
+    if row.get("sources"):
+        return row["sources"]
+    urls = []
+    for key in ("official_url", "official_url_secondary", "url"):
+        if row.get(key):
+            urls.append({"label": key, "url": row[key]})
+    return urls
+
+
+for rel in ("data/tournaments.json", "data/hotels.json", "data/rates.json"):
     rows = json.load(open(os.path.join(ROOT, rel), encoding="utf-8"))["rows"]
     for r in rows:
-        src = r.get("sources") or []
+        src = sources_of(r)
         if not src or not all(s.get("url", "").startswith("https://") for s in src):
             problems.append(f"{rel}: row {r.get('id', r.get('name'))} lacks an https source")
             continue
@@ -52,6 +74,15 @@ for day in schedule.get("days", []):
         url = event.get("source", "")
         if not url.startswith("https://") or urlparse(url).hostname not in OFFICIAL_SOURCE_HOSTS:
             problems.append(f"data/schedule.json: event {event.get('id')} has a non-official source")
+
+# every generated page must exist, and no stale page may be left behind
+for rel in sorted(GENERATED_PAGES):
+    if not os.path.isfile(os.path.join(ROOT, rel)):
+        problems.append(f"{rel}: generated page is missing")
+for f in sorted(os.listdir(os.path.join(ROOT, "pages"))):
+    rel = os.path.join("pages", f)
+    if f.endswith(".html") and rel not in GENERATED_PAGES:
+        problems.append(f"{rel}: stale page with no generator entry")
 
 pages = ["index.html"] + [os.path.join("pages", f) for f in sorted(os.listdir(os.path.join(ROOT, "pages")))]
 for p in pages:

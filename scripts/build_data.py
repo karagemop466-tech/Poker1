@@ -390,13 +390,27 @@ def classify_venetian(sheet_no, series_key):
     base["flights_offered"] = multi_flight
     base["rebuy"] = None
     base["add_on"] = None
+    base["house_fee"] = facts.get("house_fee")
+    base["buy_in"] = facts.get("buy_in")
+    base["levels_printed"] = facts.get("levels_printed")
+    base["level_minutes"] = facts.get("level_minutes")
 
     if cash_entry:
         base["single_entry"] = False
         base["re_entry"] = True
-        base["note"] = ("The official sheet prints cash-entry wording: '%s'. Not counted as "
-                        "single entry." % cash_entry[0]["excerpt"][:220])
-        return "RE", base, cash_entry[0]["excerpt"][:400]
+        txt = cash_entry[0]["excerpt"]
+        if re.search(r"subsequent re-?entry", txt, re.I):
+            base["note"] = ("The official sheet refers to 'any subsequent re-entry' when it describes "
+                            "who qualifies for the rake discount, which implies more than one entry is "
+                            "permitted for this event. Not counted as single entry.")
+        elif re.search(r"subsequent buy", txt, re.I):
+            base["note"] = ("The official sheet prints 'All subsequent buy in's after the initial buy in "
+                            "will be $200', which implies a second buy-in is possible. Not counted as "
+                            "single entry.")
+        else:
+            base["note"] = ("The official sheet prints cash-entry wording: '%s'. Not counted as single "
+                            "entry." % txt[:220])
+        return "RE", base, txt[:400]
 
     if multi_flight:
         base["single_entry"] = False
@@ -416,24 +430,159 @@ def classify_venetian(sheet_no, series_key):
     return "SE", base, "No re-entry, rebuy, add-on or multi-flight clause appears on the official sheet."
 
 
-def classify_wynn(status):
-    if status == "RE":
-        return "RE", {
-            "single_entry": False, "re_entry": True, "rebuy": None, "add_on": None,
-            "flights_offered": None, "entries_allowed": "unlimited re-entry until level 9",
-            "source_url": SRC["wpt_struct"], "structure_sheet": "WPT_World_Championship_Structures.pdf",
-            "retrieved": None, "fetched": False,
-            "excerpts": {"re_entry": WPT_RE[1]},
-            "note": WPT_RE[1],
-        }, WPT_RE[1]
-    return "UNV", {
+WPT_EVENTS = (FACTS.get("series", {}).get("wpt_structures", {}) or {}).get("events", [])
+
+
+def _norm(t):
+    t = re.sub(r"[^a-z0-9 ]+", " ", (t or "").lower())
+    return re.sub(r"\s+", " ", t).strip()
+
+
+def _wpt_key(name, label):
+    """The WPT schedule's own wording for an event, e.g. 'NLH Day 1A' + '$600 NLH $400K'."""
+    text = _norm(label)
+    m = re.search(r"\$([\d,]+)", text)
+    fee = int(m.group(1).replace(",", "")) if m else None
+    return text, fee, _norm(name)
+
+
+GAME_WORDS = [
+    ("no limit holdem", "nlh"), ("nlh", "nlh"), ("plo", "plo"), ("pot limit omaha", "plo"),
+    ("limit omaha", "lo8"), ("horse", "horse"), ("torse", "torse"), ("big o", "bigo"),
+    ("mixed triple draw", "mtd"), ("triple draw", "mtd"), ("toe", "toe"), ("stud", "stud"),
+]
+TYPE_WORDS = [
+    ("mystery bounty", "mystery"), ("progressive", "pko"), ("pko", "pko"), ("bounty", "bounty"),
+    ("turbo", "turbo"), ("high roller", "highroller"), ("6 max", "6max"), ("8 max", "8max"),
+    ("6max", "6max"), ("8max", "8max"), ("shootout", "shootout"),
+]
+SPECIAL_WORDS = [("super gold", "supergold"), ("prime", "prime"), ("ladies", "ladies"),
+                 ("senior", "senior"), ("championship", "champ"), ("main event", "champ"),
+                 ("wynn mixed", "mixedchamp"), ("bomb pot", "bombpot")]
+
+
+def _sig(text):
+    t = " " + _norm(text) + " "
+    games = {tag for word, tag in GAME_WORDS if word in t}
+    types = {tag for word, tag in TYPE_WORDS if word in t}
+    specials = {tag for word, tag in SPECIAL_WORDS if word in t}
+    return games, types, specials
+
+
+def _day_pairs(ev):
+    return {(d.get("date"), d.get("start")) for d in (ev.get("day_listing") or [])}
+
+
+def match_wpt(name, label, buy, date=None, start=None):
+    """Match a WPT schedule row to its official terms page.
+
+    Primary test: the terms page prints the exact day(s) and start time the
+    structure applies to. A row matches when its own date and start time appear
+    in that printed list. This needs no string heuristics.
+
+    Fallback test (only when no date match exists): the entry fee printed on the
+    event's front page plus the game and format words. A tie is refused, so an
+    ambiguous row stays unverified rather than being matched to the wrong event.
+    """
+    if date and start:
+        hits = [ev for ev in WPT_EVENTS if (date, start) in _day_pairs(ev)]
+        if len(hits) == 1:
+            ev = dict(hits[0])
+            ev["match_basis"] = "the terms page prints this event on %s at %s" % (date, start)
+            return ev
+        if len(hits) > 1:
+            hits.sort(key=lambda e: -len(e.get("event_dates") or []))
+            ev = dict(hits[0])
+            ev["match_basis"] = ("several terms pages list %s at %s; the one with the shortest "
+                                 "listed run was used" % (date, start))
+            return ev
+
+    sched_text = (name or "") + " " + (label or "")
+    g_s, t_s, sp_s = _sig(sched_text)
+    gtd = None
+    m = re.search(r"\$(\d+(?:\.\d+)?)\s*([KkMm])\b", sched_text)
+    if m:
+        gtd = int(float(m.group(1)) * (1000 if m.group(2).upper() == "K" else 1000000))
+    candidates = []
+    for ev in WPT_EVENTS:
+        if ev.get("structure_entry_fee_usd") != buy:
+            continue
+        g_e, t_e, sp_e = _sig(ev.get("structure_title"))
+        if g_s and g_e and not (g_s & g_e):
+            continue
+        title = _norm(ev.get("structure_title"))
+        if "torse" in (t_s | g_s) and "torse" not in title:
+            continue
+        if "turbo" in t_s and "turbo" not in title:
+            continue
+        if "mystery" in t_s and "mystery" not in title:
+            continue
+        score = 0
+        if gtd is not None and ev.get("structure_guarantee_usd"):
+            score += 12 if ev["structure_guarantee_usd"] == gtd else -8
+        score += 6 * len(sp_s & sp_e) + 4 * len(t_s & t_e) + 2 * (1 if (g_s & g_e) else 0)
+        candidates.append((score, ev))
+    if not candidates:
+        return None
+    candidates.sort(key=lambda x: -x[0])
+    if candidates[0][0] <= 0:
+        return None
+    if len(candidates) > 1 and candidates[1][0] == candidates[0][0]:
+        return None
+    ev = dict(candidates[0][1])
+    ev["match_basis"] = "entry fee and printed game and format wording"
+    return ev
+
+
+def classify_wynn(status, name="", label="", buy=None, date=None, start=None):
+    ev = match_wpt(name, label, buy, date, start) if (name or label) else None
+    base = {
         "single_entry": None, "re_entry": None, "rebuy": None, "add_on": None,
         "flights_offered": None, "entries_allowed": None,
-        "source_url": SRC["wpt_struct"], "structure_sheet": None,
-        "retrieved": None, "fetched": False, "excerpts": {},
-        "note": ("The official WPT structures document has not yet been read by the collector, "
-                 "so this row's entry rule is blank and unverified."),
-    }, "Official structure document not yet read by the collector."
+        "source_url": SRC["wpt_struct"],
+        "structure_sheet": "WPT_World_Championship_Structures.pdf",
+        "retrieved": (FACTS.get("series", {}).get("wpt_structures", {}) or {}).get("fetched_utc"),
+        "fetched": bool(ev), "excerpts": {},
+        "house_fee": None, "buy_in": None, "levels_printed": None, "level_minutes": None,
+    }
+    if not ev:
+        base["note"] = ("The official WPT structures document has not been matched to this row, so the "
+                        "entry rule is blank and unverified.")
+        return "UNV", base, "WPT terms page not matched to this row."
+    ex = base["excerpts"]
+    if ev.get("registration_rule"):
+        ex["re_entry"] = ev["registration_rule"][:420]
+    if ev.get("entry_fee_breakdown"):
+        ex["entry_fee"] = ev["entry_fee_breakdown"][:260]
+    if ev.get("starting_stack"):
+        base["starting_stack"] = ev["starting_stack"]
+    base["levels_printed"] = ev.get("levels_printed")
+    base["level_minutes"] = ev.get("level_minutes")
+    reg = ev.get("registration_rule") or ""
+    m = re.search(r"\$([\d,]+) \(Tournament Fee\)", ev.get("entry_fee_breakdown") or "")
+    m2 = re.search(r"\$([\d,]+) \(Poker Staff Service Charge\)", ev.get("entry_fee_breakdown") or "")
+    if m or m2:
+        base["house_fee"] = (int(m.group(1).replace(",", "")) if m else 0) + \
+                            (int(m2.group(1).replace(",", "")) if m2 else 0)
+        base["buy_in"] = ev.get("structure_entry_fee_usd")
+    if re.search(r"re-?entr|rebu|add-?\s?on", reg, re.I):
+        base["single_entry"] = False
+        base["re_entry"] = True
+        if re.search(r"unlimited re-?entry", reg, re.I):
+            base["entries_allowed"] = "unlimited re-entry"
+        elif re.search(r"one \(1\) entr", reg, re.I):
+            base["entries_allowed"] = "one entry plus one re-entry"
+        base["note"] = ("Official WPT terms for this event print: '%s'. Not single entry." % reg[:320])
+        return "RE", base, reg[:420]
+    if re.search(r"no re-?entr|single entr|freeze-?out", reg + " " + (ev.get("structure_title") or ""), re.I):
+        base["single_entry"] = True
+        base["re_entry"] = False
+        base["entries_allowed"] = "single entry"
+        base["note"] = ("Official WPT terms print no re-entry: '%s'." % reg[:320])
+        return "SE", base, reg[:420]
+    base["note"] = ("Official WPT terms were read but do not state a re-entry rule: '%s'. Left "
+                    "unverified." % reg[:320])
+    return "UNV", base, "WPT terms do not state a re-entry rule."
 
 
 def last_checked(urls):
@@ -509,7 +658,7 @@ def build_tournaments():
     venetian("dec", "Venetian DeepStack Extravaganza NYE", "dse_dec_page", DSE_NYE)
 
     for date, time, name, label, buy, gtd, status, note in WPT:
-        st, rule, excerpt = classify_wynn(status)
+        st, rule, excerpt = classify_wynn(status, name, label, buy, date, time)
         srcs = [{"label": "Official WPT schedule (PDF)", "url": SRC["wpt_sched"]},
                 {"label": "Official WPT structures and terms (PDF)", "url": SRC["wpt_struct"]}]
         urls = [s["url"] for s in srcs]
@@ -562,36 +711,65 @@ def build_tournaments():
 
 
 # ------------------------------------------------------- overlap / day plan --
-DEFAULT_DURATION_MIN = 720   # used only when a finish time is not printed
-EXIT_BUFFER_MIN = 30         # time to leave one event and register for the next
+EXIT_BUFFER_MIN = 45         # time to leave one event, walk, and register for the next
+
+# Confirmed walking times are not published on any official source, so no walk
+# minutes are entered. The fallback test therefore uses the primary event's
+# published late-registration close, which is a printed time on official sheets.
+WALK_PLACEHOLDER_MIN = 0     # an unverified walk adds no minutes to the test
 
 
-def finish_estimate(row):
-    """Return (estimated_finish_hhmm, basis). The official sheets print a level
-    count but no finish time, so the basis is stated and shown in the UI."""
-    facts = STRUCTS.get((row.get("rules") or {}).get("structure_sheet") or "")
-    if not facts:
+def minutes(hhmm):
+    if not hhmm:
+        return None
+    h, m = int(hhmm[:2]), int(hhmm[3:])
+    return h * 60 + m
+
+
+def hhmm(total):
+    total = total % (24 * 60)
+    return "%02d:%02d" % (total // 60, total % 60)
+
+
+def late_reg_close(row):
+    """Latest time a player can still enter, taken from the official sheet's own
+    'Late Registration' line (for example '8 levels + Break (9:40 PM)')."""
+    rules = row.get("rules") or {}
+    text = rules.get("excerpts", {}).get("late_registration")
+    if not text:
         return None, None
-    start = row["start"]
-    h, m = int(start[:2]), int(start[3:])
-    total = h * 60 + m
-    lvl = facts.get("level_minutes")
-    levels = facts.get("levels_printed")
-    if lvl and levels:
-        return "%02d:%02d" % (((total + int(lvl) * int(levels)) // 60) % 24,
-                              (total + int(lvl) * int(levels)) % 60), \
-               "%s levels x %s minutes, excluding breaks" % (levels, lvl)
-    return None, None
+    m = re.search(r"(\d{1,2}):(\d{2})\s*([AP])\.?\s*M", text)
+    if not m:
+        return None, None
+    h = int(m.group(1)) % 12
+    if m.group(3).upper() == "P":
+        h += 12
+    return "%02d:%s" % (h, m.group(2)), "printed on the official sheet as '%s'" % text.split("  ")[0]
+
+
+def estimated_finish(row):
+    """Estimate only, clearly labelled: start + levels printed x level minutes.
+    The operator prints no finish time, so this is marked as an estimate and is
+    never used as the sequence test."""
+    rules = row.get("rules") or {}
+    lvl = rules.get("level_minutes")
+    levels = rules.get("levels_printed")
+    st = minutes(row.get("start"))
+    if not (lvl and levels and st is not None):
+        return None, None
+    total = st + int(lvl) * int(levels)
+    return hhmm(total), ("%s levels of %s minutes after the %s start, breaks excluded"
+                         % (levels, lvl, row.get("start")))
 
 
 def build_schedule(rows):
-    """One primary event and one conditional fallback per day.
+    """One primary event and, where the printed times allow it, one conditional
+    fallback per day.
 
-    Primary = earliest verified single-entry start of the day.
-    Fallback = a later verified single-entry event that the primary can
-    realistically be abandoned for, i.e. the primary's estimated finish (or the
-    documented late-registration close) leaves at least EXIT_BUFFER_MIN before
-    the fallback's late registration closes.
+    Sequence test: the fallback can be reached only if it starts at least
+    EXIT_BUFFER_MIN minutes after the primary's printed late-registration close.
+    If the primary closes late registration after the fallback starts, the two
+    cannot be played in sequence and the row is labelled a conflict.
     """
     se = [r for r in rows if r["entry_status"] == "SE"]
     by_day = {}
@@ -599,45 +777,48 @@ def build_schedule(rows):
         by_day.setdefault(r["date"], []).append(r)
     days = []
     for d in sorted(by_day):
-        evs = sorted(by_day[d], key=lambda e: e["start"])
+        evs = sorted(by_day[d], key=lambda e: (e["start"], e["name"]))
         primary = evs[0]
-        p_finish, p_basis = finish_estimate(primary)
-        options = []
+        close, close_basis = late_reg_close(primary)
+        opts = []
         for e in evs:
-            flag = None
-            if e is not primary:
-                if p_finish:
-                    ph, pm = int(p_finish[:2]), int(p_finish[3:])
-                    eh, em = int(e["start"][:2]), int(e["start"][3:])
-                    gap = (eh * 60 + em) - (ph * 60 + pm)
-                    flag = ("ok" if gap >= EXIT_BUFFER_MIN else "conflict")
-                else:
-                    flag = "unknown"
-            options.append({
-                "id": e["id"], "start": e["start"], "name": e["name"],
-                "series": e["series"], "buy_in_usd": e["buy_in_usd"],
-                "guarantee_usd": e["guarantee_usd"], "venue_id": e["venue_id"],
-                "entry_status": e["entry_status"],
-                "estimated_finish": p_finish if e is primary else None,
-                "sequence_check": flag,
+            est, est_basis = estimated_finish(e)
+            entry = {
+                "id": e["id"], "start": e["start"], "name": e["name"], "series": e["series"],
+                "buy_in_usd": e["buy_in_usd"], "guarantee_usd": e["guarantee_usd"],
+                "venue_id": e["venue_id"], "entry_status": e["entry_status"],
+                "late_reg_close": close if e is primary else None,
+                "estimated_finish": est,
+                "sequence_check": None, "sequence_note": None,
                 "source": e["sources"][-1]["url"],
-            })
-        fallback = None
-        for o in options[1:]:
-            if o["sequence_check"] == "ok":
-                fallback = o
-                break
+            }
+            if e is not primary:
+                if close is None:
+                    entry["sequence_check"] = "unknown"
+                    entry["sequence_note"] = ("The primary's late-registration close is not printed on "
+                                               "the official sheet, so the sequence cannot be tested.")
+                else:
+                    gap = minutes(e["start"]) - minutes(close)
+                    entry["sequence_note"] = (
+                        "Fallback starts %d minutes after the primary's late-registration close (%s)."
+                        % (gap, close))
+                    entry["sequence_check"] = "ok" if gap >= EXIT_BUFFER_MIN else "conflict"
+            opts.append(entry)
+        fallback = next((o for o in opts[1:] if o["sequence_check"] == "ok"), None)
+        conflict = next((o for o in opts[1:] if o["sequence_check"] == "conflict"), None)
         days.append({
             "date": d,
-            "primary": options[0],
+            "primary": opts[0],
             "fallback": fallback,
+            "later_event_that_conflicts": conflict,
+            "sequence_basis": close_basis or ("Late-registration close not printed for this event, so "
+                                              "no sequence is asserted."),
             "conditional_note": (
                 None if fallback else
-                "No later verified single-entry event is compatible with the primary's "
-                "estimated finish. The later event on this day is shown as an alternative, "
-                "not as a sequence."),
-            "primary_finish_basis": p_basis,
-            "options": options,
+                ("No later verified single-entry event on this day starts at least %d minutes after the "
+                 "primary's late-registration close. The later event listed below is an alternative, not "
+                 "a sequence." % EXIT_BUFFER_MIN)),
+            "options": opts,
         })
     starts = sorted({r["start"] for r in rows})
     return {
@@ -646,61 +827,94 @@ def build_schedule(rows):
         "days": days,
         "earliest_listed_start": starts[0] if starts else None,
         "exit_buffer_min": EXIT_BUFFER_MIN,
-        "duration_default_min": DEFAULT_DURATION_MIN,
-        "note": ("Primary = earliest verified single-entry start that day. A fallback is listed "
-                 "only when the primary's estimated finish leaves at least %d minutes before the "
-                 "fallback starts. Finish times are not printed by the operator; they are "
-                 "estimated from the printed level count and level length on the official "
-                 "structure sheet and are labelled as estimates. Registration opening times are "
-                 "not published, so the 8 AM goal cannot be confirmed from an official source."
-                 % EXIT_BUFFER_MIN),
+        "note": ("Primary = the earliest verified single-entry start that day. A fallback is listed only when "
+                 "it starts at least %d minutes after the primary's late-registration close, which is a time "
+                 "printed on the official structure sheet. Finish times are not printed by the operator; the "
+                 "'estimated finish' shown is levels x level length and is labelled an estimate. No official "
+                 "walking time is published, so no walking minutes are added." % EXIT_BUFFER_MIN),
     }
 
 
 # ------------------------------------------------------------------ hotels --
 HOTELS = [
- {"id":"venetian","name":"The Venetian Resort","address_note":"Venetian host property for DeepStack series (official poker page)",
-  "resort_fee_usd":55,"resort_fee_status":"verified","resort_fee_note":"Official Venetian hotel terms, read 2026-11-16: $55 plus applicable tax per night.",
-  "room_rate_usd":None,"room_rate_status":"unverified","room_rate_note":"Official poker-suite page says rates 'start as low as $119 and $209' (Venetian or Palazzo), conditional on poker play. Which rate applies to which tower is not stated, so no value is entered here.",
-  "clark_county_tax_pct":13.38,"tax_status":"Verified from full official Venetian hotel terms read 2026-11-16: Clark County Room Tax 13.38%.",
-  "sources":[{"label":"Resort fee (official)","url":SRC["venetian_fee"]},{"label":"Hotel terms incl. 13.38% room tax and resort-fee tax (official)","url":SRC["venetian_terms"]},{"label":"Poker suite rates (official)","url":SRC["venetian_poker_suite"]}],
-  "walk_to_venetian_min":None,"walk_note":"Host property. Walking time not applicable (not published)."},
- {"id":"palazzo","name":"The Palazzo","address_note":"Venetian sister property (official poker page names The Palazzo for the $55 fee)",
-  "resort_fee_usd":55,"resort_fee_status":"verified","resort_fee_note":"Official Venetian poker-suite page: 'There is a $55 resort fee per night stayed' (stated for The Venetian or The Palazzo).",
-  "room_rate_usd":None,"room_rate_status":"unverified","room_rate_note":"Only conditional poker-suite starting rates are published (see Venetian row). No Palazzo-specific rate confirmed.",
-  "clark_county_tax_pct":None,"tax_status":"Unverified for Palazzo: the fetched Venetian hotel terms do not separately identify Palazzo's tax calculation.",
-  "sources":[{"label":"Poker suite rates incl. $55 resort fee (official)","url":SRC["venetian_poker_suite"]},{"label":"Venetian hotel terms (official; property-specific Palazzo tax not stated)","url":SRC["venetian_terms"]}],
-  "walk_to_venetian_min":None,"walk_note":"Unverified: walking time not on an official source."},
- {"id":"wynn","name":"Wynn Las Vegas","address_note":"WPT World Championship and Wynn Signature Series host",
-  "resort_fee_usd":55,"resort_fee_status":"verified","resort_fee_note":"Official Wynn terms (search excerpt, not fetched in full): daily resort fee of $55 plus tax per room night.",
-  "room_rate_usd":None,"room_rate_status":"unverified","room_rate_note":"No official nightly rate confirmed for any date. Third-party sites quote rates; these are not used.",
+ {"id":"venetian","name":"The Venetian Resort Las Vegas","venue_id":"venetian",
+  "address_note":"3355 S Las Vegas Blvd. The poker room is at The Palazzo level 2, Grand Canal Shoppes (official poker page).",
+  "resort_fee_usd":55,"resort_fee_status":"verified",
+  "resort_fee_note":"Official Venetian hotel terms and the official poker suite-rate page: $55 plus applicable tax, per night stayed.",
+  "room_rate_usd":None,"room_rate_status":"unverified",
+  "room_rate_note":"The official page prints poker-suite rates 'as low as $119 and $209' with no stay date attached, so no nightly value is entered. See the rate log.",
+  "clark_county_tax_pct":13.38,
+  "tax_status":"Verified from the official Venetian hotel terms: Clark County Room Tax 13.38%.",
+  "parking":"Complimentary self-parking for non-registered guests who play three hours or more in tournaments or cash games (official poker page).",
+  "cancellation_deadline":None,
+  "cancellation_note":"No cancellation deadline is printed on the poker suite-rate page. Poker-rate qualification is six hours of live cash play or a $300+ tournament buy-in per night, or the rate is adjusted to the prevailing rate.",
+  "sources":[{"label":"Resort fee (official)","url":SRC["venetian_fee"]},
+             {"label":"Hotel terms, 13.38% room tax and resort-fee tax (official)","url":SRC["venetian_terms"]},
+             {"label":"Poker suite rates and play requirement (official)","url":SRC["venetian_poker_suite"]},
+             {"label":"Poker room location and parking (official)","url":"https://www.venetianlasvegas.com/resort/casino/poker.html"}],
+  "walk_to_venetian_min":0,"walk_note":"Same building as the poker room (The Palazzo, level 2, Grand Canal Shoppes).","walk_status":"same building"},
+ {"id":"palazzo","name":"The Palazzo at The Venetian Resort","venue_id":"venetian",
+  "address_note":"3325 S Las Vegas Blvd. The poker room is inside this tower, level 2, Grand Canal Shoppes (official poker page).",
+  "resort_fee_usd":55,"resort_fee_status":"verified",
+  "resort_fee_note":"Official poker suite-rate page: 'There is a $55 resort fee per night stayed' for The Venetian or The Palazzo.",
+  "room_rate_usd":None,"room_rate_status":"unverified",
+  "room_rate_note":"Only the conditional poker-suite range ($119 to $209) is published; no Palazzo-specific dated rate.",
+  "clark_county_tax_pct":None,
+  "tax_status":"Unverified for The Palazzo: the fetched Venetian terms do not separately identify its tax calculation.",
+  "parking":"The poker room has direct access to The Palazzo self-parking garage (official poker page).",
+  "cancellation_deadline":None,"cancellation_note":"Not printed on the official page read.",
+  "sources":[{"label":"Poker suite rates and $55 resort fee (official)","url":SRC["venetian_poker_suite"]},
+             {"label":"Poker room location and parking (official)","url":"https://www.venetianlasvegas.com/resort/casino/poker.html"}],
+  "walk_to_venetian_min":0,"walk_note":"Same building as the poker room.","walk_status":"same building"},
+ {"id":"wynn","name":"Wynn Las Vegas","venue_id":"wynn",
+  "address_note":"3131 S Las Vegas Blvd. The Wynn poker room is in Encore at Wynn Las Vegas (official tournament terms).",
+  "resort_fee_usd":55,"resort_fee_status":"verified",
+  "resort_fee_note":"Official Wynn terms: daily resort fee of $55 plus tax per room night (terms page read by the collector; see the change log).",
+  "room_rate_usd":None,"room_rate_status":"unverified",
+  "room_rate_note":"No official nightly rate for any stay date was retrieved. Third-party rates are not used.",
   "clark_county_tax_pct":None,"tax_status":"Unverified: no Wynn-specific tax rate was confirmed from official terms.",
-  "sources":[{"label":"Resort fee terms (official)","url":SRC["wynn_terms"]},{"label":"Wynn poker room (official)","url":SRC["wynn_poker"]}],
-  "walk_to_venetian_min":None,"walk_note":"Unverified: walking time not on an official source."},
- {"id":"encore","name":"Encore at Wynn Las Vegas","address_note":"Same resort operator as Wynn Las Vegas",
-  "resort_fee_usd":55,"resort_fee_status":"verified","resort_fee_note":"Official Wynn terms (search excerpt, not fetched in full) cover 'Wynn and Encore Las Vegas' with a $55 plus tax daily resort fee. Confirm for the specific room.",
+  "parking":None,"cancellation_deadline":None,
+  "cancellation_note":"Not verified from an official source.",
+  "sources":[{"label":"Resort fee terms (official)","url":SRC["wynn_terms"]},
+             {"label":"Wynn poker room (official)","url":SRC["wynn_poker"]}],
+  "walk_to_wynn_min":0,"walk_note":"Same resort as the Wynn poker room (the room is in Encore at Wynn Las Vegas).","walk_status":"same resort"},
+ {"id":"encore","name":"Encore at Wynn Las Vegas","venue_id":"wynn",
+  "address_note":"3121 S Las Vegas Blvd. The Wynn poker room is inside this property (official tournament terms).",
+  "resort_fee_usd":55,"resort_fee_status":"verified",
+  "resort_fee_note":"Official Wynn terms cover 'Wynn and Encore Las Vegas' with a $55 plus tax daily resort fee.",
   "room_rate_usd":None,"room_rate_status":"unverified","room_rate_note":"No official nightly rate confirmed.",
-  "clark_county_tax_pct":None,"tax_status":"Unverified: no Encore-specific tax rate was confirmed from official terms.",
-  "sources":[{"label":"Resort fee terms (official)","url":SRC["wynn_terms"]}],
-  "walk_to_venetian_min":None,"walk_note":"Unverified: walking time not on an official source."},
- {"id":"bellagio","name":"Bellagio","address_note":"MGM Resorts property on the Strip",
-  "resort_fee_usd":None,"resort_fee_status":"unverified","resort_fee_note":"No Bellagio-specific official resort-fee terms confirmed. Third-party guides conflict; left blank.",
+  "clark_county_tax_pct":None,"tax_status":"Unverified: no Encore-specific tax rate confirmed from official terms.",
+  "parking":None,"cancellation_deadline":None,"cancellation_note":"Not verified from an official source.",
+  "sources":[{"label":"Resort fee terms (official)","url":SRC["wynn_terms"]},
+             {"label":"Wynn poker room (official)","url":SRC["wynn_poker"]}],
+  "walk_to_wynn_min":0,"walk_note":"Same property as the Wynn poker room.","walk_status":"same resort"},
+ {"id":"bellagio","name":"Bellagio","venue_id":None,
+  "address_note":"3600 S Las Vegas Blvd. Not the host of a tournament series in this dataset.",
+  "resort_fee_usd":None,"resort_fee_status":"unverified",
+  "resort_fee_note":"No Bellagio-specific official resort-fee terms were confirmed. Third-party figures conflict, so the value is blank.",
   "room_rate_usd":None,"room_rate_status":"unverified","room_rate_note":"No official nightly rate confirmed.",
-  "clark_county_tax_pct":None,"tax_status":"Unverified for Bellagio: no Bellagio-specific tax rate confirmed from official terms.",
-  "sources":[{"label":"Bellagio official home page (property identification; no fee or tax value)","url":"https://bellagio.mgmresorts.com/en.html"}],
-  "walk_to_venetian_min":None,"walk_note":"Unverified: walking time not on an official source."},
- {"id":"aria","name":"ARIA Resort & Casino","address_note":"MGM Resorts property on the Strip",
-  "resort_fee_usd":None,"resort_fee_status":"unverified","resort_fee_note":"Official ARIA home page fetched; no official resort-fee terms located on it. Left blank.",
+  "clark_county_tax_pct":None,"tax_status":"Unverified for Bellagio.",
+  "parking":None,"cancellation_deadline":None,"cancellation_note":"Not verified from an official source.",
+  "sources":[{"label":"Bellagio official site (property identification only)","url":"https://bellagio.mgmresorts.com/en.html"}],
+  "walk_to_venetian_min":None,"walk_note":"Walking time is not published on any official source.","walk_status":"unverified"},
+ {"id":"aria","name":"ARIA Resort & Casino","venue_id":None,
+  "address_note":"3730 S Las Vegas Blvd. Not the host of a tournament series in this dataset.",
+  "resort_fee_usd":None,"resort_fee_status":"unverified",
+  "resort_fee_note":"The official ARIA page was fetched by the collector; no resort-fee terms were found on it, so the value is blank.",
   "room_rate_usd":None,"room_rate_status":"unverified","room_rate_note":"No official nightly rate confirmed.",
-  "clark_county_tax_pct":None,"tax_status":"Unverified for ARIA: no property-specific tax rate was confirmed from official terms.",
-  "sources":[{"label":"ARIA official home page (fetched)","url":"https://aria.mgmresorts.com/en.html"}],
-  "walk_to_venetian_min":None,"walk_note":"Unverified: walking time not on an official source."},
- {"id":"caesars","name":"Caesars Palace","address_note":"Caesars Entertainment property",
-  "resort_fee_usd":None,"resort_fee_status":"unverified","resort_fee_note":"Official corporate disclaimer gives a general range of $45 to $50 plus applicable tax, not property-specific. Third-party listings conflict. Left blank.",
+  "clark_county_tax_pct":None,"tax_status":"Unverified for ARIA.",
+  "parking":None,"cancellation_deadline":None,"cancellation_note":"Not verified from an official source.",
+  "sources":[{"label":"ARIA official site","url":"https://aria.mgmresorts.com/en.html"}],
+  "walk_to_venetian_min":None,"walk_note":"Walking time is not published on any official source.","walk_status":"unverified"},
+ {"id":"caesars","name":"Caesars Palace","venue_id":None,
+  "address_note":"3570 S Las Vegas Blvd. Not the host of a tournament series in this dataset.",
+  "resort_fee_usd":None,"resort_fee_status":"unverified",
+  "resort_fee_note":"The official Caesars corporate disclaimer prints a general range of $45 to $50 plus tax, not a property-specific fee, so the value is blank.",
   "room_rate_usd":None,"room_rate_status":"unverified","room_rate_note":"No official nightly rate confirmed.",
-  "clark_county_tax_pct":None,"tax_status":"Unverified for Caesars Palace: no property-specific tax rate was confirmed from official terms.",
+  "clark_county_tax_pct":None,"tax_status":"Unverified for Caesars Palace.",
+  "parking":None,"cancellation_deadline":None,"cancellation_note":"Not verified from an official source.",
   "sources":[{"label":"Caesars corporate disclaimer (official range)","url":SRC["caesars_disclaimer"]}],
-  "walk_to_venetian_min":None,"walk_note":"Unverified: walking time not on an official source."},
+  "walk_to_venetian_min":None,"walk_note":"Walking time is not published on any official source.","walk_status":"unverified"},
 ]
 
 
@@ -708,75 +922,76 @@ RATE_LOG = [
   {
     "id": "venetian-poker-suite-2026",
     "hotel_id": "venetian",
+    "entry_date": "2026-11-16",
     "property_scope_printed": "The Venetian or The Palazzo",
-    "rate_type": "published poker-play suite rate range",
+    "rate_type": "published poker-play suite rate range (not date-specific)",
     "room_type_printed": "Luxury King Suite, single/double occupancy",
     "rate_low_usd": 119,
-    "rate_high_from_usd": 209,
-    "rate_printed_text": ("'These rates will start as low as $119 and $209 and can be higher.' "
-                          "No calendar date is attached to either figure and the page does "
-                          "not say which property each figure applies to."),
-    "applies_to_dates": None,
-    "blackout_dates_printed": "Blackout dates may apply (none listed).",
+    "rate_from_high_usd": 209,
+    "rate_text": ("'These rates will start as low as $119 and $209 and can be higher.' "
+                  "The page attaches no calendar date to either figure and does not say "
+                  "which property each figure belongs to."),
+    "applies_to_stay_dates": None,
+    "blackout_dates": "Blackout dates may apply (none listed).",
     "mandatory_resort_fee_usd": 55,
     "resort_fee_text": "There is a $55 resort fee per night stayed.",
     "room_tax_pct": 13.38,
     "room_tax_text": "Clark County Room Tax 13.38% (official Venetian hotel terms).",
     "room_tax_applies_to_resort_fee": True,
-    "parking": "Complimentary self-parking for players who play three hours or more "
-               "(official poker page).",
+    "resort_fee_tax_text": "$55 resort fee 'plus applicable tax'.",
+    "parking": "Complimentary self-parking with three or more hours of play (official poker page).",
     "cancellation_deadline": None,
-    "cancellation_note": "The poker-suite page does not print a cancellation deadline. "
-                         "It says the poker rate cannot be combined with other promotions "
-                         "and requires six hours of live cash play or a $300+ tournament "
-                         "buy-in per night stayed, or the rate is adjusted to the "
-                         "prevailing rate.",
-    "qualification_requirement": "Six hours of active live cash gameplay or a $300 or higher "
-                                 "tournament buy-in per night stayed, completed before 2 a.m. "
-                                 "of the last night stayed.",
+    "cancellation_text": ("The poker suite-rate page prints no cancellation deadline. It prints "
+                          "the play requirement instead: six hours of live cash play or a $300+ "
+                          "tournament buy-in per night stayed, or the nightly rate is adjusted "
+                          "to the prevailing rate."),
+    "qualification_requirement": ("Six hours of active live cash gameplay or a $300 or higher "
+                                  "tournament buy-in, per night stayed, completed before 2 a.m. "
+                                  "of the last night stayed."),
     "booking_channel": "Call 866.255.8936 and mention code EPOKR25 (printed on the official page).",
+    "rate_ceiling_note": "The page says future rates are provided out to a maximum of 150 days from the current date.",
     "official_url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
     "official_url_secondary": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
-    "retrieved_utc": (DOCS.get("https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html", {}).get("fetched_utc")
-                      or VERIFIED_ON),
+    "retrieved_utc": None,   # filled from the collector below
     "date_specific": False,
   },
 ]
 
 
 def rate_log_with_totals():
-    rows = []
+    out = []
     for r in RATE_LOG:
         r = dict(r)
-        # A true nightly total needs a date-specific rate. A 'from' range is not a
-        # date-specific rate, so the total stays blank and the arithmetic is shown.
+        r["retrieved_utc"] = (DOCS.get(r["official_url"], {}).get("fetched_utc")
+                              or r["retrieved_utc"] or VERIFIED_ON)
+        r["source_changed"] = bool(DOCS.get(r["official_url"], {}).get("changed_since_first_seen"))
         r["true_cost_per_night_usd"] = None
-        r["true_cost_note"] = ("Not computed: neither printed figure is attached to a stay "
-                               "date. The stated components are rate + $55 resort fee, taxed "
-                               "at 13.38%. At the printed low figure that arithmetic would be "
-                               "(119 + 55) x 1.1338, but the page does not attach $119 to any "
-                               "date, so no total is entered.")
-        rows.append(r)
-    return rows
+        r["true_cost_note"] = ("Left blank: neither printed figure is attached to a stay date, "
+                               "so no like-for-like total can be computed. The stated components "
+                               "are room rate + a $55 mandatory resort fee, with 13.38% room tax. "
+                               "The arithmetic is (rate + 55) x 1.1338 once a dated rate exists.")
+        out.append(r)
+    return out
 
 
 def build_changes():
     path = os.path.join(DATA, "change_log.json")
     if not os.path.exists(path):
-        return {"records": [], "note": "The change log is written by scripts/collect_official.py."}
+        return {"rows": [], "note": "The change log is written by scripts/collect_official.py."}
     log = json.load(open(path, encoding="utf-8"))
     latest = {}
     for rec in log.get("records", []):
         latest[rec["url"]] = rec
+    rows = sorted(latest.values(), key=lambda r: r.get("slug") or "")
     return {
         "updated_utc": log.get("updated_utc"),
-        "latest": sorted(latest.values(), key=lambda r: r["slug"]),
+        "rows": rows,
         "counts": {
-            "documents_tracked": len(latest),
-            "changed": sum(1 for r in latest.values() if r["status"] == "changed"),
-            "unchanged": sum(1 for r in latest.values() if r["status"] == "unchanged"),
-            "new": sum(1 for r in latest.values() if r["status"] == "new"),
-            "unreachable": sum(1 for r in latest.values() if r["status"] == "unreachable"),
+            "documents_tracked": len(rows),
+            "changed": sum(1 for r in rows if r["status"] == "changed"),
+            "unchanged": sum(1 for r in rows if r["status"] == "unchanged"),
+            "new": sum(1 for r in rows if r["status"] == "new"),
+            "unreachable": sum(1 for r in rows if r["status"] == "unreachable"),
         },
     }
 
