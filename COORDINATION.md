@@ -4,6 +4,20 @@ Shared task board for the Las Vegas Strip poker tournament and hotel planner.
 
 ## Current session and task claim
 
+## Session arena/bad329a9-poker1 — active claim (2026-11-16)
+
+Session ID: `bad329a9`. Branch: `arena/bad329a9-poker1` (fixed for this session). Base: `2dc4120`.
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Read every official structure sheet for DSE IV (events 1–64) + DSE NYE + Wynn/WPT sources; derive verified single-entry / re-entry / add-on rules; add per-row "last checked" date; remove "unverified" label only where an official sheet confirms the rule | in progress | `scripts/fetch_sources.py`, `data/structure_facts.json`, `scripts/build_data.py`, `data/tournaments.json`, `research/tournaments.md` | `bad329a9` |
+| Add trip-cost calculator (entries × buy-in + nights × true hotel cost), date filter, search across all tables, overlap flagging, primary/fallback day plan | in progress | `assets/app.js`, `assets/style.css`, `pages/*.html` (new: `cost.html`, `overlap.html`, `venues.html`), `scripts/build_site.py` | `bad329a9` |
+| Keep hotel rates as a dated rate log; one page per venue; rate timestamps; change monitoring of official URLs | in progress | `data/rates.json`, `data/changes.json`, `scripts/check_sources.py`, `.github/workflows/monitor.yml`, `pages/venues.html` | `bad329a9` |
+| Refresh docs: QUESTIONS.md / SUGGESTIONS.md / FLAGGED.md / EXECUTIVE_SUMMARY.md / REVIEW.md, PR + merge + Pages deploy | in progress | repo root Markdown, `COORDINATION.md` | `bad329a9` |
+
+No other session has an active claim. Files not listed above (e.g. `archive/`) are read-only for this session. Claim committed before implementation work.
+
+
 Session `f0143c13` is working on branch `arena/f0143c13-poker1` (the branch is fixed for this session). Claim commit `cc17d9e` was pushed before implementation work.
 
 Session `arena/f5896c06-poker1` is working on branch `arena/f5896c06-poker1`. Integration commit `3241bb8` was pushed and opened as PR #13; rebased onto `b272ed5` and merged into main.
