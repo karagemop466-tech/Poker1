@@ -34,6 +34,14 @@ Published so you can review the items. Flags do not block the merge. Every flag 
 | U9 | Registration opening times (Venetian and Wynn) | Not printed in the schedules read. The schedules print a REG CLOSES time per event. |
 | U10 | 2027 Las Vegas WSOP Circuit schedule | Not found on an official source. |
 
+## D. Verification scope note (integration session arena/f5896c06-poker1, 2026-11-16)
+
+This session re-verified what is verifiable from the sandbox: the site builds cleanly (`scripts/build_site.py` produces zero diff), all 11 pages pass `scripts/check_links.py` (JSON valid, every local link resolves, no external assets, every data row carries an https source), and the data cross-checks (225 rows: 33 single-entry verified, 6 re-entry, 15 possible multi-entry, 171 unverified).
+
+The official venue sources could NOT be re-fetched from this sandbox (outbound internet is limited to github.com / api.github.com and related hosts; venetianlasvegas.com, cdn.wynnresorts.com and github.io return connection failure). Therefore no content on those official pages was re-confirmed this session. All existing rows were verified against those official sources in prior sessions and retain their official links; every unconfirmed value remains blank and flagged. Nothing was inferred or filled in.
+
+Live site URL: https://karagemop466-tech.github.io/Poker1/ (GitHub Pages API status: `built`, source branch `main`, path `/`). The live site could not be fetched from this sandbox.
+
 ## C. Official links for manual review
 
 - [Venetian DeepStack IV event page](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html)
