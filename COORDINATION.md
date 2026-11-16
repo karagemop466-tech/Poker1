@@ -1,69 +1,48 @@
 # COORDINATION.md
 
-Shared task board for the Poker1 project (Las Vegas Strip poker tournament & hotel planner).
-Session ID: `arena-1` (branch `arena/e3571fc8-poker1`, PR #4).
+Shared task board for the Las Vegas Strip poker tournament and hotel planner.
 
-## Parallel sessions (visible on this repo)
-| Session ID | PR | Status | Contribution |
+## Current session and task claim
+
+Session `f0143c13` is working on branch `arena/f0143c13-poker1` (the branch is fixed for this session). Claim commit `cc17d9e` was pushed before implementation work.
+
+| Task | Status | File scope | Owner |
 |---|---|---|---|
-| arena/67733ec6-poker1 | #1 MERGED | done | Evidence-first dashboard foundation: index.html, styles.css, app.js, README.md, COORDINATION.md, .github/workflows/pages.yml |
-| arena/85820f64-poker1 | #2 MERGED | done | Expanded dashboard: decision.html, flagged.html, hotels.html, suggestions.html, tournaments.html, scripts/check_site.py |
-| arena/85820f64-poker1 | #6 MERGED | done | Record final research and Pages deployment verification (COORDINATION.md) |
-| arena/e73e692a-poker1 | #5 MERGED | done | Venetian/Wynn/Bellagio research site (T1-T7); review.html, REVIEW.md, data/*.json, pages/*.html; claimed Pages workflow run 43931551346 |
-| arena-1 | #4 | merging | Full research + category-dashboard site (verified Wynn tournament + hotel data); 8 root pages + assets/style.css |
+| Repair GitHub Pages deployment of the Markdown-backed dashboard pages; add checks for deployed content and official source domains; correct incorrect summary metadata; record the review/deploy result | In progress pending PR and deploy verification | `.github/workflows/pages.yml`, `scripts/check_links.py`, `README.md`, `EXECUTIVE_SUMMARY.md`, `COORDINATION.md` | `f0143c13` |
 
-## How to use
-- Claim a task by writing your session ID and file scope, then commit and push immediately.
-- Never start a task another session has claimed. Keep scopes non-overlapping.
-- If a task requires changing a file owned by another session, log the request here instead of editing it.
-- Make small, frequent commits; run `git pull --rebase` before every push.
-- On merge conflict: stop, resolve without discarding the other session's work, and log what happened here.
-- Never mark verified without checking against an official source; link that source.
-- Unverified values are flagged, never inferred or filled in.
+No other active file claims are recorded. All tournament/hotel data and site generation code are outside this session's scope.
 
-## Conflict resolution log
-- 2026-11-16: arena-1 rebased onto current origin/main through successive parallel merges (PR #1, #2, #5, #6). Overlapping page files resolved by retaining each session's contributions where non-conflicting; COORDINATION.md merged to preserve all session boards. PR #4 (arena-1) content integrated into main this session.
+## Existing deliverables and current data status
 
-## Tasks (arena-1 scope)
-| # | Task | Status | File scope | Sources / verification | Irregularities |
-|---|---|---|---|---|---|
-| 1 | Create COORDINATION.md task board | done | COORDINATION.md | n/a | none |
-| 2 | Research upcoming single-entry poker tournaments near Las Vegas Strip (official sources) | done | data/tournaments.md, site/tournaments.html | Wynn Las Vegas official site + official WPT schedule/structures PDFs. WPT World Championship Nov 27–Dec 21 2026; ALL events allow re-entry. Wynn daily tournaments all allow re-entry and/or add-on. No single-entry tournament confirmed from official Strip source. | Single-entry main list empty from official sources; gap flagged |
-| 3 | Research hotels within walking distance (30 min) of tournaments (official sources) | done | data/hotels.md, site/hotels.html | Wynn resort fee $55+tax, free self-parking; Venetian/Palazzo $55+tax + $20 self-parking; Clark County lodging tax 13.38%; room rates dynamic. | Room rates dynamic; several hotel fees unverified |
-| 4 | Build executive summary | done | site/executive-summary.html | n/a | none |
-| 5 | Build suggestions section | done | site/suggestions.html | n/a | none |
-| 6 | Build questions / information / answers section | done | site/questions.html | n/a | none |
-| 7 | Create GitHub Pages site: landing page + category subpages, dashboard tables | done | *.html, assets/style.css | All 8 pages HTTP 200 locally; all internal links valid | Overlaps PR #2/#5 files — resolved at rebase |
-| 8 | Flagged for Review page (unverified items) | done | site/flagged-review.html | n/a | none |
-| 9 | Verify all table rows against official sources; no broken links | done | All site files | Official Wynn sources used; unverified values flagged, never inferred | Unverified items on Flagged for Review page |
-| 10 | Enable GitHub Pages, confirm deploy, create PR, merge to main | in progress | n/a (GitHub) | PR #4 created; Pages configured (source=main) | Confirm Pages deploy after merge |
+The repository already contains a static dashboard (`index.html`, `pages/`, `assets/`), source-linked JSON data, research notes, and separate Executive Summary, Questions, Suggestions, and Flagged for Review documents. The data build reports 225 rows: 33 marked verified single entry, 15 marked possible multi-entry, 6 marked re-entry, and 171 with entry rules unverified. Only the 33 Venetian DeepStack IV rows are presently in the verified single-entry list. The full dataset and research notes have not been independently reread row by row in this current audit; the verification boundary and open items below are explicit.
 
-## Sources and verification
-- Wynn poker page: https://www.wynnlasvegas.com/casino/poker
-- WPT World Championship Schedule PDF: https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf
-- WPT World Championship Structures PDF: https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf
-- Wynn Daily Tournament poster + Daily Structures PDFs (cdn.wynnresorts.com)
-- Hotel fee/parking policy sources; Clark County lodging tax 13.38%
-- PR #5 (e73e692a) sources (retained): Venetian DeepStack IV schedule (4 chunks), Venetian poker room/suite rates/resort fee, ARIA poker page; flagged items: Bellagio Saturday price conflict, Wynn hotel offer conflict/dead official page, Caesars and Bellagio fees unverified, RWLV/MGM Grand/Aria poker pages unavailable, 16 Venetian structure sheets not read
-- Full list: data/sources.md
+## Verification performed in this session
 
-## Irregularities / open facts
-- No single-entry tournament confirmed from an official Las Vegas Strip source for the upcoming period (single-entry list empty; gap flagged).
-- No verified 8 a.m. tournament start.
-- Hotel room rates dynamic (not fixed); several hotel fees unverified.
-- Venetian's general poker page labels WPT Fall Festival "Current Series" while its dedicated page lists DeepStack IV beginning Nov 16; mismatch published on Flagged for Review.
-- All unverified values flagged, never inferred.
+- `python3 scripts/build_data.py` — generated the committed data files; counts matched the above.
+- `python3 scripts/build_site.py` — generated the landing page and 10 dashboard subpages.
+- `python3 scripts/check_links.py` — passed JSON parsing, local links, required Markdown-file presence, and official-source-host validation.
+- Pages staging smoke test — confirmed the static build contains `index.html`, all required subpages, the three JSON datasets, and all five Markdown documents fetched by the summary/questions/suggestions/flags/review pages.
+- `git diff --check` — passed.
+- Official Venetian source pages fetched and read:
+  - [DeepStack Extravaganza IV schedule](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html): series dates Nov 16–Dec 23, 2026; displayed schedule rows and structure-sheet links.
+  - [DeepStack Extravaganza NYE schedule](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html): series dates Dec 24, 2026–Jan 10, 2027; source page itself prints some rows with a 2025 year, recorded in `FLAGGED.md`.
+  - [Venetian poker suite rates](https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html): starting-rate language is conditional, rates are not assigned to a particular tower, availability and poker-play qualification apply, and $55/night resort fee is stated.
+  - [Venetian resort fee](https://www.venetianlasvegas.com/resort/resort-fee.html): $55 plus tax per night.
+  - [Venetian hotel terms](https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html): 13.38% Clark County room tax and $55 plus applicable tax resort fee are stated; the terms also state rates are availability/date-dependent.
+- GitHub Pages is configured for `main` at `/`. The existing Pages run `43934417739` succeeded before this session's fix. Its success did not prove the Markdown-backed pages worked because the staging step omitted the Markdown files; the current fix must merge and deploy before the issue is considered closed.
 
-## Pull request / deployment
-- PR #1 merged: https://github.com/karagemop466-tech/Poker1/pull/1
-- PR #2 merged: https://github.com/karagemop466-tech/Poker1/pull/2
-- PR #5 merged: https://github.com/karagemop466-tech/Poker1/pull/5
-- PR #6 merged: https://github.com/karagemop466-tech/Poker1/pull/6
-- PR #4 (arena-1): https://github.com/karagemop466-tech/Poker1/pull/4 — being merged into main this session.
-- GitHub Pages: https://karagemop466-tech.github.io/Poker1/ — Pages API reported `built`, but latest workflow run 43932754208 failed validation (table rows lacked official links); deploy job skipped. Fixed tournament/hotel row sourcing, suggestion references, and workflow staging; local validator now passes. Deployment confirmation still pending.
+## Open facts and irregularities — publish on Flagged for Review
 
-## Log
-- 2026-11-16: arena-1 initialized board; repo contained only README.md.
-- 2026-11-16: arena-1 completed tournament + hotel research from official Wynn sources.
-- 2026-11-16: arena-1 built the GitHub Pages site (8 pages + CSS).
-- 2026-11-16: PR #1, #2, #5, #6 merged into main while this session worked; arena-1 rebased onto current origin/main.
+- The initial deployed artifact staged only `index.html`, `pages/`, `assets/`, and `data/`, while dashboard pages fetch the root Markdown documents. Those Markdown pages would fail to load after deployment. The workflow now stages the five required documents, and a smoke check covers them. Actual post-merge Pages deployment remains pending.
+- The audit checks that all dataset sources use known official operator hosts; it does not establish that every individual schedule/structure value has been freshly reread. Do not describe all 225 rows as independently reverified by this session.
+- Research note `research/tournaments.md` says some Venetian multi-flight structure-sheet-to-event mappings were selected by reasoning and not rechecked sheet by sheet. Keep those 15 rows segregated from the single-entry ranking pending confirmation.
+- 171 tournament rows still have unverified entry rules. No unsupported value should be filled in.
+- No date-specific hotel nightly quote is verified. The Venetian poker offer is conditional and has not been used as a generic rate; a true total for a particular stay cannot yet be computed.
+- Official-source walking times have not been verified. Therefore the 30-minute walking requirement and quality/cost hotel ranking cannot be confirmed from current data.
+- No verified single-entry event starts at 8 AM. Verified single-entry entries start no earlier than 10:10 AM; the schedule page reports 11:10 AM for the first event date (Nov 18). Long enough tournament duration/late registration/overlap data are not established to guarantee all-day multi-entry scheduling.
+- The official Venetian NYE schedule has year/date typos and other printed inconsistencies documented in `FLAGGED.md`.
+- `EXECUTIVE_SUMMARY.md` previously contained an unsupported “Houston, TX” label; removed. No user location is asserted in the summary.
+
+## PR and deployment record
+
+Previous project changes are already integrated on `main` (including PRs #1, #2, #5, #6, #8, #9, and #10). PR #7 is an unrelated open historical PR. Current-session PR link, merge result, and resulting GitHub Pages deployment run will be recorded here after they are confirmed.

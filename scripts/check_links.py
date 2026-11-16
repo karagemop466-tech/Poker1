@@ -4,9 +4,28 @@ import json
 import os
 import re
 import sys
+from urllib.parse import urlparse
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 problems = []
+REQUIRED_SITE_DOCS = (
+    "EXECUTIVE_SUMMARY.md",
+    "QUESTIONS.md",
+    "SUGGESTIONS.md",
+    "FLAGGED.md",
+    "REVIEW.md",
+)
+OFFICIAL_SOURCE_HOSTS = {
+    "www.venetianlasvegas.com",
+    "www.wynnlasvegas.com",
+    "cdn.wynnresorts.com",
+    "aria.mgmresorts.com",
+    "www.caesars.com",
+}
+
+for rel in REQUIRED_SITE_DOCS:
+    if not os.path.isfile(os.path.join(ROOT, rel)):
+        problems.append(f"{rel}: required Markdown content for the deployed dashboard is missing")
 
 for rel in ("data/tournaments.json", "data/hotels.json", "data/schedule.json"):
     try:
@@ -20,6 +39,18 @@ for rel in ("data/tournaments.json", "data/hotels.json"):
         src = r.get("sources") or []
         if not src or not all(s.get("url", "").startswith("https://") for s in src):
             problems.append(f"{rel}: row {r.get('id', r.get('name'))} lacks an https source")
+            continue
+        for source in src:
+            host = urlparse(source["url"]).hostname
+            if host not in OFFICIAL_SOURCE_HOSTS:
+                problems.append(f"{rel}: row {r.get('id', r.get('name'))} has a non-approved source host: {host}")
+
+schedule = json.load(open(os.path.join(ROOT, "data/schedule.json"), encoding="utf-8"))
+for day in schedule.get("days", []):
+    for event in day.get("options", []):
+        url = event.get("source", "")
+        if not url.startswith("https://") or urlparse(url).hostname not in OFFICIAL_SOURCE_HOSTS:
+            problems.append(f"data/schedule.json: event {event.get('id')} has a non-official source")
 
 pages = ["index.html"] + [os.path.join("pages", f) for f in sorted(os.listdir(os.path.join(ROOT, "pages")))]
 for p in pages:
