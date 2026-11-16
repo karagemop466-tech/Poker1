@@ -552,11 +552,18 @@ def main():
             continue
         doc = record(slug, url, raw, "html")
         html = raw.decode("utf-8", "replace")
-        rows = parse_venetian_rows(html)
+        try:
+            rows = parse_venetian_rows(html)
+        except Exception as exc:  # noqa: BLE001
+            log("PARSE FAILED", slug, repr(exc))
+            series[slug] = prev_series.get(slug, {})
+            continue
         with open(os.path.join(SNAP, slug + ".rows.txt"), "w", encoding="utf-8") as f:
             for r in rows:
-                f.write("%s %s ev%s %s | %s\n" % (r["date"], r["start"], r["event_no"],
-                                                  r["printed_name"], r["structure_url"]))
+                f.write("%s %s ev%s %s | %s\n" % (r.get("date", "?"), r.get("start", "?"),
+                                                  r.get("event_no", "?"),
+                                                  r.get("printed_name", "?"),
+                                                  r.get("structure_url")))
         h1 = re.search(r"<h1[^>]*>([\s\S]*?)</h1>", html)
         daterange = re.search(
             r"<strong>\s*((?:January|February|March|April|May|June|July|August|September|"
