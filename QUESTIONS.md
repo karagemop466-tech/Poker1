@@ -1,43 +1,46 @@
 # Questions and Information Gaps
 
-For each question: what is known now, what is missing, and how to close it. **Open** means no official source answers it yet.
+For each question: what is known, what is missing, and how to close it. "Open" means no official source answers it yet.
+"Closed" means an official source now answers it and the answer is in the dataset.
 
 ## A. Decisions only you can make
 
 | # | Question | Why it matters | Status |
 |---|---|---|---|
-| D1 | Should a player who busts one flight and enters a later flight count as a second entry? | 27 rows depend on it, including the $800 Event 26 ($500K) and the $2,200 Event 47 ($1M). If a bust-out re-entry is allowed, these are not single-entry events. | Open. Ask the poker room (C1). |
-| D2 | Should age- or gender-limited events be ranked with open events? | 6 verified single-entry rows are limited: events 24 and 32 (50+), event 39 (LIPS Ladies, female), event 35 (tag team, female/male), and events 49 (50+, multi-flight). | Open. They are listed with a note. |
-| D3 | What is your nightly budget, including resort fee and tax? | Hotel ranking and the trip-cost calculator depend on it. | Open. |
-| D4 | Which nights do you plan to stay? | Only fixed dates allow a dated rate quote, a day-by-day schedule and a like-for-like hotel comparison. | Open. |
-| D5 | What is your quality floor for a hotel? | You said cost and quality outrank distance. Without a floor, hotels cannot be ranked. | Open. |
-| D6 | Should bounty events count as single entry? They add no second buy-in, but the guarantee includes bounties (F6), so the pool ÷ fee ratio is not comparable to a freezeout. | Changes the ranking. | Open. Kept in the ranking with a **(bounty)** label. |
-| D7 | Should the WSOP Circuit or Planet Hollywood series be included? | No verified 2027 Las Vegas Circuit schedule exists in this data. | Open. |
-| D8 | How late will you play? Several days have an 11:10 AM event and a 5:10 PM event; 10 of them are flagged as a tight turnaround. | Determines whether the fallback is realistic for you. | Open. |
+| D1 | Should a player who busts from one flight and enters a later flight count as a second entry? | 60 multi-flight rows depend on it, including the $800 Event 26 at $500K. | Open. Ask the poker room (see C1). |
+| D2 | Should age-limited events (50+ Seniors, ladies-only, tag-team) be ranked with open events? | Several verified rows are age-limited (Events 24, 32, 33, 37, 49). | Open. Currently listed with a note. |
+| D3 | What is your nightly budget, including resort fee and tax? | Hotel ranking depends on it. | Open. The calculator answers it as soon as you enter a rate. |
+| D4 | Which nights do you plan to stay? | Only chosen dates allow a rate check and a day-by-day schedule. | Open. The date selector on the schedule page uses the same dates. |
+| D5 | Should bounty events count as single entry? They add no buy-in, but the guarantee includes bounties (F14). | Changes the ranking. | Open. Kept, with a note. |
+| D6 | Should the milestone satellites count as single-entry tournaments? Their structure sheets contain no re-entry clause, so they are listed as single entry, but they award **seats, not cash**. | Twenty rows sit in the single-entry list with a seat prize instead of a dollar guarantee. | Open. They are marked with a `satellite` label and a `prize_text` value. |
+| D7 | Should the WSOP Circuit or Planet Hollywood series be included? | No verified 2027 Las Vegas schedule in this data. | Open. |
 
 ## B. Information that is missing or unverified
 
 | # | Question | Known now | Missing | How to close it |
 |---|---|---|---|---|
-| I1 | Are the 50 verified single-entry rows truly single entry? | Each official structure sheet was read and shows no re-entry, rebuy, add-on or flight clause. | A written "no re-entry" sentence, or written confirmation from the room. The sheets' silence is an absence-of-clause finding, not a written guarantee. | Ask the poker room (C1). |
-| I2 | Entry rules for 51 Wynn WPT rows | 35 WPT rows are confirmed re-entry from the official structures PDF. The PDF covers only 13 of ~30 distinct WPT events (F13). | The remaining events' structure documents. | Find the remaining official WPT structure documents, or ask the Wynn poker room. |
-| I3 | Entry rules for 21 Venetian NYE rows | Sheets 1 and 2 read (10 rows). Sheet 1 confirms events 1, 3, 17 as single entry; sheet 2 produced flag F5. | NYE sheets 3, 6, 8, 9, 10, 11, 12, 13, 14, 15. | Read each NYE sheet from the [NYE event page](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html). |
-| I4 | Entry rules for 31 Wynn Signature Series rows (Jan 11–24, 2027) | Schedule and buy-ins are official. | A structures document. None was found on an official source. | Ask the Wynn poker room, or watch for an official structures PDF. |
-| I5 | Nightly room rate for each hotel on your dates | None verified. | Every rate. | Check each official booking page for your dates and record checkout total, nightly average, resort fee, tax, parking, cancellation deadline and a timestamp (schema in `data/hotel_rates.json`). |
-| I6 | Resort fee, tax, parking and cancellation for Bellagio, ARIA and Caesars Palace | Caesars: official range $45–$50 only. Bellagio and ARIA: nothing. | Property-specific figures. | Read each property's official resort-fee and parking terms. |
-| I7 | Poker-suite rate mapping | Official page says "$119 and $209" for the Venetian or Palazzo, conditional on play. | Which rate belongs to which tower, and the play requirement. | Ask the Venetian poker room (C1). |
-| I8 | Itemized tax-and-fee total for a given room and stay | Venetian terms state a $55 fee plus applicable tax and 13.38% Clark County Room Tax, but publish no worked example (F11). | A dated itemized quote or final folio. | Obtain an official booking quote for your exact dates. |
-| I9 | WPT $1M addition and the Nevada footnote (F7) | Footnote says ClubWPT Gold is not available in Nevada. | Whether the $1M is paid to Nevada players. | Ask the Wynn poker room (C1). |
-| I10 | Ladies WPT entry (F8) | Footnote gives $11,100 with a discounted ladies entry; the printed buy-in is $1,100. | What a ladies player actually pays. | Ask the Wynn poker room (C1). |
-| I11 | Registration opening times | Schedules print a registration CLOSE time per event. | Opening times. | Ask the poker room (C1). |
-| I12 | Event finish times | Not published anywhere official (U11). | Every finish time. | This is why the schedule overlap check uses official registration windows instead. Ask the room for typical run times. |
-| I13 | 2027 Las Vegas WSOP Circuit schedule | Only leads found. | 2027 dates and buy-ins. | Check the official WSOP Circuit calendar on wsop.com. |
+| I1 | Are the 80 verified single-entry rows truly single entry? | Every Venetian structure sheet was read: 37 of 37 for DeepStack Extravaganza IV and 15 of 15 for the NYE series. None of them carries a re-entry, rebuy, add-on or flight clause. | Written confirmation from the poker room. | Ask the poker room (C1). |
+| I2 | Entry rules for the 135 Wynn WPT rows | 14 official structure sheets read: $600 NLH, $800 NLH, $1,600 NLH, WPT Prime, PLO Mystery Bounty, $600 NLH Turbo, $400 PLO, $1,100 PLO, TORSE, Mixed Triple Draw, HORSE, Limit Omaha 8, Limit Omaha 8/Stud 8. Fee splits, stacks, level lengths, action-clock terms and payout rules are stored. | Structure sheets for the milestone and satellite rows, and for the events listed only on the schedule. | The official structures PDF publishes no sheet for the satellites; ask the Wynn poker room (C1). |
+| I3 | Entry rules for the 49 Venetian NYE rows | **Closed.** All 15 NYE structure sheets were read on 2026-11-16. | Nothing for the entry rule. | - |
+| I4 | Entry rules for the 38 Wynn Signature Series rows (Jan 11 – 24, 2027) | The official schedule is complete and read. | Structure sheets. The official Wynn Signature Series Structures PDF contains only a "COMING SOON" placeholder. | Re-check the official structures PDF once Wynn publishes it; the monitoring job flags the change. |
+| I5 | Remaining Venetian DSE IV structure sheets | **Closed.** All 37 sheets were read on 2026-11-16. | Nothing. | - |
+| I6 | Nightly room rate for each hotel on your dates | One dated quote is on file: Palazzo Luxury King, Nov 26 – 29, 2026, two adults, three nights, $2,412.44 checkout total, $284.69 taxes, $804.15 true cost per night. | Every other rate, on every other date. | Check the official booking page for the chosen dates and add the quote to `data/rates.json` with its date. |
+| I7 | Resort fee at Bellagio, Caesars Palace and ARIA | Venetian, Palazzo, Wynn and Encore have a verified $55 fee. | The other three property fees. | Read each property's official resort-fee terms. The earlier general Caesars range was not supported by a page read here and was removed. |
+| I8 | Poker-suite rate mapping | The official page says "$119 and $209" for the Venetian or the Palazzo, conditional on qualifying play. | Which rate belongs to which property, and the exact play requirement. | Ask the Venetian poker room (C1). |
+| I9 | The exact tax-and-fee total for a given room and stay at each hotel | The Venetian terms state a $55 resort fee plus applicable tax and a 13.38% Clark County Room Tax. The calculator uses the logged quote when the dates match and otherwise leaves unverified inputs blank. | Date-specific room rates for the other properties and an itemised quote. | Obtain a dated official booking quote for each selected hotel and stay and add it to the rate log. |
+| I10 | WPT $1M addition and the Nevada footnote (F7) | The footnote says ClubWPT Gold is not available in Nevada. | Whether the $1M is paid to Nevada players. | Ask the Wynn poker room (C1). |
+| I11 | Ladies WPT entry (F8) | The footnote gives $11,100 with a discounted ladies entry; the printed buy-in is $1,100. | The amount a ladies player actually pays. | Ask the Wynn poker room (C1). |
+| I12 | Registration opening times | **Partly answered for Wynn.** The official Wynn daily tournament terms state: *"Registration for each Event will open four (4) hours prior to the scheduled start of play"*, so the 12 p.m. daily events open registration at 8 a.m. | Venetian opening times, and Wynn opening times for WPT and Signature Series events (those PDFs print a close time only). | Ask the Venetian poker room; watch the WPT and Signature Series structures documents. |
+| I13 | 2027 Las Vegas WSOP Circuit schedule | Only leads found. | 2027 dates and buy-ins. | Check wsop.com's official Circuit calendar. |
+| I14 | Which time is right for the December 21 $600 NLH Turbo: 8 p.m. or 6 p.m.? (F4) | Both official sources were read; they disagree. | A single confirmed time. | Ask the Wynn poker room (C1), or check the poker room board on the day. |
+| I15 | Which Wynn WPT day is the block printed under "Dec. 18 Wednesday"? (F3) | Stored as December 16, 2026 because that is the only reading that fits the World Championship day order. | Confirmation from Wynn. | Ask the Wynn poker room (C1). |
+| I16 | Which event owns each WPT "Day 2" row? (F5) | The structure sheets were used where they exist. | Confirmation for the rows with no structure sheet. | Ask the Wynn poker room (C1). |
+| I17 | Do the milestone satellites end when the seats run out, or when the chip milestone is reached? | The structure sheets describe both endings: clause 09 (200,000-chip milestone) and clause 10 (play ends when the remaining seats equal the seats left to award). | Which ending a player should plan for. | Read the rules again with the poker room, or use the estimated end time as an upper bound. |
 
 ## C. Suggestions for discovering the missing information
 
-1. **Contact the poker rooms.** The Wynn schedule prints (702) 770-7654 and wynnpoker.com. The Venetian poker room is at venetianpokerroom.blog. Ask about D1, D2, I1, I7, I9, I10, I11 and I12.
-2. **Read the remaining structure sheets.** Venetian NYE sheets 3, 6, 8, 9, 10, 11, 12, 13, 14 and 15, plus the WPT and Signature Series structures documents if they exist. Note that satellites (DSE IV sheets 19, 24, 25) are not needed — satellites are excluded from the dataset.
-3. **Record official rates on your dates.** For each candidate hotel record: check-in, check-out, nights, occupancy, nightly rate, mandatory resort fee, tax, parking, cancellation deadline, checkout total, nightly average and a timestamp. That makes stays comparable like for like, and feeds the rate log.
-4. **Measure the walking routes.** Use a mapping service at walking pace for each of the 14 hotel–venue pairs. Record the result with the date and mark it as a measured estimate, not an official figure. The site applies the 30-minute limit as soon as a value exists.
-5. **Let the change monitor run.** `scripts/check_sources.py` runs daily in GitHub Actions, stores a checksum per official source and opens an issue when one changes. Re-verify the rows from any changed page.
-6. **Keep every value dated.** Each row carries `last_checked`; each structured rule field carries `retrieved_on` and its own source URL, so a stale value is visible.
+1. **Contact the poker rooms.** The Wynn schedule prints (702) 770-7654 and wynnpoker.com. The Venetian poker room is at venetianpokerroom.blog. Ask about D1, I8, I10, I11, I12, I14, I15 and I16.
+2. **Re-check the Signature Series structures PDF.** Wynn publishes it at a fixed URL; the monitoring job records its status every day, so a change from "COMING SOON" shows up automatically.
+3. **Record official rates on a date.** Pick your dates, open each official booking page, and add the quote to `data/rates.json` with its date and the number of nights. The rate log keeps every quote instead of overwriting it.
+4. **Measure walking routes.** Use a mapping service at walking pace for each hotel-to-venue pair, then record the value in `data/walking.json` and mark it as an estimate with the date. The 30-minute rule applies to a value only once one exists.
+5. **Keep a dated change log.** Every row carries a verified date, and `scripts/monitor_sources.py` reports which rows changed since the last verified snapshot.

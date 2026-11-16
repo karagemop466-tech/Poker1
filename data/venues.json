@@ -1,0 +1,84 @@
+{
+ "verified_on": "2026-11-16",
+ "rows": [
+  {
+   "id": "venetian",
+   "name": "The Venetian Resort",
+   "poker_room": "The Palazzo, level 2, Grand Canal Shoppes",
+   "address": null,
+   "address_status": "unverified",
+   "note": "Official poker page: 50 tables, open 24 hours, complimentary self-parking for players who play three hours or more. The street address is not printed on the official pages read in this session.",
+   "hotel_ids": [
+    "venetian",
+    "palazzo"
+   ],
+   "official_links": [
+    "https://www.venetianlasvegas.com/resort/casino/poker.html",
+    "https://www.venetianlasvegas.com/content/dam/vlvweb/resort/map.pdf",
+    "https://www.venetianlasvegas.com/book"
+   ]
+  },
+  {
+   "id": "wynn",
+   "name": "Wynn Las Vegas",
+   "poker_room": "Wynn Las Vegas poker room, located in Encore at Wynn Las Vegas",
+   "address": "3131 Las Vegas Blvd. S., Las Vegas, NV 89109",
+   "address_status": "verified",
+   "note": "Official tournament terms place the poker room in Encore. The official poker page links the WPT, Wynn Signature Series and daily tournament schedules, structures and results. Registration opening time: the official Wynn daily tournament terms and conditions state \"Registration for each Event will open four (4) hours prior to the scheduled start of play\", so a 12 p.m. daily event opens registration at 8 a.m. That opening time is printed only in the Wynn daily tournament terms; the WPT and Signature Series schedule PDFs print a registration CLOSE time per event but no opening time.",
+   "hotel_ids": [
+    "wynn",
+    "encore"
+   ],
+   "official_links": [
+    "https://www.wynnlasvegas.com/casino/poker",
+    "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+    "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+    "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf",
+    "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+   ]
+  },
+  {
+   "id": "aria",
+   "name": "ARIA Resort & Casino",
+   "poker_room": "ARIA poker room, east side of the casino floor next to main valet pick-up",
+   "address": null,
+   "address_status": "unverified",
+   "note": "Official ARIA poker page: 24 tables and exclusive room rates for qualifying poker players (rate by phone or e-mail). No tournament schedule with entry rules was published on the official page read in this session.",
+   "hotel_ids": [
+    "aria"
+   ],
+   "official_links": [
+    "https://aria.mgmresorts.com/en/casino/poker.html",
+    "https://aria.mgmresorts.com/en.html"
+   ]
+  },
+  {
+   "id": "bellagio",
+   "name": "Bellagio",
+   "poker_room": null,
+   "address": null,
+   "address_status": "unverified",
+   "note": "No official tournament schedule or structure sheet was read for this property in this session, so no tournament rows are listed for it.",
+   "hotel_ids": [
+    "bellagio"
+   ],
+   "official_links": [
+    "https://bellagio.mgmresorts.com/en.html"
+   ]
+  },
+  {
+   "id": "caesars",
+   "name": "Caesars Palace",
+   "poker_room": null,
+   "address": "3570 Las Vegas Blvd South, Las Vegas, NV 89109",
+   "address_status": "verified",
+   "note": "No official tournament schedule or structure sheet was read for this property in this session, so no tournament rows are listed for it.",
+   "hotel_ids": [
+    "caesars"
+   ],
+   "official_links": [
+    "https://www.caesars.com/caesars-palace"
+   ]
+  }
+ ]
+}
