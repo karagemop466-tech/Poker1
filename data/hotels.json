@@ -1,5 +1,6 @@
 {
  "generated_on": "2026-11-16",
+ "verified_on": "2026-11-16",
  "rows": [
   {
    "id": "venetian",
@@ -41,10 +42,17 @@
      "url": "https://www.venetianlasvegas.com/book"
     }
    ],
+   "clark_county_tax_pct": 13.38,
    "true_cost_per_night_usd": null,
    "walk_minutes": null,
+   "walk_to_venetian_min": null,
    "walk_status": "unverified",
    "walk_note": "Walking time is not published on any official source. Official addresses are recorded for each hotel-venue pair, but no official walking time exists, so the cell is blank and the 30-minute test cannot be applied yet.",
+   "rates": [],
+   "checkout_total_usd": null,
+   "nightly_average_usd": null,
+   "checkout_total_note": null,
+   "verified_on": "2026-11-16",
    "last_checked": "2026-11-16"
   },
   {
@@ -79,10 +87,17 @@
      "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html"
     }
    ],
+   "clark_county_tax_pct": null,
    "true_cost_per_night_usd": null,
    "walk_minutes": null,
+   "walk_to_venetian_min": null,
    "walk_status": "unverified",
    "walk_note": "Walking time is not published on any official source. Official addresses are recorded for each hotel-venue pair, but no official walking time exists, so the cell is blank and the 30-minute test cannot be applied yet.",
+   "rates": [],
+   "checkout_total_usd": null,
+   "nightly_average_usd": null,
+   "checkout_total_note": null,
+   "verified_on": "2026-11-16",
    "last_checked": "2026-11-16"
   },
   {
@@ -117,10 +132,17 @@
      "url": "https://www.wynnlasvegas.com/casino/poker"
     }
    ],
+   "clark_county_tax_pct": null,
    "true_cost_per_night_usd": null,
    "walk_minutes": null,
+   "walk_to_venetian_min": null,
    "walk_status": "unverified",
    "walk_note": "Walking time is not published on any official source. Official addresses are recorded for each hotel-venue pair, but no official walking time exists, so the cell is blank and the 30-minute test cannot be applied yet.",
+   "rates": [],
+   "checkout_total_usd": null,
+   "nightly_average_usd": null,
+   "checkout_total_note": null,
+   "verified_on": "2026-11-16",
    "last_checked": "2026-11-16"
   },
   {
@@ -151,10 +173,17 @@
      "url": "https://www.wynnlasvegas.com/terms-and-conditions/848671"
     }
    ],
+   "clark_county_tax_pct": null,
    "true_cost_per_night_usd": null,
    "walk_minutes": null,
+   "walk_to_venetian_min": null,
    "walk_status": "unverified",
    "walk_note": "Walking time is not published on any official source. Official addresses are recorded for each hotel-venue pair, but no official walking time exists, so the cell is blank and the 30-minute test cannot be applied yet.",
+   "rates": [],
+   "checkout_total_usd": null,
+   "nightly_average_usd": null,
+   "checkout_total_note": null,
+   "verified_on": "2026-11-16",
    "last_checked": "2026-11-16"
   },
   {
@@ -185,10 +214,17 @@
      "url": "https://bellagio.mgmresorts.com/en.html"
     }
    ],
+   "clark_county_tax_pct": null,
    "true_cost_per_night_usd": null,
    "walk_minutes": null,
+   "walk_to_venetian_min": null,
    "walk_status": "unverified",
    "walk_note": "Walking time is not published on any official source. Official addresses are recorded for each hotel-venue pair, but no official walking time exists, so the cell is blank and the 30-minute test cannot be applied yet.",
+   "rates": [],
+   "checkout_total_usd": null,
+   "nightly_average_usd": null,
+   "checkout_total_note": null,
+   "verified_on": "2026-11-16",
    "last_checked": "2026-11-16"
   },
   {
@@ -219,10 +255,17 @@
      "url": "https://aria.mgmresorts.com/en.html"
     }
    ],
+   "clark_county_tax_pct": null,
    "true_cost_per_night_usd": null,
    "walk_minutes": null,
+   "walk_to_venetian_min": null,
    "walk_status": "unverified",
    "walk_note": "Walking time is not published on any official source. Official addresses are recorded for each hotel-venue pair, but no official walking time exists, so the cell is blank and the 30-minute test cannot be applied yet.",
+   "rates": [],
+   "checkout_total_usd": null,
+   "nightly_average_usd": null,
+   "checkout_total_note": null,
+   "verified_on": "2026-11-16",
    "last_checked": "2026-11-16"
   },
   {
@@ -253,10 +296,17 @@
      "url": "https://www.caesars.com/corporate/disclaimer"
     }
    ],
+   "clark_county_tax_pct": null,
    "true_cost_per_night_usd": null,
    "walk_minutes": null,
+   "walk_to_venetian_min": null,
    "walk_status": "unverified",
    "walk_note": "Walking time is not published on any official source. Official addresses are recorded for each hotel-venue pair, but no official walking time exists, so the cell is blank and the 30-minute test cannot be applied yet.",
+   "rates": [],
+   "checkout_total_usd": null,
+   "nightly_average_usd": null,
+   "checkout_total_note": null,
+   "verified_on": "2026-11-16",
    "last_checked": "2026-11-16"
   }
  ],

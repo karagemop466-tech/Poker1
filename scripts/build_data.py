@@ -686,49 +686,79 @@ def reg_close_24h(sheet, start_24h):
     return None
 
 def sheet_rules(sheet, sheet_url, status):
-    """Build the structured rule fields for one structure sheet."""
+    """Build the structured rule fields for one structure sheet.
+
+    The keys match what scripts/check_links.py validates:
+      single_entry, re_entry, rebuy, add_on, flights (true / false / null)
+      plus source_excerpt and retrieved_on.
+    """
     rule_excerpt = sheet.get("rule_excerpt")
     if status == "SE":
         se_val, se_exc = True, NO_REENTRY_LINE
         re_val, re_exc = False, "No re-entry clause appears on this official structure sheet."
-        ao_val, ao_exc = False, "No add-on or rebuy clause appears on this official structure sheet."
+        rb_val, rb_exc = False, "No rebuy clause appears on this official structure sheet."
+        ao_val, ao_exc = False, "No add-on clause appears on this official structure sheet."
         fl_val, fl_exc = False, "No flight clause appears on this official structure sheet."
     elif status == "MULTI":
         se_val, se_exc = None, BAG_NOTE
         re_val, re_exc = None, ("Not stated. " + BAG_CLAUSE + " The sheet does not say whether a "
                                 "player who busts may enter a later flight.")
-        ao_val, ao_exc = False, "No add-on or rebuy clause appears on this official structure sheet."
+        rb_val, rb_exc = False, "No rebuy clause appears on this official structure sheet."
+        ao_val, ao_exc = False, "No add-on clause appears on this official structure sheet."
         fl_val, fl_exc = True, ("Multi-flight event. " + BAG_CLAUSE)
     elif status == "RE":
         se_val, se_exc = False, (rule_excerpt or "Re-entry is offered on this official structure sheet.")
         re_val, re_exc = True, (rule_excerpt or "")
+        rb_val, rb_exc = None, "Rebuy terms not stated on the official structure sheet."
         ao_val, ao_exc = None, "Add-on terms not stated on the official structure sheet."
         fl_val, fl_exc = None, "Flight terms as printed on the official structure sheet."
     else:  # FLAG
-        se_val, se_exc = None, ("Wording on the official sheet implies a second buy-in but does not "
-                                "state it outright: " + (rule_excerpt or ""))
+        implied = ("Wording on the official sheet implies a second buy-in but does not state it "
+                   "outright: " + (rule_excerpt or ""))
+        se_val, se_exc = None, implied
         re_val, re_exc = None, ("Not stated outright. Wording that implies a second buy-in: "
                                 + (rule_excerpt or ""))
+        rb_val, rb_exc = None, "Not stated."
         ao_val, ao_exc = None, "Not stated."
         fl_val, fl_exc = None, "Not stated."
-    def fld(value, excerpt):
-        return {"value": value, "excerpt": excerpt, "source_url": sheet_url, "retrieved_on": CHECKED_ON}
     return {
-        "single_entry": fld(se_val, se_exc),
-        "re_entry": fld(re_val, re_exc),
-        "add_on": fld(ao_val, ao_exc),
-        "fee": fld(sheet.get("fee_usd"), sheet.get("fee_excerpt")),
+        "single_entry": se_val, "re_entry": re_val, "rebuy": rb_val,
+        "add_on": ao_val, "flights": fl_val,
+        "source_excerpt": (re_exc or se_exc or ""),
+        "retrieved_on": CHECKED_ON,
+        # Per-rule evidence, kept so a reader can check each verdict separately.
+        "evidence": {
+            "single_entry": {"value": se_val, "excerpt": se_exc, "source_url": sheet_url, "retrieved_on": CHECKED_ON},
+            "re_entry": {"value": re_val, "excerpt": re_exc, "source_url": sheet_url, "retrieved_on": CHECKED_ON},
+            "rebuy": {"value": rb_val, "excerpt": rb_exc, "source_url": sheet_url, "retrieved_on": CHECKED_ON},
+            "add_on": {"value": ao_val, "excerpt": ao_exc, "source_url": sheet_url, "retrieved_on": CHECKED_ON},
+            "flights": {"value": fl_val, "excerpt": fl_exc, "source_url": sheet_url, "retrieved_on": CHECKED_ON},
+            "fee": {"value": sheet.get("fee_usd"), "excerpt": sheet.get("fee_excerpt"),
+                    "source_url": sheet_url, "retrieved_on": CHECKED_ON},
+        },
     }
 
 def unverified_rules(why, url):
-    def fld(value, excerpt):
-        return {"value": value, "excerpt": excerpt, "source_url": url, "retrieved_on": CHECKED_ON}
+    evidence = {}
+    for field in ("single_entry", "re_entry", "rebuy", "add_on", "flights", "fee"):
+        evidence[field] = {"value": None, "excerpt": why, "source_url": url, "retrieved_on": CHECKED_ON}
     return {
-        "single_entry": fld(None, why),
-        "re_entry": fld(None, why),
-        "add_on": fld(None, why),
-        "fee": fld(None, why),
+        "single_entry": None, "re_entry": None, "rebuy": None,
+        "add_on": None, "flights": None,
+        "source_excerpt": why,
+        "retrieved_on": CHECKED_ON,
+        "evidence": evidence,
     }
+
+# One-line entry rule shown on the tables. The wording is fixed per status so
+# that scripts/check_links.py can assert the row states its own classification.
+ENTRY_RULE = {
+    "SE": ("Single entry: official structure sheet read, no re-entry, rebuy, add-on or flight clause."),
+    "MULTI": ("Multi-flight event: a second entry is possible until the room confirms the bust-out rule."),
+    "RE": ("Re-entry offered by the official structure sheet."),
+    "FLAG": ("Second buy-in implied by the official sheet's wording but not stated outright."),
+    "UNV": ("Unverified: entry rule not confirmed from an official source."),
+}
 
 # ---------------------------------------------------------------------------
 # Build tournament rows
@@ -761,9 +791,10 @@ def build_tournaments():
             "buy_in_usd": buy,
             "guarantee_usd": gtd,
             "house_fee_usd": fee,
-            "house_fee_pct": round(fee / buy * 100.0, 2) if fee and buy else None,
+            "house_fee_pct": round(100.0 * fee / buy, 2) if fee and buy else None,
             "gtd_multiple": round(gtd / buy, 1) if gtd and buy else None,
             "entry_status": status,
+            "entry_rule": ENTRY_RULE[status],
             "starting_chips": s.get("stack"),
             "level_minutes": s.get("level_min"),
             "reg_closes": reg_close_24h(s, start),
@@ -773,6 +804,7 @@ def build_tournaments():
             "sources": [{"label": "Official series event page", "url": page_url},
                         {"label": "Official schedule (PDF)", "url": sched_url},
                         {"label": "Structure sheet #%d (official PDF)" % sheet_no, "url": sheet_url}],
+            "verified_on": CHECKED_ON,
             "last_checked": CHECKED_ON,
         })
 
@@ -796,6 +828,7 @@ def build_tournaments():
             "house_fee_pct": None,
             "gtd_multiple": round(gtd / buy, 1) if gtd and buy else None,
             "entry_status": status,
+            "entry_rule": ENTRY_RULE[status],
             "starting_chips": None,
             "level_minutes": None,
             "reg_closes": None,
@@ -803,6 +836,7 @@ def build_tournaments():
             "rules": rules or unverified_rules(why, urls[-1]["url"]),
             "note": " ".join(notes) if notes else None,
             "sources": urls,
+            "verified_on": CHECKED_ON,
             "last_checked": CHECKED_ON,
         })
 
@@ -829,31 +863,47 @@ def build_tournaments():
     for date, start, ev_name, label, buy, gtd, key, extra in WPT:
         if key:
             r = WPT_RULES[key]
-            rules = {
+            evidence = {
                 "single_entry": {"value": False, "excerpt": r["excerpt"],
                                  "source_url": SRC["wpt_struct"], "retrieved_on": CHECKED_ON},
                 "re_entry": {"value": True, "excerpt": r["excerpt"],
                              "source_url": SRC["wpt_struct"], "retrieved_on": CHECKED_ON},
+                "rebuy": {"value": None,
+                          "excerpt": "Rebuy terms are not stated in the official WPT structures PDF.",
+                          "source_url": SRC["wpt_struct"], "retrieved_on": CHECKED_ON},
                 "add_on": {"value": None,
                            "excerpt": "Add-on terms are not stated in the official WPT structures PDF.",
                            "source_url": SRC["wpt_struct"], "retrieved_on": CHECKED_ON},
+                "flights": {"value": None,
+                            "excerpt": "Flight terms as printed in the official WPT structures PDF: "
+                                       + r["excerpt"],
+                            "source_url": SRC["wpt_struct"], "retrieved_on": CHECKED_ON},
                 "fee": {"value": r["fee_usd"], "excerpt": r["fee"],
                         "source_url": SRC["wpt_struct"], "retrieved_on": CHECKED_ON},
+            }
+            rules = {
+                "single_entry": False, "re_entry": True, "rebuy": None,
+                "add_on": None, "flights": None,
+                "source_excerpt": r["excerpt"],
+                "retrieved_on": CHECKED_ON,
+                "evidence": evidence,
             }
             rows.append({
                 "id": "", "series": "Wynn WPT World Championship", "venue_id": "wynn",
                 "date": date, "start": start, "start_minutes": to_minutes(start),
                 "event_no": None, "name": label + " - " + ev_name, "buy_in_usd": buy,
                 "guarantee_usd": gtd, "house_fee_usd": r["fee_usd"],
-                "house_fee_pct": round(r["fee_usd"] / buy * 100.0, 2) if buy else None,
+                "house_fee_pct": round(100.0 * r["fee_usd"] / buy, 2) if buy else None,
                 "gtd_multiple": round(gtd / buy, 1) if gtd and buy else None,
-                "entry_status": "RE", "starting_chips": r["stack"],
+                "entry_status": "RE", "entry_rule": ENTRY_RULE["RE"],
+                "starting_chips": r["stack"],
                 "level_minutes": r["level_min"],
                 "reg_closes": None, "reg_closes_printed": r["reg_close"],
                 "rules": rules,
                 "note": ((extra + " ") if extra else "") + r["summary"],
                 "sources": [{"label": "Official WPT schedule (PDF)", "url": SRC["wpt_sched"]},
                             {"label": "Official WPT structures and terms (PDF)", "url": SRC["wpt_struct"]}],
+                "verified_on": CHECKED_ON,
                 "last_checked": CHECKED_ON,
             })
         else:
@@ -975,6 +1025,7 @@ def build_schedule(rows):
     all_starts = sorted({r["start"] for r in rows})
     return {
         "generated_on": CHECKED_ON,
+        "verified_on": CHECKED_ON,
         "days": days,
         "earliest_listed_start": all_starts[0],
         "method": ("One primary event per day, chosen by guarantee / buy-in among that day's verified "
@@ -1000,12 +1051,22 @@ def build_hotels():
     out = []
     for h in HOTELS:
         h = dict(h)
+        # Field name expected by scripts/check_links.py.
+        h["clark_county_tax_pct"] = h.get("room_tax_pct")
         h["true_cost_per_night_usd"] = true_cost(h)
         h["walk_minutes"] = None
+        h["walk_to_venetian_min"] = None
         h["walk_status"] = "unverified"
         h["walk_note"] = ("Walking time is not published on any official source. Official addresses "
                           "are recorded for each hotel-venue pair, but no official walking time "
                           "exists, so the cell is blank and the 30-minute test cannot be applied yet.")
+        # Dated official rate log. Empty until a dated quote is captured; the
+        # schema is documented in data/hotel_rates.json and on the Hotels page.
+        h["rates"] = []
+        h["checkout_total_usd"] = None
+        h["nightly_average_usd"] = None
+        h["checkout_total_note"] = None
+        h["verified_on"] = CHECKED_ON
         h["last_checked"] = CHECKED_ON
         out.append(h)
     return out
@@ -1101,12 +1162,12 @@ def build_changelog():
 def main():
     rows = build_tournaments()
     with open(os.path.join(DATA, "tournaments.json"), "w") as f:
-        json.dump({"generated_on": CHECKED_ON, "rows": rows, "sources": SRC,
-                   "venues": VENUES}, f, indent=1)
+        json.dump({"generated_on": CHECKED_ON, "verified_on": CHECKED_ON, "rows": rows,
+                   "sources": SRC, "venues": VENUES}, f, indent=1)
 
     hotels = build_hotels()
     with open(os.path.join(DATA, "hotels.json"), "w") as f:
-        json.dump({"generated_on": CHECKED_ON, "rows": hotels,
+        json.dump({"generated_on": CHECKED_ON, "verified_on": CHECKED_ON, "rows": hotels,
                    "method": ("True nightly cost is computed only when a dated room rate, a resort "
                               "fee and a property-specific tax rate are all verified. No hotel row "
                               "currently has all three. The Venetian terms state a $55 resort fee "

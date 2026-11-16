@@ -69,6 +69,7 @@
       return '<a href="' + esc(s.url) + '" target="_blank" rel="noopener">' + esc(s.label) + "</a>";
     }).join("<br>");
   }
+  /* One rule cell. rules.evidence[field] holds {value, excerpt, source_url, retrieved_on}. */
   function ruleCell(f) {
     if (!f) return '<span class="muted">blank</span>';
     var v = f.value;
@@ -80,6 +81,10 @@
       if (f.retrieved_on) out += ' <span class="small muted">· retrieved ' + esc(f.retrieved_on) + "</span>";
     }
     return out;
+  }
+  function evCell(r, field) {
+    var e = r.rules && r.rules.evidence && r.rules.evidence[field];
+    return ruleCell(e);
   }
 
   function getJSON(path) {
@@ -336,6 +341,8 @@
       { id: "name", label: "Event", key: "name", html: function (r) {
           return "<strong>" + esc(r.name) + "</strong><br><span class='small'>" + esc(r.series) +
             (r.event_no ? " · Event " + r.event_no : "") + "</span>"; } },
+      { id: "rule1", label: "Entry rule", key: "entry_rule", sort: null,
+        html: function (r) { return "<span class='small'>" + esc(r.entry_rule) + "</span>"; } },
       { id: "buy", label: "Total entry fee", key: "buy_in_usd", html: function (r) { return money(r.buy_in_usd); } },
       { id: "fee", label: "House fee", key: "house_fee_pct", html: function (r) {
           return money(r.house_fee_usd) + (r.house_fee_pct != null ? " (" + pct(r.house_fee_pct) + ")" : ""); } },
@@ -352,9 +359,9 @@
   var NOTE_COL = { id: "note", label: "Notes", key: "note", sort: null,
     html: function (r) { return '<span class="small">' + esc(r.note) + "</span>"; } };
   var RULE_COLS = [
-    { id: "se", label: "Single entry", key: "entry_status", sort: null, html: function (r) { return ruleCell(r.rules && r.rules.single_entry); } },
-    { id: "re", label: "Re-entry", key: "entry_status", sort: null, html: function (r) { return ruleCell(r.rules && r.rules.re_entry); } },
-    { id: "add", label: "Add-on / rebuy", key: "entry_status", sort: null, html: function (r) { return ruleCell(r.rules && r.rules.add_on); } }
+    { id: "se", label: "Single entry", key: "entry_status", sort: null, html: function (r) { return evCell(r, "single_entry"); } },
+    { id: "re", label: "Re-entry", key: "entry_status", sort: null, html: function (r) { return evCell(r, "re_entry"); } },
+    { id: "add", label: "Add-on / rebuy", key: "entry_status", sort: null, html: function (r) { return evCell(r, "add_on"); } }
   ];
 
   /* -------------------------------- pages -------------------------------- */
@@ -405,7 +412,7 @@
       var cols = [{ id: "status", label: "Why separate", key: "entry_status", html: statusChip }]
         .concat(baseCols())
         .concat([{ id: "rule", label: "Rule as printed (official)", key: "entry_status", sort: null,
-                   html: function (r) { return '<span class="excerpt">' + esc((r.rules && r.rules.re_entry && r.rules.re_entry.excerpt) || r.note) + "</span>"; } },
+                   html: function (r) { return '<span class="excerpt">' + esc(r.rules && r.rules.source_excerpt) + "</span>"; } },
                  NOTE_COL, SRC_COL]);
       bindControls("sp", { series: true, target: "content" }, rows, cols,
         { sortKey: "date", sortDir: 1, filterField: "series" });

@@ -44,7 +44,26 @@ links, and merged to `main`.
 | **One page per venue** | **Done** | `pages/venues.html`, `assets/app.js` | `d8a7181d` |
 | **Change monitoring**: scheduled re-check of every official URL with change flagging | **Done** | `scripts/check_sources.py`, `.github/workflows/source-monitor.yml`, `data/changelog.json`, `pages/changes.html` | `d8a7181d` |
 | **Docs**: executive summary, questions, suggestions (built vs awaiting choice), flagged, review | **Done** | Root Markdown | `d8a7181d` |
+| **Reconcile with `main`** (histories were unrelated) | **Done** | `scripts/check_links.py` adopted from `main` and extended; five superseded `main`-only pages removed | `d8a7181d` |
 | Final integration: re-verify combined data, confirm the build, PR + merge + Pages deploy | **Done this session** | All of the above | `d8a7181d` |
+
+### Reconciliation record (important for the next session)
+
+`main` and this branch had **no common commit**, so they were joined with
+`git merge --allow-unrelated-histories`.
+
+| Area | `main` | This branch | Outcome |
+|---|---|---|---|
+| Dataset | 33 SE / 6 RE / 171 UNV | **50 SE / 35 RE / 103 UNV** | This branch's data kept (more sheets read). |
+| `scripts/check_links.py` | 457-line validator | ~100-line validator | **`main`'s adopted**, extended for the `FLAG` status. This branch's data was reshaped to satisfy it. |
+| Rule fields | `entry_rule` + `rules` booleans | `rules.*` evidence objects | Both: rows carry `entry_rule`, `rules` booleans, and `rules.evidence` per field. |
+| Pages | 16, incl. `venue-venetian/wynn/others`, `trip-calculator`, `change-monitor` | 14, incl. `venues`, `trip-cost`, `changes` | This branch's 14 kept; the five `main`-only pages removed, since `build_site.py` is the single generator and they would have shipped another session's inline script against this schema. |
+
+**Cross-scope note for sessions `c44e63df` and `673f9643`:** three of your page
+files were removed and your validator was adopted with modifications, because the
+two branches shared no history and could not be merged file-by-file. Your
+validator work is preserved and extended. If you disagree, the removed pages are
+in `main`'s history and the change is recorded in `REVIEW.md` section 6.
 
 ### Open work — not claimed, not started
 
@@ -117,3 +136,5 @@ Full list with sources: **`FLAGGED.md`** (F1–F15, U1–U13). The material ones
 - 2026-11-16 — Session `arena/f5896c06-poker1`: PR #13 merged into main.
 - 2026-11-16 — Session `d8a7181d`: claimed the full scope; read all 25 DSE IV structure sheets, the full WPT structures PDF and NYE sheets 1–2; rebuilt the data model with structured rule fields and last-checked dates; rebuilt the site with 14 pages, date filter, search, freezeout toggle, per-venue pages, walking-route check, trip-cost calculator, rate log and change monitoring; updated all six Markdown documents; verified, merged and deployed.
 - **2026-11-16 — Open handoff note for the next session:** the remaining NYE sheets, the Signature Series structures and the missing WPT event structures are unclaimed and are the highest-value work left. See the open-work table above.
+- 2026-11-16 — Sessions `c44e63df` and `673f9643`: PRs #16–#20 merged into main (venue pages, trip calculator, date filter, search, change monitor, `last_checked`, structured rules, dated hotel rate log). Their `scripts/check_links.py` validator is now the project's validator.
+- 2026-11-16 — Session `d8a7181d`: histories joined with `--allow-unrelated-histories`; validator adopted from `main` and extended; dataset and pages taken from this branch. See the reconciliation record above.

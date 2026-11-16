@@ -82,7 +82,25 @@ Re-read the official Venetian hotel terms. Confirmed: $55 resort fee plus applic
 5. **Every rule field carries its own evidence** — value, verbatim excerpt, source URL and retrieval date — so you can check any verdict yourself.
 6. **No finish time is inferred.** The schedule overlap check uses only official start times and official late-registration close times.
 
-## 6. Build and data checks
+## 6. Reconciliation with `main` (branch histories were unrelated)
+
+`main` and this branch had **no common commit**, so they were joined with
+`git merge --allow-unrelated-histories`. `main` carried work from sessions
+`c44e63df` and `673f9643` (PRs #16–#20) that overlapped this session's scope.
+
+| Area | `main` | This branch | What was kept and why |
+|---|---|---|---|
+| Tournament data | 225 rows: **33 SE**, 15 MULTI, **6 RE**, **171 UNV** | 224 rows: **50 SE**, 27 MULTI, **35 RE**, 9 FLAG, **103 UNV** | **This branch.** Its structure-sheet reading is strictly more complete (25 of 25 Venetian sheets, all 8 parts of the WPT structures PDF). |
+| Validator (`scripts/check_links.py`) | 457 lines: date/time/number shape checks, per-status rule assertions, recomputes `gtd_multiple` and `house_fee_pct`, validates the dated hotel rate log, schedule-vs-row consistency, duplicate HTML ids, fragment links | ~100 lines: JSON, local links, source hosts | **`main`'s**, adopted wholesale, then extended to allow the `FLAG` status and to assert that a `FLAG` row leaves `rules.single_entry` and `rules.re_entry` null. |
+| Rule fields | `entry_rule` string plus `rules` booleans | `rules.*` objects with per-field evidence | **Both.** Rows now carry `entry_rule` (one line), `rules` booleans (`single_entry`, `re_entry`, `rebuy`, `add_on`, `flights`, `source_excerpt`, `retrieved_on`) and `rules.evidence` with a per-field excerpt, URL and date. |
+| Pages | 16 pages, including `venue-venetian.html`, `venue-wynn.html`, `venue-others.html`, `trip-calculator.html`, `change-monitor.html` | 14 pages, including `venues.html`, `trip-cost.html`, `changes.html` | **This branch's.** The five `main`-only pages were removed: `build_site.py` is the single generator, and leaving them would have shipped pages carrying another session's inline script against this branch's data schema. |
+| `scripts/check_sources.py` and `.github/workflows/source-monitor.yml` | Not present | Present | **This branch's.** |
+
+The validator was the point of the exercise: `main`'s checks are considerably
+stronger, so this branch's data was reshaped to satisfy them rather than
+weakening the checks. It now passes with the larger verified dataset.
+
+## 7. Build and data checks
 
 ```
 python3 scripts/build_data.py     # 224 rows: 50 SE, 27 MULTI, 35 RE, 9 FLAG, 103 UNV
@@ -96,7 +114,7 @@ python3 scripts/check_sources.py  # daily in CI; checksums every official source
 - **Browser-level test.** All 14 pages were loaded in a DOM and executed: no runtime errors, and 28 interaction checks pass — date filter, search, freezeout toggle, column sort, schedule date filter, ≤30-minute walk filter, hotel–venue pair table, trip-cost arithmetic (verified: $200 + $55 fee at 13.38% = $289.12 per night; 5 nights + $700 of entries = $2,145.59), venue cards and the change log.
 - **Counts cross-check.** 50 single-entry rows; 34 days have a primary event; 10 days have a conditional fallback; 13 overlap flags (3 hard, 10 tight); earliest verified start 10:10 AM.
 
-## 7. Source log
+## 8. Source log
 
 | Source | Used for | Parts read |
 |---|---|---|
@@ -119,7 +137,7 @@ python3 scripts/check_sources.py  # daily in CI; checksums every official source
 
 Third-party sites (pokernews, pokeratlas, pokerfuse, mttdb, vegaspokercalendar and others) were used only to locate events and hotels. **They are not cited on any row.**
 
-## 8. Known limits of this review
+## 9. Known limits of this review
 
 - **51 WPT rows and 31 Signature Series rows** have no official structures document that could be found, so their entry rule is unverified. This is the largest remaining gap.
 - **10 NYE structure sheets** were not read (21 rows).

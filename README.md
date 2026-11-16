@@ -72,6 +72,17 @@ Parallel sessions: read `COORDINATION.md` **before** starting. Claim a task with
 your session ID and file scope, commit and push the claim, and never start a task
 another session has claimed.
 
+**Note on branch history.** The repository's `main` branch and this session's
+branch grew from unrelated histories (no common commit), so the two were joined
+with `git merge --allow-unrelated-histories`. Where the two overlapped, this
+session kept the more-verified dataset and adopted `main`'s stronger validator
+(`scripts/check_links.py`). Five pages that `main` had added
+(`venue-venetian.html`, `venue-wynn.html`, `venue-others.html`,
+`trip-calculator.html`, `change-monitor.html`) were removed, because
+`scripts/build_site.py` is the single generator: `venues.html`, `trip-cost.html`
+and `changes.html` replace them, and leaving them would have shipped pages
+carrying another session's inline script against a different data schema.
+
 Documents: `EXECUTIVE_SUMMARY.md`, `QUESTIONS.md`, `SUGGESTIONS.md`, `FLAGGED.md`,
 `REVIEW.md`, `COORDINATION.md`.
 
