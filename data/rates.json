@@ -1,0 +1,34 @@
+{
+ "verified_on": "2026-11-16",
+ "note": "A dated log, not a single value. Each entry keeps the printed text, the official URL, and the retrieval time. A total is computed only when the rate is attached to a stay date.",
+ "rows": [
+  {
+   "id": "venetian-poker-suite-2026",
+   "hotel_id": "venetian",
+   "property_scope_printed": "The Venetian or The Palazzo",
+   "rate_type": "published poker-play suite rate range",
+   "room_type_printed": "Luxury King Suite, single/double occupancy",
+   "rate_low_usd": 119,
+   "rate_high_from_usd": 209,
+   "rate_printed_text": "'These rates will start as low as $119 and $209 and can be higher.' No calendar date is attached to either figure and the page does not say which property each figure applies to.",
+   "applies_to_dates": null,
+   "blackout_dates_printed": "Blackout dates may apply (none listed).",
+   "mandatory_resort_fee_usd": 55,
+   "resort_fee_text": "There is a $55 resort fee per night stayed.",
+   "room_tax_pct": 13.38,
+   "room_tax_text": "Clark County Room Tax 13.38% (official Venetian hotel terms).",
+   "room_tax_applies_to_resort_fee": true,
+   "parking": "Complimentary self-parking for players who play three hours or more (official poker page).",
+   "cancellation_deadline": null,
+   "cancellation_note": "The poker-suite page does not print a cancellation deadline. It says the poker rate cannot be combined with other promotions and requires six hours of live cash play or a $300+ tournament buy-in per night stayed, or the rate is adjusted to the prevailing rate.",
+   "qualification_requirement": "Six hours of active live cash gameplay or a $300 or higher tournament buy-in per night stayed, completed before 2 a.m. of the last night stayed.",
+   "booking_channel": "Call 866.255.8936 and mention code EPOKR25 (printed on the official page).",
+   "official_url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+   "official_url_secondary": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+   "retrieved_utc": "2026-11-16T19:15:28Z",
+   "date_specific": false,
+   "true_cost_per_night_usd": null,
+   "true_cost_note": "Not computed: neither printed figure is attached to a stay date. The stated components are rate + $55 resort fee, taxed at 13.38%. At the printed low figure that arithmetic would be (119 + 55) x 1.1338, but the page does not attach $119 to any date, so no total is entered."
+  }
+ ]
+}

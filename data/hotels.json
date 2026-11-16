@@ -172,5 +172,5 @@
    "true_cost_per_night_usd": null
   }
  ],
- "method": "True nightly cost is computed only when a date-specific room rate, resort fee, and property-specific tax rate are verified. No current hotel row has all required values. The Venetian terms state a $55 resort fee plus applicable tax and 13.38% Clark County Room Tax; the tax rate is not copied to other hotel rows without property-specific support."
+ "method": "True nightly cost is computed only when a date-specific room rate, a resort fee, and a property-specific tax rate are all verified. No hotel row has a date-specific rate, so every true cost is blank. The Venetian terms state a $55 resort fee plus applicable tax and a 13.38% Clark County Room Tax; that rate is not copied to other properties without property-specific support."
 }

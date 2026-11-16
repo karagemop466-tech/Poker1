@@ -1,0 +1,111 @@
+{
+ "updated_utc": "2026-11-16T19:15:28Z",
+ "latest": [
+  {
+   "checked_utc": "2026-11-16T19:15:28Z",
+   "slug": "caesars_disclaimer",
+   "url": "https://www.caesars.com/corporate/disclaimer",
+   "kind": "html",
+   "status": "new",
+   "sha256": "ec3f740bd29d8ecbed7dafb5352fda786ba5b524aa1e446bf50f8d9a601253ac",
+   "previous_sha256": null
+  },
+  {
+   "checked_utc": "2026-11-16T19:15:28Z",
+   "slug": "dse_dec_2026_page",
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
+   "kind": "html",
+   "status": "new",
+   "sha256": "a6d4956c3c23ec60b0f8ad14631a6760feb8546f8402c4e4d53790c212c200ea",
+   "previous_sha256": null
+  },
+  {
+   "checked_utc": "2026-11-16T19:15:28Z",
+   "slug": "dse_nov_2026_page",
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "kind": "html",
+   "status": "new",
+   "sha256": "b6c3be5877beac1ae3dfd05b7959645f53253a3d2f96859b014af91bc1871d2d",
+   "previous_sha256": null
+  },
+  {
+   "checked_utc": "2026-11-16T19:15:28Z",
+   "slug": "venetian_hotel_terms",
+   "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+   "kind": "html",
+   "status": "new",
+   "sha256": "20cc8567cbf605ada37d5e9685a69d3f1f95c4bec52660beb31ea866a575b5b4",
+   "previous_sha256": null
+  },
+  {
+   "checked_utc": "2026-11-16T19:15:28Z",
+   "slug": "venetian_poker_suite_rates",
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+   "kind": "html",
+   "status": "new",
+   "sha256": "ca1c8ba394c77f13e06126a4be7f470853cf81129fb9be0f0aef0161a60163b8",
+   "previous_sha256": null
+  },
+  {
+   "checked_utc": "2026-11-16T19:15:28Z",
+   "slug": "venetian_resort_fee",
+   "url": "https://www.venetianlasvegas.com/resort/resort-fee.html",
+   "kind": "html",
+   "status": "new",
+   "sha256": "6005f32cb9eac2c0661c9041a86b98717de9a0e295ad5e5dda5c81d4b8c839c0",
+   "previous_sha256": null
+  },
+  {
+   "checked_utc": "2026-11-16T19:15:28Z",
+   "slug": "wpt_schedule",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+   "kind": "pdf",
+   "status": "new",
+   "sha256": "9291f60e5263033d9bd884849a56e36cb8180d91e6bee24aa319267d8634b3e0",
+   "previous_sha256": null
+  },
+  {
+   "checked_utc": "2026-11-16T19:15:28Z",
+   "slug": "wpt_structures",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "kind": "pdf",
+   "status": "new",
+   "sha256": "40522ad679c5d7a290b69a6a740dfd6f5f44ca883b3fee64c708249ae0540693",
+   "previous_sha256": null
+  },
+  {
+   "checked_utc": "2026-11-16T19:15:28Z",
+   "slug": "wynn_poker_page",
+   "url": "https://www.wynnlasvegas.com/casino/poker",
+   "kind": "html",
+   "status": "new",
+   "sha256": "df87f4777d3d619d981faa425061481d0bb729c59cbe9700ccd21ad352d089b4",
+   "previous_sha256": null
+  },
+  {
+   "checked_utc": "2026-11-16T19:15:28Z",
+   "slug": "wynn_signature_schedule",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1756113053/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf",
+   "kind": "pdf",
+   "status": "new",
+   "sha256": "51a19da4b135d9287471da1d814b8f76d370b69bae736ab5854dc370ae2754eb",
+   "previous_sha256": null
+  },
+  {
+   "checked_utc": "2026-11-16T19:15:28Z",
+   "slug": "wynn_terms",
+   "url": "https://www.wynnlasvegas.com/terms-and-conditions/848671",
+   "kind": "html",
+   "status": "new",
+   "sha256": "f3705890247b883bea47c59aaf881a2e8cb28739d26e5bb68ab643355ef760b8",
+   "previous_sha256": null
+  }
+ ],
+ "counts": {
+  "documents_tracked": 11,
+  "changed": 0,
+  "unchanged": 0,
+  "new": 11,
+  "unreachable": 0
+ }
+}
