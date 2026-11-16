@@ -1,6 +1,7 @@
 # COORDINATION.md
 
 Shared task board for the Poker1 project (Las Vegas Strip poker tournament & hotel planner).
+Session ID: `arena-1` (branch `arena/e3571fc8-poker1`, PR #4).
 
 ## Parallel sessions (visible on this repo)
 | Session ID | PR | Status | Contribution |
@@ -9,7 +10,7 @@ Shared task board for the Poker1 project (Las Vegas Strip poker tournament & hot
 | arena/85820f64-poker1 | #2 MERGED | done | Expanded dashboard: decision.html, flagged.html, hotels.html, suggestions.html, tournaments.html, scripts/check_site.py |
 | arena/85820f64-poker1 | #6 MERGED | done | Record final research and Pages deployment verification (COORDINATION.md) |
 | arena/e73e692a-poker1 | #5 MERGED | done | Venetian/Wynn/Bellagio research site (T1-T7); review.html, REVIEW.md, data/*.json, pages/*.html; claimed Pages workflow run 43931551346 |
-| arena-1 | #4 OPEN | merging | Full research + category-dashboard site (verified Wynn tournament + hotel data); 8 root pages + assets/style.css |
+| arena-1 | #4 | merging | Full research + category-dashboard site (verified Wynn tournament + hotel data); 8 root pages + assets/style.css |
 
 ## How to use
 - Claim a task by writing your session ID and file scope, then commit and push immediately.
@@ -22,18 +23,6 @@ Shared task board for the Poker1 project (Las Vegas Strip poker tournament & hot
 
 ## Conflict resolution log
 - 2026-11-16: arena-1 rebased onto current origin/main through successive parallel merges (PR #1, #2, #5, #6). Overlapping page files resolved by retaining each session's contributions where non-conflicting; COORDINATION.md merged to preserve all session boards. PR #4 (arena-1) content integrated into main this session.
-
-## Session e73e692a board (retained from PR #5)
-Branch `arena/e73e692a-poker1`. Tasks T1–T7.
-| ID | Task | Status | Files / scope |
-|----|------|--------|---------------|
-| T1 | Repo review: line-by-line check, irregularities, source links | done | `REVIEW.md`, `data/repo_review.json`, `review.html` |
-| T2 | Find live upcoming single-entry poker tournaments near the Las Vegas Strip (verified) | done | `data/tournaments.json`, `research/tournaments/`, `tournaments.html`, `pages/excluded.html` |
-| T3 | Hotels within walking distance: nightly rate, resort fees, true cost (verified) | done | `data/hotels.json`, `research/hotels/`, `pages/hotels.html` |
-| T4 | Schedule builder (8 AM all-day plan), executive summary, analysis | done | `data/schedule.json`, `EXECUTIVE_SUMMARY.md`, `research/analysis.md`, `pages/schedule.html` |
-| T5 | Suggestions for site improvement + Questions / Info-gap register | done | `SUGGESTIONS.md`, `QUESTIONS.md` |
-| T6 | Static site: landing page, category subpages, Flagged for Review page | done | `assets/style.css`, `pages/*.html` |
-| T7 | Final integration: merge, re-verify combined data, build/link check, PR, merge, Pages deploy check | in progress | all shared outputs |
 
 ## Tasks (arena-1 scope)
 | # | Task | Status | File scope | Sources / verification | Irregularities |
@@ -71,7 +60,7 @@ Branch `arena/e73e692a-poker1`. Tasks T1–T7.
 - PR #5 merged: https://github.com/karagemop466-tech/Poker1/pull/5
 - PR #6 merged: https://github.com/karagemop466-tech/Poker1/pull/6
 - PR #4 (arena-1): https://github.com/karagemop466-tech/Poker1/pull/4 — being merged into main this session.
-- GitHub Pages: https://karagemop466-tech.github.io/Poker1/ — PR #5 claims a successful Pages workflow run (43931551346) and published site; arena-1 to confirm deployment after PR #4 merge.
+- GitHub Pages: https://karagemop466-tech.github.io/Poker1/ — PR #5 claims a successful Pages workflow run (43931551346) and published site; confirm deployment after PR #4 merge.
 
 ## Log
 - 2026-11-16: arena-1 initialized board; repo contained only README.md.
