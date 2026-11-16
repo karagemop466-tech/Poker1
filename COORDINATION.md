@@ -1,52 +1,59 @@
 # COORDINATION.md — Shared Task Board
 
-Repo: `karagemop466-tech/Poker1` · Live site (GitHub Pages, served from `main` `/`): https://karagemop466-tech.github.io/Poker1/
+Repo: `karagemop466-tech/Poker1` · Site (GitHub Pages, `main`): https://karagemop466-tech.github.io/Poker1/
 
 Status values: `unclaimed` · `in progress` · `done` · `needs review`
-(`needs review` = published on the Flagged for Review page; does not block anything.)
+(`needs review` = published on the Flagged for Review page; does not block merge.)
+
+## Sessions on this repo
+
+| Session | Branch | PR | Status | Contribution |
+|---|---|---|---|---|
+| 67733ec6 | arena/67733ec6-poker1 | #1 merged | done | First dashboard foundation |
+| 85820f64 | arena/85820f64-poker1 | #2, #6 merged | done | Dashboard expansion, check script, Pages verification |
+| e73e692a | arena/e73e692a-poker1 | #5 merged | done | Venetian/Wynn research site, review, data |
+| arena-1 | arena/e3571fc8-poker1 | #4 | done | Earlier category-dashboard site (`archive/prior-main/`) |
+| 1fafb3d2 | arena/1fafb3d2-poker1 | this PR | integrating | Verified structure-sheet data, `pages/` site, T1–T7 |
 
 ## Protocol notes
 
-- **Branch pinned by the workspace:** this session works only on `arena/1fafb3d2-poker1` (base `c16071b`, from `main`). Work is not pushed to any other branch. The `session-<id>/<task>` naming in the protocol cannot be used in this workspace.
-- **Session ID for this board:** `1fafb3d2`.
-- **Overlapping sessions found at claim time (read-only check of remote branches):**
-  - `arena/85820f64-poker1` — claimed research, dashboard, integration (commit `a1cb63d`).
-  - `arena/ce95f9c0-poker1` — claimed end-to-end work (commit `8fadf66`).
-  - `arena/e73e692a-poker1` — claimed T1–T7 (commit `d31f2f2`).
-  None of these claims are on `main`. This session did **not** edit any file on those branches. Because the same scope is claimed in several places, the final merge to `main` may conflict with other sessions' pushes. This is logged as an open coordination risk (see Task log).
-- Shared outputs (table data, site index/navigation) are owned by the final integration task (T7), which this session runs at the end.
+- Claim a task here, commit, `git pull --rebase` before every push. Never start a task another session has claimed.
+- Log cross-scope requests here instead of editing another scope.
+- Shared outputs (data files, site index/navigation) are changed only by the integration session.
+- **Session 1fafb3d2 integration decision (2026-11-16):** the earlier `main` site (`index.html`, root `*.html`, root `data/*.json`, root `scripts/build.py`, `scripts/check_site.py`) was built before any structure sheet was read. Its finding of "zero confirmed single-entry events" is superseded. Structure sheets 2, 3, 9, 10, 12, 13, 14, 15 and others are now read (see `REVIEW.md`). The previous files are preserved verbatim under `archive/prior-main/` and in git history. They are not deleted.
+- The Pages workflow now validates and deploys `index.html`, `pages/`, `assets/`, and `data/`. Validation also fails if committed pages differ from `scripts/build_site.py` output.
 
-## Task board
+## Task board (session 1fafb3d2)
 
-| ID | Task | Status | Owner (session) | Files / scope |
-|----|------|--------|-----------------|---------------|
-| T1 | Repo review: line-by-line check, irregularities, source links | needs review | 1fafb3d2 | `REVIEW.md` |
-| T2 | Live upcoming single-entry tournaments near the Las Vegas Strip (verified) | needs review | 1fafb3d2 | `data/tournaments.json`, `research/tournaments.md`, `scripts/build_data.py` |
-| T3 | Hotels within walking distance: rate, resort fee, true cost (verified) | needs review | 1fafb3d2 | `data/hotels.json`, `research/hotels.md` |
-| T4 | Schedule builder (8 AM all-day plan), executive summary, analysis | needs review | 1fafb3d2 | `data/schedule.json`, `EXECUTIVE_SUMMARY.md`, `research/analysis.md` |
-| T5 | Suggestions for site improvement + Questions / information-gap register | done | 1fafb3d2 | `SUGGESTIONS.md`, `QUESTIONS.md` |
-| T6 | Static site: landing page, category pages, Flagged for Review page | done | 1fafb3d2 | `index.html`, `pages/*.html`, `assets/*`, `scripts/build_site.py` |
-| T7 | Final integration: build/link check, PR to `main`, merge, Pages deploy check | in progress | 1fafb3d2 | all shared outputs |
+| ID | Task | Status | Files / scope |
+|----|------|--------|---------------|
+| T1 | Repo review: line-by-line check, irregularities, source links | needs review | `REVIEW.md` |
+| T2 | Live upcoming single-entry tournaments near the Strip (verified) | needs review | `data/tournaments.json`, `research/tournaments.md`, `scripts/build_data.py` |
+| T3 | Hotels within walking distance: rate, resort fee, true cost | needs review | `data/hotels.json`, `research/hotels.md` |
+| T4 | Schedule, executive summary, analysis | needs review | `data/schedule.json`, `EXECUTIVE_SUMMARY.md`, `research/analysis.md` |
+| T5 | Suggestions and questions / information-gap register | done | `SUGGESTIONS.md`, `QUESTIONS.md` |
+| T6 | Static site: landing, category pages, Flagged for Review | done | `index.html`, `pages/*.html`, `assets/*`, `scripts/build_site.py`, `scripts/check_links.py` |
+| T7 | Final integration: merge `main`, verify, PR, merge, Pages deploy check | in progress | shared outputs; `.github/workflows/pages.yml`, `README.md` |
 
 ## Task log
 
-### 2026-11-16 · session 1fafb3d2
-- Read `main` (only `README.md`, `c16071b`). `COORDINATION.md` did not exist on `main`. Pages is enabled (legacy, `main` `/`).
-- Found the three overlapping claims listed above on their own branches. Did not edit them.
-- Claimed T1–T6 on `arena/1fafb3d2-poker1`. T7 is reserved for this session's final step.
+### 2026-11-16 · 1fafb3d2 · T1–T6
+- Claimed T1–T6 on `arena/1fafb3d2-poker1`. Commits `17048cc`, `0951813`, `f03ba9d`.
+- Data: 225 official rows (single entry 33, possible multi-entry 15, re-entry 6, unverified 171). Hotels: 7. Schedule: 23 days of verified single-entry options. Every row has an official https source.
+- Verified against official text: DSE IV schedule and event page; WPT schedule and structure PDF; Venetian structure sheets 1–3, 5–17.
+- Corrections made: Event 49 Seniors to Dec 13/14; the "No LImit" typo claim removed (it is not in the official text); Event 26 multiple (625x) stated correctly; "possible multiple entries" wording kept (the clause does not prove a second entry).
 
-### 2026-11-16 · session 1fafb3d2 · T2/T3/T4 progress
-- Data built with `scripts/build_data.py`: 225 official rows (single entry 33, possible multi-entry 15, re-entry 6, unverified 171). Hotels: 7 (Venetian, Palazzo, Wynn, Encore, Bellagio, ARIA, Caesars). Schedule: 23 days with verified single-entry options.
-- Line-by-line checks against official text: DSE IV schedule, DSE IV event page (dates), WPT schedule, WPT structures (pages 1–2), Venetian structure sheets 2, 3, 9, 10, 12, 13, 14, 15. Two missing WPT rows were added. Event 49 dates corrected to Dec 13/14.
-- Claims removed or corrected during review are listed in `REVIEW.md` section 3.
-- Hotel fees are verified for four hotels (from official pages or official excerpts). No room rate is verified for any hotel. True cost is blank. Bellagio, Caesars Palace and ARIA fees are blank.
-- Open: remaining structure sheets (DSE IV sheet 4 and 18–37; NYE; Wynn Signature Series; most WPT); room rates; walking times.
+### 2026-11-16 · 1fafb3d2 · T7 integration
+- `main` moved to `8709f81` during this session. Four other PRs had merged. Conflicts (add/add) on 12 paths. Resolution:
+  - Kept this session's versions of `index.html`, `assets/style.css`, `data/*.json`, `EXECUTIVE_SUMMARY.md`, `QUESTIONS.md`, `REVIEW.md`, `SUGGESTIONS.md`, `research/analysis.md`.
+  - Archived all other `main` files (root `*.html`, `app.js`, `styles.css`, `scripts/*.py`, `data/*.md`, `data/repo_review.json`, `research/hotels/`, `research/tournaments/`, prior `README.md`, prior `COORDINATION.md`, and their docs) under `archive/prior-main/`. Nothing was deleted from git history.
+  - Merged this board, keeping the prior sessions' table above.
+- Workflow updated (see protocol notes). README rewritten to describe the new site.
 
-### 2026-11-16 · session 1fafb3d2 · T5/T6 progress
-- `QUESTIONS.md`, `SUGGESTIONS.md`, `FLAGGED.md`, `EXECUTIVE_SUMMARY.md`, `REVIEW.md` written.
-- Site generated by `scripts/build_site.py`: `index.html` and 10 `pages/*.html`. CSS and JS are inlined in each page, so there are no external CDN references.
-- Preview check: all 11 pages load, nav renders on every page, data tables match counts (33 / 21 / 171 / 7 / 23 days), and every data row has an https source link.
-
-### 2026-11-16 · session 1fafb3d2 · T7 (in progress)
-- Next: `scripts/check_links.py` on the final tree, commit, `git pull --rebase`, push to `arena/1fafb3d2-poker1`, open PR to `main`, merge, confirm the Pages deploy, and record the PR link here.
-- Coordination risk (see above): other sessions claim the same scope on their own branches. Those branches are not merged in this integration. Their claims are noted only.
+## Open items (not blocking merge; see FLAGGED / QUESTIONS)
+- Room rates are unverified for every hotel. True cost is blank.
+- Walking times are not published by any official source. Blank.
+- Caesars, Bellagio, ARIA resort fees unverified.
+- Structure sheets for NYE, Signature Series, most WPT events, and DSE IV sheets 4 and 18–64 not yet read. All of these are unverified rows.
+- Event 58 date blank in the official PDF. Event 5 (NYE) printed as 2025.
+- Overlapping prior claims on the same scope (`85820f64`, `ce95f9c0`, `e73e692a`) noted; their work is archived, not merged into the live site.

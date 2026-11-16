@@ -1,0 +1,217 @@
+{
+  "generated": "2026-11-16",
+  "checks": [
+    {
+      "id": "R1",
+      "check": "Venetian DSE IV schedule: every row (date, time, event #, name, structure URL) compared to the fetched official page",
+      "result": "Re-verified on 2026-11-16 across all 4 chunks. Dates, times and sheet mappings in data match the page. Event 1 flights 1A–1D and events 19, 37 confirmed.",
+      "status": "verified",
+      "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
+    },
+    {
+      "id": "R2",
+      "check": "Venetian single-day structure sheets (fee, pool, guarantee, late registration)",
+      "result": "Read: sheets 1, 2, 5, 6, 7, 8, 10, 11, 15, 16, 17, 18, 22, 23, 26, 27, 28, 29, 30, 33, 34. Fee/pool/guarantee match the data. Sheets 3, 4, 9, 12–14, 19–21, 24, 25, 31, 32, 35–37 NOT read: those events are not ranked.",
+      "status": "partial",
+      "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
+    },
+    {
+      "id": "R3",
+      "check": "Venetian hotel terms: resort fee, room tax, guest surcharge, parking",
+      "result": "$55 resort fee + 13.38% Clark County room tax per night (official). Used in hotel totals.",
+      "status": "verified",
+      "source": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html"
+    },
+    {
+      "id": "R4",
+      "check": "Venetian poker suite rates and play requirement",
+      "result": "From $119 (Venetian) / $209 (Palazzo); $55 resort fee; conditional on poker play each night. Used as the rate basis, with the condition flagged.",
+      "status": "verified",
+      "source": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html"
+    },
+    {
+      "id": "R5",
+      "check": "Bellagio weekly events (PDF structures)",
+      "result": "Fri $600 NLH and Sun $400 H.O.R.S.E. read. Sat PDF conflicts ($1,000 file name/page, $1,100 header, $600 fee sum). Gratuity buys chips (pay-to-advantage).",
+      "status": "irregular",
+      "source": "https://bellagio.mgmresorts.com/en/casino/poker.html"
+    },
+    {
+      "id": "R6",
+      "check": "Wynn daily tournaments (structures PDF)",
+      "result": "All five daily structures read. All allow re-entry or add-on, so all are excluded from the single-entry list. Registration text says 'Encore at Wynn'.",
+      "status": "irregular",
+      "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf"
+    },
+    {
+      "id": "R7",
+      "check": "Wynn WPT schedule (PDF)",
+      "result": "Rows out of chronological order (Dec 18 before Dec 17). A footnote mentions an $11,100 Ladies entry. Not ranked.",
+      "status": "irregular",
+      "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+    },
+    {
+      "id": "R8",
+      "check": "Wynn WPT structures PDF ($600 NLH, $400K GTD)",
+      "result": "Unlimited re-entry per flight until level 9. Fee breakdown $510 + $65 + $25 = $600. Excluded from single-entry list.",
+      "status": "verified",
+      "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+    },
+    {
+      "id": "R9",
+      "check": "Wynn hotel rates and resort fee",
+      "result": "Official pages wynnlasvegas.com/hotel are dead. Undated offer 848654 says $45 resort fee and $99/$169 rates. Offer 850225 says $55 and expired Aug 31, 2026. Conflict; left blank.",
+      "status": "irregular",
+      "source": "https://www.wynnlasvegas.com/terms-and-conditions/848654"
+    },
+    {
+      "id": "R10",
+      "check": "Caesars Palace hotel page (resort fee)",
+      "result": "Official page chunks 0–1 read: no resort fee shown. Aggregators conflict ($49.95, $55, $62.30). Left blank.",
+      "status": "unverified",
+      "source": "https://www.caesars.com/caesars-palace/hotel"
+    },
+    {
+      "id": "R11",
+      "check": "Bellagio resort fee and nightly rate",
+      "result": "Not found on official MGM pages retrieved. Aggregator figure $55 + tax not used.",
+      "status": "unverified",
+      "source": "https://bellagio.mgmresorts.com/en/casino/poker.html"
+    },
+    {
+      "id": "R12",
+      "check": "RWLV, MGM Grand (SSPS), Aria, Planet Hollywood poker pages",
+      "result": "Official URLs returned email blast, 404, or unrelated domain. No events from these venues are listed.",
+      "status": "unverified",
+      "source": "https://rwlasvegas.com/casino/poker"
+    },
+    {
+      "id": "R13",
+      "check": "Stale notice on Bellagio poker page",
+      "result": "Official page carries a tournament-resumption notice dated July 26. Weekly event list may be out of date.",
+      "status": "irregular",
+      "source": "https://bellagio.mgmresorts.com/en/casino/poker.html"
+    },
+    {
+      "id": "R14",
+      "check": "Wynn daily suspension during WPT series",
+      "result": "Official poker page says daily tournaments are suspended during the series (Nov 27 – Dec 21). Resume date not stated.",
+      "status": "irregular",
+      "source": "https://www.wynnlasvegas.com/casino/poker"
+    }
+  ],
+  "flagged": [
+    {
+      "id": "F1",
+      "type": "Conflict",
+      "item": "Bellagio Saturday event: price",
+      "detail": "File name and official page say $1,000; the PDF header says $1,100; the fee breakdown ($510 + $50 + $40) totals $600.",
+      "source": "https://bellagio.mgmresorts.com/en/casino/poker.html"
+    },
+    {
+      "id": "F2",
+      "type": "Conflict",
+      "item": "Wynn Hotel resort fee",
+      "detail": "Undated offer 848654: $45 + tax. Expired offer 850225: $55 + tax. No current official value. Left blank.",
+      "source": "https://www.wynnlasvegas.com/terms-and-conditions/848654"
+    },
+    {
+      "id": "F3",
+      "type": "Conflict",
+      "item": "Wynn daily registration location",
+      "detail": "Daily T&C say registration is in 'Encore at Wynn'; the poker room is documented at Wynn. Confirm before play.",
+      "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf"
+    },
+    {
+      "id": "F4",
+      "type": "Irregularity",
+      "item": "Wynn WPT schedule order",
+      "detail": "Dec 18 rows appear before Dec 17 rows. A footnote lists an $11,100 Ladies entry.",
+      "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+    },
+    {
+      "id": "F5",
+      "type": "Unverified",
+      "item": "Caesars Palace resort fee",
+      "detail": "Official page chunks 0–1 read, no fee shown. Aggregators disagree. Left blank.",
+      "source": "https://www.caesars.com/caesars-palace/hotel"
+    },
+    {
+      "id": "F6",
+      "type": "Unverified",
+      "item": "Bellagio resort fee and nightly rate",
+      "detail": "No official MGM page retrieved. Left blank.",
+      "source": "https://bellagio.mgmresorts.com/en/casino/poker.html"
+    },
+    {
+      "id": "F7",
+      "type": "Unverified",
+      "item": "Wynn base rate",
+      "detail": "Official wynnlasvegas.com/hotel page is dead. Offer rates are undated or expired. Left blank.",
+      "source": "https://www.wynnlasvegas.com/terms-and-conditions/848654"
+    },
+    {
+      "id": "F8",
+      "type": "Unverified",
+      "item": "Hotel walking times to venues",
+      "detail": "No official source for walking time. The 30-minute walking criterion cannot be verified for any hotel. Blank.",
+      "source": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html"
+    },
+    {
+      "id": "F9",
+      "type": "Unverified",
+      "item": "Venetian structure sheets not read",
+      "detail": "Sheets 3, 4, 9, 12–14, 19–21, 24, 25, 31, 32, 35–37 not read. Affected events are multi-flight, satellite, tag-team or 2-day, so they are not ranked.",
+      "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
+    },
+    {
+      "id": "F10",
+      "type": "Unverified",
+      "item": "Venetian single-day sheets: re-entry rule",
+      "detail": "Read sheets print no re-entry or add-on provision. Classified single-entry on that basis. Confirm at the cage.",
+      "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
+    },
+    {
+      "id": "F11",
+      "type": "Policy decision",
+      "item": "Bounty / PKO events in the single-entry list",
+      "detail": "Bounties are prize money and do not add chips. Kept in the single-entry list with a Bounty flag. Owner to confirm.",
+      "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
+    },
+    {
+      "id": "F12",
+      "type": "Policy decision",
+      "item": "PokerAtlas PRO $20 rake discount (events 18, 58)",
+      "detail": "Membership-linked discount on the initial buy-in only. Kept in the list, flagged.",
+      "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
+    },
+    {
+      "id": "F13",
+      "type": "Policy decision",
+      "item": "Bellagio optional staff gratuity",
+      "detail": "$40 Fri / $25 Sun / Sat gratuity buys extra chips. Treated as pay-to-advantage and excluded.",
+      "source": "https://bellagio.mgmresorts.com/en/casino/poker.html"
+    },
+    {
+      "id": "F14",
+      "type": "Unverified",
+      "item": "Wynn daily tournaments during WPT series",
+      "detail": "Official page says daily tournaments are suspended during the series. Resume date not stated.",
+      "source": "https://www.wynnlasvegas.com/casino/poker"
+    },
+    {
+      "id": "F15",
+      "type": "Unverified",
+      "item": "8:00 AM start",
+      "detail": "No official single-entry event starts before 10:10 AM (verified). The 9:10 AM satellite (event 46) is unranked.",
+      "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
+    },
+    {
+      "id": "F16",
+      "type": "Unverified",
+      "item": "Venetian DSE event durations",
+      "detail": "Official schedule gives start times and some late-registration windows, not durations. Stacking events cannot be confirmed.",
+      "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
+    }
+  ]
+}
