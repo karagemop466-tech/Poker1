@@ -77,3 +77,29 @@ The repository already contains a static dashboard (`index.html`, `pages/`, `ass
 ## Log
 - 2026-11-16: PR #11 merged into main (b272ed5), advancing it past the branch base.
 - 2026-11-16: arena/f5896c06-poker1 rebased onto origin/main, resolved COORDINATION.md conflict preserving both sessions' work; PR #13 created and merged; recording verification and limitation above.
+
+---
+
+## Session `e92e1517` — claim (arena/e92e1517-poker1)
+
+Claimed 2026-11-16 by session `e92e1517` on branch `arena/e92e1517-poker1` (branch base `2dc4120`).
+Claim commit pushed before implementation work, per the shared-board rule.
+
+| # | Task | Status | File scope | Owner |
+|---|---|---|---|---|
+| A | Read every official structure sheet (Venetian DSE Nov + NYE, Wynn WPT structures, Wynn Signature Series) and replace the "unverified" entry-rule label with confirmed values; store structured rule fields (single-entry, re-entry, add-on, fee) with source excerpt + retrieval date | in progress | `scripts/build_data.py`, `data/tournaments.json`, `research/structures.md` | `e92e1517` |
+| B | Add "last checked" date to every row and a scheduled re-check of every official URL that flags changed rows | in progress | `scripts/monitor.py`, `data/checks.json`, `.github/workflows/monitor.yml`, `pages/changes.html` | `e92e1517` |
+| C | Keep hotel rates as a dated log (per date, per property, with source + retrieval timestamp); official booking link per date; true cost/night = rate + resort fee + tax | in progress | `data/rates.json`, `data/hotels.json`, `scripts/build_data.py` | `e92e1517` |
+| D | One page per venue (Venetian, Wynn, other Strip rooms) with that venue's events and hotels | in progress | `pages/venue-*.html`, `scripts/build_site.py`, `assets/app.js` | `e92e1517` |
+| E | Date filter, global search across all tables, "single-entry / freezeout confirmed" toggle filter, ≤30-minute walk filter | in progress | `assets/app.js`, `assets/style.css`, `scripts/build_site.py` | `e92e1517` |
+| F | Schedule overlap check (start, late-reg cutoff, plausible duration) with a primary event and a conditional fallback per day | in progress | `data/schedule.json`, `assets/app.js`, `research/analysis.md` | `e92e1517` |
+| G | Walking-route check for each hotel–venue pair with official addresses, source links, and the 30-minute limit applied | in progress | `data/walking.json`, `assets/app.js`, `research/hotels.md` | `e92e1517` |
+| H | Trip cost calculator: entries × buy-ins + nights × true hotel cost | in progress | `pages/calculator.html`, `assets/app.js` | `e92e1517` |
+| I | Live-data feed / scraper that pulls each Strip poker room's official daily schedule each morning | in progress | `scripts/scrape_schedules.py`, `data/live_feed.json`, `.github/workflows/feed.yml`, `pages/feed.html` | `e92e1517` |
+| J | Refresh Executive Summary, Questions, Suggestions, Flagged, Repo Review documents against the re-verified data | in progress | `EXECUTIVE_SUMMARY.md`, `QUESTIONS.md`, `SUGGESTIONS.md`, `FLAGGED.md`, `REVIEW.md` | `e92e1517` |
+| K | Final integration: re-verify combined data line by line, confirm the site builds with no broken links, PR to main, merge, confirm Pages deploy, record result | unclaimed (final integration) | `COORDINATION.md` | — |
+
+Notes on scope: this session owns all files listed above. `data/schedule.json`, `data/tournaments.json`,
+`data/hotels.json`, `assets/app.js`, `assets/style.css` and `scripts/build_site.py` are shared outputs and are
+therefore **not** edited by any other session while this claim is open. If another session needs one of these
+files, log the request in this board instead of editing it.
