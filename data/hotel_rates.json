@@ -1,0 +1,380 @@
+{
+ "verified_on": "2026-11-16",
+ "log_format": "Append-only. One row per observation of one stay, never an overwrite of a previous row. Each row records the room rate, the same-stay checkout total, the nightly average, the mandatory resort fee and tax, parking, the cancellation deadline, occupancy and the rate timestamp, each with its own verification flag.",
+ "comparison_rule": "Compare like for like: same check-in and check-out dates, same occupancy, same room type, and the same resort-fee and tax treatment. Rows whose check-in and check-out dates are blank cannot be compared on rate and are shown for their fee terms only.",
+ "entries": [
+  {
+   "id": "hr-venetian-2026-11-16",
+   "hotel_id": "venetian",
+   "hotel_name": "The Venetian Resort Las Vegas",
+   "observed_on": "2026-11-16",
+   "check_in_date": null,
+   "check_out_date": null,
+   "nights": null,
+   "occupancy_adults": 2,
+   "occupancy_children": 0,
+   "room_type": null,
+   "room_rate_usd": null,
+   "room_rate_status": "unverified",
+   "room_rate_note": "No official dated room rate was confirmable. Every official booking engine on these properties is a JavaScript application that returns no static rate table to a plain fetch, and no resort publishes a rate card. Left blank rather than inferred.",
+   "resort_fee_usd": 55,
+   "resort_fee_status": "verified",
+   "room_tax_pct": 13.38,
+   "room_tax_status": "verified",
+   "tax_note": "Official Venetian hotel terms: \"Daily rates do not include the applicable Clark County Room Tax of 13.38%.\" Confirmed for the same rate by the official Clark County transient lodging licence list.",
+   "parking_status": "verified",
+   "parking_note": "Official Venetian hotel terms: \"The daily fee for registered hotel guests is $20/day, seven days a week. For non-hotel guests, the fee is $20, Monday - Thursday, and $25/day Friday - Sunday. Valet parking is $40/day.\"",
+   "parking_self_guest_usd": 20,
+   "parking_self_public_weekday_usd": 20,
+   "parking_self_public_weekend_usd": 25,
+   "parking_valet_usd": 40,
+   "cancellation_deadline_hours": null,
+   "cancellation_status": "unverified",
+   "cancellation_note": "The official terms bill a deposit at reservation confirmation but do not publish a single cancellation deadline; the deadline depends on the booked offer. Left unverified.",
+   "max_occupancy": null,
+   "extra_guest_usd": 50,
+   "checkout_total_usd": null,
+   "checkout_total_status": "unverified",
+   "nightly_average_usd": null,
+   "nightly_average_status": "unverified",
+   "rate_timestamp": "2026-11-16",
+   "rate_timestamp_note": "Timestamp of the read of the official fee, tax, parking and cancellation terms that this row records. No dated room rate was observed on that date.",
+   "sources": [
+    {
+     "label": "Official hotel terms (resort fee, 13.38% tax, parking, occupancy, deposit)",
+     "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html"
+    },
+    {
+     "label": "Official resort fee page",
+     "url": "https://www.venetianlasvegas.com/resort/resort-fee.html"
+    },
+    {
+     "label": "Official poker suite rates (EPOKR25)",
+     "url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html"
+    },
+    {
+     "label": "Official street address and room tax (Clark County licence list)",
+     "url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:29eabec9-8db1-4deb-b66e-5bae28a89da2/original/as/transient-lodging-licenses-by-category-as-of-07-2021.pdf"
+    }
+   ]
+  },
+  {
+   "id": "hr-palazzo-2026-11-16",
+   "hotel_id": "palazzo",
+   "hotel_name": "The Palazzo",
+   "observed_on": "2026-11-16",
+   "check_in_date": null,
+   "check_out_date": null,
+   "nights": null,
+   "occupancy_adults": 2,
+   "occupancy_children": 0,
+   "room_type": null,
+   "room_rate_usd": null,
+   "room_rate_status": "unverified",
+   "room_rate_note": "No official dated room rate was confirmable. Every official booking engine on these properties is a JavaScript application that returns no static rate table to a plain fetch, and no resort publishes a rate card. Left blank rather than inferred.",
+   "resort_fee_usd": 55,
+   "resort_fee_status": "verified",
+   "room_tax_pct": 13.38,
+   "room_tax_status": "verified",
+   "tax_note": "Official Clark County transient lodging licence list records \"Venetian Resort Hotel Casino / Palazzo Resort Hotel Casino\" as a licensed Resort Hotel in the Primary Gaming Corridor at 13.38%.",
+   "parking_status": "verified",
+   "parking_note": "Official Venetian hotel terms: registered hotel guests $20/day self parking; non-guests $20 Mon-Thu and $25 Fri-Sun; valet $40/day.",
+   "parking_self_guest_usd": 20,
+   "parking_self_public_weekday_usd": 20,
+   "parking_self_public_weekend_usd": 25,
+   "parking_valet_usd": 40,
+   "cancellation_deadline_hours": null,
+   "cancellation_status": "unverified",
+   "cancellation_note": "No single published cancellation deadline; depends on the booked offer. Left unverified.",
+   "max_occupancy": null,
+   "extra_guest_usd": 50,
+   "checkout_total_usd": null,
+   "checkout_total_status": "unverified",
+   "nightly_average_usd": null,
+   "nightly_average_status": "unverified",
+   "rate_timestamp": "2026-11-16",
+   "rate_timestamp_note": "Timestamp of the read of the official fee, tax, parking and cancellation terms that this row records. No dated room rate was observed on that date.",
+   "sources": [
+    {
+     "label": "Official poker suite rates and $55 fee (official)",
+     "url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html"
+    },
+    {
+     "label": "Official hotel terms (resort fee, parking, occupancy)",
+     "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html"
+    },
+    {
+     "label": "Official street address and room tax (Clark County licence list)",
+     "url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:29eabec9-8db1-4deb-b66e-5bae28a89da2/original/as/transient-lodging-licenses-by-category-as-of-07-2021.pdf"
+    }
+   ]
+  },
+  {
+   "id": "hr-wynn-2026-11-16",
+   "hotel_id": "wynn",
+   "hotel_name": "Wynn Las Vegas",
+   "observed_on": "2026-11-16",
+   "check_in_date": null,
+   "check_out_date": null,
+   "nights": null,
+   "occupancy_adults": 2,
+   "occupancy_children": 0,
+   "room_type": null,
+   "room_rate_usd": null,
+   "room_rate_status": "unverified",
+   "room_rate_note": "No official dated room rate was confirmable. Every official booking engine on these properties is a JavaScript application that returns no static rate table to a plain fetch, and no resort publishes a rate card. Left blank rather than inferred.",
+   "resort_fee_usd": 55,
+   "resort_fee_status": "verified",
+   "room_tax_pct": 13.38,
+   "room_tax_status": "verified",
+   "tax_note": "Official Clark County transient lodging licence list records \"Wynn Las Vegas / Encore at Wynn Las Vegas\" as a licensed Resort Hotel in the Primary Gaming Corridor at 13.38%.",
+   "parking_status": "verified",
+   "parking_note": "Official Wynn parking page: \"complimentary parking for all Wynn and Encore Resort and Tower Suite registered guests\"; \"The daily parking fee for non-registered guests is $25 per day with the first three (3) hours complimentary\"; valet $40 per day. Official Wynn terms confirm the $55 fee \"entitles you to receive complimentary self-parking for up to two vehicles\".",
+   "parking_self_guest_usd": 0,
+   "parking_self_public_weekday_usd": 25,
+   "parking_self_public_weekend_usd": 25,
+   "parking_valet_usd": 40,
+   "cancellation_deadline_hours": 48,
+   "cancellation_status": "verified_offer_terms",
+   "cancellation_note": "Official Wynn terms: \"cancellations must be received at least 48 hours prior to arrival date or deposit will be forfeited\" (published offer terms).",
+   "max_occupancy": 4,
+   "extra_guest_usd": 50,
+   "checkout_total_usd": null,
+   "checkout_total_status": "unverified",
+   "nightly_average_usd": null,
+   "nightly_average_status": "unverified",
+   "rate_timestamp": "2026-11-16",
+   "rate_timestamp_note": "Timestamp of the read of the official fee, tax, parking and cancellation terms that this row records. No dated room rate was observed on that date.",
+   "sources": [
+    {
+     "label": "Official Wynn terms (resort fee, parking, cancellation, occupancy, deposit)",
+     "url": "https://www.wynnlasvegas.com/terms-and-conditions/848671"
+    },
+    {
+     "label": "Official Wynn parking page",
+     "url": "https://www.wynnlasvegas.com/about-us/parking"
+    },
+    {
+     "label": "Official Wynn poker room",
+     "url": "https://www.wynnlasvegas.com/casino/poker"
+    },
+    {
+     "label": "Official street address and room tax (Clark County licence list)",
+     "url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:29eabec9-8db1-4deb-b66e-5bae28a89da2/original/as/transient-lodging-licenses-by-category-as-of-07-2021.pdf"
+    }
+   ]
+  },
+  {
+   "id": "hr-encore-2026-11-16",
+   "hotel_id": "encore",
+   "hotel_name": "Encore at Wynn Las Vegas",
+   "observed_on": "2026-11-16",
+   "check_in_date": null,
+   "check_out_date": null,
+   "nights": null,
+   "occupancy_adults": 2,
+   "occupancy_children": 0,
+   "room_type": null,
+   "room_rate_usd": null,
+   "room_rate_status": "unverified",
+   "room_rate_note": "No official dated room rate was confirmable. Every official booking engine on these properties is a JavaScript application that returns no static rate table to a plain fetch, and no resort publishes a rate card. Left blank rather than inferred.",
+   "resort_fee_usd": 55,
+   "resort_fee_status": "verified",
+   "room_tax_pct": 13.38,
+   "room_tax_status": "verified",
+   "tax_note": "Official Clark County transient lodging licence list records the Wynn / Encore property as a licensed Resort Hotel in the Primary Gaming Corridor at 13.38%.",
+   "parking_status": "verified",
+   "parking_note": "Official Wynn parking page: complimentary self-parking for registered Wynn and Encore resort guests; $25 per day for non-registered guests; valet $40 per day.",
+   "parking_self_guest_usd": 0,
+   "parking_self_public_weekday_usd": 25,
+   "parking_self_public_weekend_usd": 25,
+   "parking_valet_usd": 40,
+   "cancellation_deadline_hours": 48,
+   "cancellation_status": "verified_offer_terms",
+   "cancellation_note": "Official Wynn terms: 48 hours before arrival (published offer terms).",
+   "max_occupancy": 4,
+   "extra_guest_usd": 50,
+   "checkout_total_usd": null,
+   "checkout_total_status": "unverified",
+   "nightly_average_usd": null,
+   "nightly_average_status": "unverified",
+   "rate_timestamp": "2026-11-16",
+   "rate_timestamp_note": "Timestamp of the read of the official fee, tax, parking and cancellation terms that this row records. No dated room rate was observed on that date.",
+   "sources": [
+    {
+     "label": "Official Wynn terms (resort fee, parking, cancellation, occupancy)",
+     "url": "https://www.wynnlasvegas.com/terms-and-conditions/848671"
+    },
+    {
+     "label": "Official Wynn parking page",
+     "url": "https://www.wynnlasvegas.com/about-us/parking"
+    },
+    {
+     "label": "Official WPT terms placing the poker room in Encore",
+     "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+    },
+    {
+     "label": "Official street address and room tax (Clark County licence list)",
+     "url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:29eabec9-8db1-4deb-b66e-5bae28a89da2/original/as/transient-lodging-licenses-by-category-as-of-07-2021.pdf"
+    }
+   ]
+  },
+  {
+   "id": "hr-bellagio-2026-11-16",
+   "hotel_id": "bellagio",
+   "hotel_name": "Bellagio",
+   "observed_on": "2026-11-16",
+   "check_in_date": null,
+   "check_out_date": null,
+   "nights": null,
+   "occupancy_adults": 2,
+   "occupancy_children": 0,
+   "room_type": null,
+   "room_rate_usd": null,
+   "room_rate_status": "unverified",
+   "room_rate_note": "No official dated room rate was confirmable. Every official booking engine on these properties is a JavaScript application that returns no static rate table to a plain fetch, and no resort publishes a rate card. Left blank rather than inferred.",
+   "resort_fee_usd": 55,
+   "resort_fee_status": "verified",
+   "room_tax_pct": 13.38,
+   "room_tax_status": "verified",
+   "tax_note": "Official Clark County transient lodging licence list records Bellagio as a licensed Resort Hotel in the Primary Gaming Corridor at 13.38%.",
+   "parking_status": "verified",
+   "parking_note": "Official MGM parking page: self-parking $20 Mon-Thu and $25 Fri-Sun, $20 per day for registered hotel guests; valet $40 per day.",
+   "parking_self_guest_usd": 20,
+   "parking_self_public_weekday_usd": 20,
+   "parking_self_public_weekend_usd": 25,
+   "parking_valet_usd": 40,
+   "cancellation_deadline_hours": 72,
+   "cancellation_status": "verified",
+   "cancellation_note": "Official Bellagio terms: \"The first night's deposit is fully refundable provided a timely notice of cancellation is received by Room Reservations at 888.987.6667 at least 72 hours prior to the arrival date.\"",
+   "max_occupancy": null,
+   "extra_guest_usd": 50,
+   "checkout_total_usd": null,
+   "checkout_total_status": "unverified",
+   "nightly_average_usd": null,
+   "nightly_average_status": "unverified",
+   "rate_timestamp": "2026-11-16",
+   "rate_timestamp_note": "Timestamp of the read of the official fee, tax, parking and cancellation terms that this row records. No dated room rate was observed on that date.",
+   "sources": [
+    {
+     "label": "Official Bellagio terms (resort fee, cancellation, occupancy, deposit)",
+     "url": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html"
+    },
+    {
+     "label": "Official MGM parking page",
+     "url": "https://www.mgmresorts.com/en/things-to-do/parking.html"
+    },
+    {
+     "label": "Official Bellagio poker room and weekly structures",
+     "url": "https://bellagio.mgmresorts.com/en/casino/poker.html"
+    },
+    {
+     "label": "Official street address and room tax (Clark County licence list)",
+     "url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:29eabec9-8db1-4deb-b66e-5bae28a89da2/original/as/transient-lodging-licenses-by-category-as-of-07-2021.pdf"
+    }
+   ]
+  },
+  {
+   "id": "hr-aria-2026-11-16",
+   "hotel_id": "aria",
+   "hotel_name": "ARIA Resort & Casino",
+   "observed_on": "2026-11-16",
+   "check_in_date": null,
+   "check_out_date": null,
+   "nights": null,
+   "occupancy_adults": 2,
+   "occupancy_children": 0,
+   "room_type": null,
+   "room_rate_usd": null,
+   "room_rate_status": "unverified",
+   "room_rate_note": "No official dated room rate was confirmable. Every official booking engine on these properties is a JavaScript application that returns no static rate table to a plain fetch, and no resort publishes a rate card. Left blank rather than inferred.",
+   "resort_fee_usd": 55,
+   "resort_fee_status": "verified",
+   "room_tax_pct": 13.38,
+   "room_tax_status": "verified",
+   "tax_note": "Official Clark County transient lodging licence list records Aria Resort & Casino as a licensed Resort Hotel in the Primary Gaming Corridor at 13.38%.",
+   "parking_status": "verified",
+   "parking_note": "Official MGM parking page: self-parking $20 Mon-Thu and $25 Fri-Sun, $20 per day for registered hotel guests; valet $40 per day.",
+   "parking_self_guest_usd": 20,
+   "parking_self_public_weekday_usd": 20,
+   "parking_self_public_weekend_usd": 25,
+   "parking_valet_usd": 40,
+   "cancellation_deadline_hours": 72,
+   "cancellation_status": "verified",
+   "cancellation_note": "Official ARIA terms: \"The first night's deposit is fully refundable provided a timely notice of cancellation is received by Room Reservations at 866.359.7757 at least 72 hours prior to the arrival date.\"",
+   "max_occupancy": null,
+   "extra_guest_usd": 50,
+   "checkout_total_usd": null,
+   "checkout_total_status": "unverified",
+   "nightly_average_usd": null,
+   "nightly_average_status": "unverified",
+   "rate_timestamp": "2026-11-16",
+   "rate_timestamp_note": "Timestamp of the read of the official fee, tax, parking and cancellation terms that this row records. No dated room rate was observed on that date.",
+   "sources": [
+    {
+     "label": "Official ARIA terms (resort fee, cancellation, check-in, occupancy, deposit)",
+     "url": "https://aria.mgmresorts.com/en/terms-and-conditions.html"
+    },
+    {
+     "label": "Official MGM parking page",
+     "url": "https://www.mgmresorts.com/en/things-to-do/parking.html"
+    },
+    {
+     "label": "Official ARIA poker room and rate line",
+     "url": "https://aria.mgmresorts.com/en/casino/poker.html"
+    },
+    {
+     "label": "Official street address and room tax (Clark County licence list)",
+     "url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:29eabec9-8db1-4deb-b66e-5bae28a89da2/original/as/transient-lodging-licenses-by-category-as-of-07-2021.pdf"
+    }
+   ]
+  },
+  {
+   "id": "hr-caesars-2026-11-16",
+   "hotel_id": "caesars",
+   "hotel_name": "Caesars Palace",
+   "observed_on": "2026-11-16",
+   "check_in_date": null,
+   "check_out_date": null,
+   "nights": null,
+   "occupancy_adults": 2,
+   "occupancy_children": 0,
+   "room_type": null,
+   "room_rate_usd": null,
+   "room_rate_status": "unverified",
+   "room_rate_note": "No official dated room rate was confirmable. Every official booking engine on these properties is a JavaScript application that returns no static rate table to a plain fetch, and no resort publishes a rate card. Left blank rather than inferred.",
+   "resort_fee_usd": null,
+   "resort_fee_status": "unverified",
+   "room_tax_pct": 13.38,
+   "room_tax_status": "verified",
+   "tax_note": "Official Clark County transient lodging licence list records Caesars Palace as a licensed Resort Hotel in the Primary Gaming Corridor at 13.38%.",
+   "parking_status": "unverified",
+   "parking_note": "Caesars does not publish a parking tariff on the official Caesars Palace hotel page read on 2026-11-16. Left blank.",
+   "parking_self_guest_usd": null,
+   "parking_self_public_weekday_usd": null,
+   "parking_self_public_weekend_usd": null,
+   "parking_valet_usd": null,
+   "cancellation_deadline_hours": 48,
+   "cancellation_status": "advertised_not_rate_specific",
+   "cancellation_note": "The official Caesars Palace hotel page advertises \"FREE 48-Hour Cancellation*\" as a booking benefit. It is a headline booking-window statement, not a per-rate deadline, so it is recorded with a caveat.",
+   "max_occupancy": null,
+   "extra_guest_usd": null,
+   "checkout_total_usd": null,
+   "checkout_total_status": "unverified",
+   "nightly_average_usd": null,
+   "nightly_average_status": "unverified",
+   "rate_timestamp": "2026-11-16",
+   "rate_timestamp_note": "Timestamp of the read of the official fee, tax, parking and cancellation terms that this row records. No dated room rate was observed on that date.",
+   "sources": [
+    {
+     "label": "Official Caesars Palace hotel page",
+     "url": "https://www.caesars.com/caesars-palace"
+    },
+    {
+     "label": "Official street address and room tax (Clark County licence list)",
+     "url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:29eabec9-8db1-4deb-b66e-5bae28a89da2/original/as/transient-lodging-licenses-by-category-as-of-07-2021.pdf"
+    }
+   ]
+  }
+ ]
+}

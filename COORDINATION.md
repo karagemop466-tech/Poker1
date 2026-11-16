@@ -103,3 +103,13 @@ Notes on scope: this session owns all files listed above. `data/schedule.json`, 
 `data/hotels.json`, `assets/app.js`, `assets/style.css` and `scripts/build_site.py` are shared outputs and are
 therefore **not** edited by any other session while this claim is open. If another session needs one of these
 files, log the request in this board instead of editing it.
+
+### Follow-up: full build landed (session e92e1517)
+
+Research log now covers all 37 November and all 15 NYE structure sheets, the Wynn WPT and Signature Series
+documents, the official hotel terms for seven properties, and the walking methodology. The generator now emits
+264 tournament rows (80 confirmed single entry, 184 in the separate section), 52 schedule days with 44
+conditional fallbacks, seven hotels, a 42-pair walking matrix, an append-only hotel rate log, a 76-URL source
+registry and a daily feed. Site rebuilt with venue pages, format and date filters, a cost calculator, a
+source-watch page and an irregularity log. `scripts/check_links.py` extended to validate the app's DOM
+contract against the generated pages.

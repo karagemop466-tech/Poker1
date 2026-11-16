@@ -1,42 +1,90 @@
-# Suggestions for Site Improvement
+# Improvement suggestions for review
 
-These are options for you to choose from. **None has been implemented.** Pick the ones you want, and the next session will build only those.
+Each item names what it would change, why it is worth doing, and how much work it is. Nothing here has been
+applied without a decision. Items already built into this version are marked **done**, so the list doubles as a
+record of what changed.
 
-## 1. Decision support
+## Built in this version
 
-| # | Suggestion | Benefit | Cost / risk |
-|---|---|---|---|
-| S1 | Add a filter for "Only events I can enter in my budget" (buy-in cap). | Faster shortlist. | Needs your budget (D3). |
-| S2 | Add a day planner that lets you drag events onto a day and warns on time overlaps. | Shows which events conflict. | Overlap rules depend on real run times, which are not published. |
-| S3 | Add an "estimated cost of a trip" calculator: entries × buy-ins + nights × true hotel cost. | One total number. | Blank until rates are verified. |
-| S4 | Show a traffic-light status on each row: verified, partially verified, unverified. | Makes gaps obvious at a glance. | None. |
+**1. Section the tournaments by the entry rule alone.** **Done.**
+An earlier version mixed two criteria: it moved bounty, satellite and team formats out of the single-entry
+section, which meant a single-entry satellite was excluded from a section whose name describes exactly what it
+is. The section now turns on one question only: does the structure sheet allow more than one entry? Prize
+structure became a filter instead of a section.
 
-## 2. Data quality
+**2. Stop adding the house fee to the buy-in.** **Done.**
+The earlier version computed a "total fee" as buy-in plus house fee, which double-counted. Every official sheet
+read here withholds the fee from the buy-in. Two Bellagio prize pools were also derived as buy-in minus fee when
+the official sheet prints the pool explicitly, which produced $550 instead of $510 and $365 instead of $340.
+Both are now the printed figures.
 
-| # | Suggestion | Benefit | Cost / risk |
-|---|---|---|---|
-| S5 | Add an automatic re-check of each official URL on a schedule and mark rows whose source changed. | Catches schedule changes. | Needs a scheduled job. Limited by source access. |
-| S6 | Read every structure sheet and remove the "unverified" label from each event that is confirmed. | Largest gain in confidence. | All remaining structure sheets (Venetian, Venetian NYE, Wynn). |
-| S7 | Add a "last checked" date to each row. | Easy to see stale data. | None. |
-| S8 | Keep rates as a dated log, not a single value. | Shows price patterns on your dates. | Needs repeat checks. |
+**3. Give every schedule day a conditional fallback.** **Done.**
+44 of 52 dates now carry a fallback rather than only 16. A fallback is only offered when its start falls outside
+the primary's registration window, using the printed late-registration cutoff as the overlap test. Where no
+non-overlapping alternative exists, the page says so rather than silently showing a single option.
 
-## 3. Site structure
+**4. Compute the walking times instead of leaving them blank.** **Done.**
+All 42 hotel-to-venue pairs are computed from the official street addresses with one OpenStreetMap pedestrian
+routing request, and each pair carries Google Maps and Apple Maps walking links. The figures are labelled
+computed, not quoted, because no resort publishes a walking time.
 
-| # | Suggestion | Benefit | Cost / risk |
-|---|---|---|---|
-| S9 | One page per venue (Venetian, Wynn, others), each with its events and hotels. | Easier to plan by location. | Duplicates some data. |
-| S10 | Keep the current category pages (single entry, separate section, hotels, schedule). | Matches your request. | None. |
-| S11 | Add print-friendly views. | Useful on the trip. | Small effort. |
-| S12 | Add a search box across all tables. | Faster lookup. | Small effort. |
+**5. Add a hotel rate log with like-for-like rules.** **Done.**
+An append-only log, one row per observation of one stay, with a flag on every field. The comparison rule is
+stated on the page: same dates, same occupancy, same room type, same fee and tax treatment.
 
-## 4. Process
+**6. Add a trip cost calculator.** **Done.**
+Entries times buy-ins plus nights times the true nightly cost. The hotel component stays visibly blank until a
+dated rate exists, instead of being estimated from a rate the site cannot confirm.
 
-| # | Suggestion | Benefit | Cost / risk |
-|---|---|---|---|
-| S13 | Use one shared `COORDINATION.md` on `main` before parallel sessions start. | Avoids the split-branch claims found in this repo. | Needs agreement. |
-| S14 | Put the build script in CI so the site cannot publish with a broken link or missing source. | Protects quality. | Setup effort. |
-| S15 | Require a source URL on every new row (already enforced by `scripts/build_data.py`). | Keeps the "no hallucination" rule. | None. |
+**7. Add a live daily feed.** **Done.**
+The official daily posters and structure sheets are parsed by a scheduled job. The eight rows read directly
+from those documents are pinned in the seed feed so a failed extraction never drops a verified row.
 
-## Your choice
+**8. Add a source watchdog.** **Done.**
+Every official URL is fetched, hashed and compared with a stored baseline. A document that moves is flagged on
+the Official sources page. A fetch failure is reported as a failure, never as "unchanged".
 
-Reply with the numbers you want (for example "S1, S4, S6, S10"). Nothing changes until you choose.
+**9. Add an irregularity log.** **Done.**
+Contradictions and typos found in official documents are recorded with the document, the specific problem, and
+how it was handled.
+
+**10. Split the Markdown review material into its own pages.** **Done.**
+The executive summary, questions, suggestions, flagged items, irregularities, sources and repo review each have
+their own page instead of one long document.
+
+## Suggested next, in order of value
+
+**11. Capture one dated rate per property.** *Medium work, highest value.*
+The single biggest gap. Seven dated quotes for the same six nights and two adults would turn every blank stay
+total on the site into a real number, and would make cross-property comparison possible for the first time. The
+log is already built to receive them.
+
+**12. Read the rendered WPT and Signature Series PDFs page by page.** *Medium work, high value.*
+93 rows, the majority of the Wynn inventory, sit unranked because the text extraction stops partway through the
+WPT document and the Signature structures are a placeholder. A rendered read would either confirm those rows or
+confirm that they genuinely cannot be confirmed yet.
+
+**13. Add the Venetian and Palazzo room-type pages.** *Small work, moderate value.*
+Maximum occupancy and the difference between the from-$119 and from-$209 tiers would both come from the same
+set of pages.
+
+**14. Add a printable one-page trip card.** *Small work, moderate value.*
+The chosen dates, the primary and fallback per day, the buy-ins, the hotel, and the walk times, on one page that
+prints cleanly to A4. Useful in a pocket, which a 17-page site is not.
+
+**15. Add a calendar export.** *Small work, moderate value.*
+An `.ics` file for the primary events on the chosen dates, so the plan lands in a phone calendar with the venue
+address attached.
+
+**16. Add a per-venue guarantee distribution.** *Medium work, low value.*
+A small histogram per venue showing how guarantees are spread, so "the Venetian's typical guarantee is $10K but
+its ceiling is $75K" is visible at a glance rather than inferred from a table.
+
+**17. Add structured data for search engines.** *Small work, low value.*
+Schema.org event markup for the tournament rows so a search result can surface a date and a venue. Worth doing
+only if the site is meant to be found by people other than you.
+
+**18. Add a change history per tournament row.** *Medium work, low value.*
+Store each generated data file's previous version and diff it, so a guarantee that moves from $50K to $75K is
+visible as a change rather than silently replacing the old value. The source watchdog already detects that a
+document changed; this would show what changed inside it.

@@ -1,0 +1,538 @@
+{
+ "verified_on": "2026-11-16",
+ "note": "Every official URL this project depends on, with the kind of document it is and how often it should be re-checked. scripts/monitor_sources.py fetches each URL, hashes the body and writes a change flag to data/source_changes.json when a body differs from the stored baseline.",
+ "sources": [
+  {
+   "key": "dse_nov_page",
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "label": "Venetian DeepStack Extravaganza IV schedule",
+   "kind": "schedule",
+   "cadence": "daily"
+  },
+  {
+   "key": "dse_dec_page",
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
+   "label": "Venetian DeepStack Extravaganza NYE schedule",
+   "kind": "schedule",
+   "cadence": "daily"
+  },
+  {
+   "key": "dse_nov_structure_1",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+   "label": "Venetian DSE November structure sheet 1",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "dse_nov_structure_2",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_2.pdf",
+   "label": "Venetian DSE November structure sheet 2",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "dse_nov_structure_3",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf",
+   "label": "Venetian DSE November structure sheet 3",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "dse_nov_structure_4",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf",
+   "label": "Venetian DSE November structure sheet 4",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "dse_nov_structure_5",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf",
+   "label": "Venetian DSE November structure sheet 5",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "dse_nov_structure_6",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_6.pdf",
+   "label": "Venetian DSE November structure sheet 6",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "dse_nov_structure_7",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf",
+   "label": "Venetian DSE November structure sheet 7",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "dse_nov_structure_8",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf",
+   "label": "Venetian DSE November structure sheet 8",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "dse_nov_structure_9",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf",
+   "label": "Venetian DSE November structure sheet 9",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "dse_nov_structure_10",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf",
+   "label": "Venetian DSE November structure sheet 10",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "dse_nov_structure_11",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf",
+   "label": "Venetian DSE November structure sheet 11",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "dse_nov_structure_12",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf",
+   "label": "Venetian DSE November structure sheet 12",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "dse_nov_structure_13",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf",
+   "label": "Venetian DSE November structure sheet 13",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "dse_nov_structure_14",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf",
+   "label": "Venetian DSE November structure sheet 14",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "dse_nov_structure_15",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
+   "label": "Venetian DSE November structure sheet 15",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "dse_nov_structure_16",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_16.pdf",
+   "label": "Venetian DSE November structure sheet 16",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "dse_nov_structure_17",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf",
+   "label": "Venetian DSE November structure sheet 17",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "dse_nov_structure_18",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf",
+   "label": "Venetian DSE November structure sheet 18",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "dse_nov_structure_19",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_19.pdf",
+   "label": "Venetian DSE November structure sheet 19",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "dse_nov_structure_20",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_20.pdf",
+   "label": "Venetian DSE November structure sheet 20",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "dse_nov_structure_21",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf",
+   "label": "Venetian DSE November structure sheet 21",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "dse_nov_structure_22",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_22.pdf",
+   "label": "Venetian DSE November structure sheet 22",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "dse_nov_structure_23",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_23.pdf",
+   "label": "Venetian DSE November structure sheet 23",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "dse_nov_structure_24",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_24.pdf",
+   "label": "Venetian DSE November structure sheet 24",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "dse_nov_structure_25",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_25.pdf",
+   "label": "Venetian DSE November structure sheet 25",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "dse_nov_structure_26",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_26.pdf",
+   "label": "Venetian DSE November structure sheet 26",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "dse_nov_structure_27",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_27.pdf",
+   "label": "Venetian DSE November structure sheet 27",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "dse_nov_structure_28",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_28.pdf",
+   "label": "Venetian DSE November structure sheet 28",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "dse_nov_structure_29",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_29.pdf",
+   "label": "Venetian DSE November structure sheet 29",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "dse_nov_structure_30",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_30.pdf",
+   "label": "Venetian DSE November structure sheet 30",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "dse_nov_structure_31",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_31.pdf",
+   "label": "Venetian DSE November structure sheet 31",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "dse_nov_structure_32",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf",
+   "label": "Venetian DSE November structure sheet 32",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "dse_nov_structure_33",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_33.pdf",
+   "label": "Venetian DSE November structure sheet 33",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "dse_nov_structure_34",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_34.pdf",
+   "label": "Venetian DSE November structure sheet 34",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "dse_nov_structure_35",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf",
+   "label": "Venetian DSE November structure sheet 35",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "dse_nov_structure_36",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf",
+   "label": "Venetian DSE November structure sheet 36",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "dse_nov_structure_37",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_37.pdf",
+   "label": "Venetian DSE November structure sheet 37",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "dse_dec_structure_1",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_1.pdf",
+   "label": "Venetian DSE NYE structure sheet 1",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "dse_dec_structure_2",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_2.pdf",
+   "label": "Venetian DSE NYE structure sheet 2",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "dse_dec_structure_3",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_3.pdf",
+   "label": "Venetian DSE NYE structure sheet 3",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "dse_dec_structure_4",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_4.pdf",
+   "label": "Venetian DSE NYE structure sheet 4",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "dse_dec_structure_5",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_5.pdf",
+   "label": "Venetian DSE NYE structure sheet 5",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "dse_dec_structure_6",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_6.pdf",
+   "label": "Venetian DSE NYE structure sheet 6",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "dse_dec_structure_7",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_7.pdf",
+   "label": "Venetian DSE NYE structure sheet 7",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "dse_dec_structure_8",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_8.pdf",
+   "label": "Venetian DSE NYE structure sheet 8",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "dse_dec_structure_9",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_9.pdf",
+   "label": "Venetian DSE NYE structure sheet 9",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "dse_dec_structure_10",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_10.pdf",
+   "label": "Venetian DSE NYE structure sheet 10",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "dse_dec_structure_11",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_11.pdf",
+   "label": "Venetian DSE NYE structure sheet 11",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "dse_dec_structure_12",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_12.pdf",
+   "label": "Venetian DSE NYE structure sheet 12",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "dse_dec_structure_13",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_13.pdf",
+   "label": "Venetian DSE NYE structure sheet 13",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "dse_dec_structure_14",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_14.pdf",
+   "label": "Venetian DSE NYE structure sheet 14",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "dse_dec_structure_15",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_15.pdf",
+   "label": "Venetian DSE NYE structure sheet 15",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "wpt_sched",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+   "label": "Wynn WPT World Championship schedule",
+   "kind": "schedule",
+   "cadence": "daily"
+  },
+  {
+   "key": "wpt_struct",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "label": "Wynn WPT World Championship structures",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "wss_sched",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf",
+   "label": "Wynn Signature Series schedule",
+   "kind": "schedule",
+   "cadence": "daily"
+  },
+  {
+   "key": "wss_struct",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf",
+   "label": "Wynn Signature Series structures",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "wynn_daily_poster",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf",
+   "label": "Wynn daily tournament poster",
+   "kind": "daily",
+   "cadence": "daily"
+  },
+  {
+   "key": "wynn_daily_struct",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+   "label": "Wynn daily tournament structures",
+   "kind": "daily",
+   "cadence": "daily"
+  },
+  {
+   "key": "wynn_poker",
+   "url": "https://www.wynnlasvegas.com/casino/poker",
+   "label": "Wynn Las Vegas poker room",
+   "kind": "daily",
+   "cadence": "daily"
+  },
+  {
+   "key": "bellagio_poker",
+   "url": "https://bellagio.mgmresorts.com/en/casino/poker.html",
+   "label": "Bellagio poker room",
+   "kind": "daily",
+   "cadence": "daily"
+  },
+  {
+   "key": "bellagio_fri",
+   "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf",
+   "label": "Bellagio Friday $600 NLH structure",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "bellagio_sat",
+   "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf",
+   "label": "Bellagio Saturday NLH structure",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "bellagio_sun",
+   "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf",
+   "label": "Bellagio Sunday $400 HORSE structure",
+   "kind": "structure",
+   "cadence": "daily"
+  },
+  {
+   "key": "venetian_poker",
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker.html",
+   "label": "Venetian poker room",
+   "kind": "daily",
+   "cadence": "daily"
+  },
+  {
+   "key": "aria_poker",
+   "url": "https://aria.mgmresorts.com/en/casino/poker.html",
+   "label": "ARIA poker room",
+   "kind": "daily",
+   "cadence": "daily"
+  },
+  {
+   "key": "venetian_terms",
+   "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+   "label": "Venetian hotel terms",
+   "kind": "hotel",
+   "cadence": "weekly"
+  },
+  {
+   "key": "venetian_fee",
+   "url": "https://www.venetianlasvegas.com/resort/resort-fee.html",
+   "label": "Venetian resort fee",
+   "kind": "hotel",
+   "cadence": "weekly"
+  },
+  {
+   "key": "venetian_suite",
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+   "label": "Venetian poker suite rates",
+   "kind": "hotel",
+   "cadence": "weekly"
+  },
+  {
+   "key": "wynn_terms",
+   "url": "https://www.wynnlasvegas.com/terms-and-conditions/848671",
+   "label": "Wynn offer terms",
+   "kind": "hotel",
+   "cadence": "weekly"
+  },
+  {
+   "key": "wynn_parking",
+   "url": "https://www.wynnlasvegas.com/about-us/parking",
+   "label": "Wynn parking policy",
+   "kind": "hotel",
+   "cadence": "weekly"
+  },
+  {
+   "key": "bellagio_terms",
+   "url": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
+   "label": "Bellagio hotel terms",
+   "kind": "hotel",
+   "cadence": "weekly"
+  },
+  {
+   "key": "aria_terms",
+   "url": "https://aria.mgmresorts.com/en/terms-and-conditions.html",
+   "label": "ARIA hotel terms",
+   "kind": "hotel",
+   "cadence": "weekly"
+  },
+  {
+   "key": "mgm_parking",
+   "url": "https://www.mgmresorts.com/en/things-to-do/parking.html",
+   "label": "MGM Resorts parking rates",
+   "kind": "hotel",
+   "cadence": "weekly"
+  },
+  {
+   "key": "clark_county",
+   "url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:29eabec9-8db1-4deb-b66e-5bae28a89da2/original/as/transient-lodging-licenses-by-category-as-of-07-2021.pdf",
+   "label": "Clark County transient lodging licences and tax rates",
+   "kind": "hotel",
+   "cadence": "monthly"
+  }
+ ]
+}

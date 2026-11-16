@@ -1,0 +1,1274 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daily feed · Las Vegas Strip Poker Plan</title>
+<meta name="description" content="Live official daily poker-room schedules for the Las Vegas Strip.">
+<style>
+:root {
+  --bg: #0f1115;
+  --bg2: #161a21;
+  --card: #1b2029;
+  --card2: #212734;
+  --line: #2c3341;
+  --fg: #e8ecf3;
+  --muted: #98a2b5;
+  --accent: #63b3ff;
+  --accent2: #7ee0b8;
+  --warn: #ffc266;
+  --bad: #ff8f8f;
+  --ok: #7ee0b8;
+  --info: #9fc4ff;
+  --radius: 10px;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 15px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+code { background: var(--card2); padding: 1px 5px; border-radius: 4px; font-size: 13px; }
+
+/* ------------------------------------------------------------- chrome --- */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(15, 17, 21, .96);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(6px);
+}
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 10px 18px 6px;
+}
+.brand a { font-weight: 700; font-size: 16px; color: var(--fg); }
+.brand .tag {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--accent2);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 1px 8px;
+}
+.topbar nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  padding: 0 12px 8px;
+}
+.topbar nav a {
+  color: var(--muted);
+  font-size: 13px;
+  padding: 5px 9px;
+  border-radius: 7px;
+}
+.topbar nav a:hover { background: var(--card); color: var(--fg); text-decoration: none; }
+.topbar nav a.active { background: var(--card2); color: var(--accent); }
+
+main { max-width: 1500px; margin: 0 auto; padding: 20px 18px 60px; }
+h1 { font-size: 27px; margin: 8px 0 6px; letter-spacing: -.01em; }
+h2 { font-size: 19px; margin: 26px 0 10px; }
+h3 { font-size: 15px; margin: 0 0 6px; }
+p { margin: 8px 0; }
+.lead { color: var(--muted); max-width: 90ch; margin-bottom: 16px; }
+.small { font-size: 12.5px; }
+.muted { color: var(--muted); }
+
+.footer-inner {
+  border-top: 1px solid var(--line);
+  padding: 16px 18px 30px;
+  color: var(--muted);
+  font-size: 13px;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+/* --------------------------------------------------------------- cards -- */
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  margin: 10px 0;
+}
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+.grid.two { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+.tile { display: block; color: inherit; }
+.tile:hover { border-color: var(--accent); text-decoration: none; }
+.tile h3 { color: var(--accent); }
+.tile p { color: var(--muted); font-size: 13px; }
+.callout {
+  border-left: 3px solid var(--accent);
+  background: var(--card2);
+  color: var(--muted);
+  font-size: 13.5px;
+}
+.kpi { margin: 0; }
+.kpi-value { font-size: 25px; font-weight: 700; letter-spacing: -.02em; }
+.kpi-label { font-size: 13px; color: var(--fg); margin-top: 2px; }
+
+/* ------------------------------------------------------------ toolbar --- */
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 10px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  margin: 12px 0;
+}
+.field { display: flex; flex-direction: column; gap: 3px; font-size: 12px; color: var(--muted); }
+.field input, .field select {
+  background: var(--bg2);
+  color: var(--fg);
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  padding: 7px 9px;
+  font-size: 13.5px;
+  min-width: 150px;
+}
+.field.check { flex-direction: row; align-items: center; gap: 7px; color: var(--fg); font-size: 13px; }
+.field.check input { min-width: 0; width: 16px; height: 16px; }
+.count { margin-left: auto; align-self: center; }
+.btn {
+  background: var(--card2);
+  color: var(--fg);
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  padding: 7px 12px;
+  font-size: 13px;
+  cursor: pointer;
+}
+.btn:hover { border-color: var(--accent); color: var(--accent); }
+.btn.small { padding: 4px 8px; font-size: 12px; }
+
+.tabs { display: flex; flex-wrap: wrap; gap: 6px; margin: 12px 0 4px; }
+.tab {
+  background: var(--card);
+  color: var(--muted);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 6px 13px;
+  font-size: 13px;
+  cursor: pointer;
+}
+.tab.on { background: var(--accent); color: #0b1016; border-color: var(--accent); font-weight: 600; }
+
+/* -------------------------------------------------------------- table --- */
+.tablewrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); }
+table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+thead th {
+  background: var(--card2);
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--muted);
+  cursor: pointer;
+  white-space: nowrap;
+}
+tbody tr:hover { background: #1f2531; }
+tbody tr:last-child td { border-bottom: none; }
+table.kv { font-size: 13.5px; }
+table.kv th {
+  width: 220px;
+  color: var(--muted);
+  font-weight: 500;
+  cursor: default;
+  background: transparent;
+  position: static;
+  border-bottom: 1px solid var(--line);
+  text-transform: none;
+  letter-spacing: 0;
+}
+table.kv td { border-bottom: 1px solid var(--line); }
+
+/* -------------------------------------------------------------- chips --- */
+.chip {
+  display: inline-block;
+  font-size: 11.5px;
+  padding: 1px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  white-space: nowrap;
+}
+.chip.ok { color: var(--ok); border-color: rgba(126, 224, 184, .45); }
+.chip.warn { color: var(--warn); border-color: rgba(255, 194, 102, .45); }
+.chip.bad { color: var(--bad); border-color: rgba(255, 143, 143, .45); }
+.chip.info { color: var(--info); border-color: rgba(159, 196, 255, .45); }
+.chip.soft { background: var(--card2); }
+
+ul.notes { margin: 6px 0 0; padding-left: 18px; color: var(--muted); font-size: 13px; }
+ul.notes li { margin: 3px 0; }
+
+/* ------------------------------------------------------------- days ----- */
+.daylist { display: flex; flex-direction: column; gap: 10px; }
+.day { margin: 0; }
+.day-head { display: flex; align-items: baseline; gap: 10px; margin-bottom: 8px; }
+.day-date strong { font-size: 15px; }
+.slots { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 10px; }
+.slot {
+  background: var(--card2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 11px 13px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 12px;
+  align-items: start;
+}
+.slot .chip { grid-column: 1 / -1; justify-self: start; }
+.slot-time { font-weight: 700; font-size: 16px; }
+.slot-name { font-size: 14px; }
+.slot-name a { color: var(--fg); }
+.slot-name a:hover { color: var(--accent); }
+.slot-nums, .slot-meta { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 10px; font-size: 12.5px; color: var(--muted); }
+.slot-meta { flex-direction: column; gap: 3px; }
+.slot.empty { color: var(--muted); }
+
+/* ------------------------------------------------------------ hotels ---- */
+.hotel h3 { display: flex; flex-wrap: wrap; gap: 8px; align-items: baseline; }
+.entryrow { display: flex; gap: 8px; align-items: center; margin-bottom: 7px; }
+.entryrow select { flex: 1; background: var(--bg2); color: var(--fg); border: 1px solid var(--line); border-radius: 7px; padding: 6px 8px; font-size: 13px; }
+.entrycost { min-width: 70px; text-align: right; font-variant-numeric: tabular-nums; }
+
+details { margin: 8px 0 0; }
+summary { cursor: pointer; color: var(--accent); font-size: 13px; }
+
+/* --------------------------------------------------------- markdown ----- */
+#content h1 { font-size: 21px; margin-top: 18px; }
+#content h2 { font-size: 17px; border-bottom: 1px solid var(--line); padding-bottom: 5px; }
+#content h3 { font-size: 15px; margin-top: 16px; }
+#content table { margin: 10px 0; }
+#content thead th { position: static; }
+#content ul, #content ol { padding-left: 20px; }
+#content li { margin: 4px 0; }
+#content hr { border: none; border-top: 1px solid var(--line); margin: 18px 0; }
+#content blockquote { border-left: 3px solid var(--line); padding-left: 12px; color: var(--muted); margin: 10px 0; }
+
+@media (max-width: 720px) {
+  main { padding: 14px 12px 50px; }
+  h1 { font-size: 22px; }
+  table.kv th { width: auto; }
+}
+
+</style>
+</head>
+<body data-page="daily">
+<div id="site-header"></div>
+<main>
+<h1>Official daily poker-room schedules</h1>
+<p class="lead">A live feed scraped from the official daily poker-room pages and posters. Each row names
+the document it came from and the moment it was retrieved.</p>
+<div class="toolbar">
+  <label class="field"><span>Search</span><input id="q" type="search" placeholder="Event, venue, format"></label>
+  <label class="field"><span>Venue</span><select id="venue"></select></label>
+  <span id="count" class="small count"></span>
+  <button id="reset" type="button" class="btn">Reset</button>
+</div>
+<div class="card callout" id="note"></div>
+<div id="content"></div>
+</main>
+<footer id="site-footer"></footer>
+<script>
+/* Shared site logic. Data is read from JSON and Markdown files in the repo.
+   Every path is relative so the site works under a GitHub Pages project URL. */
+(function () {
+  "use strict";
+
+  var IN_PAGES = /\/pages\//.test(location.pathname);
+  var BASE = IN_PAGES ? "../" : "./";
+
+  var NAV = [
+    ["index.html", "Home"],
+    ["pages/single-entry.html", "Single entry"],
+    ["pages/other-formats.html", "Separate formats"],
+    ["pages/unverified.html", "Unverified"],
+    ["pages/schedule.html", "Schedule"],
+    ["pages/venues.html", "Venues"],
+    ["pages/hotels.html", "Hotels"],
+    ["pages/hotel-rates.html", "Hotel rate log"],
+    ["pages/cost.html", "Trip cost"],
+    ["pages/daily.html", "Daily feed"],
+    ["pages/summary.html", "Executive summary"],
+    ["pages/questions.html", "Questions"],
+    ["pages/suggestions.html", "Suggestions"],
+    ["pages/flagged.html", "Flagged for review"],
+    ["pages/irregularities.html", "Irregularity log"],
+    ["pages/sources.html", "Official sources"],
+    ["pages/review.html", "Repo review"]
+  ];
+
+  /* ------------------------------------------------------------ helpers -- */
+  function esc(s) {
+    return String(s == null ? "" : s)
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+  function money(v) {
+    if (v == null || v === "") return '<span class="muted">blank</span>';
+    return "$" + Number(v).toLocaleString("en-US");
+  }
+  function pct(v) {
+    if (v == null) return '<span class="muted">n/a</span>';
+    return Number(v).toFixed(2).replace(/\.?0+$/, "") + "%";
+  }
+  function mult(v) {
+    if (v == null) return '<span class="muted">n/a</span>';
+    return Number(v).toLocaleString("en-US") + "×";
+  }
+  function dateFmt(iso) {
+    if (!iso) return '<span class="muted">blank</span>';
+    var d = new Date(iso + "T12:00:00Z");
+    return d.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric", year: "numeric", timeZone: "UTC" });
+  }
+  function timeFmt(hhmm) {
+    if (!hhmm) return "";
+    var p = hhmm.split(":"), h = +p[0], m = p[1];
+    var ap = h >= 12 ? "PM" : "AM";
+    var hh = h % 12 === 0 ? 12 : h % 12;
+    return hh + ":" + m + " " + ap;
+  }
+  function weekday(iso) {
+    if (!iso) return "";
+    return new Date(iso + "T12:00:00Z").toLocaleDateString("en-US", { weekday: "short", timeZone: "UTC" });
+  }
+  function blank(s) { return s == null || s === ""; }
+
+  function statusChip(s) {
+    if (s === "SE") return '<span class="chip ok">Single entry (verified)</span>';
+    if (s === "MULTI") return '<span class="chip warn">Multiple entries possible</span>';
+    if (s === "RE") return '<span class="chip bad">Re-entry offered</span>';
+    if (s === "RESTART") return '<span class="chip info">Day 2 restart (no new entry)</span>';
+    return '<span class="chip warn">Unverified</span>';
+  }
+  function tagChips(tags) {
+    if (!tags || !tags.length) return "";
+    return tags.map(function (t) {
+      return '<span class="chip soft">' + esc(String(t).replace(/_/g, " ")) + "</span>";
+    }).join(" ");
+  }
+  function srcLinks(sources) {
+    return (sources || []).map(function (s) {
+      return '<a href="' + esc(s.url) + '" target="_blank" rel="noopener">' + esc(s.label) + "</a>";
+    }).join("<br>");
+  }
+  function noteList(notes) {
+    if (!notes || !notes.length) return "";
+    return '<ul class="notes">' + notes.map(function (n) { return "<li>" + esc(n) + "</li>"; }).join("") + "</ul>";
+  }
+
+  function getJSON(path) {
+    return fetch(BASE + path, { cache: "no-cache" }).then(function (r) {
+      if (!r.ok) throw new Error("Could not load " + path + " (" + r.status + ")");
+      return r.json();
+    });
+  }
+  function getText(path) {
+    return fetch(BASE + path, { cache: "no-cache" }).then(function (r) {
+      if (!r.ok) throw new Error("Could not load " + path + " (" + r.status + ")");
+      return r.text();
+    });
+  }
+
+  /* ------------------------------------------------------- markdown ------ */
+  function mdToHtml(md) {
+    var lines = md.split(/\r?\n/);
+    var out = [], i = 0, listType = null;
+    function closeList() {
+      if (listType) { out.push(listType === "ul" ? "</ul>" : "</ol>"); listType = null; }
+    }
+    function inline(t) {
+      t = esc(t);
+      t = t.replace(/\[([^\]]+)\]\(([^)]+)\)/g, function (m, label, url) {
+        return '<a href="' + url + '" target="_blank" rel="noopener">' + label + "</a>";
+      });
+      t = t.replace(/`([^`]+)`/g, "<code>$1</code>");
+      t = t.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+      t = t.replace(/(^|[^*])\*([^*]+)\*/g, "$1<em>$2</em>");
+      return t;
+    }
+    while (i < lines.length) {
+      var line = lines[i];
+      if (/^\s*$/.test(line)) { closeList(); i++; continue; }
+      var m;
+      if ((m = line.match(/^(#{1,6})\s+(.*)$/))) {
+        closeList();
+        var lvl = m[1].length;
+        out.push("<h" + lvl + ">" + inline(m[2]) + "</h" + lvl + ">");
+        i++; continue;
+      }
+      if (/^\s*([-*_])\1{2,}\s*$/.test(line)) { closeList(); out.push("<hr>"); i++; continue; }
+      if (/^\|/.test(line)) {
+        closeList();
+        var rows = [];
+        while (i < lines.length && /^\|/.test(lines[i])) { rows.push(lines[i]); i++; }
+        var cells = rows.map(function (r) {
+          return r.replace(/^\|/, "").replace(/\|$/, "").split("|").map(function (c) { return c.trim(); });
+        });
+        var head = cells[0], body = cells.slice(1).filter(function (r) {
+          return !r.every(function (c) { return /^:?-{2,}:?$/.test(c); });
+        });
+        var h = "<table><thead><tr>" + head.map(function (c) { return "<th>" + inline(c) + "</th>"; }).join("") + "</tr></thead><tbody>";
+        body.forEach(function (r) {
+          h += "<tr>" + r.map(function (c) { return "<td>" + inline(c) + "</td>"; }).join("") + "</tr>";
+        });
+        out.push(h + "</tbody></table>");
+        continue;
+      }
+      if ((m = line.match(/^\s*[-*]\s+(.*)$/))) {
+        if (listType !== "ul") { closeList(); out.push("<ul>"); listType = "ul"; }
+        out.push("<li>" + inline(m[1]) + "</li>");
+        i++; continue;
+      }
+      if ((m = line.match(/^\s*\d+[.)]\s+(.*)$/))) {
+        if (listType !== "ol") { closeList(); out.push("<ol>"); listType = "ol"; }
+        out.push("<li>" + inline(m[1]) + "</li>");
+        i++; continue;
+      }
+      closeList();
+      out.push("<p>" + inline(line) + "</p>");
+      i++;
+    }
+    closeList();
+    return out.join("\n");
+  }
+
+  /* ------------------------------------------------------- header/footer - */
+  function renderChrome() {
+    var here = location.pathname.split("/").pop() || "index.html";
+    var nav = NAV.map(function (n) {
+      var active = n[0] === here ? ' class="active"' : "";
+      return '<a href="' + (IN_PAGES ? "../" : "./") + n[0] + '"' + active + ">" + esc(n[1]) + "</a>";
+    }).join("");
+    var header = document.getElementById("site-header");
+    if (header) {
+      header.innerHTML =
+        '<div class="topbar"><div class="brand"><a href="' + (IN_PAGES ? "../" : "./") + 'index.html">Las Vegas Strip Poker Plan</a>' +
+        '<span class="tag">official sources only</span></div><nav>' + nav + "</nav></div>";
+    }
+    var footer = document.getElementById("site-footer");
+    if (footer) {
+      footer.innerHTML =
+        '<div class="footer-inner"><p>Built from official resort and tournament-room documents. ' +
+        "Blank values are unconfirmed, never inferred. Every row links to the document it was read from.</p>" +
+        '<p class="small">Sources last read 2026-11-16. Confirm any price, fee or time with the property before booking. ' +
+        'This planner is informational and is not affiliated with any resort.</p></div>';
+    }
+  }
+
+  /* ---------------------------------------------------------- data cache - */
+  var D = {};
+  function loadAll() {
+    var jobs = [
+      getJSON("data/tournaments.json").then(function (d) { D.tournaments = d.rows; }),
+      getJSON("data/hotels.json").then(function (d) { D.hotels = d.rows; D.hotelsMeta = d; }),
+      getJSON("data/hotel_rates.json").then(function (d) { D.rates = d; }),
+      getJSON("data/schedule.json").then(function (d) { D.schedule = d; }),
+      getJSON("data/venues.json").then(function (d) { D.venues = d.venues; }),
+      getJSON("data/walking.json").then(function (d) { D.walking = d; }),
+      getJSON("data/source_registry.json").then(function (d) { D.registry = d; }),
+      getJSON("data/source_changes.json").then(function (d) { D.changes = d; }).catch(function () { D.changes = null; })
+    ];
+    return Promise.all(jobs);
+  }
+
+  /* ------------------------------------------------------- toolbar state - */
+  function readToolbar() {
+    var st = {
+      q: (document.getElementById("q") || {}).value || "",
+      from: (document.getElementById("from") || {}).value || "",
+      to: (document.getElementById("to") || {}).value || "",
+      venue: (document.getElementById("venue") || {}).value || "",
+      format: (document.getElementById("format") || {}).value || "",
+      seOnly: !!(document.getElementById("seOnly") || {}).checked
+    };
+    return st;
+  }
+  function wireToolbar(onChange) {
+    ["q", "from", "to", "venue", "format", "seOnly"].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      el.addEventListener("input", onChange);
+      el.addEventListener("change", onChange);
+    });
+    var reset = document.getElementById("reset");
+    if (reset) {
+      reset.addEventListener("click", function () {
+        ["q", "from", "to"].forEach(function (id) { var e = document.getElementById(id); if (e) e.value = ""; });
+        ["venue", "format"].forEach(function (id) { var e = document.getElementById(id); if (e) e.value = ""; });
+        var s = document.getElementById("seOnly"); if (s) s.checked = false;
+        var w = document.getElementById("walkOnly"); if (w) w.checked = false;
+        onChange();
+      });
+    }
+  }
+  var FORMAT_LABELS = {
+    "plain": "Plain freezeout (no bounty, satellite or team format)",
+    "bounty": "Bounty",
+    "pko": "Progressive knockout",
+    "satellite": "Satellite",
+    "milestone": "Milestone satellite",
+    "tag_team": "Tag team",
+    "multi_flight": "Multi-flight",
+    "day1_payout": "Day-one payouts, several flights advance",
+    "subsequent_buy_in": "Subsequent buy-in allowed",
+    "reentry": "Re-entry offered",
+    "title_event": "Title event",
+    "turbo": "Turbo",
+    "ladies": "Ladies",
+    "seniors": "Seniors",
+    "two_day": "Runs over two days"
+  };
+  function fillFormats(select) {
+    if (!select) return;
+    var seen = {};
+    (D.tournaments || []).forEach(function (r) {
+      (r.format_tags || []).forEach(function (t) { seen[t] = true; });
+    });
+    var opts = '<option value="">Any format</option><option value="plain">Plain freezeout (no bounty, satellite or team format)</option>';
+    Object.keys(seen).sort().forEach(function (t) {
+      opts += '<option value="' + esc(t) + '">' + esc(FORMAT_LABELS[t] || t.replace(/_/g, " ")) + "</option>";
+    });
+    select.innerHTML = opts;
+  }
+  function matchesFormat(r, fmt) {
+    if (!fmt) return true;
+    var tags = r.format_tags || [];
+    if (fmt === "plain") {
+      return tags.indexOf("bounty") === -1 && tags.indexOf("pko") === -1 &&
+             tags.indexOf("satellite") === -1 && tags.indexOf("milestone") === -1 &&
+             tags.indexOf("tag_team") === -1;
+    }
+    return tags.indexOf(fmt) !== -1;
+  }
+  function fillVenues(select, includeAll) {
+    if (!select || !D.venues) return;
+    var opts = includeAll ? '<option value="">All venues</option>' : "";
+    D.venues.forEach(function (v) {
+      opts += '<option value="' + esc(v.id) + '">' + esc(v.name) + "</option>";
+    });
+    select.innerHTML = opts;
+  }
+  function matches(r, st) {
+    if (st.from && (!r.date || r.date < st.from)) return false;
+    if (st.to && (!r.date || r.date > st.to)) return false;
+    if (st.venue && r.venue !== st.venue) return false;
+    if (st.seOnly && r.entry_status !== "SE") return false;
+    if (!matchesFormat(r, st.format)) return false;
+    if (st.q) {
+      var hay = [r.name, r.series, r.venue_name, r.entry_rule, r.section_reason, r.format_note, r.excerpt,
+                 (r.notes || []).join(" "), (r.format_tags || []).join(" "),
+                 r.buy_in_usd, r.guarantee_usd].join(" ").toLowerCase();
+      if (hay.indexOf(st.q.toLowerCase()) === -1) return false;
+    }
+    return true;
+  }
+
+  /* ------------------------------------------------- tournament table ---- */
+  var COLS = [
+    { key: "date", label: "Date", get: function (r) { return r.date; },
+      fmt: function (r) { return r.date ? dateFmt(r.date) + ' <span class="muted">' + weekday(r.date) + "</span>" : '<span class="muted">recurring</span>'; },
+      sort: function (r) { return r.date || "9999"; } },
+    { key: "start", label: "Start", get: function (r) { return r.start; },
+      fmt: function (r) { return timeFmt(r.start); }, sort: function (r) { return r.start; } },
+    { key: "name", label: "Event", get: function (r) { return r.name; },
+      fmt: function (r) {
+        return '<strong>' + esc(r.name) + "</strong><br>" +
+          '<span class="muted small">' + esc(r.series) + " · " + esc(r.venue_name) + "</span>" +
+          (r.format_tags && r.format_tags.length ? "<br>" + tagChips(r.format_tags) : "");
+      },
+      sort: function (r) { return (r.name || "").toLowerCase(); } },
+    { key: "buy", label: "Buy-in", get: function (r) { return r.buy_in_usd; },
+      fmt: function (r) { return money(r.buy_in_usd); }, sort: function (r) { return r.buy_in_usd || 0; } },
+    { key: "fee", label: "House fee", get: function (r) { return r.house_fee_usd; },
+      fmt: function (r) { return money(r.house_fee_usd) + "<br>" + pct(r.house_fee_pct); },
+      sort: function (r) { return r.house_fee_usd || 0; } },
+    { key: "pool", label: "Prize pool", get: function (r) { return r.prize_pool_usd; },
+      fmt: function (r) { return money(r.prize_pool_usd); }, sort: function (r) { return r.prize_pool_usd || 0; } },
+    { key: "gtd", label: "Guarantee", get: function (r) { return r.guarantee_usd; },
+      fmt: function (r) {
+        if (r.guarantee_usd == null) return '<span class="muted">not printed</span>';
+        return money(r.guarantee_usd) + (r.guarantee_note ? '<br><span class="muted small">' + esc(r.guarantee_note) + "</span>" : "");
+      },
+      sort: function (r) { return r.guarantee_usd || 0; } },
+    { key: "ratio", label: "GTD ÷ buy-in", get: function (r) { return r.gtd_multiple; },
+      fmt: function (r) { return mult(r.gtd_multiple); }, sort: function (r) { return r.gtd_multiple || 0; } },
+    { key: "stack", label: "Stack / level", get: function (r) { return r.starting_stack_chips; },
+      fmt: function (r) {
+        if (!r.starting_stack_chips) return '<span class="muted">n/a</span>';
+        return r.starting_stack_chips.toLocaleString("en-US") + " chips<br>" +
+          '<span class="muted small">' + (r.level_minutes ? r.level_minutes + "-minute levels" : "level length not printed") + "</span>";
+      },
+      sort: function (r) { return r.starting_stack_chips || 0; } },
+    { key: "late", label: "Late registration", get: function (r) { return r.late_registration_time; },
+      fmt: function (r) {
+        if (!r.late_registration) return '<span class="muted">n/a</span>';
+        return esc(r.late_registration);
+      },
+      sort: function (r) { return r.late_registration_time || "99:99"; } },
+    { key: "entry", label: "Entry rule", get: function (r) { return r.entry_status; },
+      fmt: function (r) { return statusChip(r.entry_status) + (r.reentry_cutoff ? '<br><span class="muted small">re-entry until ' + esc(r.reentry_cutoff) + "</span>" : ""); },
+      sort: function (r) { return r.entry_status; } },
+    { key: "src", label: "Official source", get: function (r) { return ""; },
+      fmt: function (r) { return srcLinks(r.sources); }, sort: function () { return ""; } }
+  ];
+
+  var sortState = { key: "gtd", dir: -1 };
+
+  function renderTable(rows, opts) {
+    opts = opts || {};
+    var wrap = document.createElement("div");
+    wrap.className = "tablewrap";
+    var t = document.createElement("table");
+    var head = "<thead><tr>";
+    COLS.forEach(function (c) {
+      if (opts.hide && opts.hide.indexOf(c.key) !== -1) return;
+      var arrow = sortState.key === c.key ? (sortState.dir === 1 ? " ▲" : " ▼") : "";
+      head += '<th data-sort="' + c.key + '">' + esc(c.label) + arrow + "</th>";
+    });
+    head += "</tr></thead><tbody>";
+    var sorted = rows.slice().sort(function (a, b) {
+      var col = null;
+      for (var i = 0; i < COLS.length; i++) if (COLS[i].key === sortState.key) col = COLS[i];
+      if (!col) return 0;
+      var x = col.sort(a), y = col.sort(b);
+      if (x === y) return 0;
+      return (x > y ? 1 : -1) * sortState.dir;
+    });
+    sorted.forEach(function (r) {
+      head += "<tr>";
+      COLS.forEach(function (c) {
+        if (opts.hide && opts.hide.indexOf(c.key) !== -1) return;
+        head += "<td>" + c.fmt(r) + "</td>";
+      });
+      head += "</tr>";
+    });
+    t.innerHTML = head + "</tbody></table>";
+    wrap.appendChild(t);
+    wrap.querySelectorAll("th[data-sort]").forEach(function (th) {
+      th.addEventListener("click", function () {
+        var k = th.getAttribute("data-sort");
+        if (sortState.key === k) sortState.dir = -sortState.dir;
+        else { sortState.key = k; sortState.dir = -1; }
+        if (opts.onSort) opts.onSort();
+      });
+    });
+    return wrap;
+  }
+
+  function setCount(el, n, total) {
+    if (!el) return;
+    el.textContent = n === total ? n + " rows" : n + " of " + total + " rows";
+  }
+
+  /* ----------------------------------------------------------- page impls */
+  function pageKpis() {
+    var el = document.getElementById("kpis");
+    if (!el) return;
+    var t = D.tournaments || [];
+    var se = t.filter(function (r) { return r.section === "single"; });
+    var other = t.filter(function (r) { return r.section === "other"; });
+    var unv = t.filter(function (r) { return r.entry_status === "UNV"; });
+    var days = (D.schedule && D.schedule.days) || [];
+    var gtdMax = se.filter(function (r) { return r.guarantee_usd; })
+      .sort(function (a, b) { return b.guarantee_usd - a.guarantee_usd; })[0];
+    var cards = [
+      ["Tournament rows", t.length, "every official schedule row in this plan"],
+      ["Confirmed single-entry freezeouts", se.length, "structure sheet read, no re-entry or add-on clause"],
+      ["Other formats", other.length, "re-entry, multi-flight, bounty, satellite, team and unverified"],
+      ["Schedule days", days.length, "one primary and a fallback where one is possible"],
+      ["Venues", (D.venues || []).length, "poker rooms on the Strip"],
+      ["Hotels", (D.hotels || []).length, "resort fee and tax confirmed from official terms"]
+    ];
+    if (gtdMax) {
+      cards.push(["Largest confirmed guarantee", money(gtdMax.guarantee_usd),
+        esc(gtdMax.name) + " · " + dateFmt(gtdMax.date)]);
+    }
+    el.innerHTML = cards.map(function (c) {
+      return '<div class="card kpi"><div class="kpi-value">' + c[1] + "</div><div class=\"kpi-label\">" +
+        esc(c[0]) + '</div><div class="small muted">' + c[2] + "</div></div>";
+    }).join("");
+  }
+
+  function pageTournamentList(filterFn, hideCols) {
+    var content = document.getElementById("content");
+    if (!content) return;
+    var total = (D.tournaments || []).length;
+    function draw() {
+      var st = readToolbar();
+      var rows = (D.tournaments || []).filter(filterFn).filter(function (r) { return matches(r, st); });
+      content.innerHTML = "";
+      content.appendChild(renderTable(rows, { hide: hideCols, onSort: draw }));
+      setCount(document.getElementById("count"), rows.length, total);
+    }
+    fillVenues(document.getElementById("venue"), true);
+    fillFormats(document.getElementById("format"));
+    wireToolbar(draw);
+    draw();
+  }
+
+  function pageOtherFormats() {
+    var content = document.getElementById("content");
+    var tabs = document.getElementById("formatTabs");
+    if (!content) return;
+    var GROUPS = [
+      ["all", "Everything separated"],
+      ["MULTI", "Multiple entries allowed"],
+      ["RE", "Re-entry offered"],
+      ["RESTART", "Day 2 continuations"],
+      ["UNV", "Entry rule unverified"]
+    ];
+    var active = "all";
+    function groupOf(r) {
+      if (r.entry_status === "MULTI") return "MULTI";
+      if (r.entry_status === "RE") return "RE";
+      if (r.entry_status === "RESTART") return "RESTART";
+      if (r.entry_status === "UNV") return "UNV";
+      return "all";
+    }
+    function draw() {
+      var st = readToolbar();
+      if (tabs) {
+        tabs.innerHTML = GROUPS.map(function (g) {
+          return '<button type="button" class="tab' + (g[0] === active ? " on" : "") +
+            '" data-g="' + g[0] + '">' + esc(g[1]) + "</button>";
+        }).join("");
+        tabs.querySelectorAll("[data-g]").forEach(function (b) {
+          b.addEventListener("click", function () { active = b.getAttribute("data-g"); draw(); });
+        });
+      }
+      var all = (D.tournaments || []).filter(function (r) { return r.section === "other"; });
+      var rows = all.filter(function (r) { return active === "all" || groupOf(r) === active; })
+        .filter(function (r) { return matches(r, st); });
+      content.innerHTML = "";
+      content.appendChild(renderTable(rows, { onSort: draw }));
+      setCount(document.getElementById("count"), rows.length, all.length);
+    }
+    fillVenues(document.getElementById("venue"), true);
+    fillFormats(document.getElementById("format"));
+    wireToolbar(draw);
+    draw();
+  }
+
+  function pageSchedule() {
+    var content = document.getElementById("content");
+    if (!content) return;
+    var note = document.getElementById("note");
+    if (note && D.schedule) {
+      note.innerHTML = "<strong>How a day is chosen.</strong> " + esc(D.schedule.method) +
+        "<br><br><strong>Overlap test.</strong> " + esc(D.schedule.overlap_rule || "");
+    }
+    function draw() {
+      var st = readToolbar();
+      var days = (D.schedule && D.schedule.days) || [];
+      var shown = days.filter(function (d) {
+        if (st.from && d.date < st.from) return false;
+        if (st.to && d.date > st.to) return false;
+        if (st.q) {
+          var hay = (d.primary.name + " " + d.primary.series + " " + d.primary.venue_name +
+            (d.fallback ? " " + d.fallback.name + " " + d.fallback.series : "")).toLowerCase();
+          if (hay.indexOf(st.q.toLowerCase()) === -1) return false;
+        }
+        if (st.seOnly && d.primary.entry_status !== "SE") return false;
+        return true;
+      });
+      var html = '<div class="daylist">';
+      shown.forEach(function (d) {
+        html += '<div class="card day"><div class="day-head"><div class="day-date"><strong>' +
+          esc(dateFmt(d.date)) + "</strong><span class=\"muted small\">" + esc(weekday(d.date)) +
+          "</span></div></div>";
+        html += '<div class="slots">';
+        html += slotHtml(d.primary, "Primary");
+        if (d.fallback) html += slotHtml(d.fallback, "Conditional fallback");
+        else html += '<div class="slot empty"><span class="chip soft">No fallback</span>' +
+          '<span class="muted small">No non-overlapping alternative with a confirmed fee and guarantee was published for this date.</span></div>';
+        html += "</div>";
+        if (d.notes && d.notes.length) html += noteList(d.notes);
+        html += "</div>";
+      });
+      html += "</div>";
+      content.innerHTML = html;
+      setCount(document.getElementById("count"), shown.length, days.length);
+    }
+    wireToolbar(draw);
+    draw();
+  }
+
+  function slotHtml(s, label) {
+    if (!s) return "";
+    return '<div class="slot"><span class="chip ' + (s.section === "single" ? "ok" : "warn") + '">' + esc(label) + "</span>" +
+      '<div class="slot-time">' + esc(s.start_label) + "</div>" +
+      '<div class="slot-name"><a href="venue-' + esc(s.venue) + '.html">' + esc(s.name) + "</a>" +
+      '<span class="muted small">' + esc(s.series) + " · " + esc(s.venue_name) + "</span></div>" +
+      '<div class="slot-nums"><span>Buy-in ' + money(s.buy_in_usd) + "</span>" +
+      '<span>Fee ' + money(s.house_fee_usd) + "</span>" +
+      '<span>Guarantee ' + money(s.guarantee_usd) + "</span>" +
+      '<span>GTD ÷ buy-in ' + mult(s.gtd_multiple) + "</span></div>" +
+      '<div class="slot-meta"><span class="muted small">Late registration: ' +
+      (s.late_registration ? esc(s.late_registration) : "not printed") + "</span>" +
+      '<br><span class="muted small">Stack: ' +
+      (s.starting_stack_chips ? s.starting_stack_chips.toLocaleString("en-US") + " chips, " : "not printed ") +
+      (s.level_minutes ? s.level_minutes + "-minute levels" : "") + "</span>" +
+      '<br>' + statusChip(s.entry_status) + ' <span class="muted small">' + esc(s.section_reason) + "</span>" +
+      '<br><a class="small" href="' + esc(s.source) + '" target="_blank" rel="noopener">' + esc(s.source_label) + "</a></div></div>";
+  }
+
+  function pageVenues() {
+    var content = document.getElementById("content");
+    if (!content) return;
+    var html = '<div class="grid">';
+    (D.venues || []).forEach(function (v) {
+      html += '<a class="card tile" href="venue-' + esc(v.id) + '.html"><h3>' + esc(v.name) + "</h3>" +
+        '<p class="muted small">' + esc(v.address) + "</p>" +
+        '<p><strong>' + v.event_count + "</strong> events · <strong>" + v.single_entry_count +
+        "</strong> confirmed single-entry</p>" +
+        '<p class="small">' + esc(v.series.join(" · ")) + "</p></a>";
+    });
+    html += "</div>";
+    content.innerHTML = html;
+  }
+
+  function pageVenue() {
+    var content = document.getElementById("content");
+    if (!content) return;
+    var id = document.body.getAttribute("data-venue") || "";
+    var venue = (D.venues || []).filter(function (v) { return v.id === id; })[0];
+    var note = document.getElementById("venueNote");
+    var stats = document.getElementById("venueStats");
+    if (!venue) {
+      if (note) note.textContent = "Venue not found.";
+      return;
+    }
+    if (note) {
+      note.innerHTML = "<strong>Poker room.</strong> " + esc(venue.poker_room) +
+        '<br><br><strong>Sources.</strong><br>' + srcLinks(venue.sources);
+    }
+    var rows = (D.tournaments || []).filter(function (r) { return r.venue === venue.id; });
+    var se = rows.filter(function (r) { return r.section === "single"; });
+    if (stats) {
+      stats.innerHTML = [
+        ["Events listed", rows.length],
+        ["Confirmed single-entry freezeouts", se.length],
+        ["First date", venue.earliest_date ? dateFmt(venue.earliest_date) : "n/a"],
+        ["Last date", venue.latest_date ? dateFmt(venue.latest_date) : "n/a"]
+      ].map(function (c) {
+        return '<div class="card kpi"><div class="kpi-value">' + esc(c[1]) + '</div><div class="kpi-label">' + esc(c[0]) + "</div></div>";
+      }).join("");
+    }
+    var total = rows.length;
+    function draw() {
+      var st = readToolbar();
+      st.venue = venue.id;
+      var list = rows.filter(function (r) { return matches(r, st); });
+      content.innerHTML = "";
+      content.appendChild(renderTable(list, { onSort: draw }));
+      setCount(document.getElementById("count"), list.length, total);
+    }
+    fillVenues(document.getElementById("venue"), true);
+    fillFormats(document.getElementById("format"));
+    wireToolbar(draw);
+    draw();
+  }
+
+  function pageHotels() {
+    var content = document.getElementById("content");
+    if (!content) return;
+    var method = document.getElementById("method");
+    if (method && D.hotelsMeta) method.innerHTML = "<strong>How true cost is computed.</strong> " + esc(D.hotelsMeta.method);
+    var pairs = {};
+    (D.walking ? D.walking.pairs : []).forEach(function (p) { pairs[p.from + ">" + p.to] = p; });
+
+    function draw() {
+      var st = readToolbar();
+      var walkOnly = !!(document.getElementById("walkOnly") || {}).checked;
+      var html = "";
+      (D.hotels || []).forEach(function (h) {
+        var walk = st.venue ? pairs[h.id + ">" + st.venue] : null;
+        if (walkOnly && (!walk || walk.walk_minutes > 30)) return;
+        if (st.q) {
+          var hay = (h.name + " " + h.address + " " + h.quality + " " + (h.poker_rate_note || "")).toLowerCase();
+          if (hay.indexOf(st.q.toLowerCase()) === -1) return;
+        }
+        html += '<div class="card hotel"><h3>' + esc(h.name) +
+          ' <span class="muted small">' + esc(h.address) + "</span></h3>";
+        html += '<p class="small">' + esc(h.quality) + "</p>";
+        html += '<table class="kv"><tbody>';
+        html += kvRow("Mandatory resort fee", h.resort_fee_usd == null ? blankCell() : money(h.resort_fee_usd) + " + tax",
+          h.resort_fee_status === "verified" ? "verified" : "unverified", h.resort_fee_note);
+        html += kvRow("Room tax", h.room_tax_pct == null ? blankCell() : h.room_tax_pct + "%",
+          h.room_tax_status === "verified" ? "verified" : "unverified", h.room_tax_note);
+        html += kvRow("Tax-inclusive resort fee per night", h.tax_inclusive_resort_fee_usd == null ? blankCell() : money(h.tax_inclusive_resort_fee_usd),
+          h.tax_inclusive_resort_fee_usd == null ? "unverified" : "computed", h.tax_inclusive_resort_fee_note);
+        html += kvRow("Room rate for a stay", blankCell(), "unverified",
+          "No date-specific official room rate was confirmable. The rate log on the Hotel rate log page records " +
+          "the confirmed fee terms and leaves the rate blank until a dated quote is captured.");
+        html += kvRow("True nightly cost", blankCell(), "unverified", h.true_cost_note);
+        html += kvRow("Parking", h.parking_self_guest_usd == null ? blankCell() : money(h.parking_self_guest_usd) + " / day (registered guest)",
+          h.parking_status === "verified" ? "verified" : "unverified", h.parking_note);
+        html += kvRow("Cancellation deadline", h.cancellation_deadline_hours == null ? blankCell() : h.cancellation_deadline_hours + " hours before arrival",
+          h.cancellation_status === "unverified" ? "unverified" : h.cancellation_status.replace(/_/g, " "), h.cancellation_note);
+        html += kvRow("Occupancy", h.max_occupancy == null ? blankCell() : String(h.max_occupancy) + " guests",
+          h.max_occupancy == null ? "unverified" : "verified", h.max_occupancy_note +
+          (h.extra_guest_usd ? " Extra guest charge: " + money(h.extra_guest_usd) + ". " + (h.extra_guest_note || "") : ""));
+        html += kvRow("Check-in / check-out", h.check_in ? (h.check_in + " / " + (h.check_out || "?")) : blankCell(),
+          h.check_in ? "verified" : "unverified", h.check_in_note || "");
+        html += kvRow("Poker-player rate", h.poker_rate_usd_from ? "from " + money(h.poker_rate_usd_from) : blankCell(),
+          h.poker_rate_status === "verified_starting_rate" ? "verified starting rate" : "unverified", h.poker_rate_note);
+        if (walk) {
+          html += kvRow("Walk to " + esc(st.venue), walk.walk_minutes + " min (" + Math.round(walk.distance_m) + " m)",
+            "computed", walk.derived +
+            ' <br><a href="' + esc(walk.google_maps) + '" target="_blank" rel="noopener">Google Maps walk</a> · ' +
+            '<a href="' + esc(walk.apple_maps) + '" target="_blank" rel="noopener">Apple Maps walk</a>');
+        } else if (st.venue) {
+          html += kvRow("Walk to " + esc(st.venue), blankCell(), "unverified", "No computed route for this pair.");
+        }
+        html += "</tbody></table>";
+        html += '<p class="small"><a class="btn" href="' + esc(h.booking_url) + '" target="_blank" rel="noopener">' +
+          esc(h.booking_label) + "</a></p>";
+        html += '<details><summary>Official sources</summary>' + srcLinks(h.sources) + "</details>";
+        html += "</div>";
+      });
+      content.innerHTML = html || '<div class="card callout">No hotel matches the current filters.</div>';
+      var shown = content.querySelectorAll(".hotel").length;
+      setCount(document.getElementById("count"), shown, (D.hotels || []).length);
+    }
+    function blankCell() { return '<span class="muted">blank</span>'; }
+    function kvRow(label, value, status, note) {
+      var cls = status === "verified" ? "ok" : (status === "computed" ? "info" : "warn");
+      return "<tr><th>" + esc(label) + "</th><td>" + value +
+        ' <span class="chip ' + cls + '">' + esc(status) + "</span>" +
+        (note ? '<br><span class="muted small">' + note + "</span>" : "") + "</td></tr>";
+    }
+    fillVenues(document.getElementById("venue"), false);
+    wireToolbar(draw);
+    draw();
+  }
+
+  function pageHotelRates() {
+    var content = document.getElementById("content");
+    if (!content) return;
+    var method = document.getElementById("method");
+    if (method && D.rates) {
+      method.innerHTML = "<strong>Log format.</strong> " + esc(D.rates.log_format) +
+        "<br><br><strong>Comparison rule.</strong> " + esc(D.rates.comparison_rule);
+    }
+    function draw() {
+      var st = readToolbar();
+      var entries = (D.rates ? D.rates.entries : []).filter(function (e) {
+        if (!st.q) return true;
+        var hay = (e.hotel_name + " " + e.observed_on + " " + (e.room_rate_note || "") +
+          " " + (e.resort_fee_note || "") + " " + (e.cancellation_note || "")).toLowerCase();
+        return hay.indexOf(st.q.toLowerCase()) !== -1;
+      });
+      var html = '<div class="tablewrap"><table><thead><tr><th>Observed</th><th>Hotel</th><th>Stay</th>' +
+        "<th>Room rate</th><th>Resort fee</th><th>Room tax</th><th>Parking</th><th>Cancellation</th>" +
+        "<th>Occupancy</th><th>Checkout total</th><th>Nightly average</th><th>Rate timestamp</th><th>Sources</th></tr></thead><tbody>";
+      entries.forEach(function (e) {
+        html += "<tr><td>" + esc(e.observed_on) + "</td><td>" + esc(e.hotel_name) + "</td><td>" +
+          (e.check_in_date ? esc(e.check_in_date) + " → " + esc(e.check_out_date) : '<span class="muted">blank</span>') +
+          "</td><td>" + money(e.room_rate_usd) + ' <span class="chip warn">' + esc(e.room_rate_status) + "</span></td>" +
+          "<td>" + money(e.resort_fee_usd) + "</td><td>" + (e.room_tax_pct == null ? '<span class="muted">blank</span>' : e.room_tax_pct + "%") + "</td>" +
+          "<td>" + (e.parking_self_guest_usd == null ? '<span class="muted">blank</span>' : money(e.parking_self_guest_usd) + " guest") + "</td>" +
+          "<td>" + (e.cancellation_deadline_hours == null ? '<span class="muted">blank</span>' : e.cancellation_deadline_hours + " h") + "</td>" +
+          "<td>" + (e.max_occupancy == null ? '<span class="muted">blank</span>' : e.max_occupancy) + "</td>" +
+          "<td>" + money(e.checkout_total_usd) + "</td><td>" + money(e.nightly_average_usd) + "</td>" +
+          "<td>" + esc(e.rate_timestamp) + "</td><td>" + srcLinks(e.sources) + "</td></tr>";
+      });
+      html += "</tbody></table></div>";
+      content.innerHTML = html;
+      setCount(document.getElementById("count"), entries.length, (D.rates ? D.rates.entries.length : 0));
+    }
+    wireToolbar(draw);
+    draw();
+  }
+
+  function pageCost() {
+    var listEl = document.getElementById("entryList");
+    if (!listEl) return;
+    var hotelSel = document.getElementById("hotel");
+    var nightsEl = document.getElementById("nights");
+    var adultsEl = document.getElementById("adults");
+    var resultEl = document.getElementById("result");
+    var noteEl = document.getElementById("hotelNote");
+    var entries = [];
+
+    (D.hotels || []).forEach(function (h) {
+      hotelSel.innerHTML = (hotelSel.innerHTML || "") + '<option value="' + esc(h.id) + '">' + esc(h.name) + "</option>";
+    });
+
+    function pickableRows() {
+      return (D.tournaments || []).filter(function (r) {
+        return r.buy_in_usd != null && !r.is_restart;
+      }).sort(function (a, b) {
+        return (a.date || "9999") < (b.date || "9999") ? -1 : 1;
+      });
+    }
+
+    function drawEntries() {
+      var rows = pickableRows();
+      if (!entries.length) {
+        entries.push({ id: rows.length ? rows[0].id : null });
+      }
+      listEl.innerHTML = entries.map(function (e, i) {
+        var opts = '<option value="">(choose an event)</option>';
+        rows.forEach(function (r) {
+          var label = (r.date ? r.date + " " : "recurring ") + r.name + " · " + money(r.buy_in_usd);
+          opts += '<option value="' + esc(r.id) + '"' + (e.id === r.id ? " selected" : "") + ">" + esc(label) + "</option>";
+        });
+        return '<div class="entryrow"><select data-i="' + i + '">' + opts + "</select>" +
+          '<span class="entrycost" data-c="' + i + '"></span>' +
+          '<button type="button" class="btn small" data-rm="' + i + '">Remove</button></div>';
+      }).join("");
+      listEl.querySelectorAll("select[data-i]").forEach(function (sel) {
+        sel.addEventListener("change", function () {
+          entries[+sel.getAttribute("data-i")].id = sel.value;
+          compute();
+        });
+      });
+      listEl.querySelectorAll("button[data-rm]").forEach(function (b) {
+        b.addEventListener("click", function () {
+          entries.splice(+b.getAttribute("data-rm"), 1);
+          drawEntries();
+          compute();
+        });
+      });
+      compute();
+    }
+
+    function hotelOf(id) {
+      return (D.hotels || []).filter(function (h) { return h.id === id; })[0];
+    }
+
+    function compute() {
+      var rowById = {};
+      (D.tournaments || []).forEach(function (r) { rowById[r.id] = r; });
+      var tournamentTotal = 0, count = 0, lines = [];
+      entries.forEach(function (e, i) {
+        var r = rowById[e.id];
+        var cell = listEl.querySelector('[data-c="' + i + '"]');
+        if (r && r.buy_in_usd != null) {
+          tournamentTotal += r.buy_in_usd;
+          count++;
+          if (cell) cell.textContent = money(r.buy_in_usd);
+          lines.push({ name: r.name, date: r.date, buy: r.buy_in_usd, id: r.id });
+        } else if (cell) {
+          cell.textContent = "";
+        }
+      });
+      var h = hotelOf(hotelSel.value);
+      var nights = Math.max(1, parseInt(nightsEl.value || "1", 10));
+      var adults = Math.max(1, parseInt(adultsEl.value || "1", 10));
+      var hotelTotal = null;
+      if (h && h.true_cost_per_night_usd != null) hotelTotal = h.true_cost_per_night_usd * nights;
+      var html = "<h3>Estimated trip cost</h3>";
+      html += '<table class="kv"><tbody>';
+      html += "<tr><th>Tournament entries</th><td>" + count + " × buy-in = <strong>" +
+        (count ? money(tournamentTotal) : '<span class="muted">blank</span>') + "</strong></td></tr>";
+      html += "<tr><th>Hotel</th><td>" + (h ? esc(h.name) + " · " + nights + " night" + (nights === 1 ? "" : "s") : '<span class="muted">choose a property</span>') + "</td></tr>";
+      html += "<tr><th>True nightly cost</th><td>" +
+        (h && h.true_cost_per_night_usd != null ? money(h.true_cost_per_night_usd) + " per night" : '<span class="muted">blank</span>') +
+        "</td></tr>";
+      html += "<tr><th>Hotel total</th><td>" + (hotelTotal == null ? '<span class="muted">blank</span>' : money(hotelTotal)) + "</td></tr>";
+      html += "<tr><th>Estimated trip total</th><td><strong>" +
+        (hotelTotal == null ? '<span class="muted">blank until a dated room rate is confirmed</span>' : money(tournamentTotal + hotelTotal)) +
+        "</strong></td></tr>";
+      html += "</tbody></table>";
+      if (h) {
+        html += '<p class="small muted">' + esc(h.true_cost_note) + "</p>";
+        html += '<p class="small muted">Occupancy used: ' + adults + " adult" + (adults === 1 ? "" : "s") +
+          ". " + esc(h.extra_guest_note || "") + "</p>";
+      }
+      if (lines.length) {
+        html += '<details open><summary>Entries used</summary><ul class="notes">';
+        lines.forEach(function (l) {
+          html += "<li>" + (l.date ? esc(l.date) + " · " : "") + esc(l.name) + " · " + money(l.buy) + "</li>";
+        });
+        html += "</ul></details>";
+      }
+      resultEl.innerHTML = html;
+      if (noteEl && h) noteEl.textContent = h.poker_rate_note || "";
+    }
+
+    document.getElementById("addEntry").addEventListener("click", function () {
+      entries.push({ id: null });
+      drawEntries();
+    });
+    hotelSel.addEventListener("change", compute);
+    nightsEl.addEventListener("input", compute);
+    adultsEl.addEventListener("input", compute);
+    drawEntries();
+  }
+
+  function pageDaily() {
+    var content = document.getElementById("content");
+    if (!content) return;
+    getJSON("data/daily_feed.json").then(function (d) {
+      var note = document.getElementById("note");
+      if (note) {
+        note.innerHTML = "<strong>Feed status.</strong> Generated " + esc(d.generated_at || "unknown") +
+          ". " + esc(d.note || "") + "<br><br>Sources: " + srcLinks(d.sources);
+      }
+      function draw() {
+        var st = readToolbar();
+        var rows = (d.rows || []).filter(function (r) {
+          if (st.venue && r.venue !== st.venue) return false;
+          if (!st.q) return true;
+          var hay = (r.name + " " + (r.venue_name || "") + " " + (r.format || "") + " " + (r.notes || "")).toLowerCase();
+          return hay.indexOf(st.q.toLowerCase()) !== -1;
+        });
+        var html = '<div class="tablewrap"><table><thead><tr><th>Venue</th><th>When</th><th>Event</th>' +
+          "<th>Format</th><th>Buy-in</th><th>Stack</th><th>Guarantee</th><th>Entry rule</th><th>Source</th></tr></thead><tbody>";
+        rows.forEach(function (r) {
+          html += "<tr><td>" + esc(r.venue_name || r.venue) + "</td><td>" + esc(r.when || "") + "</td><td>" +
+            esc(r.name) + "</td><td>" + esc(r.format || "") + "</td><td>" + money(r.buy_in_usd) + "</td><td>" +
+            (r.stack_chips == null ? '<span class="muted">blank</span>' : r.stack_chips.toLocaleString("en-US")) +
+            "</td><td>" + money(r.guarantee_usd) + "</td><td>" + (r.entry_rule ? esc(r.entry_rule) : '<span class="muted">blank</span>') +
+            "</td><td><a href=\"" + esc(r.source) + "\" target=\"_blank\" rel=\"noopener\">" + esc(r.source_label || "source") + "</a></td></tr>";
+        });
+        html += "</tbody></table></div>";
+        content.innerHTML = html;
+        setCount(document.getElementById("count"), rows.length, (d.rows || []).length);
+      }
+      fillVenues(document.getElementById("venue"), true);
+      wireToolbar(draw);
+      draw();
+    }).catch(function (e) {
+      content.innerHTML = '<div class="card callout">The daily feed has not been generated yet. ' + esc(e.message) +
+        " Run <code>python3 scripts/scrape_daily.py</code> to build it.</div>";
+    });
+  }
+
+  function pageSources() {
+    var content = document.getElementById("content");
+    if (!content) return;
+    var status = {};
+    if (D.changes && D.changes.results) {
+      D.changes.results.forEach(function (r) { status[r.key] = r; });
+    }
+    var banner = "";
+    if (D.changes) {
+      banner = '<div class="card callout"><strong>Source watch.</strong> Last checked ' +
+        esc(D.changes.checked_at) + ": " + D.changes.total + " documents, " + D.changes.changed +
+        " changed, " + D.changes.failed + " could not be fetched. " +
+        "<span class=\"muted\">" + esc(D.changes.note) + "</span></div>";
+    } else {
+      banner = '<div class="card callout"><strong>Source watch.</strong> No source-watch run has been recorded yet. ' +
+        "The scheduled job writes its result to <code>data/source_changes.json</code>.</div>";
+    }
+    function chip(s) {
+      if (!s) return '<span class="chip soft">not yet checked</span>';
+      if (s.status === "unchanged") return '<span class="chip ok">unchanged</span>';
+      if (s.status === "changed") return '<span class="chip bad">changed</span>';
+      if (s.status === "baseline") return '<span class="chip info">baseline recorded</span>';
+      if (s.status === "error") return '<span class="chip warn" title="' + esc(s.error) + '">fetch failed</span>';
+      return '<span class="chip soft">' + esc(s.status) + "</span>";
+    }
+    function draw() {
+      var st = readToolbar();
+      var rows = (D.registry ? D.registry.sources : []).filter(function (s) {
+        if (!st.q) return true;
+        return (s.label + " " + s.url + " " + s.kind).toLowerCase().indexOf(st.q.toLowerCase()) !== -1;
+      });
+      var html = banner + '<div class="tablewrap"><table><thead><tr><th>Key</th><th>Document</th><th>Kind</th>' +
+        "<th>Re-check</th><th>Status</th><th>Checked</th><th>URL</th></tr></thead><tbody>";
+      rows.forEach(function (s) {
+        var stt = status[s.key];
+        html += "<tr><td><code>" + esc(s.key) + "</code></td><td>" + esc(s.label) + "</td><td>" + esc(s.kind) +
+          "</td><td>" + esc(s.cadence) + "</td><td>" + chip(stt) + "</td><td>" +
+          esc(stt ? stt.checked_at : "") + '</td><td><a href="' + esc(s.url) + '" target="_blank" rel="noopener">' +
+          esc(s.url) + "</a></td></tr>";
+      });
+      html += "</tbody></table></div>";
+      content.innerHTML = html;
+      setCount(document.getElementById("count"), rows.length, (D.registry ? D.registry.sources.length : 0));
+    }
+    wireToolbar(draw);
+    draw();
+  }
+
+  function pageMarkdown(file, target) {
+    var el = document.getElementById("content");
+    if (!el) return;
+    getText(file).then(function (t) {
+      el.innerHTML = mdToHtml(t);
+    }).catch(function (e) {
+      el.innerHTML = '<div class="card callout">Could not load ' + esc(file) + ": " + esc(e.message) + "</div>";
+    });
+  }
+
+  /* ------------------------------------------------------------- routing - */
+  function venueIdFromPath() {
+    var m = location.pathname.match(/venue-([a-z]+)\.html/);
+    return m ? m[1] : "";
+  }
+
+  function start() {
+    renderChrome();
+    var page = document.body.getAttribute("data-page");
+    var vid = venueIdFromPath();
+    if (vid) document.body.setAttribute("data-venue", vid);
+    var needsData = ["index", "singleEntry", "otherFormats", "unverified", "schedule", "venues",
+                     "venue", "hotels", "hotelRates", "cost", "sources", "daily"].indexOf(page) !== -1;
+    var ready = needsData ? loadAll() : Promise.resolve();
+    ready.then(function () {
+      switch (page) {
+        case "index": pageKpis(); break;
+        case "singleEntry":
+          pageTournamentList(function (r) { return r.section === "single"; });
+          break;
+        case "otherFormats": pageOtherFormats(); break;
+        case "unverified":
+          pageTournamentList(function (r) { return r.entry_status === "UNV"; });
+          break;
+        case "schedule": pageSchedule(); break;
+        case "venues": pageVenues(); break;
+        case "venue": pageVenue(); break;
+        case "hotels": pageHotels(); break;
+        case "hotelRates": pageHotelRates(); break;
+        case "cost": pageCost(); break;
+        case "sources": pageSources(); break;
+        case "daily": pageDaily(); break;
+        case "summary": pageMarkdown("EXECUTIVE_SUMMARY.md"); break;
+        case "questions": pageMarkdown("QUESTIONS.md"); break;
+        case "suggestions": pageMarkdown("SUGGESTIONS.md"); break;
+        case "flagged": pageMarkdown("FLAGGED.md"); break;
+        case "irregularities": pageMarkdown("IRREGULARITIES.md"); break;
+        case "review": pageMarkdown("REVIEW.md"); break;
+        default: break;
+      }
+    }).catch(function (e) {
+      var c = document.getElementById("content");
+      if (c) c.innerHTML = '<div class="card callout">Could not load the data: ' + esc(e.message) + "</div>";
+      else console.error(e);
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", start);
+  } else {
+    start();
+  }
+})();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+{
+ "verified_on": "2026-11-16",
+ "venues": [
+  {
+   "id": "venetian",
+   "name": "The Venetian Resort Las Vegas (DeepStack Poker Room)",
+   "address": "3355 Las Vegas Blvd S, Las Vegas, NV 89109",
+   "lat": 36.1217073,
+   "lon": -115.1693352,
+   "poker_room": "DeepStack Extravaganza is held in The Venetian Poker Room.",
+   "event_count": 143,
+   "single_entry_count": 80,
+   "earliest_date": "2026-11-16",
+   "latest_date": "2027-01-10",
+   "series": [
+    "Venetian DeepStack Extravaganza IV",
+    "Venetian DeepStack Extravaganza NYE"
+   ],
+   "sources": [
+    {
+     "label": "Venetian poker room (official)",
+     "url": "https://www.venetianlasvegas.com/resort/casino/poker.html"
+    },
+    {
+     "label": "Official street address (Clark County licence list)",
+     "url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:29eabec9-8db1-4deb-b66e-5bae28a89da2/original/as/transient-lodging-licenses-by-category-as-of-07-2021.pdf"
+    }
+   ]
+  },
+  {
+   "id": "wynn",
+   "name": "Wynn Las Vegas / Encore Poker Room",
+   "address": "3131 Las Vegas Blvd S, Las Vegas, NV 89109",
+   "lat": 36.1263781,
+   "lon": -115.165818,
+   "poker_room": "Official WPT terms: \"Players will register in the Wynn Las Vegas Poker Room, located in Encore at Wynn Las Vegas.\"",
+   "event_count": 118,
+   "single_entry_count": 0,
+   "earliest_date": "2026-11-27",
+   "latest_date": "2027-01-24",
+   "series": [
+    "WPT World Championship (Wynn)",
+    "Wynn Signature Series"
+   ],
+   "sources": [
+    {
+     "label": "Wynn poker room (official)",
+     "url": "https://www.wynnlasvegas.com/casino/poker"
+    },
+    {
+     "label": "Official WPT terms and conditions (official PDF)",
+     "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+    },
+    {
+     "label": "Official street address (Clark County licence list)",
+     "url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:29eabec9-8db1-4deb-b66e-5bae28a89da2/original/as/transient-lodging-licenses-by-category-as-of-07-2021.pdf"
+    }
+   ]
+  },
+  {
+   "id": "bellagio",
+   "name": "Bellagio Poker Room",
+   "address": "3600 Las Vegas Blvd S, Las Vegas, NV 89109",
+   "lat": 36.1123192,
+   "lon": -115.178723,
+   "poker_room": "Official Bellagio poker page: \"Location: Northside of Casino, next to Sportsbook\".",
+   "event_count": 3,
+   "single_entry_count": 0,
+   "earliest_date": null,
+   "latest_date": null,
+   "series": [
+    "Bellagio weekly poker room"
+   ],
+   "sources": [
+    {
+     "label": "Bellagio poker room (official)",
+     "url": "https://bellagio.mgmresorts.com/en/casino/poker.html"
+    },
+    {
+     "label": "Official street address (Clark County licence list)",
+     "url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:29eabec9-8db1-4deb-b66e-5bae28a89da2/original/as/transient-lodging-licenses-by-category-as-of-07-2021.pdf"
+    }
+   ]
+  },
+  {
+   "id": "aria",
+   "name": "ARIA Poker Room",
+   "address": "3730 Las Vegas Blvd S, Las Vegas, NV 89109",
+   "lat": 36.1070287,
+   "lon": -115.1779977,
+   "poker_room": "Official ARIA poker page: \"Location: East side of the casino floor, next to Main Valet Pick-up\".",
+   "event_count": 0,
+   "single_entry_count": 0,
+   "earliest_date": null,
+   "latest_date": null,
+   "series": [],
+   "sources": [
+    {
+     "label": "ARIA poker room (official)",
+     "url": "https://aria.mgmresorts.com/en/casino/poker.html"
+    },
+    {
+     "label": "Official street address (Clark County licence list)",
+     "url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:29eabec9-8db1-4deb-b66e-5bae28a89da2/original/as/transient-lodging-licenses-by-category-as-of-07-2021.pdf"
+    }
+   ]
+  },
+  {
+   "id": "caesars",
+   "name": "Caesars Palace (center Strip)",
+   "address": "3570 Las Vegas Blvd S, Las Vegas, NV 89109",
+   "lat": 36.1167079,
+   "lon": -115.1751896,
+   "poker_room": "No official Caesars poker-room tournament schedule for this series was located. Listed as a lodging option and walk reference only.",
+   "event_count": 0,
+   "single_entry_count": 0,
+   "earliest_date": null,
+   "latest_date": null,
+   "series": [],
+   "sources": [
+    {
+     "label": "Caesars Palace hotel (official)",
+     "url": "https://www.caesars.com/caesars-palace"
+    },
+    {
+     "label": "Official street address (Clark County licence list)",
+     "url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:29eabec9-8db1-4deb-b66e-5bae28a89da2/original/as/transient-lodging-licenses-by-category-as-of-07-2021.pdf"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,284 @@
+{
+ "generated_at": "2026-11-16T19:33:28+00:00",
+ "verified_on": "2026-11-16",
+ "note": "Official daily Strip poker-room schedules. The rows below were read directly from the official daily posters and structure sheets on 2026-11-16. A scheduled job refreshes the feed from the same official documents; rows it cannot parse are kept rather than dropped. Fields the documents do not state are left blank.",
+ "sources": [
+  {
+   "label": "Official Wynn daily tournament poster",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf",
+   "status": "read"
+  },
+  {
+   "label": "Official Wynn daily tournament structures",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+   "status": "read"
+  },
+  {
+   "label": "Official Bellagio Friday structure sheet",
+   "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf",
+   "status": "read"
+  },
+  {
+   "label": "Official Bellagio Saturday structure sheet",
+   "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf",
+   "status": "read"
+  },
+  {
+   "label": "Official Bellagio Sunday structure sheet",
+   "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf",
+   "status": "read"
+  },
+  {
+   "label": "Wynn poker room",
+   "url": "https://www.wynnlasvegas.com/casino/poker",
+   "status": "read"
+  },
+  {
+   "label": "Bellagio poker room",
+   "url": "https://bellagio.mgmresorts.com/en/casino/poker.html",
+   "status": "read"
+  },
+  {
+   "label": "ARIA poker room",
+   "url": "https://aria.mgmresorts.com/en/casino/poker.html",
+   "status": "read"
+  },
+  {
+   "label": "Venetian poker room",
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker.html",
+   "status": "read"
+  }
+ ],
+ "documents": [
+  {
+   "key": "wynn_daily_poster",
+   "name": "Wynn daily tournament poster",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf",
+   "venue": "wynn",
+   "venue_name": "Wynn Las Vegas / Encore Poker Room",
+   "status": "error",
+   "error": "URLError: <urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  {
+   "key": "wynn_daily_struct",
+   "name": "Wynn daily tournament structures",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+   "venue": "wynn",
+   "venue_name": "Wynn Las Vegas / Encore Poker Room",
+   "status": "error",
+   "error": "URLError: <urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  {
+   "key": "wynn_poker",
+   "name": "Wynn poker room",
+   "url": "https://www.wynnlasvegas.com/casino/poker",
+   "venue": "wynn",
+   "venue_name": "Wynn Las Vegas / Encore Poker Room",
+   "status": "error",
+   "error": "URLError: <urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  {
+   "key": "bellagio_poker",
+   "name": "Bellagio poker room",
+   "url": "https://bellagio.mgmresorts.com/en/casino/poker.html",
+   "venue": "bellagio",
+   "venue_name": "Bellagio Poker Room",
+   "status": "error",
+   "error": "URLError: <urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  {
+   "key": "bellagio_fri",
+   "name": "Bellagio Friday $600 No Limit Hold'em",
+   "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf",
+   "venue": "bellagio",
+   "venue_name": "Bellagio Poker Room",
+   "status": "error",
+   "error": "URLError: <urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  {
+   "key": "bellagio_sat",
+   "name": "Bellagio Saturday No Limit Hold'em",
+   "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf",
+   "venue": "bellagio",
+   "venue_name": "Bellagio Poker Room",
+   "status": "error",
+   "error": "URLError: <urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  {
+   "key": "bellagio_sun",
+   "name": "Bellagio Sunday $400 H.O.R.S.E.",
+   "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf",
+   "venue": "bellagio",
+   "venue_name": "Bellagio Poker Room",
+   "status": "error",
+   "error": "URLError: <urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  {
+   "key": "aria_poker",
+   "name": "ARIA poker room",
+   "url": "https://aria.mgmresorts.com/en/casino/poker.html",
+   "venue": "aria",
+   "venue_name": "ARIA Poker Room",
+   "status": "error",
+   "error": "URLError: <urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  {
+   "key": "venetian_poker",
+   "name": "Venetian poker room",
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker.html",
+   "venue": "venetian",
+   "venue_name": "The Venetian Resort Las Vegas (DeepStack Poker Room)",
+   "status": "error",
+   "error": "URLError: <urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  }
+ ],
+ "errors": [
+  "Wynn daily tournament poster - <urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>",
+  "Wynn daily tournament structures - <urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>",
+  "Wynn poker room - <urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>",
+  "Bellagio poker room - <urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>",
+  "Bellagio Friday $600 No Limit Hold'em - <urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>",
+  "Bellagio Saturday No Limit Hold'em - <urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>",
+  "Bellagio Sunday $400 H.O.R.S.E. - <urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>",
+  "ARIA poker room - <urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>",
+  "Venetian poker room - <urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+ ],
+ "rows": [
+  {
+   "venue": "wynn",
+   "venue_name": "Wynn Las Vegas / Encore Poker Room",
+   "when": "Monday - Thursday, 12 p.m.",
+   "name": "$200 No Limit Hold'em, $10,000 Guarantee",
+   "format": "Daily single-day No Limit Hold'em, Big Blind Ante",
+   "buy_in_usd": 200,
+   "stack_chips": 25000,
+   "guarantee_usd": 10000,
+   "entry_rule": "Registration and re-entry until the start of level 9 (about 4:30 p.m.). The entry fee and the re-entry fee are both $200. All levels play 30 minutes with a 15-minute break after every 4 levels.",
+   "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+   "source_label": "Official Wynn daily tournament structures",
+   "verified_on": "2026-11-16",
+   "retrieved_at": "2026-11-16T00:00:00+00:00",
+   "origin": "read from the official document",
+   "notes": "The $200 entry fee is distributed as $26 tournament fee, $12 poker staff service charge and $162 prize pool. The tournament is offered Monday-Thursday and may be suspended during Seniors Events, Classic Events or other tournament series."
+  },
+  {
+   "venue": "wynn",
+   "venue_name": "Wynn Las Vegas / Encore Poker Room",
+   "when": "Friday, 12 p.m.",
+   "name": "$240 No Limit Hold'em Rebuy and Add-on, $40,000 Guarantee",
+   "format": "Daily single-day No Limit Hold'em with rebuys and add-ons",
+   "buy_in_usd": 240,
+   "stack_chips": 25000,
+   "guarantee_usd": 40000,
+   "entry_rule": "Registration, rebuys and add-ons until the start of level 9 (about 4:30 p.m.). Re-entry is NOT allowed. Unlimited $200 rebuys for 25,000 chips are available any time a player is at 15,000 chips or less. One $100 add-on for 25,000 chips is available any time until the end of registration. All rebuys must be made from the player's original seat.",
+   "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+   "source_label": "Official Wynn daily tournament structures",
+   "verified_on": "2026-11-16",
+   "retrieved_at": "2026-11-16T00:00:00+00:00",
+   "origin": "read from the official document",
+   "notes": "The $240 entry fee is $35 tournament fee, $15 poker staff service charge and $190 prize pool. $10 from each $200 rebuy and $5 from each $100 add-on are withheld as a staff service charge; $5 from each $200 rebuy and $5 from each add-on are withheld as a tournament fee."
+  },
+  {
+   "venue": "wynn",
+   "venue_name": "Wynn Las Vegas / Encore Poker Room",
+   "when": "Saturday and Sunday, 12 p.m.",
+   "name": "$200 No Limit Hold'em, $25,000 Guarantee",
+   "format": "Daily single-day No Limit Hold'em with re-entry and one add-on",
+   "buy_in_usd": 200,
+   "stack_chips": 25000,
+   "guarantee_usd": 25000,
+   "entry_rule": "Registration, re-entry and one add-on per entry until the start of level 11 (about 5:30 p.m.). One $100 add-on for 25,000 chips is available any time until the end of registration. All levels play 30 minutes with a 15-minute break after every 4 levels.",
+   "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+   "source_label": "Official Wynn daily tournament structures",
+   "verified_on": "2026-11-16",
+   "retrieved_at": "2026-11-16T00:00:00+00:00",
+   "origin": "read from the official document",
+   "notes": "The $200 entry fee is distributed as $26 tournament fee, $12 poker staff service charge and $162 prize pool. $5 from each $100 add-on is withheld as a tournament fee and $5 from each add-on as a staff service charge."
+  },
+  {
+   "venue": "wynn",
+   "venue_name": "Wynn Las Vegas / Encore Poker Room",
+   "when": "Nightly, Monday - Sunday, 6 p.m.",
+   "name": "$160 No Limit Hold'em, $10,000 Guarantee",
+   "format": "Nightly single-day No Limit Hold'em with re-entry and one add-on",
+   "buy_in_usd": 160,
+   "stack_chips": 25000,
+   "guarantee_usd": 10000,
+   "entry_rule": "Registration, re-entry and one add-on per entry until the start of level 9 (about 9:00 p.m.). One $100 add-on for 25,000 chips is available any time until the end of registration. All levels play 20 minutes with a 10-minute break after every 4 levels.",
+   "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+   "source_label": "Official Wynn daily tournament structures",
+   "verified_on": "2026-11-16",
+   "retrieved_at": "2026-11-16T00:00:00+00:00",
+   "origin": "read from the official document",
+   "notes": "The $160 entry fee is distributed as $20 tournament fee, $10 poker staff service charge and $130 prize pool. $5 from each $100 add-on is withheld as a tournament fee and $5 from each add-on as a staff service charge."
+  },
+  {
+   "venue": "wynn",
+   "venue_name": "Wynn Las Vegas / Encore Poker Room",
+   "when": "Daily poster",
+   "name": "Daily tournament poster: Monday-Thursday $200 NLH $10,000 GTD, Friday $240 NLH Rebuy $40,000 GTD, Saturday and Sunday $200 NLH $25,000 GTD, nightly $160 NLH $10,000 GTD",
+   "format": "Official daily tournament poster",
+   "buy_in_usd": null,
+   "stack_chips": null,
+   "guarantee_usd": null,
+   "entry_rule": "The poster itself states no entry rule; the entry rules are in the daily structure sheets.",
+   "source": "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf",
+   "source_label": "Official Wynn daily tournament poster",
+   "verified_on": "2026-11-16",
+   "retrieved_at": "2026-11-16T00:00:00+00:00",
+   "origin": "read from the official document",
+   "notes": "The poster is the authoritative schedule of which daily tournament runs on which day. The poster directs players to wynnpoker.com or the event structure sheets for the complete list of house and staff fees."
+  },
+  {
+   "venue": "bellagio",
+   "venue_name": "Bellagio Poker Room",
+   "when": "Friday, 11:00 a.m.",
+   "name": "$600 No Limit Hold'em",
+   "format": "Weekly single-day No Limit Hold'em with re-entry",
+   "buy_in_usd": 600,
+   "stack_chips": 30000,
+   "guarantee_usd": null,
+   "entry_rule": "Players may buy in and re-enter through the end of level 8 (including the break). Levels are 30 minutes long with a 12-minute break every 4 levels.",
+   "source": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf",
+   "source_label": "Official Bellagio Friday $600 No Limit Hold'em structure sheet",
+   "verified_on": "2026-11-16",
+   "retrieved_at": "2026-11-16T00:00:00+00:00",
+   "origin": "read from the official document",
+   "notes": "The $600 buy-in is allocated as $510 to the prize pool, $50 house fee and $40 voluntary staff gratuity. Players start with 30,000 tournament chips, including the optional staff gratuity (15,000 + 15,000). No guarantee is printed on this sheet."
+  },
+  {
+   "venue": "bellagio",
+   "venue_name": "Bellagio Poker Room",
+   "when": "Saturday, 11:00 a.m.",
+   "name": "No Limit Hold'em, multi-flight",
+   "format": "Weekly multi-flight No Limit Hold'em",
+   "buy_in_usd": null,
+   "stack_chips": 40000,
+   "guarantee_usd": 50000,
+   "entry_rule": "Registration is open until the start of level 10. Players start with 40,000 tournament chips (20,000 + 20,000 optional).",
+   "source": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf",
+   "source_label": "Official Bellagio Saturday No Limit Hold'em structure sheet",
+   "verified_on": "2026-11-16",
+   "retrieved_at": "2026-11-16T00:00:00+00:00",
+   "origin": "read from the official document",
+   "notes": "Bellagio guarantees the total combined prize pool will be at least $50,000. The buy-in and fee split is unverified: rule 07 reads '$600 buy-in, $510 to the prize pool, $50 admin fees and $40 optional staff gratuity', the document heading reads 'NLH $1100 BUY-IN' and the published file name says $1000 NLH. The three statements conflict, so the buy-in is left blank here."
+  },
+  {
+   "venue": "bellagio",
+   "venue_name": "Bellagio Poker Room",
+   "when": "Sunday, 11:00 a.m.",
+   "name": "$400 H.O.R.S.E.",
+   "format": "Weekly single-day H.O.R.S.E. with re-entry",
+   "buy_in_usd": 400,
+   "stack_chips": 30000,
+   "guarantee_usd": null,
+   "entry_rule": "Players may buy in and re-enter through the end of level 8 (including the break). Each level lasts 30 minutes.",
+   "source": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf",
+   "source_label": "Official Bellagio Sunday $400 H.O.R.S.E. structure sheet",
+   "verified_on": "2026-11-16",
+   "retrieved_at": "2026-11-16T00:00:00+00:00",
+   "origin": "read from the official document",
+   "notes": "The $400 buy-in is allocated as $340 to the prize pool, $35 house fee and $25 voluntary staff gratuity. No guarantee is printed on this sheet."
+  }
+ ]
+}
