@@ -174,6 +174,11 @@ walking_data = load_json("data/walking.json")
 monitoring_data = load_json("data/monitoring.json")
 changes_data = load_json("data/changes.json")
 snapshot_data = load_json("data/row_snapshot.json")
+# Provenance archive kept by scripts/check_source_facts.py (session 40ca34e5).
+source_manifest = load_json("data/sources.json")
+source_facts_log = load_json("data/change_log.json")
+structure_rules = load_json("data/structure_rules.json")
+wpt_rules = load_json("data/wpt_rules.json")
 
 tournament_rows = check_rows_shape("data/tournaments.json", tournaments_data)
 hotel_rows = check_rows_shape("data/hotels.json", hotels_data)
@@ -415,6 +420,58 @@ for index, row in enumerate(walking_rows, 1):
     if is_number(row.get("minutes")) and row["minutes"] > 30:
         problems.append(f"{where}: walking time is outside the 30-minute limit")
 
+# Provenance archive: the official source manifest, the per-source change log and the
+# machine-readable rule extraction from the official structure sheets and WPT blocks.
+if isinstance(source_manifest, dict):
+    manifest_sources = source_manifest.get("sources")
+    if not isinstance(manifest_sources, list) or not manifest_sources:
+        problems.append("data/sources.json: 'sources' must be a non-empty list")
+    else:
+        seen_ids = set()
+        for index, source in enumerate(manifest_sources, 1):
+            where = f"data/sources.json source {index}"
+            if not isinstance(source, dict):
+                problems.append(f"{where} is not an object")
+                continue
+            source_id = source.get("id")
+            if not isinstance(source_id, str) or not source_id.strip():
+                problems.append(f"{where} has no id")
+            elif source_id in seen_ids:
+                problems.append(f"data/sources.json: duplicate source id {source_id!r}")
+            else:
+                seen_ids.add(source_id)
+            if source.get("active") is False:
+                if not isinstance(source.get("note"), str) or not source["note"].strip():
+                    problems.append(f"{where} is inactive without an explanation")
+                continue
+            check_official_https_url(source.get("url"), where)
+if isinstance(source_facts_log, dict):
+    if not isinstance(source_facts_log.get("generated_utc"), str):
+        problems.append("data/change_log.json: generated_utc must be a string")
+    for index, source in enumerate(source_facts_log.get("sources") or [], 1):
+        where = f"data/change_log.json source {index}"
+        if not isinstance(source, dict):
+            problems.append(f"{where} is not an object")
+            continue
+        if source.get("inactive"):
+            if not isinstance(source.get("note"), str) or not source["note"].strip():
+                problems.append(f"{where} is inactive without an explanation")
+            continue
+        if not isinstance(source.get("last_checked_utc"), str):
+            problems.append(f"{where} has no last-checked time")
+        check_official_https_url(source.get("url"), where)
+if isinstance(structure_rules, dict):
+    if not structure_rules:
+        problems.append("data/structure_rules.json: no structure sheets recorded")
+    for sheet_id, sheet in structure_rules.items():
+        if not isinstance(sheet, dict):
+            problems.append(f"data/structure_rules.json: {sheet_id} is not an object")
+            continue
+        if sheet.get("sheet_kind") not in {"SINGLE_ENTRY", "MULTI_FLIGHT", "RE_ENTRY"}:
+            problems.append(f"data/structure_rules.json: {sheet_id} has no rule verdict")
+if not isinstance(wpt_rules, list) or not wpt_rules:
+    problems.append("data/wpt_rules.json: expected a non-empty list of WPT structure blocks")
+
 # Monitoring and changed-row files.
 if isinstance(monitoring_data, dict):
     check_date(monitoring_data.get("checked_at"), "data/monitoring.json checked_at", required=True)
@@ -596,4 +653,4 @@ if problems:
     sys.exit(1)
 print(f"check_links: OK ({len(pages)} pages, {len(tournament_rows)} tournament rows, "
       f"{len(hotel_rows)} hotels, {len(rate_entries)} dated rates, {len(schedule_days)} schedule days; "
-      f"source, rules, schedule, hotel-rate/cost, and page-link checks passed)")
+      f"source, rules, schedule, hotel-rate/cost, provenance and page-link checks passed)")

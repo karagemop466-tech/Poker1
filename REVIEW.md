@@ -120,3 +120,24 @@ Third-party sites were used to locate events and hotels only. They are not cited
 - Current counts: **316 rows**. Single entry 80 (60 cash, 20 milestone satellites). Separate section
   105 (60 possible multi-entry, 45 re-entry). Unverified 129. Continuation rows 43.
 - Row IDs are unique and assigned after the chronological sort (`r001` to `r316`).
+
+## 8. Cross-check from the parallel session `40ca34e5`
+
+Session `40ca34e5` worked in parallel on the same file scope. Its branch was integrated here rather than
+merged over this one: this session's dataset is larger (316 rows against 225), and it captured a real
+nightly rate from the official booking engine, which `40ca34e5` could not — that session's attempt used
+the calendar view, which returns `$XXX` placeholders. Nothing from this session was discarded.
+
+What `40ca34e5` contributed, and how it cross-checks this session's work:
+
+| Contribution | Cross-check result |
+|---|---|
+| `scripts/extract_rules.py` → `data/structure_rules.json`: every official Venetian structure sheet parsed into rule fields with a per-sheet verdict | 52 sheets (37 November + 15 NYE). **Agrees with this session's row-level verdicts**: the sheets that print a starting-flight clause are exactly the ones this session classifies as possible multi-entry; the two Valuetown sheets and the CES-discount sheets are the only ones printing wording about a further entry. |
+| `scripts/extract_wpt.py` → `data/wpt_rules.json`: the 69 event blocks of the official WPT structures PDF | Confirms this session's reading that **no WPT block prints a prohibition on re-entry**; every block states a re-entry rule. It also confirms the Signature Series structures file is a placeholder: 166 KB fetched, **27 characters** of extractable text. |
+| `scripts/check_source_facts.py` + `data/sources.json` (71 URLs) + `data/snapshots/` + `data/change_log.json` + `data/baseline_hashes.json`, run weekly by `.github/workflows/source-facts.yml` | Runs successfully in GitHub Actions, where the operator domains are reachable: **68 of 71 sources fetched with text, 1 inactive, 2 unreachable** (Bellagio and ARIA time out). This is the reachability evidence that `data/monitoring.json` cannot yet show, because that file still holds a sandbox run in which every domain was unreachable. |
+| Meaningful-change detection (`facts_signature`) | On a live re-check it recorded **9 raw page changes and 0 published-value changes**. Operator pages rotate promos and cookie text, so a raw byte hash flags almost every page on every fetch; comparing the money amounts, dates, times and entry-rule words printed on the page avoids that false alarm. |
+| `research/verification-2026-11-16.md` | One row per Venetian structure sheet with its verdict and link, the distinct WPT re-entry wordings with a count of the rows quoting each, and the Wynn daily-tournament facts. |
+
+Irregularity found in this repository during that integration: `.github/workflows/monitor.yml` used a
+`name:` key inside its `schedule:` entry. The workflow schema accepts only `cron` there, so **the daily
+source check had never fired**. The key was removed; the daily job will now run on its schedule.
