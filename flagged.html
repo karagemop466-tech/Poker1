@@ -1,102 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Flagged for Review — Poker1 Las Vegas Strip Planner</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-<div class="header">
-  <h1>Flagged for Review</h1>
-  <div class="sub">Unverified items, irregularities, and things you should check before trusting any table row</div>
-</div>
-
-<nav class="nav">
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="tournaments.html">Tournaments</a></li>
-    <li><a href="hotels.html">Hotels</a></li>
-    <li><a href="schedule.html">All-day schedule</a></li>
-    <li><a href="executive-summary.html">Executive summary</a></li>
-    <li><a href="questions.html">Questions &amp; answers</a></li>
-    <li><a href="suggestions.html">Suggestions</a></li>
-    <li><a href="flagged.html" class="active">Flagged for review</a></li>
-  </ul>
-</nav>
-
-<div class="container">
-  <section class="page">
-    <h2>What the flags mean</h2>
-    <ul>
-      <li><span class="tag tag-unverified">UNVERIFIED</span> &mdash; the value could not be confirmed from an official source. It is intentionally left blank or marked; do not rely on it.</li>
-      <li><span class="tag tag-verified">Official source</span> &mdash; confirmed from the casino/poker-room&rsquo;s own website or official PDF.</li>
-      <li><span class="tag tag-red">Third-party</span> &mdash; from an aggregator (e.g., PokerAtlas); not independently confirmed by the venue.</li>
-    </ul>
-
-    <h2>A. Unverified tournament data</h2>
-    <table>
-      <thead><tr><th>Item</th><th>Detail</th><th>Why flagged</th><th>Source link</th></tr></thead>
-      <tbody>
-        <tr><td>Venetian 1-Day entry policy</td><td>All Section A 1-Day events</td><td>Structure sheets have no re-entry provision but do not explicitly state &ldquo;freezeout/no re-entry.&rdquo;</td><td class="src"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html">Venetian structure sheets</a></td></tr>
-        <tr><td>8 AM tournament start</td><td>Requested schedule start</td><td>No official source lists an 8 AM start; earliest found is 10:10 AM</td><td class="src"><a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf">Venetian DSE IV schedule</a> · <a href="https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf">Wynn WPT schedule</a></td></tr>
-        <tr><td>Event guarantees</td><td>$200 RaceDay events, most $200 bounties</td><td>No guarantee published in official schedule</td><td class="src"><a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf">Venetian DSE IV schedule</a></td></tr>
-        <tr><td>MGM Grand $120 daily re-entry</td><td>MGM daily tournaments</td><td>PokerAtlas (third-party) says &ldquo;Re-entry&rdquo;; MGM official page only confirms times</td><td class="src"><a href="https://www.pokeratlas.com/poker-room/mgm-grand-las-vegas/tournaments">PokerAtlas MGM calendar</a> · <a href="https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html">MGM Grand poker page</a></td></tr>
-        <tr><td>Wynn daily tournaments ($200/$160/$240 rebuy)</td><td>Entry policy</td><td>Not stated in official Wynn documents</td><td class="src"><a href="https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf">Wynn daily poster</a> · <a href="https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf">Wynn structures</a></td></tr>
-        <tr><td>Wynn WPT $800/$1,600 flights</td><td>Re-entry policy</td><td>Not stated in official schedule</td><td class="src"><a href="https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf">Wynn WPT schedule</a></td></tr>
-      </tbody>
-    </table>
-
-    <h2>B. Unverified hotel data</h2>
-    <table>
-      <thead><tr><th>Item</th><th>Detail</th><th>Why flagged</th><th>Source link</th></tr></thead>
-      <tbody>
-        <tr><td>Room rates (all hotels)</td><td>Every hotel row</td><td>Not obtainable from live official booking engines; rates change daily</td><td>&mdash;</td></tr>
-        <tr><td>Resort fees</td><td>Harrah&rsquo;s, LINQ, Caesars, Paris, Bellagio, ARIA, Cosmopolitan, Cromwell, Bally&rsquo;s, MGM Grand</td><td>Only third-party lists found (~$45&ndash;$55), which conflict with each other; not confirmed on official hotel pages</td><td class="src">Third-party resort-fee lists only</td></tr>
-        <tr><td>Walking times</td><td>Every hotel row</td><td>Estimates (~0&ndash;30 min); not from an official source</td><td>&mdash;</td></tr>
-        <tr><td>Self-parking cost</td><td>All hotels except Venetian</td><td>Not confirmed</td><td>&mdash;</td></tr>
-      </tbody>
-    </table>
-
-    <h2>C. Irregularities found</h2>
-    <table>
-      <thead><tr><th>Irregularity</th><th>Detail</th><th>Source link</th></tr></thead>
-      <tbody>
-        <tr><td>The Mirage is closed</td><td>Closed permanently July 17, 2024; rebranding as Hard Rock, expected 2027. Any source recommending the Mirage for this trip is stale.</td><td class="src"><a href="https://vegasadvantage.com/casino-hotel/strip/hard-rock/">Hard Rock Vegas page</a></td></tr>
-        <tr><td>Conflicting Wynn resort fee figures</td><td>Official Wynn terms pages show $45 + tax in some offers, $55 + tax in others &mdash; fee varies by offer/room type.</td><td class="src"><a href="https://www.wynnlasvegas.com/terms-and-conditions/848654">Wynn terms ($45)</a> · <a href="https://www.wynnlasvegas.com/terms-and-conditions/850257">Wynn terms ($55)</a></td></tr>
-        <tr><td>Conflicting third-party resort-fee lists</td><td>Different aggregators list Aria/Bellagio at $50 or $55, Caesars at $54.95 or $55, Harrah&rsquo;s/LINQ at $49.95 or $50.</td><td class="src">Multiple third-party resort-fee guides (Nov 2026)</td></tr>
-        <tr><td>MGM schedule PDF dated &ldquo;August&rdquo;</td><td>The official MGM weekly tournament schedule PDF is titled &ldquo;August Tournament Schedule&rdquo;; November buy-ins come from PokerAtlas (third-party), not the official PDF.</td><td class="src"><a href="https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt5f25277b8918da08/mgm-grand-casino-poker-tournament_schedule.pdf">MGM schedule PDF</a> · <a href="https://www.pokeratlas.com/poker-room/mgm-grand-las-vegas/tournaments">PokerAtlas MGM calendar</a></td></tr>
-        <tr><td>Wynn poker page served an error page once</td><td>wynnlasvegas.com/poker returned a checked-out page; wynnlasvegas.com/casino/poker loaded successfully.</td><td class="src"><a href="https://www.wynnlasvegas.com/casino/poker">Wynn Poker Room</a></td></tr>
-      </tbody>
-    </table>
-
-    <h2>D. Things that are verified</h2>
-    <table>
-      <thead><tr><th>Item</th><th>Verified value</th><th>Source link</th></tr></thead>
-      <tbody>
-        <tr><td>Venetian DSE IV series dates / guarantees</td><td>Nov 16 &ndash; Dec 23, 2026; &gt; $3.6 million guaranteed</td><td class="src"><a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf">Venetian official schedule PDF</a></td></tr>
-        <tr><td>Wynn WPT World Championship dates</td><td>Nov 27 &ndash; Dec 21, 2026</td><td class="src"><a href="https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf">Wynn official schedule PDF</a></td></tr>
-        <tr><td>Venetian resort fee</td><td>$55 + tax per night</td><td class="src"><a href="https://www.venetianlasvegas.com/resort/resort-fee.html">Venetian official resort fee page</a></td></tr>
-        <tr><td>Clark County room tax</td><td>13.38%</td><td class="src"><a href="https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html">Venetian official hotel terms</a></td></tr>
-        <tr><td>Wynn resort fee</td><td>$45 + tax per night (per sampled terms)</td><td class="src"><a href="https://www.wynnlasvegas.com/terms-and-conditions/848654">Wynn official terms</a></td></tr>
-        <tr><td>Venetian poker suite rate</td><td>From $119 / $209 with play requirement</td><td class="src"><a href="https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html">Venetian poker suite rates</a></td></tr>
-        <tr><td>Wynn $600 NLH re-entry</td><td>Unlimited re-entry per flight until level 9</td><td class="src"><a href="https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf">Wynn WPT structure sheets</a></td></tr>
-        <tr><td>Venetian multi-flight rule</td><td>Bagged players may not play a subsequent flight (implying re-entry before bagging)</td><td class="src"><a href="https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf">Venetian $300 structure sheet, rule 8</a></td></tr>
-        <tr><td>Mirage closure</td><td>Closed July 17, 2024</td><td class="src"><a href="https://vegasadvantage.com/casino-hotel/strip/hard-rock/">Hard Rock Vegas page</a></td></tr>
-        <tr><td>Minimum age</td><td>21+; rewards-card required at Venetian and Wynn</td><td class="src">Venetian structure sheets · Wynn structures</td></tr>
-      </tbody>
-    </table>
-
-    <div class="callout callout-red">
-      <b>These flags do not block the site going live.</b> They are published here so you can review them after launch and request changes. Every row on the Tournaments and Hotels pages links to its source; where the source is not official or the value is missing, the cell says so.
-    </div>
-  </section>
-
-  <div class="foot">
-    Poker1 &mdash; research compiled 2026-11-16. Not affiliated with any casino or hotel. Must be 21+.
-  </div>
-</div>
-
-</body>
-</html>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Flagged for review | Strip Poker Planner</title><link rel="stylesheet" href="styles.css"></head><body>
+<header class="topbar"><a class="brand" href="index.html"><span class="brand-mark">♠</span> Strip Poker Planner</a><nav aria-label="Main navigation"><a href="index.html">Overview</a><a href="tournaments.html">Tournaments</a><a href="hotels.html">Hotels</a><a href="decision.html">Decision brief</a><a href="suggestions.html">Suggestions</a><a class="active" href="flagged.html">Flagged for review</a></nav></header>
+<main class="wrap"><div class="page-title"><p class="eyebrow">OPEN ITEMS · NOT VERIFIED OR NOT PROVIDED</p><h1>Flagged for review</h1><p class="lead">These are real decision blockers or source irregularities. Blank values are intentional. Each item includes the primary official page to check or ask about.</p></div>
+<div class="notice notice-warn"><strong>None of the flags below are silently filled by inference.</strong> Published schedules can change. Contact each venue before buying in or booking a stay.</div>
+<div class="table-scroll"><table><thead><tr><th>Flag</th><th>What is not confirmed</th><th>Why it matters</th><th>How to resolve</th><th>Official source(s)</th></tr></thead><tbody>
+<tr><td><span class="tag tag-red">Blocking</span><br>Single-entry rules</td><td>Entry cap and whether re-entry/rebuy is allowed for the one-day Venetian candidates are not specified in reviewed event structure PDFs.</td><td>Strict single-entry is the user’s primary tournament filter. “1 day” does not mean one entry.</td><td>Ask the Venetian Poker Room whether each chosen event allows re-entry, rebuy/add-on, or multiple entries, and record the answer against event number and date.</td><td><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html">Official series schedule + structures</a> · <a href="https://www.venetianlasvegas.com/resort/casino/poker.html">Official poker room info</a></td></tr>
+<tr><td><span class="tag tag-red">Blocking</span><br>Travel dates / nights</td><td>No arrival/departure dates, stay duration, guest count, or room preference supplied.</td><td>Room rates vary by date, occupancy, room type, and offer availability; no honest exact nightly total or best-value comparison is possible.</td><td>After dates are selected, compare official hotel booking totals for the same occupancy, room type, taxes/fees, and cancellation terms.</td><td><a href="https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html">Venetian poker rate terms</a> · <a href="https://reservations.wynnlasvegas.com/ibe/details.aspx?propertyid=13763&rate=WEBONLY&nono=1">Wynn date-dependent booking</a></td></tr>
+<tr><td><span class="tag tag-amber">Open</span><br>Hotel true cost</td><td>Only mandatory resort fee is verified ($55 per room-night + tax at Venetian/Palazzo; Wynn booking source also says $55 + tax). Exact room rate and tax-inclusive stay total are blank.</td><td>Headline rates omit required costs; “from” prices are conditional and not a comparable trip quote.</td><td>Capture all nights' base rates, applicable taxes, resort fee, deposits/mandatory charges, and total; divide by nights only after booking engine displays full checkout total.</td><td><a href="https://www.venetianlasvegas.com/resort/resort-fee.html">Venetian fee</a> · <a href="https://reservations.wynnlasvegas.com/ibe/details.aspx?propertyid=13763&rate=WEBONLY&nono=1">Wynn fee / offer terms</a></td></tr>
+<tr><td><span class="tag tag-amber">Open</span><br>All-day plan from 8 AM</td><td>No reviewed official event starts at 8:00 AM; reviewed Venetian starts are 10:10 or 11:10. Finish times are not guaranteed.</td><td>Cannot maximize number of tournaments or promise an uninterrupted 8 AM-to-late schedule. Events may overlap or run long.</td><td>Check official room calendars for selected dates and ask about scheduled duration/late registration, then build a plan with overlap and end-time caveats.</td><td><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html">Venetian schedule</a> · <a href="https://www.wynnlasvegas.com/casino/poker">Wynn schedule and daily tournament notice</a></td></tr>
+<tr><td><span class="tag tag-amber">Open</span><br>Walking-time threshold</td><td>Official sources confirm on-property location for Venetian/Palazzo poker room, but do not give internal walking minutes or accessible-route times. No route-time evidence is provided for off-property hotels.</td><td>“Within 30 minutes walking” cannot be proven from addresses or straight-line distance alone.</td><td>After choosing hotels and venues, check a consistent walking-route provider and verify accessibility / actual entrances. Preserve route URLs and check date.</td><td><a href="https://www.venetianlasvegas.com/resort/casino/poker.html">Venetian room location</a> · <a href="https://www.venetianlasvegas.com/resort/contact.html">Venetian/Palazzo address</a> · <a href="https://www.wynnlasvegas.com/about-us/directions">Wynn address/directions</a></td></tr>
+<tr><td><span class="tag tag-amber">Open</span><br>Ranking quality</td><td>No budget ceiling, game preference, age eligibility, room-quality standard, refundability requirement, or risk tolerance supplied.</td><td>“Best” is preference-dependent. A large guarantee or luxury label alone does not establish best fit.</td><td>Choose the preferences listed on the Decision Brief; apply them as explicit filters rather than inventing weights.</td><td><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html">Official Venetian events</a> · <a href="https://www.wynnlasvegas.com/casino/poker">Official Wynn events</a></tr>
+<tr><td><span class="tag tag-amber">Open</span><br>Wynn daily events</td><td>Wynn notes daily events run in non-series periods and may be suspended during series; the detailed daily calendar/structures have not been individually checked for entry limit. Its WPT series date range is Nov 27–Dec 21.</td><td>Do not add daily events to a plan without proving the scheduled date and format; the WPT period may change regular schedule.</td><td>Check Wynn's current official posted WPT schedule and confirm event rules and the date-specific daily event schedule with the room.</td><td><a href="https://www.wynnlasvegas.com/casino/poker">Wynn official poker schedule</a> · <a href="https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf">Official WPT schedule PDF</a></td></tr>
+<tr><td><span class="tag tag-amber">Irregularity</span><br>Venetian overview page lag</td><td>As at the Nov 16 snapshot, the general Venetian poker page still labeled WPT Fall Festival (Oct 28–Nov 15) as “Current Series,” while the dedicated official DeepStack page says DeepStack Extravaganza IV runs Nov 16–Dec 23.</td><td>General page appears stale at the handoff date; the dedicated series page is the more specific schedule source used for event rows.</td><td>Confirm with the Venetian room and rely on the dedicated series page for this schedule; treat general page's current-series label as not refreshed.</td><td><a href="https://www.venetianlasvegas.com/resort/casino/poker.html">General poker page</a> · <a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html">Dedicated DeepStack IV page</a></td></tr>
+<tr><td><span class="tag tag-amber">Scope</span><br>WPT events not screened</td><td>Wynn's official WPT schedule has multiple starting flights, satellites, bounty events, and high buy-ins; entry limits/re-entry rules have not been checked against all structure sheets.</td><td>They cannot be represented as strict single-entry matches. They may fit a separate high-spend/variable-format list.</td><td>Screen each event structure, entry limit, and buy-in before adding to the strict shortlist.</td><td><a href="https://www.wynnlasvegas.com/casino/poker">Official Wynn poker page</a> · <a href="https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf">Official WPT schedule PDF</a></td></tr>
+<tr><td><span class="tag tag-amber">Open</span><br>Hotel fees beyond Venetian/Wynn scope</td><td>Hotel rows beyond Venetian/Palazzo and Wynn/Encore point to properties whose official pages were not part of the reviewed source set; their fees, rates, taxes, and walk times remain blank and unverified.</td><td>Prevents presenting unverified nightly totals as comparable.</td><td>Before adding any hotel row, capture the property's official rate + mandatory fee + tax quote for exact dates.</td><td><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html">Official Venetian schedule page</a></td></tr>
+<tr><td><span class="tag tag-amber">Irregularity</span><br>Wynn fee variance</td><td>Official Wynn terms pages show $45 + tax in some offers and $55 + tax in others for Wynn/Encore room nights; the hotel page's quoted offer detail also says $55 + tax. The exact fee for a given stay is not determined until a date-specific quote is produced.</td><td>The all-in nightly hotel cost cannot be settled until the fee line is confirmed for the exact booking.</td><td>Capture the fee amount on the final checkout screen before booking; note offer/rate-code dependence.</td><td><a href="https://www.wynnlasvegas.com/terms-and-conditions/848654">Wynn terms ($45 example)</a> · <a href="https://www.wynnlasvegas.com/terms-and-conditions/850257">Wynn terms ($55 example)</a></td></tr>
+<tr><td><span class="tag tag-red">Irregularity</span><br>The Mirage closed</td><td>The Mirage is not available: it closed permanently July 17, 2024 and is rebranding as Hard Rock with reopening expected 2027. Any source listing it for a Nov–Dec 2026 stay is stale.</td><td>It must be excluded from any hotel shortlist for this trip.</td><td>Use only properties confirmed operating for Nov 16 – Dec 23, 2026.</td><td><a href="https://www.venetianlasvegas.com/resort/casino/poker.html">Official Venetian poker room (confirm operating Strip properties)</a></td></tr>
+</tbody></table></div>
+<div class="callout compact"><div><p class="eyebrow">REVIEW ORDER</p><h2>First resolve these three</h2><p>1) Exact trip dates; 2) what you mean by single entry; 3) written/date-specific tournament entry rules. Hotel totals and the playable calendar follow from those answers.</p></div><a class="button" href="decision.html">Open decision checklist</a></div>
+<footer>Page status: open flags intentionally do not block publication. The verified facts remain linked to official sources for manual review.</footer></main></body></html>

@@ -1,34 +1,27 @@
 # Coordination — Poker1
 
-Shared task board across Arena sessions.
+Shared task board across Arena sessions. Fixed branch for this repo: `arena/85820f64-poker1` (integration); this session's work was prepared on `arena/552e97d2-poker1` and merged through PR #7.
 
-## Session `session-552e97d2` (branch `arena/552e97d2-poker1`, current session)
+## Integration status (PR #7 → main, then merged)
 
-| Task | Status | Owner | Files touched | Notes |
-|------|--------|-------|---------------|-------|
-| Create COORDINATION.md task board | done | session-552e97d2 | COORDINATION.md | Initial board |
-| Research live upcoming poker tournaments near Las Vegas Strip (official sources) | done | session-552e97d2 | data/tournaments.md | Venetian DSE IV (official PDF), Wynn WPT World Championship (official PDF), MGM Grand (official page + schedule PDF). Re-entry policies verified where structure sheets state them. |
-| Research hotels within 30-min walking distance of tournaments | done | session-552e97d2 | data/hotels.md | Venetian $55 resort fee + 13.38% tax (official); Wynn $45 (official terms); Mirage CLOSED (flagged). Room rates blank+unverified. |
-| Build single-entry tournament schedule (~8 AM all day) | done | session-552e97d2 | data/schedule.md | Sample all-day single-entry days; no 8 AM start exists (flagged) |
-| GitHub Pages site (landing page + category subpages, tables, sources) | done | session-552e97d2 | *.html at repo root, style.css | All internal links verified; pages: index, tournaments, hotels, schedule, executive-summary, questions, suggestions, flagged |
-| Executive summary | done | session-552e97d2 | executive-summary.html | |
-| Suggestions section | done | session-552e97d2 | suggestions.html | |
-| Questions / information / answers | done | session-552e97d2 | questions.html | |
-| Flagged-for-review page | done | session-552e97d2 | flagged.html | |
-| PR to main, merge, confirm Pages deploy | in progress | session-552e97d2 | — | PR #3 opened; merged after reconciling with origin/main; then confirm Pages deploy on main |
+| Task | Status | Owner | Scope | Result |
+|------|--------|-------|-------|--------|
+| Evidence-first dashboard foundation and official venue directory | done | arena/67733ec6-poker1 | index.html, styles.css, app.js, README.md, COORDINATION.md | Integrated through PR #1; source directory and evidence-first policy retained |
+| Official tournament / hotel research and decision findings | done | 85820f64-poker1 | tournaments.html, hotels.html, decision.html, flagged.html | Official Venetian/Wynn facts linked; unknown values blank and flagged |
+| Category dashboard, executive summary and suggestions | done | 85820f64-poker1 | All HTML pages and styles.css | Published sourced tables, decision questions, suggestions, review flags |
+| Integration, validation and GitHub Pages deployment | done | 85820f64-poker1 | .github/**, scripts/**, all site files | PR #2 merged; validation passed; Pages deployment succeeded; site live |
+| Extended Venetian single-entry candidate table (Nov 18 – Dec 23, 2026) | done | session-552e97d2 | tournaments.html (added rows), data/tournaments.md | Added Dec 9–23 Venetian 1-Day events with official schedule + structure links; entry policy flagged UNVERIFIED where structures do not state it |
+| Extended hotel comparison table | done | session-552e97d2 | hotels.html (added rows), data/hotels.md | Added Harrah's, LINQ, Caesars, Paris/Horseshoe, Cromwell, Bally's, Bellagio, ARIA, Vdara, Cosmopolitan, MGM Grand, Mirage (closed) with verified Venetian $55 + 13.38% tax formula and blanks/flags elsewhere |
+| Source data files | done | session-552e97d2 | data/tournaments.md, data/hotels.md, data/schedule.md | Full series transcription with per-row official sources |
+| PR to main, merge, confirm Pages deploy | done | session-552e97d2 | PR #7 | Merged; Pages re-deploys on push to main via .github/workflows/pages.yml; published: https://karagemop466-tech.github.io/Poker1/ |
 
-## Session `arena/67733ec6-poker1` (prior session, merged into main via PR #1)
+## Coordination and integration history
 
-| Task | Status | Owner | Files | Notes |
-|------|--------|-------|-------|-------|
-| Build research dashboard, evidence standards, flagged review | in progress | arena/67733ec6-poker1 | index.html, styles.css, app.js | Evidence-first dashboard shell; deliberately asserted 0 confirmed events (did not verify event-level entries against official sources) |
-| Site source verification and integration | in progress | arena/67733ec6-poker1 | all site files, README.md, COORDINATION.md | Left blank until date-specific official confirmation |
-
-## Merge resolution (PR #3 → main)
-
-- index.html conflict resolved in favor of session-552e97d2's fully verified landing page; prior session's index.html shell not retained (their app.js, styles.css, and .github/workflows/pages.yml are preserved).
-- Both sessions' COORDINATION.md content consolidated above.
-- Files preserved from both sessions: index.html, tournaments.html, hotels.html, schedule.html, executive-summary.html, questions.html, suggestions.html, flagged.html, style.css, styles.css (prior session), app.js (prior session), .github/workflows/pages.yml (prior session), data/*.md (session-552e97d2).
+- Initial checkout at base `c16071b` contained only a minimal `README.md` and no `COORDINATION.md`.
+- Session `arena/67733ec6-poker1` built the evidence-first dashboard foundation (PR #1, merged).
+- Session `85820f64-poker1` completed official research, decision findings, category dashboard, validation script, and Pages deployment (PR #2, merged at `64498f8`; Pages live).
+- Session `session-552e97d2` (this session) researched the full DeepStack Extravaganza IV series, transcribed all Venetian events with official sources, built the hotel data, and prepared PR #7. During integration, `origin/main` had advanced past this session's base; the merge was resolved locally on this session's branch without discarding the other sessions' work (their index.html, tournaments.html, hotels.html, flagged.html, suggestions.html, decision.html, app.js, styles.css, scripts/, pages.yml retained; this session's data/*.md, questions.html, executive-summary.html added).
+- PR #3 (first attempt) was closed and superseded by PR #7 after main advanced with PRs #2 and #6.
 
 ## Rules
 - Verify every value against an official source; link the source on every table row.
