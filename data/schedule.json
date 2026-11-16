@@ -1,419 +1,1552 @@
 {
- "verified_on": "2026-11-16",
+ "generated_on": "2026-11-16",
  "days": [
   {
    "date": "2026-11-18",
+   "primary": {
+    "id": "r005",
+    "start": "11:10",
+    "name": "$300 No Limit Hold'em (1Day)",
+    "series": "Venetian DeepStack Extravaganza IV",
+    "buy_in_usd": 300,
+    "guarantee_usd": 10000,
+    "gtd_multiple": 33.3,
+    "reg_closes": "16:55",
+    "event_no": 2,
+    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf"
+   },
+   "fallback": null,
+   "fallback_reason": "Only one verified single-entry event runs on this day, so there is no conditional fallback.",
    "options": [
     {
      "id": "r005",
      "start": "11:10",
-     "series": "Venetian DeepStack Extravaganza IV",
      "name": "$300 No Limit Hold'em (1Day)",
+     "series": "Venetian DeepStack Extravaganza IV",
      "buy_in_usd": 300,
      "guarantee_usd": 10000,
+     "gtd_multiple": 33.3,
+     "reg_closes": "16:55",
+     "event_no": 2,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf"
     }
-   ]
+   ],
+   "conflicts": []
+  },
+  {
+   "date": "2026-11-19",
+   "primary": {
+    "id": "r006",
+    "start": "10:10",
+    "name": "$200 NLH RaceDay Stack (1Day)",
+    "series": "Venetian DeepStack Extravaganza IV",
+    "buy_in_usd": 200,
+    "guarantee_usd": null,
+    "gtd_multiple": null,
+    "reg_closes": "12:25",
+    "event_no": 3,
+    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf"
+   },
+   "fallback": null,
+   "fallback_reason": "Only one verified single-entry event runs on this day, so there is no conditional fallback.",
+   "options": [
+    {
+     "id": "r006",
+     "start": "10:10",
+     "name": "$200 NLH RaceDay Stack (1Day)",
+     "series": "Venetian DeepStack Extravaganza IV",
+     "buy_in_usd": 200,
+     "guarantee_usd": null,
+     "gtd_multiple": null,
+     "reg_closes": "12:25",
+     "event_no": 3,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf"
+    }
+   ],
+   "conflicts": []
+  },
+  {
+   "date": "2026-11-20",
+   "primary": {
+    "id": "r007",
+    "start": "10:10",
+    "name": "$200 NLH RaceDay Stack (1Day)",
+    "series": "Venetian DeepStack Extravaganza IV",
+    "buy_in_usd": 200,
+    "guarantee_usd": null,
+    "gtd_multiple": null,
+    "reg_closes": "12:25",
+    "event_no": 4,
+    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf"
+   },
+   "fallback": null,
+   "fallback_reason": "Only one verified single-entry event runs on this day, so there is no conditional fallback.",
+   "options": [
+    {
+     "id": "r007",
+     "start": "10:10",
+     "name": "$200 NLH RaceDay Stack (1Day)",
+     "series": "Venetian DeepStack Extravaganza IV",
+     "buy_in_usd": 200,
+     "guarantee_usd": null,
+     "gtd_multiple": null,
+     "reg_closes": "12:25",
+     "event_no": 4,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf"
+    }
+   ],
+   "conflicts": []
+  },
+  {
+   "date": "2026-11-21",
+   "primary": {
+    "id": "r008",
+    "start": "10:10",
+    "name": "$200 NLH RaceDay Stack (1Day)",
+    "series": "Venetian DeepStack Extravaganza IV",
+    "buy_in_usd": 200,
+    "guarantee_usd": null,
+    "gtd_multiple": null,
+    "reg_closes": "12:25",
+    "event_no": 5,
+    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf"
+   },
+   "fallback": null,
+   "fallback_reason": "Only one verified single-entry event runs on this day, so there is no conditional fallback.",
+   "options": [
+    {
+     "id": "r008",
+     "start": "10:10",
+     "name": "$200 NLH RaceDay Stack (1Day)",
+     "series": "Venetian DeepStack Extravaganza IV",
+     "buy_in_usd": 200,
+     "guarantee_usd": null,
+     "gtd_multiple": null,
+     "reg_closes": "12:25",
+     "event_no": 5,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf"
+    }
+   ],
+   "conflicts": []
+  },
+  {
+   "date": "2026-11-22",
+   "primary": {
+    "id": "r009",
+    "start": "11:10",
+    "name": "$200 No Limit Hold'em (1Day)",
+    "series": "Venetian DeepStack Extravaganza IV",
+    "buy_in_usd": 200,
+    "guarantee_usd": null,
+    "gtd_multiple": null,
+    "reg_closes": "15:40",
+    "event_no": 6,
+    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_29.pdf"
+   },
+   "fallback": null,
+   "fallback_reason": "Only one verified single-entry event runs on this day, so there is no conditional fallback.",
+   "options": [
+    {
+     "id": "r009",
+     "start": "11:10",
+     "name": "$200 No Limit Hold'em (1Day)",
+     "series": "Venetian DeepStack Extravaganza IV",
+     "buy_in_usd": 200,
+     "guarantee_usd": null,
+     "gtd_multiple": null,
+     "reg_closes": "15:40",
+     "event_no": 6,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_29.pdf"
+    }
+   ],
+   "conflicts": []
+  },
+  {
+   "date": "2026-11-23",
+   "primary": {
+    "id": "r011",
+    "start": "17:10",
+    "name": "$200 No Limit Hold'em PKO Bounty (1Day)",
+    "series": "Venetian DeepStack Extravaganza IV",
+    "buy_in_usd": 200,
+    "guarantee_usd": 8000,
+    "gtd_multiple": 40.0,
+    "reg_closes": "21:40",
+    "event_no": 8,
+    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_30.pdf"
+   },
+   "fallback": null,
+   "fallback_reason": "Only one verified single-entry event runs on this day, so there is no conditional fallback.",
+   "options": [
+    {
+     "id": "r011",
+     "start": "17:10",
+     "name": "$200 No Limit Hold'em PKO Bounty (1Day)",
+     "series": "Venetian DeepStack Extravaganza IV",
+     "buy_in_usd": 200,
+     "guarantee_usd": 8000,
+     "gtd_multiple": 40.0,
+     "reg_closes": "21:40",
+     "event_no": 8,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_30.pdf"
+    }
+   ],
+   "conflicts": []
   },
   {
    "date": "2026-11-24",
+   "primary": {
+    "id": "r013",
+    "start": "17:10",
+    "name": "$200 No Limit Hold'em Bounty (1Day)",
+    "series": "Venetian DeepStack Extravaganza IV",
+    "buy_in_usd": 200,
+    "guarantee_usd": 8000,
+    "gtd_multiple": 40.0,
+    "reg_closes": "21:40",
+    "event_no": 9,
+    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+   },
+   "fallback": null,
+   "fallback_reason": "Only one verified single-entry event runs on this day, so there is no conditional fallback.",
    "options": [
     {
      "id": "r013",
      "start": "17:10",
-     "series": "Venetian DeepStack Extravaganza IV",
      "name": "$200 No Limit Hold'em Bounty (1Day)",
+     "series": "Venetian DeepStack Extravaganza IV",
      "buy_in_usd": 200,
      "guarantee_usd": 8000,
+     "gtd_multiple": 40.0,
+     "reg_closes": "21:40",
+     "event_no": 9,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
     }
-   ]
+   ],
+   "conflicts": []
   },
   {
    "date": "2026-11-25",
+   "primary": {
+    "id": "r015",
+    "start": "17:10",
+    "name": "$200 No Limit Hold'em Bounty (1Day)",
+    "series": "Venetian DeepStack Extravaganza IV",
+    "buy_in_usd": 200,
+    "guarantee_usd": 8000,
+    "gtd_multiple": 40.0,
+    "reg_closes": "21:40",
+    "event_no": 11,
+    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+   },
+   "fallback": null,
+   "fallback_reason": "No second single-entry event on this day starts after the primary event's late-registration close (21:40). Any second entry would overlap the primary, so none is recommended.",
    "options": [
     {
      "id": "r014",
      "start": "11:10",
-     "series": "Venetian DeepStack Extravaganza IV",
      "name": "$400 No Limit Hold'em (1Day)",
+     "series": "Venetian DeepStack Extravaganza IV",
      "buy_in_usd": 400,
      "guarantee_usd": 15000,
+     "gtd_multiple": 37.5,
+     "reg_closes": "16:55",
+     "event_no": 10,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_6.pdf"
     },
     {
      "id": "r015",
      "start": "17:10",
-     "series": "Venetian DeepStack Extravaganza IV",
      "name": "$200 No Limit Hold'em Bounty (1Day)",
+     "series": "Venetian DeepStack Extravaganza IV",
      "buy_in_usd": 200,
      "guarantee_usd": 8000,
+     "gtd_multiple": 40.0,
+     "reg_closes": "21:40",
+     "event_no": 11,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+    }
+   ],
+   "conflicts": [
+    {
+     "a_id": "r014",
+     "b_id": "r015",
+     "a_name": "$400 No Limit Hold'em (1Day)",
+     "b_name": "$200 No Limit Hold'em Bounty (1Day)",
+     "a_start": "11:10",
+     "b_start": "17:10",
+     "a_reg_closes": "16:55",
+     "severity": "tight",
+     "reason": "Only 15 minutes between the end of $400 No Limit Hold'em (1Day)'s late-registration window (16:55) and the start of $200 No Limit Hold'em Bounty (1Day) (17:10). You must leave the first table the moment registration closes and may still be playing."
     }
    ]
   },
   {
    "date": "2026-11-26",
+   "primary": {
+    "id": "r017",
+    "start": "17:10",
+    "name": "$200 No Limit Hold'em Bounty (1Day)",
+    "series": "Venetian DeepStack Extravaganza IV",
+    "buy_in_usd": 200,
+    "guarantee_usd": 8000,
+    "gtd_multiple": 40.0,
+    "reg_closes": "21:40",
+    "event_no": 13,
+    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+   },
+   "fallback": null,
+   "fallback_reason": "No second single-entry event on this day starts after the primary event's late-registration close (21:40). Any second entry would overlap the primary, so none is recommended.",
    "options": [
     {
      "id": "r016",
      "start": "11:10",
-     "series": "Venetian DeepStack Extravaganza IV",
      "name": "$300 No Limit Hold'em (1Day)",
+     "series": "Venetian DeepStack Extravaganza IV",
      "buy_in_usd": 300,
      "guarantee_usd": 10000,
+     "gtd_multiple": 33.3,
+     "reg_closes": "16:55",
+     "event_no": 12,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf"
     },
     {
      "id": "r017",
      "start": "17:10",
-     "series": "Venetian DeepStack Extravaganza IV",
      "name": "$200 No Limit Hold'em Bounty (1Day)",
+     "series": "Venetian DeepStack Extravaganza IV",
      "buy_in_usd": 200,
      "guarantee_usd": 8000,
+     "gtd_multiple": 40.0,
+     "reg_closes": "21:40",
+     "event_no": 13,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+    }
+   ],
+   "conflicts": [
+    {
+     "a_id": "r016",
+     "b_id": "r017",
+     "a_name": "$300 No Limit Hold'em (1Day)",
+     "b_name": "$200 No Limit Hold'em Bounty (1Day)",
+     "a_start": "11:10",
+     "b_start": "17:10",
+     "a_reg_closes": "16:55",
+     "severity": "tight",
+     "reason": "Only 15 minutes between the end of $300 No Limit Hold'em (1Day)'s late-registration window (16:55) and the start of $200 No Limit Hold'em Bounty (1Day) (17:10). You must leave the first table the moment registration closes and may still be playing."
     }
    ]
   },
   {
    "date": "2026-11-27",
+   "primary": {
+    "id": "r019",
+    "start": "11:10",
+    "name": "$600 No Limit Hold'em (1Day)",
+    "series": "Venetian DeepStack Extravaganza IV",
+    "buy_in_usd": 600,
+    "guarantee_usd": 30000,
+    "gtd_multiple": 50.0,
+    "reg_closes": "16:55",
+    "event_no": 14,
+    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf"
+   },
+   "fallback": {
+    "id": "r023",
+    "start": "17:10",
+    "name": "$200 No Limit Hold'em Bounty (1Day)",
+    "series": "Venetian DeepStack Extravaganza IV",
+    "buy_in_usd": 200,
+    "guarantee_usd": 8000,
+    "gtd_multiple": 40.0,
+    "reg_closes": "21:40",
+    "event_no": 15,
+    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+   },
+   "fallback_reason": "Starts at 17:10, after the primary event's official late-registration close of 16:55.",
    "options": [
     {
      "id": "r019",
      "start": "11:10",
-     "series": "Venetian DeepStack Extravaganza IV",
      "name": "$600 No Limit Hold'em (1Day)",
+     "series": "Venetian DeepStack Extravaganza IV",
      "buy_in_usd": 600,
      "guarantee_usd": 30000,
+     "gtd_multiple": 50.0,
+     "reg_closes": "16:55",
+     "event_no": 14,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf"
     },
     {
      "id": "r023",
      "start": "17:10",
-     "series": "Venetian DeepStack Extravaganza IV",
      "name": "$200 No Limit Hold'em Bounty (1Day)",
+     "series": "Venetian DeepStack Extravaganza IV",
      "buy_in_usd": 200,
      "guarantee_usd": 8000,
+     "gtd_multiple": 40.0,
+     "reg_closes": "21:40",
+     "event_no": 15,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+    }
+   ],
+   "conflicts": [
+    {
+     "a_id": "r019",
+     "b_id": "r023",
+     "a_name": "$600 No Limit Hold'em (1Day)",
+     "b_name": "$200 No Limit Hold'em Bounty (1Day)",
+     "a_start": "11:10",
+     "b_start": "17:10",
+     "a_reg_closes": "16:55",
+     "severity": "tight",
+     "reason": "Only 15 minutes between the end of $600 No Limit Hold'em (1Day)'s late-registration window (16:55) and the start of $200 No Limit Hold'em Bounty (1Day) (17:10). You must leave the first table the moment registration closes and may still be playing."
     }
    ]
   },
   {
    "date": "2026-11-28",
+   "primary": {
+    "id": "r025",
+    "start": "11:10",
+    "name": "$600 No Limit Hold'em Bounty (1Day)",
+    "series": "Venetian DeepStack Extravaganza IV",
+    "buy_in_usd": 600,
+    "guarantee_usd": 30000,
+    "gtd_multiple": 50.0,
+    "reg_closes": "16:55",
+    "event_no": 16,
+    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf"
+   },
+   "fallback": null,
+   "fallback_reason": "No second single-entry event on this day starts after the primary event's late-registration close (16:55). Any second entry would overlap the primary, so none is recommended.",
    "options": [
     {
      "id": "r025",
      "start": "11:10",
-     "series": "Venetian DeepStack Extravaganza IV",
      "name": "$600 No Limit Hold'em Bounty (1Day)",
+     "series": "Venetian DeepStack Extravaganza IV",
      "buy_in_usd": 600,
      "guarantee_usd": 30000,
+     "gtd_multiple": 50.0,
+     "reg_closes": "16:55",
+     "event_no": 16,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf"
+    },
+    {
+     "id": "r027",
+     "start": "12:10",
+     "name": "$400 Pot Limit Omaha Bounty (1Day)",
+     "series": "Venetian DeepStack Extravaganza IV",
+     "buy_in_usd": 400,
+     "guarantee_usd": 15000,
+     "gtd_multiple": 37.5,
+     "reg_closes": "16:40",
+     "event_no": 17,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_26.pdf"
+    }
+   ],
+   "conflicts": [
+    {
+     "a_id": "r025",
+     "b_id": "r027",
+     "a_name": "$600 No Limit Hold'em Bounty (1Day)",
+     "b_name": "$400 Pot Limit Omaha Bounty (1Day)",
+     "a_start": "11:10",
+     "b_start": "12:10",
+     "a_reg_closes": "16:55",
+     "severity": "conflict",
+     "reason": "$600 No Limit Hold'em Bounty (1Day) is still open for late registration until 16:55 when $400 Pot Limit Omaha Bounty (1Day) starts at 12:10. You cannot be seated in both."
     }
    ]
   },
   {
    "date": "2026-11-29",
+   "primary": {
+    "id": "r033",
+    "start": "17:10",
+    "name": "$200 No Limit Hold'em Bounty (1Day)",
+    "series": "Venetian DeepStack Extravaganza IV",
+    "buy_in_usd": 200,
+    "guarantee_usd": 8000,
+    "gtd_multiple": 40.0,
+    "reg_closes": "21:40",
+    "event_no": 21,
+    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+   },
+   "fallback": null,
+   "fallback_reason": "No second single-entry event on this day starts after the primary event's late-registration close (21:40). Any second entry would overlap the primary, so none is recommended.",
    "options": [
+    {
+     "id": "r032",
+     "start": "12:10",
+     "name": "$300 Pot Limit Omaha Double Board Bomb Pot (1Day)",
+     "series": "Venetian DeepStack Extravaganza IV",
+     "buy_in_usd": 300,
+     "guarantee_usd": 10000,
+     "gtd_multiple": 33.3,
+     "reg_closes": "16:40",
+     "event_no": 20,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_22.pdf"
+    },
     {
      "id": "r033",
      "start": "17:10",
-     "series": "Venetian DeepStack Extravaganza IV",
      "name": "$200 No Limit Hold'em Bounty (1Day)",
+     "series": "Venetian DeepStack Extravaganza IV",
      "buy_in_usd": 200,
      "guarantee_usd": 8000,
+     "gtd_multiple": 40.0,
+     "reg_closes": "21:40",
+     "event_no": 21,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
     }
-   ]
+   ],
+   "conflicts": []
   },
   {
    "date": "2026-11-30",
+   "primary": {
+    "id": "r039",
+    "start": "17:10",
+    "name": "$200 No Limit Hold'em Bounty (1Day)",
+    "series": "Venetian DeepStack Extravaganza IV",
+    "buy_in_usd": 200,
+    "guarantee_usd": 8000,
+    "gtd_multiple": 40.0,
+    "reg_closes": "21:40",
+    "event_no": 22,
+    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+   },
+   "fallback": null,
+   "fallback_reason": "Only one verified single-entry event runs on this day, so there is no conditional fallback.",
    "options": [
     {
      "id": "r039",
      "start": "17:10",
-     "series": "Venetian DeepStack Extravaganza IV",
      "name": "$200 No Limit Hold'em Bounty (1Day)",
+     "series": "Venetian DeepStack Extravaganza IV",
      "buy_in_usd": 200,
      "guarantee_usd": 8000,
+     "gtd_multiple": 40.0,
+     "reg_closes": "21:40",
+     "event_no": 22,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
     }
-   ]
+   ],
+   "conflicts": []
   },
   {
    "date": "2026-12-01",
+   "primary": {
+    "id": "r045",
+    "start": "17:10",
+    "name": "$200 No Limit Hold'em Bounty (1Day)",
+    "series": "Venetian DeepStack Extravaganza IV",
+    "buy_in_usd": 200,
+    "guarantee_usd": 8000,
+    "gtd_multiple": 40.0,
+    "reg_closes": "21:40",
+    "event_no": 23,
+    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+   },
+   "fallback": null,
+   "fallback_reason": "Only one verified single-entry event runs on this day, so there is no conditional fallback.",
    "options": [
     {
      "id": "r045",
      "start": "17:10",
-     "series": "Venetian DeepStack Extravaganza IV",
      "name": "$200 No Limit Hold'em Bounty (1Day)",
+     "series": "Venetian DeepStack Extravaganza IV",
      "buy_in_usd": 200,
      "guarantee_usd": 8000,
+     "gtd_multiple": 40.0,
+     "reg_closes": "21:40",
+     "event_no": 23,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
     }
-   ]
+   ],
+   "conflicts": []
   },
   {
    "date": "2026-12-02",
+   "primary": {
+    "id": "r046",
+    "start": "10:10",
+    "name": "$600 No Limit Hold'em Seniors (1Day)",
+    "series": "Venetian DeepStack Extravaganza IV",
+    "buy_in_usd": 600,
+    "guarantee_usd": 40000,
+    "gtd_multiple": 66.7,
+    "reg_closes": "15:55",
+    "event_no": 24,
+    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf"
+   },
+   "fallback": {
+    "id": "r048",
+    "start": "17:10",
+    "name": "$200 No Limit Hold'em Bounty (1Day)",
+    "series": "Venetian DeepStack Extravaganza IV",
+    "buy_in_usd": 200,
+    "guarantee_usd": 8000,
+    "gtd_multiple": 40.0,
+    "reg_closes": "21:40",
+    "event_no": 25,
+    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+   },
+   "fallback_reason": "Starts at 17:10, after the primary event's official late-registration close of 15:55.",
    "options": [
     {
      "id": "r046",
      "start": "10:10",
-     "series": "Venetian DeepStack Extravaganza IV",
      "name": "$600 No Limit Hold'em Seniors (1Day)",
+     "series": "Venetian DeepStack Extravaganza IV",
      "buy_in_usd": 600,
      "guarantee_usd": 40000,
+     "gtd_multiple": 66.7,
+     "reg_closes": "15:55",
+     "event_no": 24,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf"
     },
     {
      "id": "r048",
      "start": "17:10",
-     "series": "Venetian DeepStack Extravaganza IV",
      "name": "$200 No Limit Hold'em Bounty (1Day)",
+     "series": "Venetian DeepStack Extravaganza IV",
      "buy_in_usd": 200,
      "guarantee_usd": 8000,
+     "gtd_multiple": 40.0,
+     "reg_closes": "21:40",
+     "event_no": 25,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
     }
-   ]
+   ],
+   "conflicts": []
+  },
+  {
+   "date": "2026-12-03",
+   "primary": {
+    "id": "r052",
+    "start": "12:10",
+    "name": "$600 BIG O (1Day)",
+    "series": "Venetian DeepStack Extravaganza IV",
+    "buy_in_usd": 600,
+    "guarantee_usd": 25000,
+    "gtd_multiple": 41.7,
+    "reg_closes": "16:40",
+    "event_no": 27,
+    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_28.pdf"
+   },
+   "fallback": null,
+   "fallback_reason": "Only one verified single-entry event runs on this day, so there is no conditional fallback.",
+   "options": [
+    {
+     "id": "r052",
+     "start": "12:10",
+     "name": "$600 BIG O (1Day)",
+     "series": "Venetian DeepStack Extravaganza IV",
+     "buy_in_usd": 600,
+     "guarantee_usd": 25000,
+     "gtd_multiple": 41.7,
+     "reg_closes": "16:40",
+     "event_no": 27,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_28.pdf"
+    }
+   ],
+   "conflicts": []
   },
   {
    "date": "2026-12-06",
+   "primary": {
+    "id": "r064",
+    "start": "11:10",
+    "name": "$600 No Limit Hold'em (1Day)",
+    "series": "Venetian DeepStack Extravaganza IV",
+    "buy_in_usd": 600,
+    "guarantee_usd": 40000,
+    "gtd_multiple": 66.7,
+    "reg_closes": "16:55",
+    "event_no": 28,
+    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf"
+   },
+   "fallback": {
+    "id": "r065",
+    "start": "17:10",
+    "name": "$300 No Limit Hold'em Bounty (1Day)",
+    "series": "Venetian DeepStack Extravaganza IV",
+    "buy_in_usd": 300,
+    "guarantee_usd": 15000,
+    "gtd_multiple": 50.0,
+    "reg_closes": "21:40",
+    "event_no": 29,
+    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+   },
+   "fallback_reason": "Starts at 17:10, after the primary event's official late-registration close of 16:55.",
    "options": [
     {
      "id": "r064",
      "start": "11:10",
-     "series": "Venetian DeepStack Extravaganza IV",
      "name": "$600 No Limit Hold'em (1Day)",
+     "series": "Venetian DeepStack Extravaganza IV",
      "buy_in_usd": 600,
      "guarantee_usd": 40000,
+     "gtd_multiple": 66.7,
+     "reg_closes": "16:55",
+     "event_no": 28,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf"
     },
     {
      "id": "r065",
      "start": "17:10",
-     "series": "Venetian DeepStack Extravaganza IV",
      "name": "$300 No Limit Hold'em Bounty (1Day)",
+     "series": "Venetian DeepStack Extravaganza IV",
      "buy_in_usd": 300,
      "guarantee_usd": 15000,
+     "gtd_multiple": 50.0,
+     "reg_closes": "21:40",
+     "event_no": 29,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+    }
+   ],
+   "conflicts": [
+    {
+     "a_id": "r064",
+     "b_id": "r065",
+     "a_name": "$600 No Limit Hold'em (1Day)",
+     "b_name": "$300 No Limit Hold'em Bounty (1Day)",
+     "a_start": "11:10",
+     "b_start": "17:10",
+     "a_reg_closes": "16:55",
+     "severity": "tight",
+     "reason": "Only 15 minutes between the end of $600 No Limit Hold'em (1Day)'s late-registration window (16:55) and the start of $300 No Limit Hold'em Bounty (1Day) (17:10). You must leave the first table the moment registration closes and may still be playing."
     }
    ]
   },
   {
    "date": "2026-12-07",
+   "primary": {
+    "id": "r070",
+    "start": "11:10",
+    "name": "$600 No Limit Hold'em Bounty (1Day)",
+    "series": "Venetian DeepStack Extravaganza IV",
+    "buy_in_usd": 600,
+    "guarantee_usd": 40000,
+    "gtd_multiple": 66.7,
+    "reg_closes": "16:55",
+    "event_no": 30,
+    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf"
+   },
+   "fallback": {
+    "id": "r072",
+    "start": "17:10",
+    "name": "$300 No Limit Hold'em Bounty (1Day)",
+    "series": "Venetian DeepStack Extravaganza IV",
+    "buy_in_usd": 300,
+    "guarantee_usd": 15000,
+    "gtd_multiple": 50.0,
+    "reg_closes": "21:40",
+    "event_no": 31,
+    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+   },
+   "fallback_reason": "Starts at 17:10, after the primary event's official late-registration close of 16:55.",
    "options": [
     {
      "id": "r070",
      "start": "11:10",
-     "series": "Venetian DeepStack Extravaganza IV",
      "name": "$600 No Limit Hold'em Bounty (1Day)",
+     "series": "Venetian DeepStack Extravaganza IV",
      "buy_in_usd": 600,
      "guarantee_usd": 40000,
+     "gtd_multiple": 66.7,
+     "reg_closes": "16:55",
+     "event_no": 30,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf"
     },
     {
      "id": "r072",
      "start": "17:10",
-     "series": "Venetian DeepStack Extravaganza IV",
      "name": "$300 No Limit Hold'em Bounty (1Day)",
+     "series": "Venetian DeepStack Extravaganza IV",
      "buy_in_usd": 300,
      "guarantee_usd": 15000,
+     "gtd_multiple": 50.0,
+     "reg_closes": "21:40",
+     "event_no": 31,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+    }
+   ],
+   "conflicts": [
+    {
+     "a_id": "r070",
+     "b_id": "r072",
+     "a_name": "$600 No Limit Hold'em Bounty (1Day)",
+     "b_name": "$300 No Limit Hold'em Bounty (1Day)",
+     "a_start": "11:10",
+     "b_start": "17:10",
+     "a_reg_closes": "16:55",
+     "severity": "tight",
+     "reason": "Only 15 minutes between the end of $600 No Limit Hold'em Bounty (1Day)'s late-registration window (16:55) and the start of $300 No Limit Hold'em Bounty (1Day) (17:10). You must leave the first table the moment registration closes and may still be playing."
     }
    ]
   },
   {
    "date": "2026-12-08",
+   "primary": {
+    "id": "r074",
+    "start": "10:10",
+    "name": "$600 No Limit Hold'em Seniors (1Day)",
+    "series": "Venetian DeepStack Extravaganza IV",
+    "buy_in_usd": 600,
+    "guarantee_usd": 40000,
+    "gtd_multiple": 66.7,
+    "reg_closes": "15:55",
+    "event_no": 32,
+    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf"
+   },
+   "fallback": {
+    "id": "r076",
+    "start": "17:10",
+    "name": "$300 No Limit Hold'em Bounty (1Day)",
+    "series": "Venetian DeepStack Extravaganza IV",
+    "buy_in_usd": 300,
+    "guarantee_usd": 15000,
+    "gtd_multiple": 50.0,
+    "reg_closes": "21:40",
+    "event_no": 34,
+    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+   },
+   "fallback_reason": "Starts at 17:10, after the primary event's official late-registration close of 15:55.",
    "options": [
     {
      "id": "r074",
      "start": "10:10",
-     "series": "Venetian DeepStack Extravaganza IV",
      "name": "$600 No Limit Hold'em Seniors (1Day)",
+     "series": "Venetian DeepStack Extravaganza IV",
      "buy_in_usd": 600,
      "guarantee_usd": 40000,
+     "gtd_multiple": 66.7,
+     "reg_closes": "15:55",
+     "event_no": 32,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf"
     },
     {
      "id": "r076",
      "start": "17:10",
-     "series": "Venetian DeepStack Extravaganza IV",
      "name": "$300 No Limit Hold'em Bounty (1Day)",
+     "series": "Venetian DeepStack Extravaganza IV",
      "buy_in_usd": 300,
      "guarantee_usd": 15000,
+     "gtd_multiple": 50.0,
+     "reg_closes": "21:40",
+     "event_no": 34,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
     }
-   ]
+   ],
+   "conflicts": []
   },
   {
    "date": "2026-12-09",
+   "primary": {
+    "id": "r080",
+    "start": "11:10",
+    "name": "$800 No Limit Hold'em Bounty (1Day)",
+    "series": "Venetian DeepStack Extravaganza IV",
+    "buy_in_usd": 800,
+    "guarantee_usd": 75000,
+    "gtd_multiple": 93.8,
+    "reg_closes": "16:55",
+    "event_no": 36,
+    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_16.pdf"
+   },
+   "fallback": {
+    "id": "r083",
+    "start": "17:10",
+    "name": "$300 No Limit Hold'em Bounty (1Day)",
+    "series": "Venetian DeepStack Extravaganza IV",
+    "buy_in_usd": 300,
+    "guarantee_usd": 15000,
+    "gtd_multiple": 50.0,
+    "reg_closes": "21:40",
+    "event_no": 38,
+    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+   },
+   "fallback_reason": "Starts at 17:10, after the primary event's official late-registration close of 16:55.",
    "options": [
+    {
+     "id": "r078",
+     "start": "10:10",
+     "name": "$600 NLH LIPS Poker Jingle Tag Team (1Day)",
+     "series": "Venetian DeepStack Extravaganza IV",
+     "buy_in_usd": 600,
+     "guarantee_usd": 10000,
+     "gtd_multiple": 16.7,
+     "reg_closes": "14:40",
+     "event_no": 35,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_31.pdf"
+    },
     {
      "id": "r080",
      "start": "11:10",
-     "series": "Venetian DeepStack Extravaganza IV",
      "name": "$800 No Limit Hold'em Bounty (1Day)",
+     "series": "Venetian DeepStack Extravaganza IV",
      "buy_in_usd": 800,
      "guarantee_usd": 75000,
+     "gtd_multiple": 93.8,
+     "reg_closes": "16:55",
+     "event_no": 36,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_16.pdf"
     },
     {
      "id": "r083",
      "start": "17:10",
-     "series": "Venetian DeepStack Extravaganza IV",
      "name": "$300 No Limit Hold'em Bounty (1Day)",
+     "series": "Venetian DeepStack Extravaganza IV",
      "buy_in_usd": 300,
      "guarantee_usd": 15000,
+     "gtd_multiple": 50.0,
+     "reg_closes": "21:40",
+     "event_no": 38,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+    }
+   ],
+   "conflicts": [
+    {
+     "a_id": "r078",
+     "b_id": "r080",
+     "a_name": "$600 NLH LIPS Poker Jingle Tag Team (1Day)",
+     "b_name": "$800 No Limit Hold'em Bounty (1Day)",
+     "a_start": "10:10",
+     "b_start": "11:10",
+     "a_reg_closes": "14:40",
+     "severity": "conflict",
+     "reason": "$600 NLH LIPS Poker Jingle Tag Team (1Day) is still open for late registration until 14:40 when $800 No Limit Hold'em Bounty (1Day) starts at 11:10. You cannot be seated in both."
+    },
+    {
+     "a_id": "r080",
+     "b_id": "r083",
+     "a_name": "$800 No Limit Hold'em Bounty (1Day)",
+     "b_name": "$300 No Limit Hold'em Bounty (1Day)",
+     "a_start": "11:10",
+     "b_start": "17:10",
+     "a_reg_closes": "16:55",
+     "severity": "tight",
+     "reason": "Only 15 minutes between the end of $800 No Limit Hold'em Bounty (1Day)'s late-registration window (16:55) and the start of $300 No Limit Hold'em Bounty (1Day) (17:10). You must leave the first table the moment registration closes and may still be playing."
     }
    ]
   },
   {
    "date": "2026-12-10",
+   "primary": {
+    "id": "r086",
+    "start": "10:10",
+    "name": "$800 No Limit Hold'em LIPS Ladies (2Day)",
+    "series": "Venetian DeepStack Extravaganza IV",
+    "buy_in_usd": 800,
+    "guarantee_usd": 40000,
+    "gtd_multiple": 50.0,
+    "reg_closes": "16:55",
+    "event_no": 39,
+    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf"
+   },
+   "fallback": {
+    "id": "r088",
+    "start": "17:10",
+    "name": "$300 No Limit Hold'em Bounty (1Day)",
+    "series": "Venetian DeepStack Extravaganza IV",
+    "buy_in_usd": 300,
+    "guarantee_usd": 15000,
+    "gtd_multiple": 50.0,
+    "reg_closes": "21:40",
+    "event_no": 42,
+    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+   },
+   "fallback_reason": "Starts at 17:10, after the primary event's official late-registration close of 16:55.",
    "options": [
+    {
+     "id": "r086",
+     "start": "10:10",
+     "name": "$800 No Limit Hold'em LIPS Ladies (2Day)",
+     "series": "Venetian DeepStack Extravaganza IV",
+     "buy_in_usd": 800,
+     "guarantee_usd": 40000,
+     "gtd_multiple": 50.0,
+     "reg_closes": "16:55",
+     "event_no": 39,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf"
+    },
+    {
+     "id": "r087",
+     "start": "12:10",
+     "name": "$600 Pot Limit Omaha Bounty (1Day)",
+     "series": "Venetian DeepStack Extravaganza IV",
+     "buy_in_usd": 600,
+     "guarantee_usd": 25000,
+     "gtd_multiple": 41.7,
+     "reg_closes": "16:40",
+     "event_no": 40,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_27.pdf"
+    },
     {
      "id": "r088",
      "start": "17:10",
-     "series": "Venetian DeepStack Extravaganza IV",
      "name": "$300 No Limit Hold'em Bounty (1Day)",
+     "series": "Venetian DeepStack Extravaganza IV",
      "buy_in_usd": 300,
      "guarantee_usd": 15000,
+     "gtd_multiple": 50.0,
+     "reg_closes": "21:40",
+     "event_no": 42,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+    }
+   ],
+   "conflicts": [
+    {
+     "a_id": "r086",
+     "b_id": "r087",
+     "a_name": "$800 No Limit Hold'em LIPS Ladies (2Day)",
+     "b_name": "$600 Pot Limit Omaha Bounty (1Day)",
+     "a_start": "10:10",
+     "b_start": "12:10",
+     "a_reg_closes": "16:55",
+     "severity": "conflict",
+     "reason": "$800 No Limit Hold'em LIPS Ladies (2Day) is still open for late registration until 16:55 when $600 Pot Limit Omaha Bounty (1Day) starts at 12:10. You cannot be seated in both."
+    },
+    {
+     "a_id": "r086",
+     "b_id": "r088",
+     "a_name": "$800 No Limit Hold'em LIPS Ladies (2Day)",
+     "b_name": "$300 No Limit Hold'em Bounty (1Day)",
+     "a_start": "10:10",
+     "b_start": "17:10",
+     "a_reg_closes": "16:55",
+     "severity": "tight",
+     "reason": "Only 15 minutes between the end of $800 No Limit Hold'em LIPS Ladies (2Day)'s late-registration window (16:55) and the start of $300 No Limit Hold'em Bounty (1Day) (17:10). You must leave the first table the moment registration closes and may still be playing."
     }
    ]
   },
   {
+   "date": "2026-12-11",
+   "primary": {
+    "id": "r091",
+    "start": "11:10",
+    "name": "$600 No Limit Hold'em LIPS Kings and Queens Bounty (1Day)",
+    "series": "Venetian DeepStack Extravaganza IV",
+    "buy_in_usd": 600,
+    "guarantee_usd": 30000,
+    "gtd_multiple": 50.0,
+    "reg_closes": "16:55",
+    "event_no": 43,
+    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_33.pdf"
+   },
+   "fallback": null,
+   "fallback_reason": "Only one verified single-entry event runs on this day, so there is no conditional fallback.",
+   "options": [
+    {
+     "id": "r091",
+     "start": "11:10",
+     "name": "$600 No Limit Hold'em LIPS Kings and Queens Bounty (1Day)",
+     "series": "Venetian DeepStack Extravaganza IV",
+     "buy_in_usd": 600,
+     "guarantee_usd": 30000,
+     "gtd_multiple": 50.0,
+     "reg_closes": "16:55",
+     "event_no": 43,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_33.pdf"
+    }
+   ],
+   "conflicts": []
+  },
+  {
    "date": "2026-12-13",
+   "primary": {
+    "id": "r103",
+    "start": "17:10",
+    "name": "$300 No Limit Hold'em Bounty (1Day)",
+    "series": "Venetian DeepStack Extravaganza IV",
+    "buy_in_usd": 300,
+    "guarantee_usd": 15000,
+    "gtd_multiple": 50.0,
+    "reg_closes": "21:40",
+    "event_no": 50,
+    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+   },
+   "fallback": null,
+   "fallback_reason": "Only one verified single-entry event runs on this day, so there is no conditional fallback.",
    "options": [
     {
      "id": "r103",
      "start": "17:10",
-     "series": "Venetian DeepStack Extravaganza IV",
      "name": "$300 No Limit Hold'em Bounty (1Day)",
+     "series": "Venetian DeepStack Extravaganza IV",
      "buy_in_usd": 300,
      "guarantee_usd": 15000,
+     "gtd_multiple": 50.0,
+     "reg_closes": "21:40",
+     "event_no": 50,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
     }
-   ]
+   ],
+   "conflicts": []
   },
   {
    "date": "2026-12-14",
+   "primary": {
+    "id": "r109",
+    "start": "17:10",
+    "name": "$300 No Limit Hold'em Bounty (1Day)",
+    "series": "Venetian DeepStack Extravaganza IV",
+    "buy_in_usd": 300,
+    "guarantee_usd": 15000,
+    "gtd_multiple": 50.0,
+    "reg_closes": "21:40",
+    "event_no": 51,
+    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+   },
+   "fallback": null,
+   "fallback_reason": "Only one verified single-entry event runs on this day, so there is no conditional fallback.",
    "options": [
     {
      "id": "r109",
      "start": "17:10",
-     "series": "Venetian DeepStack Extravaganza IV",
      "name": "$300 No Limit Hold'em Bounty (1Day)",
+     "series": "Venetian DeepStack Extravaganza IV",
      "buy_in_usd": 300,
      "guarantee_usd": 15000,
+     "gtd_multiple": 50.0,
+     "reg_closes": "21:40",
+     "event_no": 51,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
     }
-   ]
+   ],
+   "conflicts": []
   },
   {
    "date": "2026-12-15",
+   "primary": {
+    "id": "r113",
+    "start": "11:10",
+    "name": "$1,100 No Limit Hold'em Progressive Knockout Bounty (1Day)",
+    "series": "Venetian DeepStack Extravaganza IV",
+    "buy_in_usd": 1100,
+    "guarantee_usd": 75000,
+    "gtd_multiple": 68.2,
+    "reg_closes": "16:55",
+    "event_no": 52,
+    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_34.pdf"
+   },
+   "fallback": {
+    "id": "r116",
+    "start": "17:10",
+    "name": "$300 No Limit Hold'em Bounty (1Day)",
+    "series": "Venetian DeepStack Extravaganza IV",
+    "buy_in_usd": 300,
+    "guarantee_usd": 15000,
+    "gtd_multiple": 50.0,
+    "reg_closes": "21:40",
+    "event_no": 53,
+    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+   },
+   "fallback_reason": "Starts at 17:10, after the primary event's official late-registration close of 16:55.",
    "options": [
+    {
+     "id": "r113",
+     "start": "11:10",
+     "name": "$1,100 No Limit Hold'em Progressive Knockout Bounty (1Day)",
+     "series": "Venetian DeepStack Extravaganza IV",
+     "buy_in_usd": 1100,
+     "guarantee_usd": 75000,
+     "gtd_multiple": 68.2,
+     "reg_closes": "16:55",
+     "event_no": 52,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_34.pdf"
+    },
     {
      "id": "r116",
      "start": "17:10",
-     "series": "Venetian DeepStack Extravaganza IV",
      "name": "$300 No Limit Hold'em Bounty (1Day)",
+     "series": "Venetian DeepStack Extravaganza IV",
      "buy_in_usd": 300,
      "guarantee_usd": 15000,
+     "gtd_multiple": 50.0,
+     "reg_closes": "21:40",
+     "event_no": 53,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+    }
+   ],
+   "conflicts": [
+    {
+     "a_id": "r113",
+     "b_id": "r116",
+     "a_name": "$1,100 No Limit Hold'em Progressive Knockout Bounty (1Day)",
+     "b_name": "$300 No Limit Hold'em Bounty (1Day)",
+     "a_start": "11:10",
+     "b_start": "17:10",
+     "a_reg_closes": "16:55",
+     "severity": "tight",
+     "reason": "Only 15 minutes between the end of $1,100 No Limit Hold'em Progressive Knockout Bounty (1Day)'s late-registration window (16:55) and the start of $300 No Limit Hold'em Bounty (1Day) (17:10). You must leave the first table the moment registration closes and may still be playing."
     }
    ]
   },
   {
    "date": "2026-12-16",
+   "primary": {
+    "id": "r119",
+    "start": "11:10",
+    "name": "$600 No Limit Hold'em Bounty (1Day)",
+    "series": "Venetian DeepStack Extravaganza IV",
+    "buy_in_usd": 600,
+    "guarantee_usd": 50000,
+    "gtd_multiple": 83.3,
+    "reg_closes": "16:55",
+    "event_no": 54,
+    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf"
+   },
+   "fallback": {
+    "id": "r121",
+    "start": "17:10",
+    "name": "$300 No Limit Hold'em Bounty (1Day)",
+    "series": "Venetian DeepStack Extravaganza IV",
+    "buy_in_usd": 300,
+    "guarantee_usd": 15000,
+    "gtd_multiple": 50.0,
+    "reg_closes": "21:40",
+    "event_no": 55,
+    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+   },
+   "fallback_reason": "Starts at 17:10, after the primary event's official late-registration close of 16:55.",
    "options": [
     {
-     "id": "r118",
+     "id": "r119",
      "start": "11:10",
-     "series": "Venetian DeepStack Extravaganza IV",
      "name": "$600 No Limit Hold'em Bounty (1Day)",
+     "series": "Venetian DeepStack Extravaganza IV",
      "buy_in_usd": 600,
      "guarantee_usd": 50000,
+     "gtd_multiple": 83.3,
+     "reg_closes": "16:55",
+     "event_no": 54,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf"
     },
     {
-     "id": "r119",
+     "id": "r121",
      "start": "17:10",
-     "series": "Venetian DeepStack Extravaganza IV",
      "name": "$300 No Limit Hold'em Bounty (1Day)",
+     "series": "Venetian DeepStack Extravaganza IV",
      "buy_in_usd": 300,
      "guarantee_usd": 15000,
+     "gtd_multiple": 50.0,
+     "reg_closes": "21:40",
+     "event_no": 55,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
     }
+   ],
+   "conflicts": [
+    {
+     "a_id": "r119",
+     "b_id": "r121",
+     "a_name": "$600 No Limit Hold'em Bounty (1Day)",
+     "b_name": "$300 No Limit Hold'em Bounty (1Day)",
+     "a_start": "11:10",
+     "b_start": "17:10",
+     "a_reg_closes": "16:55",
+     "severity": "tight",
+     "reason": "Only 15 minutes between the end of $600 No Limit Hold'em Bounty (1Day)'s late-registration window (16:55) and the start of $300 No Limit Hold'em Bounty (1Day) (17:10). You must leave the first table the moment registration closes and may still be playing."
+    }
    ]
+  },
+  {
+   "date": "2026-12-17",
+   "primary": {
+    "id": "r126",
+    "start": "12:10",
+    "name": "$600 Pot Limit Omaha Double Board Bomb Pot (1Day)",
+    "series": "Venetian DeepStack Extravaganza IV",
+    "buy_in_usd": 600,
+    "guarantee_usd": 25000,
+    "gtd_multiple": 41.7,
+    "reg_closes": "16:40",
+    "event_no": 57,
+    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_23.pdf"
+   },
+   "fallback": null,
+   "fallback_reason": "Only one verified single-entry event runs on this day, so there is no conditional fallback.",
+   "options": [
+    {
+     "id": "r126",
+     "start": "12:10",
+     "name": "$600 Pot Limit Omaha Double Board Bomb Pot (1Day)",
+     "series": "Venetian DeepStack Extravaganza IV",
+     "buy_in_usd": 600,
+     "guarantee_usd": 25000,
+     "gtd_multiple": 41.7,
+     "reg_closes": "16:40",
+     "event_no": 57,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_23.pdf"
+    }
+   ],
+   "conflicts": []
   },
   {
    "date": "2026-12-20",
+   "primary": {
+    "id": "r152",
+    "start": "17:10",
+    "name": "$200 No Limit Hold'em Bounty (1Day)",
+    "series": "Venetian DeepStack Extravaganza IV",
+    "buy_in_usd": 200,
+    "guarantee_usd": 8000,
+    "gtd_multiple": 40.0,
+    "reg_closes": "21:40",
+    "event_no": 60,
+    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+   },
+   "fallback": null,
+   "fallback_reason": "Only one verified single-entry event runs on this day, so there is no conditional fallback.",
    "options": [
     {
-     "id": "r153",
+     "id": "r152",
      "start": "17:10",
-     "series": "Venetian DeepStack Extravaganza IV",
      "name": "$200 No Limit Hold'em Bounty (1Day)",
+     "series": "Venetian DeepStack Extravaganza IV",
      "buy_in_usd": 200,
      "guarantee_usd": 8000,
+     "gtd_multiple": 40.0,
+     "reg_closes": "21:40",
+     "event_no": 60,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
     }
-   ]
+   ],
+   "conflicts": []
   },
   {
    "date": "2026-12-21",
+   "primary": {
+    "id": "r157",
+    "start": "17:10",
+    "name": "$200 No Limit Hold'em Bounty (1Day)",
+    "series": "Venetian DeepStack Extravaganza IV",
+    "buy_in_usd": 200,
+    "guarantee_usd": 8000,
+    "gtd_multiple": 40.0,
+    "reg_closes": "21:40",
+    "event_no": 61,
+    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+   },
+   "fallback": null,
+   "fallback_reason": "Only one verified single-entry event runs on this day, so there is no conditional fallback.",
    "options": [
     {
-     "id": "r158",
+     "id": "r157",
      "start": "17:10",
-     "series": "Venetian DeepStack Extravaganza IV",
      "name": "$200 No Limit Hold'em Bounty (1Day)",
+     "series": "Venetian DeepStack Extravaganza IV",
      "buy_in_usd": 200,
      "guarantee_usd": 8000,
+     "gtd_multiple": 40.0,
+     "reg_closes": "21:40",
+     "event_no": 61,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
     }
-   ]
+   ],
+   "conflicts": []
   },
   {
    "date": "2026-12-22",
+   "primary": {
+    "id": "r160",
+    "start": "17:10",
+    "name": "$200 No Limit Hold'em Bounty (1Day)",
+    "series": "Venetian DeepStack Extravaganza IV",
+    "buy_in_usd": 200,
+    "guarantee_usd": 8000,
+    "gtd_multiple": 40.0,
+    "reg_closes": "21:40",
+    "event_no": 62,
+    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+   },
+   "fallback": null,
+   "fallback_reason": "Only one verified single-entry event runs on this day, so there is no conditional fallback.",
+   "options": [
+    {
+     "id": "r160",
+     "start": "17:10",
+     "name": "$200 No Limit Hold'em Bounty (1Day)",
+     "series": "Venetian DeepStack Extravaganza IV",
+     "buy_in_usd": 200,
+     "guarantee_usd": 8000,
+     "gtd_multiple": 40.0,
+     "reg_closes": "21:40",
+     "event_no": 62,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+    }
+   ],
+   "conflicts": []
+  },
+  {
+   "date": "2026-12-23",
+   "primary": {
+    "id": "r161",
+    "start": "11:10",
+    "name": "$600 No Limit Hold'em (1Day)",
+    "series": "Venetian DeepStack Extravaganza IV",
+    "buy_in_usd": 600,
+    "guarantee_usd": 30000,
+    "gtd_multiple": 50.0,
+    "reg_closes": "16:55",
+    "event_no": 63,
+    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf"
+   },
+   "fallback": {
+    "id": "r162",
+    "start": "17:10",
+    "name": "$200 No Limit Hold'em Bounty (1Day)",
+    "series": "Venetian DeepStack Extravaganza IV",
+    "buy_in_usd": 200,
+    "guarantee_usd": 8000,
+    "gtd_multiple": 40.0,
+    "reg_closes": "21:40",
+    "event_no": 64,
+    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+   },
+   "fallback_reason": "Starts at 17:10, after the primary event's official late-registration close of 16:55.",
    "options": [
     {
      "id": "r161",
-     "start": "17:10",
+     "start": "11:10",
+     "name": "$600 No Limit Hold'em (1Day)",
      "series": "Venetian DeepStack Extravaganza IV",
+     "buy_in_usd": 600,
+     "guarantee_usd": 30000,
+     "gtd_multiple": 50.0,
+     "reg_closes": "16:55",
+     "event_no": 63,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf"
+    },
+    {
+     "id": "r162",
+     "start": "17:10",
      "name": "$200 No Limit Hold'em Bounty (1Day)",
+     "series": "Venetian DeepStack Extravaganza IV",
      "buy_in_usd": 200,
      "guarantee_usd": 8000,
+     "gtd_multiple": 40.0,
+     "reg_closes": "21:40",
+     "event_no": 64,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+    }
+   ],
+   "conflicts": [
+    {
+     "a_id": "r161",
+     "b_id": "r162",
+     "a_name": "$600 No Limit Hold'em (1Day)",
+     "b_name": "$200 No Limit Hold'em Bounty (1Day)",
+     "a_start": "11:10",
+     "b_start": "17:10",
+     "a_reg_closes": "16:55",
+     "severity": "tight",
+     "reason": "Only 15 minutes between the end of $600 No Limit Hold'em (1Day)'s late-registration window (16:55) and the start of $200 No Limit Hold'em Bounty (1Day) (17:10). You must leave the first table the moment registration closes and may still be playing."
     }
    ]
   },
   {
-   "date": "2026-12-23",
+   "date": "2026-12-24",
+   "primary": {
+    "id": "r163",
+    "start": "11:10",
+    "name": "$400 No Limit Hold'em (1Day)",
+    "series": "Venetian DeepStack Extravaganza NYE",
+    "buy_in_usd": 400,
+    "guarantee_usd": 15000,
+    "gtd_multiple": 37.5,
+    "reg_closes": "15:40",
+    "event_no": 1,
+    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_1.pdf"
+   },
+   "fallback": null,
+   "fallback_reason": "Only one verified single-entry event runs on this day, so there is no conditional fallback.",
    "options": [
     {
-     "id": "r162",
-     "start": "11:10",
-     "series": "Venetian DeepStack Extravaganza IV",
-     "name": "$600 No Limit Hold'em (1Day)",
-     "buy_in_usd": 600,
-     "guarantee_usd": 30000,
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf"
-    },
-    {
      "id": "r163",
-     "start": "17:10",
-     "series": "Venetian DeepStack Extravaganza IV",
-     "name": "$200 No Limit Hold'em Bounty (1Day)",
-     "buy_in_usd": 200,
-     "guarantee_usd": 8000,
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+     "start": "11:10",
+     "name": "$400 No Limit Hold'em (1Day)",
+     "series": "Venetian DeepStack Extravaganza NYE",
+     "buy_in_usd": 400,
+     "guarantee_usd": 15000,
+     "gtd_multiple": 37.5,
+     "reg_closes": "15:40",
+     "event_no": 1,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_1.pdf"
     }
-   ]
+   ],
+   "conflicts": []
+  },
+  {
+   "date": "2026-12-25",
+   "primary": {
+    "id": "r165",
+    "start": "11:10",
+    "name": "$400 No Limit Hold'em (1Day)",
+    "series": "Venetian DeepStack Extravaganza NYE",
+    "buy_in_usd": 400,
+    "guarantee_usd": 15000,
+    "gtd_multiple": 37.5,
+    "reg_closes": "15:40",
+    "event_no": 3,
+    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_1.pdf"
+   },
+   "fallback": null,
+   "fallback_reason": "Only one verified single-entry event runs on this day, so there is no conditional fallback.",
+   "options": [
+    {
+     "id": "r165",
+     "start": "11:10",
+     "name": "$400 No Limit Hold'em (1Day)",
+     "series": "Venetian DeepStack Extravaganza NYE",
+     "buy_in_usd": 400,
+     "guarantee_usd": 15000,
+     "gtd_multiple": 37.5,
+     "reg_closes": "15:40",
+     "event_no": 3,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_1.pdf"
+    }
+   ],
+   "conflicts": []
+  },
+  {
+   "date": "2026-12-31",
+   "primary": {
+    "id": "r173",
+    "start": "11:10",
+    "name": "$400 No Limit Hold'em (1Day)",
+    "series": "Venetian DeepStack Extravaganza NYE",
+    "buy_in_usd": 400,
+    "guarantee_usd": 15000,
+    "gtd_multiple": 37.5,
+    "reg_closes": "15:40",
+    "event_no": 17,
+    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_1.pdf"
+   },
+   "fallback": null,
+   "fallback_reason": "Only one verified single-entry event runs on this day, so there is no conditional fallback.",
+   "options": [
+    {
+     "id": "r173",
+     "start": "11:10",
+     "name": "$400 No Limit Hold'em (1Day)",
+     "series": "Venetian DeepStack Extravaganza NYE",
+     "buy_in_usd": 400,
+     "guarantee_usd": 15000,
+     "gtd_multiple": 37.5,
+     "reg_closes": "15:40",
+     "event_no": 17,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_1.pdf"
+    }
+   ],
+   "conflicts": []
   }
  ],
  "earliest_listed_start": "10:00",
- "note": "Earliest start among the rows in this dataset is 10:00 AM (Wynn, Super Gold Million Day 1A, Dec 10). Satellites are excluded from the dataset, and one Venetian satellite starts at 9:10 AM. Registration opening times are not printed in the schedules read. The schedules print a REG CLOSES time per event."
+ "method": "One primary event per day, chosen by guarantee / buy-in among that day's verified single-entry events. The conditional fallback is the next-best event that starts after the primary's official late-registration close. Overlaps are flagged using only official start times and official late-registration close times, because no official source publishes a finish time.",
+ "note": "No verified single-entry event in this dataset starts before 10:10 AM, so a full day of play beginning at 8 AM is not supported by the official schedules read. Registration OPENING times are not printed on any official schedule read; the schedules print a registration CLOSE time per event."
 }

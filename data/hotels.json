@@ -1,18 +1,28 @@
 {
- "verified_on": "2026-11-16",
+ "generated_on": "2026-11-16",
  "rows": [
   {
    "id": "venetian",
    "name": "The Venetian Resort",
-   "address_note": "Venetian host property for DeepStack series (official poker page)",
+   "venue_id": "venetian",
+   "address_note": "Host property for the DeepStack series. On the Strip, north of Flamingo.",
    "resort_fee_usd": 55,
    "resort_fee_status": "verified",
    "resort_fee_note": "Official Venetian hotel terms, read 2026-11-16: $55 plus applicable tax per night.",
+   "resort_fee_source": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
    "room_rate_usd": null,
    "room_rate_status": "unverified",
    "room_rate_note": "Official poker-suite page says rates 'start as low as $119 and $209' (Venetian or Palazzo), conditional on poker play. Which rate applies to which tower is not stated, so no value is entered here.",
-   "clark_county_tax_pct": 13.38,
+   "room_tax_pct": 13.38,
    "tax_status": "Verified from full official Venetian hotel terms read 2026-11-16: Clark County Room Tax 13.38%.",
+   "tax_source": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+   "parking_usd": null,
+   "parking_status": "unverified",
+   "parking_note": "No parking rate was confirmed from an official Venetian source.",
+   "cancellation_deadline": null,
+   "cancellation_status": "unverified",
+   "cancellation_note": "No cancellation deadline was confirmed from an official Venetian source.",
+   "booking_url": "https://www.venetianlasvegas.com/book",
    "sources": [
     {
      "label": "Resort fee (official)",
@@ -25,24 +35,40 @@
     {
      "label": "Poker suite rates (official)",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html"
+    },
+    {
+     "label": "Official booking page",
+     "url": "https://www.venetianlasvegas.com/book"
     }
    ],
-   "walk_to_venetian_min": null,
-   "walk_note": "Host property. Walking time not applicable (not published).",
-   "true_cost_per_night_usd": null
+   "true_cost_per_night_usd": null,
+   "walk_minutes": null,
+   "walk_status": "unverified",
+   "walk_note": "Walking time is not published on any official source. Official addresses are recorded for each hotel-venue pair, but no official walking time exists, so the cell is blank and the 30-minute test cannot be applied yet.",
+   "last_checked": "2026-11-16"
   },
   {
    "id": "palazzo",
    "name": "The Palazzo",
-   "address_note": "Venetian sister property (official poker page names The Palazzo for the $55 fee)",
+   "venue_id": "venetian",
+   "address_note": "Venetian sister property, same resort complex.",
    "resort_fee_usd": 55,
    "resort_fee_status": "verified",
    "resort_fee_note": "Official Venetian poker-suite page: 'There is a $55 resort fee per night stayed' (stated for The Venetian or The Palazzo).",
+   "resort_fee_source": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
    "room_rate_usd": null,
    "room_rate_status": "unverified",
    "room_rate_note": "Only conditional poker-suite starting rates are published (see Venetian row). No Palazzo-specific rate confirmed.",
-   "clark_county_tax_pct": null,
+   "room_tax_pct": null,
    "tax_status": "Unverified for Palazzo: the fetched Venetian hotel terms do not separately identify Palazzo's tax calculation.",
+   "tax_source": null,
+   "parking_usd": null,
+   "parking_status": "unverified",
+   "parking_note": "No parking rate was confirmed from an official source for Palazzo.",
+   "cancellation_deadline": null,
+   "cancellation_status": "unverified",
+   "cancellation_note": "Not confirmed from an official source.",
+   "booking_url": "https://www.venetianlasvegas.com/book",
    "sources": [
     {
      "label": "Poker suite rates incl. $55 resort fee (official)",
@@ -53,22 +79,34 @@
      "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html"
     }
    ],
-   "walk_to_venetian_min": null,
-   "walk_note": "Unverified: walking time not on an official source.",
-   "true_cost_per_night_usd": null
+   "true_cost_per_night_usd": null,
+   "walk_minutes": null,
+   "walk_status": "unverified",
+   "walk_note": "Walking time is not published on any official source. Official addresses are recorded for each hotel-venue pair, but no official walking time exists, so the cell is blank and the 30-minute test cannot be applied yet.",
+   "last_checked": "2026-11-16"
   },
   {
    "id": "wynn",
    "name": "Wynn Las Vegas",
-   "address_note": "WPT World Championship and Wynn Signature Series host",
+   "venue_id": "wynn",
+   "address_note": "Host property for the WPT World Championship and the Wynn Signature Series.",
    "resort_fee_usd": 55,
    "resort_fee_status": "verified",
    "resort_fee_note": "Official Wynn terms (search excerpt, not fetched in full): daily resort fee of $55 plus tax per room night.",
+   "resort_fee_source": "https://www.wynnlasvegas.com/terms-and-conditions/848671",
    "room_rate_usd": null,
    "room_rate_status": "unverified",
-   "room_rate_note": "No official nightly rate confirmed for any date. Third-party sites quote rates; these are not used.",
-   "clark_county_tax_pct": null,
+   "room_rate_note": "No official nightly rate confirmed for any date. Third-party rates are not used.",
+   "room_tax_pct": null,
    "tax_status": "Unverified: no Wynn-specific tax rate was confirmed from official terms.",
+   "tax_source": null,
+   "parking_usd": null,
+   "parking_status": "unverified",
+   "parking_note": "No parking rate was confirmed from an official Wynn source.",
+   "cancellation_deadline": null,
+   "cancellation_status": "unverified",
+   "cancellation_note": "Not confirmed from an official source.",
+   "booking_url": "https://www.wynnlasvegas.com/",
    "sources": [
     {
      "label": "Resort fee terms (official)",
@@ -79,98 +117,148 @@
      "url": "https://www.wynnlasvegas.com/casino/poker"
     }
    ],
-   "walk_to_venetian_min": null,
-   "walk_note": "Unverified: walking time not on an official source.",
-   "true_cost_per_night_usd": null
+   "true_cost_per_night_usd": null,
+   "walk_minutes": null,
+   "walk_status": "unverified",
+   "walk_note": "Walking time is not published on any official source. Official addresses are recorded for each hotel-venue pair, but no official walking time exists, so the cell is blank and the 30-minute test cannot be applied yet.",
+   "last_checked": "2026-11-16"
   },
   {
    "id": "encore",
    "name": "Encore at Wynn Las Vegas",
-   "address_note": "Same resort operator as Wynn Las Vegas",
+   "venue_id": "wynn",
+   "address_note": "Same resort operator as Wynn Las Vegas.",
    "resort_fee_usd": 55,
    "resort_fee_status": "verified",
    "resort_fee_note": "Official Wynn terms (search excerpt, not fetched in full) cover 'Wynn and Encore Las Vegas' with a $55 plus tax daily resort fee. Confirm for the specific room.",
+   "resort_fee_source": "https://www.wynnlasvegas.com/terms-and-conditions/848671",
    "room_rate_usd": null,
    "room_rate_status": "unverified",
    "room_rate_note": "No official nightly rate confirmed.",
-   "clark_county_tax_pct": null,
+   "room_tax_pct": null,
    "tax_status": "Unverified: no Encore-specific tax rate was confirmed from official terms.",
+   "tax_source": null,
+   "parking_usd": null,
+   "parking_status": "unverified",
+   "parking_note": "Not confirmed from an official source.",
+   "cancellation_deadline": null,
+   "cancellation_status": "unverified",
+   "cancellation_note": "Not confirmed from an official source.",
+   "booking_url": "https://www.wynnlasvegas.com/",
    "sources": [
     {
      "label": "Resort fee terms (official)",
      "url": "https://www.wynnlasvegas.com/terms-and-conditions/848671"
     }
    ],
-   "walk_to_venetian_min": null,
-   "walk_note": "Unverified: walking time not on an official source.",
-   "true_cost_per_night_usd": null
+   "true_cost_per_night_usd": null,
+   "walk_minutes": null,
+   "walk_status": "unverified",
+   "walk_note": "Walking time is not published on any official source. Official addresses are recorded for each hotel-venue pair, but no official walking time exists, so the cell is blank and the 30-minute test cannot be applied yet.",
+   "last_checked": "2026-11-16"
   },
   {
    "id": "bellagio",
    "name": "Bellagio",
-   "address_note": "MGM Resorts property on the Strip",
+   "venue_id": null,
+   "address_note": "MGM Resorts property on the Strip.",
    "resort_fee_usd": null,
    "resort_fee_status": "unverified",
    "resort_fee_note": "No Bellagio-specific official resort-fee terms confirmed. Third-party guides conflict; left blank.",
+   "resort_fee_source": null,
    "room_rate_usd": null,
    "room_rate_status": "unverified",
    "room_rate_note": "No official nightly rate confirmed.",
-   "clark_county_tax_pct": null,
+   "room_tax_pct": null,
    "tax_status": "Unverified for Bellagio: no Bellagio-specific tax rate confirmed from official terms.",
+   "tax_source": null,
+   "parking_usd": null,
+   "parking_status": "unverified",
+   "parking_note": "Not confirmed from an official source.",
+   "cancellation_deadline": null,
+   "cancellation_status": "unverified",
+   "cancellation_note": "Not confirmed from an official source.",
+   "booking_url": "https://bellagio.mgmresorts.com/en.html",
    "sources": [
     {
      "label": "Bellagio official home page (property identification; no fee or tax value)",
      "url": "https://bellagio.mgmresorts.com/en.html"
     }
    ],
-   "walk_to_venetian_min": null,
-   "walk_note": "Unverified: walking time not on an official source.",
-   "true_cost_per_night_usd": null
+   "true_cost_per_night_usd": null,
+   "walk_minutes": null,
+   "walk_status": "unverified",
+   "walk_note": "Walking time is not published on any official source. Official addresses are recorded for each hotel-venue pair, but no official walking time exists, so the cell is blank and the 30-minute test cannot be applied yet.",
+   "last_checked": "2026-11-16"
   },
   {
    "id": "aria",
    "name": "ARIA Resort & Casino",
-   "address_note": "MGM Resorts property on the Strip",
+   "venue_id": null,
+   "address_note": "MGM Resorts property on the Strip.",
    "resort_fee_usd": null,
    "resort_fee_status": "unverified",
    "resort_fee_note": "Official ARIA home page fetched; no official resort-fee terms located on it. Left blank.",
+   "resort_fee_source": null,
    "room_rate_usd": null,
    "room_rate_status": "unverified",
    "room_rate_note": "No official nightly rate confirmed.",
-   "clark_county_tax_pct": null,
+   "room_tax_pct": null,
    "tax_status": "Unverified for ARIA: no property-specific tax rate was confirmed from official terms.",
+   "tax_source": null,
+   "parking_usd": null,
+   "parking_status": "unverified",
+   "parking_note": "Not confirmed from an official source.",
+   "cancellation_deadline": null,
+   "cancellation_status": "unverified",
+   "cancellation_note": "Not confirmed from an official source.",
+   "booking_url": "https://aria.mgmresorts.com/en.html",
    "sources": [
     {
      "label": "ARIA official home page (fetched)",
      "url": "https://aria.mgmresorts.com/en.html"
     }
    ],
-   "walk_to_venetian_min": null,
-   "walk_note": "Unverified: walking time not on an official source.",
-   "true_cost_per_night_usd": null
+   "true_cost_per_night_usd": null,
+   "walk_minutes": null,
+   "walk_status": "unverified",
+   "walk_note": "Walking time is not published on any official source. Official addresses are recorded for each hotel-venue pair, but no official walking time exists, so the cell is blank and the 30-minute test cannot be applied yet.",
+   "last_checked": "2026-11-16"
   },
   {
    "id": "caesars",
    "name": "Caesars Palace",
-   "address_note": "Caesars Entertainment property",
+   "venue_id": null,
+   "address_note": "Caesars Entertainment property on the Strip.",
    "resort_fee_usd": null,
    "resort_fee_status": "unverified",
    "resort_fee_note": "Official corporate disclaimer gives a general range of $45 to $50 plus applicable tax, not property-specific. Third-party listings conflict. Left blank.",
+   "resort_fee_source": "https://www.caesars.com/corporate/disclaimer",
    "room_rate_usd": null,
    "room_rate_status": "unverified",
    "room_rate_note": "No official nightly rate confirmed.",
-   "clark_county_tax_pct": null,
+   "room_tax_pct": null,
    "tax_status": "Unverified for Caesars Palace: no property-specific tax rate was confirmed from official terms.",
+   "tax_source": null,
+   "parking_usd": null,
+   "parking_status": "unverified",
+   "parking_note": "Not confirmed from an official source.",
+   "cancellation_deadline": null,
+   "cancellation_status": "unverified",
+   "cancellation_note": "Not confirmed from an official source.",
+   "booking_url": "https://www.caesars.com/caesars-palace",
    "sources": [
     {
      "label": "Caesars corporate disclaimer (official range)",
      "url": "https://www.caesars.com/corporate/disclaimer"
     }
    ],
-   "walk_to_venetian_min": null,
-   "walk_note": "Unverified: walking time not on an official source.",
-   "true_cost_per_night_usd": null
+   "true_cost_per_night_usd": null,
+   "walk_minutes": null,
+   "walk_status": "unverified",
+   "walk_note": "Walking time is not published on any official source. Official addresses are recorded for each hotel-venue pair, but no official walking time exists, so the cell is blank and the 30-minute test cannot be applied yet.",
+   "last_checked": "2026-11-16"
   }
  ],
- "method": "True nightly cost is computed only when a date-specific room rate, resort fee, and property-specific tax rate are verified. No current hotel row has all required values. The Venetian terms state a $55 resort fee plus applicable tax and 13.38% Clark County Room Tax; the tax rate is not copied to other hotel rows without property-specific support."
+ "method": "True nightly cost is computed only when a dated room rate, a resort fee and a property-specific tax rate are all verified. No hotel row currently has all three. The Venetian terms state a $55 resort fee plus applicable tax and a 13.38% Clark County Room Tax; that tax rate is not copied to other properties without property-specific support."
 }

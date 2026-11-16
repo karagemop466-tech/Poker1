@@ -28,7 +28,8 @@ for rel in REQUIRED_SITE_DOCS:
     if not os.path.isfile(os.path.join(ROOT, rel)):
         problems.append(f"{rel}: required Markdown content for the deployed dashboard is missing")
 
-for rel in ("data/tournaments.json", "data/hotels.json", "data/schedule.json"):
+for rel in ("data/tournaments.json", "data/hotels.json", "data/schedule.json",
+            "data/walking.json", "data/hotel_rates.json", "data/changelog.json"):
     try:
         json.load(open(os.path.join(ROOT, rel), encoding="utf-8"))
     except Exception as e:  # noqa: BLE001
@@ -45,6 +46,25 @@ for rel in ("data/tournaments.json", "data/hotels.json"):
             host = urlparse(source["url"]).hostname
             if host not in OFFICIAL_SOURCE_HOSTS:
                 problems.append(f"{rel}: row {r.get('id', r.get('name'))} has a non-approved source host: {host}")
+
+# Every structured rule field must carry its own official source URL.
+tournaments = json.load(open(os.path.join(ROOT, "data/tournaments.json"), encoding="utf-8"))
+for r in tournaments["rows"]:
+    rules = r.get("rules") or {}
+    for field in ("single_entry", "re_entry", "add_on", "fee"):
+        f = rules.get(field)
+        if not f:
+            problems.append(f"data/tournaments.json: row {r['id']} is missing the {field} rule field")
+            continue
+        url = f.get("source_url") or ""
+        if not url.startswith("https://"):
+            problems.append(f"data/tournaments.json: row {r['id']} rule {field} lacks an https source")
+        elif urlparse(url).hostname not in OFFICIAL_SOURCE_HOSTS:
+            problems.append(f"data/tournaments.json: row {r['id']} rule {field} has a non-approved host")
+        if not f.get("retrieved_on"):
+            problems.append(f"data/tournaments.json: row {r['id']} rule {field} has no retrieval date")
+    if not r.get("last_checked"):
+        problems.append(f"data/tournaments.json: row {r['id']} has no last_checked date")
 
 schedule = json.load(open(os.path.join(ROOT, "data/schedule.json"), encoding="utf-8"))
 for day in schedule.get("days", []):

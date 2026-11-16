@@ -1,80 +1,90 @@
 # Executive Summary: Las Vegas Strip Poker Plan
 
-*Checked 2026-11-16 · Data: `data/tournaments.json`, `data/hotels.json`, `data/schedule.json`*
+*Checked 2026-11-16 · Sources: official Venetian and Wynn pages only · Data: `data/tournaments.json`, `data/hotels.json`, `data/schedule.json`*
 
 ## Bottom line
 
-- **33 single-entry tournaments are verified.** All are at The Venetian, from Nov 18 to Dec 23, 2026. Buy-ins range from $200 to $800. Each has its structure sheet read, with no re-entry, rebuy, add-on or flight clause.
-- **21 events are in a separate section.** Fifteen rows are multi-flight events whose structure sheets say that a player who bags Day 2 chips may not play a later flight. That leaves open whether a player who busts can enter a later flight. Six rows are Wynn $600 NLH flights with unlimited re-entry.
-- **171 official rows are unverified.** Their structure sheets have not been read: 81 Wynn WPT, 31 Wynn Signature Series, 31 Venetian New Year's (NYE), and 28 Venetian DeepStack IV.
-- **Hotels are the weakest part of the data.** The $55 resort fee plus tax is verified for The Venetian, The Palazzo, Wynn and Encore. Bellagio, Caesars Palace and ARIA fees are blank. **No room rate is verified for any hotel, so no true cost per night can be stated.**
-- **8 AM start:** no verified single-entry event starts before 10:10 AM. The earliest start in the dataset is 10:00 AM (Wynn Super Gold Million, Dec 10, $400, entry rule unverified). The 8 to 10 AM window has no verified event.
+- **50 single-entry tournaments are now verified** (up from 33 before this session). 47 are Venetian DeepStack Extravaganza IV (Nov 18 – Dec 23, 2026) and 3 are Venetian DeepStack NYE (Dec 24 and Dec 25 and Dec 31, 2026). Buy-ins run from **$200 to $1,100**. Every one has its official structure sheet read, with no re-entry, rebuy, add-on or flight clause on it.
+- **71 rows sit in the separate section** and are not ranked: **27 multi-flight** rows, **35 re-entry** rows and **9 rows whose sheet wording implies a second buy-in**.
+- **103 official rows remain unverified** for entry rule: 51 Wynn WPT, 31 Wynn Signature Series, 21 Venetian NYE.
+- **Hotels are still the weakest part of the data.** A resort fee is verified for 4 of 7 hotels. **No room rate is verified for any hotel on any date, so no true cost per night can be stated**, and no walking time is published by any official source, so the 30-minute test cannot be applied yet.
+- **8 AM start: not supported.** No verified single-entry event starts before **10:10 AM**. Seven verified single-entry events start at 10:10 AM.
+- **All 25 non-satellite DeepStack IV structure sheets have now been read** (previously 16 of them). That is what moved the verified count from 33 to 50.
 
 ## 1. Best single-entry tournaments (verified)
 
-Ranked by guarantee divided by buy-in. A higher figure means more prize pool per dollar. For bounty events the guarantee includes bounties, so it is not a pure prize pool. The table lists the top nine; the single-entry page lists all 33, sortable by any column.
+Ranked by **guaranteed pool ÷ total entry fee**. This is a *descriptive* ratio of two published numbers — it is **not a forecast** of what you will win, of field size, or of value. Events marked **(bounty)** include bounties in the guarantee, so their pool is not a pure prize pool. All rows are Venetian, 2026.
 
-| Rank | Date (2026) | Start | Event | Buy-in | Guarantee | Guarantee ÷ buy-in | House fee | Source |
-|---|---|---|---|---|---|---|---|---|
-| 1 | Dec 9 | 11:10 AM | Event 36, $800 No Limit Hold'em Bounty | $800 | $75,000 | 93.8x | 12.5% | [Sheet #16](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_16.pdf) |
-| 2 | Dec 16 | 11:10 AM | Event 54, $600 No Limit Hold'em Bounty | $600 | $50,000 | 83.3x | 15% | [Sheet #11](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf) |
-| 3 (tie) | Dec 2 | 10:10 AM | Event 24, $600 No Limit Hold'em Seniors | $600 | $40,000 | 66.7x | 15% | [Sheet #17](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf) |
-| 3 (tie) | Dec 6 | 11:10 AM | Event 28, $600 No Limit Hold'em | $600 | $40,000 | 66.7x | 15% | [Sheet #7](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf) |
-| 3 (tie) | Dec 7 | 11:10 AM | Event 30, $600 No Limit Hold'em Bounty | $600 | $40,000 | 66.7x | 15% | [Sheet #11](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf) |
-| 3 (tie) | Dec 8 | 10:10 AM | Event 32, $600 No Limit Hold'em Seniors | $600 | $40,000 | 66.7x | 15% | [Sheet #17](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf) |
-| 7 (tie) | Nov 27 | 11:10 AM | Event 14, $600 No Limit Hold'em | $600 | $30,000 | 50x | 15% | [Sheet #7](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf) |
-| 7 (tie) | Nov 28 | 11:10 AM | Event 16, $600 No Limit Hold'em Bounty | $600 | $30,000 | 50x | 15% | [Sheet #11](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf) |
-| 7 (tie) | Dec 6 | 5:10 PM | Event 29, $300 No Limit Hold'em Bounty | $300 | $15,000 | 50x | 16.67% | [Sheet #15](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf) |
+| Rank | Date | Start | Event | Entry fee | Guaranteed pool | Pool ÷ fee | House fee | Stack | Levels | Late reg closes |
+|---|---|---|---|---|---|---|---|---|---|---|
+| 1 | Dec 9 | 11:10 AM | Event 36, $800 NLH Bounty **(bounty)** | $800 | $75,000 | 93.8x | $100 (12.50%) | 40,000 | 30 min | 4:55 PM |
+| 2 | Dec 16 | 11:10 AM | Event 54, $600 NLH Bounty **(bounty)** | $600 | $50,000 | 83.3x | $90 (15.00%) | 40,000 | 30 min | 4:55 PM |
+| 3 | Dec 15 | 11:10 AM | Event 52, $1,100 NLH Progressive Knockout **(bounty)** | $1,100 | $75,000 | 68.2x | $130 (11.82%) | 40,000 | 30 min | 4:55 PM |
+| 4 (tie) | Dec 2 | 10:10 AM | Event 24, $600 NLH Seniors (50+) | $600 | $40,000 | 66.7x | $90 (15.00%) | 40,000 | 30 min | 3:55 PM |
+| 4 (tie) | Dec 6 | 11:10 AM | Event 28, $600 NLH | $600 | $40,000 | 66.7x | $90 (15.00%) | 40,000 | 30 min | 4:55 PM |
+| 4 (tie) | Dec 7 | 11:10 AM | Event 30, $600 NLH Bounty **(bounty)** | $600 | $40,000 | 66.7x | $90 (15.00%) | 40,000 | 30 min | 4:55 PM |
+| 4 (tie) | Dec 8 | 10:10 AM | Event 32, $600 NLH Seniors (50+) | $600 | $40,000 | 66.7x | $90 (15.00%) | 40,000 | 30 min | 3:55 PM |
+| 8 | Dec 10 | 10:10 AM | Event 39, $800 LIPS Ladies (2-day, female) | $800 | $40,000 | 50.0x | $90 (11.25%) | 40,000 | 40 min | 4:55 PM |
+| 9 (tie) | Nov 27 | 11:10 AM | Event 14, $600 NLH | $600 | $30,000 | 50.0x | $90 (15.00%) | 40,000 | 30 min | 4:55 PM |
+| 9 (tie) | Nov 28 | 11:10 AM | Event 16, $600 NLH Bounty **(bounty)** | $600 | $30,000 | 50.0x | $90 (15.00%) | 40,000 | 30 min | 4:55 PM |
+| 9 (tie) | Dec 11 | 11:10 AM | Event 43, $600 LIPS Kings & Queens Bounty **(bounty)** | $600 | $30,000 | 50.0x | $80 (13.33%) | 40,000 | 30 min | 4:55 PM |
+| 9 (tie) | Dec 23 | 11:10 AM | Event 63, $600 NLH | $600 | $30,000 | 50.0x | $90 (15.00%) | 40,000 | 30 min | 4:55 PM |
 
-Also 50x and in the single-entry list: Event 31 (Dec 7, 5:10 PM, $300 bounty) and Event 63 (Dec 23, 11:10 AM, $600 NLH).
+Source for every row: the official structure sheet linked on that row of the
+[DeepStack IV event page](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html).
+The full sortable list of all 50 is on the **Single entry** page.
 
-Sources: [official DeepStack IV schedule (PDF)](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf), [event page](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html), and the structure sheet linked on each row.
+Four verified single-entry events have **no guarantee printed** on their sheet: events 3, 4 and 5 ($200 RaceDay Stack) and event 6 ($200 NLH).
 
 ## 2. Separate section: not single entry
 
-These are kept out of the ranking.
-
-- **Possible multiple entries (15 rows, 4 events).** Event 1 ($300, flights 1A to 1D, $75K guarantee), Event 7 ($400, $75K), Event 19 ($400, $75K) and Event 26 ($800, flights 1A to 1F, $500K). Each structure sheet says: "Any player who bags chips for Day 2 may not play a subsequent flight." Whether a player who busts may enter a later flight is not stated. Confirm with the poker room. Event 26 has the highest guarantee multiple of any event in the dataset (625x, 13.75% house fee) but sits here until this is confirmed.
-- **Re-entry offered (6 rows).** Wynn $600 NLH $400K flights, Nov 27 to 29. The official Wynn structure PDF offers unlimited re-entry for each starting flight until level 9.
-- **Named but not in the dataset:** a Wynn $40K Friday NLH rebuy, listed on the Wynn poker page. Rebuy events are excluded.
-- **Not in the dataset:** satellites and milestone satellites, which award seats, not cash.
+- **Possible multiple entries — 27 rows.** Venetian events 1, 7, 19, 26, 47, 49, 56 and 59. Every one of these sheets carries clause 08: *"Any player who bags chips for Day 2 may not play a subsequent flight."* That restricts only players who bag; it does not say whether a player who busts may enter a later flight, so a second entry stays possible. Event 26 ($800, $500K) and event 47 ($2,200, $1M) have the largest guarantees in the dataset and sit here only for this reason.
+- **Re-entry offered — 35 Wynn WPT rows, all confirmed this session** from the official WPT structures PDF. Most offer *unlimited re-entry* until the start of level 9 or 10. The WPT Prime Championship offers *one entry and one re-entry* per flight until the start of level 10. The $600 NLH $400K, TORSE, PLO, Mixed Triple Draw, Limit Omaha 8, HORSE and Turbo events all offer unlimited re-entry.
+- **Second buy-in implied — 9 rows.** Venetian events 18 and 58 (PokerAtlas Valuetown) say *"All subsequent buy in's after the initial buy in will be $200."* Seven NYE $200 bounty events say *"The $20 discount can be applied to the initial entry or any subsequent re-entry."* Neither states re-entry outright, so both are flagged rather than ranked.
+- **Excluded from the dataset:** satellites and milestone satellites (they award seats, not cash), and Day 2 / Day 3 restart rows.
 
 ## 3. Hotels
 
-| Hotel | Resort fee per night | Room rate | True cost per night | Walk to Venetian poker room | Source |
-|---|---|---|---|---|---|
-| The Venetian Resort | $55 plus tax (verified) | Blank | Blank | Host property | [Resort fee (official)](https://www.venetianlasvegas.com/resort/resort-fee.html) |
-| The Palazzo | $55 (verified; tax not stated) | Blank | Blank | Not published | [Poker suite rates incl. $55 resort fee (official)](https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html) |
-| Wynn Las Vegas | $55 plus tax (verified) | Blank | Blank | Not published | [Resort fee terms (official)](https://www.wynnlasvegas.com/terms-and-conditions/848671) |
-| Encore at Wynn Las Vegas | $55 plus tax (verified) | Blank | Blank | Not published | [Resort fee terms (official)](https://www.wynnlasvegas.com/terms-and-conditions/848671) |
-| Bellagio | Blank | Blank | Blank | Not published | [Bellagio official home page](https://bellagio.mgmresorts.com/en.html); no Bellagio-specific fee or tax value confirmed. |
-| ARIA Resort & Casino | Blank | Blank | Blank | Not published | [ARIA official home page (fetched)](https://aria.mgmresorts.com/en.html) |
-| Caesars Palace | Blank | Blank | Blank | Not published | [Caesars corporate disclaimer (official range)](https://www.caesars.com/corporate/disclaimer) |
+| Hotel | Resort fee / night | Room rate | Room tax | Parking | Cancellation | True cost / night | Walk |
+|---|---|---|---|---|---|---|---|
+| The Venetian Resort | $55 + tax (verified) | blank | 13.38% (verified) | blank | blank | blank | blank |
+| The Palazzo | $55 (verified) | blank | blank | blank | blank | blank | blank |
+| Wynn Las Vegas | $55 + tax (verified) | blank | blank | blank | blank | blank | blank |
+| Encore at Wynn Las Vegas | $55 + tax (verified) | blank | blank | blank | blank | blank | blank |
+| Bellagio | blank | blank | blank | blank | blank | blank | blank |
+| ARIA Resort & Casino | blank | blank | blank | blank | blank | blank | blank |
+| Caesars Palace | blank (official range only, $45–$50) | blank | blank | blank | blank | blank | blank |
 
-The Venetian's official hotel terms state a 13.38% Clark County Room Tax and a $55 resort fee plus applicable tax. A dated room quote has not been verified for any hotel, so true nightly cost remains blank. The data does not apply the Venetian's tax rate to other hotels without property-specific confirmation (see F10).
+**Why true cost is blank.** The formula is `(room rate + resort fee) × (1 + tax%)`. A total is computed only when a *dated* room rate, a resort fee and a *property-specific* tax rate are all verified. No hotel has a verified rate, so no total can be stated. The Venetian's 13.38% Clark County Room Tax is verified from the
+[official Venetian hotel terms](https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html)
+and is **not** copied to other properties without property-specific support.
 
-Walking times are not on any official source, so distances are blank.
+**Walking distance.** No official source publishes a walking time, so all 14 hotel–venue pairs are blank and the 30-minute filter returns nothing. Both official addresses are recorded for each pair so the test can be applied the moment a value is measured. See the Hotels page.
 
-## 4. Schedule and the 8 AM goal
+## 4. Schedule: one primary per day, plus a conditional fallback
 
-- **Verified options:** 23 days have at least one verified single-entry event. The first is Nov 18 (Event 2, $300 NLH, 11:10 AM).
-- **Common pattern:** many days have a daytime event at 10:10 or 11:10 AM and a 5:10 PM bounty. The schedule page lists each day. Events 24 (Dec 2) and 32 (Dec 8) start at 10:10 AM and are for players aged 50+.
-- **Morning:** no verified single-entry event starts before 10:10 AM. The 8 to 10 AM window is open for travel and check-in. Registration opening times are not published in the schedules read.
-- **Earliest starts in the dataset:** 10:00 AM Wynn Super Gold Million Mystery Bounty flights on Dec 10 and Dec 11 ($400, $3M guarantee). Their entry rules are unverified.
+- **34 days** have at least one verified single-entry event (Nov 18 – Dec 31, 2026).
+- **10 of those days** also have a conditional fallback — a second single-entry event that starts after the primary's official late-registration close.
+- **13 overlap flags** across the schedule: 3 hard overlaps and 10 tight turnarounds (under 30 minutes between one event's registration close and the next event's start).
+- **Method.** No official source publishes a finish time, so the overlap check uses only official start times and official late-registration close times. Two events are flagged as conflicting when their `[start → registration close]` windows overlap, because you cannot be seated in a second event while the first is still open for registration. Nothing here is a forecast of when an event ends.
+- **8 AM is not achievable.** Earliest verified single-entry start is 10:10 AM. Registration *opening* times are not printed on any official schedule read; the schedules print only a *close* time.
 
-See `data/schedule.json` and the Schedule page for the day-by-day list.
+## 5. Trip cost calculator
 
-## 5. What the data cannot yet tell you
+On the **Trip cost** page: tick the verified single-entry events you plan to play, set nights, pick a hotel, and the page computes `entries × buy-ins + nights × true cost per night`. The entry-fee half is official. The hotel half stays blank until a dated rate is verified; you may type your own rate and tax to model it, and the page labels those numbers as yours, not official.
 
-1. Whether the 15 multi-flight rows allow a second entry after a bust-out.
+## 6. What the data still cannot tell you
+
+1. Whether a player who busts one Venetian flight may enter a later one (affects 27 rows, including the $500K and $1M events).
 2. Any nightly room rate for any hotel on any date.
-3. Walking times from any hotel to any venue.
-4. The entry rule for the 171 unverified events.
-5. Resort fees for Bellagio, Caesars Palace and ARIA.
+3. Any walking time from any hotel to any venue.
+4. The entry rule for 103 official rows (51 Wynn WPT, 31 Wynn Signature Series, 21 Venetian NYE).
+5. Resort fee, tax, parking and cancellation terms for Bellagio, ARIA and Caesars Palace.
 6. A verified 2027 Las Vegas WSOP Circuit schedule.
+7. Registration *opening* times and event *finish* times — neither is published.
 
-See the Questions page for the full register, with a way to close each gap.
+See the Questions page for the full register with a way to close each gap, and the Suggestions page for the site improvements awaiting your choice.
 
-## 6. Time-sensitive note
+## 7. Time-sensitive note
 
-Venetian events scheduled for Nov 16 and Nov 17 are all multi-flight rows (Event 1). The first verified single-entry event is on Nov 18 at 11:10 AM. Confirm all times with the poker room before you travel.
+Venetian events on Nov 16 and Nov 17 are all multi-flight Event 1 rows. The first verified single-entry event is **Nov 18 at 11:10 AM (Event 2, $300 NLH, $10K GTD)**. Confirm all times with the poker room before you travel.

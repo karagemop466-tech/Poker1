@@ -1,0 +1,80 @@
+name: Monitor official sources
+
+# Re-checks every official source once a day and records what changed.
+# It never edits tournament or hotel values: a changed source is a signal to
+# re-verify that page line by line before anything is changed.
+
+on:
+  schedule:
+    # 07:00 UTC is midnight in Las Vegas, after the rooms post next-day sheets.
+    - cron: "0 7 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: source-monitor
+  cancel-in-progress: false
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Re-check official sources
+        id: check
+        run: |
+          set -o pipefail
+          python3 scripts/check_sources.py | tee monitor.log
+          echo "exit=${PIPESTATUS[0]}" >> "$GITHUB_OUTPUT"
+        continue-on-error: true
+
+      - name: Commit updated snapshots
+        if: steps.check.outputs.exit == '2'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/snapshots.json data/changelog.json
+          git commit -m "chore(source-monitor): record changed official sources $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          git push
+
+      - name: Open an issue for the change
+        if: steps.check.outputs.exit == '2'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const log = fs.readFileSync('monitor.log', 'utf8');
+            const title = 'Official source changed — re-verify rows';
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title,
+              body: [
+                'The daily source check found that at least one official page changed.',
+                '',
+                'Nothing in `data/tournaments.json` or `data/hotels.json` was altered.',
+                'Re-verify each affected row line by line against the official page, then update the value and its `last_checked` date.',
+                '',
+                '```',
+                log.trim(),
+                '```'
+              ].join('\n')
+            });
+
+      - name: Report unreachable sources
+        if: steps.check.outputs.exit == '0' && contains(steps.check.outputs.*, 'unreachable')
+        run: echo "Some official sources could not be reached; see the log above."
+
+      - name: Fail the job on an unexpected error
+        if: steps.check.outcome == 'failure'
+        run: exit 1

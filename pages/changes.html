@@ -1,0 +1,880 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Change log · Las Vegas Strip Poker Plan</title>
+<style>
+:root {
+  --bg: #0f1115;
+  --panel: #171a21;
+  --panel-2: #1e222b;
+  --line: #2a2f3a;
+  --text: #e6e9ef;
+  --muted: #8b93a4;
+  --accent: #6ea8fe;
+  --ok: #3fb950;
+  --warn: #d29922;
+  --bad: #f85149;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font: 15px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+.wrap { max-width: 1240px; margin: 0 auto; padding: 0 18px; }
+a { color: var(--accent); }
+h1 { font-size: 26px; margin: 22px 0 6px; }
+h2 { font-size: 20px; margin: 26px 0 8px; }
+h3 { font-size: 16px; margin: 0 0 8px; }
+h4 { font-size: 14px; margin: 0 0 6px; }
+.lead { color: var(--muted); margin: 0 0 16px; max-width: 90ch; }
+.small { font-size: 12.5px; }
+.muted { color: var(--muted); }
+code { background: var(--panel-2); padding: 1px 5px; border-radius: 4px; font-size: 12.5px; }
+
+/* header / nav */
+#site-header { background: var(--panel); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 20; }
+.head-inner { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; padding: 10px 18px; max-width: 1240px; margin: 0 auto; }
+.brand { font-weight: 700; color: var(--text); text-decoration: none; margin-right: 8px; }
+.nav { display: flex; flex-wrap: wrap; gap: 4px; }
+.nav a { color: var(--muted); text-decoration: none; font-size: 13px; padding: 4px 8px; border-radius: 6px; }
+.nav a:hover { color: var(--text); background: var(--panel-2); }
+.nav a.active { color: var(--text); background: var(--panel-2); border: 1px solid var(--line); }
+#site-footer { border-top: 1px solid var(--line); margin-top: 40px; padding: 18px 0; color: var(--muted); }
+
+/* cards + grid */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 12px; margin: 14px 0; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px; }
+.tile { text-decoration: none; color: inherit; display: block; }
+.tile:hover { border-color: var(--accent); }
+.tile h3 { color: var(--accent); }
+.tile p { color: var(--muted); font-size: 13px; margin: 0; }
+.kpi .num { font-size: 24px; font-weight: 700; }
+.kpi .label { color: var(--muted); font-size: 12.5px; }
+.callout { background: var(--panel-2); }
+.callout.bad { border-left: 3px solid var(--bad); }
+.callout.warn { border-left: 3px solid var(--warn); }
+.defn { margin: 14px 0; }
+.day { margin-bottom: 14px; }
+.day h3 { color: var(--accent); }
+.sub { margin-top: 12px; background: var(--panel-2); }
+.total { margin-top: 14px; }
+
+/* toolbar */
+.toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 12px 0; }
+.toolbar input[type=search], .toolbar input[type=date], .toolbar input[type=number], .toolbar select,
+.toolbar label input {
+  background: var(--panel-2); border: 1px solid var(--line); color: var(--text);
+  border-radius: 7px; padding: 6px 9px; font-size: 13px;
+}
+.toolbar input[type=search] { min-width: 260px; flex: 1 1 260px; }
+.toolbar label { display: inline-flex; align-items: center; gap: 5px; color: var(--muted); }
+.toolbar label.toggle { max-width: 60ch; line-height: 1.3; }
+.btn-reset { background: var(--panel-2); border: 1px solid var(--line); color: var(--muted);
+  border-radius: 7px; padding: 6px 10px; font-size: 13px; cursor: pointer; }
+.btn-reset:hover { color: var(--text); border-color: var(--accent); }
+
+/* tables */
+.tablewrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; }
+table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+thead th { position: sticky; top: 0; background: var(--panel-2); text-align: left; padding: 9px 10px;
+  border-bottom: 1px solid var(--line); cursor: pointer; white-space: nowrap; font-size: 12.5px; }
+thead th.nosort { cursor: default; color: var(--muted); }
+tbody td { padding: 9px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+tbody tr:hover { background: rgba(110, 168, 254, 0.05); }
+tbody tr:last-child td { border-bottom: none; }
+.grand td { border-top: 2px solid var(--line); font-size: 15px; }
+.excerpt { color: var(--muted); font-size: 12px; display: block; margin-top: 3px; max-width: 46ch; }
+
+/* chips */
+.chip { display: inline-block; font-size: 11.5px; padding: 2px 8px; border-radius: 999px;
+  border: 1px solid var(--line); white-space: nowrap; }
+.chip.ok { color: var(--ok); border-color: rgba(63,185,80,.5); background: rgba(63,185,80,.10); }
+.chip.warn { color: var(--warn); border-color: rgba(210,153,34,.5); background: rgba(210,153,34,.10); }
+.chip.bad { color: var(--bad); border-color: rgba(248,81,73,.5); background: rgba(248,81,73,.10); }
+
+/* markdown pages */
+.md { max-width: 100ch; }
+.md table { margin: 10px 0 18px; }
+.md h2 { margin-top: 26px; }
+.md h3 { margin-top: 20px; }
+.md ul, .md ol { padding-left: 22px; }
+.md li { margin: 4px 0; }
+.md blockquote { border-left: 3px solid var(--line); margin: 10px 0; padding: 2px 12px; color: var(--muted); }
+.md hr { border: none; border-top: 1px solid var(--line); margin: 22px 0; }
+.md p { max-width: 92ch; }
+
+details summary { cursor: pointer; color: var(--accent); font-size: 13.5px; margin: 8px 0; }
+.venue { margin-bottom: 16px; }
+.venue ul { margin: 6px 0 12px; padding-left: 20px; }
+
+</style>
+</head>
+<body data-page="changes">
+<div id="site-header"></div>
+<main class="wrap">
+<h1>Change monitoring</h1>
+<p class="lead">Each official source is re-checked on a schedule. Rows whose source changed are
+flagged here and re-verified line by line.</p>
+
+<div class="card callout defn">
+<strong>How to read this site.</strong> Every row links to an official source
+(venue or operator domain). A cell is <strong>blank</strong> when the official
+source does not state that value &mdash; nothing is inferred or filled in.
+<strong>Pool &divide; entry fee</strong> is a descriptive ratio of the published
+guarantee to the published buy-in; it is not a forecast of what you will win or
+of likely field size. Bounty and multi-flight events are labelled separately.
+</div>
+
+<div class="card callout" id="method"></div>
+<div id="content"></div>
+</main>
+<footer id="site-footer"></footer>
+<script>
+/* Shared site logic. Data is read from JSON and Markdown files in the repo.
+   Every path is relative so the site works under a GitHub Pages project URL.
+   Nothing here invents a value: a cell is blank when the official source does
+   not state it. */
+(function () {
+  "use strict";
+
+  var IN_PAGES = /\/pages\//.test(location.pathname);
+  var BASE = IN_PAGES ? "../" : "./";
+
+  var NAV = [
+    ["index.html", "Home"],
+    ["pages/single-entry.html", "Single entry"],
+    ["pages/separate-section.html", "Separate section"],
+    ["pages/unverified.html", "Unverified"],
+    ["pages/venues.html", "Venues"],
+    ["pages/hotels.html", "Hotels"],
+    ["pages/schedule.html", "Schedule"],
+    ["pages/trip-cost.html", "Trip cost"],
+    ["pages/summary.html", "Executive summary"],
+    ["pages/questions.html", "Questions"],
+    ["pages/suggestions.html", "Suggestions"],
+    ["pages/changes.html", "Change log"],
+    ["pages/flagged.html", "Flagged for review"],
+    ["pages/review.html", "Repo review"]
+  ];
+
+  /* ------------------------------- helpers ------------------------------- */
+  function esc(s) {
+    return String(s == null ? "" : s)
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+  function money(v) {
+    if (v == null || v === "") return '<span class="muted">blank</span>';
+    return "$" + Number(v).toLocaleString("en-US");
+  }
+  function pct(v) { return v == null ? '<span class="muted">n/a</span>' : v.toFixed(2).replace(/\.?0+$/, "") + "%"; }
+  function mult(v) { return v == null ? '<span class="muted">n/a</span>' : v.toLocaleString("en-US") + "x"; }
+  function num(v) { return v == null ? '<span class="muted">blank</span>' : Number(v).toLocaleString("en-US"); }
+  function dateFmt(iso) {
+    if (!iso) return '<span class="muted">blank</span>';
+    var d = new Date(iso + "T12:00:00Z");
+    return d.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric", year: "numeric", timeZone: "UTC" });
+  }
+  function dateShort(iso) {
+    if (!iso) return "";
+    var d = new Date(iso + "T12:00:00Z");
+    return d.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" });
+  }
+  function timeFmt(hhmm) {
+    if (!hhmm) return '<span class="muted">blank</span>';
+    var p = hhmm.split(":"), h = +p[0], m = p[1];
+    var ap = h >= 12 ? "PM" : "AM";
+    var hh = h % 12 === 0 ? 12 : h % 12;
+    return hh + ":" + m + " " + ap;
+  }
+  function chip(kind, text) { return '<span class="chip ' + kind + '">' + esc(text) + "</span>"; }
+
+  function statusChip(s) {
+    if (s === "SE") return chip("ok", "Single entry verified");
+    if (s === "MULTI") return chip("warn", "Possible multiple entries");
+    if (s === "RE") return chip("bad", "Re-entry offered");
+    if (s === "FLAG") return chip("warn", "Second buy-in implied");
+    return chip("warn", "Unverified");
+  }
+  function srcLinks(sources) {
+    return (sources || []).map(function (s) {
+      return '<a href="' + esc(s.url) + '" target="_blank" rel="noopener">' + esc(s.label) + "</a>";
+    }).join("<br>");
+  }
+  function ruleCell(f) {
+    if (!f) return '<span class="muted">blank</span>';
+    var v = f.value;
+    var label = v === true ? "Yes" : (v === false ? "No" : '<span class="muted">Unverified</span>');
+    var out = "<strong>" + label + "</strong>";
+    if (f.excerpt) out += '<br><span class="excerpt">' + esc(f.excerpt) + "</span>";
+    if (f.source_url) {
+      out += '<br><a class="small" href="' + esc(f.source_url) + '" target="_blank" rel="noopener">source</a>';
+      if (f.retrieved_on) out += ' <span class="small muted">· retrieved ' + esc(f.retrieved_on) + "</span>";
+    }
+    return out;
+  }
+
+  function getJSON(path) {
+    return fetch(BASE + path, { cache: "no-cache" }).then(function (r) {
+      if (!r.ok) throw new Error("Could not load " + path + " (" + r.status + ")");
+      return r.json();
+    });
+  }
+  function getText(path) {
+    return fetch(BASE + path, { cache: "no-cache" }).then(function (r) {
+      if (!r.ok) throw new Error("Could not load " + path + " (" + r.status + ")");
+      return r.text();
+    });
+  }
+
+  /* --------------------------- markdown renderer -------------------------- */
+  function inline(t) {
+    t = esc(t);
+    t = t.replace(/`([^`]+)`/g, "<code>$1</code>");
+    t = t.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+    t = t.replace(/\*([^*]+)\*/g, "<em>$1</em>");
+    t = t.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, function (m, label, url) {
+      var href = url.replace(/&amp;/g, "&");
+      var ext = /^https?:/.test(href);
+      return '<a href="' + href + '"' + (ext ? ' target="_blank" rel="noopener"' : "") + ">" + label + "</a>";
+    });
+    return t;
+  }
+  function renderMarkdown(src) {
+    var lines = src.replace(/\r/g, "").split("\n"), out = [], i = 0;
+    while (i < lines.length) {
+      var line = lines[i];
+      if (/^\s*$/.test(line)) { i++; continue; }
+      if (/^#{1,6}\s/.test(line)) {
+        var lvl = line.match(/^#+/)[0].length;
+        out.push("<h" + lvl + ">" + inline(line.replace(/^#+\s*/, "")) + "</h" + lvl + ">");
+        i++; continue;
+      }
+      if (/^\s*\|/.test(line) && i + 1 < lines.length && /^\s*\|[\s:|-]+\|/.test(lines[i + 1])) {
+        var head = lines[i].split("|").slice(1, -1).map(function (c) { return c.trim(); });
+        i += 2; var body = [];
+        while (i < lines.length && /^\s*\|/.test(lines[i])) {
+          body.push(lines[i].split("|").slice(1, -1).map(function (c) { return c.trim(); }));
+          i++;
+        }
+        out.push('<div class="tablewrap"><table><thead><tr>' +
+          head.map(function (c) { return "<th>" + inline(c) + "</th>"; }).join("") +
+          "</tr></thead><tbody>" +
+          body.map(function (r) {
+            return "<tr>" + r.map(function (c) { return "<td>" + inline(c) + "</td>"; }).join("") + "</tr>";
+          }).join("") + "</tbody></table></div>");
+        continue;
+      }
+      if (/^\s*[-*]\s/.test(line)) {
+        var items = [];
+        while (i < lines.length && /^\s*[-*]\s/.test(lines[i])) {
+          items.push(inline(lines[i].replace(/^\s*[-*]\s*/, "")));
+          i++;
+        }
+        out.push("<ul>" + items.map(function (t) { return "<li>" + t + "</li>"; }).join("") + "</ul>");
+        continue;
+      }
+      if (/^\s*\d+\.\s/.test(line)) {
+        var oitems = [];
+        while (i < lines.length && /^\s*\d+\.\s/.test(lines[i])) {
+          oitems.push(inline(lines[i].replace(/^\s*\d+\.\s*/, "")));
+          i++;
+        }
+        out.push("<ol>" + oitems.map(function (t) { return "<li>" + t + "</li>"; }).join("") + "</ol>");
+        continue;
+      }
+      if (/^>\s?/.test(line)) {
+        var q = [];
+        while (i < lines.length && /^>\s?/.test(lines[i])) {
+          q.push(inline(lines[i].replace(/^>\s?/, "")));
+          i++;
+        }
+        out.push('<blockquote>' + q.join("<br>") + "</blockquote>");
+        continue;
+      }
+      if (/^(---|\*\*\*)\s*$/.test(line)) { out.push("<hr>"); i++; continue; }
+      var para = [];
+      while (i < lines.length && !/^\s*$/.test(lines[i]) && !/^#{1,6}\s/.test(lines[i]) &&
+             !/^\s*\|/.test(lines[i]) && !/^\s*[-*]\s/.test(lines[i]) && !/^\s*\d+\.\s/.test(lines[i])) {
+        para.push(lines[i]); i++;
+      }
+      out.push("<p>" + inline(para.join(" ")) + "</p>");
+    }
+    return out.join("\n");
+  }
+
+  /* ------------------------------ sortable table -------------------------- */
+  function table(el, rows, cols, opts) {
+    opts = opts || {};
+    var state = { key: opts.sortKey || cols[0].id, dir: opts.sortDir || 1 };
+    var filters = { text: "", from: "", to: "", field: "", toggle: false, walk30: false };
+
+    function fieldOf(select) {
+      if (!select || !select.value) return "";
+      return select.value;
+    }
+
+    function visible() {
+      var t = filters.text.toLowerCase();
+      return rows.filter(function (r) {
+        if (filters.from && r.date < filters.from) return false;
+        if (filters.to && r.date > filters.to) return false;
+        if (filters.field && opts.filterField && r[opts.filterField] !== filters.field) return false;
+        if (filters.toggle && opts.toggleTest && !opts.toggleTest(r)) return false;
+        if (filters.walk30 && opts.walkTest && !opts.walkTest(r)) return false;
+        if (!t) return true;
+        return cols.some(function (c) {
+          var v = c.key ? r[c.key] : null;
+          if (v == null) return false;
+          if (Array.isArray(v)) {
+            return v.some(function (s) { return String(s.label || s.url || s).toLowerCase().indexOf(t) >= 0; });
+          }
+          return String(v).toLowerCase().indexOf(t) >= 0;
+        });
+      });
+    }
+
+    function render() {
+      var list = visible();
+      var col = cols.filter(function (c) { return c.id === state.key; })[0] || cols[0];
+      list.sort(function (a, b) {
+        var av = col.key ? a[col.key] : null, bv = col.key ? b[col.key] : null;
+        if (av == null && bv == null) return 0;
+        if (av == null) return 1;
+        if (bv == null) return -1;
+        if (typeof av === "number" && typeof bv === "number") return (av - bv) * state.dir;
+        return String(av).localeCompare(String(bv)) * state.dir;
+      });
+      var head = cols.map(function (c) {
+        var arrow = c.id === state.key ? (state.dir === 1 ? " \u25B2" : " \u25BC") : "";
+        return "<th data-id='" + c.id + "'" + (c.sort === null ? " class='nosort'" : "") + ">" +
+          esc(c.label) + arrow + "</th>";
+      }).join("");
+      var body = list.map(function (r) {
+        return "<tr>" + cols.map(function (c) { return "<td>" + c.html(r) + "</td>"; }).join("") + "</tr>";
+      }).join("");
+      el.innerHTML = '<div class="tablewrap"><table><thead><tr>' + head +
+        "</tr></thead><tbody>" + body + "</tbody></table></div>";
+      if (opts.countEl) {
+        opts.countEl.textContent = "Showing " + list.length + " of " + rows.length + " rows";
+      }
+      Array.prototype.forEach.call(el.querySelectorAll("th[data-id]"), function (th) {
+        th.addEventListener("click", function () {
+          var c = cols.filter(function (x) { return x.id === th.getAttribute("data-id"); })[0];
+          if (!c || c.sort === null) return;
+          if (state.key === c.id) state.dir = -state.dir;
+          else { state.key = c.id; state.dir = 1; }
+          render();
+        });
+      });
+      if (opts.onRender) opts.onRender(list);
+    }
+
+    if (opts.searchInput) {
+      opts.searchInput.addEventListener("input", function () { filters.text = this.value.trim(); render(); });
+    }
+    if (opts.fromInput) {
+      opts.fromInput.addEventListener("change", function () { filters.from = this.value; render(); });
+    }
+    if (opts.toInput) {
+      opts.toInput.addEventListener("change", function () { filters.to = this.value; render(); });
+    }
+    if (opts.filterSelect) {
+      opts.filterSelect.addEventListener("change", function () { filters.field = this.value; render(); });
+    }
+    if (opts.toggleInput) {
+      opts.toggleInput.addEventListener("change", function () { filters.toggle = this.checked; render(); });
+    }
+    if (opts.walkInput) {
+      opts.walkInput.addEventListener("change", function () { filters.walk30 = this.checked; render(); });
+    }
+    render();
+    return { render: render, setFilters: function (f) { Object.keys(f).forEach(function (k) { filters[k] = f[k]; }); render(); } };
+  }
+
+  /* A reusable control bar: search + date range + series + toggle. */
+  function controls(spec) {
+    var id = spec.id;
+    return '' +
+      '<div class="toolbar">' +
+        '<input id="' + id + '-q" type="search" placeholder="Search this table (event, series, note, source)">' +
+        '<label class="small">From <input id="' + id + '-from" type="date"></label>' +
+        '<label class="small">To <input id="' + id + '-to" type="date"></label>' +
+        (spec.series ? '<select id="' + id + '-series"></select>' : "") +
+        (spec.toggle ? '<label class="small toggle"><input id="' + id + '-toggle" type="checkbox"> ' + spec.toggle + "</label>" : "") +
+        (spec.walk ? '<label class="small toggle"><input id="' + id + '-walk" type="checkbox"> Only hotels with a recorded walk &le; 30 min</label>' : "") +
+        '<button id="' + id + '-reset" class="btn-reset" type="button">Reset</button>' +
+        '<span id="' + id + '-count" class="small"></span>' +
+      "</div>";
+  }
+  function bindControls(id, spec, rows, cols, opts) {
+    var q = document.getElementById(id + "-q");
+    var from = document.getElementById(id + "-from");
+    var to = document.getElementById(id + "-to");
+    var sel = spec.series ? document.getElementById(id + "-series") : null;
+    var tog = spec.toggle ? document.getElementById(id + "-toggle") : null;
+    var walk = spec.walk ? document.getElementById(id + "-walk") : null;
+    var count = document.getElementById(id + "-count");
+    var reset = document.getElementById(id + "-reset");
+    if (sel) {
+      var names = Array.from(new Set(rows.map(function (r) { return r[opts.filterField]; })));
+      sel.innerHTML = '<option value="">All series</option>' +
+        names.map(function (s) { return '<option value="' + esc(s) + '">' + esc(s) + "</option>"; }).join("");
+    }
+    var t = table(document.getElementById(spec.target), rows, cols, Object.assign({}, opts, {
+      searchInput: q, fromInput: from, toInput: to, filterSelect: sel,
+      toggleInput: tog, walkInput: walk, countEl: count
+    }));
+    reset.addEventListener("click", function () {
+      if (q) q.value = "";
+      if (from) from.value = "";
+      if (to) to.value = "";
+      if (sel) sel.value = "";
+      if (tog) tog.checked = false;
+      if (walk) walk.checked = false;
+      t.setFilters({ text: "", from: "", to: "", field: "", toggle: false, walk30: false });
+    });
+    return t;
+  }
+
+  /* --------------------------------- nav --------------------------------- */
+  function renderNav() {
+    var here = location.pathname.split("/").pop() || "index.html";
+    if (!IN_PAGES) here = "index.html";
+    var links = NAV.map(function (n) {
+      var href = IN_PAGES ? (n[0] === "index.html" ? "../index.html" : n[0].replace(/^pages\//, "")) : n[0];
+      var active = n[0].split("/").pop() === here ? ' class="active"' : "";
+      return '<a href="' + href + '"' + active + ">" + esc(n[1]) + "</a>";
+    }).join("");
+    document.getElementById("site-header").innerHTML =
+      '<div class="wrap head-inner"><a class="brand" href="' + (IN_PAGES ? "../index.html" : "index.html") +
+      '">Las Vegas Strip Poker Plan</a><nav class="nav">' + links + "</nav></div>";
+    document.getElementById("site-footer").innerHTML =
+      '<div class="wrap small">Static site generated by <code>scripts/build_site.py</code> from ' +
+      "<code>data/*.json</code>. Every row links to an official source. Blank cells are unverified; " +
+      "no value is inferred. Data checked 2026-11-16.</div>";
+  }
+
+  function showErr(e) {
+    var main = document.getElementById("content");
+    if (main) main.innerHTML = '<div class="card callout">Could not load this page: ' + esc(e.message) + "</div>";
+  }
+
+  /* ------------------------------- columns ------------------------------- */
+  function baseCols(extra) {
+    var c = [
+      { id: "date", label: "Date", key: "date", html: function (r) { return dateFmt(r.date) + '<br><span class="small muted">checked ' + esc(r.last_checked) + "</span>"; } },
+      { id: "start", label: "Start", key: "start_minutes", html: function (r) { return timeFmt(r.start); } },
+      { id: "name", label: "Event", key: "name", html: function (r) {
+          return "<strong>" + esc(r.name) + "</strong><br><span class='small'>" + esc(r.series) +
+            (r.event_no ? " · Event " + r.event_no : "") + "</span>"; } },
+      { id: "buy", label: "Total entry fee", key: "buy_in_usd", html: function (r) { return money(r.buy_in_usd); } },
+      { id: "fee", label: "House fee", key: "house_fee_pct", html: function (r) {
+          return money(r.house_fee_usd) + (r.house_fee_pct != null ? " (" + pct(r.house_fee_pct) + ")" : ""); } },
+      { id: "gtd", label: "Guaranteed pool", key: "guarantee_usd", html: function (r) { return money(r.guarantee_usd); } },
+      { id: "ratio", label: "Pool ÷ entry fee", key: "gtd_multiple", html: function (r) { return mult(r.gtd_multiple); } },
+      { id: "stack", label: "Starting stack", key: "starting_chips", html: function (r) { return num(r.starting_chips); } },
+      { id: "level", label: "Level length", key: "level_minutes", html: function (r) { return r.level_minutes == null ? '<span class="muted">blank</span>' : r.level_minutes + " min"; } },
+      { id: "reg", label: "Late reg closes", key: "reg_closes", html: function (r) { return timeFmt(r.reg_closes); } }
+    ];
+    return extra ? c.concat(extra) : c;
+  }
+  var SRC_COL = { id: "src", label: "Official source", key: "sources", sort: null,
+    html: function (r) { return '<span class="small">' + srcLinks(r.sources) + "</span>"; } };
+  var NOTE_COL = { id: "note", label: "Notes", key: "note", sort: null,
+    html: function (r) { return '<span class="small">' + esc(r.note) + "</span>"; } };
+  var RULE_COLS = [
+    { id: "se", label: "Single entry", key: "entry_status", sort: null, html: function (r) { return ruleCell(r.rules && r.rules.single_entry); } },
+    { id: "re", label: "Re-entry", key: "entry_status", sort: null, html: function (r) { return ruleCell(r.rules && r.rules.re_entry); } },
+    { id: "add", label: "Add-on / rebuy", key: "entry_status", sort: null, html: function (r) { return ruleCell(r.rules && r.rules.add_on); } }
+  ];
+
+  /* -------------------------------- pages -------------------------------- */
+  var PAGES = {};
+
+  PAGES.index = function () {
+    Promise.all([getJSON("data/tournaments.json"), getJSON("data/hotels.json"), getJSON("data/schedule.json")])
+      .then(function (res) {
+        var t = res[0], h = res[1], s = res[2];
+        var se = t.rows.filter(function (r) { return r.entry_status === "SE"; });
+        var multi = t.rows.filter(function (r) { return r.entry_status === "MULTI"; });
+        var re = t.rows.filter(function (r) { return r.entry_status === "RE"; });
+        var flag = t.rows.filter(function (r) { return r.entry_status === "FLAG"; });
+        var unv = t.rows.filter(function (r) { return r.entry_status === "UNV"; });
+        var fees = h.rows.filter(function (r) { return r.resort_fee_status === "verified"; });
+        document.getElementById("kpis").innerHTML = [
+          kpi(se.length, "single-entry events verified (structure sheet read)"),
+          kpi(re.length + multi.length + flag.length, "in the separate section (not single entry)"),
+          kpi(unv.length, "official rows still unverified for entry rule"),
+          kpi(s.days.length, "days with a verified primary event"),
+          kpi(fees.length + " / " + h.rows.length, "hotels with a verified resort fee"),
+          kpi("0 / " + h.rows.length, "hotels with a verified room rate")
+        ].join("");
+      }).catch(showErr);
+  };
+  function kpi(n, label) {
+    return '<div class="card kpi"><div class="num">' + esc(n) + '</div><div class="label">' + esc(label) + "</div></div>";
+  }
+
+  PAGES.singleEntry = function () {
+    getJSON("data/tournaments.json").then(function (d) {
+      var rows = d.rows.filter(function (r) { return r.entry_status === "SE"; });
+      document.getElementById("controls").innerHTML = controls({ id: "se", series: true,
+        toggle: "Only freezeout-confirmed (structure sheet shows no re-entry, rebuy, add-on or flight clause)" });
+      var cols = baseCols([NOTE_COL, SRC_COL]);
+      bindControls("se", { series: true, toggle: true, target: "content" }, rows, cols,
+        { sortKey: "ratio", sortDir: -1, filterField: "series",
+          toggleTest: function (r) { return r.entry_status === "SE"; } });
+    }).catch(showErr);
+  };
+
+  PAGES.separate = function () {
+    getJSON("data/tournaments.json").then(function (d) {
+      var rows = d.rows.filter(function (r) {
+        return r.entry_status === "MULTI" || r.entry_status === "RE" || r.entry_status === "FLAG";
+      });
+      document.getElementById("controls").innerHTML = controls({ id: "sp", series: true });
+      var cols = [{ id: "status", label: "Why separate", key: "entry_status", html: statusChip }]
+        .concat(baseCols())
+        .concat([{ id: "rule", label: "Rule as printed (official)", key: "entry_status", sort: null,
+                   html: function (r) { return '<span class="excerpt">' + esc((r.rules && r.rules.re_entry && r.rules.re_entry.excerpt) || r.note) + "</span>"; } },
+                 NOTE_COL, SRC_COL]);
+      bindControls("sp", { series: true, target: "content" }, rows, cols,
+        { sortKey: "date", sortDir: 1, filterField: "series" });
+    }).catch(showErr);
+  };
+
+  PAGES.unverified = function () {
+    getJSON("data/tournaments.json").then(function (d) {
+      var rows = d.rows.filter(function (r) { return r.entry_status === "UNV"; });
+      document.getElementById("controls").innerHTML = controls({ id: "uv", series: true });
+      var cols = baseCols([{ id: "why", label: "Why unverified", key: "note", sort: null,
+        html: function (r) { return '<span class="excerpt">' + esc(r.note) + "</span>"; } }, SRC_COL]);
+      bindControls("uv", { series: true, target: "content" }, rows, cols,
+        { sortKey: "date", sortDir: 1, filterField: "series" });
+    }).catch(showErr);
+  };
+
+  PAGES.venues = function () {
+    getJSON("data/tournaments.json").then(function (d) {
+      var out = d.venues.map(function (v) {
+        var rows = d.rows.filter(function (r) { return r.venue_id === v.id; });
+        var counts = { SE: 0, MULTI: 0, RE: 0, FLAG: 0, UNV: 0 };
+        rows.forEach(function (r) { counts[r.entry_status]++; });
+        var days = Array.from(new Set(rows.map(function (r) { return r.date; }))).sort();
+        var seriesList = v.series.map(function (s) {
+          var sr = rows.filter(function (r) { return r.series === s; });
+          var se = sr.filter(function (r) { return r.entry_status === "SE"; });
+          return "<li><strong>" + esc(s) + "</strong> — " + sr.length + " official rows, " +
+            se.length + " verified single entry" +
+            (se.length ? ", buy-ins " + money(Math.min.apply(null, se.map(function (r) { return r.buy_in_usd; }))) +
+              "–" + money(Math.max.apply(null, se.map(function (r) { return r.buy_in_usd; }))) : "") + "</li>";
+        }).join("");
+        return '<div class="card venue">' +
+          '<h2 id="' + esc(v.id) + '">' + esc(v.name) + "</h2>" +
+          '<p class="small">' + esc(v.address) + "</p>" +
+          '<p class="small">' + esc(v.poker_room_note) + "</p>" +
+          "<ul>" + seriesList + "</ul>" +
+          '<div class="grid">' +
+            kpi(rows.length, "official rows at this venue") +
+            kpi(counts.SE, "verified single entry") +
+            kpi(counts.MULTI, "possible multiple entries") +
+            kpi(counts.RE, "re-entry offered") +
+            kpi(counts.UNV, "unverified") +
+          "</div>" +
+          "<p class=\"small\">Dates covered: " + esc(dateShort(days[0])) + " – " + esc(dateShort(days[days.length - 1])) + "</p>" +
+          '<p class="small">Official sources: ' + srcLinks(v.sources) + "</p>" +
+          '<p><a class="small" href="hotels.html">Hotels recorded for this venue &rarr;</a></p>' +
+          "</div>";
+      }).join("");
+      document.getElementById("content").innerHTML = out;
+    }).catch(showErr);
+  };
+
+  PAGES.hotels = function () {
+    Promise.all([getJSON("data/hotels.json"), getJSON("data/walking.json")]).then(function (res) {
+      var d = res[0], w = res[1];
+      document.getElementById("method").innerHTML =
+        "<strong>Method.</strong> " + esc(d.method) +
+        "<br><br><strong>Walking check.</strong> " + esc(w.method) +
+        " The limit applied is <strong>" + w.limit_minutes + " minutes</strong>.";
+      document.getElementById("controls").innerHTML = controls({ id: "ht", walk: true });
+      var rows = d.rows.map(function (h) {
+        h = Object.assign({}, h);
+        var pair = w.pairs.filter(function (p) { return p.hotel_id === h.id && p.venue_id === (h.venue_id || "venetian"); })[0];
+        h.walk_pair = pair || null;
+        return h;
+      });
+      var cols = [
+        { id: "name", label: "Hotel", key: "name", html: function (r) {
+            return "<strong>" + esc(r.name) + "</strong><br><span class='small'>" + esc(r.address_note) + "</span>" +
+              (r.booking_url ? '<br><a class="small" href="' + esc(r.booking_url) + '" target="_blank" rel="noopener">official booking page</a>' : ""); } },
+        { id: "venue", label: "Nearest venue", key: "venue_id", html: function (r) {
+            return r.venue_id ? esc(r.venue_id === "venetian" ? "The Venetian Resort" : "Wynn Las Vegas") : '<span class="muted">not a host property</span>'; } },
+        { id: "fee", label: "Resort fee / night", key: "resort_fee_usd", html: function (r) {
+            return (r.resort_fee_status === "verified" ? chip("ok", "Verified") : chip("warn", "Unverified")) +
+              "<br>" + money(r.resort_fee_usd) + '<br><span class="excerpt">' + esc(r.resort_fee_note) + "</span>"; } },
+        { id: "rate", label: "Room rate / night", key: "room_rate_usd", html: function (r) {
+            return chip("warn", "Unverified") + "<br>" + money(r.room_rate_usd) +
+              '<br><span class="excerpt">' + esc(r.room_rate_note) + "</span>"; } },
+        { id: "tax", label: "Room tax", key: "room_tax_pct", html: function (r) {
+            return r.room_tax_pct == null ? '<span class="muted">Unverified</span><br><span class="excerpt">' + esc(r.tax_status) + "</span>"
+              : r.room_tax_pct + "%<br><span class='excerpt'>" + esc(r.tax_status) + "</span>"; } },
+        { id: "park", label: "Parking / night", key: "parking_usd", html: function (r) {
+            return money(r.parking_usd) + '<br><span class="excerpt">' + esc(r.parking_note) + "</span>"; } },
+        { id: "cancel", label: "Cancellation deadline", key: "cancellation_deadline", html: function (r) {
+            return r.cancellation_deadline ? esc(r.cancellation_deadline) : '<span class="muted">Unverified</span><br><span class="excerpt">' + esc(r.cancellation_note) + "</span>"; } },
+        { id: "true", label: "True cost / night", key: "true_cost_per_night_usd", html: function (r) {
+            return r.true_cost_per_night_usd == null ? '<span class="muted">blank — rate unverified</span>' : money(r.true_cost_per_night_usd); } },
+        { id: "walk", label: "Walk to venue (≤30 min test)", key: "walk_minutes", html: function (r) {
+            if (r.walk_minutes == null) return '<span class="muted">Unverified</span><br><span class="excerpt">' + esc(r.walk_note) + "</span>";
+            var ok = r.walk_minutes <= 30;
+            return (ok ? chip("ok", r.walk_minutes + " min — passes") : chip("bad", r.walk_minutes + " min — fails")) +
+              '<br><span class="excerpt">' + esc(r.walk_note) + "</span>"; } },
+        { id: "src", label: "Official sources", key: "sources", sort: null, html: function (r) {
+            return '<span class="small">' + srcLinks(r.sources) + "</span>"; } }
+      ];
+      bindControls("ht", { walk: true, target: "content" }, rows, cols,
+        { sortKey: "name", sortDir: 1,
+          walkTest: function (r) { return r.walk_minutes != null && r.walk_minutes <= 30; } });
+
+      // Hotel-venue walking pairs table
+      document.getElementById("pairs").innerHTML =
+        '<div class="tablewrap"><table><thead><tr><th>Hotel</th><th>Venue</th><th>Hotel address (official)</th>' +
+        "<th>Venue address (official)</th><th>Walking time</th><th>≤ 30 min test</th></tr></thead><tbody>" +
+        w.pairs.map(function (p) {
+          return "<tr><td>" + esc(p.hotel) + "</td><td>" + esc(p.venue) + "</td><td class='small'>" + esc(p.hotel_address) +
+            "</td><td class='small'>" + esc(p.venue_address) + "</td><td>" +
+            (p.walk_minutes == null ? '<span class="muted">blank</span>' : p.walk_minutes + " min") + "</td><td>" +
+            (p.walk_minutes == null ? chip("warn", "cannot apply — no official value") :
+              (p.walk_minutes <= 30 ? chip("ok", "pass") : chip("bad", "fail"))) + "</td></tr>";
+        }).join("") + "</tbody></table></div>";
+    }).catch(showErr);
+  };
+
+  PAGES.schedule = function () {
+    getJSON("data/schedule.json").then(function (d) {
+      document.getElementById("method").textContent = d.method;
+      document.getElementById("note").textContent = d.note;
+      document.getElementById("earliest").textContent = timeFmt(d.earliest_listed_start).replace(/<[^>]+>/g, "");
+
+      var from = document.getElementById("from"), to = document.getElementById("to");
+      var box = document.getElementById("content");
+
+      function eventLine(e, tag) {
+        return "<li><strong>" + (tag ? esc(tag) + ": " : "") + timeFmt(e.start) + "</strong> · " + esc(e.name) +
+          " · " + money(e.buy_in_usd) + " entry · pool " + money(e.guarantee_usd) +
+          (e.gtd_multiple ? " (" + mult(e.gtd_multiple) + ")" : "") +
+          " · <a href='" + esc(e.source) + "' target='_blank' rel='noopener'>source</a></li>";
+      }
+
+      function render() {
+        var days = d.days.filter(function (day) {
+          if (from.value && day.date < from.value) return false;
+          if (to.value && day.date > to.value) return false;
+          return true;
+        });
+        document.getElementById("count").textContent =
+          "Showing " + days.length + " of " + d.days.length + " days with a verified primary event";
+        box.innerHTML = days.map(function (day) {
+          var conf = day.conflicts.map(function (c) {
+            return '<div class="callout ' + (c.severity === "conflict" ? "bad" : "warn") + '">' +
+              "<strong>" + (c.severity === "conflict" ? "Overlap flagged" : "Tight turnaround") + ":</strong> " +
+              esc(c.reason) + "</div>";
+          }).join("");
+          return '<div class="card day"><h3>' + dateFmt(day.date) + "</h3>" +
+            "<p><strong>Primary</strong> (highest pool ÷ entry fee on this day):</p>" +
+            "<ul>" + eventLine(day.primary) + "</ul>" +
+            "<p><strong>Conditional fallback</strong>:</p>" +
+            (day.fallback ? "<ul>" + eventLine(day.fallback) + "</ul>"
+                          : '<p class="muted">' + esc(day.fallback_reason) + "</p>") +
+            (day.options.length > 1 ? "<details><summary>All " + day.options.length +
+              " verified single-entry options this day</summary><ul>" +
+              day.options.map(function (o) { return eventLine(o); }).join("") + "</ul></details>" : "") +
+            conf + "</div>";
+        }).join("") || '<div class="card">No verified single-entry day in the selected range.</div>';
+      }
+      from.addEventListener("change", render);
+      to.addEventListener("change", render);
+      render();
+    }).catch(showErr);
+  };
+
+  PAGES.tripCost = function () {
+    Promise.all([getJSON("data/tournaments.json"), getJSON("data/hotels.json")]).then(function (res) {
+      var t = res[0], h = res[1];
+      var box = document.getElementById("content");
+      var se = t.rows.filter(function (r) { return r.entry_status === "SE"; });
+      var chosen = {};
+      var nights = 1;
+      var hotelId = h.rows[0].id;
+      var manualRate = null, manualTax = null;
+
+      function hotel() { return h.rows.filter(function (x) { return x.id === hotelId; })[0]; }
+
+      function entryTotal() {
+        return se.filter(function (r) { return chosen[r.id]; })
+          .reduce(function (a, r) { return a + (r.buy_in_usd || 0); }, 0);
+      }
+      function chosenCount() {
+        return se.filter(function (r) { return chosen[r.id]; }).length;
+      }
+      function nightly() {
+        var hb = hotel();
+        var rate = hb.room_rate_usd != null ? hb.room_rate_usd : manualRate;
+        var fee = hb.resort_fee_usd;
+        var tax = hb.room_tax_pct != null ? hb.room_tax_pct : manualTax;
+        var ok = rate != null && fee != null && tax != null;
+        return {
+          rate: rate, fee: fee, tax: tax, ok: ok,
+          total: ok ? (rate + fee) * (1 + tax / 100) : null,
+          rateVerified: hb.room_rate_usd != null,
+          feeVerified: hb.resort_fee_status === "verified",
+          taxVerified: hb.room_tax_pct != null
+        };
+      }
+
+      function render() {
+        var n = nightly();
+        var et = entryTotal();
+        var cc = chosenCount();
+        var hotelTotal = n.total != null ? n.total * nights : null;
+        var tripTotal = (n.total != null) ? et + hotelTotal : null;
+        box.innerHTML =
+          '<div class="grid">' +
+            '<div class="card"><h3>1. Choose entries</h3>' +
+              '<p class="small">Only verified single-entry events are offered. Tick the events you plan to play.</p>' +
+              '<div class="toolbar"><input id="tc-q" type="search" placeholder="Search events">' +
+              '<label class="small">From <input id="tc-from" type="date"></label>' +
+              '<label class="small">To <input id="tc-to" type="date"></label>' +
+              '<button id="tc-clear" class="btn-reset" type="button">Clear entries</button></div>' +
+              '<div id="tc-list" class="tablewrap"></div>' +
+            "</div>" +
+            '<div class="card"><h3>2. Nights and hotel</h3>' +
+              '<label class="small">Nights <input id="tc-nights" type="number" min="1" max="60" value="' + nights + '"></label>' +
+              '<label class="small">Hotel <select id="tc-hotel">' +
+                h.rows.map(function (x) { return '<option value="' + esc(x.id) + '"' + (x.id === hotelId ? " selected" : "") + ">" + esc(x.name) + "</option>"; }).join("") +
+              "</select></label>" +
+              '<div class="card sub"><h4>True cost per night</h4>' +
+                "<table><tbody>" +
+                "<tr><td>Room rate / night</td><td>" + money(n.rate) +
+                  (n.rateVerified ? " " + chip("ok", "verified") : " " + chip("warn", "unverified — enter your own to model")) + "</td></tr>" +
+                "<tr><td>Resort fee / night</td><td>" + money(n.fee) + " " + (n.feeVerified ? chip("ok", "verified") : chip("warn", "unverified")) + "</td></tr>" +
+                "<tr><td>Room tax</td><td>" + (n.tax == null ? '<span class="muted">blank</span>' : n.tax + "%") + " " + (n.taxVerified ? chip("ok", "verified") : chip("warn", "unverified")) + "</td></tr>" +
+                "<tr><td><strong>Per night</strong></td><td><strong>" + (n.total == null ? '<span class="muted">blank</span>' : "$" + n.total.toFixed(2)) + "</strong></td></tr>" +
+                "</tbody></table>" +
+                '<div class="toolbar"><label class="small">Your nightly rate (unverified) <input id="tc-rate" type="number" min="0" step="1" placeholder="blank"></label>' +
+                '<label class="small">Your tax % (unverified) <input id="tc-tax" type="number" min="0" step="0.01" placeholder="blank"></label></div>' +
+                '<p class="small">Formula: (room rate + resort fee) × (1 + tax%). Values you type are yours; they are not official and are not stored.</p>' +
+              "</div>" +
+            "</div>" +
+          "</div>" +
+          '<div class="card total"><h3>3. Estimated trip cost</h3>' +
+            "<table><tbody>" +
+            "<tr><td>Entries selected</td><td>" + cc + "</td></tr>" +
+            "<tr><td>Entry fees (buy-ins)</td><td>" + money(et) + "</td></tr>" +
+            "<tr><td>Nights</td><td>" + nights + "</td></tr>" +
+            "<tr><td>Hotel true cost per night</td><td>" + (n.total == null ? '<span class="muted">blank</span>' : "$" + n.total.toFixed(2)) + "</td></tr>" +
+            "<tr><td>Hotel total</td><td>" + (hotelTotal == null ? '<span class="muted">blank</span>' : "$" + hotelTotal.toFixed(2)) + "</td></tr>" +
+            '<tr class="grand"><td><strong>Estimated trip total</strong></td><td><strong>' +
+              (tripTotal == null ? '<span class="muted">blank — hotel rate unverified</span>' : "$" + tripTotal.toFixed(2)) +
+            "</strong></td></tr>" +
+            "</tbody></table>" +
+            '<p class="small">Entry fees are official buy-ins from the structure sheets. The hotel half is blank until a dated room rate is verified, because no official rate has been captured for any hotel. Anything you type into the unverified boxes is a model, not a verified figure.</p>' +
+          "</div>";
+
+        // events list
+        var list = document.getElementById("tc-list");
+        var q = document.getElementById("tc-q"), f = document.getElementById("tc-from"), to = document.getElementById("tc-to");
+        function drawList() {
+          var txt = (q.value || "").trim().toLowerCase();
+          var rows = se.filter(function (r) {
+            if (f.value && r.date < f.value) return false;
+            if (to.value && r.date > to.value) return false;
+            if (!txt) return true;
+            return (r.name + " " + r.series + " " + (r.note || "")).toLowerCase().indexOf(txt) >= 0;
+          });
+          list.innerHTML = '<table><thead><tr><th>Play</th><th>Date</th><th>Start</th><th>Event</th>' +
+            "<th>Entry fee</th><th>Pool</th><th>Pool ÷ fee</th><th>Source</th></tr></thead><tbody>" +
+            rows.map(function (r) {
+              return "<tr><td><input type='checkbox' data-id='" + esc(r.id) + "'" + (chosen[r.id] ? " checked" : "") + "></td>" +
+                "<td>" + dateFmt(r.date) + "</td><td>" + timeFmt(r.start) + "</td>" +
+                "<td>" + esc(r.name) + "</td><td>" + money(r.buy_in_usd) + "</td><td>" + money(r.guarantee_usd) +
+                "</td><td>" + mult(r.gtd_multiple) + "</td>" +
+                "</td><td><a class='small' href='" + esc(r.sources[r.sources.length - 1].url) + "' target='_blank' rel='noopener'>source</a></td></tr>";
+            }).join("") + "</tbody></table>";
+          Array.prototype.forEach.call(list.querySelectorAll("input[type=checkbox]"), function (cb) {
+            cb.addEventListener("change", function () {
+              chosen[cb.getAttribute("data-id")] = cb.checked;
+              render();
+            });
+          });
+        }
+        q.addEventListener("input", drawList);
+        f.addEventListener("change", drawList);
+        to.addEventListener("change", drawList);
+        drawList();
+
+        document.getElementById("tc-nights").addEventListener("change", function () {
+          nights = Math.max(1, parseInt(this.value || "1", 10) || 1);
+          render();
+        });
+        document.getElementById("tc-hotel").addEventListener("change", function () { hotelId = this.value; render(); });
+        document.getElementById("tc-clear").addEventListener("click", function () { chosen = {}; render(); });
+        var ri = document.getElementById("tc-rate");
+        ri.addEventListener("input", function () { manualRate = this.value === "" ? null : +this.value; render(); document.getElementById("tc-rate").focus(); });
+        var ti = document.getElementById("tc-tax");
+        ti.addEventListener("input", function () { manualTax = this.value === "" ? null : +this.value; render(); document.getElementById("tc-tax").focus(); });
+      }
+      render();
+    }).catch(showErr);
+  };
+
+  PAGES.changes = function () {
+    getJSON("data/changelog.json").then(function (d) {
+      document.getElementById("method").textContent = d.method;
+      document.getElementById("content").innerHTML =
+        '<div class="card"><h3>Monitored official sources</h3>' +
+        '<div class="tablewrap"><table><thead><tr><th>Source</th><th>Type</th><th>URL</th></tr></thead><tbody>' +
+        d.monitored.map(function (m) {
+          return "<tr><td>" + esc(m.label) + "</td><td>" + esc(m.kind) +
+            '</td><td><a href="' + esc(m.url) + '" target="_blank" rel="noopener">' + esc(m.url) + "</a></td></tr>";
+        }).join("") + "</tbody></table></div></div>" +
+        '<div class="card"><h3>Recorded changes</h3>' +
+        (d.snapshots.length === 0
+          ? '<p class="muted">No change recorded yet. The scheduled job has not completed a run, so every row carries the date it was last checked (2026-11-16) and no source has been re-fetched since.</p>'
+          : '<div class="tablewrap"><table><thead><tr><th>Date</th><th>Source</th><th>Change</th></tr></thead><tbody>' +
+            d.snapshots.map(function (s) {
+              return "<tr><td>" + esc(s.date) + "</td><td>" + esc(s.source) + "</td><td>" + esc(s.change) + "</td></tr>";
+            }).join("") + "</tbody></table></div>") +
+        "</div>";
+    }).catch(showErr);
+  };
+
+  function markdownPage(file) {
+    return function () {
+      getText(file).then(function (t) {
+        document.getElementById("content").innerHTML = '<div class="md">' + renderMarkdown(t) + "</div>";
+      }).catch(showErr);
+    };
+  }
+  PAGES.summary = markdownPage("EXECUTIVE_SUMMARY.md");
+  PAGES.questions = markdownPage("QUESTIONS.md");
+  PAGES.suggestions = markdownPage("SUGGESTIONS.md");
+  PAGES.flagged = markdownPage("FLAGGED.md");
+  PAGES.review = markdownPage("REVIEW.md");
+
+  document.addEventListener("DOMContentLoaded", function () {
+    renderNav();
+    var page = document.body.getAttribute("data-page");
+    if (page && PAGES[page]) PAGES[page]();
+  });
+})();
+
+</script>
+</body>
+</html>
