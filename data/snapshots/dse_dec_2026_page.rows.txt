@@ -1,49 +1,49 @@
-2026-12-24 11:10 ev1 $400 No Limit Hold'em $15K GTD (1Day) | None
-2026-12-24 17:10 ev2 $200 No Limit Hold'em Bounty $8K GTD (1Day) | None
-2026-12-25 11:10 ev3 $400 No Limit Hold'em $15K GTD (1Day) | None
-2026-12-25 17:10 ev4 $200 No Limit Hold'em Bounty $8K GTD (1Day) | None
-2025-12-26 11:10 ev5 $600 No Limit Hold'em Bounty $40K GTD (1Day) $200 bounties to start & $500 bounties in the money | None
-2025-12-26 15:10 ev6 $260 NLH Milestone Satellite (1Day) Awards 1 in 5 (20%) Direct Entry into Event # 08 | None
-2025-12-26 18:10 ev7 $260 NLH Milestone Satellite (1Day) Awards 1 in 5 (20%) Direct Entry into Event # 08 | None
-2026-12-27 11:10 ev8 $1,100 No Limit Hold'em 1A $300K GTD Ante Up Championship | None
-2026-12-27 15:10 ev9 $260 NLH Milestone Satellite (1Day) Awards 1 in 5 (20%) Direct Entry into Event # 08 | None
-2026-12-27 18:10 ev10 $260 NLH Milestone Satellite (1Day) Awards 1 in 5 (20%) Direct Entry into Event # 08 | None
-2026-12-28 11:10 ev8 $1,100 No Limit Hold'em 1B $300K GTD Ante Up Championship | None
-2026-12-28 15:10 ev11 $260 NLH Milestone Satellite (1Day) Awards 1 in 5 (20%) Direct Entry into Event # 08 | None
-2026-12-28 18:10 ev12 $260 NLH Milestone Satellite (1Day) Awards 1 in 5 (20%) Direct Entry into Event # 08 | None
-2026-12-29 11:10 ev8 $1,100 No Limit Hold'em 1C $300K GTD Ante Up Championship | None
-2026-12-29 17:10 ev13 $200 No Limit Hold'em Bounty $8K GTD (1Day) | None
-2026-12-30 11:00 ev8 $1,100 No Limit Hold'em Ante Up Day 2 Restart Play Down to Final 7 - Streamed Final Table (POKERGO) | None
-2026-12-30 11:10 ev14 $600 No Limit Hold'em $50K GTD (1Day) | None
-2026-12-30 15:10 ev15 $200 NLH Milestone Satellite (1Day) Awards Direct Entry into Event # 20 | None
-2026-12-30 18:10 ev16 $200 NLH Turbo Milestone Satellite (1Day) Awards Direct Entry into Event # 20 | None
-2026-12-31 10:00 ev8 $1,100 No Limit Hold'em Ante Up Day 3 Restart Streamed Final Table (POKERGO) | None
-2026-12-31 11:10 ev17 $400 No Limit Hold'em $15K GTD (1Day) | None
-2026-12-31 15:10 ev18 $200 NLH Milestone Satellite (1Day) Awards Direct Entry into Event # 20 | None
-2026-12-31 18:10 ev19 $200 NLH Turbo Milestone Satellite (1Day) Awards Direct Entry into Event # 20 | None
-2027-01-01 11:10 ev20 $1,600 No Limit Hold'em MSPT 1A $400K GTD $40 Reduced Rake until the start of Level 4 | None
-2027-01-01 15:10 ev21 $200 NLH Milestone Satellite (1Day) Awards Direct Entry into Event # 20 | None
-2027-01-01 17:10 ev22 $200 No Limit Hold'em Bounty $8K GTD (1Day) | None
-2027-01-02 10:10 ev23 $200 NLH Milestone Satellite (1Day) Awards Direct Entry into Event # 20 | None
-2027-01-02 11:10 ev20 $1,600 No Limit Hold'em MSPT 1B $400K GTD | None
-2027-01-02 15:10 ev24 $200 NLH Milestone Satellite (1Day) Awards Direct Entry into Event # 20 | None
-2027-01-02 17:10 ev25 $200 NLH PokerAtlas Valuetown Bounty $20K GTD (1Day) POKERATLAS PRO MEMBER $20 RAKE DISCOUNT | None
-2027-01-03 11:10 ev20 $1,600 No Limit Hold'em MSPT 1C $400K GTD | None
-2027-01-03 17:10 ev26 $200 No Limit Hold'em Bounty $8K GTD (1Day) | None
-2027-01-04 11:10 ev20 $1,600 No Limit Hold'em MSPT Day 2 Restart | None
-2027-01-04 11:10 ev27 $250 No Limit Hold'em 1A $75K GTD (1Day) Day 1 Payouts with 5% advancing to Day 2$10 Reduced Rake for Entry before 11:10 AM | None
-2027-01-04 17:10 ev27 $250 No Limit Hold'em 1B $75K GTD (1Day) Day 1 Payouts with 5% advancing to Day 2$10 Reduced Rake for Entry before 5:10 PM | None
-2027-01-05 11:10 ev27 $250 No Limit Hold'em 1C $75K GTD (1Day) Day 1 Payouts with 5% advancing to Day 2 | None
-2027-01-05 17:10 ev27 $250 No Limit Hold'em 1D $75K GTD (1Day) Day 1 Payouts with 5% advancing to Day 2 | None
-2027-01-06 11:10 ev28 $400 No Limit Hold'em $15K GTD (1Day) | None
-2027-01-06 12:00 ev27 $250 No Limit Hold'em Day 2 Restart | None
-2027-01-06 17:10 ev29 $200 No Limit Hold'em Bounty $8K GTD (1Day) Show Your CES Badge - $10 RAKE DISCOUNT | None
-2027-01-07 11:10 ev30 $300 No Limit Hold'em 1A $100K GTD (1Day) | None
-2027-01-07 17:10 ev30 $300 No Limit Hold'em 1B $100K GTD (1Day) Show Your CES Badge - $10 RAKE DISCOUNT | None
-2027-01-08 11:10 ev30 $300 No Limit Hold'em 1C $100K GTD (1Day) | None
-2027-01-08 17:10 ev30 $300 No Limit Hold'em 1D $100K GTD (1Day) Show Your CES Badge - $10 RAKE DISCOUNT | None
-2027-01-09 11:10 ev30 $300 No Limit Hold'em 1E $100K GTD (1Day) | None
-2027-01-09 17:10 ev30 $300 No Limit Hold'em 1F $100K GTD (1Day) | None
-2027-01-10 10:10 ev31 $400 No Limit Hold'em Seniors $20K GTD (1Day) Must be 50+ years of age to participate | None
-2027-01-10 12:00 ev30 $300 No Limit Hold'em Day 2 Restart | None
-2027-01-10 17:10 ev32 $200 No Limit Hold'em Bounty $8K GTD (1Day) | None
+2026-12-24 11:10 ev1 $400 No Limit Hold'em $15K GTD (1Day) | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_1.pdf
+2026-12-24 17:10 ev2 $200 No Limit Hold'em Bounty $8K GTD (1Day) | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_2.pdf
+2026-12-25 11:10 ev3 $400 No Limit Hold'em $15K GTD (1Day) | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_1.pdf
+2026-12-25 17:10 ev4 $200 No Limit Hold'em Bounty $8K GTD (1Day) | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_2.pdf
+2025-12-26 11:10 ev5 $600 No Limit Hold'em Bounty $40K GTD (1Day) $200 bounties to start & $500 bounties in the money | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_3.pdf
+2025-12-26 15:10 ev6 $260 NLH Milestone Satellite (1Day) Awards 1 in 5 (20%) Direct Entry into Event # 08 | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_4.pdf
+2025-12-26 18:10 ev7 $260 NLH Milestone Satellite (1Day) Awards 1 in 5 (20%) Direct Entry into Event # 08 | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_4.pdf
+2026-12-27 11:10 ev8 $1,100 No Limit Hold'em 1A $300K GTD Ante Up Championship | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_6.pdf
+2026-12-27 15:10 ev9 $260 NLH Milestone Satellite (1Day) Awards 1 in 5 (20%) Direct Entry into Event # 08 | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_4.pdf
+2026-12-27 18:10 ev10 $260 NLH Milestone Satellite (1Day) Awards 1 in 5 (20%) Direct Entry into Event # 08 | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_4.pdf
+2026-12-28 11:10 ev8 $1,100 No Limit Hold'em 1B $300K GTD Ante Up Championship | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_6.pdf
+2026-12-28 15:10 ev11 $260 NLH Milestone Satellite (1Day) Awards 1 in 5 (20%) Direct Entry into Event # 08 | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_4.pdf
+2026-12-28 18:10 ev12 $260 NLH Milestone Satellite (1Day) Awards 1 in 5 (20%) Direct Entry into Event # 08 | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_4.pdf
+2026-12-29 11:10 ev8 $1,100 No Limit Hold'em 1C $300K GTD Ante Up Championship | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_6.pdf
+2026-12-29 17:10 ev13 $200 No Limit Hold'em Bounty $8K GTD (1Day) | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_2.pdf
+2026-12-30 11:00 ev8 $1,100 No Limit Hold'em Ante Up Day 2 Restart Play Down to Final 7 - Streamed Final Table (POKERGO) | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_6.pdf
+2026-12-30 11:10 ev14 $600 No Limit Hold'em $50K GTD (1Day) | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_12.pdf
+2026-12-30 15:10 ev15 $200 NLH Milestone Satellite (1Day) Awards Direct Entry into Event # 20 | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_5.pdf
+2026-12-30 18:10 ev16 $200 NLH Turbo Milestone Satellite (1Day) Awards Direct Entry into Event # 20 | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_7.pdf
+2026-12-31 10:00 ev8 $1,100 No Limit Hold'em Ante Up Day 3 Restart Streamed Final Table (POKERGO) | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_6.pdf
+2026-12-31 11:10 ev17 $400 No Limit Hold'em $15K GTD (1Day) | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_1.pdf
+2026-12-31 15:10 ev18 $200 NLH Milestone Satellite (1Day) Awards Direct Entry into Event # 20 | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_5.pdf
+2026-12-31 18:10 ev19 $200 NLH Turbo Milestone Satellite (1Day) Awards Direct Entry into Event # 20 | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_7.pdf
+2027-01-01 11:10 ev20 $1,600 No Limit Hold'em MSPT 1A $400K GTD $40 Reduced Rake until the start of Level 4 | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_8.pdf
+2027-01-01 15:10 ev21 $200 NLH Milestone Satellite (1Day) Awards Direct Entry into Event # 20 | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_5.pdf
+2027-01-01 17:10 ev22 $200 No Limit Hold'em Bounty $8K GTD (1Day) | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_2.pdf
+2027-01-02 10:10 ev23 $200 NLH Milestone Satellite (1Day) Awards Direct Entry into Event # 20 | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_5.pdf
+2027-01-02 11:10 ev20 $1,600 No Limit Hold'em MSPT 1B $400K GTD | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_8.pdf
+2027-01-02 15:10 ev24 $200 NLH Milestone Satellite (1Day) Awards Direct Entry into Event # 20 | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_5.pdf
+2027-01-02 17:10 ev25 $200 NLH PokerAtlas Valuetown Bounty $20K GTD (1Day) POKERATLAS PRO MEMBER $20 RAKE DISCOUNT | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_9.pdf
+2027-01-03 11:10 ev20 $1,600 No Limit Hold'em MSPT 1C $400K GTD | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_8.pdf
+2027-01-03 17:10 ev26 $200 No Limit Hold'em Bounty $8K GTD (1Day) | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_2.pdf
+2027-01-04 11:10 ev20 $1,600 No Limit Hold'em MSPT Day 2 Restart | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_8.pdf
+2027-01-04 11:10 ev27 $250 No Limit Hold'em 1A $75K GTD (1Day) Day 1 Payouts with 5% advancing to Day 2$10 Reduced Rake for Entry before 11:10 AM | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_15.pdf
+2027-01-04 17:10 ev27 $250 No Limit Hold'em 1B $75K GTD (1Day) Day 1 Payouts with 5% advancing to Day 2$10 Reduced Rake for Entry before 5:10 PM | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_15.pdf
+2027-01-05 11:10 ev27 $250 No Limit Hold'em 1C $75K GTD (1Day) Day 1 Payouts with 5% advancing to Day 2 | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_15.pdf
+2027-01-05 17:10 ev27 $250 No Limit Hold'em 1D $75K GTD (1Day) Day 1 Payouts with 5% advancing to Day 2 | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_15.pdf
+2027-01-06 11:10 ev28 $400 No Limit Hold'em $15K GTD (1Day) | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_11.pdf
+2027-01-06 12:00 ev27 $250 No Limit Hold'em Day 2 Restart | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_15.pdf
+2027-01-06 17:10 ev29 $200 No Limit Hold'em Bounty $8K GTD (1Day) Show Your CES Badge - $10 RAKE DISCOUNT | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_2.pdf
+2027-01-07 11:10 ev30 $300 No Limit Hold'em 1A $100K GTD (1Day) | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_13.pdf
+2027-01-07 17:10 ev30 $300 No Limit Hold'em 1B $100K GTD (1Day) Show Your CES Badge - $10 RAKE DISCOUNT | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_14.pdf
+2027-01-08 11:10 ev30 $300 No Limit Hold'em 1C $100K GTD (1Day) | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_13.pdf
+2027-01-08 17:10 ev30 $300 No Limit Hold'em 1D $100K GTD (1Day) Show Your CES Badge - $10 RAKE DISCOUNT | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_14.pdf
+2027-01-09 11:10 ev30 $300 No Limit Hold'em 1E $100K GTD (1Day) | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_13.pdf
+2027-01-09 17:10 ev30 $300 No Limit Hold'em 1F $100K GTD (1Day) | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_14.pdf
+2027-01-10 10:10 ev31 $400 No Limit Hold'em Seniors $20K GTD (1Day) Must be 50+ years of age to participate | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_10.pdf
+2027-01-10 12:00 ev30 $300 No Limit Hold'em Day 2 Restart | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_13.pdf
+2027-01-10 17:10 ev32 $200 No Limit Hold'em Bounty $8K GTD (1Day) | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_2.pdf
