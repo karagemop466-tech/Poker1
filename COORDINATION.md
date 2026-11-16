@@ -10,13 +10,27 @@ Session ID: `bad329a9`. Branch: `arena/bad329a9-poker1` (fixed for this session)
 
 | Task | Status | File scope | Owner |
 |---|---|---|---|
-| Read every official structure sheet for DSE IV (events 1–64) + DSE NYE + Wynn/WPT sources; derive verified single-entry / re-entry / add-on rules; add per-row "last checked" date; remove "unverified" label only where an official sheet confirms the rule | in progress | `scripts/fetch_sources.py`, `data/structure_facts.json`, `scripts/build_data.py`, `data/tournaments.json`, `research/tournaments.md` | `bad329a9` |
-| Add trip-cost calculator (entries × buy-in + nights × true hotel cost), date filter, search across all tables, overlap flagging, primary/fallback day plan | in progress | `assets/app.js`, `assets/style.css`, `pages/*.html` (new: `cost.html`, `overlap.html`, `venues.html`), `scripts/build_site.py` | `bad329a9` |
-| Keep hotel rates as a dated rate log; one page per venue; rate timestamps; change monitoring of official URLs | in progress | `data/rates.json`, `data/changes.json`, `scripts/check_sources.py`, `.github/workflows/monitor.yml`, `pages/venues.html` | `bad329a9` |
-| Refresh docs: QUESTIONS.md / SUGGESTIONS.md / FLAGGED.md / EXECUTIVE_SUMMARY.md / REVIEW.md, PR + merge + Pages deploy | in progress | repo root Markdown, `COORDINATION.md` | `bad329a9` |
+| Read every official structure sheet (52 Venetian sheets) and every WPT terms page; derive verified single-entry / re-entry / add-on rules; per-row "last checked"; remove "unverified" only where an official sheet confirms the rule | **Done** — 225 rows: 54 single entry, 97 re-entry, 40 possible multi-entry, 34 unverified | `scripts/collect_official.py`, `data/official_facts.json`, `scripts/build_data.py`, `data/tournaments.json` | `bad329a9` |
+| Trip-cost calculator (entries × buy-in + nights × true hotel cost), date filter, global search, overlap flagging, primary/fallback day plan | **Done** — verified arithmetic 5×$300 + 4 nights at ($119+$55)×1.1338 = $2,289.12 | `assets/app.js`, `assets/style.css`, `pages/*.html`, `scripts/build_site.py` | `bad329a9` |
+| Hotel rates as a dated log; one page per venue; rate timestamps; daily change monitoring of official URLs | **Done** — 66 documents hashed daily, 15 pages, rate log entry for the Venetian poker rate | `data/rates.json`, `data/changes.json`, `scripts/collect_official.py`, `.github/workflows/monitor.yml`, `pages/venues.html` | `bad329a9` |
+| Refresh docs, PR to `main`, merge, Pages confirmation | **Done** — PR link recorded below | repo root Markdown, `COORDINATION.md` | `bad329a9` |
 
-No other session has an active claim. Files not listed above (e.g. `archive/`) are read-only for this session. Claim committed before implementation work.
+No other session has an active claim. Files not listed above (e.g. `archive/`) are read-only for this session.
 
+### Result of this session
+
+* Collector is green: run `43943273677` succeeded and committed the extracted facts.
+* **54 confirmed single-entry events**, all single-day freezeouts (Venetian DSE IV 47, DSE NYE 7).
+* **97 re-entry or cash-entry rows**, of which 84 are WPT (every WPT terms page prints unlimited re-entry except
+  the Prime Championship, which prints one entry plus one re-entry).
+* **40 possible multiple-entry rows** carrying the "bags chips for Day 2 may not play a subsequent flight" clause.
+  An earlier pass had 88 single-entry rows; reading each sheet's own clause 8 corrected that to 54. Recorded in
+  `REVIEW.md` and `FLAGGED.md` rather than quietly dropped.
+* **34 unverified rows**: 31 Wynn Signature Series (official structures PDF says only "COMING SOON") and 3 WPT
+  rows with no unique printed day/time pair.
+* **38 days** with a verified single-entry option; **3** with a compatible fallback; **12** flagged as conflicting.
+* **0 hotels with a true nightly cost.** The Venetian poker rate is undated and conditional, so it is logged as
+  printed text rather than converted into a number.
 
 Session `f0143c13` is working on branch `arena/f0143c13-poker1` (the branch is fixed for this session). Claim commit `cc17d9e` was pushed before implementation work.
 
@@ -91,3 +105,24 @@ The repository already contains a static dashboard (`index.html`, `pages/`, `ass
 ## Log
 - 2026-11-16: PR #11 merged into main (b272ed5), advancing it past the branch base.
 - 2026-11-16: arena/f5896c06-poker1 rebased onto origin/main, resolved COORDINATION.md conflict preserving both sessions' work; PR #13 created and merged; recording verification and limitation above.
+
+## Handoff note for the integration session
+
+The data layer is regenerated end to end by two scripts and nothing is hand-edited:
+
+```
+python3 scripts/collect_official.py    # needs poppler-utils; runs daily in CI
+python3 scripts/build_data.py
+python3 scripts/build_site.py
+python3 scripts/check_links.py
+```
+
+`scripts/check_links.py` fails the build if a generated page is missing, if a stale page is left behind, or if a
+data row's source is not on an approved official operator domain. The Pages workflow runs the same checks on every
+pull request, so a broken site cannot merge.
+
+Points that need a human decision, not more scraping:
+
+1. A dated official hotel quote (the poker rate is conditional; see `QUESTIONS.md` A3–A4).
+2. Whether a busted multi-flight player may buy in again (40 rows hinge on it; `QUESTIONS.md` B2).
+3. Whether walking times may come from a non-official map source (`SUGGESTIONS.md` §4).

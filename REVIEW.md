@@ -17,7 +17,10 @@ its result, so a change on an operator's site becomes visible on this site witho
 ## 2. What was reviewed line by line in this session
 
 * **Official Venetian event pages** were parsed row by row. The DeepStack IV page yields 94 printed rows and the
-  NYE page 49, including blank date cells that the operator's own event page fills in.
+  NYE page 49.
+* **Every WPT row was matched to its own terms page by the printed date and start time**, not by guesswork. 84 of
+  87 rows matched on a printed day/time pair. The remaining 3 (TORSE, HORSE and one Turbo date) have no unique
+  printed pair at that fee and are left unverified rather than matched to the wrong event.
 * **Structure sheet links were taken from the event page itself**, not guessed from a filename pattern. 52
   Venetian structure PDFs were downloaded and read; each one's title, event numbers, start time, starting chips,
   level length, late-registration line, guarantee, house fee and clause 8 were extracted verbatim.
@@ -35,8 +38,8 @@ its result, so a change on an operator's site becomes visible on this site witho
 
 | Correction | Before | After |
 |---|---|---|
-| Single-entry count | 33 rows | **88 rows**, each confirmed from its own structure sheet |
-| Entry-rule basis | Assumed from a filename list of "multi-flight sheets" | Derived from the sheet's own clause text, quoted on the row |
+| Single-entry count | 33 rows | **54 rows**, each confirmed from its own structure sheet. An earlier pass reported 88 because it trusted the sheet naming convention; reading each sheet's clause 8 moved 40 rows to *possible multiple entries* |
+| Entry-rule basis | Assumed from a filename list of "multi-flight sheets" | Derived from the sheet's own clause text, quoted on the row. Clause 8 now overrides: a sheet that prints it is never single entry |
 | House fee | Copied from a hand-maintained table | Read from each sheet's fee sentence; blank when absent or when the sheet covers a different event number |
 | Start time per event | Taken from the schedule row only | Cross-checked against the start time printed on the structure sheet |
 | "Unverified" label | Applied to whole series without reading the sheets | Removed from every row whose sheet was read and confirmed |
