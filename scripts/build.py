@@ -325,7 +325,7 @@ for dd in schedule:
     if dd["single_entry_starts"]:
         items = "<br>".join(f"{esc(s['start'])} · #{s['event']} {esc(s['name'])} ({money(s['buy_in'])})" for s in dd["single_entry_starts"])
     else:
-        items = '<span class="small">None single-entry</span>'
+        items = '<span class="small">No single-entry starts</span>'
     multi = "<br>".join(f"{esc(s['start'])} · #{s['event']} {esc(s['name'])}" for s in dd["multi_entry_starts"]) or ""
     sched_rows.append(f"<tr><td>{esc(dd['label'])}</td><td>{items}</td><td class=small>{multi}</td><td class=small>{esc(dd['note'])}</td></tr>")
 sched_body = f"""<p class="lead">Single-entry starts by day, from the official Venetian schedule. Arrive at 8:00 AM to register; the first verified single-entry start is 10:10 AM.</p>
@@ -350,3 +350,49 @@ rv_body = f"""<p class="lead">Line-by-line verification log against official sou
 open(os.path.join(ROOT, "pages", "review.html"), "w").write(page("Repo review", rv_body, "review.html"))
 
 print("built", len(main), "main;", len(excluded), "excluded;", len(unverified), "unverified;", len(hotels), "hotels;", len(schedule), "days;", len(flagged), "flags")
+
+
+# ----------------------------------------------------------- INDEX (T7)
+def index_page():
+    nav_items = [("index.html", "Home"), ("pages/tournaments.html", "Single-entry"), ("pages/excluded.html", "Excluded"),
+                 ("pages/hotels.html", "Hotels"), ("pages/schedule.html", "Schedule"), ("pages/flagged.html", "Flagged for Review"),
+                 ("pages/review.html", "Repo review")]
+    nav = "".join(f'<a href="{h}"{" class=active" if h == "index.html" else ""}>{esc(l)}</a>' for h, l in nav_items)
+    repo = "https://github.com/karagemop466-tech/Poker1/blob/main/"
+    cards = [
+        ("pages/tournaments.html", "Single-entry tournaments", f"{len(main)} verified single-entry events (Venetian DSE IV), ranked by buy-in and prize pool.", len(main)),
+        ("pages/excluded.html", "Excluded and unverified", f"{len(excluded)} excluded (re-entry, flights, add-ons, pay-to-advantage) and {len(unverified)} unranked rows.", len(excluded)),
+        ("pages/hotels.html", "Hotels", "Official rates, resort fees and true nightly cost. Walking times not verified.", len(hotels)),
+        ("pages/schedule.html", "Schedule", "Single-entry starts by day, Nov 16 – Dec 23, 2026. First verified start 10:10 AM.", len(schedule)),
+        ("pages/flagged.html", "Flagged for Review", f"{len(flagged)} flags: conflicts, unverified values, policy decisions.", len(flagged)),
+        ("pages/review.html", "Repo review", f"{len(review)} verification checks against official sources, with irregularities.", len(review)),
+    ]
+    cards_html = "".join(
+        f'<a class="card" href="{h}"><h3>{esc(t)}</h3><p>{esc(d)}</p><div class="stat">{n}</div></a>' for h, t, d, n in cards)
+    docs = [("EXECUTIVE_SUMMARY.md", "Executive summary"), ("research/analysis.md", "Analysis"),
+            ("SUGGESTIONS.md", "Suggestions (for review)"), ("QUESTIONS.md", "Questions and gaps"), ("REVIEW.md", "Repo review (markdown)")]
+    docs_html = "".join(f'<li><a href="{repo}{p}">{esc(t)}</a></li>' for p, t in docs)
+    body = f"""<section><p class="lead">Las Vegas Strip poker, November 16 – December 23, 2026. A verified list of single-entry tournaments,
+the hotels nearby, and a day-by-day schedule. Every value links to an official source. Unverified values are blank and flagged,
+not inferred.</p>
+<div class="notice"><strong>Key facts.</strong> No verified single-entry event starts before 10:10 AM. Hotels: no walking times are verified,
+so no hotel is confirmed to meet the 30-minute walking requirement. The Venetian is the venue itself (true cost from $197.28 per night).</div>
+<div class="cards">{cards_html}</div>
+<h2>Documents</h2><ul>{docs_html}</ul>
+<p class="small">Data: <a href="{repo}data/tournaments.json">tournaments.json</a> · <a href="{repo}data/hotels.json">hotels.json</a> · <a href="{repo}data/schedule.json">schedule.json</a> · <a href="{repo}data/repo_review.json">repo_review.json</a></p>
+</section>"""
+    return f"""<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Las Vegas Strip Poker · Dashboard</title>
+<link rel="stylesheet" href="assets/style.css"></head>
+<body><header class="top"><div class="wrap"><a class="brand" href="index.html">Las Vegas Strip Poker</a>
+<nav>{nav}</nav></div></header>
+<main class="wrap"><h1>Las Vegas Strip Poker — Dashboard</h1>{body}</main>
+<footer class="wrap small">Generated {GENERATED} from official sources. Blank cells with &#9873; are unverified.</footer>
+</body></html>
+"""
+
+
+open(os.path.join(ROOT, "index.html"), "w").write(index_page())
+open(os.path.join(ROOT, ".nojekyll"), "w").write("")
+print("index written")

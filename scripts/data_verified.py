@@ -474,7 +474,7 @@ HOTELS = [
     ),
     dict(
         name="Caesars Palace",
-        tournaments="None verified (no official Caesars poker schedule retrieved)",
+        tournaments="No verified tournament (no official Caesars poker schedule retrieved)",
         in_building="NOT APPLICABLE — no verified tournament venue in this report.",
         base_rate_from=None, rate_basis="NOT VERIFIED.",
         resort_fee=None, resort_fee_basis="CONFLICT across non-official sources ($49.95, $55, $62.30). Official hotel page fetched did not show the fee. NOT VERIFIED.",
