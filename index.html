@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#12231f">
+  <meta name="description" content="An official-source Las Vegas Strip poker tournament planner: entry rules, buy-ins, guarantees, hotel fees and an 8 AM decision plan.">
+  <title>Strip Poker Planner — verified tournament & hotel guide</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to dashboard</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="Strip Poker Planner home">
+        <span class="brand-mark" aria-hidden="true">♠</span>
+        <span><strong>STRIP POKER</strong><small>PLANNER / FIELD NOTES</small></span>
+      </a>
+      <div class="header-meta">
+        <span class="live-dot" aria-hidden="true"></span>
+        <span>Official-source audit</span>
+        <span class="meta-divider" aria-hidden="true">/</span>
+        <time datetime="2026-11-16">16 NOV 2026</time>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero shell" id="top" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span>LAS VEGAS · OFFICIAL-SOURCE TOURNAMENT FIELD NOTES</p>
+        <h1 id="hero-title">Plan the poker trip.<br><em>Trust the fine print.</em></h1>
+        <p class="hero-lede">Upcoming Strip-area tournaments, re-entry terms, resort fees and day plans—linked back to the official venue documents. Unknowns stay blank, not guessed.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#events">Explore verified events <span aria-hidden="true">↓</span></a>
+          <a class="button button-quiet" href="#stays">Compare stay costs <span aria-hidden="true">↗</span></a>
+        </div>
+      </div>
+      <aside class="hero-status" aria-label="Research status">
+        <div class="status-top"><span class="status-icon" aria-hidden="true">!</span><span>THE HONEST READ</span></div>
+        <p class="status-title">No strict single-entry event is confirmed yet.</p>
+        <p class="status-copy">Several attractive schedules are published, but the current official terms either allow re-entry / extra chips or do not say whether another entry is permitted.</p>
+        <a href="#single-entry" class="text-link">See the strict-entry screen <span aria-hidden="true">→</span></a>
+      </aside>
+      <div class="hero-footnote"><span>RESEARCH SNAPSHOT</span><strong>Nov 16, 2026</strong><span class="hero-footnote-sep">·</span><span>Strip & nearby resort poker rooms</span></div>
+    </section>
+
+    <nav class="section-nav" aria-label="Dashboard sections">
+      <div class="section-nav-inner">
+        <a href="#overview">Summary</a>
+        <a href="#events">Events</a>
+        <a href="#analysis">Analysis</a>
+        <a href="#day-plan">8 AM day plan</a>
+        <a href="#stays">Hotels</a>
+        <a href="#known-missing">Known / missing</a>
+        <a href="#suggestions">Suggestions</a>
+        <a href="#sources">Sources</a>
+      </div>
+    </nav>
+
+    <div id="load-error" class="load-error shell" role="alert" hidden>
+      Dashboard data could not be loaded. Please refresh, or review the source data in <code>data.json</code>.
+    </div>
+    <noscript><div class="load-error shell">Enable JavaScript to load the source-linked dashboard tables. All tournament and hotel claims are linked to their official source pages from the dashboard.</div></noscript>
+
+    <div id="dashboard" hidden>
+      <section class="shell section section-overview" id="overview" aria-labelledby="overview-title">
+        <div class="section-heading">
+          <div class="section-index">01 <span>—</span> DECISION BRIEF</div>
+          <div><h2 id="overview-title">Executive summary</h2><p class="section-intro">What is actionable now, and what still needs a venue answer.</p></div>
+        </div>
+        <div class="summary-grid">
+          <article class="summary-card summary-card-featured">
+            <div class="summary-label"><span class="small-dot dot-gold"></span>SINGLE-ENTRY FIRST</div>
+            <div class="summary-number" id="single-count">0</div>
+            <h3>strict single-entry tournaments verified</h3>
+            <p>The confirmed list is deliberately empty. A one-day event, a single starting flight, or a missing re-entry rule is not proof of a freezeout.</p>
+          </article>
+          <article class="summary-card">
+            <div class="summary-label"><span class="small-dot dot-green"></span>EVENT TERMS</div>
+            <div class="summary-number" id="extra-count">—</div>
+            <h3>re-entry / extra-spend options</h3>
+            <p>Kept apart from the strict-entry screen so add-ons and repeat entries do not look like the base buy-in.</p>
+          </article>
+          <article class="summary-card">
+            <div class="summary-label"><span class="small-dot dot-blue"></span>HOTEL FEES</div>
+            <div class="summary-number" id="hotel-count">—</div>
+            <h3>resort-fee schedules checked</h3>
+            <p>Fees are not stay totals. Room rates, taxes and a timed walking route remain unverified for the assumed dates.</p>
+          </article>
+          <article class="summary-card">
+            <div class="summary-label"><span class="small-dot dot-red"></span>BOOKING QUOTES</div>
+            <div class="summary-number">0</div>
+            <h3>full stay totals confirmed</h3>
+            <p>The official booking engines did not return a usable date-specific quote; total-cost cells remain blank.</p>
+          </article>
+        </div>
+        <div class="decision-strip">
+          <div class="decision-icon" aria-hidden="true">↗</div>
+          <div><strong>Best published guarantee is not the same as a single-entry pick.</strong><span>WPT Prime posts a $5M guarantee at $1,100, but its official terms permit one re-entry per starting flight. It belongs in the separate extra-spend view.</span></div>
+          <a href="#extra-spend" class="text-link">Review the terms <span aria-hidden="true">→</span></a>
+        </div>
+      </section>
+
+      <section class="shell section" id="events" aria-labelledby="events-title">
+        <div class="section-heading">
+          <div class="section-index">02 <span>—</span> TOURNAMENT BOARD</div>
+          <div><h2 id="events-title">Entry policy before prize pool</h2><p class="section-intro">Strict one-entry opportunities lead. Re-entry and add-on structures are split out; unresolved candidates stay visible for review.</p></div>
+        </div>
+
+        <article class="panel strict-panel" id="single-entry" aria-labelledby="single-title">
+          <div class="panel-heading">
+            <div><p class="panel-kicker">01 / VERIFIED ONLY</p><h3 id="single-title">Strict single-entry</h3></div>
+            <span class="badge badge-empty">0 confirmed</span>
+          </div>
+          <div class="empty-state">
+            <div class="empty-symbol" aria-hidden="true">♠</div>
+            <div><strong>No upcoming event passed the strict test.</strong><p>Definition used here: one paid entry total for the whole event. “One entry per flight” still permits more than one entry across flights, so it does not qualify.</p></div>
+            <a href="#review-candidates" class="text-link">See candidates needing terms <span aria-hidden="true">→</span></a>
+          </div>
+        </article>
+
+        <article class="panel table-panel" id="extra-spend" aria-labelledby="extra-title">
+          <div class="panel-heading panel-heading-wrap">
+            <div><p class="panel-kicker">02 / SEPARATE BY DESIGN</p><h3 id="extra-title">Re-entry, add-ons & extra-chip advantages</h3><p class="panel-subtitle">A low listed buy-in can become a larger spend. “Unlimited re-entry” is a confirmed opportunity to buy again, not a recommendation to do so.</p></div>
+            <label class="search-control" for="extra-search"><span aria-hidden="true">⌕</span><input id="extra-search" type="search" placeholder="Filter by venue or event" autocomplete="off"></label>
+          </div>
+          <div class="table-wrap" role="region" aria-label="Re-entry and extra-spend tournament events" tabindex="0">
+            <table>
+              <thead><tr><th scope="col">Venue / event</th><th scope="col">Dates / start</th><th scope="col">Buy-in</th><th scope="col">Published guarantee</th><th scope="col">Entry / extra-spend terms</th><th scope="col">Official sources</th></tr></thead>
+              <tbody id="extra-rows"></tbody>
+            </table>
+          </div>
+          <p class="table-footnote">Empty price or guarantee cells are intentional: no comparable value was verified. An entry-policy gap is called out in the terms cell.</p>
+        </article>
+
+        <article class="panel table-panel" id="review-candidates" aria-labelledby="candidate-title">
+          <div class="panel-heading panel-heading-wrap">
+            <div><p class="panel-kicker">03 / NOT YET SINGLE-ENTRY</p><h3 id="candidate-title">Scheduled candidates — entry cap needs confirmation</h3><p class="panel-subtitle">Official schedule values are shown; event structures reviewed so far do not establish a strict one-entry limit.</p></div>
+            <div class="table-tools">
+              <label class="search-control" for="candidate-search"><span aria-hidden="true">⌕</span><input id="candidate-search" type="search" placeholder="Filter candidates" autocomplete="off"></label>
+              <label class="select-control" for="candidate-sort"><span class="visually-hidden">Sort candidates</span><select id="candidate-sort"><option value="date">Sort: soonest</option><option value="buyin">Sort: lowest buy-in</option><option value="ratio">Sort: guarantee / buy-in</option></select></label>
+            </div>
+          </div>
+          <div class="table-wrap" role="region" aria-label="Upcoming tournaments needing entry-policy confirmation" tabindex="0">
+            <table>
+              <thead><tr><th scope="col">Venue / event</th><th scope="col">Date / start</th><th scope="col">Buy-in</th><th scope="col">Guarantee</th><th scope="col">GTD ÷ buy-in</th><th scope="col">Entry-policy review</th><th scope="col">Official sources</th></tr></thead>
+              <tbody id="candidate-rows"></tbody>
+            </table>
+          </div>
+          <p class="table-footnote">Guarantee-to-buy-in is a simple size comparison, not expected value or a promise of returns. Multi-flight events can permit several starting attempts; check the terms before counting one as single-entry.</p>
+        </article>
+
+        <div class="two-col-panels">
+          <article class="panel compact-panel" aria-labelledby="daily-title">
+            <p class="panel-kicker">DAILY ROOM WATCH</p><h3 id="daily-title">Recurring starts with missing details</h3>
+            <div id="daily-room-list" class="daily-room-list"></div>
+            <p class="panel-footnote">A posted start time does not confirm buy-in, guarantee, registration cutoff or entry cap. Confirm the current day's sheet with the room.</p>
+          </article>
+          <article class="panel compact-panel conflict-panel" aria-labelledby="conflict-title">
+            <p class="panel-kicker">SOURCE CONFLICT / DO NOT USE</p><h3 id="conflict-title">Bellagio Saturday NLH</h3>
+            <p>The official page and structure PDF disagree on the Saturday buy-in: the file title says $1,000, its heading says $1,100, and its fee split allocates only $600. Buy-in and prize pool are left blank until Bellagio resolves it.</p>
+            <div id="conflict-sources" class="source-links"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="shell section" id="analysis" aria-labelledby="analysis-title">
+        <div class="section-heading">
+          <div class="section-index">03 <span>—</span> VALUE LENS</div>
+          <div><h2 id="analysis-title">What the posted numbers say</h2><p class="section-intro">Compare entry price and minimum published pools without treating an advertised guarantee as an expected return.</p></div>
+        </div>
+        <div class="analysis-grid">
+          <article class="panel chart-panel">
+            <div class="panel-heading"><div><p class="panel-kicker">GUARANTEE / ENTRY</p><h3>Big pools, read carefully</h3></div><span class="micro-label">Official listed values</span></div>
+            <div id="guarantee-chart" class="guarantee-chart" aria-label="Tournament guarantee divided by buy-in"></div>
+            <p class="table-footnote">Only rows with both values confirmed are charted. Multiple flights, fees, entry limits and actual field size make this ratio unsuitable as an EV estimate.</p>
+          </article>
+          <aside class="analysis-notes">
+            <article class="insight-card insight-green"><span class="insight-no">A</span><div><h3>Lowest sticker buy-in in the sample</h3><p><strong>$200</strong> Venetian RaceDay Stack, Nov 19–21. The structure explains its fee split and registration cutoff; the schedule does not list a guarantee or one-entry limit.</p></div></article>
+            <article class="insight-card insight-gold"><span class="insight-no">B</span><div><h3>Largest verified guarantee in the sample</h3><p><strong>$5M for $1,100</strong> at Wynn's WPT Prime. Its terms explicitly allow an entry and a re-entry per starting flight, so it stays out of the strict-entry list.</p></div></article>
+            <article class="insight-card insight-blue"><span class="insight-no">C</span><div><h3>Venue value requires a rule check</h3><p>Venetian has several sub-$1,000 scheduled entries with published guarantees. Its reviewed sheets do not state an entry cap; a blank is not a freezeout.</p></div></article>
+          </aside>
+        </div>
+        <div class="analysis-caveat"><strong>Comparison guardrail</strong><span>A guarantee is a minimum tournament pool, not the likely pool, an individual payout, or the odds of cashing. Buy-in figures are the posted total entry amount unless a structure explicitly breaks out fees.</span></div>
+      </section>
+
+      <section class="shell section day-section" id="day-plan" aria-labelledby="day-title">
+        <div class="section-heading">
+          <div class="section-index">04 <span>—</span> START AT 8 AM</div>
+          <div><h2 id="day-title">A conditional day plan</h2><p class="section-intro">Illustrative Saturday, Dec 5, 2026. The clock starts at 8 AM; the first published daily tournament start is later.</p></div>
+        </div>
+        <div class="plan-banner"><span class="plan-clock" aria-hidden="true">08</span><div><strong>No 8 AM tournament start is verified.</strong><p>Use 8–9 AM to confirm the current schedule, entry rules and late-registration cutoffs. Do not register in two events that overlap; move to a later start only after elimination/finish and only if registration remains open.</p></div><span class="plan-tag">DEC 05 EXAMPLE</span></div>
+        <div id="day-plan-list" class="timeline"></div>
+        <p class="plan-disclaimer">Caesars' official guide says many daily sessions run about four to six hours, but that is not an event-specific duration. The timetable is a decision tree—not a guarantee that multiple entries fit in one day.</p>
+      </section>
+
+      <section class="shell section" id="stays" aria-labelledby="stays-title">
+        <div class="section-heading">
+          <div class="section-index">05 <span>—</span> SLEEP / WALK / COST</div>
+          <div><h2 id="stays-title">On-property hotel shortlist</h2><p class="section-intro">Quality signals and known fee components are shown before distance. A same-resort location is a practical lead, not a measured lobby-to-seat route.</p></div>
+        </div>
+        <div class="stay-assumption"><div class="assumption-icon" aria-hidden="true">◷</div><div><strong>Comparison assumption: 2 adults · 1 standard room · 4 nights</strong><span>Thu Dec 3 to Mon Dec 7, 2026 · direct booking · no upgrade. This is a comparison window, not a user-supplied trip date.</span></div></div>
+        <div class="table-alert"><span class="alert-mark" aria-hidden="true">!</span><p><strong>Full stay totals are blank.</strong> Official booking searches did not return usable date-specific quotes. Resort fee amounts below are fee-only components; they do not include the room rate, room tax, upgrades or other charges.</p></div>
+        <div class="table-wrap hotel-table-wrap" role="region" aria-label="Hotel resort fee and total cost comparison" tabindex="0">
+          <table class="hotel-table">
+            <thead><tr><th scope="col">Hotel / linked poker room</th><th scope="col">Official quality signal</th><th scope="col">Walk screen</th><th scope="col">Resort fee / night</th><th scope="col">Fee-only subtotal<br><small>4 nights</small></th><th scope="col">Full stay total<br><small>incl. fees / tax</small></th><th scope="col">Sources</th></tr></thead>
+            <tbody id="hotel-rows"></tbody>
+          </table>
+        </div>
+        <div class="hotel-notes" id="hotel-notes"></div>
+        <p class="table-footnote">No property is ranked by total cost until matching, date-specific room quotes (including resort fee and taxes) are available. Exact walking minutes remain blank and flagged when not published; same-property/connected status is not a timed route.</p>
+      </section>
+
+      <section class="shell section" id="known-missing" aria-labelledby="known-title">
+        <div class="section-heading">
+          <div class="section-index">06 <span>—</span> DATA HYGIENE</div>
+          <div><h2 id="known-title">Known, missing & questions</h2><p class="section-intro">Operational questions for the venues and booking desks—not requests for manual input.</p></div>
+        </div>
+        <div class="known-grid">
+          <article class="panel info-panel known-panel"><div class="panel-kicker">CONFIRMED</div><h3>Known information</h3><ul id="known-list"></ul></article>
+          <article class="panel info-panel missing-panel"><div class="panel-kicker">LEFT BLANK ON PURPOSE</div><h3>Missing answers</h3><ul id="missing-list"></ul></article>
+        </div>
+        <div class="questions-panel">
+          <div class="questions-heading"><span class="question-mark" aria-hidden="true">?</span><div><p class="panel-kicker">NEXT VERIFICATION CALLS</p><h3>Questions to close before choosing</h3></div></div>
+          <ol id="questions-list"></ol>
+        </div>
+      </section>
+
+      <section class="shell section suggestions-section" id="suggestions" aria-labelledby="suggestions-title">
+        <div class="section-heading">
+          <div class="section-index">07 <span>—</span> REVIEW BEFORE BUILDING MORE</div>
+          <div><h2 id="suggestions-title">Suggestions & decision paths</h2><p class="section-intro">Ideas to improve the planner are deliberately proposals; no new data automation or ranking is implied.</p></div>
+        </div>
+        <div class="suggestion-grid" id="suggestion-grid"></div>
+        <div class="decision-paths" id="decision-paths"></div>
+      </section>
+
+      <section class="shell section source-section" id="sources" aria-labelledby="sources-title">
+        <div class="section-heading">
+          <div class="section-index">08 <span>—</span> MANUAL REVIEW</div>
+          <div><h2 id="sources-title">Official source library</h2><p class="section-intro">Open the schedule, structure or hotel policy used for each value. Third-party calendars are not used to fill tournament rows.</p></div>
+        </div>
+        <div id="source-groups" class="source-groups"></div>
+        <div class="source-method"><strong>Method:</strong> event schedule + linked structure for tournament values; hotel policy/fee page for resort fees; direct booking engines for stay quotes. Missing or conflicting fields are not inferred. <span id="source-reviewed"></span></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner"><span class="footer-brand">♠ STRIP POKER PLANNER</span><span>Research snapshot only · Confirm schedules and terms with the venue before paying.</span><a href="#top">Back to top ↑</a></div>
+    <div class="shell responsible-note">Must be 21 or older to gamble. Know your limits. Event schedules, hotel fees and availability can change.</div>
+  </footer>
+  <script src="./app.js" defer></script>
+</body>
+</html>

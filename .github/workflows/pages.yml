@@ -1,0 +1,77 @@
+name: Deploy dashboard to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Validate static dashboard
+        run: |
+          python3 -m json.tool data.json > /dev/null
+          node --check app.js
+          test -s index.html
+          test -s styles.css
+          python3 - <<'PY'
+          from collections import Counter
+          from html.parser import HTMLParser
+          from pathlib import Path
+
+          class AnchorAudit(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.ids = []
+                  self.fragments = []
+              def handle_starttag(self, tag, attrs):
+                  attrs = dict(attrs)
+                  if attrs.get("id"):
+                      self.ids.append(attrs["id"])
+                  if tag == "a" and attrs.get("href", "").startswith("#"):
+                      self.fragments.append(attrs["href"][1:])
+
+          audit = AnchorAudit()
+          audit.feed(Path("index.html").read_text(encoding="utf-8"))
+          duplicates = [value for value, count in Counter(audit.ids).items() if count > 1]
+          missing = [fragment for fragment in audit.fragments if fragment not in audit.ids]
+          if duplicates or missing:
+              raise SystemExit(f"HTML anchor audit failed: duplicate IDs={duplicates}; missing fragments={missing}")
+          PY
+      - name: Assemble static dashboard
+        run: |
+          mkdir -p _site
+          cp index.html styles.css app.js data.json _site/
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    if: github.event_name == 'push' || (github.event_name == 'workflow_dispatch' && github.ref == 'refs/heads/main')
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

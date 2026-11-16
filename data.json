@@ -1,0 +1,568 @@
+{
+  "meta": {
+    "snapshot": "2026-11-16",
+    "snapshotLabel": "Nov 16, 2026",
+    "assumption": "Illustrative hotel comparison: Dec 3–7, 2026 (4 nights), 2 adults, 1 standard room",
+    "sourcePolicy": "Tournament and hotel facts use official venue/operator sources. Unverified fields stay blank; conflicting official values are called out rather than averaged.",
+    "strictDefinition": "Strict single-entry means one paid entry total for the entire tournament. One entry per flight, a 1Day label, or silence in a structure sheet does not meet that definition."
+  },
+  "sources": [
+    {"id":"ven-schedule","group":"Tournament schedules","short":"Schedule","title":"Venetian DeepStack Extravaganza IV schedule","url":"https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html","note":"Official Nov 16–Dec 23, 2026 event calendar with event numbers, starts, listed buy-ins, guarantees, and links to structures."},
+    {"id":"ven-s5","group":"Structure sheets","short":"Structure #5","title":"Venetian structure #5 — $300 NLH","url":"https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf","note":"$300 one-day NLH structures used for Venetian events #2 and #12; a 1Day label is not an entry-cap rule."},
+    {"id":"ven-s18","group":"Structure sheets","short":"Structure #18","title":"Venetian structure #18 — $200 RaceDay Stack","url":"https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf","note":"$200 RaceDay Stack sheet for events #3–#5. It states the fee split and late-registration timing but no total entry cap."},
+    {"id":"ven-s29","group":"Structure sheets","short":"Structure #29","title":"Venetian structure #29 — $200 NLH","url":"https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_29.pdf","note":"Event #6 $200 one-day NLH sheet. It does not state a strict one-entry total."},
+    {"id":"ven-s2","group":"Structure sheets","short":"Structure #2","title":"Venetian structure #2 — $400 NLH multi-flight","url":"https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_2.pdf","note":"Structure for Venetian event #7, the $400 $75K guarantee event. Multi-flight wording does not establish a one-entry total."},
+    {"id":"ven-s6","group":"Structure sheets","short":"Structure #6","title":"Venetian structure #6 — $400 NLH","url":"https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_6.pdf","note":"$400 one-day NLH event #10; the sheet does not state a strict one-entry total."},
+    {"id":"ven-s7","group":"Structure sheets","short":"Structure #7","title":"Venetian structure #7 — $600 NLH 1Day","url":"https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf","note":"Events #14, #28, and #63; posted guarantees vary by event. The 1Day label does not establish an entry limit."},
+    {"id":"ven-s11","group":"Structure sheets","short":"Structure #11","title":"Venetian structure #11 — $600 NLH bounty","url":"https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf","note":"$600 one-day bounty structure used for event #16; no strict entry cap is stated."},
+    {"id":"ven-s17","group":"Structure sheets","short":"Structure #17","title":"Venetian structure #17 — $600 Seniors NLH","url":"https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf","note":"Seniors event #24; participation is limited to players age 50 or older. No total entry cap is stated."},
+    {"id":"ven-s12","group":"Structure sheets","short":"Structure #12","title":"Venetian structure #12 — $800 NLH $500K guarantee","url":"https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf","note":"Events #26. A player who bags for Day 2 may not play a subsequent flight; the sheet does not state the overall entry cap or number of re-entries."},
+    {"id":"ven-s21","group":"Structure sheets","short":"Structure #21","title":"Venetian structure #21 — $2,200 PokerAtlas Championship","url":"https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf","note":"Event #47, multi-day PokerAtlas Championship title event, $1M guarantee; no strict one-entry rule confirmed."},
+    {"id":"ven-s34","group":"Structure sheets","short":"Structure #34","title":"Venetian structure #34 — $1,100 NLH PKO","url":"https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_34.pdf","note":"Event #52, $75K guarantee. The sheet does not establish a strict one-entry total."},
+    {"id":"ven-s35","group":"Structure sheets","short":"Structure #35","title":"Venetian structure #35 — $1,100 multi-flight NLH, flights A/C/E","url":"https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf","note":"Event #56, $500K guarantee, flights A/C/E; a Day 2 qualifier may not play a subsequent flight."},
+    {"id":"ven-s36","group":"Structure sheets","short":"Structure #36","title":"Venetian structure #36 — $1,100 multi-flight NLH, flights B/D","url":"https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf","note":"Event #56, $500K guarantee, flights B/D; not proof of a one-entry total."},
+    {"id":"ven-s4","group":"Structure sheets","short":"Structure #4","title":"Venetian structure #4 — $600 NLH $150K multi-flight","url":"https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf","note":"Event #59, $150K guarantee and multiple flights; no strict one-entry total stated."},
+    {"id":"wpt-schedule","group":"Tournament schedules","short":"WPT schedule","title":"WPT World Championship 2026 schedule","url":"https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf","note":"Official Wynn schedule, Nov 27–Dec 21, 2026; event dates, start times, posted buy-ins, and guarantees."},
+    {"id":"wpt-structures","group":"Structure sheets","short":"WPT structures","title":"WPT World Championship 2026 structures and terms","url":"https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf","note":"Official terms confirm re-entry limits, fee breakdowns, registration cutoffs, and event structure. Sampled events allow re-entry; WPT Prime permits one entry plus one re-entry per starting flight."},
+    {"id":"wynn-poker","group":"Poker rooms & access","short":"Wynn room","title":"Wynn Las Vegas poker room, tournament schedule and structures","url":"https://www.wynnlasvegas.com/casino/poker","note":"Wynn's official poker-room page links its WPT, daily schedules, and structures."},
+    {"id":"pgt-news","group":"Tournament schedules","short":"PGT news","title":"PGT winter schedule announcement: ARIA High Roller Series","url":"https://www.pgt.com/news/pgt-winter-schedule-features-boosted-points-at-aria-and-five-dream-seats-at-last-chance","note":"PGT news says five daily $5,300 one-day events run Nov 28–Dec 2, 2026."},
+    {"id":"pgt-schedule","group":"Tournament schedules","short":"PGT schedule","title":"PokerGO Tour official schedule","url":"https://www.pgt.com/schedule","note":"Lists five ARIA High Roller events at 3 PM, Nov 28–Dec 2, and links their structure sheet."},
+    {"id":"pgt-structure","group":"Structure sheets","short":"PGT structure","title":"PGT ARIA High Roller Series structure","url":"https://pgt.pokergomedia.com/event_pdf/053862af-PGTARIAHighRollerSeriesstructurev3.pdf","note":"Explicitly allows unlimited re-entry; lists 12 PM and $5,000 plus $100 on-time / $300 late fee, conflicting with PGT schedule/news."},
+    {"id":"caesars-article","group":"Poker rooms & access","short":"Caesars guide","title":"Caesars Palace and Horseshoe poker tournament guide","url":"https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip","note":"Official guide lists Caesars Palace's daily $100 events, $1,000 guarantee, optional $50 add-on, and Horseshoe's daily start times. It does not state entry limits."},
+    {"id":"horseshoe-room","group":"Poker rooms & access","short":"Horseshoe room","title":"Horseshoe Las Vegas casino and poker room","url":"https://caesars.com/horseshoe-las-vegas/casino","note":"Official Horseshoe room information."},
+    {"id":"mgm-poker","group":"Poker rooms & access","short":"MGM room","title":"MGM Grand poker room and daily tournaments","url":"https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html","note":"Official room page lists daily starts at 11 AM, 7 PM, and 11 PM."},
+    {"id":"mgm-structure","group":"Structure sheets","short":"MGM $120 sheet","title":"MGM Grand $120 NLH structure","url":"https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf","note":"Published $120 sheet includes an optional $11 gratuity for 10,000 extra chips; schedule year/applicability is unresolved."},
+    {"id":"bellagio-poker","group":"Poker rooms & access","short":"Bellagio room","title":"Bellagio poker room and tournament structure links","url":"https://bellagio.mgmresorts.com/en/casino/poker.html","note":"Official room page lists its location and links the Friday, Saturday, and Sunday tournament sheets; event validity/date needs confirmation."},
+    {"id":"bellagio-fri","group":"Structure sheets","short":"Bellagio Friday","title":"Bellagio Fridays $600 NLH structure","url":"https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf","note":"Official sheet permits re-entry through level 8 and lists optional gratuity chips; current event date/time was not established."},
+    {"id":"bellagio-sat","group":"Structure sheets","short":"Bellagio Saturday","title":"Bellagio Saturdays NLH structure — conflicting figures","url":"https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf","note":"Excluded from quantified comparisons: PDF title says $1,000, heading says $1,100, and its fee allocation says $600."},
+    {"id":"bellagio-sun","group":"Structure sheets","short":"Bellagio Sunday","title":"Bellagio Sundays $400 H.O.R.S.E. structure","url":"https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf","note":"Official sheet permits re-entry through level 8 and lists optional gratuity chips; current event date/time was not established."},
+    {"id":"venetian-fee","group":"Hotel fees & booking","short":"Venetian fee","title":"Venetian resort fee details","url":"https://www.venetianlasvegas.com/resort/resort-fee.html","note":"Posted resort fee is $55 per night plus tax; this is not a dated room quote."},
+    {"id":"venetian-poker-rate","group":"Hotel fees & booking","short":"Poker rate","title":"Venetian poker-player suite rates and conditions","url":"https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html","note":"Conditional poker-player rate requires phone booking/code EPOKR25, Venetian Rewards tracking, and qualifying play each night; not a Dec 3–7 quote."},
+    {"id":"wynn-fee","group":"Hotel fees & booking","short":"Wynn fee","title":"Wynn resort information and resort fee","url":"https://www.wynnlasvegas.com/about-us/resort-information","note":"Posted resort fee is $55 per night plus tax; this is not a dated room quote."},
+    {"id":"aria-fee","group":"Hotel fees & booking","short":"ARIA fee","title":"ARIA resort fee terms","url":"https://aria.mgmresorts.com/en/terms-and-conditions.html","note":"Posted resort fee is $55 per night plus tax; this is not a dated room quote."},
+    {"id":"bellagio-fee","group":"Hotel fees & booking","short":"Bellagio fee","title":"Bellagio terms and resort fee","url":"https://bellagio.mgmresorts.com/en/terms-and-conditions.html","note":"Posted resort fee is $55 per night plus tax; this is not a dated room quote."},
+    {"id":"mgm-fee","group":"Hotel fees & booking","short":"MGM fee","title":"MGM Grand terms and resort fee","url":"https://mgmgrand.mgmresorts.com/en/terms-and-conditions.html","note":"Posted resort fee is $50 per night plus tax; this is not a dated room quote."},
+    {"id":"horseshoe-fee","group":"Hotel fees & booking","short":"Horseshoe fee","title":"Horseshoe booking and resort-fee terms","url":"https://www.caesars.com/book/hotel-calendar?dateSearchFormat=flexible-dates&flexibleMonth=December&propCode=blv","note":"Posted resort fee $49.95 plus $6.68 tax, $56.63 total per night; no usable date-specific room rate was returned."},
+    {"id":"caesars-fee","group":"Hotel fees & booking","short":"Caesars fee","title":"Caesars Palace booking and resort-fee terms","url":"https://www.caesars.com/book/hotel-calendar?dateSearchFormat=flexible-dates&flexibleMonth=December&propCode=clv","note":"Posted resort fee $54.95 plus $7.35 tax, $62.30 total per night; no usable date-specific room rate was returned."},
+    {"id":"ti-fee","group":"Hotel fees & booking","short":"TI fee","title":"Treasure Island room and resort-fee information","url":"https://treasureisland.com/hotel/luxury-suite","note":"Posted resort fee is $49.95 per night plus tax; generic promotions are not date-specific quotes."},
+    {"id":"ti-map","group":"Poker rooms & access","short":"TI map","title":"Treasure Island official property map and pedestrian bridges","url":"https://treasureisland.com/hotel/property-map","note":"Official map states TI is connected by pedestrian bridges to Palazzo and The Venetian; it gives no exact walking duration."}
+  ],
+  "extraEvents": [
+    {
+      "venue":"PokerGO Studio / ARIA High Roller Series",
+      "title":"ARIA High Roller Series #1–#5",
+      "date":"2026-11-28",
+      "dates":"Nov 28–Dec 2 · one event daily",
+      "time":"",
+      "buyIn":null,
+      "buyInText":"",
+      "guarantee":null,
+      "guaranteeText":"",
+      "policy":"Unlimited re-entry confirmed",
+      "policyType":"unlimited",
+      "terms":"The structure explicitly allows unlimited re-entry. Official sources conflict: PGT news/schedule list $5,300 and 3 PM; the structure says $5,000 plus $100 on-time / $300 late fee and noon. Cost and start are left blank. No guarantee is listed in the structure.",
+      "sourceIds":["pgt-news","pgt-schedule","pgt-structure"]
+    },
+    {
+      "venue":"Wynn Las Vegas",
+      "title":"WPT $600 NLH — $400K guarantee",
+      "date":"2026-11-27",
+      "dates":"Nov 27–29 flights · Day 2 Nov 30",
+      "time":"11:00 AM (Day 1A)",
+      "buyIn":600,
+      "guarantee":400000,
+      "policy":"Unlimited re-entry per flight",
+      "policyType":"unlimited",
+      "terms":"Unlimited re-entry is available in each starting flight until level 9. A Day 2 qualifier may not enter a later flight. The structure splits the $600 entry into $510 prize pool, $65 tournament fee, and $25 staff service charge.",
+      "sourceIds":["wpt-schedule","wpt-structures"]
+    },
+    {
+      "venue":"Wynn Las Vegas",
+      "title":"WPT $800 NLH — $1M guarantee",
+      "date":"2026-11-30",
+      "dates":"Nov 30–Dec 2 flights · Day 2 Dec 3 · final table Dec 4",
+      "time":"11:00 AM (Day 1A)",
+      "buyIn":800,
+      "guarantee":1000000,
+      "policy":"Unlimited re-entry per flight",
+      "policyType":"unlimited",
+      "terms":"Unlimited re-entry per starting flight until level 9; a Day 2 qualifier may not enter a later flight. Published entry breakdown: $695 prize pool, $72 tournament fee, $33 staff service charge.",
+      "sourceIds":["wpt-schedule","wpt-structures"]
+    },
+    {
+      "venue":"Wynn Las Vegas",
+      "title":"WPT $1,600 NLH — $1M guarantee",
+      "date":"2026-12-03",
+      "dates":"Dec 3 Day 1A · Dec 4 Day 1B · Day 2 Dec 5",
+      "time":"11:00 AM (Day 1A)",
+      "buyIn":1600,
+      "guarantee":1000000,
+      "policy":"Unlimited re-entry per flight",
+      "policyType":"unlimited",
+      "terms":"Unlimited re-entry per starting flight until level 10; a Day 2 qualifier may not enter a later flight. The structure publishes a $1,430 prize contribution, $120 tournament fee, and $50 staff service charge.",
+      "sourceIds":["wpt-schedule","wpt-structures"]
+    },
+    {
+      "venue":"Wynn Las Vegas",
+      "title":"WPT $600 HORSE",
+      "date":"2026-12-04",
+      "dates":"Dec 4 · one-day event",
+      "time":"12:00 PM",
+      "buyIn":600,
+      "guarantee":null,
+      "policy":"Unlimited re-entry until level 9",
+      "policyType":"unlimited",
+      "terms":"The official structure allows unlimited re-entry until level 9 (approximately 4:30 PM). No guarantee is listed in the schedule/structure reviewed.",
+      "sourceIds":["wpt-schedule","wpt-structures"]
+    },
+    {
+      "venue":"Wynn Las Vegas",
+      "title":"WPT Prime Championship — $5M guarantee",
+      "date":"2026-12-05",
+      "dates":"Dec 5–8 starting flights · Day 2 Dec 9",
+      "time":"11:00 AM (Day 1A)",
+      "buyIn":1100,
+      "guarantee":5000000,
+      "policy":"One re-entry per starting flight",
+      "policyType":"limited",
+      "terms":"Each flight permits one entry and one re-entry until level 10 (approximately 6:45 PM). A Day 2 qualifier may not enter a later flight. The $1,100 consists of $970 prize pool, $90 tournament fee, and $40 staff service charge.",
+      "sourceIds":["wpt-schedule","wpt-structures"]
+    },
+    {
+      "venue":"Wynn Las Vegas",
+      "title":"WPT $600 NLH Turbo — $50K guarantee",
+      "date":"2026-12-05",
+      "dates":"Dec 5 · one-day event",
+      "time":"9:00 PM",
+      "buyIn":600,
+      "guarantee":50000,
+      "policy":"Unlimited re-entry until level 9",
+      "policyType":"unlimited",
+      "terms":"The structure allows unlimited re-entry until level 9. Entry breakdown: $515 prize pool, $60 tournament fee, and $25 staff service charge. A late start is a conditional pivot only if the earlier event is finished and registration remains open.",
+      "sourceIds":["wpt-schedule","wpt-structures"]
+    },
+    {
+      "venue":"Wynn Las Vegas",
+      "title":"WPT $1,600 PLO Mystery Bounty — $500K guarantee",
+      "date":"2026-12-06",
+      "dates":"Dec 6 flights at 11 AM and 6 PM · Day 2 Dec 7",
+      "time":"11:00 AM (Day 1A)",
+      "buyIn":1600,
+      "guarantee":500000,
+      "policy":"Unlimited re-entry per flight",
+      "policyType":"unlimited",
+      "terms":"Unlimited re-entry in each starting flight until level 10; a Day 2 qualifier may not enter a later flight. The $1,600 includes a $500 mystery-bounty pool in addition to the tournament pool and fees.",
+      "sourceIds":["wpt-schedule","wpt-structures"]
+    }
+  ],
+  "candidateEvents": [
+    {
+      "venue":"The Venetian",
+      "title":"DeepStack #2 · $300 NLH 1Day",
+      "date":"2026-11-18",
+      "dates":"Nov 18 · one-day label",
+      "time":"11:10 AM",
+      "buyIn":300,
+      "guarantee":10000,
+      "entryReview":"No strict total entry cap stated in the reviewed structure; 1Day is not proof of single-entry.",
+      "sourceIds":["ven-schedule","ven-s5"]
+    },
+    {
+      "venue":"The Venetian",
+      "title":"DeepStack #3 · $200 RaceDay Stack",
+      "date":"2026-11-19",
+      "dates":"Nov 19 · one-day label",
+      "time":"10:10 AM",
+      "buyIn":200,
+      "guarantee":null,
+      "entryReview":"The structure lists a one-day format, but no total entry cap. Do not infer a freezeout from silence.",
+      "sourceIds":["ven-schedule","ven-s18"]
+    },
+    {
+      "venue":"The Venetian",
+      "title":"DeepStack #6 · $200 NLH 1Day",
+      "date":"2026-11-22",
+      "dates":"Nov 22 · one-day label",
+      "time":"11:10 AM",
+      "buyIn":200,
+      "guarantee":null,
+      "entryReview":"No strict total entry cap stated in the reviewed structure; 1Day is not proof of single-entry.",
+      "sourceIds":["ven-schedule","ven-s29"]
+    },
+    {
+      "venue":"The Venetian",
+      "title":"DeepStack #7 · $400 NLH $75K guarantee",
+      "date":"2026-11-23",
+      "dates":"Nov 23–24 flights · Day 2 Nov 25",
+      "time":"11:10 AM (Day 1A)",
+      "buyIn":400,
+      "guarantee":75000,
+      "entryReview":"Multi-flight event; the reviewed source does not establish a one-entry total. Confirm how many flights/entries are allowed.",
+      "sourceIds":["ven-schedule","ven-s2"]
+    },
+    {
+      "venue":"The Venetian",
+      "title":"DeepStack #10 · $400 NLH $15K guarantee",
+      "date":"2026-11-25",
+      "dates":"Nov 25 · one-day label",
+      "time":"11:10 AM",
+      "buyIn":400,
+      "guarantee":15000,
+      "entryReview":"No strict total entry cap stated in the reviewed structure; 1Day is not proof of single-entry.",
+      "sourceIds":["ven-schedule","ven-s6"]
+    },
+    {
+      "venue":"The Venetian",
+      "title":"DeepStack #14 · $600 NLH $30K guarantee",
+      "date":"2026-11-27",
+      "dates":"Nov 27 · one-day label",
+      "time":"11:10 AM",
+      "buyIn":600,
+      "guarantee":30000,
+      "entryReview":"The sheet says 1Day and lists a late-registration cutoff, but no total entry cap. Not confirmed single-entry.",
+      "sourceIds":["ven-schedule","ven-s7"]
+    },
+    {
+      "venue":"The Venetian",
+      "title":"DeepStack #16 · $600 NLH bounty $30K guarantee",
+      "date":"2026-11-28",
+      "dates":"Nov 28 · one-day label",
+      "time":"11:10 AM",
+      "buyIn":600,
+      "guarantee":30000,
+      "entryReview":"Bounty / one-day format does not establish a one-entry limit; the reviewed sheet does not state a total cap.",
+      "sourceIds":["ven-schedule","ven-s11"]
+    },
+    {
+      "venue":"The Venetian",
+      "title":"DeepStack #24 · $600 Seniors NLH $40K guarantee",
+      "date":"2026-12-02",
+      "dates":"Dec 2 · 50+ only · one-day label",
+      "time":"10:10 AM",
+      "buyIn":600,
+      "guarantee":40000,
+      "entryReview":"Eligibility is limited to players age 50 or older. The reviewed structure does not establish a strict entry cap.",
+      "sourceIds":["ven-schedule","ven-s17"]
+    },
+    {
+      "venue":"The Venetian",
+      "title":"DeepStack #26 · $800 NLH $500K guarantee",
+      "date":"2026-12-03",
+      "dates":"Dec 3–5 flights · Day 2 Dec 6",
+      "time":"11:10 AM (Day 1A; other flights also listed)",
+      "buyIn":800,
+      "guarantee":500000,
+      "entryReview":"Multi-flight. A player who bags for Day 2 may not play a later flight; the structure does not state the overall entry cap or re-entry count.",
+      "sourceIds":["ven-schedule","ven-s12"]
+    },
+    {
+      "venue":"The Venetian",
+      "title":"DeepStack #28 · $600 NLH $40K guarantee",
+      "date":"2026-12-06",
+      "dates":"Dec 6 · one-day label",
+      "time":"11:10 AM",
+      "buyIn":600,
+      "guarantee":40000,
+      "entryReview":"The sheet states 1Day but no strict total entry cap; confirm directly before treating it as a freezeout.",
+      "sourceIds":["ven-schedule","ven-s7"]
+    },
+    {
+      "venue":"The Venetian",
+      "title":"DeepStack #47 · $2,200 PokerAtlas Championship $1M guarantee",
+      "date":"2026-12-12",
+      "dates":"Dec 12–14 · multi-day title event",
+      "time":"10:10 AM (Day 1A)",
+      "buyIn":2200,
+      "guarantee":1000000,
+      "entryReview":"Multi-day event; no strict one-entry total confirmed in the reviewed sheet.",
+      "sourceIds":["ven-schedule","ven-s21"]
+    },
+    {
+      "venue":"Wynn Las Vegas",
+      "title":"WPT Super Gold Million Mystery Bounty $3M guarantee",
+      "date":"2026-12-10",
+      "dates":"Dec 10–11 flights · Day 2 Dec 12",
+      "time":"10:00 AM (Day 1A; later flights at 6 PM)",
+      "buyIn":400,
+      "guarantee":3000000,
+      "entryReview":"The official schedule lists $400 and a $3M guarantee, but the entry cap/re-entry terms were not confirmed in the reviewed structure material.",
+      "sourceIds":["wpt-schedule","wynn-poker"]
+    },
+    {
+      "venue":"The Venetian",
+      "title":"DeepStack #52 · $1,100 NLH PKO $75K guarantee",
+      "date":"2026-12-15",
+      "dates":"Dec 15 · one-day label",
+      "time":"11:10 AM",
+      "buyIn":1100,
+      "guarantee":75000,
+      "entryReview":"Progressive-knockout bounty format; the reviewed structure does not establish a strict entry cap.",
+      "sourceIds":["ven-schedule","ven-s34"]
+    },
+    {
+      "venue":"The Venetian",
+      "title":"DeepStack #56 · $1,100 NLH $500K guarantee",
+      "date":"2026-12-17",
+      "dates":"Dec 17–19 flights · Day 2 Dec 20",
+      "time":"10:10 AM (Day 1A; later flights also listed)",
+      "buyIn":1100,
+      "guarantee":500000,
+      "entryReview":"Multi-flight event; a Day 2 qualifier may not play a later flight. A strict one-entry total is not established.",
+      "sourceIds":["ven-schedule","ven-s35","ven-s36"]
+    },
+    {
+      "venue":"The Venetian",
+      "title":"DeepStack #59 · $600 NLH $150K guarantee",
+      "date":"2026-12-20",
+      "dates":"Dec 20–22 flights · Day 2 Dec 23",
+      "time":"11:10 AM (Day 1A; later flights also listed)",
+      "buyIn":600,
+      "guarantee":150000,
+      "entryReview":"Multi-flight event; the reviewed structure does not establish a strict one-entry total.",
+      "sourceIds":["ven-schedule","ven-s4"]
+    },
+    {
+      "venue":"The Venetian",
+      "title":"DeepStack #63 · $600 NLH $30K guarantee",
+      "date":"2026-12-23",
+      "dates":"Dec 23 · one-day label",
+      "time":"11:10 AM",
+      "buyIn":600,
+      "guarantee":30000,
+      "entryReview":"The sheet says 1Day but no total entry cap. Not confirmed single-entry.",
+      "sourceIds":["ven-schedule","ven-s7"]
+    }
+  ],
+  "dailyRooms": [
+    {
+      "venue":"Caesars Palace",
+      "times":"10 AM · 2 PM · 6 PM · 9 PM",
+      "details":"Official guide lists $100 NLH, $1,000 guarantee, and a $50 optional add-on for 15,000 extra chips. Re-entry/entry cap and same-day registration cutoff are not stated.",
+      "sourceIds":["caesars-article"]
+    },
+    {
+      "venue":"Horseshoe Las Vegas",
+      "times":"9 AM · 11 AM · 2 PM · 5 PM · 8 PM · 11 PM",
+      "details":"Official guide lists daily starts; event-specific buy-ins, guarantees, entry limits, and registration cutoffs are not published there.",
+      "sourceIds":["caesars-article","horseshoe-room"]
+    },
+    {
+      "venue":"MGM Grand",
+      "times":"11 AM · 7 PM · 11 PM",
+      "details":"Current room page lists daily tournament starts. A linked $120 sheet offers an optional $11 gratuity for 10,000 chips, but its schedule year/applicability and entry policy are unresolved.",
+      "sourceIds":["mgm-poker","mgm-structure"]
+    },
+    {
+      "venue":"Bellagio",
+      "times":"Friday $600 NLH sheet · Sunday $400 H.O.R.S.E. sheet",
+      "details":"The linked sheets allow re-entry through level 8 and include optional gratuity chips. The poker page's schedule wording is not date-specific enough to confirm upcoming sessions; Saturday sheet is internally inconsistent and excluded.",
+      "sourceIds":["bellagio-poker","bellagio-fri","bellagio-sun","bellagio-sat"]
+    }
+  ],
+  "hotels": [
+    {
+      "hotel":"The Venetian Resort",
+      "room":"Venetian Poker Room / DeepStack",
+      "signal":"Official tournament series at the resort; the poker-player room rate is conditional, not a dated quote.",
+      "walk":"Same resort; exact room-to-table minutes not verified.",
+      "fee":"$55 + tax / night",
+      "feeFourNights":"$220 + applicable tax (fee only)",
+      "fullStay":"Not quoted",
+      "sourceIds":["ven-schedule","venetian-fee","venetian-poker-rate"]
+    },
+    {
+      "hotel":"Wynn Las Vegas",
+      "room":"Wynn Poker Room / WPT",
+      "signal":"Official WPT event venue and poker room are at Wynn; no independent hotel-quality score is used.",
+      "walk":"Same resort; exact room-to-table minutes not verified.",
+      "fee":"$55 + tax / night",
+      "feeFourNights":"$220 + applicable tax (fee only)",
+      "fullStay":"Not quoted",
+      "sourceIds":["wynn-poker","wynn-fee"]
+    },
+    {
+      "hotel":"ARIA Resort & Casino",
+      "room":"PGT ARIA High Roller Series / PokerGO Studio",
+      "signal":"PGT lists the series at PokerGO Studio, Las Vegas; the exact hotel-to-studio linkage/route was not independently verified.",
+      "walk":"Property/route not verified; minutes blank.",
+      "fee":"$55 + tax / night",
+      "feeFourNights":"$220 + applicable tax (fee only)",
+      "fullStay":"Not quoted",
+      "sourceIds":["pgt-schedule","aria-fee"]
+    },
+    {
+      "hotel":"Bellagio",
+      "room":"Bellagio Poker Room",
+      "signal":"Official poker page places the room on the north side of the casino and describes 24-hour table-side dining; not an independent rating.",
+      "walk":"Same resort; exact room-to-table minutes not verified.",
+      "fee":"$55 + tax / night",
+      "feeFourNights":"$220 + applicable tax (fee only)",
+      "fullStay":"Not quoted",
+      "sourceIds":["bellagio-poker","bellagio-fee"]
+    },
+    {
+      "hotel":"MGM Grand",
+      "room":"MGM Grand Poker Room",
+      "signal":"Official room page says the room is open 24 hours and lists daily tournament starts.",
+      "walk":"Same resort; exact room-to-table minutes not verified.",
+      "fee":"$50 + tax / night",
+      "feeFourNights":"$200 + applicable tax (fee only)",
+      "fullStay":"Not quoted",
+      "sourceIds":["mgm-poker","mgm-fee"]
+    },
+    {
+      "hotel":"Horseshoe Las Vegas",
+      "room":"Horseshoe Hall of Fame Poker Room",
+      "signal":"Caesars' guide describes a 24-hour poker room; daily event entry terms remain unpublished in the reviewed guide.",
+      "walk":"Same resort; exact room-to-table minutes not verified.",
+      "fee":"$49.95 + $6.68 tax = $56.63 / night",
+      "feeFourNights":"$226.52 incl. posted tax (fee only)",
+      "fullStay":"Not quoted",
+      "sourceIds":["horseshoe-room","caesars-article","horseshoe-fee"]
+    },
+    {
+      "hotel":"Caesars Palace",
+      "room":"Caesars Palace Poker Room",
+      "signal":"Official guide describes a refreshed 16-table room, open 24/7, with daily $100 NLH tournaments.",
+      "walk":"Same resort; exact room-to-table minutes not verified.",
+      "fee":"$54.95 + $7.35 tax = $62.30 / night",
+      "feeFourNights":"$249.20 incl. posted tax (fee only)",
+      "fullStay":"Not quoted",
+      "sourceIds":["caesars-article","caesars-fee"]
+    },
+    {
+      "hotel":"Treasure Island",
+      "room":"Pedestrian bridge connection to Venetian / Palazzo poker venues",
+      "signal":"Official property map confirms pedestrian bridges to Venetian and Palazzo; no poker room at TI is claimed here.",
+      "walk":"Bridge connection confirmed; exact walking duration not published.",
+      "fee":"$49.95 + tax / night",
+      "feeFourNights":"$199.80 + applicable tax (fee only)",
+      "fullStay":"Not quoted",
+      "sourceIds":["ti-map","ti-fee","ven-schedule"]
+    }
+  ],
+  "hotelNotes": [
+    {
+      "title":"Venetian poker-player rate is conditional",
+      "text":"The advertised player rate requires phone booking with code EPOKR25, Venetian Rewards tracking, and qualifying play each night. It is not a Dec 3–7 room quote; compare the written confirmation and nightly resort fee before booking.",
+      "sourceIds":["venetian-poker-rate","venetian-fee"]
+    },
+    {
+      "title":"No independent quality ranking or timed walking score",
+      "text":"Room/property details above are operator-published signals, not star ratings or a claim that one hotel is better. The official sources reviewed do not establish exact hotel-to-seat walking minutes; same-resort or bridge status is not a timed route.",
+      "sourceIds":["ven-schedule","wynn-poker","ti-map"]
+    }
+  ],
+  "known": [
+    "Research snapshot is Nov 16, 2026. Tournament dates, terms, hotel fees, availability, and room rates can change; check the official source again before paying.",
+    "No upcoming event in the reviewed official sources is confirmed as strict single-entry (one paid entry total). The confirmed strict-entry list is empty by design.",
+    "WPT Prime runs Dec 5–12 with a $1,100 entry and $5M guarantee; its structure allows one entry plus one re-entry per starting flight, so it is not single-entry.",
+    "PGT ARIA High Roller events run Nov 28–Dec 2 and explicitly allow unlimited re-entry. Official schedule/news and structure conflict on start time and cost; unresolved fields stay blank.",
+    "Reviewed Venetian $600 events labeled 1Day do not state a strict one-entry cap. Its multi-flight structures say a player who bags for Day 2 cannot play a later flight; that restriction does not establish one entry total.",
+    "Daily Caesars Palace, Horseshoe, and MGM Grand starts are published, but their event entry caps are not confirmed in the reviewed sources.",
+    "The listed nightly resort fees are fee components, not room quotes. The four-night fee-only subtotals are transparent multiplication of the posted nightly amount and are not a full stay total.",
+    "Treasure Island's official property map confirms pedestrian bridges to Venetian/Palazzo but does not publish walking minutes."
+  ],
+  "missing": [
+    "A strict one-entry total confirmed in an official structure for any upcoming tournament.",
+    "A comparable, date-specific Dec 3–7, 2026 room quote including room price, resort fee, taxes, and mandatory charges. Official booking searches did not return usable totals.",
+    "Exact route minutes from each hotel entrance/room to the poker tournament room, including internal resort walk time and accessible routing.",
+    "Venetian event-specific total-entry/re-entry limits for the sampled 1Day and multi-flight events.",
+    "Day-specific entry limits, registration cutoff, current buy-in, and guaranteed pool for all daily Caesars/Horseshoe/MGM tournaments.",
+    "A confirmed current year/date for MGM's linked $120 schedule and Bellagio's recurring Friday/Sunday structure sheets.",
+    "A resolution from PGT/Wynn on the ARIA series' conflicting start time and cost presentation; no independent hotel-quality score or guaranteed room availability."
+  ],
+  "questions": [
+    "Venetian Tournament Desk: for each shortlisted event, is there exactly one paid entry for the whole event, or can a player re-enter / enter another flight? What is the latest registration time?",
+    "Wynn / PGT: for ARIA High Roller events, which start time is current (12 PM or 3 PM), and is the $5,300 schedule figure inclusive of the structure's $5,000 buy-in plus fees?",
+    "Caesars Palace and Horseshoe: what are today's buy-in, guarantee, re-entry/add-on rules, and registration cutoff for the specific daily start?",
+    "MGM Grand and Bellagio: are the linked tournament sheets current for the intended date, and what are the precise entry, gratuity/add-on, and late-registration terms?",
+    "Hotel booking desks: can you quote Dec 3–7, 2026 for two adults/one standard room, itemizing room rate, resort fee, taxes, and other mandatory charges?",
+    "For any hotel shortlist: can the property provide an entrance-to-poker-room accessible walking route and realistic minutes? Current official pages do not give a timed route."
+  ],
+  "suggestions": [
+    {
+      "title":"Keep the entry-rule gate strict",
+      "text":"Preserve separate states for confirmed single-entry, re-entry allowed, and entry cap unknown. Require an official structure sentence before promoting any candidate into the strict list.",
+      "tag":"Accuracy first"
+    },
+    {
+      "title":"Add a trip-date quote workspace",
+      "text":"Let a traveler set check-in/out, guest count, room count, and a fee/tax-inclusive budget. Store a date-stamped hotel quote and its cancellation terms rather than estimating a full stay from resort fees.",
+      "tag":"Planning upgrade"
+    },
+    {
+      "title":"Add a route-time map only after verification",
+      "text":"Capture room entrance and poker-room pins, step-free routes, and source/date for each duration. Until then, show on-property or bridge-connected status without minutes.",
+      "tag":"Evidence needed"
+    },
+    {
+      "title":"Model the maximum entry spend",
+      "text":"For each selected tournament, show base entry, permitted re-entries, optional add-ons/gratuities, and a user-set hard cap separately. Never label extra chips as a better-value buy-in by default.",
+      "tag":"Bankroll clarity"
+    },
+    {
+      "title":"Make overlapping starts explicit alternatives",
+      "text":"Add a side-by-side comparison for events starting within the same window. Keep late-start events as conditional pivots only after elimination/finish and only while registration remains open.",
+      "tag":"Day-of usability"
+    },
+    {
+      "title":"Add freshness checks before automation",
+      "text":"If schedule scraping is added later, retain the official PDF/page link, retrieval timestamp, and conflict state for every field; require a human review before declaring a strict-entry event.",
+      "tag":"Future automation"
+    }
+  ],
+  "decisionPaths": [
+    {
+      "title":"If one-entry total is non-negotiable",
+      "text":"Do not choose a tournament from this snapshot yet. Ask the room for the exact event's official terms; the strict-entry list remains empty until one paid entry total is documented."
+    },
+    {
+      "title":"If one re-entry per flight is acceptable",
+      "text":"WPT Prime is the clearest published high-guarantee option in this sample: $1,100 / $5M, with one entry plus one re-entry per flight. Set a hard spend cap before registering."
+    },
+    {
+      "title":"If a smaller posted entry matters most",
+      "text":"Venetian RaceDay Stack starts at $200 and the reviewed sheet shows no guarantee or total entry cap. Treat it as an unknown-policy candidate, not a freezeout, and ask the tournament desk first."
+    }
+  ],
+  "dayPlan": [
+    {
+      "time":"8:00 AM",
+      "kind":"Plan",
+      "title":"Start with a rules-and-budget check",
+      "text":"No live 8 AM tournament was verified. Confirm today's official start, event number, exact buy-in, entry cap, late-registration cutoff, and your maximum total spend; do not assume yesterday's poster is current.",
+      "sourceIds":["wpt-schedule","ven-schedule"]
+    },
+    {
+      "time":"9:00 AM",
+      "kind":"Choose one",
+      "title":"Pick one of the overlapping late-morning starts",
+      "text":"For Dec 5, WPT Prime starts at 11 AM ($1,100 / $5M; one re-entry per flight). Venetian event #26 has an 11:10 AM $800 flight toward a $500K guarantee, but its total entry cap is not stated. These are alternatives at different venues—do not register for both.",
+      "sourceIds":["wpt-schedule","wpt-structures","ven-schedule","ven-s12"]
+    },
+    {
+      "time":"10:30 AM",
+      "kind":"Arrive / confirm",
+      "title":"Use the chosen venue's own registration desk",
+      "text":"Wynn's general terms say event registration opens four hours before the scheduled start and registration is in the Wynn Poker Room. For another venue, confirm its current desk location and cutoff directly; no cross-resort walk time is assumed.",
+      "sourceIds":["wpt-structures","wynn-poker","ven-schedule"]
+    },
+    {
+      "time":"11:00–11:10 AM",
+      "kind":"Tournament",
+      "title":"One start only; do not double-book",
+      "text":"Choose WPT Prime Day 1A at Wynn (11:00 AM) OR Venetian #26 Day 1E (11:10 AM). Venetian's sheet prohibits a player who has bagged for Day 2 from playing a later flight, but does not establish the overall entry cap. The two rooms are not treated as a timed walk.",
+      "sourceIds":["wpt-schedule","wpt-structures","ven-schedule","ven-s12"]
+    },
+    {
+      "time":"After finish / elimination",
+      "kind":"Conditional",
+      "title":"Only then consider a later session",
+      "text":"Wynn's $600 NLH Turbo is posted for 9 PM with unlimited re-entry until level 9. It is a possible later choice only if the earlier event is over, the late-session budget allows it, and registration is still open. Do not assume a long event ends in time.",
+      "sourceIds":["wpt-schedule","wpt-structures"]
+    }
+  ],
+  "conflictSources":["bellagio-poker","bellagio-sat"],
+  "reviewedLabel":"Official-source research snapshot: Nov 16, 2026 (UTC). Verify current terms and availability directly with each venue before booking or entering."
+}
