@@ -54,6 +54,8 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 - Note: `git pull --rebase` was run once on this branch after the merge commit. It tried to replay `main`'s history and stopped with conflicts. The rebase was aborted (`git rebase --abort`), and the branch was not changed. Use `git merge` (not `pull --rebase`) for merges that include a merge commit.
 
 ## Open items (not blocking merge; see FLAGGED / QUESTIONS)
+- MULTI_FLIGHT_SHEETS = {2, 3, 9, 10, 12, 13, 14}: the sheet-to-event mapping is not yet re-checked sheet by sheet. These 15 rows stay in the separate section.
+- The 29-day count in an earlier note conflicts with the 23-day schedule rebuild. The 23-day figure comes from `data/schedule.json`. Re-check still open.
 - Room rates are unverified for every hotel. True cost is blank.
 - Walking times are not published by any official source. Blank.
 - Caesars, Bellagio, ARIA resort fees unverified.
