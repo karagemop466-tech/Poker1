@@ -16,7 +16,24 @@ Session `arena/f5896c06-poker1` is working on branch `arena/f5896c06-poker1`. In
 
 Conflict resolution: during the required rebase onto updated `origin/main`, preserved the merged arena/f5896c06-poker1 PR #13 records and both f0143c13 tasks; no concurrent work was discarded.
 
-No other active file claims are recorded. The current session changed only the files listed in its task scopes; tournament rows and event schedules were not edited.
+## Current session (c44e63df) claims — started 2026-11-16
+
+Session `c44e63df` is working on branch `arena/c44e63df-poker1`, branched from `main` at `2dc41203c468004dec61d653192113b8e167c86d`. Outbound internet from this sandbox is limited to GitHub hosts and package registries; the official venue domains (venetianlasvegas.com, wynnlasvegas.com, cdn.wynnresorts.com) cannot be fetched here, so no new structure-sheet or hotel-rate values can be verified in this session. All unverified values therefore remain blank and flagged; nothing is inferred or filled in.
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Add `last_checked` date to every tournament and hotel row | In progress | `scripts/build_data.py`, `data/*.json` | `c44e63df` |
+| Store structured rule fields per event (single-entry, re-entry, rebuy, add-on, fee) each with source excerpt and retrieval date | In progress | `scripts/build_data.py`, `data/tournaments.json` | `c44e63df` |
+| Keep hotel rates as a dated log (date/rate/source/timestamp) plus checkout total, nightly average, parking, cancellation deadline | In progress | `scripts/build_data.py`, `data/hotels.json` | `c44e63df` |
+| Flag same-day schedule overlaps from start time + plausible duration (estimated, unverified) | In progress | `scripts/build_data.py`, `scripts/build_site.py`, `assets/app.js` | `c44e63df` |
+| Trip calculator page: entries × buy-ins + nights × true hotel cost | In progress | `pages/trip-calculator.html`, `scripts/build_site.py`, `assets/app.js` | `c44e63df` |
+| One page per venue (Venetian, Wynn, others) with its events and hotels | In progress | `pages/venue-*.html`, `scripts/build_site.py`, `assets/app.js` | `c44e63df` |
+| Search box across all tables; date filter on the events tables | In progress | `scripts/build_site.py`, `assets/app.js` | `c44e63df` |
+| Change-monitoring page + re-check script skeleton; mark rows whose source changed | Planned | `pages/change-monitor.html`, `scripts/check_changes.py` | `c44e63df` |
+| Rebuild site, run checks, PR to main, merge, confirm Pages deploy | Planned | all site files | `c44e63df` |
+
+No other active file claims are recorded. The current session changes only the files listed in its task scopes.
+
 
 ## Existing deliverables and current data status
 
@@ -77,3 +94,4 @@ The repository already contains a static dashboard (`index.html`, `pages/`, `ass
 ## Log
 - 2026-11-16: PR #11 merged into main (b272ed5), advancing it past the branch base.
 - 2026-11-16: arena/f5896c06-poker1 rebased onto origin/main, resolved COORDINATION.md conflict preserving both sessions' work; PR #13 created and merged; recording verification and limitation above.
+- 2026-11-16: session c44e63df (branch arena/c44e63df-poker1, from main 2dc4120) claimed implementation tasks on COORDINATION.md. Outbound internet limited to GitHub hosts/package registries; official venue domains not reachable from this sandbox, so no new structure-sheet or hotel-rate values can be verified. Unverified values remain blank and flagged.

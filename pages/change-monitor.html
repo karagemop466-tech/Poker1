@@ -1,0 +1,662 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Change monitor · Las Vegas Strip Poker Plan</title>
+<style>
+:root {
+  --ink: #1d2433;
+  --muted: #5b6474;
+  --line: #e3e7ee;
+  --bg: #f6f8fb;
+  --card: #ffffff;
+  --accent: #1f6feb;
+  --ok: #1a7f37;
+  --warn: #9a6700;
+  --bad: #b42318;
+  --chip-ok: #e6f4ea;
+  --chip-warn: #fff4d6;
+  --chip-bad: #fde8e7;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--ink); background: var(--bg); line-height: 1.5;
+}
+header.site {
+  background: #0f1b2d; color: #fff; padding: 14px 20px;
+  display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; justify-content: space-between;
+}
+header.site .brand { font-weight: 700; font-size: 18px; color: #fff; text-decoration: none; }
+header.site nav { display: flex; flex-wrap: wrap; gap: 6px 14px; }
+header.site nav a { color: #cfe1ff; text-decoration: none; font-size: 14px; }
+header.site nav a:hover, header.site nav a.active { color: #fff; text-decoration: underline; }
+main { max-width: 1200px; margin: 0 auto; padding: 22px 18px 60px; }
+h1 { font-size: 26px; margin: 4px 0 6px; }
+h2 { font-size: 20px; margin: 26px 0 8px; }
+h3 { font-size: 17px; margin: 18px 0 6px; }
+p.lead { color: var(--muted); margin-top: 0; }
+a { color: var(--accent); }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; margin: 14px 0; }
+.grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.kpi .num { font-size: 28px; font-weight: 700; }
+.kpi .label { color: var(--muted); font-size: 13px; }
+.tile { display: block; text-decoration: none; color: var(--ink); }
+.tile:hover { border-color: var(--accent); }
+.tile h3 { margin-top: 0; color: var(--accent); }
+.tile p { margin: 4px 0 0; color: var(--muted); font-size: 14px; }
+.callout { border-left: 4px solid var(--warn); background: var(--chip-warn); padding: 12px 14px; border-radius: 6px; }
+.toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 10px 0; }
+.toolbar input, .toolbar select {
+  padding: 7px 10px; border: 1px solid var(--line); border-radius: 6px; font-size: 14px; background: #fff;
+}
+.table-wrap { overflow-x: auto; background: #fff; border: 1px solid var(--line); border-radius: 10px; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { background: #f0f3f8; position: sticky; top: 0; cursor: pointer; white-space: nowrap; }
+th.nosort { cursor: default; }
+tr:hover td { background: #fafcff; }
+td.num, th.num { text-align: right; white-space: nowrap; }
+.chip { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 12px; font-weight: 600; white-space: nowrap; }
+.chip.ok { background: var(--chip-ok); color: var(--ok); }
+.chip.warn { background: var(--chip-warn); color: var(--warn); }
+.chip.bad { background: var(--chip-bad); color: var(--bad); }
+.muted { color: var(--muted); }
+.small { font-size: 12.5px; color: var(--muted); }
+.md h1 { font-size: 24px; }
+.md table { margin: 10px 0; }
+.md td, .md th { border: 1px solid var(--line); }
+.md pre, .md code { background: #f0f3f8; border-radius: 4px; padding: 1px 4px; font-size: 13px; }
+.notice { font-size: 13px; color: var(--muted); margin: 8px 0; }
+.day { margin: 12px 0; }
+.day h3 { margin-bottom: 4px; }
+footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20px; }
+
+</style>
+</head>
+<body data-page="changeMonitor">
+<div id="site-header"></div>
+<main>
+<h1>Change monitoring of official sources</h1>
+<p class="lead">Each official source URL is listed with the date it was last checked. A scheduled re-check flags any row whose source changed. External official pages cannot be fetched from this sandbox, so re-check results are not yet populated.</p>
+<div id="monitor"></div>
+</main>
+<footer id="site-footer"></footer>
+<script>
+/* Shared site logic. Data is read from JSON and Markdown files in the repo.
+   Every path is relative so the site works under a GitHub Pages project URL. */
+(function () {
+  "use strict";
+
+  var IN_PAGES = /\/pages\//.test(location.pathname);
+  var BASE = IN_PAGES ? "../" : "./";
+
+  var NAV = [
+    ["index.html", "Home"],
+    ["pages/single-entry.html", "Single entry"],
+    ["pages/separate-section.html", "Separate section"],
+    ["pages/unverified.html", "Unverified"],
+    ["pages/hotels.html", "Hotels"],
+    ["pages/schedule.html", "Schedule"],
+    ["pages/summary.html", "Executive summary"],
+    ["pages/questions.html", "Questions"],
+    ["pages/suggestions.html", "Suggestions"],
+    ["pages/flagged.html", "Flagged for review"],
+    ["pages/review.html", "Repo review and sources"],
+    ["pages/venue-venetian.html", "Venue: Venetian"],
+    ["pages/venue-wynn.html", "Venue: Wynn"],
+    ["pages/venue-others.html", "Venue: others"],
+    ["pages/trip-calculator.html", "Trip calculator"],
+    ["pages/change-monitor.html", "Change monitor"]
+  ];
+
+  function esc(s) {
+    return String(s == null ? "" : s)
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+  function money(v) {
+    if (v == null || v === "") return '<span class="muted">blank</span>';
+    return "$" + Number(v).toLocaleString("en-US");
+  }
+  function pct(v) { return v == null ? '<span class="muted">n/a</span>' : v.toFixed(2).replace(/\.?0+$/, "") + "%"; }
+  function mult(v) { return v == null ? '<span class="muted">n/a</span>' : v.toLocaleString("en-US") + "x"; }
+  function dateFmt(iso) {
+    if (!iso) return '<span class="muted">blank</span>';
+    var d = new Date(iso + "T12:00:00Z");
+    return d.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric", year: "numeric", timeZone: "UTC" });
+  }
+  function timeFmt(hhmm) {
+    if (!hhmm) return "";
+    var p = hhmm.split(":"), h = +p[0], m = p[1];
+    var ap = h >= 12 ? "PM" : "AM";
+    var hh = h % 12 === 0 ? 12 : h % 12;
+    return hh + ":" + m + " " + ap;
+  }
+  function statusChip(s) {
+    if (s === "SE") return '<span class="chip ok">Single entry (verified)</span>';
+    if (s === "MULTI") return '<span class="chip warn">Possible multiple entries</span>';
+    if (s === "RE") return '<span class="chip bad">Re-entry offered</span>';
+    return '<span class="chip warn">Unverified</span>';
+  }
+  function rulesHtml(r) {
+    var ru = r.rules || {}, chips = [];
+    if (ru.single_entry === true) chips.push('<span class="chip ok">single entry</span>');
+    else if (ru.single_entry === false) chips.push('<span class="chip bad">not single entry</span>');
+    else if (ru.single_entry === null) chips.push('<span class="chip warn">single entry?</span>');
+    if (ru.re_entry === true) chips.push('<span class="chip bad">re-entry</span>');
+    if (ru.rebuy === true) chips.push('<span class="chip bad">rebuy</span>');
+    if (ru.add_on === true) chips.push('<span class="chip bad">add-on</span>');
+    if (ru.flights === true) chips.push('<span class="chip warn">flights</span>');
+    if (chips.length === 0) chips.push('<span class="muted">rules not confirmed</span>');
+    var html = chips.join(" ");
+    if (ru.source_excerpt) html += ' <span class="small">' + esc(ru.source_excerpt) + '</span>';
+    if (ru.retrieved_on) html += ' <span class="small">read ' + esc(ru.retrieved_on) + '</span>';
+    return '<span class="small">' + html + "</span>";
+  }
+  function srcLinks(sources) {
+    return (sources || []).map(function (s) {
+      return '<a href="' + esc(s.url) + '" target="_blank" rel="noopener">' + esc(s.label) + "</a>";
+    }).join("<br>");
+  }
+
+  function getJSON(path) {
+    return fetch(BASE + path, { cache: "no-cache" }).then(function (r) {
+      if (!r.ok) throw new Error("Could not load " + path + " (" + r.status + ")");
+      return r.json();
+    });
+  }
+  function getText(path) {
+    return fetch(BASE + path, { cache: "no-cache" }).then(function (r) {
+      if (!r.ok) throw new Error("Could not load " + path + " (" + r.status + ")");
+      return r.text();
+    });
+  }
+
+  /* ---------- tiny Markdown renderer (headings, lists, tables, bold, links, code) ---------- */
+  function inline(t) {
+    t = esc(t);
+    t = t.replace(/`([^`]+)`/g, "<code>$1</code>");
+    t = t.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+    t = t.replace(/\*([^*]+)\*/g, "<em>$1</em>");
+    t = t.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, function (m, label, url) {
+      var href = url.replace(/&amp;/g, "&");
+      var ext = /^https?:/.test(href);
+      return '<a href="' + href + '"' + (ext ? ' target="_blank" rel="noopener"' : "") + ">" + label + "</a>";
+    });
+    return t;
+  }
+  function renderMarkdown(src) {
+    var lines = src.replace(/\r/g, "").split("\n"), out = [], i = 0;
+    while (i < lines.length) {
+      var line = lines[i];
+      if (/^\s*$/.test(line)) { i++; continue; }
+      if (/^---+\s*$/.test(line)) { out.push("<hr>"); i++; continue; }
+      var h = /^(#{1,4})\s+(.*)$/.exec(line);
+      if (h) { var lvl = h[1].length; out.push("<h" + lvl + ">" + inline(h[2]) + "</h" + lvl + ">"); i++; continue; }
+      if (/^\|/.test(line)) {
+        var rows = [];
+        while (i < lines.length && /^\|/.test(lines[i])) { rows.push(lines[i]); i++; }
+        var cells = function (r) { return r.replace(/^\||\|\s*$/g, "").split("|").map(function (c) { return c.trim(); }); };
+        var head = cells(rows[0]);
+        var body = rows.slice(2).map(cells);
+        var html = '<div class="table-wrap"><table><thead><tr>' + head.map(function (c) { return "<th>" + inline(c) + "</th>"; }).join("") + "</tr></thead><tbody>";
+        body.forEach(function (r) { html += "<tr>" + r.map(function (c) { return "<td>" + inline(c) + "</td>"; }).join("") + "</tr>"; });
+        html += "</tbody></table></div>";
+        out.push(html);
+        continue;
+      }
+      if (/^\s*[-*]\s+/.test(line)) {
+        var items = [];
+        while (i < lines.length && /^\s*[-*]\s+/.test(lines[i])) { items.push(lines[i].replace(/^\s*[-*]\s+/, "")); i++; }
+        out.push("<ul>" + items.map(function (x) { return "<li>" + inline(x) + "</li>"; }).join("") + "</ul>");
+        continue;
+      }
+      if (/^\s*\d+\.\s+/.test(line)) {
+        var nitems = [];
+        while (i < lines.length && /^\s*\d+\.\s+/.test(lines[i])) { nitems.push(lines[i].replace(/^\s*\d+\.\s+/, "")); i++; }
+        out.push("<ol>" + nitems.map(function (x) { return "<li>" + inline(x) + "</li>"; }).join("") + "</ol>");
+        continue;
+      }
+      var para = [];
+      while (i < lines.length && !/^\s*$/.test(lines[i]) && !/^(#|\||\s*[-*]\s|\s*\d+\.\s|---)/.test(lines[i])) { para.push(lines[i]); i++; }
+      if (para.length === 0) { para.push(lines[i]); i++; }
+      out.push("<p>" + inline(para.join(" ")) + "</p>");
+    }
+    return out.join("\n");
+  }
+
+  /* ---------- generic sortable, filterable table ---------- */
+  function table(container, rows, cols, opts) {
+    opts = opts || {};
+    var state = { key: opts.sortKey || null, dir: opts.sortDir || -1 };
+    var wrap = document.createElement("div");
+    wrap.className = "table-wrap";
+    var t = document.createElement("table");
+    wrap.appendChild(t);
+    container.appendChild(wrap);
+    function value(r, c) { return c.sort ? c.sort(r) : r[c.key]; }
+    function draw() {
+      var q = (opts.filterInput ? opts.filterInput.value : "").toLowerCase();
+      var sel = opts.filterSelect ? opts.filterSelect.value : "";
+      var list = rows.filter(function (r) {
+        if (sel && opts.filterField && String(r[opts.filterField]) !== sel) return false;
+        if (opts.dateSelect && opts.dateSelect.value && String(r.date) !== opts.dateSelect.value) return false;
+        if (!q) return true;
+        return cols.some(function (c) { return c.text && String(c.text(r) || "").toLowerCase().indexOf(q) >= 0; }) ||
+               JSON.stringify(r).toLowerCase().indexOf(q) >= 0;
+      });
+      if (state.key) {
+        var col = cols.filter(function (c) { return c.id === state.key; })[0];
+        if (col) {
+          list = list.slice().sort(function (a, b) {
+            var va = value(a, col), vb = value(b, col);
+            if (va == null && vb == null) return 0;
+            if (va == null) return 1;
+            if (vb == null) return -1;
+            if (typeof va === "number" && typeof vb === "number") return (va - vb) * state.dir;
+            return String(va).localeCompare(String(vb)) * state.dir;
+          });
+        }
+      }
+      var head = "<thead><tr>" + cols.map(function (c) {
+        var arrow = state.key === c.id ? (state.dir > 0 ? " ▲" : " ▼") : "";
+        var cls = (c.num ? "num " : "") + (c.sort === null ? "nosort" : "");
+        return '<th class="' + cls.trim() + '" data-id="' + c.id + '">' + esc(c.label) + arrow + "</th>";
+      }).join("") + "</tr></thead>";
+      var body = "<tbody>" + list.map(function (r) {
+        return "<tr>" + cols.map(function (c) {
+          var cls = c.num ? ' class="num"' : "";
+          return "<td" + cls + ">" + (c.html ? c.html(r) : esc(r[c.key])) + "</td>";
+        }).join("") + "</tr>";
+      }).join("") + "</tbody>";
+      t.innerHTML = head + body;
+      var count = opts.countEl;
+      if (count) count.textContent = list.length + " of " + rows.length + " rows";
+      Array.prototype.forEach.call(t.querySelectorAll("th"), function (th) {
+        th.addEventListener("click", function () {
+          var id = th.getAttribute("data-id");
+          var c = cols.filter(function (x) { return x.id === id; })[0];
+          if (!c || c.sort === null) return;
+          if (state.key === id) state.dir = -state.dir; else { state.key = id; state.dir = -1; }
+          draw();
+        });
+      });
+    }
+    if (opts.filterInput) opts.filterInput.addEventListener("input", draw);
+    if (opts.filterSelect) opts.filterSelect.addEventListener("change", draw);
+    if (opts.dateSelect) {
+      opts.dateSelect.addEventListener("change", draw);
+      (function fillDates() {
+        var dates = Array.from(new Set(rows.map(function (r) { return r.date; }))).sort();
+        opts.dateSelect.innerHTML = '<option value="">All dates</option>' +
+          dates.map(function (d) { return '<option value="' + esc(d) + '">' + esc(dateFmt(d)) + "</option>"; }).join("");
+      })();
+    }
+    draw();
+    return { redraw: draw };
+  }
+
+  /* ---------- nav ---------- */
+  function renderNav() {
+    var here = location.pathname.replace(/\/index\.html$/, "/");
+    var html = '<header class="site"><a class="brand" href="' + BASE + 'index.html">Las Vegas Strip Poker Plan</a><nav>';
+    NAV.forEach(function (n) {
+      var active = here.endsWith("/" + n[0]) || (n[0] === "index.html" && (here.endsWith("/") && !IN_PAGES));
+      html += '<a href="' + BASE + n[0] + '"' + (active ? ' class="active"' : "") + ">" + esc(n[1]) + "</a>";
+    });
+    html += "</nav></header>";
+    var el = document.getElementById("site-header");
+    if (el) el.outerHTML = html;
+    var f = document.getElementById("site-footer");
+    if (f) f.innerHTML = "Data verified against official sources on 2026-11-16. Blank cells are unverified, and no value is inferred. " +
+      '<a href="' + BASE + 'pages/flagged.html">Flagged for review</a>.';
+  }
+
+  /* ---------- page renderers ---------- */
+  var PAGES = {};
+
+  PAGES.index = function () {
+    Promise.all([getJSON("data/tournaments.json"), getJSON("data/hotels.json")]).then(function (res) {
+      var rows = res[0].rows, hotels = res[1].rows;
+      var c = { SE: 0, MULTI: 0, RE: 0, UNV: 0 };
+      rows.forEach(function (r) { c[r.entry_status] = (c[r.entry_status] || 0) + 1; });
+      var verifiedFees = hotels.filter(function (h) { return h.resort_fee_status === "verified"; }).length;
+      document.getElementById("kpis").innerHTML =
+        kpi(rows.length, "official rows in this dataset") +
+        kpi(c.SE, "single entry, verified") +
+        kpi(c.MULTI + c.RE, "in the separate section") +
+        kpi(c.UNV, "unverified (entry rule)") +
+        kpi(verifiedFees + " of " + hotels.length, "hotels with a verified resort fee");
+    }).catch(showErr);
+  };
+  function kpi(n, label) {
+    return '<div class="card kpi"><div class="num">' + esc(n) + '</div><div class="label">' + esc(label) + "</div></div>";
+  }
+
+  PAGES.singleEntry = function () {
+    getJSON("data/tournaments.json").then(function (d) {
+      var rows = d.rows.filter(function (r) { return r.entry_status === "SE"; });
+      rows.forEach(function (r) { r._mult = r.gtd_multiple || 0; });
+      var main = document.getElementById("content");
+      var q = document.getElementById("q"), sel = document.getElementById("series"), dateEl = document.getElementById("date"), count = document.getElementById("count");
+      var seriesNames = Array.from(new Set(rows.map(function (r) { return r.series; })));
+      sel.innerHTML = '<option value="">All series</option>' + seriesNames.map(function (s) { return '<option value="' + esc(s) + '">' + esc(s) + "</option>"; }).join("");
+      var cols = [
+        { id: "date", label: "Date", key: "date", sort: function (r) { return r.date + r.start; }, html: function (r) { return dateFmt(r.date); } },
+        { id: "start", label: "Start", key: "start", html: function (r) { return timeFmt(r.start); } },
+        { id: "name", label: "Event", key: "name", html: function (r) { return "<strong>" + esc(r.name) + "</strong><br><span class='small'>" + esc(r.series) + (r.event_no ? " · Event " + r.event_no : "") + "</span>"; } },
+        { id: "buy", label: "Buy-in", key: "buy_in_usd", num: true, html: function (r) { return money(r.buy_in_usd); } },
+        { id: "gtd", label: "Guarantee", key: "guarantee_usd", num: true, html: function (r) { return money(r.guarantee_usd); } },
+        { id: "mult", label: "Guarantee ÷ buy-in", key: "gtd_multiple", num: true, html: function (r) { return mult(r.gtd_multiple); } },
+        { id: "fee", label: "House fee", key: "house_fee_pct", num: true, html: function (r) { return pct(r.house_fee_pct); } },
+        { id: "rules", label: "Entry rules", key: "rules", sort: null, html: function (r) { return rulesHtml(r); } },
+        { id: "last", label: "Last checked", key: "last_checked", html: function (r) { return dateFmt(r.last_checked); } },
+        { id: "note", label: "Notes", key: "note", sort: null, html: function (r) { return "<span class='small'>" + esc(r.note) + "</span>"; } },
+        { id: "src", label: "Source", key: "sources", sort: null, html: function (r) { return "<span class='small'>" + srcLinks(r.sources) + "</span>"; } }
+      ];
+      table(main, rows, cols, { sortKey: "mult", sortDir: -1, filterInput: q, filterSelect: sel, dateSelect: dateEl, filterField: "series", countEl: count });
+    }).catch(showErr);
+  };
+
+  PAGES.separate = function () {
+    getJSON("data/tournaments.json").then(function (d) {
+      var rows = d.rows.filter(function (r) { return r.entry_status === "MULTI" || r.entry_status === "RE"; });
+      var main = document.getElementById("content");
+      var q = document.getElementById("q"), dateEl = document.getElementById("date"), count = document.getElementById("count");
+      var cols = [
+        { id: "status", label: "Why separate", key: "entry_status", html: function (r) { return statusChip(r.entry_status); } },
+        { id: "date", label: "Date", key: "date", html: function (r) { return dateFmt(r.date); } },
+        { id: "start", label: "Start", key: "start", html: function (r) { return timeFmt(r.start); } },
+        { id: "name", label: "Event", key: "name", html: function (r) { return "<strong>" + esc(r.name) + "</strong><br><span class='small'>" + esc(r.series) + "</span>"; } },
+        { id: "buy", label: "Buy-in", key: "buy_in_usd", num: true, html: function (r) { return money(r.buy_in_usd); } },
+        { id: "gtd", label: "Guarantee", key: "guarantee_usd", num: true, html: function (r) { return money(r.guarantee_usd); } },
+        { id: "mult", label: "Guarantee ÷ buy-in", key: "gtd_multiple", num: true, html: function (r) { return mult(r.gtd_multiple); } },
+        { id: "rule", label: "Entry rule (official)", key: "entry_rule", sort: null, html: function (r) { return "<span class='small'>" + esc(r.entry_rule) + "</span>"; } },
+        { id: "note", label: "Notes", key: "note", sort: null, html: function (r) { return "<span class='small'>" + esc(r.note) + "</span>"; } },
+        { id: "src", label: "Source", key: "sources", sort: null, html: function (r) { return "<span class='small'>" + srcLinks(r.sources) + "</span>"; } }
+      ];
+      table(main, rows, cols, { sortKey: "date", sortDir: 1, filterInput: q, dateSelect: dateEl, countEl: count });
+    }).catch(showErr);
+  };
+
+  PAGES.unverified = function () {
+    getJSON("data/tournaments.json").then(function (d) {
+      var rows = d.rows.filter(function (r) { return r.entry_status === "UNV"; });
+      var main = document.getElementById("content");
+      var q = document.getElementById("q"), sel = document.getElementById("series"), dateEl = document.getElementById("date"), count = document.getElementById("count");
+      var seriesNames = Array.from(new Set(rows.map(function (r) { return r.series; })));
+      sel.innerHTML = '<option value="">All series</option>' + seriesNames.map(function (s) { return '<option value="' + esc(s) + '">' + esc(s) + "</option>"; }).join("");
+      var cols = [
+        { id: "date", label: "Date", key: "date", html: function (r) { return dateFmt(r.date); } },
+        { id: "start", label: "Start", key: "start", html: function (r) { return timeFmt(r.start); } },
+        { id: "name", label: "Event", key: "name", html: function (r) { return "<strong>" + esc(r.name) + "</strong><br><span class='small'>" + esc(r.series) + (r.event_no ? " · Event " + r.event_no : "") + "</span>"; } },
+        { id: "buy", label: "Buy-in", key: "buy_in_usd", num: true, html: function (r) { return money(r.buy_in_usd); } },
+        { id: "gtd", label: "Guarantee", key: "guarantee_usd", num: true, html: function (r) { return money(r.guarantee_usd); } },
+        { id: "why", label: "Why unverified", key: "entry_rule", sort: null, html: function (r) { return "<span class='small'>" + esc(r.note) + "</span>"; } },
+        { id: "src", label: "Source", key: "sources", sort: null, html: function (r) { return "<span class='small'>" + srcLinks(r.sources) + "</span>"; } }
+      ];
+      table(main, rows, cols, { sortKey: "date", sortDir: 1, filterInput: q, filterSelect: sel, dateSelect: dateEl, filterField: "series", countEl: count });
+    }).catch(showErr);
+  };
+
+  PAGES.hotels = function () {
+    getJSON("data/hotels.json").then(function (d) {
+      var rows = d.rows;
+      var main = document.getElementById("content");
+      document.getElementById("method").textContent = d.method;
+      var q = document.getElementById("q"), count = document.getElementById("count");
+      var chip = function (s) { return s === "verified" ? '<span class="chip ok">Verified</span>' : '<span class="chip warn">Unverified</span>'; };
+      var rateLog = function (r) {
+        if (!r.rates || r.rates.length === 0) return '<span class="muted">no rate logged</span><br><span class="small">' + esc(r.rates_note) + "</span>";
+        return r.rates.map(function (rate) {
+          var tc = rate.true_cost_usd;
+          return esc(rate.date) + ": " + money(rate.rate_usd) + (tc != null ? " · true cost " + money(tc) : "") +
+            "<br><span class='small'>" + esc(rate.note || "") + " (retrieved " + esc(rate.retrieved_on) + ")</span>";
+        }).join("<br>");
+      };
+      var cols = [
+        { id: "name", label: "Hotel", key: "name", html: function (r) { return "<strong>" + esc(r.name) + "</strong><br><span class='small'>" + esc(r.address_note) + "</span>"; } },
+        { id: "checked", label: "Last checked", key: "last_checked", html: function (r) { return dateFmt(r.last_checked); } },
+        { id: "fee", label: "Resort fee / night", key: "resort_fee_usd", num: true, html: function (r) { return chip(r.resort_fee_status) + "<br>" + money(r.resort_fee_usd) + "<br><span class='small'>" + esc(r.resort_fee_note) + "</span>"; } },
+        { id: "rate", label: "Room rate (dated log)", key: "rates", sort: null, html: rateLog },
+        { id: "checkout", label: "Checkout total (stay)", key: "checkout_total_usd", num: true, html: function (r) { return money(r.checkout_total_usd) + "<br><span class='small'>" + esc(r.checkout_total_note || "") + "</span>"; } },
+        { id: "avg", label: "Nightly average", key: "nightly_average_usd", num: true, html: function (r) { return money(r.nightly_average_usd); } },
+        { id: "parking", label: "Parking / night", key: "parking_usd", num: true, html: function (r) { return money(r.parking_usd); } },
+        { id: "cancel", label: "Cancellation deadline", key: "cancellation_deadline", html: function (r) { return esc(r.cancellation_deadline || ""); } },
+        { id: "tax", label: "Room tax", key: "clark_county_tax_pct", num: true, html: function (r) { return r.clark_county_tax_pct == null ? '<span class="muted">Unverified</span><br><span class="small">' + esc(r.tax_status) + "</span>" : r.clark_county_tax_pct + "%<br><span class='small'>" + esc(r.tax_status) + "</span>"; } },
+        { id: "true", label: "True cost / night", key: "true_cost_per_night_usd", num: true, html: function (r) { return r.true_cost_per_night_usd == null ? '<span class="muted">blank (rate unverified)</span>' : money(r.true_cost_per_night_usd); } },
+        { id: "walk", label: "Walk to Venetian", key: "walk_to_venetian_min", sort: null, html: function (r) { return r.walk_to_venetian_min == null ? '<span class="muted">Unverified</span>' : r.walk_to_venetian_min + " min"; } },
+        { id: "src", label: "Sources", key: "sources", sort: null, html: function (r) { return "<span class='small'>" + srcLinks(r.sources) + "</span>"; } }
+      ];
+      table(main, rows, cols, { sortKey: "name", sortDir: 1, filterInput: q, countEl: count });
+    }).catch(showErr);
+  };
+
+  PAGES.schedule = function () {
+    getJSON("data/schedule.json").then(function (d) {
+      var main = document.getElementById("content");
+      document.getElementById("note").textContent = d.note;
+      document.getElementById("earliest").textContent = timeFmt(d.earliest_listed_start);
+      var q = document.getElementById("q"), count = document.getElementById("count");
+      var days = d.days;
+      function drawSchedule() {
+        var query = (q ? q.value : "").toLowerCase();
+        var shown = 0;
+        main.innerHTML = days.map(function (day) {
+          var list = day.options.filter(function (o) {
+            if (!query) return true;
+            return o.name.toLowerCase().indexOf(query) >= 0 || o.source.toLowerCase().indexOf(query) >= 0;
+          });
+          if (!query || list.length > 0) { shown += list.length; }
+          var html = "<li>" + list.map(function (o) {
+            return "<strong>" + timeFmt(o.start) + "</strong> · " + esc(o.name) + " · " + money(o.buy_in_usd) +
+              (o.guarantee_usd ? " · GTD " + money(o.guarantee_usd) : "") +
+              " · <a href='" + esc(o.source) + "' target='_blank' rel='noopener'>source</a>";
+          }).join("</li><li>") + "</li>";
+          return '<div class="card day"><h3>' + dateFmt(day.date) + '</h3><ul>' + (query ? "<strong>filtered:</strong> " : "") + html + "</ul></div>";
+        }).join("");
+        if (count) count.textContent = shown + " matching events";
+      }
+      drawSchedule();
+      if (q) q.addEventListener("input", drawSchedule);
+    }).catch(showErr);
+  };
+
+  function markdownPage(file) {
+    return function () {
+      getText(file).then(function (t) {
+        document.getElementById("content").innerHTML = '<div class="md">' + renderMarkdown(t) + "</div>";
+      }).catch(showErr);
+    };
+  }
+  PAGES.summary = markdownPage("EXECUTIVE_SUMMARY.md");
+  PAGES.questions = markdownPage("QUESTIONS.md");
+  PAGES.suggestions = markdownPage("SUGGESTIONS.md");
+  PAGES.flagged = markdownPage("FLAGGED.md");
+  PAGES.review = markdownPage("REVIEW.md");
+
+  /* ---------- venue pages ---------- */
+  function venueEventCols() {
+    return [
+      { id: "date", label: "Date", key: "date", sort: function (r) { return r.date + r.start; }, html: function (r) { return dateFmt(r.date); } },
+      { id: "start", label: "Start", key: "start", html: function (r) { return timeFmt(r.start); } },
+      { id: "name", label: "Event", key: "name", html: function (r) { return "<strong>" + esc(r.name) + "</strong><br><span class='small'>" + esc(r.series) + (r.event_no ? " · Event " + r.event_no : "") + "</span>"; } },
+      { id: "status", label: "Entry status", key: "entry_status", html: function (r) { return statusChip(r.entry_status); } },
+      { id: "buy", label: "Buy-in", key: "buy_in_usd", num: true, html: function (r) { return money(r.buy_in_usd); } },
+      { id: "gtd", label: "Guarantee", key: "guarantee_usd", num: true, html: function (r) { return money(r.guarantee_usd); } },
+      { id: "mult", label: "Guarantee ÷ buy-in", key: "gtd_multiple", num: true, html: function (r) { return mult(r.gtd_multiple); } },
+      { id: "rules", label: "Entry rules", key: "rules", sort: null, html: function (r) { return rulesHtml(r); } },
+      { id: "last", label: "Last checked", key: "last_checked", html: function (r) { return dateFmt(r.last_checked); } },
+      { id: "src", label: "Source", key: "sources", sort: null, html: function (r) { return "<span class='small'>" + srcLinks(r.sources) + "</span>"; } }
+    ];
+  }
+  function renderVenue(containerId, venueName, seriesRe, hotelIds) {
+    Promise.all([getJSON("data/tournaments.json"), getJSON("data/hotels.json")]).then(function (res) {
+      var events = res[0].rows.filter(function (r) { return seriesRe.test(r.series); });
+      var hotels = res[1].rows.filter(function (h) { return hotelIds.indexOf(h.id) >= 0; });
+      var main = document.getElementById(containerId);
+      var q = document.createElement("input");
+      q.type = "search"; q.placeholder = "Filter " + venueName + " events and hotels";
+      q.className = ""; q.style.cssText = "padding:7px 10px;border:1px solid var(--line);border-radius:6px;font-size:14px;margin-bottom:10px;display:block;width:100%;max-width:420px;";
+      main.appendChild(q);
+      var eventsWrap = document.createElement("div");
+      main.appendChild(eventsWrap);
+      var hotelsWrap = document.createElement("div");
+      main.appendChild(hotelsWrap);
+      function draw() {
+        var query = q.value.toLowerCase();
+        var ev = events.filter(function (r) {
+          if (!query) return true;
+          return JSON.stringify(r).toLowerCase().indexOf(query) >= 0;
+        });
+        var ho = hotels.filter(function (h) {
+          if (!query) return true;
+          return JSON.stringify(h).toLowerCase().indexOf(query) >= 0;
+        });
+        eventsWrap.innerHTML = "<h3>" + esc(venueName) + " events (" + ev.length + ")</h3>";
+        table(eventsWrap, ev, venueEventCols(), { sortKey: "date", sortDir: 1 });
+        hotelsWrap.innerHTML = "<h3>" + esc(venueName) + " hotels (" + ho.length + ")</h3>";
+        table(hotelsWrap, ho, [
+          { id: "name", label: "Hotel", key: "name", html: function (r) { return "<strong>" + esc(r.name) + "</strong><br><span class='small'>" + esc(r.address_note) + "</span>"; } },
+          { id: "fee", label: "Resort fee / night", key: "resort_fee_usd", num: true, html: function (r) { return (r.resort_fee_status === "verified" ? '<span class="chip ok">Verified</span>' : '<span class="chip warn">Unverified</span>') + "<br>" + money(r.resort_fee_usd); } },
+          { id: "rate", label: "Room rate (dated log)", key: "rates", sort: null, html: function (r) { return r.rates && r.rates.length ? r.rates.map(function (rate) { return esc(rate.date) + ": " + money(rate.rate_usd); }).join("<br>") : '<span class="muted">no rate logged</span>'; } },
+          { id: "true", label: "True cost / night", key: "true_cost_per_night_usd", num: true, html: function (r) { return r.true_cost_per_night_usd == null ? '<span class="muted">blank</span>' : money(r.true_cost_per_night_usd); } },
+          { id: "src", label: "Source", key: "sources", sort: null, html: function (r) { return "<span class='small'>" + srcLinks(r.sources) + "</span>"; } }
+        ], { sortKey: "name", sortDir: 1 });
+      }
+      q.addEventListener("input", draw);
+      draw();
+    }).catch(showErr);
+  }
+  PAGES.venueVenetian = function () { renderVenue("content", "Venetian", /Venetian/, ["venetian", "palazzo"]); };
+  PAGES.venueWynn = function () { renderVenue("content", "Wynn", /Wynn/, ["wynn", "encore"]); };
+  PAGES.venueOthers = function () {
+    getJSON("data/hotels.json").then(function (d) {
+      var main = document.getElementById("content");
+      var hotels = d.rows.filter(function (h) { return ["bellagio", "aria", "caesars"].indexOf(h.id) >= 0; });
+      var q = document.createElement("input");
+      q.type = "search"; q.placeholder = "Filter other hotels";
+      q.style.cssText = "padding:7px 10px;border:1px solid var(--line);border-radius:6px;font-size:14px;margin-bottom:10px;display:block;width:100%;max-width:420px;";
+      main.appendChild(q);
+      function draw() {
+        var query = q.value.toLowerCase();
+        var ho = hotels.filter(function (h) { if (!query) return true; return JSON.stringify(h).toLowerCase().indexOf(query) >= 0; });
+        main.innerHTML = "";
+        main.appendChild(q);
+        var wrap = document.createElement("div");
+        main.appendChild(wrap);
+        wrap.innerHTML = "<h3>Other Strip hotels (" + ho.length + ")</h3>";
+        table(wrap, ho, [
+          { id: "name", label: "Hotel", key: "name", html: function (r) { return "<strong>" + esc(r.name) + "</strong><br><span class='small'>" + esc(r.address_note) + "</span>"; } },
+          { id: "fee", label: "Resort fee / night", key: "resort_fee_usd", num: true, html: function (r) { return (r.resort_fee_status === "verified" ? '<span class="chip ok">Verified</span>' : '<span class="chip warn">Unverified</span>') + "<br>" + money(r.resort_fee_usd); } },
+          { id: "rate", label: "Room rate (dated log)", key: "rates", sort: null, html: function (r) { return r.rates && r.rates.length ? r.rates.map(function (rate) { return esc(rate.date) + ": " + money(rate.rate_usd); }).join("<br>") : '<span class="muted">no rate logged</span>'; } },
+          { id: "true", label: "True cost / night", key: "true_cost_per_night_usd", num: true, html: function (r) { return r.true_cost_per_night_usd == null ? '<span class="muted">blank</span>' : money(r.true_cost_per_night_usd); } },
+          { id: "src", label: "Source", key: "sources", sort: null, html: function (r) { return "<span class='small'>" + srcLinks(r.sources) + "</span>"; } }
+        ], { sortKey: "name", sortDir: 1 });
+      }
+      q.addEventListener("input", draw);
+      draw();
+    }).catch(showErr);
+  };
+
+  /* ---------- trip calculator ---------- */
+  PAGES.tripCalculator = function () {
+    getJSON("data/hotels.json").then(function (d) {
+      var main = document.getElementById("calculator");
+      var sel = document.createElement("select");
+      sel.id = "tripHotel";
+      sel.innerHTML = '<option value="">-- choose a hotel (rate unverified) --</option>' +
+        d.rows.map(function (h) { return '<option value="' + esc(h.id) + '" data-fee="' + esc(h.resort_fee_usd == null ? "" : h.resort_fee_usd) + '" data-tax="' + esc(h.clark_county_tax_pct == null ? "" : h.clark_county_tax_pct) + '">' + esc(h.name) + "</option>"; }).join("");
+      var form = '<form id="tripForm">' +
+        '<label>Tournament entries <input type="number" id="tripEntries" value="1" min="0"></label> ' +
+        '<label>Buy-in per entry ($) <input type="number" id="tripBuyIn" value="300" min="0" step="10"></label> ' +
+        '<label>Hotel nights <input type="number" id="tripNights" value="3" min="0"></label> ' +
+        '<label>Hotel ' + sel.outerHTML + '</label> ' +
+        '<label>Nightly rate ($, override) <input type="number" id="tripRate" step="0.01" min="0"></label> ' +
+        '<label>Resort fee/night ($) <span id="tripFee">—</span></label> ' +
+        '<label>Tax rate (%) <span id="tripTax">—</span></label> ' +
+        '</form>';
+      var result = document.createElement("div");
+      result.id = "tripResult";
+      main.innerHTML = form;
+      main.appendChild(result);
+      var feeEl = document.getElementById("tripFee"), taxEl = document.getElementById("tripTax");
+      function compute() {
+        var entries = +document.getElementById("tripEntries").value || 0;
+        var buyIn = +document.getElementById("tripBuyIn").value || 0;
+        var nights = +document.getElementById("tripNights").value || 0;
+        var rate = +document.getElementById("tripRate").value || 0;
+        var opt = sel.options[sel.selectedIndex];
+        var fee = +(opt && opt.getAttribute("data-fee") || "") || 0;
+        var tax = +(opt && opt.getAttribute("data-tax") || "") || 0;
+        var hasRate = document.getElementById("tripRate").value !== "";
+        if (!hasRate) rate = 0;
+        var nightly = rate + fee;
+        var trueNightly = hasRate && tax ? nightly * (1 + tax / 100) : null;
+        var entriesCost = entries * buyIn;
+        var hotelCost = trueNightly ? nights * trueNightly : (nights * nightly);
+        var total = entriesCost + hotelCost;
+        var out = [];
+        out.push("<strong>Tournament entries:</strong> " + entries + " × " + money(buyIn) + " = " + money(entriesCost));
+        out.push("<strong>Hotel:</strong> " + nights + " nights × " + (trueNightly ? money(trueNightly) : (money(nightly) + " (tax not confirmed for this hotel)")) + " = " + money(hotelCost));
+        out.push("<strong>Total estimated cost:</strong> " + money(total));
+        if (!hasRate) out.push("<span class='small'>Nightly rate is not verified for any hotel — enter a rate above for a real estimate.</span>");
+        if (opt) out.push("<span class='small'>Resort fee " + money(fee) + (tax ? " · tax " + tax.toFixed(2).replace(/\.?0+$/,"") + "%" : " (tax unverified)") + " per night.</span>");
+        result.innerHTML = out.map(function (l) { return "<p>" + l + "</p>"; }).join("");
+      }
+      document.getElementById("tripForm").addEventListener("input", compute);
+      sel.addEventListener("change", function () {
+        feeEl.textContent = (sel.options[sel.selectedIndex].getAttribute("data-fee") || "") ? money(+sel.options[sel.selectedIndex].getAttribute("data-fee")) : "—";
+        taxEl.textContent = (sel.options[sel.selectedIndex].getAttribute("data-tax") || "") ? (+sel.options[sel.selectedIndex].getAttribute("data-tax")).toFixed(2).replace(/\.?0+$/,"") + "%" : "—";
+        compute();
+      });
+      feeEl.textContent = "—"; taxEl.textContent = "—";
+      compute();
+    }).catch(showErr);
+  };
+
+  /* ---------- change monitor ---------- */
+  PAGES.changeMonitor = function () {
+    Promise.all([getJSON("data/tournaments.json"), getJSON("data/hotels.json")]).then(function (res) {
+      var main = document.getElementById("monitor");
+      var sources = {};
+      function add(url, label, date) {
+        if (!sources[url]) sources[url] = { label: label, dates: [] };
+        if (date) sources[url].dates.push(date);
+      }
+      res[0].rows.forEach(function (r) { (r.sources || []).forEach(function (s) { add(s.url, s.label, r.last_checked); }); });
+      res[1].rows.forEach(function (h) { (h.sources || []).forEach(function (s) { add(s.url, s.label, h.last_checked); }); });
+      var rows = Object.keys(sources).map(function (url) {
+        var info = sources[url];
+        var last = info.dates.length ? info.dates.sort().reverse()[0] : null;
+        return { url: url, label: info.label, last: last };
+      });
+      var html = '<table><thead><tr><th>Official source</th><th>Used as</th><th>Last checked</th><th>Re-check status</th></tr></thead><tbody>' +
+        rows.map(function (r) {
+          return "<tr><td><a href='" + esc(r.url) + "' target='_blank' rel='noopener'>" + esc(r.label) + "</a></td>" +
+            "<td><span class='small'>" + esc(r.url) + "</span></td>" +
+            "<td>" + dateFmt(r.last) + "</td>" +
+            "<td><span class='chip warn'>Not re-checked from this sandbox</span></td></tr>";
+        }).join("") + "</tbody></table>";
+      html += '<p class="small">A scheduled re-check (change monitoring) would fetch each official URL and compare it to the value recorded on each row, then flag rows whose source changed. This sandbox cannot reach the official venue domains, so results are not populated. Run check_changes.py from a machine with access to the official sites.</p>';
+      main.innerHTML = html;
+    }).catch(showErr);
+  };
+
+  function showErr(e) {
+    var main = document.getElementById("content");
+    if (main) main.innerHTML = '<div class="card callout">Could not load this page: ' + esc(e.message) + "</div>";
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    renderNav();
+    var page = document.body.getAttribute("data-page");
+    if (page && PAGES[page]) PAGES[page]();
+  });
+})();
+
+</script>
+</body>
+</html>
