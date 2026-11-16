@@ -1,7 +1,13 @@
 # COORDINATION.md
 
 Shared task board for the Poker1 project (Las Vegas Strip poker tournament & hotel planner).
-Session ID: `arena-1` (branch `arena/e3571fc8-poker1`, PR #4).
+
+## Current session claim
+| Session ID | Task | Status | File scope |
+|---|---|---|---|
+| `f0143c13` | Audit the currently deployed Pages workflow and ensure Markdown-backed dashboard subpages are included in the deployment; strengthen build checks and correct summary metadata. | in progress | `.github/workflows/pages.yml`, `scripts/check_links.py`, `README.md`, `EXECUTIVE_SUMMARY.md`, `COORDINATION.md` |
+
+No other active claims are listed below. Existing completed-task history is retained as context; this session uses only its declared file scope.
 
 ## Parallel sessions (visible on this repo)
 | Session ID | PR | Status | Contribution |
