@@ -1,718 +1,419 @@
 {
-  "generated": "2026-11-16",
-  "days": [
+ "verified_on": "2026-11-16",
+ "days": [
+  {
+   "date": "2026-11-18",
+   "options": [
     {
-      "date": "2026-11-16",
-      "label": "Mon Nov 16, 2026",
-      "single_entry_starts": [],
-      "multi_entry_starts": [
-        {
-          "start": "11:10 AM / 5:10 PM (1A/1B); 11:10 AM / 5:10 PM Nov 17 (1C/1D)",
-          "event": 1,
-          "name": "$300 No Limit Hold'em 1A–1D $75K GTD (flights)"
-        }
-      ],
-      "earliest_verified_single_entry_start": null,
-      "note": "No single-entry Venetian start this day (multi-flight or no event). See excluded list."
-    },
-    {
-      "date": "2026-11-17",
-      "label": "Tue Nov 17, 2026",
-      "single_entry_starts": [],
-      "multi_entry_starts": [],
-      "earliest_verified_single_entry_start": null,
-      "note": "No single-entry Venetian start this day (multi-flight or no event). See excluded list."
-    },
-    {
-      "date": "2026-11-18",
-      "label": "Wed Nov 18, 2026",
-      "single_entry_starts": [
-        {
-          "start": "11:10 AM",
-          "event": 2,
-          "name": "$300 No Limit Hold'em (1Day)",
-          "buy_in": 300,
-          "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
-        }
-      ],
-      "multi_entry_starts": [],
-      "earliest_verified_single_entry_start": "11:10 AM",
-      "note": "No verified single-entry tournament starts before 10:10 AM on the official schedule. Arrive at 8:00 AM for the room and tournament check-in; no official event begins at 8:00 AM."
-    },
-    {
-      "date": "2026-11-19",
-      "label": "Thu Nov 19, 2026",
-      "single_entry_starts": [
-        {
-          "start": "10:10 AM",
-          "event": 3,
-          "name": "$200 No Limit Hold'em RaceDay Stack (1Day)",
-          "buy_in": 200,
-          "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
-        }
-      ],
-      "multi_entry_starts": [],
-      "earliest_verified_single_entry_start": "10:10 AM",
-      "note": "No verified single-entry tournament starts before 10:10 AM on the official schedule. Arrive at 8:00 AM for the room and tournament check-in; no official event begins at 8:00 AM."
-    },
-    {
-      "date": "2026-11-20",
-      "label": "Fri Nov 20, 2026",
-      "single_entry_starts": [
-        {
-          "start": "10:10 AM",
-          "event": 4,
-          "name": "$200 No Limit Hold'em RaceDay Stack (1Day)",
-          "buy_in": 200,
-          "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
-        }
-      ],
-      "multi_entry_starts": [],
-      "earliest_verified_single_entry_start": "10:10 AM",
-      "note": "No verified single-entry tournament starts before 10:10 AM on the official schedule. Arrive at 8:00 AM for the room and tournament check-in; no official event begins at 8:00 AM."
-    },
-    {
-      "date": "2026-11-21",
-      "label": "Sat Nov 21, 2026",
-      "single_entry_starts": [
-        {
-          "start": "10:10 AM",
-          "event": 5,
-          "name": "$200 No Limit Hold'em RaceDay Stack (1Day)",
-          "buy_in": 200,
-          "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
-        }
-      ],
-      "multi_entry_starts": [],
-      "earliest_verified_single_entry_start": "10:10 AM",
-      "note": "No verified single-entry tournament starts before 10:10 AM on the official schedule. Arrive at 8:00 AM for the room and tournament check-in; no official event begins at 8:00 AM."
-    },
-    {
-      "date": "2026-11-22",
-      "label": "Sun Nov 22, 2026",
-      "single_entry_starts": [
-        {
-          "start": "11:10 AM",
-          "event": 6,
-          "name": "$200 No Limit Hold'em (1Day)",
-          "buy_in": 200,
-          "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
-        }
-      ],
-      "multi_entry_starts": [],
-      "earliest_verified_single_entry_start": "11:10 AM",
-      "note": "No verified single-entry tournament starts before 10:10 AM on the official schedule. Arrive at 8:00 AM for the room and tournament check-in; no official event begins at 8:00 AM."
-    },
-    {
-      "date": "2026-11-23",
-      "label": "Mon Nov 23, 2026",
-      "single_entry_starts": [
-        {
-          "start": "5:10 PM",
-          "event": 8,
-          "name": "$200 No Limit Hold'em PKO (Progressive Knock-Out Bounty) (1Day)",
-          "buy_in": 200,
-          "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
-        }
-      ],
-      "multi_entry_starts": [
-        {
-          "start": "11:10 AM (1A, Nov 23); 11:10 AM (1B, Nov 24)",
-          "event": 7,
-          "name": "$400 No Limit Hold'em 1A/1B $75K GTD (flights)"
-        }
-      ],
-      "earliest_verified_single_entry_start": "5:10 PM",
-      "note": "No verified single-entry tournament starts before 10:10 AM on the official schedule. Arrive at 8:00 AM for the room and tournament check-in; no official event begins at 8:00 AM."
-    },
-    {
-      "date": "2026-11-24",
-      "label": "Tue Nov 24, 2026",
-      "single_entry_starts": [
-        {
-          "start": "5:10 PM",
-          "event": 9,
-          "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
-          "buy_in": 200,
-          "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
-        }
-      ],
-      "multi_entry_starts": [],
-      "earliest_verified_single_entry_start": "5:10 PM",
-      "note": "No verified single-entry tournament starts before 10:10 AM on the official schedule. Arrive at 8:00 AM for the room and tournament check-in; no official event begins at 8:00 AM."
-    },
-    {
-      "date": "2026-11-25",
-      "label": "Wed Nov 25, 2026",
-      "single_entry_starts": [
-        {
-          "start": "11:10 AM",
-          "event": 10,
-          "name": "$400 No Limit Hold'em $15K GTD (1Day)",
-          "buy_in": 400,
-          "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
-        },
-        {
-          "start": "5:10 PM",
-          "event": 11,
-          "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
-          "buy_in": 200,
-          "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
-        }
-      ],
-      "multi_entry_starts": [],
-      "earliest_verified_single_entry_start": "11:10 AM",
-      "note": "No verified single-entry tournament starts before 10:10 AM on the official schedule. Arrive at 8:00 AM for the room and tournament check-in; no official event begins at 8:00 AM."
-    },
-    {
-      "date": "2026-11-26",
-      "label": "Thu Nov 26, 2026",
-      "single_entry_starts": [
-        {
-          "start": "11:10 AM",
-          "event": 12,
-          "name": "$300 No Limit Hold'em $10K GTD (1Day)",
-          "buy_in": 300,
-          "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
-        },
-        {
-          "start": "5:10 PM",
-          "event": 13,
-          "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
-          "buy_in": 200,
-          "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
-        }
-      ],
-      "multi_entry_starts": [],
-      "earliest_verified_single_entry_start": "11:10 AM",
-      "note": "No verified single-entry tournament starts before 10:10 AM on the official schedule. Arrive at 8:00 AM for the room and tournament check-in; no official event begins at 8:00 AM."
-    },
-    {
-      "date": "2026-11-27",
-      "label": "Fri Nov 27, 2026",
-      "single_entry_starts": [
-        {
-          "start": "11:10 AM",
-          "event": 14,
-          "name": "$600 No Limit Hold'em $30K GTD (1Day)",
-          "buy_in": 600,
-          "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
-        },
-        {
-          "start": "5:10 PM",
-          "event": 15,
-          "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
-          "buy_in": 200,
-          "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
-        }
-      ],
-      "multi_entry_starts": [],
-      "earliest_verified_single_entry_start": "11:10 AM",
-      "note": "No verified single-entry tournament starts before 10:10 AM on the official schedule. Arrive at 8:00 AM for the room and tournament check-in; no official event begins at 8:00 AM."
-    },
-    {
-      "date": "2026-11-28",
-      "label": "Sat Nov 28, 2026",
-      "single_entry_starts": [
-        {
-          "start": "11:10 AM",
-          "event": 16,
-          "name": "$600 No Limit Hold'em Bounty $30K GTD (1Day)",
-          "buy_in": 600,
-          "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
-        },
-        {
-          "start": "12:10 PM",
-          "event": 17,
-          "name": "$400 Pot Limit Omaha Bounty $15K GTD (1Day)",
-          "buy_in": 400,
-          "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
-        },
-        {
-          "start": "5:10 PM",
-          "event": 18,
-          "name": "$200 No Limit Hold'em PokerAtlas Valuetown Bounty $20K GTD (1Day)",
-          "buy_in": 200,
-          "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
-        }
-      ],
-      "multi_entry_starts": [],
-      "earliest_verified_single_entry_start": "11:10 AM",
-      "note": "No verified single-entry tournament starts before 10:10 AM on the official schedule. Arrive at 8:00 AM for the room and tournament check-in; no official event begins at 8:00 AM."
-    },
-    {
-      "date": "2026-11-29",
-      "label": "Sun Nov 29, 2026",
-      "single_entry_starts": [
-        {
-          "start": "12:10 PM",
-          "event": 20,
-          "name": "$300 Pot Limit Omaha Double Board Bomb Pot $10K GTD (1Day)",
-          "buy_in": 300,
-          "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
-        },
-        {
-          "start": "5:10 PM",
-          "event": 21,
-          "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
-          "buy_in": 200,
-          "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
-        }
-      ],
-      "multi_entry_starts": [
-        {
-          "start": "11:10 AM (1A Nov 29; 1B Nov 30; 1C Dec 1)",
-          "event": 19,
-          "name": "$400 No Limit Hold'em 1A/1B/1C $75K GTD (flights)"
-        }
-      ],
-      "earliest_verified_single_entry_start": "12:10 PM",
-      "note": "No verified single-entry tournament starts before 10:10 AM on the official schedule. Arrive at 8:00 AM for the room and tournament check-in; no official event begins at 8:00 AM."
-    },
-    {
-      "date": "2026-11-30",
-      "label": "Mon Nov 30, 2026",
-      "single_entry_starts": [
-        {
-          "start": "5:10 PM",
-          "event": 22,
-          "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
-          "buy_in": 200,
-          "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
-        }
-      ],
-      "multi_entry_starts": [],
-      "earliest_verified_single_entry_start": "5:10 PM",
-      "note": "No verified single-entry tournament starts before 10:10 AM on the official schedule. Arrive at 8:00 AM for the room and tournament check-in; no official event begins at 8:00 AM."
-    },
-    {
-      "date": "2026-12-01",
-      "label": "Tue Dec 1, 2026",
-      "single_entry_starts": [
-        {
-          "start": "5:10 PM",
-          "event": 23,
-          "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
-          "buy_in": 200,
-          "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
-        }
-      ],
-      "multi_entry_starts": [],
-      "earliest_verified_single_entry_start": "5:10 PM",
-      "note": "No verified single-entry tournament starts before 10:10 AM on the official schedule. Arrive at 8:00 AM for the room and tournament check-in; no official event begins at 8:00 AM."
-    },
-    {
-      "date": "2026-12-02",
-      "label": "Wed Dec 2, 2026",
-      "single_entry_starts": [
-        {
-          "start": "10:10 AM",
-          "event": 24,
-          "name": "$600 No Limit Hold'em Seniors $40K GTD (1Day) — 50+ only",
-          "buy_in": 600,
-          "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
-        },
-        {
-          "start": "5:10 PM",
-          "event": 25,
-          "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
-          "buy_in": 200,
-          "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
-        }
-      ],
-      "multi_entry_starts": [],
-      "earliest_verified_single_entry_start": "10:10 AM",
-      "note": "No verified single-entry tournament starts before 10:10 AM on the official schedule. Arrive at 8:00 AM for the room and tournament check-in; no official event begins at 8:00 AM."
-    },
-    {
-      "date": "2026-12-03",
-      "label": "Thu Dec 3, 2026",
-      "single_entry_starts": [
-        {
-          "start": "12:10 PM",
-          "event": 27,
-          "name": "$600 BIG O $25K GTD (1Day)",
-          "buy_in": 600,
-          "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
-        }
-      ],
-      "multi_entry_starts": [
-        {
-          "start": "11:10 AM / 5:10 PM across Dec 3–5 (1A–1F)",
-          "event": 26,
-          "name": "$800 No Limit Hold'em 1A–1F $500K GTD (flights, incl. Turbo 1F)"
-        }
-      ],
-      "earliest_verified_single_entry_start": "12:10 PM",
-      "note": "No verified single-entry tournament starts before 10:10 AM on the official schedule. Arrive at 8:00 AM for the room and tournament check-in; no official event begins at 8:00 AM."
-    },
-    {
-      "date": "2026-12-04",
-      "label": "Fri Dec 4, 2026",
-      "single_entry_starts": [],
-      "multi_entry_starts": [],
-      "earliest_verified_single_entry_start": null,
-      "note": "No single-entry Venetian start this day (multi-flight or no event). See excluded list."
-    },
-    {
-      "date": "2026-12-05",
-      "label": "Sat Dec 5, 2026",
-      "single_entry_starts": [],
-      "multi_entry_starts": [],
-      "earliest_verified_single_entry_start": null,
-      "note": "No single-entry Venetian start this day (multi-flight or no event). See excluded list."
-    },
-    {
-      "date": "2026-12-06",
-      "label": "Sun Dec 6, 2026",
-      "single_entry_starts": [
-        {
-          "start": "11:10 AM",
-          "event": 28,
-          "name": "$600 No Limit Hold'em $40K GTD (1Day)",
-          "buy_in": 600,
-          "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
-        },
-        {
-          "start": "5:10 PM",
-          "event": 29,
-          "name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)",
-          "buy_in": 300,
-          "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
-        }
-      ],
-      "multi_entry_starts": [],
-      "earliest_verified_single_entry_start": "11:10 AM",
-      "note": "No verified single-entry tournament starts before 10:10 AM on the official schedule. Arrive at 8:00 AM for the room and tournament check-in; no official event begins at 8:00 AM."
-    },
-    {
-      "date": "2026-12-07",
-      "label": "Mon Dec 7, 2026",
-      "single_entry_starts": [
-        {
-          "start": "11:10 AM",
-          "event": 30,
-          "name": "$600 No Limit Hold'em Bounty $40K GTD (1Day)",
-          "buy_in": 600,
-          "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
-        },
-        {
-          "start": "5:10 PM",
-          "event": 31,
-          "name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)",
-          "buy_in": 300,
-          "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
-        }
-      ],
-      "multi_entry_starts": [],
-      "earliest_verified_single_entry_start": "11:10 AM",
-      "note": "No verified single-entry tournament starts before 10:10 AM on the official schedule. Arrive at 8:00 AM for the room and tournament check-in; no official event begins at 8:00 AM."
-    },
-    {
-      "date": "2026-12-08",
-      "label": "Tue Dec 8, 2026",
-      "single_entry_starts": [
-        {
-          "start": "10:10 AM",
-          "event": 32,
-          "name": "$600 No Limit Hold'em Seniors $40K GTD (1Day) — 50+ only",
-          "buy_in": 600,
-          "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
-        },
-        {
-          "start": "5:10 PM",
-          "event": 34,
-          "name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)",
-          "buy_in": 300,
-          "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
-        }
-      ],
-      "multi_entry_starts": [],
-      "earliest_verified_single_entry_start": "10:10 AM",
-      "note": "No verified single-entry tournament starts before 10:10 AM on the official schedule. Arrive at 8:00 AM for the room and tournament check-in; no official event begins at 8:00 AM."
-    },
-    {
-      "date": "2026-12-09",
-      "label": "Wed Dec 9, 2026",
-      "single_entry_starts": [
-        {
-          "start": "11:10 AM",
-          "event": 36,
-          "name": "$800 No Limit Hold'em Bounty $75K GTD (1Day)",
-          "buy_in": 800,
-          "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
-        },
-        {
-          "start": "5:10 PM",
-          "event": 38,
-          "name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)",
-          "buy_in": 300,
-          "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
-        }
-      ],
-      "multi_entry_starts": [],
-      "earliest_verified_single_entry_start": "11:10 AM",
-      "note": "No verified single-entry tournament starts before 10:10 AM on the official schedule. Arrive at 8:00 AM for the room and tournament check-in; no official event begins at 8:00 AM."
-    },
-    {
-      "date": "2026-12-10",
-      "label": "Thu Dec 10, 2026",
-      "single_entry_starts": [
-        {
-          "start": "12:10 PM",
-          "event": 40,
-          "name": "$600 Pot Limit Omaha Bounty $25K GTD (1Day)",
-          "buy_in": 600,
-          "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
-        },
-        {
-          "start": "5:10 PM",
-          "event": 42,
-          "name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)",
-          "buy_in": 300,
-          "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
-        }
-      ],
-      "multi_entry_starts": [],
-      "earliest_verified_single_entry_start": "12:10 PM",
-      "note": "No verified single-entry tournament starts before 10:10 AM on the official schedule. Arrive at 8:00 AM for the room and tournament check-in; no official event begins at 8:00 AM."
-    },
-    {
-      "date": "2026-12-11",
-      "label": "Fri Dec 11, 2026",
-      "single_entry_starts": [
-        {
-          "start": "11:10 AM",
-          "event": 43,
-          "name": "$600 No Limit Hold'em LIPS KINGS & QUEENS Bounty $30K GTD (1Day)",
-          "buy_in": 600,
-          "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
-        }
-      ],
-      "multi_entry_starts": [],
-      "earliest_verified_single_entry_start": "11:10 AM",
-      "note": "No verified single-entry tournament starts before 10:10 AM on the official schedule. Arrive at 8:00 AM for the room and tournament check-in; no official event begins at 8:00 AM."
-    },
-    {
-      "date": "2026-12-12",
-      "label": "Sat Dec 12, 2026",
-      "single_entry_starts": [],
-      "multi_entry_starts": [
-        {
-          "start": "10:10 AM (1A, Dec 12); 6:10 PM (1B, Dec 12)",
-          "event": 47,
-          "name": "$2,200 No Limit Hold'em 1A/1B $1 Million GTD — PokerAtlas Championship Title Event"
-        }
-      ],
-      "earliest_verified_single_entry_start": null,
-      "note": "No single-entry Venetian start this day (multi-flight or no event). See excluded list."
-    },
-    {
-      "date": "2026-12-13",
-      "label": "Sun Dec 13, 2026",
-      "single_entry_starts": [
-        {
-          "start": "5:10 PM",
-          "event": 50,
-          "name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)",
-          "buy_in": 300,
-          "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
-        }
-      ],
-      "multi_entry_starts": [
-        {
-          "start": "10:10 AM (1A Dec 13); 10:10 AM (1B Dec 14)",
-          "event": 49,
-          "name": "$1,100 No Limit Hold'em Seniors 1A/1B $300K GTD — 50+ only"
-        }
-      ],
-      "earliest_verified_single_entry_start": "5:10 PM",
-      "note": "No verified single-entry tournament starts before 10:10 AM on the official schedule. Arrive at 8:00 AM for the room and tournament check-in; no official event begins at 8:00 AM."
-    },
-    {
-      "date": "2026-12-14",
-      "label": "Mon Dec 14, 2026",
-      "single_entry_starts": [
-        {
-          "start": "5:10 PM",
-          "event": 51,
-          "name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)",
-          "buy_in": 300,
-          "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
-        }
-      ],
-      "multi_entry_starts": [],
-      "earliest_verified_single_entry_start": "5:10 PM",
-      "note": "No verified single-entry tournament starts before 10:10 AM on the official schedule. Arrive at 8:00 AM for the room and tournament check-in; no official event begins at 8:00 AM."
-    },
-    {
-      "date": "2026-12-15",
-      "label": "Tue Dec 15, 2026",
-      "single_entry_starts": [
-        {
-          "start": "11:10 AM",
-          "event": 52,
-          "name": "$1,100 No Limit Hold'em PKO (Progressive Knock-Out Bounty) $75K GTD (1Day)",
-          "buy_in": 1100,
-          "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
-        },
-        {
-          "start": "5:10 PM",
-          "event": 53,
-          "name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)",
-          "buy_in": 300,
-          "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
-        }
-      ],
-      "multi_entry_starts": [],
-      "earliest_verified_single_entry_start": "11:10 AM",
-      "note": "No verified single-entry tournament starts before 10:10 AM on the official schedule. Arrive at 8:00 AM for the room and tournament check-in; no official event begins at 8:00 AM."
-    },
-    {
-      "date": "2026-12-16",
-      "label": "Wed Dec 16, 2026",
-      "single_entry_starts": [
-        {
-          "start": "11:10 AM",
-          "event": 54,
-          "name": "$600 No Limit Hold'em Bounty $50K GTD (1Day)",
-          "buy_in": 600,
-          "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
-        },
-        {
-          "start": "5:10 PM",
-          "event": 55,
-          "name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)",
-          "buy_in": 300,
-          "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
-        }
-      ],
-      "multi_entry_starts": [],
-      "earliest_verified_single_entry_start": "11:10 AM",
-      "note": "No verified single-entry tournament starts before 10:10 AM on the official schedule. Arrive at 8:00 AM for the room and tournament check-in; no official event begins at 8:00 AM."
-    },
-    {
-      "date": "2026-12-17",
-      "label": "Thu Dec 17, 2026",
-      "single_entry_starts": [
-        {
-          "start": "12:10 PM",
-          "event": 57,
-          "name": "$600 Pot Limit Omaha Double Board Bomb Pot $25K GTD (1Day)",
-          "buy_in": 600,
-          "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
-        }
-      ],
-      "multi_entry_starts": [
-        {
-          "start": "10:10 AM (1A Dec 17); 6:10 PM (1B Dec 17); 10:10 AM (1C Dec 18); 6:10 PM (1D Dec 18); 10:10 AM (1E Dec 19)",
-          "event": 56,
-          "name": "$1,100 No Limit Hold'em 1A–1E $500K GTD (flights)"
-        }
-      ],
-      "earliest_verified_single_entry_start": "12:10 PM",
-      "note": "No verified single-entry tournament starts before 10:10 AM on the official schedule. Arrive at 8:00 AM for the room and tournament check-in; no official event begins at 8:00 AM."
-    },
-    {
-      "date": "2026-12-18",
-      "label": "Fri Dec 18, 2026",
-      "single_entry_starts": [],
-      "multi_entry_starts": [],
-      "earliest_verified_single_entry_start": null,
-      "note": "No single-entry Venetian start this day (multi-flight or no event). See excluded list."
-    },
-    {
-      "date": "2026-12-19",
-      "label": "Sat Dec 19, 2026",
-      "single_entry_starts": [
-        {
-          "start": "5:10 PM",
-          "event": 58,
-          "name": "$200 No Limit Hold'em PokerAtlas Valuetown Bounty $20K GTD (1Day)",
-          "buy_in": 200,
-          "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
-        }
-      ],
-      "multi_entry_starts": [],
-      "earliest_verified_single_entry_start": "5:10 PM",
-      "note": "No verified single-entry tournament starts before 10:10 AM on the official schedule. Arrive at 8:00 AM for the room and tournament check-in; no official event begins at 8:00 AM."
-    },
-    {
-      "date": "2026-12-20",
-      "label": "Sun Dec 20, 2026",
-      "single_entry_starts": [
-        {
-          "start": "5:10 PM",
-          "event": 60,
-          "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
-          "buy_in": 200,
-          "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
-        }
-      ],
-      "multi_entry_starts": [
-        {
-          "start": "11:10 AM (1A Dec 20); 11:10 AM (1B Dec 21); 11:10 AM (1C Dec 22)",
-          "event": 59,
-          "name": "$600 No Limit Hold'em 1A–1C $150K GTD (flights)"
-        }
-      ],
-      "earliest_verified_single_entry_start": "5:10 PM",
-      "note": "No verified single-entry tournament starts before 10:10 AM on the official schedule. Arrive at 8:00 AM for the room and tournament check-in; no official event begins at 8:00 AM."
-    },
-    {
-      "date": "2026-12-21",
-      "label": "Mon Dec 21, 2026",
-      "single_entry_starts": [
-        {
-          "start": "5:10 PM",
-          "event": 61,
-          "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
-          "buy_in": 200,
-          "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
-        }
-      ],
-      "multi_entry_starts": [],
-      "earliest_verified_single_entry_start": "5:10 PM",
-      "note": "No verified single-entry tournament starts before 10:10 AM on the official schedule. Arrive at 8:00 AM for the room and tournament check-in; no official event begins at 8:00 AM."
-    },
-    {
-      "date": "2026-12-22",
-      "label": "Tue Dec 22, 2026",
-      "single_entry_starts": [
-        {
-          "start": "5:10 PM",
-          "event": 62,
-          "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
-          "buy_in": 200,
-          "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
-        }
-      ],
-      "multi_entry_starts": [],
-      "earliest_verified_single_entry_start": "5:10 PM",
-      "note": "No verified single-entry tournament starts before 10:10 AM on the official schedule. Arrive at 8:00 AM for the room and tournament check-in; no official event begins at 8:00 AM."
-    },
-    {
-      "date": "2026-12-23",
-      "label": "Wed Dec 23, 2026",
-      "single_entry_starts": [
-        {
-          "start": "11:10 AM",
-          "event": 63,
-          "name": "$600 No Limit Hold'em $30K GTD (1Day)",
-          "buy_in": 600,
-          "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
-        },
-        {
-          "start": "5:10 PM",
-          "event": 64,
-          "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
-          "buy_in": 200,
-          "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
-        }
-      ],
-      "multi_entry_starts": [],
-      "earliest_verified_single_entry_start": "11:10 AM",
-      "note": "No verified single-entry tournament starts before 10:10 AM on the official schedule. Arrive at 8:00 AM for the room and tournament check-in; no official event begins at 8:00 AM."
+     "id": "r005",
+     "start": "11:10",
+     "series": "Venetian DeepStack Extravaganza IV",
+     "name": "$300 No Limit Hold'em (1Day)",
+     "buy_in_usd": 300,
+     "guarantee_usd": 10000,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf"
     }
-  ]
+   ]
+  },
+  {
+   "date": "2026-11-24",
+   "options": [
+    {
+     "id": "r013",
+     "start": "17:10",
+     "series": "Venetian DeepStack Extravaganza IV",
+     "name": "$200 No Limit Hold'em Bounty (1Day)",
+     "buy_in_usd": 200,
+     "guarantee_usd": 8000,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+    }
+   ]
+  },
+  {
+   "date": "2026-11-25",
+   "options": [
+    {
+     "id": "r014",
+     "start": "11:10",
+     "series": "Venetian DeepStack Extravaganza IV",
+     "name": "$400 No Limit Hold'em (1Day)",
+     "buy_in_usd": 400,
+     "guarantee_usd": 15000,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_6.pdf"
+    },
+    {
+     "id": "r015",
+     "start": "17:10",
+     "series": "Venetian DeepStack Extravaganza IV",
+     "name": "$200 No Limit Hold'em Bounty (1Day)",
+     "buy_in_usd": 200,
+     "guarantee_usd": 8000,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+    }
+   ]
+  },
+  {
+   "date": "2026-11-26",
+   "options": [
+    {
+     "id": "r016",
+     "start": "11:10",
+     "series": "Venetian DeepStack Extravaganza IV",
+     "name": "$300 No Limit Hold'em (1Day)",
+     "buy_in_usd": 300,
+     "guarantee_usd": 10000,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf"
+    },
+    {
+     "id": "r017",
+     "start": "17:10",
+     "series": "Venetian DeepStack Extravaganza IV",
+     "name": "$200 No Limit Hold'em Bounty (1Day)",
+     "buy_in_usd": 200,
+     "guarantee_usd": 8000,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+    }
+   ]
+  },
+  {
+   "date": "2026-11-27",
+   "options": [
+    {
+     "id": "r019",
+     "start": "11:10",
+     "series": "Venetian DeepStack Extravaganza IV",
+     "name": "$600 No Limit Hold'em (1Day)",
+     "buy_in_usd": 600,
+     "guarantee_usd": 30000,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf"
+    },
+    {
+     "id": "r023",
+     "start": "17:10",
+     "series": "Venetian DeepStack Extravaganza IV",
+     "name": "$200 No Limit Hold'em Bounty (1Day)",
+     "buy_in_usd": 200,
+     "guarantee_usd": 8000,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+    }
+   ]
+  },
+  {
+   "date": "2026-11-28",
+   "options": [
+    {
+     "id": "r025",
+     "start": "11:10",
+     "series": "Venetian DeepStack Extravaganza IV",
+     "name": "$600 No Limit Hold'em Bounty (1Day)",
+     "buy_in_usd": 600,
+     "guarantee_usd": 30000,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf"
+    }
+   ]
+  },
+  {
+   "date": "2026-11-29",
+   "options": [
+    {
+     "id": "r033",
+     "start": "17:10",
+     "series": "Venetian DeepStack Extravaganza IV",
+     "name": "$200 No Limit Hold'em Bounty (1Day)",
+     "buy_in_usd": 200,
+     "guarantee_usd": 8000,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+    }
+   ]
+  },
+  {
+   "date": "2026-11-30",
+   "options": [
+    {
+     "id": "r039",
+     "start": "17:10",
+     "series": "Venetian DeepStack Extravaganza IV",
+     "name": "$200 No Limit Hold'em Bounty (1Day)",
+     "buy_in_usd": 200,
+     "guarantee_usd": 8000,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+    }
+   ]
+  },
+  {
+   "date": "2026-12-01",
+   "options": [
+    {
+     "id": "r045",
+     "start": "17:10",
+     "series": "Venetian DeepStack Extravaganza IV",
+     "name": "$200 No Limit Hold'em Bounty (1Day)",
+     "buy_in_usd": 200,
+     "guarantee_usd": 8000,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+    }
+   ]
+  },
+  {
+   "date": "2026-12-02",
+   "options": [
+    {
+     "id": "r046",
+     "start": "10:10",
+     "series": "Venetian DeepStack Extravaganza IV",
+     "name": "$600 No Limit Hold'em Seniors (1Day)",
+     "buy_in_usd": 600,
+     "guarantee_usd": 40000,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf"
+    },
+    {
+     "id": "r048",
+     "start": "17:10",
+     "series": "Venetian DeepStack Extravaganza IV",
+     "name": "$200 No Limit Hold'em Bounty (1Day)",
+     "buy_in_usd": 200,
+     "guarantee_usd": 8000,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+    }
+   ]
+  },
+  {
+   "date": "2026-12-06",
+   "options": [
+    {
+     "id": "r064",
+     "start": "11:10",
+     "series": "Venetian DeepStack Extravaganza IV",
+     "name": "$600 No Limit Hold'em (1Day)",
+     "buy_in_usd": 600,
+     "guarantee_usd": 40000,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf"
+    },
+    {
+     "id": "r065",
+     "start": "17:10",
+     "series": "Venetian DeepStack Extravaganza IV",
+     "name": "$300 No Limit Hold'em Bounty (1Day)",
+     "buy_in_usd": 300,
+     "guarantee_usd": 15000,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+    }
+   ]
+  },
+  {
+   "date": "2026-12-07",
+   "options": [
+    {
+     "id": "r070",
+     "start": "11:10",
+     "series": "Venetian DeepStack Extravaganza IV",
+     "name": "$600 No Limit Hold'em Bounty (1Day)",
+     "buy_in_usd": 600,
+     "guarantee_usd": 40000,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf"
+    },
+    {
+     "id": "r072",
+     "start": "17:10",
+     "series": "Venetian DeepStack Extravaganza IV",
+     "name": "$300 No Limit Hold'em Bounty (1Day)",
+     "buy_in_usd": 300,
+     "guarantee_usd": 15000,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+    }
+   ]
+  },
+  {
+   "date": "2026-12-08",
+   "options": [
+    {
+     "id": "r074",
+     "start": "10:10",
+     "series": "Venetian DeepStack Extravaganza IV",
+     "name": "$600 No Limit Hold'em Seniors (1Day)",
+     "buy_in_usd": 600,
+     "guarantee_usd": 40000,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf"
+    },
+    {
+     "id": "r076",
+     "start": "17:10",
+     "series": "Venetian DeepStack Extravaganza IV",
+     "name": "$300 No Limit Hold'em Bounty (1Day)",
+     "buy_in_usd": 300,
+     "guarantee_usd": 15000,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+    }
+   ]
+  },
+  {
+   "date": "2026-12-09",
+   "options": [
+    {
+     "id": "r080",
+     "start": "11:10",
+     "series": "Venetian DeepStack Extravaganza IV",
+     "name": "$800 No Limit Hold'em Bounty (1Day)",
+     "buy_in_usd": 800,
+     "guarantee_usd": 75000,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_16.pdf"
+    },
+    {
+     "id": "r083",
+     "start": "17:10",
+     "series": "Venetian DeepStack Extravaganza IV",
+     "name": "$300 No Limit Hold'em Bounty (1Day)",
+     "buy_in_usd": 300,
+     "guarantee_usd": 15000,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+    }
+   ]
+  },
+  {
+   "date": "2026-12-10",
+   "options": [
+    {
+     "id": "r088",
+     "start": "17:10",
+     "series": "Venetian DeepStack Extravaganza IV",
+     "name": "$300 No Limit Hold'em Bounty (1Day)",
+     "buy_in_usd": 300,
+     "guarantee_usd": 15000,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+    }
+   ]
+  },
+  {
+   "date": "2026-12-13",
+   "options": [
+    {
+     "id": "r103",
+     "start": "17:10",
+     "series": "Venetian DeepStack Extravaganza IV",
+     "name": "$300 No Limit Hold'em Bounty (1Day)",
+     "buy_in_usd": 300,
+     "guarantee_usd": 15000,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+    }
+   ]
+  },
+  {
+   "date": "2026-12-14",
+   "options": [
+    {
+     "id": "r109",
+     "start": "17:10",
+     "series": "Venetian DeepStack Extravaganza IV",
+     "name": "$300 No Limit Hold'em Bounty (1Day)",
+     "buy_in_usd": 300,
+     "guarantee_usd": 15000,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+    }
+   ]
+  },
+  {
+   "date": "2026-12-15",
+   "options": [
+    {
+     "id": "r116",
+     "start": "17:10",
+     "series": "Venetian DeepStack Extravaganza IV",
+     "name": "$300 No Limit Hold'em Bounty (1Day)",
+     "buy_in_usd": 300,
+     "guarantee_usd": 15000,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+    }
+   ]
+  },
+  {
+   "date": "2026-12-16",
+   "options": [
+    {
+     "id": "r118",
+     "start": "11:10",
+     "series": "Venetian DeepStack Extravaganza IV",
+     "name": "$600 No Limit Hold'em Bounty (1Day)",
+     "buy_in_usd": 600,
+     "guarantee_usd": 50000,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf"
+    },
+    {
+     "id": "r119",
+     "start": "17:10",
+     "series": "Venetian DeepStack Extravaganza IV",
+     "name": "$300 No Limit Hold'em Bounty (1Day)",
+     "buy_in_usd": 300,
+     "guarantee_usd": 15000,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
+    }
+   ]
+  },
+  {
+   "date": "2026-12-20",
+   "options": [
+    {
+     "id": "r153",
+     "start": "17:10",
+     "series": "Venetian DeepStack Extravaganza IV",
+     "name": "$200 No Limit Hold'em Bounty (1Day)",
+     "buy_in_usd": 200,
+     "guarantee_usd": 8000,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+    }
+   ]
+  },
+  {
+   "date": "2026-12-21",
+   "options": [
+    {
+     "id": "r158",
+     "start": "17:10",
+     "series": "Venetian DeepStack Extravaganza IV",
+     "name": "$200 No Limit Hold'em Bounty (1Day)",
+     "buy_in_usd": 200,
+     "guarantee_usd": 8000,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+    }
+   ]
+  },
+  {
+   "date": "2026-12-22",
+   "options": [
+    {
+     "id": "r161",
+     "start": "17:10",
+     "series": "Venetian DeepStack Extravaganza IV",
+     "name": "$200 No Limit Hold'em Bounty (1Day)",
+     "buy_in_usd": 200,
+     "guarantee_usd": 8000,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+    }
+   ]
+  },
+  {
+   "date": "2026-12-23",
+   "options": [
+    {
+     "id": "r162",
+     "start": "11:10",
+     "series": "Venetian DeepStack Extravaganza IV",
+     "name": "$600 No Limit Hold'em (1Day)",
+     "buy_in_usd": 600,
+     "guarantee_usd": 30000,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf"
+    },
+    {
+     "id": "r163",
+     "start": "17:10",
+     "series": "Venetian DeepStack Extravaganza IV",
+     "name": "$200 No Limit Hold'em Bounty (1Day)",
+     "buy_in_usd": 200,
+     "guarantee_usd": 8000,
+     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+    }
+   ]
+  }
+ ],
+ "earliest_listed_start": "10:00",
+ "note": "Earliest start among the rows in this dataset is 10:00 AM (Wynn, Super Gold Million Day 1A, Dec 10). Satellites are excluded from the dataset, and one Venetian satellite starts at 9:10 AM. Registration opening times are not printed in the schedules read. The schedules print a REG CLOSES time per event."
 }

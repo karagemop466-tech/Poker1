@@ -1,35 +1,40 @@
-# Questions and information gaps
+# Questions and Information Gaps
 
-Each question is paired with the data it affects. Answer any of these to update the data. Nothing blocks the merge.
+For each question: what is known, what is missing, and how to close it. "Open" means no official source answers it yet.
 
-## Policy decisions
+## A. Decisions only you can make
 
-| # | Question | Current assumption | Affects |
+| # | Question | Why it matters | Status |
 |---|---|---|---|
-| Q1 | Should bounty/PKO events be in the single-entry list? | Yes. Bounties are prize money, not chips. | 32 rows |
-| Q2 | Is Bellagio's optional staff gratuity (buys extra chips) pay-to-advantage? | Yes, excluded. | 3 Bellagio rows |
-| Q3 | Is the PokerAtlas PRO $20 rake discount (events 18, 58) acceptable? | Yes, flagged. | 2 rows |
-| Q4 | Should "at least 30 min walking" mean hotel-to-venue walk ≥30 min? | Yes. The Venetian/Palazzo fail, since they are the venue. | Hotel list |
-| Q5 | Should Wynn WPT events be ranked? | No. Their rules are not verified and most have re-entry. | 127 rows |
-| Q6 | Should the Venetian single-day events count as "single-entry" when the sheet is silent on re-entry? | Shown as candidates. Strict reading (explicit wording required) gives 0 confirmed. | 47 rows |
+| D1 | Should a player who busts from one flight and enters a later flight count as a second entry? | 15 rows (including the $800 Event 26 at $500K) depend on it. | Open. Ask the poker room (see C1). |
+| D2 | Should age-limited events (50+ Seniors, ladies-only, tag-team) be ranked with open events? | 2 verified rows are age-limited (Events 24 and 32). | Open. Currently listed with a note. |
+| D3 | What is your nightly budget, including resort fee and tax? | Hotel ranking depends on it. | Open. |
+| D4 | Which nights do you plan to stay? | Only chosen dates allow a rate check and a day-by-day schedule. | Open. |
+| D5 | Should bounty events count as single entry? They add no buy-in, but the guarantee includes bounties (F5). | Changes the ranking. | Open. Kept, with a note. |
+| D6 | Should the WSOP Circuit or Planet Hollywood series be included? | No verified 2027 Las Vegas schedule in this data. | Open. |
 
-## Verification gaps
+## B. Information that is missing or unverified
 
-| # | Gap | Impact |
-|---|---|---|
-| G1 | Venetian structure sheets 3, 4, 9, 12–14, 19–21, 24, 25, 31, 32, 35–37 not read | Multi-flight, satellite, tag-team, 2-day events unranked |
-| G2 | Bellagio Saturday price: $1,000 vs $1,100 vs $600 | Saturday row left unpriced |
-| G3 | Wynn current base rate and resort fee | Wynn hotel row blank |
-| G4 | Bellagio resort fee and nightly rate | Bellagio hotel row blank |
-| G5 | Caesars Palace resort fee | Caesars hotel row blank |
-| G6 | MGM Grand, Aria, RWLV poker schedules (official URLs unavailable) | These venues are absent from the lists |
-| G7 | Event durations (for stacking events in a day) | Schedule shows starts only |
-| G8 | Walking times to each venue | Walking column blank for all hotels |
-| G9 | Hotel quality ratings from an official source | Quality not ranked |
-| G10 | Date-specific hotel rates | Rate basis is a floor, not a booking quote |
+| # | Question | Known now | Missing | How to close it |
+|---|---|---|---|---|
+| I1 | Are the 33 Venetian single-entry rows truly single entry? | Each structure sheet read shows no re-entry or flight clause. | Written confirmation from the poker room. | Ask the poker room (C1). |
+| I2 | Entry rules for the 81 Wynn WPT rows | Only the $600 NLH $400K flights are verified (re-entry). | The other per-event structure sheets. | Read each sheet in the WPT structures PDF (8 pages; pages 1-2 read). |
+| I3 | Entry rules for the 31 Venetian NYE rows | Buy-ins and guarantees are official. | Structure sheets. | Read each NYE structure sheet. |
+| I4 | Entry rules for the 31 Wynn Signature Series rows (Jan 11-24, 2027) | Schedule and buy-ins are official. | Structure sheets. | Read the Signature Series structures PDF. |
+| I5 | Remaining Venetian DSE IV structure sheets | Sheets 1, 2, 3, 5 to 17 read. | Sheet 4 and sheets 18 to 37 (about 21 PDFs). | Read each sheet linked from the DSE IV event page. |
+| I6 | Nightly room rate for each hotel on your dates | None verified. | Every rate. | Check the official booking pages for the chosen dates. Record the rate with a dated screenshot. |
+| I7 | Resort fee at Bellagio, Caesars Palace and ARIA | Caesars: general official range $45 to $50. Bellagio and ARIA: no fee terms found. | Exact property fees. | Read each property's official resort-fee terms. |
+| I8 | Poker-suite rate mapping | Official page says "$119 and $209" for the Venetian or Palazzo, conditional on play. | Which rate belongs to which property, and the play requirement details. | Ask the Venetian poker room. |
+| I9 | Whether the 13.38% room tax applies to the resort fee | Official terms say "$55 plus applicable tax" and cite 13.38%. | Explicit statement. | Ask the hotel, or read the Clark County tax notice. |
+| I10 | WPT $1M addition and the Nevada footnote (F6) | Footnote says ClubWPT Gold is not available in Nevada. | Whether the $1M is paid to Nevada players. | Ask the Wynn poker room (C1). |
+| I11 | Ladies WPT entry (F7) | Footnote gives $11,100 with a discounted ladies entry. Printed buy-in $1,100. | The amount a ladies player actually pays. | Ask the Wynn poker room (C1). |
+| I12 | Registration opening times | Schedules print REG CLOSES times. | Opening times. | Ask the poker room (C1). |
+| I13 | 2027 Las Vegas WSOP Circuit schedule | Only leads found. | 2027 dates and buy-ins. | Check wsop.com's official Circuit calendar. |
 
-## Information to confirm at the venue
+## C. Suggestions for discovering the missing information
 
-- Venetian: confirm no re-entry or add-on on single-day events at the cage (the structure sheets say nothing about it).
-- Wynn: confirm the poker room location (Wynn vs Encore) for daily events, and whether dailies resume after Dec 21.
-- Wynn hotel: confirm the current resort fee and room tax at booking.
+1. **Contact the poker rooms.** The Wynn schedule prints (702) 770-7654 and wynnpoker.com. The Venetian poker room is at venetianpokerroom.blog. Ask about D1, I8, I10, I11 and I12.
+2. **Read the remaining structure sheets.** Venetian DSE IV sheets 4 and 18 to 37, the NYE sheets, the Signature Series sheets, and the remaining WPT sheets. Each is one official PDF.
+3. **Record official rates on a date.** Pick two candidate dates. Record each hotel's displayed rate, resort fee and tax on the official booking site, with a dated screenshot.
+4. **Measure walking routes.** Use a mapping service at walking pace for each hotel-to-venue pair. Mark the result as an estimate, with the date.
+5. **Keep a dated change log.** Official schedules change. Each row carries a verified date, so a re-check can detect changes.

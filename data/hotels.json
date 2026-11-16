@@ -1,138 +1,180 @@
 {
-  "generated": "2026-11-16",
-  "hotels": [
+ "verified_on": "2026-11-16",
+ "rows": [
+  {
+   "id": "venetian",
+   "name": "The Venetian Resort",
+   "address_note": "Venetian host property for DeepStack series (official poker page)",
+   "resort_fee_usd": 55,
+   "resort_fee_status": "verified",
+   "resort_fee_note": "Official Venetian resort-fee page (search excerpt, not fetched in full): $55 plus applicable tax per night.",
+   "room_rate_usd": null,
+   "room_rate_status": "unverified",
+   "room_rate_note": "Official poker-suite page says rates 'start as low as $119 and $209' (Venetian or Palazzo), conditional on poker play. Which rate applies to which tower is not stated, so no value is entered here.",
+   "clark_county_tax_pct": 13.38,
+   "tax_status": "verified (Venetian terms search excerpt, not fetched in full)",
+   "sources": [
     {
-      "name": "The Venetian Resort (Venetian tower)",
-      "tournaments": "DeepStack Extravaganza IV: single-entry Venetian events (Section A)",
-      "in_building": "Yes — The Venetian Poker Room is on level 2 of The Palazzo, Grand Canal Shoppes (official poker page). Same resort campus.",
-      "base_rate_from": 119,
-      "rate_basis": "Poker suite rate 'as low as $119' (Luxury King Suite, 2026). Conditional: poker-room play each night (6 hours live cash OR buy-in to a $300+ tournament per night stayed). Not a guaranteed nightly rate. Date-specific rate not verified.",
-      "resort_fee": 55,
-      "resort_fee_basis": "Venetian hotel terms: $55 + applicable tax per night (official)",
-      "room_tax": 0.1338,
-      "parking": "Hotel guests: $20/day self-parking, $40/day valet (official hotel terms). Poker-room players: complimentary self-parking after 3+ hours of play (official poker page). Non-guest rates NOT verified.",
-      "walking": "In-building for DSE events (official). Walking distance to other properties: NOT VERIFIED.",
-      "quality": "NOT VERIFIED from official source (no rating source fetched).",
-      "sources": [
-        "VEN_SUITE",
-        "VEN_HOTEL",
-        "VEN_POKER",
-        "VEN_SCHED"
-      ],
-      "flags": [
-        "Nightly rate is a floor for qualifying poker players, not an advertised nightly price.",
-        "Room tax assumed to apply to the resort fee too ('plus applicable tax' stated) — confirm at check-in."
-      ],
-      "true_cost_from_per_night": 197.28,
-      "walk_minutes_to_venue": null,
-      "meets_30min_walk": null,
-      "walk_note": "No official walking-time source retrieved. Blank and flagged."
+     "label": "Resort fee (official)",
+     "url": "https://www.venetianlasvegas.com/resort/resort-fee.html"
     },
     {
-      "name": "The Palazzo (same resort; poker room on Palazzo side)",
-      "tournaments": "DeepStack Extravaganza IV (Section A) — poker room location",
-      "in_building": "Yes — poker room is 'The Palazzo, level 2, Grand Canal Shoppes' (official).",
-      "base_rate_from": 209,
-      "rate_basis": "Poker suite rate 'as low as $209' (Palazzo Luxury King Suite, 2026). Same qualifying-play conditions as The Venetian.",
-      "resort_fee": 55,
-      "resort_fee_basis": "Official poker suite page: '$55 resort fee per night stayed' for both The Venetian and The Palazzo.",
-      "room_tax": 0.1338,
-      "parking": "Same Venetian/Palazzo parking policy (official).",
-      "walking": "In-building for DSE (official).",
-      "quality": "NOT VERIFIED from official source.",
-      "sources": [
-        "VEN_SUITE",
-        "VEN_HOTEL",
-        "VEN_POKER"
-      ],
-      "flags": [
-        "Starting rate; check date-specific rate at booking (not captured here).",
-        "Tax on resort fee assumed — confirm."
-      ],
-      "true_cost_from_per_night": 299.32,
-      "walk_minutes_to_venue": null,
-      "meets_30min_walk": null,
-      "walk_note": "No official walking-time source retrieved. Blank and flagged."
+     "label": "Hotel terms incl. 13.38% room tax (official)",
+     "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html"
     },
     {
-      "name": "Wynn Las Vegas",
-      "tournaments": "Daily Wynn tournaments (multi-entry, Section B) and WPT World Championship (Nov 27 – Dec 21; rules unverified, Section C)",
-      "in_building": "Wynn daily poker room is in Encore at Wynn Las Vegas (official Wynn terms reference). Same resort complex.",
-      "base_rate_from": null,
-      "rate_basis": "NOT VERIFIED for current dates. Undated official offer (terms 848654) lists 'from $99 Sun–Thu / $169 Fri–Sat' for Resort King with a 3-night minimum. Offer 850225 (Tower Suites) is EXPIRED: travel window ended Aug 31, 2026. Neither is a current nightly price.",
-      "resort_fee": null,
-      "resort_fee_basis": "NOT VERIFIED for current dates. Undated offer 848654 says $45 + tax per night. Expired offer 850225 says $55 + tax per night. Conflict left blank; not used in totals.",
-      "room_tax": null,
-      "parking": "NOT VERIFIED from official source (offer 848654 says parking is 'complimentary' only for resort fee holders; stated as an amenity, not a rate).",
-      "walking": "In-building for Wynn daily events (Encore). Walking distance to other venues NOT VERIFIED.",
-      "quality": "NOT VERIFIED from official source.",
-      "sources": [
-        "WYNN_TERMS_OFFER",
-        "WYNN_TERMS_OFFER2",
-        "WYNN_TERMS_SUITE",
-        "WYNN_POKER",
-        "WYNN_DAILY_STRUCT"
-      ],
-      "flags": [
-        "Official Wynn base-rate and fee pages (wynnlasvegas.com/hotel) are dead. No current official nightly rate or resort fee was retrieved.",
-        "Resort fee conflict in official Wynn offer terms ($45 undated vs $55 expired).",
-        "Room tax rate for Wynn not stated on a Wynn source; not applied.",
-        "Wynn daily T&C say registration is in 'Encore at Wynn'; verify poker room location (see Flagged)."
-      ],
-      "true_cost_from_per_night": null,
-      "walk_minutes_to_venue": null,
-      "meets_30min_walk": null,
-      "walk_note": "No official walking-time source retrieved. Blank and flagged."
-    },
-    {
-      "name": "Bellagio",
-      "tournaments": "Weekly Bellagio events (multi-entry / gratuity-advantage, Section B)",
-      "in_building": "Yes — Bellagio poker room is on the north side of the casino (official).",
-      "base_rate_from": null,
-      "rate_basis": "NOT VERIFIED — no official nightly rate fetched.",
-      "resort_fee": null,
-      "resort_fee_basis": "NOT VERIFIED from official MGM source. Secondary sites say $55 + tax (not used in calculations).",
-      "room_tax": null,
-      "parking": "NOT VERIFIED from official source.",
-      "walking": "In-building for Bellagio events (official). Other venues: NOT VERIFIED.",
-      "quality": "NOT VERIFIED from official source.",
-      "sources": [
-        "BELL_POKER"
-      ],
-      "flags": [
-        "Official MGM resort-fee and room-rate pages were not retrievable in this session.",
-        "Secondary-source resort fee ($55 + tax) left unverified and excluded from totals."
-      ],
-      "true_cost_from_per_night": null,
-      "walk_minutes_to_venue": null,
-      "meets_30min_walk": null,
-      "walk_note": "No official walking-time source retrieved. Blank and flagged."
-    },
-    {
-      "name": "Caesars Palace",
-      "tournaments": "No verified tournament (no official Caesars poker schedule retrieved)",
-      "in_building": "NOT APPLICABLE — no verified tournament venue in this report.",
-      "base_rate_from": null,
-      "rate_basis": "NOT VERIFIED.",
-      "resort_fee": null,
-      "resort_fee_basis": "CONFLICT across non-official sources ($49.95, $55, $62.30). Official hotel page fetched did not show the fee. NOT VERIFIED.",
-      "room_tax": null,
-      "parking": "NOT VERIFIED.",
-      "walking": "NOT VERIFIED.",
-      "quality": "Official page states THE VILLAS Caesars Palace holds AAA Five Diamond designation (official Caesars statement; AAA not checked directly).",
-      "sources": [
-        "CAESARS_HOTEL"
-      ],
-      "flags": [
-        "Included for comparison only; no verified tournament link.",
-        "Resort fee unverified."
-      ],
-      "true_cost_from_per_night": null,
-      "walk_minutes_to_venue": null,
-      "meets_30min_walk": null,
-      "walk_note": "No official walking-time source retrieved. Blank and flagged."
+     "label": "Poker suite rates (official)",
+     "url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html"
     }
-  ],
-  "tax_rate": 0.1338,
-  "formula": "(nightly rate + resort fee) x (1 + room tax)"
+   ],
+   "walk_to_venetian_min": null,
+   "walk_note": "Host property. Walking time not applicable (not published).",
+   "true_cost_per_night_usd": null
+  },
+  {
+   "id": "palazzo",
+   "name": "The Palazzo",
+   "address_note": "Venetian sister property (official poker page names The Palazzo for the $55 fee)",
+   "resort_fee_usd": 55,
+   "resort_fee_status": "verified",
+   "resort_fee_note": "Official Venetian poker-suite page: 'There is a $55 resort fee per night stayed' (stated for The Venetian or The Palazzo).",
+   "room_rate_usd": null,
+   "room_rate_status": "unverified",
+   "room_rate_note": "Only conditional poker-suite starting rates are published (see Venetian row). No Palazzo-specific rate confirmed.",
+   "clark_county_tax_pct": 13.38,
+   "tax_status": "verified (Venetian terms search excerpt, not fetched in full)",
+   "sources": [
+    {
+     "label": "Poker suite rates incl. $55 resort fee (official)",
+     "url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html"
+    },
+    {
+     "label": "Hotel terms incl. 13.38% room tax (official)",
+     "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html"
+    }
+   ],
+   "walk_to_venetian_min": null,
+   "walk_note": "Unverified: walking time not on an official source.",
+   "true_cost_per_night_usd": null
+  },
+  {
+   "id": "wynn",
+   "name": "Wynn Las Vegas",
+   "address_note": "WPT World Championship and Wynn Signature Series host",
+   "resort_fee_usd": 55,
+   "resort_fee_status": "verified",
+   "resort_fee_note": "Official Wynn terms (search excerpt, not fetched in full): daily resort fee of $55 plus tax per room night.",
+   "room_rate_usd": null,
+   "room_rate_status": "unverified",
+   "room_rate_note": "No official nightly rate confirmed for any date. Third-party sites quote rates; these are not used.",
+   "clark_county_tax_pct": 13.38,
+   "tax_status": "verified (Venetian terms search excerpt, not fetched in full)",
+   "sources": [
+    {
+     "label": "Resort fee terms (official)",
+     "url": "https://www.wynnlasvegas.com/terms-and-conditions/848671"
+    },
+    {
+     "label": "Wynn poker room (official)",
+     "url": "https://www.wynnlasvegas.com/casino/poker"
+    },
+    {
+     "label": "Hotel terms incl. 13.38% room tax (official)",
+     "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html"
+    }
+   ],
+   "walk_to_venetian_min": null,
+   "walk_note": "Unverified: walking time not on an official source.",
+   "true_cost_per_night_usd": null
+  },
+  {
+   "id": "encore",
+   "name": "Encore at Wynn Las Vegas",
+   "address_note": "Same resort operator as Wynn Las Vegas",
+   "resort_fee_usd": 55,
+   "resort_fee_status": "verified",
+   "resort_fee_note": "Official Wynn terms (search excerpt, not fetched in full) cover 'Wynn and Encore Las Vegas' with a $55 plus tax daily resort fee. Confirm for the specific room.",
+   "room_rate_usd": null,
+   "room_rate_status": "unverified",
+   "room_rate_note": "No official nightly rate confirmed.",
+   "clark_county_tax_pct": 13.38,
+   "tax_status": "verified (Venetian terms search excerpt, not fetched in full)",
+   "sources": [
+    {
+     "label": "Resort fee terms (official)",
+     "url": "https://www.wynnlasvegas.com/terms-and-conditions/848671"
+    }
+   ],
+   "walk_to_venetian_min": null,
+   "walk_note": "Unverified: walking time not on an official source.",
+   "true_cost_per_night_usd": null
+  },
+  {
+   "id": "bellagio",
+   "name": "Bellagio",
+   "address_note": "MGM Resorts property",
+   "resort_fee_usd": null,
+   "resort_fee_status": "unverified",
+   "resort_fee_note": "No official MGM page found. Third-party guides give conflicting values ($45, $50, $55). Left blank.",
+   "room_rate_usd": null,
+   "room_rate_status": "unverified",
+   "room_rate_note": "No official nightly rate confirmed.",
+   "clark_county_tax_pct": 13.38,
+   "tax_status": "verified (Venetian terms search excerpt, not fetched in full)",
+   "sources": [
+    {
+     "label": "Clark County tax rate (official hotel terms)",
+     "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html"
+    }
+   ],
+   "walk_to_venetian_min": null,
+   "walk_note": "Unverified: walking time not on an official source.",
+   "true_cost_per_night_usd": null
+  },
+  {
+   "id": "aria",
+   "name": "ARIA Resort & Casino",
+   "address_note": "MGM Resorts property on the Strip",
+   "resort_fee_usd": null,
+   "resort_fee_status": "unverified",
+   "resort_fee_note": "Official ARIA home page fetched; no official resort-fee terms located on it. Left blank.",
+   "room_rate_usd": null,
+   "room_rate_status": "unverified",
+   "room_rate_note": "No official nightly rate confirmed.",
+   "clark_county_tax_pct": 13.38,
+   "tax_status": "verified (Venetian terms search excerpt, not fetched in full)",
+   "sources": [
+    {
+     "label": "ARIA official home page (fetched)",
+     "url": "https://aria.mgmresorts.com/en.html"
+    }
+   ],
+   "walk_to_venetian_min": null,
+   "walk_note": "Unverified: walking time not on an official source.",
+   "true_cost_per_night_usd": null
+  },
+  {
+   "id": "caesars",
+   "name": "Caesars Palace",
+   "address_note": "Caesars Entertainment property",
+   "resort_fee_usd": null,
+   "resort_fee_status": "unverified",
+   "resort_fee_note": "Official corporate disclaimer gives a general range of $45 to $50 plus applicable tax, not property-specific. Third-party listings conflict. Left blank.",
+   "room_rate_usd": null,
+   "room_rate_status": "unverified",
+   "room_rate_note": "No official nightly rate confirmed.",
+   "clark_county_tax_pct": 13.38,
+   "tax_status": "verified (Venetian terms search excerpt, not fetched in full)",
+   "sources": [
+    {
+     "label": "Caesars corporate disclaimer (official range)",
+     "url": "https://www.caesars.com/corporate/disclaimer"
+    }
+   ],
+   "walk_to_venetian_min": null,
+   "walk_note": "Unverified: walking time not on an official source.",
+   "true_cost_per_night_usd": null
+  }
+ ],
+ "method": "ASSUMPTION, NOT VERIFIED: true_cost_per_night = (room rate + resort fee) x (1 + 13.38%). It assumes the room tax also applies to the resort fee (see FLAGGED F10). Blank when any input is unverified."
 }

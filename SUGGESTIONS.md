@@ -1,13 +1,42 @@
-# Suggestions for review (not implemented)
+# Suggestions for Site Improvement
 
-These are proposals for the owner to review. Nothing here has been implemented without approval.
+These are options for you to choose from. **None has been implemented.** Pick the ones you want, and the next session will build only those.
 
-1. **Confirm the bounty policy.** 32 of 47 single-entry events are bounty/PKO. If bounties should be treated differently, move them to a separate section. The data already carries a `bounty` flag, so a filter is a small change.
-2. **Confirm the Bellagio gratuity policy.** The optional gratuity buys extra chips, so it is excluded now. If you consider it acceptable, Bellagio events could move to the single-entry list. That still needs the Saturday price conflict resolved (IR-1).
-3. **Read the remaining Venetian structure sheets** (3, 4, 9, 12–14, 19–21, 24, 25, 31, 32, 35–37). This would confirm the multi-flight, satellite, tag-team and two-day events, and would allow ranking the satellites.
-4. **Find a current official Wynn rate and fee source.** The wynnlasvegas.com/hotel page is dead. Ask Wynn Rewards support or check the booking engine for the resort fee.
-5. **Find walking times from an official or public source** (for example, a published map with walk times) so the 30-minute requirement can be checked. Until then the walking column stays blank.
-6. **Use the Venetian poker suite rate only if you will play 6 hours of cash or a $300+ buy-in each night.** This is the condition for the $119 rate.
-7. **Re-check dates weekly.** The Venetian schedule and Bellagio page carry live dates, and Bellagio's July 26 notice suggests the page may be stale.
-8. **Add a calendar export** (.ics) for the single-entry starts. Requires only the verified times.
-9. **Decide on the PokerAtlas PRO discount** (events 18 and 58). It is membership-linked; if membership cost is considered, the effective buy-in changes.
+## 1. Decision support
+
+| # | Suggestion | Benefit | Cost / risk |
+|---|---|---|---|
+| S1 | Add a filter for "Only events I can enter in my budget" (buy-in cap). | Faster shortlist. | Needs your budget (D3). |
+| S2 | Add a day planner that lets you drag events onto a day and warns on time overlaps. | Shows which events conflict. | Overlap rules depend on real run times, which are not published. |
+| S3 | Add an "estimated cost of a trip" calculator: entries × buy-ins + nights × true hotel cost. | One total number. | Blank until rates are verified. |
+| S4 | Show a traffic-light status on each row: verified, partially verified, unverified. | Makes gaps obvious at a glance. | None. |
+
+## 2. Data quality
+
+| # | Suggestion | Benefit | Cost / risk |
+|---|---|---|---|
+| S5 | Add an automatic re-check of each official URL on a schedule and mark rows whose source changed. | Catches schedule changes. | Needs a scheduled job. Limited by source access. |
+| S6 | Read every structure sheet and remove the "unverified" label from each event that is confirmed. | Largest gain in confidence. | All remaining structure sheets (Venetian, Venetian NYE, Wynn). |
+| S7 | Add a "last checked" date to each row. | Easy to see stale data. | None. |
+| S8 | Keep rates as a dated log, not a single value. | Shows price patterns on your dates. | Needs repeat checks. |
+
+## 3. Site structure
+
+| # | Suggestion | Benefit | Cost / risk |
+|---|---|---|---|
+| S9 | One page per venue (Venetian, Wynn, others), each with its events and hotels. | Easier to plan by location. | Duplicates some data. |
+| S10 | Keep the current category pages (single entry, separate section, hotels, schedule). | Matches your request. | None. |
+| S11 | Add print-friendly views. | Useful on the trip. | Small effort. |
+| S12 | Add a search box across all tables. | Faster lookup. | Small effort. |
+
+## 4. Process
+
+| # | Suggestion | Benefit | Cost / risk |
+|---|---|---|---|
+| S13 | Use one shared `COORDINATION.md` on `main` before parallel sessions start. | Avoids the split-branch claims found in this repo. | Needs agreement. |
+| S14 | Put the build script in CI so the site cannot publish with a broken link or missing source. | Protects quality. | Setup effort. |
+| S15 | Require a source URL on every new row (already enforced by `scripts/build_data.py`). | Keeps the "no hallucination" rule. | None. |
+
+## Your choice
+
+Reply with the numbers you want (for example "S1, S4, S6, S10"). Nothing changes until you choose.

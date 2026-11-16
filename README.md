@@ -1,32 +1,33 @@
-# Vegas Poker Planner
+# Las Vegas Strip Poker Plan
 
-A source-linked static dashboard for planning Las Vegas Strip-area poker tournaments and hotel stays. Research snapshot: **November 16, 2026**.
+A source-verified plan for single-entry poker tournaments on the Las Vegas Strip and walkable hotels. Snapshot date: **2026-11-16**.
 
-## Current finding
+Live site: https://karagemop466-tech.github.io/Poker1/
 
-Two official upcoming series are listed: The Venetian DeepStack Extravaganza IV (Nov 16–Dec 23, 2026) and Wynn's WPT World Championship (Nov 27–Dec 21, 2026). The strict single-entry result remains **zero confirmed events** because the reviewed official structures do not explicitly establish a one-entry/no-re-entry limit for the one-day candidates. Those events are shown as unverified candidates—not as single-entry recommendations. Exact hotel totals are blank because trip dates and occupancy are unknown.
+## What is in the site
 
-The source-first rule from the initial dashboard remains in effect: an event belongs in the strict shortlist only when the official schedule/structure identifies it and its entry rules explicitly rule out re-entry, re-buy, add-on, and extra bullets. “One day” is not equivalent to “single entry.” Guarantees divided by buy-in are shown only as arithmetic screening comparisons, never as expected value.
+- `index.html`: landing page with counts and links.
+- `pages/`: single entry, separate section (possible multi-entry and re-entry), unverified rows, hotels, schedule, executive summary, questions, suggestions, flagged for review, repo review and sources.
+- `data/*.json`: tournament, hotel and schedule data. Generated from `scripts/build_data.py`. Do not edit the JSON by hand.
+- `assets/`: shared stylesheet and client-side renderer. The site has no external CDN dependencies.
+- `research/`: research notes for each task.
+- `archive/prior-main/`: the earlier site and documents from other sessions, kept for reference. Not published.
 
-## Dashboard pages
+## Rules used
 
-- `index.html` — executive summary and decision status
-- `tournaments.html` — Venetian event candidates, Wynn multi-flight leads, and entry-rule caveats
-- `hotels.html` — official resort fees, conditional poker rates, and blank date-dependent true nightly totals
-- `decision.html` — unresolved questions and provisional path
-- `suggestions.html` — site improvement options, separate from implementation
-- `flagged.html` — unverified values and source irregularities
+- Only events whose official structure sheet has been read and shows no re-entry, rebuy, add-on or flight clause are listed as single entry.
+- Possible multi-entry events are shown separately. The structure sheet clause only says a player who bags Day 2 chips may not play a subsequent flight.
+- Hotel true cost includes resort fees. A value is blank until it is verified from an official source. Nothing is inferred.
+- Every table row links to an official source.
 
-## Research limits
+## Rebuild and check
 
-This is a dated, source-verified snapshot, not a reservation or entry guarantee and not a comprehensive event census of every Strip-area poker room. ARIA's official poker page directs readers to confirm whether daily tournaments are running; other rooms are retained as official source-directory links in `app.js` but are not represented as having verified future events in this snapshot. Unconfirmed event rules, prices, fees, and walking times are left blank and flagged.
+```
+python3 scripts/build_data.py     # regenerate data/*.json
+python3 scripts/build_site.py     # regenerate index.html and pages/*.html
+python3 scripts/check_links.py    # JSON, local links, source links
+```
 
-Hotel comparisons require exact stay dates, occupancy, room type, live operator quotes, mandatory resort/destination fees, applicable taxes, and cancellation terms. Walk times require route evidence and actual entrances. No unsupported value is inferred. Confirm current information directly with operators before paying.
+The Pages workflow (`.github/workflows/pages.yml`) runs the checks on each pull request and deploys `index.html`, `pages/`, `assets/` and `data/` after a push to `main`.
 
-## Verification and hosting
-
-Run `python3 scripts/check_site.py` to verify required site pages, local links, and at least one official venue/operator source on every table row. The GitHub Actions workflow in `.github/workflows/pages.yml` checks pull requests and publishes the site root to GitHub Pages after pushes to `main`. GitHub Pages must permit GitHub Actions deployments.
-
-## Retained starter research
-
-`app.js` retains the initial official poker/property source directory and its no-event-unless-officially-verified rule from the prior evidence-first dashboard. It is retained for later venue expansion; the current multi-page tables contain the reviewed event-specific records.
+Coordination and open items: `COORDINATION.md`.

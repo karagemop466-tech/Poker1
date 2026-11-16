@@ -22,8 +22,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Validate static site files and local links
-        run: python3 scripts/check_site.py
+      - name: Confirm generated pages match committed pages
+        run: |
+          python3 scripts/build_site.py
+          git diff --exit-code -- index.html pages
+      - name: Validate JSON, local links, and source links
+        run: python3 scripts/check_links.py
 
   deploy:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
@@ -40,8 +44,8 @@ jobs:
       - name: Stage public site
         run: |
           mkdir -p _site
-          cp index.html tournaments.html excluded.html hotels.html schedule.html flagged.html review.html decision.html suggestions.html styles.css _site/
-          cp -r assets data _site/
+          cp index.html _site/
+          cp -r pages assets data _site/
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
