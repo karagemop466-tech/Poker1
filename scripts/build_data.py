@@ -345,7 +345,15 @@ def structure_for(series_key, number):
 
 
 def classify_venetian(sheet_no, series_key):
-    """Return (entry_status, structured rule fields, excerpt, retrieval date)."""
+    """Return (entry_status, structured rule fields, source excerpt).
+
+    Decision inputs, all from the official structure sheet:
+      * verbatim hits for re-entry / rebuy / add-on / multiple-entry wording
+      * the sheet's own clause 8 text
+      * whether the sheet prints numbered rules at all
+    A sheet that prints no re-entry wording and no multi-flight clause is
+    recorded as single entry. A sheet that prints the multi-flight clause is not.
+    """
     facts, key = structure_for(series_key, sheet_no)
     url = (SRC["dse_nov_struct"] if series_key == "nov" else SRC["dse_dec_struct"]).format(sheet_no)
     base = {
@@ -357,55 +365,55 @@ def classify_venetian(sheet_no, series_key):
         "excerpts": {},
     }
     if not facts:
-        base["note"] = ("Official structure sheet has not been read by the collector, so the "
+        base["note"] = ("The official structure sheet was not retrieved by the collector, so the "
                         "entry rule is blank and the row is unverified.")
-        return "UNV", base, "Official structure sheet not yet read by the collector."
+        return "UNV", base, "Official structure sheet not retrieved."
 
     ex = base["excerpts"]
     kws = facts.get("keywords") or []
-    kw_names = sorted({k["keyword"].lower() for k in kws})
-    re_hits = [k for k in kws if "re-entr" in k["keyword"].lower()
-               or "rebu" in k["keyword"].lower() or "add-on" in k["keyword"].lower()
-               or "add on" in k["keyword"].lower() or "multiple entr" in k["keyword"].lower()
-               or "subsequent buy" in k["keyword"].lower()]
-    flights = [k for k in kws if k["keyword"].lower() == "flights"]
-    clause8 = facts.get("clause_08")
+    cash_entry = [k for k in kws if re.search(
+        r"re-?entr|rebu|add-?\s?on|multiple entr|subsequent buy", k["keyword"], re.I)]
+    clause8 = facts.get("clause_08_sentence") or facts.get("clause_08") or ""
+    multi_flight = bool(facts.get("mentions_players_may_not_play_subsequent_flight")) or \
+        bool(re.search(r"bags? chips", clause8, re.I))
     if clause8:
-        ex["clause_08"] = clause8
-    for k in re_hits[:3]:
-        ex["rule_" + str(len(ex))] = k["excerpt"]
-    if flights:
-        ex["flights"] = flights[0]["excerpt"]
+        ex["clause_08"] = clause8[:400]
+    if facts.get("late_registration"):
+        ex["late_registration"] = facts["late_registration"][:200]
+    if cash_entry:
+        ex["cash_entry_wording"] = cash_entry[0]["excerpt"][:400]
+    if facts.get("house_fee_clause"):
+        ex["house_fee"] = facts["house_fee_clause"][:300]
+    if facts.get("late_registration"):
+        ex["late_registration"] = facts["late_registration"][:200]
 
-    # Flights: the sheet says a player who bags Day 2 chips may not play another
-    # flight. That text only exists if multiple starting flights exist.
-    multi_flight = bool(clause8 and re.search(r"bags? chips", clause8, re.I))
     base["flights_offered"] = multi_flight
+    base["rebuy"] = None
+    base["add_on"] = None
 
-    if re_hits:
-        # An explicit cash-for-entry clause: the label says it is not single entry.
+    if cash_entry:
         base["single_entry"] = False
         base["re_entry"] = True
-        base["note"] = ("Official sheet prints cash-entry language: '%s'. Treated as not "
-                        "single entry." % re_hits[0]["excerpt"][:240])
-        return "RE", base, re_hits[0]["excerpt"]
+        base["note"] = ("The official sheet prints cash-entry wording: '%s'. Not counted as "
+                        "single entry." % cash_entry[0]["excerpt"][:220])
+        return "RE", base, cash_entry[0]["excerpt"][:400]
 
-    base["re_entry"] = False
-    base["rebuy"] = False
-    base["add_on"] = False
     if multi_flight:
         base["single_entry"] = False
-        base["entries_allowed"] = "one per starting flight, subject to clause 08"
-        base["note"] = ("Official sheet prints clause 08: '%s'. A player who bags chips may not "
-                        "play a later flight; the sheet does not say that a player who busts "
-                        "may re-enter, so this is not counted as single entry." % clause8[:300])
-        return "MULTI", base, clause8
+        base["re_entry"] = None
+        base["entries_allowed"] = "one entry per starting flight"
+        base["note"] = ("The official sheet prints clause 8: '%s'. A player who bags chips may "
+                        "not play a later flight. The sheet does not say that a player who busts "
+                        "may enter a later flight, so this row is not counted as single entry."
+                        % clause8[:260])
+        return "MULTI", base, clause8[:400]
 
     base["single_entry"] = True
+    base["re_entry"] = False
     base["entries_allowed"] = "single entry"
-    base["note"] = ("Official sheet read: no re-entry, rebuy, add-on or multi-flight language, "
-                    "and no cash-entry clause. Verified single entry.")
-    return "SE", base, "No re-entry, rebuy, add-on or flight wording appears on the official sheet."
+    base["note"] = ("The official sheet was read: no re-entry, rebuy, add-on, multiple-entry or "
+                    "multi-flight clause appears. Verified single entry.")
+    return "SE", base, "No re-entry, rebuy, add-on or multi-flight clause appears on the official sheet."
 
 
 def classify_wynn(status):

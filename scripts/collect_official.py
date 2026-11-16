@@ -106,7 +106,7 @@ def pdf_text(raw):
         path = f.name
     out = path + ".txt"
     try:
-        subprocess.run(["pdftotext", "-layout", "-enc", "UTF-8", path, out],
+        subprocess.run(["pdftotext", "-layout", "-raw", "-enc", "UTF-8", path, out],
                        check=True, capture_output=True, timeout=120)
         with open(out, encoding="utf-8", errors="replace") as fh:
             return fh.read()
@@ -306,11 +306,20 @@ def excerpt(text, start, end, pad=180):
 
 
 def numbered_clause(text, number):
-    """Return the numbered clause text, e.g. clause 08."""
-    pat = re.compile(r"(?:^|\n)\s*0?%d[.)]\s+([\s\S]{0,900}?)(?=\n\s*0?\d{2}[.)]\s|\Z)"
-                     % number)
+    """Return clause <number> from a sheet whose columns are interleaved.
+
+    Returns None when the sheet prints no numbered rules at all. When the sheet
+    does print numbered rules but the clause cannot be isolated, returns the
+    string 'PRESENT-BUT-UNPARSED' so the caller never treats it as absent.
+    """
+    has_rules = re.search(r"0?1[.)]\s+TDA rules", text)
+    if not has_rules:
+        return None
+    pat = re.compile(r"0?%d[.)]\s*([\s\S]{0,600}?)(?=0?\d{1,2}[.)]\s+[A-Z]|\Z)" % number)
     m = pat.search(text)
-    return re.sub(r"\s+", " ", m.group(1)).strip() if m else None
+    if not m:
+        return "PRESENT-BUT-UNPARSED" if has_rules else None
+    return re.sub(r"\s+", " ", m.group(1)).strip()
 
 
 def parse_structure(text):
@@ -364,6 +373,12 @@ def parse_structure(text):
     facts["keywords"] = uniq
 
     facts["clause_08"] = numbered_clause(flat, 8)
+    m8 = re.search(r"(?:0?8[.)]\s*)?(Any player who bags chips[^.]*\.)", one)
+    facts["clause_08_sentence"] = m8.group(1).strip() if m8 else None
+    facts["mentions_players_may_not_play_subsequent_flight"] = bool(
+        re.search(r"may not play a subsequent flight", one, flags=re.I))
+    facts["mentions_starting_flight"] = bool(re.search(r"starting flight|flight 1[ABCDEF]",
+                                                       one, flags=re.I))
     facts["has_flight_language"] = bool(re.search(r"\bflight", one, flags=re.I))
     facts["is_satellite"] = bool(re.search(r"satellite", one, flags=re.I))
     facts["is_tag_team"] = bool(re.search(r"tag\s*team", one, flags=re.I))
