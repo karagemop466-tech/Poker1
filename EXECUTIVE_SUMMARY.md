@@ -1,6 +1,6 @@
 # Executive Summary: Las Vegas Strip Poker Plan
 
-*Checked 2026-11-16 · Houston, TX · Data: `data/tournaments.json`, `data/hotels.json`, `data/schedule.json`*
+*Checked 2026-11-16 · Data: `data/tournaments.json`, `data/hotels.json`, `data/schedule.json`*
 
 ## Bottom line
 

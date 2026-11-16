@@ -46,6 +46,10 @@ jobs:
           mkdir -p _site
           cp index.html _site/
           cp -r pages assets data _site/
+          cp EXECUTIVE_SUMMARY.md QUESTIONS.md SUGGESTIONS.md FLAGGED.md REVIEW.md _site/
+          for file in EXECUTIVE_SUMMARY.md QUESTIONS.md SUGGESTIONS.md FLAGGED.md REVIEW.md; do
+            test -s "_site/$file"
+          done
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:

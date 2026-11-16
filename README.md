@@ -28,6 +28,6 @@ python3 scripts/build_site.py     # regenerate index.html and pages/*.html
 python3 scripts/check_links.py    # JSON, local links, source links
 ```
 
-The Pages workflow (`.github/workflows/pages.yml`) runs the checks on each pull request and deploys `index.html`, `pages/`, `assets/` and `data/` after a push to `main`.
+The Pages workflow (`.github/workflows/pages.yml`) runs the checks on each pull request and deploys `index.html`, `pages/`, `assets/`, `data/`, and the Markdown content files used by the Executive Summary, Questions, Suggestions, Flagged for Review, and Repo Review pages after a push to `main`. `scripts/check_links.py` verifies those Markdown files are present and that every data source uses an approved official operator domain.
 
 Coordination and open items: `COORDINATION.md`.
