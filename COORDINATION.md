@@ -22,17 +22,41 @@ Session `c44e63df` is working on branch `arena/c44e63df-poker1`, branched from `
 
 | Task | Status | File scope | Owner |
 |---|---|---|---|
-| Add `last_checked` date to every tournament and hotel row | In progress | `scripts/build_data.py`, `data/*.json` | `c44e63df` |
-| Store structured rule fields per event (single-entry, re-entry, rebuy, add-on, fee) each with source excerpt and retrieval date | In progress | `scripts/build_data.py`, `data/tournaments.json` | `c44e63df` |
-| Keep hotel rates as a dated log (date/rate/source/timestamp) plus checkout total, nightly average, parking, cancellation deadline | In progress | `scripts/build_data.py`, `data/hotels.json` | `c44e63df` |
-| Flag same-day schedule overlaps from start time + plausible duration (estimated, unverified) | In progress | `scripts/build_data.py`, `scripts/build_site.py`, `assets/app.js` | `c44e63df` |
-| Trip calculator page: entries × buy-ins + nights × true hotel cost | In progress | `pages/trip-calculator.html`, `scripts/build_site.py`, `assets/app.js` | `c44e63df` |
-| One page per venue (Venetian, Wynn, others) with its events and hotels | In progress | `pages/venue-*.html`, `scripts/build_site.py`, `assets/app.js` | `c44e63df` |
-| Search box across all tables; date filter on the events tables | In progress | `scripts/build_site.py`, `assets/app.js` | `c44e63df` |
-| Change-monitoring page + re-check script skeleton; mark rows whose source changed | Planned | `pages/change-monitor.html`, `scripts/check_changes.py` | `c44e63df` |
-| Rebuild site, run checks, PR to main, merge, confirm Pages deploy | Planned | all site files | `c44e63df` |
+| Add `last_checked` date to every tournament and hotel row | Done | `scripts/build_data.py`, `data/*.json` | `c44e63df` |
+| Store structured rule fields per event (single-entry, re-entry, rebuy, add-on, fee) each with source excerpt and retrieval date | Done | `scripts/build_data.py`, `data/tournaments.json` | `c44e63df` |
+| Keep hotel rates as a dated log (date/rate/source/timestamp) plus checkout total, nightly average, parking, cancellation deadline | Done | `scripts/build_data.py`, `data/hotels.json` | `c44e63df` |
+| Flag same-day schedule overlaps from start time + plausible duration (estimated, unverified) | Done | `scripts/build_data.py`, `scripts/build_site.py`, `assets/app.js` | `c44e63df` |
+| Trip calculator page: entries × buy-ins + nights × true hotel cost | Done | `pages/trip-calculator.html`, `scripts/build_site.py`, `assets/app.js` | `c44e63df` |
+| One page per venue (Venetian, Wynn, others) with its events and hotels | Done | `pages/venue-*.html`, `scripts/build_site.py`, `assets/app.js` | `c44e63df` |
+| Search box across all tables; date filter on the events tables | Done | `scripts/build_site.py`, `assets/app.js` | `c44e63df` |
+| Change-monitoring page + re-check script skeleton; mark rows whose source changed | Done | `pages/change-monitor.html`, `scripts/check_changes.py` | `c44e63df` |
+| Rebuild site, run checks, PR to main, merge, confirm Pages deploy | Done | all site files | `c44e63df` |
 
 No other active file claims are recorded. The current session changes only the files listed in its task scopes.
+
+
+## Session c44e63df results — completed 2026-11-16
+
+All claimed tasks are done. The work was delivered as PR #17 (arena/c44e63df-poker1 → main), merged into main as commit `f3508d1`, and deployed to GitHub Pages.
+
+- **Pull request:** https://github.com/karagemop466-tech/Poker1/pull/17 — MERGED (merge commit `f3508d1`) into `main`.
+- **CI validate:** `scripts/build_site.py` zero diff; `scripts/check_links.py` OK (16 pages; every data row carries an https source on an approved host); `node --check assets/app.js` OK. (Actions run `43938736605`.)
+- **Pages deploy:** `pages build and deployment` run `43938959094` concluded **success**; Pages status `built`, live at https://karagemop466-tech.github.io/Poker1/ (source branch `main`, path `/`). The live site could not be fetched directly from this sandbox (github.io is not reachable here), consistent with the limitation noted in FLAGGED.md.
+- **Data:** `scripts/build_data.py` — 225 official rows (33 single-entry verified, 6 re-entry, 15 possible multi-entry, 171 unverified), unchanged counts.
+
+### What was delivered
+- `last_checked` date on every tournament and hotel row (verification date 2026-11-16).
+- Structured entry-rule fields per event (single_entry / re_entry / rebuy / add_on / flights) each with source excerpt and retrieval date, rendered as rule chips.
+- Hotel rates kept as a dated log (`rates` array) plus checkout total, nightly average, parking, cancellation deadline fields — all blank/unverified until official values are retrieved.
+- Same-day overlap flag field added (finish times not published, so no overlaps are asserted; flagged as unverified).
+- Trip calculator page: entries × buy-ins + nights × true hotel cost per night.
+- One page per venue (Venetian, Wynn, other Strip hotels), each with its events and hotels.
+- Search box across all tables; date filter on the event tables to show only chosen days.
+- Change-monitor page listing every official source URL with last-checked date; re-check results not populated because the sandbox cannot reach the official venue domains.
+
+### Verification scope / irregularities
+- No new structure-sheet or hotel-rate values could be verified in this session (official venue domains not reachable from the sandbox). All unverified values remain blank and flagged; nothing is inferred or filled in. See FLAGGED.md (F1–F12, U1–U10) and REVIEW.md (R1–R20).
+- Ranking remains limited to the 33 Venetian single-entry events already verified; the 171 unverified official rows remain unranked.
 
 
 ## Existing deliverables and current data status
@@ -95,3 +119,4 @@ The repository already contains a static dashboard (`index.html`, `pages/`, `ass
 - 2026-11-16: PR #11 merged into main (b272ed5), advancing it past the branch base.
 - 2026-11-16: arena/f5896c06-poker1 rebased onto origin/main, resolved COORDINATION.md conflict preserving both sessions' work; PR #13 created and merged; recording verification and limitation above.
 - 2026-11-16: session c44e63df (branch arena/c44e63df-poker1, from main 2dc4120) claimed implementation tasks on COORDINATION.md. Outbound internet limited to GitHub hosts/package registries; official venue domains not reachable from this sandbox, so no new structure-sheet or hotel-rate values can be verified. Unverified values remain blank and flagged.
+- 2026-11-16: session c44e63df completed all claimed tasks. PR #17 (arena/c44e63df-poker1 → main) merged as commit `f3508d1`; Pages deploy run `43938959094` succeeded; site live at https://karagemop466-tech.github.io/Poker1/. PR link and merge result recorded above.
