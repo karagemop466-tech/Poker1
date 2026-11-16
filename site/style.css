@@ -1,0 +1,80 @@
+/* Poker1 — Las Vegas Strip poker vacation planner */
+:root {
+  --bg: #f7f5f0;
+  --surface: #ffffff;
+  --ink: #1a1a1a;
+  --muted: #5b5b5b;
+  --line: #d8d4c8;
+  --accent: #8a1c1c;
+  --accent-soft: #f3e9e9;
+  --green: #1e6b3a;
+  --green-soft: #e9f4ec;
+  --amber: #b97a1a;
+  --amber-soft: #fdf3e3;
+  --red: #a31616;
+  --red-soft: #fbeaea;
+  --blue: #1d4e89;
+  --blue-soft: #e8eef6;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg); color: var(--ink); line-height: 1.5;
+}
+a { color: var(--blue); text-decoration: underline; }
+a:hover { text-decoration: underline; text-decoration-color: var(--accent); }
+.header {
+  background: var(--ink); color: #fff; padding: 24px 32px;
+}
+.header h1 { margin: 0 0 6px 0; font-size: 26px; letter-spacing: 0.4px; }
+.header .sub { color: #c9c2b4; font-size: 14px; }
+.nav { background: var(--surface); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 100; }
+.nav ul { display: flex; flex-wrap: wrap; margin: 0; padding: 0 32px; list-style: none; }
+.nav li { margin-right: 22px; }
+.nav a { display: block; padding: 14px 4px; color: var(--ink); text-decoration: none; font-weight: 600; font-size: 14px; border-bottom: 3px solid transparent; }
+.nav a:hover { color: var(--accent); border-bottom-color: var(--accent); }
+.nav a.active { color: var(--accent); border-bottom-color: var(--accent); }
+.container { max-width: 1200px; margin: 0 auto; padding: 28px 32px; }
+.page { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 26px 32px; margin-bottom: 24px; }
+.page h2 { margin-top: 0; font-size: 22px; border-bottom: 2px solid var(--line); padding-bottom: 10px; }
+.page h3 { font-size: 16px; margin: 20px 0 8px; color: var(--accent); }
+p { margin: 0 0 12px; }
+table { width: 100%; border-collapse: collapse; margin: 12px 0 22px; font-size: 13px; }
+th, td { border: 1px solid var(--line); padding: 7px 9px; text-align: left; vertical-align: top; }
+th { background: #eeeae0; font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 0.3px; }
+tr:nth-child(even) td { background: #fbfaf6; }
+.tag { display: inline-block; font-size: 11px; font-weight: 700; padding: 1px 6px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.3px; }
+.tag-unverified { background: var(--amber-soft); color: var(--amber); }
+.tag-verified { background: var(--green-soft); color: var(--green); }
+.tag-red { background: var(--red-soft); color: var(--red); }
+.tag-blue { background: var(--blue-soft); color: var(--blue); }
+.src { font-size: 11.5px; color: var(--muted); }
+.src a { color: var(--blue); text-decoration: underline dashed; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 20px 0; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 18px 20px; }
+.card h4 { margin: 0 0 8px 0; font-size: 15px; }
+.card p { margin: 0; font-size: 13.5px; color: var(--muted); }
+.card b { color: var(--ink); }
+.callout { border-radius: 6px; padding: 14px 18px; margin: 14px 0; }
+.callout-amber { background: var(--amber-soft); border-left: 4px solid var(--amber); }
+.callout-red { background: var(--red-soft); border-left: 4px solid var(--red); }
+.callout-green { background: var(--green-soft); border-left: 4px solid var(--green); }
+.callout-blue { background: var(--blue-soft); border-left: 4px solid var(--blue); }
+.small { font-size: 12.5px; color: var(--muted); }
+ul { margin: 6px 0 14px 20px; padding: 0; }
+li { margin-bottom: 6px; }
+.foot { border-top: 1px solid var(--line); margin-top: 30px; padding-top: 18px; color: var(--muted); font-size: 12.5px; }
+.nowrap { white-space: nowrap; }
+.center { text-align: center; }
+.warn { color: var(--red); font-weight: 700; }
+
+/* Homepage dashboard */
+.hero { background: linear-gradient(135deg, #2b2822, #1a1a1a); color: #fff; border-radius: 10px; padding: 34px 40px; margin-bottom: 26px; }
+.hero h1 { color: #fff; margin: 0 0 10px; font-size: 30px; }
+.hero p { color: #d8d0c0; margin: 0 0 16px; font-size: 15px; }
+.hero .tag { color: #fff; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.35); }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin-bottom: 24px; }
+.stat { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 16px; }
+.stat .big { font-size: 26px; font-weight: 800; color: var(--accent); }
+.stat .lbl { font-size: 12px; color: var(--muted); margin-top: 4px; }
+.kicker { font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: var(--accent); font-weight: 700; margin-bottom: 8px; }
