@@ -1,0 +1,3692 @@
+{
+  "generated": "2026-11-16",
+  "as_of": "2026-11-16 (Houston, TX local date)",
+  "series": "Venetian DeepStack Extravaganza IV (Nov 16 – Dec 23, 2026)",
+  "main_single_entry": [
+    {
+      "event": 52,
+      "date": "2026-12-15",
+      "start": "11:10 AM",
+      "name": "$1,100 No Limit Hold'em PKO (Progressive Knock-Out Bounty) $75K GTD (1Day)",
+      "buy_in": 1100,
+      "gtd": 75000,
+      "house_fee": 130,
+      "prize_pool": 970,
+      "bounty": true,
+      "eligibility": "21+ with Venetian Rewards card",
+      "notes": "",
+      "gtd_note": "$75,000 guarantee = prize pool + total bounty money (schedule: PKO).",
+      "entry_type": "Candidate: no re-entry or add-on terms printed on structure sheet (explicit single-entry wording not found)",
+      "structure_sheet": 34,
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_34.pdf",
+      "sheet_read": true,
+      "rank": 1
+    },
+    {
+      "event": 36,
+      "date": "2026-12-09",
+      "start": "11:10 AM",
+      "name": "$800 No Limit Hold'em Bounty $75K GTD (1Day)",
+      "buy_in": 800,
+      "gtd": 75000,
+      "house_fee": 100,
+      "prize_pool": 700,
+      "bounty": true,
+      "eligibility": "21+ with Venetian Rewards card",
+      "notes": "",
+      "gtd_note": "$75,000 guarantee = prize pool + total bounties. $200 bounties to start, $500 once in the money.",
+      "entry_type": "Candidate: no re-entry or add-on terms printed on structure sheet (explicit single-entry wording not found)",
+      "structure_sheet": 16,
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_16.pdf",
+      "sheet_read": true,
+      "rank": 2
+    },
+    {
+      "event": 14,
+      "date": "2026-11-27",
+      "start": "11:10 AM",
+      "name": "$600 No Limit Hold'em $30K GTD (1Day)",
+      "buy_in": 600,
+      "gtd": 30000,
+      "house_fee": 90,
+      "prize_pool": 510,
+      "bounty": false,
+      "eligibility": "21+ with Venetian Rewards card",
+      "notes": "",
+      "gtd_note": null,
+      "entry_type": "Candidate: no re-entry or add-on terms printed on structure sheet (explicit single-entry wording not found)",
+      "structure_sheet": 7,
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf",
+      "sheet_read": true,
+      "rank": 3
+    },
+    {
+      "event": 16,
+      "date": "2026-11-28",
+      "start": "11:10 AM",
+      "name": "$600 No Limit Hold'em Bounty $30K GTD (1Day)",
+      "buy_in": 600,
+      "gtd": 30000,
+      "house_fee": 90,
+      "prize_pool": 510,
+      "bounty": true,
+      "eligibility": "21+ with Venetian Rewards card",
+      "notes": "",
+      "gtd_note": "$30,000 guarantee = prize pool + total bounties. $200 bounties to start, $500 once in the money.",
+      "entry_type": "Candidate: no re-entry or add-on terms printed on structure sheet (explicit single-entry wording not found)",
+      "structure_sheet": 11,
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf",
+      "sheet_read": true,
+      "rank": 4
+    },
+    {
+      "event": 24,
+      "date": "2026-12-02",
+      "start": "10:10 AM",
+      "name": "$600 No Limit Hold'em Seniors $40K GTD (1Day) — 50+ only",
+      "buy_in": 600,
+      "gtd": 40000,
+      "house_fee": 90,
+      "prize_pool": 510,
+      "bounty": false,
+      "eligibility": "50+ with Venetian Rewards card",
+      "notes": "15% of field paid (local notes, sheet 17).",
+      "gtd_note": null,
+      "entry_type": "Candidate: no re-entry or add-on terms printed on structure sheet (explicit single-entry wording not found)",
+      "structure_sheet": 17,
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf",
+      "sheet_read": true,
+      "rank": 5
+    },
+    {
+      "event": 27,
+      "date": "2026-12-03",
+      "start": "12:10 PM",
+      "name": "$600 BIG O $25K GTD (1Day)",
+      "buy_in": 600,
+      "gtd": 25000,
+      "house_fee": 90,
+      "prize_pool": 510,
+      "bounty": false,
+      "eligibility": "21+ with Venetian Rewards card",
+      "notes": "Event name as printed: BIG O.",
+      "gtd_note": null,
+      "entry_type": "Candidate: no re-entry or add-on terms printed on structure sheet (explicit single-entry wording not found)",
+      "structure_sheet": 28,
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_28.pdf",
+      "sheet_read": true,
+      "rank": 6
+    },
+    {
+      "event": 28,
+      "date": "2026-12-06",
+      "start": "11:10 AM",
+      "name": "$600 No Limit Hold'em $40K GTD (1Day)",
+      "buy_in": 600,
+      "gtd": 40000,
+      "house_fee": 90,
+      "prize_pool": 510,
+      "bounty": false,
+      "eligibility": "21+ with Venetian Rewards card",
+      "notes": "",
+      "gtd_note": null,
+      "entry_type": "Candidate: no re-entry or add-on terms printed on structure sheet (explicit single-entry wording not found)",
+      "structure_sheet": 7,
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf",
+      "sheet_read": true,
+      "rank": 7
+    },
+    {
+      "event": 30,
+      "date": "2026-12-07",
+      "start": "11:10 AM",
+      "name": "$600 No Limit Hold'em Bounty $40K GTD (1Day)",
+      "buy_in": 600,
+      "gtd": 40000,
+      "house_fee": 90,
+      "prize_pool": 510,
+      "bounty": true,
+      "eligibility": "21+ with Venetian Rewards card",
+      "notes": "",
+      "gtd_note": "$40,000 guarantee = prize pool + total bounties. $200 bounties to start, $500 once in the money.",
+      "entry_type": "Candidate: no re-entry or add-on terms printed on structure sheet (explicit single-entry wording not found)",
+      "structure_sheet": 11,
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf",
+      "sheet_read": true,
+      "rank": 8
+    },
+    {
+      "event": 32,
+      "date": "2026-12-08",
+      "start": "10:10 AM",
+      "name": "$600 No Limit Hold'em Seniors $40K GTD (1Day) — 50+ only",
+      "buy_in": 600,
+      "gtd": 40000,
+      "house_fee": 90,
+      "prize_pool": 510,
+      "bounty": false,
+      "eligibility": "50+ with Venetian Rewards card",
+      "notes": "15% of field paid (local notes, sheet 17).",
+      "gtd_note": null,
+      "entry_type": "Candidate: no re-entry or add-on terms printed on structure sheet (explicit single-entry wording not found)",
+      "structure_sheet": 17,
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf",
+      "sheet_read": true,
+      "rank": 9
+    },
+    {
+      "event": 40,
+      "date": "2026-12-10",
+      "start": "12:10 PM",
+      "name": "$600 Pot Limit Omaha Bounty $25K GTD (1Day)",
+      "buy_in": 600,
+      "gtd": 25000,
+      "house_fee": 90,
+      "prize_pool": 510,
+      "bounty": true,
+      "eligibility": "21+ with Venetian Rewards card",
+      "notes": "",
+      "gtd_note": "$25,000 guarantee = prize pool + total bounties ($200 bounty).",
+      "entry_type": "Candidate: no re-entry or add-on terms printed on structure sheet (explicit single-entry wording not found)",
+      "structure_sheet": 27,
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_27.pdf",
+      "sheet_read": true,
+      "rank": 10
+    },
+    {
+      "event": 43,
+      "date": "2026-12-11",
+      "start": "11:10 AM",
+      "name": "$600 No Limit Hold'em LIPS KINGS & QUEENS Bounty $30K GTD (1Day)",
+      "buy_in": 600,
+      "gtd": 30000,
+      "house_fee": 90,
+      "prize_pool": 510,
+      "bounty": true,
+      "eligibility": "Open to all players (schedule: KINGS and QUEENS, open to all)",
+      "notes": "$80 house fee plus $10 flat fee to LIPS (Vegas Connected, Inc.) — $90 total withheld; $510 prize pool.",
+      "gtd_note": "$30,000 guarantee = prize pool + total bounties ($200 bounty).",
+      "entry_type": "Candidate: no re-entry or add-on terms printed on structure sheet (explicit single-entry wording not found)",
+      "structure_sheet": 33,
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_33.pdf",
+      "sheet_read": true,
+      "rank": 11
+    },
+    {
+      "event": 54,
+      "date": "2026-12-16",
+      "start": "11:10 AM",
+      "name": "$600 No Limit Hold'em Bounty $50K GTD (1Day)",
+      "buy_in": 600,
+      "gtd": 50000,
+      "house_fee": 90,
+      "prize_pool": 510,
+      "bounty": true,
+      "eligibility": "21+ with Venetian Rewards card",
+      "notes": "",
+      "gtd_note": "$50,000 guarantee = prize pool + total bounties. $200 bounties to start, $500 once in the money.",
+      "entry_type": "Candidate: no re-entry or add-on terms printed on structure sheet (explicit single-entry wording not found)",
+      "structure_sheet": 11,
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf",
+      "sheet_read": true,
+      "rank": 12
+    },
+    {
+      "event": 57,
+      "date": "2026-12-17",
+      "start": "12:10 PM",
+      "name": "$600 Pot Limit Omaha Double Board Bomb Pot $25K GTD (1Day)",
+      "buy_in": 600,
+      "gtd": 25000,
+      "house_fee": 90,
+      "prize_pool": 510,
+      "bounty": false,
+      "eligibility": "21+ with Venetian Rewards card",
+      "notes": "Double-board bomb pot format (schedule).",
+      "gtd_note": null,
+      "entry_type": "Candidate: no re-entry or add-on terms printed on structure sheet (explicit single-entry wording not found)",
+      "structure_sheet": 23,
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_23.pdf",
+      "sheet_read": true,
+      "rank": 13
+    },
+    {
+      "event": 63,
+      "date": "2026-12-23",
+      "start": "11:10 AM",
+      "name": "$600 No Limit Hold'em $30K GTD (1Day)",
+      "buy_in": 600,
+      "gtd": 30000,
+      "house_fee": 90,
+      "prize_pool": 510,
+      "bounty": false,
+      "eligibility": "21+ with Venetian Rewards card",
+      "notes": "",
+      "gtd_note": null,
+      "entry_type": "Candidate: no re-entry or add-on terms printed on structure sheet (explicit single-entry wording not found)",
+      "structure_sheet": 7,
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf",
+      "sheet_read": true,
+      "rank": 14
+    },
+    {
+      "event": 17,
+      "date": "2026-11-28",
+      "start": "12:10 PM",
+      "name": "$400 Pot Limit Omaha Bounty $15K GTD (1Day)",
+      "buy_in": 400,
+      "gtd": 15000,
+      "house_fee": 60,
+      "prize_pool": 340,
+      "bounty": true,
+      "eligibility": "21+ with Venetian Rewards card",
+      "notes": "",
+      "gtd_note": "$15,000 guarantee = prize pool + total bounties ($100 bounty).",
+      "entry_type": "Candidate: no re-entry or add-on terms printed on structure sheet (explicit single-entry wording not found)",
+      "structure_sheet": 26,
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_26.pdf",
+      "sheet_read": true,
+      "rank": 15
+    },
+    {
+      "event": 10,
+      "date": "2026-11-25",
+      "start": "11:10 AM",
+      "name": "$400 No Limit Hold'em $15K GTD (1Day)",
+      "buy_in": 400,
+      "gtd": 15000,
+      "house_fee": 65,
+      "prize_pool": 335,
+      "bounty": false,
+      "eligibility": "21+ with Venetian Rewards card",
+      "notes": "",
+      "gtd_note": null,
+      "entry_type": "Candidate: no re-entry or add-on terms printed on structure sheet (explicit single-entry wording not found)",
+      "structure_sheet": 6,
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_6.pdf",
+      "sheet_read": true,
+      "rank": 16
+    },
+    {
+      "event": 29,
+      "date": "2026-12-06",
+      "start": "5:10 PM",
+      "name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)",
+      "buy_in": 300,
+      "gtd": 15000,
+      "house_fee": 50,
+      "prize_pool": 250,
+      "bounty": true,
+      "eligibility": "21+ with Venetian Rewards card",
+      "notes": "",
+      "gtd_note": "$15,000 guarantee = prize pool + total bounties.",
+      "entry_type": "Candidate: no re-entry or add-on terms printed on structure sheet (explicit single-entry wording not found)",
+      "structure_sheet": 15,
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
+      "sheet_read": true,
+      "rank": 17
+    },
+    {
+      "event": 31,
+      "date": "2026-12-07",
+      "start": "5:10 PM",
+      "name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)",
+      "buy_in": 300,
+      "gtd": 15000,
+      "house_fee": 50,
+      "prize_pool": 250,
+      "bounty": true,
+      "eligibility": "21+ with Venetian Rewards card",
+      "notes": "",
+      "gtd_note": "$15,000 guarantee = prize pool + total bounties.",
+      "entry_type": "Candidate: no re-entry or add-on terms printed on structure sheet (explicit single-entry wording not found)",
+      "structure_sheet": 15,
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
+      "sheet_read": true,
+      "rank": 18
+    },
+    {
+      "event": 34,
+      "date": "2026-12-08",
+      "start": "5:10 PM",
+      "name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)",
+      "buy_in": 300,
+      "gtd": 15000,
+      "house_fee": 50,
+      "prize_pool": 250,
+      "bounty": true,
+      "eligibility": "21+ with Venetian Rewards card",
+      "notes": "",
+      "gtd_note": "$15,000 guarantee = prize pool + total bounties.",
+      "entry_type": "Candidate: no re-entry or add-on terms printed on structure sheet (explicit single-entry wording not found)",
+      "structure_sheet": 15,
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
+      "sheet_read": true,
+      "rank": 19
+    },
+    {
+      "event": 38,
+      "date": "2026-12-09",
+      "start": "5:10 PM",
+      "name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)",
+      "buy_in": 300,
+      "gtd": 15000,
+      "house_fee": 50,
+      "prize_pool": 250,
+      "bounty": true,
+      "eligibility": "21+ with Venetian Rewards card",
+      "notes": "",
+      "gtd_note": "$15,000 guarantee = prize pool + total bounties.",
+      "entry_type": "Candidate: no re-entry or add-on terms printed on structure sheet (explicit single-entry wording not found)",
+      "structure_sheet": 15,
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
+      "sheet_read": true,
+      "rank": 20
+    },
+    {
+      "event": 42,
+      "date": "2026-12-10",
+      "start": "5:10 PM",
+      "name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)",
+      "buy_in": 300,
+      "gtd": 15000,
+      "house_fee": 50,
+      "prize_pool": 250,
+      "bounty": true,
+      "eligibility": "21+ with Venetian Rewards card",
+      "notes": "",
+      "gtd_note": "$15,000 guarantee = prize pool + total bounties.",
+      "entry_type": "Candidate: no re-entry or add-on terms printed on structure sheet (explicit single-entry wording not found)",
+      "structure_sheet": 15,
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
+      "sheet_read": true,
+      "rank": 21
+    },
+    {
+      "event": 50,
+      "date": "2026-12-13",
+      "start": "5:10 PM",
+      "name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)",
+      "buy_in": 300,
+      "gtd": 15000,
+      "house_fee": 50,
+      "prize_pool": 250,
+      "bounty": true,
+      "eligibility": "21+ with Venetian Rewards card",
+      "notes": "",
+      "gtd_note": "$15,000 guarantee = prize pool + total bounties.",
+      "entry_type": "Candidate: no re-entry or add-on terms printed on structure sheet (explicit single-entry wording not found)",
+      "structure_sheet": 15,
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
+      "sheet_read": true,
+      "rank": 22
+    },
+    {
+      "event": 51,
+      "date": "2026-12-14",
+      "start": "5:10 PM",
+      "name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)",
+      "buy_in": 300,
+      "gtd": 15000,
+      "house_fee": 50,
+      "prize_pool": 250,
+      "bounty": true,
+      "eligibility": "21+ with Venetian Rewards card",
+      "notes": "",
+      "gtd_note": "$15,000 guarantee = prize pool + total bounties.",
+      "entry_type": "Candidate: no re-entry or add-on terms printed on structure sheet (explicit single-entry wording not found)",
+      "structure_sheet": 15,
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
+      "sheet_read": true,
+      "rank": 23
+    },
+    {
+      "event": 53,
+      "date": "2026-12-15",
+      "start": "5:10 PM",
+      "name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)",
+      "buy_in": 300,
+      "gtd": 15000,
+      "house_fee": 50,
+      "prize_pool": 250,
+      "bounty": true,
+      "eligibility": "21+ with Venetian Rewards card",
+      "notes": "",
+      "gtd_note": "$15,000 guarantee = prize pool + total bounties.",
+      "entry_type": "Candidate: no re-entry or add-on terms printed on structure sheet (explicit single-entry wording not found)",
+      "structure_sheet": 15,
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
+      "sheet_read": true,
+      "rank": 24
+    },
+    {
+      "event": 55,
+      "date": "2026-12-16",
+      "start": "5:10 PM",
+      "name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)",
+      "buy_in": 300,
+      "gtd": 15000,
+      "house_fee": 50,
+      "prize_pool": 250,
+      "bounty": true,
+      "eligibility": "21+ with Venetian Rewards card",
+      "notes": "",
+      "gtd_note": "$15,000 guarantee = prize pool + total bounties.",
+      "entry_type": "Candidate: no re-entry or add-on terms printed on structure sheet (explicit single-entry wording not found)",
+      "structure_sheet": 15,
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
+      "sheet_read": true,
+      "rank": 25
+    },
+    {
+      "event": 2,
+      "date": "2026-11-18",
+      "start": "11:10 AM",
+      "name": "$300 No Limit Hold'em (1Day)",
+      "buy_in": 300,
+      "gtd": 10000,
+      "house_fee": 58,
+      "prize_pool": 242,
+      "bounty": false,
+      "eligibility": "21+ with Venetian Rewards card",
+      "notes": "Sheet 5 read. Late registration window not printed on sheet 5.",
+      "gtd_note": null,
+      "entry_type": "Candidate: no re-entry or add-on terms printed on structure sheet (explicit single-entry wording not found)",
+      "structure_sheet": 5,
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf",
+      "sheet_read": true,
+      "rank": 26
+    },
+    {
+      "event": 12,
+      "date": "2026-11-26",
+      "start": "11:10 AM",
+      "name": "$300 No Limit Hold'em $10K GTD (1Day)",
+      "buy_in": 300,
+      "gtd": 10000,
+      "house_fee": 58,
+      "prize_pool": 242,
+      "bounty": false,
+      "eligibility": "21+ with Venetian Rewards card",
+      "notes": "",
+      "gtd_note": null,
+      "entry_type": "Candidate: no re-entry or add-on terms printed on structure sheet (explicit single-entry wording not found)",
+      "structure_sheet": 5,
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf",
+      "sheet_read": true,
+      "rank": 27
+    },
+    {
+      "event": 20,
+      "date": "2026-11-29",
+      "start": "12:10 PM",
+      "name": "$300 Pot Limit Omaha Double Board Bomb Pot $10K GTD (1Day)",
+      "buy_in": 300,
+      "gtd": 10000,
+      "house_fee": 58,
+      "prize_pool": 242,
+      "bounty": false,
+      "eligibility": "21+ with Venetian Rewards card",
+      "notes": "Double-board bomb pot format (schedule).",
+      "gtd_note": null,
+      "entry_type": "Candidate: no re-entry or add-on terms printed on structure sheet (explicit single-entry wording not found)",
+      "structure_sheet": 22,
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_22.pdf",
+      "sheet_read": true,
+      "rank": 28
+    },
+    {
+      "event": 3,
+      "date": "2026-11-19",
+      "start": "10:10 AM",
+      "name": "$200 No Limit Hold'em RaceDay Stack (1Day)",
+      "buy_in": 200,
+      "gtd": null,
+      "house_fee": 35,
+      "prize_pool": 165,
+      "bounty": false,
+      "eligibility": "21+ with Venetian Rewards card",
+      "notes": "Official schedule: 'Race to finish before the Race'. No guarantee printed on schedule or structure sheet.",
+      "gtd_note": null,
+      "entry_type": "Candidate: no re-entry or add-on terms printed on structure sheet (explicit single-entry wording not found)",
+      "structure_sheet": 18,
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf",
+      "sheet_read": true,
+      "rank": 29
+    },
+    {
+      "event": 4,
+      "date": "2026-11-20",
+      "start": "10:10 AM",
+      "name": "$200 No Limit Hold'em RaceDay Stack (1Day)",
+      "buy_in": 200,
+      "gtd": null,
+      "house_fee": 35,
+      "prize_pool": 165,
+      "bounty": false,
+      "eligibility": "21+ with Venetian Rewards card",
+      "notes": "Same RaceDay structure as Event 3. No guarantee printed.",
+      "gtd_note": null,
+      "entry_type": "Candidate: no re-entry or add-on terms printed on structure sheet (explicit single-entry wording not found)",
+      "structure_sheet": 18,
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf",
+      "sheet_read": true,
+      "rank": 30
+    },
+    {
+      "event": 5,
+      "date": "2026-11-21",
+      "start": "10:10 AM",
+      "name": "$200 No Limit Hold'em RaceDay Stack (1Day)",
+      "buy_in": 200,
+      "gtd": null,
+      "house_fee": 35,
+      "prize_pool": 165,
+      "bounty": false,
+      "eligibility": "21+ with Venetian Rewards card",
+      "notes": "Same RaceDay structure as Event 3. No guarantee printed.",
+      "gtd_note": null,
+      "entry_type": "Candidate: no re-entry or add-on terms printed on structure sheet (explicit single-entry wording not found)",
+      "structure_sheet": 18,
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf",
+      "sheet_read": true,
+      "rank": 31
+    },
+    {
+      "event": 6,
+      "date": "2026-11-22",
+      "start": "11:10 AM",
+      "name": "$200 No Limit Hold'em (1Day)",
+      "buy_in": 200,
+      "gtd": null,
+      "house_fee": 40,
+      "prize_pool": 160,
+      "bounty": false,
+      "eligibility": "21+ with Venetian Rewards card",
+      "notes": "No guarantee printed on schedule or structure sheet.",
+      "gtd_note": null,
+      "entry_type": "Candidate: no re-entry or add-on terms printed on structure sheet (explicit single-entry wording not found)",
+      "structure_sheet": 29,
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_29.pdf",
+      "sheet_read": true,
+      "rank": 32
+    },
+    {
+      "event": 8,
+      "date": "2026-11-23",
+      "start": "5:10 PM",
+      "name": "$200 No Limit Hold'em PKO (Progressive Knock-Out Bounty) (1Day)",
+      "buy_in": 200,
+      "gtd": 8000,
+      "house_fee": 40,
+      "prize_pool": 160,
+      "bounty": true,
+      "eligibility": "21+ with Venetian Rewards card",
+      "notes": "",
+      "gtd_note": "$8,000 guarantee = prize pool + total bounty money awarded.",
+      "entry_type": "Candidate: no re-entry or add-on terms printed on structure sheet (explicit single-entry wording not found)",
+      "structure_sheet": 30,
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_30.pdf",
+      "sheet_read": true,
+      "rank": 33
+    },
+    {
+      "event": 9,
+      "date": "2026-11-24",
+      "start": "5:10 PM",
+      "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+      "buy_in": 200,
+      "gtd": 8000,
+      "house_fee": 40,
+      "prize_pool": 160,
+      "bounty": true,
+      "eligibility": "21+ with Venetian Rewards card",
+      "notes": "",
+      "gtd_note": "$8,000 guarantee = prize pool + total bounties ($50 per elimination, sheet 1).",
+      "entry_type": "Candidate: no re-entry or add-on terms printed on structure sheet (explicit single-entry wording not found)",
+      "structure_sheet": 1,
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+      "sheet_read": true,
+      "rank": 34
+    },
+    {
+      "event": 11,
+      "date": "2026-11-25",
+      "start": "5:10 PM",
+      "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+      "buy_in": 200,
+      "gtd": 8000,
+      "house_fee": 40,
+      "prize_pool": 160,
+      "bounty": true,
+      "eligibility": "21+ with Venetian Rewards card",
+      "notes": "",
+      "gtd_note": "$8,000 guarantee = prize pool + total bounties.",
+      "entry_type": "Candidate: no re-entry or add-on terms printed on structure sheet (explicit single-entry wording not found)",
+      "structure_sheet": 1,
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+      "sheet_read": true,
+      "rank": 35
+    },
+    {
+      "event": 13,
+      "date": "2026-11-26",
+      "start": "5:10 PM",
+      "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+      "buy_in": 200,
+      "gtd": 8000,
+      "house_fee": 40,
+      "prize_pool": 160,
+      "bounty": true,
+      "eligibility": "21+ with Venetian Rewards card",
+      "notes": "",
+      "gtd_note": "$8,000 guarantee = prize pool + total bounties.",
+      "entry_type": "Candidate: no re-entry or add-on terms printed on structure sheet (explicit single-entry wording not found)",
+      "structure_sheet": 1,
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+      "sheet_read": true,
+      "rank": 36
+    },
+    {
+      "event": 15,
+      "date": "2026-11-27",
+      "start": "5:10 PM",
+      "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+      "buy_in": 200,
+      "gtd": 8000,
+      "house_fee": 40,
+      "prize_pool": 160,
+      "bounty": true,
+      "eligibility": "21+ with Venetian Rewards card",
+      "notes": "",
+      "gtd_note": "$8,000 guarantee = prize pool + total bounties.",
+      "entry_type": "Candidate: no re-entry or add-on terms printed on structure sheet (explicit single-entry wording not found)",
+      "structure_sheet": 1,
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+      "sheet_read": true,
+      "rank": 37
+    },
+    {
+      "event": 18,
+      "date": "2026-11-28",
+      "start": "5:10 PM",
+      "name": "$200 No Limit Hold'em PokerAtlas Valuetown Bounty $20K GTD (1Day)",
+      "buy_in": 200,
+      "gtd": 20000,
+      "house_fee": 40,
+      "prize_pool": 160,
+      "bounty": true,
+      "eligibility": "21+ with Venetian Rewards card",
+      "notes": "Schedule: PokerAtlas PRO member $20 rake discount. Local notes (sheet 8, rule 7): discount applies to initial buy-in only. Membership-linked.",
+      "gtd_note": "$20,000 guarantee = prize pool + total bounties.",
+      "entry_type": "Candidate: no re-entry or add-on terms printed on structure sheet (explicit single-entry wording not found)",
+      "structure_sheet": 8,
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf",
+      "sheet_read": true,
+      "rank": 38
+    },
+    {
+      "event": 21,
+      "date": "2026-11-29",
+      "start": "5:10 PM",
+      "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+      "buy_in": 200,
+      "gtd": 8000,
+      "house_fee": 40,
+      "prize_pool": 160,
+      "bounty": true,
+      "eligibility": "21+ with Venetian Rewards card",
+      "notes": "",
+      "gtd_note": "$8,000 guarantee = prize pool + total bounties.",
+      "entry_type": "Candidate: no re-entry or add-on terms printed on structure sheet (explicit single-entry wording not found)",
+      "structure_sheet": 1,
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+      "sheet_read": true,
+      "rank": 39
+    },
+    {
+      "event": 22,
+      "date": "2026-11-30",
+      "start": "5:10 PM",
+      "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+      "buy_in": 200,
+      "gtd": 8000,
+      "house_fee": 40,
+      "prize_pool": 160,
+      "bounty": true,
+      "eligibility": "21+ with Venetian Rewards card",
+      "notes": "",
+      "gtd_note": "$8,000 guarantee = prize pool + total bounties.",
+      "entry_type": "Candidate: no re-entry or add-on terms printed on structure sheet (explicit single-entry wording not found)",
+      "structure_sheet": 1,
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+      "sheet_read": true,
+      "rank": 40
+    },
+    {
+      "event": 23,
+      "date": "2026-12-01",
+      "start": "5:10 PM",
+      "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+      "buy_in": 200,
+      "gtd": 8000,
+      "house_fee": 40,
+      "prize_pool": 160,
+      "bounty": true,
+      "eligibility": "21+ with Venetian Rewards card",
+      "notes": "",
+      "gtd_note": "$8,000 guarantee = prize pool + total bounties.",
+      "entry_type": "Candidate: no re-entry or add-on terms printed on structure sheet (explicit single-entry wording not found)",
+      "structure_sheet": 1,
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+      "sheet_read": true,
+      "rank": 41
+    },
+    {
+      "event": 25,
+      "date": "2026-12-02",
+      "start": "5:10 PM",
+      "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+      "buy_in": 200,
+      "gtd": 8000,
+      "house_fee": 40,
+      "prize_pool": 160,
+      "bounty": true,
+      "eligibility": "21+ with Venetian Rewards card",
+      "notes": "",
+      "gtd_note": "$8,000 guarantee = prize pool + total bounties.",
+      "entry_type": "Candidate: no re-entry or add-on terms printed on structure sheet (explicit single-entry wording not found)",
+      "structure_sheet": 1,
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+      "sheet_read": true,
+      "rank": 42
+    },
+    {
+      "event": 58,
+      "date": "2026-12-19",
+      "start": "5:10 PM",
+      "name": "$200 No Limit Hold'em PokerAtlas Valuetown Bounty $20K GTD (1Day)",
+      "buy_in": 200,
+      "gtd": 20000,
+      "house_fee": 40,
+      "prize_pool": 160,
+      "bounty": true,
+      "eligibility": "21+ with Venetian Rewards card",
+      "notes": "Schedule: PokerAtlas PRO member $20 rake discount. Membership-linked.",
+      "gtd_note": "$20,000 guarantee = prize pool + total bounties.",
+      "entry_type": "Candidate: no re-entry or add-on terms printed on structure sheet (explicit single-entry wording not found)",
+      "structure_sheet": 8,
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf",
+      "sheet_read": true,
+      "rank": 43
+    },
+    {
+      "event": 60,
+      "date": "2026-12-20",
+      "start": "5:10 PM",
+      "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+      "buy_in": 200,
+      "gtd": 8000,
+      "house_fee": 40,
+      "prize_pool": 160,
+      "bounty": true,
+      "eligibility": "21+ with Venetian Rewards card",
+      "notes": "",
+      "gtd_note": "$8,000 guarantee = prize pool + total bounties.",
+      "entry_type": "Candidate: no re-entry or add-on terms printed on structure sheet (explicit single-entry wording not found)",
+      "structure_sheet": 1,
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+      "sheet_read": true,
+      "rank": 44
+    },
+    {
+      "event": 61,
+      "date": "2026-12-21",
+      "start": "5:10 PM",
+      "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+      "buy_in": 200,
+      "gtd": 8000,
+      "house_fee": 40,
+      "prize_pool": 160,
+      "bounty": true,
+      "eligibility": "21+ with Venetian Rewards card",
+      "notes": "",
+      "gtd_note": "$8,000 guarantee = prize pool + total bounties.",
+      "entry_type": "Candidate: no re-entry or add-on terms printed on structure sheet (explicit single-entry wording not found)",
+      "structure_sheet": 1,
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+      "sheet_read": true,
+      "rank": 45
+    },
+    {
+      "event": 62,
+      "date": "2026-12-22",
+      "start": "5:10 PM",
+      "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+      "buy_in": 200,
+      "gtd": 8000,
+      "house_fee": 40,
+      "prize_pool": 160,
+      "bounty": true,
+      "eligibility": "21+ with Venetian Rewards card",
+      "notes": "",
+      "gtd_note": "$8,000 guarantee = prize pool + total bounties.",
+      "entry_type": "Candidate: no re-entry or add-on terms printed on structure sheet (explicit single-entry wording not found)",
+      "structure_sheet": 1,
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+      "sheet_read": true,
+      "rank": 46
+    },
+    {
+      "event": 64,
+      "date": "2026-12-23",
+      "start": "5:10 PM",
+      "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+      "buy_in": 200,
+      "gtd": 8000,
+      "house_fee": 40,
+      "prize_pool": 160,
+      "bounty": true,
+      "eligibility": "21+ with Venetian Rewards card",
+      "notes": "",
+      "gtd_note": "$8,000 guarantee = prize pool + total bounties.",
+      "entry_type": "Candidate: no re-entry or add-on terms printed on structure sheet (explicit single-entry wording not found)",
+      "structure_sheet": 1,
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+      "sheet_read": true,
+      "rank": 47
+    }
+  ],
+  "excluded": [
+    {
+      "category": "Multi-flight / re-entry",
+      "source": "Venetian DSE IV schedule (official)",
+      "event": 1,
+      "date": "2026-11-16",
+      "start": "11:10 AM / 5:10 PM (1A/1B); 11:10 AM / 5:10 PM Nov 17 (1C/1D)",
+      "name": "$300 No Limit Hold'em 1A–1D $75K GTD (flights)",
+      "buy_in": 300,
+      "gtd": 75000,
+      "house_fee": 60,
+      "prize_pool": 240,
+      "reason": "Flights 1A–1D on official schedule. Structure sheet rule 8: a player who bags chips for Day 2 may not play a subsequent flight, so a player can buy into more than one flight before bagging.",
+      "notes": "Day 2 restart Wed Nov 18, 12:00 PM. Sheet 10 (1A/1C) read; sheet 9 (1B/1D) linked on schedule but NOT read — flagged.",
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": [
+        "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf",
+        "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf"
+      ]
+    },
+    {
+      "category": "Multi-flight / re-entry",
+      "source": "Venetian DSE IV schedule (official)",
+      "event": 7,
+      "date": "2026-11-23",
+      "start": "11:10 AM (1A, Nov 23); 11:10 AM (1B, Nov 24)",
+      "name": "$400 No Limit Hold'em 1A/1B $75K GTD (flights)",
+      "buy_in": 400,
+      "gtd": 75000,
+      "house_fee": 70,
+      "prize_pool": 330,
+      "reason": "Flights 1A and 1B. Structure rule 8: a player who bags chips for Day 2 may not play a subsequent flight.",
+      "notes": "Day 2 restart Wed Nov 25, 11:00 AM.",
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": [
+        "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_2.pdf"
+      ]
+    },
+    {
+      "category": "Multi-flight / re-entry",
+      "source": "Venetian DSE IV schedule (official)",
+      "event": 19,
+      "date": "2026-11-29",
+      "start": "11:10 AM (1A Nov 29; 1B Nov 30; 1C Dec 1)",
+      "name": "$400 No Limit Hold'em 1A/1B/1C $75K GTD (flights)",
+      "buy_in": 400,
+      "gtd": 75000,
+      "house_fee": null,
+      "prize_pool": null,
+      "reason": "Flights 1A, 1B and 1C on official schedule (multi-flight label). Sheet 3 linked but NOT read — fee breakdown unverified.",
+      "notes": "Day 2 restart Wed Dec 2, 11:00 AM.",
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": [
+        "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf"
+      ]
+    },
+    {
+      "category": "Multi-flight / re-entry",
+      "source": "Venetian DSE IV schedule (official)",
+      "event": 26,
+      "date": "2026-12-03",
+      "start": "11:10 AM / 5:10 PM across Dec 3–5 (1A–1F)",
+      "name": "$800 No Limit Hold'em 1A–1F $500K GTD (flights, incl. Turbo 1F)",
+      "buy_in": 800,
+      "gtd": 500000,
+      "house_fee": null,
+      "prize_pool": null,
+      "reason": "Six flights (1A–1F) on official schedule — multi-flight. Structure sheets 12/13/14 linked, not read.",
+      "notes": "Day 2 restart Sun Dec 6, 12:00 PM. Fee breakdown unverified.",
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": [
+        "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf",
+        "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf",
+        "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf"
+      ]
+    },
+    {
+      "category": "Multi-flight / re-entry",
+      "source": "Venetian DSE IV schedule (official)",
+      "event": 47,
+      "date": "2026-12-12",
+      "start": "10:10 AM (1A, Dec 12); 6:10 PM (1B, Dec 12)",
+      "name": "$2,200 No Limit Hold'em 1A/1B $1 Million GTD — PokerAtlas Championship Title Event",
+      "buy_in": 2200,
+      "gtd": 1000000,
+      "house_fee": null,
+      "prize_pool": null,
+      "reason": "Flights 1A and 1B on official schedule — multi-flight. Sheets 21/37 linked, not read.",
+      "notes": "Day 2 restart Sun Dec 13, 1:00 PM; Day 3 restart Mon Dec 14, 11:00 AM.",
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": [
+        "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf",
+        "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_37.pdf"
+      ]
+    },
+    {
+      "category": "Multi-flight / re-entry",
+      "source": "Venetian DSE IV schedule (official)",
+      "event": 49,
+      "date": "2026-12-13",
+      "start": "10:10 AM (1A Dec 13); 10:10 AM (1B Dec 14)",
+      "name": "$1,100 No Limit Hold'em Seniors 1A/1B $300K GTD — 50+ only",
+      "buy_in": 1100,
+      "gtd": 300000,
+      "house_fee": null,
+      "prize_pool": null,
+      "reason": "Flights 1A and 1B on official schedule — multi-flight. 50+ only. Sheet 20 linked, not read.",
+      "notes": "Day 2 restart Tue Dec 15, 10:00 AM.",
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": [
+        "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_20.pdf"
+      ]
+    },
+    {
+      "category": "Multi-flight / re-entry",
+      "source": "Venetian DSE IV schedule (official)",
+      "event": 56,
+      "date": "2026-12-17",
+      "start": "10:10 AM (1A Dec 17); 6:10 PM (1B Dec 17); 10:10 AM (1C Dec 18); 6:10 PM (1D Dec 18); 10:10 AM (1E Dec 19)",
+      "name": "$1,100 No Limit Hold'em 1A–1E $500K GTD (flights)",
+      "buy_in": 1100,
+      "gtd": 500000,
+      "house_fee": null,
+      "prize_pool": null,
+      "reason": "Flights 1A–1E on official schedule — multi-flight. Schedule notes a $40 rake discount for entries before 10:10 AM / 6:10 PM. Sheets 35/36 linked, not read.",
+      "notes": "Day 2 restart Sun Dec 20, 11:00 AM.",
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": [
+        "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf",
+        "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf"
+      ]
+    },
+    {
+      "category": "Multi-flight / re-entry",
+      "source": "Venetian DSE IV schedule (official)",
+      "event": 59,
+      "date": "2026-12-20",
+      "start": "11:10 AM (1A Dec 20); 11:10 AM (1B Dec 21); 11:10 AM (1C Dec 22)",
+      "name": "$600 No Limit Hold'em 1A–1C $150K GTD (flights)",
+      "buy_in": 600,
+      "gtd": 150000,
+      "house_fee": null,
+      "prize_pool": null,
+      "reason": "Flights 1A–1C on official schedule — multi-flight. Schedule notes a $20 rake discount for entries before 11:10 AM. Sheet 4 linked, not read.",
+      "notes": "Day 2 restart Wed Dec 23, 11:00 AM.",
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": [
+        "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf"
+      ]
+    },
+    {
+      "category": "Re-entry / rebuy / add-on",
+      "source": "Wynn daily poster + daily structures (official)",
+      "event": null,
+      "date": "Mon–Thu",
+      "start": "12:00 PM",
+      "name": "$200 NLH — $10,000 GTD (single day)",
+      "buy_in": 200,
+      "gtd": 10000,
+      "house_fee": null,
+      "prize_pool": null,
+      "reason": "Re-entry allowed through Level 9 (~4:30 PM). Starting chips 25,000; 30-minute levels.",
+      "notes": "$26 tournament fee + $12 staff service charge; $162 to prize pool",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf"
+      ]
+    },
+    {
+      "category": "Re-entry / rebuy / add-on",
+      "source": "Wynn daily poster + daily structures (official)",
+      "event": null,
+      "date": "Friday",
+      "start": "12:00 PM",
+      "name": "$240 NLH Rebuy & Add-on — $40,000 GTD",
+      "buy_in": 240,
+      "gtd": 40000,
+      "house_fee": null,
+      "prize_pool": null,
+      "reason": "Re-entry NOT allowed. $200 rebuys (25,000 chips) and one $100 add-on (15,000 chips).",
+      "notes": "$35 tournament fee + $15 staff; $190 of each entry to prize pool",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf"
+      ]
+    },
+    {
+      "category": "Re-entry / rebuy / add-on",
+      "source": "Wynn daily poster + daily structures (official)",
+      "event": null,
+      "date": "Sat & Sun",
+      "start": "12:00 PM",
+      "name": "$200 NLH — $25,000 GTD (single day)",
+      "buy_in": 200,
+      "gtd": 25000,
+      "house_fee": null,
+      "prize_pool": null,
+      "reason": "Re-entry allowed and one $100 add-on per entry until start of Level 11 (~5:30 PM).",
+      "notes": "$26 tournament fee + $12 staff; $162 to prize pool",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf"
+      ]
+    },
+    {
+      "category": "Re-entry / rebuy / add-on",
+      "source": "Wynn daily poster + daily structures (official)",
+      "event": null,
+      "date": "Nightly (Mon–Sun)",
+      "start": "6:00 PM",
+      "name": "$160 NLH — $10,000 GTD (single day)",
+      "buy_in": 160,
+      "gtd": 10000,
+      "house_fee": null,
+      "prize_pool": null,
+      "reason": "Re-entry and one $100 add-on per entry through Level 9 (~9:00 PM). 20-minute levels.",
+      "notes": "$20 tournament fee + $10 staff; $130 to prize pool",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf"
+      ]
+    },
+    {
+      "category": "Pay-to-advantage (gratuity buys chips)",
+      "source": "Bellagio poker page + structure PDF (official)",
+      "event": null,
+      "date": "Friday",
+      "start": "11:00 AM",
+      "name": "$600 No Limit Hold'em",
+      "buy_in": 600,
+      "gtd": null,
+      "house_fee": null,
+      "prize_pool": null,
+      "reason": "Re-entry through Level 8. 30,000 starting chips.",
+      "notes": "$50 house fee; $510 prize pool; $40 VOLUNTARY staff gratuity that grants an extra 15,000 starting chips. Bellagio guarantees combined pool only in Saturday event (see below). Friday: no GTD printed.",
+      "source_schedule": "https://bellagio.mgmresorts.com/en/casino/poker.html",
+      "source_structure": [
+        "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf"
+      ]
+    },
+    {
+      "category": "Pay-to-advantage (gratuity buys chips)",
+      "source": "Bellagio poker page + structure PDF (official)",
+      "event": null,
+      "date": "Saturday",
+      "start": "11:00 AM",
+      "name": "No Limit Hold'em (sheet header $1,100; file name and page say $1,000)",
+      "buy_in": null,
+      "gtd": 50000,
+      "house_fee": null,
+      "prize_pool": null,
+      "reason": "Re-entry/flight structure per official PDF (see Flagged: fee and name conflict). Combined Day 2 per PDF.",
+      "notes": "Sheet rule 7: $510 to prize pool, $50 admin, $40 optional gratuity (= $600 total). Gratuity grants extra 20,000 chips.. IRREGULARITY: file name and official page say $1,000; sheet header says $1,100; fee math sums to $600. Combined prize pool guaranteed at least $50,000 (rule 8).",
+      "source_schedule": "https://bellagio.mgmresorts.com/en/casino/poker.html",
+      "source_structure": [
+        "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf"
+      ]
+    },
+    {
+      "category": "Pay-to-advantage (gratuity buys chips)",
+      "source": "Bellagio poker page + structure PDF (official)",
+      "event": null,
+      "date": "Sunday",
+      "start": "11:00 AM",
+      "name": "$400 H.O.R.S.E.",
+      "buy_in": 400,
+      "gtd": null,
+      "house_fee": null,
+      "prize_pool": null,
+      "reason": "Re-entry through Level 8.",
+      "notes": "$35 house fee; $340 prize pool; $25 VOLUNTARY staff gratuity granting an extra 15,000 chips. Payout approx. 12.5% of field. No GTD printed.",
+      "source_schedule": "https://bellagio.mgmresorts.com/en/casino/poker.html",
+      "source_structure": [
+        "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf"
+      ]
+    },
+    {
+      "category": "Re-entry (WPT World Championship)",
+      "source": "Wynn WPT structures PDF (official)",
+      "event": null,
+      "date": "2026-11-27 to 2026-11-29",
+      "start": "11:00 AM (1A) to 6:00 PM (1F)",
+      "name": "$600 No Limit Hold'em $400,000 GTD (Flights 1A–1F + Day 2)",
+      "buy_in": 600,
+      "gtd": 400000,
+      "house_fee": null,
+      "prize_pool": 510,
+      "reason": "Official terms: 'Unlimited re-entry for each starting flight will be available until the start of level 9.' Entry fee $600 = $510 prize pool + $65 tournament fee + $25 staff service charge.",
+      "notes": "Official structure PDF read (chunk 1 of 8).",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    }
+  ],
+  "unverified_not_ranked": [
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-11-27",
+      "start": "12:00 PM",
+      "name": "TORSE",
+      "buy_in": 600,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-11-27",
+      "start": "1:00 PM",
+      "name": "PLO",
+      "buy_in": 400,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-11-28",
+      "start": "12:00 PM",
+      "name": "Mixed Triple Draw (A-5, 2-7, Badugi)",
+      "buy_in": 600,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-11-30",
+      "start": "11:00 AM",
+      "name": "No Limit Hold'em Day 1A",
+      "buy_in": 800,
+      "gtd": 1000000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-11-30",
+      "start": "12:00 PM",
+      "name": "Limit Omaha 8",
+      "buy_in": 600,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-11-30",
+      "start": "1:00 PM",
+      "name": "No Limit Hold'em Day 2",
+      "buy_in": 800,
+      "gtd": 1000000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-11-30",
+      "start": "5:00 PM",
+      "name": "No Limit Hold'em Day 1B",
+      "buy_in": 800,
+      "gtd": 1000000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-01",
+      "start": "11:00 AM",
+      "name": "No Limit Hold'em Day 1C",
+      "buy_in": 800,
+      "gtd": 1000000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-01",
+      "start": "12:00 PM",
+      "name": "Limit Omaha 8/5/Stud 8",
+      "buy_in": 600,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-01",
+      "start": "1:00 PM",
+      "name": "PLO",
+      "buy_in": 1100,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-01",
+      "start": "5:00 PM",
+      "name": "No Limit Hold'em Day 1D",
+      "buy_in": 800,
+      "gtd": 1000000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-02",
+      "start": "11:00 AM",
+      "name": "No Limit Hold'em Day 1E",
+      "buy_in": 800,
+      "gtd": 1000000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-02",
+      "start": "6:00 PM",
+      "name": "No Limit Hold'em Day 1F",
+      "buy_in": 800,
+      "gtd": 1000000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-03",
+      "start": "11:00 AM",
+      "name": "No Limit Hold'em Day 1A",
+      "buy_in": 1600,
+      "gtd": 1000000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-03",
+      "start": "1:00 PM",
+      "name": "No Limit Hold'em Day 2",
+      "buy_in": 1600,
+      "gtd": 1000000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-03",
+      "start": "7:00 PM",
+      "name": "Double Play Milestone Satellite (2 x $1,100 ticket)",
+      "buy_in": 400,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-04",
+      "start": "11:00 AM",
+      "name": "No Limit Hold'em Day 1B",
+      "buy_in": 1600,
+      "gtd": 1000000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-04",
+      "start": "12:00 PM",
+      "name": "HORSE",
+      "buy_in": 600,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-04",
+      "start": "7:00 PM",
+      "name": "Double Play Milestone Satellite (2 x $1,100 ticket)",
+      "buy_in": 400,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-05",
+      "start": "11:00 AM",
+      "name": "No Limit Hold'em Day 2",
+      "buy_in": 1100,
+      "gtd": 5000000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-05",
+      "start": "11:00 AM",
+      "name": "WPT Prime Championship Day 1A",
+      "buy_in": 1100,
+      "gtd": 5000000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-05",
+      "start": "9:00 PM",
+      "name": "NLH Turbo",
+      "buy_in": 600,
+      "gtd": 50000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-06",
+      "start": "11:00 AM",
+      "name": "WPT Prime Championship Day 1B",
+      "buy_in": 1100,
+      "gtd": 5000000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-06",
+      "start": "11:00 AM",
+      "name": "PLO Mystery Bounty Day 1A",
+      "buy_in": 1600,
+      "gtd": 500000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-06",
+      "start": "12:00 PM",
+      "name": "Milestone Satellite to $1,100 Prime Championship",
+      "buy_in": 200,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-06",
+      "start": "6:00 PM",
+      "name": "PLO Mystery Bounty Day 1B",
+      "buy_in": 1600,
+      "gtd": 500000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-06",
+      "start": "7:00 PM",
+      "name": "Double Play Milestone Satellite (2 x $1,100 ticket)",
+      "buy_in": 400,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-06",
+      "start": "9:00 PM",
+      "name": "NLH Turbo",
+      "buy_in": 600,
+      "gtd": 50000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-07",
+      "start": "11:00 AM",
+      "name": "WPT Prime Championship Day 1C",
+      "buy_in": 1100,
+      "gtd": 5000000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-07",
+      "start": "11:00 AM",
+      "name": "HORSE (2 Day)",
+      "buy_in": 1100,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-07",
+      "start": "12:00 PM",
+      "name": "PLO Mystery Bounty Day 2",
+      "buy_in": null,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-07",
+      "start": "1:00 PM",
+      "name": "PLO $500 Bounty",
+      "buy_in": 1600,
+      "gtd": 100000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-07",
+      "start": "7:00 PM",
+      "name": "Milestone Satellite Package to Prime and World Championship",
+      "buy_in": 1600,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-07",
+      "start": "9:00 PM",
+      "name": "NLH Turbo",
+      "buy_in": 600,
+      "gtd": 50000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-08",
+      "start": "11:00 AM",
+      "name": "WPT Prime Championship Day 1D",
+      "buy_in": 1100,
+      "gtd": 5000000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "Satellite (entry ticket)",
+      "source": "Venetian DSE IV schedule (official)",
+      "event": 33,
+      "date": "2026-12-08",
+      "start": "4:10 PM",
+      "name": "$100 NLH LIPS Ladies Milestone Satellite (1Day) — awards direct entry to Event 39",
+      "buy_in": 100,
+      "gtd": null,
+      "reason": "Structure sheet not read in full, or format rules not confirmed. Not ranked.",
+      "notes": "Structure sheet 19 linked, not read.",
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": [
+        "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_19.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-08",
+      "start": "7:00 PM",
+      "name": "Milestone Satellite to $10,400 World Championship",
+      "buy_in": 1100,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-08",
+      "start": "9:00 PM",
+      "name": "NLH Turbo",
+      "buy_in": 600,
+      "gtd": 50000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "Tag-team format — single-entry status unverified",
+      "source": "Venetian DSE IV schedule (official)",
+      "event": 35,
+      "date": "2026-12-09",
+      "start": "10:10 AM",
+      "name": "$600 NLH LIPS Poker Jingle Tag Team $10K GTD (1Day) — tag teams (F/F or F/M)",
+      "buy_in": 600,
+      "gtd": 10000,
+      "reason": "Structure sheet not read in full, or format rules not confirmed. Not ranked.",
+      "notes": "Structure sheet 31 linked, not read.",
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": [
+        "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_31.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-09",
+      "start": "11:00 AM",
+      "name": "No Limit Hold'em (2 Day)",
+      "buy_in": 1600,
+      "gtd": 1000000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-09",
+      "start": "12:00 PM",
+      "name": "WPT Prime Championship Day 2",
+      "buy_in": null,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-09",
+      "start": "1:00 PM",
+      "name": "PLO $1,000 Bounty",
+      "buy_in": 3000,
+      "gtd": 250000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-09",
+      "start": "1:00 PM",
+      "name": "Limit Omaha 8",
+      "buy_in": 800,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-09",
+      "start": "2:00 PM",
+      "name": "Milestone Satellite to $10,400 World Championship",
+      "buy_in": 1100,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "Satellite (entry ticket)",
+      "source": "Venetian DSE IV schedule (official)",
+      "event": 37,
+      "date": "2026-12-09",
+      "start": "4:10 PM",
+      "name": "$100 NLH LIPS Ladies Milestone Satellite (1Day) — awards direct entry to Event 39",
+      "buy_in": 100,
+      "gtd": null,
+      "reason": "Structure sheet not read in full, or format rules not confirmed. Not ranked.",
+      "notes": "Structure sheet 19 linked, not read.",
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": [
+        "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_19.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-09",
+      "start": "7:00 PM",
+      "name": "Milestone Satellite to $10,400 World Championship",
+      "buy_in": 1100,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-09",
+      "start": "9:00 PM",
+      "name": "NLH Turbo",
+      "buy_in": 600,
+      "gtd": 50000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-10",
+      "start": "10:00 AM",
+      "name": "Super Gold Million Mystery Bounty Day 1A",
+      "buy_in": 400,
+      "gtd": 3000000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "2-day event — entry rules unverified",
+      "source": "Venetian DSE IV schedule (official)",
+      "event": 39,
+      "date": "2026-12-10",
+      "start": "10:10 AM (2-Day; Day 2 Dec 11 10:00 AM; final table 7:00 PM streamed)",
+      "name": "$800 NLH LIPS Ladies $40K GTD (2Day) — Women in Poker Main Event",
+      "buy_in": 800,
+      "gtd": 40000,
+      "reason": "Structure sheet not read in full, or format rules not confirmed. Not ranked.",
+      "notes": "Structure sheet 32 linked, not read. Eligibility per schedule title only.",
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": [
+        "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-10",
+      "start": "12:00 PM",
+      "name": "WPT Prime Championship Day 3",
+      "buy_in": null,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "Satellite (entry ticket)",
+      "source": "Venetian DSE IV schedule (official)",
+      "event": 41,
+      "date": "2026-12-10",
+      "start": "4:10 PM",
+      "name": "$260 NLH Milestone Satellite (1Day) — awards direct entry to Event 47",
+      "buy_in": 260,
+      "gtd": null,
+      "reason": "Structure sheet not read in full, or format rules not confirmed. Not ranked.",
+      "notes": "Structure sheet 24 linked, not read.",
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": [
+        "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_24.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-10",
+      "start": "6:00 PM",
+      "name": "Super Gold Million Mystery Bounty Day 1B",
+      "buy_in": 400,
+      "gtd": 3000000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-11",
+      "start": "10:00 AM",
+      "name": "Super Gold Million Mystery Bounty Day 1C",
+      "buy_in": 400,
+      "gtd": 3000000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-11",
+      "start": "12:00 PM",
+      "name": "WPT Prime Championship Day 4",
+      "buy_in": null,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "Satellite (entry ticket)",
+      "source": "Venetian DSE IV schedule (official)",
+      "event": 44,
+      "date": "2026-12-11",
+      "start": "4:10 PM",
+      "name": "$260 NLH Milestone Satellite (1Day) — awards direct entry to Event 47",
+      "buy_in": 260,
+      "gtd": null,
+      "reason": "Structure sheet not read in full, or format rules not confirmed. Not ranked.",
+      "notes": "Structure sheet 24 linked, not read.",
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": [
+        "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_24.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-11",
+      "start": "6:00 PM",
+      "name": "Super Gold Million Mystery Bounty Day 1D",
+      "buy_in": 400,
+      "gtd": 3000000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "Satellite (entry ticket)",
+      "source": "Venetian DSE IV schedule (official)",
+      "event": 45,
+      "date": "2026-12-11",
+      "start": "8:10 PM",
+      "name": "$260 NLH Turbo Milestone Satellite (1Day) — awards direct entry to Event 47",
+      "buy_in": 260,
+      "gtd": null,
+      "reason": "Structure sheet not read in full, or format rules not confirmed. Not ranked.",
+      "notes": "Structure sheet 25 linked, not read.",
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": [
+        "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_25.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-12",
+      "start": "10:00 AM",
+      "name": "No Limit Hold'em",
+      "buy_in": 800,
+      "gtd": 100000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "Satellite (entry ticket)",
+      "source": "Venetian DSE IV schedule (official)",
+      "event": 48,
+      "date": "2026-12-12",
+      "start": "12:10 PM",
+      "name": "$260 NLH Turbo Milestone Satellite (1Day) — awards direct entry to Event 47",
+      "buy_in": 260,
+      "gtd": null,
+      "reason": "Structure sheet not read in full, or format rules not confirmed. Not ranked.",
+      "notes": "Structure sheet 25 linked, not read.",
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": [
+        "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_25.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-12",
+      "start": "1:00 PM",
+      "name": "PLO",
+      "buy_in": 3000,
+      "gtd": 250000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-12",
+      "start": "2:00 PM",
+      "name": "WPT Prime Championship Final Table",
+      "buy_in": null,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-12",
+      "start": "2:00 PM",
+      "name": "Super Gold Million Mystery Bounty Day 2",
+      "buy_in": null,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-12",
+      "start": "2:00 PM",
+      "name": "Milestone Satellite to $10,400 World Championship 1A/8",
+      "buy_in": 1100,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-12",
+      "start": "4:00 PM",
+      "name": "Milestone Satellite to $10,400 Ladies NLH Championship",
+      "buy_in": 200,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-12",
+      "start": "7:00 PM",
+      "name": "Milestone Satellite to $10,400 World Championship 1A/8",
+      "buy_in": 1100,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-12",
+      "start": "9:00 PM",
+      "name": "NLH Turbo",
+      "buy_in": 600,
+      "gtd": 50000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "Satellite (entry ticket)",
+      "source": "Venetian DSE IV schedule (official)",
+      "event": 46,
+      "date": "2026-12-12",
+      "start": "9:10 AM",
+      "name": "$260 NLH Turbo Milestone Satellite (1Day) — awards direct entry to Event 47",
+      "buy_in": 260,
+      "gtd": null,
+      "reason": "Structure sheet not read in full, or format rules not confirmed. Not ranked.",
+      "notes": "Structure sheet 25 linked, not read.",
+      "source_schedule": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "source_structure": [
+        "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_25.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-13",
+      "start": "11:00 AM",
+      "name": "WPT World Championship Day 1A ($1,000,000 added)",
+      "buy_in": 10400,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-13",
+      "start": "11:00 AM",
+      "name": "Ladies NLH Championship (2 Day)",
+      "buy_in": 1100,
+      "gtd": 250000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-13",
+      "start": "11:00 AM",
+      "name": "No Limit Hold'em Day 1A",
+      "buy_in": 800,
+      "gtd": 500000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-13",
+      "start": "12:00 PM",
+      "name": "PLO Day 1A",
+      "buy_in": 1600,
+      "gtd": 1000000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-13",
+      "start": "12:00 PM",
+      "name": "Milestone Satellite to $10,400 World Championship 1B",
+      "buy_in": 1100,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-13",
+      "start": "1:00 PM",
+      "name": "Super Gold Million Mystery Bounty Day 3",
+      "buy_in": null,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-13",
+      "start": "6:00 PM",
+      "name": "Milestone Satellite to $10,400 World Championship 1B/C",
+      "buy_in": 1100,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-14",
+      "start": "11:00 AM",
+      "name": "WPT World Championship Day 1B ($1,000,000 added)",
+      "buy_in": 10400,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-14",
+      "start": "11:00 AM",
+      "name": "No Limit Hold'em Day 1B",
+      "buy_in": 800,
+      "gtd": 500000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-14",
+      "start": "12:00 PM",
+      "name": "PLO Day 1B",
+      "buy_in": 1600,
+      "gtd": 1000000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-14",
+      "start": "12:00 PM",
+      "name": "Mixed Triple Draw (A-5, 2-7, Badugi) (2 Day)",
+      "buy_in": 1100,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-14",
+      "start": "12:00 PM",
+      "name": "Milestone Satellite to $10,400 World Championship 1C",
+      "buy_in": 1100,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-14",
+      "start": "2:00 PM",
+      "name": "Super Gold Million Mystery Bounty Final Table",
+      "buy_in": null,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-14",
+      "start": "6:00 PM",
+      "name": "Milestone Satellite to $10,400 World Championship 1C",
+      "buy_in": 1100,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-14",
+      "start": "7:00 PM",
+      "name": "PLO Turbo",
+      "buy_in": 1100,
+      "gtd": 100000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-14",
+      "start": "9:00 PM",
+      "name": "NLH Turbo",
+      "buy_in": 600,
+      "gtd": 50000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-15",
+      "start": "11:00 AM",
+      "name": "WPT World Championship Day 1C ($1,000,000 added)",
+      "buy_in": 10400,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-15",
+      "start": "11:00 AM",
+      "name": "No Limit Hold'em Day 2",
+      "buy_in": null,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-15",
+      "start": "11:00 AM",
+      "name": "Milestone Satellite to $10,400 World Championship 1C/Day 2",
+      "buy_in": 1100,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-15",
+      "start": "12:00 PM",
+      "name": "PLO Day 2",
+      "buy_in": null,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-15",
+      "start": "12:00 PM",
+      "name": "Big O",
+      "buy_in": 1100,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-15",
+      "start": "1:00 PM",
+      "name": "PLO Progressive Bounty (PKO)",
+      "buy_in": 3000,
+      "gtd": 250000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-15",
+      "start": "6:00 PM",
+      "name": "Milestone Satellite to $10,400 World Championship Day 2",
+      "buy_in": 1100,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-15",
+      "start": "7:00 PM",
+      "name": "NIH $500 Bounty Turbo (as printed on official schedule)",
+      "buy_in": 1600,
+      "gtd": 100000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-17",
+      "start": "11:00 AM",
+      "name": "Seniors NLH Championship (3 Day)",
+      "buy_in": 1100,
+      "gtd": 500000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-17",
+      "start": "11:00 AM",
+      "name": "Wynn Mixed Championship (2 Day)",
+      "buy_in": 1600,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-17",
+      "start": "12:00 PM",
+      "name": "WPT World Championship Day 3",
+      "buy_in": null,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-17",
+      "start": "12:00 PM",
+      "name": "No Limit Hold'em Day 2",
+      "buy_in": null,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-17",
+      "start": "12:00 PM",
+      "name": "No Limit Hold'em Day 1A",
+      "buy_in": 3000,
+      "gtd": 2000000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-17",
+      "start": "1:00 PM",
+      "name": "NLH High Roller (2 Day)",
+      "buy_in": 25800,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-17",
+      "start": "2:00 PM",
+      "name": "Milestone Satellite to $3,000 NLH",
+      "buy_in": 400,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-17",
+      "start": "7:00 PM",
+      "name": "Milestone Satellite to $3,000 NLH",
+      "buy_in": 400,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-18",
+      "start": "10:00 AM",
+      "name": "Milestone Satellite to $3,000 NLH",
+      "buy_in": 400,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-18",
+      "start": "11:00 AM",
+      "name": "No Limit Hold'em Day 1A",
+      "buy_in": 1100,
+      "gtd": 1000000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-18",
+      "start": "12:00 PM",
+      "name": "WPT World Championship Day 2 (registration open until start of Day 2)",
+      "buy_in": null,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-18",
+      "start": "12:00 PM",
+      "name": "PLO Double Board Bomb Pot",
+      "buy_in": 800,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-18",
+      "start": "12:00 PM",
+      "name": "No Limit Hold'em Day 1B",
+      "buy_in": 3000,
+      "gtd": 2000000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-18",
+      "start": "12:00 PM",
+      "name": "Limit Omaha 8 Championship (2 Day)",
+      "buy_in": 1600,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-18",
+      "start": "12:00 PM",
+      "name": "No Limit Hold'em",
+      "buy_in": 600,
+      "gtd": 100000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-18",
+      "start": "1:00 PM",
+      "name": "PLO 6-Max",
+      "buy_in": 10500,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-18",
+      "start": "1:00 PM",
+      "name": "HORSE",
+      "buy_in": 800,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-18",
+      "start": "1:00 PM",
+      "name": "NLH 6-Max",
+      "buy_in": 10500,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-18",
+      "start": "2:00 PM",
+      "name": "Milestone Satellite to $5,000 Seniors High Roller",
+      "buy_in": 600,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-18",
+      "start": "6:00 PM",
+      "name": "Milestone Satellite to $25K NIH High Roller",
+      "buy_in": 3000,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-18",
+      "start": "6:00 PM",
+      "name": "Milestone Satellite to $3,000 NLH",
+      "buy_in": 400,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-18",
+      "start": "6:00 PM",
+      "name": "NLH Turbo",
+      "buy_in": 1100,
+      "gtd": 100000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-18",
+      "start": "7:00 PM",
+      "name": "No Limit Hold'em Day 1B",
+      "buy_in": 1100,
+      "gtd": 1000000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-19",
+      "start": "11:00 AM",
+      "name": "Seniors High Roller (3 Day)",
+      "buy_in": 5000,
+      "gtd": 250000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-19",
+      "start": "11:00 AM",
+      "name": "NLH Mystery Bounty Day 1A",
+      "buy_in": 1600,
+      "gtd": 1000000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-19",
+      "start": "12:00 PM",
+      "name": "WPT World Championship Day 5",
+      "buy_in": null,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-19",
+      "start": "12:00 PM",
+      "name": "No Limit Hold'em Day 2",
+      "buy_in": null,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-19",
+      "start": "12:00 PM",
+      "name": "Milestone Satellite to $1,600 Mystery Bounty",
+      "buy_in": 300,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-19",
+      "start": "1:00 PM",
+      "name": "PLO",
+      "buy_in": 10500,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-19",
+      "start": "1:00 PM",
+      "name": "NLH 6-Max",
+      "buy_in": 3000,
+      "gtd": 500000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-19",
+      "start": "1:00 PM",
+      "name": "TORSE Championship (2 Day)",
+      "buy_in": 1600,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-19",
+      "start": "5:00 PM",
+      "name": "Milestone Satellite to $1,600 Mystery Bounty",
+      "buy_in": 300,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-19",
+      "start": "6:00 PM",
+      "name": "NLH 6-Max Turbo",
+      "buy_in": 600,
+      "gtd": 50000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-19",
+      "start": "7:00 PM",
+      "name": "NLH Mystery Bounty Day 1B",
+      "buy_in": 1600,
+      "gtd": 1000000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-20",
+      "start": "11:00 AM",
+      "name": "NLH Mystery Bounty Day 1C",
+      "buy_in": 1600,
+      "gtd": 1000000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-20",
+      "start": "12:00 PM",
+      "name": "No Limit Hold'em Final Table",
+      "buy_in": null,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-20",
+      "start": "12:00 PM",
+      "name": "No Limit Hold'em",
+      "buy_in": 600,
+      "gtd": 50000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-20",
+      "start": "1:00 PM",
+      "name": "NLH 8-Max",
+      "buy_in": 10500,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-20",
+      "start": "1:00 PM",
+      "name": "Mixed Triple Draw (A-5, 2-7, Badugi)",
+      "buy_in": 600,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-20",
+      "start": "2:00 PM",
+      "name": "WPT World Championship Final Table",
+      "buy_in": null,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-20",
+      "start": "6:00 PM",
+      "name": "5-Card PLO Turbo",
+      "buy_in": 600,
+      "gtd": 50000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-20",
+      "start": "7:00 PM",
+      "name": "NLH Mystery Bounty Day 1D",
+      "buy_in": 1600,
+      "gtd": 1000000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-21",
+      "start": "12:00 PM",
+      "name": "No Limit Hold'em",
+      "buy_in": 1100,
+      "gtd": 100000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-21",
+      "start": "1:00 PM",
+      "name": "NLH Mystery Bounty Day 2",
+      "buy_in": null,
+      "gtd": null,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    },
+    {
+      "category": "WPT World Championship (rules not verified)",
+      "source": "Wynn WPT schedule (official)",
+      "event": null,
+      "date": "2026-12-21",
+      "start": "8:00 PM",
+      "name": "NLH Turbo",
+      "buy_in": 600,
+      "gtd": 50000,
+      "reason": "Official schedule row only. Re-entry, add-on, and bounty rules not verified for this event.",
+      "notes": "",
+      "source_schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "source_structure": [
+        "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+      ]
+    }
+  ],
+  "sources": {
+    "VEN_SCHED": {
+      "title": "The Venetian: DeepStack Extravaganza IV schedule (official)",
+      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+      "publisher": "The Venetian Las Vegas (official)"
+    },
+    "VEN_POKER": {
+      "title": "The Venetian: Poker Room (official)",
+      "url": "https://www.venetianlasvegas.com/resort/casino/poker.html",
+      "publisher": "The Venetian Las Vegas (official)"
+    },
+    "VEN_HOTEL": {
+      "title": "The Venetian: Hotel Terms & Conditions (resort fee, room tax, parking)",
+      "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+      "publisher": "The Venetian Las Vegas (official)"
+    },
+    "VEN_SUITE": {
+      "title": "The Venetian: 2026 Poker Room Rates & Play Requirements",
+      "url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
+      "publisher": "The Venetian Las Vegas (official)"
+    },
+    "WYNN_POKER": {
+      "title": "Wynn Las Vegas: Poker Room (official)",
+      "url": "https://www.wynnlasvegas.com/casino/poker",
+      "publisher": "Wynn Las Vegas (official)"
+    },
+    "WYNN_POSTER": {
+      "title": "Wynn: Daily Tournaments poster (official PDF)",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf",
+      "publisher": "Wynn Las Vegas (official)"
+    },
+    "WYNN_DAILY_STRUCT": {
+      "title": "Wynn: Daily Poker Tournaments terms and structure sheets (official PDF)",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "publisher": "Wynn Las Vegas (official)"
+    },
+    "WYNN_WPT_SCHED": {
+      "title": "Wynn: WPT World Championship schedule Nov 27 – Dec 21, 2026 (official PDF)",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+      "publisher": "Wynn Las Vegas (official)"
+    },
+    "WYNN_WPT_STRUCT": {
+      "title": "Wynn: WPT World Championship general terms & structures (official PDF, first page read)",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+      "publisher": "Wynn Las Vegas (official)"
+    },
+    "WYNN_TERMS_OFFER": {
+      "title": "Wynn: Special Offer Terms (resort fee $45 + tax; from $99 Sun–Thu / $169 Fri–Sat)",
+      "url": "https://www.wynnlasvegas.com/terms-and-conditions/848654",
+      "publisher": "Wynn Las Vegas (official)"
+    },
+    "WYNN_TERMS_OFFER2": {
+      "title": "Wynn: Special Offer Terms (resort fee $45 + tax)",
+      "url": "https://www.wynnlasvegas.com/terms-and-conditions/848991",
+      "publisher": "Wynn Las Vegas (official)"
+    },
+    "WYNN_TERMS_SUITE": {
+      "title": "Wynn: Special Offer Terms (Tower Suite resort fee $55 + tax)",
+      "url": "https://www.wynnlasvegas.com/terms-and-conditions/850225",
+      "publisher": "Wynn Las Vegas (official)"
+    },
+    "BELL_POKER": {
+      "title": "Bellagio: Poker Room (official)",
+      "url": "https://bellagio.mgmresorts.com/en/casino/poker.html",
+      "publisher": "Bellagio Las Vegas (official)"
+    },
+    "BELL_FRI": {
+      "title": "Bellagio: Friday $600 NLH structure (official PDF)",
+      "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf",
+      "publisher": "Bellagio Las Vegas (official)"
+    },
+    "BELL_SAT": {
+      "title": "Bellagio: Saturday NLH structure (official PDF, file name says $1,000, header says $1,100)",
+      "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf",
+      "publisher": "Bellagio Las Vegas (official)"
+    },
+    "BELL_SUN": {
+      "title": "Bellagio: Sunday $400 H.O.R.S.E. structure (official PDF)",
+      "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf",
+      "publisher": "Bellagio Las Vegas (official)"
+    },
+    "CAESARS_HOTEL": {
+      "title": "Caesars Palace: hotel page (official; resort fee not shown on fetched page)",
+      "url": "https://www.caesars.com/caesars-palace/hotel",
+      "publisher": "Caesars Entertainment (official)"
+    },
+    "VEN_S1": {
+      "title": "Venetian DSE IV structure sheet #1 (official PDF)",
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+      "publisher": "The Venetian Las Vegas (official)"
+    },
+    "VEN_S2": {
+      "title": "Venetian DSE IV structure sheet #2 (official PDF)",
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_2.pdf",
+      "publisher": "The Venetian Las Vegas (official)"
+    },
+    "VEN_S3": {
+      "title": "Venetian DSE IV structure sheet #3 (official PDF)",
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf",
+      "publisher": "The Venetian Las Vegas (official)"
+    },
+    "VEN_S4": {
+      "title": "Venetian DSE IV structure sheet #4 (official PDF)",
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf",
+      "publisher": "The Venetian Las Vegas (official)"
+    },
+    "VEN_S5": {
+      "title": "Venetian DSE IV structure sheet #5 (official PDF)",
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf",
+      "publisher": "The Venetian Las Vegas (official)"
+    },
+    "VEN_S6": {
+      "title": "Venetian DSE IV structure sheet #6 (official PDF)",
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_6.pdf",
+      "publisher": "The Venetian Las Vegas (official)"
+    },
+    "VEN_S7": {
+      "title": "Venetian DSE IV structure sheet #7 (official PDF)",
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf",
+      "publisher": "The Venetian Las Vegas (official)"
+    },
+    "VEN_S8": {
+      "title": "Venetian DSE IV structure sheet #8 (official PDF)",
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf",
+      "publisher": "The Venetian Las Vegas (official)"
+    },
+    "VEN_S9": {
+      "title": "Venetian DSE IV structure sheet #9 (official PDF)",
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf",
+      "publisher": "The Venetian Las Vegas (official)"
+    },
+    "VEN_S10": {
+      "title": "Venetian DSE IV structure sheet #10 (official PDF)",
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf",
+      "publisher": "The Venetian Las Vegas (official)"
+    },
+    "VEN_S11": {
+      "title": "Venetian DSE IV structure sheet #11 (official PDF)",
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf",
+      "publisher": "The Venetian Las Vegas (official)"
+    },
+    "VEN_S12": {
+      "title": "Venetian DSE IV structure sheet #12 (official PDF)",
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf",
+      "publisher": "The Venetian Las Vegas (official)"
+    },
+    "VEN_S13": {
+      "title": "Venetian DSE IV structure sheet #13 (official PDF)",
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf",
+      "publisher": "The Venetian Las Vegas (official)"
+    },
+    "VEN_S14": {
+      "title": "Venetian DSE IV structure sheet #14 (official PDF)",
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf",
+      "publisher": "The Venetian Las Vegas (official)"
+    },
+    "VEN_S15": {
+      "title": "Venetian DSE IV structure sheet #15 (official PDF)",
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
+      "publisher": "The Venetian Las Vegas (official)"
+    },
+    "VEN_S16": {
+      "title": "Venetian DSE IV structure sheet #16 (official PDF)",
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_16.pdf",
+      "publisher": "The Venetian Las Vegas (official)"
+    },
+    "VEN_S17": {
+      "title": "Venetian DSE IV structure sheet #17 (official PDF)",
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf",
+      "publisher": "The Venetian Las Vegas (official)"
+    },
+    "VEN_S18": {
+      "title": "Venetian DSE IV structure sheet #18 (official PDF)",
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf",
+      "publisher": "The Venetian Las Vegas (official)"
+    },
+    "VEN_S19": {
+      "title": "Venetian DSE IV structure sheet #19 (official PDF)",
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_19.pdf",
+      "publisher": "The Venetian Las Vegas (official)"
+    },
+    "VEN_S20": {
+      "title": "Venetian DSE IV structure sheet #20 (official PDF)",
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_20.pdf",
+      "publisher": "The Venetian Las Vegas (official)"
+    },
+    "VEN_S21": {
+      "title": "Venetian DSE IV structure sheet #21 (official PDF)",
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf",
+      "publisher": "The Venetian Las Vegas (official)"
+    },
+    "VEN_S22": {
+      "title": "Venetian DSE IV structure sheet #22 (official PDF)",
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_22.pdf",
+      "publisher": "The Venetian Las Vegas (official)"
+    },
+    "VEN_S23": {
+      "title": "Venetian DSE IV structure sheet #23 (official PDF)",
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_23.pdf",
+      "publisher": "The Venetian Las Vegas (official)"
+    },
+    "VEN_S24": {
+      "title": "Venetian DSE IV structure sheet #24 (official PDF)",
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_24.pdf",
+      "publisher": "The Venetian Las Vegas (official)"
+    },
+    "VEN_S25": {
+      "title": "Venetian DSE IV structure sheet #25 (official PDF)",
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_25.pdf",
+      "publisher": "The Venetian Las Vegas (official)"
+    },
+    "VEN_S26": {
+      "title": "Venetian DSE IV structure sheet #26 (official PDF)",
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_26.pdf",
+      "publisher": "The Venetian Las Vegas (official)"
+    },
+    "VEN_S27": {
+      "title": "Venetian DSE IV structure sheet #27 (official PDF)",
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_27.pdf",
+      "publisher": "The Venetian Las Vegas (official)"
+    },
+    "VEN_S28": {
+      "title": "Venetian DSE IV structure sheet #28 (official PDF)",
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_28.pdf",
+      "publisher": "The Venetian Las Vegas (official)"
+    },
+    "VEN_S29": {
+      "title": "Venetian DSE IV structure sheet #29 (official PDF)",
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_29.pdf",
+      "publisher": "The Venetian Las Vegas (official)"
+    },
+    "VEN_S30": {
+      "title": "Venetian DSE IV structure sheet #30 (official PDF)",
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_30.pdf",
+      "publisher": "The Venetian Las Vegas (official)"
+    },
+    "VEN_S31": {
+      "title": "Venetian DSE IV structure sheet #31 (official PDF)",
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_31.pdf",
+      "publisher": "The Venetian Las Vegas (official)"
+    },
+    "VEN_S32": {
+      "title": "Venetian DSE IV structure sheet #32 (official PDF)",
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf",
+      "publisher": "The Venetian Las Vegas (official)"
+    },
+    "VEN_S33": {
+      "title": "Venetian DSE IV structure sheet #33 (official PDF)",
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_33.pdf",
+      "publisher": "The Venetian Las Vegas (official)"
+    },
+    "VEN_S34": {
+      "title": "Venetian DSE IV structure sheet #34 (official PDF)",
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_34.pdf",
+      "publisher": "The Venetian Las Vegas (official)"
+    },
+    "VEN_S35": {
+      "title": "Venetian DSE IV structure sheet #35 (official PDF)",
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf",
+      "publisher": "The Venetian Las Vegas (official)"
+    },
+    "VEN_S36": {
+      "title": "Venetian DSE IV structure sheet #36 (official PDF)",
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf",
+      "publisher": "The Venetian Las Vegas (official)"
+    },
+    "VEN_S37": {
+      "title": "Venetian DSE IV structure sheet #37 (official PDF)",
+      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_37.pdf",
+      "publisher": "The Venetian Las Vegas (official)"
+    }
+  }
+}

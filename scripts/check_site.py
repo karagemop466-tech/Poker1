@@ -14,6 +14,10 @@ OFFICIAL_HOSTS = {
     "www.wynnlasvegas.com",
     "reservations.wynnlasvegas.com",
     "aria.mgmresorts.com",
+    "bellagio.mgmresorts.com",
+    "mgmresorts.com",
+    "caesars.com",
+    "rwlasvegas.com",
 }
 
 class SiteParser(HTMLParser):

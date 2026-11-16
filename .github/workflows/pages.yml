@@ -40,7 +40,8 @@ jobs:
       - name: Stage public site
         run: |
           mkdir -p _site
-          cp index.html tournaments.html hotels.html decision.html suggestions.html flagged.html styles.css _site/
+          cp index.html tournaments.html excluded.html hotels.html schedule.html flagged.html review.html decision.html suggestions.html styles.css _site/
+          cp -r assets data _site/
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
