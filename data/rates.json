@@ -28,9 +28,9 @@
    "rate_ceiling_note": "The page says future rates are provided out to a maximum of 150 days from the current date.",
    "official_url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html",
    "official_url_secondary": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
-   "retrieved_utc": "2026-11-16T19:39:59Z",
+   "retrieved_utc": "2026-11-16T19:49:18Z",
    "date_specific": false,
-   "source_changed": false,
+   "source_changed": true,
    "true_cost_per_night_usd": null,
    "true_cost_note": "Left blank: neither printed figure is attached to a stay date, so no like-for-like total can be computed. The stated components are room rate + a $55 mandatory resort fee, with 13.38% room tax. The arithmetic is (rate + 55) x 1.1338 once a dated rate exists."
   }

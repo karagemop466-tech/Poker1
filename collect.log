@@ -1,9 +1,9 @@
-run_utc=2026-11-16T19:32:36Z
-ref=arena/bad329a9-poker1 commit=5ccd5253a08515f44b5a940deb79b15a0f037838
-script_sha256=4f41e9801be76c75b508a0a8f44a2d82fb2867c256a00f3213ef53befed31a6a
+run_utc=2026-11-16T19:49:18Z
+ref=arena/bad329a9-poker1 commit=39df4558ebf0a556bf00364f7d821057e0dbd82a
+script_sha256=1082dfc2caff522c4d8374b9adcc440b2af7065cb7b38c465551ea09ce033f73
 pdftotext=pdftotext version 26.01.0
-rows dse_nov_2026_page 94
-rows dse_dec_2026_page 49
+PARSE FAILED dse_nov_2026_page KeyError('November')
+PARSE FAILED dse_dec_2026_page KeyError('December')
 structure dse_dec_2026-structure_1.pdf -> [1, 3, 17] kw 0
 structure dse_dec_2026-structure_10.pdf -> [31] kw 0
 structure dse_dec_2026-structure_11.pdf -> [28] kw 0
@@ -33,8 +33,8 @@ structure dse_nov_2026-structure_19.pdf -> [33, 37] kw 0
 structure dse_nov_2026-structure_2.pdf -> [7] kw 0
 structure dse_nov_2026-structure_20.pdf -> [49] kw 0
 structure dse_nov_2026-structure_21.pdf -> [47] kw 0
-structure dse_nov_2026-structure_22.pdf -> [1, 20] kw 0
-structure dse_nov_2026-structure_23.pdf -> [1, 57] kw 0
+structure dse_nov_2026-structure_22.pdf -> [20] kw 0
+structure dse_nov_2026-structure_23.pdf -> [57] kw 0
 structure dse_nov_2026-structure_24.pdf -> [41, 44] kw 0
 structure dse_nov_2026-structure_25.pdf -> [45, 46, 48] kw 0
 structure dse_nov_2026-structure_26.pdf -> [17] kw 0
@@ -57,18 +57,18 @@ structure dse_nov_2026-structure_7.pdf -> [14, 28, 63] kw 0
 structure dse_nov_2026-structure_8.pdf -> [18, 58] kw 1
 structure dse_nov_2026-structure_9.pdf -> [1] kw 0
 wynn structures wpt_structures 61 events parsed
-wynn signature schedule rows 34
+wynn signature schedule rows 38
 wynn structures wynn_signature_structures 0 events parsed
 UNREACHABLE bellagio_home TimeoutError: The read operation timed out
 UNREACHABLE aria_home TimeoutError: The read operation timed out
 done: 64 documents fetched, 2 unreachable, 52 structures
   wpt_structures events: 61
   wynn_signature_structures events: 0
-  signature schedule rows: 34
+  signature schedule rows: 38
   unreachable: https://bellagio.mgmresorts.com/en.html TimeoutError: The read operation timed out
   unreachable: https://aria.mgmresorts.com/en.html TimeoutError: The read operation timed out
-facts generated: 2026-11-16T19:32:36Z
+facts generated: 2026-11-16T19:49:18Z
 documents: 66 structures: 52
 wpt_structures events: 61
 wynn_signature_structures events: 0
-wss rows: 34
+wss rows: 38

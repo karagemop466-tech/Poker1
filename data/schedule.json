@@ -1,143 +1,7 @@
 {
  "verified_on": "2026-11-16",
- "facts_generated_utc": "2026-11-16T19:39:59Z",
+ "facts_generated_utc": "2026-11-16T19:49:18Z",
  "days": [
-  {
-   "date": "2026-11-16",
-   "primary": {
-    "id": "r001",
-    "start": "11:10",
-    "name": "$300 No Limit Hold'em 1A",
-    "series": "Venetian DeepStack Extravaganza IV",
-    "buy_in_usd": 300,
-    "guarantee_usd": 75000,
-    "venue_id": "venetian",
-    "entry_status": "SE",
-    "late_reg_close": "15:40",
-    "estimated_finish": null,
-    "sequence_check": null,
-    "sequence_note": null,
-    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf"
-   },
-   "fallback": {
-    "id": "r002",
-    "start": "17:10",
-    "name": "$300 No Limit Hold'em 1B",
-    "series": "Venetian DeepStack Extravaganza IV",
-    "buy_in_usd": 300,
-    "guarantee_usd": 75000,
-    "venue_id": "venetian",
-    "entry_status": "SE",
-    "late_reg_close": null,
-    "estimated_finish": null,
-    "sequence_check": "ok",
-    "sequence_note": "Fallback starts 90 minutes after the primary's late-registration close (15:40).",
-    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf"
-   },
-   "later_event_that_conflicts": null,
-   "sequence_basis": "printed on the official sheet as '6 levels + Break (~ 3:40 PM) 3 40 400 200-400 15 Minute Break Guarantee: $75,000 4 40 500'",
-   "conditional_note": null,
-   "options": [
-    {
-     "id": "r001",
-     "start": "11:10",
-     "name": "$300 No Limit Hold'em 1A",
-     "series": "Venetian DeepStack Extravaganza IV",
-     "buy_in_usd": 300,
-     "guarantee_usd": 75000,
-     "venue_id": "venetian",
-     "entry_status": "SE",
-     "late_reg_close": "15:40",
-     "estimated_finish": null,
-     "sequence_check": null,
-     "sequence_note": null,
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf"
-    },
-    {
-     "id": "r002",
-     "start": "17:10",
-     "name": "$300 No Limit Hold'em 1B",
-     "series": "Venetian DeepStack Extravaganza IV",
-     "buy_in_usd": 300,
-     "guarantee_usd": 75000,
-     "venue_id": "venetian",
-     "entry_status": "SE",
-     "late_reg_close": null,
-     "estimated_finish": null,
-     "sequence_check": "ok",
-     "sequence_note": "Fallback starts 90 minutes after the primary's late-registration close (15:40).",
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf"
-    }
-   ]
-  },
-  {
-   "date": "2026-11-17",
-   "primary": {
-    "id": "r003",
-    "start": "11:10",
-    "name": "$300 No Limit Hold'em 1C",
-    "series": "Venetian DeepStack Extravaganza IV",
-    "buy_in_usd": 300,
-    "guarantee_usd": 75000,
-    "venue_id": "venetian",
-    "entry_status": "SE",
-    "late_reg_close": "15:40",
-    "estimated_finish": null,
-    "sequence_check": null,
-    "sequence_note": null,
-    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf"
-   },
-   "fallback": {
-    "id": "r004",
-    "start": "17:10",
-    "name": "$300 No Limit Hold'em 1D",
-    "series": "Venetian DeepStack Extravaganza IV",
-    "buy_in_usd": 300,
-    "guarantee_usd": 75000,
-    "venue_id": "venetian",
-    "entry_status": "SE",
-    "late_reg_close": null,
-    "estimated_finish": null,
-    "sequence_check": "ok",
-    "sequence_note": "Fallback starts 90 minutes after the primary's late-registration close (15:40).",
-    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf"
-   },
-   "later_event_that_conflicts": null,
-   "sequence_basis": "printed on the official sheet as '6 levels + Break (~ 3:40 PM) 3 40 400 200-400 15 Minute Break Guarantee: $75,000 4 40 500'",
-   "conditional_note": null,
-   "options": [
-    {
-     "id": "r003",
-     "start": "11:10",
-     "name": "$300 No Limit Hold'em 1C",
-     "series": "Venetian DeepStack Extravaganza IV",
-     "buy_in_usd": 300,
-     "guarantee_usd": 75000,
-     "venue_id": "venetian",
-     "entry_status": "SE",
-     "late_reg_close": "15:40",
-     "estimated_finish": null,
-     "sequence_check": null,
-     "sequence_note": null,
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf"
-    },
-    {
-     "id": "r004",
-     "start": "17:10",
-     "name": "$300 No Limit Hold'em 1D",
-     "series": "Venetian DeepStack Extravaganza IV",
-     "buy_in_usd": 300,
-     "guarantee_usd": 75000,
-     "venue_id": "venetian",
-     "entry_status": "SE",
-     "late_reg_close": null,
-     "estimated_finish": null,
-     "sequence_check": "ok",
-     "sequence_note": "Fallback starts 90 minutes after the primary's late-registration close (15:40).",
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf"
-    }
-   ]
-  },
   {
    "date": "2026-11-18",
    "primary": {
@@ -150,14 +14,14 @@
     "venue_id": "venetian",
     "entry_status": "SE",
     "late_reg_close": "16:55",
-    "estimated_finish": null,
+    "estimated_finish": "01:10",
     "sequence_check": null,
     "sequence_note": null,
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf"
    },
    "fallback": null,
    "later_event_that_conflicts": null,
-   "sequence_basis": "printed on the official sheet as '10 levels + Break (~ 4:55 PM) 15 Minute Break Guarantee: $10,000 5 30 800 400-800 6 30 1,0'",
+   "sequence_basis": "printed on the official sheet as '10 levels + Break (~ 4:55 PM) Guarantee: $10,000 1. TDA rules apply to all Venetian Poker'",
    "conditional_note": "No later verified single-entry event on this day starts at least 45 minutes after the primary's late-registration close. The later event listed below is an alternative, not a sequence.",
    "options": [
     {
@@ -170,7 +34,7 @@
      "venue_id": "venetian",
      "entry_status": "SE",
      "late_reg_close": "16:55",
-     "estimated_finish": null,
+     "estimated_finish": "01:10",
      "sequence_check": null,
      "sequence_note": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf"
@@ -196,7 +60,7 @@
    },
    "fallback": null,
    "later_event_that_conflicts": null,
-   "sequence_basis": "printed on the official sheet as '6 levels + Break (~ 12:25 PM) 5 20 800 400-800 6 20 1,000 500-1,000 1. TDA rules apply to'",
+   "sequence_basis": "printed on the official sheet as '6 levels + Break (~ 12:25 PM) 1. TDA rules apply to all Venetian Poker Room tournaments.'",
    "conditional_note": "No later verified single-entry event on this day starts at least 45 minutes after the primary's late-registration close. The later event listed below is an alternative, not a sequence.",
    "options": [
     {
@@ -235,7 +99,7 @@
    },
    "fallback": null,
    "later_event_that_conflicts": null,
-   "sequence_basis": "printed on the official sheet as '6 levels + Break (~ 12:25 PM) 5 20 800 400-800 6 20 1,000 500-1,000 1. TDA rules apply to'",
+   "sequence_basis": "printed on the official sheet as '6 levels + Break (~ 12:25 PM) 1. TDA rules apply to all Venetian Poker Room tournaments.'",
    "conditional_note": "No later verified single-entry event on this day starts at least 45 minutes after the primary's late-registration close. The later event listed below is an alternative, not a sequence.",
    "options": [
     {
@@ -274,7 +138,7 @@
    },
    "fallback": null,
    "later_event_that_conflicts": null,
-   "sequence_basis": "printed on the official sheet as '6 levels + Break (~ 12:25 PM) 5 20 800 400-800 6 20 1,000 500-1,000 1. TDA rules apply to'",
+   "sequence_basis": "printed on the official sheet as '6 levels + Break (~ 12:25 PM) 1. TDA rules apply to all Venetian Poker Room tournaments.'",
    "conditional_note": "No later verified single-entry event on this day starts at least 45 minutes after the primary's late-registration close. The later event listed below is an alternative, not a sequence.",
    "options": [
     {
@@ -306,14 +170,14 @@
     "venue_id": "venetian",
     "entry_status": "SE",
     "late_reg_close": "15:40",
-    "estimated_finish": null,
+    "estimated_finish": "01:10",
     "sequence_check": null,
     "sequence_note": null,
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_29.pdf"
    },
    "fallback": null,
    "later_event_that_conflicts": null,
-   "sequence_basis": "printed on the official sheet as '8 levels + Break (~ 3:40 PM) 15 Minute Break 5 30 800 400-800 1. TDA rules apply to all Ve'",
+   "sequence_basis": "printed on the official sheet as '8 levels + Break (~ 3:40 PM) 1. TDA rules apply to all Venetian Poker Room tournaments.'",
    "conditional_note": "No later verified single-entry event on this day starts at least 45 minutes after the primary's late-registration close. The later event listed below is an alternative, not a sequence.",
    "options": [
     {
@@ -326,7 +190,7 @@
      "venue_id": "venetian",
      "entry_status": "SE",
      "late_reg_close": "15:40",
-     "estimated_finish": null,
+     "estimated_finish": "01:10",
      "sequence_check": null,
      "sequence_note": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_29.pdf"
@@ -336,22 +200,6 @@
   {
    "date": "2026-11-23",
    "primary": {
-    "id": "r010",
-    "start": "11:10",
-    "name": "$400 No Limit Hold'em 1A",
-    "series": "Venetian DeepStack Extravaganza IV",
-    "buy_in_usd": 400,
-    "guarantee_usd": 75000,
-    "venue_id": "venetian",
-    "entry_status": "SE",
-    "late_reg_close": "17:55",
-    "estimated_finish": null,
-    "sequence_check": null,
-    "sequence_note": null,
-    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_2.pdf"
-   },
-   "fallback": null,
-   "later_event_that_conflicts": {
     "id": "r011",
     "start": "17:10",
     "name": "$200 No Limit Hold'em PKO Bounty (1Day)",
@@ -360,30 +208,17 @@
     "guarantee_usd": 8000,
     "venue_id": "venetian",
     "entry_status": "SE",
-    "late_reg_close": null,
-    "estimated_finish": null,
-    "sequence_check": "conflict",
-    "sequence_note": "Fallback starts -45 minutes after the primary's late-registration close (17:55).",
+    "late_reg_close": "21:40",
+    "estimated_finish": "07:10",
+    "sequence_check": null,
+    "sequence_note": null,
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_30.pdf"
    },
-   "sequence_basis": "printed on the official sheet as '9 levels + Break (5:55 PM) 3 40 400 200-400 15 Minute Break Guarantee: $75,000 4 40 500 30'",
+   "fallback": null,
+   "later_event_that_conflicts": null,
+   "sequence_basis": "printed on the official sheet as '8 levels + Break (9:40 PM) Guarantee: $8,000 (prize pool + total bounties) 1. TDA rules'",
    "conditional_note": "No later verified single-entry event on this day starts at least 45 minutes after the primary's late-registration close. The later event listed below is an alternative, not a sequence.",
    "options": [
-    {
-     "id": "r010",
-     "start": "11:10",
-     "name": "$400 No Limit Hold'em 1A",
-     "series": "Venetian DeepStack Extravaganza IV",
-     "buy_in_usd": 400,
-     "guarantee_usd": 75000,
-     "venue_id": "venetian",
-     "entry_status": "SE",
-     "late_reg_close": "17:55",
-     "estimated_finish": null,
-     "sequence_check": null,
-     "sequence_note": null,
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_2.pdf"
-    },
     {
      "id": "r011",
      "start": "17:10",
@@ -393,10 +228,10 @@
      "guarantee_usd": 8000,
      "venue_id": "venetian",
      "entry_status": "SE",
-     "late_reg_close": null,
-     "estimated_finish": null,
-     "sequence_check": "conflict",
-     "sequence_note": "Fallback starts -45 minutes after the primary's late-registration close (17:55).",
+     "late_reg_close": "21:40",
+     "estimated_finish": "07:10",
+     "sequence_check": null,
+     "sequence_note": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_30.pdf"
     }
    ]
@@ -404,22 +239,6 @@
   {
    "date": "2026-11-24",
    "primary": {
-    "id": "r012",
-    "start": "11:10",
-    "name": "$400 No Limit Hold'em 1B",
-    "series": "Venetian DeepStack Extravaganza IV",
-    "buy_in_usd": 400,
-    "guarantee_usd": 75000,
-    "venue_id": "venetian",
-    "entry_status": "SE",
-    "late_reg_close": "17:55",
-    "estimated_finish": null,
-    "sequence_check": null,
-    "sequence_note": null,
-    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_2.pdf"
-   },
-   "fallback": null,
-   "later_event_that_conflicts": {
     "id": "r013",
     "start": "17:10",
     "name": "$200 No Limit Hold'em Bounty (1Day)",
@@ -428,30 +247,17 @@
     "guarantee_usd": 8000,
     "venue_id": "venetian",
     "entry_status": "SE",
-    "late_reg_close": null,
-    "estimated_finish": null,
-    "sequence_check": "conflict",
-    "sequence_note": "Fallback starts -45 minutes after the primary's late-registration close (17:55).",
+    "late_reg_close": "21:40",
+    "estimated_finish": "07:10",
+    "sequence_check": null,
+    "sequence_note": null,
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
    },
-   "sequence_basis": "printed on the official sheet as '9 levels + Break (5:55 PM) 3 40 400 200-400 15 Minute Break Guarantee: $75,000 4 40 500 30'",
+   "fallback": null,
+   "later_event_that_conflicts": null,
+   "sequence_basis": "printed on the official sheet as '8 levels + Break (9:40 PM) Guarantee: $8,000 (prize pool + total bounties) 1. TDA rules'",
    "conditional_note": "No later verified single-entry event on this day starts at least 45 minutes after the primary's late-registration close. The later event listed below is an alternative, not a sequence.",
    "options": [
-    {
-     "id": "r012",
-     "start": "11:10",
-     "name": "$400 No Limit Hold'em 1B",
-     "series": "Venetian DeepStack Extravaganza IV",
-     "buy_in_usd": 400,
-     "guarantee_usd": 75000,
-     "venue_id": "venetian",
-     "entry_status": "SE",
-     "late_reg_close": "17:55",
-     "estimated_finish": null,
-     "sequence_check": null,
-     "sequence_note": null,
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_2.pdf"
-    },
     {
      "id": "r013",
      "start": "17:10",
@@ -461,10 +267,10 @@
      "guarantee_usd": 8000,
      "venue_id": "venetian",
      "entry_status": "SE",
-     "late_reg_close": null,
-     "estimated_finish": null,
-     "sequence_check": "conflict",
-     "sequence_note": "Fallback starts -45 minutes after the primary's late-registration close (17:55).",
+     "late_reg_close": "21:40",
+     "estimated_finish": "07:10",
+     "sequence_check": null,
+     "sequence_note": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
     }
    ]
@@ -481,7 +287,7 @@
     "venue_id": "venetian",
     "entry_status": "SE",
     "late_reg_close": "16:55",
-    "estimated_finish": null,
+    "estimated_finish": "01:10",
     "sequence_check": null,
     "sequence_note": null,
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_6.pdf"
@@ -497,12 +303,12 @@
     "venue_id": "venetian",
     "entry_status": "SE",
     "late_reg_close": null,
-    "estimated_finish": null,
+    "estimated_finish": "07:10",
     "sequence_check": "conflict",
     "sequence_note": "Fallback starts 15 minutes after the primary's late-registration close (16:55).",
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
    },
-   "sequence_basis": "printed on the official sheet as '10 levels + Break (~ 4:55 PM) 15 Minute Break Guarantee: $15,000 5 30 800 400-800 6 30 1,0'",
+   "sequence_basis": "printed on the official sheet as '10 levels + Break (~ 4:55 PM) Guarantee: $15,000 1. TDA rules apply to all Venetian Poker'",
    "conditional_note": "No later verified single-entry event on this day starts at least 45 minutes after the primary's late-registration close. The later event listed below is an alternative, not a sequence.",
    "options": [
     {
@@ -515,7 +321,7 @@
      "venue_id": "venetian",
      "entry_status": "SE",
      "late_reg_close": "16:55",
-     "estimated_finish": null,
+     "estimated_finish": "01:10",
      "sequence_check": null,
      "sequence_note": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_6.pdf"
@@ -530,7 +336,7 @@
      "venue_id": "venetian",
      "entry_status": "SE",
      "late_reg_close": null,
-     "estimated_finish": null,
+     "estimated_finish": "07:10",
      "sequence_check": "conflict",
      "sequence_note": "Fallback starts 15 minutes after the primary's late-registration close (16:55).",
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
@@ -549,7 +355,7 @@
     "venue_id": "venetian",
     "entry_status": "SE",
     "late_reg_close": "16:55",
-    "estimated_finish": null,
+    "estimated_finish": "01:10",
     "sequence_check": null,
     "sequence_note": null,
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf"
@@ -565,12 +371,12 @@
     "venue_id": "venetian",
     "entry_status": "SE",
     "late_reg_close": null,
-    "estimated_finish": null,
+    "estimated_finish": "07:10",
     "sequence_check": "conflict",
     "sequence_note": "Fallback starts 15 minutes after the primary's late-registration close (16:55).",
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
    },
-   "sequence_basis": "printed on the official sheet as '10 levels + Break (~ 4:55 PM) 15 Minute Break Guarantee: $10,000 5 30 800 400-800 6 30 1,0'",
+   "sequence_basis": "printed on the official sheet as '10 levels + Break (~ 4:55 PM) Guarantee: $10,000 1. TDA rules apply to all Venetian Poker'",
    "conditional_note": "No later verified single-entry event on this day starts at least 45 minutes after the primary's late-registration close. The later event listed below is an alternative, not a sequence.",
    "options": [
     {
@@ -583,7 +389,7 @@
      "venue_id": "venetian",
      "entry_status": "SE",
      "late_reg_close": "16:55",
-     "estimated_finish": null,
+     "estimated_finish": "01:10",
      "sequence_check": null,
      "sequence_note": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf"
@@ -598,7 +404,7 @@
      "venue_id": "venetian",
      "entry_status": "SE",
      "late_reg_close": null,
-     "estimated_finish": null,
+     "estimated_finish": "07:10",
      "sequence_check": "conflict",
      "sequence_note": "Fallback starts 15 minutes after the primary's late-registration close (16:55).",
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
@@ -617,7 +423,7 @@
     "venue_id": "venetian",
     "entry_status": "SE",
     "late_reg_close": "16:55",
-    "estimated_finish": null,
+    "estimated_finish": "01:10",
     "sequence_check": null,
     "sequence_note": null,
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf"
@@ -633,12 +439,12 @@
     "venue_id": "venetian",
     "entry_status": "SE",
     "late_reg_close": null,
-    "estimated_finish": null,
+    "estimated_finish": "07:10",
     "sequence_check": "conflict",
     "sequence_note": "Fallback starts 15 minutes after the primary's late-registration close (16:55).",
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
    },
-   "sequence_basis": "printed on the official sheet as '10 levels + Break (~ 4:55 PM) 15 Minute Break Guarantee: $30,000 for Event #14 and #63 5 3'",
+   "sequence_basis": "printed on the official sheet as '10 levels + Break (~ 4:55 PM) Guarantee: $30,000 for Event #14 and #63 Guarantee: $40,000'",
    "conditional_note": "No later verified single-entry event on this day starts at least 45 minutes after the primary's late-registration close. The later event listed below is an alternative, not a sequence.",
    "options": [
     {
@@ -651,7 +457,7 @@
      "venue_id": "venetian",
      "entry_status": "SE",
      "late_reg_close": "16:55",
-     "estimated_finish": null,
+     "estimated_finish": "01:10",
      "sequence_check": null,
      "sequence_note": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf"
@@ -666,7 +472,7 @@
      "venue_id": "venetian",
      "entry_status": "SE",
      "late_reg_close": null,
-     "estimated_finish": null,
+     "estimated_finish": "07:10",
      "sequence_check": "conflict",
      "sequence_note": "Fallback starts 15 minutes after the primary's late-registration close (16:55).",
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
@@ -685,7 +491,7 @@
     "venue_id": "venetian",
     "entry_status": "SE",
     "late_reg_close": "16:55",
-    "estimated_finish": null,
+    "estimated_finish": "01:10",
     "sequence_check": null,
     "sequence_note": null,
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf"
@@ -706,7 +512,7 @@
     "sequence_note": "Fallback starts -285 minutes after the primary's late-registration close (16:55).",
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_26.pdf"
    },
-   "sequence_basis": "printed on the official sheet as '10 levels + Break (4:55 PM) 15 Minute Break Guarantee: $30,000 (prize pool + total bountie'",
+   "sequence_basis": "printed on the official sheet as '10 levels + Break (4:55 PM) Guarantee: $30,000 (prize pool + total bounties) Event #16 Gu'",
    "conditional_note": "No later verified single-entry event on this day starts at least 45 minutes after the primary's late-registration close. The later event listed below is an alternative, not a sequence.",
    "options": [
     {
@@ -719,7 +525,7 @@
      "venue_id": "venetian",
      "entry_status": "SE",
      "late_reg_close": "16:55",
-     "estimated_finish": null,
+     "estimated_finish": "01:10",
      "sequence_check": null,
      "sequence_note": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf"
@@ -744,22 +550,6 @@
   {
    "date": "2026-11-29",
    "primary": {
-    "id": "r031",
-    "start": "11:10",
-    "name": "$400 No Limit Hold'em 1A",
-    "series": "Venetian DeepStack Extravaganza IV",
-    "buy_in_usd": 400,
-    "guarantee_usd": 75000,
-    "venue_id": "venetian",
-    "entry_status": "SE",
-    "late_reg_close": "17:55",
-    "estimated_finish": null,
-    "sequence_check": null,
-    "sequence_note": null,
-    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf"
-   },
-   "fallback": null,
-   "later_event_that_conflicts": {
     "id": "r032",
     "start": "12:10",
     "name": "$300 Pot Limit Omaha Double Board Bomb Pot (1Day)",
@@ -768,30 +558,31 @@
     "guarantee_usd": 10000,
     "venue_id": "venetian",
     "entry_status": "SE",
-    "late_reg_close": null,
+    "late_reg_close": "16:40",
     "estimated_finish": null,
-    "sequence_check": "conflict",
-    "sequence_note": "Fallback starts -345 minutes after the primary's late-registration close (17:55).",
+    "sequence_check": null,
+    "sequence_note": null,
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_22.pdf"
    },
-   "sequence_basis": "printed on the official sheet as '9 levels + Break (5:55 PM) 3 40 400 200-400 15 Minute Break Guarantee: $75,000 4 40 500 30'",
+   "fallback": null,
+   "later_event_that_conflicts": {
+    "id": "r033",
+    "start": "17:10",
+    "name": "$200 No Limit Hold'em Bounty (1Day)",
+    "series": "Venetian DeepStack Extravaganza IV",
+    "buy_in_usd": 200,
+    "guarantee_usd": 8000,
+    "venue_id": "venetian",
+    "entry_status": "SE",
+    "late_reg_close": null,
+    "estimated_finish": "07:10",
+    "sequence_check": "conflict",
+    "sequence_note": "Fallback starts 30 minutes after the primary's late-registration close (16:40).",
+    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
+   },
+   "sequence_basis": "printed on the official sheet as '8 levels + break (~ 4:40 PM) Guarantee: $10,000 1. TDA rules apply to all Venetian Poker'",
    "conditional_note": "No later verified single-entry event on this day starts at least 45 minutes after the primary's late-registration close. The later event listed below is an alternative, not a sequence.",
    "options": [
-    {
-     "id": "r031",
-     "start": "11:10",
-     "name": "$400 No Limit Hold'em 1A",
-     "series": "Venetian DeepStack Extravaganza IV",
-     "buy_in_usd": 400,
-     "guarantee_usd": 75000,
-     "venue_id": "venetian",
-     "entry_status": "SE",
-     "late_reg_close": "17:55",
-     "estimated_finish": null,
-     "sequence_check": null,
-     "sequence_note": null,
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf"
-    },
     {
      "id": "r032",
      "start": "12:10",
@@ -801,10 +592,10 @@
      "guarantee_usd": 10000,
      "venue_id": "venetian",
      "entry_status": "SE",
-     "late_reg_close": null,
+     "late_reg_close": "16:40",
      "estimated_finish": null,
-     "sequence_check": "conflict",
-     "sequence_note": "Fallback starts -345 minutes after the primary's late-registration close (17:55).",
+     "sequence_check": null,
+     "sequence_note": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_22.pdf"
     },
     {
@@ -817,9 +608,9 @@
      "venue_id": "venetian",
      "entry_status": "SE",
      "late_reg_close": null,
-     "estimated_finish": null,
+     "estimated_finish": "07:10",
      "sequence_check": "conflict",
-     "sequence_note": "Fallback starts -45 minutes after the primary's late-registration close (17:55).",
+     "sequence_note": "Fallback starts 30 minutes after the primary's late-registration close (16:40).",
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
     }
    ]
@@ -827,22 +618,6 @@
   {
    "date": "2026-11-30",
    "primary": {
-    "id": "r036",
-    "start": "11:10",
-    "name": "$400 No Limit Hold'em 1B",
-    "series": "Venetian DeepStack Extravaganza IV",
-    "buy_in_usd": 400,
-    "guarantee_usd": 75000,
-    "venue_id": "venetian",
-    "entry_status": "SE",
-    "late_reg_close": "17:55",
-    "estimated_finish": null,
-    "sequence_check": null,
-    "sequence_note": null,
-    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf"
-   },
-   "fallback": null,
-   "later_event_that_conflicts": {
     "id": "r039",
     "start": "17:10",
     "name": "$200 No Limit Hold'em Bounty (1Day)",
@@ -851,30 +626,17 @@
     "guarantee_usd": 8000,
     "venue_id": "venetian",
     "entry_status": "SE",
-    "late_reg_close": null,
-    "estimated_finish": null,
-    "sequence_check": "conflict",
-    "sequence_note": "Fallback starts -45 minutes after the primary's late-registration close (17:55).",
+    "late_reg_close": "21:40",
+    "estimated_finish": "07:10",
+    "sequence_check": null,
+    "sequence_note": null,
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
    },
-   "sequence_basis": "printed on the official sheet as '9 levels + Break (5:55 PM) 3 40 400 200-400 15 Minute Break Guarantee: $75,000 4 40 500 30'",
+   "fallback": null,
+   "later_event_that_conflicts": null,
+   "sequence_basis": "printed on the official sheet as '8 levels + Break (9:40 PM) Guarantee: $8,000 (prize pool + total bounties) 1. TDA rules'",
    "conditional_note": "No later verified single-entry event on this day starts at least 45 minutes after the primary's late-registration close. The later event listed below is an alternative, not a sequence.",
    "options": [
-    {
-     "id": "r036",
-     "start": "11:10",
-     "name": "$400 No Limit Hold'em 1B",
-     "series": "Venetian DeepStack Extravaganza IV",
-     "buy_in_usd": 400,
-     "guarantee_usd": 75000,
-     "venue_id": "venetian",
-     "entry_status": "SE",
-     "late_reg_close": "17:55",
-     "estimated_finish": null,
-     "sequence_check": null,
-     "sequence_note": null,
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf"
-    },
     {
      "id": "r039",
      "start": "17:10",
@@ -884,10 +646,10 @@
      "guarantee_usd": 8000,
      "venue_id": "venetian",
      "entry_status": "SE",
-     "late_reg_close": null,
-     "estimated_finish": null,
-     "sequence_check": "conflict",
-     "sequence_note": "Fallback starts -45 minutes after the primary's late-registration close (17:55).",
+     "late_reg_close": "21:40",
+     "estimated_finish": "07:10",
+     "sequence_check": null,
+     "sequence_note": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
     }
    ]
@@ -895,22 +657,6 @@
   {
    "date": "2026-12-01",
    "primary": {
-    "id": "r041",
-    "start": "11:10",
-    "name": "$400 No Limit Hold'em 1C",
-    "series": "Venetian DeepStack Extravaganza IV",
-    "buy_in_usd": 400,
-    "guarantee_usd": 75000,
-    "venue_id": "venetian",
-    "entry_status": "SE",
-    "late_reg_close": "17:55",
-    "estimated_finish": null,
-    "sequence_check": null,
-    "sequence_note": null,
-    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf"
-   },
-   "fallback": null,
-   "later_event_that_conflicts": {
     "id": "r045",
     "start": "17:10",
     "name": "$200 No Limit Hold'em Bounty (1Day)",
@@ -919,30 +665,17 @@
     "guarantee_usd": 8000,
     "venue_id": "venetian",
     "entry_status": "SE",
-    "late_reg_close": null,
-    "estimated_finish": null,
-    "sequence_check": "conflict",
-    "sequence_note": "Fallback starts -45 minutes after the primary's late-registration close (17:55).",
+    "late_reg_close": "21:40",
+    "estimated_finish": "07:10",
+    "sequence_check": null,
+    "sequence_note": null,
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
    },
-   "sequence_basis": "printed on the official sheet as '9 levels + Break (5:55 PM) 3 40 400 200-400 15 Minute Break Guarantee: $75,000 4 40 500 30'",
+   "fallback": null,
+   "later_event_that_conflicts": null,
+   "sequence_basis": "printed on the official sheet as '8 levels + Break (9:40 PM) Guarantee: $8,000 (prize pool + total bounties) 1. TDA rules'",
    "conditional_note": "No later verified single-entry event on this day starts at least 45 minutes after the primary's late-registration close. The later event listed below is an alternative, not a sequence.",
    "options": [
-    {
-     "id": "r041",
-     "start": "11:10",
-     "name": "$400 No Limit Hold'em 1C",
-     "series": "Venetian DeepStack Extravaganza IV",
-     "buy_in_usd": 400,
-     "guarantee_usd": 75000,
-     "venue_id": "venetian",
-     "entry_status": "SE",
-     "late_reg_close": "17:55",
-     "estimated_finish": null,
-     "sequence_check": null,
-     "sequence_note": null,
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf"
-    },
     {
      "id": "r045",
      "start": "17:10",
@@ -952,10 +685,10 @@
      "guarantee_usd": 8000,
      "venue_id": "venetian",
      "entry_status": "SE",
-     "late_reg_close": null,
-     "estimated_finish": null,
-     "sequence_check": "conflict",
-     "sequence_note": "Fallback starts -45 minutes after the primary's late-registration close (17:55).",
+     "late_reg_close": "21:40",
+     "estimated_finish": "07:10",
+     "sequence_check": null,
+     "sequence_note": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
     }
    ]
@@ -972,7 +705,7 @@
     "venue_id": "venetian",
     "entry_status": "SE",
     "late_reg_close": "15:55",
-    "estimated_finish": null,
+    "estimated_finish": "00:10",
     "sequence_check": null,
     "sequence_note": null,
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf"
@@ -987,13 +720,13 @@
     "venue_id": "venetian",
     "entry_status": "SE",
     "late_reg_close": null,
-    "estimated_finish": null,
+    "estimated_finish": "07:10",
     "sequence_check": "ok",
     "sequence_note": "Fallback starts 75 minutes after the primary's late-registration close (15:55).",
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
    },
    "later_event_that_conflicts": null,
-   "sequence_basis": "printed on the official sheet as '10 levels + Break (~ 3:55 PM) 15 Minute Break Guarantee: $40,000 5 30 800 400-800 6 30 1,0'",
+   "sequence_basis": "printed on the official sheet as '10 levels + Break (~ 3:55 PM) Guarantee: $40,000 1. TDA rules apply to all Venetian Poker'",
    "conditional_note": null,
    "options": [
     {
@@ -1006,7 +739,7 @@
      "venue_id": "venetian",
      "entry_status": "SE",
      "late_reg_close": "15:55",
-     "estimated_finish": null,
+     "estimated_finish": "00:10",
      "sequence_check": null,
      "sequence_note": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf"
@@ -1021,7 +754,7 @@
      "venue_id": "venetian",
      "entry_status": "SE",
      "late_reg_close": null,
-     "estimated_finish": null,
+     "estimated_finish": "07:10",
      "sequence_check": "ok",
      "sequence_note": "Fallback starts 75 minutes after the primary's late-registration close (15:55).",
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
@@ -1031,36 +764,6 @@
   {
    "date": "2026-12-03",
    "primary": {
-    "id": "r051",
-    "start": "11:10",
-    "name": "$800 No Limit Hold'em 1A",
-    "series": "Venetian DeepStack Extravaganza IV",
-    "buy_in_usd": 800,
-    "guarantee_usd": 500000,
-    "venue_id": "venetian",
-    "entry_status": "SE",
-    "late_reg_close": "15:40",
-    "estimated_finish": null,
-    "sequence_check": null,
-    "sequence_note": null,
-    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf"
-   },
-   "fallback": {
-    "id": "r053",
-    "start": "17:10",
-    "name": "$800 No Limit Hold'em 1B",
-    "series": "Venetian DeepStack Extravaganza IV",
-    "buy_in_usd": 800,
-    "guarantee_usd": 500000,
-    "venue_id": "venetian",
-    "entry_status": "SE",
-    "late_reg_close": null,
-    "estimated_finish": null,
-    "sequence_check": "ok",
-    "sequence_note": "Fallback starts 90 minutes after the primary's late-registration close (15:40).",
-    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf"
-   },
-   "later_event_that_conflicts": {
     "id": "r052",
     "start": "12:10",
     "name": "$600 Big O (1Day)",
@@ -1069,30 +772,17 @@
     "guarantee_usd": 25000,
     "venue_id": "venetian",
     "entry_status": "SE",
-    "late_reg_close": null,
+    "late_reg_close": "16:40",
     "estimated_finish": null,
-    "sequence_check": "conflict",
-    "sequence_note": "Fallback starts -210 minutes after the primary's late-registration close (15:40).",
+    "sequence_check": null,
+    "sequence_note": null,
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_28.pdf"
    },
-   "sequence_basis": "printed on the official sheet as '6 levels + Break (~ 3:40 PM) 3 40 400 200-400 15 Minute Break Guarantee: $500,000 4 40 500'",
-   "conditional_note": null,
+   "fallback": null,
+   "later_event_that_conflicts": null,
+   "sequence_basis": "printed on the official sheet as '8 levels + break (~ 4:40 PM) Guarantee: $25,000 1. TDA rules apply to all Venetian Poker'",
+   "conditional_note": "No later verified single-entry event on this day starts at least 45 minutes after the primary's late-registration close. The later event listed below is an alternative, not a sequence.",
    "options": [
-    {
-     "id": "r051",
-     "start": "11:10",
-     "name": "$800 No Limit Hold'em 1A",
-     "series": "Venetian DeepStack Extravaganza IV",
-     "buy_in_usd": 800,
-     "guarantee_usd": 500000,
-     "venue_id": "venetian",
-     "entry_status": "SE",
-     "late_reg_close": "15:40",
-     "estimated_finish": null,
-     "sequence_check": null,
-     "sequence_note": null,
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf"
-    },
     {
      "id": "r052",
      "start": "12:10",
@@ -1102,162 +792,11 @@
      "guarantee_usd": 25000,
      "venue_id": "venetian",
      "entry_status": "SE",
-     "late_reg_close": null,
+     "late_reg_close": "16:40",
      "estimated_finish": null,
-     "sequence_check": "conflict",
-     "sequence_note": "Fallback starts -210 minutes after the primary's late-registration close (15:40).",
+     "sequence_check": null,
+     "sequence_note": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_28.pdf"
-    },
-    {
-     "id": "r053",
-     "start": "17:10",
-     "name": "$800 No Limit Hold'em 1B",
-     "series": "Venetian DeepStack Extravaganza IV",
-     "buy_in_usd": 800,
-     "guarantee_usd": 500000,
-     "venue_id": "venetian",
-     "entry_status": "SE",
-     "late_reg_close": null,
-     "estimated_finish": null,
-     "sequence_check": "ok",
-     "sequence_note": "Fallback starts 90 minutes after the primary's late-registration close (15:40).",
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf"
-    }
-   ]
-  },
-  {
-   "date": "2026-12-04",
-   "primary": {
-    "id": "r055",
-    "start": "11:10",
-    "name": "$800 No Limit Hold'em 1C",
-    "series": "Venetian DeepStack Extravaganza IV",
-    "buy_in_usd": 800,
-    "guarantee_usd": 500000,
-    "venue_id": "venetian",
-    "entry_status": "SE",
-    "late_reg_close": "15:40",
-    "estimated_finish": null,
-    "sequence_check": null,
-    "sequence_note": null,
-    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf"
-   },
-   "fallback": {
-    "id": "r057",
-    "start": "17:10",
-    "name": "$800 No Limit Hold'em 1D",
-    "series": "Venetian DeepStack Extravaganza IV",
-    "buy_in_usd": 800,
-    "guarantee_usd": 500000,
-    "venue_id": "venetian",
-    "entry_status": "SE",
-    "late_reg_close": null,
-    "estimated_finish": null,
-    "sequence_check": "ok",
-    "sequence_note": "Fallback starts 90 minutes after the primary's late-registration close (15:40).",
-    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf"
-   },
-   "later_event_that_conflicts": null,
-   "sequence_basis": "printed on the official sheet as '6 levels + Break (~ 3:40 PM) 3 40 400 200-400 15 Minute Break Guarantee: $500,000 4 40 500'",
-   "conditional_note": null,
-   "options": [
-    {
-     "id": "r055",
-     "start": "11:10",
-     "name": "$800 No Limit Hold'em 1C",
-     "series": "Venetian DeepStack Extravaganza IV",
-     "buy_in_usd": 800,
-     "guarantee_usd": 500000,
-     "venue_id": "venetian",
-     "entry_status": "SE",
-     "late_reg_close": "15:40",
-     "estimated_finish": null,
-     "sequence_check": null,
-     "sequence_note": null,
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf"
-    },
-    {
-     "id": "r057",
-     "start": "17:10",
-     "name": "$800 No Limit Hold'em 1D",
-     "series": "Venetian DeepStack Extravaganza IV",
-     "buy_in_usd": 800,
-     "guarantee_usd": 500000,
-     "venue_id": "venetian",
-     "entry_status": "SE",
-     "late_reg_close": null,
-     "estimated_finish": null,
-     "sequence_check": "ok",
-     "sequence_note": "Fallback starts 90 minutes after the primary's late-registration close (15:40).",
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf"
-    }
-   ]
-  },
-  {
-   "date": "2026-12-05",
-   "primary": {
-    "id": "r059",
-    "start": "11:10",
-    "name": "$800 No Limit Hold'em 1E",
-    "series": "Venetian DeepStack Extravaganza IV",
-    "buy_in_usd": 800,
-    "guarantee_usd": 500000,
-    "venue_id": "venetian",
-    "entry_status": "SE",
-    "late_reg_close": "15:40",
-    "estimated_finish": null,
-    "sequence_check": null,
-    "sequence_note": null,
-    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf"
-   },
-   "fallback": {
-    "id": "r060",
-    "start": "17:10",
-    "name": "$800 No Limit Hold'em 1F (Turbo)",
-    "series": "Venetian DeepStack Extravaganza IV",
-    "buy_in_usd": 800,
-    "guarantee_usd": 500000,
-    "venue_id": "venetian",
-    "entry_status": "SE",
-    "late_reg_close": null,
-    "estimated_finish": null,
-    "sequence_check": "ok",
-    "sequence_note": "Fallback starts 90 minutes after the primary's late-registration close (15:40).",
-    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf"
-   },
-   "later_event_that_conflicts": null,
-   "sequence_basis": "printed on the official sheet as '6 levels + Break (~ 3:40 PM) 3 40 400 200-400 15 Minute Break Guarantee: $500,000 4 40 500'",
-   "conditional_note": null,
-   "options": [
-    {
-     "id": "r059",
-     "start": "11:10",
-     "name": "$800 No Limit Hold'em 1E",
-     "series": "Venetian DeepStack Extravaganza IV",
-     "buy_in_usd": 800,
-     "guarantee_usd": 500000,
-     "venue_id": "venetian",
-     "entry_status": "SE",
-     "late_reg_close": "15:40",
-     "estimated_finish": null,
-     "sequence_check": null,
-     "sequence_note": null,
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf"
-    },
-    {
-     "id": "r060",
-     "start": "17:10",
-     "name": "$800 No Limit Hold'em 1F (Turbo)",
-     "series": "Venetian DeepStack Extravaganza IV",
-     "buy_in_usd": 800,
-     "guarantee_usd": 500000,
-     "venue_id": "venetian",
-     "entry_status": "SE",
-     "late_reg_close": null,
-     "estimated_finish": null,
-     "sequence_check": "ok",
-     "sequence_note": "Fallback starts 90 minutes after the primary's late-registration close (15:40).",
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf"
     }
    ]
   },
@@ -1273,7 +812,7 @@
     "venue_id": "venetian",
     "entry_status": "SE",
     "late_reg_close": "16:55",
-    "estimated_finish": null,
+    "estimated_finish": "01:10",
     "sequence_check": null,
     "sequence_note": null,
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf"
@@ -1289,12 +828,12 @@
     "venue_id": "venetian",
     "entry_status": "SE",
     "late_reg_close": null,
-    "estimated_finish": null,
+    "estimated_finish": "07:10",
     "sequence_check": "conflict",
     "sequence_note": "Fallback starts 15 minutes after the primary's late-registration close (16:55).",
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
    },
-   "sequence_basis": "printed on the official sheet as '10 levels + Break (~ 4:55 PM) 15 Minute Break Guarantee: $30,000 for Event #14 and #63 5 3'",
+   "sequence_basis": "printed on the official sheet as '10 levels + Break (~ 4:55 PM) Guarantee: $30,000 for Event #14 and #63 Guarantee: $40,000'",
    "conditional_note": "No later verified single-entry event on this day starts at least 45 minutes after the primary's late-registration close. The later event listed below is an alternative, not a sequence.",
    "options": [
     {
@@ -1307,7 +846,7 @@
      "venue_id": "venetian",
      "entry_status": "SE",
      "late_reg_close": "16:55",
-     "estimated_finish": null,
+     "estimated_finish": "01:10",
      "sequence_check": null,
      "sequence_note": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf"
@@ -1322,7 +861,7 @@
      "venue_id": "venetian",
      "entry_status": "SE",
      "late_reg_close": null,
-     "estimated_finish": null,
+     "estimated_finish": "07:10",
      "sequence_check": "conflict",
      "sequence_note": "Fallback starts 15 minutes after the primary's late-registration close (16:55).",
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
@@ -1341,7 +880,7 @@
     "venue_id": "venetian",
     "entry_status": "SE",
     "late_reg_close": "16:55",
-    "estimated_finish": null,
+    "estimated_finish": "01:10",
     "sequence_check": null,
     "sequence_note": null,
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf"
@@ -1357,12 +896,12 @@
     "venue_id": "venetian",
     "entry_status": "SE",
     "late_reg_close": null,
-    "estimated_finish": null,
+    "estimated_finish": "07:10",
     "sequence_check": "conflict",
     "sequence_note": "Fallback starts 15 minutes after the primary's late-registration close (16:55).",
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
    },
-   "sequence_basis": "printed on the official sheet as '10 levels + Break (4:55 PM) 15 Minute Break Guarantee: $30,000 (prize pool + total bountie'",
+   "sequence_basis": "printed on the official sheet as '10 levels + Break (4:55 PM) Guarantee: $30,000 (prize pool + total bounties) Event #16 Gu'",
    "conditional_note": "No later verified single-entry event on this day starts at least 45 minutes after the primary's late-registration close. The later event listed below is an alternative, not a sequence.",
    "options": [
     {
@@ -1375,7 +914,7 @@
      "venue_id": "venetian",
      "entry_status": "SE",
      "late_reg_close": "16:55",
-     "estimated_finish": null,
+     "estimated_finish": "01:10",
      "sequence_check": null,
      "sequence_note": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf"
@@ -1390,7 +929,7 @@
      "venue_id": "venetian",
      "entry_status": "SE",
      "late_reg_close": null,
-     "estimated_finish": null,
+     "estimated_finish": "07:10",
      "sequence_check": "conflict",
      "sequence_note": "Fallback starts 15 minutes after the primary's late-registration close (16:55).",
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
@@ -1409,7 +948,7 @@
     "venue_id": "venetian",
     "entry_status": "SE",
     "late_reg_close": "15:55",
-    "estimated_finish": null,
+    "estimated_finish": "00:10",
     "sequence_check": null,
     "sequence_note": null,
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf"
@@ -1424,13 +963,13 @@
     "venue_id": "venetian",
     "entry_status": "SE",
     "late_reg_close": null,
-    "estimated_finish": null,
+    "estimated_finish": "07:10",
     "sequence_check": "ok",
     "sequence_note": "Fallback starts 75 minutes after the primary's late-registration close (15:55).",
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
    },
    "later_event_that_conflicts": null,
-   "sequence_basis": "printed on the official sheet as '10 levels + Break (~ 3:55 PM) 15 Minute Break Guarantee: $40,000 5 30 800 400-800 6 30 1,0'",
+   "sequence_basis": "printed on the official sheet as '10 levels + Break (~ 3:55 PM) Guarantee: $40,000 1. TDA rules apply to all Venetian Poker'",
    "conditional_note": null,
    "options": [
     {
@@ -1443,7 +982,7 @@
      "venue_id": "venetian",
      "entry_status": "SE",
      "late_reg_close": "15:55",
-     "estimated_finish": null,
+     "estimated_finish": "00:10",
      "sequence_check": null,
      "sequence_note": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf"
@@ -1458,7 +997,7 @@
      "venue_id": "venetian",
      "entry_status": "SE",
      "late_reg_close": null,
-     "estimated_finish": null,
+     "estimated_finish": "07:10",
      "sequence_check": "ok",
      "sequence_note": "Fallback starts 75 minutes after the primary's late-registration close (15:55).",
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
@@ -1477,7 +1016,7 @@
     "venue_id": "venetian",
     "entry_status": "SE",
     "late_reg_close": "14:40",
-    "estimated_finish": null,
+    "estimated_finish": "00:10",
     "sequence_check": null,
     "sequence_note": null,
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_31.pdf"
@@ -1492,7 +1031,7 @@
     "venue_id": "venetian",
     "entry_status": "SE",
     "late_reg_close": null,
-    "estimated_finish": null,
+    "estimated_finish": "07:10",
     "sequence_check": "ok",
     "sequence_note": "Fallback starts 150 minutes after the primary's late-registration close (14:40).",
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
@@ -1507,12 +1046,12 @@
     "venue_id": "venetian",
     "entry_status": "SE",
     "late_reg_close": null,
-    "estimated_finish": null,
+    "estimated_finish": "01:10",
     "sequence_check": "conflict",
     "sequence_note": "Fallback starts -210 minutes after the primary's late-registration close (14:40).",
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_16.pdf"
    },
-   "sequence_basis": "printed on the official sheet as '8 levels + Break (~ 2:40 PM) 15 Minute Break Guarantee: $10,000 5 30 800 400-800 Teams: Fe'",
+   "sequence_basis": "printed on the official sheet as '8 levels + Break (~ 2:40 PM) Guarantee: $10,000 Teams: Female / Female OR Female / Male'",
    "conditional_note": null,
    "options": [
     {
@@ -1525,7 +1064,7 @@
      "venue_id": "venetian",
      "entry_status": "SE",
      "late_reg_close": "14:40",
-     "estimated_finish": null,
+     "estimated_finish": "00:10",
      "sequence_check": null,
      "sequence_note": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_31.pdf"
@@ -1540,7 +1079,7 @@
      "venue_id": "venetian",
      "entry_status": "SE",
      "late_reg_close": null,
-     "estimated_finish": null,
+     "estimated_finish": "01:10",
      "sequence_check": "conflict",
      "sequence_note": "Fallback starts -210 minutes after the primary's late-registration close (14:40).",
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_16.pdf"
@@ -1555,7 +1094,7 @@
      "venue_id": "venetian",
      "entry_status": "SE",
      "late_reg_close": null,
-     "estimated_finish": null,
+     "estimated_finish": "07:10",
      "sequence_check": "ok",
      "sequence_note": "Fallback starts 150 minutes after the primary's late-registration close (14:40).",
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
@@ -1574,7 +1113,7 @@
     "venue_id": "venetian",
     "entry_status": "SE",
     "late_reg_close": "16:55",
-    "estimated_finish": null,
+    "estimated_finish": "05:30",
     "sequence_check": null,
     "sequence_note": null,
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf"
@@ -1595,7 +1134,7 @@
     "sequence_note": "Fallback starts -285 minutes after the primary's late-registration close (16:55).",
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_27.pdf"
    },
-   "sequence_basis": "printed on the official sheet as '9 levels + Break (~ 4:55 PM) 3 40 400 200-400 15 Minute Break Guarantee: $40,000 4 40 500'",
+   "sequence_basis": "printed on the official sheet as '9 levels + Break (~ 4:55 PM) Guarantee: $40,000 1. TDA rules apply to all Venetian Poker'",
    "conditional_note": "No later verified single-entry event on this day starts at least 45 minutes after the primary's late-registration close. The later event listed below is an alternative, not a sequence.",
    "options": [
     {
@@ -1608,7 +1147,7 @@
      "venue_id": "venetian",
      "entry_status": "SE",
      "late_reg_close": "16:55",
-     "estimated_finish": null,
+     "estimated_finish": "05:30",
      "sequence_check": null,
      "sequence_note": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf"
@@ -1638,7 +1177,7 @@
      "venue_id": "venetian",
      "entry_status": "SE",
      "late_reg_close": null,
-     "estimated_finish": null,
+     "estimated_finish": "07:10",
      "sequence_check": "conflict",
      "sequence_note": "Fallback starts 15 minutes after the primary's late-registration close (16:55).",
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
@@ -1657,14 +1196,14 @@
     "venue_id": "venetian",
     "entry_status": "SE",
     "late_reg_close": "16:55",
-    "estimated_finish": null,
+    "estimated_finish": "01:10",
     "sequence_check": null,
     "sequence_note": null,
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_33.pdf"
    },
    "fallback": null,
    "later_event_that_conflicts": null,
-   "sequence_basis": "printed on the official sheet as '10 levels + Break (4:55 PM) 15 Minute Break Guarantee: $30,000 (prize pool + total bountie'",
+   "sequence_basis": "printed on the official sheet as '10 levels + Break (4:55 PM) Guarantee: $30,000 (prize pool + total bounties) 1. TDA rules'",
    "conditional_note": "No later verified single-entry event on this day starts at least 45 minutes after the primary's late-registration close. The later event listed below is an alternative, not a sequence.",
    "options": [
     {
@@ -1677,7 +1216,7 @@
      "venue_id": "venetian",
      "entry_status": "SE",
      "late_reg_close": "16:55",
-     "estimated_finish": null,
+     "estimated_finish": "01:10",
      "sequence_check": null,
      "sequence_note": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_33.pdf"
@@ -1685,92 +1224,8 @@
    ]
   },
   {
-   "date": "2026-12-12",
-   "primary": {
-    "id": "r094",
-    "start": "10:10",
-    "name": "$2,200 No Limit Hold'em 1A",
-    "series": "Venetian DeepStack Extravaganza IV",
-    "buy_in_usd": 2200,
-    "guarantee_usd": 1000000,
-    "venue_id": "venetian",
-    "entry_status": "SE",
-    "late_reg_close": "16:55",
-    "estimated_finish": null,
-    "sequence_check": null,
-    "sequence_note": null,
-    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf"
-   },
-   "fallback": {
-    "id": "r096",
-    "start": "18:10",
-    "name": "$2,200 No Limit Hold'em 1B",
-    "series": "Venetian DeepStack Extravaganza IV",
-    "buy_in_usd": 2200,
-    "guarantee_usd": 1000000,
-    "venue_id": "venetian",
-    "entry_status": "SE",
-    "late_reg_close": null,
-    "estimated_finish": null,
-    "sequence_check": "ok",
-    "sequence_note": "Fallback starts 75 minutes after the primary's late-registration close (16:55).",
-    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_37.pdf"
-   },
-   "later_event_that_conflicts": null,
-   "sequence_basis": "printed on the official sheet as '9 levels + Break (~ 4:55 PM) 3 40 400 200-400 Guarantee: $1,000,000 15 Minute Break 4 40 5'",
-   "conditional_note": null,
-   "options": [
-    {
-     "id": "r094",
-     "start": "10:10",
-     "name": "$2,200 No Limit Hold'em 1A",
-     "series": "Venetian DeepStack Extravaganza IV",
-     "buy_in_usd": 2200,
-     "guarantee_usd": 1000000,
-     "venue_id": "venetian",
-     "entry_status": "SE",
-     "late_reg_close": "16:55",
-     "estimated_finish": null,
-     "sequence_check": null,
-     "sequence_note": null,
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf"
-    },
-    {
-     "id": "r096",
-     "start": "18:10",
-     "name": "$2,200 No Limit Hold'em 1B",
-     "series": "Venetian DeepStack Extravaganza IV",
-     "buy_in_usd": 2200,
-     "guarantee_usd": 1000000,
-     "venue_id": "venetian",
-     "entry_status": "SE",
-     "late_reg_close": null,
-     "estimated_finish": null,
-     "sequence_check": "ok",
-     "sequence_note": "Fallback starts 75 minutes after the primary's late-registration close (16:55).",
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_37.pdf"
-    }
-   ]
-  },
-  {
    "date": "2026-12-13",
    "primary": {
-    "id": "r098",
-    "start": "10:10",
-    "name": "$1,100 No Limit Hold'em Seniors 1A",
-    "series": "Venetian DeepStack Extravaganza IV",
-    "buy_in_usd": 1100,
-    "guarantee_usd": 300000,
-    "venue_id": "venetian",
-    "entry_status": "SE",
-    "late_reg_close": "16:55",
-    "estimated_finish": null,
-    "sequence_check": null,
-    "sequence_note": null,
-    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_20.pdf"
-   },
-   "fallback": null,
-   "later_event_that_conflicts": {
     "id": "r103",
     "start": "17:10",
     "name": "$300 No Limit Hold'em Bounty (1Day)",
@@ -1779,30 +1234,17 @@
     "guarantee_usd": 15000,
     "venue_id": "venetian",
     "entry_status": "SE",
-    "late_reg_close": null,
-    "estimated_finish": null,
-    "sequence_check": "conflict",
-    "sequence_note": "Fallback starts 15 minutes after the primary's late-registration close (16:55).",
+    "late_reg_close": "21:40",
+    "estimated_finish": "07:10",
+    "sequence_check": null,
+    "sequence_note": null,
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
    },
-   "sequence_basis": "printed on the official sheet as '9 levels + Break (~ 4:55 PM) 3 40 400 200-400 15 Minute Break Guarantee: $300,000 4 40 500'",
+   "fallback": null,
+   "later_event_that_conflicts": null,
+   "sequence_basis": "printed on the official sheet as '8 levels + Break (9:40 PM) Guarantee: $15,000 (prize pool + total bounties) 1. TDA rules'",
    "conditional_note": "No later verified single-entry event on this day starts at least 45 minutes after the primary's late-registration close. The later event listed below is an alternative, not a sequence.",
    "options": [
-    {
-     "id": "r098",
-     "start": "10:10",
-     "name": "$1,100 No Limit Hold'em Seniors 1A",
-     "series": "Venetian DeepStack Extravaganza IV",
-     "buy_in_usd": 1100,
-     "guarantee_usd": 300000,
-     "venue_id": "venetian",
-     "entry_status": "SE",
-     "late_reg_close": "16:55",
-     "estimated_finish": null,
-     "sequence_check": null,
-     "sequence_note": null,
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_20.pdf"
-    },
     {
      "id": "r103",
      "start": "17:10",
@@ -1812,10 +1254,10 @@
      "guarantee_usd": 15000,
      "venue_id": "venetian",
      "entry_status": "SE",
-     "late_reg_close": null,
-     "estimated_finish": null,
-     "sequence_check": "conflict",
-     "sequence_note": "Fallback starts 15 minutes after the primary's late-registration close (16:55).",
+     "late_reg_close": "21:40",
+     "estimated_finish": "07:10",
+     "sequence_check": null,
+     "sequence_note": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
     }
    ]
@@ -1823,22 +1265,6 @@
   {
    "date": "2026-12-14",
    "primary": {
-    "id": "r104",
-    "start": "10:10",
-    "name": "$1,100 No Limit Hold'em Seniors 1B",
-    "series": "Venetian DeepStack Extravaganza IV",
-    "buy_in_usd": 1100,
-    "guarantee_usd": 300000,
-    "venue_id": "venetian",
-    "entry_status": "SE",
-    "late_reg_close": "16:55",
-    "estimated_finish": null,
-    "sequence_check": null,
-    "sequence_note": null,
-    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_20.pdf"
-   },
-   "fallback": null,
-   "later_event_that_conflicts": {
     "id": "r109",
     "start": "17:10",
     "name": "$300 No Limit Hold'em Bounty (1Day)",
@@ -1847,30 +1273,17 @@
     "guarantee_usd": 15000,
     "venue_id": "venetian",
     "entry_status": "SE",
-    "late_reg_close": null,
-    "estimated_finish": null,
-    "sequence_check": "conflict",
-    "sequence_note": "Fallback starts 15 minutes after the primary's late-registration close (16:55).",
+    "late_reg_close": "21:40",
+    "estimated_finish": "07:10",
+    "sequence_check": null,
+    "sequence_note": null,
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
    },
-   "sequence_basis": "printed on the official sheet as '9 levels + Break (~ 4:55 PM) 3 40 400 200-400 15 Minute Break Guarantee: $300,000 4 40 500'",
+   "fallback": null,
+   "later_event_that_conflicts": null,
+   "sequence_basis": "printed on the official sheet as '8 levels + Break (9:40 PM) Guarantee: $15,000 (prize pool + total bounties) 1. TDA rules'",
    "conditional_note": "No later verified single-entry event on this day starts at least 45 minutes after the primary's late-registration close. The later event listed below is an alternative, not a sequence.",
    "options": [
-    {
-     "id": "r104",
-     "start": "10:10",
-     "name": "$1,100 No Limit Hold'em Seniors 1B",
-     "series": "Venetian DeepStack Extravaganza IV",
-     "buy_in_usd": 1100,
-     "guarantee_usd": 300000,
-     "venue_id": "venetian",
-     "entry_status": "SE",
-     "late_reg_close": "16:55",
-     "estimated_finish": null,
-     "sequence_check": null,
-     "sequence_note": null,
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_20.pdf"
-    },
     {
      "id": "r109",
      "start": "17:10",
@@ -1880,10 +1293,10 @@
      "guarantee_usd": 15000,
      "venue_id": "venetian",
      "entry_status": "SE",
-     "late_reg_close": null,
-     "estimated_finish": null,
-     "sequence_check": "conflict",
-     "sequence_note": "Fallback starts 15 minutes after the primary's late-registration close (16:55).",
+     "late_reg_close": "21:40",
+     "estimated_finish": "07:10",
+     "sequence_check": null,
+     "sequence_note": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
     }
    ]
@@ -1900,7 +1313,7 @@
     "venue_id": "venetian",
     "entry_status": "SE",
     "late_reg_close": "16:55",
-    "estimated_finish": null,
+    "estimated_finish": "01:10",
     "sequence_check": null,
     "sequence_note": null,
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_34.pdf"
@@ -1916,12 +1329,12 @@
     "venue_id": "venetian",
     "entry_status": "SE",
     "late_reg_close": null,
-    "estimated_finish": null,
+    "estimated_finish": "07:10",
     "sequence_check": "conflict",
     "sequence_note": "Fallback starts 15 minutes after the primary's late-registration close (16:55).",
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
    },
-   "sequence_basis": "printed on the official sheet as '10 levels + Break (4:55 PM) 15 Minute Break Guarantee: $75,000 (prize pool + total bountie'",
+   "sequence_basis": "printed on the official sheet as '10 levels + Break (4:55 PM) Guarantee: $75,000 (prize pool + total bounties) 1. TDA rules'",
    "conditional_note": "No later verified single-entry event on this day starts at least 45 minutes after the primary's late-registration close. The later event listed below is an alternative, not a sequence.",
    "options": [
     {
@@ -1934,7 +1347,7 @@
      "venue_id": "venetian",
      "entry_status": "SE",
      "late_reg_close": "16:55",
-     "estimated_finish": null,
+     "estimated_finish": "01:10",
      "sequence_check": null,
      "sequence_note": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_34.pdf"
@@ -1949,7 +1362,7 @@
      "venue_id": "venetian",
      "entry_status": "SE",
      "late_reg_close": null,
-     "estimated_finish": null,
+     "estimated_finish": "07:10",
      "sequence_check": "conflict",
      "sequence_note": "Fallback starts 15 minutes after the primary's late-registration close (16:55).",
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
@@ -1968,7 +1381,7 @@
     "venue_id": "venetian",
     "entry_status": "SE",
     "late_reg_close": "16:55",
-    "estimated_finish": null,
+    "estimated_finish": "01:10",
     "sequence_check": null,
     "sequence_note": null,
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf"
@@ -1984,12 +1397,12 @@
     "venue_id": "venetian",
     "entry_status": "SE",
     "late_reg_close": null,
-    "estimated_finish": null,
+    "estimated_finish": "07:10",
     "sequence_check": "conflict",
     "sequence_note": "Fallback starts 15 minutes after the primary's late-registration close (16:55).",
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
    },
-   "sequence_basis": "printed on the official sheet as '10 levels + Break (4:55 PM) 15 Minute Break Guarantee: $30,000 (prize pool + total bountie'",
+   "sequence_basis": "printed on the official sheet as '10 levels + Break (4:55 PM) Guarantee: $30,000 (prize pool + total bounties) Event #16 Gu'",
    "conditional_note": "No later verified single-entry event on this day starts at least 45 minutes after the primary's late-registration close. The later event listed below is an alternative, not a sequence.",
    "options": [
     {
@@ -2002,7 +1415,7 @@
      "venue_id": "venetian",
      "entry_status": "SE",
      "late_reg_close": "16:55",
-     "estimated_finish": null,
+     "estimated_finish": "01:10",
      "sequence_check": null,
      "sequence_note": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf"
@@ -2017,7 +1430,7 @@
      "venue_id": "venetian",
      "entry_status": "SE",
      "late_reg_close": null,
-     "estimated_finish": null,
+     "estimated_finish": "07:10",
      "sequence_check": "conflict",
      "sequence_note": "Fallback starts 15 minutes after the primary's late-registration close (16:55).",
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
@@ -2041,24 +1454,10 @@
     "sequence_note": null,
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_23.pdf"
    },
-   "fallback": {
-    "id": "r126",
-    "start": "18:10",
-    "name": "$1,100 No Limit Hold'em 1B",
-    "series": "Venetian DeepStack Extravaganza IV",
-    "buy_in_usd": 1100,
-    "guarantee_usd": 500000,
-    "venue_id": "venetian",
-    "entry_status": "SE",
-    "late_reg_close": null,
-    "estimated_finish": null,
-    "sequence_check": "ok",
-    "sequence_note": "Fallback starts 90 minutes after the primary's late-registration close (16:40).",
-    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf"
-   },
+   "fallback": null,
    "later_event_that_conflicts": null,
-   "sequence_basis": "printed on the official sheet as '8 levels + break (~ 4:40 PM) 5th Level 600 Guarantee: $25,000 6th Level 800 7th Level 1,00'",
-   "conditional_note": null,
+   "sequence_basis": "printed on the official sheet as '8 levels + break (~ 4:40 PM) Guarantee: $25,000 1. TDA rules apply to all Venetian Poker'",
+   "conditional_note": "No later verified single-entry event on this day starts at least 45 minutes after the primary's late-registration close. The later event listed below is an alternative, not a sequence.",
    "options": [
     {
      "id": "r124",
@@ -2074,82 +1473,12 @@
      "sequence_check": null,
      "sequence_note": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_23.pdf"
-    },
-    {
-     "id": "r126",
-     "start": "18:10",
-     "name": "$1,100 No Limit Hold'em 1B",
-     "series": "Venetian DeepStack Extravaganza IV",
-     "buy_in_usd": 1100,
-     "guarantee_usd": 500000,
-     "venue_id": "venetian",
-     "entry_status": "SE",
-     "late_reg_close": null,
-     "estimated_finish": null,
-     "sequence_check": "ok",
-     "sequence_note": "Fallback starts 90 minutes after the primary's late-registration close (16:40).",
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf"
-    }
-   ]
-  },
-  {
-   "date": "2026-12-18",
-   "primary": {
-    "id": "r137",
-    "start": "18:10",
-    "name": "$1,100 No Limit Hold'em 1D",
-    "series": "Venetian DeepStack Extravaganza IV",
-    "buy_in_usd": 1100,
-    "guarantee_usd": 500000,
-    "venue_id": "venetian",
-    "entry_status": "SE",
-    "late_reg_close": "23:10",
-    "estimated_finish": null,
-    "sequence_check": null,
-    "sequence_note": null,
-    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf"
-   },
-   "fallback": null,
-   "later_event_that_conflicts": null,
-   "sequence_basis": "printed on the official sheet as '9 levels + Break (~ 11:10 PM) 3 30 400 200-400 4 30 500 300-500 Guarantee: $500,000 5 30 6'",
-   "conditional_note": "No later verified single-entry event on this day starts at least 45 minutes after the primary's late-registration close. The later event listed below is an alternative, not a sequence.",
-   "options": [
-    {
-     "id": "r137",
-     "start": "18:10",
-     "name": "$1,100 No Limit Hold'em 1D",
-     "series": "Venetian DeepStack Extravaganza IV",
-     "buy_in_usd": 1100,
-     "guarantee_usd": 500000,
-     "venue_id": "venetian",
-     "entry_status": "SE",
-     "late_reg_close": "23:10",
-     "estimated_finish": null,
-     "sequence_check": null,
-     "sequence_note": null,
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf"
     }
    ]
   },
   {
    "date": "2026-12-20",
    "primary": {
-    "id": "r149",
-    "start": "11:10",
-    "name": "$600 No Limit Hold'em 1A",
-    "series": "Venetian DeepStack Extravaganza IV",
-    "buy_in_usd": 600,
-    "guarantee_usd": 150000,
-    "venue_id": "venetian",
-    "entry_status": "SE",
-    "late_reg_close": "17:55",
-    "estimated_finish": null,
-    "sequence_check": null,
-    "sequence_note": null,
-    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf"
-   },
-   "fallback": null,
-   "later_event_that_conflicts": {
     "id": "r153",
     "start": "17:10",
     "name": "$200 No Limit Hold'em Bounty (1Day)",
@@ -2158,30 +1487,17 @@
     "guarantee_usd": 8000,
     "venue_id": "venetian",
     "entry_status": "SE",
-    "late_reg_close": null,
-    "estimated_finish": null,
-    "sequence_check": "conflict",
-    "sequence_note": "Fallback starts -45 minutes after the primary's late-registration close (17:55).",
+    "late_reg_close": "21:40",
+    "estimated_finish": "07:10",
+    "sequence_check": null,
+    "sequence_note": null,
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
    },
-   "sequence_basis": "printed on the official sheet as '9 levels + Break (5:55 PM) 3 40 400 200-400 15 Minute Break Guarantee: $150,000 4 40 500 3'",
+   "fallback": null,
+   "later_event_that_conflicts": null,
+   "sequence_basis": "printed on the official sheet as '8 levels + Break (9:40 PM) Guarantee: $8,000 (prize pool + total bounties) 1. TDA rules'",
    "conditional_note": "No later verified single-entry event on this day starts at least 45 minutes after the primary's late-registration close. The later event listed below is an alternative, not a sequence.",
    "options": [
-    {
-     "id": "r149",
-     "start": "11:10",
-     "name": "$600 No Limit Hold'em 1A",
-     "series": "Venetian DeepStack Extravaganza IV",
-     "buy_in_usd": 600,
-     "guarantee_usd": 150000,
-     "venue_id": "venetian",
-     "entry_status": "SE",
-     "late_reg_close": "17:55",
-     "estimated_finish": null,
-     "sequence_check": null,
-     "sequence_note": null,
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf"
-    },
     {
      "id": "r153",
      "start": "17:10",
@@ -2191,10 +1507,10 @@
      "guarantee_usd": 8000,
      "venue_id": "venetian",
      "entry_status": "SE",
-     "late_reg_close": null,
-     "estimated_finish": null,
-     "sequence_check": "conflict",
-     "sequence_note": "Fallback starts -45 minutes after the primary's late-registration close (17:55).",
+     "late_reg_close": "21:40",
+     "estimated_finish": "07:10",
+     "sequence_check": null,
+     "sequence_note": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
     }
    ]
@@ -2202,22 +1518,6 @@
   {
    "date": "2026-12-21",
    "primary": {
-    "id": "r156",
-    "start": "11:10",
-    "name": "$600 No Limit Hold'em 1B",
-    "series": "Venetian DeepStack Extravaganza IV",
-    "buy_in_usd": 600,
-    "guarantee_usd": 150000,
-    "venue_id": "venetian",
-    "entry_status": "SE",
-    "late_reg_close": "17:55",
-    "estimated_finish": null,
-    "sequence_check": null,
-    "sequence_note": null,
-    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf"
-   },
-   "fallback": null,
-   "later_event_that_conflicts": {
     "id": "r158",
     "start": "17:10",
     "name": "$200 No Limit Hold'em Bounty (1Day)",
@@ -2226,30 +1526,17 @@
     "guarantee_usd": 8000,
     "venue_id": "venetian",
     "entry_status": "SE",
-    "late_reg_close": null,
-    "estimated_finish": null,
-    "sequence_check": "conflict",
-    "sequence_note": "Fallback starts -45 minutes after the primary's late-registration close (17:55).",
+    "late_reg_close": "21:40",
+    "estimated_finish": "07:10",
+    "sequence_check": null,
+    "sequence_note": null,
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
    },
-   "sequence_basis": "printed on the official sheet as '9 levels + Break (5:55 PM) 3 40 400 200-400 15 Minute Break Guarantee: $150,000 4 40 500 3'",
+   "fallback": null,
+   "later_event_that_conflicts": null,
+   "sequence_basis": "printed on the official sheet as '8 levels + Break (9:40 PM) Guarantee: $8,000 (prize pool + total bounties) 1. TDA rules'",
    "conditional_note": "No later verified single-entry event on this day starts at least 45 minutes after the primary's late-registration close. The later event listed below is an alternative, not a sequence.",
    "options": [
-    {
-     "id": "r156",
-     "start": "11:10",
-     "name": "$600 No Limit Hold'em 1B",
-     "series": "Venetian DeepStack Extravaganza IV",
-     "buy_in_usd": 600,
-     "guarantee_usd": 150000,
-     "venue_id": "venetian",
-     "entry_status": "SE",
-     "late_reg_close": "17:55",
-     "estimated_finish": null,
-     "sequence_check": null,
-     "sequence_note": null,
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf"
-    },
     {
      "id": "r158",
      "start": "17:10",
@@ -2259,10 +1546,10 @@
      "guarantee_usd": 8000,
      "venue_id": "venetian",
      "entry_status": "SE",
-     "late_reg_close": null,
-     "estimated_finish": null,
-     "sequence_check": "conflict",
-     "sequence_note": "Fallback starts -45 minutes after the primary's late-registration close (17:55).",
+     "late_reg_close": "21:40",
+     "estimated_finish": "07:10",
+     "sequence_check": null,
+     "sequence_note": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
     }
    ]
@@ -2270,22 +1557,6 @@
   {
    "date": "2026-12-22",
    "primary": {
-    "id": "r160",
-    "start": "11:10",
-    "name": "$600 No Limit Hold'em 1C",
-    "series": "Venetian DeepStack Extravaganza IV",
-    "buy_in_usd": 600,
-    "guarantee_usd": 150000,
-    "venue_id": "venetian",
-    "entry_status": "SE",
-    "late_reg_close": "17:55",
-    "estimated_finish": null,
-    "sequence_check": null,
-    "sequence_note": null,
-    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf"
-   },
-   "fallback": null,
-   "later_event_that_conflicts": {
     "id": "r161",
     "start": "17:10",
     "name": "$200 No Limit Hold'em Bounty (1Day)",
@@ -2294,30 +1565,17 @@
     "guarantee_usd": 8000,
     "venue_id": "venetian",
     "entry_status": "SE",
-    "late_reg_close": null,
-    "estimated_finish": null,
-    "sequence_check": "conflict",
-    "sequence_note": "Fallback starts -45 minutes after the primary's late-registration close (17:55).",
+    "late_reg_close": "21:40",
+    "estimated_finish": "07:10",
+    "sequence_check": null,
+    "sequence_note": null,
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
    },
-   "sequence_basis": "printed on the official sheet as '9 levels + Break (5:55 PM) 3 40 400 200-400 15 Minute Break Guarantee: $150,000 4 40 500 3'",
+   "fallback": null,
+   "later_event_that_conflicts": null,
+   "sequence_basis": "printed on the official sheet as '8 levels + Break (9:40 PM) Guarantee: $8,000 (prize pool + total bounties) 1. TDA rules'",
    "conditional_note": "No later verified single-entry event on this day starts at least 45 minutes after the primary's late-registration close. The later event listed below is an alternative, not a sequence.",
    "options": [
-    {
-     "id": "r160",
-     "start": "11:10",
-     "name": "$600 No Limit Hold'em 1C",
-     "series": "Venetian DeepStack Extravaganza IV",
-     "buy_in_usd": 600,
-     "guarantee_usd": 150000,
-     "venue_id": "venetian",
-     "entry_status": "SE",
-     "late_reg_close": "17:55",
-     "estimated_finish": null,
-     "sequence_check": null,
-     "sequence_note": null,
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf"
-    },
     {
      "id": "r161",
      "start": "17:10",
@@ -2327,10 +1585,10 @@
      "guarantee_usd": 8000,
      "venue_id": "venetian",
      "entry_status": "SE",
-     "late_reg_close": null,
-     "estimated_finish": null,
-     "sequence_check": "conflict",
-     "sequence_note": "Fallback starts -45 minutes after the primary's late-registration close (17:55).",
+     "late_reg_close": "21:40",
+     "estimated_finish": "07:10",
+     "sequence_check": null,
+     "sequence_note": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
     }
    ]
@@ -2347,7 +1605,7 @@
     "venue_id": "venetian",
     "entry_status": "SE",
     "late_reg_close": "16:55",
-    "estimated_finish": null,
+    "estimated_finish": "01:10",
     "sequence_check": null,
     "sequence_note": null,
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf"
@@ -2363,12 +1621,12 @@
     "venue_id": "venetian",
     "entry_status": "SE",
     "late_reg_close": null,
-    "estimated_finish": null,
+    "estimated_finish": "07:10",
     "sequence_check": "conflict",
     "sequence_note": "Fallback starts 15 minutes after the primary's late-registration close (16:55).",
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
    },
-   "sequence_basis": "printed on the official sheet as '10 levels + Break (~ 4:55 PM) 15 Minute Break Guarantee: $30,000 for Event #14 and #63 5 3'",
+   "sequence_basis": "printed on the official sheet as '10 levels + Break (~ 4:55 PM) Guarantee: $30,000 for Event #14 and #63 Guarantee: $40,000'",
    "conditional_note": "No later verified single-entry event on this day starts at least 45 minutes after the primary's late-registration close. The later event listed below is an alternative, not a sequence.",
    "options": [
     {
@@ -2381,7 +1639,7 @@
      "venue_id": "venetian",
      "entry_status": "SE",
      "late_reg_close": "16:55",
-     "estimated_finish": null,
+     "estimated_finish": "01:10",
      "sequence_check": null,
      "sequence_note": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf"
@@ -2396,7 +1654,7 @@
      "venue_id": "venetian",
      "entry_status": "SE",
      "late_reg_close": null,
-     "estimated_finish": null,
+     "estimated_finish": "07:10",
      "sequence_check": "conflict",
      "sequence_note": "Fallback starts 15 minutes after the primary's late-registration close (16:55).",
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
@@ -2415,14 +1673,14 @@
     "venue_id": "venetian",
     "entry_status": "SE",
     "late_reg_close": "15:40",
-    "estimated_finish": null,
+    "estimated_finish": "01:10",
     "sequence_check": null,
     "sequence_note": null,
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_1.pdf"
    },
    "fallback": null,
    "later_event_that_conflicts": null,
-   "sequence_basis": "printed on the official sheet as '8 levels + Break (~ 3:40 PM) 15 Minute Break Guarantee: $15,000 5 30 800 400-800 6 30 1,00'",
+   "sequence_basis": "printed on the official sheet as '8 levels + Break (~ 3:40 PM) Guarantee: $15,000 1. TDA rules apply to all Venetian Poker'",
    "conditional_note": "No later verified single-entry event on this day starts at least 45 minutes after the primary's late-registration close. The later event listed below is an alternative, not a sequence.",
    "options": [
     {
@@ -2435,7 +1693,7 @@
      "venue_id": "venetian",
      "entry_status": "SE",
      "late_reg_close": "15:40",
-     "estimated_finish": null,
+     "estimated_finish": "01:10",
      "sequence_check": null,
      "sequence_note": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_1.pdf"
@@ -2454,14 +1712,14 @@
     "venue_id": "venetian",
     "entry_status": "SE",
     "late_reg_close": "15:40",
-    "estimated_finish": null,
+    "estimated_finish": "01:10",
     "sequence_check": null,
     "sequence_note": null,
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_1.pdf"
    },
    "fallback": null,
    "later_event_that_conflicts": null,
-   "sequence_basis": "printed on the official sheet as '8 levels + Break (~ 3:40 PM) 15 Minute Break Guarantee: $15,000 5 30 800 400-800 6 30 1,00'",
+   "sequence_basis": "printed on the official sheet as '8 levels + Break (~ 3:40 PM) Guarantee: $15,000 1. TDA rules apply to all Venetian Poker'",
    "conditional_note": "No later verified single-entry event on this day starts at least 45 minutes after the primary's late-registration close. The later event listed below is an alternative, not a sequence.",
    "options": [
     {
@@ -2474,7 +1732,7 @@
      "venue_id": "venetian",
      "entry_status": "SE",
      "late_reg_close": "15:40",
-     "estimated_finish": null,
+     "estimated_finish": "01:10",
      "sequence_check": null,
      "sequence_note": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_1.pdf"
@@ -2493,14 +1751,14 @@
     "venue_id": "venetian",
     "entry_status": "SE",
     "late_reg_close": "16:55",
-    "estimated_finish": null,
+    "estimated_finish": "01:10",
     "sequence_check": null,
     "sequence_note": null,
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_3.pdf"
    },
    "fallback": null,
    "later_event_that_conflicts": null,
-   "sequence_basis": "printed on the official sheet as '10 levels + Break (4:55 PM) 15 Minute Break Guarantee: $40,000 (prize pool + total bountie'",
+   "sequence_basis": "printed on the official sheet as '10 levels + Break (4:55 PM) Guarantee: $40,000 (prize pool + total bounties) 1. TDA rules'",
    "conditional_note": "No later verified single-entry event on this day starts at least 45 minutes after the primary's late-registration close. The later event listed below is an alternative, not a sequence.",
    "options": [
     {
@@ -2513,127 +1771,10 @@
      "venue_id": "venetian",
      "entry_status": "SE",
      "late_reg_close": "16:55",
-     "estimated_finish": null,
+     "estimated_finish": "01:10",
      "sequence_check": null,
      "sequence_note": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_3.pdf"
-    }
-   ]
-  },
-  {
-   "date": "2026-12-27",
-   "primary": {
-    "id": "r169",
-    "start": "11:10",
-    "name": "$1,100 No Limit Hold'em 1A - Ante Up Championship",
-    "series": "Venetian DeepStack Extravaganza NYE",
-    "buy_in_usd": 1100,
-    "guarantee_usd": 300000,
-    "venue_id": "venetian",
-    "entry_status": "SE",
-    "late_reg_close": "17:55",
-    "estimated_finish": null,
-    "sequence_check": null,
-    "sequence_note": null,
-    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_6.pdf"
-   },
-   "fallback": null,
-   "later_event_that_conflicts": null,
-   "sequence_basis": "printed on the official sheet as '9 levels + Break (~ 5:55 PM) 3 40 400 200-400 Guarantee: $300,000 15 Minute Break 4 40 500'",
-   "conditional_note": "No later verified single-entry event on this day starts at least 45 minutes after the primary's late-registration close. The later event listed below is an alternative, not a sequence.",
-   "options": [
-    {
-     "id": "r169",
-     "start": "11:10",
-     "name": "$1,100 No Limit Hold'em 1A - Ante Up Championship",
-     "series": "Venetian DeepStack Extravaganza NYE",
-     "buy_in_usd": 1100,
-     "guarantee_usd": 300000,
-     "venue_id": "venetian",
-     "entry_status": "SE",
-     "late_reg_close": "17:55",
-     "estimated_finish": null,
-     "sequence_check": null,
-     "sequence_note": null,
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_6.pdf"
-    }
-   ]
-  },
-  {
-   "date": "2026-12-28",
-   "primary": {
-    "id": "r170",
-    "start": "11:10",
-    "name": "$1,100 No Limit Hold'em 1B - Ante Up Championship",
-    "series": "Venetian DeepStack Extravaganza NYE",
-    "buy_in_usd": 1100,
-    "guarantee_usd": 300000,
-    "venue_id": "venetian",
-    "entry_status": "SE",
-    "late_reg_close": "17:55",
-    "estimated_finish": null,
-    "sequence_check": null,
-    "sequence_note": null,
-    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_6.pdf"
-   },
-   "fallback": null,
-   "later_event_that_conflicts": null,
-   "sequence_basis": "printed on the official sheet as '9 levels + Break (~ 5:55 PM) 3 40 400 200-400 Guarantee: $300,000 15 Minute Break 4 40 500'",
-   "conditional_note": "No later verified single-entry event on this day starts at least 45 minutes after the primary's late-registration close. The later event listed below is an alternative, not a sequence.",
-   "options": [
-    {
-     "id": "r170",
-     "start": "11:10",
-     "name": "$1,100 No Limit Hold'em 1B - Ante Up Championship",
-     "series": "Venetian DeepStack Extravaganza NYE",
-     "buy_in_usd": 1100,
-     "guarantee_usd": 300000,
-     "venue_id": "venetian",
-     "entry_status": "SE",
-     "late_reg_close": "17:55",
-     "estimated_finish": null,
-     "sequence_check": null,
-     "sequence_note": null,
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_6.pdf"
-    }
-   ]
-  },
-  {
-   "date": "2026-12-29",
-   "primary": {
-    "id": "r171",
-    "start": "11:10",
-    "name": "$1,100 No Limit Hold'em 1C - Ante Up Championship",
-    "series": "Venetian DeepStack Extravaganza NYE",
-    "buy_in_usd": 1100,
-    "guarantee_usd": 300000,
-    "venue_id": "venetian",
-    "entry_status": "SE",
-    "late_reg_close": "17:55",
-    "estimated_finish": null,
-    "sequence_check": null,
-    "sequence_note": null,
-    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_6.pdf"
-   },
-   "fallback": null,
-   "later_event_that_conflicts": null,
-   "sequence_basis": "printed on the official sheet as '9 levels + Break (~ 5:55 PM) 3 40 400 200-400 Guarantee: $300,000 15 Minute Break 4 40 500'",
-   "conditional_note": "No later verified single-entry event on this day starts at least 45 minutes after the primary's late-registration close. The later event listed below is an alternative, not a sequence.",
-   "options": [
-    {
-     "id": "r171",
-     "start": "11:10",
-     "name": "$1,100 No Limit Hold'em 1C - Ante Up Championship",
-     "series": "Venetian DeepStack Extravaganza NYE",
-     "buy_in_usd": 1100,
-     "guarantee_usd": 300000,
-     "venue_id": "venetian",
-     "entry_status": "SE",
-     "late_reg_close": "17:55",
-     "estimated_finish": null,
-     "sequence_check": null,
-     "sequence_note": null,
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_6.pdf"
     }
    ]
   },
@@ -2649,14 +1790,14 @@
     "venue_id": "venetian",
     "entry_status": "SE",
     "late_reg_close": "16:55",
-    "estimated_finish": null,
+    "estimated_finish": "01:10",
     "sequence_check": null,
     "sequence_note": null,
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_12.pdf"
    },
    "fallback": null,
    "later_event_that_conflicts": null,
-   "sequence_basis": "printed on the official sheet as '10 levels + Break (~ 4:55 PM) 15 Minute Break Guarantee: $50,000 5 30 800 400-800 6 30 1,0'",
+   "sequence_basis": "printed on the official sheet as '10 levels + Break (~ 4:55 PM) Guarantee: $50,000 1. TDA rules apply to all Venetian Poker'",
    "conditional_note": "No later verified single-entry event on this day starts at least 45 minutes after the primary's late-registration close. The later event listed below is an alternative, not a sequence.",
    "options": [
     {
@@ -2669,7 +1810,7 @@
      "venue_id": "venetian",
      "entry_status": "SE",
      "late_reg_close": "16:55",
-     "estimated_finish": null,
+     "estimated_finish": "01:10",
      "sequence_check": null,
      "sequence_note": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_12.pdf"
@@ -2688,14 +1829,14 @@
     "venue_id": "venetian",
     "entry_status": "SE",
     "late_reg_close": "15:40",
-    "estimated_finish": null,
+    "estimated_finish": "01:10",
     "sequence_check": null,
     "sequence_note": null,
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_1.pdf"
    },
    "fallback": null,
    "later_event_that_conflicts": null,
-   "sequence_basis": "printed on the official sheet as '8 levels + Break (~ 3:40 PM) 15 Minute Break Guarantee: $15,000 5 30 800 400-800 6 30 1,00'",
+   "sequence_basis": "printed on the official sheet as '8 levels + Break (~ 3:40 PM) Guarantee: $15,000 1. TDA rules apply to all Venetian Poker'",
    "conditional_note": "No later verified single-entry event on this day starts at least 45 minutes after the primary's late-registration close. The later event listed below is an alternative, not a sequence.",
    "options": [
     {
@@ -2708,146 +1849,10 @@
      "venue_id": "venetian",
      "entry_status": "SE",
      "late_reg_close": "15:40",
-     "estimated_finish": null,
+     "estimated_finish": "01:10",
      "sequence_check": null,
      "sequence_note": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_1.pdf"
-    }
-   ]
-  },
-  {
-   "date": "2027-01-04",
-   "primary": {
-    "id": "r181",
-    "start": "11:10",
-    "name": "$250 No Limit Hold'em 1A $75K GTD (1Day)",
-    "series": "Venetian DeepStack Extravaganza NYE",
-    "buy_in_usd": 250,
-    "guarantee_usd": 75000,
-    "venue_id": "venetian",
-    "entry_status": "SE",
-    "late_reg_close": "15:40",
-    "estimated_finish": null,
-    "sequence_check": null,
-    "sequence_note": null,
-    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_15.pdf"
-   },
-   "fallback": {
-    "id": "r182",
-    "start": "17:10",
-    "name": "$250 No Limit Hold'em 1B $75K GTD (1Day)",
-    "series": "Venetian DeepStack Extravaganza NYE",
-    "buy_in_usd": 250,
-    "guarantee_usd": 75000,
-    "venue_id": "venetian",
-    "entry_status": "SE",
-    "late_reg_close": null,
-    "estimated_finish": null,
-    "sequence_check": "ok",
-    "sequence_note": "Fallback starts 90 minutes after the primary's late-registration close (15:40).",
-    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_15.pdf"
-   },
-   "later_event_that_conflicts": null,
-   "sequence_basis": "printed on the official sheet as '8 levels + Break (~ 3:40 PM or ~ 9:40 PM) 4 30 500 300-500 Guarantee: $75,000 15 Minute Br'",
-   "conditional_note": null,
-   "options": [
-    {
-     "id": "r181",
-     "start": "11:10",
-     "name": "$250 No Limit Hold'em 1A $75K GTD (1Day)",
-     "series": "Venetian DeepStack Extravaganza NYE",
-     "buy_in_usd": 250,
-     "guarantee_usd": 75000,
-     "venue_id": "venetian",
-     "entry_status": "SE",
-     "late_reg_close": "15:40",
-     "estimated_finish": null,
-     "sequence_check": null,
-     "sequence_note": null,
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_15.pdf"
-    },
-    {
-     "id": "r182",
-     "start": "17:10",
-     "name": "$250 No Limit Hold'em 1B $75K GTD (1Day)",
-     "series": "Venetian DeepStack Extravaganza NYE",
-     "buy_in_usd": 250,
-     "guarantee_usd": 75000,
-     "venue_id": "venetian",
-     "entry_status": "SE",
-     "late_reg_close": null,
-     "estimated_finish": null,
-     "sequence_check": "ok",
-     "sequence_note": "Fallback starts 90 minutes after the primary's late-registration close (15:40).",
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_15.pdf"
-    }
-   ]
-  },
-  {
-   "date": "2027-01-05",
-   "primary": {
-    "id": "r183",
-    "start": "11:10",
-    "name": "$250 No Limit Hold'em 1C $75K GTD (1Day)",
-    "series": "Venetian DeepStack Extravaganza NYE",
-    "buy_in_usd": 250,
-    "guarantee_usd": 75000,
-    "venue_id": "venetian",
-    "entry_status": "SE",
-    "late_reg_close": "15:40",
-    "estimated_finish": null,
-    "sequence_check": null,
-    "sequence_note": null,
-    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_15.pdf"
-   },
-   "fallback": {
-    "id": "r184",
-    "start": "17:10",
-    "name": "$250 No Limit Hold'em 1D $75K GTD (1Day)",
-    "series": "Venetian DeepStack Extravaganza NYE",
-    "buy_in_usd": 250,
-    "guarantee_usd": 75000,
-    "venue_id": "venetian",
-    "entry_status": "SE",
-    "late_reg_close": null,
-    "estimated_finish": null,
-    "sequence_check": "ok",
-    "sequence_note": "Fallback starts 90 minutes after the primary's late-registration close (15:40).",
-    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_15.pdf"
-   },
-   "later_event_that_conflicts": null,
-   "sequence_basis": "printed on the official sheet as '8 levels + Break (~ 3:40 PM or ~ 9:40 PM) 4 30 500 300-500 Guarantee: $75,000 15 Minute Br'",
-   "conditional_note": null,
-   "options": [
-    {
-     "id": "r183",
-     "start": "11:10",
-     "name": "$250 No Limit Hold'em 1C $75K GTD (1Day)",
-     "series": "Venetian DeepStack Extravaganza NYE",
-     "buy_in_usd": 250,
-     "guarantee_usd": 75000,
-     "venue_id": "venetian",
-     "entry_status": "SE",
-     "late_reg_close": "15:40",
-     "estimated_finish": null,
-     "sequence_check": null,
-     "sequence_note": null,
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_15.pdf"
-    },
-    {
-     "id": "r184",
-     "start": "17:10",
-     "name": "$250 No Limit Hold'em 1D $75K GTD (1Day)",
-     "series": "Venetian DeepStack Extravaganza NYE",
-     "buy_in_usd": 250,
-     "guarantee_usd": 75000,
-     "venue_id": "venetian",
-     "entry_status": "SE",
-     "late_reg_close": null,
-     "estimated_finish": null,
-     "sequence_check": "ok",
-     "sequence_note": "Fallback starts 90 minutes after the primary's late-registration close (15:40).",
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_15.pdf"
     }
    ]
   },
@@ -2863,14 +1868,14 @@
     "venue_id": "venetian",
     "entry_status": "SE",
     "late_reg_close": "16:55",
-    "estimated_finish": null,
+    "estimated_finish": "01:10",
     "sequence_check": null,
     "sequence_note": null,
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_11.pdf"
    },
    "fallback": null,
    "later_event_that_conflicts": null,
-   "sequence_basis": "printed on the official sheet as '10 levels + Break (~ 4:55 PM) 15 Minute Break Guarantee: $15,000 5 30 800 400-800 6 30 1,0'",
+   "sequence_basis": "printed on the official sheet as '10 levels + Break (~ 4:55 PM) Guarantee: $15,000 1. TDA rules apply to all Venetian Poker'",
    "conditional_note": "No later verified single-entry event on this day starts at least 45 minutes after the primary's late-registration close. The later event listed below is an alternative, not a sequence.",
    "options": [
     {
@@ -2883,127 +1888,10 @@
      "venue_id": "venetian",
      "entry_status": "SE",
      "late_reg_close": "16:55",
-     "estimated_finish": null,
+     "estimated_finish": "01:10",
      "sequence_check": null,
      "sequence_note": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_11.pdf"
-    }
-   ]
-  },
-  {
-   "date": "2027-01-07",
-   "primary": {
-    "id": "r187",
-    "start": "11:10",
-    "name": "$300 No Limit Hold'em 1A $100K GTD (1Day)",
-    "series": "Venetian DeepStack Extravaganza NYE",
-    "buy_in_usd": 300,
-    "guarantee_usd": 100000,
-    "venue_id": "venetian",
-    "entry_status": "SE",
-    "late_reg_close": "15:40",
-    "estimated_finish": null,
-    "sequence_check": null,
-    "sequence_note": null,
-    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_13.pdf"
-   },
-   "fallback": null,
-   "later_event_that_conflicts": null,
-   "sequence_basis": "printed on the official sheet as '6 levels + Break (~ 3:40 PM) 3 40 400 200-400 15 Minute Break Guarantee: $100,000 4 40 500'",
-   "conditional_note": "No later verified single-entry event on this day starts at least 45 minutes after the primary's late-registration close. The later event listed below is an alternative, not a sequence.",
-   "options": [
-    {
-     "id": "r187",
-     "start": "11:10",
-     "name": "$300 No Limit Hold'em 1A $100K GTD (1Day)",
-     "series": "Venetian DeepStack Extravaganza NYE",
-     "buy_in_usd": 300,
-     "guarantee_usd": 100000,
-     "venue_id": "venetian",
-     "entry_status": "SE",
-     "late_reg_close": "15:40",
-     "estimated_finish": null,
-     "sequence_check": null,
-     "sequence_note": null,
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_13.pdf"
-    }
-   ]
-  },
-  {
-   "date": "2027-01-08",
-   "primary": {
-    "id": "r189",
-    "start": "11:10",
-    "name": "$300 No Limit Hold'em 1C $100K GTD (1Day)",
-    "series": "Venetian DeepStack Extravaganza NYE",
-    "buy_in_usd": 300,
-    "guarantee_usd": 100000,
-    "venue_id": "venetian",
-    "entry_status": "SE",
-    "late_reg_close": "15:40",
-    "estimated_finish": null,
-    "sequence_check": null,
-    "sequence_note": null,
-    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_13.pdf"
-   },
-   "fallback": null,
-   "later_event_that_conflicts": null,
-   "sequence_basis": "printed on the official sheet as '6 levels + Break (~ 3:40 PM) 3 40 400 200-400 15 Minute Break Guarantee: $100,000 4 40 500'",
-   "conditional_note": "No later verified single-entry event on this day starts at least 45 minutes after the primary's late-registration close. The later event listed below is an alternative, not a sequence.",
-   "options": [
-    {
-     "id": "r189",
-     "start": "11:10",
-     "name": "$300 No Limit Hold'em 1C $100K GTD (1Day)",
-     "series": "Venetian DeepStack Extravaganza NYE",
-     "buy_in_usd": 300,
-     "guarantee_usd": 100000,
-     "venue_id": "venetian",
-     "entry_status": "SE",
-     "late_reg_close": "15:40",
-     "estimated_finish": null,
-     "sequence_check": null,
-     "sequence_note": null,
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_13.pdf"
-    }
-   ]
-  },
-  {
-   "date": "2027-01-09",
-   "primary": {
-    "id": "r191",
-    "start": "11:10",
-    "name": "$300 No Limit Hold'em 1E $100K GTD (1Day)",
-    "series": "Venetian DeepStack Extravaganza NYE",
-    "buy_in_usd": 300,
-    "guarantee_usd": 100000,
-    "venue_id": "venetian",
-    "entry_status": "SE",
-    "late_reg_close": "15:40",
-    "estimated_finish": null,
-    "sequence_check": null,
-    "sequence_note": null,
-    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_13.pdf"
-   },
-   "fallback": null,
-   "later_event_that_conflicts": null,
-   "sequence_basis": "printed on the official sheet as '6 levels + Break (~ 3:40 PM) 3 40 400 200-400 15 Minute Break Guarantee: $100,000 4 40 500'",
-   "conditional_note": "No later verified single-entry event on this day starts at least 45 minutes after the primary's late-registration close. The later event listed below is an alternative, not a sequence.",
-   "options": [
-    {
-     "id": "r191",
-     "start": "11:10",
-     "name": "$300 No Limit Hold'em 1E $100K GTD (1Day)",
-     "series": "Venetian DeepStack Extravaganza NYE",
-     "buy_in_usd": 300,
-     "guarantee_usd": 100000,
-     "venue_id": "venetian",
-     "entry_status": "SE",
-     "late_reg_close": "15:40",
-     "estimated_finish": null,
-     "sequence_check": null,
-     "sequence_note": null,
-     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_13.pdf"
     }
    ]
   },
@@ -3019,14 +1907,14 @@
     "venue_id": "venetian",
     "entry_status": "SE",
     "late_reg_close": "15:55",
-    "estimated_finish": null,
+    "estimated_finish": "00:10",
     "sequence_check": null,
     "sequence_note": null,
     "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_10.pdf"
    },
    "fallback": null,
    "later_event_that_conflicts": null,
-   "sequence_basis": "printed on the official sheet as '10 levels + Break (~ 3:55 PM) 15 Minute Break Guarantee: $20,000 5 30 800 400-800 6 30 1,0'",
+   "sequence_basis": "printed on the official sheet as '10 levels + Break (~ 3:55 PM) Guarantee: $20,000 1. TDA rules apply to all Venetian Poker'",
    "conditional_note": "No later verified single-entry event on this day starts at least 45 minutes after the primary's late-registration close. The later event listed below is an alternative, not a sequence.",
    "options": [
     {
@@ -3039,7 +1927,7 @@
      "venue_id": "venetian",
      "entry_status": "SE",
      "late_reg_close": "15:55",
-     "estimated_finish": null,
+     "estimated_finish": "00:10",
      "sequence_check": null,
      "sequence_note": null,
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_10.pdf"
