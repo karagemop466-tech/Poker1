@@ -36,16 +36,33 @@ TEMPLATE = """<!doctype html>
 </html>
 """
 
-TOOLBAR_SEARCH = ('<div class="toolbar"><input id="q" type="search" placeholder="Filter rows (event, series, note)">'
-                  '<select id="series"></select><span id="count" class="small"></span></div>')
-TOOLBAR_SEARCH_NO_SERIES = ('<div class="toolbar"><input id="q" type="search" placeholder="Filter rows (event, series, note)">'
-                            '<span id="count" class="small"></span></div>')
-TOOLBAR_SEARCH_DATE = ('<div class="toolbar"><input id="q" type="search" placeholder="Filter rows (event, series, note)">'
-                       '<select id="date"><option value="">All dates</option></select>'
-                       '<select id="series"></select><span id="count" class="small"></span></div>')
-TOOLBAR_SEARCH_DATE_NO_SERIES = ('<div class="toolbar"><input id="q" type="search" placeholder="Filter rows (event, series, note)">'
-                                 '<select id="date"><option value="">All dates</option></select>'
-                                 '<span id="count" class="small"></span></div>')
+FILTERS = '<div id="filters"></div>'
+COUNT = '<span id="count" class="small"></span>'
+
+VENUE_PAGES = [
+    ("venue-venetian.html", "The Venetian Resort", "venetian"),
+    ("venue-wynn.html", "Wynn Las Vegas", "wynn"),
+    ("venue-aria.html", "ARIA Resort & Casino", "aria"),
+    ("venue-bellagio.html", "Bellagio", "bellagio"),
+    ("venue-caesars.html", "Caesars Palace", "caesars"),
+]
+
+
+def venue_page(title, venue_id):
+    return (title, "venue:" + venue_id, """
+<h1>%s</h1>
+<p class="lead">Everything in this dataset that belongs to this venue, with the official source behind each row.</p>
+<div id="content"></div>
+<h2>Hotels here</h2>
+<div id="hotels"></div>
+<h2>Walking records</h2>
+<div id="walking"></div>
+<h2>Tournaments</h2>
+%s
+<div class="toolbar"><span class="small">%s</span></div>
+<div id="events"></div>
+""" % (title, FILTERS, COUNT))
+
 
 PAGES = {
     "index.html": ("Home", "index", """
@@ -55,13 +72,18 @@ PAGES = {
 <h2>Start here</h2>
 <div class="grid">
   <a class="card tile" href="pages/summary.html"><h3>Executive summary</h3><p>Bottom line, ranked events, hotel status, and the 8 AM question.</p></a>
-  <a class="card tile" href="pages/single-entry.html"><h3>Single entry (verified)</h3><p>33 Venetian events. Sortable table with official source links.</p></a>
+  <a class="card tile" href="pages/single-entry.html"><h3>Single entry (verified)</h3><p>Every event whose structure sheet confirms one entry only, with filters for date, venue, buy-in and labels.</p></a>
   <a class="card tile" href="pages/separate-section.html"><h3>Separate section</h3><p>Possible multiple entries and re-entry events. Kept out of the ranking.</p></a>
-  <a class="card tile" href="pages/hotels.html"><h3>Hotels</h3><p>Resort fees, room-rate status, and true cost. Rates are blank until verified.</p></a>
-  <a class="card tile" href="pages/schedule.html"><h3>Schedule</h3><p>Day-by-day verified single-entry options. Starts from 10:10 AM.</p></a>
   <a class="card tile" href="pages/unverified.html"><h3>Unverified</h3><p>Official rows whose entry rule is not yet confirmed.</p></a>
+  <a class="card tile" href="pages/daily.html"><h3>Daily feed</h3><p>Wynn's recurring daily tournaments: format, guarantee, fee split and cut-offs.</p></a>
+  <a class="card tile" href="pages/schedule.html"><h3>Schedule</h3><p>Day-by-day verified single-entry options, with a date picker.</p></a>
+  <a class="card tile" href="pages/hotels.html"><h3>Hotels</h3><p>Resort fees, room-rate status, walking records and the dated rate log.</p></a>
+  <a class="card tile" href="pages/calculator.html"><h3>Rate calculator</h3><p>Price a stay from verified fees, tax and a logged quote. Nothing is assumed.</p></a>
+  <a class="card tile" href="pages/venues.html"><h3>Venues</h3><p>Each poker room, the hotels attached to it and the events played there.</p></a>
+  <a class="card tile" href="pages/search.html"><h3>Search</h3><p>One box across every row, hotel, venue, document and rate on the site.</p></a>
+  <a class="card tile" href="pages/monitoring.html"><h3>Monitoring</h3><p>Source health, changed rows and every printed source flag.</p></a>
   <a class="card tile" href="pages/questions.html"><h3>Questions</h3><p>Open decisions and information gaps, with how to close each.</p></a>
-  <a class="card tile" href="pages/suggestions.html"><h3>Suggestions</h3><p>Site improvements for your review. None implemented.</p></a>
+  <a class="card tile" href="pages/suggestions.html"><h3>Suggestions</h3><p>Site improvements for your review.</p></a>
   <a class="card tile" href="pages/flagged.html"><h3>Flagged for review</h3><p>Source irregularities and blank values, with links.</p></a>
   <a class="card tile" href="pages/review.html"><h3>Repo review and sources</h3><p>Line-by-line review, corrections made, and the source log.</p></a>
 </div>
@@ -69,38 +91,75 @@ PAGES = {
 """),
     "pages/single-entry.html": ("Single entry", "singleEntry", """
 <h1>Single-entry tournaments (verified)</h1>
-<p class="lead">Each row has its structure sheet read, with no re-entry, rebuy, add-on, or flight clause. Sort by any column. Guarantee ÷ buy-in is the default sort. Use the date selector to show only events on chosen days.</p>
-""" + TOOLBAR_SEARCH_DATE + """
+<p class="lead">Each row has its structure sheet read, with no re-entry, rebuy, add-on, or flight clause. Guarantee ÷ buy-in is the default sort. Use the filters to narrow by date, venue, series, buy-in or label.</p>
+""" + FILTERS + """
+<div class="toolbar"><span class="small">""" + COUNT + """</span></div>
 <div id="content"></div>
 """),
     "pages/separate-section.html": ("Separate section", "separate", """
 <h1>Separate section: not single entry</h1>
 <p class="lead">Possible multiple entries (multi-flight events) and re-entry events. Kept out of the single-entry ranking.</p>
 <div class="card callout">Multi-flight rows: the structure sheet says a player who bags Day 2 chips may not play a subsequent flight. It does not say whether a player who busts may enter a later flight. Confirm with the poker room.</div>
-""" + TOOLBAR_SEARCH_DATE_NO_SERIES + """
+""" + FILTERS + """
+<div class="toolbar"><span class="small">""" + COUNT + """</span></div>
 <div id="content"></div>
 """),
     "pages/unverified.html": ("Unverified", "unverified", """
 <h1>Unverified official rows</h1>
-<p class="lead">Official schedule rows whose structure sheet has not been read. Entry rule unknown. Not ranked. Use the date selector to show only events on chosen days.</p>
-""" + TOOLBAR_SEARCH_DATE + """
+<p class="lead">Official schedule rows whose structure sheet has not been read. Entry rule unknown. Not ranked.</p>
+""" + FILTERS + """
+<div class="toolbar"><span class="small">""" + COUNT + """</span></div>
 <div id="content"></div>
+"""),
+    "pages/daily.html": ("Daily feed", "daily", """
+<h1>Wynn daily tournament feed</h1>
+<p class="lead">The recurring formats Wynn publishes for every day, read from the official daily structures.</p>
+<div class="card callout" id="note"></div>
+<div id="content"></div>
+<p class="small" id="series-note"></p>
 """),
     "pages/hotels.html": ("Hotels", "hotels", """
 <h1>Hotels near the Strip</h1>
 <p class="lead">Resort fee and room-rate status are shown per hotel. True cost per night is blank until a room rate is verified.</p>
 <div class="card callout" id="method"></div>
-""" + TOOLBAR_SEARCH_NO_SERIES + """
 <div id="content"></div>
 <p class="small">Walking time to each venue is not published on any official source, so it is blank.</p>
+<div id="walking"></div>
+<div id="rates"></div>
+<p class="small"><a href="calculator.html">Price a stay with the rate calculator →</a></p>
+"""),
+    "pages/calculator.html": ("Rate calculator", "calculator", """
+<h1>Hotel rate and cost calculator</h1>
+<p class="lead">Price a stay from the verified resort fee, the verified room tax and a room rate. Any value that is not verified stays blank and is reported as missing instead of being guessed.</p>
+<div id="content"></div>
 """),
     "pages/schedule.html": ("Schedule", "schedule", """
 <h1>Day-by-day schedule</h1>
-<p class="lead">Verified single-entry options per day, earliest first. Use the search box to find an event or venue.</p>
-""" + TOOLBAR_SEARCH_NO_SERIES + """
+<p class="lead">Verified single-entry options per day, earliest first.</p>
 <div class="card callout" id="note"></div>
 <p class="small">Earliest start among the rows in this dataset: <strong id="earliest"></strong></p>
 <div id="content"></div>
+"""),
+    "pages/venues.html": ("Venues", "venues", """
+<h1>Venues</h1>
+<p class="lead">Every property in this dataset, the hotels attached to it, and how many verified rows it carries.</p>
+<div id="content"></div>
+"""),
+    "pages/search.html": ("Search", "search", """
+<h1>Search</h1>
+<p class="lead">One box across every tournament row, hotel, venue, daily format, walking record, rate log entry and document on this site.</p>
+<div class="toolbar"><input id="q" type="search" placeholder="Search everything, for example: milestone, ante up, pokeratlas, 13.38" style="min-width:320px"></div>
+<p class="small" id="summary"></p>
+<div id="results"></div>
+"""),
+    "pages/monitoring.html": ("Monitoring", "monitoring", """
+<h1>Source monitoring</h1>
+<p class="lead">Which official sources answered on the last check, which rows changed since the last snapshot, and every printed source flag.</p>
+<div id="content"></div>
+<h2>Rows carrying a source flag</h2>
+<div id="flagged"></div>
+<h2>Source status</h2>
+<div id="sources"></div>
 """),
     "pages/summary.html": ("Executive summary", "summary", """
 <h1>Executive summary</h1>
@@ -123,32 +182,10 @@ PAGES = {
 <h1>Repo review and sources</h1>
 <div id="content"></div>
 """),
-    "pages/venue-venetian.html": ("Venue: The Venetian", "venueVenetian", """
-<h1>Venue: The Venetian Resort</h1>
-<p class="lead">Venetian-hosted DeepStack events and the Venetian / Palazzo hotels.</p>
-<div id="content"></div>
-"""),
-    "pages/venue-wynn.html": ("Venue: Wynn", "venueWynn", """
-<h1>Venue: Wynn Las Vegas</h1>
-<p class="lead">Wynn-hosted WPT World Championship and Signature Series events, and the Wynn / Encore hotels.</p>
-<div id="content"></div>
-"""),
-    "pages/venue-others.html": ("Venue: other Strip hotels", "venueOthers", """
-<h1>Venue: other Strip hotels</h1>
-<p class="lead">Bellagio, ARIA and Caesars Palace -- rates and fees are blank until verified from official sources.</p>
-<div id="content"></div>
-"""),
-    "pages/trip-calculator.html": ("Trip calculator", "tripCalculator", """
-<h1>Estimated cost of a trip</h1>
-<p class="lead">Total = (tournament entries x buy-in) + (nights x true hotel cost per night). True hotel cost is blank until a date-specific rate is verified; enter a nightly rate to see a working estimate.</p>
-<div id="calculator"></div>
-"""),
-    "pages/change-monitor.html": ("Change monitor", "changeMonitor", """
-<h1>Change monitoring of official sources</h1>
-<p class="lead">Each official source URL is listed with the date it was last checked. A scheduled re-check flags any row whose source changed. External official pages cannot be fetched from this sandbox, so re-check results are not yet populated.</p>
-<div id="monitor"></div>
-"""),
 }
+
+for _file, _title, _vid in VENUE_PAGES:
+    PAGES["pages/" + _file] = venue_page(_title, _vid)
 
 
 def write(rel, title, page, body):

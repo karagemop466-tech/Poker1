@@ -22,12 +22,34 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Rebuild the dataset from the verified sources
+        run: |
+          python3 scripts/build_data.py
+          git diff --exit-code -- data
+
       - name: Confirm generated pages match committed pages
         run: |
           python3 scripts/build_site.py
           git diff --exit-code -- index.html pages
-      - name: Validate JSON, local links, and source links
+
+      - name: Validate JSON schemas, local links, and source links
         run: python3 scripts/check_links.py
+
+      - name: Check every official source and summarise the changed rows
+        run: |
+          python3 scripts/monitor_sources.py --print | tee monitor.txt
+          {
+            echo "### Source check"
+            echo
+            cat monitor.txt
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Render every page in a headless DOM
+        continue-on-error: true
+        run: |
+          npm install --no-save --no-audit --no-fund jsdom
+          node scripts/smoke_test.js | tee -a "$GITHUB_STEP_SUMMARY"
 
   deploy:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
@@ -46,8 +68,8 @@ jobs:
           mkdir -p _site
           cp index.html _site/
           cp -r pages assets data _site/
-          cp EXECUTIVE_SUMMARY.md QUESTIONS.md SUGGESTIONS.md FLAGGED.md REVIEW.md _site/
-          for file in EXECUTIVE_SUMMARY.md QUESTIONS.md SUGGESTIONS.md FLAGGED.md REVIEW.md; do
+          cp EXECUTIVE_SUMMARY.md QUESTIONS.md SUGGESTIONS.md FLAGGED.md REVIEW.md README.md _site/
+          for file in EXECUTIVE_SUMMARY.md QUESTIONS.md SUGGESTIONS.md FLAGGED.md REVIEW.md README.md; do
             test -s "_site/$file"
           done
       - name: Upload Pages artifact

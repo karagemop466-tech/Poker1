@@ -62,6 +62,7 @@ td.num, th.num { text-align: right; white-space: nowrap; }
 .chip.ok { background: var(--chip-ok); color: var(--ok); }
 .chip.warn { background: var(--chip-warn); color: var(--warn); }
 .chip.bad { background: var(--chip-bad); color: var(--bad); }
+.chip.info { background: #e8f0fe; color: var(--accent); }
 .muted { color: var(--muted); }
 .small { font-size: 12.5px; color: var(--muted); }
 .md h1 { font-size: 24px; }
@@ -73,14 +74,65 @@ td.num, th.num { text-align: right; white-space: nowrap; }
 .day h3 { margin-bottom: 4px; }
 footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20px; }
 
+/* ---------- advanced filter bar ---------- */
+.filters {
+  background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+  padding: 12px 14px; margin: 12px 0;
+}
+.filters .row { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: flex-end; margin-bottom: 8px; }
+.filters .field { display: flex; flex-direction: column; gap: 3px; }
+.filters label { font-size: 11.5px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); }
+.filters input, .filters select {
+  padding: 6px 9px; border: 1px solid var(--line); border-radius: 6px; font-size: 13.5px; background: #fff; min-width: 120px;
+}
+.filters input[type="search"] { min-width: 260px; }
+.filters .toggle { flex-direction: row; align-items: center; gap: 6px; }
+.filters .toggle label { text-transform: none; font-size: 13px; color: var(--ink); }
+.filters .labels { display: flex; flex-wrap: wrap; gap: 6px; }
+.filters .labels label {
+  display: inline-flex; align-items: center; gap: 5px; border: 1px solid var(--line);
+  border-radius: 999px; padding: 3px 10px; font-size: 12.5px; text-transform: none; color: var(--ink); cursor: pointer;
+}
+.filters .actions { display: flex; gap: 8px; align-items: center; margin-left: auto; }
+.filters button {
+  border: 1px solid var(--line); background: #fff; border-radius: 6px; padding: 6px 12px;
+  font-size: 13.5px; cursor: pointer;
+}
+.filters button:hover { border-color: var(--accent); color: var(--accent); }
+.filters .summary { font-size: 12.5px; color: var(--muted); margin-top: 4px; }
+
+/* ---------- venue / search / calculator / monitoring ---------- */
+.venue-card { border-left: 4px solid var(--accent); }
+.result { border-bottom: 1px solid var(--line); padding: 10px 0; }
+.result:last-child { border-bottom: 0; }
+.result .title { font-weight: 600; }
+.result .meta { font-size: 12.5px; color: var(--muted); }
+.form-grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); }
+.form-grid label { display: block; font-size: 12px; color: var(--muted); margin-bottom: 3px; }
+.form-grid input, .form-grid select {
+  width: 100%; padding: 8px 10px; border: 1px solid var(--line); border-radius: 6px; font-size: 14px; background: #fff;
+}
+.calc-out { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); margin-top: 12px; }
+.calc-out .box { border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; background: #fbfcfe; }
+.calc-out .box .n { font-size: 20px; font-weight: 700; }
+.calc-out .box .l { font-size: 12px; color: var(--muted); }
+.day-chip { border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; font-size: 13px; background: #fff; }
+.status-dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 6px; }
+.status-dot.ok { background: var(--ok); }
+.status-dot.warn { background: var(--warn); }
+.status-dot.bad { background: var(--bad); }
+.calendar { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+.calendar .slot { border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; background: #fff; }
+.calendar .slot .d { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+.calendar .slot .t { font-size: 18px; font-weight: 700; margin: 2px 0; }
+
 </style>
 </head>
 <body data-page="schedule">
 <div id="site-header"></div>
 <main>
 <h1>Day-by-day schedule</h1>
-<p class="lead">Verified single-entry options per day, earliest first. Use the search box to find an event or venue.</p>
-<div class="toolbar"><input id="q" type="search" placeholder="Filter rows (event, series, note)"><span id="count" class="small"></span></div>
+<p class="lead">Verified single-entry options per day, earliest first.</p>
 <div class="card callout" id="note"></div>
 <p class="small">Earliest start among the rows in this dataset: <strong id="earliest"></strong></p>
 <div id="content"></div>
@@ -100,18 +152,27 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
     ["pages/single-entry.html", "Single entry"],
     ["pages/separate-section.html", "Separate section"],
     ["pages/unverified.html", "Unverified"],
-    ["pages/hotels.html", "Hotels"],
+    ["pages/daily.html", "Daily feed"],
     ["pages/schedule.html", "Schedule"],
-    ["pages/summary.html", "Executive summary"],
+    ["pages/hotels.html", "Hotels"],
+    ["pages/calculator.html", "Calculator"],
+    ["pages/venues.html", "Venues"],
+    ["pages/search.html", "Search"],
+    ["pages/monitoring.html", "Monitoring"],
+    ["pages/summary.html", "Summary"],
     ["pages/questions.html", "Questions"],
     ["pages/suggestions.html", "Suggestions"],
-    ["pages/flagged.html", "Flagged for review"],
-    ["pages/review.html", "Repo review and sources"],
-    ["pages/venue-venetian.html", "Venue: Venetian"],
-    ["pages/venue-wynn.html", "Venue: Wynn"],
-    ["pages/venue-others.html", "Venue: others"],
-    ["pages/trip-calculator.html", "Trip calculator"],
-    ["pages/change-monitor.html", "Change monitor"]
+    ["pages/flagged.html", "Flagged"],
+    ["pages/review.html", "Review"]
+  ];
+
+  var DOCS = [
+    ["EXECUTIVE_SUMMARY.md", "Executive summary"],
+    ["QUESTIONS.md", "Questions"],
+    ["SUGGESTIONS.md", "Suggestions"],
+    ["FLAGGED.md", "Flagged for review"],
+    ["REVIEW.md", "Repo review and sources"],
+    ["README.md", "README"]
   ];
 
   function esc(s) {
@@ -130,6 +191,11 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
     var d = new Date(iso + "T12:00:00Z");
     return d.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric", year: "numeric", timeZone: "UTC" });
   }
+  function dateShort(iso) {
+    if (!iso) return "";
+    var d = new Date(iso + "T12:00:00Z");
+    return d.toLocaleDateString("en-US", { month: "short", day: "numeric", timeZone: "UTC" });
+  }
   function timeFmt(hhmm) {
     if (!hhmm) return "";
     var p = hhmm.split(":"), h = +p[0], m = p[1];
@@ -141,27 +207,33 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
     if (s === "SE") return '<span class="chip ok">Single entry (verified)</span>';
     if (s === "MULTI") return '<span class="chip warn">Possible multiple entries</span>';
     if (s === "RE") return '<span class="chip bad">Re-entry offered</span>';
+    if (s === "REBUY") return '<span class="chip bad">Rebuy / add-on</span>';
+    if (s === "CONT") return '<span class="chip info">Continuation</span>';
     return '<span class="chip warn">Unverified</span>';
-  }
-  function rulesHtml(r) {
-    var ru = r.rules || {}, chips = [];
-    if (ru.single_entry === true) chips.push('<span class="chip ok">single entry</span>');
-    else if (ru.single_entry === false) chips.push('<span class="chip bad">not single entry</span>');
-    else if (ru.single_entry === null) chips.push('<span class="chip warn">single entry?</span>');
-    if (ru.re_entry === true) chips.push('<span class="chip bad">re-entry</span>');
-    if (ru.rebuy === true) chips.push('<span class="chip bad">rebuy</span>');
-    if (ru.add_on === true) chips.push('<span class="chip bad">add-on</span>');
-    if (ru.flights === true) chips.push('<span class="chip warn">flights</span>');
-    if (chips.length === 0) chips.push('<span class="muted">rules not confirmed</span>');
-    var html = chips.join(" ");
-    if (ru.source_excerpt) html += ' <span class="small">' + esc(ru.source_excerpt) + '</span>';
-    if (ru.retrieved_on) html += ' <span class="small">read ' + esc(ru.retrieved_on) + '</span>';
-    return '<span class="small">' + html + "</span>";
   }
   function srcLinks(sources) {
     return (sources || []).map(function (s) {
       return '<a href="' + esc(s.url) + '" target="_blank" rel="noopener">' + esc(s.label) + "</a>";
     }).join("<br>");
+  }
+  function flagsHtml(row) {
+    var f = row.flags || [];
+    if (!f.length) return "";
+    return '<div class="small" style="margin-top:4px">' + f.map(function (x) {
+      return '<span class="chip warn" style="white-space:normal;display:block;margin-top:4px">' + esc(x) + "</span>";
+    }).join("") + "</div>";
+  }
+  function ruleCell(row) {
+    var parts = [];
+    ["single_entry", "re_entry", "add_on", "fee"].forEach(function (k) {
+      var f = (row.rules || {})[k];
+      if (!f) return;
+      parts.push("<strong>" + esc(k.replace(/_/g, " ")) + ":</strong> " + esc(f.value) +
+        '<br><span class="small">' + esc(f.excerpt) + "</span>" +
+        '<br><span class="small">' + esc(f.source.label) + " &middot; " +
+        '<a href="' + esc(f.source.url) + '" target="_blank" rel="noopener">' + esc(f.source.url) + "</a></span>");
+    });
+    return "<span class='small'>" + parts.join("<hr>") + "</span>";
   }
 
   function getJSON(path) {
@@ -176,6 +248,8 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
       return r.text();
     });
   }
+  function getJSONSafe(path) { return getJSON(path).catch(function () { return null; }); }
+  function getTextSafe(path) { return getText(path).catch(function () { return ""; }); }
 
   /* ---------- tiny Markdown renderer (headings, lists, tables, bold, links, code) ---------- */
   function inline(t) {
@@ -244,8 +318,8 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
       var q = (opts.filterInput ? opts.filterInput.value : "").toLowerCase();
       var sel = opts.filterSelect ? opts.filterSelect.value : "";
       var list = rows.filter(function (r) {
+        if (opts.predicate && !opts.predicate(r)) return false;
         if (sel && opts.filterField && String(r[opts.filterField]) !== sel) return false;
-        if (opts.dateSelect && opts.dateSelect.value && String(r.date) !== opts.dateSelect.value) return false;
         if (!q) return true;
         return cols.some(function (c) { return c.text && String(c.text(r) || "").toLowerCase().indexOf(q) >= 0; }) ||
                JSON.stringify(r).toLowerCase().indexOf(q) >= 0;
@@ -277,6 +351,7 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
       t.innerHTML = head + body;
       var count = opts.countEl;
       if (count) count.textContent = list.length + " of " + rows.length + " rows";
+      if (opts.onDraw) opts.onDraw(list);
       Array.prototype.forEach.call(t.querySelectorAll("th"), function (th) {
         th.addEventListener("click", function () {
           var id = th.getAttribute("data-id");
@@ -289,16 +364,178 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
     }
     if (opts.filterInput) opts.filterInput.addEventListener("input", draw);
     if (opts.filterSelect) opts.filterSelect.addEventListener("change", draw);
-    if (opts.dateSelect) {
-      opts.dateSelect.addEventListener("change", draw);
-      (function fillDates() {
-        var dates = Array.from(new Set(rows.map(function (r) { return r.date; }))).sort();
-        opts.dateSelect.innerHTML = '<option value="">All dates</option>' +
-          dates.map(function (d) { return '<option value="' + esc(d) + '">' + esc(dateFmt(d)) + "</option>"; }).join("");
-      })();
-    }
     draw();
-    return { redraw: draw };
+    return { redraw: draw, rows: function () { return rows; } };
+  }
+
+  /* ---------- advanced filter bar ----------
+     One component used by every tournament table. It owns the text query, the
+     date range, the venue, the series, the entry status, the buy-in range, the
+     labels and the single-entry toggle, so the same behaviour is available
+     everywhere. */
+  function Filters(host, opts) {
+    opts = opts || {};
+    var el = document.createElement("div");
+    el.className = "filters";
+    var listeners = [];
+
+    function field(label, control) {
+      var w = document.createElement("div");
+      w.className = "field";
+      var l = document.createElement("label");
+      l.textContent = label;
+      l.setAttribute("for", control.id);
+      w.appendChild(l);
+      w.appendChild(control);
+      return w;
+    }
+    function input(id, type, attrs) {
+      var i = document.createElement("input");
+      i.id = id; i.type = type;
+      Object.keys(attrs || {}).forEach(function (k) { i.setAttribute(k, attrs[k]); });
+      return i;
+    }
+    function select(id, values, allLabel) {
+      var s = document.createElement("select");
+      s.id = id;
+      s.innerHTML = '<option value="">' + esc(allLabel) + "</option>" +
+        values.map(function (v) { return '<option value="' + esc(v) + '">' + esc(v) + "</option>"; }).join("");
+      return s;
+    }
+
+    var q = input("q", "search", { placeholder: "Search name, series, note, source" });
+    var from = input("date-from", "date", {});
+    var to = input("date-to", "date", {});
+    var buyMin = input("buy-min", "number", { min: "0", step: "50", placeholder: "min" });
+    var buyMax = input("buy-max", "number", { min: "0", step: "50", placeholder: "max" });
+    var venue = select("venue", opts.venues || [], "All venues");
+    var series = select("series", opts.series || [], "All series");
+    var status = select("status", opts.statuses || [], "Any entry rule");
+    var single = input("single-only", "checkbox", {});
+    var reset = document.createElement("button");
+    reset.type = "button"; reset.textContent = "Reset filters";
+
+    var row1 = document.createElement("div");
+    row1.className = "row";
+    row1.appendChild(field("Search", q));
+    row1.appendChild(field("From date", from));
+    row1.appendChild(field("To date", to));
+    row1.appendChild(field("Min buy-in", buyMin));
+    row1.appendChild(field("Max buy-in", buyMax));
+
+    var row2 = document.createElement("div");
+    row2.className = "row";
+    row2.appendChild(field("Venue", venue));
+    if ((opts.series || []).length) row2.appendChild(field("Series", series));
+    if ((opts.statuses || []).length) row2.appendChild(field("Entry rule", status));
+    var tog = document.createElement("div");
+    tog.className = "field toggle";
+    var tl = document.createElement("label");
+    tl.setAttribute("for", "single-only");
+    tl.textContent = "Single entry only";
+    tog.appendChild(single); tog.appendChild(tl);
+    row2.appendChild(tog);
+    var actions = document.createElement("div");
+    actions.className = "actions";
+    actions.appendChild(reset);
+    row2.appendChild(actions);
+
+    el.appendChild(row1);
+    el.appendChild(row2);
+
+    var labelBox = null;
+    if ((opts.labels || []).length) {
+      labelBox = document.createElement("div");
+      labelBox.className = "field";
+      var ll = document.createElement("label");
+      ll.textContent = "Labels";
+      var box = document.createElement("div");
+      box.className = "labels";
+      opts.labels.forEach(function (lab) {
+        var l = document.createElement("label");
+        var cb = input("label-" + lab.replace(/\W+/g, "-"), "checkbox", { value: lab });
+        l.appendChild(cb);
+        l.appendChild(document.createTextNode(" " + lab));
+        box.appendChild(l);
+      });
+      labelBox.appendChild(ll);
+      labelBox.appendChild(box);
+      el.appendChild(labelBox);
+    }
+
+    var summary = document.createElement("div");
+    summary.className = "summary";
+    el.appendChild(summary);
+    host.appendChild(el);
+
+    function selectedLabels() {
+      if (!labelBox) return [];
+      return Array.prototype.slice.call(labelBox.querySelectorAll("input:checked")).map(function (i) { return i.value; });
+    }
+    function num(v) { var n = parseFloat(v); return isNaN(n) ? null : n; }
+
+    function matches(row) {
+      var query = q.value.trim().toLowerCase();
+      if (query) {
+        var hay = JSON.stringify(row).toLowerCase();
+        if (hay.indexOf(query) < 0) return false;
+      }
+      if (from.value && row.date < from.value) return false;
+      if (to.value && row.date > to.value) return false;
+      if (venue.value && row.venue !== venue.value) return false;
+      if (series.value && row.series !== series.value) return false;
+      if (status.value && row.entry_status !== status.value) return false;
+      if (single.checked && row.entry_status !== "SE") return false;
+      var lo = num(buyMin.value), hi = num(buyMax.value);
+      if (lo != null && !(row.buy_in_usd != null && row.buy_in_usd >= lo)) return false;
+      if (hi != null && !(row.buy_in_usd != null && row.buy_in_usd <= hi)) return false;
+      var labs = selectedLabels();
+      if (labs.length) {
+        var have = row.labels || [];
+        if (!labs.every(function (l) { return have.indexOf(l) >= 0; })) return false;
+      }
+      return true;
+    }
+    function describe() {
+      var bits = [];
+      if (q.value.trim()) bits.push('search "' + q.value.trim() + '"');
+      if (from.value) bits.push("from " + dateShort(from.value));
+      if (to.value) bits.push("to " + dateShort(to.value));
+      if (venue.value) bits.push(venue.value);
+      if (series.value) bits.push(series.value);
+      if (status.value) bits.push(status.value);
+      if (single.checked) bits.push("single entry only");
+      if (lo2() != null) bits.push("buy-in ≥ " + money(lo2()));
+      if (hi2() != null) bits.push("buy-in ≤ " + money(hi2()));
+      var labs = selectedLabels();
+      if (labs.length) bits.push("labels: " + labs.join(", "));
+      return bits.length ? "Active: " + bits.join(" · ") : "No filters active - showing every row.";
+    }
+    function lo2() { return num(buyMin.value); }
+    function hi2() { return num(buyMax.value); }
+
+    function fire() {
+      summary.textContent = describe();
+      listeners.forEach(function (fn) { fn(); });
+    }
+    [q, from, to, buyMin, buyMax].forEach(function (c) { c.addEventListener("input", fire); });
+    [venue, series, status].forEach(function (c) { c.addEventListener("change", fire); });
+    single.addEventListener("change", fire);
+    if (labelBox) labelBox.querySelectorAll("input").forEach(function (c) { c.addEventListener("change", fire); });
+    reset.addEventListener("click", function () {
+      q.value = ""; from.value = ""; to.value = ""; buyMin.value = ""; buyMax.value = "";
+      venue.value = ""; series.value = ""; status.value = ""; single.checked = false;
+      if (labelBox) labelBox.querySelectorAll("input").forEach(function (c) { c.checked = false; });
+      fire();
+    });
+    fire();
+
+    return {
+      el: el,
+      matches: matches,
+      onChange: function (fn) { listeners.push(fn); },
+      reset: function () { reset.click(); }
+    };
   }
 
   /* ---------- nav ---------- */
@@ -314,52 +551,82 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
     if (el) el.outerHTML = html;
     var f = document.getElementById("site-footer");
     if (f) f.innerHTML = "Data verified against official sources on 2026-11-16. Blank cells are unverified, and no value is inferred. " +
-      '<a href="' + BASE + 'pages/flagged.html">Flagged for review</a>.';
+      '<a href="' + BASE + 'pages/flagged.html">Flagged for review</a> · ' +
+      '<a href="' + BASE + 'pages/monitoring.html">Monitoring</a>.';
   }
 
   /* ---------- page renderers ---------- */
   var PAGES = {};
 
   PAGES.index = function () {
-    Promise.all([getJSON("data/tournaments.json"), getJSON("data/hotels.json")]).then(function (res) {
-      var rows = res[0].rows, hotels = res[1].rows;
+    Promise.all([getJSON("data/tournaments.json"), getJSON("data/hotels.json"), getJSON("data/daily.json")]).then(function (res) {
+      var rows = res[0].rows, hotels = res[1].rows, daily = res[2].rows;
       var c = { SE: 0, MULTI: 0, RE: 0, UNV: 0 };
       rows.forEach(function (r) { c[r.entry_status] = (c[r.entry_status] || 0) + 1; });
       var verifiedFees = hotels.filter(function (h) { return h.resort_fee_status === "verified"; }).length;
+      var flagged = rows.filter(function (r) { return (r.flags || []).length; }).length;
+      var dates = {};
+      rows.forEach(function (r) { dates[r.date] = 1; });
       document.getElementById("kpis").innerHTML =
         kpi(rows.length, "official rows in this dataset") +
         kpi(c.SE, "single entry, verified") +
         kpi(c.MULTI + c.RE, "in the separate section") +
         kpi(c.UNV, "unverified (entry rule)") +
-        kpi(verifiedFees + " of " + hotels.length, "hotels with a verified resort fee");
+        kpi(Object.keys(dates).length, "dates covered") +
+        kpi(verifiedFees + " of " + hotels.length, "hotels with a verified resort fee") +
+        kpi(daily.length, "recurring daily formats") +
+        kpi(flagged, "rows carrying a source flag");
     }).catch(showErr);
   };
   function kpi(n, label) {
     return '<div class="card kpi"><div class="num">' + esc(n) + '</div><div class="label">' + esc(label) + "</div></div>";
   }
 
+  function tournamentFilters(host, rows, opts) {
+    opts = opts || {};
+    var venues = Array.from(new Set(rows.map(function (r) { return r.venue; }))).sort();
+    var series = Array.from(new Set(rows.map(function (r) { return r.series; }))).sort();
+    var statuses = Array.from(new Set(rows.map(function (r) { return r.entry_status; }))).sort();
+    var labels = Array.from(new Set(rows.reduce(function (a, r) { return a.concat(r.labels || []); }, []))).sort();
+    return Filters(host, {
+      venues: venues, series: series, statuses: statuses, labels: labels,
+      showStatus: opts.showStatus !== false
+    });
+  }
+
+  function tournamentColumns(withRules) {
+    var cols = [
+      { id: "date", label: "Date", key: "date", sort: function (r) { return r.date + r.start; }, html: function (r) { return dateFmt(r.date); } },
+      { id: "start", label: "Start", key: "start", html: function (r) { return timeFmt(r.start); } },
+      { id: "name", label: "Event", key: "name", html: function (r) {
+          return "<strong>" + esc(r.name) + "</strong><br><span class='small'>" + esc(r.series) +
+            (r.event_no ? " · Event " + esc(r.event_no) : "") + " · " + esc(r.venue) +
+            (r.prize_text ? "<br>Prize: " + esc(r.prize_text) : "") + "</span>" + flagsHtml(r);
+        } },
+      { id: "buy", label: "Buy-in", key: "buy_in_usd", num: true, html: function (r) { return money(r.buy_in_usd); } },
+      { id: "gtd", label: "Guarantee", key: "guarantee_usd", num: true, html: function (r) { return money(r.guarantee_usd); } },
+      { id: "mult", label: "Guarantee ÷ buy-in", key: "gtd_multiple", num: true, html: function (r) { return mult(r.gtd_multiple); } },
+      { id: "status", label: "Entry rule", key: "entry_status", html: function (r) { return statusChip(r.entry_status); } }
+    ];
+    if (withRules) {
+      cols.push({ id: "rule", label: "Entry rule (official)", key: "entry_rule", sort: null, html: function (r) { return "<span class='small'>" + esc(r.entry_rule) + "</span>"; } });
+      cols.push({ id: "detail", label: "Rule excerpts and source", key: "rules", sort: null, html: function (r) { return ruleCell(r); } });
+    }
+    cols.push({ id: "note", label: "Notes", key: "note", sort: null, html: function (r) { return "<span class='small'>" + esc(r.note) + "</span>"; } });
+    cols.push({ id: "src", label: "Sources", key: "sources", sort: null, html: function (r) { return "<span class='small'>" + srcLinks(r.sources) + "</span>"; } });
+    return cols;
+  }
+
   PAGES.singleEntry = function () {
     getJSON("data/tournaments.json").then(function (d) {
       var rows = d.rows.filter(function (r) { return r.entry_status === "SE"; });
-      rows.forEach(function (r) { r._mult = r.gtd_multiple || 0; });
       var main = document.getElementById("content");
-      var q = document.getElementById("q"), sel = document.getElementById("series"), dateEl = document.getElementById("date"), count = document.getElementById("count");
-      var seriesNames = Array.from(new Set(rows.map(function (r) { return r.series; })));
-      sel.innerHTML = '<option value="">All series</option>' + seriesNames.map(function (s) { return '<option value="' + esc(s) + '">' + esc(s) + "</option>"; }).join("");
-      var cols = [
-        { id: "date", label: "Date", key: "date", sort: function (r) { return r.date + r.start; }, html: function (r) { return dateFmt(r.date); } },
-        { id: "start", label: "Start", key: "start", html: function (r) { return timeFmt(r.start); } },
-        { id: "name", label: "Event", key: "name", html: function (r) { return "<strong>" + esc(r.name) + "</strong><br><span class='small'>" + esc(r.series) + (r.event_no ? " · Event " + r.event_no : "") + "</span>"; } },
-        { id: "buy", label: "Buy-in", key: "buy_in_usd", num: true, html: function (r) { return money(r.buy_in_usd); } },
-        { id: "gtd", label: "Guarantee", key: "guarantee_usd", num: true, html: function (r) { return money(r.guarantee_usd); } },
-        { id: "mult", label: "Guarantee ÷ buy-in", key: "gtd_multiple", num: true, html: function (r) { return mult(r.gtd_multiple); } },
-        { id: "fee", label: "House fee", key: "house_fee_pct", num: true, html: function (r) { return pct(r.house_fee_pct); } },
-        { id: "rules", label: "Entry rules", key: "rules", sort: null, html: function (r) { return rulesHtml(r); } },
-        { id: "last", label: "Last checked", key: "last_checked", html: function (r) { return dateFmt(r.last_checked); } },
-        { id: "note", label: "Notes", key: "note", sort: null, html: function (r) { return "<span class='small'>" + esc(r.note) + "</span>"; } },
-        { id: "src", label: "Source", key: "sources", sort: null, html: function (r) { return "<span class='small'>" + srcLinks(r.sources) + "</span>"; } }
-      ];
-      table(main, rows, cols, { sortKey: "mult", sortDir: -1, filterInput: q, filterSelect: sel, dateSelect: dateEl, filterField: "series", countEl: count });
+      var count = document.getElementById("count");
+      var filters = tournamentFilters(document.getElementById("filters"), rows);
+      var tbl = table(main, rows, tournamentColumns(true), {
+        sortKey: "mult", sortDir: -1, predicate: filters.matches, countEl: count
+      });
+      filters.onChange(function () { tbl.redraw(); });
     }).catch(showErr);
   };
 
@@ -367,20 +634,12 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
     getJSON("data/tournaments.json").then(function (d) {
       var rows = d.rows.filter(function (r) { return r.entry_status === "MULTI" || r.entry_status === "RE"; });
       var main = document.getElementById("content");
-      var q = document.getElementById("q"), dateEl = document.getElementById("date"), count = document.getElementById("count");
-      var cols = [
-        { id: "status", label: "Why separate", key: "entry_status", html: function (r) { return statusChip(r.entry_status); } },
-        { id: "date", label: "Date", key: "date", html: function (r) { return dateFmt(r.date); } },
-        { id: "start", label: "Start", key: "start", html: function (r) { return timeFmt(r.start); } },
-        { id: "name", label: "Event", key: "name", html: function (r) { return "<strong>" + esc(r.name) + "</strong><br><span class='small'>" + esc(r.series) + "</span>"; } },
-        { id: "buy", label: "Buy-in", key: "buy_in_usd", num: true, html: function (r) { return money(r.buy_in_usd); } },
-        { id: "gtd", label: "Guarantee", key: "guarantee_usd", num: true, html: function (r) { return money(r.guarantee_usd); } },
-        { id: "mult", label: "Guarantee ÷ buy-in", key: "gtd_multiple", num: true, html: function (r) { return mult(r.gtd_multiple); } },
-        { id: "rule", label: "Entry rule (official)", key: "entry_rule", sort: null, html: function (r) { return "<span class='small'>" + esc(r.entry_rule) + "</span>"; } },
-        { id: "note", label: "Notes", key: "note", sort: null, html: function (r) { return "<span class='small'>" + esc(r.note) + "</span>"; } },
-        { id: "src", label: "Source", key: "sources", sort: null, html: function (r) { return "<span class='small'>" + srcLinks(r.sources) + "</span>"; } }
-      ];
-      table(main, rows, cols, { sortKey: "date", sortDir: 1, filterInput: q, dateSelect: dateEl, countEl: count });
+      var count = document.getElementById("count");
+      var filters = tournamentFilters(document.getElementById("filters"), rows);
+      var tbl = table(main, rows, tournamentColumns(true), {
+        sortKey: "date", sortDir: 1, predicate: filters.matches, countEl: count
+      });
+      filters.onChange(function () { tbl.redraw(); });
     }).catch(showErr);
   };
 
@@ -388,82 +647,518 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
     getJSON("data/tournaments.json").then(function (d) {
       var rows = d.rows.filter(function (r) { return r.entry_status === "UNV"; });
       var main = document.getElementById("content");
-      var q = document.getElementById("q"), sel = document.getElementById("series"), dateEl = document.getElementById("date"), count = document.getElementById("count");
-      var seriesNames = Array.from(new Set(rows.map(function (r) { return r.series; })));
-      sel.innerHTML = '<option value="">All series</option>' + seriesNames.map(function (s) { return '<option value="' + esc(s) + '">' + esc(s) + "</option>"; }).join("");
+      var count = document.getElementById("count");
+      var filters = tournamentFilters(document.getElementById("filters"), rows);
+      var tbl = table(main, rows, tournamentColumns(true), {
+        sortKey: "date", sortDir: 1, predicate: filters.matches, countEl: count
+      });
+      filters.onChange(function () { tbl.redraw(); });
+    }).catch(showErr);
+  };
+
+  PAGES.daily = function () {
+    Promise.all([getJSON("data/daily.json"), getJSON("data/tournaments.json")]).then(function (res) {
+      var daily = res[0].rows, rows = res[1].rows;
+      var main = document.getElementById("content");
+      document.getElementById("note").innerHTML =
+        "<strong>" + esc(res[0].note) + "</strong>" +
+        "<br><br>Sources: " + srcLinks(res[0].sources);
+      var dayNames = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+      var calendar = '<div class="calendar">' + dayNames.map(function (d, i) {
+        var todays = daily.filter(function (x) { return x.days.indexOf(d.slice(0, 3)) >= 0 || x.days.indexOf(d) >= 0; });
+        return '<div class="slot"><div class="d">' + d + "</div>" + (todays.length
+          ? todays.map(function (x) {
+              return '<div class="t">' + timeFmt(x.start) + "</div><div class='small'>" + esc(x.name) +
+                "<br>" + money(x.buy_in_usd) + " · GTD " + money(x.guarantee_usd) + "</div>";
+            }).join("<hr>")
+          : "<div class='small muted'>No daily format published for this weekday.</div>") + "</div>";
+      }).join("") + "</div>";
+      main.innerHTML = "<h2>Weekly format map</h2>" + calendar + "<h2>Published formats</h2>";
       var cols = [
-        { id: "date", label: "Date", key: "date", html: function (r) { return dateFmt(r.date); } },
+        { id: "name", label: "Format", key: "name", html: function (r) { return "<strong>" + esc(r.name) + "</strong><br><span class='small'>" + esc(r.days) + "</span>"; } },
         { id: "start", label: "Start", key: "start", html: function (r) { return timeFmt(r.start); } },
-        { id: "name", label: "Event", key: "name", html: function (r) { return "<strong>" + esc(r.name) + "</strong><br><span class='small'>" + esc(r.series) + (r.event_no ? " · Event " + r.event_no : "") + "</span>"; } },
         { id: "buy", label: "Buy-in", key: "buy_in_usd", num: true, html: function (r) { return money(r.buy_in_usd); } },
         { id: "gtd", label: "Guarantee", key: "guarantee_usd", num: true, html: function (r) { return money(r.guarantee_usd); } },
-        { id: "why", label: "Why unverified", key: "entry_rule", sort: null, html: function (r) { return "<span class='small'>" + esc(r.note) + "</span>"; } },
-        { id: "src", label: "Source", key: "sources", sort: null, html: function (r) { return "<span class='small'>" + srcLinks(r.sources) + "</span>"; } }
+        { id: "status", label: "Entry rule", key: "status", html: function (r) { return statusChip(r.status); } },
+        { id: "late", label: "Registration closes", key: "late", html: function (r) { return timeFmt(r.late); } },
+        { id: "levels", label: "Levels × minutes", key: "levels", num: true, html: function (r) { return r.levels + " × " + r.lmin + " min"; } },
+        { id: "fee", label: "Fee split", key: "fee", sort: null, html: function (r) { return "<span class='small'>" + esc(r.fee) + "</span>"; } },
+        { id: "ex", label: "Rule excerpt", key: "ex", sort: null, html: function (r) { return "<span class='small'>" + esc(r.ex) + "<br>" + esc(r.stack || "") + "</span>"; } }
       ];
-      table(main, rows, cols, { sortKey: "date", sortDir: 1, filterInput: q, filterSelect: sel, dateSelect: dateEl, filterField: "series", countEl: count });
+      table(main, daily, cols, { sortKey: "start", sortDir: 1 });
+      var susp = rows.filter(function (r) { return r.venue === "Wynn Las Vegas"; });
+      var note = document.getElementById("series-note");
+      if (note) {
+        note.innerHTML = "<strong>Series dates that can suspend the daily schedule:</strong> " +
+          esc(susp.length) + " Wynn rows are published between 2026-11-27 and 2027-01-24 " +
+          "(WPT World Championship and Wynn Signature Series). Check the " +
+          '<a href="' + BASE + 'pages/schedule.html">schedule</a> before planning around a daily format.';
+      }
+    }).catch(showErr);
+  };
+
+  PAGES.schedule = function () {
+    Promise.all([getJSON("data/schedule.json"), getJSON("data/tournaments.json")]).then(function (res) {
+      var sched = res[0], rows = res[1].rows;
+      var main = document.getElementById("content");
+      document.getElementById("note").textContent = sched.note;
+      document.getElementById("earliest").textContent = timeFmt(sched.earliest_listed_start);
+
+      var byId = {};
+      rows.forEach(function (r) { byId[r.id] = r; });
+
+      var picker = document.createElement("div");
+      picker.className = "toolbar";
+      var sel = document.createElement("select");
+      sel.id = "day-picker";
+      sel.innerHTML = '<option value="">Jump to a date…</option>' +
+        sched.days.map(function (d) { return '<option value="' + d.date + '">' + esc(dateFmt(d.date)) + "</option>"; }).join("");
+      var prev = document.createElement("button"); prev.type = "button"; prev.textContent = "◀ Previous day";
+      var next = document.createElement("button"); next.type = "button"; next.textContent = "Next day ▶";
+      var count = document.createElement("span"); count.id = "count"; count.className = "small";
+      picker.appendChild(sel); picker.appendChild(prev); picker.appendChild(next); picker.appendChild(count);
+      main.parentNode.insertBefore(picker, main);
+
+      function render() {
+        main.innerHTML = sched.days.map(function (day) {
+          var list = day.events.map(function (o) {
+            var row = byId[o.id] || {};
+            var chip = o.entry_status === "SE" ? '<span class="chip ok">Single entry</span>' :
+              (o.entry_status === "CONT" ? '<span class="chip info">Continuation</span>' :
+                (o.entry_status === "MULTI" ? '<span class="chip warn">Possible multiple entries</span>' :
+                  (o.entry_status === "RE" ? '<span class="chip bad">Re-entry</span>' : '<span class="chip warn">Unverified</span>')));
+            var marks = [];
+            if (day.primary_id === o.id) marks.push('<span class="chip ok">Primary</span>');
+            if (day.fallback_id === o.id) marks.push('<span class="chip info">Conditional fallback</span>');
+            return "<li><strong>" + timeFmt(o.start) + "</strong> · " + esc(o.name) + " · " + money(o.buy_in_usd) +
+              (o.guarantee_usd ? " · GTD " + money(o.guarantee_usd) : "") +
+              (o.prize_text ? " · " + esc(o.prize_text) : "") +
+              " " + chip + " " + marks.join(" ") +
+              '<br><span class="small">' + esc(o.series) + " · " + esc(o.venue) +
+              (o.est_end ? " · estimated to finish about " + timeFmt(o.est_end) : "") +
+              ' · <a href="' + esc(o.source) + '" target="_blank" rel="noopener">source</a></span>' +
+              ((row.flags || []).length ? '<br><span class="chip warn">' + esc(row.flags[0]) + "</span>" : "") +
+              "</li>";
+          }).join("");
+          var conflicts = day.conflicts.length
+            ? '<div class="small" style="margin-top:6px"><span class="chip warn">' + day.conflicts.length +
+              " overlap(s) flagged</span> " + esc(day.conflicts[0].detail) + "</div>"
+            : "";
+          var fallback = day.fallback_note
+            ? '<div class="small muted">' + esc(day.fallback_note) + "</div>" : "";
+          return '<div class="card day" id="day-' + day.date + '"><h3>' + dateFmt(day.date) + "</h3><ul>" + list +
+            "</ul>" + conflicts + fallback + "</div>";
+        }).join("");
+      }
+      render();
+
+      var idx = 0;
+      function jump(delta) {
+        idx = Math.min(Math.max(idx + delta, 0), sched.days.length - 1);
+        var day = sched.days[idx];
+        sel.value = day.date;
+        var target = document.getElementById("day-" + day.date);
+        if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+      sel.addEventListener("change", function () {
+        var d = sched.days.filter(function (x) { return x.date === sel.value; })[0];
+        if (!d) return;
+        idx = sched.days.indexOf(d);
+        var target = document.getElementById("day-" + d.date);
+        if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+      prev.addEventListener("click", function () { jump(-1); });
+      next.addEventListener("click", function () { jump(1); });
+      count.textContent = sched.days.length + " dates";
     }).catch(showErr);
   };
 
   PAGES.hotels = function () {
-    getJSON("data/hotels.json").then(function (d) {
-      var rows = d.rows;
+    Promise.all([getJSON("data/hotels.json"), getJSON("data/walking.json"), getJSON("data/rates.json")]).then(function (res) {
+      var rows = res[0].rows, walking = res[1].rows, rates = res[2].entries;
       var main = document.getElementById("content");
-      document.getElementById("method").textContent = d.method;
-      var q = document.getElementById("q"), count = document.getElementById("count");
+      document.getElementById("method").textContent = res[0].method;
       var chip = function (s) { return s === "verified" ? '<span class="chip ok">Verified</span>' : '<span class="chip warn">Unverified</span>'; };
-      var rateLog = function (r) {
-        if (!r.rates || r.rates.length === 0) return '<span class="muted">no rate logged</span><br><span class="small">' + esc(r.rates_note) + "</span>";
-        return r.rates.map(function (rate) {
-          var tc = rate.true_cost_usd;
-          return esc(rate.date) + ": " + money(rate.rate_usd) + (tc != null ? " · true cost " + money(tc) : "") +
-            "<br><span class='small'>" + esc(rate.note || "") + " (retrieved " + esc(rate.retrieved_on) + ")</span>";
-        }).join("<br>");
-      };
       var cols = [
         { id: "name", label: "Hotel", key: "name", html: function (r) { return "<strong>" + esc(r.name) + "</strong><br><span class='small'>" + esc(r.address_note) + "</span>"; } },
-        { id: "checked", label: "Last checked", key: "last_checked", html: function (r) { return dateFmt(r.last_checked); } },
         { id: "fee", label: "Resort fee / night", key: "resort_fee_usd", num: true, html: function (r) { return chip(r.resort_fee_status) + "<br>" + money(r.resort_fee_usd) + "<br><span class='small'>" + esc(r.resort_fee_note) + "</span>"; } },
-        { id: "rate", label: "Room rate (dated log)", key: "rates", sort: null, html: rateLog },
-        { id: "checkout", label: "Checkout total (stay)", key: "checkout_total_usd", num: true, html: function (r) { return money(r.checkout_total_usd) + "<br><span class='small'>" + esc(r.checkout_total_note || "") + "</span>"; } },
-        { id: "avg", label: "Nightly average", key: "nightly_average_usd", num: true, html: function (r) { return money(r.nightly_average_usd); } },
-        { id: "parking", label: "Parking / night", key: "parking_usd", num: true, html: function (r) { return money(r.parking_usd); } },
-        { id: "cancel", label: "Cancellation deadline", key: "cancellation_deadline", html: function (r) { return esc(r.cancellation_deadline || ""); } },
+        { id: "rate", label: "Room rate / night", key: "room_rate_usd", num: true, html: function (r) { return chip(r.room_rate_status) + "<br>" + money(r.room_rate_usd) + "<br><span class='small'>" + esc(r.room_rate_note) + "</span>"; } },
         { id: "tax", label: "Room tax", key: "clark_county_tax_pct", num: true, html: function (r) { return r.clark_county_tax_pct == null ? '<span class="muted">Unverified</span><br><span class="small">' + esc(r.tax_status) + "</span>" : r.clark_county_tax_pct + "%<br><span class='small'>" + esc(r.tax_status) + "</span>"; } },
         { id: "true", label: "True cost / night", key: "true_cost_per_night_usd", num: true, html: function (r) { return r.true_cost_per_night_usd == null ? '<span class="muted">blank (rate unverified)</span>' : money(r.true_cost_per_night_usd); } },
         { id: "walk", label: "Walk to Venetian", key: "walk_to_venetian_min", sort: null, html: function (r) { return r.walk_to_venetian_min == null ? '<span class="muted">Unverified</span>' : r.walk_to_venetian_min + " min"; } },
         { id: "src", label: "Sources", key: "sources", sort: null, html: function (r) { return "<span class='small'>" + srcLinks(r.sources) + "</span>"; } }
       ];
-      table(main, rows, cols, { sortKey: "name", sortDir: 1, filterInput: q, countEl: count });
+      table(main, rows, cols, { sortKey: "name", sortDir: 1 });
+
+      var w = document.getElementById("walking");
+      if (w) {
+        w.innerHTML = "<h2>Walking records</h2>" +
+          "<p class='small'>A walking time is only filled in when an official source publishes one. None does today, " +
+          "so every time is blank and the 30-minute rule cannot be applied yet. Each row links a walking route instead.</p>";
+        var wcols = [
+          { id: "hotel", label: "Hotel", key: "hotel" },
+          { id: "venue", label: "Venue", key: "venue" },
+          { id: "minutes", label: "Minutes", key: "minutes", num: true, html: function (r) { return r.minutes == null ? '<span class="muted">unverified</span>' : r.minutes; } },
+          { id: "status", label: "Status", key: "status" },
+          { id: "note", label: "Note", key: "note", sort: null, html: function (r) { return "<span class='small'>" + esc(r.note) + "</span>"; } },
+          { id: "route", label: "Route", key: "route_link", sort: null, html: function (r) { return '<a href="' + esc(r.route_link) + '" target="_blank" rel="noopener">walking route</a>'; } }
+        ];
+        table(w, walking, wcols, { sortKey: "hotel", sortDir: 1 });
+      }
+
+      var rl = document.getElementById("rates");
+      if (rl) {
+        rl.innerHTML = "<h2>Dated rate log</h2><p class='small'>Every quote is stored with the date it was taken, so a later " +
+          "rate can be compared against it instead of replacing it.</p>";
+        var rcols = [
+          { id: "arrival", label: "Arrival", key: "arrival", html: function (r) { return dateFmt(r.arrival); } },
+          { id: "departure", label: "Departure", key: "departure", html: function (r) { return dateFmt(r.departure); } },
+          { id: "nights", label: "Nights", key: "nights", num: true },
+          { id: "avg", label: "Published average / night", key: "nightly_average_usd", num: true, html: function (r) { return money(r.nightly_average_usd); } },
+          { id: "checkout", label: "Checkout total", key: "checkout_total_usd", num: true, html: function (r) { return money(r.checkout_total_usd); } },
+          { id: "taxes", label: "Taxes", key: "taxes_total_usd", num: true, html: function (r) { return money(r.taxes_total_usd); } },
+          { id: "true", label: "True cost / night", key: "true_cost_per_night_usd", num: true, html: function (r) { return money(r.true_cost_per_night_usd); } },
+          { id: "room", label: "Room", key: "room", sort: null, html: function (r) { return "<span class='small'>" + esc(r.room) + " · " + esc(r.occupancy) + "<br>" + esc(r.caveat) + "</span>"; } },
+          { id: "src", label: "Source", key: "source", sort: null, html: function (r) { return '<a href="' + esc(r.source) + '" target="_blank" rel="noopener">official booking engine</a>'; } }
+        ];
+        table(rl, rates, rcols, { sortKey: "arrival", sortDir: -1 });
+      }
     }).catch(showErr);
   };
 
-  PAGES.schedule = function () {
-    getJSON("data/schedule.json").then(function (d) {
+  /* ---------- hotel rate / cost calculator ---------- */
+  PAGES.calculator = function () {
+    Promise.all([getJSON("data/hotels.json"), getJSON("data/rates.json")]).then(function (res) {
+      var hotels = res[0].rows, rates = res[1].entries;
       var main = document.getElementById("content");
-      document.getElementById("note").textContent = d.note;
-      document.getElementById("earliest").textContent = timeFmt(d.earliest_listed_start);
-      var q = document.getElementById("q"), count = document.getElementById("count");
-      var days = d.days;
-      function drawSchedule() {
-        var query = (q ? q.value : "").toLowerCase();
-        var shown = 0;
-        main.innerHTML = days.map(function (day) {
-          var list = day.options.filter(function (o) {
-            if (!query) return true;
-            return o.name.toLowerCase().indexOf(query) >= 0 || o.source.toLowerCase().indexOf(query) >= 0;
-          });
-          if (!query || list.length > 0) { shown += list.length; }
-          var html = "<li>" + list.map(function (o) {
-            return "<strong>" + timeFmt(o.start) + "</strong> · " + esc(o.name) + " · " + money(o.buy_in_usd) +
-              (o.guarantee_usd ? " · GTD " + money(o.guarantee_usd) : "") +
-              " · <a href='" + esc(o.source) + "' target='_blank' rel='noopener'>source</a>";
-          }).join("</li><li>") + "</li>";
-          return '<div class="card day"><h3>' + dateFmt(day.date) + '</h3><ul>' + (query ? "<strong>filtered:</strong> " : "") + html + "</ul></div>";
-        }).join("");
-        if (count) count.textContent = shown + " matching events";
+      var first = rates[0];
+      main.innerHTML =
+        '<div class="card">' +
+        '<div class="form-grid">' +
+        '<div><label for="c-hotel">Property</label><select id="c-hotel"></select></div>' +
+        '<div><label for="c-in">Check-in</label><input type="date" id="c-in"></div>' +
+        '<div><label for="c-out">Check-out</label><input type="date" id="c-out"></div>' +
+        '<div><label for="c-guests">Guests</label><input type="number" id="c-guests" min="1" max="4" value="2"></div>' +
+        '<div><label for="c-rate">Room rate / night (USD)</label><input type="number" id="c-rate" min="0" step="1"></div>' +
+        '<div><label for="c-fee">Resort fee / night (USD)</label><input type="number" id="c-fee" min="0" step="0.01"></div>' +
+        '<div><label for="c-tax">Room tax %</label><input type="number" id="c-tax" min="0" step="0.01"></div>' +
+        '<div><label for="c-park">Parking / day (USD)</label><input type="number" id="c-park" min="0" step="1"></div>' +
+        '<div><label for="c-parkdays">Parking days</label><input type="number" id="c-parkdays" min="0" step="1" value="0"></div>' +
+        '<div><label for="c-entries">Tournament entries</label><input type="number" id="c-entries" min="0" step="1" value="0"></div>' +
+        '<div><label for="c-buyin">Buy-in each (USD)</label><input type="number" id="c-buyin" min="0" step="10" value="300"></div>' +
+        '</div>' +
+        '<div class="calc-out" id="c-out"></div>' +
+        '<p class="small" id="c-note"></p>' +
+        '</div>';
+
+      var hotelSel = document.getElementById("c-hotel");
+      hotelSel.innerHTML = hotels.map(function (h) { return '<option value="' + esc(h.id) + '">' + esc(h.name) + "</option>"; }).join("");
+      var els = {
+        hotel: hotelSel, in: document.getElementById("c-in"), out: document.getElementById("c-out"),
+        guests: document.getElementById("c-guests"), rate: document.getElementById("c-rate"),
+        fee: document.getElementById("c-fee"), tax: document.getElementById("c-tax"),
+        park: document.getElementById("c-park"), parkdays: document.getElementById("c-parkdays"),
+        entries: document.getElementById("c-entries"), buyin: document.getElementById("c-buyin")
+      };
+      if (first) {
+        els.in.value = first.arrival;
+        els.out.value = first.departure;
       }
-      drawSchedule();
-      if (q) q.addEventListener("input", drawSchedule);
+
+      function num(v) { var n = parseFloat(v); return isNaN(n) ? null : n; }
+      function nights() {
+        var a = els.in.value, b = els.out.value;
+        if (!a || !b) return null;
+        var d = (new Date(b + "T12:00:00Z") - new Date(a + "T12:00:00Z")) / 86400000;
+        return d > 0 ? d : null;
+      }
+      function applyHotel() {
+        var h = hotels.filter(function (x) { return x.id === els.hotel.value; })[0] || hotels[0];
+        els.fee.value = h.resort_fee_usd == null ? "" : h.resort_fee_usd;
+        els.tax.value = h.clark_county_tax_pct == null ? "" : h.clark_county_tax_pct;
+        els.park.value = h.parking_usd_per_day == null ? "" : h.parking_usd_per_day;
+        if (h.room_rate_usd != null) els.rate.value = h.room_rate_usd;
+        return h;
+      }
+      function applyRate() {
+        var n = nights();
+        if (!n) return null;
+        var hit = rates.filter(function (r) {
+          return r.arrival === els.in.value && r.departure === els.out.value &&
+                 (r.property.indexOf(hotels.filter(function (h) { return h.id === els.hotel.value; })[0].name.split(" ")[0]) >= 0);
+        })[0];
+        if (hit) {
+          els.rate.value = hit.nightly_average_usd;
+          return hit;
+        }
+        return null;
+      }
+
+      function calc() {
+        var h = applyHotel();
+        var n = nights();
+        var rate = num(els.rate.value), fee = num(els.fee.value), tax = num(els.tax.value);
+        var park = num(els.park.value), parkdays = num(els.parkdays.value);
+        var entries = num(els.entries.value), buyin = num(els.buyin.value);
+        var guests = num(els.guests.value);
+        var out = document.getElementById("c-out");
+        var note = document.getElementById("c-note");
+        var msgs = [];
+        if (!n) { out.innerHTML = ""; note.textContent = "Enter a check-in and a check-out date to calculate a stay."; return; }
+        if (rate == null) msgs.push("The room rate is not verified for these dates, so no total is calculated. The dated rate log holds the quotes that were taken.");
+        if (fee == null) msgs.push("The resort fee for this property is not published on an official source, so it is left out rather than guessed.");
+        if (tax == null) msgs.push("The room tax rate for this property is not published on an official source, so it is left out rather than guessed.");
+        var room = rate == null ? null : rate * n;
+        var feeTotal = fee == null ? null : fee * n;
+        var taxTotal = (room == null || tax == null) ? null : (room + (feeTotal || 0)) * tax / 100;
+        var parkTotal = (park == null || !parkdays) ? 0 : park * parkdays;
+        var entryTotal = (entries == null || buyin == null) ? 0 : entries * buyin;
+        var total = 0, known = true;
+        [room, feeTotal, taxTotal].forEach(function (v) { if (v == null) known = false; else total += v; });
+        total += parkTotal + entryTotal;
+        var box = function (label, value, hint) {
+          return '<div class="box"><div class="n">' + (value == null ? '<span class="muted">n/a</span>' : money(value)) +
+            '</div><div class="l">' + esc(label) + (hint ? "<br>" + esc(hint) : "") + "</div></div>";
+        };
+        out.innerHTML =
+          box("Nights", null, String(n)) +
+          box("Room subtotal", room, rate == null ? "rate needed" : money(rate) + " × " + n) +
+          box("Resort fee subtotal", feeTotal, fee == null ? "fee unverified" : money(fee) + " × " + n) +
+          box("Taxes", taxTotal, tax == null ? "tax rate unverified" : tax + "%") +
+          box("Parking", parkTotal, parkTotal ? "for " + parkdays + " day(s)" : "none entered") +
+          box("Tournament entries", entryTotal, entries ? entries + " × " + money(buyin) : "none entered") +
+          box("Total for the stay", known ? total : null, known ? "" : "needs a verified rate") +
+          box("True cost / night", known && n ? total / n : null, known ? "" : "needs a verified rate");
+        note.innerHTML = msgs.length
+          ? msgs.map(function (m) { return '<span class="chip warn">' + esc(m) + "</span>"; }).join(" ") +
+            (guests > 2 ? ' <span class="chip warn">Official terms add a fee for each guest above two.</span>' : "")
+          : "Every value in this calculation comes from a verified official figure in the dataset or from a quote you typed in.";
+        var hit = applyRate();
+        if (hit) {
+          note.innerHTML += '<br><span class="small">A quote for these exact dates was logged on ' +
+            esc(hit.logged_on) + ": " + money(hit.checkout_total_usd) + " checkout total, " +
+            money(hit.taxes_total_usd) + " taxes, " + money(hit.true_cost_per_night_usd) +
+            " true cost per night (" + esc(hit.caveat) + ").</span>";
+        }
+      }
+      Object.keys(els).forEach(function (k) {
+        els[k].addEventListener("input", calc);
+        els[k].addEventListener("change", calc);
+      });
+      calc();
+    }).catch(showErr);
+  };
+
+  PAGES.venues = function () {
+    Promise.all([getJSON("data/venues.json"), getJSON("data/tournaments.json"), getJSON("data/hotels.json"), getJSON("data/walking.json")]).then(function (res) {
+      var venues = res[0].rows, rows = res[1].rows, hotels = res[2].rows, walking = res[3].rows;
+      var main = document.getElementById("content");
+      main.innerHTML = venues.map(function (v) {
+        var vr = rows.filter(function (r) { return r.venue === v.name; });
+        var se = vr.filter(function (r) { return r.entry_status === "SE"; }).length;
+        var hs = hotels.filter(function (h) { return (v.hotel_ids || []).indexOf(h.id) >= 0; });
+        var wk = walking.filter(function (w) { return w.venue === v.name; });
+        return '<div class="card venue-card">' +
+          "<h3>" + esc(v.name) + "</h3>" +
+          '<p class="small">' + esc(v.note) + "</p>" +
+          "<p><strong>Poker room:</strong> " + (v.poker_room ? esc(v.poker_room) : '<span class="muted">not published on an official source read in this session</span>') + "</p>" +
+          "<p><strong>Address:</strong> " + (v.address ? esc(v.address) : '<span class="muted">unverified</span>') + "</p>" +
+          "<p><strong>Hotels here:</strong> " + (hs.length ? hs.map(function (h) { return esc(h.name); }).join(", ") : '<span class="muted">none listed</span>') + "</p>" +
+          "<p><strong>Tournament rows:</strong> " + vr.length + " (" + se + " single entry, verified)</p>" +
+          "<p><strong>Walking records:</strong> " + wk.length + "</p>" +
+          '<p><a href="' + BASE + 'pages/venue-' + esc(v.id) + '.html">Open ' + esc(v.name) + " venue page</a> " +
+          "· Official links: " + srcLinks((v.official_links || []).map(function (u) { return { label: u, url: u }; })) + "</p>" +
+          "</div>";
+      }).join("");
+    }).catch(showErr);
+  };
+
+  PAGES.venue = function (venueId) {
+    Promise.all([getJSON("data/venues.json"), getJSON("data/tournaments.json"), getJSON("data/hotels.json"), getJSON("data/walking.json")]).then(function (res) {
+      var venues = res[0].rows, rows = res[1].rows, hotels = res[2].rows, walking = res[3].rows;
+      var v = venues.filter(function (x) { return x.id === venueId; })[0];
+      var main = document.getElementById("content");
+      if (!v) { main.innerHTML = '<div class="card callout">Unknown venue.</div>'; return; }
+      var vr = rows.filter(function (r) { return r.venue === v.name; });
+      var hs = hotels.filter(function (h) { return (v.hotel_ids || []).indexOf(h.id) >= 0; });
+      var wk = walking.filter(function (w) { return w.venue === v.name; });
+      main.innerHTML =
+        '<div class="card venue-card"><h3>' + esc(v.name) + "</h3>" +
+        '<p class="small">' + esc(v.note) + "</p>" +
+        "<p><strong>Poker room:</strong> " + (v.poker_room ? esc(v.poker_room) : '<span class="muted">not published</span>') + "</p>" +
+        "<p><strong>Address:</strong> " + (v.address ? esc(v.address) : '<span class="muted">unverified</span>') + "</p>" +
+        "<p>Official links: " + srcLinks((v.official_links || []).map(function (u) { return { label: u, url: u }; })) + "</p>" +
+        "</div>";
+      var hsec = document.getElementById("hotels");
+      if (hsec && hs.length) {
+        hsec.innerHTML = "<h2>Hotels at this venue</h2>";
+        table(hsec, hs, [
+          { id: "name", label: "Hotel", key: "name", html: function (r) { return "<strong>" + esc(r.name) + "</strong>"; } },
+          { id: "fee", label: "Resort fee", key: "resort_fee_usd", num: true, html: function (r) { return money(r.resort_fee_usd) + " <span class='small'>(" + esc(r.resort_fee_status) + ")</span>"; } },
+          { id: "tax", label: "Room tax", key: "clark_county_tax_pct", num: true, html: function (r) { return r.clark_county_tax_pct == null ? '<span class="muted">unverified</span>' : r.clark_county_tax_pct + "%"; } },
+          { id: "walk", label: "Walk", key: "walk_to_venetian_min", sort: null, html: function (r) { return r.walk_to_venetian_min == null ? '<span class="muted">unverified</span>' : r.walk_to_venetian_min + " min"; } },
+          { id: "src", label: "Sources", key: "sources", sort: null, html: function (r) { return "<span class='small'>" + srcLinks(r.sources) + "</span>"; } }
+        ], { sortKey: "name", sortDir: 1 });
+      }
+      var wsec = document.getElementById("walking");
+      if (wsec && wk.length) {
+        wsec.innerHTML = "<h2>Walking records</h2>";
+        table(wsec, wk, [
+          { id: "hotel", label: "Hotel", key: "hotel" },
+          { id: "from", label: "From", key: "from", sort: null },
+          { id: "minutes", label: "Minutes", key: "minutes", num: true, html: function (r) { return r.minutes == null ? '<span class="muted">unverified</span>' : r.minutes; } },
+          { id: "note", label: "Note", key: "note", sort: null, html: function (r) { return "<span class='small'>" + esc(r.note) + "</span>"; } },
+          { id: "route", label: "Route", key: "route_link", sort: null, html: function (r) { return '<a href="' + esc(r.route_link) + '" target="_blank" rel="noopener">walking route</a>'; } }
+        ], { sortKey: "hotel", sortDir: 1 });
+      }
+      var tsec = document.getElementById("events");
+      if (tsec) {
+        var filters = tournamentFilters(document.getElementById("filters"), vr);
+        var tbl = table(tsec, vr, tournamentColumns(true), {
+          sortKey: "date", sortDir: 1, predicate: filters.matches, countEl: document.getElementById("count")
+        });
+        filters.onChange(function () { tbl.redraw(); });
+      }
+    }).catch(showErr);
+  };
+
+  PAGES.search = function () {
+    var results = document.getElementById("results");
+    var input = document.getElementById("q");
+    var summary = document.getElementById("summary");
+    Promise.all([
+      getJSON("data/tournaments.json"), getJSON("data/hotels.json"), getJSON("data/venues.json"),
+      getJSON("data/daily.json"), getJSON("data/walking.json"), getJSON("data/rates.json")
+    ].concat(DOCS.map(function (d) { return getTextSafe(d[0]); }))).then(function (res) {
+      var rows = res[0].rows, hotels = res[1].rows, venues = res[2].rows, daily = res[3].rows;
+      var walking = res[4].rows, rates = res[5].entries;
+      var docs = DOCS.map(function (d, i) { return { file: d[0], title: d[1], text: res[6 + i] || "" }; });
+
+      function block(title, items) {
+        if (!items.length) return "";
+        return "<h3>" + esc(title) + " (" + items.length + ")</h3>" + items.join("");
+      }
+      function run() {
+        var q = input.value.trim().toLowerCase();
+        if (!q) { results.innerHTML = '<div class="card callout">Type to search every tournament, hotel, venue, daily format, walking record, rate log entry and document on this site.</div>'; summary.textContent = ""; return; }
+        var hitT = rows.filter(function (r) { return JSON.stringify(r).toLowerCase().indexOf(q) >= 0; }).slice(0, 60)
+          .map(function (r) {
+            return '<div class="result"><div class="title">' + esc(r.name) + "</div><div class='meta'>" +
+              esc(r.date) + " " + esc(r.start) + " · " + esc(r.venue) + " · " + esc(r.entry_status) +
+              (r.buy_in_usd ? " · " + money(r.buy_in_usd) : "") + " · <a href='" + BASE + "pages/schedule.html'>schedule</a></div></div>";
+          });
+        var hitH = hotels.filter(function (h) { return JSON.stringify(h).toLowerCase().indexOf(q) >= 0; })
+          .map(function (h) {
+            return '<div class="result"><div class="title">' + esc(h.name) + "</div><div class='meta'>" +
+              esc(h.resort_fee_status) + " resort fee · <a href='" + BASE + "pages/hotels.html'>hotels</a></div></div>";
+          });
+        var hitV = venues.filter(function (v) { return JSON.stringify(v).toLowerCase().indexOf(q) >= 0; })
+          .map(function (v) {
+            return '<div class="result"><div class="title">' + esc(v.name) + "</div><div class='meta'>venue · <a href='" +
+              BASE + "pages/venue-" + esc(v.id) + ".html'>venue page</a></div></div>";
+          });
+        var hitD = daily.filter(function (d) { return JSON.stringify(d).toLowerCase().indexOf(q) >= 0; })
+          .map(function (d) {
+            return '<div class="result"><div class="title">' + esc(d.name) + "</div><div class='meta'>" + esc(d.days) +
+              " · <a href='" + BASE + "pages/daily.html'>daily feed</a></div></div>";
+          });
+        var hitW = walking.filter(function (w) { return JSON.stringify(w).toLowerCase().indexOf(q) >= 0; })
+          .map(function (w) {
+            return '<div class="result"><div class="title">' + esc(w.hotel) + " → " + esc(w.venue) + "</div><div class='meta'>walking record · <a href='" + BASE + "pages/hotels.html'>hotels</a></div></div>";
+          });
+        var hitR = rates.filter(function (r) { return JSON.stringify(r).toLowerCase().indexOf(q) >= 0; })
+          .map(function (r) {
+            return '<div class="result"><div class="title">' + esc(r.room) + "</div><div class='meta'>rate log " +
+              esc(r.arrival) + " → " + esc(r.departure) + " · " + money(r.checkout_total_usd) + "</div></div>";
+          });
+        var hitDocs = docs.filter(function (d) { return d.text.toLowerCase().indexOf(q) >= 0; })
+          .map(function (d) {
+            var idx = d.text.toLowerCase().indexOf(q);
+            var start = Math.max(0, idx - 90);
+            var snippet = d.text.slice(start, idx + 140).replace(/\s+/g, " ");
+            return '<div class="result"><div class="title">' + esc(d.title) + "</div><div class='meta'>" +
+              esc(snippet) + "…</div></div>";
+          });
+        results.innerHTML = block("Tournaments", hitT) + block("Hotels", hitH) + block("Venues", hitV) +
+          block("Daily formats", hitD) + block("Walking records", hitW) + block("Rate log", hitR) +
+          block("Documents", hitDocs) ||
+          '<div class="card callout">Nothing matched " ' + esc(q) + ' ".</div>';
+        summary.textContent = "Search covers " + rows.length + " tournament rows, " + hotels.length + " hotels, " +
+          venues.length + " venues, " + daily.length + " daily formats, " + walking.length + " walking records, " +
+          rates.length + " rate log entries and " + docs.length + " documents.";
+      }
+      input.addEventListener("input", run);
+      run();
+    }).catch(showErr);
+  };
+
+  PAGES.monitoring = function () {
+    Promise.all([
+      getJSONSafe("data/monitoring.json"), getJSONSafe("data/changes.json"), getJSON("data/tournaments.json")
+    ]).then(function (res) {
+      var mon = res[0], ch = res[1], rows = res[2].rows;
+      var main = document.getElementById("content");
+      var flagged = rows.filter(function (r) { return (r.flags || []).length; });
+      var html = "";
+      if (mon) {
+        html += "<div class='grid'>" +
+          kpi(mon.sources_ok + " / " + mon.sources_total, "official sources reachable") +
+          kpi(mon.sources_unreachable, "unreachable on the last check") +
+          kpi(mon.sources_http_error, "HTTP errors on the last check") +
+          kpi(mon.rows_changed, "rows changed since the last snapshot") +
+          kpi(mon.rows_added + " / " + mon.rows_removed, "rows added / removed") +
+          kpi(flagged.length, "rows carrying a source flag") +
+          "</div>";
+        html += "<p class='small'>Last check: " + esc(mon.checked_at) + ". " + esc(mon.note) + "</p>";
+      } else {
+        html += "<div class='card callout'>No monitoring result is stored yet. The monitoring job writes data/monitoring.json after it checks every official source.</div>";
+      }
+      if (ch) {
+        var changed = ch.changed || [], added = ch.added || [], removed = ch.removed || [];
+        html += "<h2>Changed rows</h2>";
+        if (!changed.length && !added.length && !removed.length) {
+          html += "<div class='card callout'>No row changed since the snapshot in data/row_snapshot.json (" + esc(ch.checked_at) + ").</div>";
+        } else {
+          var list = added.map(function (r) { return ["added", r]; })
+            .concat(removed.map(function (r) { return ["removed", r]; }))
+            .concat(changed.map(function (r) { return ["changed", r]; }));
+          html += list.map(function (x) {
+            var kind = x[0], r = x[1];
+            var detail = r.diff ? Object.keys(r.diff).map(function (k) {
+              return esc(k) + ": " + esc(JSON.stringify(r.diff[k][0])) + " → " + esc(JSON.stringify(r.diff[k][1]));
+            }).join("<br>") : "";
+            return '<div class="result"><span class="chip ' + (kind === "removed" ? "bad" : (kind === "added" ? "ok" : "warn")) + '">' +
+              kind + '</span> <div class="title">' + esc(r.name) + "</div><div class='meta'>" + esc(r.id) + " · " + esc(r.date) +
+              "</div>" + (detail ? "<div class='meta'>" + detail + "</div>" : "") + "</div>";
+          }).join("");
+        }
+      }
+      main.innerHTML = html;
+      var tsec = document.getElementById("flagged");
+      if (tsec) {
+        tsec.innerHTML = "<h2>Rows carrying a source flag</h2>" +
+          "<p class='small'>A flag records a printed irregularity in an official source - a typo, a conflict between two " +
+          "official pages, or a source that cannot be reconciled. Every flag keeps its own source text.</p>";
+        table(tsec, flagged, [
+          { id: "date", label: "Date", key: "date", html: function (r) { return dateFmt(r.date); } },
+          { id: "name", label: "Event", key: "name", html: function (r) { return "<strong>" + esc(r.name) + "</strong><br><span class='small'>" + esc(r.series) + "</span>"; } },
+          { id: "flag", label: "Flag", key: "flags", sort: null, html: function (r) { return flagsHtml(r); } },
+          { id: "src", label: "Sources", key: "sources", sort: null, html: function (r) { return "<span class='small'>" + srcLinks(r.sources) + "</span>"; } }
+        ], { sortKey: "date", sortDir: 1 });
+      }
+      var ssec = document.getElementById("sources");
+      if (ssec && mon) {
+        var urls = Object.keys(mon.sources).map(function (u) { return { url: u, s: mon.sources[u] }; });
+        ssec.innerHTML = "<h2>Source status</h2>";
+        table(ssec, urls, [
+          { id: "status", label: "Status", key: "s", sort: null, html: function (r) {
+              var cls = r.s.status === "ok" ? "ok" : (r.s.status === "http-error" ? "bad" : "warn");
+              return '<span class="status-dot ' + cls + '"></span>' + esc(r.s.status) +
+                (r.s.http_status ? " (" + r.s.http_status + ")" : "") + (r.s.error ? "<br><span class='small'>" + esc(r.s.error) + "</span>" : "");
+            } },
+          { id: "url", label: "Official URL", key: "url", sort: null, html: function (r) { return '<a href="' + esc(r.url) + '" target="_blank" rel="noopener">' + esc(r.url) + "</a>"; } }
+        ], { sortKey: "status", sortDir: 1 });
+      }
     }).catch(showErr);
   };
 
@@ -480,174 +1175,6 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
   PAGES.flagged = markdownPage("FLAGGED.md");
   PAGES.review = markdownPage("REVIEW.md");
 
-  /* ---------- venue pages ---------- */
-  function venueEventCols() {
-    return [
-      { id: "date", label: "Date", key: "date", sort: function (r) { return r.date + r.start; }, html: function (r) { return dateFmt(r.date); } },
-      { id: "start", label: "Start", key: "start", html: function (r) { return timeFmt(r.start); } },
-      { id: "name", label: "Event", key: "name", html: function (r) { return "<strong>" + esc(r.name) + "</strong><br><span class='small'>" + esc(r.series) + (r.event_no ? " · Event " + r.event_no : "") + "</span>"; } },
-      { id: "status", label: "Entry status", key: "entry_status", html: function (r) { return statusChip(r.entry_status); } },
-      { id: "buy", label: "Buy-in", key: "buy_in_usd", num: true, html: function (r) { return money(r.buy_in_usd); } },
-      { id: "gtd", label: "Guarantee", key: "guarantee_usd", num: true, html: function (r) { return money(r.guarantee_usd); } },
-      { id: "mult", label: "Guarantee ÷ buy-in", key: "gtd_multiple", num: true, html: function (r) { return mult(r.gtd_multiple); } },
-      { id: "rules", label: "Entry rules", key: "rules", sort: null, html: function (r) { return rulesHtml(r); } },
-      { id: "last", label: "Last checked", key: "last_checked", html: function (r) { return dateFmt(r.last_checked); } },
-      { id: "src", label: "Source", key: "sources", sort: null, html: function (r) { return "<span class='small'>" + srcLinks(r.sources) + "</span>"; } }
-    ];
-  }
-  function renderVenue(containerId, venueName, seriesRe, hotelIds) {
-    Promise.all([getJSON("data/tournaments.json"), getJSON("data/hotels.json")]).then(function (res) {
-      var events = res[0].rows.filter(function (r) { return seriesRe.test(r.series); });
-      var hotels = res[1].rows.filter(function (h) { return hotelIds.indexOf(h.id) >= 0; });
-      var main = document.getElementById(containerId);
-      var q = document.createElement("input");
-      q.type = "search"; q.placeholder = "Filter " + venueName + " events and hotels";
-      q.className = ""; q.style.cssText = "padding:7px 10px;border:1px solid var(--line);border-radius:6px;font-size:14px;margin-bottom:10px;display:block;width:100%;max-width:420px;";
-      main.appendChild(q);
-      var eventsWrap = document.createElement("div");
-      main.appendChild(eventsWrap);
-      var hotelsWrap = document.createElement("div");
-      main.appendChild(hotelsWrap);
-      function draw() {
-        var query = q.value.toLowerCase();
-        var ev = events.filter(function (r) {
-          if (!query) return true;
-          return JSON.stringify(r).toLowerCase().indexOf(query) >= 0;
-        });
-        var ho = hotels.filter(function (h) {
-          if (!query) return true;
-          return JSON.stringify(h).toLowerCase().indexOf(query) >= 0;
-        });
-        eventsWrap.innerHTML = "<h3>" + esc(venueName) + " events (" + ev.length + ")</h3>";
-        table(eventsWrap, ev, venueEventCols(), { sortKey: "date", sortDir: 1 });
-        hotelsWrap.innerHTML = "<h3>" + esc(venueName) + " hotels (" + ho.length + ")</h3>";
-        table(hotelsWrap, ho, [
-          { id: "name", label: "Hotel", key: "name", html: function (r) { return "<strong>" + esc(r.name) + "</strong><br><span class='small'>" + esc(r.address_note) + "</span>"; } },
-          { id: "fee", label: "Resort fee / night", key: "resort_fee_usd", num: true, html: function (r) { return (r.resort_fee_status === "verified" ? '<span class="chip ok">Verified</span>' : '<span class="chip warn">Unverified</span>') + "<br>" + money(r.resort_fee_usd); } },
-          { id: "rate", label: "Room rate (dated log)", key: "rates", sort: null, html: function (r) { return r.rates && r.rates.length ? r.rates.map(function (rate) { return esc(rate.date) + ": " + money(rate.rate_usd); }).join("<br>") : '<span class="muted">no rate logged</span>'; } },
-          { id: "true", label: "True cost / night", key: "true_cost_per_night_usd", num: true, html: function (r) { return r.true_cost_per_night_usd == null ? '<span class="muted">blank</span>' : money(r.true_cost_per_night_usd); } },
-          { id: "src", label: "Source", key: "sources", sort: null, html: function (r) { return "<span class='small'>" + srcLinks(r.sources) + "</span>"; } }
-        ], { sortKey: "name", sortDir: 1 });
-      }
-      q.addEventListener("input", draw);
-      draw();
-    }).catch(showErr);
-  }
-  PAGES.venueVenetian = function () { renderVenue("content", "Venetian", /Venetian/, ["venetian", "palazzo"]); };
-  PAGES.venueWynn = function () { renderVenue("content", "Wynn", /Wynn/, ["wynn", "encore"]); };
-  PAGES.venueOthers = function () {
-    getJSON("data/hotels.json").then(function (d) {
-      var main = document.getElementById("content");
-      var hotels = d.rows.filter(function (h) { return ["bellagio", "aria", "caesars"].indexOf(h.id) >= 0; });
-      var q = document.createElement("input");
-      q.type = "search"; q.placeholder = "Filter other hotels";
-      q.style.cssText = "padding:7px 10px;border:1px solid var(--line);border-radius:6px;font-size:14px;margin-bottom:10px;display:block;width:100%;max-width:420px;";
-      main.appendChild(q);
-      function draw() {
-        var query = q.value.toLowerCase();
-        var ho = hotels.filter(function (h) { if (!query) return true; return JSON.stringify(h).toLowerCase().indexOf(query) >= 0; });
-        main.innerHTML = "";
-        main.appendChild(q);
-        var wrap = document.createElement("div");
-        main.appendChild(wrap);
-        wrap.innerHTML = "<h3>Other Strip hotels (" + ho.length + ")</h3>";
-        table(wrap, ho, [
-          { id: "name", label: "Hotel", key: "name", html: function (r) { return "<strong>" + esc(r.name) + "</strong><br><span class='small'>" + esc(r.address_note) + "</span>"; } },
-          { id: "fee", label: "Resort fee / night", key: "resort_fee_usd", num: true, html: function (r) { return (r.resort_fee_status === "verified" ? '<span class="chip ok">Verified</span>' : '<span class="chip warn">Unverified</span>') + "<br>" + money(r.resort_fee_usd); } },
-          { id: "rate", label: "Room rate (dated log)", key: "rates", sort: null, html: function (r) { return r.rates && r.rates.length ? r.rates.map(function (rate) { return esc(rate.date) + ": " + money(rate.rate_usd); }).join("<br>") : '<span class="muted">no rate logged</span>'; } },
-          { id: "true", label: "True cost / night", key: "true_cost_per_night_usd", num: true, html: function (r) { return r.true_cost_per_night_usd == null ? '<span class="muted">blank</span>' : money(r.true_cost_per_night_usd); } },
-          { id: "src", label: "Source", key: "sources", sort: null, html: function (r) { return "<span class='small'>" + srcLinks(r.sources) + "</span>"; } }
-        ], { sortKey: "name", sortDir: 1 });
-      }
-      q.addEventListener("input", draw);
-      draw();
-    }).catch(showErr);
-  };
-
-  /* ---------- trip calculator ---------- */
-  PAGES.tripCalculator = function () {
-    getJSON("data/hotels.json").then(function (d) {
-      var main = document.getElementById("calculator");
-      var sel = document.createElement("select");
-      sel.id = "tripHotel";
-      sel.innerHTML = '<option value="">-- choose a hotel (rate unverified) --</option>' +
-        d.rows.map(function (h) { return '<option value="' + esc(h.id) + '" data-fee="' + esc(h.resort_fee_usd == null ? "" : h.resort_fee_usd) + '" data-tax="' + esc(h.clark_county_tax_pct == null ? "" : h.clark_county_tax_pct) + '">' + esc(h.name) + "</option>"; }).join("");
-      var form = '<form id="tripForm">' +
-        '<label>Tournament entries <input type="number" id="tripEntries" value="1" min="0"></label> ' +
-        '<label>Buy-in per entry ($) <input type="number" id="tripBuyIn" value="300" min="0" step="10"></label> ' +
-        '<label>Hotel nights <input type="number" id="tripNights" value="3" min="0"></label> ' +
-        '<label>Hotel ' + sel.outerHTML + '</label> ' +
-        '<label>Nightly rate ($, override) <input type="number" id="tripRate" step="0.01" min="0"></label> ' +
-        '<label>Resort fee/night ($) <span id="tripFee">—</span></label> ' +
-        '<label>Tax rate (%) <span id="tripTax">—</span></label> ' +
-        '</form>';
-      var result = document.createElement("div");
-      result.id = "tripResult";
-      main.innerHTML = form;
-      main.appendChild(result);
-      var feeEl = document.getElementById("tripFee"), taxEl = document.getElementById("tripTax");
-      function compute() {
-        var entries = +document.getElementById("tripEntries").value || 0;
-        var buyIn = +document.getElementById("tripBuyIn").value || 0;
-        var nights = +document.getElementById("tripNights").value || 0;
-        var rate = +document.getElementById("tripRate").value || 0;
-        var opt = sel.options[sel.selectedIndex];
-        var fee = +(opt && opt.getAttribute("data-fee") || "") || 0;
-        var tax = +(opt && opt.getAttribute("data-tax") || "") || 0;
-        var hasRate = document.getElementById("tripRate").value !== "";
-        if (!hasRate) rate = 0;
-        var nightly = rate + fee;
-        var trueNightly = hasRate && tax ? nightly * (1 + tax / 100) : null;
-        var entriesCost = entries * buyIn;
-        var hotelCost = trueNightly ? nights * trueNightly : (nights * nightly);
-        var total = entriesCost + hotelCost;
-        var out = [];
-        out.push("<strong>Tournament entries:</strong> " + entries + " × " + money(buyIn) + " = " + money(entriesCost));
-        out.push("<strong>Hotel:</strong> " + nights + " nights × " + (trueNightly ? money(trueNightly) : (money(nightly) + " (tax not confirmed for this hotel)")) + " = " + money(hotelCost));
-        out.push("<strong>Total estimated cost:</strong> " + money(total));
-        if (!hasRate) out.push("<span class='small'>Nightly rate is not verified for any hotel — enter a rate above for a real estimate.</span>");
-        if (opt) out.push("<span class='small'>Resort fee " + money(fee) + (tax ? " · tax " + tax.toFixed(2).replace(/\.?0+$/,"") + "%" : " (tax unverified)") + " per night.</span>");
-        result.innerHTML = out.map(function (l) { return "<p>" + l + "</p>"; }).join("");
-      }
-      document.getElementById("tripForm").addEventListener("input", compute);
-      sel.addEventListener("change", function () {
-        feeEl.textContent = (sel.options[sel.selectedIndex].getAttribute("data-fee") || "") ? money(+sel.options[sel.selectedIndex].getAttribute("data-fee")) : "—";
-        taxEl.textContent = (sel.options[sel.selectedIndex].getAttribute("data-tax") || "") ? (+sel.options[sel.selectedIndex].getAttribute("data-tax")).toFixed(2).replace(/\.?0+$/,"") + "%" : "—";
-        compute();
-      });
-      feeEl.textContent = "—"; taxEl.textContent = "—";
-      compute();
-    }).catch(showErr);
-  };
-
-  /* ---------- change monitor ---------- */
-  PAGES.changeMonitor = function () {
-    Promise.all([getJSON("data/tournaments.json"), getJSON("data/hotels.json")]).then(function (res) {
-      var main = document.getElementById("monitor");
-      var sources = {};
-      function add(url, label, date) {
-        if (!sources[url]) sources[url] = { label: label, dates: [] };
-        if (date) sources[url].dates.push(date);
-      }
-      res[0].rows.forEach(function (r) { (r.sources || []).forEach(function (s) { add(s.url, s.label, r.last_checked); }); });
-      res[1].rows.forEach(function (h) { (h.sources || []).forEach(function (s) { add(s.url, s.label, h.last_checked); }); });
-      var rows = Object.keys(sources).map(function (url) {
-        var info = sources[url];
-        var last = info.dates.length ? info.dates.sort().reverse()[0] : null;
-        return { url: url, label: info.label, last: last };
-      });
-      var html = '<table><thead><tr><th>Official source</th><th>Used as</th><th>Last checked</th><th>Re-check status</th></tr></thead><tbody>' +
-        rows.map(function (r) {
-          return "<tr><td><a href='" + esc(r.url) + "' target='_blank' rel='noopener'>" + esc(r.label) + "</a></td>" +
-            "<td><span class='small'>" + esc(r.url) + "</span></td>" +
-            "<td>" + dateFmt(r.last) + "</td>" +
-            "<td><span class='chip warn'>Not re-checked from this sandbox</span></td></tr>";
-        }).join("") + "</tbody></table>";
-      html += '<p class="small">A scheduled re-check (change monitoring) would fetch each official URL and compare it to the value recorded on each row, then flag rows whose source changed. This sandbox cannot reach the official venue domains, so results are not populated. Run check_changes.py from a machine with access to the official sites.</p>';
-      main.innerHTML = html;
-    }).catch(showErr);
-  };
-
   function showErr(e) {
     var main = document.getElementById("content");
     if (main) main.innerHTML = '<div class="card callout">Could not load this page: ' + esc(e.message) + "</div>";
@@ -656,7 +1183,9 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
   document.addEventListener("DOMContentLoaded", function () {
     renderNav();
     var page = document.body.getAttribute("data-page");
-    if (page && PAGES[page]) PAGES[page]();
+    if (!page) return;
+    if (page.indexOf("venue:") === 0) PAGES.venue(page.slice("venue:".length));
+    else if (PAGES[page]) PAGES[page]();
   });
 })();
 

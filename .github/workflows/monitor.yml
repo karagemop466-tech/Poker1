@@ -1,0 +1,92 @@
+name: Monitor official sources
+
+# Checks that every official source used by the dataset still answers, records
+# the result in data/monitoring.json, and lists the rows that changed since the
+# last verified snapshot. When something moves, the report is posted as an
+# issue so a reviewer can re-read the affected structure sheets.
+
+on:
+  schedule:
+    - name: Daily source check
+      cron: "17 7 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: source-monitor
+  cancel-in-progress: true
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Check every official source
+        run: python3 scripts/monitor_sources.py --print | tee monitor.txt
+
+      - name: Summarise the result
+        run: |
+          python3 scripts/report_monitoring.py > report.md
+          {
+            echo "### Source check"
+            echo
+            cat monitor.txt
+            echo
+            cat report.md
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Commit the monitoring result
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/monitoring.json data/changes.json
+          if git diff --cached --quiet; then
+            echo "No change in the monitoring result."
+          else
+            git commit -m "chore: refresh source monitoring result"
+            git push
+          fi
+
+      - name: Publish the report as an issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY' > report.md
+          import json
+          mon = json.load(open("data/monitoring.json"))
+          ch = json.load(open("data/changes.json"))
+          print("## Official source check")
+          print()
+          print(f"- checked: {mon['checked_at']}")
+          print(f"- sources reachable: {mon['sources_ok']} / {mon['sources_total']}")
+          print(f"- unreachable: {mon['sources_unreachable']}")
+          print(f"- HTTP errors: {mon['sources_http_error']}")
+          print()
+          print("### Rows that changed since the last verified snapshot")
+          print()
+          for row in ch["changed"]:
+              print(f"- **{row['name']}** ({row['date']}, {row['id']})")
+              for key, pair in row["diff"].items():
+                  print(f"  - {key}: {pair[0]} -> {pair[1]}")
+          for row in ch["added"]:
+              print(f"- added **{row['name']}** ({row['date']}, {row['id']})")
+          for row in ch["removed"]:
+              print(f"- removed **{row['name']}** ({row['date']}, {row['id']})")
+          if not (ch["changed"] or ch["added"] or ch["removed"]):
+              print("- no row changed")
+          PY
+          echo "---" >> report.md
+          echo "" >> report.md
+          echo "Re-read the affected structure sheets before trusting the changed rows." >> report.md
+          title="Source check $(date -u +%Y-%m-%d)"
+          existing=$(gh issue list --state open --search "$title in:title" --json number --jq '.[0].number' || true)
+          if [ -n "$existing" ]; then
+            gh issue edit "$existing" --body-file report.md >/dev/null
+          else
+            gh issue create --title "$title" --body-file report.md >/dev/null
+          fi

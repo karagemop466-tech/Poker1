@@ -1,0 +1,139 @@
+{
+ "verified_on": "2026-11-16",
+ "max_minutes": 30,
+ "rows": [
+  {
+   "hotel": "venetian",
+   "venue": "The Venetian Resort",
+   "from": "The Venetian Resort (hotel tower, Grand Canal Shoppes)",
+   "to": "The Venetian poker room (The Palazzo, level 2, Grand Canal Shoppes)",
+   "minutes": null,
+   "status": "internal",
+   "note": "Official poker page: the poker room is inside the Venetian/Palazzo complex; the walk is through the casino and the Grand Canal Shoppes, so no street crossing is involved.",
+   "official_fact": "\"Our Poker Room is located at The Palazzo on level 2 of Grand Canal Shoppes.\"",
+   "route_link": "https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=The Venetian Resort Las Vegas&destination=The Palazzo, 3355 Las Vegas Blvd S, Las Vegas, NV 89109"
+  },
+  {
+   "hotel": "palazzo",
+   "venue": "The Venetian Resort",
+   "from": "The Palazzo guest suites",
+   "to": "The Venetian poker room (The Palazzo, level 2, Grand Canal Shoppes)",
+   "minutes": null,
+   "status": "internal",
+   "note": "Official poker page: \"From The Palazzo Lobby: Proceed across The Palazzo Casino Floor to the self-parking elevators... The Poker Room will be straight ahead.\" Inside the building.",
+   "official_fact": "\"From The Palazzo Lobby: ... The Poker Room will be straight ahead.\"",
+   "route_link": "https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=The Palazzo Las Vegas&destination=The Palazzo, 3355 Las Vegas Blvd S, Las Vegas, NV 89109"
+  },
+  {
+   "hotel": "wynn",
+   "venue": "Wynn Las Vegas",
+   "from": "Wynn Las Vegas / Encore guest tower",
+   "to": "Wynn Las Vegas poker room (in Encore at Wynn Las Vegas)",
+   "minutes": null,
+   "status": "internal",
+   "note": "Official tournament terms: \"Players will register in the Wynn Las Vegas Poker Room, located in Encore at Wynn Las Vegas.\" Inside the resort.",
+   "official_fact": "\"Players will register in the Wynn Las Vegas Poker Room, located in Encore at Wynn Las Vegas.\"",
+   "route_link": "https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=Wynn Las Vegas, 3131 Las Vegas Blvd S, Las Vegas, NV 89109&destination=Encore at Wynn Las Vegas"
+  },
+  {
+   "hotel": "encore",
+   "venue": "Wynn Las Vegas",
+   "from": "Encore guest suites",
+   "to": "Wynn Las Vegas poker room (in Encore at Wynn Las Vegas)",
+   "minutes": null,
+   "status": "internal",
+   "note": "Official tournament terms place the poker room in Encore. Inside the resort.",
+   "official_fact": "\"Players will register in the Wynn Las Vegas Poker Room, located in Encore at Wynn Las Vegas.\"",
+   "route_link": "https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=Encore at Wynn Las Vegas&destination=Encore at Wynn Las Vegas"
+  },
+  {
+   "hotel": "wynn",
+   "venue": "The Venetian Resort",
+   "from": "Wynn Las Vegas, 3131 Las Vegas Blvd S",
+   "to": "The Venetian poker room (The Palazzo, level 2, Grand Canal Shoppes)",
+   "minutes": null,
+   "status": "unverified",
+   "note": "No official source publishes a walking time. Use the route link (Google Maps walking mode) and record the value before relying on it; the 30-minute rule is applied to the value only once it is verified.",
+   "official_fact": null,
+   "route_link": "https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=Wynn Las Vegas, 3131 Las Vegas Blvd S, Las Vegas, NV 89109&destination=The Venetian Resort, 3355 Las Vegas Blvd S, Las Vegas, NV 89109 (poker room: The Palazzo, level 2, Grand Canal Shoppes)"
+  },
+  {
+   "hotel": "encore",
+   "venue": "The Venetian Resort",
+   "from": "Encore at Wynn Las Vegas, 3131 Las Vegas Blvd S",
+   "to": "The Venetian poker room (The Palazzo, level 2, Grand Canal Shoppes)",
+   "minutes": null,
+   "status": "unverified",
+   "note": "No official source publishes a walking time.",
+   "official_fact": null,
+   "route_link": "https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=Encore at Wynn Las Vegas&destination=The Venetian Resort, 3355 Las Vegas Blvd S, Las Vegas, NV 89109 (poker room: The Palazzo, level 2, Grand Canal Shoppes)"
+  },
+  {
+   "hotel": "bellagio",
+   "venue": "The Venetian Resort",
+   "from": "Bellagio (official street address not published on the pages read)",
+   "to": "The Venetian poker room (The Palazzo, level 2, Grand Canal Shoppes)",
+   "minutes": null,
+   "status": "unverified",
+   "note": "No official source publishes a walking time, and the official Bellagio page read did not print the street address, so both the time and the start point are blank.",
+   "official_fact": null,
+   "route_link": "https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=Bellagio, Las Vegas, NV&destination=The Venetian Resort, 3355 Las Vegas Blvd S, Las Vegas, NV 89109 (poker room: The Palazzo, level 2, Grand Canal Shoppes)"
+  },
+  {
+   "hotel": "aria",
+   "venue": "The Venetian Resort",
+   "from": "ARIA (official street address not published on the pages read)",
+   "to": "The Venetian poker room (The Palazzo, level 2, Grand Canal Shoppes)",
+   "minutes": null,
+   "status": "unverified",
+   "note": "No official source publishes a walking time, and the official ARIA page read did not print the street address, so both the time and the start point are blank.",
+   "official_fact": null,
+   "route_link": "https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=ARIA Resort & Casino, Las Vegas, NV&destination=The Venetian Resort, 3355 Las Vegas Blvd S, Las Vegas, NV 89109 (poker room: The Palazzo, level 2, Grand Canal Shoppes)"
+  },
+  {
+   "hotel": "caesars",
+   "venue": "The Venetian Resort",
+   "from": "Caesars Palace, 3570 Las Vegas Blvd South",
+   "to": "The Venetian poker room (The Palazzo, level 2, Grand Canal Shoppes)",
+   "minutes": null,
+   "status": "unverified",
+   "note": "No official source publishes a walking time.",
+   "official_fact": null,
+   "route_link": "https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=Caesars Palace, 3570 Las Vegas Blvd S, Las Vegas, NV 89109&destination=The Venetian Resort, 3355 Las Vegas Blvd S, Las Vegas, NV 89109 (poker room: The Palazzo, level 2, Grand Canal Shoppes)"
+  },
+  {
+   "hotel": "bellagio",
+   "venue": "Wynn Las Vegas",
+   "from": "Bellagio (official street address not published on the pages read)",
+   "to": "Wynn Las Vegas poker room (in Encore at Wynn Las Vegas)",
+   "minutes": null,
+   "status": "unverified",
+   "note": "No official source publishes a walking time.",
+   "official_fact": null,
+   "route_link": "https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=Bellagio, Las Vegas, NV&destination=Wynn Las Vegas, 3131 Las Vegas Blvd S, Las Vegas, NV 89109"
+  },
+  {
+   "hotel": "aria",
+   "venue": "Wynn Las Vegas",
+   "from": "ARIA (official street address not published on the pages read)",
+   "to": "Wynn Las Vegas poker room (in Encore at Wynn Las Vegas)",
+   "minutes": null,
+   "status": "unverified",
+   "note": "No official source publishes a walking time.",
+   "official_fact": null,
+   "route_link": "https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=ARIA Resort & Casino, Las Vegas, NV&destination=Wynn Las Vegas, 3131 Las Vegas Blvd S, Las Vegas, NV 89109"
+  },
+  {
+   "hotel": "caesars",
+   "venue": "Wynn Las Vegas",
+   "from": "Caesars Palace, 3570 Las Vegas Blvd South",
+   "to": "Wynn Las Vegas poker room (in Encore at Wynn Las Vegas)",
+   "minutes": null,
+   "status": "unverified",
+   "note": "No official source publishes a walking time.",
+   "official_fact": null,
+   "route_link": "https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=Caesars Palace, 3570 Las Vegas Blvd S, Las Vegas, NV 89109&destination=Wynn Las Vegas, 3131 Las Vegas Blvd S, Las Vegas, NV 89109"
+  }
+ ],
+ "note": "Walking time is only filled in when an official source publishes it. No official source publishes walking times between these hotels and poker rooms, so the times are blank and a route link is given instead. The 30-minute rule is applied to a value only once one is verified."
+}
