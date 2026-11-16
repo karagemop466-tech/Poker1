@@ -85,6 +85,19 @@ Dropped from this session's branch because `main` already ships a richer equival
 only `cron` there, so **the daily source check never fired** and `data/monitoring.json` still shows the
 sandbox result (0 of 59 sources reachable). The key was removed here; the daily job will now run.
 
+### Pull request / deployment (session `40ca34e5`)
+
+- PR #26 (`arena/40ca34e5-poker1` → `main`): https://github.com/karagemop466-tech/Poker1/pull/26 —
+  **MERGED** (merge commit `3380491`) on 2026-11-16T20:16:15Z. The `validate` check passed first:
+  `build_data.py` and `build_site.py` regenerated with a zero diff, `check_links.py` returned OK
+  (21 pages, 316 rows, 7 hotels, 1 dated rate, 70 schedule days), and the headless render test passed.
+- GitHub Pages: deployment status **success** at 2026-11-16T20:17:13Z for `3380491`;
+  environment URL https://karagemop466-tech.github.io/Poker1/ ; Pages build status `built`.
+- Merged without waiting for review, as instructed. Flagged and unverified items were published with
+  their source links and did not block the merge.
+- To check after this merge: the fixed `monitor.yml` schedule should now fire daily at 07:17 UTC, so
+  `data/monitoring.json` should stop showing every source as unreachable.
+
 ### Verification performed in this session (after integrating onto `main`)
 
 - `python3 scripts/build_site.py` → 21 pages, zero diff against the committed pages.
@@ -211,6 +224,10 @@ The repository contains a static dashboard (`index.html`, `pages/`, `assets/`), 
 - PR #23 content: branch histories were unrelated, so it joined `main` with `--allow-unrelated-histories`. `main`'s dataset (316 rows, 80 SE) was kept over this branch's (224 rows, 50 SE). The PR adds only the Wynn registration-opening time, the daily-suspension source conflict, and the coordination record.
 
 ## Log
+- 2026-11-16: session `40ca34e5` integrated onto `main` (which had advanced with session `baba1a15`'s
+  full integration). `main`'s dataset, pages, styles, scripts and workflows were adopted unchanged; this
+  session's branch was rebased on top of `main` and force-pushed with `--force-with-lease` so no other
+  session's work was overwritten. PR #26 merged as `3380491`; Pages deploy confirmed `success`.
 - 2026-11-16: PR #11 merged into main (b272ed5), advancing it past the branch base.
 - 2026-11-16: arena/f5896c06-poker1 rebased onto origin/main, resolved COORDINATION.md conflict preserving both sessions' work; PR #13 created and merged; recording verification and limitation above.
 
