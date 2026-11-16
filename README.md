@@ -1,23 +1,32 @@
 # Vegas Poker Planner
 
-Static, evidence-first dashboard for planning Las Vegas Strip-area poker tournament trips. The public-facing dashboard is `index.html`; it can be hosted as a GitHub Pages static site from the repository root.
+A source-linked static dashboard for planning Las Vegas Strip-area poker tournaments and hotel stays. Research snapshot: **November 16, 2026**.
 
-## Research status (November 16, 2026)
-No tournament entries, hotel rates, resort-fee amounts, walking times, or all-in nightly prices are asserted as verified. The available search results did not provide event-specific confirmation from an official venue source. The dashboard therefore displays no confirmed events and leaves quote-dependent values blank rather than repeating third-party claims. Official venue/poker and property pages are linked in the dashboard as research starting points; source links alone do not establish a tournament schedule or fee.
+## Current finding
 
-## Method
-- A confirmed event needs an official, current schedule or structure page that identifies the future event and date/time, buy-in, guarantee/prize information, and all entry mechanics.
-- A strict single-entry candidate must have explicit official evidence that re-entry, re-buy, add-on, and extra bullets are not permitted. If terms are absent or ambiguous, classify as unverified and do not recommend it.
-- Compare field guarantees and buy-in only as disclosed by the same event source. Guarantee-per-buy-in is not expected value, and a guarantee is not a predicted payout.
-- Hotel totals require the user's exact dates and occupancy plus an official, bookable checkout quote. Compare room charges, mandatory resort/destination fees, applicable taxes, and mandatory charges, divided by nights. Report optional charges separately.
-- Walking time is not populated without a verified route and venue entrance. The desired maximum is 30 minutes.
-- Never schedule overlapping tournaments. Confirm late registration, start times, duration, breaks, and realistic transitions before proposing an all-day sequence.
+Two official upcoming series are listed: The Venetian DeepStack Extravaganza IV (Nov 16–Dec 23, 2026) and Wynn's WPT World Championship (Nov 27–Dec 21, 2026). The strict single-entry result remains **zero confirmed events** because the reviewed official structures do not explicitly establish a one-entry/no-re-entry limit for the one-day candidates. Those events are shown as unverified candidates—not as single-entry recommendations. Exact hotel totals are blank because trip dates and occupancy are unknown.
 
-## Files
-- `index.html`: Dashboard sections: executive summary, tournament finder, day plan, hotel cost comparison, flagged questions, official source directory.
-- `app.js`: Venue directory and empty event dataset. Rows are intentionally absent until official event-specific evidence is confirmed.
-- `styles.css`: Responsive presentation.
-- `COORDINATION.md`: Session work log, scope, evidence status, and deployment limitations.
+The source-first rule from the initial dashboard remains in effect: an event belongs in the strict shortlist only when the official schedule/structure identifies it and its entry rules explicitly rule out re-entry, re-buy, add-on, and extra bullets. “One day” is not equivalent to “single entry.” Guarantees divided by buy-in are shown only as arithmetic screening comparisons, never as expected value.
 
-## Hosting
-Enable GitHub Pages for the `main` branch, repository root (`/(root)`). This is a static site with no build step. The repository's current branch workflow and Pages configuration need maintainer-level GitHub settings; no deployment is claimed by this deliverable.
+## Dashboard pages
+
+- `index.html` — executive summary and decision status
+- `tournaments.html` — Venetian event candidates, Wynn multi-flight leads, and entry-rule caveats
+- `hotels.html` — official resort fees, conditional poker rates, and blank date-dependent true nightly totals
+- `decision.html` — unresolved questions and provisional path
+- `suggestions.html` — site improvement options, separate from implementation
+- `flagged.html` — unverified values and source irregularities
+
+## Research limits
+
+This is a dated, source-verified snapshot, not a reservation or entry guarantee and not a comprehensive event census of every Strip-area poker room. ARIA's official poker page directs readers to confirm whether daily tournaments are running; other rooms are retained as official source-directory links in `app.js` but are not represented as having verified future events in this snapshot. Unconfirmed event rules, prices, fees, and walking times are left blank and flagged.
+
+Hotel comparisons require exact stay dates, occupancy, room type, live operator quotes, mandatory resort/destination fees, applicable taxes, and cancellation terms. Walk times require route evidence and actual entrances. No unsupported value is inferred. Confirm current information directly with operators before paying.
+
+## Verification and hosting
+
+Run `python3 scripts/check_site.py` to verify required site pages, local links, and at least one official venue/operator source on every table row. The GitHub Actions workflow in `.github/workflows/pages.yml` checks pull requests and publishes the site root to GitHub Pages after pushes to `main`. GitHub Pages must permit GitHub Actions deployments.
+
+## Retained starter research
+
+`app.js` retains the initial official poker/property source directory and its no-event-unless-officially-verified rule from the prior evidence-first dashboard. It is retained for later venue expansion; the current multi-page tables contain the reviewed event-specific records.
