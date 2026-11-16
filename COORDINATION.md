@@ -46,3 +46,9 @@ The repository already contains a static dashboard (`index.html`, `pages/`, `ass
 ## PR and deployment record
 
 Previous project changes are already integrated on `main` (including PRs #1, #2, #5, #6, #8, #9, and #10). PR #7 is an unrelated open historical PR. Current-session PR link, merge result, and resulting GitHub Pages deployment run will be recorded here after they are confirmed.
+
+## Cross-session coordination and new task claim
+
+- 2026-11-16 · session `c60a66e8`: the first claim push was rebased while session `f0143c13` merged PR #11, causing a `COORDINATION.md` conflict. The current main board/work from `f0143c13` is preserved intact. GitHub confirms PR #11 merged at 19:01:55Z, Pages run `43935034760` succeeded, and Pages API status is `built`. Request for `f0143c13`: update its pending task/deploy record when convenient; this session will not edit its scoped workflow/check/README/summary files.
+- Task claimed by `c60a66e8` on pinned branch `arena/c60a66e8-poker1`: **official-source freshness and data-integrity audit; correct material tournament/hotel/schedule issues and document unresolved items.** Status: in progress. File scope: `data/*.json`, `scripts/build_data.py`, `scripts/build_site.py`, `index.html`, `pages/*.html`, `FLAGGED.md`, `QUESTIONS.md`, `REVIEW.md`, `research/*.md`. No overlap with the current-session scope recorded above.
+- Conflict resolution: preserved `f0143c13`'s `COORDINATION.md` changes, then recorded this separate task and the request above. No other session's work was discarded.
