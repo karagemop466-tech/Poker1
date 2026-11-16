@@ -7,19 +7,19 @@
    "address_note": "Venetian host property for DeepStack series (official poker page)",
    "resort_fee_usd": 55,
    "resort_fee_status": "verified",
-   "resort_fee_note": "Official Venetian resort-fee page (search excerpt, not fetched in full): $55 plus applicable tax per night.",
+   "resort_fee_note": "Official Venetian hotel terms, read 2026-11-16: $55 plus applicable tax per night.",
    "room_rate_usd": null,
    "room_rate_status": "unverified",
    "room_rate_note": "Official poker-suite page says rates 'start as low as $119 and $209' (Venetian or Palazzo), conditional on poker play. Which rate applies to which tower is not stated, so no value is entered here.",
    "clark_county_tax_pct": 13.38,
-   "tax_status": "verified (Venetian terms search excerpt, not fetched in full)",
+   "tax_status": "Verified from full official Venetian hotel terms read 2026-11-16: Clark County Room Tax 13.38%.",
    "sources": [
     {
      "label": "Resort fee (official)",
      "url": "https://www.venetianlasvegas.com/resort/resort-fee.html"
     },
     {
-     "label": "Hotel terms incl. 13.38% room tax (official)",
+     "label": "Hotel terms incl. 13.38% room tax and resort-fee tax (official)",
      "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html"
     },
     {
@@ -41,15 +41,15 @@
    "room_rate_usd": null,
    "room_rate_status": "unverified",
    "room_rate_note": "Only conditional poker-suite starting rates are published (see Venetian row). No Palazzo-specific rate confirmed.",
-   "clark_county_tax_pct": 13.38,
-   "tax_status": "verified (Venetian terms search excerpt, not fetched in full)",
+   "clark_county_tax_pct": null,
+   "tax_status": "Unverified for Palazzo: the fetched Venetian hotel terms do not separately identify Palazzo's tax calculation.",
    "sources": [
     {
      "label": "Poker suite rates incl. $55 resort fee (official)",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html"
     },
     {
-     "label": "Hotel terms incl. 13.38% room tax (official)",
+     "label": "Venetian hotel terms (official; property-specific Palazzo tax not stated)",
      "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html"
     }
    ],
@@ -67,8 +67,8 @@
    "room_rate_usd": null,
    "room_rate_status": "unverified",
    "room_rate_note": "No official nightly rate confirmed for any date. Third-party sites quote rates; these are not used.",
-   "clark_county_tax_pct": 13.38,
-   "tax_status": "verified (Venetian terms search excerpt, not fetched in full)",
+   "clark_county_tax_pct": null,
+   "tax_status": "Unverified: no Wynn-specific tax rate was confirmed from official terms.",
    "sources": [
     {
      "label": "Resort fee terms (official)",
@@ -77,10 +77,6 @@
     {
      "label": "Wynn poker room (official)",
      "url": "https://www.wynnlasvegas.com/casino/poker"
-    },
-    {
-     "label": "Hotel terms incl. 13.38% room tax (official)",
-     "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html"
     }
    ],
    "walk_to_venetian_min": null,
@@ -97,8 +93,8 @@
    "room_rate_usd": null,
    "room_rate_status": "unverified",
    "room_rate_note": "No official nightly rate confirmed.",
-   "clark_county_tax_pct": 13.38,
-   "tax_status": "verified (Venetian terms search excerpt, not fetched in full)",
+   "clark_county_tax_pct": null,
+   "tax_status": "Unverified: no Encore-specific tax rate was confirmed from official terms.",
    "sources": [
     {
      "label": "Resort fee terms (official)",
@@ -112,19 +108,19 @@
   {
    "id": "bellagio",
    "name": "Bellagio",
-   "address_note": "MGM Resorts property",
+   "address_note": "MGM Resorts property on the Strip",
    "resort_fee_usd": null,
    "resort_fee_status": "unverified",
-   "resort_fee_note": "No official MGM page found. Third-party guides give conflicting values ($45, $50, $55). Left blank.",
+   "resort_fee_note": "No Bellagio-specific official resort-fee terms confirmed. Third-party guides conflict; left blank.",
    "room_rate_usd": null,
    "room_rate_status": "unverified",
    "room_rate_note": "No official nightly rate confirmed.",
-   "clark_county_tax_pct": 13.38,
-   "tax_status": "verified (Venetian terms search excerpt, not fetched in full)",
+   "clark_county_tax_pct": null,
+   "tax_status": "Unverified for Bellagio: no Bellagio-specific tax rate confirmed from official terms.",
    "sources": [
     {
-     "label": "Clark County tax rate (official hotel terms)",
-     "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html"
+     "label": "Bellagio official home page (property identification; no fee or tax value)",
+     "url": "https://bellagio.mgmresorts.com/en.html"
     }
    ],
    "walk_to_venetian_min": null,
@@ -141,8 +137,8 @@
    "room_rate_usd": null,
    "room_rate_status": "unverified",
    "room_rate_note": "No official nightly rate confirmed.",
-   "clark_county_tax_pct": 13.38,
-   "tax_status": "verified (Venetian terms search excerpt, not fetched in full)",
+   "clark_county_tax_pct": null,
+   "tax_status": "Unverified for ARIA: no property-specific tax rate was confirmed from official terms.",
    "sources": [
     {
      "label": "ARIA official home page (fetched)",
@@ -163,8 +159,8 @@
    "room_rate_usd": null,
    "room_rate_status": "unverified",
    "room_rate_note": "No official nightly rate confirmed.",
-   "clark_county_tax_pct": 13.38,
-   "tax_status": "verified (Venetian terms search excerpt, not fetched in full)",
+   "clark_county_tax_pct": null,
+   "tax_status": "Unverified for Caesars Palace: no property-specific tax rate was confirmed from official terms.",
    "sources": [
     {
      "label": "Caesars corporate disclaimer (official range)",
@@ -176,5 +172,5 @@
    "true_cost_per_night_usd": null
   }
  ],
- "method": "ASSUMPTION, NOT VERIFIED: true_cost_per_night = (room rate + resort fee) x (1 + 13.38%). It assumes the room tax also applies to the resort fee (see FLAGGED F10). Blank when any input is unverified."
+ "method": "True nightly cost is computed only when a date-specific room rate, resort fee, and property-specific tax rate are verified. No current hotel row has all required values. The Venetian terms state a $55 resort fee plus applicable tax and 13.38% Clark County Room Tax; the tax rate is not copied to other hotel rows without property-specific support."
 }

@@ -18,4 +18,4 @@ Session `1fafb3d2` · Checked 2026-11-16 · Inputs: `data/tournaments.json`, `da
 
 ## Risks to the analysis
 - Multi-flight events (15 rows) could allow a second entry, which would change the value ranking. They are kept out of the ranking until the poker room confirms.
-- The room-tax-on-fee assumption affects only the true-cost column, which is blank.
+- The full Venetian terms state a $55 resort fee plus applicable tax and a 13.38% Clark County room tax. The other hotels' property-specific tax values and all date-specific room rates remain unverified, so true-cost cells are blank.
