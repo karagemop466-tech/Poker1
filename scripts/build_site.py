@@ -40,6 +40,12 @@ TOOLBAR_SEARCH = ('<div class="toolbar"><input id="q" type="search" placeholder=
                   '<select id="series"></select><span id="count" class="small"></span></div>')
 TOOLBAR_SEARCH_NO_SERIES = ('<div class="toolbar"><input id="q" type="search" placeholder="Filter rows (event, series, note)">'
                             '<span id="count" class="small"></span></div>')
+TOOLBAR_SEARCH_DATE = ('<div class="toolbar"><input id="q" type="search" placeholder="Filter rows (event, series, note)">'
+                       '<select id="date"><option value="">All dates</option></select>'
+                       '<select id="series"></select><span id="count" class="small"></span></div>')
+TOOLBAR_SEARCH_DATE_NO_SERIES = ('<div class="toolbar"><input id="q" type="search" placeholder="Filter rows (event, series, note)">'
+                                 '<select id="date"><option value="">All dates</option></select>'
+                                 '<span id="count" class="small"></span></div>')
 
 PAGES = {
     "index.html": ("Home", "index", """
@@ -63,33 +69,35 @@ PAGES = {
 """),
     "pages/single-entry.html": ("Single entry", "singleEntry", """
 <h1>Single-entry tournaments (verified)</h1>
-<p class="lead">Each row has its structure sheet read, with no re-entry, rebuy, add-on, or flight clause. Sort by any column. Guarantee ÷ buy-in is the default sort.</p>
-""" + TOOLBAR_SEARCH + """
+<p class="lead">Each row has its structure sheet read, with no re-entry, rebuy, add-on, or flight clause. Sort by any column. Guarantee ÷ buy-in is the default sort. Use the date selector to show only events on chosen days.</p>
+""" + TOOLBAR_SEARCH_DATE + """
 <div id="content"></div>
 """),
     "pages/separate-section.html": ("Separate section", "separate", """
 <h1>Separate section: not single entry</h1>
 <p class="lead">Possible multiple entries (multi-flight events) and re-entry events. Kept out of the single-entry ranking.</p>
 <div class="card callout">Multi-flight rows: the structure sheet says a player who bags Day 2 chips may not play a subsequent flight. It does not say whether a player who busts may enter a later flight. Confirm with the poker room.</div>
-""" + TOOLBAR_SEARCH_NO_SERIES + """
+""" + TOOLBAR_SEARCH_DATE_NO_SERIES + """
 <div id="content"></div>
 """),
     "pages/unverified.html": ("Unverified", "unverified", """
 <h1>Unverified official rows</h1>
-<p class="lead">Official schedule rows whose structure sheet has not been read. Entry rule unknown. Not ranked.</p>
-""" + TOOLBAR_SEARCH + """
+<p class="lead">Official schedule rows whose structure sheet has not been read. Entry rule unknown. Not ranked. Use the date selector to show only events on chosen days.</p>
+""" + TOOLBAR_SEARCH_DATE + """
 <div id="content"></div>
 """),
     "pages/hotels.html": ("Hotels", "hotels", """
 <h1>Hotels near the Strip</h1>
 <p class="lead">Resort fee and room-rate status are shown per hotel. True cost per night is blank until a room rate is verified.</p>
 <div class="card callout" id="method"></div>
+""" + TOOLBAR_SEARCH_NO_SERIES + """
 <div id="content"></div>
 <p class="small">Walking time to each venue is not published on any official source, so it is blank.</p>
 """),
     "pages/schedule.html": ("Schedule", "schedule", """
 <h1>Day-by-day schedule</h1>
-<p class="lead">Verified single-entry options per day, earliest first.</p>
+<p class="lead">Verified single-entry options per day, earliest first. Use the search box to find an event or venue.</p>
+""" + TOOLBAR_SEARCH_NO_SERIES + """
 <div class="card callout" id="note"></div>
 <p class="small">Earliest start among the rows in this dataset: <strong id="earliest"></strong></p>
 <div id="content"></div>
@@ -114,6 +122,31 @@ PAGES = {
     "pages/review.html": ("Repo review and sources", "review", """
 <h1>Repo review and sources</h1>
 <div id="content"></div>
+"""),
+    "pages/venue-venetian.html": ("Venue: The Venetian", "venueVenetian", """
+<h1>Venue: The Venetian Resort</h1>
+<p class="lead">Venetian-hosted DeepStack events and the Venetian / Palazzo hotels.</p>
+<div id="content"></div>
+"""),
+    "pages/venue-wynn.html": ("Venue: Wynn", "venueWynn", """
+<h1>Venue: Wynn Las Vegas</h1>
+<p class="lead">Wynn-hosted WPT World Championship and Signature Series events, and the Wynn / Encore hotels.</p>
+<div id="content"></div>
+"""),
+    "pages/venue-others.html": ("Venue: other Strip hotels", "venueOthers", """
+<h1>Venue: other Strip hotels</h1>
+<p class="lead">Bellagio, ARIA and Caesars Palace -- rates and fees are blank until verified from official sources.</p>
+<div id="content"></div>
+"""),
+    "pages/trip-calculator.html": ("Trip calculator", "tripCalculator", """
+<h1>Estimated cost of a trip</h1>
+<p class="lead">Total = (tournament entries x buy-in) + (nights x true hotel cost per night). True hotel cost is blank until a date-specific rate is verified; enter a nightly rate to see a working estimate.</p>
+<div id="calculator"></div>
+"""),
+    "pages/change-monitor.html": ("Change monitor", "changeMonitor", """
+<h1>Change monitoring of official sources</h1>
+<p class="lead">Each official source URL is listed with the date it was last checked. A scheduled re-check flags any row whose source changed. External official pages cannot be fetched from this sandbox, so re-check results are not yet populated.</p>
+<div id="monitor"></div>
 """),
 }
 
