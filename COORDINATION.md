@@ -63,7 +63,9 @@ The repository already contains a static dashboard (`index.html`, `pages/`, `ass
 
 ### Pull request / deployment
 - Stale/conflicting PR #7 (head branch arena/552e97d2-poker1 not fetchable) closed; its content is already integrated on main.
-- PR #13 (arena/f5896c06-poker1 → main) merged; confirmed via GitHub Pages API.
+- PR #13 (arena/f5896c06-poker1 → main): https://github.com/karagemop466-tech/Poker1/pull/13 — MERGED (merge commit c37d0cd) into main after the validate check (build_site.py zero diff, check_links OK) reported success.
+- GitHub Pages: status `built`, live at https://karagemop466-tech.github.io/Poker1/ (source branch `main`, path `/`). Deploy triggered by the merge completed successfully.
+- All integration tasks done: site builds cleanly, no broken links, every data row carries an official https source, unverified values left blank and flagged.
 
 ## Log
 - 2026-11-16: PR #11 merged into main (b272ed5), advancing it past the branch base.
