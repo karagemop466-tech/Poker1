@@ -1,0 +1,138 @@
+{
+  "generated": "2026-11-16",
+  "hotels": [
+    {
+      "name": "The Venetian Resort (Venetian tower)",
+      "tournaments": "DeepStack Extravaganza IV: single-entry Venetian events (Section A)",
+      "in_building": "Yes — The Venetian Poker Room is on level 2 of The Palazzo, Grand Canal Shoppes (official poker page). Same resort campus.",
+      "base_rate_from": 119,
+      "rate_basis": "Poker suite rate 'as low as $119' (Luxury King Suite, 2026). Conditional: poker-room play each night (6 hours live cash OR buy-in to a $300+ tournament per night stayed). Not a guaranteed nightly rate. Date-specific rate not verified.",
+      "resort_fee": 55,
+      "resort_fee_basis": "Venetian hotel terms: $55 + applicable tax per night (official)",
+      "room_tax": 0.1338,
+      "parking": "Hotel guests: $20/day self-parking, $40/day valet (official hotel terms). Poker-room players: complimentary self-parking after 3+ hours of play (official poker page). Non-guest rates NOT verified.",
+      "walking": "In-building for DSE events (official). Walking distance to other properties: NOT VERIFIED.",
+      "quality": "NOT VERIFIED from official source (no rating source fetched).",
+      "sources": [
+        "VEN_SUITE",
+        "VEN_HOTEL",
+        "VEN_POKER",
+        "VEN_SCHED"
+      ],
+      "flags": [
+        "Nightly rate is a floor for qualifying poker players, not an advertised nightly price.",
+        "Room tax assumed to apply to the resort fee too ('plus applicable tax' stated) — confirm at check-in."
+      ],
+      "true_cost_from_per_night": 197.28,
+      "walk_minutes_to_venue": null,
+      "meets_30min_walk": null,
+      "walk_note": "No official walking-time source retrieved. Blank and flagged."
+    },
+    {
+      "name": "The Palazzo (same resort; poker room on Palazzo side)",
+      "tournaments": "DeepStack Extravaganza IV (Section A) — poker room location",
+      "in_building": "Yes — poker room is 'The Palazzo, level 2, Grand Canal Shoppes' (official).",
+      "base_rate_from": 209,
+      "rate_basis": "Poker suite rate 'as low as $209' (Palazzo Luxury King Suite, 2026). Same qualifying-play conditions as The Venetian.",
+      "resort_fee": 55,
+      "resort_fee_basis": "Official poker suite page: '$55 resort fee per night stayed' for both The Venetian and The Palazzo.",
+      "room_tax": 0.1338,
+      "parking": "Same Venetian/Palazzo parking policy (official).",
+      "walking": "In-building for DSE (official).",
+      "quality": "NOT VERIFIED from official source.",
+      "sources": [
+        "VEN_SUITE",
+        "VEN_HOTEL",
+        "VEN_POKER"
+      ],
+      "flags": [
+        "Starting rate; check date-specific rate at booking (not captured here).",
+        "Tax on resort fee assumed — confirm."
+      ],
+      "true_cost_from_per_night": 299.32,
+      "walk_minutes_to_venue": null,
+      "meets_30min_walk": null,
+      "walk_note": "No official walking-time source retrieved. Blank and flagged."
+    },
+    {
+      "name": "Wynn Las Vegas",
+      "tournaments": "Daily Wynn tournaments (multi-entry, Section B) and WPT World Championship (Nov 27 – Dec 21; rules unverified, Section C)",
+      "in_building": "Wynn daily poker room is in Encore at Wynn Las Vegas (official Wynn terms reference). Same resort complex.",
+      "base_rate_from": null,
+      "rate_basis": "NOT VERIFIED for current dates. Undated official offer (terms 848654) lists 'from $99 Sun–Thu / $169 Fri–Sat' for Resort King with a 3-night minimum. Offer 850225 (Tower Suites) is EXPIRED: travel window ended Aug 31, 2026. Neither is a current nightly price.",
+      "resort_fee": null,
+      "resort_fee_basis": "NOT VERIFIED for current dates. Undated offer 848654 says $45 + tax per night. Expired offer 850225 says $55 + tax per night. Conflict left blank; not used in totals.",
+      "room_tax": null,
+      "parking": "NOT VERIFIED from official source (offer 848654 says parking is 'complimentary' only for resort fee holders; stated as an amenity, not a rate).",
+      "walking": "In-building for Wynn daily events (Encore). Walking distance to other venues NOT VERIFIED.",
+      "quality": "NOT VERIFIED from official source.",
+      "sources": [
+        "WYNN_TERMS_OFFER",
+        "WYNN_TERMS_OFFER2",
+        "WYNN_TERMS_SUITE",
+        "WYNN_POKER",
+        "WYNN_DAILY_STRUCT"
+      ],
+      "flags": [
+        "Official Wynn base-rate and fee pages (wynnlasvegas.com/hotel) are dead. No current official nightly rate or resort fee was retrieved.",
+        "Resort fee conflict in official Wynn offer terms ($45 undated vs $55 expired).",
+        "Room tax rate for Wynn not stated on a Wynn source; not applied.",
+        "Wynn daily T&C say registration is in 'Encore at Wynn'; verify poker room location (see Flagged)."
+      ],
+      "true_cost_from_per_night": null,
+      "walk_minutes_to_venue": null,
+      "meets_30min_walk": null,
+      "walk_note": "No official walking-time source retrieved. Blank and flagged."
+    },
+    {
+      "name": "Bellagio",
+      "tournaments": "Weekly Bellagio events (multi-entry / gratuity-advantage, Section B)",
+      "in_building": "Yes — Bellagio poker room is on the north side of the casino (official).",
+      "base_rate_from": null,
+      "rate_basis": "NOT VERIFIED — no official nightly rate fetched.",
+      "resort_fee": null,
+      "resort_fee_basis": "NOT VERIFIED from official MGM source. Secondary sites say $55 + tax (not used in calculations).",
+      "room_tax": null,
+      "parking": "NOT VERIFIED from official source.",
+      "walking": "In-building for Bellagio events (official). Other venues: NOT VERIFIED.",
+      "quality": "NOT VERIFIED from official source.",
+      "sources": [
+        "BELL_POKER"
+      ],
+      "flags": [
+        "Official MGM resort-fee and room-rate pages were not retrievable in this session.",
+        "Secondary-source resort fee ($55 + tax) left unverified and excluded from totals."
+      ],
+      "true_cost_from_per_night": null,
+      "walk_minutes_to_venue": null,
+      "meets_30min_walk": null,
+      "walk_note": "No official walking-time source retrieved. Blank and flagged."
+    },
+    {
+      "name": "Caesars Palace",
+      "tournaments": "None verified (no official Caesars poker schedule retrieved)",
+      "in_building": "NOT APPLICABLE — no verified tournament venue in this report.",
+      "base_rate_from": null,
+      "rate_basis": "NOT VERIFIED.",
+      "resort_fee": null,
+      "resort_fee_basis": "CONFLICT across non-official sources ($49.95, $55, $62.30). Official hotel page fetched did not show the fee. NOT VERIFIED.",
+      "room_tax": null,
+      "parking": "NOT VERIFIED.",
+      "walking": "NOT VERIFIED.",
+      "quality": "Official page states THE VILLAS Caesars Palace holds AAA Five Diamond designation (official Caesars statement; AAA not checked directly).",
+      "sources": [
+        "CAESARS_HOTEL"
+      ],
+      "flags": [
+        "Included for comparison only; no verified tournament link.",
+        "Resort fee unverified."
+      ],
+      "true_cost_from_per_night": null,
+      "walk_minutes_to_venue": null,
+      "meets_30min_walk": null,
+      "walk_note": "No official walking-time source retrieved. Blank and flagged."
+    }
+  ],
+  "tax_rate": 0.1338,
+  "formula": "(nightly rate + resort fee) x (1 + room tax)"
+}

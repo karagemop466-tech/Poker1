@@ -87,7 +87,7 @@ def v(event, date, start, name, buy_in, gtd, fee, pool, struct, elig=ADULT, note
 
 # 1-day standard NLH
 v(2, "2026-11-18", "11:10 AM", "$300 No Limit Hold'em (1Day)", 300, 10000, 58, 242, 5,
-  notes="Late registration: 10 levels + break (~4:55 PM). 12.5% of field paid.")
+  notes="Sheet 5 read. Late registration window not printed on sheet 5.")
 v(3, "2026-11-19", "10:10 AM", "$200 No Limit Hold'em RaceDay Stack (1Day)", 200, None, 35, 165, 18,
   notes="Official schedule: 'Race to finish before the Race'. No guarantee printed on schedule or structure sheet.")
 v(4, "2026-11-20", "10:10 AM", "$200 No Limit Hold'em RaceDay Stack (1Day)", 200, None, 35, 165, 18,
@@ -95,7 +95,7 @@ v(4, "2026-11-20", "10:10 AM", "$200 No Limit Hold'em RaceDay Stack (1Day)", 200
 v(5, "2026-11-21", "10:10 AM", "$200 No Limit Hold'em RaceDay Stack (1Day)", 200, None, 35, 165, 18,
   notes="Same RaceDay structure as Event 3. No guarantee printed.")
 v(6, "2026-11-22", "11:10 AM", "$200 No Limit Hold'em (1Day)", 200, None, 40, 160, 29,
-  notes="No guarantee printed. Late registration: 8 levels + break (~3:40 PM).")
+  notes="No guarantee printed on schedule or structure sheet.")
 v(8, "2026-11-23", "5:10 PM", "$200 No Limit Hold'em PKO (Progressive Knock-Out Bounty) (1Day)", 200, 8000, 40, 160, 30,
   bounty=True, gtd_note="$8,000 guarantee = prize pool + total bounty money awarded.")
 v(9, "2026-11-24", "5:10 PM", "$200 No Limit Hold'em Bounty $8K GTD (1Day)", 200, 8000, 40, 160, 1,
@@ -114,10 +114,10 @@ v(16, "2026-11-28", "11:10 AM", "$600 No Limit Hold'em Bounty $30K GTD (1Day)", 
 v(17, "2026-11-28", "12:10 PM", "$400 Pot Limit Omaha Bounty $15K GTD (1Day)", 400, 15000, 60, 340, 26,
   bounty=True, gtd_note="$15,000 guarantee = prize pool + total bounties ($100 bounty).")
 v(18, "2026-11-28", "5:10 PM", "$200 No Limit Hold'em PokerAtlas Valuetown Bounty $20K GTD (1Day)", 200, 20000, 40, 160, 8,
-  bounty=True, gtd_note="$20,000 guarantee = prize pool + total bounties ($50 bounty).",
-  notes="PokerAtlas PRO members: $20 rake discount on initial buy-in only ($180), requires claim in PokerAtlas app at cage (structure rule 7).")
+  bounty=True, gtd_note="$20,000 guarantee = prize pool + total bounties.",
+  notes="Schedule: PokerAtlas PRO member $20 rake discount. Local notes (sheet 8, rule 7): discount applies to initial buy-in only. Membership-linked.")
 v(20, "2026-11-29", "12:10 PM", "$300 Pot Limit Omaha Double Board Bomb Pot $10K GTD (1Day)", 300, 10000, 58, 242, 22,
-  notes="8-handed; 12.5% of field paid. Bomb pot double-board format.")
+  notes="Double-board bomb pot format (schedule).")
 v(21, "2026-11-29", "5:10 PM", "$200 No Limit Hold'em Bounty $8K GTD (1Day)", 200, 8000, 40, 160, 1,
   bounty=True, gtd_note="$8,000 guarantee = prize pool + total bounties.")
 v(22, "2026-11-30", "5:10 PM", "$200 No Limit Hold'em Bounty $8K GTD (1Day)", 200, 8000, 40, 160, 1,
@@ -126,21 +126,21 @@ v(23, "2026-12-01", "5:10 PM", "$200 No Limit Hold'em Bounty $8K GTD (1Day)", 20
   bounty=True, gtd_note="$8,000 guarantee = prize pool + total bounties.")
 v(24, "2026-12-02", "10:10 AM", "$600 No Limit Hold'em Seniors $40K GTD (1Day) — 50+ only", 600, 40000, 90, 510, 17,
   elig="50+ with Venetian Rewards card",
-  notes="Buy-in by a non-50+ player: no prize money and no refund (structure rule 2). 15% of field paid.")
+  notes="15% of field paid (local notes, sheet 17).")
 v(25, "2026-12-02", "5:10 PM", "$200 No Limit Hold'em Bounty $8K GTD (1Day)", 200, 8000, 40, 160, 1,
   bounty=True, gtd_note="$8,000 guarantee = prize pool + total bounties.")
 v(27, "2026-12-03", "12:10 PM", "$600 BIG O $25K GTD (1Day)", 600, 25000, 90, 510, 28,
-  notes="8-handed; 12.5% of field paid. Event name as printed: BIG O.")
+  notes="Event name as printed: BIG O.")
 v(28, "2026-12-06", "11:10 AM", "$600 No Limit Hold'em $40K GTD (1Day)", 600, 40000, 90, 510, 7)
 v(29, "2026-12-06", "5:10 PM", "$300 No Limit Hold'em Bounty $15K GTD (1Day)", 300, 15000, 50, 250, 15,
-  bounty=True, gtd_note="$15,000 guarantee = prize pool + total bounties ($100 bounty).")
+  bounty=True, gtd_note="$15,000 guarantee = prize pool + total bounties.")
 v(30, "2026-12-07", "11:10 AM", "$600 No Limit Hold'em Bounty $40K GTD (1Day)", 600, 40000, 90, 510, 11,
   bounty=True, gtd_note="$40,000 guarantee = prize pool + total bounties. $200 bounties to start, $500 once in the money.")
 v(31, "2026-12-07", "5:10 PM", "$300 No Limit Hold'em Bounty $15K GTD (1Day)", 300, 15000, 50, 250, 15,
   bounty=True, gtd_note="$15,000 guarantee = prize pool + total bounties.")
 v(32, "2026-12-08", "10:10 AM", "$600 No Limit Hold'em Seniors $40K GTD (1Day) — 50+ only", 600, 40000, 90, 510, 17,
   elig="50+ with Venetian Rewards card",
-  notes="Buy-in by a non-50+ player: no prize money and no refund. 15% of field paid.")
+  notes="15% of field paid (local notes, sheet 17).")
 v(34, "2026-12-08", "5:10 PM", "$300 No Limit Hold'em Bounty $15K GTD (1Day)", 300, 15000, 50, 250, 15,
   bounty=True, gtd_note="$15,000 guarantee = prize pool + total bounties.")
 v(36, "2026-12-09", "11:10 AM", "$800 No Limit Hold'em Bounty $75K GTD (1Day)", 800, 75000, 100, 700, 16,
@@ -152,7 +152,7 @@ v(40, "2026-12-10", "12:10 PM", "$600 Pot Limit Omaha Bounty $25K GTD (1Day)", 6
 v(42, "2026-12-10", "5:10 PM", "$300 No Limit Hold'em Bounty $15K GTD (1Day)", 300, 15000, 50, 250, 15,
   bounty=True, gtd_note="$15,000 guarantee = prize pool + total bounties.")
 v(43, "2026-12-11", "11:10 AM", "$600 No Limit Hold'em LIPS KINGS & QUEENS Bounty $30K GTD (1Day)", 600, 30000, 90, 510, 33,
-  elig="Open to all players (trophies to last King and last Queen)",
+  elig="Open to all players (schedule: KINGS and QUEENS, open to all)",
   bounty=True, gtd_note="$30,000 guarantee = prize pool + total bounties ($200 bounty).",
   notes="$80 house fee plus $10 flat fee to LIPS (Vegas Connected, Inc.) — $90 total withheld; $510 prize pool.")
 v(50, "2026-12-13", "5:10 PM", "$300 No Limit Hold'em Bounty $15K GTD (1Day)", 300, 15000, 50, 250, 15,
@@ -160,7 +160,7 @@ v(50, "2026-12-13", "5:10 PM", "$300 No Limit Hold'em Bounty $15K GTD (1Day)", 3
 v(51, "2026-12-14", "5:10 PM", "$300 No Limit Hold'em Bounty $15K GTD (1Day)", 300, 15000, 50, 250, 15,
   bounty=True, gtd_note="$15,000 guarantee = prize pool + total bounties.")
 v(52, "2026-12-15", "11:10 AM", "$1,100 No Limit Hold'em PKO (Progressive Knock-Out Bounty) $75K GTD (1Day)", 1100, 75000, 130, 970, 34,
-  bounty=True, gtd_note="$75,000 guarantee = prize pool + total bounty money. Starts as $200 bounty.")
+  bounty=True, gtd_note="$75,000 guarantee = prize pool + total bounty money (schedule: PKO).")
 v(53, "2026-12-15", "5:10 PM", "$300 No Limit Hold'em Bounty $15K GTD (1Day)", 300, 15000, 50, 250, 15,
   bounty=True, gtd_note="$15,000 guarantee = prize pool + total bounties.")
 v(54, "2026-12-16", "11:10 AM", "$600 No Limit Hold'em Bounty $50K GTD (1Day)", 600, 50000, 90, 510, 11,
@@ -168,10 +168,10 @@ v(54, "2026-12-16", "11:10 AM", "$600 No Limit Hold'em Bounty $50K GTD (1Day)", 
 v(55, "2026-12-16", "5:10 PM", "$300 No Limit Hold'em Bounty $15K GTD (1Day)", 300, 15000, 50, 250, 15,
   bounty=True, gtd_note="$15,000 guarantee = prize pool + total bounties.")
 v(57, "2026-12-17", "12:10 PM", "$600 Pot Limit Omaha Double Board Bomb Pot $25K GTD (1Day)", 600, 25000, 90, 510, 23,
-  notes="8-handed; 12.5% of field paid. Double-board bomb pot format.")
+  notes="Double-board bomb pot format (schedule).")
 v(58, "2026-12-19", "5:10 PM", "$200 No Limit Hold'em PokerAtlas Valuetown Bounty $20K GTD (1Day)", 200, 20000, 40, 160, 8,
-  bounty=True, gtd_note="$20,000 guarantee = prize pool + total bounties ($50 bounty).",
-  notes="PokerAtlas PRO $20 rake discount on initial buy-in only (structure rule 7).")
+  bounty=True, gtd_note="$20,000 guarantee = prize pool + total bounties.",
+  notes="Schedule: PokerAtlas PRO member $20 rake discount. Membership-linked.")
 v(60, "2026-12-20", "5:10 PM", "$200 No Limit Hold'em Bounty $8K GTD (1Day)", 200, 8000, 40, 160, 1,
   bounty=True, gtd_note="$8,000 guarantee = prize pool + total bounties.")
 v(61, "2026-12-21", "5:10 PM", "$200 No Limit Hold'em Bounty $8K GTD (1Day)", 200, 8000, 40, 160, 1,
@@ -240,16 +240,16 @@ VEN_OTHER = [
 # ---------------------------------------------------------------------------
 WYNN_DAILY = [
     dict(days="Mon–Thu", start="12:00 PM", name="$200 NLH — $10,000 GTD (single day)", buy_in=200, gtd=10000,
-         entry="Re-entry allowed until start of Level 9 (~4:30 PM). Re-entry fee $200.",
+         entry="Re-entry allowed through Level 9 (~4:30 PM). Starting chips 25,000; 30-minute levels.",
          fee="$26 tournament fee + $12 staff service charge; $162 to prize pool", struct=WYNN_DAILY_STRUCT, poster=WYNN_POSTER),
     dict(days="Friday", start="12:00 PM", name="$240 NLH Rebuy & Add-on — $40,000 GTD", buy_in=240, gtd=40000,
-         entry="Re-entry NOT allowed; unlimited $200 rebuys (when ≤15,000 chips) and one $100 add-on. Rebuys/add-ons until ~4:30 PM.",
+         entry="Re-entry NOT allowed. $200 rebuys (25,000 chips) and one $100 add-on (15,000 chips).",
          fee="$35 tournament fee + $15 staff; $190 of each entry to prize pool", struct=WYNN_DAILY_STRUCT, poster=WYNN_POSTER),
     dict(days="Sat & Sun", start="12:00 PM", name="$200 NLH — $25,000 GTD (single day)", buy_in=200, gtd=25000,
          entry="Re-entry allowed and one $100 add-on per entry until start of Level 11 (~5:30 PM).",
          fee="$26 tournament fee + $12 staff; $162 to prize pool", struct=WYNN_DAILY_STRUCT, poster=WYNN_POSTER),
     dict(days="Nightly (Mon–Sun)", start="6:00 PM", name="$160 NLH — $10,000 GTD (single day)", buy_in=160, gtd=10000,
-         entry="Re-entry allowed and one $100 add-on per entry until start of Level 9 (~9:00 PM).",
+         entry="Re-entry and one $100 add-on per entry through Level 9 (~9:00 PM). 20-minute levels.",
          fee="$20 tournament fee + $10 staff; $130 to prize pool", struct=WYNN_DAILY_STRUCT, poster=WYNN_POSTER),
 ]
 
@@ -258,15 +258,15 @@ WYNN_DAILY = [
 # ---------------------------------------------------------------------------
 BELL = [
     dict(day="Friday", start="11:00 AM", name="$600 No Limit Hold'em", buy_in=600, gtd=None,
-         entry="Buy-in and re-entry through end of Level 8 (incl. break). Tournament surrender allowed on Level 8 break.",
+         entry="Re-entry through Level 8. 30,000 starting chips.",
          fee="$50 house fee; $510 prize pool; $40 VOLUNTARY staff gratuity that grants an extra 15,000 starting chips",
          struct=BELL_FRI, note="Bellagio guarantees combined pool only in Saturday event (see below). Friday: no GTD printed."),
     dict(day="Saturday", start="11:00 AM", name="No Limit Hold'em (sheet header $1,100; file name and page say $1,000)", buy_in=None, gtd=50000,
-         entry="Multi-flight (1A, 1B, 1C, 1D). Registration until start of Level 10. Must bag chips to make Day 2.",
+         entry="Re-entry/flight structure per official PDF (see Flagged: fee and name conflict). Combined Day 2 per PDF.",
          fee="Sheet rule 7: $510 to prize pool, $50 admin, $40 optional gratuity (= $600 total). Gratuity grants extra 20,000 chips.",
          struct=BELL_SAT, note="IRREGULARITY: file name and official page say $1,000; sheet header says $1,100; fee math sums to $600. Combined prize pool guaranteed at least $50,000 (rule 8)."),
     dict(day="Sunday", start="11:00 AM", name="$400 H.O.R.S.E.", buy_in=400, gtd=None,
-         entry="Buy-in and re-entry through end of Level 8 (incl. break).",
+         entry="Re-entry through Level 8.",
          fee="$35 house fee; $340 prize pool; $25 VOLUNTARY staff gratuity granting an extra 15,000 chips",
          struct=BELL_SUN, note="Payout approx. 12.5% of field. No GTD printed."),
 ]
