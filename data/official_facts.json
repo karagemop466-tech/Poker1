@@ -1,0 +1,1788 @@
+{
+ "author": "scripts/collect_official.py",
+ "documents": {
+  "https://aria.mgmresorts.com/en.html": {
+   "error": "TimeoutError: The read operation timed out",
+   "fetched_utc": "2026-11-16T19:15:28Z",
+   "kind": "html",
+   "sha256": null,
+   "slug": "aria_home",
+   "status": "unreachable"
+  },
+  "https://bellagio.mgmresorts.com/en.html": {
+   "error": "TimeoutError: The read operation timed out",
+   "fetched_utc": "2026-11-16T19:15:28Z",
+   "kind": "html",
+   "sha256": null,
+   "slug": "bellagio_home",
+   "status": "unreachable"
+  },
+  "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf": {
+   "bytes": 2637121,
+   "changed_since_first_seen": false,
+   "fetched_utc": "2026-11-16T19:15:28Z",
+   "first_seen_utc": "2026-11-16T19:15:28Z",
+   "kind": "pdf",
+   "previous_sha256": null,
+   "sha256": "40522ad679c5d7a290b69a6a740dfd6f5f44ca883b3fee64c708249ae0540693",
+   "slug": "wpt_structures",
+   "status": "new"
+  },
+  "https://cdn.wynnresorts.com/image/upload/v1756113053/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf": {
+   "bytes": 1180224,
+   "changed_since_first_seen": false,
+   "fetched_utc": "2026-11-16T19:15:28Z",
+   "first_seen_utc": "2026-11-16T19:15:28Z",
+   "kind": "pdf",
+   "previous_sha256": null,
+   "sha256": "51a19da4b135d9287471da1d814b8f76d370b69bae736ab5854dc370ae2754eb",
+   "slug": "wynn_signature_schedule",
+   "status": "new"
+  },
+  "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf": {
+   "bytes": 23785821,
+   "changed_since_first_seen": false,
+   "fetched_utc": "2026-11-16T19:15:28Z",
+   "first_seen_utc": "2026-11-16T19:15:28Z",
+   "kind": "pdf",
+   "previous_sha256": null,
+   "sha256": "9291f60e5263033d9bd884849a56e36cb8180d91e6bee24aa319267d8634b3e0",
+   "slug": "wpt_schedule",
+   "status": "new"
+  },
+  "https://www.caesars.com/corporate/disclaimer": {
+   "bytes": 55942,
+   "changed_since_first_seen": false,
+   "fetched_utc": "2026-11-16T19:15:28Z",
+   "first_seen_utc": "2026-11-16T19:15:28Z",
+   "kind": "html",
+   "previous_sha256": null,
+   "sha256": "ec3f740bd29d8ecbed7dafb5352fda786ba5b524aa1e446bf50f8d9a601253ac",
+   "slug": "caesars_disclaimer",
+   "status": "new"
+  },
+  "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html": {
+   "bytes": 230841,
+   "changed_since_first_seen": false,
+   "fetched_utc": "2026-11-16T19:15:28Z",
+   "first_seen_utc": "2026-11-16T19:15:28Z",
+   "kind": "html",
+   "previous_sha256": null,
+   "sha256": "20cc8567cbf605ada37d5e9685a69d3f1f95c4bec52660beb31ea866a575b5b4",
+   "slug": "venetian_hotel_terms",
+   "status": "new"
+  },
+  "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html": {
+   "bytes": 245899,
+   "changed_since_first_seen": false,
+   "fetched_utc": "2026-11-16T19:15:28Z",
+   "first_seen_utc": "2026-11-16T19:15:28Z",
+   "kind": "html",
+   "previous_sha256": null,
+   "sha256": "a6d4956c3c23ec60b0f8ad14631a6760feb8546f8402c4e4d53790c212c200ea",
+   "slug": "dse_dec_2026_page",
+   "status": "new"
+  },
+  "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html": {
+   "bytes": 267650,
+   "changed_since_first_seen": false,
+   "fetched_utc": "2026-11-16T19:15:28Z",
+   "first_seen_utc": "2026-11-16T19:15:28Z",
+   "kind": "html",
+   "previous_sha256": null,
+   "sha256": "b6c3be5877beac1ae3dfd05b7959645f53253a3d2f96859b014af91bc1871d2d",
+   "slug": "dse_nov_2026_page",
+   "status": "new"
+  },
+  "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html": {
+   "bytes": 229943,
+   "changed_since_first_seen": false,
+   "fetched_utc": "2026-11-16T19:15:28Z",
+   "first_seen_utc": "2026-11-16T19:15:28Z",
+   "kind": "html",
+   "previous_sha256": null,
+   "sha256": "ca1c8ba394c77f13e06126a4be7f470853cf81129fb9be0f0aef0161a60163b8",
+   "slug": "venetian_poker_suite_rates",
+   "status": "new"
+  },
+  "https://www.venetianlasvegas.com/resort/resort-fee.html": {
+   "bytes": 225302,
+   "changed_since_first_seen": false,
+   "fetched_utc": "2026-11-16T19:15:28Z",
+   "first_seen_utc": "2026-11-16T19:15:28Z",
+   "kind": "html",
+   "previous_sha256": null,
+   "sha256": "6005f32cb9eac2c0661c9041a86b98717de9a0e295ad5e5dda5c81d4b8c839c0",
+   "slug": "venetian_resort_fee",
+   "status": "new"
+  },
+  "https://www.wynnlasvegas.com/casino/poker": {
+   "bytes": 459919,
+   "changed_since_first_seen": false,
+   "fetched_utc": "2026-11-16T19:15:28Z",
+   "first_seen_utc": "2026-11-16T19:15:28Z",
+   "kind": "html",
+   "previous_sha256": null,
+   "sha256": "df87f4777d3d619d981faa425061481d0bb729c59cbe9700ccd21ad352d089b4",
+   "slug": "wynn_poker_page",
+   "status": "new"
+  },
+  "https://www.wynnlasvegas.com/terms-and-conditions/848671": {
+   "bytes": 348822,
+   "changed_since_first_seen": false,
+   "fetched_utc": "2026-11-16T19:15:28Z",
+   "first_seen_utc": "2026-11-16T19:15:28Z",
+   "kind": "html",
+   "previous_sha256": null,
+   "sha256": "f3705890247b883bea47c59aaf881a2e8cb28739d26e5bb68ab643355ef760b8",
+   "slug": "wynn_terms",
+   "status": "new"
+  }
+ },
+ "generated_date": "2026-11-16",
+ "generated_utc": "2026-11-16T19:15:28Z",
+ "note": "Facts are copied verbatim from the official documents listed here. Null means the document does not print the value. Every document is hashed so a later run can detect a change.",
+ "series": {
+  "dse_dec_2026_page": {
+   "fetched_utc": "2026-11-16T19:15:28Z",
+   "name": "Venetian DeepStack Extravaganza NYE",
+   "page_title": "DeepStack Extravaganza NYE",
+   "printed_date_range": null,
+   "printed_guarantee_blurb": "More than $1.1 Million in guaranteed tournament prize pools",
+   "rows": [
+    {
+     "date": "2026-12-24",
+     "event_no": "1",
+     "printed_date": "Thursday, December 24, 2026",
+     "printed_name": "$400 No Limit Hold'em $15K GTD (1Day)",
+     "printed_time": "11:10 AM",
+     "printed_year": 2026,
+     "start": "11:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-24",
+     "event_no": "2",
+     "printed_date": "Thursday, December 24, 2026",
+     "printed_name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+     "printed_time": "5:10 PM",
+     "printed_year": 2026,
+     "start": "17:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-25",
+     "event_no": "3",
+     "printed_date": "Friday, December 25, 2026",
+     "printed_name": "$400 No Limit Hold'em $15K GTD (1Day)",
+     "printed_time": "11:10 AM",
+     "printed_year": 2026,
+     "start": "11:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-25",
+     "event_no": "4",
+     "printed_date": "Friday, December 25, 2026",
+     "printed_name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+     "printed_time": "5:10 PM",
+     "printed_year": 2026,
+     "start": "17:10",
+     "structure_url": null
+    },
+    {
+     "date": "2025-12-26",
+     "event_no": "5",
+     "printed_date": "Saturday, December 26, 2025",
+     "printed_name": "$600 No Limit Hold'em Bounty $40K GTD (1Day) $200 bounties to start & $500 bounties in the money",
+     "printed_time": "11:10 AM",
+     "printed_year": 2025,
+     "start": "11:10",
+     "structure_url": null
+    },
+    {
+     "date": "2025-12-26",
+     "event_no": "6",
+     "printed_date": "Saturday, December 26, 2025",
+     "printed_name": "$260 NLH Milestone Satellite (1Day) Awards 1 in 5 (20%) Direct Entry into Event # 08",
+     "printed_time": "3:10 PM",
+     "printed_year": 2025,
+     "start": "15:10",
+     "structure_url": null
+    },
+    {
+     "date": "2025-12-26",
+     "event_no": "7",
+     "printed_date": "Saturday, December 26, 2025",
+     "printed_name": "$260 NLH Milestone Satellite (1Day) Awards 1 in 5 (20%) Direct Entry into Event # 08",
+     "printed_time": "6:10 PM",
+     "printed_year": 2025,
+     "start": "18:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-27",
+     "event_no": "8",
+     "printed_date": "Sunday, December 27, 2026",
+     "printed_name": "$1,100 No Limit Hold'em 1A $300K GTD Ante Up Championship",
+     "printed_time": "11:10 AM",
+     "printed_year": 2026,
+     "start": "11:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-27",
+     "event_no": "9",
+     "printed_date": "Sunday, December 27, 2026",
+     "printed_name": "$260 NLH Milestone Satellite (1Day) Awards 1 in 5 (20%) Direct Entry into Event # 08",
+     "printed_time": "3:10 PM",
+     "printed_year": 2026,
+     "start": "15:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-27",
+     "event_no": "10",
+     "printed_date": "Sunday, December 27, 2026",
+     "printed_name": "$260 NLH Milestone Satellite (1Day) Awards 1 in 5 (20%) Direct Entry into Event # 08",
+     "printed_time": "6:10 PM",
+     "printed_year": 2026,
+     "start": "18:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-28",
+     "event_no": "8",
+     "printed_date": "Monday, December 28, 2026",
+     "printed_name": "$1,100 No Limit Hold'em 1B $300K GTD Ante Up Championship",
+     "printed_time": "11:10 AM",
+     "printed_year": 2026,
+     "start": "11:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-28",
+     "event_no": "11",
+     "printed_date": "Monday, December 28, 2026",
+     "printed_name": "$260 NLH Milestone Satellite (1Day) Awards 1 in 5 (20%) Direct Entry into Event # 08",
+     "printed_time": "3:10 PM",
+     "printed_year": 2026,
+     "start": "15:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-28",
+     "event_no": "12",
+     "printed_date": "Monday, December 28, 2026",
+     "printed_name": "$260 NLH Milestone Satellite (1Day) Awards 1 in 5 (20%) Direct Entry into Event # 08",
+     "printed_time": "6:10 PM",
+     "printed_year": 2026,
+     "start": "18:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-29",
+     "event_no": "8",
+     "printed_date": "Tuesday, December 29, 2026",
+     "printed_name": "$1,100 No Limit Hold'em 1C $300K GTD Ante Up Championship",
+     "printed_time": "11:10 AM",
+     "printed_year": 2026,
+     "start": "11:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-29",
+     "event_no": "13",
+     "printed_date": "Tuesday, December 29, 2026",
+     "printed_name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+     "printed_time": "5:10 PM",
+     "printed_year": 2026,
+     "start": "17:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-30",
+     "event_no": "8",
+     "printed_date": "Wednesday, December 30, 2026",
+     "printed_name": "$1,100 No Limit Hold'em Ante Up Day 2 Restart Play Down to Final 7 - Streamed Final Table (POKERGO)",
+     "printed_time": "11:00 AM",
+     "printed_year": 2026,
+     "start": "11:00",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-30",
+     "event_no": "14",
+     "printed_date": "Wednesday, December 30, 2026",
+     "printed_name": "$600 No Limit Hold'em $50K GTD (1Day)",
+     "printed_time": "11:10 AM",
+     "printed_year": 2026,
+     "start": "11:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-30",
+     "event_no": "15",
+     "printed_date": "Wednesday, December 30, 2026",
+     "printed_name": "$200 NLH Milestone Satellite (1Day) Awards Direct Entry into Event # 20",
+     "printed_time": "3:10 PM",
+     "printed_year": 2026,
+     "start": "15:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-30",
+     "event_no": "16",
+     "printed_date": "Wednesday, December 30, 2026",
+     "printed_name": "$200 NLH Turbo Milestone Satellite (1Day) Awards Direct Entry into Event # 20",
+     "printed_time": "6:10 PM",
+     "printed_year": 2026,
+     "start": "18:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-31",
+     "event_no": "8",
+     "printed_date": "Thursday, December 31, 2026",
+     "printed_name": "$1,100 No Limit Hold'em Ante Up Day 3 Restart Streamed Final Table (POKERGO)",
+     "printed_time": "10:00 AM",
+     "printed_year": 2026,
+     "start": "10:00",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-31",
+     "event_no": "17",
+     "printed_date": "Thursday, December 31, 2026",
+     "printed_name": "$400 No Limit Hold'em $15K GTD (1Day)",
+     "printed_time": "11:10 AM",
+     "printed_year": 2026,
+     "start": "11:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-31",
+     "event_no": "18",
+     "printed_date": "Thursday, December 31, 2026",
+     "printed_name": "$200 NLH Milestone Satellite (1Day) Awards Direct Entry into Event # 20",
+     "printed_time": "3:10 PM",
+     "printed_year": 2026,
+     "start": "15:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-31",
+     "event_no": "19",
+     "printed_date": "Thursday, December 31, 2026",
+     "printed_name": "$200 NLH Turbo Milestone Satellite (1Day) Awards Direct Entry into Event # 20",
+     "printed_time": "6:10 PM",
+     "printed_year": 2026,
+     "start": "18:10",
+     "structure_url": null
+    },
+    {
+     "date": "2027-01-01",
+     "event_no": "20",
+     "printed_date": "Friday, January 1, 2027",
+     "printed_name": "$1,600 No Limit Hold'em MSPT 1A $400K GTD $40 Reduced Rake until the start of Level 4",
+     "printed_time": "11:10 AM",
+     "printed_year": 2027,
+     "start": "11:10",
+     "structure_url": null
+    },
+    {
+     "date": "2027-01-01",
+     "event_no": "21",
+     "printed_date": "Friday, January 1, 2027",
+     "printed_name": "$200 NLH Milestone Satellite (1Day) Awards Direct Entry into Event # 20",
+     "printed_time": "3:10 PM",
+     "printed_year": 2027,
+     "start": "15:10",
+     "structure_url": null
+    },
+    {
+     "date": "2027-01-01",
+     "event_no": "22",
+     "printed_date": "Friday, January 1, 2027",
+     "printed_name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+     "printed_time": "5:10 PM",
+     "printed_year": 2027,
+     "start": "17:10",
+     "structure_url": null
+    },
+    {
+     "date": "2027-01-02",
+     "event_no": "23",
+     "printed_date": "Saturday, January 2, 2027",
+     "printed_name": "$200 NLH Milestone Satellite (1Day) Awards Direct Entry into Event # 20",
+     "printed_time": "10:10 AM",
+     "printed_year": 2027,
+     "start": "10:10",
+     "structure_url": null
+    },
+    {
+     "date": "2027-01-02",
+     "event_no": "20",
+     "printed_date": "Saturday, January 2, 2027",
+     "printed_name": "$1,600 No Limit Hold'em MSPT 1B $400K GTD",
+     "printed_time": "11:10 AM",
+     "printed_year": 2027,
+     "start": "11:10",
+     "structure_url": null
+    },
+    {
+     "date": "2027-01-02",
+     "event_no": "24",
+     "printed_date": "Saturday, January 2, 2027",
+     "printed_name": "$200 NLH Milestone Satellite (1Day) Awards Direct Entry into Event # 20",
+     "printed_time": "3:10 PM",
+     "printed_year": 2027,
+     "start": "15:10",
+     "structure_url": null
+    },
+    {
+     "date": "2027-01-02",
+     "event_no": "25",
+     "printed_date": "Saturday, January 2, 2027",
+     "printed_name": "$200 NLH PokerAtlas Valuetown Bounty $20K GTD (1Day) POKERATLAS PRO MEMBER $20 RAKE DISCOUNT",
+     "printed_time": "5:10 PM",
+     "printed_year": 2027,
+     "start": "17:10",
+     "structure_url": null
+    },
+    {
+     "date": "2027-01-03",
+     "event_no": "20",
+     "printed_date": "Sunday, January 3, 2027",
+     "printed_name": "$1,600 No Limit Hold'em MSPT 1C $400K GTD",
+     "printed_time": "11:10 AM",
+     "printed_year": 2027,
+     "start": "11:10",
+     "structure_url": null
+    },
+    {
+     "date": "2027-01-03",
+     "event_no": "26",
+     "printed_date": "Sunday, January 3, 2027",
+     "printed_name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+     "printed_time": "5:10 PM",
+     "printed_year": 2027,
+     "start": "17:10",
+     "structure_url": null
+    },
+    {
+     "date": "2027-01-04",
+     "event_no": "20",
+     "printed_date": "Monday, January 4, 2027",
+     "printed_name": "$1,600 No Limit Hold'em MSPT Day 2 Restart",
+     "printed_time": "11:10 AM",
+     "printed_year": 2027,
+     "start": "11:10",
+     "structure_url": null
+    },
+    {
+     "date": "2027-01-04",
+     "event_no": "27",
+     "printed_date": "Monday, January 4, 2027",
+     "printed_name": "$250 No Limit Hold'em 1A $75K GTD (1Day) Day 1 Payouts with 5% advancing to Day 2$10 Reduced Rake for Entry before 11:10 AM",
+     "printed_time": "11:10 AM",
+     "printed_year": 2027,
+     "start": "11:10",
+     "structure_url": null
+    },
+    {
+     "date": "2027-01-04",
+     "event_no": "27",
+     "printed_date": "Monday, January 4, 2027",
+     "printed_name": "$250 No Limit Hold'em 1B $75K GTD (1Day) Day 1 Payouts with 5% advancing to Day 2$10 Reduced Rake for Entry before 5:10 PM",
+     "printed_time": "5:10 PM",
+     "printed_year": 2027,
+     "start": "17:10",
+     "structure_url": null
+    },
+    {
+     "date": "2027-01-05",
+     "event_no": "27",
+     "printed_date": "Tuesaday, January 5, 2027",
+     "printed_name": "$250 No Limit Hold'em 1C $75K GTD (1Day) Day 1 Payouts with 5% advancing to Day 2",
+     "printed_time": "11:10 AM",
+     "printed_year": 2027,
+     "start": "11:10",
+     "structure_url": null
+    },
+    {
+     "date": "2027-01-05",
+     "event_no": "27",
+     "printed_date": "Tuesaday, January 5, 2027",
+     "printed_name": "$250 No Limit Hold'em 1D $75K GTD (1Day) Day 1 Payouts with 5% advancing to Day 2",
+     "printed_time": "5:10 PM",
+     "printed_year": 2027,
+     "start": "17:10",
+     "structure_url": null
+    },
+    {
+     "date": "2027-01-06",
+     "event_no": "28",
+     "printed_date": "Wednesday, January 6, 2027",
+     "printed_name": "$400 No Limit Hold'em $15K GTD (1Day)",
+     "printed_time": "11:10 AM",
+     "printed_year": 2027,
+     "start": "11:10",
+     "structure_url": null
+    },
+    {
+     "date": "2027-01-06",
+     "event_no": "27",
+     "printed_date": "Wednesday, January 6, 2027",
+     "printed_name": "$250 No Limit Hold'em Day 2 Restart",
+     "printed_time": "12:00 PM",
+     "printed_year": 2027,
+     "start": "12:00",
+     "structure_url": null
+    },
+    {
+     "date": "2027-01-06",
+     "event_no": "29",
+     "printed_date": "Wednesday, January 6, 2027",
+     "printed_name": "$200 No Limit Hold'em Bounty $8K GTD (1Day) Show Your CES Badge - $10 RAKE DISCOUNT",
+     "printed_time": "5:10 PM",
+     "printed_year": 2027,
+     "start": "17:10",
+     "structure_url": null
+    },
+    {
+     "date": "2027-01-07",
+     "event_no": "30",
+     "printed_date": "Thursday, January 7, 2027",
+     "printed_name": "$300 No Limit Hold'em 1A $100K GTD (1Day)",
+     "printed_time": "11:10 AM",
+     "printed_year": 2027,
+     "start": "11:10",
+     "structure_url": null
+    },
+    {
+     "date": "2027-01-07",
+     "event_no": "30",
+     "printed_date": "Thursday, January 7, 2027",
+     "printed_name": "$300 No Limit Hold'em 1B $100K GTD (1Day) Show Your CES Badge - $10 RAKE DISCOUNT",
+     "printed_time": "5:10 PM",
+     "printed_year": 2027,
+     "start": "17:10",
+     "structure_url": null
+    },
+    {
+     "date": "2027-01-08",
+     "event_no": "30",
+     "printed_date": "Friday, January 8, 2027",
+     "printed_name": "$300 No Limit Hold'em 1C $100K GTD (1Day)",
+     "printed_time": "11:10 AM",
+     "printed_year": 2027,
+     "start": "11:10",
+     "structure_url": null
+    },
+    {
+     "date": "2027-01-08",
+     "event_no": "30",
+     "printed_date": "Friday, January 8, 2027",
+     "printed_name": "$300 No Limit Hold'em 1D $100K GTD (1Day) Show Your CES Badge - $10 RAKE DISCOUNT",
+     "printed_time": "5:10 PM",
+     "printed_year": 2027,
+     "start": "17:10",
+     "structure_url": null
+    },
+    {
+     "date": "2027-01-09",
+     "event_no": "30",
+     "printed_date": "Saturday, January 9, 2027",
+     "printed_name": "$300 No Limit Hold'em 1E $100K GTD (1Day)",
+     "printed_time": "11:10 AM",
+     "printed_year": 2027,
+     "start": "11:10",
+     "structure_url": null
+    },
+    {
+     "date": "2027-01-09",
+     "event_no": "30",
+     "printed_date": "Saturday, January 9, 2027",
+     "printed_name": "$300 No Limit Hold'em 1F $100K GTD (1Day)",
+     "printed_time": "5:10 PM",
+     "printed_year": 2027,
+     "start": "17:10",
+     "structure_url": null
+    },
+    {
+     "date": "2027-01-10",
+     "event_no": "31",
+     "printed_date": "Sunday, January 10, 2027",
+     "printed_name": "$400 No Limit Hold'em Seniors $20K GTD (1Day) Must be 50+ years of age to participate",
+     "printed_time": "10:10 AM",
+     "printed_year": 2027,
+     "start": "10:10",
+     "structure_url": null
+    },
+    {
+     "date": "2027-01-10",
+     "event_no": "30",
+     "printed_date": "Sunday, January 10, 2027",
+     "printed_name": "$300 No Limit Hold'em Day 2 Restart",
+     "printed_time": "12:00 PM",
+     "printed_year": 2027,
+     "start": "12:00",
+     "structure_url": null
+    },
+    {
+     "date": "2027-01-10",
+     "event_no": "32",
+     "printed_date": "Sunday, January 10, 2027",
+     "printed_name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+     "printed_time": "5:10 PM",
+     "printed_year": 2027,
+     "start": "17:10",
+     "structure_url": null
+    }
+   ],
+   "rows_count": 49,
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
+  },
+  "dse_nov_2026_page": {
+   "fetched_utc": "2026-11-16T19:15:28Z",
+   "name": "Venetian DeepStack Extravaganza IV",
+   "page_title": "DeepStack Extravaganza IV",
+   "printed_date_range": null,
+   "printed_guarantee_blurb": "More than $3.6 Million in guaranteed tournament prize pools",
+   "rows": [
+    {
+     "date": "2026-11-16",
+     "event_no": "1",
+     "printed_date": "Monday, November 16, 2026",
+     "printed_name": "$300 No Limit Hold'em 1A $75K GTD",
+     "printed_time": "11:10 AM",
+     "printed_year": 2026,
+     "start": "11:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-11-16",
+     "event_no": "1",
+     "printed_date": "Monday, November 16, 2026",
+     "printed_name": "$300 No Limit Hold'em 1B $75K GTD",
+     "printed_time": "5:10 PM",
+     "printed_year": 2026,
+     "start": "17:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-11-17",
+     "event_no": "1",
+     "printed_date": "Tuesday, November 17, 2026",
+     "printed_name": "$300 No Limit Hold'em 1C $75K GTD",
+     "printed_time": "11:10 AM",
+     "printed_year": 2026,
+     "start": "11:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-11-17",
+     "event_no": "1",
+     "printed_date": "Tuesday, November 17, 2026",
+     "printed_name": "$300 No Limit Hold'em 1D $75K GTD",
+     "printed_time": "5:10 PM",
+     "printed_year": 2026,
+     "start": "17:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-11-18",
+     "event_no": "2",
+     "printed_date": "Wednesday, November 18, 2026",
+     "printed_name": "$300 No LImit Hold'em $10K GTD (1Day)",
+     "printed_time": "11:10 AM",
+     "printed_year": 2026,
+     "start": "11:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-11-18",
+     "event_no": "1",
+     "printed_date": "Wednesday, November 18, 2026",
+     "printed_name": "$300 No Limit Hold'em Day 2 Restart",
+     "printed_time": "12:00 PM",
+     "printed_year": 2026,
+     "start": "12:00",
+     "structure_url": null
+    },
+    {
+     "date": "2026-11-19",
+     "event_no": "3",
+     "printed_date": "Thursday, November 19, 2026",
+     "printed_name": "$200 NLH RaceDay Stack (1Day) Race to finish before the Race",
+     "printed_time": "10:10 AM",
+     "printed_year": 2026,
+     "start": "10:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-11-20",
+     "event_no": "4",
+     "printed_date": "Friday, November 20, 2026",
+     "printed_name": "$200 NLH RaceDay Stack (1Day) Race to finish before the Race",
+     "printed_time": "10:10 AM",
+     "printed_year": 2026,
+     "start": "10:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-11-21",
+     "event_no": "5",
+     "printed_date": "Saturday, November 21, 2026",
+     "printed_name": "$200 NLH RaceDay Stack (1Day) Race to finish before the Race",
+     "printed_time": "10:10 AM",
+     "printed_year": 2026,
+     "start": "10:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-11-22",
+     "event_no": "6",
+     "printed_date": "Sunday, November 22, 2026",
+     "printed_name": "$200 No LImit Hold'em (1Day)",
+     "printed_time": "11:10 AM",
+     "printed_year": 2026,
+     "start": "11:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-11-23",
+     "event_no": "7",
+     "printed_date": "Monday, November 23, 2026",
+     "printed_name": "$400 No Limit Hold'em 1A $75K GTD",
+     "printed_time": "11:10 AM",
+     "printed_year": 2026,
+     "start": "11:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-11-23",
+     "event_no": "8",
+     "printed_date": "Monday, November 23, 2026",
+     "printed_name": "$200 No Limit Hold'em $8K GTD (1Day) Progressive Knock-Out Bounty (PKO)",
+     "printed_time": "5:10 PM",
+     "printed_year": 2026,
+     "start": "17:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-11-24",
+     "event_no": "7",
+     "printed_date": "Tuesday, November 24, 2026",
+     "printed_name": "$400 No Limit Hold'em 1B $75K GTD",
+     "printed_time": "11:10 AM",
+     "printed_year": 2026,
+     "start": "11:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-11-24",
+     "event_no": "9",
+     "printed_date": "Tuesday, November 24, 2026",
+     "printed_name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+     "printed_time": "5:10 PM",
+     "printed_year": 2026,
+     "start": "17:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-11-25",
+     "event_no": "7",
+     "printed_date": "Wednesday, November 25, 2026",
+     "printed_name": "$400 No Limit Hold'em Day 2 Restart",
+     "printed_time": "11:00 AM",
+     "printed_year": 2026,
+     "start": "11:00",
+     "structure_url": null
+    },
+    {
+     "date": "2026-11-25",
+     "event_no": "10",
+     "printed_date": "Wednesday, November 25, 2026",
+     "printed_name": "$400 No LImit Hold'em $15K GTD (1Day)",
+     "printed_time": "11:10 AM",
+     "printed_year": 2026,
+     "start": "11:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-11-25",
+     "event_no": "11",
+     "printed_date": "Wednesday, November 25, 2026",
+     "printed_name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+     "printed_time": "5:10 PM",
+     "printed_year": 2026,
+     "start": "17:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-11-26",
+     "event_no": "12",
+     "printed_date": "Thursday, November 26, 2026",
+     "printed_name": "$300 No LImit Hold'em $10K GTD (1Day)",
+     "printed_time": "11:10 AM",
+     "printed_year": 2026,
+     "start": "11:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-11-26",
+     "event_no": "13",
+     "printed_date": "Thursday, November 26, 2026",
+     "printed_name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+     "printed_time": "5:10 PM",
+     "printed_year": 2026,
+     "start": "17:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-11-27",
+     "event_no": "14",
+     "printed_date": "Friday, November 27, 2026",
+     "printed_name": "$600 No Limit Hold'em $30K GTD (1Day)",
+     "printed_time": "11:10 AM",
+     "printed_year": 2026,
+     "start": "11:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-11-27",
+     "event_no": "15",
+     "printed_date": "Friday, November 27, 2026",
+     "printed_name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+     "printed_time": "5:10 PM",
+     "printed_year": 2026,
+     "start": "17:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-11-28",
+     "event_no": "16",
+     "printed_date": "Saturday, November 28, 2026",
+     "printed_name": "$600 No Limit Hold'em Bounty $30K GTD (1Day) $200 bounties to start & $500 bounties in the money",
+     "printed_time": "11:10 AM",
+     "printed_year": 2026,
+     "start": "11:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-11-28",
+     "event_no": "17",
+     "printed_date": "Saturday, November 28, 2026",
+     "printed_name": "$400 Pot Limit Omaha Bounty $15K GTD (1Day)",
+     "printed_time": "12:10 PM",
+     "printed_year": 2026,
+     "start": "12:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-11-28",
+     "event_no": "18",
+     "printed_date": "Saturday, November 28, 2026",
+     "printed_name": "$200 NLH PokerAtlas Valuetown Bounty $20K GTD (1Day) POKERATLAS PRO MEMBER $20 RAKE DISCOUNT",
+     "printed_time": "5:10 PM",
+     "printed_year": 2026,
+     "start": "17:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-11-29",
+     "event_no": "19",
+     "printed_date": "Sunday, November 29, 2026",
+     "printed_name": "$400 No Limit Hold'em 1A $75K GTD",
+     "printed_time": "11:10 AM",
+     "printed_year": 2026,
+     "start": "11:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-11-29",
+     "event_no": "20",
+     "printed_date": "Sunday, November 29, 2026",
+     "printed_name": "$300 Pot Limit Omaha $10K GTD (1Day) Double Board Bomb Pot",
+     "printed_time": "12:10 PM",
+     "printed_year": 2026,
+     "start": "12:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-11-29",
+     "event_no": "21",
+     "printed_date": "Sunday, November 29, 2026",
+     "printed_name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+     "printed_time": "5:10 PM",
+     "printed_year": 2026,
+     "start": "17:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-11-30",
+     "event_no": "19",
+     "printed_date": "Monday, November 30, 2026",
+     "printed_name": "$400 No Limit Hold'em 1B $75K GTD",
+     "printed_time": "11:10 AM",
+     "printed_year": 2026,
+     "start": "11:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-11-30",
+     "event_no": "22",
+     "printed_date": "Monday, November 30, 2026",
+     "printed_name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+     "printed_time": "5:10 PM",
+     "printed_year": 2026,
+     "start": "17:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-01",
+     "event_no": "19",
+     "printed_date": "Tuesday, December 1, 2026",
+     "printed_name": "$400 No Limit Hold'em 1C $75K GTD",
+     "printed_time": "11:10 AM",
+     "printed_year": 2026,
+     "start": "11:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-01",
+     "event_no": "23",
+     "printed_date": "Tuesday, December 1, 2026",
+     "printed_name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+     "printed_time": "5:10 PM",
+     "printed_year": 2026,
+     "start": "17:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-02",
+     "event_no": "24",
+     "printed_date": "Wednesday, December 2, 2026",
+     "printed_name": "$600 No Limit Hold'em Seniors $40K GTD (1Day) Must be 50+ years of age to participate",
+     "printed_time": "10:10 AM",
+     "printed_year": 2026,
+     "start": "10:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-02",
+     "event_no": "19",
+     "printed_date": "Wednesday, December 2, 2026",
+     "printed_name": "$400 No Limit Hold'em Day 2 Restart",
+     "printed_time": "11:00 AM",
+     "printed_year": 2026,
+     "start": "11:00",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-02",
+     "event_no": "25",
+     "printed_date": "Wednesday, December 2, 2026",
+     "printed_name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+     "printed_time": "5:10 PM",
+     "printed_year": 2026,
+     "start": "17:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-03",
+     "event_no": "26",
+     "printed_date": "Thursday, December 3, 2026",
+     "printed_name": "$800 No Limit Hold'em 1A $500K GTD",
+     "printed_time": "11:10 AM",
+     "printed_year": 2026,
+     "start": "11:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-03",
+     "event_no": "27",
+     "printed_date": "Thursday, December 3, 2026",
+     "printed_name": "$600 BIG O $25K GTD (1Day)",
+     "printed_time": "12:10 PM",
+     "printed_year": 2026,
+     "start": "12:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-03",
+     "event_no": "26",
+     "printed_date": "Thursday, December 3, 2026",
+     "printed_name": "$800 No Limit Hold'em 1B $500K GTD",
+     "printed_time": "5:10 PM",
+     "printed_year": 2026,
+     "start": "17:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-04",
+     "event_no": "26",
+     "printed_date": "Friday, December 4, 2026",
+     "printed_name": "$800 No Limit Hold'em 1C $500K GTD",
+     "printed_time": "11:10 AM",
+     "printed_year": 2026,
+     "start": "11:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-04",
+     "event_no": "26",
+     "printed_date": "Friday, December 4, 2026",
+     "printed_name": "$800 No Limit Hold'em 1D $500K GTD",
+     "printed_time": "5:10 PM",
+     "printed_year": 2026,
+     "start": "17:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-05",
+     "event_no": "26",
+     "printed_date": "Saturday, December 5, 2026",
+     "printed_name": "$800 No Limit Hold'em 1E $500K GTD",
+     "printed_time": "11:10 AM",
+     "printed_year": 2026,
+     "start": "11:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-05",
+     "event_no": "26",
+     "printed_date": "Saturday, December 5, 2026",
+     "printed_name": "$800 No Limit Hold'em 1F (Turbo) $500K GTD",
+     "printed_time": "5:10 PM",
+     "printed_year": 2026,
+     "start": "17:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-06",
+     "event_no": "28",
+     "printed_date": "Sunday, December 6, 2026",
+     "printed_name": "$600 No Limit Hold'em $40K GTD (1Day)",
+     "printed_time": "11:10 AM",
+     "printed_year": 2026,
+     "start": "11:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-06",
+     "event_no": "26",
+     "printed_date": "Sunday, December 6, 2026",
+     "printed_name": "$800 No Limit Hold'em Day 2 Restart",
+     "printed_time": "12:00 PM",
+     "printed_year": 2026,
+     "start": "12:00",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-06",
+     "event_no": "29",
+     "printed_date": "Sunday, December 6, 2026",
+     "printed_name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)",
+     "printed_time": "5:10 PM",
+     "printed_year": 2026,
+     "start": "17:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-07",
+     "event_no": "30",
+     "printed_date": "Monday, December 7, 2026",
+     "printed_name": "$600 No Limit Hold'em Bounty $40K GTD (1Day) $200 bounties to start & $500 bounties in the money",
+     "printed_time": "11:10 AM",
+     "printed_year": 2026,
+     "start": "11:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-07",
+     "event_no": "31",
+     "printed_date": "Monday, December 7, 2026",
+     "printed_name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)",
+     "printed_time": "5:10 PM",
+     "printed_year": 2026,
+     "start": "17:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-08",
+     "event_no": "32",
+     "printed_date": "Tuesday, December 8, 2026",
+     "printed_name": "$600 No Limit Hold'em Seniors $40K GTD (1Day) Must be 50+ years of age to participate",
+     "printed_time": "10:10 AM",
+     "printed_year": 2026,
+     "start": "10:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-08",
+     "event_no": "33",
+     "printed_date": "Tuesday, December 8, 2026",
+     "printed_name": "$100 NLH LIPS Ladies Milestone Satellite (1Day) Awards Direct Entry to Event # 39",
+     "printed_time": "4:10 PM",
+     "printed_year": 2026,
+     "start": "16:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-08",
+     "event_no": "34",
+     "printed_date": "Tuesday, December 8, 2026",
+     "printed_name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)",
+     "printed_time": "5:10 PM",
+     "printed_year": 2026,
+     "start": "17:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-09",
+     "event_no": "35",
+     "printed_date": "Wednesday, December 9, 2026",
+     "printed_name": "$600 NLH LIPS Poker Jingle Tag Team $10K GTD (1Day) Tag Teams Consist of Female/Female or Female/Male",
+     "printed_time": "10:10 AM",
+     "printed_year": 2026,
+     "start": "10:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-09",
+     "event_no": "36",
+     "printed_date": "Wednesday, December 9, 2026",
+     "printed_name": "$800 No Limit Hold'em Bounty $75K GTD (1Day) $200 bounties to start & $500 bounties in the money",
+     "printed_time": "11:10 AM",
+     "printed_year": 2026,
+     "start": "11:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-09",
+     "event_no": "37",
+     "printed_date": "Wednesday, December 9, 2026",
+     "printed_name": "$100 NLH LIPS Ladies Milestone Satellite (1Day) Awards Direct Entry to Event # 39",
+     "printed_time": "4:10 PM",
+     "printed_year": 2026,
+     "start": "16:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-09",
+     "event_no": "38",
+     "printed_date": "Wednesday, December 9, 2026",
+     "printed_name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)",
+     "printed_time": "5:10 PM",
+     "printed_year": 2026,
+     "start": "17:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-10",
+     "event_no": "39",
+     "printed_date": "Thursday, December 10, 2026",
+     "printed_name": "$800 No Limit Hold'em LIPS Ladies $40K GTD (2Day) Women in Poker - Main Event",
+     "printed_time": "10:10 AM",
+     "printed_year": 2026,
+     "start": "10:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-10",
+     "event_no": "40",
+     "printed_date": "Thursday, December 10, 2026",
+     "printed_name": "$600 Pot Limit Omaha Bounty $25K GTD (1Day)",
+     "printed_time": "12:10 PM",
+     "printed_year": 2026,
+     "start": "12:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-10",
+     "event_no": "41",
+     "printed_date": "Thursday, December 10, 2026",
+     "printed_name": "$260 NLH Milestone Satellite (1Day) Awards Direct Entry to Event # 47",
+     "printed_time": "4:10 PM",
+     "printed_year": 2026,
+     "start": "16:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-10",
+     "event_no": "42",
+     "printed_date": "Thursday, December 10, 2026",
+     "printed_name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)",
+     "printed_time": "5:10 PM",
+     "printed_year": 2026,
+     "start": "17:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-11",
+     "event_no": "39",
+     "printed_date": "Friday, December 11, 2026",
+     "printed_name": "$800 No Limit Hold'em LIPS Ladies Day 2 Restart Play Down to Final 7 - Streamed Final Table (PokerGO)",
+     "printed_time": "10:00 AM",
+     "printed_year": 2026,
+     "start": "10:00",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-11",
+     "event_no": "43",
+     "printed_date": "Friday, December 11, 2026",
+     "printed_name": "$600 No Limit Hold'em LIPS $30K GTD (1Day) KINGS and QUEENS Bounty - Open to all players",
+     "printed_time": "11:10 AM",
+     "printed_year": 2026,
+     "start": "11:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-11",
+     "event_no": "44",
+     "printed_date": "Friday, December 11, 2026",
+     "printed_name": "$260 NLH Milestone Satellite (1Day) Awards Direct Entry to Event # 47",
+     "printed_time": "4:10 PM",
+     "printed_year": 2026,
+     "start": "16:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-11",
+     "event_no": "39",
+     "printed_date": "Friday, December 11, 2026",
+     "printed_name": "$800 No Limit Hold'em LIPS Ladies Final Table Streamed Final Table (PokerGO)",
+     "printed_time": "7:00 PM",
+     "printed_year": 2026,
+     "start": "19:00",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-11",
+     "event_no": "45",
+     "printed_date": "Friday, December 11, 2026",
+     "printed_name": "$260 NLH Turbo Milestone Satellite (1Day) Awards Direct Entry to Event # 47",
+     "printed_time": "8:10 PM",
+     "printed_year": 2026,
+     "start": "20:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-12",
+     "event_no": "46",
+     "printed_date": "Saturday, December 12, 2026",
+     "printed_name": "$260 NLH Turbo Milestone Satellite (1Day) Awards Direct Entry to Event # 47",
+     "printed_time": "9:10 AM",
+     "printed_year": 2026,
+     "start": "09:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-12",
+     "event_no": "47",
+     "printed_date": "Saturday, December 12, 2026",
+     "printed_name": "$2,200 No Limit Hold'em 1A $1 Mill GTD PokerAtlas Championship Title Event",
+     "printed_time": "10:10 AM",
+     "printed_year": 2026,
+     "start": "10:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-12",
+     "event_no": "48",
+     "printed_date": "Saturday, December 12, 2026",
+     "printed_name": "$260 NLH Turbo Milestone Satellite (1Day) Awards Direct Entry to Event # 47",
+     "printed_time": "12:10 PM",
+     "printed_year": 2026,
+     "start": "12:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-12",
+     "event_no": "47",
+     "printed_date": "Saturday, December 12, 2026",
+     "printed_name": "$2,200 No Limit Hold'em 1B $1 Mill GTD PokerAtlas Championship Title Event",
+     "printed_time": "6:10 PM",
+     "printed_year": 2026,
+     "start": "18:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-13",
+     "event_no": "49",
+     "printed_date": "Sunday, December 13, 2026",
+     "printed_name": "$1,100 No Limit Hold'em Seniors 1A $300K GTD Must be 50+ years of age to participate",
+     "printed_time": "10:10 AM",
+     "printed_year": 2026,
+     "start": "10:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-13",
+     "event_no": "47",
+     "printed_date": "Sunday, December 13, 2026",
+     "printed_name": "$2,200 NLH PokerAtlas Championship Title Event Day 2 Restart Play Down to Final 7 - Streamed Final Table (PokerGO)",
+     "printed_time": "1:00 PM",
+     "printed_year": 2026,
+     "start": "13:00",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-13",
+     "event_no": "50",
+     "printed_date": "Sunday, December 13, 2026",
+     "printed_name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)",
+     "printed_time": "5:10 PM",
+     "printed_year": 2026,
+     "start": "17:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-14",
+     "event_no": "49",
+     "printed_date": "Monday, December 14, 2026",
+     "printed_name": "$1,100 No Limit Hold'em Seniors 1B $300K GTD Must be 50+ years of age to participate",
+     "printed_time": "10:10 AM",
+     "printed_year": 2026,
+     "start": "10:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-14",
+     "event_no": "47",
+     "printed_date": "Monday, December 14, 2026",
+     "printed_name": "$2,200 NLH PokerAtlas Championship Title Event Day 3 Restart Streamed Final Table (PokerGO)",
+     "printed_time": "11:00 AM",
+     "printed_year": 2026,
+     "start": "11:00",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-14",
+     "event_no": "51",
+     "printed_date": "Monday, December 14, 2026",
+     "printed_name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)",
+     "printed_time": "5:10 PM",
+     "printed_year": 2026,
+     "start": "17:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-15",
+     "event_no": "49",
+     "printed_date": "Tuesday, December 15, 2026",
+     "printed_name": "$1,100 No Limit Hold'em Seniors Day 2 Restart",
+     "printed_time": "10:00 AM",
+     "printed_year": 2026,
+     "start": "10:00",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-15",
+     "event_no": "52",
+     "printed_date": "Tuesday, December 15, 2026",
+     "printed_name": "$1,100 No Limit Hold'em $75K GTD (1Day) Progressive Knock-Out Bounty (PKO)",
+     "printed_time": "11:10 AM",
+     "printed_year": 2026,
+     "start": "11:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-15",
+     "event_no": "53",
+     "printed_date": "Tuesday, December 15, 2026",
+     "printed_name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)",
+     "printed_time": "5:10 PM",
+     "printed_year": 2026,
+     "start": "17:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-16",
+     "event_no": "54",
+     "printed_date": "Wednesday, December 16, 2026",
+     "printed_name": "$600 No Limit Hold'em Bounty $50K GTD (1Day) $200 bounties to start & $500 bounties in the money",
+     "printed_time": "11:10 AM",
+     "printed_year": 2026,
+     "start": "11:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-16",
+     "event_no": "55",
+     "printed_date": "Wednesday, December 16, 2026",
+     "printed_name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)",
+     "printed_time": "5:10 PM",
+     "printed_year": 2026,
+     "start": "17:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-17",
+     "event_no": "56",
+     "printed_date": "Thursday, December 17, 2026",
+     "printed_name": "$1,100 No Limit Hold'em 1A $500K GTD $40 Rake Discount for Entries Before 10:10 a.m.",
+     "printed_time": "10:10 AM",
+     "printed_year": 2026,
+     "start": "10:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-17",
+     "event_no": "57",
+     "printed_date": "Thursday, December 17, 2026",
+     "printed_name": "$600 Pot Limit Omaha $25K GTD (1Day) Double Board Bomb Pot",
+     "printed_time": "12:10 PM",
+     "printed_year": 2026,
+     "start": "12:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-17",
+     "event_no": "56",
+     "printed_date": "Thursday, December 17, 2026",
+     "printed_name": "$1,100 No Limit Hold'em 1B $500K GTD $40 Rake Discount for Entries Before 6:10 p.m.",
+     "printed_time": "6:10 PM",
+     "printed_year": 2026,
+     "start": "18:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-18",
+     "event_no": "56",
+     "printed_date": "Friday, December 18, 2026",
+     "printed_name": "$1,100 No Limit Hold'em 1C $500K GTD",
+     "printed_time": "10:10 AM",
+     "printed_year": 2026,
+     "start": "10:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-18",
+     "event_no": "56",
+     "printed_date": "Friday, December 18, 2026",
+     "printed_name": "$1,100 No Limit Hold'em 1D $500K GTD",
+     "printed_time": "6:10 PM",
+     "printed_year": 2026,
+     "start": "18:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-19",
+     "event_no": "56",
+     "printed_date": "Saturday, December 19, 2026",
+     "printed_name": "$1,100 No Limit Hold'em 1E $500K GTD",
+     "printed_time": "10:10 AM",
+     "printed_year": 2026,
+     "start": "10:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-19",
+     "event_no": "58",
+     "printed_date": "Saturday, December 19, 2026",
+     "printed_name": "$200 NLH PokerAtlas Valuetown Bounty $20K GTD (1Day) POKERATLAS PRO MEMBER $20 RAKE DISCOUNT",
+     "printed_time": "5:10 PM",
+     "printed_year": 2026,
+     "start": "17:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-20",
+     "event_no": "56",
+     "printed_date": "Sunday, December 20, 2026",
+     "printed_name": "$1,100 No Limit Hold'em Day 2 Restart",
+     "printed_time": "11:00 AM",
+     "printed_year": 2026,
+     "start": "11:00",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-20",
+     "event_no": "59",
+     "printed_date": "Sunday, December 20, 2026",
+     "printed_name": "$600 No Limit Hold'em 1A $150K GTD $20 Rake Discount for Entries Before 11:10 a.m.",
+     "printed_time": "11:10 AM",
+     "printed_year": 2026,
+     "start": "11:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-20",
+     "event_no": "60",
+     "printed_date": "Sunday, December 20, 2026",
+     "printed_name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+     "printed_time": "5:10 PM",
+     "printed_year": 2026,
+     "start": "17:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-21",
+     "event_no": "59",
+     "printed_date": "Monday, December 21, 2026",
+     "printed_name": "$600 No Limit Hold'em 1B $150K GTD",
+     "printed_time": "11:10 AM",
+     "printed_year": 2026,
+     "start": "11:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-21",
+     "event_no": "61",
+     "printed_date": "Monday, December 21, 2026",
+     "printed_name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+     "printed_time": "5:10 PM",
+     "printed_year": 2026,
+     "start": "17:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-22",
+     "event_no": "59",
+     "printed_date": "Tuesday, December 22, 2026",
+     "printed_name": "$600 No Limit Hold'em 1C $150K GTD",
+     "printed_time": "11:10 AM",
+     "printed_year": 2026,
+     "start": "11:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-22",
+     "event_no": "62",
+     "printed_date": "Tuesday, December 22, 2026",
+     "printed_name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+     "printed_time": "5:10 PM",
+     "printed_year": 2026,
+     "start": "17:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-23",
+     "event_no": "59",
+     "printed_date": "Wednesday, December 23, 2026",
+     "printed_name": "$600 No Limit Hold'em Day 2 Restart",
+     "printed_time": "11:00 AM",
+     "printed_year": 2026,
+     "start": "11:00",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-23",
+     "event_no": "63",
+     "printed_date": "Wednesday, December 23, 2026",
+     "printed_name": "$600 No Limit Hold'em $30K GTD (1Day)",
+     "printed_time": "11:10 AM",
+     "printed_year": 2026,
+     "start": "11:10",
+     "structure_url": null
+    },
+    {
+     "date": "2026-12-23",
+     "event_no": "64",
+     "printed_date": "Wednesday, December 23, 2026",
+     "printed_name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+     "printed_time": "5:10 PM",
+     "printed_year": 2026,
+     "start": "17:10",
+     "structure_url": null
+    }
+   ],
+   "rows_count": 94,
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html"
+  },
+  "wpt_schedule": {
+   "chars": 26880,
+   "fetched_utc": "2026-11-16T19:15:28Z",
+   "kind": "pdf",
+   "re_entry_hits": [],
+   "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+  },
+  "wpt_structures": {
+   "chars": 287861,
+   "fetched_utc": "2026-11-16T19:15:28Z",
+   "kind": "pdf",
+   "re_entry_hits": [
+    {
+     "excerpt": ".m. Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge) Registration: Unlimited re-entry for each starting flight will be available until the start of level 9. A player who advances to Day 2 is prohibited from entering a subsequ",
+     "keyword": "re-entry"
+    },
+    {
+     "excerpt": "enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight. Starting Stack: Players",
+     "keyword": "re-entry"
+    },
+    {
+     "excerpt": "te. Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge) Registration: Unlimited re-entry will be available until the start of level 9 Starting Stack: Players will start with 35,000 in tournament chips. Length of Play: 30 minutes",
+     "keyword": "re-entry"
+    },
+    {
+     "excerpt": "op. Entry Fee: $400 Buy-in = $337 (Tournament Prize Pool) + $45 (Tournament Fee) + $18 (Poker Staff Service Charge) Registration: Unlimited re-entry will be available until the start of level 9 (approximately 5:30 p.m.). Starting Stack: Players will start with 30,000 in tournament chips.",
+     "keyword": "re-entry"
+    },
+    {
+     "excerpt": "te. Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge) Registration: Unlimited re-entry will be available until the start of level 9. Starting Stack: Players will start with 35,000 in tournament chips. Length of Play: 30 minute",
+     "keyword": "re-entry"
+    },
+    {
+     "excerpt": ".m. Entry Fee: $800 Buy-in = $695 (Tournament Prize Pool) + $72 (Tournament Fee) + $33 (Poker Staff Service Charge) Registration: Unlimited re-entry for each starting flight will be available until the start of level 9. A player who advances to Day 2 is prohibited from entering a subsequ",
+     "keyword": "re-entry"
+    },
+    {
+     "excerpt": "enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight. Starting Stack: Players",
+     "keyword": "re-entry"
+    },
+    {
+     "excerpt": "te. Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge) Registration: Unlimited re-entry will be available until the start of level 9 Starting Stack: Players will start with 35,000 in tournament chips. Length of Play: 30 minutes",
+     "keyword": "re-entry"
+    },
+    {
+     "excerpt": "te. Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge) Registration: Unlimited re-entry will be available until the start of level 9 Starting Stack: Players will start with 35,000 in tournament chips. Length of Play: 30 minutes",
+     "keyword": "re-entry"
+    },
+    {
+     "excerpt": ". Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $45 (Poker Staff Service Charge) Registration: Unlimited re-entry will be available until the start of level 9 (approximately 5:30 p.m.). Starting Stack: Players will start with 30,000 in tournament chips.",
+     "keyword": "re-entry"
+    },
+    {
+     "excerpt": "ntry Fee: $1,600 Buy-in = $1,430 (Tournament Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge) Registration: Unlimited re-entry for each starting flight will be available until the start of level 10. A player who advances to Day 2 is prohibited from entering a subseq",
+     "keyword": "re-entry"
+    },
+    {
+     "excerpt": "enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight. Starting Stack: Players",
+     "keyword": "re-entry"
+    },
+    {
+     "excerpt": "te. Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge) Registration: Unlimited re-entry will be available until the start of level 9 (approximately 4:30 p.m.). Starting Stack: Players will start with 35,000 in tournament chips.",
+     "keyword": "re-entry"
+    },
+    {
+     "excerpt": "100 Buy-in = $970 (Tournament Prize Pool) + $90 (Tournament Fee) + $40 (Poker Staff Service Charge) Registration: One (1) Entry and One (1) re-entry for each starting flight will be available until the start of level 10 (approximately 6:45 p.m.). A player who advances to Day 2 is prohibi",
+     "keyword": "re-entry"
+    },
+    {
+     "excerpt": "enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight. Starting Stack: Players",
+     "keyword": "re-entry"
+    },
+    {
+     "excerpt": ".m. Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge) Registration: Unlimited re-entry will be available until the start of level 9. Starting Stack: Players will start with 30,000 in tournament chips. Length of Play: 20 minute",
+     "keyword": "re-entry"
+    },
+    {
+     "excerpt": "ournament Prize Pool) + $500 (Mystery Bounty Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge) Registration: Unlimited re-entry for each starting flight will be available until the start of level 10. A player who advances to Day 2 is prohibited from entering a subseq",
+     "keyword": "re-entry"
+    },
+    {
+     "excerpt": "enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight. Starting Stack: Players",
+     "keyword": "re-entry"
+    },
+    {
+     "excerpt": ". Entry Fee: $1,100 Buy-in = $965 (Tournament Prize Pool) + $90 (Tournament Fee) + $45 (Poker Staff Service Charge) Registration: Unlimited re-entry will be available until the start of level 10 (approximately 6:30 p.m.). Starting Stack: Players will start with 40,000 in tournament chips",
+     "keyword": "re-entry"
+    },
+    {
+     "excerpt": "$940 (Tournament Prize Pool) + $500 (Bounty Prize Pool) + $115 (Tournament Fee) + $45 (Poker Staff Service Charge) Registration: Unlimited re-entry will be available until the start of level 9 (approximately 5:30 p.m.). Starting Stack: Players will start with 30,000 in tournament chips.",
+     "keyword": "re-entry"
+    },
+    {
+     "excerpt": "ntry Fee: $1,600 Buy-in = $1,430 (Tournament Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge) Registration: Unlimited re-entry for each starting flight will be available until the start of level 10. Starting Stack: Players will start with 40,000 in tournament chips.",
+     "keyword": "re-entry"
+    },
+    {
+     "excerpt": "730 (Tournament Prize Pool) + $1,000 (Bounty Prize Pool) + $200 (Tournament Fee) + $70 (Poker Staff Service Charge) Registration: Unlimited re-entry will be available until the start of level 9 (approximately 5:30 p.m.). Starting Stack: Players will start with 30,000 in tournament chips.",
+     "keyword": "re-entry"
+    },
+    {
+     "excerpt": "te. Entry Fee: $800 Buy-in = $695 (Tournament Prize Pool) + $72 (Tournament Fee) + $33 (Poker Staff Service Charge) Registration: Unlimited re-entry will be available until the start of level 9. Starting Stack: Players will start with 35,000 in tournament chips. Length of Play: 30 minute",
+     "keyword": "re-entry"
+    },
+    {
+     "excerpt": "$22 (Poker Staff Service Charge) $1,200,000 from the Tournament Prize Pool will fund the Mystery Bounty Prize Pool. Registration: Unlimited re-entry for each starting flight will be available until the start of level 9. A player who advances to Day 2 is allowed to enter a subsequent star",
+     "keyword": "re-entry"
+    },
+    {
+     "excerpt": ".m. Entry Fee: $800 Buy-in = $700 (Tournament Prize Pool) + $70 (Tournament Fee) + $30 (Poker Staff Service Charge) Registration: Unlimited re-entry will be available until the start of level 9 (approximately 2:30 p.m.). Starting Stack: Players will start with 30,000 in tournament chips.",
+     "keyword": "re-entry"
+    },
+    {
+     "excerpt": "ntry Fee: $3,000 Buy-in = $2,730 (Tournament Prize Pool) + $200 (Tournament Fee) + $70 (Poker Staff Service Charge) Registration: Unlimited re-entry will be available until the start of level 9 (approximately 5:30 p.m.). Starting Stack: Players will start with 30,000 in tournament chips.",
+     "keyword": "re-entry"
+    },
+    {
+     "excerpt": "enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight. Starting Stack: Players",
+     "keyword": "re-entry"
+    },
+    {
+     "excerpt": "s Entry Fee: $1,100 Buy-in = $965 (Tournament Prize Pool) + $90 (Tournament Fee) + $45 (Poker Staff Service Charge) Registration: Unlimited re-entry will be available until the start of level 10 (approximately 6:30 p.m.). Starting Stack: Players will start with 40,000 in tournament chips",
+     "keyword": "re-entry"
+    },
+    {
+     "excerpt": ". Entry Fee: $1,100 Buy-in = $965 (Tournament Prize Pool) + $90 (Tournament Fee) + $45 (Poker Staff Service Charge) Registration: Unlimited re-entry will be available until the start of level 10 (approximately 6:30 p.m.). Starting Stack: Players will start with 40,000 in tournament chips",
+     "keyword": "re-entry"
+    },
+    {
+     "excerpt": ".m. Entry Fee: $800 Buy-in = $695 (Tournament Prize Pool) + $72 (Tournament Fee) + $33 (Poker Staff Service Charge) Registration: Unlimited re-entry for each starting flight will be available until the start of level 10. A player who advances to Day 2 is prohibited from entering a subseq",
+     "keyword": "re-entry"
+    },
+    {
+     "excerpt": "enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight. Starting Stack: Players",
+     "keyword": "re-entry"
+    },
+    {
+     "excerpt": "ntry Fee: $1,600 Buy-in = $1,430 (Tournament Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge) Registration: Unlimited re-entry for each starting flight will be available until the start of level 10. A player who advances to Day 2 is prohibited from entering a subseq",
+     "keyword": "re-entry"
+    },
+    {
+     "excerpt": "enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight. Starting Stack: Players",
+     "keyword": "re-entry"
+    },
+    {
+     "excerpt": ". Entry Fee: $1,100 Buy-in = $965 (Tournament Prize Pool) + $90 (Tournament Fee) + $45 (Poker Staff Service Charge) Registration: Unlimited re-entry will be available until the start of level 10 (approximately 7:30 p.m.). Starting Stack: Players will start with 40,000 in tournament chips",
+     "keyword": "re-entry"
+    },
+    {
+     "excerpt": ". Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge) Registration: Unlimited re-entry will be available until the start of level 9 (approximately 9 p.m.). Starting Stack: Players will start with 30,000 in tournament chips. Le",
+     "keyword": "re-entry"
+    },
+    {
+     "excerpt": ". Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge) Registration: Unlimited re-entry will be available until the start of level 9 (approximately 4:30 p.m.) Starting Stack: Players will start with 30,000 in tournament chips.",
+     "keyword": "re-entry"
+    },
+    {
+     "excerpt": "730 (Tournament Prize Pool) + $1,000 (Bounty Prize Pool) + $200 (Tournament Fee) + $70 (Poker Staff Service Charge) Registration: Unlimited re-entry will be available until the start of level 9 (approximately 5:30 p.m.). Starting Stack: Players will start with 30,000 in tournament chips",
+     "keyword": "re-entry"
+    },
+    {
+     "excerpt": "$940 (Tournament Prize Pool) + $500 (Bounty Prize Pool) + $115 (Tournament Fee) + $45 (Poker Staff Service Charge) Registration: Unlimited re-entry will be available until the start of level 9. Starting Stack: Players will start with 30,000 in tournament chips. Length of Play: 20 minute",
+     "keyword": "re-entry"
+    },
+    {
+     "excerpt": ". Entry Fee: $1,100 Buy-in = $965 (Tournament Prize Pool) + $90 (Tournament Fee) + $45 (Poker Staff Service Charge) Registration: Unlimited re-entry for each starting flight will be available until the start of level 10. A player who advances to Day 2 is prohibited from entering a subseq",
+     "keyword": "re-entry"
+    },
+    {
+     "excerpt": "enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight. Starting Stack: Players",
+     "keyword": "re-entry"
+    }
+   ],
+   "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+  },
+  "wynn_poker_page": {
+   "chars": 459919,
+   "fetched_utc": "2026-11-16T19:15:28Z",
+   "kind": "html",
+   "url": "https://www.wynnlasvegas.com/casino/poker"
+  },
+  "wynn_signature_schedule": {
+   "chars": 6516,
+   "fetched_utc": "2026-11-16T19:15:28Z",
+   "kind": "pdf",
+   "re_entry_hits": [],
+   "url": "https://cdn.wynnresorts.com/image/upload/v1756113053/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+  }
+ },
+ "structures": {}
+}
