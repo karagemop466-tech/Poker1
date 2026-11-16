@@ -1,95 +1,122 @@
-# Repo Review and Verification Log (T1)
+# Repo Review and Verification Log
 
-Session `1fafb3d2` · Branch `arena/1fafb3d2-poker1` (base `c16071b`, from `main`) · Checked 2026-11-16
+Session `baba1a15` · Branch `arena/baba1a15-poker1` (base `2dc4120`, from `main`) · Checked 2026-11-16
 
-## 1. Repository state
+This log records what was read, what was found, what was changed, and what is still missing. The
+earlier session (`1fafb3d2`) findings are kept where they still apply.
+
+## 1. Repository state at the start of this session
 
 | Item | Result | Evidence |
 |---|---|---|
-| Files on `main` | Only `README.md` (`# Poker1`) | `git ls-tree -r main` |
-| Commits on `main` | One commit, `c16071b` | `git log` |
-| `COORDINATION.md` | Not on `main`. Created on this branch (`bc212f8`). | `git show origin/main:COORDINATION.md` returns nothing |
-| GitHub Pages | Enabled. Legacy build, source `main` `/`, status `built`. | `gh api repos/karagemop466-tech/Poker1/pages` |
-| Other session branches | `arena/85820f64-poker1`, `arena/ce95f9c0-poker1`, `arena/e73e692a-poker1` each claim overlapping scope. | `git ls-remote origin`; their `COORDINATION.md` files, read only |
+| Branch | `arena/baba1a15-poker1`, based on `2dc4120` | `git log` |
+| Published site | https://karagemop466-tech.github.io/Poker1/ | `COORDINATION.md` deployment log |
+| Rows in the published dataset | 225 (33 single entry, 15 possible multi-entry, 6 re-entry, 171 unverified) | `data/tournaments.json` at `bf597a0` |
+| Structure sheets read | 16 of 37 Venetian November sheets, 0 of 15 Venetian December sheets, 2 of 8 Wynn WPT structure sections | `research/structure-sheets-verification.md` |
+| Hotel data | 7 hotels, no room rate verified, no dated rate log | `data/hotels.json` |
+| Site | 11 pages, a text filter and a series dropdown only | `assets/app.js` |
 
-## 2. Irregularities found
+## 2. What this session read
 
-| # | Area | Irregularity | Source | Impact / status |
-|---|---|---|---|---|
-| R1 | Coordination | Three other branches claim the same scope, so the task board is split across branches. | Their `COORDINATION.md` files | Possible merge conflicts. This session did not edit them. |
-| R2 | Coordination | The workspace pins one branch, so the `session-<id>/<task>` branch naming in the protocol cannot be followed. | `COORDINATION.md` protocol notes | Process only. Noted on the board. |
-| R3 | Venetian NYE page | Event 5 (Dec 26) is printed as "Saturday, December 26, 2025". The series runs 2026 to 2027. | [NYE event page](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html) | Year flagged. Row kept with a flag. |
-| R4 | Venetian NYE page | Typo "Tuesaday" (Jan 5, 2027). | Same page | Cosmetic |
-| R5 | Venetian DSE IV schedule | "(IDAY)" printed where "(1DAY)" is meant, on many rows. | [DSE IV schedule PDF](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf) | Cosmetic. Event names are kept as printed in the source. |
-| R6 | Venetian DSE IV event page | "No LImit Hold'em" on events 2, 6, 10, 12. | [DSE IV event page](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html) | Cosmetic |
-| R7 | Wynn WPT schedule | "BadugI" for Badugi, and "NIH" printed where NLH is meant (for example "NIH Turbo", "Ladies NIH Championship"). | [WPT schedule PDF](https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf) | Cosmetic. Names are kept as printed. |
-| R8 | Venetian PDF date cells | Some rows have a blank date cell (LIPS and PokerAtlas overlay rows: events 17, 18, 32, 36, 39, 40, 43-49, 58). | DSE IV schedule PDF | The official event page prints a date on every row. The dates were taken from that page. Event 49 was wrong in the draft (Dec 12/13) and is corrected to Dec 13/14. |
-| R9 | Venetian flight events | Structure sheets for events 1, 7, 19 and 26 (sheets 2, 3, 9, 10, 12, 13, 14) carry clause 08: "Any player who bags chips for Day 2 may not play a subsequent flight." The clause does not say whether a player who busts may enter a later flight. | Sheets listed in FLAGGED.md | 15 rows moved from single entry to the separate section. |
-| R10 | Venetian structure sheet 8 | Wording on the PokerAtlas discount reads "all subsequent buy in's ... $200", which may imply a second buy-in. | [Structure 8](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf) (from session log; not re-read this session) | Rows 18 and 58 kept as unverified. |
-| R11 | Venetian bounty sheets | Sheet 15: "Guarantee: $15,000 (prize pool + total bounties)." Each bounty pays $100 per elimination. | [Structure 15](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf) | A bounty guarantee is not a pure prize pool. Flagged on the bounty rows. |
-| R12 | Wynn WPT footnotes | Footnote *** says ClubWPT Gold adds $1,000,000 and "is not available in Nevada." Footnote **** gives a $11,100 ladies tournament entry with a discounted ladies entry. | [WPT schedule PDF](https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf) | Printed as-is and flagged. Confirmation needed. |
-| R13 | Wynn WPT $600 NLH $400K | Unlimited re-entry for each starting flight until level 9. | [WPT structures PDF](https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf) (pages 1-2 read) | Moved to the separate section. |
-| R14 | Caesars Palace fee | Official corporate disclaimer gives a general "$45-$50 plus tax" range. Third-party values conflict. | [Caesars disclaimer](https://www.caesars.com/corporate/disclaimer) | Left blank. |
-| R15 | Bellagio fee | No official MGM page found. Third-party values conflict ($45, $50, $55). | Third-party only | Left blank. |
-| R16 | ARIA fee | Official home page fetched. No resort-fee terms found on it. | [ARIA home page](https://aria.mgmresorts.com/en.html) | Left blank. Row added. |
-| R17 | Venetian room tax | Full Venetian hotel terms fetched and read: 13.38% Clark County Room Tax; the $55 resort fee is stated as "plus applicable tax." No separate itemized tax calculation is published. This Venetian rate is not copied to other hotels without property-specific support. | [Venetian hotel terms](https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html) | Corrected hotel data to leave tax blank for other properties; no total is calculated without date-specific rates. |
-| R18 | Venetian poker suite page | "Start as low as $119 and $209" for the Venetian or Palazzo, conditional on play. It does not say which rate belongs to which property. | [Poker suite rates](https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html) | Not used as a room rate. |
-| R19 | Time-sensitive | The first verified single-entry Venetian event is Nov 18, 11:10 AM. The Nov 16 and 17 events are multi-flight rows. | DSE IV event page | Confirm before travel. |
-| R20 | Coverage | No verified 2027 Las Vegas WSOP Circuit schedule. Search returned leads only. | Search only | Gap. See QUESTIONS.md. |
+Every source below was opened directly and read on **2026-11-16**. The full field-by-field log is in
+`research/structure-sheets-verification.md`.
 
-## 3. Corrections made during this review
+| Source | Coverage |
+|---|---|
+| `dse_nov_2026-structure_1.pdf` … `_37.pdf` | **37 of 37** |
+| `dse_dec_2026-structure_1.pdf` … `_15.pdf` | **15 of 15** |
+| `dse-nov-2026.html` | read in full, four chunks |
+| `dse-dec-2026.html` | read in full, two chunks |
+| `WPT_World_Championship_Schedule.pdf` | read in full, Nov 27 – Dec 21, 2026 |
+| `WPT_World_Championship_Structures.pdf` | read in full, eight sections |
+| `Wynn_Signature_Series_Schedule.pdf` | read in full, Jan 11 – 24, 2027 |
+| `Wynn_Signature_Series_Structures.pdf` | read - "COMING SOON" placeholder only |
+| Wynn daily poster and daily structures | read in full |
+| Venetian and Wynn hotel terms, resort fee, poker suite rates, map, booking engine, poker pages | read |
 
-Claims in the earlier drafts were checked against the official text. These were removed or corrected:
+No official source used by the dataset is left unread.
+
+## 3. Irregularities found and how each was handled
+
+| # | Area | Irregularity | Handling |
+|---|---|---|---|
+| R1 | Data completeness | The draft omitted **seven** November milestone-satellite rows and **thirteen** December milestone-satellite rows, plus the NYE Ante Up flight 1B on Dec 28, because the official event pages list them in rows the earlier draft did not transcribe. | All twenty-one rows added, with their own structure sheets (19, 24, 25 in November; 4, 5, 7 in December). |
+| R2 | Data completeness | The draft's Wynn WPT schedule was missing 43 printed rows: the Day 2, Day 3, Day 4 and final-table continuations, 28 milestone and satellite rows, and the December 16 block. | The WPT schedule was rebuilt row by row from the official PDF, including the published chip counts and level counts. |
+| R3 | Date correctness | The draft had several Wynn rows on the wrong date. The PDF prints one block under the heading "Dec. 18 Wednesday"; December 18, 2026 is a Friday and the PDF prints a separate "Dec. 18 Friday" block. | The block is stored as **December 16, 2026**, the only reading that also fits the World Championship day order. Every affected row carries the flag and the reasoning. |
+| R4 | Source conflict | The schedule PDF prints the December 21 $600 NLH Turbo at 8 p.m.; the $600 NLH Turbo structure sheet lists "Monday, December 21, 2026 at 6 p.m." | Both times kept, the schedule time stored, the conflict flagged on the row. |
+| R5 | Source conflict | The schedule PDF prints a buy-in in each "Day 2" row that belongs to a different event than the day it names. | The structure sheet is treated as authoritative for the day-to-event link, the printed value is kept in the row flag. |
+| R6 | Date typo | The NYE event page prints the Dec 26 rows as "Saturday, December 26, **2025**". | Stored as 2026-12-26 with the printed string and the reasoning in the row flag. |
+| R7 | Date typo | The NYE event page prints "Tuesaday" for the Jan 5, 2027 rows. | Stored as 2027-01-05 with the flag. |
+| R8 | Unsupported claim | The draft stated a Caesars Palace resort fee from a corporate disclaimer range that no page read in this session supports. | The claim and its source were removed. Caesars Palace fee and tax stay blank. |
+| R9 | Wrong URL | The draft pointed the Wynn Signature Series structures at a URL variant that was never fetched. | The fetched URL (`v1753296112`) is restored, and the row records that the file is a "COMING SOON" placeholder. |
+| R10 | Rule wording | The draft's generic "no re-entry clause" excerpt was applied to rows where the sheet says something more specific (clause 08 on the flight events, clause 07 on the PokerAtlas rows, clause 06 on NYE Event 29). | Each row now quotes its own clause. |
+| R11 | Payout and stack data | The draft carried starting stacks, level lengths, breaks and payout rules only for the two WPT structures that had been read. | All eight WPT structure sections were read, so every WPT row with a published sheet now carries the fee split, stack, level length, break rule and payout note. |
+| R12 | Entry status | The draft's separate section did not include the Wynn re-entry rows, so the published ranking mixed verified and unverified rows. | The separate section now holds all 105 rows that are not verified single entry. |
+| R13 | Schedule schema | `assets/app.js` read `days[].options`, but the generator emits `days[].events`, so the schedule page rendered nothing. | Fixed in both places, and `scripts/check_links.py` now checks the schedule schema. |
+| R14 | Missing data files | `data/daily.json`, `data/rates.json`, `data/venues.json` and `data/walking.json` were created by the earlier draft but were never validated, rendered or linked. | All four are generated, validated, rendered on their own pages and linked from the navigation. |
+
+## 4. Corrections made to earlier drafts
 
 | Earlier claim | What the source says | Action |
 |---|---|---|
-| Wynn registration opens 4 hours before start | Not found in any official text read. | Removed. The schedule prints a REG CLOSES time per event. |
-| Venetian event 58 date "Dec 19 from row position" | Event page prints Sat Dec 19, 5:10 PM. | Confirmed. |
-| Event 49 Seniors 1A on Dec 12 | Event page prints Sun Dec 13 (1A) and Mon Dec 14 (1B). | Corrected. |
-| Two WPT rows missing from the draft | Schedule prints HORSE $800 and PLO 6-Max $10,500 on Dec 18 at 1 PM. | Added. |
-| Typos "No LImit" on DSE IV schedule | Printed on the event page, not on the schedule PDF. | Re-attributed (R6). |
-| "$197.28 per night" example | Used unverified inputs. | Removed. |
-| "Venetian walk time 0 min" | No official source. | Set to blank. |
-| Palazzo "connected at casino level" | Not in any source read. | Removed. |
-| Venetian "payable at check-in" | Not in any source read. | Removed. |
-| WSOP "March and July 2026" | Not checked against a source. | Replaced by R20. |
-| Hotel tax data applied the Venetian 13.38% rate to every hotel and questioned whether Venetian's fee was taxed | Full Venetian terms state the $55 fee is plus applicable tax; they do not verify other properties' tax rates. | Tax is retained only for The Venetian; other properties' tax and total-cost cells are blank pending property-specific confirmation. |
+| "Every structure sheet was verified" | At the start of this session only 16 of 37 November sheets and none of the December sheets had been read. | The claim was replaced with a per-sheet log, and the reading was completed. |
+| "Wynn registration opens 4 hours before start" | Not in the official text read. | Removed earlier. The schedules publish a registration close time. |
+| "$197.28 per night" hotel example | Used unverified inputs. | Removed earlier. |
+| "Venetian walk time 0 min" | No official source. | Blank; each walking record now carries a route link instead. |
+| Hotel tax applied to every property | The Venetian terms state 13.38% for the Venetian only. | Tax kept for The Venetian only. |
+| Caesars corporate fee range | Not supported by a page read here. | Removed this session. |
+| Wynn WPT rows on Dec 18 for PLO 6-Max, HORSE and the $1,100 flights | Those rows are printed under "Dec. 18 Wednesday". | Moved to Dec 16 with the reasoning stored on each row. |
 
-## 4. Verification method
+## 5. Verification method
 
-1. Primary sources only (venue or operator domains). Third-party sites were used to find events and hotels, never as a value source.
-2. Each row is copied from the official schedule or event page. Buy-in and guarantee come from those pages.
-3. Single-entry status requires the official structure sheet to be read. The sheet must show no re-entry, rebuy or add-on language and no flight clause.
-4. Hotel resort fees come from official pages or official excerpts. Where only an excerpt was read, it is labelled "search excerpt".
+1. Primary sources only (venue or operator domains). Third-party sites were used to find events and
+   hotels, never as a value source.
+2. Each row is copied from the official schedule or event page. Buy-in, guarantee, chips and level
+   count come from those pages.
+3. Single-entry status requires the official structure sheet to be read. The sheet must show no
+   re-entry, rebuy, add-on or flight language.
+4. Every rule field carries the clause text it came from, the source label, the source URL and the
+   date the source was read.
 5. Missing or conflicting values are left blank and flagged. Nothing is inferred.
 
-## 5. Source log
+## 6. Source log
 
 | Source | URL | Read how | Used for |
 |---|---|---|---|
-| Venetian DSE IV schedule (PDF) | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf | Chunks 0-1 | All DSE IV rows |
-| Venetian DSE IV event page | https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html | Chunks 0-2 of 4 (chunk 3 not read) | Explicit dates and structure links |
-| Venetian DSE NYE event page | https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html | Chunks 0-1 | NYE rows |
-| Venetian DSE IV structure sheets: 1, 2, 3, 5-17 | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_{N}.pdf | Read (earlier session) | Single-entry checks, house fee |
-| Structure sheets 2, 3, 9, 10, 12, 13, 14, 15 | same pattern | Read this session | Clause 08 check; house fee for sheet 15 |
-| Venetian DeepStack home | https://venetianpokerroom.blog/ | Read | Navigation only |
-| Wynn WPT World Championship schedule (PDF) | https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf | Chunks 0-1 | WPT rows, footnotes, phone and website |
-| Wynn WPT structures (PDF) | https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf | Chunks 0-1 of 8 | $600 NLH re-entry terms |
-| Wynn Signature Series schedule (PDF) | https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf | Read | Signature Series rows |
-| Wynn poker page | https://www.wynnlasvegas.com/casino/poker | Read (earlier session) | Series dates |
-| Wynn terms (resort fee) | https://www.wynnlasvegas.com/terms-and-conditions/848671 | Search excerpt | Fee $55 plus tax |
-| Venetian resort fee | https://www.venetianlasvegas.com/resort/resort-fee.html | Search excerpt | Fee $55 plus tax |
-| Venetian hotel terms | https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html | Full page fetched, chunks 0–1, 2026-11-16 | 13.38% Clark County Room Tax; $55 resort fee plus applicable tax |
-| Venetian poker suite rates | https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html | Read (earlier session) | Conditional suite rates; $55 fee |
-| Caesars disclaimer | https://www.caesars.com/corporate/disclaimer | Search excerpt | General fee range |
-| Bellagio home page | https://bellagio.mgmresorts.com/en.html | Read 2026-11-16 | Identifies Bellagio as an MGM property; no fee/tax value claimed |
-| ARIA home page | https://aria.mgmresorts.com/en.html | Read | Official domain; no fee terms found |
+| Venetian DSE IV event page | https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html | Chunks 0-3 of 4 | Dates, times, guarantees, structure links |
+| Venetian DSE NYE event page | https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html | Chunks 0-1 of 2 | Dates, times, guarantees, structure links |
+| Venetian DSE IV structure sheets 1-37 | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_{N}.pdf | Read directly | Entry rules, fee split, levels, stacks, late registration |
+| Venetian DSE NYE structure sheets 1-15 | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_{N}.pdf | Read directly | Entry rules, fee split, levels, stacks, late registration |
+| Venetian DSE IV schedule PDF | https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf | Read | Row order, footnotes |
+| Venetian hotel terms | https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html | Chunks 0-1 | 13.38% Clark County Room Tax, $55 resort fee, parking, deposit and cancellation |
+| Venetian resort fee | https://www.venetianlasvegas.com/resort/resort-fee.html | Read | Fee confirmation |
+| Venetian poker suite rates | https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html | Read | Conditional suite rates, $55 fee |
+| Venetian poker page and map | https://www.venetianlasvegas.com/resort/casino/poker.html, https://www.venetianlasvegas.com/content/dam/vlvweb/resort/map.pdf | Read | Poker room location, 50 tables, parking benefit |
+| Venetian booking engine | https://www.venetianlasvegas.com/book | Read | Dated quote, Nov 26-29 2026 |
+| Wynn WPT schedule PDF | https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf | Chunks 0-1 | Every WPT row, chips, levels, footnotes |
+| Wynn WPT structures PDF | https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf | Chunks 0-7 of 8 | Fee splits, stacks, levels, breaks, payouts, action clock, day lists |
+| Wynn Signature Series schedule PDF | https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf | Read | Every Signature Series row |
+| Wynn Signature Series structures PDF | https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf | Read | Confirmed "COMING SOON" placeholder |
+| Wynn daily poster and structures | https://cdn.wynnresorts.com/image/upload/v1752011166/.../poker-daily-tournament-poster.pdf, https://cdn.wynnresorts.com/image/upload/v1752011191/.../Poker-All_Daily_Structures.pdf | Read in full | Daily formats, fee splits, levels, cut-offs |
+| Wynn offer terms | https://www.wynnlasvegas.com/terms-and-conditions/848671 | Read | $55 plus tax resort fee, deposit and cancellation terms |
+| Wynn facts page | https://www.wynnlasvegas.com/ai-information | Read | Address, resort fee, parking, check-in and check-out |
+| Wynn parking | https://www.wynnlasvegas.com/about-us/parking | Read | Parking terms |
+| Wynn poker page | https://www.wynnlasvegas.com/casino/poker | Read | Series links, daily suspension note |
+| ARIA poker page | https://aria.mgmresorts.com/en/casino/poker.html | Read | 24 tables, player rates by phone or e-mail |
+| Bellagio home page | https://bellagio.mgmresorts.com/en.html | Read | Identifies the property; no fee or tax value claimed |
+| Caesars Palace page | https://www.caesars.com/caesars-palace | Read | Address only; no fee or tax value claimed |
 
-Third-party sites (vegaspokercalendar.com, pokernews.com, pokerfuse.com, mttdb.com, pokeratlas.com, pokerscout.com and others) were used to locate events and hotels only. They are not cited on any row.
+Third-party sites were used to locate events and hotels only. They are not cited on any row.
 
-## 6. Build and data checks
+## 7. Build and data checks
 
-- `scripts/build_data.py` regenerates `data/tournaments.json`, `data/hotels.json` and `data/schedule.json` from the rows in the script.
-- `scripts/check_links.py` checks that the site's local links and JSON files resolve.
-- Current counts: 225 official rows. Single entry 33 (Venetian DSE IV). Separate section 21 (15 possible multi-entry, 6 re-entry). Unverified 171.
-- Unique row IDs: checked (`r001`-`r225`).
+- `scripts/build_data.py` regenerates every file in `data/` from the verified rows and the structure
+  sheets. It also writes `data/row_snapshot.json`, the fingerprint used for changed-row detection.
+- `scripts/build_site.py` regenerates `index.html` and every page in `pages/`.
+- `scripts/check_links.py` validates the JSON schemas, every local link, every source host, and the
+  `data-page` attribute of every generated page.
+- `scripts/monitor_sources.py` checks every official URL and reports the rows that changed.
+- `scripts/smoke_test.js` renders every generated page in a headless DOM and fails on any page error.
+- Current counts: **316 rows**. Single entry 80 (60 cash, 20 milestone satellites). Separate section
+  105 (60 possible multi-entry, 45 re-entry). Unverified 129. Continuation rows 43.
+- Row IDs are unique and assigned after the chronological sort (`r001` to `r316`).

@@ -1,0 +1,99 @@
+{
+ "verified_on": "2026-11-16",
+ "rows": [
+  {
+   "id": "daily-mon-thu",
+   "name": "$200 No Limit Hold'em (daily)",
+   "days": "Monday-Thursday",
+   "start": "12:00",
+   "buy_in_usd": 200,
+   "guarantee_usd": 10000,
+   "status": "RE",
+   "labels": [
+    "recurring",
+    "re-entry"
+   ],
+   "fee": "Entry Fee: $200 Buy-in = $162 (Tournament prize pool) + $26 (Tournament fee) + $12 (Poker staff service charge)",
+   "ex": "Clause 3: \"The Tournament entry fee, as well as the re-entry fee, is $200\"; clause 4: \"Registration and re-entries will be available until the start of level 9 (approximately 4:30 p.m.)\"",
+   "late": "16:30",
+   "levels": 28,
+   "lmin": 30,
+   "stack": "Clause 5: \"Players will start with 25,000 in Tournament chips.\""
+  },
+  {
+   "id": "daily-fri",
+   "name": "$240 No Limit Hold'em Rebuy & Add-on (daily)",
+   "days": "Friday",
+   "start": "12:00",
+   "buy_in_usd": 240,
+   "guarantee_usd": 40000,
+   "status": "REBUY",
+   "labels": [
+    "recurring",
+    "rebuy",
+    "add-on"
+   ],
+   "fee": "Entry Fee: $240 of which $190 funds the prize pool, $35 tournament fee, $15 staff service charge; $200 rebuys and $100 add-ons are charged extra",
+   "ex": "Clause 4: \"Re-entry is NOT allowed. All rebuys must be done immediately from the player's original seat.\" Clause 5: \"Unlimited $200 rebuys for 25,000 tournament chips are available any time a player is at 15,000 chips or less. One (1) $100 add-on for 15,000 tournament chips is available any time until the end of registration.\"",
+   "late": "16:30",
+   "levels": 28,
+   "lmin": 30,
+   "stack": "Clause 5: \"Players will start with 25,000 in Tournament chips.\""
+  },
+  {
+   "id": "daily-weekend",
+   "name": "$200 No Limit Hold'em (daily)",
+   "days": "Saturday-Sunday",
+   "start": "12:00",
+   "buy_in_usd": 200,
+   "guarantee_usd": 25000,
+   "status": "RE",
+   "labels": [
+    "recurring",
+    "re-entry",
+    "add-on"
+   ],
+   "fee": "Entry Fee: $200 Buy-in = $162 (Tournament prize pool) + $26 (Tournament fee) + $12 (Poker staff service charge)",
+   "ex": "Clause 3: \"The Tournament entry fee, as well as the re-entry fee, is $200\"; clause 4: \"Registration, re-entries, and one (1) add-on per entry will be available until the start of level 11 (approximately 5:30 p.m.)\"",
+   "late": "17:30",
+   "levels": 28,
+   "lmin": 30,
+   "stack": "Clause 5: \"Players will start with 25,000 in Tournament chips.\""
+  },
+  {
+   "id": "daily-nightly",
+   "name": "$160 No Limit Hold'em nightly (daily)",
+   "days": "Monday-Sunday",
+   "start": "18:00",
+   "buy_in_usd": 160,
+   "guarantee_usd": 10000,
+   "status": "RE",
+   "labels": [
+    "recurring",
+    "re-entry",
+    "add-on"
+   ],
+   "fee": "Entry Fee: $160 Buy-in = $130 (Tournament prize pool) + $20 (Tournament fee) + $10 (Poker staff service charge)",
+   "ex": "Clause 3: \"The Tournament entry fee, as well as the re-entry fee, is $160\"; clause 4: \"Registration, re-entries, and one (1) add-on per entry will be available until the start of level 9 (approximately 9:00 p.m.)\"",
+   "late": "21:00",
+   "levels": 30,
+   "lmin": 20,
+   "stack": "Clause 5: \"Players will start with 25,000 in Tournament chips.\""
+  }
+ ],
+ "note": "Recurring daily tournaments published by Wynn Las Vegas. The official poker page states: \"The Daily Tournament schedule will be suspended during each Wynn Signature, Wynn Millions, and Classic tournament series.\" Read 2026-11-16.",
+ "sources": [
+  {
+   "label": "Official daily tournament poster",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf"
+  },
+  {
+   "label": "Official daily tournament structures",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf"
+  },
+  {
+   "label": "Official poker room page",
+   "url": "https://www.wynnlasvegas.com/casino/poker"
+  }
+ ]
+}

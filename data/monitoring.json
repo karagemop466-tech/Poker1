@@ -1,0 +1,368 @@
+{
+ "checked_at": "2026-11-16",
+ "sources_total": 59,
+ "sources_ok": 0,
+ "sources_unreachable": 59,
+ "sources_http_error": 0,
+ "rows_total": 316,
+ "rows_changed": 0,
+ "rows_added": 0,
+ "rows_removed": 0,
+ "sources": {
+  "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 78,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 68,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 28,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 37,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 100,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_1.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 36,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_10.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 38,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_11.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 28,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_12.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 35,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_13.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 29,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_14.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 29,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_15.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 28,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_2.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 29,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_3.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 28,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_4.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 28,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_5.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 32,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_6.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 28,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_7.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 28,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_8.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 29,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_9.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 29,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 28,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 29,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 28,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 28,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 28,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 28,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 28,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_16.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 28,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 28,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 29,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_19.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 28,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_2.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 28,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_20.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 28,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 28,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_22.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 28,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_23.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 28,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_24.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 30,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_25.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 28,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_26.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 28,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_27.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 30,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_28.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 28,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_29.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 28,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 28,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_30.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 28,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_31.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 28,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 28,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_33.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 28,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_34.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 28,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 28,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 28,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_37.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 28,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 28,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 28,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_6.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 28,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 28,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 28,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 28,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 28,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  },
+  "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html": {
+   "status": "unreachable",
+   "http_status": null,
+   "elapsed_ms": 28,
+   "error": "<urlopen error TLS/SSL connection has been closed (EOF) (_ssl.c:992)>"
+  }
+ },
+ "note": "Status is the HTTP result of fetching each official URL on the date shown. 'unreachable' means the host did not answer from the machine that ran the check; it does not by itself mean the page changed."
+}

@@ -1,0 +1,29 @@
+{
+ "verified_on": "2026-11-16",
+ "entries": [
+  {
+   "logged_on": "2026-11-16",
+   "property": "The Venetian Resort / The Palazzo",
+   "room": "Palazzo Luxury King",
+   "offer": "Book Direct: Up to 25% Off (best available rate shown by the official booking engine)",
+   "arrival": "2026-11-26",
+   "departure": "2026-11-29",
+   "nights": 3,
+   "occupancy": "2 adults",
+   "nightly_average_usd": 709.25,
+   "resort_fee_per_night_usd": 55.0,
+   "nightly_rates_usd": [
+    261.75,
+    1274.25,
+    426.75
+   ],
+   "taxes_total_usd": 284.69,
+   "checkout_total_usd": 2412.44,
+   "true_cost_per_night_usd": 804.15,
+   "true_cost_method": "checkout total (room + resort fee + taxes) / 3 nights",
+   "caveat": "Best-available quote for these exact dates and occupancy at the time of retrieval. Rates move with availability; re-check the official booking engine before paying.",
+   "source": "https://www.venetianlasvegas.com/book",
+   "retrieved_on": "2026-11-16"
+  }
+ ]
+}
