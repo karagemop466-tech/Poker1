@@ -28,7 +28,11 @@ row itself says what is odd about it.
 | F18 | Typos printed on official schedules: "No LImit" on the DSE IV event page; "BadugI" and "NIH" for NLH on the WPT schedule. | DSE IV event page, WPT schedule PDF | Names are kept as printed. |
 | F19 | The WPT schedule prints several "Day 2", "Day 3", "Day 4" and "Final Table" rows with no buy-in, no guarantee, no chips and no level count, and does not name the parent event. | Same schedule PDF | Those rows are marked as continuations with no parent stated, and say so. |
 
-| Scheduled check never ran | `.github/workflows/monitor.yml` used a `name:` key inside its `schedule:` entry. The workflow schema accepts only `cron` there, so the daily source check never fired and `data/monitoring.json` still shows a run made from a sandbox where every operator domain was unreachable (0 of 59 sources). | Fixed by removing the unsupported key. The parallel provenance job (`scripts/check_source_facts.py`, weekly) does run in GitHub Actions and reports 68 of 71 sources fetched, which is the reachability evidence the monitoring page is still missing. |
+### Repository irregularity found during integration
+
+| # | Irregularity | Handling |
+|---|---|---|
+| F20 | `.github/workflows/monitor.yml` used a `name:` key inside its `schedule:` entry. The workflow schema accepts only `cron` there, so the daily source check never fired, and `data/monitoring.json` still shows a run made from a sandbox where every operator domain was unreachable (0 of 59 sources). | Fixed by removing the unsupported key, so the daily job will now run. The parallel provenance job (`scripts/check_source_facts.py`, weekly) already runs in GitHub Actions and reports 68 of 71 sources fetched, which is the reachability evidence the monitoring page is still missing. |
 
 ## B. Items with no official value (left blank)
 
