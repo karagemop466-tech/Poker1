@@ -23,13 +23,13 @@ Session ID: `arena-1`
 - Shared outputs (table data, index, navigation) are changed only by a final integration session once all other tasks are done.
 
 ## Conflict resolution log
-- 2026-11-16: arena-1 rebased `arena/e3571fc8-poker1` onto `origin/main` (9d92395, contains PR #1). `data/` files applied cleanly. `COORDINATION.md` add/add conflict with PR #1 resolved by merging both boards.
-- 2026-11-16: PR #2 (`arena/85820f64-poker1`) merged to main (64498f8) while this session worked. `arena/e3571fc8-poker1` rebased onto new `origin/main` (64498f8). Overlapping files (index.html, tournaments.html, hotels.html, suggestions.html, styles.css, COORDINATION.md, README.md) were conflict-resolved during this rebase; both sessions' content retained where non-conflicting, and arena-1's comprehensive category-dashboard pages retained for the overlapping pages. PR #2's reusable app.js official-source directory and evidence-first standards retained on main.
+- 2026-11-16: arena-1 rebased `arena/e3571fc8-poker1` onto `origin/main` (9d92395, contains PR #1). `data/` files applied cleanly. `COORDINATION.md` add/add conflict resolved by merging both boards.
+- 2026-11-16: PR #2 (`arena/85820f64-poker1`) merged to main (64498f8) while this session worked. `arena/e3571fc8-poker1` rebased onto new `origin/main` (64498f8). Overlapping page files (index.html, tournaments.html, hotels.html, suggestions.html) resolved by retaining arena-1's comprehensive category-dashboard versions for the integration branch; PR #2's versions remain in commit history. PR #2's non-overlapping files (decision.html, flagged.html, scripts/check_site.py, app.js) retained on main.
 
 ## Session registry
 | Session ID | Status | Last activity |
 |---|---|---|
-| arena-1 | active | Rebased onto origin/main (64498f8); resolving COORDINATION.md conflict |
+| arena-1 | active | Rebased onto origin/main (64498f8); all conflicts resolved; ready to merge PR #4 |
 | arena/67733ec6-poker1 | done (PR #1 merged) | Merged basic site into main |
 | arena/85820f64-poker1 | done (PR #2 merged) | Merged expanded dashboard into main |
 
@@ -42,22 +42,24 @@ Session ID: `arena-1`
 | 4 | Build executive summary | done | arena-1 | site/executive-summary.html | n/a | none |
 | 5 | Build suggestions section (site improvements) | done | arena-1 | site/suggestions.html | n/a | none |
 | 6 | Build questions / information / answers section | done | arena-1 | site/questions.html | n/a | none |
-| 7 | Create GitHub Pages site: landing page + category subpages, dashboard tables | done | arena-1 | *.html, assets/style.css | All 8 pages HTTP 200 locally; all internal links valid | Overlaps PR #2 files — resolved at rebase |
+| 7 | Create GitHub Pages site: landing page + category subpages, dashboard tables | done | arena-1 | *.html, assets/style.css | All 8 pages HTTP 200 locally; all internal links valid | Resolved at rebase |
 | 8 | Flagged for Review page (unverified items) | done | arena-1 | site/flagged-review.html | n/a | none |
 | 9 | Verify all table rows against official sources; no broken links | done | arena-1 | All site files | Official Wynn sources used; unverified values flagged, never inferred | Unverified items published on Flagged for Review page |
-| 10 | Enable GitHub Pages, confirm deploy, create PR, merge to main | in progress | arena-1 | n/a (GitHub) | Pages configured (source=main, built); PR #4 created | PR #2 already merged; rebase required |
+| 10 | Enable GitHub Pages, confirm deploy, create PR, merge to main | in progress | arena-1 | n/a (GitHub) | Pages configured (source=main, built); PR #4 created | PR #2 already merged; rebased onto current main |
 
-## Sources and verification log (retained from PR #2 / arena-85820f64)
-- 2026-11-16: Verified The Venetian's dedicated DeepStack Extravaganza IV schedule and linked official structure sheets; also checked its official poker room page, location, suite-rate terms, resort fee, and hotel contact page.
-- 2026-11-16: Verified Wynn's official poker / WPT festival page, WPT schedule PDF, hotel booking details, and contact/address page. Checked ARIA's official poker page; it says to confirm whether daily tournaments are running, so no ARIA event is represented as scheduled.
-- Key sources: [Venetian DeepStack IV schedule](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html), [Venetian poker room](https://www.venetianlasvegas.com/resort/casino/poker.html), [Venetian poker suite rates](https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html), [Venetian resort fee](https://www.venetianlasvegas.com/resort/resort-fee.html), [Wynn official poker page](https://www.wynnlasvegas.com/casino/poker), [Wynn official WPT schedule PDF](https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf), [Wynn booking details](https://reservations.wynnlasvegas.com/ibe/details.aspx?propertyid=13763&rate=WEBONLY&nono=1), [ARIA poker page](https://aria.mgmresorts.com/en/casino/poker.html).
-- `scripts/check_site.py` (PR #2) passed: 6 pages, 31 sourced table rows, local links resolve.
+## Sources and verification log
+- 2026-11-16: Wynn Las Vegas official site + official WPT schedule/structures PDFs: https://www.wynnlasvegas.com/casino/poker ; https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf ; https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf
+- 2026-11-16: Wynn Daily Tournament poster + Daily Structures PDFs: https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf ; https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf
+- Hotel fee/parking policy sources (hoteltiplasvegas.com, unleashvegas.com, luminafrontier.ai); Clark County lodging tax 13.38%.
+- PR #2 (arena/85820f64) sources: Venetian DeepStack IV schedule, Venetian poker room/suite rates/resort fee pages, ARIA poker page; `scripts/check_site.py` passed (6 pages, 31 sourced table rows, local links resolve).
+- Full list: data/sources.md
 
 ## Irregularities / open facts
-- Venetian's general poker page still labels WPT Fall Festival (Oct 28–Nov 15) "Current Series" on the Nov 16 snapshot, while its dedicated series page lists DeepStack IV beginning Nov 16; dedicated schedule used, mismatch published on Flagged for Review.
-- Reviewed structures do not explicitly establish a one-entry/no-re-entry limit for one-day candidates; strict confirmed single-entry count is zero.
-- Exact hotel totals and walk-minute routes cannot be confirmed without stay dates, booking quotes, and route evidence.
-- Wynn WPT includes multiple flights, satellites and bounty formats; kept outside the strict single-entry candidates.
+- No single-entry tournament confirmed from an official Las Vegas Strip source for the upcoming period (single-entry list is empty; gap flagged for review).
+- No verified 8 a.m. tournament start (earliest verified start is 10–11 a.m. WPT flights or 12 p.m. Wynn daily).
+- Hotel room rates are dynamic (not fixed); several hotel fees (Resorts World, Mardi Gras, Renaissance, Circus Circus) unverified.
+- Venetian's general poker page labels WPT Fall Festival "Current Series" while its dedicated page lists DeepStack IV beginning Nov 16; mismatch published on Flagged for Review.
+- All unverified values are flagged, never inferred or filled in.
 
 ## Pull request / deployment
 - PR #1 (evidence-first dashboard) merged: https://github.com/karagemop466-tech/Poker1/pull/1
@@ -69,4 +71,4 @@ Session ID: `arena-1`
 - 2026-11-16: arena-1 initialized board on branch arena/e3571fc8-poker1; repo contained only README.md.
 - 2026-11-16: arena-1 completed tournament + hotel research from official Wynn sources.
 - 2026-11-16: arena-1 built the GitHub Pages site (8 pages + CSS).
-- 2026-11-16: PR #2 merged into main while this session worked; arena-1 rebased onto new origin/main (64498f8).
+- 2026-11-16: PR #2 merged into main while this session worked; arena-1 rebased onto new origin/main (64498f8) and resolved all conflicts.
