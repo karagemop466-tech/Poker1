@@ -54,7 +54,7 @@ Branch `arena/e73e692a-poker1`. Tasks T1–T7 are claimed and tracked here; shar
 | T4 | Schedule builder (8 AM all-day plan), executive summary, analysis | done | e73e692a | `data/schedule.json`, `EXECUTIVE_SUMMARY.md`, `research/analysis.md`, `pages/schedule.html` |
 | T5 | Suggestions for site improvement + Questions / Info-gap register | done | e73e692a | `SUGGESTIONS.md`, `QUESTIONS.md` |
 | T6 | Static site: landing page, category subpages, Flagged for Review page | done | e73e692a | `assets/style.css`, `pages/*.html` (index and nav reserved for T7) |
-| T7 | Final integration: merge, re-verify combined data, build/link check, PR, merge, Pages deploy check | in progress | e73e692a | all shared outputs (`index.html`, nav, merged table data) |
+| T7 | Final integration: merge, re-verify combined data, build/link check, PR, merge, Pages deploy check | done | e73e692a | all shared outputs (`index.html`, nav, merged table data, `.github/workflows/pages.yml`) |
 
 ## Task log
 
@@ -63,3 +63,15 @@ Branch `arena/e73e692a-poker1`. Tasks T1–T7 are claimed and tracked here; shar
 - Repo at claim time: only `README.md` (`# Poker1`), one commit `c16071b Initial commit`, no existing claims, Pages already enabled (legacy, `main` `/`).
 - T1–T6 completed on `arena/e73e692a-poker1`. Data rows were re-verified against the official Venetian schedule on 2026-11-16 (all 4 chunks). Flagged items (not blocking) are on `flagged.html`: Bellagio Saturday price conflict (IR-1), Wynn hotel offer conflict and dead official page, Caesars and Bellagio fees unverified, RWLV / MGM Grand / Aria poker pages unavailable, 16 Venetian structure sheets not read (events unranked).
 - T7 claimed for session `e73e692a`. Integration will build `index.html` and nav, run link and JSON checks, open a PR into `main`, merge it, and record the PR link and merge result below.
+
+### Integration record (e73e692a, T7)
+
+- Integration merged `origin/main` (PR #1, #2 and claim PR #6 from other sessions) into `arena/e73e692a-poker1`. Conflicts resolved: `index.html` replaced by the new dashboard index; `scripts/check_site.py` kept as the other session's validator (allowed hosts extended for Bellagio, Caesars, RWLV and MGM Grand official pages); our checker is `scripts/check_site_integration.py`; `COORDINATION.md` combined (both boards kept). Other session's `decision.html`, `suggestions.html`, `styles.css`, `app.js` kept and linked from our nav.
+- Pages now serves a flat root site: `index.html`, `tournaments.html`, `excluded.html`, `hotels.html`, `schedule.html`, `flagged.html`, `review.html`, plus `assets/` and `data/`. Workflow staging updated to copy these.
+- Both validators passed before merge: `python3 scripts/check_site.py` (6 pages, 74 sourced table rows) and `python3 scripts/check_site_integration.py` (7 generated pages, 47 candidate, 16 excluded, 136 unranked rows, all with official links).
+- Pull request: https://github.com/karagemop466-tech/Poker1/pull/5 (`arena/e73e692a-poker1` into `main`).
+- Merge result: MERGED at 2026-11-16T18:45:55Z, merge commit `529570fb900a7e0a082713d4089db0f569541fd9`, merged with a merge commit (no approval wait; no `--auto`).
+- Pages deploy: run 43932265271 on `main` at 529570f: validate success, deploy success. Live check: https://karagemop466-tech.github.io/Poker1/tournaments.html returns the new single-entry candidates page.
+- This record is committed on `arena/e73e692a-poker1` after the merge, so it is not on `main`. Record-only change; no site content depends on it.
+- Open flags (non-blocking, see `flagged.html`): explicit single-entry wording not found on structure sheets (strict count 0); Bellagio Saturday price conflict; Wynn hotel fee conflict; Caesars and Bellagio fees unverified; walking times unverified; 16 Venetian structure sheets not read.
+
