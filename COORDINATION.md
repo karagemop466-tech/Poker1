@@ -24,3 +24,4 @@ Not performed: no GitHub Pages configuration or repository remote workflow was p
 - PR #1: https://github.com/karagemop466-tech/Poker1/pull/1 — merged to `main` using merge commit.
 - Pages status immediately after merge: GitHub Pages API reported `building`; Actions run 43930072037 and Pages deployment run 43930069916 were queued. Live URL: https://karagemop466-tech.github.io/Poker1/ . Deployment success is not yet confirmed.
 - Validation: `node --check app.js`; `git diff --check`. GitHub reported no PR checks on the feature branch. Official source page review confirmed Wynn's Jan 11–24, 2027 series date window and Venetian's Oct 28–Nov 15, 2026 festival dates; individual entry terms remain unavailable/unchecked.
+- Deployment completed successfully: Actions run 43930072037 passed; Pages is live at https://karagemop466-tech.github.io/Poker1/ and the published HTML was fetched and reviewed. PR #1 merged successfully.
