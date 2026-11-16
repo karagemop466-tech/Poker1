@@ -1,15 +1,115 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Suggestions | Strip Poker Planner</title><link rel="stylesheet" href="styles.css"></head><body>
-<header class="topbar"><a class="brand" href="index.html"><span class="brand-mark">♠</span> Strip Poker Planner</a><nav aria-label="Main navigation"><a href="index.html">Overview</a><a href="tournaments.html">Tournaments</a><a href="hotels.html">Hotels</a><a href="decision.html">Decision brief</a><a class="active" href="suggestions.html">Suggestions</a><a href="flagged.html">Flagged for review</a></nav></header>
-<main class="wrap"><div class="page-title"><p class="eyebrow">PROPOSED IMPROVEMENTS · NOT YET IMPLEMENTED</p><h1>Suggestions for better decisions</h1><p class="lead">This page keeps enhancement ideas separate from verified findings. Choose which paths make sense before implementing more collection or scoring behavior.</p></div>
-<div class="notice notice-info"><strong>Selection principle:</strong> prioritize changes that close material decision gaps, preserve the source trail, and avoid false precision.</div>
-<div class="suggestion-list">
-<article class="suggestion"><div class="suggestion-top"><span class="priority">01 · highest impact</span><span class="status-tag">Recommended first</span></div><h2>Maintain an official-entry-policy registry</h2><p>For every event record: entry cap, re-entry allowed, re-entry cutoff, rebuy/add-on policy, multiple-flight rules, age restrictions, and date/time last confirmed. Keep “unknown” distinct from “no.” Contact venue directly where official schedules omit the rule.</p><p class="why"><b>Decision gain:</b> makes a genuinely strict single-entry filter possible. <b>Source basis:</b> current official Venetian structures omit explicit entry limits on the reviewed one-day events.</p><p class="source-line"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html">Official series schedule</a> · <a href="https://www.venetianlasvegas.com/resort/casino/poker.html">Official poker room contact</a></p></article>
-<article class="suggestion"><div class="suggestion-top"><span class="priority">02 · high impact</span><span class="status-tag">Recommended</span></div><h2>Add date-based hotel quote comparisons</h2><p>Only after arrival/departure dates and occupancy are known, capture room rate, mandatory resort fee, applicable taxes, parking, deposits, cancellation policy, and total stay divided by nights. Save the quote timestamp and official booking URL; recheck before purchase.</p><p class="why"><b>Decision gain:</b> compares actual nightly costs instead of headline rates. The two official operator sources publish mandatory $55 + tax resort fees and date-dependent booking information.</p><p class="source-line"><a href="https://www.venetianlasvegas.com/resort/resort-fee.html">Venetian official fee</a> · <a href="https://reservations.wynnlasvegas.com/ibe/details.aspx?propertyid=13763&rate=WEBONLY&nono=1">Wynn official booking details</a></p></article>
-<article class="suggestion"><div class="suggestion-top"><span class="priority">03 · high impact</span><span class="status-tag">Recommended</span></div><h2>Use a walkability check with route evidence</h2><p>Record address-to-entrance walking duration from a consistent mapping source, whether it is indoor/on-property, accessible route availability, and last-check time. Include an uncertainty buffer and flag major construction or pedestrian-route changes. Do not use straight-line distance as walking time.</p><p class="why"><b>Decision gain:</b> applies the 30-minute threshold in a repeatable and auditable way. Current official sources establish venue addresses and on-property locations but not route minutes.</p><p class="source-line"><a href="https://www.venetianlasvegas.com/resort/casino/poker.html">Venetian room location</a> · <a href="https://www.wynnlasvegas.com/about-us/directions">Wynn official directions</a></p></article>
-<article class="suggestion"><div class="suggestion-top"><span class="priority">04 · decision quality</span><span class="status-tag">Optional</span></div><h2>Replace “best tournament” with transparent filters and trade-offs</h2><p>Allow user-selected maximum buy-in, minimum official guarantee, eligible game/format, confirmed one-entry policy, age eligibility, and preferred start-time range. Show guarantee/buy-in only as a computed screening ratio, clearly marked not expected value. Let users sort, not hide, the underlying source facts.</p><p class="why"><b>Decision gain:</b> separates personal preference from venue facts and avoids presenting a computed ratio as a prediction.</p><p class="source-line"><a href="tournaments.html">Current candidate analysis</a> · <a href="decision.html">Current decision gates</a></p></article>
-<article class="suggestion"><div class="suggestion-top"><span class="priority">05 · schedule quality</span><span class="status-tag">Optional</span></div><h2>Model event conflicts and actual play duration</h2><p>Store registration close, blind level length, break pattern, scheduled restart, expected finish range (only if venue-published), and overlap. Generate a daily plan with one event at a time and clearly show unfillable hours. Do not promise multi-event play from start times alone.</p><p class="why"><b>Decision gain:</b> prevents impossible plans and addresses the 8 AM-to-late goal with the actual calendar.</p><p class="source-line"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html">Official schedule</a></p></article>
-<article class="suggestion"><div class="suggestion-top"><span class="priority">06 · trust / maintenance</span><span class="status-tag">Recommended</span></div><h2>Automate source freshness and broken-link checks</h2><p>For every row, store last-checked date, official/secondary provenance, source status, and a “changed since last review” note. Run scheduled link checks and flag a row rather than retaining stale guarantees or prices silently. Keep official links primary.</p><p class="why"><b>Decision gain:</b> tournament schedules, fee pages, and offers can change after this snapshot.</p><p class="source-line"><a href="https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html">Official schedule</a> · <a href="https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html">Official hotel terms</a></p></article>
-</div>
-<div class="callout compact"><div><p class="eyebrow">NO CHANGES MADE FROM THIS PAGE</p><h2>Choose a direction before expanding.</h2><p>Recommended first: entry policy + dated total room quote + route evidence. These directly address the biggest blockers; ranking weights and automated ingestion can follow later.</p></div><a class="button" href="decision.html">Back to the decision brief</a></div>
-<footer>Ideas are proposals only. None should be treated as user-approved implementation decisions.</footer></main></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suggestions — Poker1 Las Vegas Strip Planner</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-wrap">
+    <a class="brand" href="index.html"><span class="mark">P1</span>Poker1</a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="tournaments.html">Tournaments</a>
+      <a href="hotels.html">Hotels</a>
+      <a href="schedule.html">Schedule</a>
+      <a href="executive-summary.html">Executive Summary</a>
+      <a href="questions.html">Questions &amp; Answers</a>
+      <a class="active" href="suggestions.html">Suggestions</a>
+      <a class="btn-ghost" href="flagged-review.html" style="padding:6px 12px;font-size:0.82rem;margin-left:8px;">Flagged for Review</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <main class="page">
+    <h2 class="section-title"><span class="num">5</span>Suggestions &mdash; Site &amp; Decision-Making Improvements</h2>
+    <p class="lead">Suggestions for improving the site and your decision-making. Review these and choose the best path before implementing any changes. None are implemented yet.</p>
+
+    <h3 class="section-title">A. Suggestions to improve decision making</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th><th>Suggestion</th><th>Why it helps</th><th>Effort</th><th>Priority</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="num">1</td><td>Add a "single-entry only" toggle/filter so the tournament table shows only freezeout events.</td><td>Directly serves your core requirement; hides re-entry/add-on events by default.</td><td>Low</td><td>High</td></tr>
+          <tr><td class="num">2</td><td>Add a "true cost per night" calculator: room rate + resort fee + tax + parking, with date picker.</td><td>Room rates are dynamic; a calculator lets you see the real per-night cost for your exact dates.</td><td>Medium</td><td>High</td></tr>
+          <tr><td class="num">3</td><td>Pull live tournament schedules from each venue's official page (or an official API) instead of static research.</td><td>Schedules change; live data prevents planning on stale dates/buy-ins.</td><td>High</td><td>High</td></tr>
+          <tr><td class="num">4</td><td>Add walking-distance &amp; drive-time estimates from each hotel to each tournament venue (with map links).</td><td>Makes the "reasonable distance / 30-minute walk" rule concrete per hotel&ndash;venue pair.</td><td>Medium</td><td>Medium</td></tr>
+          <tr><td class="num">5</td><td>Add a "bankroll planner" estimating total trip cost (buy-ins + re-entries + hotel + food + transport).</td><td>Helps decide how many tournaments you can realistically enter on a vacation budget.</td><td>Medium</td><td>Medium</td></tr>
+          <tr><td class="num">6</td><td>Flag every table cell whose value came from a third-party source (not the venue's official page).</td><td>Prevents decisions based on unverified leads like the Westgate freezeout.</td><td>Low</td><td>High</td></tr>
+          <tr><td class="num">7</td><td>Add a "last verified on" date to each table so users know how fresh the data is.</td><td>Poker schedules and hotel fees change seasonally.</td><td>Low</td><td>Medium</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="section-title">B. Suggestions to improve the site</h3>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th><th>Suggestion</th><th>Where it applies</th><th>Effort</th><th>Priority</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="num">1</td><td>Add a search/filter bar on the Tournaments page (by buy-in, guarantee, venue, date, entry type).</td><td>Tournaments</td><td>Low</td><td>High</td></tr>
+          <tr><td class="num">2</td><td>Add source links on every table row (already started) and a "Verify on official site" button per row.</td><td>All tables</td><td>Low</td><td>High</td></tr>
+          <tr><td class="num">3</td><td>Make the site mobile-responsive (tables already scroll horizontally; consider collapsible rows).</td><td>All pages</td><td>Low</td><td>High</td></tr>
+          <tr><td class="num">4</td><td>Add a print-friendly stylesheet so users can print the schedule and hotel comparison.</td><td>Schedule / Hotels</td><td>Low</td><td>Low</td></tr>
+          <tr><td class="num">5</td><td>Add a changelog showing when data was last re-verified against official sources.</td><td>Footer / each page</td><td>Low</td><td>Medium</td></tr>
+          <tr><td class="num">6</td><td>Host on GitHub Pages (this repo) and enable automatic deployment on push.</td><td>Site</td><td>Low</td><td>High</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3 class="section-title">C. Recommended order to implement</h3>
+    <ol>
+      <li>Enable GitHub Pages and confirm the live site builds with no broken links (this session).</li>
+      <li>Publish the Flagged for Review page so unverified items are visible before decisions.</li>
+      <li>Add the "single-entry only" toggle and the source/verification badges to every table row.</li>
+      <li>Add the true-cost hotel calculator with date picker.</li>
+      <li>Wire up live schedule pulls from official venue pages.</li>
+      <li>Add walking/drive-time estimates and the bankroll planner.</li>
+    </ol>
+
+    <div class="callout info">
+      <h4>How to use this section</h4>
+      <p>Review the suggestions above, pick the priority and effort that fit your constraints, and implement in the recommended order. No changes are made automatically &mdash; each suggestion is a decision point for you.</p>
+    </div>
+
+    <p class="small">Related: <a class="anchor-link" href="questions.html">Questions &amp; Answers</a> &bull; <a class="anchor-link" href="flagged-review.html">Flagged for Review</a> &bull; <a class="anchor-link" href="data/sources.md">Sources</a>.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="inner">
+    <div class="footer-grid">
+      <div>
+        <strong>Poker1</strong><br>
+        <span class="small">Las Vegas Strip poker tournament &amp; hotel planner.</span>
+      </div>
+      <div>
+        <strong>Navigation</strong><br>
+        <a class="anchor-link" href="index.html">Home</a><br>
+        <a class="anchor-link" href="tournaments.html">Tournaments</a><br>
+        <a class="anchor-link" href="hotels.html">Hotels</a><br>
+        <a class="anchor-link" href="schedule.html">Schedule</a><br>
+        <a class="anchor-link" href="executive-summary.html">Executive Summary</a><br>
+        <a class="anchor-link" href="questions.html">Questions &amp; Answers</a><br>
+        <a class="anchor-link" href="flagged-review.html">Flagged for Review</a>
+      </div>
+      <div>
+        <strong>Status</strong><br>
+        <span class="small">Suggestions are not implemented. Review before acting.</span>
+      </div>
+    </div>
+    <p class="small" style="margin-top:22px;border-top:1px solid var(--line);padding-top:16px;">Poker1 &bull; No hallucinated values.</p>
+  </div>
+</footer>
+</body>
+</html>

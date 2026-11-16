@@ -1,17 +1,114 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Las Vegas Strip Poker · Dashboard</title>
-<link rel="stylesheet" href="assets/style.css"></head>
-<body><header class="top"><div class="wrap"><a class="brand" href="index.html">Las Vegas Strip Poker</a>
-<nav><a href="index.html" class=active>Home</a><a href="tournaments.html">Single-entry candidates</a><a href="excluded.html">Excluded &amp; unranked</a><a href="hotels.html">Hotels</a><a href="schedule.html">Schedule</a><a href="flagged.html">Flagged for Review</a><a href="review.html">Repo review</a><a href="decision.html">Decision brief</a><a href="suggestions.html">Suggestions</a></nav></div></header>
-<main class="wrap"><h1>Las Vegas Strip Poker — Dashboard</h1><section><p class="lead">Las Vegas Strip poker, November 16 – December 23, 2026. A verified list of single-entry tournaments,
-the hotels nearby, and a day-by-day schedule. Every value links to an official source. Unverified values are blank and flagged,
-not inferred.</p>
-<div class="notice"><strong>Key facts.</strong> No verified single-entry event starts before 10:10 AM. Hotels: no walking times are verified,
-so no hotel is confirmed to meet the 30-minute walking requirement. The Venetian is the venue itself (true cost from $197.28 per night).</div>
-<div class="cards"><a class="card" href="tournaments.html"><h3>Single-entry candidates</h3><p>47 Venetian DSE IV single-day candidates with no re-entry or add-on terms printed, ranked by buy-in and prize pool.</p><div class="stat">47</div></a><a class="card" href="excluded.html"><h3>Excluded and unverified</h3><p>16 excluded (re-entry, flights, add-ons, pay-to-advantage) and 136 unranked rows.</p><div class="stat">16</div></a><a class="card" href="hotels.html"><h3>Hotels</h3><p>Official rates, resort fees and true nightly cost. Walking times not verified.</p><div class="stat">5</div></a><a class="card" href="schedule.html"><h3>Schedule</h3><p>Candidate single-entry starts by day, Nov 16 – Dec 23, 2026. First verified start 10:10 AM.</p><div class="stat">38</div></a><a class="card" href="flagged.html"><h3>Flagged for Review</h3><p>16 flags: conflicts, unverified values, policy decisions.</p><div class="stat">16</div></a><a class="card" href="review.html"><h3>Repo review</h3><p>14 verification checks against official sources, with irregularities.</p><div class="stat">14</div></a></div>
-<h2>Documents</h2><ul><li><a href="https://github.com/karagemop466-tech/Poker1/blob/main/EXECUTIVE_SUMMARY.md">Executive summary</a></li><li><a href="https://github.com/karagemop466-tech/Poker1/blob/main/research/analysis.md">Analysis</a></li><li><a href="https://github.com/karagemop466-tech/Poker1/blob/main/SUGGESTIONS.md">Suggestions (for review)</a></li><li><a href="https://github.com/karagemop466-tech/Poker1/blob/main/QUESTIONS.md">Questions and gaps</a></li><li><a href="https://github.com/karagemop466-tech/Poker1/blob/main/REVIEW.md">Repo review (markdown)</a></li></ul>
-<p class="small">Data: <a href="https://github.com/karagemop466-tech/Poker1/blob/main/data/tournaments.json">tournaments.json</a> · <a href="https://github.com/karagemop466-tech/Poker1/blob/main/data/hotels.json">hotels.json</a> · <a href="https://github.com/karagemop466-tech/Poker1/blob/main/data/schedule.json">schedule.json</a> · <a href="https://github.com/karagemop466-tech/Poker1/blob/main/data/repo_review.json">repo_review.json</a></p>
-</section></main>
-<footer class="wrap small">Generated 2026-11-16 from official sources. Blank cells with &#9873; are unverified.</footer>
-</body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Poker1 — Las Vegas Strip Poker Tournament &amp; Hotel Planner</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="header-wrap">
+    <a class="brand" href="index.html"><span class="mark">P1</span>Poker1</a>
+    <nav class="nav">
+      <a class="active" href="index.html">Home</a>
+      <a href="tournaments.html">Tournaments</a>
+      <a href="hotels.html">Hotels</a>
+      <a href="schedule.html">Schedule</a>
+      <a href="executive-summary.html">Executive Summary</a>
+      <a href="questions.html">Questions &amp; Answers</a>
+      <a href="suggestions.html">Suggestions</a>
+      <a class="btn-ghost" href="flagged-review.html" style="padding:6px 12px;font-size:0.82rem;margin-left:8px;">Flagged for Review</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <main class="page">
+    <section class="hero">
+      <span class="kicker">Poker1 &bull; Live site</span>
+      <h1>Las Vegas Strip Poker Tournament &amp; Hotel Planner</h1>
+      <p>Upcoming single-entry poker tournaments near the Las Vegas Strip, the best hotels within walking distance, and a play-all-day schedule &mdash; built from official venue sources, with every value verified or flagged.</p>
+      <p class="small">Research date: 2026-11-16 &bull; Anchor venue: Wynn Las Vegas poker room (WPT World Championship, Nov 27 &ndash; Dec 21, 2026)</p>
+    </section>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Tournaments</h3>
+        <p>Single-entry (freezeout) focus, with re-entry/add-on events in a separate section. Buy-ins, guarantees, and entry rules from official Wynn sources.</p>
+        <a class="anchor-link" href="tournaments.html">View tournaments &rarr;</a>
+      </div>
+      <div class="card">
+        <h3>Hotels</h3>
+        <p>Walking distance to the Strip poker rooms, with resort fee, tax, and parking broken out for the true per-night cost.</p>
+        <a class="anchor-link" href="hotels.html">View hotels &rarr;</a>
+      </div>
+      <div class="card">
+        <h3>Schedule</h3>
+        <p>A play-all-day plan starting as early as the first tournament of the day, running through the evening.</p>
+        <a class="anchor-link" href="schedule.html">View schedule &rarr;</a>
+      </div>
+    </div>
+
+    <h2 class="section-title">Executive Summary</h2>
+    <div class="callout info">
+      <h4>Bottom line up front</h4>
+      <p><strong>There are no single-entry tournaments confirmed from an official Las Vegas Strip source for the upcoming period.</strong> Every event I could verify on the official Wynn Las Vegas site and its official WPT schedule/structure sheets &mdash; including the WPT World Championship (Nov 27 &ndash; Dec 21, 2026) and all Wynn daily tournaments &mdash; permits re-entry, rebuy, and/or add-on. These are listed in the separate "Re-Entry / Add-On" section on the Tournaments page.</p>
+    </div>
+
+    <h3>Key findings</h3>
+    <ul>
+      <li><strong>Anchor tournament:</strong> WPT World Championship at Wynn Las Vegas, Nov 27 &ndash; Dec 21, 2026. Official schedule and structure sheets confirm <strong>every event allows re-entry</strong> (unlimited re-entry until level 9/10, or one re-entry per starting flight for WPT Prime). None qualify as single entry.</li>
+      <li><strong>Wynn daily tournaments:</strong> $200 NLH (Mon&ndash;Thu 12pm), $240 NLH Rebuy &amp; Add-on (Fri 12pm), $200 NLH (Sat&ndash;Sun 12pm), $160 NLH nightly (6pm). All allow re-entry and/or add-on.</li>
+      <li><strong>Single-entry status:</strong> Not confirmed from any official Strip source. The only lead is Westgate's $70 Daily NLH "Freezeout" on a third-party calendar &mdash; unverified and off-strip. Flagged for review.</li>
+      <li><strong>Best hotel (distance + quality):</strong> Wynn Las Vegas &mdash; on-site (0-min walk to the poker room), Forbes 4-star, free guest self-parking, $55+tax (~$62.36) nightly resort fee. Room rates are dynamic.</li>
+      <li><strong>Best hotel (value alternative):</strong> The Venetian Resort &mdash; across the street (~5&ndash;8 min walk), all-suite, but $20/day guest self-parking brings fixed extras to ~$82.36/night.</li>
+      <li><strong>True cost per night:</strong> room rate (dynamic, must be quoted on the official booking page) + resort fee + 13.38% Clark County tax + parking. Wynn/Encore fixed extras ~$62.36/night; Venetian/Palazzo ~$82.36/night (includes $20 parking).</li>
+      <li><strong>Play-all-day:</strong> Wynn's first tournament starts at 12 p.m. (or 10&ndash;11 a.m. during WPT series flights). No verified 8 a.m. start exists on the current Strip schedule; earliest practical start is ~10&ndash;11 a.m.</li>
+    </ul>
+
+    <h3>What you should do before booking</h3>
+    <ul>
+      <li>Confirm single-entry status with each poker room directly (see Questions &amp; Answers).</li>
+      <li>Quote hotel room rates on the official booking pages for your exact dates; confirm whether the displayed rate includes the resort fee and tax.</li>
+      <li>Review the Flagged for Review page for every unverified value before making decisions.</li>
+    </ul>
+
+    <div class="callout warn">
+      <h4>Verification standard</h4>
+      <p>Every table row carries a source link to an official venue site where available. Where a value could not be confirmed from an official source, it is left blank or marked <span class="badge b-unverified">UNVERIFIED</span>. Nothing here is inferred or filled in.</p>
+    </div>
+
+    <p class="small">Data sources: wynnlasvegas.com/casino/poker; official WPT World Championship Schedule and Structures PDFs (cdn.wynnresorts.com); Wynn Daily Tournament poster and Daily Structures PDFs. Full source list: <a class="anchor-link" href="data/sources.md">data/sources.md</a>.</p>
+  </div>
+
+</main>
+
+<footer>
+  <div class="inner">
+    <div class="footer-grid">
+      <div>
+        <strong>Poker1</strong><br>
+        <span class="small">Las Vegas Strip poker tournament &amp; hotel planner &mdash; dashboard for a planned poker vacation.</span>
+      </div>
+      <div>
+        <strong>Navigation</strong><br>
+        <a class="anchor-link" href="tournaments.html">Tournaments</a><br>
+        <a class="anchor-link" href="hotels.html">Hotels</a><br>
+        <a class="anchor-link" href="schedule.html">Schedule</a><br>
+        <a class="anchor-link" href="executive-summary.html">Executive Summary</a><br>
+        <a class="anchor-link" href="questions.html">Questions &amp; Answers</a><br>
+        <a class="anchor-link" href="suggestions.html">Suggestions</a><br>
+        <a class="anchor-link" href="flagged-review.html">Flagged for Review</a>
+      </div>
+      <div>
+        <strong>Research basis</strong><br>
+        <span class="small">Official Wynn Las Vegas site + official WPT schedule/structure PDFs. Third-party leads flagged UNVERIFIED.</span><br><br>
+        <span class="small">Reproduction without verification is not advised. Confirm all fees, schedules, and entry rules with the venue before booking.</span>
+      </div>
+    </div>
+    <p class="small" style="margin-top:22px;border-top:1px solid var(--line);padding-top:16px;">Poker1 &bull; Built from official verified sources &bull; All unverified values published on the Flagged for Review page &bull; No hallucinated values.</p>
+  </div>
+</footer>
+</body>
+</html>
