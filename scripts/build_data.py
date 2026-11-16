@@ -1422,7 +1422,11 @@ VENUES = [
  {"id": "wynn", "name": "Wynn Las Vegas", "poker_room": "Wynn Las Vegas poker room, located in Encore at Wynn Las Vegas",
   "address": "3131 Las Vegas Blvd. S., Las Vegas, NV 89109", "address_status": "verified",
   "note": "Official tournament terms place the poker room in Encore. The official poker page links the WPT, Wynn "
-          "Signature Series and daily tournament schedules, structures and results.",
+          "Signature Series and daily tournament schedules, structures and results. Registration opening time: "
+          "the official Wynn daily tournament terms and conditions state \"Registration for each Event will open "
+          "four (4) hours prior to the scheduled start of play\", so a 12 p.m. daily event opens registration at "
+          "8 a.m. That opening time is printed only in the Wynn daily tournament terms; the WPT and Signature "
+          "Series schedule PDFs print a registration CLOSE time per event but no opening time.",
   "hotel_ids": ["wynn", "encore"],
   "official_links": [SRC["wynn_poker"], SRC["wpt_sched"], SRC["wpt_struct"], SRC["wss_sched"], SRC["wynn_daily_poster"]]},
  {"id": "aria", "name": "ARIA Resort & Casino", "poker_room": "ARIA poker room, east side of the casino floor next to main valet pick-up",
@@ -1508,7 +1512,13 @@ def main():
         json.dump({"verified_on": VERIFIED_ON, "rows": WYNN_DAILY,
                    "note": "Recurring daily tournaments published by Wynn Las Vegas. The official poker page states: "
                            "\"The Daily Tournament schedule will be suspended during each Wynn Signature, Wynn Millions, "
-                           "and Classic tournament series.\" Read 2026-11-16.",
+                           "and Classic tournament series.\" The official daily terms and conditions state: \"Registration "
+                           "for each Event will open four (4) hours prior to the scheduled start of play\", so registration "
+                           "for the 12 p.m. daily events opens at 8 a.m. Note the suspension wording differs between the "
+                           "two official sources: the poker page names Wynn Signature, Wynn Millions and Classic series, "
+                           "while each daily structure sheet says the event \"may be suspended during Seniors Events, "
+                           "Classic Events, or other Tournament Series\". Neither names the WPT World Championship "
+                           "explicitly, so confirm before travelling. Read 2026-11-16.",
                    "sources": [{"label": "Official daily tournament poster", "url": SRC["wynn_daily_poster"]},
                                {"label": "Official daily tournament structures", "url": SRC["wynn_daily_struct"]},
                                {"label": "Official poker room page", "url": SRC["wynn_poker"]}]}, f, indent=1)

@@ -117,9 +117,16 @@ a walking-route link instead.
   9:10 AM milestone satellite) and Jan 2 (the $1,600 MSPT 1B at 11:10 AM against the 10:10 AM
   satellite). Both involve a satellite whose end time is an upper bound, because the tournament ends
   when the seats run out.
+- **Wynn registration opens at 8 AM for the noon events.** The official Wynn daily tournament terms
+  and conditions state: *"Registration for each Event will open four (4) hours prior to the scheduled
+  start of play."* The daily events start at 12 p.m., so registration opens at **8 a.m.** That is the
+  only registration *opening* time printed on any official source read so far, and it is the one place
+  the 8 AM goal is met directly. It is printed in the Wynn daily terms only: the WPT and Signature
+  Series schedule PDFs print a registration *close* time per event and no opening time.
 - **Wynn daily formats:** four recurring formats are published on their own page: $200/$10K Monday to
   Thursday, $240 rebuy-and-add-on/$40K Friday, $200/$25K Saturday and Sunday, and $160/$10K nightly.
-  Wynn states that the daily schedule is suspended during each Wynn Signature, Wynn Millions and
+  All four permit re-entry, rebuys or add-ons, so **none of them qualifies as single entry**; they sit
+  in the separate section. Wynn states that the daily schedule is suspended during each Wynn Signature, Wynn Millions and
   Classic series, and the WPT and Signature Series dates are listed on the schedule page.
 
 ## 6. What is not in the data
