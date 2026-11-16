@@ -292,6 +292,44 @@ WSS_NOTE = "Buy-in and guarantee from official Wynn Signature Series schedule PD
 
 def build_tournaments():
     rows = []
+    def rule_block(status):
+        """Structured entry-rule fields for one event, each tied to its source.
+
+        single_entry / re_entry / rebuy / add_on / flights are true, false, or
+        None (not confirmed). source_excerpt is the official wording, and
+        retrieved_on is the date it was read. Nothing is inferred: an unread
+        sheet yields None everywhere.
+        """
+        if status == "SE":
+            return {
+                "single_entry": True, "re_entry": False, "rebuy": False,
+                "add_on": False, "flights": False,
+                "source_excerpt": ("Structure sheet read on %s: no re-entry, rebuy, "
+                                   "add-on or flight clause." % VERIFIED_ON),
+                "retrieved_on": VERIFIED_ON,
+            }
+        if status == "MULTI":
+            return {
+                "single_entry": None, "re_entry": None, "rebuy": None,
+                "add_on": None, "flights": True,
+                "source_excerpt": ("Clause 08 (read %s): \"Any player who bags chips for "
+                                   "Day 2 may not play a subsequent flight.\" Whether a "
+                                   "player who busts may enter a later flight is not stated." % VERIFIED_ON),
+                "retrieved_on": VERIFIED_ON,
+            }
+        if status == "RE":
+            return {
+                "single_entry": False, "re_entry": True, "rebuy": False,
+                "add_on": False, "flights": False,
+                "source_excerpt": ("Unlimited re-entry for each starting flight until the "
+                                   "start of level 9 (official WPT structure terms, read %s)." % VERIFIED_ON),
+                "retrieved_on": VERIFIED_ON,
+            }
+        return {
+            "single_entry": None, "re_entry": None, "rebuy": None,
+            "add_on": None, "flights": None,
+            "source_excerpt": None, "retrieved_on": None,
+        }
     def add(series, sched_key, struct_key, r, note_default=None):
         date, time, no, name, buy, gtd, sheet, status, note = r
         # Multi-flight sheets (2, 3, 9, 10, 12, 13, 14) say "Any player who bags chips for Day 2
@@ -322,6 +360,9 @@ def build_tournaments():
             "gtd_multiple": round(gtd / buy, 1) if gtd and buy else None,
             "entry_status": status, "entry_rule": rule, "note": note,
             "sources": srcs, "verified_on": VERIFIED_ON,
+            "last_checked": VERIFIED_ON,
+            "rules": rule_block(status),
+            "overlap": None,
         })
     for r in DSE_NOV:
         add("Venetian DeepStack Extravaganza IV", "dse_nov_sched", "dse_nov_struct", r)
@@ -345,7 +386,8 @@ def build_tournaments():
             "sources": [{"label": "Official schedule", "url": SRC["wpt_sched"]},
                         {"label": "Official structures / terms", "url": SRC["wpt_struct"]}] if status == "RE"
                        else [{"label": "Official schedule", "url": SRC["wpt_sched"]}],
-            "verified_on": VERIFIED_ON,
+            "verified_on": VERIFIED_ON, "last_checked": VERIFIED_ON,
+            "rules": rule_block(status), "overlap": None,
         })
     for date, time, name, buy, gtd in WSS:
         rows.append({
@@ -357,7 +399,8 @@ def build_tournaments():
             "entry_status": "UNV", "entry_rule": "Unverified: entry rule not confirmed from an official structure sheet.",
             "note": WSS_NOTE,
             "sources": [{"label": "Official schedule", "url": SRC["wss_sched"]}],
-            "verified_on": VERIFIED_ON,
+            "verified_on": VERIFIED_ON, "last_checked": VERIFIED_ON,
+            "rules": rule_block("UNV"), "overlap": None,
         })
     rows.sort(key=lambda x: (x["date"], x["start"], x["name"]))
     for i, row in enumerate(rows, 1):
@@ -387,54 +430,77 @@ def build_schedule(rows):
 
 HOTELS = [
  {"id":"venetian","name":"The Venetian Resort","address_note":"Venetian host property for DeepStack series (official poker page)",
+  "last_checked":"2026-11-16",
   "resort_fee_usd":55,"resort_fee_status":"verified","resort_fee_note":"Official Venetian hotel terms, read 2026-11-16: $55 plus applicable tax per night.",
-  "room_rate_usd":None,"room_rate_status":"unverified","room_rate_note":"Official poker-suite page says rates 'start as low as $119 and $209' (Venetian or Palazzo), conditional on poker play. Which rate applies to which tower is not stated, so no value is entered here.",
+  "rates":[],"rates_note":"Dated rate log: each entry is {date, rate_usd, source, retrieved_on, note}. No official date-specific rate has been retrieved for The Venetian, so the log is empty and no true cost per night can be stated yet.",
+  "checkout_total_usd":None,"checkout_total_note":None,
+  "nightly_average_usd":None,"parking_usd":None,"cancellation_deadline":None,
   "clark_county_tax_pct":13.38,"tax_status":"Verified from full official Venetian hotel terms read 2026-11-16: Clark County Room Tax 13.38%.",
   "sources":[{"label":"Resort fee (official)","url":SRC["venetian_fee"]},{"label":"Hotel terms incl. 13.38% room tax and resort-fee tax (official)","url":SRC["venetian_terms"]},{"label":"Poker suite rates (official)","url":SRC["venetian_poker_suite"]}],
   "walk_to_venetian_min":None,"walk_note":"Host property. Walking time not applicable (not published)."},
  {"id":"palazzo","name":"The Palazzo","address_note":"Venetian sister property (official poker page names The Palazzo for the $55 fee)",
+  "last_checked":"2026-11-16",
   "resort_fee_usd":55,"resort_fee_status":"verified","resort_fee_note":"Official Venetian poker-suite page: 'There is a $55 resort fee per night stayed' (stated for The Venetian or The Palazzo).",
-  "room_rate_usd":None,"room_rate_status":"unverified","room_rate_note":"Only conditional poker-suite starting rates are published (see Venetian row). No Palazzo-specific rate confirmed.",
+  "rates":[],"rates_note":"Dated rate log: each entry is {date, rate_usd, source, retrieved_on, note}. No official date-specific rate has been retrieved for The Palazzo, so the log is empty and no true cost per night can be stated yet.",
+  "checkout_total_usd":None,"checkout_total_note":None,
+  "nightly_average_usd":None,"parking_usd":None,"cancellation_deadline":None,
   "clark_county_tax_pct":None,"tax_status":"Unverified for Palazzo: the fetched Venetian hotel terms do not separately identify Palazzo's tax calculation.",
   "sources":[{"label":"Poker suite rates incl. $55 resort fee (official)","url":SRC["venetian_poker_suite"]},{"label":"Venetian hotel terms (official; property-specific Palazzo tax not stated)","url":SRC["venetian_terms"]}],
   "walk_to_venetian_min":None,"walk_note":"Unverified: walking time not on an official source."},
  {"id":"wynn","name":"Wynn Las Vegas","address_note":"WPT World Championship and Wynn Signature Series host",
+  "last_checked":"2026-11-16",
   "resort_fee_usd":55,"resort_fee_status":"verified","resort_fee_note":"Official Wynn terms (search excerpt, not fetched in full): daily resort fee of $55 plus tax per room night.",
-  "room_rate_usd":None,"room_rate_status":"unverified","room_rate_note":"No official nightly rate confirmed for any date. Third-party sites quote rates; these are not used.",
+  "rates":[],"rates_note":"Dated rate log: each entry is {date, rate_usd, source, retrieved_on, note}. No official date-specific rate has been retrieved for Wynn Las Vegas, so the log is empty and no true cost per night can be stated yet.",
+  "checkout_total_usd":None,"checkout_total_note":None,
+  "nightly_average_usd":None,"parking_usd":None,"cancellation_deadline":None,
   "clark_county_tax_pct":None,"tax_status":"Unverified: no Wynn-specific tax rate was confirmed from official terms.",
   "sources":[{"label":"Resort fee terms (official)","url":SRC["wynn_terms"]},{"label":"Wynn poker room (official)","url":SRC["wynn_poker"]}],
   "walk_to_venetian_min":None,"walk_note":"Unverified: walking time not on an official source."},
  {"id":"encore","name":"Encore at Wynn Las Vegas","address_note":"Same resort operator as Wynn Las Vegas",
+  "last_checked":"2026-11-16",
   "resort_fee_usd":55,"resort_fee_status":"verified","resort_fee_note":"Official Wynn terms (search excerpt, not fetched in full) cover 'Wynn and Encore Las Vegas' with a $55 plus tax daily resort fee. Confirm for the specific room.",
-  "room_rate_usd":None,"room_rate_status":"unverified","room_rate_note":"No official nightly rate confirmed.",
+  "rates":[],"rates_note":"Dated rate log: each entry is {date, rate_usd, source, retrieved_on, note}. No official date-specific rate has been retrieved for Encore, so the log is empty and no true cost per night can be stated yet.",
+  "checkout_total_usd":None,"checkout_total_note":None,
+  "nightly_average_usd":None,"parking_usd":None,"cancellation_deadline":None,
   "clark_county_tax_pct":None,"tax_status":"Unverified: no Encore-specific tax rate was confirmed from official terms.",
   "sources":[{"label":"Resort fee terms (official)","url":SRC["wynn_terms"]}],
   "walk_to_venetian_min":None,"walk_note":"Unverified: walking time not on an official source."},
  {"id":"bellagio","name":"Bellagio","address_note":"MGM Resorts property on the Strip",
+  "last_checked":"2026-11-16",
   "resort_fee_usd":None,"resort_fee_status":"unverified","resort_fee_note":"No Bellagio-specific official resort-fee terms confirmed. Third-party guides conflict; left blank.",
-  "room_rate_usd":None,"room_rate_status":"unverified","room_rate_note":"No official nightly rate confirmed.",
+  "rates":[],"rates_note":"Dated rate log: each entry is {date, rate_usd, source, retrieved_on, note}. No official date-specific rate has been retrieved for Bellagio, so the log is empty and no true cost per night can be stated yet.",
+  "checkout_total_usd":None,"checkout_total_note":None,
+  "nightly_average_usd":None,"parking_usd":None,"cancellation_deadline":None,
   "clark_county_tax_pct":None,"tax_status":"Unverified for Bellagio: no Bellagio-specific tax rate confirmed from official terms.",
   "sources":[{"label":"Bellagio official home page (property identification; no fee or tax value)","url":"https://bellagio.mgmresorts.com/en.html"}],
   "walk_to_venetian_min":None,"walk_note":"Unverified: walking time not on an official source."},
  {"id":"aria","name":"ARIA Resort & Casino","address_note":"MGM Resorts property on the Strip",
+  "last_checked":"2026-11-16",
   "resort_fee_usd":None,"resort_fee_status":"unverified","resort_fee_note":"Official ARIA home page fetched; no official resort-fee terms located on it. Left blank.",
-  "room_rate_usd":None,"room_rate_status":"unverified","room_rate_note":"No official nightly rate confirmed.",
+  "rates":[],"rates_note":"Dated rate log: each entry is {date, rate_usd, source, retrieved_on, note}. No official date-specific rate has been retrieved for ARIA, so the log is empty and no true cost per night can be stated yet.",
+  "checkout_total_usd":None,"checkout_total_note":None,
+  "nightly_average_usd":None,"parking_usd":None,"cancellation_deadline":None,
   "clark_county_tax_pct":None,"tax_status":"Unverified for ARIA: no property-specific tax rate was confirmed from official terms.",
   "sources":[{"label":"ARIA official home page (fetched)","url":"https://aria.mgmresorts.com/en.html"}],
   "walk_to_venetian_min":None,"walk_note":"Unverified: walking time not on an official source."},
  {"id":"caesars","name":"Caesars Palace","address_note":"Caesars Entertainment property",
+  "last_checked":"2026-11-16",
   "resort_fee_usd":None,"resort_fee_status":"unverified","resort_fee_note":"Official corporate disclaimer gives a general range of $45 to $50 plus applicable tax, not property-specific. Third-party listings conflict. Left blank.",
-  "room_rate_usd":None,"room_rate_status":"unverified","room_rate_note":"No official nightly rate confirmed.",
+  "rates":[],"rates_note":"Dated rate log: each entry is {date, rate_usd, source, retrieved_on, note}. No official date-specific rate has been retrieved for Caesars Palace, so the log is empty and no true cost per night can be stated yet.",
+  "checkout_total_usd":None,"checkout_total_note":None,
+  "nightly_average_usd":None,"parking_usd":None,"cancellation_deadline":None,
   "clark_county_tax_pct":None,"tax_status":"Unverified for Caesars Palace: no property-specific tax rate was confirmed from official terms.",
   "sources":[{"label":"Caesars corporate disclaimer (official range)","url":SRC["caesars_disclaimer"]}],
   "walk_to_venetian_min":None,"walk_note":"Unverified: walking time not on an official source."},
 ]
 
-def true_cost(h):
-    """Compute a nightly total only when room rate, fee, and property-specific tax are verified."""
-    if h["room_rate_usd"] is None or h["resort_fee_usd"] is None or h["clark_county_tax_pct"] is None:
+def true_cost(h, rate=None):
+    """Compute a nightly total for one logged rate when rate, fee, and property-specific
+    tax are all verified. Returns None when any input is missing."""
+    r = rate if rate is not None else h.get("room_rate_usd")
+    if r is None or h.get("resort_fee_usd") is None or h.get("clark_county_tax_pct") is None:
         return None
-    return round((h["room_rate_usd"] + h["resort_fee_usd"]) * (1 + h["clark_county_tax_pct"] / 100.0), 2)
+    return round((r + h["resort_fee_usd"]) * (1 + h["clark_county_tax_pct"] / 100.0), 2)
 
 def main():
     rows = build_tournaments()
