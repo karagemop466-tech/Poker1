@@ -33,7 +33,7 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
 | T4 | Schedule, executive summary, analysis | needs review | `data/schedule.json`, `EXECUTIVE_SUMMARY.md`, `research/analysis.md` |
 | T5 | Suggestions and questions / information-gap register | done | `SUGGESTIONS.md`, `QUESTIONS.md` |
 | T6 | Static site: landing, category pages, Flagged for Review | done | `index.html`, `pages/*.html`, `assets/*`, `scripts/build_site.py`, `scripts/check_links.py` |
-| T7 | Final integration: merge `main`, verify, PR, merge, Pages deploy check | in progress | shared outputs; `.github/workflows/pages.yml`, `README.md` |
+| T7 | Final integration: merge `main`, verify, PR, merge, Pages deploy check | done | shared outputs; `.github/workflows/pages.yml`, `README.md` |
 
 ## Task log
 
@@ -49,6 +49,9 @@ Status values: `unclaimed` · `in progress` · `done` · `needs review`
   - Archived all other `main` files (root `*.html`, `app.js`, `styles.css`, `scripts/*.py`, `data/*.md`, `data/repo_review.json`, `research/hotels/`, `research/tournaments/`, prior `README.md`, prior `COORDINATION.md`, and their docs) under `archive/prior-main/`. Nothing was deleted from git history.
   - Merged this board, keeping the prior sessions' table above.
 - Workflow updated (see protocol notes). README rewritten to describe the new site.
+- PR #8 (`arena/1fafb3d2-poker1` → `main`): https://github.com/karagemop466-tech/Poker1/pull/8. Validate job passed on the PR. Merged with a merge commit at `a50f162` (2026-11-16 18:51 UTC).
+- Pages deploy: push run `43933252244` on `main` (validate success, deploy success). Pages API status `built`, source `main` `/`. Live page `https://karagemop466-tech.github.io/Poker1/pages/single-entry.html` fetched and shows all 33 single-entry rows with source links.
+- Note: `git pull --rebase` was run once on this branch after the merge commit. It tried to replay `main`'s history and stopped with conflicts. The rebase was aborted (`git rebase --abort`), and the branch was not changed. Use `git merge` (not `pull --rebase`) for merges that include a merge commit.
 
 ## Open items (not blocking merge; see FLAGGED / QUESTIONS)
 - Room rates are unverified for every hotel. True cost is blank.
