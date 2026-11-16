@@ -4,7 +4,10 @@ Shared task board for the Las Vegas Strip poker tournament and hotel planner.
 
 ## Current session and task claim
 
-Session `f0143c13` is working on branch `arena/f0143c13-poker1` (the branch is fixed for this session). Claim commit `cc17d9e` was pushed before implementation work.
+Session `arena/5630a9ef-poker1` is working on its fixed branch `arena/5630a9ef-poker1`.
+Claim: dashboard decision-support and source-monitoring improvements, with strict preservation of official-source-only verification. Scope: `COORDINATION.md`, `README.md`, `EXECUTIVE_SUMMARY.md`, `QUESTIONS.md`, `SUGGESTIONS.md`, `FLAGGED.md`, `REVIEW.md`, `scripts/`, `assets/`, `data/`, `pages/`, `index.html`, and `.github/workflows/`. No other active claims were listed when this claim was made. Claim commit is to be pushed before implementation.
+
+Session `f0143c13` is working on branch `arena/f0143c13-poker1` (the branch is fixed for that session). Claim commit `cc17d9e` was pushed before implementation work.
 
 Session `arena/f5896c06-poker1` is working on branch `arena/f5896c06-poker1`. Integration commit `3241bb8` was pushed and opened as PR #13; rebased onto `b272ed5` and merged into main.
 
