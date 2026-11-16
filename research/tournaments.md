@@ -9,7 +9,7 @@ Session `1fafb3d2` · Checked 2026-11-16 · Output: `data/tournaments.json` (225
 ## Method
 1. Schedule rows copied from the official PDFs and event pages. Where a PDF date cell is blank, the official event page supplies the date. Event 49 was corrected to Dec 13/14 this way.
 2. Structure sheets read for single-entry checks: Venetian DSE IV sheets 1, 2, 3, 5 to 17 (earlier session), plus 2, 3, 9, 10, 12, 13, 14, 15 (this session).
-3. Clause 08 ("Any player who bags chips for Day 2 may not play a subsequent flight") found on sheets 2, 3, 9, 10, 12, 13, 14. Those events go to the separate section.
+3. Clause 08 ("Any player who bags chips for Day 2 may not play a subsequent flight") is quoted from the multi-flight sheets read earlier. The sheet-to-event mapping for sheets 2, 3, 9, 10, 12, 13, 14 was chosen by reasoning and has NOT been re-checked sheet by sheet. Those events are kept in the separate section until it is. The clause does not prove a second entry.
 4. WPT rows checked against the official schedule text (chunks 0 and 1). Two rows were missing and were added (Dec 18 HORSE $800, PLO 6-Max $10,500).
 
 ## Counts
