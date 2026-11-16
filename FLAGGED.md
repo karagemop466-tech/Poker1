@@ -15,7 +15,7 @@ Published so you can review the items. Flags do not block the merge. Every flag 
 | F7 | WPT footnote ****: "The Tournament Entry for the Ladies Championship is $11,100. Ladies will receive a discounted entry." The printed ladies buy-in is $1,100. | [WPT schedule](https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf) |
 | F8 | Caesars Palace resort fee: official disclaimer gives a general $45 to $50 plus tax. Third-party values conflict. | [Caesars disclaimer](https://www.caesars.com/corporate/disclaimer) |
 | F9 | Venetian poker-suite page: rates "start as low as $119 and $209" without saying which property each applies to. | [Poker suite rates](https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html) |
-| F10 | Venetian hotel terms state $55 plus tax and a 13.38% room tax. They do not say whether the room tax applies to the resort fee. The data formula assumes it does. | [Venetian hotel terms](https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html) |
+| F10 | The full Venetian hotel terms state a $55 resort fee "plus applicable tax" and a 13.38% Clark County Room Tax. The current text supports that the Venetian fee is taxed; it does not provide a separate itemized calculation. The 13.38% value is not applied to other hotels without property-specific support. | [Venetian hotel terms](https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html) |
 | F11 | PDF date cells are blank for some rows (LIPS and PokerAtlas overlay rows). The official event page prints a date for each row. Event 49 was wrong in the draft and is corrected. | [DSE IV event page](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html) |
 | F12 | Event 1 (Nov 16) starts on the check date. Nov 16 and 17 have only Event 1 flights, which are multi-flight rows. | [DSE IV event page](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html) |
 
@@ -49,7 +49,8 @@ Live site URL: https://karagemop466-tech.github.io/Poker1/ (GitHub Pages API sta
 - [Wynn poker room](https://www.wynnlasvegas.com/casino/poker) (the official schedule prints wynnpoker.com and (702) 770-7654)
 - [Wynn Signature Series schedule (PDF)](https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf)
 - [Wynn WPT structures and terms (PDF)](https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf)
-- [Wynn resort fee terms](https://www.wynnlasvegas.com/terms-and-conditions/848671) (search excerpt)
-- [Venetian resort fee](https://www.venetianlasvegas.com/resort/resort-fee.html) (search excerpt)
+- [Wynn resort fee terms](https://www.wynnlasvegas.com/terms-and-conditions/848671) (prior search excerpt)
+- [Venetian resort fee](https://www.venetianlasvegas.com/resort/resort-fee.html) (fetched and read)
+- [Venetian hotel terms](https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html) (full page fetched and read; 13.38% Clark County room tax and $55 resort fee plus applicable tax)
 - [Caesars corporate disclaimer](https://www.caesars.com/corporate/disclaimer) (search excerpt)
 - [ARIA home page](https://aria.mgmresorts.com/en.html)

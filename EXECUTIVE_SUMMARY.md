@@ -47,11 +47,11 @@ These are kept out of the ranking.
 | The Palazzo | $55 (verified; tax not stated) | Blank | Blank | Not published | [Poker suite rates incl. $55 resort fee (official)](https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html) |
 | Wynn Las Vegas | $55 plus tax (verified) | Blank | Blank | Not published | [Resort fee terms (official)](https://www.wynnlasvegas.com/terms-and-conditions/848671) |
 | Encore at Wynn Las Vegas | $55 plus tax (verified) | Blank | Blank | Not published | [Resort fee terms (official)](https://www.wynnlasvegas.com/terms-and-conditions/848671) |
-| Bellagio | Blank | Blank | Blank | Not published | Tax only: [Venetian hotel terms, 13.38% room tax](https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html). No official Bellagio fee source found. |
+| Bellagio | Blank | Blank | Blank | Not published | [Bellagio official home page](https://bellagio.mgmresorts.com/en.html); no Bellagio-specific fee or tax value confirmed. |
 | ARIA Resort & Casino | Blank | Blank | Blank | Not published | [ARIA official home page (fetched)](https://aria.mgmresorts.com/en.html) |
 | Caesars Palace | Blank | Blank | Blank | Not published | [Caesars corporate disclaimer (official range)](https://www.caesars.com/corporate/disclaimer) |
 
-**Formula used in the data (assumption, not verified):** true cost per night = (room rate + resort fee) × 1.1338. The 13.38% is the Clark County room tax from a Venetian terms excerpt. Whether the tax applies to the resort fee is not confirmed (flag F10). The value stays blank until a room rate is verified.
+The Venetian's official hotel terms state a 13.38% Clark County Room Tax and a $55 resort fee plus applicable tax. A dated room quote has not been verified for any hotel, so true nightly cost remains blank. The data does not apply the Venetian's tax rate to other hotels without property-specific confirmation (see F10).
 
 Walking times are not on any official source, so distances are blank.
 

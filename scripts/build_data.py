@@ -387,52 +387,52 @@ def build_schedule(rows):
 
 HOTELS = [
  {"id":"venetian","name":"The Venetian Resort","address_note":"Venetian host property for DeepStack series (official poker page)",
-  "resort_fee_usd":55,"resort_fee_status":"verified","resort_fee_note":"Official Venetian resort-fee page (search excerpt, not fetched in full): $55 plus applicable tax per night.",
+  "resort_fee_usd":55,"resort_fee_status":"verified","resort_fee_note":"Official Venetian hotel terms, read 2026-11-16: $55 plus applicable tax per night.",
   "room_rate_usd":None,"room_rate_status":"unverified","room_rate_note":"Official poker-suite page says rates 'start as low as $119 and $209' (Venetian or Palazzo), conditional on poker play. Which rate applies to which tower is not stated, so no value is entered here.",
-  "clark_county_tax_pct":13.38,"tax_status":"verified (Venetian terms search excerpt, not fetched in full)",
-  "sources":[{"label":"Resort fee (official)","url":SRC["venetian_fee"]},{"label":"Hotel terms incl. 13.38% room tax (official)","url":SRC["venetian_terms"]},{"label":"Poker suite rates (official)","url":SRC["venetian_poker_suite"]}],
+  "clark_county_tax_pct":13.38,"tax_status":"Verified from full official Venetian hotel terms read 2026-11-16: Clark County Room Tax 13.38%.",
+  "sources":[{"label":"Resort fee (official)","url":SRC["venetian_fee"]},{"label":"Hotel terms incl. 13.38% room tax and resort-fee tax (official)","url":SRC["venetian_terms"]},{"label":"Poker suite rates (official)","url":SRC["venetian_poker_suite"]}],
   "walk_to_venetian_min":None,"walk_note":"Host property. Walking time not applicable (not published)."},
  {"id":"palazzo","name":"The Palazzo","address_note":"Venetian sister property (official poker page names The Palazzo for the $55 fee)",
   "resort_fee_usd":55,"resort_fee_status":"verified","resort_fee_note":"Official Venetian poker-suite page: 'There is a $55 resort fee per night stayed' (stated for The Venetian or The Palazzo).",
   "room_rate_usd":None,"room_rate_status":"unverified","room_rate_note":"Only conditional poker-suite starting rates are published (see Venetian row). No Palazzo-specific rate confirmed.",
-  "clark_county_tax_pct":13.38,"tax_status":"verified (Venetian terms search excerpt, not fetched in full)",
-  "sources":[{"label":"Poker suite rates incl. $55 resort fee (official)","url":SRC["venetian_poker_suite"]},{"label":"Hotel terms incl. 13.38% room tax (official)","url":SRC["venetian_terms"]}],
+  "clark_county_tax_pct":None,"tax_status":"Unverified for Palazzo: the fetched Venetian hotel terms do not separately identify Palazzo's tax calculation.",
+  "sources":[{"label":"Poker suite rates incl. $55 resort fee (official)","url":SRC["venetian_poker_suite"]},{"label":"Venetian hotel terms (official; property-specific Palazzo tax not stated)","url":SRC["venetian_terms"]}],
   "walk_to_venetian_min":None,"walk_note":"Unverified: walking time not on an official source."},
  {"id":"wynn","name":"Wynn Las Vegas","address_note":"WPT World Championship and Wynn Signature Series host",
   "resort_fee_usd":55,"resort_fee_status":"verified","resort_fee_note":"Official Wynn terms (search excerpt, not fetched in full): daily resort fee of $55 plus tax per room night.",
   "room_rate_usd":None,"room_rate_status":"unverified","room_rate_note":"No official nightly rate confirmed for any date. Third-party sites quote rates; these are not used.",
-  "clark_county_tax_pct":13.38,"tax_status":"verified (Venetian terms search excerpt, not fetched in full)",
-  "sources":[{"label":"Resort fee terms (official)","url":SRC["wynn_terms"]},{"label":"Wynn poker room (official)","url":SRC["wynn_poker"]},{"label":"Hotel terms incl. 13.38% room tax (official)","url":SRC["venetian_terms"]}],
+  "clark_county_tax_pct":None,"tax_status":"Unverified: no Wynn-specific tax rate was confirmed from official terms.",
+  "sources":[{"label":"Resort fee terms (official)","url":SRC["wynn_terms"]},{"label":"Wynn poker room (official)","url":SRC["wynn_poker"]}],
   "walk_to_venetian_min":None,"walk_note":"Unverified: walking time not on an official source."},
  {"id":"encore","name":"Encore at Wynn Las Vegas","address_note":"Same resort operator as Wynn Las Vegas",
   "resort_fee_usd":55,"resort_fee_status":"verified","resort_fee_note":"Official Wynn terms (search excerpt, not fetched in full) cover 'Wynn and Encore Las Vegas' with a $55 plus tax daily resort fee. Confirm for the specific room.",
   "room_rate_usd":None,"room_rate_status":"unverified","room_rate_note":"No official nightly rate confirmed.",
-  "clark_county_tax_pct":13.38,"tax_status":"verified (Venetian terms search excerpt, not fetched in full)",
+  "clark_county_tax_pct":None,"tax_status":"Unverified: no Encore-specific tax rate was confirmed from official terms.",
   "sources":[{"label":"Resort fee terms (official)","url":SRC["wynn_terms"]}],
   "walk_to_venetian_min":None,"walk_note":"Unverified: walking time not on an official source."},
- {"id":"bellagio","name":"Bellagio","address_note":"MGM Resorts property",
-  "resort_fee_usd":None,"resort_fee_status":"unverified","resort_fee_note":"No official MGM page found. Third-party guides give conflicting values ($45, $50, $55). Left blank.",
+ {"id":"bellagio","name":"Bellagio","address_note":"MGM Resorts property on the Strip",
+  "resort_fee_usd":None,"resort_fee_status":"unverified","resort_fee_note":"No Bellagio-specific official resort-fee terms confirmed. Third-party guides conflict; left blank.",
   "room_rate_usd":None,"room_rate_status":"unverified","room_rate_note":"No official nightly rate confirmed.",
-  "clark_county_tax_pct":13.38,"tax_status":"verified (Venetian terms search excerpt, not fetched in full)",
-  "sources":[{"label":"Clark County tax rate (official hotel terms)","url":SRC["venetian_terms"]}],
+  "clark_county_tax_pct":None,"tax_status":"Unverified for Bellagio: no Bellagio-specific tax rate confirmed from official terms.",
+  "sources":[{"label":"Bellagio official home page (property identification; no fee or tax value)","url":"https://bellagio.mgmresorts.com/en.html"}],
   "walk_to_venetian_min":None,"walk_note":"Unverified: walking time not on an official source."},
  {"id":"aria","name":"ARIA Resort & Casino","address_note":"MGM Resorts property on the Strip",
   "resort_fee_usd":None,"resort_fee_status":"unverified","resort_fee_note":"Official ARIA home page fetched; no official resort-fee terms located on it. Left blank.",
   "room_rate_usd":None,"room_rate_status":"unverified","room_rate_note":"No official nightly rate confirmed.",
-  "clark_county_tax_pct":13.38,"tax_status":"verified (Venetian terms search excerpt, not fetched in full)",
+  "clark_county_tax_pct":None,"tax_status":"Unverified for ARIA: no property-specific tax rate was confirmed from official terms.",
   "sources":[{"label":"ARIA official home page (fetched)","url":"https://aria.mgmresorts.com/en.html"}],
   "walk_to_venetian_min":None,"walk_note":"Unverified: walking time not on an official source."},
  {"id":"caesars","name":"Caesars Palace","address_note":"Caesars Entertainment property",
   "resort_fee_usd":None,"resort_fee_status":"unverified","resort_fee_note":"Official corporate disclaimer gives a general range of $45 to $50 plus applicable tax, not property-specific. Third-party listings conflict. Left blank.",
   "room_rate_usd":None,"room_rate_status":"unverified","room_rate_note":"No official nightly rate confirmed.",
-  "clark_county_tax_pct":13.38,"tax_status":"verified (Venetian terms search excerpt, not fetched in full)",
+  "clark_county_tax_pct":None,"tax_status":"Unverified for Caesars Palace: no property-specific tax rate was confirmed from official terms.",
   "sources":[{"label":"Caesars corporate disclaimer (official range)","url":SRC["caesars_disclaimer"]}],
   "walk_to_venetian_min":None,"walk_note":"Unverified: walking time not on an official source."},
 ]
 
 def true_cost(h):
-    """True nightly cost = (room + resort fee) x (1 + Clark County room tax). Only computed when both inputs are verified."""
-    if h["room_rate_usd"] is None or h["resort_fee_usd"] is None:
+    """Compute a nightly total only when room rate, fee, and property-specific tax are verified."""
+    if h["room_rate_usd"] is None or h["resort_fee_usd"] is None or h["clark_county_tax_pct"] is None:
         return None
     return round((h["room_rate_usd"] + h["resort_fee_usd"]) * (1 + h["clark_county_tax_pct"] / 100.0), 2)
 
@@ -447,7 +447,7 @@ def main():
         hotels.append(h)
     with open(os.path.join(DATA, "hotels.json"), "w") as f:
         json.dump({"verified_on": VERIFIED_ON, "rows": hotels,
-                   "method": "ASSUMPTION, NOT VERIFIED: true_cost_per_night = (room rate + resort fee) x (1 + 13.38%). It assumes the room tax also applies to the resort fee (see FLAGGED F10). Blank when any input is unverified."}, f, indent=1)
+                   "method": "True nightly cost is computed only when a date-specific room rate, resort fee, and property-specific tax rate are verified. No current hotel row has all required values. The Venetian terms state a $55 resort fee plus applicable tax and 13.38% Clark County Room Tax; the tax rate is not copied to other hotel rows without property-specific support."}, f, indent=1)
     with open(os.path.join(DATA, "schedule.json"), "w") as f:
         json.dump(build_schedule(rows), f, indent=1)
     se = [r for r in rows if r["entry_status"] == "SE"]

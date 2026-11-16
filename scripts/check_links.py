@@ -20,6 +20,7 @@ OFFICIAL_SOURCE_HOSTS = {
     "www.wynnlasvegas.com",
     "cdn.wynnresorts.com",
     "aria.mgmresorts.com",
+    "bellagio.mgmresorts.com",
     "www.caesars.com",
 }
 

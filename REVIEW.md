@@ -32,7 +32,7 @@ Session `1fafb3d2` · Branch `arena/1fafb3d2-poker1` (base `c16071b`, from `main
 | R14 | Caesars Palace fee | Official corporate disclaimer gives a general "$45-$50 plus tax" range. Third-party values conflict. | [Caesars disclaimer](https://www.caesars.com/corporate/disclaimer) | Left blank. |
 | R15 | Bellagio fee | No official MGM page found. Third-party values conflict ($45, $50, $55). | Third-party only | Left blank. |
 | R16 | ARIA fee | Official home page fetched. No resort-fee terms found on it. | [ARIA home page](https://aria.mgmresorts.com/en.html) | Left blank. Row added. |
-| R17 | Venetian room tax | 13.38% Clark County room tax comes from a search excerpt of the Venetian hotel terms. The terms do not say whether it applies to the resort fee. | [Venetian hotel terms](https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html) (excerpt) | Tax-on-fee assumption flagged (F10). |
+| R17 | Venetian room tax | Full Venetian hotel terms fetched and read: 13.38% Clark County Room Tax; the $55 resort fee is stated as "plus applicable tax." No separate itemized tax calculation is published. This Venetian rate is not copied to other hotels without property-specific support. | [Venetian hotel terms](https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html) | Corrected hotel data to leave tax blank for other properties; no total is calculated without date-specific rates. |
 | R18 | Venetian poker suite page | "Start as low as $119 and $209" for the Venetian or Palazzo, conditional on play. It does not say which rate belongs to which property. | [Poker suite rates](https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html) | Not used as a room rate. |
 | R19 | Time-sensitive | The first verified single-entry Venetian event is Nov 18, 11:10 AM. The Nov 16 and 17 events are multi-flight rows. | DSE IV event page | Confirm before travel. |
 | R20 | Coverage | No verified 2027 Las Vegas WSOP Circuit schedule. Search returned leads only. | Search only | Gap. See QUESTIONS.md. |
@@ -53,7 +53,7 @@ Claims in the earlier drafts were checked against the official text. These were 
 | Palazzo "connected at casino level" | Not in any source read. | Removed. |
 | Venetian "payable at check-in" | Not in any source read. | Removed. |
 | WSOP "March and July 2026" | Not checked against a source. | Replaced by R20. |
-| Hotel "true cost" formula taxing the fee | Assumption. The official source does not confirm it. | Labelled as an assumption (F10). |
+| Hotel tax data applied the Venetian 13.38% rate to every hotel and questioned whether Venetian's fee was taxed | Full Venetian terms state the $55 fee is plus applicable tax; they do not verify other properties' tax rates. | Tax is retained only for The Venetian; other properties' tax and total-cost cells are blank pending property-specific confirmation. |
 
 ## 4. Verification method
 
@@ -79,9 +79,10 @@ Claims in the earlier drafts were checked against the official text. These were 
 | Wynn poker page | https://www.wynnlasvegas.com/casino/poker | Read (earlier session) | Series dates |
 | Wynn terms (resort fee) | https://www.wynnlasvegas.com/terms-and-conditions/848671 | Search excerpt | Fee $55 plus tax |
 | Venetian resort fee | https://www.venetianlasvegas.com/resort/resort-fee.html | Search excerpt | Fee $55 plus tax |
-| Venetian hotel terms | https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html | Search excerpt | 13.38% room tax |
+| Venetian hotel terms | https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html | Full page fetched, chunks 0–1, 2026-11-16 | 13.38% Clark County Room Tax; $55 resort fee plus applicable tax |
 | Venetian poker suite rates | https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html | Read (earlier session) | Conditional suite rates; $55 fee |
 | Caesars disclaimer | https://www.caesars.com/corporate/disclaimer | Search excerpt | General fee range |
+| Bellagio home page | https://bellagio.mgmresorts.com/en.html | Read 2026-11-16 | Identifies Bellagio as an MGM property; no fee/tax value claimed |
 | ARIA home page | https://aria.mgmresorts.com/en.html | Read | Official domain; no fee terms found |
 
 Third-party sites (vegaspokercalendar.com, pokernews.com, pokerfuse.com, mttdb.com, pokeratlas.com, pokerscout.com and others) were used to locate events and hotels only. They are not cited on any row.
