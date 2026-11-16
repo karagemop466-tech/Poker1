@@ -4,7 +4,19 @@ Shared task board for the Las Vegas Strip poker tournament and hotel planner.
 
 ## Current session and task claim
 
-Session `f0143c13` is working on branch `arena/f0143c13-poker1` (the branch is fixed for this session). Claim commit `cc17d9e` was pushed before implementation work.
+Session `baba1a15` is working on branch `arena/baba1a15-poker1` (the branch is fixed for this session). Scope claimed below and pushed before implementation work.
+
+**Session `baba1a15` claim (this session) — integration session.**
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Read every remaining official structure sheet (Venetian DSE IV sheets 4, 8, 18, 20–23, 26–23, 26–37, all DeepStack NYE sheets, WPT structure PDF, Wynn Signature Series PDF) and remove the "unverified" label from each event the sheet confirms; store single-entry / re-entry / add-on / fee as separate fields with source excerpt and retrieval date | In progress | `scripts/build_data.py`, `data/tournaments.json`, `research/tournaments.md` | `baba1a15` |
+| Add per-venue pages (Venetian, Wynn, other venues) with that venue's events and hotels | Unclaimed → claimed by this session | `scripts/build_site.py`, `pages/venues/*.html`, `assets/app.js` | `baba1a15` |
+| Add date filter, global search across all tables, guaranteed-pool ÷ entry-fee ratio with bounty/flight labels, per-day primary + fallback plan and overlap check, trip-cost calculator, hotel–venue walking table with 30-minute rule, dated rate log, "last checked" column | Unclaimed → claimed by this session | `assets/app.js`, `assets/style.css`, `scripts/build_site.py`, `scripts/build_data.py`, `data/*.json` | `baba1a15` |
+| Add scheduled re-check of official URLs (change monitoring) and the daily live-schedule fetch job | Unclaimed → claimed by this session | `scripts/check_sources.py`, `scripts/fetch_daily_schedules.py`, `.github/workflows/monitor.yml`, `.github/workflows/daily-feed.yml`, `data/source_status.json` | `baba1a15` |
+| Refresh Executive Summary, Questions, Suggestions, Flagged, Review, README; final validation; PR to `main`, merge, Pages deploy confirmation | Unclaimed → claimed by this session | `EXECUTIVE_SUMMARY.md`, `QUESTIONS.md`, `SUGGESTIONS.md`, `FLAGGED.md`, `REVIEW.md`, `README.md`, `COORDINATION.md`, `research/*` | `baba1a15` |
+
+Session `f0143c13` is working on branch `arena/f0143c13-poker1` (the branch is fixed for that session). Claim commit `cc17d9e` was pushed before implementation work.
 
 Session `arena/f5896c06-poker1` is working on branch `arena/f5896c06-poker1`. Integration commit `3241bb8` was pushed and opened as PR #13; rebased onto `b272ed5` and merged into main.
 
