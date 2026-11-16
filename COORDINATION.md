@@ -4,6 +4,12 @@ Shared task board for the Las Vegas Strip poker tournament and hotel planner.
 
 ## Current session and task claim
 
+Session `48ad1b5e` is the sole active session on the fixed Arena branch `arena/48ad1b5e-poker1`. It is acting as the final integration session because the prior claims below are complete and no other active file claims are recorded. **In progress**: close the remaining site-feature gaps, improve monitoring and data traceability, re-check available official sources, and publish only source-confirmed facts. Files in scope: `COORDINATION.md`, `EXECUTIVE_SUMMARY.md`, `FLAGGED.md`, `QUESTIONS.md`, `REVIEW.md`, `SUGGESTIONS.md`, `README.md`, `data/*.json`, `assets/app.js`, `assets/style.css`, `scripts/*.py`, `pages/*.html`, `index.html`, and `.github/workflows/*.yml`. This session must remain on Arena's fixed branch; it will not create or switch branches.
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Complete outstanding dashboard requirements and source monitoring; re-check official sources available in this session and record any limits or irregularities | In progress | Scope listed above | `48ad1b5e` |
+
 Session `f0143c13` is working on branch `arena/f0143c13-poker1` (the branch is fixed for this session). Claim commit `cc17d9e` was pushed before implementation work.
 
 Session `arena/f5896c06-poker1` is working on branch `arena/f5896c06-poker1`. Integration commit `3241bb8` was pushed and opened as PR #13; rebased onto `b272ed5` and merged into main.
