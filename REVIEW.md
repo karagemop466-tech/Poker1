@@ -1,6 +1,6 @@
 # Repo review — line-by-line verification log
 
-Generated 2026-11-16. Machine-readable copy: `data/repo_review.json`. Rendered page: `pages/review.html`.
+Generated 2026-11-16. Machine-readable copy: `data/repo_review.json`. Rendered page: `review.html`.
 Verification standard: every value must come from an official source (venue or MGM/Wynn/Caesars domain). Aggregators are never used as values. Unconfirmed values are left blank and flagged.
 
 ## Scope checked

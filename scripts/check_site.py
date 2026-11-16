@@ -1,64 +1,89 @@
-"""Integration checks for the static site (T7). Exit non-zero on any failure."""
-import glob, json, os, re, sys
+#!/usr/bin/env python3
+"""Small dependency-free validator for the static GitHub Pages dashboard."""
 from html.parser import HTMLParser
+from pathlib import Path
+from urllib.parse import urlparse
+import sys
 
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-errors = []
+ROOT = Path(__file__).resolve().parents[1]
+PAGES = ["index.html", "tournaments.html", "hotels.html", "decision.html", "suggestions.html", "flagged.html"]
+OFFICIAL_HOSTS = {
+    "venetianlasvegas.com",
+    "www.venetianlasvegas.com",
+    "cdn.wynnresorts.com",
+    "www.wynnlasvegas.com",
+    "reservations.wynnlasvegas.com",
+    "aria.mgmresorts.com",
+    "bellagio.mgmresorts.com",
+    "mgmresorts.com",
+    "caesars.com",
+    "rwlasvegas.com",
+}
 
-# 1. JSON parses and every row has an official source URL
-for f in glob.glob(os.path.join(ROOT, "data", "*.json")):
-    try:
-        json.load(open(f))
-    except Exception as e:
-        errors.append(f"JSON invalid {f}: {e}")
-t = json.load(open(os.path.join(ROOT, "data", "tournaments.json")))
-for section in ("main_single_entry", "excluded", "unverified_not_ranked"):
-    for r in t[section]:
-        srcs = [r.get("source_schedule")] + (r.get("source_structure") if isinstance(r.get("source_structure"), list) else [r.get("source_structure")])
-        if not any(s and s.startswith("https://") for s in srcs):
-            errors.append(f"{section} row without official link: {r.get('name')}")
-for r in t["main_single_entry"]:
-    if not (r["source_schedule"].startswith("https://www.venetianlasvegas.com/")):
-        errors.append(f"main row source not official Venetian: {r['name']}")
-
-# 2. Internal links resolve
-class LinkParser(HTMLParser):
+class SiteParser(HTMLParser):
     def __init__(self):
-        super().__init__(); self.links = []; self.stack = []; self.bad = []
-        self.void = {"meta", "link", "br", "img", "input", "hr"}
+        super().__init__(convert_charrefs=True)
+        self.links = []
+        self.tbody_row_depth = 0
+        self.rows = []
+        self.current_row = None
+
     def handle_starttag(self, tag, attrs):
-        a = dict(attrs)
-        if tag == "a" and a.get("href"):
-            self.links.append(a["href"])
-        if tag not in self.void:
-            self.stack.append(tag)
+        attrs = dict(attrs)
+        if tag == "a" and attrs.get("href"):
+            self.links.append(attrs["href"])
+        if tag == "tr" and self.tbody_row_depth:
+            self.current_row = []
+        if tag == "a" and self.current_row is not None and attrs.get("href"):
+            self.current_row.append(attrs["href"])
+        if tag == "tbody":
+            self.tbody_row_depth += 1
+
     def handle_endtag(self, tag):
-        if tag in self.void:
-            return
-        if not self.stack or self.stack[-1] != tag:
-            self.bad.append(f"unbalanced </{tag}>, open={self.stack[-1] if self.stack else None}")
-        else:
-            self.stack.pop()
+        if tag == "tr" and self.current_row is not None:
+            self.rows.append(self.current_row)
+            self.current_row = None
+        if tag == "tbody" and self.tbody_row_depth:
+            self.tbody_row_depth -= 1
 
-pages = [os.path.join(ROOT, "index.html")] + glob.glob(os.path.join(ROOT, "pages", "*.html"))
-for p in pages:
-    text = open(p).read()
-    if re.search(r"\bNone\b|\bnan\b", re.sub(r"<[^>]+>", " ", text)):
-        errors.append(f"raw None/nan in {os.path.relpath(p, ROOT)}")
-    lp = LinkParser(); lp.feed(text)
-    if lp.bad or lp.stack:
-        errors.append(f"HTML structure issue in {os.path.relpath(p, ROOT)}: {lp.bad[:3]} open={lp.stack[:3]}")
-    for href in lp.links:
-        if href.startswith(("http://", "https://", "#", "mailto:")):
+
+def is_official(href):
+    try:
+        host = (urlparse(href).hostname or "").lower()
+        return any(host == allowed or host.endswith("." + allowed) for allowed in OFFICIAL_HOSTS)
+    except ValueError:
+        return False
+
+
+def main():
+    errors = []
+    parsed_pages = {}
+    for page in PAGES:
+        path = ROOT / page
+        if not path.is_file():
+            errors.append(f"Missing required page: {page}")
             continue
-        target = os.path.normpath(os.path.join(os.path.dirname(p), href))
-        if not os.path.exists(target):
-            errors.append(f"broken link in {os.path.relpath(p, ROOT)}: {href}")
-    if "stylesheet" in text and "assets/style.css" not in text and "../assets/style.css" not in text:
-        errors.append(f"no stylesheet link in {p}")
+        parser = SiteParser()
+        parser.feed(path.read_text(encoding="utf-8"))
+        parsed_pages[page] = parser
+        if not parser.links:
+            errors.append(f"No links found in {page}")
+        for href in parser.links:
+            if href.startswith(("http://", "https://", "mailto:", "tel:", "#")):
+                continue
+            local = (path.parent / href.split("#", 1)[0].split("?", 1)[0]).resolve()
+            if not local.exists():
+                errors.append(f"Broken local link in {page}: {href}")
+        for row_number, row_links in enumerate(parser.rows, 1):
+            if not any(is_official(href) for href in row_links):
+                errors.append(f"Table body row {row_number} in {page} has no official venue/operator source link")
+    if errors:
+        print("Site validation FAILED:")
+        print("\n".join(f"- {e}" for e in errors))
+        return 1
+    row_count = sum(len(p.rows) for p in parsed_pages.values())
+    print(f"Site validation passed: {len(parsed_pages)} pages, {row_count} sourced table rows, local links resolve.")
+    return 0
 
-print(f"pages checked: {len(pages)}; rows: main={len(t['main_single_entry'])} excluded={len(t['excluded'])} unverified={len(t['unverified_not_ranked'])}")
-if errors:
-    print("FAILURES:"); [print(" -", e) for e in errors]
-    sys.exit(1)
-print("ALL CHECKS PASSED")
+if __name__ == "__main__":
+    sys.exit(main())

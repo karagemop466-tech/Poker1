@@ -11,6 +11,7 @@ Each question is paired with the data it affects. Answer any of these to update 
 | Q3 | Is the PokerAtlas PRO $20 rake discount (events 18, 58) acceptable? | Yes, flagged. | 2 rows |
 | Q4 | Should "at least 30 min walking" mean hotel-to-venue walk ≥30 min? | Yes. The Venetian/Palazzo fail, since they are the venue. | Hotel list |
 | Q5 | Should Wynn WPT events be ranked? | No. Their rules are not verified and most have re-entry. | 127 rows |
+| Q6 | Should the Venetian single-day events count as "single-entry" when the sheet is silent on re-entry? | Shown as candidates. Strict reading (explicit wording required) gives 0 confirmed. | 47 rows |
 
 ## Verification gaps
 

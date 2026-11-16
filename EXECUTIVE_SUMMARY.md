@@ -4,7 +4,7 @@ Prepared 2026-11-16 (Houston, TX). Site: https://karagemop466-tech.github.io/Pok
 
 ## Bottom line
 
-- **47 single-entry, single-day tournaments** are verified at the Venetian (DeepStack Extravaganza IV). Buy-ins run from **$200 to $1,100**. The largest guarantee in that list is **$75,000** (events 36 and 52). Source: official Venetian schedule and structure sheets.
+- **47 single-day candidates** at the Venetian (DeepStack Extravaganza IV) print no re-entry or add-on terms on their structure sheets. Buy-ins run from **$200 to $1,100**; the largest guarantee is **$75,000** (events 36 and 52). **Important:** none of the sheets read says "single entry" explicitly. Under the stricter standard on the other dashboard on this site ("explicit wording required"), the confirmed single-entry count is **0**. Both readings are shown; this summary does not claim the 47 are confirmed single-entry.
 - **32 playing days** (Nov 18 – Dec 23) have at least one verified single-entry start. No verified single-entry event starts before **10:10 AM**; the 8 AM start is a check-in time, not a tournament start.
 - **Excluded from the single-entry list (16 rows):** Venetian multi-flight events (re-entry), Wynn daily events (re-entry, rebuys, add-ons), Bellagio weekly events (re-entry, and optional gratuities that buy chips), and the Wynn WPT $600 NLH (unlimited re-entry).
 - **Hotels: no hotel is confirmed to meet the 30-minute walking requirement** because no official source gives walking times. The Venetian and Palazzo are the venue itself. Their verified cost is **$197.28 per night** (Venetian, from $119 + $55 fee, plus 13.38% room tax) and **$299.32** (Palazzo, from $209 + $55, plus tax). Both rates are conditional on poker play each night.
@@ -23,8 +23,8 @@ Prepared 2026-11-16 (Houston, TX). Site: https://karagemop466-tech.github.io/Pok
 
 ## Key judgements (for owner review)
 
-1. **Bounty and PKO events are in the single-entry list.** A bounty pays a prize; it does not buy chips. 32 of 47 events are bounty events. See SUGGESTIONS.md.
-2. **Single-entry means the structure sheet prints no re-entry or add-on provision.** This is a documented absence, not a confirmed rule. Confirm at the cage.
+1. **Single-entry means the structure sheet prints no re-entry or add-on terms.** It is a documented absence, not explicit confirmation. Strict confirmed count: 0. See QUESTIONS.md Q6.
+2. **Bounty and PKO events are in the candidate list.** A bounty pays a prize; it does not buy chips. 32 of 47 events are bounty events. See SUGGESTIONS.md.
 3. **Bellagio's optional staff gratuity** ($25 to $40) buys extra chips, so it is treated as pay-to-advantage and excluded.
 4. **PokerAtlas PRO $20 rake discount** (events 18 and 58) is a membership-linked buy-in discount, not chips. Kept in the list and flagged.
 

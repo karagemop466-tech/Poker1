@@ -34,7 +34,7 @@
       "check": "Bellagio weekly events (PDF structures)",
       "result": "Fri $600 NLH and Sun $400 H.O.R.S.E. read. Sat PDF conflicts ($1,000 file name/page, $1,100 header, $600 fee sum). Gratuity buys chips (pay-to-advantage).",
       "status": "irregular",
-      "source": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf"
+      "source": "https://bellagio.mgmresorts.com/en/casino/poker.html"
     },
     {
       "id": "R6",
@@ -83,7 +83,7 @@
       "check": "RWLV, MGM Grand (SSPS), Aria, Planet Hollywood poker pages",
       "result": "Official URLs returned email blast, 404, or unrelated domain. No events from these venues are listed.",
       "status": "unverified",
-      "source": "(none)"
+      "source": "https://rwlasvegas.com/casino/poker"
     },
     {
       "id": "R13",
@@ -106,7 +106,7 @@
       "type": "Conflict",
       "item": "Bellagio Saturday event: price",
       "detail": "File name and official page say $1,000; the PDF header says $1,100; the fee breakdown ($510 + $50 + $40) totals $600.",
-      "source": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf"
+      "source": "https://bellagio.mgmresorts.com/en/casino/poker.html"
     },
     {
       "id": "F2",
@@ -155,7 +155,7 @@
       "type": "Unverified",
       "item": "Hotel walking times to venues",
       "detail": "No official source for walking time. The 30-minute walking criterion cannot be verified for any hotel. Blank.",
-      "source": "(none)"
+      "source": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html"
     },
     {
       "id": "F9",

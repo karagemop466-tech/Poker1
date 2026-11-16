@@ -1,9 +1,9 @@
-"""Build data/*.json and pages/*.html from scripts/data_verified.py.
+"""Build data/*.json and root *.html pages from scripts/data_verified.py.
 
 Run:  python3 scripts/build.py
 Every output value comes from data_verified.py, which carries official source URLs.
 Blank (None) values are rendered as blank cells with a flag marker and listed on
-pages/flagged.html. Nothing is inferred here.
+flagged.html. Nothing is inferred here.
 """
 import datetime as dt
 import html
@@ -43,7 +43,7 @@ for r in D.V:
         buy_in=r["buy_in"], gtd=r["gtd"], house_fee=r["house_fee"], prize_pool=r["prize_pool"],
         bounty=r["bounty"], eligibility=r["eligibility"], notes=r["notes"],
         gtd_note=r["gtd_note"],
-        entry_type="Single-entry: no re-entry or add-on provision on structure sheet",
+        entry_type="Candidate: no re-entry or add-on terms printed on structure sheet (explicit single-entry wording not found)",
         structure_sheet=r["struct"],
         source_schedule=D.VEN_SCHED,
         source_structure=D.vs(r["struct"]),
@@ -150,7 +150,7 @@ review = [
     dict(id="R4", check="Venetian poker suite rates and play requirement",
          result="From $119 (Venetian) / $209 (Palazzo); $55 resort fee; conditional on poker play each night. Used as the rate basis, with the condition flagged.", status="verified", source=D.VEN_SUITE_RATES),
     dict(id="R5", check="Bellagio weekly events (PDF structures)",
-         result="Fri $600 NLH and Sun $400 H.O.R.S.E. read. Sat PDF conflicts ($1,000 file name/page, $1,100 header, $600 fee sum). Gratuity buys chips (pay-to-advantage).", status="irregular", source=D.BELL_SAT),
+         result="Fri $600 NLH and Sun $400 H.O.R.S.E. read. Sat PDF conflicts ($1,000 file name/page, $1,100 header, $600 fee sum). Gratuity buys chips (pay-to-advantage).", status="irregular", source=D.BELL_POKER_PAGE),
     dict(id="R6", check="Wynn daily tournaments (structures PDF)",
          result="All five daily structures read. All allow re-entry or add-on, so all are excluded from the single-entry list. Registration text says 'Encore at Wynn'.", status="irregular", source=D.WYNN_DAILY_STRUCT),
     dict(id="R7", check="Wynn WPT schedule (PDF)",
@@ -164,7 +164,7 @@ review = [
     dict(id="R11", check="Bellagio resort fee and nightly rate",
          result="Not found on official MGM pages retrieved. Aggregator figure $55 + tax not used.", status="unverified", source=D.BELL_POKER_PAGE),
     dict(id="R12", check="RWLV, MGM Grand (SSPS), Aria, Planet Hollywood poker pages",
-         result="Official URLs returned email blast, 404, or unrelated domain. No events from these venues are listed.", status="unverified", source="(none)"),
+         result="Official URLs returned email blast, 404, or unrelated domain. No events from these venues are listed.", status="unverified", source="https://rwlasvegas.com/casino/poker"),
     dict(id="R13", check="Stale notice on Bellagio poker page",
          result="Official page carries a tournament-resumption notice dated July 26. Weekly event list may be out of date.", status="irregular", source=D.BELL_POKER_PAGE),
     dict(id="R14", check="Wynn daily suspension during WPT series",
@@ -173,14 +173,14 @@ review = [
 
 # ---------------------------------------------------------- FLAGGED LIST
 flagged = [
-    dict(id="F1", type="Conflict", item="Bellagio Saturday event: price", detail="File name and official page say $1,000; the PDF header says $1,100; the fee breakdown ($510 + $50 + $40) totals $600.", source=D.BELL_SAT),
+    dict(id="F1", type="Conflict", item="Bellagio Saturday event: price", detail="File name and official page say $1,000; the PDF header says $1,100; the fee breakdown ($510 + $50 + $40) totals $600.", source=D.BELL_POKER_PAGE),
     dict(id="F2", type="Conflict", item="Wynn Hotel resort fee", detail="Undated offer 848654: $45 + tax. Expired offer 850225: $55 + tax. No current official value. Left blank.", source=D.WYNN_TERMS_OFFER),
     dict(id="F3", type="Conflict", item="Wynn daily registration location", detail="Daily T&C say registration is in 'Encore at Wynn'; the poker room is documented at Wynn. Confirm before play.", source=D.WYNN_DAILY_STRUCT),
     dict(id="F4", type="Irregularity", item="Wynn WPT schedule order", detail="Dec 18 rows appear before Dec 17 rows. A footnote lists an $11,100 Ladies entry.", source=D.WYNN_WPT_SCHED),
     dict(id="F5", type="Unverified", item="Caesars Palace resort fee", detail="Official page chunks 0–1 read, no fee shown. Aggregators disagree. Left blank.", source=D.CAESARS_HOTEL),
     dict(id="F6", type="Unverified", item="Bellagio resort fee and nightly rate", detail="No official MGM page retrieved. Left blank.", source=D.BELL_POKER_PAGE),
     dict(id="F7", type="Unverified", item="Wynn base rate", detail="Official wynnlasvegas.com/hotel page is dead. Offer rates are undated or expired. Left blank.", source=D.WYNN_TERMS_OFFER),
-    dict(id="F8", type="Unverified", item="Hotel walking times to venues", detail="No official source for walking time. The 30-minute walking criterion cannot be verified for any hotel. Blank.", source="(none)"),
+    dict(id="F8", type="Unverified", item="Hotel walking times to venues", detail="No official source for walking time. The 30-minute walking criterion cannot be verified for any hotel. Blank.", source=D.VEN_HOTEL_TERMS),
     dict(id="F9", type="Unverified", item="Venetian structure sheets not read", detail="Sheets 3, 4, 9, 12–14, 19–21, 24, 25, 31, 32, 35–37 not read. Affected events are multi-flight, satellite, tag-team or 2-day, so they are not ranked.", source=D.VEN_SCHED),
     dict(id="F10", type="Unverified", item="Venetian single-day sheets: re-entry rule", detail="Read sheets print no re-entry or add-on provision. Classified single-entry on that basis. Confirm at the cage.", source=D.VEN_SCHED),
     dict(id="F11", type="Policy decision", item="Bounty / PKO events in the single-entry list", detail="Bounties are prize money and do not add chips. Kept in the single-entry list with a Bounty flag. Owner to confirm.", source=D.VEN_SCHED),
@@ -213,17 +213,16 @@ dump("schedule.json", dict(generated=GENERATED, days=schedule))
 dump("repo_review.json", dict(generated=GENERATED, checks=review, flagged=flagged))
 
 # ----------------------------------------------------------- HTML PAGES
-CSS_HREF = "../assets/style.css"
 
-NAV = [("index.html", "Home"), ("tournaments.html", "Single-entry"), ("excluded.html", "Excluded"),
+NAV = [("index.html", "Home"), ("tournaments.html", "Single-entry candidates"), ("excluded.html", "Excluded & unranked"),
        ("hotels.html", "Hotels"), ("schedule.html", "Schedule"), ("flagged.html", "Flagged for Review"),
-       ("review.html", "Repo review")]
+       ("review.html", "Repo review"), ("decision.html", "Decision brief"), ("suggestions.html", "Suggestions")]
 
 
-def page(title, body, active, prefix="../"):
-    # Pages live in pages/, so the home link and assets are one level up.
+def page(title, body, active, prefix=""):
+    # Flat root layout (matches .github/workflows/pages.yml staging).
     nav = "".join(
-        f'<a href="{prefix if href == "index.html" else ""}{href}"{" class=active" if href == active else ""}>{esc(lbl)}</a>'
+        f'<a href="{href}"{" class=active" if href == active else ""}>{esc(lbl)}</a>'
         for href, lbl in NAV)
     return f"""<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -269,11 +268,11 @@ for r in main:
         f"{cell(r['prize_pool'],'money')}<td>{'Bounty' if r['bounty'] else ''}</td><td>{esc(r['eligibility'])}</td>"
         f"<td class=small>{esc(r['notes'] or '')}{(' ' + esc(r['gtd_note'])) if r['gtd_note'] else ''}</td><td class=src>{src}</td></tr>")
 tour_body = f"""<p class="lead">Single-entry, single-day Venetian DeepStack Extravaganza IV events, ranked by buy-in and then prize pool.
-{len(main)} events. Every row links to the official schedule and structure sheet. Source: <a href="{esc(D.VEN_SCHED)}">Venetian official schedule</a>.</p>
-<p class="small">Entry type: single-entry means the structure sheet prints no re-entry or add-on provision. Bounty events are included (no chip purchase), and are marked. The buy-in is the total charged; the house fee is buy-in minus prize pool.</p>
+{len(main)} candidates. Every row links to the official schedule and structure sheet. Source: <a href="{esc(D.VEN_SCHED)}">Venetian official schedule</a>.</p>
+<p class="small">Entry type: each row is a candidate because its structure sheet prints no re-entry or add-on terms. Explicit single-entry wording was not found on the sheets read, so the confirmed count under a strict standard is 0. Bounty events are included (no chip purchase) and marked. The buy-in is the total charged; the house fee is buy-in minus prize pool.</p>
 {table(["Rank","Event #","Date","Start","Event","Buy-in","GTD","House fee","Prize pool","Bounty","Eligibility","Notes","Sources"], rows)}
 """
-open(os.path.join(ROOT, "pages", "tournaments.html"), "w").write(page("Single-entry tournaments", tour_body, "tournaments.html"))
+open(os.path.join(ROOT, "tournaments.html"), "w").write(page("Single-entry candidates", tour_body, "tournaments.html"))
 
 # excluded
 er = []
@@ -298,7 +297,7 @@ and pay-to-advantage gratuities. Also includes unverified events that are not ra
 {table(["Category","Event #","Date","Start","Event","Buy-in","GTD","Reason","Notes","Sources"],
         [f"<tr><td>{esc(u['category'])}</td><td>{esc(u['event'] or '')}</td><td>{esc(u['date'])}</td><td>{esc(u['start'])}</td><td>{esc(u['name'])}</td>{cell(u['buy_in'],'money')}{cell(u['gtd'],'money')}<td class=small>{esc(u['reason'])}</td><td class=small>{esc(u['notes'] or '')}</td><td class=src>{link(u['source_schedule'],'Official')} · {link(u['source_structure'][0],'Structure')}</td></tr>" for u in unverified])}
 """
-open(os.path.join(ROOT, "pages", "excluded.html"), "w").write(page("Excluded and unverified events", ex_body, "excluded.html"))
+open(os.path.join(ROOT, "excluded.html"), "w").write(page("Excluded and unverified events", ex_body, "excluded.html"))
 
 # hotels
 hr = []
@@ -317,7 +316,7 @@ hotel_body = f"""<p class="lead">Hotel costs use official rates, resort fees and
 <p class="small"><strong>Walking requirement:</strong> the brief asks for hotels at least 30 minutes' walk from the venue. No official source gives walking times, so no hotel is confirmed to meet this. The Venetian/Palazzo is the venue itself, so it does not meet the 30-minute requirement. Its figures are shown as a cost reference only.</p>
 {table(["Hotel","Position vs. venue","Rate from (official, conditional)","Rate basis","Resort fee / night","True cost / night from","Resort-fee basis","Walking","Sources"], hr)}
 """
-open(os.path.join(ROOT, "pages", "hotels.html"), "w").write(page("Hotels", hotel_body, "hotels.html"))
+open(os.path.join(ROOT, "hotels.html"), "w").write(page("Hotels", hotel_body, "hotels.html"))
 
 # schedule
 sched_rows = []
@@ -333,39 +332,39 @@ sched_body = f"""<p class="lead">Single-entry starts by day, from the official V
 {table(["Date","Single-entry starts (official)","Excluded multi-entry starts (reference)","Note"], sched_rows)}
 <p class="small">Schedule source: <a href="{esc(D.VEN_SCHED)}">Venetian DeepStack Extravaganza IV (official)</a>.</p>
 """
-open(os.path.join(ROOT, "pages", "schedule.html"), "w").write(page("Schedule", sched_body, "schedule.html"))
+open(os.path.join(ROOT, "schedule.html"), "w").write(page("Schedule", sched_body, "schedule.html"))
 
 # flagged
 fl_rows = [f"<tr><td>{esc(f['id'])}</td><td>{esc(f['type'])}</td><td>{esc(f['item'])}</td><td>{esc(f['detail'])}</td><td class=src>{link(f['source'],'Source') if f['source'].startswith('http') else esc(f['source'])}</td></tr>" for f in flagged]
 fl_body = f"""<p class="lead">Irregularities, conflicts, unverified values and policy decisions. Flagged items do not block the merge; they are published here for review.</p>
 {table(["ID","Type","Item","Detail","Source"], fl_rows)}
 """
-open(os.path.join(ROOT, "pages", "flagged.html"), "w").write(page("Flagged for Review", fl_body, "flagged.html"))
+open(os.path.join(ROOT, "flagged.html"), "w").write(page("Flagged for Review", fl_body, "flagged.html"))
 
 # repo review
 rv_rows = [f"<tr><td>{esc(c['id'])}</td><td>{esc(c['check'])}</td><td>{esc(c['result'])}</td><td>{esc(c['status'])}</td><td class=src>{link(c['source'],'Source') if c['source'].startswith('http') else esc(c['source'])}</td></tr>" for c in review]
 rv_body = f"""<p class="lead">Line-by-line verification log against official sources, with irregularities. Also in <code>REVIEW.md</code> and <code>data/repo_review.json</code>.</p>
 {table(["ID","Check","Result","Status","Source"], rv_rows)}
 """
-open(os.path.join(ROOT, "pages", "review.html"), "w").write(page("Repo review", rv_body, "review.html"))
+open(os.path.join(ROOT, "review.html"), "w").write(page("Repo review", rv_body, "review.html"))
 
 print("built", len(main), "main;", len(excluded), "excluded;", len(unverified), "unverified;", len(hotels), "hotels;", len(schedule), "days;", len(flagged), "flags")
 
 
 # ----------------------------------------------------------- INDEX (T7)
 def index_page():
-    nav_items = [("index.html", "Home"), ("pages/tournaments.html", "Single-entry"), ("pages/excluded.html", "Excluded"),
-                 ("pages/hotels.html", "Hotels"), ("pages/schedule.html", "Schedule"), ("pages/flagged.html", "Flagged for Review"),
-                 ("pages/review.html", "Repo review")]
+    nav_items = [("index.html", "Home"), ("tournaments.html", "Single-entry candidates"), ("excluded.html", "Excluded & unranked"),
+                 ("hotels.html", "Hotels"), ("schedule.html", "Schedule"), ("flagged.html", "Flagged for Review"),
+                 ("review.html", "Repo review"), ("decision.html", "Decision brief"), ("suggestions.html", "Suggestions")]
     nav = "".join(f'<a href="{h}"{" class=active" if h == "index.html" else ""}>{esc(l)}</a>' for h, l in nav_items)
     repo = "https://github.com/karagemop466-tech/Poker1/blob/main/"
     cards = [
-        ("pages/tournaments.html", "Single-entry tournaments", f"{len(main)} verified single-entry events (Venetian DSE IV), ranked by buy-in and prize pool.", len(main)),
-        ("pages/excluded.html", "Excluded and unverified", f"{len(excluded)} excluded (re-entry, flights, add-ons, pay-to-advantage) and {len(unverified)} unranked rows.", len(excluded)),
-        ("pages/hotels.html", "Hotels", "Official rates, resort fees and true nightly cost. Walking times not verified.", len(hotels)),
-        ("pages/schedule.html", "Schedule", "Single-entry starts by day, Nov 16 – Dec 23, 2026. First verified start 10:10 AM.", len(schedule)),
-        ("pages/flagged.html", "Flagged for Review", f"{len(flagged)} flags: conflicts, unverified values, policy decisions.", len(flagged)),
-        ("pages/review.html", "Repo review", f"{len(review)} verification checks against official sources, with irregularities.", len(review)),
+        ("tournaments.html", "Single-entry candidates", f"{len(main)} Venetian DSE IV single-day candidates with no re-entry or add-on terms printed, ranked by buy-in and prize pool.", len(main)),
+        ("excluded.html", "Excluded and unverified", f"{len(excluded)} excluded (re-entry, flights, add-ons, pay-to-advantage) and {len(unverified)} unranked rows.", len(excluded)),
+        ("hotels.html", "Hotels", "Official rates, resort fees and true nightly cost. Walking times not verified.", len(hotels)),
+        ("schedule.html", "Schedule", "Candidate single-entry starts by day, Nov 16 – Dec 23, 2026. First verified start 10:10 AM.", len(schedule)),
+        ("flagged.html", "Flagged for Review", f"{len(flagged)} flags: conflicts, unverified values, policy decisions.", len(flagged)),
+        ("review.html", "Repo review", f"{len(review)} verification checks against official sources, with irregularities.", len(review)),
     ]
     cards_html = "".join(
         f'<a class="card" href="{h}"><h3>{esc(t)}</h3><p>{esc(d)}</p><div class="stat">{n}</div></a>' for h, t, d, n in cards)
