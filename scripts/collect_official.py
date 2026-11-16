@@ -48,9 +48,12 @@ WPT_SCHEDULE = ("https://cdn.wynnresorts.com/image/upload/v1757097329/"
                 "visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf")
 WPT_STRUCTURES = ("https://cdn.wynnresorts.com/image/upload/v1750864036/"
                   "visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf")
-WSS_SCHEDULE = ("https://cdn.wynnresorts.com/image/upload/v1756113053/"
+WSS_SCHEDULE = ("https://cdn.wynnresorts.com/image/upload/v1753296112/"
                 "visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/"
                 "Wynn_Signature_Series_Schedule.pdf")
+WSS_STRUCTURES = ("https://cdn.wynnresorts.com/image/upload/v1762299460/"
+                  "visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/"
+                  "Wynn_Signature_Series_Structures.pdf")
 
 # Non-tournament documents whose text is monitored for change (hotel fees/terms).
 HOTEL_DOCS = {
@@ -119,6 +122,103 @@ def pdf_text(raw):
                 pass
 
 
+# --------------------------------------------------- Wynn / WPT structure PDF --
+def parse_wynn_structures(text):
+    """Split a Wynn structures PDF into per-event records.
+
+    The document alternates a structure page (title, entry fee, guarantee, blind
+    levels) with a terms page (entry-fee breakdown, registration and re-entry
+    rule, day listing). Pages are classified, then each terms page is paired with
+    the nearest preceding unpaired structure page.
+    """
+    pages = text.split("\f")
+    struct_pages, terms_pages = [], []
+    for i, page in enumerate(pages):
+        flat = re.sub(r"[ \t]+", " ", page)
+        is_terms = ("TERMS AND CONDITIONS" in page.upper()
+                    and re.search(r"Registration|Entry Fee:", page))
+        has_levels = bool(re.search(r"Level\s+Small Blind|Level\s+Ante|Level\s+Blind", page)) or \
+                     bool(re.search(r"^\s*1\s+[\d,]+\s+[\d,]+", page, flags=re.M))
+        has_fee = bool(re.search(r"\$[\d,]+\s*\*{0,3}\s*Entry Fee", page))
+        if is_terms:
+            terms_pages.append(i)
+        elif has_fee and has_levels:
+            struct_pages.append(i)
+
+    events = []
+    used = set()
+    for t in terms_pages:
+        # nearest unpaired structure page before this terms page, skipping
+        # terms pages already consumed (a terms page is never a structure page)
+        prior = [x for x in struct_pages if x < t and x not in used]
+        if not prior:
+            continue
+        sp = prior[-1]
+        # skip any structure page that is itself the front of an already-paired event
+        used.add(sp)
+        spage, tpage = pages[sp], pages[t]
+        one_struct = re.sub(r"\s+", " ", spage)
+        one_terms = re.sub(r"\s+", " ", tpage)
+        first = [l.strip() for l in spage.split("\n") if l.strip()]
+        fee = re.search(r"\$([\d,]+)\s*\*{0,3}\s*Entry Fee", spage)
+        gtd = re.search(r"\$([\d,]+)\s*\*{0,3}\s*(?:Guarantee|Guaranteed)", spage, flags=re.I)
+        levels = [int(x) for x in re.findall(r"^\s*(\d{1,2})\s+[\d,]+\s+[\d,]+", spage, flags=re.M)]
+        facts = {
+            "index": len(events),
+            "page_structure": sp,
+            "page_terms": t,
+            "structure_title": re.sub(r"\s+", " ", " ".join(first[:3]))[:160],
+            "structure_entry_fee_usd": int(fee.group(1).replace(",", "")) if fee else None,
+            "structure_guarantee_usd": int(gtd.group(1).replace(",", "")) if gtd else None,
+            "levels_printed": max(levels) if levels else None,
+            "entry_fee_breakdown": None,
+            "registration_rule": None,
+            "single_entry": None,
+            "re_entry": None,
+            "rebuy": None,
+            "add_on": None,
+            "starting_stack": None,
+            "level_minutes": None,
+            "day_listing": [],
+            "terms_excerpt": one_terms[:1600],
+        }
+        m = re.search(r"(Entry Fee:?\s*\$[\d,]+[^.]{0,170})", one_terms)
+        if m:
+            facts["entry_fee_breakdown"] = m.group(1).strip()
+        m = re.search(r"Registration:\s*(.{0,900})", one_terms)
+        if m:
+            seg = m.group(1)
+            cut = re.search(r"(Starting Stack|Length of Play:|Breaks:|Payouts:|Action Clock)", seg)
+            if cut:
+                seg = seg[:cut.start()]
+            facts["registration_rule"] = seg.strip()
+        m = re.search(r"Players will start with ([\d,]+) in tournament chips", one_terms)
+        if m:
+            facts["starting_stack"] = int(m.group(1).replace(",", ""))
+        m = re.search(r"(\d+ minutes? per level[^.]{0,90})", one_terms)
+        if m:
+            facts["level_minutes"] = m.group(1).strip()
+        for dm in re.finditer(r"(Day \d[A-F]?):\s*[A-Z][a-z]+day,\s*([A-Z][a-z]+ \d{1,2}, \d{4}) at "
+                              r"(\d{1,2}(?::\d{2})?\s*[ap]\.?m\.?)", one_terms):
+            facts["day_listing"].append({"day": dm.group(1), "date_printed": dm.group(2),
+                                         "printed_time": dm.group(3)})
+        reg = facts["registration_rule"] or ""
+        joined = one_struct + " " + one_terms
+        if re.search(r"re-?entr|rebu|add-?\s?on", reg, flags=re.I):
+            facts["re_entry"] = True
+            facts["single_entry"] = False
+        elif re.search(r"no re-?entr|single entr|freeze-?out|one \(1\) entr|only one entr",
+                       joined, flags=re.I):
+            facts["re_entry"] = False
+            facts["single_entry"] = True
+        if re.search(r"add-?\s?on", reg, flags=re.I):
+            facts["add_on"] = True
+        if re.search(r"rebu", reg, flags=re.I):
+            facts["rebuy"] = True
+        events.append(facts)
+    return events
+
+
 # ---------------------------------------------------------------- HTML rows --
 TAG = re.compile(r"<[^>]+>")
 
@@ -164,8 +264,16 @@ def parse_venetian_rows(html):
         hour = int(t.group(1)) % 12
         if t.group(3).lower() == "p":
             hour += 12
-        struct = re.search(r'href="(https://www\.venetianlasvegas\.com/content/dam/'
-                           r'[^"]+\.pdf)"', cells[4] if len(cells) > 4 else "")
+        cell_html = cells[4] if len(cells) > 4 else ""
+        struct = None
+        m2 = re.search(r'href="([^"]*?/content/dam/[^"]+?\.pdf)"', cell_html, flags=re.I)
+        if m2:
+            href = m2.group(1)
+            if href.startswith("//"):
+                href = "https:" + href
+            elif href.startswith("/"):
+                href = "https://www.venetianlasvegas.com" + href
+            struct = href
         rows.append({
             "printed_date": date_raw,
             "date": "%04d-%02d-%02d" % (year, month, day),
@@ -174,7 +282,7 @@ def parse_venetian_rows(html):
             "start": "%02d:%02d" % (hour, int(t.group(2))),
             "event_no": ev_raw.strip(),
             "printed_name": name_raw,
-            "structure_url": struct.group(1) if struct else None,
+            "structure_url": struct,
         })
     return rows
 
@@ -326,7 +434,12 @@ def main():
                 f.write("%s %s ev%s %s | %s\n" % (r["date"], r["start"],
                         r["event_no"], r["printed_name"], r["structure_url"]))
         header = re.search(r"<h1[^>]*>([\s\S]*?)</h1>", html)
-        dates = re.search(r"</h1>\s*<p>\s*<strong>([^<]+)</strong>", html)
+        dates = (re.search(r"<strong>\s*((?:January|February|March|April|May|June|July|"
+                          r"August|September|October|November|December)[^<]{0,60}?\d{4})\s*</strong>", html)
+                 or re.search(r"((?:January|February|March|April|May|June|July|August|"
+                              r"September|October|November|December)\s+\d{1,2},\s*\d{4}\s*[\u2013-]\s*"
+                              r"(?:January|February|March|April|May|June|July|August|September|"
+                              r"October|November|December)?\s*\d{1,2},\s*\d{4})", html))
         blurb = re.search(r"More than \$[\d.,]+ [^<]+", html)
         series[slug] = {
             "name": series_name,
@@ -375,6 +488,7 @@ def main():
     for slug, url in (("wpt_schedule", WPT_SCHEDULE),
                       ("wpt_structures", WPT_STRUCTURES),
                       ("wynn_signature_schedule", WSS_SCHEDULE),
+                      ("wynn_signature_structures", WSS_STRUCTURES),
                       ("wynn_poker_page", WYNN_POKER)):
         raw, err = fetch(url)
         if raw is None:
@@ -398,11 +512,72 @@ def main():
                     hits.append({"keyword": m.group(0),
                                  "excerpt": excerpt(one, m.start(), m.end(), 140)})
             series[slug] = {"url": url, "kind": "pdf", "chars": len(text),
-                            "re_entry_hits": hits[:40],
-                            "fetched_utc": NOW}
+                            "re_entry_hits": hits[:40], "fetched_utc": NOW,
+                            "sha256": documents[url]["sha256"]}
+            if slug == "wynn_signature_schedule":
+                series[slug]["rows"] = parse_wynn_schedule(text, 2026)
+                series[slug]["rows_count"] = len(series[slug]["rows"])
+                log("wynn signature schedule rows", len(series[slug]["rows"]))
+            if slug in ("wpt_structures", "wynn_signature_structures"):
+                parsed = parse_wynn_structures(text)
+                series[slug]["events"] = parsed
+                log("wynn structures", slug, len(parsed), "events parsed")
         else:
             series[slug] = {"url": url, "kind": "html", "fetched_utc": NOW,
-                            "chars": len(raw)}
+                            "chars": len(raw), "sha256": documents[url]["sha256"]}
+
+def parse_wynn_schedule(text, default_year):
+    """Parse the Wynn Signature Series schedule PDF by column position.
+
+    Columns are located from the printed header line, because long event names
+    run into the guarantee column. Returns rows that keep the printed strings.
+    """
+    lines = text.split("\n")
+    hdr = None
+    for l in lines:
+        if "EVENT" in l and "ENTRY" in l and "GUARANTEE" in l:
+            hdr = l
+            break
+    if hdr is None:
+        return []
+    cols = {k: hdr.find(k) for k in ("EVENT", "GUARANTEE", "ENTRY", "CHIPS", "LEVELS")}
+    rows = []
+    for line in lines:
+        m = re.match(r"\s*(\d{1,2})/(\d{1,2})\s+([A-Z]{3})\s+"
+                     r"(\d{1,2}(?::\d{2})?\s*[AP]\.M\.)", line)
+        if not m:
+            continue
+        name = line[cols["EVENT"]:cols["GUARANTEE"]].strip()
+        gtd = line[cols["GUARANTEE"]:cols["ENTRY"]].strip()
+        entry = line[cols["ENTRY"]:cols["CHIPS"]].strip()
+        chips = line[cols["CHIPS"]:cols["LEVELS"]].strip()
+        levels = line[cols["LEVELS"]:].strip()
+        if not entry and not levels:
+            continue            # Day 2 rows print no entry and no levels
+        hh, mm = None, 0
+        tm = re.match(r"(\d{1,2})(?::(\d{2}))?\s*([AP])\.M\.", m.group(4))
+        if tm:
+            hh = int(tm.group(1)) % 12
+            mm = int(tm.group(2) or 0)
+            if tm.group(3) == "P":
+                hh += 12
+        season = default_year
+        if int(m.group(1)) == 1:      # a January row belongs to the following year
+            season = default_year + 1
+        rows.append({
+            "month": int(m.group(1)), "day": int(m.group(2)),
+            "date": "%04d-%02d-%02d" % (season, int(m.group(1)), int(m.group(2))),
+            "weekday_printed": m.group(3),
+            "printed_time": m.group(4),
+            "start": "%02d:%02d" % (hh, mm) if hh is not None else None,
+            "name_printed": name,
+            "guarantee_printed": gtd or None,
+            "entry_printed": entry or None,
+            "chips_printed": chips or None,
+            "levels_printed": levels or None,
+        })
+    return rows
+
 
     # ---- hotel / fee documents (monitored, not parsed into numbers) ----
     for slug, url in HOTEL_DOCS.items():
