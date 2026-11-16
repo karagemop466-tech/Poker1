@@ -15,6 +15,7 @@ Live site: https://karagemop466-tech.github.io/Poker1/
 
 ## Rules used
 
+- **Audit status:** the current data still contains prior `SE` labels that have not all been re-audited during this integration pass. Treat those labels as provisional until the reserved data audit confirms each one with positive official evidence of a one-paid-entry cap.
 - The ranking is reserved for events whose official terms confirm one paid entry total. A structure sheet that merely omits re-entry, rebuy, add-on, or flight language does not prove single-entry.
 - Events with re-entry, rebuy, add-ons, multiple flights, or unresolved entry terms stay outside the strict ranking and are shown separately or flagged. A source clause that bars players who bag Day 2 from later flights does not resolve whether players who bust may re-enter.
 - Hotel room rates are kept in a dated log. A true nightly cost is shown only when a logged rate, resort fee, and property-specific tax are all confirmed. Walking-time fields stay blank unless supported; an unverified time is not a verified walkability claim.
