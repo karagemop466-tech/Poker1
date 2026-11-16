@@ -92,6 +92,20 @@ Session `673f9643` worked on branch `arena/673f9643-poker1` and merged PR #19 in
   run `43941537206` also succeeded.
 - [PR #20](https://github.com/karagemop466-tech/Poker1/pull/20) merged the coordination record for that work at `757e03b`.
 
+## Session baba1a15 completion (PR #21)
+
+- [PR #21](https://github.com/karagemop466-tech/Poker1/pull/21) merged into `main` at `8d035c4` on 2026-11-16.
+  The pull-request validation job passed in run `43942318033` with every step green: the dataset rebuild, the page
+  rebuild, the validator, the official-source check and the headless page render.
+- The merge-triggered Pages workflow succeeded in run `43942513435` (validate and deploy jobs). The Pages API reports
+  status `built` at https://karagemop466-tech.github.io/Poker1/ (source `main:/`).
+- The published dataset is live: `https://karagemop466-tech.github.io/Poker1/data/tournaments.json` serves the 316 rows
+  with the rule objects, the flags and the source URLs.
+- Final state of this session's work: 316 official rows across 70 dates (2026-11-16 to 2027-01-24); 80 verified
+  single entry (60 cash events, 20 milestone satellites that award a seat), 60 possible multi-entry, 45 re-entry,
+  129 unverified on the entry rule, 43 continuation rows, 55 rows carrying a source flag; 7 hotels with 4 verified
+  resort fees and 1 verified room-tax rate; 1 dated rate quote; 4 recurring daily formats; 21 published pages.
+
 ## Existing deliverables and current data status
 
 The repository contains a static dashboard (`index.html`, `pages/`, `assets/`), source-linked JSON data, research notes, and separate Executive Summary, Questions, Suggestions, Flagged for Review and Repo Review documents. After this session's verification the data build reports **316 rows** across 70 dates (2026-11-16 to 2027-01-24): **80 verified single entry** (60 cash events and 20 milestone satellites that award a seat), **60 possible multi-entry**, **45 re-entry**, **129 with the entry rule unverified**, and 2 continuation rows. Every Venetian row now carries a verified entry rule, because all 37 DeepStack Extravaganza IV sheets and all 15 New Year's Eve sheets have been read; the remaining unverified rows are Wynn rows whose structure sheets are not published (the Wynn Signature Series structures PDF is still a "COMING SOON" placeholder).
@@ -155,3 +169,4 @@ The repository contains a static dashboard (`index.html`, `pages/`, `assets/`), 
 - 2026-11-16: session `baba1a15` completed the verification pass (37/37 November sheets, 15/15 NYE sheets, all eight WPT structure sections, both WPT schedule blocks, the Signature Series schedule and every hotel-policy page), rebuilt the Wynn WPT schedule row by row, added the 21 missing milestone-satellite rows, added the venue pages, filter bar, date picker, global search, rate calculator, daily feed and monitoring pages, refreshed all six published documents, and opened the integration PR.
 - 2026-11-16: this session rebased onto `origin/main` at `a89c085`, which already contained session c44e63df's PRs #17 and #18. The overlap was resolved in favour of the fully verified dataset and the single generated site, as recorded in the section above; session c44e63df's record is preserved.
 - 2026-11-16: this session rebased again onto `origin/main` at `bdaf5ee`, which contained session 673f9643's PR #19. Its stricter validator was merged into `scripts/check_links.py` rather than dropped, its README caution on the "SE" label was kept, and its sheet 18 chip-count correction (30,000 starting chips) was adopted after re-reading the sheet.
+- 2026-11-16: session `baba1a15` merged PR #21 into `main` at `8d035c4`; the Pages workflow run `43942513435` deployed the rebuilt dataset, the 21-page site and the refreshed documents, and the Pages API reports status `built`. A new daily workflow (`.github/workflows/monitor.yml`) checks every official source, records the result in `data/monitoring.json`, and opens an issue when a row changes.
