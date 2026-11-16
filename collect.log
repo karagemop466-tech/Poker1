@@ -1,0 +1,66 @@
+run_utc=2026-11-16T19:27:27Z
+ref=arena/bad329a9-poker1 commit=e463fbc6f153bce5d52083ba9e2f565a9c41b6f2
+script_sha256=0197614f214d85c00f51af4725f4762999075e124f716e3e64beba3dd345b922
+pdftotext=pdftotext version 26.01.0
+rows dse_nov_2026_page 94
+rows dse_dec_2026_page 49
+structure dse_dec_2026-structure_1.pdf -> [1, 3, 17] kw 0
+structure dse_dec_2026-structure_10.pdf -> [31] kw 0
+structure dse_dec_2026-structure_11.pdf -> [28] kw 0
+structure dse_dec_2026-structure_12.pdf -> [14] kw 0
+structure dse_dec_2026-structure_13.pdf -> [30] kw 0
+structure dse_dec_2026-structure_14.pdf -> [30] kw 1
+structure dse_dec_2026-structure_15.pdf -> [27] kw 0
+structure dse_dec_2026-structure_2.pdf -> [2, 4, 13, 22, 26, 29, 32] kw 1
+structure dse_dec_2026-structure_3.pdf -> [5] kw 0
+structure dse_dec_2026-structure_4.pdf -> [6, 9, 11] kw 0
+structure dse_dec_2026-structure_5.pdf -> [15, 18, 21, 24] kw 0
+structure dse_dec_2026-structure_6.pdf -> [8] kw 0
+structure dse_dec_2026-structure_7.pdf -> [16, 19] kw 0
+structure dse_dec_2026-structure_8.pdf -> [20] kw 0
+structure dse_dec_2026-structure_9.pdf -> [25] kw 1
+structure dse_nov_2026-structure_1.pdf -> [9, 11, 13, 15, 21, 22, 23, 25, 60, 61, 62, 64] kw 0
+structure dse_nov_2026-structure_10.pdf -> [1] kw 0
+structure dse_nov_2026-structure_11.pdf -> [16, 30, 54] kw 0
+structure dse_nov_2026-structure_12.pdf -> [26] kw 0
+structure dse_nov_2026-structure_13.pdf -> [26] kw 0
+structure dse_nov_2026-structure_14.pdf -> [26] kw 0
+structure dse_nov_2026-structure_15.pdf -> [29, 31, 34, 38, 42, 50, 51, 53, 55] kw 0
+structure dse_nov_2026-structure_16.pdf -> [36] kw 0
+structure dse_nov_2026-structure_17.pdf -> [24, 32] kw 0
+structure dse_nov_2026-structure_18.pdf -> [3, 4, 5] kw 0
+structure dse_nov_2026-structure_19.pdf -> [33, 37] kw 0
+structure dse_nov_2026-structure_2.pdf -> [7] kw 0
+structure dse_nov_2026-structure_20.pdf -> [49] kw 0
+structure dse_nov_2026-structure_21.pdf -> [47] kw 0
+structure dse_nov_2026-structure_22.pdf -> [1, 20] kw 0
+structure dse_nov_2026-structure_23.pdf -> [1, 57] kw 0
+structure dse_nov_2026-structure_24.pdf -> [41, 44] kw 0
+structure dse_nov_2026-structure_25.pdf -> [45, 46, 48] kw 0
+structure dse_nov_2026-structure_26.pdf -> [17] kw 0
+structure dse_nov_2026-structure_27.pdf -> [40] kw 0
+structure dse_nov_2026-structure_28.pdf -> [27] kw 0
+structure dse_nov_2026-structure_29.pdf -> [6] kw 0
+structure dse_nov_2026-structure_3.pdf -> [19] kw 0
+structure dse_nov_2026-structure_30.pdf -> [8] kw 0
+structure dse_nov_2026-structure_31.pdf -> [35] kw 0
+structure dse_nov_2026-structure_32.pdf -> [39] kw 0
+structure dse_nov_2026-structure_33.pdf -> [43] kw 0
+structure dse_nov_2026-structure_34.pdf -> [52] kw 0
+structure dse_nov_2026-structure_35.pdf -> [56] kw 0
+structure dse_nov_2026-structure_36.pdf -> [56] kw 0
+structure dse_nov_2026-structure_37.pdf -> [47] kw 0
+structure dse_nov_2026-structure_4.pdf -> [59] kw 0
+structure dse_nov_2026-structure_5.pdf -> [2, 12] kw 0
+structure dse_nov_2026-structure_6.pdf -> [10] kw 0
+structure dse_nov_2026-structure_7.pdf -> [14, 28, 63] kw 0
+structure dse_nov_2026-structure_8.pdf -> [18, 58] kw 1
+structure dse_nov_2026-structure_9.pdf -> [1] kw 0
+wynn structures wpt_structures 61 events parsed
+wynn signature schedule rows 34
+wynn structures wynn_signature_structures 0 events parsed
+facts generated: 2026-11-16T19:15:28Z
+documents: 13 structures: 0
+wpt_structures events: 0
+wynn_signature_structures events: 0
+wss rows: None
