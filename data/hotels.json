@@ -1,0 +1,580 @@
+{
+  "meta": {
+    "as_of": "2026-11-16",
+    "timezone": "America/Los_Angeles",
+    "area": "Las Vegas Strip and immediately adjacent casino resorts",
+    "primary_stay_id": "primary-4-night",
+    "scope": "Provisional two-guest hotel comparison for December 12-16, 2026. A separate nine-night December 12-21 scenario is included as supplemental context because the WPT World Championship at Wynn runs December 13-20, 2026.",
+    "booking_status": "No hotel is booked. Rates and availability are dynamic snapshots, not reservations or guarantees.",
+    "currency_rule": "Do not convert Treasure Island's Accor rates from EUR to USD; no exchange-rate source was collected. Compare hotels only when currency, tax/fee inclusion, occupancy, and stay dates are understood.",
+    "tax_method": "The official Clark County lodging-tax document states 13.38% for resort hotels in the Primary Gaming Corridor. This rate is used only for clearly labeled Wynn and Venetian illustrations where the booking page did not provide an all-in total. It is not a substitute for a live booking total.",
+    "route_method": "Walking figures are Google Maps route estimates checked on 2026-11-16, not future guarantees. Property interiors, access changes, closures, and route availability may add time or invalidate a route.",
+    "interpretation": "A missing quote, parser placeholder, or booking-engine error is not evidence that a hotel is sold out. Conditional advertised starting rates are not date-specific quotes."
+  },
+  "stays": [
+    {
+      "id": "primary-4-night",
+      "check_in": "2026-12-12",
+      "check_out": "2026-12-16",
+      "nights": 4,
+      "rooms": 1,
+      "guests": 2,
+      "status": "Provisional comparison window; not supplied as confirmed travel dates."
+    },
+    {
+      "id": "wpt-series-9-night",
+      "check_in": "2026-12-12",
+      "check_out": "2026-12-21",
+      "nights": 9,
+      "rooms": 1,
+      "guests": 2,
+      "status": "Supplemental scenario only; not a replacement for the four-night baseline or a user-confirmed itinerary.",
+      "context": "The official WPT festival schedule lists the WPT World Championship at Wynn for December 13-20, 2026."
+    }
+  ],
+  "summary": {
+    "lowest_confirmed_all_in_usd_quote_for_primary_stay": {
+      "hotel_id": "resorts-world-hilton",
+      "amount_usd": 1298.77,
+      "basis": "Official booking-engine itemization for a Hilton Deluxe Room, one king, two guests, four nights; includes room tax, resort fees, and resort-fee tax.",
+      "qualification": "This is the clearest confirmed all-in USD quote found, not a universal price ranking: Treasure Island displayed EUR, Wynn's totals are estimates, and Venetian/Caesars did not return usable date-specific quotes."
+    },
+    "hotel_booked": false,
+    "recommendation_limit": "Recheck exact dates, room, rate rules, occupancy, fees, taxes, and cancellation terms in the hotel's checkout before booking."
+  },
+  "hotels": [
+    {
+      "id": "resorts-world-hilton",
+      "name": "Hilton at Resorts World Las Vegas",
+      "venue_context": "Resorts World is its own resort; walking routes to Wynn and The Venetian are listed below.",
+      "quotes": [
+        {
+          "stay_id": "primary-4-night",
+          "status": "official_itemized_date_specific_quote",
+          "room_type": "Hilton Deluxe Room - One King Bed",
+          "rate_code": "DBF26",
+          "currency": "USD",
+          "nightly_room_rates_usd": [399.0, 129.0, 198.75, 198.75],
+          "room_subtotal_usd": 925.5,
+          "room_tax_usd": 123.83,
+          "resort_fee_subtotal_usd": 220.0,
+          "resort_fee_tax_usd": 29.44,
+          "quoted_total_usd": 1298.77,
+          "includes_taxes": true,
+          "includes_resort_fee": true,
+          "cancellation_terms": null,
+          "notes": "The itemized quote lists the room amount for each night, room tax, four $55 resort fees, tax on the resort fees, and the total. Cancellation terms were not captured in the fetched quote; inspect the selected rate before booking.",
+          "sources": [
+            {
+              "label": "Official Resorts World booking engine, Dec 12-16, 2026, 2 guests",
+              "url": "https://reservations.rwlasvegas.com/ibe/shop.aspx?hotelID=17726&selectedTower=HILTON&nights=4&adults=2&children=0&checkIn=12/12/2026&checkOut=12/16/2026&selectedRate=DBF26"
+            },
+            {
+              "label": "Resorts World FAQ, standard resort fee",
+              "url": "https://www.rwlasvegas.com/faq/"
+            }
+          ]
+        },
+        {
+          "stay_id": "wpt-series-9-night",
+          "status": "official_itemized_date_specific_quote",
+          "room_type": "Hilton Deluxe Room - One King Bed",
+          "rate_code": "DBF26",
+          "currency": "USD",
+          "nightly_room_rates_usd": [399.0, 129.0, 198.75, 198.75, 198.75, 198.75, 74.25, 74.25, 64.5],
+          "room_subtotal_usd": 1536.0,
+          "room_tax_usd": 205.52,
+          "resort_fee_subtotal_usd": 495.0,
+          "resort_fee_tax_usd": 66.24,
+          "quoted_total_usd": 2302.76,
+          "includes_taxes": true,
+          "includes_resort_fee": true,
+          "cancellation_terms": null,
+          "notes": "The itemized quote is for nine nights and two guests. The per-night amounts include the stay dates Dec 12 through Dec 20, with checkout Dec 21. Cancellation terms were not captured in the fetched quote; inspect the selected rate before booking.",
+          "sources": [
+            {
+              "label": "Official Resorts World booking engine, Dec 12-21, 2026, 2 guests",
+              "url": "https://reservations.rwlasvegas.com/ibe/shop.aspx?hotelID=17726&selectedTower=HILTON&nights=9&adults=2&children=0&checkIn=12/12/2026&checkOut=12/21/2026&selectedRate=DBF26"
+            },
+            {
+              "label": "Resorts World FAQ, standard resort fee",
+              "url": "https://www.rwlasvegas.com/faq/"
+            }
+          ]
+        }
+      ],
+      "offers_not_applied": [
+        {
+          "name": "All Resort No Fees",
+          "status": "tested_offer_unavailable_for_primary_dates",
+          "notes": "The offer advertises a waived $55 nightly resort fee on qualifying stays through Dec 28, 2026, subject to availability and blackout dates. The tested Dec 12-16 stay did not return an available no-fee rate, so no savings are applied to either quote.",
+          "source": {
+            "label": "Official Resorts World no-resort-fee offer",
+            "url": "https://www.rwlasvegas.com/offers/all-resort-no-fees/"
+          }
+        }
+      ]
+    },
+    {
+      "id": "wynn-las-vegas",
+      "name": "Wynn Las Vegas",
+      "venue_context": "The WPT World Championship is scheduled at Wynn Dec 13-20, 2026; its room rates below are separate from any tournament entry costs.",
+      "quotes": [
+        {
+          "stay_id": "primary-4-night",
+          "status": "official_date_specific_average_rate_with_illustrative_total",
+          "room_type": "Wynn Resort King",
+          "offer_name": "Your Fall to Have It All",
+          "currency": "USD",
+          "quoted_average_nightly_rate_usd": 434.0,
+          "includes_resort_fee": true,
+          "taxes_included": false,
+          "estimated_rate_subtotal_before_tax_usd": 1736.0,
+          "tax_rate_used_for_estimate_percent": 13.38,
+          "estimated_tax_usd": 232.28,
+          "estimated_total_usd": 1968.28,
+          "exact_itemized_stay_total_obtained": false,
+          "estimate_method": "Displayed average nightly rate x 4 nights, then 13.38% lodging tax. The booking page displayed an average, not an itemized total; this arithmetic is illustrative only.",
+          "cancellation_terms": "The offer terms state a credit card is required, one night's room rate and tax is charged at booking, and cancellation at least 72 hours before arrival avoids a one-night room-rate-and-tax penalty.",
+          "notes": "The seasonal offer must be booked by Nov 24, 2026. It applies to eligible Resort King or Two Queens stays; confirm the offer and current rate in checkout. The $55 nightly resort fee is included in the displayed rate and is not added again.",
+          "sources": [
+            {
+              "label": "Official Wynn Resort King room details and Dec 12-16 rate display",
+              "url": "https://reservations.wynnlasvegas.com/ibe/details.aspx?hotelID=13763&langID=1&rmID=68658&promo=&voucher=&currID=0&checkIn=12%2F12%2F2026&checkOut=12%2F16%2F2026"
+            },
+            {
+              "label": "Official Wynn seasonal Fall offer terms",
+              "url": "https://www.wynnlasvegas.com/terms-and-conditions/2026-seasonal-fall-offer-public"
+            },
+            {
+              "label": "Clark County official lodging-tax document",
+              "url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:3a73546d-c587-409d-9728-cbcf3a72ed04/original/as/pubhear-roomtax-ord-sb1d2.pdf"
+            }
+          ]
+        },
+        {
+          "stay_id": "primary-4-night",
+          "status": "official_date_specific_average_rate_with_illustrative_total",
+          "room_type": "Wynn Resort King",
+          "offer_name": "Flexible Getaway Rate",
+          "currency": "USD",
+          "quoted_average_nightly_rate_usd": 529.0,
+          "includes_resort_fee": true,
+          "taxes_included": false,
+          "estimated_rate_subtotal_before_tax_usd": 2116.0,
+          "tax_rate_used_for_estimate_percent": 13.38,
+          "estimated_tax_usd": 283.12,
+          "estimated_total_usd": 2399.12,
+          "exact_itemized_stay_total_obtained": false,
+          "estimate_method": "Displayed average nightly rate x 4 nights, then 13.38% lodging tax. The booking page displayed an average, not an itemized total; this arithmetic is illustrative only.",
+          "cancellation_terms": "The official offer details state a credit card is required, one night's room rate and tax is charged at booking, and cancellation at least 72 hours before arrival avoids a one-night room-rate-and-tax penalty.",
+          "notes": "The $55 nightly resort fee is included in the displayed rate and is not added again.",
+          "sources": [
+            {
+              "label": "Official Wynn Resort King room details and Dec 12-16 rate display",
+              "url": "https://reservations.wynnlasvegas.com/ibe/details.aspx?hotelID=13763&langID=1&rmID=68658&promo=&voucher=&currID=0&checkIn=12%2F12%2F2026&checkOut=12%2F16%2F2026"
+            },
+            {
+              "label": "Official Wynn resort information and resort fee",
+              "url": "https://www.wynnlasvegas.com/about-us/resort-information"
+            },
+            {
+              "label": "Clark County official lodging-tax document",
+              "url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:3a73546d-c587-409d-9728-cbcf3a72ed04/original/as/pubhear-roomtax-ord-sb1d2.pdf"
+            }
+          ]
+        },
+        {
+          "stay_id": "wpt-series-9-night",
+          "status": "official_date_specific_average_rate_with_illustrative_total",
+          "room_type": "Wynn Resort King",
+          "offer_name": "Your Fall to Have It All",
+          "currency": "USD",
+          "quoted_average_nightly_rate_usd": 364.0,
+          "includes_resort_fee": true,
+          "taxes_included": false,
+          "estimated_rate_subtotal_before_tax_usd": 3276.0,
+          "tax_rate_used_for_estimate_percent": 13.38,
+          "estimated_tax_usd": 438.33,
+          "estimated_total_usd": 3714.33,
+          "exact_itemized_stay_total_obtained": false,
+          "estimate_method": "Displayed average nightly rate x 9 nights, then 13.38% lodging tax. The booking page displayed an average, not an itemized total; this arithmetic is illustrative only.",
+          "cancellation_terms": "The offer terms state a credit card is required, one night's room rate and tax is charged at booking, and cancellation at least 72 hours before arrival avoids a one-night room-rate-and-tax penalty.",
+          "notes": "The seasonal offer must be booked by Nov 24, 2026. The $55 nightly resort fee is included in the displayed rate and is not added again.",
+          "sources": [
+            {
+              "label": "Official Wynn Resort King room details and Dec 12-21 rate display",
+              "url": "https://reservations.wynnlasvegas.com/ibe/details.aspx?hotelID=13763&langID=1&rmID=68658&promo=&voucher=&currID=0&checkIn=12%2F12%2F2026&checkOut=12%2F21%2F2026"
+            },
+            {
+              "label": "Official Wynn seasonal Fall offer terms",
+              "url": "https://www.wynnlasvegas.com/terms-and-conditions/2026-seasonal-fall-offer-public"
+            },
+            {
+              "label": "Clark County official lodging-tax document",
+              "url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:3a73546d-c587-409d-9728-cbcf3a72ed04/original/as/pubhear-roomtax-ord-sb1d2.pdf"
+            }
+          ]
+        },
+        {
+          "stay_id": "wpt-series-9-night",
+          "status": "official_date_specific_average_rate_with_illustrative_total",
+          "room_type": "Wynn Resort King",
+          "offer_name": "Flexible Getaway Rate",
+          "currency": "USD",
+          "quoted_average_nightly_rate_usd": 442.0,
+          "includes_resort_fee": true,
+          "taxes_included": false,
+          "estimated_rate_subtotal_before_tax_usd": 3978.0,
+          "tax_rate_used_for_estimate_percent": 13.38,
+          "estimated_tax_usd": 532.26,
+          "estimated_total_usd": 4510.26,
+          "exact_itemized_stay_total_obtained": false,
+          "estimate_method": "Displayed average nightly rate x 9 nights, then 13.38% lodging tax. The booking page displayed an average, not an itemized total; this arithmetic is illustrative only.",
+          "cancellation_terms": "The official offer details state a credit card is required, one night's room rate and tax is charged at booking, and cancellation at least 72 hours before arrival avoids a one-night room-rate-and-tax penalty.",
+          "notes": "The $55 nightly resort fee is included in the displayed rate and is not added again.",
+          "sources": [
+            {
+              "label": "Official Wynn Resort King room details and Dec 12-21 rate display",
+              "url": "https://reservations.wynnlasvegas.com/ibe/details.aspx?hotelID=13763&langID=1&rmID=68658&promo=&voucher=&currID=0&checkIn=12%2F12%2F2026&checkOut=12%2F21%2F2026"
+            },
+            {
+              "label": "Official Wynn resort information and resort fee",
+              "url": "https://www.wynnlasvegas.com/about-us/resort-information"
+            },
+            {
+              "label": "Clark County official lodging-tax document",
+              "url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:3a73546d-c587-409d-9728-cbcf3a72ed04/original/as/pubhear-roomtax-ord-sb1d2.pdf"
+            }
+          ]
+        }
+      ],
+      "fee_notes": [
+        {
+          "type": "resort_fee",
+          "amount_usd_per_night": 55.0,
+          "taxes_apply": true,
+          "note": "Wynn states a daily resort fee of $55 plus tax. The displayed quoted averages are explicitly marked as including the resort fee, so it is not added again in the estimates.",
+          "source": {
+            "label": "Official Wynn resort information",
+            "url": "https://www.wynnlasvegas.com/about-us/resort-information"
+          }
+        }
+      ]
+    },
+    {
+      "id": "treasure-island-ti",
+      "name": "Treasure Island TI Las Vegas - Handwritten Collection",
+      "venue_context": "Treasure Island is near The Venetian; Google Maps walking estimates are listed below.",
+      "quotes": [
+        {
+          "stay_id": "primary-4-night",
+          "status": "official_date_specific_quote_displayed_in_eur",
+          "currency": "EUR",
+          "room_options": [
+            {
+              "room_type": "Run of House",
+              "member_rate_total": 524.8,
+              "public_rate_total": 560.29
+            },
+            {
+              "room_type": "Deluxe Room with 1 King Size Bed, non-smoking",
+              "member_rate_total": 547.02,
+              "public_rate_total": 584.97
+            }
+          ],
+          "resort_fee_included_total_eur": 205.52,
+          "includes_taxes_and_fees": true,
+          "cancellation_terms": "For the displayed Deluxe King offer: free cancellation until Dec 9, 2026 at 3:00 p.m.; online payment. Recheck the selected rate's terms before booking.",
+          "notes": "Official Accor booking results for two adults and four nights displayed EUR even after USD currency attempts. No currency conversion is applied. The member rate requires an ALL Accor membership; the page offered free sign-up.",
+          "sources": [
+            {
+              "label": "Official Accor/Treasure Island booking results, Dec 12-16, 2026, 2 adults",
+              "url": "https://all.accor.com/booking/en/accor/hotel/C598?productCode=KGAZ&dateIn=2026-12-12&nights=4&compositions=2&stayplus=false&snu=false&hideHotelDetails=true"
+            }
+          ]
+        },
+        {
+          "stay_id": "wpt-series-9-night",
+          "status": "official_date_specific_quote_displayed_in_eur",
+          "currency": "EUR",
+          "room_options": [
+            {
+              "room_type": "Run of House",
+              "member_rate_total": 970.4,
+              "public_rate_total": 1026.88
+            },
+            {
+              "room_type": "Deluxe Room with 1 King Size Bed, non-smoking",
+              "member_rate_total": 1020.4,
+              "public_rate_total": 1082.43
+            }
+          ],
+          "resort_fee_included_total_eur": 462.41,
+          "includes_taxes_and_fees": true,
+          "cancellation_terms": null,
+          "notes": "Official Accor booking results for two adults and nine nights displayed EUR. No currency conversion is applied. The member rate requires an ALL Accor membership; verify the cancellation and payment rules for the chosen rate.",
+          "sources": [
+            {
+              "label": "Official Accor/Treasure Island booking results, Dec 12-21, 2026, 2 adults",
+              "url": "https://all.accor.com/booking/en/treasureisland/hotel/C598?dateIn=2026-12-12&dateOut=2026-12-21&compositions=2&stayplus=false&snu=false&accessibleRooms=false&hideWDR=false&productCode=null&hideHotelDetails=false"
+            }
+          ]
+        }
+      ],
+      "offers_not_used": [
+        {
+          "name": "TI TV Ad Special",
+          "status": "advertised_starting_rate_not_a_date_specific_quote",
+          "notes": "The offer page advertises a starting rate of $69 per night for ALL Accor members, a two-night minimum, limited availability/blackout dates, higher Friday/Saturday rates, and an optional $49.95 nightly resort fee plus tax. It is not used in either stay total.",
+          "source": {
+            "label": "Official Accor TI TV Ad Special terms",
+            "url": "https://all.accor.com/a/en/offers/americas/hotel-offers/ti-tv.html"
+          }
+        }
+      ]
+    },
+    {
+      "id": "venetian-resort",
+      "name": "The Venetian Resort Las Vegas (including The Palazzo rate program)",
+      "venue_context": "The Venetian is a tournament venue; walking estimates from Treasure Island and Wynn are listed below.",
+      "quotes": [
+        {
+          "stay_id": "primary-4-night",
+          "status": "no_valid_date_specific_quote_obtained",
+          "currency": "USD",
+          "advertised_poker_rate_floors_usd_per_night": [119.0, 209.0],
+          "illustrative_floor_totals": [
+            {
+              "nightly_floor_usd": 119.0,
+              "estimated_total_including_4_nights_of_55_usd_resort_fee_and_13_38_percent_tax_usd": 789.12
+            },
+            {
+              "nightly_floor_usd": 209.0,
+              "estimated_total_including_4_nights_of_55_usd_resort_fee_and_13_38_percent_tax_usd": 1197.29
+            }
+          ],
+          "exact_total_obtained": false,
+          "notes": "The official booking query returned $XXX placeholders and an inconsistent 4+ guest/capacity message, not a usable two-guest rate. Do not interpret this as sold out. The separate poker-suite page advertises rates starting as low as $119 and $209, but gives no confirmed Dec 12-16 rate; both floor totals above are illustrative arithmetic, not quotes.",
+          "conditions": "Poker rate must be booked through the resort using code EPOKR25 and is subject to availability and blackout dates. For each night stayed, listed guests must collectively complete six hours of active live cash play or buy into a $300+ tournament by 2 a.m. on the last night stayed; otherwise the rate adjusts to the prevailing rate. A $55 nightly resort fee plus applicable tax applies.",
+          "sources": [
+            {
+              "label": "Official Venetian booking query for Dec 12-16, 2026, two adults",
+              "url": "https://www.venetianlasvegas.com/booking?adults=2&arrival_date=2026-12-12&children=0&departure_date=2026-12-16&view=calendar"
+            },
+            {
+              "label": "Official 2026 Venetian poker suite-rate terms and play requirement",
+              "url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html"
+            },
+            {
+              "label": "Official Venetian hotel taxes, resort fee and terms",
+              "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html"
+            },
+            {
+              "label": "Clark County official lodging-tax document",
+              "url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:3a73546d-c587-409d-9728-cbcf3a72ed04/original/as/pubhear-roomtax-ord-sb1d2.pdf"
+            }
+          ]
+        },
+        {
+          "stay_id": "wpt-series-9-night",
+          "status": "no_valid_date_specific_quote_obtained",
+          "currency": "USD",
+          "advertised_poker_rate_floors_usd_per_night": [119.0, 209.0],
+          "illustrative_floor_totals": [
+            {
+              "nightly_floor_usd": 119.0,
+              "estimated_total_including_9_nights_of_55_usd_resort_fee_and_13_38_percent_tax_usd": 1775.53
+            },
+            {
+              "nightly_floor_usd": 209.0,
+              "estimated_total_including_9_nights_of_55_usd_resort_fee_and_13_38_percent_tax_usd": 2693.91
+            }
+          ],
+          "exact_total_obtained": false,
+          "notes": "The poker-rate floors are general advertised starting prices, not a confirmed Dec 12-21 offer or availability check. These totals are illustrative arithmetic only and the play/availability conditions still apply.",
+          "conditions": "Poker rate must be booked through the resort using code EPOKR25 and is subject to availability and blackout dates. For each night stayed, listed guests must collectively complete six hours of active live cash play or buy into a $300+ tournament by 2 a.m. on the last night stayed; otherwise the rate adjusts to the prevailing rate. A $55 nightly resort fee plus applicable tax applies.",
+          "sources": [
+            {
+              "label": "Official 2026 Venetian poker suite-rate terms and play requirement",
+              "url": "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html"
+            },
+            {
+              "label": "Official Venetian hotel taxes, resort fee and terms",
+              "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html"
+            },
+            {
+              "label": "Clark County official lodging-tax document",
+              "url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:3a73546d-c587-409d-9728-cbcf3a72ed04/original/as/pubhear-roomtax-ord-sb1d2.pdf"
+            }
+          ]
+        }
+      ],
+      "fee_notes": [
+        {
+          "type": "resort_fee",
+          "amount_usd_per_night": 55.0,
+          "taxes_apply": true,
+          "source": {
+            "label": "Official Venetian hotel terms",
+            "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html"
+          }
+        },
+        {
+          "type": "incidental_deposit",
+          "amount_usd_per_night": 150.0,
+          "note": "Hotel terms state a $150/night incidental deposit for suite charging privileges for non-Signature Suites; it is not included in the room-rate estimate and is not necessarily a fee.",
+          "source": {
+            "label": "Official Venetian hotel terms",
+            "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html"
+          }
+        },
+        {
+          "type": "early_departure_charge",
+          "amount_usd": 100.0,
+          "taxes_apply": true,
+          "note": "Hotel terms state an additional $100 plus tax charge for checkout before the scheduled departure date.",
+          "source": {
+            "label": "Official Venetian hotel terms",
+            "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html"
+          }
+        }
+      ]
+    },
+    {
+      "id": "caesars-palace",
+      "name": "Caesars Palace",
+      "venue_context": "A tournament-room location considered during hotel research; no date-specific hotel rate was confirmed.",
+      "quotes": [
+        {
+          "stay_id": "primary-4-night",
+          "status": "no_usable_quote_booking_calendar_error",
+          "currency": "USD",
+          "quoted_total_usd": null,
+          "notes": "The December 2026 official rate calendar returned a technical-difficulties message. No price, fee total, or date-specific availability could be confirmed; this is not evidence that the property is sold out.",
+          "sources": [
+            {
+              "label": "Official Caesars Palace hotel and rooms page",
+              "url": "https://www.caesars.com/caesars-palace/hotel"
+            }
+          ]
+        },
+        {
+          "stay_id": "wpt-series-9-night",
+          "status": "not_researched_as_a_separate_date_specific_quote",
+          "currency": "USD",
+          "quoted_total_usd": null,
+          "notes": "No separate usable nine-night quote was obtained. The four-night December 2026 calendar attempt returned a technical-difficulties message; check the live official booking flow again.",
+          "sources": [
+            {
+              "label": "Official Caesars Palace hotel and rooms page",
+              "url": "https://www.caesars.com/caesars-palace/hotel"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "walking_routes": [
+    {
+      "origin_hotel_id": "resorts-world-hilton",
+      "destination_venue_id": "wynn-las-vegas",
+      "mode": "walking",
+      "minutes_min": 18,
+      "minutes_max": 19,
+      "distance_miles_min": 0.9,
+      "distance_miles_max": 0.9,
+      "route_caveats": [],
+      "retrieved_on": "2026-11-16",
+      "source": {
+        "label": "Google Maps walking directions: Hilton at Resorts World to Wynn",
+        "url": "https://www.google.com/maps/dir/?api=1&origin=Hilton+at+Resorts+World,+Las+Vegas,+NV&destination=Wynn+Las+Vegas,+Las+Vegas,+NV&travelmode=walking"
+      }
+    },
+    {
+      "origin_hotel_id": "resorts-world-hilton",
+      "destination_venue_id": "venetian-resort",
+      "mode": "walking",
+      "minutes_min": 27,
+      "minutes_max": 28,
+      "distance_miles_min": 1.2,
+      "distance_miles_max": 1.2,
+      "route_caveats": [
+        "Google Maps flagged this route as involving private or restricted areas. Do not treat the 27-28 minute estimate as a dependable public walking route without checking the live map and access on the day.",
+        "The estimate is near a 30-minute walk and may omit time through large resort interiors."
+      ],
+      "retrieved_on": "2026-11-16",
+      "source": {
+        "label": "Google Maps walking directions: Resorts World to The Venetian",
+        "url": "https://www.google.com/maps/dir/?api=1&origin=Resorts+World+Las+Vegas,+Las+Vegas,+NV&destination=The+Venetian+Resort+Las+Vegas,+Las+Vegas,+NV&travelmode=walking"
+      }
+    },
+    {
+      "origin_hotel_id": "venetian-resort",
+      "destination_venue_id": "wynn-las-vegas",
+      "mode": "walking",
+      "minutes_min": 13,
+      "minutes_max": 14,
+      "distance_miles_min": 0.6,
+      "distance_miles_max": 0.6,
+      "route_caveats": [],
+      "retrieved_on": "2026-11-16",
+      "source": {
+        "label": "Google Maps walking directions: The Venetian to Wynn",
+        "url": "https://www.google.com/maps/dir/?api=1&origin=The+Venetian+Resort+Las+Vegas,+Las+Vegas,+NV&destination=Wynn+Las+Vegas,+Las+Vegas,+NV&travelmode=walking"
+      }
+    },
+    {
+      "origin_hotel_id": "treasure-island-ti",
+      "destination_venue_id": "venetian-resort",
+      "mode": "walking",
+      "minutes_min": 6,
+      "minutes_max": 6,
+      "distance_miles_min": 0.2,
+      "distance_miles_max": 0.3,
+      "route_caveats": [
+        "The mileage was recorded as an approximate 0.2-0.3 mile range; access and resort-interior walking can change the time."
+      ],
+      "retrieved_on": "2026-11-16",
+      "source": {
+        "label": "Google Maps walking directions: Treasure Island to The Venetian",
+        "url": "https://www.google.com/maps/dir/?api=1&origin=Treasure+Island+Las+Vegas,+Las+Vegas,+NV&destination=The+Venetian+Resort+Las+Vegas,+Las+Vegas,+NV&travelmode=walking"
+      }
+    },
+    {
+      "origin_hotel_id": "treasure-island-ti",
+      "destination_venue_id": "wynn-las-vegas",
+      "mode": "walking",
+      "minutes_min": 11,
+      "minutes_max": 13,
+      "distance_miles_min": 0.5,
+      "distance_miles_max": 0.6,
+      "route_caveats": [],
+      "retrieved_on": "2026-11-16",
+      "source": {
+        "label": "Google Maps walking directions: Treasure Island to Wynn",
+        "url": "https://www.google.com/maps/dir/?api=1&origin=Treasure+Island+Las+Vegas,+Las+Vegas,+NV&destination=Wynn+Las+Vegas,+Las+Vegas,+NV&travelmode=walking"
+      }
+    }
+  ],
+  "event_context": [
+    {
+      "event": "WPT World Championship at Wynn Las Vegas",
+      "start_date": "2026-12-13",
+      "end_date": "2026-12-20",
+      "note": "The supplemental nine-night stay brackets the full published event date range; the baseline four-night stay overlaps Dec 13-16.",
+      "source": {
+        "label": "Official WPT 2026 festival schedule",
+        "url": "https://www.worldpokertour.com/event/main-tour-wpt-world-championship-at-wynn-las-vegas-season-2026"
+      }
+    }
+  ],
+  "general_caveats": [
+    "All hotel rates are time-sensitive snapshots retrieved on 2026-11-16. Re-price and check availability before booking.",
+    "The four-night Dec 12-16 window is provisional; the nine-night Dec 12-21 comparison is supplemental only. Neither is a confirmed user itinerary.",
+    "Quoted amount, estimated total, advertised rate floor, and failed/no-quote status are represented separately. Do not present an estimate or starting rate as an official stay total.",
+    "Resort fees and taxes can change. Parking, incidental holds, optional services, transport, meals, and tournament entry costs are not included unless explicitly itemized.",
+    "Walking times are current route estimates, not guarantees. Google Maps flagged the Resorts World-Venetian path for private/restricted areas; check for a public route.",
+    "T-01 found no reviewed event certified as strict single-entry with no re-entry, rebuy, add-on, or paid chip advantage. Hotel proximity is not an endorsement of a tournament as qualifying."
+  ]
+}
