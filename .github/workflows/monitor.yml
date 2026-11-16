@@ -48,8 +48,23 @@ jobs:
         id: collect
         run: |
           set -o pipefail
-          python3 scripts/collect_official.py 2>&1 | tee collect.log
+          {
+            echo "run_utc=$(date -u +%FT%TZ)"
+            echo "ref=${GITHUB_REF_NAME} commit=$(git rev-parse HEAD)"
+            echo "script_sha256=$(sha256sum scripts/collect_official.py | cut -d' ' -f1)"
+            echo "pdftotext=$(pdftotext -v 2>&1 | head -1)"
+          } | tee collect.log
+          python3 scripts/collect_official.py 2>&1 | tee -a collect.log
           test -s data/official_facts.json
+          python3 - <<'PYEOF' | tee -a collect.log
+          import json
+          d = json.load(open('data/official_facts.json'))
+          print('facts generated:', d['generated_utc'])
+          print('documents:', len(d['documents']), 'structures:', len(d['structures']))
+          for k in ('wpt_structures', 'wynn_signature_structures'):
+              print(k, 'events:', len(d['series'].get(k, {}).get('events', [])))
+          print('wss rows:', d['series'].get('wynn_signature_schedule', {}).get('rows_count'))
+          PYEOF
 
       - name: Rebuild data and site from the collected facts
         run: |
@@ -61,7 +76,7 @@ jobs:
         run: |
           git config user.name "official-source-monitor"
           git config user.email "monitor@users.noreply.github.com"
-          git add -A data index.html pages
+          git add -A data index.html pages collect.log
           if git diff --cached --quiet; then
             echo "No change detected in any official document."
             exit 0
