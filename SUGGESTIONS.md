@@ -12,12 +12,12 @@ the site; everything under "Still open" is a proposal that has **not** been impl
 | S4 | A status on each row. | Entry-rule chip on every row: single entry, possible multiple entries, re-entry, continuation, unverified. | All tournament tables |
 | S5 | An automatic re-check of each official URL on a schedule. | `scripts/monitor_sources.py` checks every official URL daily, writes `data/monitoring.json`, compares every row with `data/row_snapshot.json`, and the workflow posts the result as an issue. | [Monitoring](pages/monitoring.html) and `.github/workflows/monitor.yml` |
 | S6 | Read every structure sheet and remove the "unverified" label where the source allows. | All 37 DeepStack Extravaganza IV sheets and all 15 NYE sheets read, plus all eight Wynn WPT structure sections. The 20 milestone satellites that were missing are now published, and the Wynn WPT schedule is complete for Nov 27 – Dec 21. | `data/tournaments.json` |
-| S7 | A "last checked" date on each row. | `verified_on` and `last_checked` on every row, hotel and rate entry. | All data files |
+| S7 | A "last checked" date on each row. | **Shown on the page as well as stored, since 2026-11-17.** `last_checked` is no longer a hand-typed date: it is derived from `data/change_log.json`, the log of when the scheduled GitHub Actions job actually fetched each official document, and it is now a visible column on the tournament, hotel and rate-log tables. A row whose document was never fetched reads "not recorded" rather than a guess. | All data files; `Last checked` column on every table |
 | S8 | Keep rates as a dated log, not a single value. | `data/rates.json` keeps each quote with its date, nights, nightly rates, taxes and true cost. The calculator uses the matching quote when the dates line up. | [Hotels](pages/hotels.html) and [Calculator](pages/calculator.html) |
 | S9 | One page per venue. | A venues directory and a page per property, each with its hotels, walking records and events. | [Venues](pages/venues.html) |
 | S10 | Keep the category pages. | Single entry, separate section and unverified pages are unchanged in purpose and now share one filter bar. | Navigation |
 | S12 | A search box across all tables. | One search box over every tournament, hotel, venue, daily format, walking record, rate entry and document. | [Search](pages/search.html) |
-| S14 | Put the build script in CI so the site cannot publish with a broken link or missing source. | The workflow rebuilds the data and the pages, fails on any diff, runs the schema and link checks, checks every official source, and renders every page in a headless DOM. | `.github/workflows/pages.yml` |
+| S14 | Put the build script in CI so the site cannot publish with a broken link or missing source. | The workflow rebuilds the data and the pages, fails on any diff, runs the schema and link checks, **compares every one of the 317 rows field by field with the official document that prints it**, checks every official source, renders every page in a headless DOM and asserts 14 table/filter/search behaviours. | `.github/workflows/pages.yml`, `scripts/verify_live_rows.py`, `scripts/ui_test.js` |
 | S15 | Require a source URL on every new row. | Enforced by the generator and re-checked by `scripts/check_links.py`. | `scripts/build_data.py`, `scripts/check_links.py` |
 
 New pages added with these: [Daily feed](pages/daily.html) for the recurring Wynn formats, and
@@ -36,13 +36,22 @@ New pages added with these: [Daily feed](pages/daily.html) for the recurring Wyn
 | S22 | Track several quoted rates for the same property on different dates. | **Partly done:** five dated quotes are logged and the calculator sorts them by true cost per night. | The reporting view is live; what is missing is repeat quotes on the *same* dates to show movement. |
 | S23 | A weekly calendar of the daily formats across a whole trip. | See at a glance which nights have a format. | The daily page already shows the weekday map. A date-based version needs the trip dates. |
 
-## 3. Proposed next, ranked by decision value
+## 3. Built on 2026-11-17 (this session)
+
+| # | Suggestion | What was built | Why it matters |
+|---|---|---|---|
+| S24 | "Verify line by line, and flag what you cannot confirm." | `scripts/verify_live_rows.py` compares every published row, field by field, with the official document that prints it, and gates the build on the result. It found two wrong times that no page-level check could see (F60, F61). | A page-level "no value changed" result is not a row-level guarantee. It is now. |
+| S25 | "A 'last checked' date on each row" — make it evidence, not a label. | The date is derived from the official-source fetch log and printed as a column; missing evidence reads "not recorded". | A date the reader can trace beats a date the generator typed. |
+| S26 | Enforce the 30-minute walking rule in the interface. | A walking filter on the hotels page: Venetian / Wynn / either poker room within 30 minutes. It reports how many properties it drops instead of deleting rows. | The rule was a column you had to read; now it is a filter that decides. |
+| S27 | Test that the page *does* the thing, not just that it renders. | `scripts/ui_test.js`: 14 assertions covering the last-checked column, search, date range, buy-in ceiling, the walking filter, and the search page across datasets. | A page that renders but does not filter is a broken page. |
+
+## 4. Proposed next, ranked by decision value
 
 These are *not* implemented. Each one closes a specific gap in a decision you still have to make.
 
 | # | Proposal | Gap it closes | Effort |
 |---|---|---|---|
-| P1 | Write one clear question list to the two poker rooms and the two reservation lines (walk-in single-entry policy, satellite end condition, registration opening, Venetian cancellation deadline). | D1, I1, I8, I10, I12, I14–I17, I9b — the largest remaining block is "only the operator can answer". | One email or call each; the draft questions are already written in `QUESTIONS.md`. |
+| P1 | Write one clear question list to the two poker rooms and the two reservation lines (walk-in single-entry policy, satellite end condition, registration opening, Venetian cancellation deadline). | D1, I1, I8, I10, I12, I15–I17, I9b — the largest remaining block is "only the operator can answer". | One email or call each; the draft questions are already written in `QUESTIONS.md`. |
 | P2 | Add a booking-engine capture step for any stay date Wynn or the Venetian quotes, so a quote is never retyped. | Turns I6/I9 from one-off work into a repeatable dated log. | Medium: the engines render client-side, so it needs the same fetch-with-render path used on 2026-11-17. |
 | P3 | Add an "effectively single entry" flag for multi-flight events whose structure sheet prices the second flight at the same amount and imposes no penalty. | D1 currently removes 60 rows from the ranking on an unanswered policy question. | Low: the clause text is already stored on every row. |
 | P4 | Print the payout ladder where the sheet publishes one, and say "not published" explicitly where it does not. | S18 — a guarantee is not a payout ladder. | Low for the ~20 sheets that carry a ladder; nothing to do for the rest. |
