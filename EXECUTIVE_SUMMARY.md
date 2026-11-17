@@ -6,7 +6,7 @@
 Every official tournament page and structure PDF listed below was re-fetched and re-read on
 **2026-11-17**, not carried forward: the DeepStack Extravaganza IV page (94 rows), the NYE page
 (49 rows), the Wynn Signature Series schedule PDF (38 rows) and the WPT World Championship schedule
-PDF (136 rows). The result is that **all 317 rows in the current dataset match their official sources**, with known source irregularities listed in `FLAGGED.md`. Hotel fees, taxes, rates and walking times were also
+PDF (136 rows). The result is that **all 317 rows in the current dataset match their official sources**, with known source irregularities listed in `FLAGGED.md` (including the NYE page printing the Dec 26, 2026 date as 2025). Hotel fees, taxes, rates and walking times were also
 re-checked on 2026-11-17.
 
 ## Bottom line
@@ -177,7 +177,7 @@ of the five figures is the number the engine itself printed, which is an indepen
 
 The engine's own "Average Rate" (room + resort fee ÷ nights, before tax) is stored as
 `nightly_average_usd` in `data/rates.json` — $419.25, $709.25, $298.54, $804.25 and $282.25 for the five
-stays — and the room-only average is stored beside it, so the two conventions are never mixed (F56).
+stays — and the room-only average is stored beside it, so the two conventions are never mixed (F58).
 The lesson is in the spread, not the average: the same tower costs **$338.48 a night for Dec 13–20 and
 $911.86 a night for Jan 1–6**, because Jan 1 is quoted at $1,949.25 for the night. Two nights over a
 weekend in November cost $475.35 all in. Dates, not the hotel name, dominate the hotel budget.

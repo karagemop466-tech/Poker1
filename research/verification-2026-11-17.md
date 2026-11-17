@@ -230,7 +230,7 @@ Both were found by reading the deployed page, not by any local check, and both a
    the older per-night form while the nav said "Trip cost calculator". Fixed by deleting the superseded
    blocks (the kept `hotels` block was diffed byte-for-byte against the one removed). `check_links.py` now
    fails if any `PAGES.x` is defined twice.
-2. **Two nightly-average conventions.** See F56 (renumbered in the integration; it briefly collided with the LIPS F53). Four rate entries averaged room charges only; one averaged
+2. **Two nightly-average conventions.** See F58 (renumbered twice in the integration: the entry briefly collided with the LIPS F53 and then with c4774e5a's live F56). Four rate entries averaged room charges only; one averaged
    room + resort fee, which is what the engine prints. Standardised on the engine's convention and added a
    validator identity: `nightly_average_usd == room_only_average_usd + resort_fee_per_night_usd`, and
    `checkout_total_usd == sum(nightly_rates) + fee x nights + taxes`. Both are re-derived on every build, and
