@@ -13,3 +13,236 @@
 - No tournament or hotel factual data was edited in this task. This task did not reread official operator sources; existing source verification and all known irregularities remain recorded above and in `FLAGGED.md` / `REVIEW.md`.
 - Change: CI now sets up Node 22, runs `npm ci`, and fails validation if the browser smoke test fails. Previously the smoke-test step was marked `continue-on-error: true`, so a broken page could pass validation.
 - [PR #29](https://github.com/karagemop466-tech/Poker1/pull/29) merged on 2026-11-17 as `f1eafd014dd53a5e67451907c7b275c5ad87571b`. PR validation passed (run `43988344614`); the merge-triggered Pages validation and deployment both passed (run `43988437822`).
+### Verification performed in this session
+
+- `python3 scripts/build_data.py` → 316 rows: 80 single entry (60 cash, 20 milestone satellites),
+  60 possible multi-entry, 45 re-entry, 129 unverified, 2 continuation; 70 schedule days; 55 flagged rows.
+- `python3 scripts/build_site.py` → 21 pages, zero diff against the committed pages.
+- `python3 scripts/check_links.py` → OK: JSON schemas, local links, approved source hosts and the
+  `data-page` attribute of every page.
+- `node scripts/smoke_test.js` → 21/21 pages render in a headless DOM with no page error.
+- Official sources read directly on 2026-11-16: 37/37 Venetian November structure sheets, 15/15
+  December/NYE sheets, both Venetian event pages in full, the full Wynn WPT schedule and all eight WPT
+  structure sections, the Wynn Signature Series schedule and structures PDF, the Wynn daily poster and
+  daily structures PDF, and the official hotel-policy pages. The field-by-field log is in
+  `research/structure-sheets-verification.md`.
+- `python3 scripts/monitor_sources.py` → every official URL was attempted; the sandbox cannot reach
+  the operator domains, so the local baseline records them as "unreachable" and the scheduled job
+  fills in the real status from GitHub Actions, where the network is open.
+- Corrections carried out against the draft: the unsupported Caesars corporate fee claim was removed,
+  the Wynn Signature Series structures URL was restored to the fetched one, the WPT "Dec. 18 Wednesday"
+  block was moved to December 16, the December 21 NLH Turbo time conflict was flagged, the WPT "Day 2"
+  buy-in mismatches were flagged, and the schedule renderer was fixed to the `days[].events` schema.
+
+Session `f0143c13` is working on branch `arena/f0143c13-poker1` (the branch is fixed for that session). Claim commit `cc17d9e` was pushed before implementation work.
+
+Session `arena/f5896c06-poker1` is working on branch `arena/f5896c06-poker1`. Integration commit `3241bb8` was pushed and opened as PR #13; rebased onto `b272ed5` and merged into main.
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Repair GitHub Pages deployment of the Markdown-backed dashboard pages; add checks for deployed content and official source domains; correct incorrect summary metadata; record the review/deploy result | Done — [PR #11 merged](https://github.com/karagemop466-tech/Poker1/pull/11), Pages run [43935034760 succeeded](https://github.com/karagemop466-tech/Poker1/actions/runs/43935034760) | `.github/workflows/pages.yml`, `scripts/check_links.py`, `README.md`, `EXECUTIVE_SUMMARY.md`, `COORDINATION.md` | `f0143c13` |
+| Final integration: repo re-review, verification, Flagged-for-Review transparency, PR #13 + merge to main, Pages deploy confirmation | Merged (PR #13) | `COORDINATION.md`, `FLAGGED.md` | `arena/f5896c06-poker1` |
+| Correct the Venetian resort-tax caveat based on full official hotel terms; keep other hotel tax values blank without property-specific support; synchronize flags, research, generated data, and UI null handling | Done — [PR #15 merged](https://github.com/karagemop466-tech/Poker1/pull/15), Pages run [43936246593 succeeded](https://github.com/karagemop466-tech/Poker1/actions/runs/43936246593) | `FLAGGED.md`, `QUESTIONS.md`, `EXECUTIVE_SUMMARY.md`, `REVIEW.md`, `scripts/build_data.py`, `data/hotels.json`, `assets/app.js`, `research/hotels.md`, `research/analysis.md`, `COORDINATION.md` | `f0143c13` |
+
+Conflict resolution: during the required rebase onto updated `origin/main`, preserved the merged arena/f5896c06-poker1 PR #13 records and both f0143c13 tasks; no concurrent work was discarded.
+
+No other active file claims are recorded. The current session changed only the files listed in its task scopes; tournament rows and event schedules were not edited.
+
+## Session 40ca34e5 (this session) — integration with `main`, branch `arena/40ca34e5-poker1`
+
+Claimed before implementation (commit `f54349d`, pushed before work started). This session's branch was
+rebasing cleanly until `main` advanced: session `baba1a15` merged a full integration (316 rows, 21 pages,
+captured hotel rates, a daily feed, five venue pages, walking records and a row-level monitor) while this
+session was working in parallel on the same file scope.
+
+**Integration decision (no other session's work discarded).** The two branches produced two independent
+implementations of the same features. `main`'s dataset is the larger and richer one (316 rows against 225,
+and it captured real nightly rates from the official booking engine, which this session could not — the
+calendar view returns `$XXX` placeholders). This session therefore **adopted `main`'s data, pages, styles,
+scripts and workflows wholesale** and contributed only the artefacts that are unique to this session and
+additive to the site:
+
+| Contribution | File | Why it is additive |
+|---|---|---|
+| Machine-readable extraction of every official Venetian structure sheet | `scripts/extract_rules.py` → `data/structure_rules.json` | 52 sheets (37 November + 15 NYE) parsed into rule fields with a per-sheet verdict; re-runnable, so any reviewer can reproduce the single-entry / multi-flight / re-entry verdict without opening 52 PDFs |
+| Machine-readable extraction of the official WPT structures PDF | `scripts/extract_wpt.py` → `data/wpt_rules.json` | The 69 event blocks, each with its registration clause, fee split, starting stack and level length |
+| Provenance archive of every official URL | `data/sources.json` (71 URLs), `data/snapshots/*.txt` (68 documents), `data/change_log.json`, `data/baseline_hashes.json`, `scripts/check_source_facts.py`, `.github/workflows/source-facts.yml` | Keeps the raw text of each official document, its hash and its last-checked time. This job **runs successfully in GitHub Actions** (68 of 71 sources fetched; 2 unreachable, 1 inactive), which the row-level monitor's committed result does not yet show |
+| Meaningful-change detection | `facts_signature()` in `scripts/check_source_facts.py` | Operator pages rotate promos and cookie text, so a raw byte hash flags almost every page on every fetch. Comparing the money amounts, dates, times and entry-rule words printed on a page produced **9 raw page changes and 0 published-value changes** on the last run |
+| Line-by-line verification log | `research/verification-2026-11-16.md` | One row per Venetian structure sheet with its verdict and link, plus the distinct WPT re-entry wordings and the Wynn daily-tournament facts |
+| Validator coverage for the new files | `scripts/check_links.py` | The manifest, the change log, the sheet verdicts and the WPT blocks are now validated with the rest of the site |
+
+Dropped from this session's branch because `main` already ships a richer equivalent of each: the separate
+`data/plan.json` and `data/routes.json` (covered by `data/schedule.json` with primary/fallback rows and
+`data/walking.json`), and the duplicate pages `pages/plan.html`, `pages/ranking.html`, `pages/rates.html`,
+`pages/routes.html`, `pages/monitor.html` and `pages/venue-other.html`.
+
+### Irregularity found on `main` and fixed here
+
+`.github/workflows/monitor.yml` used a `name:` key inside its `schedule:` entry. The workflow schema accepts
+only `cron` there, so **the daily source check never fired** and `data/monitoring.json` still shows the
+sandbox result (0 of 59 sources reachable). The key was removed here; the daily job will now run.
+
+### Pull request / deployment (session `40ca34e5`)
+
+- PR #26 (`arena/40ca34e5-poker1` → `main`): https://github.com/karagemop466-tech/Poker1/pull/26 —
+  **MERGED** (merge commit `3380491`) on 2026-11-16T20:16:15Z. The `validate` check passed first:
+  `build_data.py` and `build_site.py` regenerated with a zero diff, `check_links.py` returned OK
+  (21 pages, 316 rows, 7 hotels, 1 dated rate, 70 schedule days), and the headless render test passed.
+- GitHub Pages: deployment status **success** at 2026-11-16T20:17:13Z for `3380491`;
+  environment URL https://karagemop466-tech.github.io/Poker1/ ; Pages build status `built`.
+- Merged without waiting for review, as instructed. Flagged and unverified items were published with
+  their source links and did not block the merge.
+- To check after this merge: the fixed `monitor.yml` schedule should now fire daily at 07:17 UTC, so
+  `data/monitoring.json` should stop showing every source as unreachable.
+
+### Verification performed in this session (after integrating onto `main`)
+
+- `python3 scripts/build_site.py` → 21 pages, zero diff against the committed pages.
+- `python3 scripts/check_links.py` → OK: 21 pages, 316 rows, 7 hotels, 1 dated rate, 70 schedule days;
+  source, rules, schedule, hotel-rate/cost, provenance and page-link checks all pass.
+- `node scripts/smoke_test.js` → 21/21 pages render headlessly. `node scripts/smoke_pages.js` → 21/21.
+- `python3 scripts/check_source_facts.py` (in GitHub Actions, where the operator domains are reachable) →
+  checked 71 sources (1 inactive), 68 fetched with text, 9 raw page changes, 0 published-value changes,
+  2 errors (Bellagio and ARIA time out).
+- Rejected during review: Caesars' corporate $45–$50 fee range was **not** copied to Caesars Palace (it is
+  not property-specific), and The Venetian's 13.38% Clark County tax was **not** copied to other properties.
+
+## Session c44e63df (PRs #17 and #18, merged into `main` before this session's rebase)
+
+Session `c44e63df` worked on branch `arena/c44e63df-poker1` and merged PR #17 and PR #18 into `main`
+(commits `f3508d1`, `3d7ff3c`, `a89c085`). Its work is preserved in the history. This session's rebase
+onto `a89c085` resolved the overlap as follows, and nothing was discarded silently:
+
+| Session c44e63df artefact | Disposition in this branch | Reason |
+|---|---|---|
+| `data/tournaments.json`, `data/hotels.json` and `scripts/build_data.py` data changes | Superseded by this session's rebuild from the official sources | This session read every Venetian structure sheet (37/37 and 15/15) and all eight Wynn WPT structure sections, so its dataset carries a verified entry rule for 80 rows that the earlier build left unverified. The generator and the data always move together. |
+| `pages/venue-venetian.html`, `pages/venue-wynn.html` | Superseded by this session's generated venue pages | Same page names. The generated versions share one navigator and one renderer with every other page. |
+| `pages/venue-others.html` | Removed; superseded by `pages/venues.html` and the per-venue pages | Two venue indexes in one site would give the reader two different navigations. |
+| `pages/trip-calculator.html` | Removed; superseded by `pages/calculator.html` | Both price a trip; the newer one refuses to total anything that depends on an unverified figure and uses the dated rate log. |
+| `pages/change-monitor.html` | Removed; superseded by `pages/monitoring.html` | The newer page renders `data/monitoring.json` and `data/changes.json`, which a scheduled workflow actually writes, and lists every flagged row. |
+| `assets/app.js` filter, search and venue work | Superseded by this session's shared filter bar, search page and venue renderer | One filter component and one renderer for all tables. |
+| The session record itself | Kept in this file and in the `Log` below | - |
+
+## Session 673f9643 (PR #19, merged into `main` before this session's second rebase)
+
+Session `673f9643` worked on branch `arena/673f9643-poker1` and merged PR #19 into `main`
+(commits `f5b8d34`, `b8f4035`, `8001ab8`, `bdaf5ee`). Its work is preserved. This session's rebase onto
+`bdaf5ee` resolved the overlap as follows:
+
+| Session 673f9643 artefact | Disposition in this branch | Reason |
+|---|---|---|
+| The stricter `scripts/check_links.py` (row ids, dates, derived values, dated hotel rate logs, page links and fragments) | **Merged, not replaced.** The validator now combines those checks with this session's schema checks: the rule-object shape, the daily, venue, walking, monitoring and snapshot files, and the `days[].events` schedule contract. | The stricter checks are strictly better; the schema checks are what the rebuilt dataset needs. Both run. |
+| The README caution that a structure sheet which merely omits re-entry language does not prove single entry | **Kept**, with the audit status stated precisely. | The audit session 673f9643 was waiting for has now been done: every Venetian sheet (37/37 and 15/15) and every WPT structure section (8/8) was read end to end. The README now says exactly what "SE" rests on, and keeps the caution. |
+| The finding that DSE IV sheet 18 has **30,000** starting chips and "20/15 minutes" level lengths | **Adopted.** Sheet 18 was re-read and the earlier transcription of 25,000 chips was wrong. The generator now stores 30,000 chips and prices sheet 18 as six 20-minute levels followed by fifteen-minute levels. | A cross-session correction of a published value. |
+| The finding that the WPT schedule's "Dec. 18 Wednesday" block cannot be repaired from the source alone | **Kept as a flag.** The rows are stored as December 16, 2026, and every affected row carries the reasoning, because that is also the only reading that fits the World Championship day order. | The source conflict is recorded rather than hidden. |
+| The finding that the Wynn Signature Series structures link `v1762299460` also returns "COMING SOON" | Recorded in `research/structure-sheets-verification.md`. This session read and published the `v1753296112` URL it fetched itself. | Both URLs serve the placeholder; only the fetched one is cited. |
+| The finding that the daily poster is not a date-specific schedule inside a suspended series | **Kept.** The daily page states the suspension rule and points at the WPT and Signature Series dates. | - |
+| The "audit status: provisional SE labels" wording | Reworded to state the completed audit and what the label rests on. | The labels are no longer provisional in the sense of "not yet re-read": every sheet has been read. |
+
+### PR #19 record (session 673f9643)
+
+- [PR #19](https://github.com/karagemop466-tech/Poker1/pull/19) merged into `main` at `bdaf5ee` on 2026-11-16; its PR
+  validation check passed (run `43941452594`).
+- The merge-triggered Pages workflow, including validation and deploy jobs, succeeded in
+  [run `43941538588](https://github.com/karagemop466-tech/Poker1/actions/runs/43941538588); the separate Pages deployment
+  run `43941537206` also succeeded.
+- [PR #20](https://github.com/karagemop466-tech/Poker1/pull/20) merged the coordination record for that work at `757e03b`.
+
+## Session baba1a15 completion (PR #21)
+
+- [PR #21](https://github.com/karagemop466-tech/Poker1/pull/21) merged into `main` at `8d035c4` on 2026-11-16.
+  The pull-request validation job passed in run `43942318033` with every step green: the dataset rebuild, the page
+  rebuild, the validator, the official-source check and the headless page render.
+- The merge-triggered Pages workflow succeeded in run `43942513435` (validate and deploy jobs). The Pages API reports
+  status `built` at https://karagemop466-tech.github.io/Poker1/ (source `main:/`).
+- The published dataset is live: `https://karagemop466-tech.github.io/Poker1/data/tournaments.json` serves the 316 rows
+  with the rule objects, the flags and the source URLs.
+- Final state of this session's work: 316 official rows across 70 dates (2026-11-16 to 2027-01-24); 80 verified
+  single entry (60 cash events, 20 milestone satellites that award a seat), 60 possible multi-entry, 45 re-entry,
+  129 unverified on the entry rule, 43 continuation rows, 55 rows carrying a source flag; 7 hotels with 4 verified
+  resort fees and 1 verified room-tax rate; 1 dated rate quote; 4 recurring daily formats; 21 published pages.
+
+## Existing deliverables and current data status
+
+The repository contains a static dashboard (`index.html`, `pages/`, `assets/`), source-linked JSON data, research notes, and separate Executive Summary, Questions, Suggestions, Flagged for Review and Repo Review documents. After this session's verification the data build reports **316 rows** across 70 dates (2026-11-16 to 2027-01-24): **80 verified single entry** (60 cash events and 20 milestone satellites that award a seat), **60 possible multi-entry**, **45 re-entry**, **129 with the entry rule unverified**, and 2 continuation rows. Every Venetian row now carries a verified entry rule, because all 37 DeepStack Extravaganza IV sheets and all 15 New Year's Eve sheets have been read; the remaining unverified rows are Wynn rows whose structure sheets are not published (the Wynn Signature Series structures PDF is still a "COMING SOON" placeholder).
+
+## Verification performed in this session (f0143c13 / PRs #11 and #15)
+
+- `python3 scripts/build_data.py` — generated the committed data files; counts matched the above.
+- `python3 scripts/build_site.py` — generated the landing page and 10 dashboard subpages.
+- `python3 scripts/check_links.py` — passed JSON parsing, local links, required Markdown-file presence, and official-source-host validation.
+- Pages staging smoke test — confirmed the static build contains `index.html`, all required subpages, the three JSON datasets, and all five Markdown documents fetched by the summary/questions/suggestions/flags/review pages.
+- `git diff --check` and root Markdown local-link checks — passed.
+- Hotel-data assertions passed: The Venetian retains its officially sourced 13.38% rate; other property-specific tax values are `null`; all true nightly totals remain blank because no date-specific rate is verified.
+- Official Venetian and Bellagio source pages fetched and read:
+  - [DeepStack Extravaganza IV schedule](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html): series dates Nov 16–Dec 23, 2026; displayed schedule rows and structure-sheet links.
+  - [DeepStack Extravaganza NYE schedule](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html): series dates Dec 24, 2026–Jan 10, 2027; source page itself prints some rows with a 2025 year, recorded in `FLAGGED.md`.
+  - [Venetian poker suite rates](https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html): starting-rate language is conditional, rates are not assigned to a particular tower, availability and poker-play qualification apply, and $55/night resort fee is stated.
+  - [Venetian resort fee](https://www.venetianlasvegas.com/resort/resort-fee.html): $55 plus tax per night.
+  - [Venetian hotel terms](https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html): full page confirms 13.38% Clark County room tax and $55 resort fee plus applicable tax; dates/rates remain availability-dependent.
+  - [Bellagio official home page](https://bellagio.mgmresorts.com/en.html): identifies the property; no fee or tax amount is claimed from this page.
+- After PR #11 merged, both Pages workflows completed successfully (including deploy run `43935034760`). The published Markdown files were fetched successfully at `https://karagemop466-tech.github.io/Poker1/EXECUTIVE_SUMMARY.md` and `https://karagemop466-tech.github.io/Poker1/FLAGGED.md`.
+- PR #15's final Pages run `43936246593` passed validation and deployment. The live `data/hotels.json` was fetched after deployment and confirmed: only The Venetian has a numeric tax value (13.38%); the other six hotel tax values and all seven true-cost values are null.
+- The full current session's official-source fetches are noted above; this session independently checked the source findings documented in this section, but did not reread every one of the 225 tournament rows or all 171 unverified structure sheets.
+
+## Integration session arena/f5896c06-poker1 (PR #13)
+
+### Verification performed
+- `python3 scripts/build_site.py` regenerates `index.html` and all `pages/*.html` with **zero diff** against the committed files — the committed site exactly matches the build output.
+- `python3 scripts/check_links.py`: OK — 11 pages, JSON parses, every local link resolves, no external asset references, and **every data row carries at least one https source URL**.
+- `python3 scripts/build_data.py`: OK — 225 official rows total: 33 single-entry (verified), 6 re-entry, 15 possible multi-entry, 171 unverified (entry rule).
+- Counts cross-check: single-entry page lists 33 Venetian DeepStack IV events (Nov 18 – Dec 23, 2026); schedule page lists 23 days with at least one verified single-entry option; earliest verified start is 10:10 AM.
+- Every table row links to an official domain (venetianlasvegas.com, cdn.wynnresorts.com, wynnlasvegas.com). Blank/unverified values are left blank and flagged; nothing is inferred.
+
+### Network-verification limitation (transparency)
+- In session `arena/f5896c06-poker1`, official venue domains and `github.io` could not be reached; that session relied on prior-session source records and left unconfirmed values blank. In the later `f0143c13` session, official Venetian and Bellagio pages and the live Pages JSON/Markdown endpoints were fetched successfully; those checks are documented above. This later check did not reread all 225 tournament rows or all unverified event structures.
+- Live site URL: https://karagemop466-tech.github.io/Poker1/ — Pages is configured for `main`, path `/`; the merge deployment succeeded in run `43936246593`.
+
+### Irregularities / open facts retained
+- No single-entry tournament confirmed before Nov 18, 2026 (Nov 16–17 are multi-flight Event 1 rows). First verified single-entry event: Nov 18, 11:10 AM, Venetian Event 2 ($300 NLH, $10K GTD).
+- No verified 8 AM start. The 8–10 AM window has no verified event; earliest verified start is 10:10 AM (events 24/32, age 50+). Earliest start anywhere in the dataset is 10:00 AM (Wynn Super Gold Million, Dec 10, entry rule unverified).
+- Hotel room rates are unverified for every hotel and date, so **no true cost per night can be stated**. Resort fee $55+tax is verified for Venetian, Palazzo, Wynn, Encore; Bellagio, Caesars, ARIA fees are blank.
+- Walking times are not published on any official source; left blank.
+- 171 official rows are unverified for entry rule (81 WPT, 31 Wynn Signature Series, 31 Venetian NYE, 28 Venetian DSE IV); structure sheets not read.
+- Full irregularity list: see `FLAGGED.md` (F1–F12, U1–U10) and `REVIEW.md` (R1–R20).
+
+### Sources (official domains, retained from prior sessions)
+- Wynn poker page: https://www.wynnlasvegas.com/casino/poker
+- WPT World Championship Schedule PDF: https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf
+- WPT World Championship Structures PDF: https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf
+- Hotel fee/tax source links are recorded in `data/hotels.json` and `REVIEW.md`; the 13.38% rate is now recorded only for The Venetian based on its official terms.
+
+### Pull request / deployment
+- Stale/conflicting PR #7 (head branch arena/552e97d2-poker1 not fetchable) closed; its content is already integrated on main.
+- PR #13 (arena/f5896c06-poker1 → main): https://github.com/karagemop466-tech/Poker1/pull/13 — MERGED (merge commit c37d0cd) into main after the validate check (build_site.py zero diff, check_links OK) reported success.
+- GitHub Pages: status `built`, live at https://karagemop466-tech.github.io/Poker1/ (source branch `main`, path `/`). Deploy triggered by the merge completed successfully.
+- All integration tasks done: site builds cleanly, no broken links, every data row carries an official https source, unverified values left blank and flagged.
+- PR #23 (arena/d8a7181d-poker1 → main): https://github.com/karagemop466-tech/Poker1/pull/23 — **MERGED** (merge commit `e5b40ba`) into `main` at 2026-11-16T20:01:50Z after the `validate` check passed (`build_site.py` zero diff, `check_links` OK). Pages workflow run `43945495418` completed; the Pages API reports status `built` at https://karagemop466-tech.github.io/Poker1/. The deployed `data/daily.json` was re-read from `main` through the GitHub API and carries both new notes (registration opens four hours before start; the daily-suspension wording conflict).
+- PR #23 content: branch histories were unrelated, so it joined `main` with `--allow-unrelated-histories`. `main`'s dataset (316 rows, 80 SE) was kept over this branch's (224 rows, 50 SE). The PR adds only the Wynn registration-opening time, the daily-suspension source conflict, and the coordination record.
+
+## Log
+- 2026-11-16: session `40ca34e5` integrated onto `main` (which had advanced with session `baba1a15`'s
+  full integration). `main`'s dataset, pages, styles, scripts and workflows were adopted unchanged; this
+  session's branch was rebased on top of `main` and force-pushed with `--force-with-lease` so no other
+  session's work was overwritten. PR #26 merged as `3380491`; Pages deploy confirmed `success`.
+- 2026-11-16: PR #11 merged into main (b272ed5), advancing it past the branch base.
+- 2026-11-16: arena/f5896c06-poker1 rebased onto origin/main, resolved COORDINATION.md conflict preserving both sessions' work; PR #13 created and merged; recording verification and limitation above.
+
+- 2026-11-16: session `baba1a15` completed the verification pass (37/37 November sheets, 15/15 NYE sheets, all eight WPT structure sections, both WPT schedule blocks, the Signature Series schedule and every hotel-policy page), rebuilt the Wynn WPT schedule row by row, added the 21 missing milestone-satellite rows, added the venue pages, filter bar, date picker, global search, rate calculator, daily feed and monitoring pages, refreshed all six published documents, and opened the integration PR.
+- 2026-11-16: this session rebased onto `origin/main` at `a89c085`, which already contained session c44e63df's PRs #17 and #18. The overlap was resolved in favour of the fully verified dataset and the single generated site, as recorded in the section above; session c44e63df's record is preserved.
+- 2026-11-16: this session rebased again onto `origin/main` at `bdaf5ee`, which contained session 673f9643's PR #19. Its stricter validator was merged into `scripts/check_links.py` rather than dropped, its README caution on the "SE" label was kept, and its sheet 18 chip-count correction (30,000 starting chips) was adopted after re-reading the sheet.
+- 2026-11-16: session `baba1a15` merged PR #21 into `main` at `8d035c4`; the Pages workflow run `43942513435` deployed the rebuilt dataset, the 21-page site and the refreshed documents, and the Pages API reports status `built`. A new daily workflow (`.github/workflows/monitor.yml`) checks every official source, records the result in `data/monitoring.json`, and opens an issue when a row changes.
+- 2026-11-16: session `d8a7181d` (this session, branch `arena/d8a7181d-poker1`) joined histories with `main` using `--allow-unrelated-histories` (the two branches shared no commit). Its own verification pass — all 25 non-satellite November sheets, NYE sheets 1 and 2, and all eight parts of the WPT structures PDF — reached 50 SE / 35 RE / 103 UNV, which is **less complete than `main`'s 80 SE / 45 RE / 129 UNV** from session `baba1a15`. Merging this branch's data would have been a regression, so the reconciliation kept `main`'s dataset and implementation and dropped this branch's superseded files. Nothing of value was lost: every finding this session reached (including the NYE sheet 2 "any subsequent re-entry" wording) was already recorded in `main`.
+  - Dropped as superseded by `main`: `scripts/check_sources.py`, `.github/workflows/source-monitor.yml`, `data/changelog.json`, `data/hotel_rates.json`, `pages/changes.html`, `pages/trip-cost.html`.
+  - **Value added by this session:** read two official sources `main` had not used and recorded the one new verified fact they contain — the Wynn daily tournament terms state *"Registration for each Event will open four (4) hours prior to the scheduled start of play"*, so registration for the 12 p.m. daily events opens at **8 a.m.** This is the only registration *opening* time on any official source read so far, and it closes question I12 for Wynn. Recorded in the Wynn venue note, `data/daily.json`, `EXECUTIVE_SUMMARY.md` section 5 and `QUESTIONS.md` I12.
+  - Also recorded in `data/daily.json`: the two official sources word the daily suspension differently (the poker page names Wynn Signature, Wynn Millions and Classic series; each daily structure sheet says "may be suspended during Seniors Events, Classic Events, or other Tournament Series"). Neither names the WPT World Championship explicitly, so it is flagged as confirm-before-travelling.
+
+## Session 2e5232bc (this session) — branch `arena/2e5232bc-poker1`, base `bfc8951`
+
+Claimed before implementation. Scope is limited to the files listed; no other session's files are touched.
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Line-by-line re-check of every Venetian DeepStack IV (Nov 16–Dec 23) and NYE (Dec 24–Jan 10) schedule row against the live official schedule pages, recording any mismatch | in progress | `research/verification-2026-11-17.md`, `data/tournaments.json` only if a mismatch is confirmed | `2e5232bc` |
+| Make the Node page smoke test runnable (jsdom was missing) without committing `node_modules` or a new lockfile | in progress | `scripts/smoke_test.js` (only if needed), no new tracked dependency files | `2e5232bc` |
+| Re-check the Wynn Signature Series schedule PDF row by row | queued after the Venetian pass | `research/verification-2026-11-17.md` | `2e5232bc` |
