@@ -36,6 +36,9 @@ OFFICIAL_SOURCE_HOSTS = {
     "aria.mgmresorts.com",
     "bellagio.mgmresorts.com",
     "www.caesars.com",
+    # MGM Resorts' shared corporate pages (parking, portfolio-wide fee text).
+    # Property pages stay on each property's own subdomain.
+    "www.mgmresorts.com",
 }
 TOURNAMENT_STATUSES = {"SE", "MULTI", "RE", "REBUY", "CONT", "UNV"}
 TOURNAMENT_KINDS = {"entry", "continuation"}
@@ -244,7 +247,7 @@ for index, row in enumerate(tournament_rows, 1):
             problems.append(f"{where} {identity}: SE entry_rule must explicitly state its verified classification")
         if re.search(r"unverified|not confirmed|unclear|possible multiple", entry_rule):
             problems.append(f"{where} {identity}: SE entry_rule contains unresolved wording")
-    elif status == "MULTI" and not re.search(r"multi|flight|multiple", entry_rule):
+    elif status == "MULTI" and not re.search(r"multi|flight|multiple|limit|limited", entry_rule):
         problems.append(f"{where} {identity}: MULTI entry_rule must explain possible additional entries")
     elif status == "RE" and not re.search(r"re[ -]?entr", entry_rule):
         problems.append(f"{where} {identity}: RE row must describe the re-entry rule")
@@ -319,14 +322,21 @@ for index, row in enumerate(hotel_rows, 1):
     if fee_status == "unverified" and fee is not None:
         problems.append(f"{where} {identity}: resort_fee_usd must be blank when resort_fee_status is unverified")
     tax_status = row.get("tax_status")
-    if tax_status not in ("verified", "unverified"):
-        problems.append(f"{where} {identity}: tax_status must be verified or unverified")
-    if tax_status == "verified" and tax is None:
-        problems.append(f"{where} {identity}: tax_status is verified but the tax rate is blank")
+    # "estimated" means the property's own terms print the tax *rule* but not a
+    # percentage; the county rate is then shown as an estimate and must never be
+    # used to calculate a true cost. Such a row must say so in its tax_note.
+    if tax_status not in ("verified", "unverified", "estimated"):
+        problems.append(f"{where} {identity}: tax_status must be verified, estimated or unverified")
+    if tax_status in ("verified", "estimated") and tax is None:
+        problems.append(f"{where} {identity}: tax_status is {tax_status} but the tax rate is blank")
     if tax_status == "unverified" and tax is not None:
         problems.append(f"{where} {identity}: tax_status is unverified but a tax rate is present")
+    if tax_status == "estimated" and "estimate" not in (row.get("tax_note") or "").lower():
+        problems.append(f"{where} {identity}: an estimated tax rate must be explained in tax_note")
+    if tax_status == "estimated" and is_number(total):
+        problems.append(f"{where} {identity}: true_cost_per_night_usd cannot use an estimated tax rate")
     if is_number(total):
-        if not all(is_number(value) for value in (rate, fee, tax)):
+        if not all(is_number(value) for value in (rate, fee, tax)) or tax_status != "verified":
             problems.append(f"{where} {identity}: true_cost_per_night_usd needs a verified rate, fee and tax")
         else:
             expected_total = round((rate + fee) * (1 + tax / 100), 2)

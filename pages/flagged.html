@@ -776,12 +776,20 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
       var rows = res[0].rows, walking = res[1].rows, rates = res[2].entries;
       var main = document.getElementById("content");
       document.getElementById("method").textContent = res[0].method;
-      var chip = function (s) { return s === "verified" ? '<span class="chip ok">Verified</span>' : '<span class="chip warn">Unverified</span>'; };
+      var chip = function (s) {
+        if (s === "verified") return '<span class="chip ok">Verified</span>';
+        if (s === "estimated") return '<span class="chip info">Estimate</span>';
+        if (s === "conditional") return '<span class="chip warn">Conditional</span>';
+        return '<span class="chip warn">Unverified</span>';
+      };
       var cols = [
         { id: "name", label: "Hotel", key: "name", html: function (r) { return "<strong>" + esc(r.name) + "</strong><br><span class='small'>" + esc(r.address_note) + "</span>"; } },
         { id: "fee", label: "Resort fee / night", key: "resort_fee_usd", num: true, html: function (r) { return chip(r.resort_fee_status) + "<br>" + money(r.resort_fee_usd) + "<br><span class='small'>" + esc(r.resort_fee_note) + "</span>"; } },
         { id: "rate", label: "Room rate / night", key: "room_rate_usd", num: true, html: function (r) { return chip(r.room_rate_status) + "<br>" + money(r.room_rate_usd) + "<br><span class='small'>" + esc(r.room_rate_note) + "</span>"; } },
-        { id: "tax", label: "Room tax", key: "clark_county_tax_pct", num: true, html: function (r) { return r.clark_county_tax_pct == null ? '<span class="muted">Unverified</span><br><span class="small">' + esc(r.tax_status) + "</span>" : r.clark_county_tax_pct + "%<br><span class='small'>" + esc(r.tax_status) + "</span>"; } },
+        { id: "tax", label: "Room tax", key: "clark_county_tax_pct", num: true, html: function (r) { return (r.clark_county_tax_pct == null ? '<span class="muted">Unverified</span>' : r.clark_county_tax_pct + "%") + " " + chip(r.tax_status) + "<br><span class='small'>" + esc(r.tax_note) + "</span>"; } },
+        { id: "parking", label: "Parking / day", key: "parking_usd_per_day", num: true, html: function (r) { return money(r.parking_usd_per_day) + "<br><span class='small'>" + esc(r.parking_note) + "</span>"; } },
+        { id: "cancel", label: "Cancellation / check-in", key: "cancellation_note", sort: null, html: function (r) { return "<span class='small'>" + esc(r.cancellation_note) + "<br><br>" + esc(r.check_in_out) + "</span>"; } },
+        { id: "checked", label: "Last checked", key: "last_checked" },
         { id: "true", label: "True cost / night", key: "true_cost_per_night_usd", num: true, html: function (r) { return r.true_cost_per_night_usd == null ? '<span class="muted">blank (rate unverified)</span>' : money(r.true_cost_per_night_usd); } },
         { id: "walk", label: "Walk to Venetian", key: "walk_to_venetian_min", sort: null, html: function (r) { return r.walk_to_venetian_min == null ? '<span class="muted">Unverified</span>' : r.walk_to_venetian_min + " min"; } },
         { id: "src", label: "Sources", key: "sources", sort: null, html: function (r) { return "<span class='small'>" + srcLinks(r.sources) + "</span>"; } }

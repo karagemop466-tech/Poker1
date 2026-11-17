@@ -1,0 +1,2811 @@
+{
+ "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+ "schedule": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+ "blocks_total": 69,
+ "rows_total": 135,
+ "matched": {
+  "r020": {
+   "row_id": "r020",
+   "key": [
+    "2026-11-27",
+    "11:00",
+    600
+   ],
+   "block": 1,
+   "title": "$600 No Limit Hold\u2019em $400,000 Guaranteed poker tournament",
+   "registration": "Unlimited re-entry for each starting flight will be available until the start of level 9. A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge)",
+   "buyin_usd": 600,
+   "prize_pool_usd": 510,
+   "tournament_fee_usd": 65,
+   "staff_fee_usd": 25,
+   "starting_stack": "Players will start with 40,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Day 1A-E: 30 minutes per level until 12.5% or less of the field remains. Day 1F: 20 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
+  },
+  "r022": {
+   "row_id": "r022",
+   "key": [
+    "2026-11-27",
+    "12:00",
+    600
+   ],
+   "block": 2,
+   "title": "$600 TORSE poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 9",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge)",
+   "buyin_usd": 600,
+   "prize_pool_usd": 510,
+   "tournament_fee_usd": 65,
+   "staff_fee_usd": 25,
+   "starting_stack": "Players will start with 35,000 in tournament chips.",
+   "level_minutes": 30,
+   "length_of_play": "30 minutes per level until a winner is declared."
+  },
+  "r023": {
+   "row_id": "r023",
+   "key": [
+    "2026-11-27",
+    "13:00",
+    400
+   ],
+   "block": 3,
+   "title": "$400 PLO poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 9 (approximately 5:30 p.m.).",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $400 Buy-in = $337 (Tournament Prize Pool) + $45 (Tournament Fee) + $18 (Poker Staff Service Charge)",
+   "buyin_usd": 400,
+   "prize_pool_usd": 337,
+   "tournament_fee_usd": 45,
+   "staff_fee_usd": 18,
+   "starting_stack": "Players will start with 30,000 in tournament chips.",
+   "level_minutes": 30,
+   "length_of_play": "30 minutes per level until a winner is declared."
+  },
+  "r024": {
+   "row_id": "r024",
+   "key": [
+    "2026-11-27",
+    "17:00",
+    600
+   ],
+   "block": 1,
+   "title": "$600 No Limit Hold\u2019em $400,000 Guaranteed poker tournament",
+   "registration": "Unlimited re-entry for each starting flight will be available until the start of level 9. A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge)",
+   "buyin_usd": 600,
+   "prize_pool_usd": 510,
+   "tournament_fee_usd": 65,
+   "staff_fee_usd": 25,
+   "starting_stack": "Players will start with 40,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Day 1A-E: 30 minutes per level until 12.5% or less of the field remains. Day 1F: 20 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
+  },
+  "r026": {
+   "row_id": "r026",
+   "key": [
+    "2026-11-28",
+    "11:00",
+    600
+   ],
+   "block": 1,
+   "title": "$600 No Limit Hold\u2019em $400,000 Guaranteed poker tournament",
+   "registration": "Unlimited re-entry for each starting flight will be available until the start of level 9. A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge)",
+   "buyin_usd": 600,
+   "prize_pool_usd": 510,
+   "tournament_fee_usd": 65,
+   "staff_fee_usd": 25,
+   "starting_stack": "Players will start with 40,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Day 1A-E: 30 minutes per level until 12.5% or less of the field remains. Day 1F: 20 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
+  },
+  "r028": {
+   "row_id": "r028",
+   "key": [
+    "2026-11-28",
+    "12:00",
+    600
+   ],
+   "block": 4,
+   "title": "$600 Mixed Triple Draw (A-5, 2-7, Badugi) poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 9.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge)",
+   "buyin_usd": 600,
+   "prize_pool_usd": 510,
+   "tournament_fee_usd": 65,
+   "staff_fee_usd": 25,
+   "starting_stack": "Players will start with 35,000 in tournament chips.",
+   "level_minutes": 30,
+   "length_of_play": "30 minutes per level until a winner is declared."
+  },
+  "r030": {
+   "row_id": "r030",
+   "key": [
+    "2026-11-28",
+    "17:00",
+    600
+   ],
+   "block": 1,
+   "title": "$600 No Limit Hold\u2019em $400,000 Guaranteed poker tournament",
+   "registration": "Unlimited re-entry for each starting flight will be available until the start of level 9. A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge)",
+   "buyin_usd": 600,
+   "prize_pool_usd": 510,
+   "tournament_fee_usd": 65,
+   "staff_fee_usd": 25,
+   "starting_stack": "Players will start with 40,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Day 1A-E: 30 minutes per level until 12.5% or less of the field remains. Day 1F: 20 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
+  },
+  "r032": {
+   "row_id": "r032",
+   "key": [
+    "2026-11-29",
+    "11:00",
+    600
+   ],
+   "block": 1,
+   "title": "$600 No Limit Hold\u2019em $400,000 Guaranteed poker tournament",
+   "registration": "Unlimited re-entry for each starting flight will be available until the start of level 9. A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge)",
+   "buyin_usd": 600,
+   "prize_pool_usd": 510,
+   "tournament_fee_usd": 65,
+   "staff_fee_usd": 25,
+   "starting_stack": "Players will start with 40,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Day 1A-E: 30 minutes per level until 12.5% or less of the field remains. Day 1F: 20 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
+  },
+  "r036": {
+   "row_id": "r036",
+   "key": [
+    "2026-11-29",
+    "18:00",
+    600
+   ],
+   "block": 1,
+   "title": "$600 No Limit Hold\u2019em $400,000 Guaranteed poker tournament",
+   "registration": "Unlimited re-entry for each starting flight will be available until the start of level 9. A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge)",
+   "buyin_usd": 600,
+   "prize_pool_usd": 510,
+   "tournament_fee_usd": 65,
+   "staff_fee_usd": 25,
+   "starting_stack": "Players will start with 40,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Day 1A-E: 30 minutes per level until 12.5% or less of the field remains. Day 1F: 20 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
+  },
+  "r037": {
+   "row_id": "r037",
+   "key": [
+    "2026-11-30",
+    "11:00",
+    800
+   ],
+   "block": 5,
+   "title": "$800 No Limit Hold\u2019em $1,000,000 Guaranteed poker tournament",
+   "registration": "Unlimited re-entry for each starting flight will be available until the start of level 9. A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $800 Buy-in = $695 (Tournament Prize Pool) + $72 (Tournament Fee) + $33 (Poker Staff Service Charge)",
+   "buyin_usd": 800,
+   "prize_pool_usd": 695,
+   "tournament_fee_usd": 72,
+   "staff_fee_usd": 33,
+   "starting_stack": "Players will start with 40,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Day 1A-1E: 30 minutes per level until 12.5% or less of the field remains. Day 1F: 20 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until nine (9) players remain. Day 3: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
+  },
+  "r039": {
+   "row_id": "r039",
+   "key": [
+    "2026-11-30",
+    "12:00",
+    600
+   ],
+   "block": 6,
+   "title": "$600 Limit Omaha 8 poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 9",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge)",
+   "buyin_usd": 600,
+   "prize_pool_usd": 510,
+   "tournament_fee_usd": 65,
+   "staff_fee_usd": 25,
+   "starting_stack": "Players will start with 35,000 in tournament chips.",
+   "level_minutes": 30,
+   "length_of_play": "30 minutes per level until a winner is declared."
+  },
+  "r041": {
+   "row_id": "r041",
+   "key": [
+    "2026-11-30",
+    "17:00",
+    800
+   ],
+   "block": 5,
+   "title": "$800 No Limit Hold\u2019em $1,000,000 Guaranteed poker tournament",
+   "registration": "Unlimited re-entry for each starting flight will be available until the start of level 9. A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $800 Buy-in = $695 (Tournament Prize Pool) + $72 (Tournament Fee) + $33 (Poker Staff Service Charge)",
+   "buyin_usd": 800,
+   "prize_pool_usd": 695,
+   "tournament_fee_usd": 72,
+   "staff_fee_usd": 33,
+   "starting_stack": "Players will start with 40,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Day 1A-1E: 30 minutes per level until 12.5% or less of the field remains. Day 1F: 20 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until nine (9) players remain. Day 3: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
+  },
+  "r043": {
+   "row_id": "r043",
+   "key": [
+    "2026-12-01",
+    "11:00",
+    800
+   ],
+   "block": 5,
+   "title": "$800 No Limit Hold\u2019em $1,000,000 Guaranteed poker tournament",
+   "registration": "Unlimited re-entry for each starting flight will be available until the start of level 9. A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $800 Buy-in = $695 (Tournament Prize Pool) + $72 (Tournament Fee) + $33 (Poker Staff Service Charge)",
+   "buyin_usd": 800,
+   "prize_pool_usd": 695,
+   "tournament_fee_usd": 72,
+   "staff_fee_usd": 33,
+   "starting_stack": "Players will start with 40,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Day 1A-1E: 30 minutes per level until 12.5% or less of the field remains. Day 1F: 20 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until nine (9) players remain. Day 3: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
+  },
+  "r045": {
+   "row_id": "r045",
+   "key": [
+    "2026-12-01",
+    "12:00",
+    600
+   ],
+   "block": 7,
+   "title": "$600 Limit Omaha 8/Stud 8 poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 9",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge)",
+   "buyin_usd": 600,
+   "prize_pool_usd": 510,
+   "tournament_fee_usd": 65,
+   "staff_fee_usd": 25,
+   "starting_stack": "Players will start with 35,000 in tournament chips.",
+   "level_minutes": 30,
+   "length_of_play": "30 minutes per level until a winner is declared."
+  },
+  "r046": {
+   "row_id": "r046",
+   "key": [
+    "2026-12-01",
+    "13:00",
+    1100
+   ],
+   "block": 8,
+   "title": "$1,100 PLO poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 9 (approximately 5:30 p.m.).",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $45 (Poker Staff Service Charge)",
+   "buyin_usd": 1100,
+   "prize_pool_usd": 975,
+   "tournament_fee_usd": 85,
+   "staff_fee_usd": 45,
+   "starting_stack": "Players will start with 30,000 in tournament chips.",
+   "level_minutes": 30,
+   "length_of_play": "30 minutes per level until a winner is declared."
+  },
+  "r047": {
+   "row_id": "r047",
+   "key": [
+    "2026-12-01",
+    "17:00",
+    800
+   ],
+   "block": 5,
+   "title": "$800 No Limit Hold\u2019em $1,000,000 Guaranteed poker tournament",
+   "registration": "Unlimited re-entry for each starting flight will be available until the start of level 9. A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $800 Buy-in = $695 (Tournament Prize Pool) + $72 (Tournament Fee) + $33 (Poker Staff Service Charge)",
+   "buyin_usd": 800,
+   "prize_pool_usd": 695,
+   "tournament_fee_usd": 72,
+   "staff_fee_usd": 33,
+   "starting_stack": "Players will start with 40,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Day 1A-1E: 30 minutes per level until 12.5% or less of the field remains. Day 1F: 20 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until nine (9) players remain. Day 3: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
+  },
+  "r051": {
+   "row_id": "r051",
+   "key": [
+    "2026-12-02",
+    "11:00",
+    800
+   ],
+   "block": 5,
+   "title": "$800 No Limit Hold\u2019em $1,000,000 Guaranteed poker tournament",
+   "registration": "Unlimited re-entry for each starting flight will be available until the start of level 9. A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $800 Buy-in = $695 (Tournament Prize Pool) + $72 (Tournament Fee) + $33 (Poker Staff Service Charge)",
+   "buyin_usd": 800,
+   "prize_pool_usd": 695,
+   "tournament_fee_usd": 72,
+   "staff_fee_usd": 33,
+   "starting_stack": "Players will start with 40,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Day 1A-1E: 30 minutes per level until 12.5% or less of the field remains. Day 1F: 20 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until nine (9) players remain. Day 3: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
+  },
+  "r053": {
+   "row_id": "r053",
+   "key": [
+    "2026-12-02",
+    "18:00",
+    800
+   ],
+   "block": 5,
+   "title": "$800 No Limit Hold\u2019em $1,000,000 Guaranteed poker tournament",
+   "registration": "Unlimited re-entry for each starting flight will be available until the start of level 9. A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $800 Buy-in = $695 (Tournament Prize Pool) + $72 (Tournament Fee) + $33 (Poker Staff Service Charge)",
+   "buyin_usd": 800,
+   "prize_pool_usd": 695,
+   "tournament_fee_usd": 72,
+   "staff_fee_usd": 33,
+   "starting_stack": "Players will start with 40,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Day 1A-1E: 30 minutes per level until 12.5% or less of the field remains. Day 1F: 20 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until nine (9) players remain. Day 3: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
+  },
+  "r054": {
+   "row_id": "r054",
+   "key": [
+    "2026-12-03",
+    "11:00",
+    1600
+   ],
+   "block": 9,
+   "title": "$1,600 No Limit Hold\u2019em $1,000,000 Guaranteed poker tournament",
+   "registration": "Unlimited re-entry for each starting flight will be available until the start of level 10. A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $1,600 Buy-in = $1,430 (Tournament Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge)",
+   "buyin_usd": 1600,
+   "prize_pool_usd": 1430,
+   "tournament_fee_usd": 120,
+   "staff_fee_usd": 50,
+   "starting_stack": "Players will start with 40,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Day 1: 40 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
+  },
+  "r059": {
+   "row_id": "r059",
+   "key": [
+    "2026-12-03",
+    "19:00",
+    400
+   ],
+   "block": 54,
+   "title": "$400 Double Play Milestone Satellite",
+   "registration": "Unlimited re-entry will be available until the start of level 9.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $400 Buy-in = $337 (Tournament Prize Pool) + $45 (Tournament Fee) + $18 (Poker Staff Service Charge)",
+   "buyin_usd": 400,
+   "prize_pool_usd": 337,
+   "tournament_fee_usd": 45,
+   "staff_fee_usd": 18,
+   "starting_stack": "Players will start with 20,000 in tournament chips.",
+   "level_minutes": 20,
+   "length_of_play": "20 minutes per level until completion."
+  },
+  "r060": {
+   "row_id": "r060",
+   "key": [
+    "2026-12-04",
+    "11:00",
+    1600
+   ],
+   "block": 9,
+   "title": "$1,600 No Limit Hold\u2019em $1,000,000 Guaranteed poker tournament",
+   "registration": "Unlimited re-entry for each starting flight will be available until the start of level 10. A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $1,600 Buy-in = $1,430 (Tournament Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge)",
+   "buyin_usd": 1600,
+   "prize_pool_usd": 1430,
+   "tournament_fee_usd": 120,
+   "staff_fee_usd": 50,
+   "starting_stack": "Players will start with 40,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Day 1: 40 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
+  },
+  "r062": {
+   "row_id": "r062",
+   "key": [
+    "2026-12-04",
+    "12:00",
+    600
+   ],
+   "block": 10,
+   "title": "$600 HORSE poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 9 (approximately 4:30 p.m.).",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge)",
+   "buyin_usd": 600,
+   "prize_pool_usd": 510,
+   "tournament_fee_usd": 65,
+   "staff_fee_usd": 25,
+   "starting_stack": "Players will start with 35,000 in tournament chips.",
+   "level_minutes": 30,
+   "length_of_play": "30 minutes per level until a winner is declared."
+  },
+  "r063": {
+   "row_id": "r063",
+   "key": [
+    "2026-12-04",
+    "13:00",
+    null
+   ],
+   "block": 5,
+   "title": "$800 No Limit Hold\u2019em $1,000,000 Guaranteed poker tournament",
+   "registration": "Unlimited re-entry for each starting flight will be available until the start of level 9. A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $800 Buy-in = $695 (Tournament Prize Pool) + $72 (Tournament Fee) + $33 (Poker Staff Service Charge)",
+   "buyin_usd": 800,
+   "prize_pool_usd": 695,
+   "tournament_fee_usd": 72,
+   "staff_fee_usd": 33,
+   "starting_stack": "Players will start with 40,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Day 1A-1E: 30 minutes per level until 12.5% or less of the field remains. Day 1F: 20 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until nine (9) players remain. Day 3: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
+  },
+  "r065": {
+   "row_id": "r065",
+   "key": [
+    "2026-12-04",
+    "19:00",
+    400
+   ],
+   "block": 54,
+   "title": "$400 Double Play Milestone Satellite",
+   "registration": "Unlimited re-entry will be available until the start of level 9.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $400 Buy-in = $337 (Tournament Prize Pool) + $45 (Tournament Fee) + $18 (Poker Staff Service Charge)",
+   "buyin_usd": 400,
+   "prize_pool_usd": 337,
+   "tournament_fee_usd": 45,
+   "staff_fee_usd": 18,
+   "starting_stack": "Players will start with 20,000 in tournament chips.",
+   "level_minutes": 20,
+   "length_of_play": "20 minutes per level until completion."
+  },
+  "r066": {
+   "row_id": "r066",
+   "key": [
+    "2026-12-05",
+    "11:00",
+    1600
+   ],
+   "block": 9,
+   "title": "$1,600 No Limit Hold\u2019em $1,000,000 Guaranteed poker tournament",
+   "registration": "Unlimited re-entry for each starting flight will be available until the start of level 10. A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $1,600 Buy-in = $1,430 (Tournament Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge)",
+   "buyin_usd": 1600,
+   "prize_pool_usd": 1430,
+   "tournament_fee_usd": 120,
+   "staff_fee_usd": 50,
+   "starting_stack": "Players will start with 40,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Day 1: 40 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
+  },
+  "r067": {
+   "row_id": "r067",
+   "key": [
+    "2026-12-05",
+    "11:00",
+    1100
+   ],
+   "block": 11,
+   "title": "$1,100 WPT Prime Championship $5,000,000 Guarantee poker tournament",
+   "registration": "One (1) Entry and One (1) re-entry for each starting flight will be available until the start of level 10 (approximately 6:45 p.m.). A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+   "unlimited_re_entry": false,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $1,100 Buy-in = $970 (Tournament Prize Pool) + $90 (Tournament Fee) + $40 (Poker Staff Service Charge)",
+   "buyin_usd": 1100,
+   "prize_pool_usd": 970,
+   "tournament_fee_usd": 90,
+   "staff_fee_usd": 40,
+   "starting_stack": "Players will start with 40,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": null
+  },
+  "r070": {
+   "row_id": "r070",
+   "key": [
+    "2026-12-05",
+    "21:00",
+    600
+   ],
+   "block": 12,
+   "title": "$600 NLH Turbo $50,000 guaranteed poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 9.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge)",
+   "buyin_usd": 600,
+   "prize_pool_usd": 515,
+   "tournament_fee_usd": 60,
+   "staff_fee_usd": 25,
+   "starting_stack": "Players will start with 30,000 in tournament chips.",
+   "level_minutes": 20,
+   "length_of_play": "20 minutes per level until a winner is declared."
+  },
+  "r071": {
+   "row_id": "r071",
+   "key": [
+    "2026-12-06",
+    "11:00",
+    1600
+   ],
+   "block": 13,
+   "title": "$1,600 Mystery Bounty $500,000 Guarantee poker tournament",
+   "registration": "Unlimited re-entry for each starting flight will be available until the start of level 10. A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $1,600 Buy-in = $930 (Tournament Prize Pool) + $500 (Mystery Bounty Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge)",
+   "buyin_usd": 1600,
+   "prize_pool_usd": 930,
+   "tournament_fee_usd": 500,
+   "staff_fee_usd": 120,
+   "starting_stack": "Players will start with 40,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Day 1A: 40 minutes per level until 12.5% or less of the field remains. Day 1B: 20 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
+  },
+  "r072": {
+   "row_id": "r072",
+   "key": [
+    "2026-12-06",
+    "11:00",
+    1100
+   ],
+   "block": 11,
+   "title": "$1,100 WPT Prime Championship $5,000,000 Guarantee poker tournament",
+   "registration": "One (1) Entry and One (1) re-entry for each starting flight will be available until the start of level 10 (approximately 6:45 p.m.). A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+   "unlimited_re_entry": false,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $1,100 Buy-in = $970 (Tournament Prize Pool) + $90 (Tournament Fee) + $40 (Poker Staff Service Charge)",
+   "buyin_usd": 1100,
+   "prize_pool_usd": 970,
+   "tournament_fee_usd": 90,
+   "staff_fee_usd": 40,
+   "starting_stack": "Players will start with 40,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": null
+  },
+  "r075": {
+   "row_id": "r075",
+   "key": [
+    "2026-12-06",
+    "12:00",
+    200
+   ],
+   "block": 55,
+   "title": "$200 Milestone Satellite to $1,100 Prime Championship",
+   "registration": "Unlimited re-entry will be available until the start of level 9.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $200 Buy-in = $165 (Tournament Prize Pool) + $20 (Tournament Fee) + $15 (Poker Staff Service Charge)",
+   "buyin_usd": 200,
+   "prize_pool_usd": 165,
+   "tournament_fee_usd": 20,
+   "staff_fee_usd": 15,
+   "starting_stack": "Players will start with 20,000 in tournament chips.",
+   "level_minutes": 20,
+   "length_of_play": "20 minutes per level until completion."
+  },
+  "r077": {
+   "row_id": "r077",
+   "key": [
+    "2026-12-06",
+    "18:00",
+    1600
+   ],
+   "block": 13,
+   "title": "$1,600 Mystery Bounty $500,000 Guarantee poker tournament",
+   "registration": "Unlimited re-entry for each starting flight will be available until the start of level 10. A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $1,600 Buy-in = $930 (Tournament Prize Pool) + $500 (Mystery Bounty Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge)",
+   "buyin_usd": 1600,
+   "prize_pool_usd": 930,
+   "tournament_fee_usd": 500,
+   "staff_fee_usd": 120,
+   "starting_stack": "Players will start with 40,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Day 1A: 40 minutes per level until 12.5% or less of the field remains. Day 1B: 20 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
+  },
+  "r078": {
+   "row_id": "r078",
+   "key": [
+    "2026-12-06",
+    "19:00",
+    400
+   ],
+   "block": 54,
+   "title": "$400 Double Play Milestone Satellite",
+   "registration": "Unlimited re-entry will be available until the start of level 9.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $400 Buy-in = $337 (Tournament Prize Pool) + $45 (Tournament Fee) + $18 (Poker Staff Service Charge)",
+   "buyin_usd": 400,
+   "prize_pool_usd": 337,
+   "tournament_fee_usd": 45,
+   "staff_fee_usd": 18,
+   "starting_stack": "Players will start with 20,000 in tournament chips.",
+   "level_minutes": 20,
+   "length_of_play": "20 minutes per level until completion."
+  },
+  "r079": {
+   "row_id": "r079",
+   "key": [
+    "2026-12-06",
+    "21:00",
+    600
+   ],
+   "block": 12,
+   "title": "$600 NLH Turbo $50,000 guaranteed poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 9.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge)",
+   "buyin_usd": 600,
+   "prize_pool_usd": 515,
+   "tournament_fee_usd": 60,
+   "staff_fee_usd": 25,
+   "starting_stack": "Players will start with 30,000 in tournament chips.",
+   "level_minutes": 20,
+   "length_of_play": "20 minutes per level until a winner is declared."
+  },
+  "r080": {
+   "row_id": "r080",
+   "key": [
+    "2026-12-07",
+    "11:00",
+    1100
+   ],
+   "block": 14,
+   "title": "$1,100 HORSE poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 10 (approximately 6:30 p.m.).",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $1,100 Buy-in = $965 (Tournament Prize Pool) + $90 (Tournament Fee) + $45 (Poker Staff Service Charge)",
+   "buyin_usd": 1100,
+   "prize_pool_usd": 965,
+   "tournament_fee_usd": 90,
+   "staff_fee_usd": 45,
+   "starting_stack": "Players will start with 40,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Day 1: Fifteen (15) levels of 40 minutes each. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
+  },
+  "r081": {
+   "row_id": "r081",
+   "key": [
+    "2026-12-07",
+    "11:00",
+    1100
+   ],
+   "block": 11,
+   "title": "$1,100 WPT Prime Championship $5,000,000 Guarantee poker tournament",
+   "registration": "One (1) Entry and One (1) re-entry for each starting flight will be available until the start of level 10 (approximately 6:45 p.m.). A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+   "unlimited_re_entry": false,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $1,100 Buy-in = $970 (Tournament Prize Pool) + $90 (Tournament Fee) + $40 (Poker Staff Service Charge)",
+   "buyin_usd": 1100,
+   "prize_pool_usd": 970,
+   "tournament_fee_usd": 90,
+   "staff_fee_usd": 40,
+   "starting_stack": "Players will start with 40,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": null
+  },
+  "r083": {
+   "row_id": "r083",
+   "key": [
+    "2026-12-07",
+    "12:00",
+    null
+   ],
+   "block": 13,
+   "title": "$1,600 Mystery Bounty $500,000 Guarantee poker tournament",
+   "registration": "Unlimited re-entry for each starting flight will be available until the start of level 10. A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $1,600 Buy-in = $930 (Tournament Prize Pool) + $500 (Mystery Bounty Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge)",
+   "buyin_usd": 1600,
+   "prize_pool_usd": 930,
+   "tournament_fee_usd": 500,
+   "staff_fee_usd": 120,
+   "starting_stack": "Players will start with 40,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Day 1A: 40 minutes per level until 12.5% or less of the field remains. Day 1B: 20 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
+  },
+  "r084": {
+   "row_id": "r084",
+   "key": [
+    "2026-12-07",
+    "13:00",
+    1600
+   ],
+   "block": 15,
+   "title": "$1,600 PLO $500 Bounty $100,000 guaranteed poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 9 (approximately 5:30 p.m.).",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $1,600 Buy-in = $940 (Tournament Prize Pool) + $500 (Bounty Prize Pool) + $115 (Tournament Fee) + $45 (Poker Staff Service Charge)",
+   "buyin_usd": 1600,
+   "prize_pool_usd": 940,
+   "tournament_fee_usd": 500,
+   "staff_fee_usd": 115,
+   "starting_stack": "Players will start with 30,000 in tournament chips.",
+   "level_minutes": 30,
+   "length_of_play": "30 minutes per level until a winner is declared."
+  },
+  "r086": {
+   "row_id": "r086",
+   "key": [
+    "2026-12-07",
+    "19:00",
+    1600
+   ],
+   "block": 56,
+   "title": "$1,600 Milestone Satellite to Prime and World Championship poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 9.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $1,600 Buy-in = $1,440 (Tournament Prize Pool) + $115 (Tournament Fee) + $45 (Poker Staff Service Charge)",
+   "buyin_usd": 1600,
+   "prize_pool_usd": 1440,
+   "tournament_fee_usd": 115,
+   "staff_fee_usd": 45,
+   "starting_stack": "Players will start with 20,000 in tournament chips.",
+   "level_minutes": 25,
+   "length_of_play": "25 minutes per level until completion."
+  },
+  "r087": {
+   "row_id": "r087",
+   "key": [
+    "2026-12-07",
+    "21:00",
+    600
+   ],
+   "block": 12,
+   "title": "$600 NLH Turbo $50,000 guaranteed poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 9.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge)",
+   "buyin_usd": 600,
+   "prize_pool_usd": 515,
+   "tournament_fee_usd": 60,
+   "staff_fee_usd": 25,
+   "starting_stack": "Players will start with 30,000 in tournament chips.",
+   "level_minutes": 20,
+   "length_of_play": "20 minutes per level until a winner is declared."
+  },
+  "r089": {
+   "row_id": "r089",
+   "key": [
+    "2026-12-08",
+    "11:00",
+    1100
+   ],
+   "block": 11,
+   "title": "$1,100 WPT Prime Championship $5,000,000 Guarantee poker tournament",
+   "registration": "One (1) Entry and One (1) re-entry for each starting flight will be available until the start of level 10 (approximately 6:45 p.m.). A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+   "unlimited_re_entry": false,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $1,100 Buy-in = $970 (Tournament Prize Pool) + $90 (Tournament Fee) + $40 (Poker Staff Service Charge)",
+   "buyin_usd": 1100,
+   "prize_pool_usd": 970,
+   "tournament_fee_usd": 90,
+   "staff_fee_usd": 40,
+   "starting_stack": "Players will start with 40,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": null
+  },
+  "r092": {
+   "row_id": "r092",
+   "key": [
+    "2026-12-08",
+    "19:00",
+    1100
+   ],
+   "block": 57,
+   "title": "$1,100 Milestone Satellite to $10,400 World Championship poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 9.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge)",
+   "buyin_usd": 1100,
+   "prize_pool_usd": 975,
+   "tournament_fee_usd": 85,
+   "staff_fee_usd": 40,
+   "starting_stack": "Players will start with 20,000 in tournament chips.",
+   "level_minutes": 25,
+   "length_of_play": "25 minutes per level until completion."
+  },
+  "r093": {
+   "row_id": "r093",
+   "key": [
+    "2026-12-08",
+    "21:00",
+    600
+   ],
+   "block": 12,
+   "title": "$600 NLH Turbo $50,000 guaranteed poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 9.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge)",
+   "buyin_usd": 600,
+   "prize_pool_usd": 515,
+   "tournament_fee_usd": 60,
+   "staff_fee_usd": 25,
+   "starting_stack": "Players will start with 30,000 in tournament chips.",
+   "level_minutes": 20,
+   "length_of_play": "20 minutes per level until a winner is declared."
+  },
+  "r095": {
+   "row_id": "r095",
+   "key": [
+    "2026-12-09",
+    "11:00",
+    1600
+   ],
+   "block": 16,
+   "title": "$1,600 No Limit Hold\u2019em $1,000,000 Guaranteed poker tournament",
+   "registration": "Unlimited re-entry for each starting flight will be available until the start of level 10.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $1,600 Buy-in = $1,430 (Tournament Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge)",
+   "buyin_usd": 1600,
+   "prize_pool_usd": 1430,
+   "tournament_fee_usd": 120,
+   "staff_fee_usd": 50,
+   "starting_stack": "Players will start with 40,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Day 1: 40 minutes per level until the tournament is \u201cin the money\u201d. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
+  },
+  "r097": {
+   "row_id": "r097",
+   "key": [
+    "2026-12-09",
+    "12:00",
+    null
+   ],
+   "block": 11,
+   "title": "$1,100 WPT Prime Championship $5,000,000 Guarantee poker tournament",
+   "registration": "One (1) Entry and One (1) re-entry for each starting flight will be available until the start of level 10 (approximately 6:45 p.m.). A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+   "unlimited_re_entry": false,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $1,100 Buy-in = $970 (Tournament Prize Pool) + $90 (Tournament Fee) + $40 (Poker Staff Service Charge)",
+   "buyin_usd": 1100,
+   "prize_pool_usd": 970,
+   "tournament_fee_usd": 90,
+   "staff_fee_usd": 40,
+   "starting_stack": "Players will start with 40,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": null
+  },
+  "r099": {
+   "row_id": "r099",
+   "key": [
+    "2026-12-09",
+    "13:00",
+    3000
+   ],
+   "block": 17,
+   "title": "$3,000 PLO $1,000 Bounty $250,000 guaranteed poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 9 (approximately 5:30 p.m.).",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $3,000 Buy-in = $1,730 (Tournament Prize Pool) + $1,000 (Bounty Prize Pool) + $200 (Tournament Fee) + $70 (Poker Staff Service Charge)",
+   "buyin_usd": 3000,
+   "prize_pool_usd": 1730,
+   "tournament_fee_usd": 1000,
+   "staff_fee_usd": 200,
+   "starting_stack": "Players will start with 30,000 in tournament chips.",
+   "level_minutes": 30,
+   "length_of_play": "30 minutes per level until a winner is declared."
+  },
+  "r098": {
+   "row_id": "r098",
+   "key": [
+    "2026-12-09",
+    "13:00",
+    800
+   ],
+   "block": 18,
+   "title": "$800 Limit Omaha 8 poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 9.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $800 Buy-in = $695 (Tournament Prize Pool) + $72 (Tournament Fee) + $33 (Poker Staff Service Charge)",
+   "buyin_usd": 800,
+   "prize_pool_usd": 695,
+   "tournament_fee_usd": 72,
+   "staff_fee_usd": 33,
+   "starting_stack": "Players will start with 35,000 in tournament chips.",
+   "level_minutes": 30,
+   "length_of_play": "30 minutes per level until a winner is declared."
+  },
+  "r100": {
+   "row_id": "r100",
+   "key": [
+    "2026-12-09",
+    "14:00",
+    1100
+   ],
+   "block": 57,
+   "title": "$1,100 Milestone Satellite to $10,400 World Championship poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 9.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge)",
+   "buyin_usd": 1100,
+   "prize_pool_usd": 975,
+   "tournament_fee_usd": 85,
+   "staff_fee_usd": 40,
+   "starting_stack": "Players will start with 20,000 in tournament chips.",
+   "level_minutes": 25,
+   "length_of_play": "25 minutes per level until completion."
+  },
+  "r103": {
+   "row_id": "r103",
+   "key": [
+    "2026-12-09",
+    "19:00",
+    1100
+   ],
+   "block": 57,
+   "title": "$1,100 Milestone Satellite to $10,400 World Championship poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 9.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge)",
+   "buyin_usd": 1100,
+   "prize_pool_usd": 975,
+   "tournament_fee_usd": 85,
+   "staff_fee_usd": 40,
+   "starting_stack": "Players will start with 20,000 in tournament chips.",
+   "level_minutes": 25,
+   "length_of_play": "25 minutes per level until completion."
+  },
+  "r104": {
+   "row_id": "r104",
+   "key": [
+    "2026-12-09",
+    "21:00",
+    600
+   ],
+   "block": 12,
+   "title": "$600 NLH Turbo $50,000 guaranteed poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 9.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge)",
+   "buyin_usd": 600,
+   "prize_pool_usd": 515,
+   "tournament_fee_usd": 60,
+   "staff_fee_usd": 25,
+   "starting_stack": "Players will start with 30,000 in tournament chips.",
+   "level_minutes": 20,
+   "length_of_play": "20 minutes per level until a winner is declared."
+  },
+  "r105": {
+   "row_id": "r105",
+   "key": [
+    "2026-12-10",
+    "10:00",
+    400
+   ],
+   "block": 19,
+   "title": "$400 Super Gold Million tournament",
+   "registration": "Unlimited re-entry for each starting flight will be available until the start of level 9. A player who advances to Day 2 is allowed to enter a subsequent starting flight. A player that has advanced to Day 2 from any of the subsequent starting flights will be permitted to play Day 2 with their largest Tournament chip stack from any of the original starting flights (Best stack forward). The player will receive the minimum Day 2 tournament payout ($700) for each additional Tournament chip stack which has advanced.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $400 Buy-in = $333 (Tournament Prize Pool) + $45 (Tournament Fee) + $22 (Poker Staff Service Charge)",
+   "buyin_usd": 400,
+   "prize_pool_usd": 333,
+   "tournament_fee_usd": 45,
+   "staff_fee_usd": 22,
+   "starting_stack": "Players will start with 30,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": null
+  },
+  "r107": {
+   "row_id": "r107",
+   "key": [
+    "2026-12-10",
+    "12:00",
+    null
+   ],
+   "block": 11,
+   "title": "$1,100 WPT Prime Championship $5,000,000 Guarantee poker tournament",
+   "registration": "One (1) Entry and One (1) re-entry for each starting flight will be available until the start of level 10 (approximately 6:45 p.m.). A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+   "unlimited_re_entry": false,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $1,100 Buy-in = $970 (Tournament Prize Pool) + $90 (Tournament Fee) + $40 (Poker Staff Service Charge)",
+   "buyin_usd": 1100,
+   "prize_pool_usd": 970,
+   "tournament_fee_usd": 90,
+   "staff_fee_usd": 40,
+   "starting_stack": "Players will start with 40,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": null
+  },
+  "r111": {
+   "row_id": "r111",
+   "key": [
+    "2026-12-10",
+    "18:00",
+    400
+   ],
+   "block": 19,
+   "title": "$400 Super Gold Million tournament",
+   "registration": "Unlimited re-entry for each starting flight will be available until the start of level 9. A player who advances to Day 2 is allowed to enter a subsequent starting flight. A player that has advanced to Day 2 from any of the subsequent starting flights will be permitted to play Day 2 with their largest Tournament chip stack from any of the original starting flights (Best stack forward). The player will receive the minimum Day 2 tournament payout ($700) for each additional Tournament chip stack which has advanced.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $400 Buy-in = $333 (Tournament Prize Pool) + $45 (Tournament Fee) + $22 (Poker Staff Service Charge)",
+   "buyin_usd": 400,
+   "prize_pool_usd": 333,
+   "tournament_fee_usd": 45,
+   "staff_fee_usd": 22,
+   "starting_stack": "Players will start with 30,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": null
+  },
+  "r113": {
+   "row_id": "r113",
+   "key": [
+    "2026-12-11",
+    "10:00",
+    400
+   ],
+   "block": 19,
+   "title": "$400 Super Gold Million tournament",
+   "registration": "Unlimited re-entry for each starting flight will be available until the start of level 9. A player who advances to Day 2 is allowed to enter a subsequent starting flight. A player that has advanced to Day 2 from any of the subsequent starting flights will be permitted to play Day 2 with their largest Tournament chip stack from any of the original starting flights (Best stack forward). The player will receive the minimum Day 2 tournament payout ($700) for each additional Tournament chip stack which has advanced.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $400 Buy-in = $333 (Tournament Prize Pool) + $45 (Tournament Fee) + $22 (Poker Staff Service Charge)",
+   "buyin_usd": 400,
+   "prize_pool_usd": 333,
+   "tournament_fee_usd": 45,
+   "staff_fee_usd": 22,
+   "starting_stack": "Players will start with 30,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": null
+  },
+  "r115": {
+   "row_id": "r115",
+   "key": [
+    "2026-12-11",
+    "12:00",
+    null
+   ],
+   "block": 11,
+   "title": "$1,100 WPT Prime Championship $5,000,000 Guarantee poker tournament",
+   "registration": "One (1) Entry and One (1) re-entry for each starting flight will be available until the start of level 10 (approximately 6:45 p.m.). A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+   "unlimited_re_entry": false,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $1,100 Buy-in = $970 (Tournament Prize Pool) + $90 (Tournament Fee) + $40 (Poker Staff Service Charge)",
+   "buyin_usd": 1100,
+   "prize_pool_usd": 970,
+   "tournament_fee_usd": 90,
+   "staff_fee_usd": 40,
+   "starting_stack": "Players will start with 40,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": null
+  },
+  "r117": {
+   "row_id": "r117",
+   "key": [
+    "2026-12-11",
+    "18:00",
+    400
+   ],
+   "block": 19,
+   "title": "$400 Super Gold Million tournament",
+   "registration": "Unlimited re-entry for each starting flight will be available until the start of level 9. A player who advances to Day 2 is allowed to enter a subsequent starting flight. A player that has advanced to Day 2 from any of the subsequent starting flights will be permitted to play Day 2 with their largest Tournament chip stack from any of the original starting flights (Best stack forward). The player will receive the minimum Day 2 tournament payout ($700) for each additional Tournament chip stack which has advanced.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $400 Buy-in = $333 (Tournament Prize Pool) + $45 (Tournament Fee) + $22 (Poker Staff Service Charge)",
+   "buyin_usd": 400,
+   "prize_pool_usd": 333,
+   "tournament_fee_usd": 45,
+   "staff_fee_usd": 22,
+   "starting_stack": "Players will start with 30,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": null
+  },
+  "r121": {
+   "row_id": "r121",
+   "key": [
+    "2026-12-12",
+    "10:00",
+    800
+   ],
+   "block": 20,
+   "title": "$800 No Limit Hold\u2019em $100,000 Guaranteed poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 9 (approximately 2:30 p.m.).",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $800 Buy-in = $700 (Tournament Prize Pool) + $70 (Tournament Fee) + $30 (Poker Staff Service Charge)",
+   "buyin_usd": 800,
+   "prize_pool_usd": 700,
+   "tournament_fee_usd": 70,
+   "staff_fee_usd": 30,
+   "starting_stack": "Players will start with 30,000 in tournament chips.",
+   "level_minutes": 30,
+   "length_of_play": "30 minutes per level until a winner is declared."
+  },
+  "r124": {
+   "row_id": "r124",
+   "key": [
+    "2026-12-12",
+    "13:00",
+    3000
+   ],
+   "block": 21,
+   "title": "$3,000 PLO $250,000 Guaranteed poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 9 (approximately 5:30 p.m.).",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $3,000 Buy-in = $2,730 (Tournament Prize Pool) + $200 (Tournament Fee) + $70 (Poker Staff Service Charge)",
+   "buyin_usd": 3000,
+   "prize_pool_usd": 2730,
+   "tournament_fee_usd": 200,
+   "staff_fee_usd": 70,
+   "starting_stack": "Players will start with 30,000 in tournament chips.",
+   "level_minutes": 30,
+   "length_of_play": "30 minutes per level until a winner is declared."
+  },
+  "r125": {
+   "row_id": "r125",
+   "key": [
+    "2026-12-12",
+    "14:00",
+    1100
+   ],
+   "block": 58,
+   "title": "$1,100 Milestone Satellite to $10,400 World Championship poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 9.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge)",
+   "buyin_usd": 1100,
+   "prize_pool_usd": 975,
+   "tournament_fee_usd": 85,
+   "staff_fee_usd": 40,
+   "starting_stack": "Players will start with 20,000 in tournament chips.",
+   "level_minutes": 25,
+   "length_of_play": "25 minutes per level until completion."
+  },
+  "r126": {
+   "row_id": "r126",
+   "key": [
+    "2026-12-12",
+    "14:00",
+    null
+   ],
+   "block": 19,
+   "title": "$400 Super Gold Million tournament",
+   "registration": "Unlimited re-entry for each starting flight will be available until the start of level 9. A player who advances to Day 2 is allowed to enter a subsequent starting flight. A player that has advanced to Day 2 from any of the subsequent starting flights will be permitted to play Day 2 with their largest Tournament chip stack from any of the original starting flights (Best stack forward). The player will receive the minimum Day 2 tournament payout ($700) for each additional Tournament chip stack which has advanced.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $400 Buy-in = $333 (Tournament Prize Pool) + $45 (Tournament Fee) + $22 (Poker Staff Service Charge)",
+   "buyin_usd": 400,
+   "prize_pool_usd": 333,
+   "tournament_fee_usd": 45,
+   "staff_fee_usd": 22,
+   "starting_stack": "Players will start with 30,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": null
+  },
+  "r127": {
+   "row_id": "r127",
+   "key": [
+    "2026-12-12",
+    "14:00",
+    null
+   ],
+   "block": 11,
+   "title": "$1,100 WPT Prime Championship $5,000,000 Guarantee poker tournament",
+   "registration": "One (1) Entry and One (1) re-entry for each starting flight will be available until the start of level 10 (approximately 6:45 p.m.). A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+   "unlimited_re_entry": false,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $1,100 Buy-in = $970 (Tournament Prize Pool) + $90 (Tournament Fee) + $40 (Poker Staff Service Charge)",
+   "buyin_usd": 1100,
+   "prize_pool_usd": 970,
+   "tournament_fee_usd": 90,
+   "staff_fee_usd": 40,
+   "starting_stack": "Players will start with 40,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": null
+  },
+  "r128": {
+   "row_id": "r128",
+   "key": [
+    "2026-12-12",
+    "16:00",
+    200
+   ],
+   "block": 59,
+   "title": "$200 Milestone Satellite to $1,100 Ladies Championship poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 9.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $200 Buy-in = $165 (Tournament Prize Pool) + $20 (Tournament Fee) + $15 (Poker Staff Service Charge)",
+   "buyin_usd": 200,
+   "prize_pool_usd": 165,
+   "tournament_fee_usd": 20,
+   "staff_fee_usd": 15,
+   "starting_stack": "Players will start with 20,000 in tournament chips.",
+   "level_minutes": 20,
+   "length_of_play": "20 minutes per level until completion."
+  },
+  "r130": {
+   "row_id": "r130",
+   "key": [
+    "2026-12-12",
+    "19:00",
+    1100
+   ],
+   "block": 58,
+   "title": "$1,100 Milestone Satellite to $10,400 World Championship poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 9.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge)",
+   "buyin_usd": 1100,
+   "prize_pool_usd": 975,
+   "tournament_fee_usd": 85,
+   "staff_fee_usd": 40,
+   "starting_stack": "Players will start with 20,000 in tournament chips.",
+   "level_minutes": 25,
+   "length_of_play": "25 minutes per level until completion."
+  },
+  "r131": {
+   "row_id": "r131",
+   "key": [
+    "2026-12-12",
+    "21:00",
+    600
+   ],
+   "block": 12,
+   "title": "$600 NLH Turbo $50,000 guaranteed poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 9.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge)",
+   "buyin_usd": 600,
+   "prize_pool_usd": 515,
+   "tournament_fee_usd": 60,
+   "staff_fee_usd": 25,
+   "starting_stack": "Players will start with 30,000 in tournament chips.",
+   "level_minutes": 20,
+   "length_of_play": "20 minutes per level until a winner is declared."
+  },
+  "r135": {
+   "row_id": "r135",
+   "key": [
+    "2026-12-13",
+    "11:00",
+    10400
+   ],
+   "block": 22,
+   "title": "$10,400 WPT World Championship tournament",
+   "registration": "Four (4) Entries maximum. Players are allowed One (1) entry per starting flight + One (1) Day 2 Entry prior to the start of Day 2. Registration is available until the start of level nine (9). A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+   "unlimited_re_entry": false,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $10,400 Buy-in = $9,800 (Tournament Prize Pool) + $400 (Tournament Fee) + $200 (Poker Staff Service Charge)",
+   "buyin_usd": 10400,
+   "prize_pool_usd": 9800,
+   "tournament_fee_usd": 400,
+   "staff_fee_usd": 200,
+   "starting_stack": "Players will start with 100,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Day 1: Eight (8) levels of 60 minutes each. Day 2: Five (5) levels of 90 minutes each. Day 3-4: Six (6) levels of 90 minutes each. Day 5: 90 minutes per level until the final 6 players remain. Final Table: 90 minutes per level until two (2) players remain, 45 minutes per level thereafter."
+  },
+  "r133": {
+   "row_id": "r133",
+   "key": [
+    "2026-12-13",
+    "11:00",
+    1100
+   ],
+   "block": 24,
+   "title": "$1,100 TORSE poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 10 (approximately 6:30 p.m.).",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $1,100 Buy-in = $965 (Tournament Prize Pool) + $90 (Tournament Fee) + $45 (Poker Staff Service Charge)",
+   "buyin_usd": 1100,
+   "prize_pool_usd": 965,
+   "tournament_fee_usd": 90,
+   "staff_fee_usd": 45,
+   "starting_stack": "Players will start with 40,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Day 1: Fifteen (15) levels of 40 minutes each. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
+  },
+  "r134": {
+   "row_id": "r134",
+   "key": [
+    "2026-12-13",
+    "11:00",
+    800
+   ],
+   "block": 25,
+   "title": "$800 No Limit Hold\u2019em $500,000 Guaranteed poker tournament",
+   "registration": "Unlimited re-entry for each starting flight will be available until the start of level 10. A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $800 Buy-in = $695 (Tournament Prize Pool) + $72 (Tournament Fee) + $33 (Poker Staff Service Charge)",
+   "buyin_usd": 800,
+   "prize_pool_usd": 695,
+   "tournament_fee_usd": 72,
+   "staff_fee_usd": 33,
+   "starting_stack": "Players will start with 40,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Day 1: 40 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
+  },
+  "r137": {
+   "row_id": "r137",
+   "key": [
+    "2026-12-13",
+    "12:00",
+    1600
+   ],
+   "block": 26,
+   "title": "$1,600 PLO $1,000,000 Guaranteed poker tournament",
+   "registration": "Unlimited re-entry for each starting flight will be available until the start of level 10. A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $1,600 Buy-in = $1,430 (Tournament Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge)",
+   "buyin_usd": 1600,
+   "prize_pool_usd": 1430,
+   "tournament_fee_usd": 120,
+   "staff_fee_usd": 50,
+   "starting_stack": "Players will start with 40,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Day 1: 40 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
+  },
+  "r136": {
+   "row_id": "r136",
+   "key": [
+    "2026-12-13",
+    "12:00",
+    1100
+   ],
+   "block": 60,
+   "title": "$1,100 Milestone Satellite to $10,400 World Championship poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 9.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge)",
+   "buyin_usd": 1100,
+   "prize_pool_usd": 975,
+   "tournament_fee_usd": 85,
+   "staff_fee_usd": 40,
+   "starting_stack": "Players will start with 20,000 in tournament chips.",
+   "level_minutes": 25,
+   "length_of_play": "25 minutes per level until completion."
+  },
+  "r139": {
+   "row_id": "r139",
+   "key": [
+    "2026-12-13",
+    "13:00",
+    null
+   ],
+   "block": 19,
+   "title": "$400 Super Gold Million tournament",
+   "registration": "Unlimited re-entry for each starting flight will be available until the start of level 9. A player who advances to Day 2 is allowed to enter a subsequent starting flight. A player that has advanced to Day 2 from any of the subsequent starting flights will be permitted to play Day 2 with their largest Tournament chip stack from any of the original starting flights (Best stack forward). The player will receive the minimum Day 2 tournament payout ($700) for each additional Tournament chip stack which has advanced.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $400 Buy-in = $333 (Tournament Prize Pool) + $45 (Tournament Fee) + $22 (Poker Staff Service Charge)",
+   "buyin_usd": 400,
+   "prize_pool_usd": 333,
+   "tournament_fee_usd": 45,
+   "staff_fee_usd": 22,
+   "starting_stack": "Players will start with 30,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": null
+  },
+  "r141": {
+   "row_id": "r141",
+   "key": [
+    "2026-12-13",
+    "18:00",
+    1100
+   ],
+   "block": 61,
+   "title": "$1,100 Milestone Satellite to $10,400 World Championship poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 9.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge)",
+   "buyin_usd": 1100,
+   "prize_pool_usd": 975,
+   "tournament_fee_usd": 85,
+   "staff_fee_usd": 40,
+   "starting_stack": "Players will start with 20,000 in tournament chips.",
+   "level_minutes": 25,
+   "length_of_play": "25 minutes per level until completion."
+  },
+  "r145": {
+   "row_id": "r145",
+   "key": [
+    "2026-12-14",
+    "11:00",
+    10400
+   ],
+   "block": 22,
+   "title": "$10,400 WPT World Championship tournament",
+   "registration": "Four (4) Entries maximum. Players are allowed One (1) entry per starting flight + One (1) Day 2 Entry prior to the start of Day 2. Registration is available until the start of level nine (9). A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+   "unlimited_re_entry": false,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $10,400 Buy-in = $9,800 (Tournament Prize Pool) + $400 (Tournament Fee) + $200 (Poker Staff Service Charge)",
+   "buyin_usd": 10400,
+   "prize_pool_usd": 9800,
+   "tournament_fee_usd": 400,
+   "staff_fee_usd": 200,
+   "starting_stack": "Players will start with 100,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Day 1: Eight (8) levels of 60 minutes each. Day 2: Five (5) levels of 90 minutes each. Day 3-4: Six (6) levels of 90 minutes each. Day 5: 90 minutes per level until the final 6 players remain. Final Table: 90 minutes per level until two (2) players remain, 45 minutes per level thereafter."
+  },
+  "r144": {
+   "row_id": "r144",
+   "key": [
+    "2026-12-14",
+    "11:00",
+    800
+   ],
+   "block": 25,
+   "title": "$800 No Limit Hold\u2019em $500,000 Guaranteed poker tournament",
+   "registration": "Unlimited re-entry for each starting flight will be available until the start of level 10. A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $800 Buy-in = $695 (Tournament Prize Pool) + $72 (Tournament Fee) + $33 (Poker Staff Service Charge)",
+   "buyin_usd": 800,
+   "prize_pool_usd": 695,
+   "tournament_fee_usd": 72,
+   "staff_fee_usd": 33,
+   "starting_stack": "Players will start with 40,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Day 1: 40 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
+  },
+  "r148": {
+   "row_id": "r148",
+   "key": [
+    "2026-12-14",
+    "12:00",
+    1600
+   ],
+   "block": 26,
+   "title": "$1,600 PLO $1,000,000 Guaranteed poker tournament",
+   "registration": "Unlimited re-entry for each starting flight will be available until the start of level 10. A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $1,600 Buy-in = $1,430 (Tournament Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge)",
+   "buyin_usd": 1600,
+   "prize_pool_usd": 1430,
+   "tournament_fee_usd": 120,
+   "staff_fee_usd": 50,
+   "starting_stack": "Players will start with 40,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Day 1: 40 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
+  },
+  "r146": {
+   "row_id": "r146",
+   "key": [
+    "2026-12-14",
+    "12:00",
+    1100
+   ],
+   "block": 62,
+   "title": "$1,100 Milestone Satellite to $10,400 World Championship poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 9.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge)",
+   "buyin_usd": 1100,
+   "prize_pool_usd": 975,
+   "tournament_fee_usd": 85,
+   "staff_fee_usd": 40,
+   "starting_stack": "Players will start with 20,000 in tournament chips.",
+   "level_minutes": 25,
+   "length_of_play": "25 minutes per level until completion."
+  },
+  "r147": {
+   "row_id": "r147",
+   "key": [
+    "2026-12-14",
+    "12:00",
+    1100
+   ],
+   "block": 27,
+   "title": "$1,100 Mixed Triple Draw (A-5, 2-7, Badugi) poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 10 (approximately 7:30 p.m.).",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $1,100 Buy-in = $965 (Tournament Prize Pool) + $90 (Tournament Fee) + $45 (Poker Staff Service Charge)",
+   "buyin_usd": 1100,
+   "prize_pool_usd": 965,
+   "tournament_fee_usd": 90,
+   "staff_fee_usd": 45,
+   "starting_stack": "Players will start with 40,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Day 1: Fifteen (15) levels of 40 minutes each. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
+  },
+  "r149": {
+   "row_id": "r149",
+   "key": [
+    "2026-12-14",
+    "14:00",
+    null
+   ],
+   "block": 19,
+   "title": "$400 Super Gold Million tournament",
+   "registration": "Unlimited re-entry for each starting flight will be available until the start of level 9. A player who advances to Day 2 is allowed to enter a subsequent starting flight. A player that has advanced to Day 2 from any of the subsequent starting flights will be permitted to play Day 2 with their largest Tournament chip stack from any of the original starting flights (Best stack forward). The player will receive the minimum Day 2 tournament payout ($700) for each additional Tournament chip stack which has advanced.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $400 Buy-in = $333 (Tournament Prize Pool) + $45 (Tournament Fee) + $22 (Poker Staff Service Charge)",
+   "buyin_usd": 400,
+   "prize_pool_usd": 333,
+   "tournament_fee_usd": 45,
+   "staff_fee_usd": 22,
+   "starting_stack": "Players will start with 30,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": null
+  },
+  "r151": {
+   "row_id": "r151",
+   "key": [
+    "2026-12-14",
+    "18:00",
+    1100
+   ],
+   "block": 62,
+   "title": "$1,100 Milestone Satellite to $10,400 World Championship poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 9.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge)",
+   "buyin_usd": 1100,
+   "prize_pool_usd": 975,
+   "tournament_fee_usd": 85,
+   "staff_fee_usd": 40,
+   "starting_stack": "Players will start with 20,000 in tournament chips.",
+   "level_minutes": 25,
+   "length_of_play": "25 minutes per level until completion."
+  },
+  "r152": {
+   "row_id": "r152",
+   "key": [
+    "2026-12-14",
+    "19:00",
+    1100
+   ],
+   "block": 28,
+   "title": "$1,100 PLO Turbo $100,000 guaranteed poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 9 (approximately 9 p.m.).",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge)",
+   "buyin_usd": 1100,
+   "prize_pool_usd": 975,
+   "tournament_fee_usd": 85,
+   "staff_fee_usd": 40,
+   "starting_stack": "Players will start with 30,000 in tournament chips.",
+   "level_minutes": 20,
+   "length_of_play": "20 minutes per level until a winner is declared."
+  },
+  "r153": {
+   "row_id": "r153",
+   "key": [
+    "2026-12-14",
+    "21:00",
+    600
+   ],
+   "block": 12,
+   "title": "$600 NLH Turbo $50,000 guaranteed poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 9.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge)",
+   "buyin_usd": 600,
+   "prize_pool_usd": 515,
+   "tournament_fee_usd": 60,
+   "staff_fee_usd": 25,
+   "starting_stack": "Players will start with 30,000 in tournament chips.",
+   "level_minutes": 20,
+   "length_of_play": "20 minutes per level until a winner is declared."
+  },
+  "r157": {
+   "row_id": "r157",
+   "key": [
+    "2026-12-15",
+    "11:00",
+    10400
+   ],
+   "block": 22,
+   "title": "$10,400 WPT World Championship tournament",
+   "registration": "Four (4) Entries maximum. Players are allowed One (1) entry per starting flight + One (1) Day 2 Entry prior to the start of Day 2. Registration is available until the start of level nine (9). A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+   "unlimited_re_entry": false,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $10,400 Buy-in = $9,800 (Tournament Prize Pool) + $400 (Tournament Fee) + $200 (Poker Staff Service Charge)",
+   "buyin_usd": 10400,
+   "prize_pool_usd": 9800,
+   "tournament_fee_usd": 400,
+   "staff_fee_usd": 200,
+   "starting_stack": "Players will start with 100,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Day 1: Eight (8) levels of 60 minutes each. Day 2: Five (5) levels of 90 minutes each. Day 3-4: Six (6) levels of 90 minutes each. Day 5: 90 minutes per level until the final 6 players remain. Final Table: 90 minutes per level until two (2) players remain, 45 minutes per level thereafter."
+  },
+  "r155": {
+   "row_id": "r155",
+   "key": [
+    "2026-12-15",
+    "11:00",
+    1100
+   ],
+   "block": 63,
+   "title": "$1,100 Milestone Satellite to $10,400 World Championship poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 9.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge)",
+   "buyin_usd": 1100,
+   "prize_pool_usd": 975,
+   "tournament_fee_usd": 85,
+   "staff_fee_usd": 40,
+   "starting_stack": "Players will start with 20,000 in tournament chips.",
+   "level_minutes": 25,
+   "length_of_play": "25 minutes per level until completion."
+  },
+  "r159": {
+   "row_id": "r159",
+   "key": [
+    "2026-12-15",
+    "12:00",
+    1100
+   ],
+   "block": 29,
+   "title": "$1,100 Big O poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 9 (approximately 4:30 p.m.)",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge)",
+   "buyin_usd": 1100,
+   "prize_pool_usd": 975,
+   "tournament_fee_usd": 85,
+   "staff_fee_usd": 40,
+   "starting_stack": "Players will start with 30,000 in tournament chips.",
+   "level_minutes": 30,
+   "length_of_play": "30 minutes per level until a winner is declared."
+  },
+  "r161": {
+   "row_id": "r161",
+   "key": [
+    "2026-12-15",
+    "13:00",
+    3000
+   ],
+   "block": 30,
+   "title": "$3,000 PLO Progressive Bounty $250,000 guaranteed poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 9 (approximately 5:30 p.m.).",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $3,000 Buy-in = $1,730 (Tournament Prize Pool) + $1,000 (Bounty Prize Pool) + $200 (Tournament Fee) + $70 (Poker Staff Service Charge)",
+   "buyin_usd": 3000,
+   "prize_pool_usd": 1730,
+   "tournament_fee_usd": 1000,
+   "staff_fee_usd": 200,
+   "starting_stack": "Players will start with 30,000 in tournament chips and four (4) bounty chips.",
+   "level_minutes": 30,
+   "length_of_play": "30 minutes per level until a winner is declared."
+  },
+  "r163": {
+   "row_id": "r163",
+   "key": [
+    "2026-12-15",
+    "18:00",
+    1100
+   ],
+   "block": 64,
+   "title": "$1,100 Milestone Satellite to $10,400 World Championship poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 9.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge)",
+   "buyin_usd": 1100,
+   "prize_pool_usd": 975,
+   "tournament_fee_usd": 85,
+   "staff_fee_usd": 40,
+   "starting_stack": "Players will start with 20,000 in tournament chips.",
+   "level_minutes": 25,
+   "length_of_play": "25 minutes per level until completion."
+  },
+  "r164": {
+   "row_id": "r164",
+   "key": [
+    "2026-12-15",
+    "19:00",
+    1600
+   ],
+   "block": 31,
+   "title": "$1,600 NLH $500 Bounty Turbo $100,000 guaranteed poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 9.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $1,600 Buy-in = $940 (Tournament Prize Pool) + $500 (Bounty Prize Pool) + $115 (Tournament Fee) + $45 (Poker Staff Service Charge)",
+   "buyin_usd": 1600,
+   "prize_pool_usd": 940,
+   "tournament_fee_usd": 500,
+   "staff_fee_usd": 115,
+   "starting_stack": "Players will start with 30,000 in tournament chips.",
+   "level_minutes": 20,
+   "length_of_play": "20 minutes per level until a winner is declared."
+  },
+  "r165": {
+   "row_id": "r165",
+   "key": [
+    "2026-12-16",
+    "11:00",
+    1100
+   ],
+   "block": 32,
+   "title": "$1,100 No Limit Hold\u2019em $1,000,000 Guaranteed poker tournament",
+   "registration": "Unlimited re-entry for each starting flight will be available until the start of level 10. A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $1,100 Buy-in = $965 (Tournament Prize Pool) + $90 (Tournament Fee) + $45 (Poker Staff Service Charge)",
+   "buyin_usd": 1100,
+   "prize_pool_usd": 965,
+   "tournament_fee_usd": 90,
+   "staff_fee_usd": 45,
+   "starting_stack": "Players will start with 40,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Day 1A: 40 minutes per level until 12.5% or less of the field remains. Day 1B: 20 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
+  },
+  "r167": {
+   "row_id": "r167",
+   "key": [
+    "2026-12-16",
+    "12:00",
+    800
+   ],
+   "block": 33,
+   "title": "$800 PLO Double Board Bomb Pot poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 9 (approximately 4:30 p.m.).",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $800 Buy-in = $700 (Tournament Prize Pool) + $70 (Tournament Fee) + $30 (Poker Staff Service Charge)",
+   "buyin_usd": 800,
+   "prize_pool_usd": 700,
+   "tournament_fee_usd": 70,
+   "staff_fee_usd": 30,
+   "starting_stack": "Players will start with 30,000 in tournament chips.",
+   "level_minutes": 30,
+   "length_of_play": "30 minutes per level. 20 minutes per level when the event is \u201cin the money\u201d. 15 minutes per level when six (6) players remain until a winner is declared."
+  },
+  "r168": {
+   "row_id": "r168",
+   "key": [
+    "2026-12-16",
+    "12:00",
+    null
+   ],
+   "block": 22,
+   "title": "$10,400 WPT World Championship tournament",
+   "registration": "Four (4) Entries maximum. Players are allowed One (1) entry per starting flight + One (1) Day 2 Entry prior to the start of Day 2. Registration is available until the start of level nine (9). A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+   "unlimited_re_entry": false,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $10,400 Buy-in = $9,800 (Tournament Prize Pool) + $400 (Tournament Fee) + $200 (Poker Staff Service Charge)",
+   "buyin_usd": 10400,
+   "prize_pool_usd": 9800,
+   "tournament_fee_usd": 400,
+   "staff_fee_usd": 200,
+   "starting_stack": "Players will start with 100,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Day 1: Eight (8) levels of 60 minutes each. Day 2: Five (5) levels of 90 minutes each. Day 3-4: Six (6) levels of 90 minutes each. Day 5: 90 minutes per level until the final 6 players remain. Final Table: 90 minutes per level until two (2) players remain, 45 minutes per level thereafter."
+  },
+  "r170": {
+   "row_id": "r170",
+   "key": [
+    "2026-12-16",
+    "13:00",
+    10500
+   ],
+   "block": 34,
+   "title": "$10,500 PLO 6-Max poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 7 (approximately 4:30 p.m.).",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $10,500 Buy-in = $10,000 (Tournament Prize Pool) + $420 (Tournament Fee) + $80 (Poker Staff Service Charge)",
+   "buyin_usd": 10500,
+   "prize_pool_usd": 10000,
+   "tournament_fee_usd": 420,
+   "staff_fee_usd": 80,
+   "starting_stack": "Players will start with 100,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Levels 1-6: 30 minutes per level. Levels 7 and above: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
+  },
+  "r169": {
+   "row_id": "r169",
+   "key": [
+    "2026-12-16",
+    "13:00",
+    800
+   ],
+   "block": 35,
+   "title": "$800 HORSE poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 9 (approximately 5:30 p.m.).",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $800 Buy-in = $695 (Tournament Prize Pool) + $72 (Tournament Fee) + $33 (Poker Staff Service Charge)",
+   "buyin_usd": 800,
+   "prize_pool_usd": 695,
+   "tournament_fee_usd": 72,
+   "staff_fee_usd": 33,
+   "starting_stack": "Players will start with 35,000 in tournament chips.",
+   "level_minutes": 30,
+   "length_of_play": "30 minutes per level until a winner is declared."
+  },
+  "r172": {
+   "row_id": "r172",
+   "key": [
+    "2026-12-16",
+    "18:00",
+    3000
+   ],
+   "block": 65,
+   "title": "$3,000 Milestone Satellite to $25,800 No Limit Hold\u2019em poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 9.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $3,000 Buy-in = $2,730 (Tournament Prize Pool) + $200 (Tournament Fee) + $70 (Poker Staff Service Charge)",
+   "buyin_usd": 3000,
+   "prize_pool_usd": 2730,
+   "tournament_fee_usd": 200,
+   "staff_fee_usd": 70,
+   "starting_stack": "Players will start with 20,000 in tournament chips.",
+   "level_minutes": 25,
+   "length_of_play": "25 minutes per level until completion."
+  },
+  "r173": {
+   "row_id": "r173",
+   "key": [
+    "2026-12-16",
+    "18:00",
+    400
+   ],
+   "block": 66,
+   "title": "$400 Milestone Satellite to $3,000 No Limit Hold\u2019em poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 9.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $400 Buy-in = $337 (Tournament Prize Pool) + $45 (Tournament Fee) + $18 (Poker Staff Service Charge)",
+   "buyin_usd": 400,
+   "prize_pool_usd": 337,
+   "tournament_fee_usd": 45,
+   "staff_fee_usd": 18,
+   "starting_stack": "Players will start with 20,000 in tournament chips.",
+   "level_minutes": 20,
+   "length_of_play": "20 minutes per level until completion."
+  },
+  "r174": {
+   "row_id": "r174",
+   "key": [
+    "2026-12-16",
+    "19:00",
+    1100
+   ],
+   "block": 32,
+   "title": "$1,100 No Limit Hold\u2019em $1,000,000 Guaranteed poker tournament",
+   "registration": "Unlimited re-entry for each starting flight will be available until the start of level 10. A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $1,100 Buy-in = $965 (Tournament Prize Pool) + $90 (Tournament Fee) + $45 (Poker Staff Service Charge)",
+   "buyin_usd": 1100,
+   "prize_pool_usd": 965,
+   "tournament_fee_usd": 90,
+   "staff_fee_usd": 45,
+   "starting_stack": "Players will start with 40,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Day 1A: 40 minutes per level until 12.5% or less of the field remains. Day 1B: 20 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
+  },
+  "r177": {
+   "row_id": "r177",
+   "key": [
+    "2026-12-17",
+    "11:00",
+    1600
+   ],
+   "block": 37,
+   "title": "$1,600 Wynn Mix Championship tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 10 (approximately 6:30 p.m.).",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $1,600 Buy-in = $1,430 (Tournament Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge)",
+   "buyin_usd": 1600,
+   "prize_pool_usd": 1430,
+   "tournament_fee_usd": 120,
+   "staff_fee_usd": 50,
+   "starting_stack": "Players will start with 40,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Day 1: Fifteen (15) levels of 40 minutes each. Day 2: 60 minutes per level until two (2) players remain, 30 minutes per level thereafter."
+  },
+  "r176": {
+   "row_id": "r176",
+   "key": [
+    "2026-12-17",
+    "11:00",
+    1100
+   ],
+   "block": 36,
+   "title": "$1,100 Seniors NLH Championship 50+ $500,000 Guarantee poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 10 (approximately 6:30 p.m.).",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $1,100 Buy-in = $965 (Tournament Prize Pool) + $90 (Tournament Fee) + $45 (Poker Staff Service Charge)",
+   "buyin_usd": 1100,
+   "prize_pool_usd": 965,
+   "tournament_fee_usd": 90,
+   "staff_fee_usd": 45,
+   "starting_stack": "Players will start with 40,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Day 1: 40-minute per level until the tournament is \u201cin the money\u201d. Day 2: 40 minutes per level until 9 players remain. Day 3: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
+  },
+  "r178": {
+   "row_id": "r178",
+   "key": [
+    "2026-12-17",
+    "12:00",
+    3000
+   ],
+   "block": 38,
+   "title": "$3,000 No Limit Hold\u2019em $2,000,000 Guaranteed poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 10 (approximately 7:30 p.m.).",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $3,000 Buy-in = $2,720 (Tournament Prize Pool) + $205 (Tournament Fee) + $75 (Poker Staff Service Charge)",
+   "buyin_usd": 3000,
+   "prize_pool_usd": 2720,
+   "tournament_fee_usd": 205,
+   "staff_fee_usd": 75,
+   "starting_stack": "Players will start with 40,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Day 1: 40 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until nine (9) players remain. Day 3: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
+  },
+  "r180": {
+   "row_id": "r180",
+   "key": [
+    "2026-12-17",
+    "12:00",
+    null
+   ],
+   "block": 22,
+   "title": "$10,400 WPT World Championship tournament",
+   "registration": "Four (4) Entries maximum. Players are allowed One (1) entry per starting flight + One (1) Day 2 Entry prior to the start of Day 2. Registration is available until the start of level nine (9). A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+   "unlimited_re_entry": false,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $10,400 Buy-in = $9,800 (Tournament Prize Pool) + $400 (Tournament Fee) + $200 (Poker Staff Service Charge)",
+   "buyin_usd": 10400,
+   "prize_pool_usd": 9800,
+   "tournament_fee_usd": 400,
+   "staff_fee_usd": 200,
+   "starting_stack": "Players will start with 100,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Day 1: Eight (8) levels of 60 minutes each. Day 2: Five (5) levels of 90 minutes each. Day 3-4: Six (6) levels of 90 minutes each. Day 5: 90 minutes per level until the final 6 players remain. Final Table: 90 minutes per level until two (2) players remain, 45 minutes per level thereafter."
+  },
+  "r182": {
+   "row_id": "r182",
+   "key": [
+    "2026-12-17",
+    "13:00",
+    25800
+   ],
+   "block": 39,
+   "title": "$25,800 NLH High Roller tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 10 (approximately 8:30 p.m.)",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $25,800 Buy-in = $25,000 (Tournament Prize Pool) + $700 (Tournament Fee) + $100 (Poker Staff Service Charge)",
+   "buyin_usd": 25800,
+   "prize_pool_usd": 25000,
+   "tournament_fee_usd": 700,
+   "staff_fee_usd": 100,
+   "starting_stack": "Players will start with 200,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Day 1: Fifteen (15) 40-minute levels. Day 2: 60 minutes per level until two (2) players remain, 30 minutes per level thereafter."
+  },
+  "r183": {
+   "row_id": "r183",
+   "key": [
+    "2026-12-17",
+    "14:00",
+    400
+   ],
+   "block": 66,
+   "title": "$400 Milestone Satellite to $3,000 No Limit Hold\u2019em poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 9.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $400 Buy-in = $337 (Tournament Prize Pool) + $45 (Tournament Fee) + $18 (Poker Staff Service Charge)",
+   "buyin_usd": 400,
+   "prize_pool_usd": 337,
+   "tournament_fee_usd": 45,
+   "staff_fee_usd": 18,
+   "starting_stack": "Players will start with 20,000 in tournament chips.",
+   "level_minutes": 20,
+   "length_of_play": "20 minutes per level until completion."
+  },
+  "r185": {
+   "row_id": "r185",
+   "key": [
+    "2026-12-17",
+    "19:00",
+    400
+   ],
+   "block": 66,
+   "title": "$400 Milestone Satellite to $3,000 No Limit Hold\u2019em poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 9.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $400 Buy-in = $337 (Tournament Prize Pool) + $45 (Tournament Fee) + $18 (Poker Staff Service Charge)",
+   "buyin_usd": 400,
+   "prize_pool_usd": 337,
+   "tournament_fee_usd": 45,
+   "staff_fee_usd": 18,
+   "starting_stack": "Players will start with 20,000 in tournament chips.",
+   "level_minutes": 20,
+   "length_of_play": "20 minutes per level until completion."
+  },
+  "r186": {
+   "row_id": "r186",
+   "key": [
+    "2026-12-18",
+    "10:00",
+    400
+   ],
+   "block": 67,
+   "title": "$400 Milestone Satellite to $3,000 No Limit Hold\u2019em poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 9.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $400 Buy-in = $337 (Tournament Prize Pool) + $45 (Tournament Fee) + $18 (Poker Staff Service Charge)",
+   "buyin_usd": 400,
+   "prize_pool_usd": 337,
+   "tournament_fee_usd": 45,
+   "staff_fee_usd": 18,
+   "starting_stack": "Players will start with 20,000 in tournament chips.",
+   "level_minutes": 15,
+   "length_of_play": "15 minutes per level until completion."
+  },
+  "r190": {
+   "row_id": "r190",
+   "key": [
+    "2026-12-18",
+    "12:00",
+    3000
+   ],
+   "block": 38,
+   "title": "$3,000 No Limit Hold\u2019em $2,000,000 Guaranteed poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 10 (approximately 7:30 p.m.).",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $3,000 Buy-in = $2,720 (Tournament Prize Pool) + $205 (Tournament Fee) + $75 (Poker Staff Service Charge)",
+   "buyin_usd": 3000,
+   "prize_pool_usd": 2720,
+   "tournament_fee_usd": 205,
+   "staff_fee_usd": 75,
+   "starting_stack": "Players will start with 40,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Day 1: 40 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until nine (9) players remain. Day 3: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
+  },
+  "r188": {
+   "row_id": "r188",
+   "key": [
+    "2026-12-18",
+    "12:00",
+    1600
+   ],
+   "block": 40,
+   "title": "$1,600 Limit Omaha 8 poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 10 (approximately 7:30 p.m.).",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $1,600 Buy-in = $1,430 (Tournament Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge)",
+   "buyin_usd": 1600,
+   "prize_pool_usd": 1430,
+   "tournament_fee_usd": 120,
+   "staff_fee_usd": 50,
+   "starting_stack": "Players will start with 40,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Day 1: Fifteen (15) levels of 40 minutes each. Day 2: 60 minutes per level until two (2) players remain, 30 minutes per level thereafter."
+  },
+  "r189": {
+   "row_id": "r189",
+   "key": [
+    "2026-12-18",
+    "12:00",
+    600
+   ],
+   "block": 41,
+   "title": "$600 No Limit Hold\u2019em $100,000 Guaranteed poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 9 (approximately 4:30 p.m.).",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge)",
+   "buyin_usd": 600,
+   "prize_pool_usd": 515,
+   "tournament_fee_usd": 60,
+   "staff_fee_usd": 25,
+   "starting_stack": "Players will start with 30,000 in tournament chips.",
+   "level_minutes": 30,
+   "length_of_play": "30 minutes per level until a winner is declared."
+  },
+  "r191": {
+   "row_id": "r191",
+   "key": [
+    "2026-12-18",
+    "12:00",
+    null
+   ],
+   "block": 22,
+   "title": "$10,400 WPT World Championship tournament",
+   "registration": "Four (4) Entries maximum. Players are allowed One (1) entry per starting flight + One (1) Day 2 Entry prior to the start of Day 2. Registration is available until the start of level nine (9). A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+   "unlimited_re_entry": false,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $10,400 Buy-in = $9,800 (Tournament Prize Pool) + $400 (Tournament Fee) + $200 (Poker Staff Service Charge)",
+   "buyin_usd": 10400,
+   "prize_pool_usd": 9800,
+   "tournament_fee_usd": 400,
+   "staff_fee_usd": 200,
+   "starting_stack": "Players will start with 100,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Day 1: Eight (8) levels of 60 minutes each. Day 2: Five (5) levels of 90 minutes each. Day 3-4: Six (6) levels of 90 minutes each. Day 5: 90 minutes per level until the final 6 players remain. Final Table: 90 minutes per level until two (2) players remain, 45 minutes per level thereafter."
+  },
+  "r192": {
+   "row_id": "r192",
+   "key": [
+    "2026-12-18",
+    "13:00",
+    10500
+   ],
+   "block": 42,
+   "title": "$10,500 NLH 6-Max poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 7 (approximately 4:30 p.m.).",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $10,500 Buy-in = $10,000 (Tournament Prize Pool) + $420 (Tournament Fee) + $80 (Poker Staff Service Charge)",
+   "buyin_usd": 10500,
+   "prize_pool_usd": 10000,
+   "tournament_fee_usd": 420,
+   "staff_fee_usd": 80,
+   "starting_stack": "Players will start with 100,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Levels 1-6: 30 minutes per level. Levels 7 and above: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
+  },
+  "r193": {
+   "row_id": "r193",
+   "key": [
+    "2026-12-18",
+    "14:00",
+    600
+   ],
+   "block": 68,
+   "title": "$600 Milestone Satellite to $5,000 Seniors NLH",
+   "registration": "Unlimited re-entry will be available until the start of level 9 (approximately 5 p.m.).",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge)",
+   "buyin_usd": 600,
+   "prize_pool_usd": 515,
+   "tournament_fee_usd": 60,
+   "staff_fee_usd": 25,
+   "starting_stack": "Players will start with 20,000 in tournament chips.",
+   "level_minutes": 20,
+   "length_of_play": "20 minutes per level until completion."
+  },
+  "r194": {
+   "row_id": "r194",
+   "key": [
+    "2026-12-18",
+    "18:00",
+    1100
+   ],
+   "block": 43,
+   "title": "$1,100 NLH Turbo $100,000 guaranteed poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 9.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge)",
+   "buyin_usd": 1100,
+   "prize_pool_usd": 975,
+   "tournament_fee_usd": 85,
+   "staff_fee_usd": 40,
+   "starting_stack": "Players will start with 30,000 in tournament chips.",
+   "level_minutes": 20,
+   "length_of_play": "20 minutes per level until a winner is declared."
+  },
+  "r198": {
+   "row_id": "r198",
+   "key": [
+    "2026-12-19",
+    "11:00",
+    5000
+   ],
+   "block": 44,
+   "title": "$5,000 Seniors High Roller $250,000 guarantee poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 11 (approximately 1:15 p.m. on Day 2).",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $5,000 Buy-in = $4,650 (Tournament Prize Pool) + $ 250 (Tournament Fee) + $100 (Poker Staff Service Charge)",
+   "buyin_usd": 5000,
+   "prize_pool_usd": 4650,
+   "tournament_fee_usd": 250,
+   "staff_fee_usd": 100,
+   "starting_stack": "Players will start with 50,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Day 1: Eight (8) 60-minute levels. Day 2: Eight (8) 60-minute levels. Day 3: 60 minutes per level until two (2) players remain, 30 minutes per level thereafter."
+  },
+  "r197": {
+   "row_id": "r197",
+   "key": [
+    "2026-12-19",
+    "11:00",
+    1600
+   ],
+   "block": 45,
+   "title": "$1,600 Mystery Bounty $1,000,000 Guarantee poker tournament",
+   "registration": "Unlimited re-entry for will be available until the start of level 10.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $1,600 Buy-in = $930 (Tournament Prize Pool) + $500 (Mystery Bounty Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge)",
+   "buyin_usd": 1600,
+   "prize_pool_usd": 930,
+   "tournament_fee_usd": 500,
+   "staff_fee_usd": 120,
+   "starting_stack": "Players will start with 40,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Day 1A &1C: 40 minutes per level until 12.5% or less of the field remains. Day 1B & 1D: 20 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
+  },
+  "r199": {
+   "row_id": "r199",
+   "key": [
+    "2026-12-19",
+    "12:00",
+    300
+   ],
+   "block": 69,
+   "title": "$300 Milestone Satellite to $1,600 Mystery Bounty",
+   "registration": "Unlimited re-entry will be available until the start of level 9.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $300 Buy-in = $250 (Tournament Prize Pool) + $34 (Tournament Fee) + $16 (Poker Staff Service Charge)",
+   "buyin_usd": 300,
+   "prize_pool_usd": 250,
+   "tournament_fee_usd": 34,
+   "staff_fee_usd": 16,
+   "starting_stack": "Players will start with 20,000 in tournament chips.",
+   "level_minutes": 20,
+   "length_of_play": "20 minutes per level until completion."
+  },
+  "r201": {
+   "row_id": "r201",
+   "key": [
+    "2026-12-19",
+    "12:00",
+    null
+   ],
+   "block": 22,
+   "title": "$10,400 WPT World Championship tournament",
+   "registration": "Four (4) Entries maximum. Players are allowed One (1) entry per starting flight + One (1) Day 2 Entry prior to the start of Day 2. Registration is available until the start of level nine (9). A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+   "unlimited_re_entry": false,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $10,400 Buy-in = $9,800 (Tournament Prize Pool) + $400 (Tournament Fee) + $200 (Poker Staff Service Charge)",
+   "buyin_usd": 10400,
+   "prize_pool_usd": 9800,
+   "tournament_fee_usd": 400,
+   "staff_fee_usd": 200,
+   "starting_stack": "Players will start with 100,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Day 1: Eight (8) levels of 60 minutes each. Day 2: Five (5) levels of 90 minutes each. Day 3-4: Six (6) levels of 90 minutes each. Day 5: 90 minutes per level until the final 6 players remain. Final Table: 90 minutes per level until two (2) players remain, 45 minutes per level thereafter."
+  },
+  "r203": {
+   "row_id": "r203",
+   "key": [
+    "2026-12-19",
+    "13:00",
+    10500
+   ],
+   "block": 46,
+   "title": "$10,500 PLO poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 7 (approximately 4:30 p.m.).",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $10,500 Buy-in = $10,000 (Tournament Prize Pool) + $420 (Tournament Fee) + $80 (Poker Staff Service Charge)",
+   "buyin_usd": 10500,
+   "prize_pool_usd": 10000,
+   "tournament_fee_usd": 420,
+   "staff_fee_usd": 80,
+   "starting_stack": "Players will start with 100,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Levels 1-6: 30 minutes per level. Levels 7 and above: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
+  },
+  "r202": {
+   "row_id": "r202",
+   "key": [
+    "2026-12-19",
+    "13:00",
+    3000
+   ],
+   "block": 47,
+   "title": "$3,000 NLH 6-Max $500,000 guaranteed poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 9 (approximately 5:30 p.m.).",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $3,000 Buy-in = $2,730 (Tournament Prize Pool) + $200 (Tournament Fee) + $70 (Poker Staff Service Charge)",
+   "buyin_usd": 3000,
+   "prize_pool_usd": 2730,
+   "tournament_fee_usd": 200,
+   "staff_fee_usd": 70,
+   "starting_stack": "Players will start with 30,000 in tournament chips.",
+   "level_minutes": 30,
+   "length_of_play": "30 minutes per level until a winner is declared."
+  },
+  "r204": {
+   "row_id": "r204",
+   "key": [
+    "2026-12-19",
+    "13:00",
+    1600
+   ],
+   "block": 48,
+   "title": "$1,600 TORSE Championship poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 10 (approximately 7:30 p.m.).",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $1,600 Buy-in = $1,430 (Tournament Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge)",
+   "buyin_usd": 1600,
+   "prize_pool_usd": 1430,
+   "tournament_fee_usd": 120,
+   "staff_fee_usd": 50,
+   "starting_stack": "Players will start with 40,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Day 1: Fifteen (15) levels of 40 minutes each. Day 2: 60 minutes per level until two (2) players remain, 30 minutes per level thereafter."
+  },
+  "r205": {
+   "row_id": "r205",
+   "key": [
+    "2026-12-19",
+    "17:00",
+    300
+   ],
+   "block": 69,
+   "title": "$300 Milestone Satellite to $1,600 Mystery Bounty",
+   "registration": "Unlimited re-entry will be available until the start of level 9.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $300 Buy-in = $250 (Tournament Prize Pool) + $34 (Tournament Fee) + $16 (Poker Staff Service Charge)",
+   "buyin_usd": 300,
+   "prize_pool_usd": 250,
+   "tournament_fee_usd": 34,
+   "staff_fee_usd": 16,
+   "starting_stack": "Players will start with 20,000 in tournament chips.",
+   "level_minutes": 20,
+   "length_of_play": "20 minutes per level until completion."
+  },
+  "r207": {
+   "row_id": "r207",
+   "key": [
+    "2026-12-19",
+    "18:00",
+    600
+   ],
+   "block": 49,
+   "title": "$600 NLH Turbo $50,000 guaranteed poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 9.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge)",
+   "buyin_usd": 600,
+   "prize_pool_usd": 515,
+   "tournament_fee_usd": 60,
+   "staff_fee_usd": 25,
+   "starting_stack": "Players will start with 30,000 in tournament chips.",
+   "level_minutes": 20,
+   "length_of_play": "20 minutes per level until a winner is declared."
+  },
+  "r208": {
+   "row_id": "r208",
+   "key": [
+    "2026-12-19",
+    "19:00",
+    1600
+   ],
+   "block": 45,
+   "title": "$1,600 Mystery Bounty $1,000,000 Guarantee poker tournament",
+   "registration": "Unlimited re-entry for will be available until the start of level 10.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $1,600 Buy-in = $930 (Tournament Prize Pool) + $500 (Mystery Bounty Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge)",
+   "buyin_usd": 1600,
+   "prize_pool_usd": 930,
+   "tournament_fee_usd": 500,
+   "staff_fee_usd": 120,
+   "starting_stack": "Players will start with 40,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Day 1A &1C: 40 minutes per level until 12.5% or less of the field remains. Day 1B & 1D: 20 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
+  },
+  "r210": {
+   "row_id": "r210",
+   "key": [
+    "2026-12-20",
+    "11:00",
+    1600
+   ],
+   "block": 45,
+   "title": "$1,600 Mystery Bounty $1,000,000 Guarantee poker tournament",
+   "registration": "Unlimited re-entry for will be available until the start of level 10.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $1,600 Buy-in = $930 (Tournament Prize Pool) + $500 (Mystery Bounty Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge)",
+   "buyin_usd": 1600,
+   "prize_pool_usd": 930,
+   "tournament_fee_usd": 500,
+   "staff_fee_usd": 120,
+   "starting_stack": "Players will start with 40,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Day 1A &1C: 40 minutes per level until 12.5% or less of the field remains. Day 1B & 1D: 20 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
+  },
+  "r212": {
+   "row_id": "r212",
+   "key": [
+    "2026-12-20",
+    "12:00",
+    600
+   ],
+   "block": 50,
+   "title": "$600 No Limit Hold\u2019em $50,000 guaranteed poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 9.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge)",
+   "buyin_usd": 600,
+   "prize_pool_usd": 515,
+   "tournament_fee_usd": 60,
+   "staff_fee_usd": 25,
+   "starting_stack": "Players will start with 30,000 in tournament chips.",
+   "level_minutes": 30,
+   "length_of_play": "30 minutes per level until a winner is declared."
+  },
+  "r215": {
+   "row_id": "r215",
+   "key": [
+    "2026-12-20",
+    "13:00",
+    10500
+   ],
+   "block": 51,
+   "title": "$10,500 NLH 8-Max poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 7 (approximately 4:30 p.m.).",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $10,500 Buy-in = $10,000 (Tournament Prize Pool) + $420 (Tournament Fee) + $80 (Poker Staff Service Charge)",
+   "buyin_usd": 10500,
+   "prize_pool_usd": 10000,
+   "tournament_fee_usd": 420,
+   "staff_fee_usd": 80,
+   "starting_stack": "Players will start with 100,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Levels 1-6: 30 minutes per level. Levels 7 and above: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
+  },
+  "r214": {
+   "row_id": "r214",
+   "key": [
+    "2026-12-20",
+    "13:00",
+    600
+   ],
+   "block": 4,
+   "title": "$600 Mixed Triple Draw (A-5, 2-7, Badugi) poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 9.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge)",
+   "buyin_usd": 600,
+   "prize_pool_usd": 510,
+   "tournament_fee_usd": 65,
+   "staff_fee_usd": 25,
+   "starting_stack": "Players will start with 35,000 in tournament chips.",
+   "level_minutes": 30,
+   "length_of_play": "30 minutes per level until a winner is declared."
+  },
+  "r216": {
+   "row_id": "r216",
+   "key": [
+    "2026-12-20",
+    "14:00",
+    null
+   ],
+   "block": 22,
+   "title": "$10,400 WPT World Championship tournament",
+   "registration": "Four (4) Entries maximum. Players are allowed One (1) entry per starting flight + One (1) Day 2 Entry prior to the start of Day 2. Registration is available until the start of level nine (9). A player who advances to Day 2 is prohibited from entering a subsequent starting flight. A player that has advanced to Day 2 who enters a starting flight in error will be disqualified from the subsequent flight and will not be entitled to a refund of their Tournament re-entry fee. The player will be permitted to play Day 2 with their Tournament chip stack from the original starting flight.",
+   "unlimited_re_entry": false,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $10,400 Buy-in = $9,800 (Tournament Prize Pool) + $400 (Tournament Fee) + $200 (Poker Staff Service Charge)",
+   "buyin_usd": 10400,
+   "prize_pool_usd": 9800,
+   "tournament_fee_usd": 400,
+   "staff_fee_usd": 200,
+   "starting_stack": "Players will start with 100,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Day 1: Eight (8) levels of 60 minutes each. Day 2: Five (5) levels of 90 minutes each. Day 3-4: Six (6) levels of 90 minutes each. Day 5: 90 minutes per level until the final 6 players remain. Final Table: 90 minutes per level until two (2) players remain, 45 minutes per level thereafter."
+  },
+  "r218": {
+   "row_id": "r218",
+   "key": [
+    "2026-12-20",
+    "18:00",
+    600
+   ],
+   "block": 52,
+   "title": "$600 5-Card PLO Turbo $50,000 guaranteed poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 9 (approximately 9 p.m.).",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge)",
+   "buyin_usd": 600,
+   "prize_pool_usd": 515,
+   "tournament_fee_usd": 60,
+   "staff_fee_usd": 25,
+   "starting_stack": "Players will start with 30,000 in tournament chips.",
+   "level_minutes": 20,
+   "length_of_play": "20 minutes per level until a winner is declared."
+  },
+  "r219": {
+   "row_id": "r219",
+   "key": [
+    "2026-12-20",
+    "19:00",
+    1600
+   ],
+   "block": 45,
+   "title": "$1,600 Mystery Bounty $1,000,000 Guarantee poker tournament",
+   "registration": "Unlimited re-entry for will be available until the start of level 10.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $1,600 Buy-in = $930 (Tournament Prize Pool) + $500 (Mystery Bounty Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge)",
+   "buyin_usd": 1600,
+   "prize_pool_usd": 930,
+   "tournament_fee_usd": 500,
+   "staff_fee_usd": 120,
+   "starting_stack": "Players will start with 40,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Day 1A &1C: 40 minutes per level until 12.5% or less of the field remains. Day 1B & 1D: 20 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
+  },
+  "r221": {
+   "row_id": "r221",
+   "key": [
+    "2026-12-21",
+    "12:00",
+    1100
+   ],
+   "block": 53,
+   "title": "$1,100 No Limit Hold\u2019em $100,000 guaranteed poker tournament",
+   "registration": "Unlimited re-entry will be available until the start of level 9.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge)",
+   "buyin_usd": 1100,
+   "prize_pool_usd": 975,
+   "tournament_fee_usd": 85,
+   "staff_fee_usd": 40,
+   "starting_stack": "Players will start with 30,000 in tournament chips.",
+   "level_minutes": 30,
+   "length_of_play": "30 minutes per level until a winner is declared."
+  },
+  "r222": {
+   "row_id": "r222",
+   "key": [
+    "2026-12-21",
+    "13:00",
+    null
+   ],
+   "block": 45,
+   "title": "$1,600 Mystery Bounty $1,000,000 Guarantee poker tournament",
+   "registration": "Unlimited re-entry for will be available until the start of level 10.",
+   "unlimited_re_entry": true,
+   "multi_entry": true,
+   "entry_fee_line": "Entry Fee: $1,600 Buy-in = $930 (Tournament Prize Pool) + $500 (Mystery Bounty Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge)",
+   "buyin_usd": 1600,
+   "prize_pool_usd": 930,
+   "tournament_fee_usd": 500,
+   "staff_fee_usd": 120,
+   "starting_stack": "Players will start with 40,000 in tournament chips.",
+   "level_minutes": null,
+   "length_of_play": "Day 1A &1C: 40 minutes per level until 12.5% or less of the field remains. Day 1B & 1D: 20 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
+  }
+ },
+ "unresolved": [
+  {
+   "id": "r040",
+   "date": "2026-11-30",
+   "start": "13:00",
+   "name": "No Limit Hold'em Day 2",
+   "kind": "continuation",
+   "reason": "no structure sheet prints this date and time"
+  },
+  {
+   "id": "r057",
+   "date": "2026-12-03",
+   "start": "13:00",
+   "name": "No Limit Hold'em Day 2",
+   "kind": "continuation",
+   "reason": "no structure sheet prints this date and time"
+  },
+  {
+   "id": "r156",
+   "date": "2026-12-15",
+   "start": "11:00",
+   "name": "No Limit Hold'em Day 2",
+   "kind": "continuation",
+   "reason": "more than one structure sheet prints this date and time and the printed titles cannot separate them",
+   "candidates": [
+    [
+     22,
+     "$10,400 WPT World Championship tournament"
+    ],
+    [
+     25,
+     "$800 No Limit Hold\u2019em $500,000 Guaranteed poker tournament"
+    ],
+    [
+     63,
+     "$1,100 Milestone Satellite to $10,400 World Championship poker tournament"
+    ]
+   ]
+  },
+  {
+   "id": "r160",
+   "date": "2026-12-15",
+   "start": "12:00",
+   "name": "PLO Day 2",
+   "kind": "continuation",
+   "reason": "more than one structure sheet prints this date and time and the printed titles cannot separate them",
+   "candidates": [
+    [
+     26,
+     "$1,600 PLO $1,000,000 Guaranteed poker tournament"
+    ],
+    [
+     27,
+     "$1,100 Mixed Triple Draw (A-5, 2-7, Badugi) poker tournament"
+    ],
+    [
+     29,
+     "$1,100 Big O poker tournament"
+    ]
+   ]
+  },
+  {
+   "id": "r179",
+   "date": "2026-12-17",
+   "start": "12:00",
+   "name": "No Limit Hold'em Day 2",
+   "kind": "continuation",
+   "reason": "more than one structure sheet prints this date and time and the printed titles cannot separate them",
+   "candidates": [
+    [
+     22,
+     "$10,400 WPT World Championship tournament"
+    ],
+    [
+     32,
+     "$1,100 No Limit Hold\u2019em $1,000,000 Guaranteed poker tournament"
+    ],
+    [
+     38,
+     "$3,000 No Limit Hold\u2019em $2,000,000 Guaranteed poker tournament"
+    ]
+   ]
+  },
+  {
+   "id": "r200",
+   "date": "2026-12-19",
+   "start": "12:00",
+   "name": "No Limit Hold'em Day 2",
+   "kind": "continuation",
+   "reason": "more than one structure sheet prints this date and time and the printed titles cannot separate them",
+   "candidates": [
+    [
+     22,
+     "$10,400 WPT World Championship tournament"
+    ],
+    [
+     38,
+     "$3,000 No Limit Hold\u2019em $2,000,000 Guaranteed poker tournament"
+    ],
+    [
+     40,
+     "$1,600 Limit Omaha 8 poker tournament"
+    ],
+    [
+     69,
+     "$300 Milestone Satellite to $1,600 Mystery Bounty"
+    ]
+   ]
+  },
+  {
+   "id": "r213",
+   "date": "2026-12-20",
+   "start": "12:00",
+   "name": "No Limit Hold'em Final Table",
+   "kind": "continuation",
+   "reason": "more than one structure sheet prints this date and time and the printed titles cannot separate them",
+   "candidates": [
+    [
+     38,
+     "$3,000 No Limit Hold\u2019em $2,000,000 Guaranteed poker tournament"
+    ],
+    [
+     50,
+     "$600 No Limit Hold\u2019em $50,000 guaranteed poker tournament"
+    ]
+   ]
+  },
+  {
+   "id": "r224",
+   "date": "2026-12-21",
+   "start": "20:00",
+   "name": "NLH Turbo",
+   "kind": "entry",
+   "reason": "no structure sheet prints this date and time"
+  }
+ ]
+}

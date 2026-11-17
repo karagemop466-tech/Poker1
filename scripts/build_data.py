@@ -14,8 +14,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data")
 os.makedirs(DATA, exist_ok=True)
 
-VERIFIED_ON = "2026-11-16"
-LAST_CHECKED = "2026-11-16"
+VERIFIED_ON = "2026-11-17"
+LAST_CHECKED = "2026-11-17"
 
 VEN = "The Venetian Resort"
 WYN = "Wynn Las Vegas"
@@ -46,11 +46,23 @@ SRC = {
     "wynn_info": "https://www.wynnlasvegas.com/ai-information",
     "wynn_parking": "https://www.wynnlasvegas.com/about-us/parking",
     "bellagio": "https://bellagio.mgmresorts.com/en.html",
+<<<<<<< HEAD
     "bellagio_poker": "https://bellagio.mgmresorts.com/en/casino/poker.html",
+=======
+    "bellagio_terms": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
+    "bellagio_faq": "https://bellagio.mgmresorts.com/en/faq.html",
+>>>>>>> a56dda7 (Verify every WPT structure sheet, join all 135 Wynn WPT rows to their printed sheet, and add the property-specific hotel fee, tax, parking and cancellation facts)
     "aria": "https://aria.mgmresorts.com/en.html",
     "aria_poker": "https://aria.mgmresorts.com/en/casino/poker.html",
+    "aria_terms": "https://aria.mgmresorts.com/en/terms-and-conditions.html",
+    "mgm_parking": "https://www.mgmresorts.com/en/things-to-do/parking.html",
     "caesars": "https://www.caesars.com/caesars-palace",
+<<<<<<< HEAD
     "caesars_poker_article": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+=======
+    "caesars_faq": "https://www.caesars.com/caesars-palace/faqs",
+    "caesars_disclaimer": "https://www.caesars.com/corporate/disclaimer",
+>>>>>>> a56dda7 (Verify every WPT structure sheet, join all 135 Wynn WPT rows to their printed sheet, and add the property-specific hotel fee, tax, parking and cancellation facts)
 }
 
 # ---------- rule excerpt strings reused by the Venetian structure sheets ----------
@@ -982,23 +994,81 @@ def build_venetian(rows, series_key, series, page_key, sheet_key, sched_key, str
     return out
 
 
+_WPT_ROW_SHEETS = json.load(open(os.path.join(DATA, "wpt_row_sheets.json"), encoding="utf-8"))
+
+
+def _sheet_for(join, date, time, buy, name):
+    """Return the joined structure-sheet record for this schedule row, or None.
+
+    The join is unique per printed (date, start time, buy-in) because
+    ``scripts/extract_wpt_sheets.py`` refuses to guess: those rows are listed in
+    the join's ``unresolved`` list instead, with the reason.
+    """
+    for rec in join["matched"].values():
+        if rec.get("key") == [date, time, buy]:
+            return rec
+    return None
+
+
+def _chips_from(stack_text):
+    m = re.search(r"([\d,]{4,})\s+in tournament chips", stack_text or "")
+    return int(m.group(1).replace(",", "")) if m else None
+
+
 def build_wynn():
+    """Wynn rows. Entry rules come from the printed structure sheet for the row.
+
+    ``scripts/extract_wpt_struct.py`` parses every structure sheet in the official
+    WPT structures PDF and ``scripts/extract_wpt_sheets.py`` joins each schedule
+    row to the sheet that prints the same date, start time and buy-in. When the
+    join is not unique the row keeps the schedule's values and is flagged, so no
+    entry rule is ever inferred.
+    """
     out = []
     for (date, time, name, buy, gtd, gtext, chips, levels_pub, kind, skey, flags) in WPT:
-        if skey and skey in WPT_STRUCTS:
-            st = WPT_STRUCTS[skey]
+        flags = list(flags)
+        # The hard-coded key still carries the long-form notes for the events a
+        # reviewer has already checked; the printed sheet is preferred wherever
+        # the join found one.
+        st = WPT_STRUCTS.get(skey) if skey else None
+        sheet_row = _sheet_for(_WPT_ROW_SHEETS, date, time, buy, name)
+        sid = None
+        if sheet_row:
+            sid = "block %d" % sheet_row["block"]
+            status = "RE" if sheet_row["unlimited_re_entry"] else "MULTI"
+            ex = "Registration: \"%s\"" % sheet_row["registration"]
+            fee_text = sheet_row["entry_fee_line"]
+            stack_text = sheet_row["starting_stack"]
+            length_text = sheet_row["length_of_play"] or (st.get("length") if st else None)
+            breaks_text = None
+            payout_text = None
+            struct_url = SRC["wpt_struct"]
+            struct_label = "Official structures PDF, %s" % sid
+        elif st:
             status = st["status"]
             ex = st["ex"]
             fee_text = st["fee"]
+            stack_text = st["stack"]
+            length_text = st["length"]
+            breaks_text = st["breaks"]
+            payout_text = st["payout"]
             struct_url = SRC["wpt_struct"]
-            struct_label = "Official structures / terms (%s)" % st["label"]
+            struct_label = "Official structures PDF (%s)" % st["label"]
         else:
             status = "UNV"
-            ex = ("No structure sheet for this event is published in the official WPT World Championship Structures "
-                  "PDF (read in full on 2026-11-16). Entry rule unknown.")
+            ex = ("No structure sheet in the official WPT World Championship Structures PDF prints this "
+                  "date, start time and buy-in combination, so the entry rule is not published for this row.")
             fee_text = None
+            stack_text = None
+            length_text = None
+            breaks_text = None
+            payout_text = None
             struct_url = None
             struct_label = None
+        if kind == "continuation":
+            # A Day 2 or final-table row never sells a new entry, so its entry
+            # status is a continuation whatever the parent sheet allows.
+            status = "CONT"
         labels = []
         low = name.lower()
         if "bounty" in low:
@@ -1015,49 +1085,69 @@ def build_wynn():
             labels.append("seniors-50-plus")
         if "Ladies" in name:
             labels.append("ladies")
-        if skey == "PRIME":
+        if sheet_row and sheet_row["multi_entry"] and not sheet_row["unlimited_re_entry"]:
             labels.append("limited-re-entry")
         if kind == "continuation":
             labels.append("continuation")
         srcs = [{"label": "Official schedule PDF", "url": SRC["wpt_sched"]}]
         if struct_url:
             srcs.append({"label": struct_label, "url": struct_url})
+        src_label = struct_label or "Official schedule PDF"
+        src_url = struct_url or SRC["wpt_sched"]
         rules = {
             "single_entry": rule_field(
-                "not single entry" if status in ("RE", "REBUY") else ("unknown" if status == "UNV" else "confirmed"),
-                ex, struct_label or "Official schedule PDF", struct_url or SRC["wpt_sched"]),
-            "re_entry": rule_field("allowed" if status in ("RE", "REBUY") else "unknown",
-                                   ex, struct_label or "Official schedule PDF", struct_url or SRC["wpt_sched"]),
-            "add_on": rule_field("not mentioned", ex, struct_label or "Official schedule PDF",
-                                 struct_url or SRC["wpt_sched"]),
-            "fee": rule_field(fee_text or "not published for this event", fee_text or ex,
-                              struct_label or "Official schedule PDF", struct_url or SRC["wpt_sched"]),
+                "not single entry" if status in ("RE", "REBUY", "MULTI") else ("unknown" if status == "UNV" else "confirmed"),
+                ex, src_label, src_url),
+            "re_entry": rule_field("allowed" if status in ("RE", "REBUY", "MULTI") else "unknown",
+                                   ex, src_label, src_url),
+            "add_on": rule_field(
+                "not mentioned on the structure sheet" if struct_url else "not published for this event",
+                ex, src_label, src_url),
+            "fee": rule_field(fee_text or "not published for this event", fee_text or ex, src_label, src_url),
         }
-        if skey and skey in WPT_STRUCTS and WPT_STRUCTS[skey].get("stack"):
-            rules["starting_chips"] = rule_field(WPT_STRUCTS[skey]["stack"], WPT_STRUCTS[skey]["stack"],
-                                                  struct_label, struct_url)
+        if stack_text:
+            rules["starting_chips"] = rule_field(stack_text, stack_text, src_label, src_url)
+        if length_text:
+            rules["length_of_play"] = rule_field(length_text, length_text, src_label, src_url)
         row = {
             "id": None, "series": "WPT World Championship (Wynn)", "venue": WYN, "date": date, "start": time,
             "kind": kind, "event_no": None, "name": name,
             "buy_in_usd": buy, "guarantee_usd": gtd, "prize_text": gtext,
-            "house_fee_usd": None, "house_fee_pct": None, "prize_pool_usd": None,
+            "house_fee_usd": (sheet_row["tournament_fee_usd"] + sheet_row["staff_fee_usd"])
+                             if sheet_row and sheet_row["tournament_fee_usd"] else None,
+            "house_fee_pct": None, "prize_pool_usd": sheet_row["prize_pool_usd"] if sheet_row else None,
             "gtd_multiple": round(gtd / buy, 1) if gtd and buy else None,
             "entry_status": status, "rules": rules,
             "entry_rule": {
-                "RE": "Re-entry confirmed: official structure terms state re-entry terms.",
-                "UNV": "Entry rule not verified: no structure sheet for this event is published in the official structures PDF.",
+                "RE": "Re-entry confirmed: the printed structure sheet states the re-entry terms.",
+                "MULTI": "Not single entry: the printed structure sheet states a limited number of entries "
+                         "(for example one entry plus one re-entry per flight), so a second entry is possible.",
+                "CONT": "Continuation row (Day 2, Day 3 or final table). No new entry is sold on this day; "
+                        "the parent event's entry rule is recorded on its Day 1 rows.",
+                "UNV": "Entry rule not verified: no structure sheet for this event is published in the "
+                       "official structures PDF.",
             }.get(status, ""),
             "labels": labels,
-            "late_reg_close": None, "levels": None, "level_minutes": None,
-            "starting_chips": chips, "levels_published": levels_pub,
+            "late_reg_close": None,
+            "levels": None,
+            "level_minutes": sheet_row["level_minutes"] if sheet_row else None,
+            "starting_chips": _chips_from(stack_text) or chips,
+            "levels_published": levels_pub,
             "est_end": None, "est_duration_min": None,
-            "note": "Buy-in, guarantee, starting chips and level count from the official WPT World Championship "
-                    "schedule PDF.",
+            "note": ("Buy-in, guarantee, starting chips and level count from the official WPT World Championship "
+                     "schedule PDF. " + ("Entry rule, fee split and starting stack from %s of the official "
+                     "structures PDF." % sid if sheet_row else "No structure sheet is published for this row.")),
             "flags": flags,
             "sources": srcs, "verified_on": VERIFIED_ON, "last_checked": LAST_CHECKED,
         }
-        if skey and skey in WPT_STRUCTS and WPT_STRUCTS[skey].get("days"):
-            row["structure_days"] = WPT_STRUCTS[skey]["days"]
+        if row["house_fee_usd"] and buy:
+            row["house_fee_pct"] = round(100.0 * row["house_fee_usd"] / buy, 2)
+        if sheet_row and sheet_row.get("length_of_play"):
+            row["structure_days"] = sheet_row["length_of_play"]
+        if st and st.get("payout"):
+            row["structure_payout"] = st["payout"]
+        if st and st.get("breaks"):
+            row["structure_breaks"] = st["breaks"]
         out.append(row)
     for (date, time, name, buy, gtd, chips, levels_pub, kind, flags) in WSS:
         out.append({
@@ -1071,15 +1161,15 @@ def build_wynn():
             "rules": {
                 "single_entry": rule_field("unknown",
                     "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" "
-                    "placeholder and no structure sheets (read on 2026-11-16). Entry rule unknown.",
+                    "placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
                     "Official Wynn Signature Series schedule PDF", SRC["wss_sched"]),
                 "re_entry": rule_field("unknown",
                     "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" "
-                    "placeholder and no structure sheets (read on 2026-11-16). Entry rule unknown.",
+                    "placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
                     "Official Wynn Signature Series schedule PDF", SRC["wss_sched"]),
                 "add_on": rule_field("unknown",
                     "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" "
-                    "placeholder and no structure sheets (read on 2026-11-16). Entry rule unknown.",
+                    "placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
                     "Official Wynn Signature Series schedule PDF", SRC["wss_sched"]),
                 "fee": rule_field("not published", "Fee breakdown is not published for this event.",
                                   "Official Wynn Signature Series schedule PDF", SRC["wss_sched"]),
@@ -1276,51 +1366,80 @@ HOTELS = [
   "address_note": "The official Bellagio page read in this session does not print the street address in the text that "
                   "was returned, so it is left blank.",
   "booking_url": "https://bellagio.mgmresorts.com/book-room/",
-  "resort_fee_usd": None, "resort_fee_status": "unverified",
-  "resort_fee_note": "No Bellagio-specific resort fee amount was printed on an official page read in this session, "
-                      "so the value is left blank.",
-  "clark_county_tax_pct": None, "tax_status": "unverified",
-  "tax_note": "No Bellagio-specific room tax rate printed on an official page read in this session.",
+  "resort_fee_usd": 55, "resort_fee_status": "verified",
+  "resort_fee_note": "Official Bellagio Hotel Reservation Terms and Conditions: \"Daily Resort Fee. A daily resort fee "
+                     "of $55.00 plus applicable tax will be applied to all reservations.\" The same page lists what "
+                     "the fee covers and states the fee is waived for MGM Rewards Gold+ members on eligible "
+                     "reservations. Read 2026-11-17.",
+  "clark_county_tax_pct": 13.38, "tax_status": "estimated",
+  "tax_note": "Estimate only, never used for a true cost. The Bellagio terms print the tax rule but not a percentage: \"Lodging taxes apply to the basic room "
+              "rate, any resort fee, additional per occupant charges, upgrades, as well as any other charges as "
+              "required by applicable law.\" A published MGM offer for a Bellagio/ARIA stay prints \"Nightly rates "
+              "do not include 13.38% room tax\", but that page is a Cosmopolitan offer, not Bellagio's own terms, "
+              "so 13.38% is shown only as the county rate used for an estimate and no true cost is calculated from it.",
   "room_rate_usd": None, "room_rate_status": "unverified",
   "room_rate_note": "No nightly rate published on an official page read in this session.",
-  "parking_note": "No Bellagio parking fee printed on an official page read in this session.",
-  "parking_usd_per_day": None,
-  "cancellation_note": "No Bellagio cancellation deadline printed on an official page read in this session.",
-  "check_in_out": None,
+  "parking_note": "Official MGM Resorts parking page: self-parking for a registered hotel guest is $20 per 24 hours "
+                  "on weekdays and $20 at weekends; valet is $40 per day. Nevada residents get the first 3 hours of "
+                  "self-parking free outside special events.",
+  "parking_usd_per_day": 20,
+  "cancellation_note": "Official Bellagio terms: \"The first night's deposit is fully refundable provided a timely "
+                       "notice of cancellation is received by Room Reservations ... at least 72 hours prior to the "
+                       "arrival date, unless specifically excluded by booked offer.\"",
+  "check_in_out": "Check-in 3:00 p.m.; check-out 11:00 a.m. (official Bellagio FAQ and terms)",
   "walk_to_venetian_min": None,
   "walk_note": "Walking time from Bellagio to the Venetian poker room is not published by any official source; "
                "left blank and flagged.",
-  "true_cost_per_night_usd": None, "true_cost_note": "No rate, fee or property tax confirmed, so no true cost.",
-  "sources": [{"label": "Bellagio official home page (official)", "url": SRC["bellagio"]}]},
+  "true_cost_per_night_usd": None, "true_cost_note": "Resort fee and parking are verified, but no dated room rate "
+                       "and no Bellagio-specific tax percentage are verified, so no true cost is calculated.",
+  "sources": [{"label": "Bellagio hotel reservation terms: $55 daily resort fee, tax rule, 72-hour cancellation (official)",
+               "url": SRC["bellagio_terms"]},
+              {"label": "Bellagio FAQ: check-in and check-out times (official)", "url": SRC["bellagio_faq"]},
+              {"label": "MGM Resorts parking rates: self-parking $20 (official)", "url": SRC["mgm_parking"]},
+              {"label": "Bellagio official home page (official)", "url": SRC["bellagio"]}]},
  {"id": "aria", "name": "ARIA Resort & Casino", "operator": "MGM Resorts International",
   "venue_link": None, "address": None, "address_status": "unverified",
   "address_note": "The official ARIA page read in this session does not print the street address in the text that was "
                   "returned, so it is left blank.",
   "booking_url": "https://aria.mgmresorts.com/book-room/",
-  "resort_fee_usd": None, "resort_fee_status": "unverified",
-  "resort_fee_note": "No ARIA resort fee amount printed on an official page read in this session.",
-  "clark_county_tax_pct": None, "tax_status": "unverified",
-  "tax_note": "No ARIA-specific room tax rate printed on an official page read in this session.",
+  "resort_fee_usd": 55, "resort_fee_status": "verified",
+  "resort_fee_note": "Official ARIA Hotel Reservation Terms and Conditions: \"Daily Resort Fee. A daily resort fee "
+                     "of $55.00 plus applicable tax will be applied to all reservations.\" Waived for MGM Rewards "
+                     "Gold+ members on eligible reservations. Read 2026-11-17.",
+  "clark_county_tax_pct": 13.38, "tax_status": "estimated",
+  "tax_note": "Estimate only, never used for a true cost. The ARIA terms print the tax rule but not a percentage: \"Estimated taxes are based on current tax "
+              "rates which are subject to change ... Lodging taxes apply to the basic room rate, any resort fee, "
+              "additional per occupant charges and upgrades.\" No ARIA-specific percentage is verified, so no true "
+              "cost is calculated for this property.",
   "room_rate_usd": None, "room_rate_status": "unverified",
   "room_rate_note": "Official ARIA poker page: \"Exclusive Room Rates for qualifying poker players\" - the rate itself "
                      "is only available by phone (702.590.7232) or by e-mail, so no number is published.",
-  "parking_note": "No ARIA parking fee printed on an official page read in this session.",
-  "parking_usd_per_day": None,
-  "cancellation_note": "No ARIA cancellation deadline printed on an official page read in this session.",
-  "check_in_out": None,
+  "parking_note": "Official MGM Resorts parking page lists ARIA with the same rates as Bellagio: self-parking $20 "
+                  "per 24 hours for a registered hotel guest, valet $40 per day.",
+  "parking_usd_per_day": 20,
+  "cancellation_note": "Official ARIA terms: the first night's deposit is fully refundable if cancellation notice is "
+                       "received at least 72 hours prior to arrival, unless excluded by the booked offer.",
+  "check_in_out": "Check-in 3:00 p.m.; check-out 11:00 a.m. (official ARIA terms)",
   "walk_to_venetian_min": None,
   "walk_note": "Walking time from ARIA to the Venetian poker room is not published by any official source; left blank "
                "and flagged. ARIA does run a poker room (official ARIA poker page).",
-  "true_cost_per_night_usd": None, "true_cost_note": "No rate, fee or property tax confirmed, so no true cost.",
-  "sources": [{"label": "ARIA official home page (official)", "url": SRC["aria"]},
+  "true_cost_per_night_usd": None, "true_cost_note": "Resort fee and parking are verified, but no dated room rate "
+                       "and no ARIA-specific tax percentage are verified, so no true cost is calculated.",
+  "sources": [{"label": "ARIA hotel reservation terms: $55 daily resort fee, tax rule, 72-hour cancellation (official)",
+               "url": SRC["aria_terms"]},
+              {"label": "MGM Resorts parking rates: self-parking $20 (official)", "url": SRC["mgm_parking"]},
+              {"label": "ARIA official home page (official)", "url": SRC["aria"]},
               {"label": "ARIA poker room and player rates (official)", "url": SRC["aria_poker"]}]},
  {"id": "caesars", "name": "Caesars Palace", "operator": "Caesars Entertainment",
   "venue_link": None, "address": "3570 Las Vegas Blvd South, Las Vegas, NV 89109", "address_status": "verified",
   "address_note": "Official Caesars Palace property page footer.",
   "booking_url": "https://www.caesars.com/book/hotel-calendar?propCode=CLV",
   "resort_fee_usd": None, "resort_fee_status": "unverified",
-  "resort_fee_note": "No Caesars Palace-specific resort fee amount was printed on an official page read in this "
-                      "session, so the value is left blank.",
+  "resort_fee_note": "Read on 2026-11-17: the Caesars Palace property pages and the Caesars Palace FAQ do not print "
+                     "a resort-fee amount for this property. The Caesars corporate disclaimer states only that "
+                     "\"Room reservations are subject to a daily resort fee between $45-$50 plus applicable tax\" "
+                     "across the Caesars portfolio, which does not name Caesars Palace, so it is not used as this "
+                     "property's fee.",
   "clark_county_tax_pct": None, "tax_status": "unverified",
   "tax_note": "No Caesars Palace-specific room tax rate printed on an official page read in this session.",
   "room_rate_usd": None, "room_rate_status": "unverified",
@@ -1333,8 +1452,13 @@ HOTELS = [
   "walk_to_venetian_min": None,
   "walk_note": "Walking time from Caesars Palace to the Venetian poker room is not published by any official source; "
                "left blank and flagged.",
-  "true_cost_per_night_usd": None, "true_cost_note": "No rate, fee or property tax confirmed, so no true cost.",
-  "sources": [{"label": "Caesars Palace official page incl. address (official)", "url": SRC["caesars"]}]},
+  "true_cost_per_night_usd": None, "true_cost_note": "No dated rate, no property-specific resort fee and no "
+                       "property-specific tax are verified, so no true cost is calculated.",
+  "sources": [{"label": "Caesars Palace FAQ: check-in/out times and 48-hour cancellation (official)",
+               "url": SRC["caesars_faq"]},
+              {"label": "Caesars corporate disclaimer: portfolio-wide $45-$50 resort-fee range, not property-specific (official)",
+               "url": SRC["caesars_disclaimer"]},
+              {"label": "Caesars Palace official page incl. address (official)", "url": SRC["caesars"]}]},
 ]
 
 # ---------------- dated rate log ----------------

@@ -1,5 +1,5 @@
 {
- "verified_on": "2026-11-16",
+ "verified_on": "2026-11-17",
  "rows": [
   {
    "id": "venetian",
@@ -49,7 +49,7 @@
      "url": "https://www.venetianlasvegas.com/book"
     }
    ],
-   "last_checked": "2026-11-16"
+   "last_checked": "2026-11-17"
   },
   {
    "id": "palazzo",
@@ -95,7 +95,7 @@
      "url": "https://www.venetianlasvegas.com/book"
     }
    ],
-   "last_checked": "2026-11-16"
+   "last_checked": "2026-11-17"
   },
   {
    "id": "wynn",
@@ -141,7 +141,7 @@
      "url": "https://www.wynnlasvegas.com/casino/poker"
     }
    ],
-   "last_checked": "2026-11-16"
+   "last_checked": "2026-11-17"
   },
   {
    "id": "encore",
@@ -183,7 +183,7 @@
      "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     }
    ],
-   "last_checked": "2026-11-16"
+   "last_checked": "2026-11-17"
   },
   {
    "id": "bellagio",
@@ -194,30 +194,42 @@
    "address_status": "unverified",
    "address_note": "The official Bellagio page read in this session does not print the street address in the text that was returned, so it is left blank.",
    "booking_url": "https://bellagio.mgmresorts.com/book-room/",
-   "resort_fee_usd": null,
-   "resort_fee_status": "unverified",
-   "resort_fee_note": "No Bellagio-specific resort fee amount was printed on an official page read in this session, so the value is left blank.",
-   "clark_county_tax_pct": null,
-   "tax_status": "unverified",
-   "tax_note": "No Bellagio-specific room tax rate printed on an official page read in this session.",
+   "resort_fee_usd": 55,
+   "resort_fee_status": "verified",
+   "resort_fee_note": "Official Bellagio Hotel Reservation Terms and Conditions: \"Daily Resort Fee. A daily resort fee of $55.00 plus applicable tax will be applied to all reservations.\" The same page lists what the fee covers and states the fee is waived for MGM Rewards Gold+ members on eligible reservations. Read 2026-11-17.",
+   "clark_county_tax_pct": 13.38,
+   "tax_status": "estimated",
+   "tax_note": "Estimate only, never used for a true cost. The Bellagio terms print the tax rule but not a percentage: \"Lodging taxes apply to the basic room rate, any resort fee, additional per occupant charges, upgrades, as well as any other charges as required by applicable law.\" A published MGM offer for a Bellagio/ARIA stay prints \"Nightly rates do not include 13.38% room tax\", but that page is a Cosmopolitan offer, not Bellagio's own terms, so 13.38% is shown only as the county rate used for an estimate and no true cost is calculated from it.",
    "room_rate_usd": null,
    "room_rate_status": "unverified",
    "room_rate_note": "No nightly rate published on an official page read in this session.",
-   "parking_note": "No Bellagio parking fee printed on an official page read in this session.",
-   "parking_usd_per_day": null,
-   "cancellation_note": "No Bellagio cancellation deadline printed on an official page read in this session.",
-   "check_in_out": null,
+   "parking_note": "Official MGM Resorts parking page: self-parking for a registered hotel guest is $20 per 24 hours on weekdays and $20 at weekends; valet is $40 per day. Nevada residents get the first 3 hours of self-parking free outside special events.",
+   "parking_usd_per_day": 20,
+   "cancellation_note": "Official Bellagio terms: \"The first night's deposit is fully refundable provided a timely notice of cancellation is received by Room Reservations ... at least 72 hours prior to the arrival date, unless specifically excluded by booked offer.\"",
+   "check_in_out": "Check-in 3:00 p.m.; check-out 11:00 a.m. (official Bellagio FAQ and terms)",
    "walk_to_venetian_min": null,
    "walk_note": "Walking time from Bellagio to the Venetian poker room is not published by any official source; left blank and flagged.",
    "true_cost_per_night_usd": null,
-   "true_cost_note": "No rate, fee or property tax confirmed, so no true cost.",
+   "true_cost_note": "Resort fee and parking are verified, but no dated room rate and no Bellagio-specific tax percentage are verified, so no true cost is calculated.",
    "sources": [
+    {
+     "label": "Bellagio hotel reservation terms: $55 daily resort fee, tax rule, 72-hour cancellation (official)",
+     "url": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html"
+    },
+    {
+     "label": "Bellagio FAQ: check-in and check-out times (official)",
+     "url": "https://bellagio.mgmresorts.com/en/faq.html"
+    },
+    {
+     "label": "MGM Resorts parking rates: self-parking $20 (official)",
+     "url": "https://www.mgmresorts.com/en/things-to-do/parking.html"
+    },
     {
      "label": "Bellagio official home page (official)",
      "url": "https://bellagio.mgmresorts.com/en.html"
     }
    ],
-   "last_checked": "2026-11-16"
+   "last_checked": "2026-11-17"
   },
   {
    "id": "aria",
@@ -228,24 +240,32 @@
    "address_status": "unverified",
    "address_note": "The official ARIA page read in this session does not print the street address in the text that was returned, so it is left blank.",
    "booking_url": "https://aria.mgmresorts.com/book-room/",
-   "resort_fee_usd": null,
-   "resort_fee_status": "unverified",
-   "resort_fee_note": "No ARIA resort fee amount printed on an official page read in this session.",
-   "clark_county_tax_pct": null,
-   "tax_status": "unverified",
-   "tax_note": "No ARIA-specific room tax rate printed on an official page read in this session.",
+   "resort_fee_usd": 55,
+   "resort_fee_status": "verified",
+   "resort_fee_note": "Official ARIA Hotel Reservation Terms and Conditions: \"Daily Resort Fee. A daily resort fee of $55.00 plus applicable tax will be applied to all reservations.\" Waived for MGM Rewards Gold+ members on eligible reservations. Read 2026-11-17.",
+   "clark_county_tax_pct": 13.38,
+   "tax_status": "estimated",
+   "tax_note": "Estimate only, never used for a true cost. The ARIA terms print the tax rule but not a percentage: \"Estimated taxes are based on current tax rates which are subject to change ... Lodging taxes apply to the basic room rate, any resort fee, additional per occupant charges and upgrades.\" No ARIA-specific percentage is verified, so no true cost is calculated for this property.",
    "room_rate_usd": null,
    "room_rate_status": "unverified",
    "room_rate_note": "Official ARIA poker page: \"Exclusive Room Rates for qualifying poker players\" - the rate itself is only available by phone (702.590.7232) or by e-mail, so no number is published.",
-   "parking_note": "No ARIA parking fee printed on an official page read in this session.",
-   "parking_usd_per_day": null,
-   "cancellation_note": "No ARIA cancellation deadline printed on an official page read in this session.",
-   "check_in_out": null,
+   "parking_note": "Official MGM Resorts parking page lists ARIA with the same rates as Bellagio: self-parking $20 per 24 hours for a registered hotel guest, valet $40 per day.",
+   "parking_usd_per_day": 20,
+   "cancellation_note": "Official ARIA terms: the first night's deposit is fully refundable if cancellation notice is received at least 72 hours prior to arrival, unless excluded by the booked offer.",
+   "check_in_out": "Check-in 3:00 p.m.; check-out 11:00 a.m. (official ARIA terms)",
    "walk_to_venetian_min": null,
    "walk_note": "Walking time from ARIA to the Venetian poker room is not published by any official source; left blank and flagged. ARIA does run a poker room (official ARIA poker page).",
    "true_cost_per_night_usd": null,
-   "true_cost_note": "No rate, fee or property tax confirmed, so no true cost.",
+   "true_cost_note": "Resort fee and parking are verified, but no dated room rate and no ARIA-specific tax percentage are verified, so no true cost is calculated.",
    "sources": [
+    {
+     "label": "ARIA hotel reservation terms: $55 daily resort fee, tax rule, 72-hour cancellation (official)",
+     "url": "https://aria.mgmresorts.com/en/terms-and-conditions.html"
+    },
+    {
+     "label": "MGM Resorts parking rates: self-parking $20 (official)",
+     "url": "https://www.mgmresorts.com/en/things-to-do/parking.html"
+    },
     {
      "label": "ARIA official home page (official)",
      "url": "https://aria.mgmresorts.com/en.html"
@@ -255,7 +275,7 @@
      "url": "https://aria.mgmresorts.com/en/casino/poker.html"
     }
    ],
-   "last_checked": "2026-11-16"
+   "last_checked": "2026-11-17"
   },
   {
    "id": "caesars",
@@ -268,7 +288,7 @@
    "booking_url": "https://www.caesars.com/book/hotel-calendar?propCode=CLV",
    "resort_fee_usd": null,
    "resort_fee_status": "unverified",
-   "resort_fee_note": "No Caesars Palace-specific resort fee amount was printed on an official page read in this session, so the value is left blank.",
+   "resort_fee_note": "Read on 2026-11-17: the Caesars Palace property pages and the Caesars Palace FAQ do not print a resort-fee amount for this property. The Caesars corporate disclaimer states only that \"Room reservations are subject to a daily resort fee between $45-$50 plus applicable tax\" across the Caesars portfolio, which does not name Caesars Palace, so it is not used as this property's fee.",
    "clark_county_tax_pct": null,
    "tax_status": "unverified",
    "tax_note": "No Caesars Palace-specific room tax rate printed on an official page read in this session.",
@@ -282,14 +302,22 @@
    "walk_to_venetian_min": null,
    "walk_note": "Walking time from Caesars Palace to the Venetian poker room is not published by any official source; left blank and flagged.",
    "true_cost_per_night_usd": null,
-   "true_cost_note": "No rate, fee or property tax confirmed, so no true cost.",
+   "true_cost_note": "No dated rate, no property-specific resort fee and no property-specific tax are verified, so no true cost is calculated.",
    "sources": [
+    {
+     "label": "Caesars Palace FAQ: check-in/out times and 48-hour cancellation (official)",
+     "url": "https://www.caesars.com/caesars-palace/faqs"
+    },
+    {
+     "label": "Caesars corporate disclaimer: portfolio-wide $45-$50 resort-fee range, not property-specific (official)",
+     "url": "https://www.caesars.com/corporate/disclaimer"
+    },
     {
      "label": "Caesars Palace official page incl. address (official)",
      "url": "https://www.caesars.com/caesars-palace"
     }
    ],
-   "last_checked": "2026-11-16"
+   "last_checked": "2026-11-17"
   }
  ],
  "method": "True nightly cost = (verified room rate + verified resort fee) x (1 + verified room tax). It is only calculated when all three are verified for the same property. The dated rate log in data/rates.json keeps each retrieved quote separately with its timestamp."
