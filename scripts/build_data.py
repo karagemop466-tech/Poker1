@@ -57,6 +57,14 @@ SRC = {
     "caesars": "https://www.caesars.com/caesars-palace",
     "caesars_poker_article": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
     "caesars_faq": "https://www.caesars.com/caesars-palace/faqs",
+    # Session ce9941b8: the official Caesars Palace casino page links this flyer under
+    # "Caesars Palace Poker Room ... daily tournaments" / "View Schedule". It prints the
+    # whole daily schedule with buy-ins, add-on, chips, level length, guarantee, the fee
+    # split and the registration rule, so the daily feed no longer has to rest on an
+    # editorial article (which now returns 404 - F78).
+    "caesars_daily_flyer": ("https://www.caesars.com/content/dam/empire/clv/casino/poker/"
+                            "tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf"),
+    "caesars_casino": "https://www.caesars.com/caesars-palace/casino",
     "caesars_disclaimer": "https://www.caesars.com/corporate/disclaimer",
     # Session ce9941b8: the taxing authority. Clark County Department of Business
     # License, "General Information Guide for Transient Lodging Establishments"
@@ -841,6 +849,147 @@ WSS = [
   ["Continuation row. The official schedule PDF prints no buy-in, guarantee, chips or levels for this row."]),
  ("2027-01-24","13:00","PLO Double Board Bomb Pot",400,None,30000,"30","entry",[]),
  ("2027-01-24","18:00","NLH Turbo",200,10000,25000,"20","entry",[]),
+]
+
+# ---------- Bellagio weekly flyers and the Caesars Palace daily flyer ----------
+# The exact PDF the official Bellagio poker page linked on 2026-11-17. Kept beside the rows
+# so every quoted rule can be opened and checked, and marked as the document behind the row.
+BELLAGIO_FLYER_URLS = {
+    "bellagio-fri": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/"
+                    "6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf",
+    "bellagio-sat": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/"
+                    "6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf",
+    "bellagio-sun": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/"
+                    "6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf",
+}
+# Every value below is quoted from the flyer the official page links; each row names the
+# document it came from in `source`, and the official poker-room page it was linked from in
+# `page`. The Bellagio flyers live on MGM's content-asset host, which the approved-host list
+# deliberately does not include (F40), so the citation is the official page that links them.
+BELLAGIO_DAILY = [
+ dict(id="bellagio-fri", room="Bellagio", name="$600 No Limit Hold'em (Fridays)", days="Friday",
+      start="11:00", buy_in_usd=600, guarantee_usd=None, status="RE",
+      labels=["recurring", "re-entry", "advantage-for-money"],
+      fee="Rule 5: \"The $600 Buy-In is allocated as follows: $510 to Prize Pool; $50 House Fee; "
+          "$40 Voluntary Staff Gratuity.\" Rule 7: \"The voluntary staff gratuity will grant players "
+          "an extra 15,000 chips.\"",
+      ex="Rule 3: \"Players may buy-in and re-enter through the end of level 8 (Including Break). "
+         "Tournament Surrender is allowed on Level 8 break.\"",
+      late=None, late_reg_level=8,
+      late_reg_text="Rule 3 closes registration at \"the end of level 8 (Including Break)\"; no clock "
+                    "time is printed. Levels are 30 minutes with a 12-minute break every four levels, so "
+                    "the end of level 8 is about 4 h 12 m after the 11:00 a.m. start - derived from the "
+                    "printed structure, not printed as a time, and the flyer does not say whether the "
+                    "break that follows level 8 is inside or outside the window.",
+      levels=28, lmin=30,
+      stack="Rule 1: \"Players will start with 30,000 tournament chips, including the optional Staff "
+            "Gratuity. (15,000 + 15,000)\""),
+ dict(id="bellagio-sat", room="Bellagio", name="$1,000 No Limit Hold'em (Saturdays)", days="Saturday",
+      start="11:00", buy_in_usd=1000, guarantee_usd=50000, status="RE",
+      labels=["recurring", "multi-flight", "re-entry", "advantage-for-money"],
+      fee="Rule 7: \"Of the $600 Buy-in, $510 goes to the Prize Pool, $50 is Admin Fees and $40 is "
+          "optional staff gratuity.\" Rule 9: the $40 gratuity \"will grant players an extra 20,000 "
+          "chips\". The $600 figures are what the flyer prints even though its heading reads "
+          "\"NLH $1100 BUY-IN\" and the file is named $1,000 (F32).",
+      ex="Rule 3: \"Registration will be open until the start of Level 10. (Approximately 5:15pm for "
+         "Flights 1A, 1B, 4:15pm for 1C and 9:30pm for Flight D).\" Rule 6: \"Each Flight would play "
+         "until the money (12.5%). Must bag chips to make Day 2 and be in the money.\"",
+      late=None, late_reg_level=10,
+      late_reg_text="Rule 3 gives a level, not a time, and gives four different clock times for four "
+                    "flights (5:15pm for 1A and 1B, 4:15pm for 1C, 9:30pm for Flight D). Which flight "
+                    "the 11:00 a.m. start is cannot be read from the flyer, so no single time is "
+                    "published for this row.",
+      levels=28, lmin=30,
+      stack="Rule 1: \"Players start with 40,000 in tournament chips (20,000 + 20,000 optional).\"",
+      flags=["F32: the flyer contradicts itself on the buy-in - the heading reads \"NLH $1100 "
+             "BUY-IN\", the file and page label read $1,000, and rule 7 prices a $600 buy-in. "
+             "Rule 4 also names a Combined Final Day 2 of 9/13/26, a date before this page was read "
+             "on 2026-11-17, so the flyer is not current. Buy-in, guarantee and entry rule are "
+             "not confirmed."]),
+ dict(id="bellagio-sun", room="Bellagio", name="$400 H.O.R.S.E. (Sundays)", days="Sunday",
+      start="11:00", buy_in_usd=400, guarantee_usd=None, status="RE",
+      labels=["recurring", "re-entry", "advantage-for-money"],
+      fee="Rule 1: \"The $400 Buy-In is allocated as follows: $340 to Prize Pool; $35 House Fee; "
+          "$25 Voluntary Staff Gratuity.\" Rule 2: the $25 gratuity \"will grant players an "
+          "additional 15,000 in starting chips\".",
+      ex="Rule 5: \"Players may buy-in and re-enter through the end of level 8 (Including Break). "
+         "Tournament Surrender is allowed on Level 8 break.\"",
+      late=None, late_reg_level=8,
+      late_reg_text="Rule 5 closes registration at \"the end of level 8 (Including Break)\"; no clock "
+                    "time is printed. Levels are 30 minutes with 12-minute breaks every four levels, "
+                    "so that is about 4 h 12 m after the 11:00 a.m. start - derived, not printed.",
+      levels=26, lmin=30,
+      stack="Rule 3: \"Players will start with 30,000 tournament chips, including the optional Staff "
+            "Gratuity. (15,000 + 15,000)\"",
+      note_extra="Rule 4: \"Each level will last thirty (30) minutes ... ***When 3 players remain in "
+                 "event, levels will be reduced to 20 Minutes.\""),
+]
+CAESARS_DAILY = [
+ dict(id="caesars-1000", room="Caesars Palace", name="$100 No Limit Hold'em (daily, 10 a.m.)",
+      days="Daily", start="10:00", buy_in_usd=100, guarantee_usd=1000, status="REBUY",
+      labels=["recurring", "re-entry", "add-on"],
+      fee="Sign-up 6: \"Of the $100 buy in, $70 goes to the prize pool and $30 is held by Caesars "
+          "Palace as a maintenance fee.\" Sign-up 8: \"Of the $50 add-on, $45 goes to the prize pool "
+          "and $5 is held by Caesars Palace as a maintenance fee.\"",
+      ex="Sign-up 3: \"Participants may only register themselves, but may re-enter, by paying the "
+         "entry fee, upon elimination within the first break of play.\" Schedule note: \"All "
+         "Tournaments feature a $50 add-on for 15,000 tournament chips that can only be taken at the "
+         "first break.\"",
+      late=None, late_reg_level=7,
+      late_reg_text="The flyer closes registration \"at the start of level seven\" and prints no "
+                    "clock time. Levels are 20 minutes with a 10-minute break every six levels, so "
+                    "that is about 2 h 10 m after the 10:00 a.m. start - derived from the printed "
+                    "structure, not printed as a time.",
+      levels=15, lmin=20,
+      stack="Schedule table: \"Starting Chips 20,000\"; the $50 add-on buys 15,000 more."),
+ dict(id="caesars-1400", room="Caesars Palace", name="$160 No Limit Hold'em (daily, 2 p.m.)",
+      days="Daily", start="14:00", buy_in_usd=160, guarantee_usd=1000, status="REBUY",
+      labels=["recurring", "re-entry", "add-on"],
+      fee="Sign-up 7: \"Of the $160 buy in, $115 goes to the prize pool and $45 is held by Caesars "
+          "Palace as a maintenance fee.\" Sign-up 8: \"Of the $50 add-on, $45 goes to the prize pool "
+          "and $5 is held by Caesars Palace as a maintenance fee.\"",
+      ex="Sign-up 3: \"Participants may only register themselves, but may re-enter, by paying the "
+         "entry fee, upon elimination within the first break of play.\" Schedule note: \"All "
+         "Tournaments feature a $50 add-on for 15,000 tournament chips that can only be taken at the "
+         "first break.\"",
+      late=None, late_reg_level=7,
+      late_reg_text="Registration closes \"at the start of level seven\" (no clock time printed); "
+                    "20-minute levels with a 10-minute break every six levels put that about 2 h 10 m "
+                    "after the 2:00 p.m. start - derived, not printed.",
+      levels=15, lmin=20,
+      stack="Schedule table: \"Starting Chips 20,000\"; the $50 add-on buys 15,000 more."),
+ dict(id="caesars-1800", room="Caesars Palace", name="$100 No Limit Hold'em (daily, 6 p.m.)",
+      days="Daily", start="18:00", buy_in_usd=100, guarantee_usd=1000, status="REBUY",
+      labels=["recurring", "re-entry", "add-on"],
+      fee="Sign-up 6: \"Of the $100 buy in, $70 goes to the prize pool and $30 is held by Caesars "
+          "Palace as a maintenance fee.\" Sign-up 8: \"Of the $50 add-on, $45 goes to the prize pool "
+          "and $5 is held by Caesars Palace as a maintenance fee.\"",
+      ex="Sign-up 3: \"Participants may only register themselves, but may re-enter, by paying the "
+         "entry fee, upon elimination within the first break of play.\" Schedule note: \"All "
+         "Tournaments feature a $50 add-on for 15,000 tournament chips that can only be taken at the "
+         "first break.\"",
+      late=None, late_reg_level=7,
+      late_reg_text="Registration closes \"at the start of level seven\" (no clock time printed); "
+                    "20-minute levels with a 10-minute break every six levels put that about 2 h 10 m "
+                    "after the 6:00 p.m. start - derived, not printed.",
+      levels=15, lmin=20,
+      stack="Schedule table: \"Starting Chips 20,000\"; the $50 add-on buys 15,000 more."),
+ dict(id="caesars-2100", room="Caesars Palace", name="$160 No Limit Hold'em (daily, 9 p.m.)",
+      days="Daily", start="21:00", buy_in_usd=160, guarantee_usd=1000, status="REBUY",
+      labels=["recurring", "re-entry", "add-on"],
+      fee="Sign-up 7: \"Of the $160 buy in, $115 goes to the prize pool and $45 is held by Caesars "
+          "Palace as a maintenance fee.\" Sign-up 8: \"Of the $50 add-on, $45 goes to the prize pool "
+          "and $5 is held by Caesars Palace as a maintenance fee.\"",
+      ex="Sign-up 3: \"Participants may only register themselves, but may re-enter, by paying the "
+         "entry fee, upon elimination within the first break of play.\" Schedule note: \"All "
+         "Tournaments feature a $50 add-on for 15,000 tournament chips that can only be taken at the "
+         "first break.\"",
+      late=None, late_reg_level=7,
+      late_reg_text="Registration closes \"at the start of level seven\" (no clock time printed); "
+                    "20-minute levels with a 10-minute break every six levels put that about 2 h 10 m "
+                    "after the 9:00 p.m. start - derived, not printed.",
+      levels=15, lmin=20,
+      stack="Schedule table: \"Starting Chips 20,000\"; the $50 add-on buys 15,000 more."),
 ]
 
 # ---------- Wynn daily (recurring) tournaments: official poster + daily structures PDF ----------
@@ -2124,8 +2273,37 @@ def main():
     with open(os.path.join(DATA, "row_snapshot.json"), "w") as f:
         json.dump({"generated_on": VERIFIED_ON, "row_count": len(rows), "rows": snapshot}, f, indent=1)
 
+    # Every recurring format the dataset publishes, each carrying the room it belongs to
+    # and the official document the values were quoted from.
+    daily_rows = []
+    for row in WYNN_DAILY:
+        r = dict(row)
+        r["room"] = "Wynn Las Vegas"
+        r["venue"] = WYN
+        r["source"] = SRC["wynn_daily_struct"]
+        r["page"] = SRC["wynn_poker"]
+        r["retrieved_on"] = "2026-11-17"
+        daily_rows.append(r)
+    for row in BELLAGIO_DAILY:
+        r = dict(row)
+        r["venue"] = "Bellagio"
+        # The flyer itself is on MGM's content-asset host, which the approved-host list
+        # deliberately excludes (F40), so the citation is the official page that links it.
+        r["page"] = SRC["bellagio_poker"]
+        r["document_url"] = BELLAGIO_FLYER_URLS[r["id"]]
+        r["source"] = SRC["bellagio_poker"]
+        r["retrieved_on"] = "2026-11-17"
+        daily_rows.append(r)
+    for row in CAESARS_DAILY:
+        r = dict(row)
+        r["venue"] = "Caesars Palace"
+        r["source"] = SRC["caesars_daily_flyer"]
+        r["page"] = SRC["caesars_casino"]
+        r["retrieved_on"] = "2026-11-17"
+        daily_rows.append(r)
+
     with open(os.path.join(DATA, "daily.json"), "w") as f:
-        json.dump({"verified_on": VERIFIED_ON, "rows": WYNN_DAILY,
+        json.dump({"verified_on": VERIFIED_ON, "rows": daily_rows,
                    "note": "Recurring daily tournaments published by Wynn Las Vegas. The official poker page states: "
                            "\"The Daily Tournament schedule will be suspended during each Wynn Signature, Wynn Millions, "
                            "and Classic tournament series.\" The official daily terms and conditions state: \"Registration "
@@ -2134,10 +2312,27 @@ def main():
                            "two official sources: the poker page names Wynn Signature, Wynn Millions and Classic series, "
                            "while each daily structure sheet says the event \"may be suspended during Seniors Events, "
                            "Classic Events, or other Tournament Series\". Neither names the WPT World Championship "
-                           "explicitly, so confirm before travelling. Read 2026-11-16.",
+                           "explicitly, so confirm before travelling. Read 2026-11-16.\n\n"
+                           "Bellagio publishes three weekly flyers: Friday $600 NLH, Saturday $1,000 NLH "
+                           "and Sunday $400 H.O.R.S.E., all at 11:00 a.m. Every one of them allows "
+                           "buy-in and re-entry through the end of level 8 (Saturday: registration "
+                           "until the start of level 10), and every one sells a larger starting stack "
+                           "for a \"voluntary staff gratuity\", so none is single entry and none is "
+                           "ranked. Caesars Palace publishes one daily flyer with four no-limit "
+                           "hold'em events a day - 10 a.m. and 6 p.m. at $100, 2 p.m. and 9 p.m. at "
+                           "$160 - each with a $50 add-on for 15,000 chips and re-entry on "
+                           "elimination within the first break, so none is single entry either. "
+                           "Recurring formats carry no calendar date on the official source, so none "
+                           "is turned into a dated row or ranked. Read 2026-11-17.",
                    "sources": [{"label": "Official daily tournament poster", "url": SRC["wynn_daily_poster"]},
                                {"label": "Official daily tournament structures", "url": SRC["wynn_daily_struct"]},
-                               {"label": "Official poker room page", "url": SRC["wynn_poker"]}]}, f, indent=1)
+                               {"label": "Official poker room page", "url": SRC["wynn_poker"]},
+                               {"label": "Official Bellagio poker page (links the Friday, Saturday and "
+                                         "Sunday tournament flyers)", "url": SRC["bellagio_poker"]},
+                               {"label": "Official Caesars Palace casino page (links the daily "
+                                         "tournament flyer)", "url": SRC["caesars_casino"]},
+                               {"label": "Official Caesars Palace daily no-limit hold'em tournament "
+                                         "flyer 2026", "url": SRC["caesars_daily_flyer"]}]}, f, indent=1)
 
     counts = {}
     for r in rows:

@@ -519,7 +519,9 @@
    "label": "Caesars Palace daily poker tournament article (official, dated 2026-07-17)",
    "url": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
    "kind": "schedule",
-   "venue": "Other"
+   "venue": "Other",
+   "active": false,
+   "note": "Returned HTTP 404 when re-read on 2026-11-17 (session ce9941b8). The text quoted from it in FLAGGED.md F35 and S5 is preserved in data/snapshots/caesars_poker_article.txt with its retrieval date, but it can no longer be re-verified from a live official page. Superseded for the daily schedule by caesars_daily_flyer, an official Caesars Palace tournament flyer (F78)."
   },
   {
    "id": "mgm_poker_page",
@@ -647,6 +649,22 @@
    "kind": "tax",
    "authority": "Clark County, Nevada (taxing authority)",
    "note": "Not an operator page. This is the county that levies the room tax: Appendix III prints the combined rate by establishment category and district, and the licensed-establishment table prints each property's licence number, DBA name, address, status and rate. The establishment table is a snapshot (as of April 2021); the rate for a Resort Hotel in the Stadium District and Primary Gaming Corridor is fixed at 13.38% by Clark County Code 4.08.010 (F77)."
+  },
+  {
+   "id": "caesars_casino",
+   "label": "Caesars Palace official casino page \u2014 links the poker room's daily tournament schedule",
+   "url": "https://www.caesars.com/caesars-palace/casino",
+   "kind": "schedule",
+   "venue": "Caesars Palace",
+   "note": "Read 2026-11-17: \"The Poker Room at Caesars Palace is open 24/7 with both live-action cash games and daily tournaments\", with a \"View Schedule\" link to the daily NLH flyer."
+  },
+  {
+   "id": "caesars_daily_flyer",
+   "label": "Caesars Palace official daily No-Limit Hold'em tournament flyer 2026",
+   "url": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+   "kind": "structure",
+   "venue": "Caesars Palace",
+   "note": "Read 2026-11-17. Prints the four daily events (10 AM $100, 2 PM $160, 6 PM $100, 9 PM $160), the optional $50 add-on for 15,000 chips, 20,000 starting chips, 20-minute levels, a $1,000 guarantee, the fee splits, the re-entry rule (sign-up 3) and the payout table by field size."
   }
  ]
 }

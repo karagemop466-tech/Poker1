@@ -502,7 +502,20 @@ for index, row in enumerate(daily_rows, 1):
     check_time(row.get("start"), f"{where} {identity} start", required=True)
     for field in ("buy_in_usd", "guarantee_usd", "levels", "lmin"):
         check_number(row.get(field), f"{where} {identity} {field}")
-    check_time(row.get("late"), f"{where} {identity} late", required=True)
+    # Registration closes at a clock time on the Wynn sheets, but at a *level* on the
+    # Bellagio and Caesars flyers. Inventing a clock time for those would be an inference,
+    # so the level and the printed clause are stored instead and the time stays blank.
+    if row.get("late") is None:
+        if not is_number(row.get("late_reg_level")) or not str(row.get("late_reg_text") or "").strip():
+            problems.append(f"{where} {identity}: late is blank, so late_reg_level and the printed "
+                            f"late_reg_text are required")
+    else:
+        check_time(row.get("late"), f"{where} {identity} late", required=True)
+    if not isinstance(row.get("room"), str) or not row["room"].strip():
+        problems.append(f"{where} {identity}: room must be non-empty text")
+    source_url = row.get("source")
+    if not check_official_https_url(source_url, f"{where} {identity} source"):
+        problems.append(f"{where} {identity}: source must be an approved official document")
 
 venue_names = set()
 for index, row in enumerate(venue_rows, 1):

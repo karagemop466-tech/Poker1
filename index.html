@@ -766,22 +766,35 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
         var todays = daily.filter(function (x) { return x.days.indexOf(d.slice(0, 3)) >= 0 || x.days.indexOf(d) >= 0; });
         return '<div class="slot"><div class="d">' + d + "</div>" + (todays.length
           ? todays.map(function (x) {
-              return '<div class="t">' + timeFmt(x.start) + "</div><div class='small'>" + esc(x.name) +
+              return '<div class="t">' + timeFmt(x.start) + "</div><div class='small'><strong>" +
+                esc(x.room || "") + "</strong><br>" + esc(x.name) +
                 "<br>" + money(x.buy_in_usd) + " · GTD " + money(x.guarantee_usd) + "</div>";
             }).join("<hr>")
           : "<div class='small muted'>No daily format published for this weekday.</div>") + "</div>";
       }).join("") + "</div>";
       main.innerHTML = "<h2>Weekly format map</h2>" + calendar + "<h2>Published formats</h2>";
+      function regCell(r) {
+        if (r.late) return timeFmt(r.late) + '<br><span class="small muted">printed on the sheet</span>';
+        return '<span class="muted">no clock time printed</span><br><span class="small">' +
+          "closes at level " + esc(r.late_reg_level) + "<br>" + esc(r.late_reg_text || "") + "</span>";
+      }
       var cols = [
-        { id: "name", label: "Format", key: "name", html: function (r) { return "<strong>" + esc(r.name) + "</strong><br><span class='small'>" + esc(r.days) + "</span>"; } },
+        { id: "room", label: "Room", key: "room", html: function (r) { return "<strong>" + esc(r.room || "") + "</strong>"; } },
+        { id: "name", label: "Format", key: "name", html: function (r) { return "<strong>" + esc(r.name) + "</strong><br><span class='small'>" + esc(r.days) + "</span>" + (r.note_extra ? "<br><span class='small'>" + esc(r.note_extra) + "</span>" : ""); } },
         { id: "start", label: "Start", key: "start", html: function (r) { return timeFmt(r.start); } },
         { id: "buy", label: "Buy-in", key: "buy_in_usd", num: true, html: function (r) { return money(r.buy_in_usd); } },
         { id: "gtd", label: "Guarantee", key: "guarantee_usd", num: true, html: function (r) { return money(r.guarantee_usd); } },
         { id: "status", label: "Entry rule", key: "status", html: function (r) { return statusChip(r.status); } },
-        { id: "late", label: "Registration closes", key: "late", html: function (r) { return timeFmt(r.late); } },
+        { id: "late", label: "Registration closes", key: "late", html: regCell },
         { id: "levels", label: "Levels × minutes", key: "levels", num: true, html: function (r) { return r.levels + " × " + r.lmin + " min"; } },
         { id: "fee", label: "Fee split", key: "fee", sort: null, html: function (r) { return "<span class='small'>" + esc(r.fee) + "</span>"; } },
-        { id: "ex", label: "Rule excerpt", key: "ex", sort: null, html: function (r) { return "<span class='small'>" + esc(r.ex) + "<br>" + esc(r.stack || "") + "</span>"; } }
+        { id: "ex", label: "Rule excerpt", key: "ex", sort: null, html: function (r) { return "<span class='small'>" + esc(r.ex) + "<br>" + esc(r.stack || "") + (r.flags ? "<br><span class='chip warn'>" + esc(r.flags[0]) + "</span>" : "") + "</span>"; } },
+        { id: "src", label: "Source document", key: "source", sort: null, html: function (r) {
+            var out = '<a href="' + esc(r.source) + '" target="_blank" rel="noopener">official document</a>';
+            if (r.page) out += '<br><a href="' + esc(r.page) + '" target="_blank" rel="noopener">official poker page</a>';
+            if (r.document_url) out += '<br><span class="small">' + esc(r.document_url) + "</span>";
+            return '<span class="small">' + out + "</span>";
+          } }
       ];
       table(main, daily, cols, { sortKey: "start", sortDir: 1 });
       var susp = rows.filter(function (r) { return r.venue === "Wynn Las Vegas"; });
@@ -789,7 +802,8 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
       if (note) {
         note.innerHTML = "<strong>Series dates that can suspend the daily schedule:</strong> " +
           esc(susp.length) + " Wynn rows are published between 2026-11-27 and 2027-01-24 " +
-          "(WPT World Championship and Wynn Signature Series). Check the " +
+          "(WPT World Championship and Wynn Signature Series), which is when Wynn says its daily "
+          + "schedule is suspended. Check the " +
           '<a href="' + BASE + 'pages/schedule.html">schedule</a> before planning around a daily format.';
       }
     }).catch(showErr);
