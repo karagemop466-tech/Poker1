@@ -126,6 +126,57 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
 .calendar .slot .d { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
 .calendar .slot .t { font-size: 18px; font-weight: 700; margin: 2px 0; }
 
+/* ---------- print-friendly views (S16) ----------
+   Ctrl/Cmd-P on any page: navigation, search, filters and buttons are dropped,
+   tables repeat their header sheet after sheet and never split a row mid-way,
+   status chips become outlines so they survive a black-and-white printer, and
+   every external link prints its URL so a paper copy still carries the official
+   source behind each row. */
+@media print {
+  @page { margin: 14mm 12mm; }
+
+  body { background: #fff; color: #000; font-size: 10.5pt; line-height: 1.4; }
+
+  /* Drop interactive chrome; the verification footer stays for provenance. */
+  header.site, #filters, .filters, .toolbar, button { display: none !important; }
+  footer { border-top: 1px solid #999; font-size: 8.5pt; padding: 6px 0 0; text-align: left; }
+
+  main { max-width: none; margin: 0; padding: 0; }
+  main::before {
+    content: "Las Vegas Strip Poker Plan · https://karagemop466-tech.github.io/Poker1/ · printed view — verify each value against the live site before travel.";
+    display: block; font-size: 8pt; color: #555; margin-bottom: 8px;
+  }
+
+  a { color: #000; text-decoration: none; }
+  /* Paper keeps the source: every external link prints its URL once. */
+  main a[href^="http"]::after, footer a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 7pt; font-weight: 400; color: #555; word-break: break-all;
+  }
+
+  /* Tables: full width, header repeated on every sheet, no split rows. */
+  .table-wrap { overflow: visible !important; border: none; border-radius: 0; }
+  table { font-size: 9.5pt; page-break-inside: auto; }
+  thead { display: table-header-group; }
+  tfoot { display: table-footer-group; }
+  th { position: static !important; background: transparent !important; border-bottom: 2px solid #444; }
+  tr, li, .card, .day, .result, .slot, .kpi, .box, .callout { page-break-inside: avoid; }
+
+  /* Section rhythm without wasting sheets. */
+  h1 { font-size: 20pt; }
+  h2 { font-size: 14pt; border-bottom: 1px solid #ccc; padding-bottom: 2px; }
+  h3 { font-size: 12pt; }
+  h1, h2, h3 { page-break-after: avoid; }
+  p, .lead { orphans: 3; widows: 3; }
+
+  /* Status chips become outlines so they stay legible without colour. */
+  .chip { background: #fff !important; border: 1px solid currentColor; }
+
+  .card { border-color: #999; }
+  .grid { gap: 8px; }
+  .md pre, .md code { white-space: pre-wrap; word-break: break-word; }
+}
+
 </style>
 </head>
 <body data-page="otherRooms">
@@ -174,8 +225,8 @@ the value. Blank means unverified, never estimated.</p>
 <tr><td><strong>Planet Hollywood</strong><br><span class="small">Caesars Entertainment · on the Strip</span></td><td><strong>Poker room published</strong></td><td><span class="chip warn">No schedule published</span><br><span class="small">The official casino page confirms a live poker room and table count but publishes no tournament schedule, buy-in or structure.</span></td><td><span class="small">"23 Live Poker Tables" and "Planet Hollywood Casino takes up a notch with an exciting gaming floor, new live action poker room and poolside blackjack."</span></td><td><span class="small"><a href="https://www.caesars.com/planet-hollywood/casino">Official Planet Hollywood casino page</a></span></td></tr>
 <tr><td><strong>Mandalay Bay</strong><br><span class="small">MGM Resorts International · on the Strip</span></td><td><strong>Poker room published</strong></td><td><span class="chip warn">No schedule published</span><br><span class="small">The official poker page publishes hours, a price range and a group booking number, but no recurring tournament schedule. It says: "To set up a Poker Tournament as a group, please contact 702.632.7790."</span></td><td><span class="small">"The cards are dealt, and the bets are in. Get set for hand after hand of classic poker action." Hours: "Wednesday - Monday: 10:00 AM - 4:00 AM", "Tuesday: Closed". Price range "$60 - $1,000".</span></td><td><span class="small"><a href="https://mandalaybay.mgmresorts.com/en/casino/poker-tables.html">Official Mandalay Bay poker page</a></span></td></tr>
 <tr><td><strong>Paris Las Vegas</strong><br><span class="small">Caesars Entertainment · on the Strip</span></td><td>No poker room published</td><td><span class="chip warn">No schedule published</span><br><span class="small">No live poker room is published on the official casino page, so there is no tournament schedule to look for.</span></td><td><span class="small">The official casino page lists "Poker Derivative Table Games" (Face Up Pai Gow, Ultimate Texas Hold'Em, Let It Ride, Three Card Poker, Mississippi Stud, I Luv Suits, Crazy 4 Poker) and no live poker room.</span></td><td><span class="small"><a href="https://www.caesars.com/paris-las-vegas/casino">Official Paris Las Vegas casino page</a></span></td></tr>
-<tr><td><strong>Luxor</strong><br><span class="small">MGM Resorts International · on the Strip</span></td><td>No poker room published</td><td><span class="chip warn">No schedule published</span><br><span class="small">No live poker room is published on the official page. See flag F72: the MGM Resorts poker hub links this page under "Luxor Poker Tournaments".</span></td><td><span class="small">The official table-games page lists craps, roulette, blackjack, 3 Card Poker, mini baccarat, Free Bet Blackjack and Ultimate Texas Hold'em, and no live poker room.</span></td><td><span class="small"><a href="https://luxor.mgmresorts.com/en/casino/table-games.html">Official Luxor table games page</a>, <a href="https://www.mgmresorts.com/en/casino/poker.html">MGM Resorts official poker hub (links Luxor here)</a></span></td></tr>
-<tr><td><strong>Excalibur</strong><br><span class="small">MGM Resorts International · on the Strip</span></td><td>No poker room published</td><td><span class="chip warn">No schedule published</span><br><span class="small">No live poker room is published on the official casino page. See flag F73: the MGM Resorts poker hub links excalibur.mgmresorts.com/en/casino/poker-room.html, which redirects to this page.</span></td><td><span class="small">The official casino page lists Slots, $5 Live Blackjack, Table Games and the BetMGM Sportsbook, and no poker room.</span></td><td><span class="small"><a href="https://excalibur.mgmresorts.com/en/casino.html">Official Excalibur casino page</a>, <a href="https://www.mgmresorts.com/en/casino/poker.html">MGM Resorts official poker hub (links Excalibur here)</a></span></td></tr>
+<tr><td><strong>Luxor</strong><br><span class="small">MGM Resorts International · on the Strip</span></td><td>No poker room published</td><td><span class="chip warn">No schedule published</span><br><span class="small">No live poker room is published on the official page. See flag F71: the MGM Resorts poker hub links this page under "Luxor Poker Tournaments".</span></td><td><span class="small">The official table-games page lists craps, roulette, blackjack, 3 Card Poker, mini baccarat, Free Bet Blackjack and Ultimate Texas Hold'em, and no live poker room.</span></td><td><span class="small"><a href="https://luxor.mgmresorts.com/en/casino/table-games.html">Official Luxor table games page</a>, <a href="https://www.mgmresorts.com/en/casino/poker.html">MGM Resorts official poker hub (links Luxor here)</a></span></td></tr>
+<tr><td><strong>Excalibur</strong><br><span class="small">MGM Resorts International · on the Strip</span></td><td>No poker room published</td><td><span class="chip warn">No schedule published</span><br><span class="small">No live poker room is published on the official casino page. See flag F71: the MGM Resorts poker hub links excalibur.mgmresorts.com/en/casino/poker-room.html, which redirects to this page.</span></td><td><span class="small">The official casino page lists Slots, $5 Live Blackjack, Table Games and the BetMGM Sportsbook, and no poker room.</span></td><td><span class="small"><a href="https://excalibur.mgmresorts.com/en/casino.html">Official Excalibur casino page</a>, <a href="https://www.mgmresorts.com/en/casino/poker.html">MGM Resorts official poker hub (links Excalibur here)</a></span></td></tr>
 <tr><td><strong>SAHARA Las Vegas</strong><br><span class="small">SAHARA Las Vegas (independent) · on the Strip</span></td><td>No poker room published</td><td><span class="chip warn">No schedule published</span><br><span class="small">No live poker room is published on the official casino page.</span></td><td><span class="small">"SAHARA Las Vegas delivers one of the most unique gaming destinations on the Strip ... nearly 60,000 square foot casino ... Over 600 slot machines ... Over 50 table games." No poker room is listed.</span></td><td><span class="small"><a href="https://www.saharalasvegas.com/casino">Official SAHARA Las Vegas casino page</a></span></td></tr>
 <tr><td><strong>Resorts World Las Vegas</strong><br><span class="small">Genting · on the Strip</span></td><td>No poker room published</td><td><span class="chip warn">No schedule published</span><br><span class="small">No live poker room is published on the official gaming page or the official casino-events page.</span></td><td><span class="small">The official gaming page lists High Limit, Slots, Table Games and the Sky Casino, and no poker room. Its casino-events page lists slot and free-play promotions only.</span></td><td><span class="small"><a href="https://www.rwlasvegas.com/gaming/">Official Resorts World gaming page</a>, <a href="https://www.rwlasvegas.com/gaming/casino-events/">Official Resorts World casino events page</a></span></td></tr>
 <tr><td><strong>Fontainebleau Las Vegas</strong><br><span class="small">Fontainebleau Development · on the Strip</span></td><td>No poker room published</td><td><span class="chip warn">No schedule published</span><br><span class="small">No live poker room is published on the official casino page.</span></td><td><span class="small">The official casino page lists table games, "high-limit slots and poker machines" (electronic video poker) in the High Limit enclave, and the race and sports book. No live poker room is listed.</span></td><td><span class="small"><a href="https://www.fontainebleaulasvegas.com/casino/">Official Fontainebleau casino page</a></span></td></tr>

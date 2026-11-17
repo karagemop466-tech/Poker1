@@ -156,7 +156,7 @@ PAGES = {
 """),
     "pages/monitoring.html": ("Monitoring", "monitoring", """
 <h1>Source monitoring</h1>
-<p class="lead">Which official sources answered on the last check, which rows changed since the last snapshot, and every printed source flag.</p>
+<p class="lead">Two different checks, kept apart on purpose: the <strong>scheduled provenance check</strong> re-fetches every official document from GitHub Actions and reports whether the values printed on it moved, and the <strong>row-level check</strong> records which URLs answered and which dataset rows changed since the last snapshot. A run that reaches nothing is labelled a network blackout rather than a source outage.</p>
 <div id="content"></div>
 <h2>Rows carrying a source flag</h2>
 <div id="flagged"></div>

@@ -213,7 +213,7 @@ Being explicit, because these are the kind of errors that would otherwise ship a
 ### 9.4 Verification performed
 
 ```
-python3 scripts/build_data.py     # 317 rows: 80 SE (60 cash + 20 satellites), 60 MULTI, 46 RE, 129 UNV, 2 CONT; 70 days; 56 flagged; 7 hotels; 5 dated rates; 12 walking records
+python3 scripts/build_data.py     # 317 rows: 80 SE (60 cash + 20 satellites), 60 MULTI, 46 RE, 129 UNV, 2 CONT; 70 days; 78 flagged; 7 hotels; 5 dated rates; 12 walking records
 python3 scripts/build_site.py     # 21 pages, zero diff against the committed pages
 python3 scripts/check_links.py    # OK: schemas, local links, official hosts, rule objects, schedule contract, quote-backed costs, walking limit, provenance
 node scripts/smoke_test.js        # 21/21 pages render in a headless DOM with no page error

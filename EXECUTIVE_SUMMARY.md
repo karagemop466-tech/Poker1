@@ -6,7 +6,7 @@
 Every official tournament page and structure PDF listed below was re-fetched and re-read on
 **2026-11-17**, not carried forward: the DeepStack Extravaganza IV page (94 rows), the NYE page
 (49 rows), the Wynn Signature Series schedule PDF (38 rows) and the WPT World Championship schedule
-PDF (136 rows). The result is that **all 317 rows in the current dataset match their official sources**, with known source irregularities listed in `FLAGGED.md`. Hotel fees, taxes, rates and walking times were also
+PDF (136 rows). The result is that **all 317 rows in the current dataset match their official sources**, with known source irregularities listed in `FLAGGED.md` (including the NYE page printing the Dec 26, 2026 date as 2025). Hotel fees, taxes, rates and walking times were also
 re-checked on 2026-11-17.
 
 ## Bottom line
@@ -17,8 +17,8 @@ re-checked on 2026-11-17.
   **seat** into a bigger event rather than cash. All 37 DeepStack Extravaganza IV structure sheets and
   all 15 New Year's Eve sheets have been read, so every Venetian row in the dataset now carries a
   verified entry rule.
-- **105 rows sit in the separate section** because a second entry is possible: 60 multi-flight rows
-  whose sheets say a player who bags Day 2 chips may not play a later flight, and 45 Wynn rows whose
+- **106 rows sit in the separate section** because a second entry is possible: 60 multi-flight rows
+  whose sheets say a player who bags Day 2 chips may not play a later flight, and 46 re-entry rows whose
   official terms publish unlimited or limited re-entry.
 - **129 rows are still unverified on the entry rule** and are not ranked: 91 Wynn WPT rows (the
   milestone satellites and the events the WPT schedule prints without a structure sheet) and all 38

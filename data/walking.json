@@ -15,6 +15,16 @@
    "official_fact": "\"From The Venetian Lobby: Proceed across The Venetian casino floor ... Take the escalator up to level 2, Grand Canal Shoppes ... The Poker Room will be on your right.\"",
    "route_link": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-115.1693352,36.1217073%3B-115.168271,36.1241843?overview=false",
    "retrieved_on": "2026-11-17",
+   "cross_check": [
+    {
+     "label": "Google Maps walking directions between the same two coordinates",
+     "url": "https://www.google.com/maps/dir/?api=1&origin=36.1217073,-115.1693352&destination=36.1241843,-115.168271&travelmode=walking"
+    },
+    {
+     "label": "Apple Maps walking directions between the same two coordinates",
+     "url": "https://maps.apple.com/?saddr=36.1217073,-115.1693352&daddr=36.1241843,-115.168271&dirflg=w"
+    }
+   ],
    "sources": [
     {
      "label": "Nominatim lookup for the venetian coordinate",
@@ -39,6 +49,16 @@
    "official_fact": null,
    "route_link": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-115.1693352,36.1217073%3B-115.165362,36.1289345?overview=false",
    "retrieved_on": "2026-11-17",
+   "cross_check": [
+    {
+     "label": "Google Maps walking directions between the same two coordinates",
+     "url": "https://www.google.com/maps/dir/?api=1&origin=36.1217073,-115.1693352&destination=36.1289345,-115.165362&travelmode=walking"
+    },
+    {
+     "label": "Apple Maps walking directions between the same two coordinates",
+     "url": "https://maps.apple.com/?saddr=36.1217073,-115.1693352&daddr=36.1289345,-115.165362&dirflg=w"
+    }
+   ],
    "sources": [
     {
      "label": "Nominatim lookup for the venetian coordinate",
@@ -63,6 +83,16 @@
    "official_fact": "\"From The Palazzo Lobby: Proceed across The Palazzo Casino Floor ... The Poker Room will be straight ahead.\"",
    "route_link": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-115.168271,36.1241843%3B-115.168271,36.1241843?overview=false",
    "retrieved_on": "2026-11-17",
+   "cross_check": [
+    {
+     "label": "Google Maps walking directions between the same two coordinates",
+     "url": "https://www.google.com/maps/dir/?api=1&origin=36.1241843,-115.168271&destination=36.1241843,-115.168271&travelmode=walking"
+    },
+    {
+     "label": "Apple Maps walking directions between the same two coordinates",
+     "url": "https://maps.apple.com/?saddr=36.1241843,-115.168271&daddr=36.1241843,-115.168271&dirflg=w"
+    }
+   ],
    "sources": [
     {
      "label": "Nominatim lookup for the palazzo coordinate",
@@ -87,6 +117,16 @@
    "official_fact": null,
    "route_link": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-115.168271,36.1241843%3B-115.165362,36.1289345?overview=false",
    "retrieved_on": "2026-11-17",
+   "cross_check": [
+    {
+     "label": "Google Maps walking directions between the same two coordinates",
+     "url": "https://www.google.com/maps/dir/?api=1&origin=36.1241843,-115.168271&destination=36.1289345,-115.165362&travelmode=walking"
+    },
+    {
+     "label": "Apple Maps walking directions between the same two coordinates",
+     "url": "https://maps.apple.com/?saddr=36.1241843,-115.168271&daddr=36.1289345,-115.165362&dirflg=w"
+    }
+   ],
    "sources": [
     {
      "label": "Nominatim lookup for the palazzo coordinate",
@@ -111,6 +151,16 @@
    "official_fact": null,
    "route_link": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-115.1654043,36.1266219%3B-115.168271,36.1241843?overview=false",
    "retrieved_on": "2026-11-17",
+   "cross_check": [
+    {
+     "label": "Google Maps walking directions between the same two coordinates",
+     "url": "https://www.google.com/maps/dir/?api=1&origin=36.1266219,-115.1654043&destination=36.1241843,-115.168271&travelmode=walking"
+    },
+    {
+     "label": "Apple Maps walking directions between the same two coordinates",
+     "url": "https://maps.apple.com/?saddr=36.1266219,-115.1654043&daddr=36.1241843,-115.168271&dirflg=w"
+    }
+   ],
    "sources": [
     {
      "label": "Nominatim lookup for the wynn coordinate",
@@ -135,6 +185,16 @@
    "official_fact": "\"Players will register in the Wynn Las Vegas Poker Room, located in Encore at Wynn Las Vegas.\"",
    "route_link": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-115.1654043,36.1266219%3B-115.165362,36.1289345?overview=false",
    "retrieved_on": "2026-11-17",
+   "cross_check": [
+    {
+     "label": "Google Maps walking directions between the same two coordinates",
+     "url": "https://www.google.com/maps/dir/?api=1&origin=36.1266219,-115.1654043&destination=36.1289345,-115.165362&travelmode=walking"
+    },
+    {
+     "label": "Apple Maps walking directions between the same two coordinates",
+     "url": "https://maps.apple.com/?saddr=36.1266219,-115.1654043&daddr=36.1289345,-115.165362&dirflg=w"
+    }
+   ],
    "sources": [
     {
      "label": "Nominatim lookup for the wynn coordinate",
@@ -159,6 +219,16 @@
    "official_fact": null,
    "route_link": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-115.165362,36.1289345%3B-115.168271,36.1241843?overview=false",
    "retrieved_on": "2026-11-17",
+   "cross_check": [
+    {
+     "label": "Google Maps walking directions between the same two coordinates",
+     "url": "https://www.google.com/maps/dir/?api=1&origin=36.1289345,-115.165362&destination=36.1241843,-115.168271&travelmode=walking"
+    },
+    {
+     "label": "Apple Maps walking directions between the same two coordinates",
+     "url": "https://maps.apple.com/?saddr=36.1289345,-115.165362&daddr=36.1241843,-115.168271&dirflg=w"
+    }
+   ],
    "sources": [
     {
      "label": "Nominatim lookup for the encore coordinate",
@@ -183,6 +253,16 @@
    "official_fact": "\"Players will register in the Wynn Las Vegas Poker Room, located in Encore at Wynn Las Vegas.\"",
    "route_link": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-115.165362,36.1289345%3B-115.165362,36.1289345?overview=false",
    "retrieved_on": "2026-11-17",
+   "cross_check": [
+    {
+     "label": "Google Maps walking directions between the same two coordinates",
+     "url": "https://www.google.com/maps/dir/?api=1&origin=36.1289345,-115.165362&destination=36.1289345,-115.165362&travelmode=walking"
+    },
+    {
+     "label": "Apple Maps walking directions between the same two coordinates",
+     "url": "https://maps.apple.com/?saddr=36.1289345,-115.165362&daddr=36.1289345,-115.165362&dirflg=w"
+    }
+   ],
    "sources": [
     {
      "label": "Nominatim lookup for the encore coordinate",
@@ -207,6 +287,16 @@
    "official_fact": null,
    "route_link": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-115.1770065,36.1131149%3B-115.168271,36.1241843?overview=false",
    "retrieved_on": "2026-11-17",
+   "cross_check": [
+    {
+     "label": "Google Maps walking directions between the same two coordinates",
+     "url": "https://www.google.com/maps/dir/?api=1&origin=36.1131149,-115.1770065&destination=36.1241843,-115.168271&travelmode=walking"
+    },
+    {
+     "label": "Apple Maps walking directions between the same two coordinates",
+     "url": "https://maps.apple.com/?saddr=36.1131149,-115.1770065&daddr=36.1241843,-115.168271&dirflg=w"
+    }
+   ],
    "sources": [
     {
      "label": "Nominatim lookup for the bellagio coordinate",
@@ -231,6 +321,16 @@
    "official_fact": null,
    "route_link": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-115.1770065,36.1131149%3B-115.165362,36.1289345?overview=false",
    "retrieved_on": "2026-11-17",
+   "cross_check": [
+    {
+     "label": "Google Maps walking directions between the same two coordinates",
+     "url": "https://www.google.com/maps/dir/?api=1&origin=36.1131149,-115.1770065&destination=36.1289345,-115.165362&travelmode=walking"
+    },
+    {
+     "label": "Apple Maps walking directions between the same two coordinates",
+     "url": "https://maps.apple.com/?saddr=36.1131149,-115.1770065&daddr=36.1289345,-115.165362&dirflg=w"
+    }
+   ],
    "sources": [
     {
      "label": "Nominatim lookup for the bellagio coordinate",
@@ -255,6 +355,16 @@
    "official_fact": null,
    "route_link": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-115.1779977,36.1070287%3B-115.168271,36.1241843?overview=false",
    "retrieved_on": "2026-11-17",
+   "cross_check": [
+    {
+     "label": "Google Maps walking directions between the same two coordinates",
+     "url": "https://www.google.com/maps/dir/?api=1&origin=36.1070287,-115.1779977&destination=36.1241843,-115.168271&travelmode=walking"
+    },
+    {
+     "label": "Apple Maps walking directions between the same two coordinates",
+     "url": "https://maps.apple.com/?saddr=36.1070287,-115.1779977&daddr=36.1241843,-115.168271&dirflg=w"
+    }
+   ],
    "sources": [
     {
      "label": "Nominatim lookup for the aria coordinate",
@@ -279,6 +389,16 @@
    "official_fact": null,
    "route_link": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-115.1779977,36.1070287%3B-115.165362,36.1289345?overview=false",
    "retrieved_on": "2026-11-17",
+   "cross_check": [
+    {
+     "label": "Google Maps walking directions between the same two coordinates",
+     "url": "https://www.google.com/maps/dir/?api=1&origin=36.1070287,-115.1779977&destination=36.1289345,-115.165362&travelmode=walking"
+    },
+    {
+     "label": "Apple Maps walking directions between the same two coordinates",
+     "url": "https://maps.apple.com/?saddr=36.1070287,-115.1779977&daddr=36.1289345,-115.165362&dirflg=w"
+    }
+   ],
    "sources": [
     {
      "label": "Nominatim lookup for the aria coordinate",
@@ -303,6 +423,16 @@
    "official_fact": null,
    "route_link": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-115.1767568,36.1166277%3B-115.168271,36.1241843?overview=false",
    "retrieved_on": "2026-11-17",
+   "cross_check": [
+    {
+     "label": "Google Maps walking directions between the same two coordinates",
+     "url": "https://www.google.com/maps/dir/?api=1&origin=36.1166277,-115.1767568&destination=36.1241843,-115.168271&travelmode=walking"
+    },
+    {
+     "label": "Apple Maps walking directions between the same two coordinates",
+     "url": "https://maps.apple.com/?saddr=36.1166277,-115.1767568&daddr=36.1241843,-115.168271&dirflg=w"
+    }
+   ],
    "sources": [
     {
      "label": "Nominatim lookup for the caesars coordinate",
@@ -327,6 +457,16 @@
    "official_fact": null,
    "route_link": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-115.1767568,36.1166277%3B-115.165362,36.1289345?overview=false",
    "retrieved_on": "2026-11-17",
+   "cross_check": [
+    {
+     "label": "Google Maps walking directions between the same two coordinates",
+     "url": "https://www.google.com/maps/dir/?api=1&origin=36.1166277,-115.1767568&destination=36.1289345,-115.165362&travelmode=walking"
+    },
+    {
+     "label": "Apple Maps walking directions between the same two coordinates",
+     "url": "https://maps.apple.com/?saddr=36.1166277,-115.1767568&daddr=36.1289345,-115.165362&dirflg=w"
+    }
+   ],
    "sources": [
     {
      "label": "Nominatim lookup for the caesars coordinate",
