@@ -1,3 +1,31 @@
+# Session 71eacf83 — FINAL INTEGRATION SESSION (branch `arena/71eacf83-poker1`, base `5de6d8d` = `main` at PR #69)
+
+Claim written 2026-11-17T22:05Z and pushed before any data, script or page change, per the shared-task-board rules.
+
+**Takeover basis (coordination rule: a claim more than 60 minutes old with no commits may be taken over).**
+Six pull requests were open and untouched for ~20 hours when this session started (last commits
+2026-11-17 01:09–02:00 UTC, now 22:05 UTC); all six report `mergeable: CONFLICTING` against `main`.
+The owning sessions are treated as crashed. Each takeover is recorded in its PR with a disposition comment.
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Take over stale PR #46 (walking-table hotel names / destination notes, session `bb9a3717`) | **In progress** | `scripts/build_data.py`, `data/walking.json`, regenerated `index.html` + `pages/*`, `COORDINATION.md` | `71eacf83` |
+| Take over stale PR #51 (claim-only PR, session `d94b191b` — verify its scope against what `main` already has) | **In progress** | `COORDINATION.md` | `71eacf83` |
+| Take over stale PR #52 (WPT structure-sheet join + `verify_live.py`, session `ca6d75b1`) | **In progress** | `scripts/extract_wpt_*.py`, `scripts/verify_live.py`, `scripts/build_data.py`, `data/*`, `assets/app.js`, `.github/workflows/*`, `COORDINATION.md` | `71eacf83` |
+| Take over stale PR #53 (row-level live verifier, evidence-based `last_checked`, 30-min filter, deploy fix, session `d57243e7`) | **In progress** | `scripts/verify_live_rows.py`, `scripts/ui_test.js`, `assets/app.js`, `.github/workflows/pages.yml`, `data/*`, `COORDINATION.md` | `71eacf83` |
+| Take over stale PR #64 (daily feed for every publishing room, county-verified room tax, session `c7a324a6`) | **In progress** | `scripts/build_data.py`, `scripts/verify_rows.py`, `data/daily.json`, `data/hotels.json`, `data/sources.json`, `assets/app.js`, `COORDINATION.md` | `71eacf83` |
+| Take over stale PR #66 (monitor baseline repair, value-level change detection, session `1ebc7e08`) | **In progress** | `scripts/monitor_sources.py`, `scripts/check_source_facts.py`, `.github/workflows/monitor.yml`, `data/sources.json`, `COORDINATION.md` | `71eacf83` |
+| Final integration: merge all taken-over work into one branch, re-verify every published row against official sources, confirm the build has no broken links, open the PR to `main`, merge, confirm the Pages deploy, record the result here | **In progress** | union of the scopes above + `COORDINATION.md` | `71eacf83` |
+
+**Files owned by other live sessions:** none known — every open claim above is stale and taken over here.
+If a session wakes and objects, it should reply on its PR; this session will not discard any merged work.
+
+**Merge order planned** (smallest surface first, so later conflicts are against settled content):
+#46 → #66 → #64 → #53 → #52 → disposition of #51. After each merge: `build_data.py`, `build_site.py`,
+`check_links.py`, `verify_rows.py`, `smoke_test.js`; a full re-run of all five after the last merge.
+
+---
+
 # Session 212b84be — FINAL INTEGRATION SESSION (branch `arena/212b84be-poker1`, base `aea688a` = `main` at PR #37)
 ## Session 8a12503e — branch `arena/8a12503e-poker1` (base `aea688a`, `main` after PR #37)
 
