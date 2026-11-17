@@ -459,3 +459,16 @@ No tournament or hotel factual data was edited in this session. All user-request
 
 - PR #43 created from `arena/3bd2f25b-poker1` to `main` (https://github.com/karagemop466-tech/Poker1/pull/43); merged without waiting for review.
 - Merge result: merged into `main` as a2c0986 on 2026-11-17. PR link: https://github.com/karagemop466-tech/Poker1/pull/43. GitHub Pages: status `built`, source branch `main`, path `/`, live at https://karagemop466-tech.github.io/Poker1/ ; the `pages-build-deployment` succeeded after the merge. All flagged items (F1–F52, U1–U10) remain published on the Flagged for Review page with their source links and did not block the merge.
+## Session d57243e7 — branch `arena/d57243e7-poker1`, base `44fcc08` (2026-11-17)
+
+Claimed in this commit before implementation work. No other session holds an open claim on these files at
+the time of writing; PRs #36, #38, #39 and #41 belong to other sessions and are not edited here (PR #41 is
+reviewed and merged by this session because it is CLEAN and its `validate` check passed — the merge is
+recorded below, and its own author's branch is not modified).
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| T1 Live line-by-line re-verification of every published value (schedules, structure-sheet rules, hotel fees, dated rates, walking records) against the official pages on 2026-11-17, with a machine-checkable record and a fresh provenance run in GitHub Actions (network is open there) | in progress | `research/verification-2026-11-17-*.md`, `data/verification*.json`, `scripts/*`, `data/*.json` (via generators) | `d57243e7` |
+| T2 Make the Pages deploy resilient: `main` run `43992732904` failed at "Deploy to GitHub Pages" with *No artifacts named "github-pages" were found for this workflow run* although "Upload Pages artifact" reported success | in progress | `.github/workflows/pages.yml`, `COORDINATION.md` | `d57243e7` |
+| T3 Confirm every requested UI capability is present and enforced, not just claimed: shared search across all tables, date filter, single-entry toggle, per-day primary + fallback, overlap flags, trip-cost calculator, walking ≤30 min filter, "last checked" column, dated rate log | in progress | `assets/app.js`, `scripts/build_site.py`, `scripts/check_links.py`, `index.html`, `pages/*` | `d57243e7` |
+| T4 Refresh the six decision documents, PR to `main`, merge without waiting, confirm the Pages deploy, record the result | in progress | `EXECUTIVE_SUMMARY.md`, `QUESTIONS.md`, `SUGGESTIONS.md`, `FLAGGED.md`, `REVIEW.md`, `README.md`, `COORDINATION.md` | `d57243e7` |
