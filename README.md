@@ -1,7 +1,8 @@
 # Las Vegas Strip Poker Plan
 
 A source-verified plan for single-entry poker tournaments on the Las Vegas Strip and walkable hotels.
-Snapshot date: **2026-11-16** (hotel rate log, venue facts and an official re-read were added on **2026-11-17**; see `research/verification-2026-11-17-3f878ff5.md`).
+Snapshot date: **2026-11-17** (every official tournament page, structure PDF, hotel-policy page and
+booking-engine quote was re-fetched on that date; see `REVIEW.md` §9 and `research/verification-2026-11-17.md`).
 
 Live site: https://karagemop466-tech.github.io/Poker1/
 
@@ -15,7 +16,8 @@ Live site: https://karagemop466-tech.github.io/Poker1/
   - `daily.html` - the recurring Wynn daily formats, with fee splits and registration cut-offs.
   - `schedule.html` - day-by-day plan with a primary event, a conditional fallback and overlap flags.
   - `hotels.html` - resort fees, room-rate status, walking records and the dated rate log.
-  - `calculator.html` - prices a stay from verified fees and tax without inventing a rate.
+  - `calculator.html` - trip cost = entries x buy-in + nights x true hotel cost + parking + other, from
+    dated official-engine quotes, with what the chosen stay window holds.
   - `venues.html` and `venue-*.html` - one page per poker room with its hotels and events.
   - `search.html` - one search box across every row, hotel, venue, rate entry and document.
   - `monitoring.html` - source health, changed rows and every printed source flag.
@@ -42,9 +44,15 @@ Live site: https://karagemop466-tech.github.io/Poker1/
 - Milestone satellites are marked separately: their prize is a seat, not cash.
 - Hotel true cost includes resort fees. A value is blank until it is verified from an official source.
   Nothing is inferred.
-- Room rates are kept in a dated log. A true nightly cost is shown only when a logged rate, a resort
-  fee and a property-specific tax are all confirmed. Walking-time fields stay blank unless an official
-  source supports them, because an unverified time is not a verified walkability claim.
+- Room rates are kept in a dated log: five quotes are on file, each with its stay dates, occupancy, room
+  type, per-night rates, resort fee, tax total, cancellation terms, engine total and the date it was
+  read. A true nightly cost is the engine's own checkout total divided by the nights - never a rate
+  reconstructed from a percentage.
+- Walking times are **routed**, not published: none of the properties publishes one. Each of the twelve
+  hotel-to-poker-room rows records the OpenStreetMap foot-network time between geocoded coordinates,
+  links the geocoding lookup and the routing query, quotes the official statement that fixes where the
+  poker room is, and marks walks inside one resort as `internal` instead of timing them. The 30-minute
+  rule is applied and the three hotels that fail it stay listed and flagged.
 - Every table row links to an official source, and every rule field keeps the clause text it came from.
 
 ## Rebuild and check

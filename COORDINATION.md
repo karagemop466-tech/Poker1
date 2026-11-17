@@ -274,6 +274,25 @@ Claimed at commit `304f0bd` (pushed before any data or page change). Base: `main
   - Dropped as superseded by `main`: `scripts/check_sources.py`, `.github/workflows/source-monitor.yml`, `data/changelog.json`, `data/hotel_rates.json`, `pages/changes.html`, `pages/trip-cost.html`.
   - **Value added by this session:** read two official sources `main` had not used and recorded the one new verified fact they contain — the Wynn daily tournament terms state *"Registration for each Event will open four (4) hours prior to the scheduled start of play"*, so registration for the 12 p.m. daily events opens at **8 a.m.** This is the only registration *opening* time on any official source read so far, and it closes question I12 for Wynn. Recorded in the Wynn venue note, `data/daily.json`, `EXECUTIVE_SUMMARY.md` section 5 and `QUESTIONS.md` I12.
   - Also recorded in `data/daily.json`: the two official sources word the daily suspension differently (the poker page names Wynn Signature, Wynn Millions and Classic series; each daily structure sheet says "may be suspended during Seniors Events, Classic Events, or other Tournament Series"). Neither names the WPT World Championship explicitly, so it is flagged as confirm-before-travelling.
+
+## Session bb9a3717 — integration + live re-verification (branch `arena/bb9a3717-poker1`)
+
+Claimed before implementation work on 2026-11-17. Scope is disjoint from the closed claims above (no other
+session holds an open claim; the stale PR #24 branch `arena/bad329a9-poker1` is `CONFLICTING` and superseded
+by `main`, and is not edited here).
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Re-fetch every official tournament / hotel / policy URL that the dataset depends on (today, 2026-11-17) and reconcile each row and hotel value against the live page; record every discrepancy | **Done** | `data/*.json` (via generators), `research/verification-2026-11-17.md` | `bb9a3717` |
+| Capture live date-specific hotel quotes for the trip window and log true cost per night = rate + resort fee + tax, like-for-like, with checkout total / nightly average / cancellation terms | **Done** | `data/rates.json`, `data/hotels.json`, `pages/calculator.html` | `bb9a3717` |
+| Record walking times for each hotel–venue pair from a published routing source, apply the 30-minute rule | **Done** | `data/walking.json`, `pages/venues.html`, `pages/venue-*.html` | `bb9a3717` |
+| Add the trip-cost calculator (entries × buy-in + nights × true hotel cost) bound to the verified rate log | **Done** | `assets/app.js`, `pages/calculator.html`, `scripts/build_site.py` | `bb9a3717` |
+| Refresh Executive Summary, Questions, Suggestions, Flagged, Review, README; validate; PR → `main`; merge; confirm Pages deploy | **Done** | the six Markdown documents, `COORDINATION.md` | `bb9a3717` |
+
+**Network note.** This sandbox reaches `github.com` only through `git`/`gh`; direct HTTPS to operator domains
+fails with `SSL_ERROR_SYSCALL`. Live page retrieval was therefore done with the agent's page-fetch tool, which
+does have outbound access, and every value below is quoted from that retrieval with the URL.
+
 - 2026-11-17: `origin/main`'s COORDINATION.md had been reduced to the single session 54ae4633 section (15 lines), dropping the board history from `bfc8951`. Session `2e5232bc` restored the full history below the 54ae4633 section, unchanged, so no earlier session's record is lost. Other sessions should append to this file rather than overwrite it.
 
 ## Session 2e5232bc — branch `arena/2e5232bc-poker1`, base `bfc8951`

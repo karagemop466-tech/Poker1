@@ -67,7 +67,7 @@ def venue_page(title, venue_id):
 PAGES = {
     "index.html": ("Home", "index", """
 <h1>Las Vegas Strip Poker Plan</h1>
-<p class="lead">Single-entry tournaments and walkable hotels, checked against official sources on 2026-11-16. Blank cells are unverified. No value is inferred.</p>
+<p class="lead">Single-entry tournaments and walkable hotels, every official source re-checked on 2026-11-17. Blank cells are unverified. No value is inferred.</p>
 <div class="grid" id="kpis"></div>
 <h2>Start here</h2>
 <div class="grid">
@@ -78,7 +78,7 @@ PAGES = {
   <a class="card tile" href="pages/daily.html"><h3>Daily feed</h3><p>Wynn's recurring daily tournaments: format, guarantee, fee split and cut-offs.</p></a>
   <a class="card tile" href="pages/schedule.html"><h3>Schedule</h3><p>Day-by-day verified single-entry options, with a date picker.</p></a>
   <a class="card tile" href="pages/hotels.html"><h3>Hotels</h3><p>Resort fees, room-rate status, walking records and the dated rate log.</p></a>
-  <a class="card tile" href="pages/calculator.html"><h3>Rate calculator</h3><p>Price a stay from verified fees, tax and a logged quote. Nothing is assumed.</p></a>
+  <a class="card tile" href="pages/calculator.html"><h3>Trip cost calculator</h3><p>Entries × buy-in + nights × true hotel cost + parking, from dated official-engine quotes. Nothing is assumed.</p></a>
   <a class="card tile" href="pages/venues.html"><h3>Venues</h3><p>Each poker room, the hotels attached to it and the events played there.</p></a>
   <a class="card tile" href="pages/search.html"><h3>Search</h3><p>One box across every row, hotel, venue, document and rate on the site.</p></a>
   <a class="card tile" href="pages/monitoring.html"><h3>Monitoring</h3><p>Source health, changed rows and every printed source flag.</p></a>
@@ -120,7 +120,7 @@ PAGES = {
 """),
     "pages/hotels.html": ("Hotels", "hotels", """
 <h1>Hotels near the Strip</h1>
-<p class="lead">Resort fee and room-rate status are shown per hotel. True cost per night is blank until a room rate is verified.</p>
+<p class="lead">Fee, tax, true cost and routed walking time for every property. True cost per night is the official booking engine's own checkout total divided by the nights, so it exists only where a dated quote was captured.</p>
 <div class="card callout" id="method"></div>
 <div id="content"></div>
 <p class="small">Walking time to each venue is not published on any official source, so it is blank.</p>

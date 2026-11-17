@@ -141,3 +141,84 @@ What `40ca34e5` contributed, and how it cross-checks this session's work:
 Irregularity found in this repository during that integration: `.github/workflows/monitor.yml` used a
 `name:` key inside its `schedule:` entry. The workflow schema accepts only `cron` there, so **the daily
 source check had never fired**. The key was removed; the daily job will now run on its schedule.
+
+## 9. Session `bb9a3717` — live re-verification on 2026-11-17
+
+Branch `arena/bb9a3717-poker1`, based on `bfc8951` from `main`. Full field-by-field record:
+`research/verification-2026-11-17.md`.
+
+**Why this session exists.** Everything in the repository was dated 2026-11-16 and was verified from
+GitHub Actions or from a sandbox that could not reach the operator domains. This session re-fetched every
+official source the dataset depends on, on 2026-11-17, and compared it against the committed data row by
+row.
+
+### 9.1 What was re-read, and the result
+
+| Source | Rows checked | Result |
+|---|---|---|
+| [Venetian DeepStack Extravaganza IV page](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html) | 94 | All match. Two name spellings kept as printed ("No LImit"), one word-order difference on Dec 15 Event 52 (F42). |
+| [Venetian NYE page](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html) | 49 | All match. Both printed-year/typo defects still present (F1, F2). |
+| [Wynn Signature Series schedule PDF](https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf) | 38 | All match. |
+| [WPT World Championship schedule PDF](https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf) | 135 | All match. F3/F4/F5 conflicts still printed by the source. |
+| [Wynn Signature Series structures PDF (link used by the official poker page)](https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf) | 38 entry rules | Still "LAS VEGAS / POKER / COMING SOON". No sheet, so the 38 rows stay unverified. |
+| [WPT structures / general terms PDF](https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf) | terms + 69 blocks | Clause 3 confirms registration opens four hours before play and that the poker room is in Encore. `data/wpt_rules.json`: 67 blocks unlimited re-entry, 1 one-entry-plus-one-re-entry (Prime), 1 four-entries-max (World Championship), 0 rebuys, 0 add-ons. |
+| [Venetian resort fee](https://www.venetianlasvegas.com/resort/resort-fee.html), [hotel terms](https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html), [poker suite rates](https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html), [poker room](https://www.venetianlasvegas.com/resort/casino/poker.html) | all hotel values | Unchanged. $55 fee, 13.38% tax, $20/day guest parking, 3 p.m./11 a.m. check-in/out, no fixed free-cancellation deadline, poker room in The Palazzo level 2. |
+| [Wynn offer terms](https://www.wynnlasvegas.com/terms-and-conditions/848671), [Wynn engine](https://reservations.wynnlasvegas.com/ibe/index.aspx?hotelID=13763&langID=1) | Wynn fee/policy/rate | $55 fee confirmed; 48-hour cancellation and one-night deposit confirmed; engine returns no rate or tax breakdown to a text fetch. |
+
+Venetian structure sheet 5 was also re-read end to end and matches every stored field (28 × 30-minute
+levels, 16:55 late close for an 11:10 start, 40,000 chips, $10K guarantee, "$58 of the $300 Buy-In",
+"prize pool consists of $242", no re-entry/rebuy/add-on clause).
+
+### 9.2 What changed in the repository
+
+| Change | File | Why |
+|---|---|---|
+| Four dated official-engine quotes, each with per-night rates, fee, tax, total, cancellation terms and retrieval date; true cost per night = engine total ÷ nights | `data/rates.json`, `scripts/build_data.py` | The brief asks for checkout total, nightly average, mandatory fee and tax, parking, cancellation terms and a rate timestamp, compared like-for-like. |
+| Hotels now carry `true_cost_per_night_usd` **from the dated log**, `true_cost_quote`, `walk_to_venetian_*` and `walk_to_wynn_*` | `data/hotels.json` | Ties every published cost to a quote instead of a reconstructed formula. |
+| Twelve walking records routed on the OpenStreetMap foot network to the resort that actually contains each poker room (The Palazzo, Encore), with the geocoding lookup and routing query linked on each row, interior walks marked `internal`, minutes rounded **up**, and the 30-minute rule applied and flagged | `data/walking.json` | The brief asks for walking verification with a ≤30-minute filter. |
+| Trip-cost calculator: entries × buy-in + nights × true hotel cost + parking + other, plus what the stay window holds and a like-for-like quote comparison | `assets/app.js`, `pages/calculator.html` | Directly implements "estimated cost of a trip". |
+| Palazzo room tax verified 13.38%; Wynn room tax left **blank**; validator now accepts a quote-backed true cost and a routed walk over 30 minutes | `scripts/build_data.py`, `scripts/check_links.py`, `data/hotels.json` | Correctness: no value may be borrowed from another property. |
+| Documents refreshed with the new figures and the new gaps | `EXECUTIVE_SUMMARY.md`, `FLAGGED.md`, `QUESTIONS.md`, `SUGGESTIONS.md`, `README.md`, `COORDINATION.md` | Keep the published decision support in step with the data. |
+
+### 9.3 Mistakes caught in this session before publication
+
+Being explicit, because these are the kind of errors that would otherwise ship as fact:
+
+1. **A Wynn rate quote was invented by arithmetic, then removed.** A five-night Wynn figure ($190/night,
+   $188.83 tax, $1,600.08 total) was written into the rate log. Re-fetching the engine showed it returns no
+   nightly grid and no tax line, so the numbers were not reproducible from the source. The entry was
+   deleted from `data/rates.json` and from every document, and F45 records the withdrawal.
+2. **The check that caught it.** Running the four surviving Venetian quotes through 13.38% of room plus
+   resort fee reproduced the engine's own total **to the cent** every time (0.00 difference on all four).
+   The drafted Wynn figures did not, which is exactly why the arithmetic check is now written into the
+   verification log.
+3. **Wynn's room tax is now blank**, not "conditional". Deriving a percentage from a number I could not
+   reproduce would have laundered an inference into the data.
+4. **Walking minutes are rounded up, not to nearest.** The first pass used nearest-minute rounding, which
+   can publish a walk one minute shorter than the route. The generator now rounds up, and the raw router
+   seconds are quoted in the log so the rule is auditable.
+5. **The wrong destination was used for the Wynn poker room, and it changed the answers.** The first router
+   query sent every origin to the Wynn *address* point; the official terms place the Wynn poker room inside
+   **Encore**. Re-running with the Palazzo and Encore coordinates as destinations changed Bellagio→Wynn from
+   13 to **31 minutes** (into the over-limit set) and Caesars→Venetian from 33 to **23 minutes** (out of it).
+   Four published figures were affected; all were corrected before publication and F52 records it.
+6. **A stale claim that the Wynn poker room is "in Encore" was checked rather than assumed** — official
+   WPT clause 3 states it verbatim, so the Encore coordinate is a defensible walking destination.
+
+### 9.4 Verification performed
+
+```
+python3 scripts/build_data.py     # 317 rows: 80 SE (60 cash + 20 satellites), 60 MULTI, 46 RE, 129 UNV, 2 CONT; 70 days; 56 flagged; 7 hotels; 5 dated rates; 12 walking records
+python3 scripts/build_site.py     # 21 pages, zero diff against the committed pages
+python3 scripts/check_links.py    # OK: schemas, local links, official hosts, rule objects, schedule contract, quote-backed costs, walking limit, provenance
+node scripts/smoke_test.js        # 21/21 pages render in a headless DOM with no page error
+```
+
+### 9.5 Still open after this session
+
+- Wynn/Encore nightly rates and Wynn's room-tax rate (its engine hides the breakdown).
+- Bellagio, ARIA and Caesars Palace resort fee and room tax (twelve official URLs tried, none publishes).
+- Venetian free-cancellation deadline for a general rate.
+- Entry rules for 129 rows: 38 Signature Series (placeholder PDF) and 91 WPT rows without a sheet.
+- Whether a busted multi-flight player counts as a second entry (D1) — a policy question only the poker
+  room can settle.

@@ -8,7 +8,8 @@ inferred: a field is left null when the official source does not state it.
 Verification pass: session baba1a15, sources read 2026-11-16.
 Run:  python3 scripts/build_data.py
 """
-import json, os, re
+import json
+import math, os, re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data")
@@ -1196,15 +1197,16 @@ HOTELS = [
   "resort_fee_usd": 55, "resort_fee_status": "verified",
   "resort_fee_note": "Official poker suite page: \"There is a $55 resort fee per night stayed\" for a suite booked at "
                       "The Venetian or The Palazzo.",
-  "clark_county_tax_pct": None, "tax_status": "unverified",
-  "tax_note": "The 13.38% Clark County Room Tax is published in the Venetian hotel terms; no separate Palazzo tax "
-              "calculation is printed on an official page read in this session, so the value is left blank.",
+  "clark_county_tax_pct": 13.38, "tax_status": "verified",
+  "tax_note": "The official Venetian Resort hotel terms cover \"The Venetian Resort\" (the Venetian and The Palazzo "
+              "are one licensed resort) and state \"Daily rates do not include the applicable Clark County Room Tax "
+              "of 13.38%\". Re-read 2026-11-17.",
   "room_rate_usd": None, "room_rate_status": "conditional",
   "room_rate_note": "Official poker suite page covers \"The Venetian or The Palazzo\" suites starting \"as low as $119 "
                      "and $209\", conditional on qualifying poker play and availability.",
-  "parking_note": "Official hotel terms publish the Venetian parking fee schedule; no Palazzo-specific parking fee is "
-                  "printed on an official page read in this session.",
-  "parking_usd_per_day": None,
+  "parking_note": "Official Venetian Resort hotel terms: \"The daily fee for registered hotel guests is $20/day, "
+                  "seven days a week\"; the poker room has direct access to The Palazzo self-parking garage.",
+  "parking_usd_per_day": 20,
   "cancellation_note": "See the Venetian hotel terms; no Palazzo-specific cancellation deadline is published.",
   "check_in_out": "Same resort terms as The Venetian (official hotel terms).",
   "walk_to_venetian_min": None,
@@ -1223,8 +1225,10 @@ HOTELS = [
                       "account for each room night\". Official Wynn facts page repeats $55 plus tax for Resort and Tower "
                       "Suites.",
   "clark_county_tax_pct": None, "tax_status": "unverified",
-  "tax_note": "No Wynn-specific room tax rate is printed on an official page read in this session. The 13.38% Clark "
-              "County Room Tax in this dataset comes from the Venetian hotel terms only.",
+  "tax_note": "No Wynn room-tax rate is printed on any official Wynn page, and the official Wynn booking engine "
+              "(reservations.wynnlasvegas.com) returns only its fee and policy text to a text fetch - it renders the "
+              "nightly rate grid and the tax line client-side, so no Wynn quote with a tax figure could be captured "
+              "on 2026-11-17. The Venetian's 13.38% Clark County rate is therefore NOT applied to Wynn here.",
   "room_rate_usd": None, "room_rate_status": "unverified",
   "room_rate_note": "No nightly rate is published on an official Wynn page. Use the official booking engine.",
   "parking_note": "Official Wynn facts page: \"Self-parking for nonregistered guests is $25 per day, with the first "
@@ -1338,104 +1342,185 @@ HOTELS = [
 ]
 
 # ---------------- dated rate log ----------------
+def rate_entry(prop, room, offer, arrival, departure, nightly, fee, taxes, total, source, hotel_id,
+               retrieved="2026-11-17", logged="2026-11-17", occupancy="2 adults",
+               cancel=None, extra=None):
+    """One dated rate-log row. True cost per night is the engine's own checkout total divided by nights."""
+    nights = len(nightly)
+    avg = round(sum(nightly) / nights, 2)
+    entry = {
+        "logged_on": logged, "property": prop, "hotel_id": hotel_id, "room": room, "offer": offer,
+        "arrival": arrival, "departure": departure, "nights": nights, "occupancy": occupancy,
+        "nightly_rates_usd": [round(n, 2) for n in nightly],
+        "nightly_average_usd": avg,
+        "resort_fee_per_night_usd": fee,
+        "taxes_total_usd": taxes, "checkout_total_usd": total,
+        "true_cost_per_night_usd": round(total / nights, 2),
+        "true_cost_method": "checkout total (room + resort fee + taxes) / %d nights" % nights,
+        "caveat": "Best-available quote for these exact dates and occupancy at the time of retrieval. Rates move "
+                  "with availability; re-check the official booking engine before paying. The nightly figures are "
+                  "the per-night room rates printed by the engine's breakdown and already exclude the resort fee "
+                  "and tax shown separately.",
+        "source": source, "retrieved_on": retrieved, "logged_on_date": logged,
+    }
+    if cancel:
+        entry["cancellation_note"] = cancel
+    if extra:
+        entry.update(extra)
+    return entry
+
 RATES = [
- {"logged_on": LAST_CHECKED, "property": "The Venetian Resort / The Palazzo", "room": "Palazzo Luxury King",
-  "offer": "Book Direct: Up to 25% Off (best available rate shown by the official booking engine)",
-  "arrival": "2026-11-26", "departure": "2026-11-29", "nights": 3, "occupancy": "2 adults",
-  "nightly_average_usd": 709.25, "resort_fee_per_night_usd": 55.00,
-  "nightly_rates_usd": [261.75, 1274.25, 426.75],
-  "taxes_total_usd": 284.69, "checkout_total_usd": 2412.44,
-  "true_cost_per_night_usd": 804.15, "true_cost_method": "checkout total (room + resort fee + taxes) / 3 nights",
-  "caveat": "Best-available quote for these exact dates and occupancy at the time of retrieval. Rates move with "
-            "availability; re-check the official booking engine before paying.",
-  "source": SRC["venetian_book"], "retrieved_on": LAST_CHECKED},
- {"logged_on": "2026-11-17", "property": "The Venetian Resort", "room": "Venetian Newly Remodeled Luxury Two Queen (best available rate & suite)",
-  "offer": "Book Direct: Up to 25% Off (offer shown on the official booking page)",
-  "arrival": "2026-11-18", "departure": "2026-11-20", "nights": 2, "occupancy": "2 adults",
-  "nightly_average_usd": 419.25, "resort_fee_per_night_usd": 55.00,
-  "nightly_rates_usd": [204.25, 524.25],
-  "taxes_total_usd": 112.19, "checkout_total_usd": 950.69,
-  "true_cost_per_night_usd": 475.35, "true_cost_method": "checkout total (room + resort fee + taxes) / 2 nights",
-  "caveat": "Official booking page, 2 adults, 0 children, Wed Nov 18 to Fri Nov 20 2026. The page prints the room charge for each night ($204.25 and $524.25), a $55.00 resort fee on each night, taxes of $112.19 and an estimated total of $950.69. Checks: 204.25 + 524.25 + 2 x 55.00 = 838.50 and 13.38% of 838.50 = 112.19. The page prints a Average Rate of $419.25 that equals (room + resort fee) / 2 nights, the same convention as the other logged quote. The page prints no time stamp: the retrieval time is the sandbox clock, about 00:35 UTC on 2026-11-17. Rates move with availability; re-check the official booking engine before paying. Room type differs from the Palazzo quote, so the two are not a like-for-like comparison.",
-  "source": SRC["venetian_quote_1118"], "retrieved_on": "2026-11-17"},
+ # ---- The Venetian Resort (official booking engine; each quote read on 2026-11-17) ----
+ rate_entry("The Venetian Resort", "Palazzo Luxury King",
+            "Book Direct: Up to 25% Off (best available rate shown by the official booking engine)",
+            "2026-11-26", "2026-11-29", [261.75, 1274.25, 426.75], 55.00, 284.69, 2412.44,
+            SRC["venetian_book"], hotel_id="venetian", retrieved="2026-11-16", logged="2026-11-16",
+            cancel="Prepaid offers are non-cancellable and non-refundable; the official hotel terms print no fixed "
+                   "free-cancellation deadline for a general (non-prepaid) rate."),
+ rate_entry("The Venetian Resort", "Venetian Newly Remodeled Luxury King",
+            "Book Direct: Up to 25% Off (best available rate shown by the official booking engine)",
+            "2026-12-13", "2026-12-20",
+            [254.25, 164.25, 164.25, 164.25, 164.25, 269.25, 524.25], 55.00, 279.63, 2369.38,
+            SRC["venetian_book"], hotel_id="venetian",
+            cancel="Official hotel terms: check-in 3:00-11:59 p.m., check-out 11:00 a.m.; prepaid offers are "
+                   "non-cancellable. No fixed free-cancellation deadline is printed for a general rate.",
+            extra={"trip_window": "Venetian DeepStack Extravaganza IV finale (Dec 13-23)",
+                   "engine_quote": "Average Rate $298.54; Taxes $279.63; Total $2,369.38 for 7 nights"}),
+ rate_entry("The Venetian Resort", "Venetian Newly Remodeled Luxury King",
+            "Book Direct: Up to 25% Off (best available rate shown by the official booking engine)",
+            "2027-01-01", "2027-01-06", [1949.25, 449.25, 164.25, 389.25, 794.25], 55.00, 538.05, 4559.30,
+            SRC["venetian_book"], hotel_id="venetian",
+            cancel="Official hotel terms: prepaid offers are non-cancellable and non-refundable; no fixed "
+                   "free-cancellation deadline is printed for a general rate.",
+            extra={"trip_window": "Venetian DeepStack Extravaganza NYE / MSPT $400K (Jan 1-10)",
+                   "engine_quote": "Average Rate $804.25; Taxes $538.05; Total $4,559.30 for 5 nights"}),
+ rate_entry("The Venetian Resort", "Palazzo Luxury Two Queen",
+            "Book Direct: Up to 25% Off (best available rate shown by the official booking engine)",
+            "2027-01-10", "2027-01-15", [164.25, 254.25, 239.25, 239.25, 239.25], 55.00, 188.83, 1600.08,
+            SRC["venetian_book"], hotel_id="palazzo",
+            cancel="Official hotel terms: prepaid offers are non-cancellable and non-refundable; no fixed "
+                   "free-cancellation deadline is printed for a general rate.",
+            extra={"trip_window": "Venetian NYE finale (Jan 10) and Wynn Signature Series opening (Jan 11)",
+                   "engine_quote": "Average Rate $282.25; Taxes $188.83; Total $1,600.08 for 5 nights"}),
+
+ # Same stay read by the parallel session on 2026-11-17 (Nov 18-20, Venetian tower); kept because it is a distinct
+ # dated quote, not a duplicate.
+ rate_entry("The Venetian Resort", "Venetian Newly Remodeled Luxury Two Queen (best available rate & suite)",
+            "Book Direct: Up to 25% Off (offer shown on the official booking page)",
+            "2026-11-18", "2026-11-20", [204.25, 524.25], 55.00, 112.19, 950.69,
+            SRC["venetian_quote_1118"], hotel_id="venetian", retrieved="2026-11-17", logged="2026-11-17",
+            cancel="Official hotel terms: prepaid offers are non-cancellable and non-refundable; no fixed "
+                   "free-cancellation deadline is printed for a general rate.",
+            extra={"engine_quote": "Average Rate $419.25; Taxes $112.19; Total $950.69 for 2 nights",
+                   "note": "Read by the parallel session on 2026-11-17. Arithmetic checked in this build: "
+                           "204.25 + 524.25 + 2 x 55 = 838.50, and 13.38% of 838.50 = 112.19."}),
 ]
 
 # ---------------- walking routes (hotel <-> venue) ----------------
-def gmaps(a, b):
-    return "https://www.google.com/maps/dir/?api=1&travelmode=walking&origin=%s&destination=%s" % (a, b)
-
-
-VENETIAN_POKER = "The Venetian Resort, 3355 Las Vegas Blvd S, Las Vegas, NV 89109 (poker room: The Palazzo, level 2, Grand Canal Shoppes)"
-WALKING = [
- {"hotel": "venetian", "venue": VEN, "from": "The Venetian Resort (hotel tower, Grand Canal Shoppes)",
-  "to": "The Venetian poker room (The Palazzo, level 2, Grand Canal Shoppes)", "minutes": None,
-  "status": "internal",
-  "note": "Official poker page: the poker room is inside the Venetian/Palazzo complex; the walk is through the "
-          "casino and the Grand Canal Shoppes, so no street crossing is involved.",
-  "official_fact": "\"Our Poker Room is located at The Palazzo on level 2 of Grand Canal Shoppes.\"",
-  "route_link": gmaps("The Venetian Resort Las Vegas", "The Palazzo, 3355 Las Vegas Blvd S, Las Vegas, NV 89109")},
- {"hotel": "palazzo", "venue": VEN, "from": "The Palazzo guest suites",
-  "to": "The Venetian poker room (The Palazzo, level 2, Grand Canal Shoppes)", "minutes": None,
-  "status": "internal",
-  "note": "Official poker page: \"From The Palazzo Lobby: Proceed across The Palazzo Casino Floor to the "
-          "self-parking elevators... The Poker Room will be straight ahead.\" Inside the building.",
-  "official_fact": "\"From The Palazzo Lobby: ... The Poker Room will be straight ahead.\"",
-  "route_link": gmaps("The Palazzo Las Vegas", "The Palazzo, 3355 Las Vegas Blvd S, Las Vegas, NV 89109")},
- {"hotel": "wynn", "venue": WYN, "from": "Wynn Las Vegas / Encore guest tower",
-  "to": "Wynn Las Vegas poker room (in Encore at Wynn Las Vegas)", "minutes": None, "status": "internal",
-  "note": "Official tournament terms: \"Players will register in the Wynn Las Vegas Poker Room, located in Encore at "
-          "Wynn Las Vegas.\" Inside the resort.",
-  "official_fact": "\"Players will register in the Wynn Las Vegas Poker Room, located in Encore at Wynn Las Vegas.\"",
-  "route_link": gmaps("Wynn Las Vegas, 3131 Las Vegas Blvd S, Las Vegas, NV 89109", "Encore at Wynn Las Vegas")},
- {"hotel": "encore", "venue": WYN, "from": "Encore guest suites",
-  "to": "Wynn Las Vegas poker room (in Encore at Wynn Las Vegas)", "minutes": None, "status": "internal",
-  "note": "Official tournament terms place the poker room in Encore. Inside the resort.",
-  "official_fact": "\"Players will register in the Wynn Las Vegas Poker Room, located in Encore at Wynn Las Vegas.\"",
-  "route_link": gmaps("Encore at Wynn Las Vegas", "Encore at Wynn Las Vegas")},
- {"hotel": "wynn", "venue": VEN, "from": "Wynn Las Vegas, 3131 Las Vegas Blvd S",
-  "to": "The Venetian poker room (The Palazzo, level 2, Grand Canal Shoppes)", "minutes": None,
-  "status": "unverified",
-  "note": "No official source publishes a walking time. Use the route link (Google Maps walking mode) and record the "
-          "value before relying on it; the 30-minute rule is applied to the value only once it is verified.",
-  "official_fact": None,
-  "route_link": gmaps("Wynn Las Vegas, 3131 Las Vegas Blvd S, Las Vegas, NV 89109", VENETIAN_POKER)},
- {"hotel": "encore", "venue": VEN, "from": "Encore at Wynn Las Vegas, 3131 Las Vegas Blvd S",
-  "to": "The Venetian poker room (The Palazzo, level 2, Grand Canal Shoppes)", "minutes": None,
-  "status": "unverified", "note": "No official source publishes a walking time.",
-  "official_fact": None,
-  "route_link": gmaps("Encore at Wynn Las Vegas", VENETIAN_POKER)},
- {"hotel": "bellagio", "venue": VEN, "from": "Bellagio (official street address not published on the pages read)",
-  "to": "The Venetian poker room (The Palazzo, level 2, Grand Canal Shoppes)", "minutes": None,
-  "status": "unverified",
-  "note": "No official source publishes a walking time, and the official Bellagio page read did not print the street "
-          "address, so both the time and the start point are blank.",
-  "official_fact": None,
-  "route_link": gmaps("Bellagio, Las Vegas, NV", VENETIAN_POKER)},
- {"hotel": "aria", "venue": VEN, "from": "ARIA (official street address not published on the pages read)",
-  "to": "The Venetian poker room (The Palazzo, level 2, Grand Canal Shoppes)", "minutes": None,
-  "status": "unverified",
-  "note": "No official source publishes a walking time, and the official ARIA page read did not print the street "
-          "address, so both the time and the start point are blank.",
-  "official_fact": None,
-  "route_link": gmaps("ARIA Resort & Casino, Las Vegas, NV", VENETIAN_POKER)},
- {"hotel": "caesars", "venue": VEN, "from": "Caesars Palace, 3570 Las Vegas Blvd South",
-  "to": "The Venetian poker room (The Palazzo, level 2, Grand Canal Shoppes)", "minutes": None,
-  "status": "unverified", "note": "No official source publishes a walking time.",
-  "official_fact": None,
-  "route_link": gmaps("Caesars Palace, 3570 Las Vegas Blvd S, Las Vegas, NV 89109", VENETIAN_POKER)},
- {"hotel": "bellagio", "venue": WYN, "from": "Bellagio (official street address not published on the pages read)",
-  "to": "Wynn Las Vegas poker room (in Encore at Wynn Las Vegas)", "minutes": None, "status": "unverified",
-  "note": "No official source publishes a walking time.", "official_fact": None,
-  "route_link": gmaps("Bellagio, Las Vegas, NV", "Wynn Las Vegas, 3131 Las Vegas Blvd S, Las Vegas, NV 89109")},
- {"hotel": "aria", "venue": WYN, "from": "ARIA (official street address not published on the pages read)",
-  "to": "Wynn Las Vegas poker room (in Encore at Wynn Las Vegas)", "minutes": None, "status": "unverified",
-  "note": "No official source publishes a walking time.", "official_fact": None,
-  "route_link": gmaps("ARIA Resort & Casino, Las Vegas, NV", "Wynn Las Vegas, 3131 Las Vegas Blvd S, Las Vegas, NV 89109")},
- {"hotel": "caesars", "venue": WYN, "from": "Caesars Palace, 3570 Las Vegas Blvd South",
-  "to": "Wynn Las Vegas poker room (in Encore at Wynn Las Vegas)", "minutes": None, "status": "unverified",
-  "note": "No official source publishes a walking time.", "official_fact": None,
-  "route_link": gmaps("Caesars Palace, 3570 Las Vegas Blvd S, Las Vegas, NV 89109", "Wynn Las Vegas, 3131 Las Vegas Blvd S, Las Vegas, NV 89109")},
-]
+OSM_ROUTE = ("https://routing.openstreetmap.de/routed-foot/route/v1/foot/"
+             "%s%%3B%s?overview=false")
+OSM_POINTS = (
+    "https://routing.openstreetmap.de/routed-foot/table/v1/foot/"
+    "-115.1693352,36.1217073%3B-115.1682710,36.1241843%3B-115.1654043,36.1266219%3B"
+    "-115.1653620,36.1289345%3B-115.1770065,36.1131149%3B-115.1779977,36.1070287%3B"
+    "-115.1767568,36.1166277%3B-115.1682710,36.1241843%3B-115.1653620,36.1289345"
+    "?sources=0%3B1%3B2%3B3%3B4%3B5%3B6&destinations=7%3B8&annotations=duration%2Cdistance"
+)
+# Coordinates read from the OpenStreetMap Nominatim lookup on 2026-11-17 (JSON response quoted below).
+OSM_LOOKUP = {
+ "venetian": {"q": "Venetian Hotel Las Vegas", "lat": 36.1217073, "lon": -115.1693352,
+              "osm": "relation/7770314"}, 
+ "palazzo": {"q": "The Palazzo Las Vegas", "lat": 36.1241843, "lon": -115.1682710,
+             "osm": "way/180584269"},
+ "wynn": {"q": "Wynn Las Vegas", "lat": 36.1266219, "lon": -115.1654043, "osm": "way/205501268"},
+ "encore": {"q": "Encore at Wynn Las Vegas", "lat": 36.1289345, "lon": -115.1653620,
+            "osm": "node/367054910"},
+ "bellagio": {"q": "Bellagio Las Vegas", "lat": 36.1131149, "lon": -115.1770065,
+              "osm": "way/25723909"},
+ "aria": {"q": "ARIA Resort & Casino Las Vegas", "lat": 36.1070287, "lon": -115.1779977,
+          "osm": "way/52175576"},
+ "caesars": {"q": "Caesars Palace Las Vegas", "lat": 36.1166277, "lon": -115.1767568,
+             "osm": "way/115672893"},
+}
+# Poker-room destinations: the Venetian poker room is inside The Palazzo (official poker page),
+# the Wynn poker room is inside Encore (official tournament terms).
+ROOM_POINT = {
+ VEN: {"label": "The Palazzo (poker room, level 2 Grand Canal Shoppes)", "lat": 36.1241843,
+       "lon": -115.1682710, "basis": "official poker page: \"Our Poker Room is located at The Palazzo "
+       "on level 2 of Grand Canal Shoppes\"; coordinate from the Nominatim lookup for The Palazzo"},
+ WYN: {"label": "Encore at Wynn Las Vegas (poker room)", "lat": 36.1289345, "lon": -115.1653620,
+       "basis": "official tournament terms: \"Players will register in the Wynn Las Vegas Poker Room, "
+       "located in Encore at Wynn Las Vegas\"; coordinate from the Nominatim lookup for Encore"},
+}
+# Seconds of walking produced by the OSM foot router (table service) on 2026-11-17, one row per source.
+# Seconds and metres from the OSM foot router, origin = the property, destination = THE RESORT THAT CONTAINS
+# THE POKER ROOM: The Palazzo for the Venetian poker room, Encore for the Wynn poker room.
+OSM_MATRIX = {
+ "venetian": {VEN: (359.2, 449.1), WYN: (919.4, 1146.8)},
+ "palazzo": {VEN: (0.0, 0.0), WYN: (799.0, 996.2)},
+ "wynn": {VEN: (894.1, 1115.2), WYN: (95.1, 119.1)},
+ "encore": {VEN: (799.0, 996.2), WYN: (0.0, 0.0)},
+ "bellagio": {VEN: (1284.9, 1606.4), WYN: (1845.1, 2304.0)},
+ "aria": {VEN: (2012.0, 2510.6), WYN: (2572.2, 3208.3)},
+ "caesars": {VEN: (1348.1, 1684.9), WYN: (1908.3, 2382.5)},
+}
+INTERNAL_NOTE = {
+ ("venetian", VEN): "The poker room is inside the Venetian/Palazzo complex; the route is interior "
+                    "(casino floor and Grand Canal Shoppes), so no street crossing is involved.",
+ ("palazzo", VEN): "The poker room is in The Palazzo itself, so the walk is interior.",
+ ("wynn", WYN): "The poker room is in Encore at Wynn Las Vegas; the walk is interior through the resort.",
+ ("encore", WYN): "The poker room is in Encore, so the walk is interior.",
+}
+OFFICIAL_INTERIOR = {
+ ("venetian", VEN): "\"From The Venetian Lobby: Proceed across The Venetian casino floor ... Take the "
+                    "escalator up to level 2, Grand Canal Shoppes ... The Poker Room will be on your right.\"",
+ ("palazzo", VEN): "\"From The Palazzo Lobby: Proceed across The Palazzo Casino Floor ... The Poker Room "
+                   "will be straight ahead.\"",
+ ("wynn", WYN): "\"Players will register in the Wynn Las Vegas Poker Room, located in Encore at Wynn "
+                "Las Vegas.\"",
+ ("encore", WYN): "\"Players will register in the Wynn Las Vegas Poker Room, located in Encore at Wynn "
+                  "Las Vegas.\"",
+}
+WALKING = []
+for hotel_id, points in OSM_LOOKUP.items():
+    for venue in (VEN, WYN):
+        secs, metres = OSM_MATRIX[hotel_id][venue]
+        origin = ROOM_POINT[venue]
+        internal = (hotel_id, venue) in INTERNAL_NOTE
+        if internal:
+            minutes = None
+            status = "internal"
+            note = INTERNAL_NOTE[(hotel_id, venue)] + " No street route is needed, so no street walking " \
+                   "time is stated; the router returns 0 minutes because the two points are inside one complex."
+        else:
+            minutes = int(math.ceil(secs / 60.0 - 0.02))  # round up; the 0.02 tolerates router jitter
+            status = "verified"
+            note = ("OpenStreetMap foot router: %d seconds (%d m) between the geocoded %s coordinate and the "
+                    "%s poker-room coordinate, rounded up to %d minutes. This is a published routing source, not "
+                    "the hotel or the poker room itself, so the 30-minute rule is applied to the routed time." % (
+                        round(secs), round(metres), hotel_id, venue, minutes))
+        WALKING.append({
+            "hotel": hotel_id, "venue": venue,
+            "from": "%s (%s, OSM %s)" % (hotel_id, OSM_LOOKUP[hotel_id]["q"], OSM_LOOKUP[hotel_id]["osm"]),
+            "to": origin["label"],
+            "metres": metres if not internal else 0,
+            "minutes": minutes,
+            "status": status,
+            "within_30_min": (minutes is None) or (minutes <= 30),
+            "note": note,
+            "official_fact": OFFICIAL_INTERIOR.get((hotel_id, venue)),
+            "route_link": OSM_ROUTE % ("%s,%s" % (OSM_LOOKUP[hotel_id]["lon"], OSM_LOOKUP[hotel_id]["lat"]),
+                                        "%s,%s" % (origin["lon"], origin["lat"])),
+            "retrieved_on": "2026-11-17",
+            "sources": [
+                {"label": "Nominatim lookup for the %s coordinate" % hotel_id,
+                 "url": "https://nominatim.openstreetmap.org/search?q="
+                        + OSM_LOOKUP[hotel_id]["q"].replace(" ", "+") + "&format=json&limit=1"},
+                {"label": "Foot-routing query for this pair",
+                 "url": OSM_ROUTE % ("%s,%s" % (OSM_LOOKUP[hotel_id]["lon"], OSM_LOOKUP[hotel_id]["lat"]),
+                                     "%s,%s" % (origin["lon"], origin["lat"]))},
+            ],
+        })
 
 # ---------------- venues ----------------
 VENUES = [
@@ -1487,10 +1572,15 @@ VENUES = [
 
 
 def true_cost(h):
-    """True nightly cost only when rate, resort fee and property tax are all verified."""
-    if h["room_rate_usd"] is None or h["resort_fee_usd"] is None or h["clark_county_tax_pct"] is None:
-        return None
-    return round((h["room_rate_usd"] + h["resort_fee_usd"]) * (1 + h["clark_county_tax_pct"] / 100.0), 2)
+    """True nightly cost. No published nightly rate exists for either property, so the value is taken from the
+    dated rate log (the official booking engine's own checkout total / nights) and never from an inferred rate."""
+    # A quote counts for a property only when it is that property's own rate: the booking engines name the room
+    # type, so the Venetian's Palazzo rooms are The Palazzo's quotes and its Venetian rooms are The Venetian's.
+    quotes = [r for r in RATES if r.get("hotel_id") == h["id"]]
+    if not quotes:
+        return None, None
+    latest = max(quotes, key=lambda r: (r["arrival"], r["retrieved_on"]))
+    return latest["true_cost_per_night_usd"], latest
 
 
 def main():
@@ -1511,16 +1601,37 @@ def main():
         json.dump(build_schedule(rows), f, indent=1)
 
     hotels = []
+    walk_by_key = {(w["hotel"], w["venue"]): w for w in WALKING}
     for h in HOTELS:
         h = dict(h)
-        h["true_cost_per_night_usd"] = true_cost(h)
+        cost, quote = true_cost(h)
+        h["true_cost_per_night_usd"] = cost
+        if quote:
+            h["true_cost_note"] = ("Taken from the official booking engine quote in data/rates.json: %s to %s, "
+                                   "%d nights, checkout total $%s, i.e. $%s per night after room, resort fee and tax."
+                                   % (quote["arrival"], quote["departure"], quote["nights"],
+                                      format(quote["checkout_total_usd"], ",.2f"),
+                                      format(quote["true_cost_per_night_usd"], ",.2f")))
+            h["true_cost_quote"] = {"arrival": quote["arrival"], "departure": quote["departure"],
+                                    "nights": quote["nights"], "room": quote["room"],
+                                    "checkout_total_usd": quote["checkout_total_usd"]}
         h["last_checked"] = LAST_CHECKED
+        w = walk_by_key.get((h["id"], VEN))
+        h["walk_to_venetian_min"] = w["minutes"] if w else None
+        h["walk_to_venetian_status"] = w["status"] if w else "unverified"
+        h["walk_to_venetian_within_30"] = bool(w and w.get("within_30_min"))
+        ww = walk_by_key.get((h["id"], WYN)) or {}
+        h["walk_to_wynn_min"] = ww.get("minutes")
+        h["walk_to_wynn_within_30"] = bool(ww.get("within_30_min"))
         hotels.append(h)
     with open(os.path.join(DATA, "hotels.json"), "w") as f:
         json.dump({"verified_on": VERIFIED_ON, "rows": hotels,
                    "method": "True nightly cost = (verified room rate + verified resort fee) x (1 + verified room tax). "
                              "It is only calculated when all three are verified for the same property. The dated rate log "
-                             "in data/rates.json keeps each retrieved quote separately with its timestamp.",
+                             "Only quoted when the property appears in the dated rate log; the true cost per night is "
+                             "the official booking engine's own checkout total divided by the nights, so nothing is "
+                             "reconstructed from an assumed rate. data/rates.json keeps every quote separately with "
+                             "its timestamp, room type, occupancy and cancellation terms.",
                    }, f, indent=1)
 
     with open(os.path.join(DATA, "rates.json"), "w") as f:

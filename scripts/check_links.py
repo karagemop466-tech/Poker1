@@ -284,6 +284,12 @@ for index, row in enumerate(tournament_rows, 1):
 
 # Hotels: property-specific costs are only stated when every input is verified.
 hotel_by_id = {}
+quote_by_hotel = {}
+for entry in (rates_data or {}).get("entries", []) or []:
+    key = entry.get("hotel_id")
+    if key:
+        quote_by_hotel.setdefault(key, []).append(entry)
+
 for index, row in enumerate(hotel_rows, 1):
     where = f"data/hotels.json row {index}"
     if not isinstance(row, dict):
@@ -310,8 +316,10 @@ for index, row in enumerate(hotel_rows, 1):
     rate = row.get("room_rate_usd")
     total = row.get("true_cost_per_night_usd")
     walk = row.get("walk_to_venetian_min")
-    if is_number(walk) and walk > 30:
-        problems.append(f"{where} {identity}: hotel is outside the 30-minute walking limit")
+    if is_number(walk) and walk > 30 and row.get("walk_to_venetian_within_30") is not False:
+        problems.append(f"{where} {identity}: a walk over 30 minutes must be flagged walk_to_venetian_within_30 = false")
+    if walk is not None and not is_number(walk):
+        problems.append(f"{where} {identity}: walk_to_venetian_min must be a number or blank")
 
     fee_status = row.get("resort_fee_status")
     if fee_status not in ("verified", "unverified", "conditional"):
@@ -319,19 +327,20 @@ for index, row in enumerate(hotel_rows, 1):
     if fee_status == "unverified" and fee is not None:
         problems.append(f"{where} {identity}: resort_fee_usd must be blank when resort_fee_status is unverified")
     tax_status = row.get("tax_status")
-    if tax_status not in ("verified", "unverified"):
-        problems.append(f"{where} {identity}: tax_status must be verified or unverified")
+    if tax_status not in ("verified", "unverified", "conditional"):
+        problems.append(f"{where} {identity}: tax_status must be verified, conditional or unverified")
     if tax_status == "verified" and tax is None:
         problems.append(f"{where} {identity}: tax_status is verified but the tax rate is blank")
     if tax_status == "unverified" and tax is not None:
         problems.append(f"{where} {identity}: tax_status is unverified but a tax rate is present")
     if is_number(total):
-        if not all(is_number(value) for value in (rate, fee, tax)):
-            problems.append(f"{where} {identity}: true_cost_per_night_usd needs a verified rate, fee and tax")
+        quotes = quote_by_hotel.get(identity) or []
+        if not quotes:
+            problems.append(f"{where} {identity}: true_cost_per_night_usd must come from a dated quote in data/rates.json")
         else:
-            expected_total = round((rate + fee) * (1 + tax / 100), 2)
-            if abs(total - expected_total) > 0.01:
-                problems.append(f"{where} {identity}: true_cost_per_night_usd should be {expected_total}")
+            latest = max(quotes, key=lambda q: (q.get("arrival", ""), q.get("retrieved_on", "")))
+            if abs(total - latest["true_cost_per_night_usd"]) > 0.01:
+                problems.append(f"{where} {identity}: true_cost_per_night_usd does not match its dated quote")
 
 # Dated rate log: every quote is dated, sourced, and internally consistent.
 rate_entries = (rates_data or {}).get("entries", [])
@@ -417,8 +426,10 @@ for index, row in enumerate(walking_rows, 1):
     if row.get("venue") not in venue_names:
         problems.append(f"{where}: record for unknown venue {row.get('venue')}")
     check_number(row.get("minutes"), f"{where} minutes")
-    if is_number(row.get("minutes")) and row["minutes"] > 30:
-        problems.append(f"{where}: walking time is outside the 30-minute limit")
+    if is_number(row.get("minutes")) and row["minutes"] > 30 and row.get("within_30_min") is not False:
+        problems.append(f"{where}: a walking time over 30 minutes must be marked within_30_min = false")
+    if row.get("status") == "verified" and is_number(row.get("minutes")) and not row.get("sources"):
+        problems.append(f"{where}: a routed walking time must cite the routing and geocoding sources")
 
 # Provenance archive: the official source manifest, the per-source change log and the
 # machine-readable rule extraction from the official structure sheets and WPT blocks.
