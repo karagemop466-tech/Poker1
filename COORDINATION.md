@@ -22,9 +22,9 @@ integration verification). No tournament, hotel, page, script or workflow file i
 
 | Task | Status | File scope | Owner |
 |---|---|---|---|
-| Diagnose the failed post-merge Pages deploy on `main` (run 43992732904, deploy job) and confirm the live site serves the latest merged content | **Done** — diagnosis recorded below; deploy re-run monitored to completion | `COORDINATION.md` only | `74e9029c` |
+| Diagnose the failed post-merge Pages deploy on `main` (run 43992732904, deploy job) and confirm the live site serves the latest merged content | **Done** — diagnosis recorded below; the very next main-push deploy (run `43993627871`, commit `e9ca3d6`) succeeded (validate + deploy green), confirming transience; the live site serves `e19e8fb` (Pages deployment API, 2026-11-17T01:20:55Z) | `COORDINATION.md` only | `74e9029c` |
 | Produce the first real scheduled-monitor result on `main` by dispatching `monitor.yml` | **Done** — dispatch API is blocked for this integration (HTTP 403 `Resource not accessible by integration` on `POST /actions/workflows/420503083/dispatches`), so the trigger was added to the workflow instead: a narrow `push` filter on `.github/workflows/monitor.yml` itself, which fires once when this change merges to `main`; the 07:17 UTC cron takes over afterwards | `.github/workflows/monitor.yml`, `data/monitoring.json`, `data/changes.json` (bot commit), one issue, `COORDINATION.md` | `74e9029c` |
-| Verify the live GitHub Pages site end to end (index, a table page, a JSON dataset, the Flagged page) and record the result | **Done** | `COORDINATION.md` only | `74e9029c` |
+| Verify the live GitHub Pages site end to end (index, a table page, a JSON dataset, the Flagged page) and record the result | **Done** — index, Monitoring and Flagged pages fetched live and read (results below) | `COORDINATION.md` only | `74e9029c` |
 
 ### Deploy-failure diagnosis (run 43992732904, commit `44fcc08`, PR #40 merge push)
 
@@ -35,7 +35,69 @@ integration verification). No tournament, hotel, page, script or workflow file i
   Not a content or config defect: identical earlier deploys succeeded, and the legacy branch-based
   `pages build and deployment` workflow deployed `44fcc08` successfully (run `43992731825`), so the
   published site was never broken by this failure.
-- Remedy: re-run the failed deploy once the `pages` concurrency group is free, and confirm the Pages API.
+- Remedy executed: the very next main-push deploy (run `43993627871`, commit `e9ca3d6`) ran to
+  completion — validate and deploy both green. The site was live and current throughout.
+
+**Request logged for the session that owns `.github/workflows/pages.yml` (PR #44, not edited by this
+session):** the `concurrency: group: pages` block is shared by `push`→`main` and `pull_request` events with
+`cancel-in-progress: true`, so every PR push cancels the main deployment run. Observed on 2026-11-17:
+main-push runs for `a2c0986`, `721c7ff` and `fb6a1ea` were all `cancelled` by newer PR-triggered runs
+(only `e9ca3d6` completed). The legacy branch builder deployed every merge regardless, so serving was
+never interrupted, but main-push validation results are routinely lost to cancellation. Suggested remedy:
+give each ref its own group (e.g. `group: pages-${{ github.ref }}`), which keeps same-ref runs
+serialized while PR runs can no longer cancel a main deployment; actual `deploy-pages` deployments are
+serialized server-side per environment.
+
+### First real scheduled-monitor result on `main` (this session's delivery)
+
+- **Trigger:** PR [#49](https://github.com/karagemop466-tech/Poker1/pull/49) merged as `fb6a1ea`; the
+  merge push matched the new path-filtered `push` trigger and the workflow ran for the first time on
+  `main` ([run `43994626646`](https://github.com/karagemop466-tech/Poker1/actions/runs/43994626646)),
+  **success**, every step green (source check, bot commit, issue publish).
+- **Result (bot commit `e19e8fb`, only `data/monitoring.json` + `data/changes.json` touched):**
+  **90 of 94** official sources reachable, **3 unreachable** (the two ARIA URLs and the Bellagio home
+  page time out after ~25 s to scripted fetchers — the same blocker previous sessions recorded),
+  **1 HTTP error** (`https://www.caesars.com/caesars-palace` returns **403** to bots — previously
+  documented), **0 rows changed, 0 added, 0 removed** against `data/row_snapshot.json` (2026-11-17).
+  The dataset matches the live official pages as of this first scheduled check.
+- The daily report is published as [issue #50](https://github.com/karagemop466-tech/Poker1/issues/50)
+  ("Source check 2026-11-17"). The live Monitoring page now shows the real numbers
+  ("90 / 94 official sources reachable · 0 rows changed · Last check: 2026-11-17"), replacing the
+  sandbox placeholder ("59 of 59 unreachable") that had sat in `data/monitoring.json` since the
+  workflow was created.
+- Nothing was inferred: unreachable/HTTP-error status is published as a transport result with the
+  workflow's own wording ("it does not by itself mean the page changed").
+
+### Live-site verification (fetched 2026-11-17 ~01:25 UTC, after `e19e8fb` deployed)
+
+- `https://karagemop466-tech.github.io/Poker1/` renders with the current counts (317 rows, 80 single
+  entry, 106 in the separate section, 129 unverified, 70 dates, 4 of 7 hotels with a verified resort
+  fee, 78 flagged rows) and all 15 navigation cards pointing at valid pages.
+- `pages/monitoring.html` renders the first real scheduled result (90/94, 0 changed rows) and the full
+  flagged-rows table with per-row official source links.
+- `pages/flagged.html` renders F1–F21 and the repository-irregularity tables with source links, as
+  required ("Flagged for Review" page published with sources, not blocking the merge).
+
+### Sources (official, read or fetched by this session)
+
+- Check-run annotations of the failed deploy: GitHub API
+  `repos/karagemop466-tech/Poker1/check-runs/133737976318/annotations`.
+- Monitor run log and jobs: GitHub Actions run `43994626646`; bot commit `e19e8fb` on `main`.
+- Live pages: the three `github.io` URLs listed above, fetched and read in full.
+
+### Verification performed in this session
+
+- `python3 scripts/build_data.py` and `python3 scripts/build_site.py` — zero diff against the committed
+  data and pages on this branch.
+- `python3 scripts/check_links.py` — OK (21 pages, 317 tournament rows, 7 hotels, 5 dated rates,
+  70 schedule days).
+- `.github/workflows/monitor.yml` parses as valid YAML (PyYAML 6.0.2).
+- `gh pr checks 49` — validate green (run `43994346605`, 1m49s); deploy correctly skipped on the
+  pull_request event.
+- After merge: monitor run green; bot commit on `main` inspected field by field (the counts above come
+  from the committed JSON, not from prose).
+- Live deployment confirmed through the Pages API (`status: built`) and the deployments endpoint
+  (`sha e19e8fb`, created 2026-11-17T01:20:55Z).
 
 ## Session f2ad3bce (current branch `arena/f2ad3bce-poker1`)
 
@@ -516,3 +578,4 @@ No tournament or hotel factual data was edited in this session. All user-request
 
 - PR #43 created from `arena/3bd2f25b-poker1` to `main` (https://github.com/karagemop466-tech/Poker1/pull/43); merged without waiting for review.
 - Merge result: merged into `main` as a2c0986 on 2026-11-17. PR link: https://github.com/karagemop466-tech/Poker1/pull/43. GitHub Pages: status `built`, source branch `main`, path `/`, live at https://karagemop466-tech.github.io/Poker1/ ; the `pages-build-deployment` succeeded after the merge. All flagged items (F1–F52, U1–U10) remain published on the Flagged for Review page with their source links and did not block the merge.
+- 2026-11-17: session `74e9029c` diagnosed the transient post-merge deploy failure (artifact race under the shared `pages` concurrency group), delivered the first real scheduled-monitor result on `main` through PR [#49](https://github.com/karagemop466-tech/Poker1/pull/49) (merged as `fb6a1ea`; monitor run `43994626646` green; bot commit `e19e8fb`: 90/94 sources reachable, 0 rows changed; issue #50 published), and verified the live site (index, monitoring, flagged). A concurrency-group request for `pages.yml` was logged for PR #44's owner instead of editing that file.
