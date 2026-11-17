@@ -225,6 +225,10 @@ def provenance_findings():
 def main():
     ap = argparse.ArgumentParser(add_help=False)
     ap.add_argument("--print", dest="as_print", action="store_true")
+    ap.add_argument("--write-report", dest="write_report", action="store_true",
+                    help="publish data/monitoring.json and data/changes.json (the scheduled job); "
+                         "without it the run only reports, so a validation run cannot overwrite a "
+                         "real result or dirty the tree")
     ap.add_argument("--content", action="store_true",
                     help="fetch and hash each page body, not just its HTTP status")
     ap.add_argument("--update-snapshot", action="store_true",
@@ -458,13 +462,20 @@ def main():
                    " check and not about the sources. The scheduled GitHub Actions job reaches the"
                    " operator domains; its provenance result is in data/change_log.json."),
     }
-    with open(os.path.join(DATA, "monitoring.json"), "w", encoding="utf-8") as f:
-        json.dump(result, f, indent=1)
-        f.write("\n")
-    with open(os.path.join(DATA, "changes.json"), "w", encoding="utf-8") as f:
-        json.dump({"checked_at": checked_at, "sources_facts_changed": facts_changed,
-                   "sources_raw_changed": raw_changed, **changes}, f, indent=1)
-        f.write("\n")
+    # Only `--write-report` publishes. `pages.yml` runs `--print` on every pull request, and a
+    # validation run must not rewrite the reports - otherwise a host with no route to the operators
+    # would overwrite the scheduled run's real numbers (and leave a dirty tree behind it).
+    if args.write_report:
+        with open(os.path.join(DATA, "monitoring.json"), "w", encoding="utf-8") as f:
+            json.dump(result, f, indent=1)
+            f.write("\n")
+        with open(os.path.join(DATA, "changes.json"), "w", encoding="utf-8") as f:
+            json.dump({"checked_at": checked_at, "sources_facts_changed": facts_changed,
+                       "sources_raw_changed": raw_changed, **changes}, f, indent=1)
+            f.write("\n")
+
+    else:
+        print("monitor: reports not written (run with --write-report to publish)")
 
     if args.accept_baseline:
         new_base = {"generated_at_utc": result["checked_at_utc"],

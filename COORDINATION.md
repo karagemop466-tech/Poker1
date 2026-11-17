@@ -16,7 +16,7 @@ chosen to be disjoint from all of them. `main` is confirmed to be the branch bas
 | File | Owner / PR | What this session needs from it |
 |---|---|---|
 | `assets/app.js`, `scripts/build_site.py`, `pages/*.html` | PR #40 (duplicate `PAGES.calculator` renderer on `main` at lines 700 and 886 — the second definition wins, so the entries x buy-in + nights x true-hotel-cost calculator is the one being replaced) | this session will re-test the calculator after #40 merges rather than touch the same file |
-| `scripts/build_data.py`, `data/tournaments.json`, `data/hotels.json`, `data/rates.json` | PR #36, PR #38 | the ≤30-min-walk filter and the per-date booking deep links requested by the brief are logged here as a request, not applied |
+| `scripts/build_data.py`, `data/tournaments.json`, `data/hotels.json`, `data/rates.json` | PR #36, PR #38 | the ≤30-min-walk filter and the per-date booking deep links requested by the brief are logged here as a request, not applied. **Correction, recorded rather than hidden:** this line is no longer true of the last two files. To publish values that had been read from official pages on 2026-11-17 but were still sitting as prose or as unevidenced blanks, this session edited `scripts/build_data.py` (two flag texts, a `HOTEL_RECHECK` table, hotel fee fields) and therefore regenerated `data/hotels.json`, and its flag changed one published note in `data/tournaments.json` (8 lines, the `r263` row only). `data/rates.json` was **not** edited. The edit to `build_data.py` and `data/tournaments.json` overlaps open PR #36, which also owns both files: expect a conflict at merge and take #36's WPT rows, this session's `r263` note and flags. Nothing was overwritten from #36 - `git diff` for this session's changes in those files is 8 lines of `data/tournaments.json` plus the generator. |
 | `EXECUTIVE_SUMMARY.md`, `FLAGGED.md`, `QUESTIONS.md`, `REVIEW.md` | PR #36, #38, #39 | this session appends only its own verification record and the PR/merge line |
 
 ### Requests logged for the owning sessions (per the coordination rule: log, do not edit)
@@ -35,6 +35,20 @@ chosen to be disjoint from all of them. `main` is confirmed to be the branch bas
    *Correction to this section's earlier wording:* the snapshot file itself held 317 rows, so the monitor was
    not in fact reporting a phantom added row; the stale number was only in the monitoring summary. Fixed here
    rather than published.
+4. **To the `FLAGGED.md` owner:** the "Irregularities re-checked on 2026-11-17" table carried a row that did not
+   fit it - four cells in a three-column table, separated from the rows above by a blank line so it rendered as
+   its own broken table, and numbered **F53**, duplicating the LIPS row in the table above. This session reshaped
+   it to three cells, moved it back inside the table and renumbered it **F56** with the reason stated under the
+   table; no text was removed. As a consequence `research/verification-2026-11-17.md` line 233 ("Two
+   nightly-average conventions. See F53.") points at the LIPS row now - it should read F56. That file belongs to
+   another session, so the pointer is logged here for its owner rather than edited. PR #58 is fixing the same
+   class of pointer (F72/F73 to F71) on the other-rooms page.
+5. **To whoever owns the monitor step:** `python3 scripts/monitor_sources.py --print` used to rewrite
+   `data/monitoring.json` and `data/changes.json`, so the PR validation job could overwrite the scheduled run's
+   real numbers with a no-route host's, and left a dirty tree. `--print` now only prints; publishing needs
+   `--write-report`, which `.github/workflows/monitor.yml` passes. Resolved while rebasing onto `main` after the
+   other-rooms session's monitor run had already written a report there: this session kept that real result
+   (90 of 94 sources answered) instead of replacing it with its own unreachable numbers.
 
 
 # COORDINATION.md

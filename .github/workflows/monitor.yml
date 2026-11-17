@@ -64,7 +64,7 @@ jobs:
       - name: Check every official source, including its content
         id: check
         run: |
-          args="--print --content"
+          args="--print --content --write-report"
           if [ "${{ inputs.accept_baseline }}" = "yes" ]; then args="$args --accept-baseline"; fi
           python3 scripts/monitor_sources.py $args | tee monitor.txt
           echo "facts_changed=$(python3 -c "import json;print(json.load(open('data/monitoring.json'))['sources_facts_changed'])")" >> "$GITHUB_OUTPUT"
