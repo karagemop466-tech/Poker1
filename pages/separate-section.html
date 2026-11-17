@@ -946,7 +946,7 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
           { id: "prop", label: "Property", key: "property" },
           { id: "room", label: "Room", key: "room", sort: null, html: function (r) { return "<span class='small'>" + esc(r.room) + "</span>"; } },
           { id: "window", label: "Stay", key: "arrival", html: function (r) { return dateShort(r.arrival) + "–" + dateShort(r.departure) + "<br><span class='small'>" + r.nights + " nights, " + esc(r.occupancy) + "</span>"; } },
-          { id: "avg", label: "Nightly average", key: "nightly_average_usd", num: true, html: function (r) { return money2(r.nightly_average_usd); } },
+          { id: "avg", label: "Nightly average (room + fee)", key: "nightly_average_usd", num: true, html: function (r) { return money2(r.nightly_average_usd) + (r.room_only_average_usd != null ? "<br><span class='small'>room only " + money2(r.room_only_average_usd) + "</span>" : ""); } },
           { id: "fee", label: "Resort fee / night", key: "resort_fee_per_night_usd", num: true, html: function (r) { return money2(r.resort_fee_per_night_usd); } },
           { id: "tax", label: "Tax total", key: "taxes_total_usd", num: true, html: function (r) { return money2(r.taxes_total_usd); } },
           { id: "total", label: "Checkout total", key: "checkout_total_usd", num: true, html: function (r) { return money2(r.checkout_total_usd); } },

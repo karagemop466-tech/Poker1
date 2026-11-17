@@ -202,7 +202,12 @@ Being explicit, because these are the kind of errors that would otherwise ship a
    **Encore**. Re-running with the Palazzo and Encore coordinates as destinations changed Bellagio→Wynn from
    13 to **31 minutes** (into the over-limit set) and Caesars→Venetian from 33 to **23 minutes** (out of it).
    Four published figures were affected; all were corrected before publication and F52 records it.
-6. **A stale claim that the Wynn poker room is "in Encore" was checked rather than assumed** — official
+6. **The merge itself introduced two silent defects, and the checks did not catch them.** Combining
+   `assets/app.js` from both branches left duplicate `PAGES.calculator` and `PAGES.hotels` definitions; because
+   duplicate function assignments are legal JavaScript, every local check stayed green while the deployed
+   calculator was the wrong one. Reading the live page is what exposed it. `check_links.py` now rejects
+   duplicate renderers, and the rate log's two arithmetic identities are re-derived on every build.
+7. **A stale claim that the Wynn poker room is "in Encore" was checked rather than assumed** — official
    WPT clause 3 states it verbatim, so the Encore coordinate is a defensible walking destination.
 
 ### 9.4 Verification performed
