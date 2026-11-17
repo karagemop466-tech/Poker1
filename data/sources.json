@@ -522,48 +522,46 @@
    "venue": "Other"
   },
   {
-<<<<<<< HEAD
    "id": "mgm_poker_page",
-   "label": "MGM Grand — official poker page (links the weekly schedule and the $120 structure sheet)",
+   "label": "MGM Grand \u2014 official poker page (links the weekly schedule and the $120 structure sheet)",
    "url": "https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html",
    "kind": "schedule",
    "venue": "MGM Grand"
   },
   {
    "id": "mb_poker_page",
-   "label": "Mandalay Bay — official poker page",
+   "label": "Mandalay Bay \u2014 official poker page",
    "url": "https://mandalaybay.mgmresorts.com/en/casino/poker-tables.html",
    "kind": "schedule",
    "venue": "Mandalay Bay"
   },
   {
    "id": "orl_poker_page",
-   "label": "The Orleans — official poker room page (links the 2026 daily schedule PDF)",
+   "label": "The Orleans \u2014 official poker room page (links the 2026 daily schedule PDF)",
    "url": "https://orleans.boydgaming.com/play/poker-room",
    "kind": "schedule",
    "venue": "Orleans"
   },
   {
    "id": "orl_daily_pdf",
-   "label": "The Orleans — 2026 daily tournament schedule and structures (official PDF)",
+   "label": "The Orleans \u2014 2026 daily tournament schedule and structures (official PDF)",
    "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0",
    "kind": "structure",
    "venue": "Orleans"
   },
   {
    "id": "sp_poker_page",
-   "label": "South Point — official poker room page (daily times and buy-ins)",
+   "label": "South Point \u2014 official poker room page (daily times and buy-ins)",
    "url": "https://southpointcasino.com/casino/poker-room",
    "kind": "schedule",
    "venue": "South Point"
   },
   {
    "id": "sp_sched_page",
-   "label": "South Point — official daily tournament schedule page (images only on 2026-11-17)",
+   "label": "South Point \u2014 official daily tournament schedule page (images only on 2026-11-17)",
    "url": "https://southpointcasino.com/casino/poker-room/daily-tournament-schedule",
    "kind": "structure",
    "venue": "South Point"
-<<<<<<< HEAD
   },
   {
    "id": "strip_rwlv_events",
@@ -578,8 +576,8 @@
    "url": "https://www.caesars.com/planet-hollywood",
    "kind": "schedule",
    "venue": "Planet Hollywood"
-=======
-=======
+  },
+  {
    "id": "v_book_hub",
    "label": "Venetian booking hub (the page the rate quotes are taken from)",
    "url": "https://www.venetianlasvegas.com/book",
@@ -641,8 +639,6 @@
    "url": "https://www.caesars.com/caesars-palace",
    "kind": "hotel",
    "venue": "Caesars"
->>>>>>> 49de612 (monitor: detect content changes on official pages and mark the rows that cite them)
->>>>>>> bce90b2 (monitor: detect content changes on official pages and mark the rows that cite them)
   }
  ]
 }
