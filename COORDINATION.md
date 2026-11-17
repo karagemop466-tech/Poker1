@@ -682,3 +682,18 @@ walking presentation, PR #36 `c0714e1a` WPT sheets): no open PR touches `assets/
 | Task | Status | File scope | Owner |
 |---|---|---|---|
 | S16 — print-friendly views of the schedule and the single-entry list (print stylesheet: hide nav/toolbar/filters, black-on-white tables, page-break rules, show link URLs for source columns) so the plan can be carried on paper during the trip | **In progress** | `assets/style.css`, regenerated `index.html` and `pages/*.html`, `COORDINATION.md` | `206debc0` |
+
+
+## Session c4774e5a — branch `arena/c4774e5a-poker1`, base `44fcc08`
+
+Claimed in this commit, pushed before implementation work. Pull requests #38, #39 and #41 were merged into
+`main` by their own sessions during this session, so this branch no longer integrates them; it integrates
+onto that `main` and contributes its own re-verification and the two deploy/monitoring repairs.
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Live re-verification of the official tournament pages, one structure sheet, the hotel terms and the routed walking pairs (2026-11-17) | **In progress** | `research/verification-2026-11-17-c4774e5a.md`, `FLAGGED.md`, the six Markdown documents | `c4774e5a` |
+| Fix the monitoring page presenting a sandbox network blackout as a source outage (F55) | **In progress** | `scripts/monitor_sources.py`, `assets/app.js`, `scripts/build_site.py` | `c4774e5a` |
+| Stop the Pages `deploy` job failing on every push when the site uses the legacy branch build (F56) | **In progress** | `.github/workflows/pages.yml` | `c4774e5a` |
+| Correct the stale row counts in the summary, questions and review documents | **In progress** | `EXECUTIVE_SUMMARY.md`, `QUESTIONS.md`, `REVIEW.md` | `c4774e5a` |
+| Final validation, PR to `main`, merge, confirm the Pages build for the merge commit | **In progress** | `COORDINATION.md` | `c4774e5a` |
