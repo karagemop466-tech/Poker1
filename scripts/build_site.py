@@ -144,6 +144,7 @@ of a poker room, or search any column.</p>
 <p class="lead">Verified single-entry options per day, earliest first.</p>
 <div class="card callout" id="note"></div>
 <p class="small">Earliest start among the rows in this dataset: <strong id="earliest"></strong></p>
+<p class="small" id="overlap-kpi"></p>
 <div id="content"></div>
 """),
     "pages/venues.html": ("Venues", "venues", """

@@ -304,6 +304,25 @@ for index, row in enumerate(tournament_rows, 1):
         check_time(est_end, f"{where} {identity} est_end", required=True)
     if is_number(row.get("est_duration_min")) and row["est_duration_min"] <= 0:
         problems.append(f"{where} {identity}: est_duration_min must be positive")
+    # A finish that runs past midnight must say so, or the day plan compares it
+    # as a clock time in the small hours of the same morning and every later
+    # event on that date looks playable (this defect was live on the site once).
+    duration = row.get("est_duration_min")
+    if est_end is not None and is_number(duration) and row.get("start"):
+        start_min = int(row["start"][:2]) * 60 + int(row["start"][3:5])
+        absolute = start_min + duration
+        expected_abs = absolute
+        expected_days = absolute // (24 * 60)
+        expected_clock = "%02d:%02d" % ((absolute % (24 * 60)) // 60, (absolute % (24 * 60)) % 60)
+        if est_end != expected_clock:
+            problems.append(f"{where} {identity}: est_end should be {expected_clock} "
+                            f"(start + est_duration_min)")
+        if row.get("est_end_abs_min") != expected_abs:
+            problems.append(f"{where} {identity}: est_end_abs_min should be {expected_abs}")
+        if row.get("est_end_days_after") != expected_days:
+            problems.append(f"{where} {identity}: est_end_days_after should be {expected_days}")
+    elif est_end is None and row.get("est_end_abs_min") is not None:
+        problems.append(f"{where} {identity}: est_end_abs_min without an est_end")
 
 # Hotels: property-specific costs are only stated when every input is verified.
 hotel_by_id = {}

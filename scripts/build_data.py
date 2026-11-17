@@ -895,14 +895,23 @@ def clock(hhmm):
 
 
 def estimate_end(start, levels, level_min, breaks=15, every=4, level_min2=None, level_min2_from=None):
-    """Plausible end time from the published level structure (estimate, not an official time)."""
+    """Plausible end time from the published level structure (estimate, not an official time).
+
+    Returns ``(wall_clock, total_minutes, days_after_start)``. The finish is
+    stored as a clock time **plus** the number of calendar days past the start
+    date, because a long level structure legitimately runs past midnight: a
+    bare clock time silently wrapped to the small hours of the same day, which
+    then read as earlier than the event's own start and made every later event
+    on that date look playable (found by session 206debc0, fixed here as F61).
+    """
     if level_min2 and level_min2_from:
         early = min(level_min2_from - 1, levels)
         play = early * level_min + (levels - early) * level_min2
     else:
         play = levels * level_min
     total = play + (levels // every) * breaks
-    return to_hhmm(to_min(start) + total), total
+    absolute = to_min(start) + total
+    return to_hhmm(absolute), total, absolute // (24 * 60)
 
 
 def rule_field(value, excerpt, source_label, source_url, clause=None, retrieved=LAST_CHECKED):
@@ -937,8 +946,9 @@ def build_venetian(rows, series_key, series, page_key, sheet_key, sched_key, str
                           "11": "15:10", "12": "18:10",
                           "15": "15:10", "18": "15:10", "21": "15:10", "23": "10:10", "24": "15:10"}[str(no)]
         late_text = sheet.get("late_by_event", {}).get(no, sheet.get("late"))
-        est_end, est_min = estimate_end(start_time, sheet["levels"], sheet["lmin"],
-                                        level_min2=sheet.get("lmin2"), level_min2_from=sheet.get("lmin2_from"))
+        est_end, est_min, est_offset_days = estimate_end(
+            start_time, sheet["levels"], sheet["lmin"],
+            level_min2=sheet.get("lmin2"), level_min2_from=sheet.get("lmin2_from"))
         struct_url = SRC[struct_key].format(sheet_no)
         fee_ex = ("Clause 06: \"$%d of the $%s Buy-In is withheld for house fees (Rake + Staff). The prize pool "
                   "consists of $%d of every $%s Buy In.\"" % (sheet["fee"], format(buy, ","), sheet["pool"], format(buy, ",")))
@@ -1016,6 +1026,11 @@ def build_venetian(rows, series_key, series, page_key, sheet_key, sched_key, str
             "levels": sheet["levels"], "level_minutes": sheet["lmin"],
             "starting_chips": sheet.get("chips"),
             "est_end": est_end, "est_duration_min": est_min,
+            # Minutes from midnight of the event's own date to the estimated
+            # finish. This is the value the day plan compares against, so a
+            # finish after midnight is never compared as a same-day clock time.
+            "est_end_abs_min": to_min(start_time) + est_min,
+            "est_end_days_after": est_offset_days,
             "note": note,
             "flags": flags,
             "sources": srcs, "verified_on": VERIFIED_ON, "last_checked": LAST_CHECKED,
@@ -1258,8 +1273,39 @@ def build_wynn():
     return out
 
 
+def finish_label(ev):
+    """How a row's estimated finish is printed: '8:55 AM (next day)' when it runs past midnight."""
+    if not ev.get("est_end"):
+        return None
+    extra = ev.get("est_end_days_after") or 0
+    if extra == 1:
+        return "%s (next day)" % ev["est_end"]
+    if extra > 1:
+        return "%s (+%d days)" % (ev["est_end"], extra)
+    return ev["est_end"]
+
+
+def finish_abs(ev):
+    """Minutes from midnight of the event's own date to its estimated finish.
+
+    ``None`` when the event publishes no level structure, so no finish can be
+    estimated at all. Such a pair is reported as undecidable instead of being
+    silently treated as playable in sequence (F62).
+    """
+    if not ev.get("est_end"):
+        return None
+    if ev.get("est_end_abs_min") is not None:
+        return ev["est_end_abs_min"]
+    return to_min(ev["est_end"])
+
+
 def build_schedule(rows):
-    """Day plan: verified single-entry primary, conditional fallback, overlap flags."""
+    """Day plan: verified single-entry primary, conditional fallback, overlap flags.
+
+    Every comparison is made in minutes from midnight of the day, using the
+    stored ``est_end_abs_min``, so a structure that finishes after midnight can
+    never be compared as if it finished in the small hours of the same morning.
+    """
     days = {}
     for r in rows:
         if r["kind"] != "entry":
@@ -1271,38 +1317,85 @@ def build_schedule(rows):
         se = [e for e in events if e["entry_status"] == "SE"]
         primary = se[0] if se else None
         fallback = None
-        if primary and primary.get("est_end"):
-            for cand in se[1:]:
-                if to_min(cand["start"]) >= to_min(primary["est_end"]):
-                    fallback = cand
-                    break
+        fallback_note = ""
+        if not primary:
+            fallback_note = "No verified single-entry event on this date."
+        else:
+            primary_end = finish_abs(primary)
+            later = [c for c in se[1:] if to_min(c["start"]) > to_min(primary["start"])]
+            if not later:
+                fallback_note = "Only one verified single-entry event is published on this date."
+            elif primary_end is None:
+                # No level structure is printed, so no finish can be estimated.
+                # The later event is still named, but it is not offered as a
+                # sequence: only the printed registration deadline says whether
+                # a player who busts out of the primary can still enter it.
+                fallback = later[0]
+                fallback_note = (
+                    "Conditional only: %s publishes no level structure, so no finish can be estimated. "
+                    "Entering %s is possible only if you are out of the primary before its registration "
+                    "closes%s. It is not a sequence that can be planned in advance."
+                    % (primary["name"], fallback["name"],
+                       (" at " + fallback["late_reg_close"]) if fallback.get("late_reg_close")
+                       else " (the deadline is not printed on an official page read so far)"))
+            else:
+                fallback = later[0]
+                if to_min(fallback["start"]) >= primary_end:
+                    fallback_note = (
+                        "Plays in sequence: %s is estimated to finish by %s, and %s starts after that."
+                        % (primary["name"], finish_label(primary), fallback["name"]))
+                else:
+                    fallback_note = (
+                        "Conditional, not a sequence: %s can run until %s, so it overlaps %s. Entering the "
+                        "latter is possible only if you are eliminated from the primary before its "
+                        "registration closes%s. Both are single entry, so neither can be re-entered."
+                        % (primary["name"], finish_label(primary), fallback["name"],
+                           (" at " + fallback["late_reg_close"]) if fallback.get("late_reg_close")
+                           else " (the deadline is not printed on an official page read so far)"))
         conflicts = []
+        undecidable = []
         for i, a in enumerate(events):
+            a_end = finish_abs(a)
             for b in events[i + 1:]:
-                if a.get("est_end") and to_min(b["start"]) < to_min(a["est_end"]):
+                if a_end is None:
+                    undecidable.append({"a": a["id"], "b": b["id"],
+                                        "detail": "%s starts %s, but %s publishes no level structure, so "
+                                                  "whether the two overlap cannot be checked."
+                                                  % (b["name"], b["start"], a["name"])})
+                elif to_min(b["start"]) < a_end:
                     conflicts.append({"a": a["id"], "b": b["id"],
-                                      "detail": "%s starts %s while %s is still estimated to run until %s"
-                                                % (b["name"], b["start"], a["name"], a["est_end"])})
+                                      "detail": "%s starts %s while %s can still be running until %s under its "
+                                                "full published structure, so the two cannot both be played to "
+                                                "a finish." % (b["name"], b["start"], a["name"],
+                                                              finish_label(a))})
         plan.append({
             "date": d,
             "events": [{"id": e["id"], "start": e["start"], "name": e["name"], "series": e["series"],
                         "venue": e["venue"], "buy_in_usd": e["buy_in_usd"], "guarantee_usd": e["guarantee_usd"],
                         "prize_text": e.get("prize_text"), "entry_status": e["entry_status"],
                         "labels": e["labels"], "late_reg_close": e.get("late_reg_close"),
-                        "est_end": e.get("est_end"), "source": e["sources"][-1]["url"]} for e in events],
+                        "est_end": e.get("est_end"), "est_end_days_after": e.get("est_end_days_after"),
+                        "est_end_label": finish_label(e),
+                        "source": e["sources"][-1]["url"]} for e in events],
             "primary_id": primary["id"] if primary else None,
             "fallback_id": fallback["id"] if fallback else None,
-            "fallback_note": ("No second single-entry event starts after the primary event is estimated to finish."
-                              if primary and not fallback else
-                              ("No verified single-entry event on this date." if not primary else "")),
+            "fallback_note": fallback_note,
             "conflicts": conflicts,
+            "undecidable_pairs": undecidable,
         })
     starts = sorted({r["start"] for r in rows if r["kind"] == "entry"})
     return {"verified_on": VERIFIED_ON, "days": plan,
             "earliest_listed_start": starts[0] if starts else None,
-            "note": "Estimated end times are calculated from the published level structure (levels x level length plus "
-                    "the published breaks). They are an estimate, not an official finish time. A day can hold a primary "
-                    "single-entry event and a conditional fallback; no impossible sequence is proposed."}
+            "conflicts_total": sum(len(p["conflicts"]) for p in plan),
+            "undecidable_total": sum(len(p["undecidable_pairs"]) for p in plan),
+            "note": "Estimated finish times are calculated from the published level structure (levels x level "
+                    "length plus the published breaks) and are the latest plausible finish, not an official "
+                    "one. A finish after midnight is printed as '(next day)' and is compared in minutes from "
+                    "midnight, so an event that can run into the next morning is never paired with a later "
+                    "start on the same date. Where an event publishes no level structure the pair is listed "
+                    "as 'cannot be checked' rather than treated as playable. A day holds one primary "
+                    "single-entry event and, only where the primary can have finished, a conditional "
+                    "fallback; no impossible sequence is proposed."}
 
 
 # ---------------- hotels ----------------

@@ -257,6 +257,15 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
     var hh = h % 12 === 0 ? 12 : h % 12;
     return hh + ":" + m + " " + ap;
   }
+  // "08:55 (next day)" -> "8:55 AM (next day)". The day marker is kept because a
+  // structure that runs past midnight used to be printed as a bare clock time
+  // that read as earlier than the event's own start.
+  function endFmt(label) {
+    if (!label) return "";
+    var m = /^(\d{2}:\d{2})(\s*\(.*\))?$/.exec(label);
+    if (!m) return esc(label);
+    return timeFmt(m[1]) + (m[2] ? " " + esc(m[2].trim()) : "");
+  }
   function statusChip(s) {
     if (s === "SE") return '<span class="chip ok">Single entry (verified)</span>';
     if (s === "MULTI") return '<span class="chip warn">Possible multiple entries</span>';
@@ -774,6 +783,12 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
       var main = document.getElementById("content");
       document.getElementById("note").textContent = sched.note;
       document.getElementById("earliest").textContent = timeFmt(sched.earliest_listed_start);
+      var kpi = document.getElementById("overlap-kpi");
+      if (kpi) {
+        kpi.textContent = sched.conflicts_total + " overlapping pair(s) flagged across the " +
+          sched.days.length + " dates, and " + sched.undecidable_total +
+          " pair(s) that cannot be checked because an event publishes no level structure.";
+      }
 
       var byId = {};
       rows.forEach(function (r) { byId[r.id] = r; });
@@ -801,24 +816,33 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
             var marks = [];
             if (day.primary_id === o.id) marks.push('<span class="chip ok">Primary</span>');
             if (day.fallback_id === o.id) marks.push('<span class="chip info">Conditional fallback</span>');
+            var finish = o.est_end_label || o.est_end;
             return "<li><strong>" + timeFmt(o.start) + "</strong> · " + esc(o.name) + " · " + money(o.buy_in_usd) +
               (o.guarantee_usd ? " · GTD " + money(o.guarantee_usd) : "") +
               (o.prize_text ? " · " + esc(o.prize_text) : "") +
               " " + chip + " " + marks.join(" ") +
               '<br><span class="small">' + esc(o.series) + " · " + esc(o.venue) +
-              (o.est_end ? " · estimated to finish about " + timeFmt(o.est_end) : "") +
+              (finish ? " · estimated to finish about " + endFmt(finish) : "") +
               ' · <a href="' + esc(o.source) + '" target="_blank" rel="noopener">source</a></span>' +
               ((row.flags || []).length ? '<br><span class="chip warn">' + esc(row.flags[0]) + "</span>" : "") +
               "</li>";
           }).join("");
-          var conflicts = day.conflicts.length
-            ? '<div class="small" style="margin-top:6px"><span class="chip warn">' + day.conflicts.length +
-              " overlap(s) flagged</span> " + esc(day.conflicts[0].detail) + "</div>"
-            : "";
+          function pairList(items, label, cls) {
+            if (!items.length) return "";
+            var shown = items.slice(0, 3).map(function (c) {
+              return "<li>" + esc(c.detail) + "</li>";
+            }).join("");
+            var more = items.length > 3
+              ? '<li class="muted">…and ' + (items.length - 3) + " more.</li>" : "";
+            return '<div class="small" style="margin-top:6px"><span class="chip ' + cls + '">' +
+              items.length + " " + label + "</span><ul style=\"margin:4px 0 0 18px\">" + shown + more + "</ul></div>";
+          }
+          var conflicts = pairList(day.conflicts || [], "overlap(s) flagged", "warn");
+          var unknown = pairList(day.undecidable_pairs || [], "pair(s) cannot be checked", "info");
           var fallback = day.fallback_note
             ? '<div class="small muted">' + esc(day.fallback_note) + "</div>" : "";
           return '<div class="card day" id="day-' + day.date + '"><h3>' + dateFmt(day.date) + "</h3><ul>" + list +
-            "</ul>" + conflicts + fallback + "</div>";
+            "</ul>" + conflicts + unknown + fallback + "</div>";
         }).join("");
       }
       render();
