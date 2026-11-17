@@ -168,6 +168,52 @@ URL (Hard Rock Las Vegas). Full list with what each printed: `research/other-roo
 - **F71** the MGM poker hub links Luxor and Excalibur to pages that list no poker room.
 - **F72** no walking record exists for these rooms; walking cells are blank and flagged.
 
+### Pull request and deploy record
+
+- [PR #56](https://github.com/karagemop466-tech/Poker1/pull/56) (`arena/0d069ce0-poker1` → `main`)
+  — **merged** at `7b53d9b` on 2026-11-17T01:28:48Z. The `validate` job passed in
+  [run 43995605119](https://github.com/karagemop466-tech/Poker1/actions/runs/43995605119)
+  (job 133746760320, 1m54s): dataset rebuild, page rebuild, `check_links.py`, the official-source
+  check and the headless render of all 22 pages.
+- [PR #58](https://github.com/karagemop466-tech/Poker1/pull/58) — **merged** at 2026-11-17T01:35:13Z.
+  Corrected two flag cross-references on the new page (F72/F73 → F71) and regenerated the page
+  against `main`'s shared assets. `validate` passed in run 43996423073.
+- Two rebases onto `main` were needed (`b886aa6`, then `b292d22`); both applied cleanly and no
+  other session's work was dropped.
+- GitHub Pages: `pages build and deployment` run 43996844250 completed `success`; the Pages API
+  reports `built` for commit `b3e34dd`. Live page checked after deploy:
+  https://karagemop466-tech.github.io/Poker1/pages/other-rooms.html renders all seven sections, and
+  https://karagemop466-tech.github.io/Poker1/data/other_rooms.json serves the dataset.
+- A transient `errored` Pages build was observed for commit `b0a0a27` while several sessions were
+  merging within the same minute; the next deployment succeeded and the site is `built`.
+
+### Overlap with session 88793bf4 (PR #45) — cross-check, not a conflict
+
+PR #45, opened 2026-11-17T01:14:39Z, surveys MGM Grand, Mandalay Bay and Horseshoe. Session
+`0d069ce0` had claimed the wider survey first (claim commit pushed before implementation) and
+merged first at `7b53d9b`. The two sessions read the same three MGM URLs independently and reached
+the same two conclusions, which is a useful cross-check:
+
+| Finding | Session 0d069ce0 | Session 88793bf4 | Agreement |
+|---|---|---|---|
+| MGM page times vs PDF times | F60 (11:00/7:00/11:00 vs 11:10/7:10/11:10) | S1 | same |
+| MGM PDF prints no date; schedule titled "August" | F61 | S2 | same |
+| $11 gratuity buys 10,000 extra chips, so out of the single-entry list | F62 | separate section | same |
+
+Differences the integration session should reconcile, keeping both:
+
+| Point | 0d069ce0 (this session) | 88793bf4 |
+|---|---|---|
+| Coverage | 14 rooms, including the Orleans (13 structure sheets read), South Point, Paris, Luxor, Excalibur, SAHARA, Resorts World, Fontainebleau, The STRAT, Mirage | 5 rooms, plus press-reported closures |
+| Press reports of closures | Recorded as a lead only, never as a value (F74) | Recorded as "reported, not confirmed" rows |
+| The contentstack asset host | **Not** added to the approved host list, matching the existing F40 treatment of the Bellagio flyers; the PDFs are cited through the official page that links them | Added to the approved list |
+| Monitoring | Six URLs appended to `data/sources.json`, so the weekly `check_source_facts.py` job snapshots them | Six URLs in `data/sources.json` **and** wired into `scripts/monitor_sources.py`, so the **daily** job covers them too |
+
+**Logged request:** the daily monitor (`scripts/monitor_sources.py`) currently builds its URL set
+from the tournament, hotel and walking rows, so the other-rooms URLs are only checked weekly.
+Wiring them into the daily job as session 88793bf4 did would close that gap. That file is not
+edited here because it belongs to the monitoring scope another session holds.
+
 ### Open request logged for the integration session
 
 - **Walking rows for MGM Grand, the Orleans and South Point.** The site's walking table covers twelve
@@ -176,6 +222,43 @@ URL (Hard Rock Las Vegas). Full list with what each printed: `research/other-roo
   twelve existing rows. This session produced none rather than estimate one (F72).
 
 ---
+
+## Session 88793bf4 — branch `arena/88793bf4-poker1`, base `44fcc08` (claim, 2026-11-17)
+
+Claimed before implementation. No other open claim covers this scope: open PRs #36 (`c0714e1a`, WPT join and hotel fee records), #38 (`160f9080`, row verification) and #39 (`11c7cbe6`, planner review) are not touched here.
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Strip-wide poker-room survey: official schedules, structures and closures for every Strip room not yet covered (MGM Grand, Mandalay Bay, Horseshoe, Resorts World, Planet Hollywood); add an official-source-only strip page with a flag for every reported-but-unconfirmed item | **Done** (see the verification record below) | `data/strip_rooms.json` (new), `research/strip-room-survey-2026-11-17.md` (new), `pages/strip-rooms.html` (generated), `scripts/build_site.py`, `assets/app.js` (one renderer), `scripts/check_links.py` (allow-list and page id), `scripts/monitor_sources.py` (monitor the new URLs), `data/sources.json`, `FLAGGED.md` (appended S-series only), `EXECUTIVE_SUMMARY.md` (appended section), `COORDINATION.md` | `88793bf4` |
+
+### Session 88793bf4 — completion record
+
+**Sources read on 2026-11-17 (official operator pages, PDFs and article):** [MGM Grand poker page](https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html); [MGM Grand weekly schedule PDF](https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt5f25277b8918da08/mgm-grand-casino-poker-tournament_schedule.pdf); [MGM Grand $120 NLH structure PDF](https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf); [Mandalay Bay poker page](https://mandalaybay.mgmresorts.com/en/casino/poker-tables.html); [Caesars poker article (Caesars Palace and Horseshoe)](https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip); [Resorts World casino events](https://www.rwlasvegas.com/gaming/casino-events/) and [gaming page](https://www.rwlasvegas.com/gaming/); [Planet Hollywood property page](https://www.caesars.com/planet-hollywood).
+
+**Press reports used only as closure leads (not confirmed on official pages):** [Casino.org, Resorts World closure, 13 Mar 2026](https://www.casino.org/vitalvegas/resorts-world-confirms-closure-of-poker-room/); [Las Vegas Review-Journal, Planet Hollywood closure, 28 Jan 2026](https://www.reviewjournal.com/business/casinos-gaming/inside-gaming-strip-casino-to-close-poker-room-3612434/).
+
+**Verification performed:** `python3 scripts/build_data.py` → no change to `data/tournaments.json` (317 rows); `python3 scripts/build_site.py` → 22 pages; `python3 scripts/check_links.py` → OK (22 pages; the new Strip-room checks pass: official hosts, times, numbers, dates, flag ids); `npm run test:smoke` → 22/22 pages render; a DOM check of `pages/strip-rooms.html` rendered 5 room rows, 5 format rows and 2 reported-change rows with no error.
+
+**Result:** MGM Grand (new): official weekly schedule and structure read. Its $120 formats include an optional $11 gratuity that buys 10,000 extra chips, so they are in the separate section; the Saturday $150 event has no published structure (unverified). Horseshoe (new): six daily start times from the official Caesars article, with no buy-in printed. Mandalay Bay (new): no tournament schedule on the official page. Resorts World and Planet Hollywood: reported closed, not confirmed on an official page. No dated rows were added; no ranking changed.
+
+**Irregularities (FLAGGED.md section E, S1–S10):** MGM poker page times (11:00 / 7:00 / 11:00) differ from the MGM PDF (11:10 / 7:10 / 11:10) (S1); the MGM PDFs print no date and carry an "August" title (S2); the $11 optional gratuity buys 10,000 chips (S3); Mandalay Bay publishes no schedule (S4); Horseshoe prints no buy-in (S5); the Saturday $150 event has no structure (S6); Resorts World and Planet Hollywood closures are press-reported only (S7, S8); MGM PDFs are on the MGM content-asset host, which F40 records as not approved; the survey cites the PDF values through the official poker page and leaves the approval decision open (S9); the Strip resorts not surveyed are listed (S10).
+
+**Monitoring:** four Strip-room operator URLs are added to `data/sources.json` (the MGM poker and Mandalay Bay pages are already on `main` from another session); `scripts/monitor_sources.py` monitors the Strip-room URLs in `data/strip_rooms.json`. The scheduled monitor will check them from GitHub Actions.
+
+**Not touched:** WPT join and hotel fee records (PR #36), row-verification fixes (PR #38), planner review (PR #39), and PR #24.
+
+**Pull request and integration log (session 88793bf4):**
+- PR: https://github.com/karagemop466-tech/Poker1/pull/45 (`arena/88793bf4-poker1` → `main`). Merge not yet performed; the merge result will be recorded here after it.
+- `main` moved (PRs #38, #39, #41, #42, #43 merged) after the branch was cut at `44fcc08`. The branch was rebased onto `origin/main`; the only conflict-free replay regenerated `pages/strip-rooms.html` so it matches the current `app.js` (the first CI failure, "Confirm generated pages match committed pages", came from that stale page).
+- Mistake, logged for transparency: during an interrupted `git pull --rebase`, one intermediate commit (`0ec3fb4`, a replay of `main`'s "correct executive summary tournament totals" commit) was pushed to this branch. Its tree is identical to `main`'s, so the content is unaffected. It was reconciled with an `ours` merge (`f903fa2`), which keeps the tree and makes the push a fast-forward. No force push was used.
+- Shared `pages` concurrency group: runs for this branch were cancelled by other sessions' pushes to `main` and to `arena/74e9029c-poker1`. Not a content failure.
+- A `source-facts` bot commit (`8e58f5f`, `data/monitor_last_run.txt` only) was added to this branch by the workflow. It is a monitoring log only.
+- Validation on PR #45 head `03ba031` was cancelled twice by newer runs in the shared `pages` group (runs `43994718232` and its re-run attempt). A further push is made so the run is the latest one started.
+- Merge of `origin/main` (PRs #47, #54–#57 and the S16 print-views work) into this branch. Conflicts resolved by keeping both sides: nav entries (Strip rooms and Other rooms), both page renderers (`PAGES.strips` and `PAGES.otherRooms`), and both page keys in `KNOWN_PAGES`. Generated pages regenerated from source.
+- Host decision (F40, kept): the MGM PDFs are served from `assets.contentstack.io`, which F40 and the other-rooms survey both keep off the approved list. This branch no longer adds that host. The Strip-room PDF values are cited through the MGM Grand official poker page, which links them. The approval question is open for a reviewer (FLAGGED S9).
+- Cross-session note for the owner of the other-rooms survey (not edited here): `pages/other-rooms.html` on `main` is stale. `assets/style.css` on `main` includes the S16 print styles, but the page was not regenerated, so a rerun of `scripts/build_other_rooms.py` produces a different page than the one committed. This branch leaves that file as `main` has it.
+- Cross-session note: FLAGGED.md on `main` has two rows with the ID F53. The ID collision predates this branch and is left for the owning session.
+- GitHub did not run `pull_request` validation for the bot commit (run `43994477112`, `action_required`, cannot be re-run). This entry is pushed to trigger a fresh run on the PR head.
 
 ## Session 54ae4633 (current branch `arena/54ae4633-poker1`)
 

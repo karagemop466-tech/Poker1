@@ -79,6 +79,7 @@ PAGES = {
   <a class="card tile" href="pages/schedule.html"><h3>Schedule</h3><p>Day-by-day verified single-entry options, with a date picker.</p></a>
   <a class="card tile" href="pages/hotels.html"><h3>Hotels</h3><p>Resort fees, room-rate status, walking records and the dated rate log.</p></a>
   <a class="card tile" href="pages/calculator.html"><h3>Trip cost calculator</h3><p>Entries × buy-in + nights × true hotel cost + parking, from dated official-engine quotes. Nothing is assumed.</p></a>
+  <a class="card tile" href="pages/strip-rooms.html"><h3>Strip rooms</h3><p>Official schedules for the Strip poker rooms the venue pages do not cover, with closures that are reported but not confirmed.</p></a>
   <a class="card tile" href="pages/venues.html"><h3>Venues</h3><p>Each poker room, the hotels attached to it and the events played there.</p></a>
   <a class="card tile" href="pages/other-rooms.html"><h3>Other rooms</h3><p>Every other Strip and near-Strip poker room, checked against its own site: what it publishes, and what it does not.</p></a>
   <a class="card tile" href="pages/search.html"><h3>Search</h3><p>One box across every row, hotel, venue, document and rate on the site.</p></a>
@@ -178,6 +179,10 @@ PAGES = {
     "pages/flagged.html": ("Flagged for review", "flagged", """
 <h1>Flagged for review</h1>
 <p class="lead">Published so you can review each item. Flags do not block the merge.</p>
+<div id="content"></div>
+"""),
+    "pages/strip-rooms.html": ("Strip rooms", "strips", """
+<h1>Strip room survey</h1>
 <div id="content"></div>
 """),
     "pages/review.html": ("Repo review and sources", "review", """

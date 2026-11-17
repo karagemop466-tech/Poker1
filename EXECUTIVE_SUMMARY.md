@@ -303,3 +303,14 @@ still unverified on the entry rule and are not counted.
   check, which rows changed since the last verified snapshot, and every flagged row.
 - The [search box](pages/search.html) covers every row, hotel, venue, daily format, walking record,
   rate entry and document on the site.
+
+## 9. Strip-wide room survey (added 2026-11-17)
+
+Details: [Strip rooms page](pages/strip-rooms.html) · [research log](research/strip-room-survey-2026-11-17.md) · flags S1–S10 in [FLAGGED.md](FLAGGED.md) section E.
+
+- **Strip coverage was incomplete.** The venue dataset covered five rooms. This survey adds MGM Grand, Mandalay Bay and Horseshoe, and records two closures.
+- **MGM Grand has an official weekly schedule.** Daily $120 no-limit hold'em at 11:10 AM (Sunday to Friday), 7:10 PM and 11:10 PM, plus a Saturday $150 event with a $2,000 guarantee. The $120 entry includes an optional $11 "gratuity" that buys 10,000 extra chips, so those formats sit in the **separate section**. The Saturday event's structure is not published, so it is unverified. The official poker page and the PDF disagree by ten minutes on every start time (flag S1).
+- **Horseshoe runs six daily no-limit hold'em sessions** at 9 AM, 11 AM, 2 PM, 5 PM, 8 PM and 11 PM, per the official Caesars article. No buy-in, guarantee or structure is printed, so none is shown (flag S5). The 9 AM start is the earliest official daily start found on the Strip in this survey, but it is not a verified single-entry event.
+- **Mandalay Bay publishes no tournament schedule** on its official poker page (flag S4). Its page says Tuesdays are closed.
+- **Resorts World and Planet Hollywood are reported closed** (March 2026 and January 2026). Both reports quote a company statement, but neither closure is confirmed on an official page read (flags S7, S8).
+- **Not surveyed:** Paris, Flamingo, Linq, Harrah's, Excalibur, Luxor, New York-New York, Park MGM, Westgate and Circus Circus (flag S10).

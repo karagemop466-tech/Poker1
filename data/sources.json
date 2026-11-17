@@ -562,6 +562,20 @@
    "url": "https://southpointcasino.com/casino/poker-room/daily-tournament-schedule",
    "kind": "structure",
    "venue": "South Point"
+  },
+  {
+   "id": "strip_rwlv_events",
+   "label": "Resorts World official casino events page (closure check: no poker event listed)",
+   "url": "https://www.rwlasvegas.com/gaming/casino-events/",
+   "kind": "schedule",
+   "venue": "Resorts World"
+  },
+  {
+   "id": "strip_ph_property",
+   "label": "Planet Hollywood official property page (closure check)",
+   "url": "https://www.caesars.com/planet-hollywood",
+   "kind": "schedule",
+   "venue": "Planet Hollywood"
   }
  ]
 }
