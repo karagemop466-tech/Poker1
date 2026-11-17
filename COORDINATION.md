@@ -354,3 +354,30 @@ Claimed in commit `a698b81` before implementation.
 - 2026-11-17: session `2e5232bc` claimed the schedule re-check (commit `a698b81`), read all four official schedules, restored the missing WPT TORSE (2 Day) row, corrected U8 and the REVIEW.md continuation count, and recorded the verification in `research/verification-2026-11-17.md`.
 - 2026-11-17: session `2e5232bc` opened [PR #31](https://github.com/karagemop466-tech/Poker1/pull/31) from `arena/2e5232bc-poker1` to `main`. The `validate` check passed, and PR #31 **merged** at `e9afbd79d7550bc9fa3f90a1177e5cdc3eefa20d` (merge commit). The Pages workflow run for `e9afbd7` completed with `success` and the Pages API reports build status `built` (2026-11-17T00:37:33Z). The live Flagged for Review page at https://karagemop466-tech.github.io/Poker1/pages/flagged.html lists F21 (the restored row). `main`'s `data/tournaments.json` contains the restored `TORSE (2 Day)` row (317 rows).
 - Note for the next session: this sandbox cannot reach `github.io` directly from bash, so the live check used the page fetcher and the GitHub API. The scheduled monitor on `main` has not yet produced a new result; check its first run before relying on `data/monitoring.json`.
+
+## Session 618483e6 — integration + verification (branch `arena/618483e6-poker1`, base `44fcc08`)
+
+Claimed in this commit, before implementation work. No other session holds an open claim on these files as of
+2026-11-17T01:12Z (open PRs #36, #38, #39, #41 are other sessions' branches and are not edited here).
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Fix the failed Pages deployment on `main` (run `43992732904`: `No artifacts named "github-pages" were found`) and confirm the live site | **In progress** | `.github/workflows/pages.yml`, `COORDINATION.md` | `618483e6` |
+| Join the 69 official WPT structure blocks in `data/wpt_rules.json` to the 91 WPT rows currently labelled UNV, so every event the official structures PDF confirms loses its "unverified" label and carries separate single-entry / re-entry / add-on / fee fields with excerpt + retrieval date | **In progress** | `scripts/build_data.py`, `data/tournaments.json`, `data/wpt_rules.json`, `research/structure-sheets-verification.md` | `618483e6` |
+| Re-verify published counts and row values against the live official pages, record every discrepancy in `FLAGGED.md` / `REVIEW.md` | **In progress** | `FLAGGED.md`, `REVIEW.md`, `EXECUTIVE_SUMMARY.md`, `README.md` | `618483e6` |
+| Final validation, PR to `main`, merge, Pages deploy confirmation | **In progress** | the six Markdown documents, `COORDINATION.md` | `618483e6` |
+
+### Already observed on `main` at claim time
+
+- **Deploy failure (not a build failure).** `validate` passed every step on `main`'s last merge (run
+  `43992732904`), but the `deploy` job failed at *Deploy to GitHub Pages* with
+  `No artifacts named "github-pages" were found for this workflow run`, even though the *Upload Pages
+  artifact* step reported success. That is the known Pages/artifacts race, not a defect in the site;
+  `gh api repos/.../pages` still reports `status: built`. It is re-run in this session.
+- **129 rows still carry UNV**, and 91 of them are WPT rows. `data/wpt_rules.json` (built by session
+  40ca34e5) already holds **69 official structure blocks** with an entry-fee split and a registration
+  clause for most of them, and `data/snapshots/wpt_struct.txt` is the extracted text of the official
+  WPT structures PDF. The join was never performed — `COORDINATION.md` recorded it as U8 "still open".
+  This is the largest single information gap in the dataset and is claimed here.
+- **`EXECUTIVE_SUMMARY.md` still says "all 316 rows"** in its opening paragraph while the rest of the
+  document and the build say 317. Cosmetic, but it is a published count.
