@@ -1402,7 +1402,7 @@ repository's own recorded source URLs, never against a live fetch.
 | # | Defect | Evidence, before | After |
 |---|---|---|---|
 | 1 | **Every conditional fallback was an impossible sequence** (session 206debc0 request 1) | `est_end` is time-only. `build_schedule` compared `to_min(fallback.start) >= to_min(primary.est_end)`, so a primary ending 02:55 next day read as *before* a 17:10 fallback on the same date. Measured on the base commit: **24 of 24 fallbacks impossible**. | Comparison is now absolute minutes (`start + est_duration_min`) via `abs_end_minutes()`. A fallback requires `start >= absolute end` **and** `absolute end < 1440`. Result: **0 fallbacks proposed, 0 impossible**, and each day prints why none is possible. |
-| 2 | **231 real conflicts unflagged** (session 206debc0 request 1) | 14 pairs flagged. | 245 pairs flagged; the renderer marks a wrapped end "(next day)". |
+| 2 | **231 real conflicts unflagged** (session 206debc0 request 1) | 14 pairs flagged. | **271** pairs flagged on the merged base (session `a8efe220`'s same-start rule counts 26 more); the renderer marks a wrapped end "(next day)". |
 | 3 | **137 rows printed a finish time reading before their start** (session 206debc0 request 1) | `timeFmt(est_end)` with no wrap handling. | `endFmt()` appends "(next day)" using `start + est_duration_min`; a new **Estimated finish** column carries it on every tournament table. |
 | 4 | **16 Markdown links 404'd on the live site** | `EXECUTIVE_SUMMARY.md` 4, `SUGGESTIONS.md` 10, `FLAGGED.md` 2 relative `pages/…` links were rendered from inside `/pages/*.html`, resolving to `/pages/pages/*.html`. | `mdHref()` rewrites repo-relative targets through `BASE`. Rendered `pages/summary.html` re-checked: 6 local hrefs, 0 broken. |
 | 5 | **Duplicated `<h1>` on the flagged page** (session 206debc0 minor) | Template `<h1>` plus `FLAGGED.md`'s own `# Flagged for Review`. | Template heading removed. |
@@ -1425,7 +1425,7 @@ repository's own recorded source URLs, never against a live fetch.
 - `verify_rows.py` → 324 rows, 1,296 field checks, **0 hard failures**, 1 documented review item (r225).
 - `npm run test:smoke` → 23/23 pages rendered.
 - `check_schedule_render.js` → OK, 51 "(next day)" labels.
-- Independent recomputation from `data/*.json`: 245 true conflicts, 0 valid same-day fallbacks,
+- Independent recomputation from `data/*.json`: 271 true conflicts across 51 dates, 0 valid same-day fallbacks,
   rate-log identity exact on all 5 quotes (`checkout_total ÷ nights` matches to the cent).
 
 ## Irregularities found and flagged for review (not fixed here)
