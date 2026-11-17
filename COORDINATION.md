@@ -288,6 +288,19 @@ by `main`, and is not edited here).
 | Add the trip-cost calculator (entries × buy-in + nights × true hotel cost) bound to the verified rate log | **Done** | `assets/app.js`, `pages/calculator.html`, `scripts/build_site.py` | `bb9a3717` |
 | Refresh Executive Summary, Questions, Suggestions, Flagged, Review, README; validate; PR → `main`; merge; confirm Pages deploy | **Done** | the six Markdown documents, `COORDINATION.md` | `bb9a3717` |
 
+**Outcome.** [PR #35](https://github.com/karagemop466-tech/Poker1/pull/35) merged into `main` at
+`da4f5d4025d02bab1e82acdad2e1c01342f65427` (merge commit). The `validate` job passed
+(run `43990124144`), the Pages deploy run `43990408056` completed with `success`, and the Pages API reports
+build status `built` for commit `da4f5d4`.
+
+Delivered in this claim: dated rate log grown from one quote to **five** (Nov 18–20 $475.35, Nov 26–29
+$804.15, Dec 13–20 $338.48, Jan 1–6 $911.86, Jan 10–15 $320.02 true cost per night, each reproducing at
+13.38% of room + resort fee); a Wynn quote withdrawn rather than kept (F45); twelve routed walking records
+corrected to the resorts that actually contain the poker rooms, which flipped four conclusions (F52);
+the trip-cost calculator page; hotel/walking/rate sources added to the monitor; and flags renumbered
+**F41–F52** after merging `main`'s F31–F40. Dataset after merge: **317 rows** (80 SE / 60 MULTI / 46 RE /
+129 UNV / 2 CONT), 70 schedule days, 56 flagged, 7 hotels, 5 dated rates, 21 pages.
+
 **Network note.** This sandbox reaches `github.com` only through `git`/`gh`; direct HTTPS to operator domains
 fails with `SSL_ERROR_SYSCALL`. Live page retrieval was therefore done with the agent's page-fetch tool, which
 does have outbound access, and every value below is quoted from that retrieval with the URL.
