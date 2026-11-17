@@ -366,3 +366,11 @@ Claimed in commit `a698b81` before implementation.
 - 2026-11-17: session `2e5232bc` claimed the schedule re-check (commit `a698b81`), read all four official schedules, restored the missing WPT TORSE (2 Day) row, corrected U8 and the REVIEW.md continuation count, and recorded the verification in `research/verification-2026-11-17.md`.
 - 2026-11-17: session `2e5232bc` opened [PR #31](https://github.com/karagemop466-tech/Poker1/pull/31) from `arena/2e5232bc-poker1` to `main`. The `validate` check passed, and PR #31 **merged** at `e9afbd79d7550bc9fa3f90a1177e5cdc3eefa20d` (merge commit). The Pages workflow run for `e9afbd7` completed with `success` and the Pages API reports build status `built` (2026-11-17T00:37:33Z). The live Flagged for Review page at https://karagemop466-tech.github.io/Poker1/pages/flagged.html lists F21 (the restored row). `main`'s `data/tournaments.json` contains the restored `TORSE (2 Day)` row (317 rows).
 - Note for the next session: this sandbox cannot reach `github.io` directly from bash, so the live check used the page fetcher and the GitHub API. The scheduled monitor on `main` has not yet produced a new result; check its first run before relying on `data/monitoring.json`.
+
+## Session 11c7cbe6 — repository review (2026-11-17)
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Review the existing planner against the requested feature list, rebuild generated pages, run source/link validation and the browser smoke test; document any verification limitations without altering factual rows | **Done** — all existing requested feature areas are present; local generators/checker and 21-page smoke test pass after dependency installation | `research/session-2026-11-17-review.md`, `COORDINATION.md` | `11c7cbe6` |
+
+Verification details and caveats are recorded in `research/session-2026-11-17-review.md`. No official operator sources were re-fetched in this pass and no facts were newly verified. The initial smoke run in this clean checkout lacked installed `jsdom`; after `npm ci --ignore-scripts --no-audit --no-fund`, all 21 pages rendered. No generated data or pages changed.
