@@ -3,14 +3,14 @@
  "sources": [
   {
    "id": "v_dse_nov_page",
-   "label": "Venetian DeepStack Extravaganza IV \u2014 official event page",
+   "label": "Venetian DeepStack Extravaganza IV — official event page",
    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "kind": "schedule",
    "venue": "Venetian"
   },
   {
    "id": "v_dse_dec_page",
-   "label": "Venetian DeepStack Extravaganza NYE \u2014 official event page",
+   "label": "Venetian DeepStack Extravaganza NYE — official event page",
    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
    "kind": "schedule",
    "venue": "Venetian"
@@ -499,6 +499,27 @@
    "url": "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date=2026-12-01&children[]=0&departure_date=2026-12-08&view=calendar",
    "kind": "rate",
    "venue": "Venetian"
+  },
+  {
+   "id": "v_dse_series_page",
+   "label": "Venetian DeepStack series overview (current and next series dates) — official page",
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html",
+   "kind": "schedule",
+   "venue": "Venetian"
+  },
+  {
+   "id": "bellagio_poker",
+   "label": "Bellagio poker room page (weekly tournament flyers) — official page",
+   "url": "https://bellagio.mgmresorts.com/en/casino/poker.html",
+   "kind": "schedule",
+   "venue": "Other"
+  },
+  {
+   "id": "caesars_poker_article",
+   "label": "Caesars Palace daily poker tournament article (official, dated 2026-07-17)",
+   "url": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+   "kind": "schedule",
+   "venue": "Other"
   }
  ]
 }
