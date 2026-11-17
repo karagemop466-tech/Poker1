@@ -753,8 +753,19 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
         "<strong>" + esc(res[0].note) + "</strong>" +
         "<br><br>Sources: " + srcLinks(res[0].sources);
       var dayNames = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+      // days is stored as a string like "Monday-Thursday", "Friday", "Saturday-Sunday" or "Monday-Sunday"
+      function dayRuns(daysStr, dayFull) {
+        var order = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+        var idx = order.indexOf(dayFull);
+        if (idx < 0) return false;
+        var parts = String(daysStr).split("-");
+        if (parts.length === 1) return parts[0] === dayFull;
+        var a = order.indexOf(parts[0]), b = order.indexOf(parts[1]);
+        if (a < 0 || b < 0) return false;
+        return idx >= a && idx <= b;
+      }
       var calendar = '<div class="calendar">' + dayNames.map(function (d, i) {
-        var todays = daily.filter(function (x) { return x.days.indexOf(d.slice(0, 3)) >= 0 || x.days.indexOf(d) >= 0; });
+        var todays = daily.filter(function (x) { return dayRuns(x.days, d); });
         return '<div class="slot"><div class="d">' + d + "</div>" + (todays.length
           ? todays.map(function (x) {
               return '<div class="t">' + timeFmt(x.start) + "</div><div class='small'>" + esc(x.name) +
