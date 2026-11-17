@@ -346,3 +346,25 @@ Claimed in commit `a698b81` before implementation.
 - 2026-11-17: session `2e5232bc` claimed the schedule re-check (commit `a698b81`), read all four official schedules, restored the missing WPT TORSE (2 Day) row, corrected U8 and the REVIEW.md continuation count, and recorded the verification in `research/verification-2026-11-17.md`.
 - 2026-11-17: session `2e5232bc` opened [PR #31](https://github.com/karagemop466-tech/Poker1/pull/31) from `arena/2e5232bc-poker1` to `main`. The `validate` check passed, and PR #31 **merged** at `e9afbd79d7550bc9fa3f90a1177e5cdc3eefa20d` (merge commit). The Pages workflow run for `e9afbd7` completed with `success` and the Pages API reports build status `built` (2026-11-17T00:37:33Z). The live Flagged for Review page at https://karagemop466-tech.github.io/Poker1/pages/flagged.html lists F21 (the restored row). `main`'s `data/tournaments.json` contains the restored `TORSE (2 Day)` row (317 rows).
 - Note for the next session: this sandbox cannot reach `github.io` directly from bash, so the live check used the page fetcher and the GitHub API. The scheduled monitor on `main` has not yet produced a new result; check its first run before relying on `data/monitoring.json`.
+
+## Session c7a324a6 — branch `arena/c7a324a6-poker1`, base `aea688a` (main after PR #37)
+
+Claimed in this commit, before any data or code change. Two sessions hold open PRs from this base:
+[#36](https://github.com/karagemop466-tech/Poker1/pull/36) (`c0714e1a`, WPT sheet join + hotel fee
+verification) and [#38](https://github.com/karagemop466-tech/Poker1/pull/38) (`160f9080`,
+`scripts/verify_rows.py`, LIPS fee split, unsourced WSS guarantees). This session does not edit their
+branch files directly. Its own work is the four tasks below; the fifth is the integration pass, which
+takes `main` only after those PRs are merged or closed, so no session's work is overwritten.
+
+| # | Task | Status | File scope | Owner |
+|---|---|---|---|---|
+| 1 | Extend the morning live feed from two rooms to every Strip poker room the dataset names: add each room's official poker / daily-schedule page to `data/sources.json` (with the host allow-list in `scripts/check_source_facts.py`) and record each room's printed daily formats in the daily feed with a quoted excerpt and retrieval date | **in progress** | `data/sources.json`, `scripts/check_source_facts.py`, `scripts/build_data.py` (WYNN_DAILY / new room rows), `pages/daily.html` (regenerated) | `c7a324a6` |
+| 2 | Verify the tax and fee components of "true cost per night" against the taxing authority (Nevada Dep. of Taxation / Clark County) instead of only the operator's own page, and upgrade or keep-blank each hotel's fee/tax status accordingly | **in progress** | `data/hotels.json` (via `scripts/build_data.py`), `research/verification-2026-11-17-c7a324a6.md`, `QUESTIONS.md`, `FLAGGED.md` | `c7a324a6` |
+| 3 | Add dated hotel-rate quotes for the trip windows from the official booking engines, so the like-for-like comparison covers more than one property | **in progress** | `data/rates.json` (via `scripts/build_data.py`), `pages/calculator.html`, `pages/hotels.html` (regenerated) | `c7a324a6` |
+| 4 | Independent line-by-line audit of every published row, hotel and rate value against the official documents fetched on 2026-11-17; publish the audit record, fix what a source contradicts, flag what it cannot settle | **in progress** | `research/verification-2026-11-17-c7a324a6.md`, `data/snapshots/*` (Actions refresh), `scripts/build_data.py` (row fixes only where a source contradicts), `FLAGGED.md`, `REVIEW.md` | `c7a324a6` |
+| 5 | Integration pass: rebase onto `main` after PRs #36/#38, regenerate `data/*.json` and `pages/*.html` from the merged generator, run `build_data.py`, `build_site.py`, `check_links.py`, `verify_rows.py` and the headless smoke test, open a PR to `main`, merge, confirm the Pages deploy, record the result | **unclaimed until #36/#38 resolve** | everything generated, `.github/workflows/pages.yml` (only if the deploy fails), `COORDINATION.md` | `c7a324a6` |
+
+Note for other sessions: this session appends to `COORDINATION.md` and does not rewrite earlier sections.
+`scripts/build_data.py`, `data/*.json`, `index.html` and `pages/*.html` are generated or shared: #36 and
+#38 own their own edits there; this session's edits to the same files are limited to the scopes above and
+are reconciled at integration, not by overwriting.
