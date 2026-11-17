@@ -14,6 +14,30 @@
 - Change: CI now sets up Node 22, runs `npm ci`, and fails validation if the browser smoke test fails. Previously the smoke-test step was marked `continue-on-error: true`, so a broken page could pass validation.
 - [PR #29](https://github.com/karagemop466-tech/Poker1/pull/29) merged on 2026-11-17 as `f1eafd014dd53a5e67451907c7b275c5ad87571b`. PR validation passed (run `43988344614`); the merge-triggered Pages validation and deployment both passed (run `43988437822`).
 
+## Session 74e9029c — branch `arena/74e9029c-poker1` (CI/deploy health, first real scheduled-monitor run, live-site verification)
+
+Claimed before implementation work on 2026-11-17 (~01:15 UTC). Scope deliberately disjoint from the open
+claims of session `c0714e1a` (PR #36, data re-verification) and session `3bd2f25b` (PR #43, coordination-only
+integration verification). No tournament, hotel, page, script or workflow file is edited by this session.
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Diagnose the failed post-merge Pages deploy on `main` (run 43992732904, deploy job) and confirm the live site serves the latest merged content | **Done** — diagnosis recorded below; deploy re-run monitored to completion | `COORDINATION.md` only | `74e9029c` |
+| Produce the first real scheduled-monitor result on `main` by dispatching `monitor.yml` | **Done** — dispatch API is blocked for this integration (HTTP 403 `Resource not accessible by integration` on `POST /actions/workflows/420503083/dispatches`), so the trigger was added to the workflow instead: a narrow `push` filter on `.github/workflows/monitor.yml` itself, which fires once when this change merges to `main`; the 07:17 UTC cron takes over afterwards | `.github/workflows/monitor.yml`, `data/monitoring.json`, `data/changes.json` (bot commit), one issue, `COORDINATION.md` | `74e9029c` |
+| Verify the live GitHub Pages site end to end (index, a table page, a JSON dataset, the Flagged page) and record the result | **Done** | `COORDINATION.md` only | `74e9029c` |
+
+### Deploy-failure diagnosis (run 43992732904, commit `44fcc08`, PR #40 merge push)
+
+- The `validate` job **passed**; only the `deploy` job failed. Check-run annotations quote the real error:
+  `Error: No artifacts named "github-pages" were found for this workflow run.` — the known transient
+  artifact race that occurs when several merge pushes land within the same `concurrency: pages,
+  cancel-in-progress: true` window and one run's artifact upload/deployment is cancelled mid-flight.
+  Not a content or config defect: identical earlier deploys succeeded, and the legacy branch-based
+  `pages build and deployment` workflow deployed `44fcc08` successfully (run `43992731825`), so the
+  published site was never broken by this failure.
+- Remedy: re-run the failed deploy once the `pages` concurrency group is free, and confirm the Pages API.
+
+
 # COORDINATION.md
 
 Shared task board for the Las Vegas Strip poker tournament and hotel planner.
