@@ -1455,7 +1455,15 @@
         }
       ],
       "events": [],
-      "findings": []
+      "findings": [
+        {
+          "text": "Another session (88793bf4, PR #45) records a press report that this poker room closed (Las Vegas Review-Journal, 28 January 2026). The official page read here on 2026-11-17 still advertises it. A press report is not an official source, so nothing is changed on the strength of it; the conflict is flagged as F74 for a human to check with the property.",
+          "source": {
+            "label": "Official Planet Hollywood casino page",
+            "url": "https://www.caesars.com/planet-hollywood/casino"
+          }
+        }
+      ]
     },
     {
       "id": "mandalay-bay",
@@ -3044,6 +3052,13 @@
       "found": "The site's walking table covers twelve hotel-to-poker-room pairs, all of them to the Venetian and Wynn poker rooms. No routed walking time was produced on 2026-11-17 from any hotel to MGM Grand, the Orleans or South Point.",
       "handling": "Walking cells for these rooms are blank and flagged. Producing them is logged as a request for the integration session in COORDINATION.md; none is estimated here.",
       "source": "https://mandalaybay.mgmresorts.com/en/casino/poker-tables.html"
+    },
+    {
+      "id": "F74",
+      "title": "Planet Hollywood: the official page still advertises a live poker room, while a press report says it closed",
+      "found": "The official Planet Hollywood casino page, read on 2026-11-17, prints \"23 Live Poker Tables\" and \"new live action poker room\". Session 88793bf4's PR #45 records a press report that the room closed (Las Vegas Review-Journal, 28 January 2026) and the same for Resorts World (Casino.org, 13 March 2026). Neither closure is confirmed on an official source, and this page does not treat a press report as a value.",
+      "handling": "Planet Hollywood is recorded exactly as the official page prints it: a poker room with 23 tables and no tournament schedule. The conflict is flagged here instead of being resolved, because closing a room is not something this site can confirm from an operator page. Check with the property before planning around it.",
+      "source": "https://www.caesars.com/planet-hollywood/casino"
     }
   ],
   "counts": {
