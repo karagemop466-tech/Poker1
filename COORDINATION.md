@@ -288,6 +288,14 @@ by `main`, and is not edited here).
 | Add the trip-cost calculator (entries × buy-in + nights × true hotel cost) bound to the verified rate log | **Done** | `assets/app.js`, `pages/calculator.html`, `scripts/build_site.py` | `bb9a3717` |
 | Refresh Executive Summary, Questions, Suggestions, Flagged, Review, README; validate; PR → `main`; merge; confirm Pages deploy | **Done** | the six Markdown documents, `COORDINATION.md` | `bb9a3717` |
 
+**Follow-up.** [PR #37](https://github.com/karagemop466-tech/Poker1/pull/37) merged at
+`aea688a3981d32d84b43d3c2328278709018cbd0`, fixing three copy defects found by reading the live page
+(a truncated method sentence on the hotels page, a stale "walking time is not published, so it is blank"
+line sitting above the populated walking table, and a link still labelled "rate calculator"). Its first
+`validate` run was **cancelled**, not failed — `pages.yml` sets `concurrency: group: pages,
+cancel-in-progress: true`, so a push from session `160f9080` cancelled the run. Re-pushed and the
+replacement run `43991209450` passed. Pages build status is `built` for `aea688a`.
+
 **Outcome.** [PR #35](https://github.com/karagemop466-tech/Poker1/pull/35) merged into `main` at
 `da4f5d4025d02bab1e82acdad2e1c01342f65427` (merge commit). The `validate` job passed
 (run `43990124144`), the Pages deploy run `43990408056` completed with `success`, and the Pages API reports
