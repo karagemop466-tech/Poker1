@@ -145,6 +145,7 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
   <a class="card tile" href="pages/hotels.html"><h3>Hotels</h3><p>Resort fees, room-rate status, walking records and the dated rate log.</p></a>
   <a class="card tile" href="pages/calculator.html"><h3>Trip cost calculator</h3><p>Entries × buy-in + nights × true hotel cost + parking, from dated official-engine quotes. Nothing is assumed.</p></a>
   <a class="card tile" href="pages/venues.html"><h3>Venues</h3><p>Each poker room, the hotels attached to it and the events played there.</p></a>
+  <a class="card tile" href="pages/other-rooms.html"><h3>Other rooms</h3><p>Every other Strip and near-Strip poker room, checked against its own site: what it publishes, and what it does not.</p></a>
   <a class="card tile" href="pages/search.html"><h3>Search</h3><p>One box across every row, hotel, venue, document and rate on the site.</p></a>
   <a class="card tile" href="pages/monitoring.html"><h3>Monitoring</h3><p>Source health, changed rows and every printed source flag.</p></a>
   <a class="card tile" href="pages/questions.html"><h3>Questions</h3><p>Open decisions and information gaps, with how to close each.</p></a>
@@ -174,6 +175,7 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
     ["pages/hotels.html", "Hotels"],
     ["pages/calculator.html", "Calculator"],
     ["pages/venues.html", "Venues"],
+    ["pages/other-rooms.html", "Other rooms"],
     ["pages/search.html", "Search"],
     ["pages/monitoring.html", "Monitoring"],
     ["pages/summary.html", "Summary"],
@@ -1201,6 +1203,31 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
       }).catch(showErr);
     };
   }
+  // pages/other-rooms.html is generated statically by scripts/build_other_rooms.py, so the
+  // tables are already in the HTML and there is nothing to render at run time. The renderer
+  // exists because the validator requires one renderer per data-page, and it uses the
+  // dataset to stamp the page with the counts and the verification date, and to say so on
+  // the page if the dataset cannot be read (the tables stay: they were built from that file).
+  PAGES.otherRooms = function () {
+    getJSON("data/other_rooms.json").then(function (data) {
+      var main = document.getElementById("content");
+      if (!main || !data || !data.counts) return;
+      var stamp = document.createElement("p");
+      stamp.className = "small";
+      stamp.textContent = "Dataset: " + data.counts.events + " recurring events across " +
+        data.counts.rooms_surveyed + " rooms surveyed, verified " + data.verified_on + ".";
+      main.parentNode.insertBefore(stamp, main.nextSibling);
+    }).catch(function () {
+      var main = document.getElementById("content");
+      if (!main) return;
+      var note = document.createElement("p");
+      note.className = "small";
+      note.textContent = "data/other_rooms.json could not be read; the tables below are the " +
+        "copy generated with the site.";
+      main.parentNode.insertBefore(note, main.nextSibling);
+    });
+  };
+
   PAGES.summary = markdownPage("EXECUTIVE_SUMMARY.md");
   PAGES.questions = markdownPage("QUESTIONS.md");
   PAGES.suggestions = markdownPage("SUGGESTIONS.md");
