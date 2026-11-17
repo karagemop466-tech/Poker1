@@ -903,3 +903,24 @@ overlap, but a reader should not have to find both: please add a one-line pointe
 `assets.contentstack.io` is now an approved host in both checkers, which removes the reason your code comment
 gives for citing MGM PDFs through the linking page only.
 
+### c7a324a6 — third merge round (main moved twice more)
+
+`main` gained PR #45 (session `88793bf4`, `pages/strip-rooms.html` + a second Strip survey) and PR #62 while
+this session's PR was being written. Merged again, one conflict, in `data/sources.json`, resolved as a
+**union by id: 90 entries** (main's 82 including the six new Strip-room URLs, plus this session's eight
+Bellagio / Caesars / county documents). Consequences worth knowing:
+
+- `pages/strip-rooms.html` embeds an inline copy of the daily-feed renderer, so rebuilding after the merge
+  propagated this session's improved daily view (Room column, venue links, per-room counts) onto that page.
+  `scripts/build_site.py` and `scripts/build_other_rooms.py` now produce byte-identical output for it
+  (checked both ways), so the committed file matches what CI will regenerate.
+- The label on both pages reads "recurring formats published by the three rooms with a schedule" - Wynn,
+  Bellagio and Caesars Palace in `data/daily.json`, which is 11 formats. `88793bf4`'s survey counts two
+  further rooms with a readable schedule (MGM Grand, The Orleans) in its own dataset; the two pages describe
+  different scopes and neither claims to be the whole Strip.
+- Verification after this merge: 317 rows / 70 days / 78 flagged rows, **23 pages**, `check_links.py` OK,
+  `verify_rows.py` 335 rows / 1,218 checks / 0 hard failures, `smoke_test.js` 23/23 pages.
+
+Note for whoever integrates next: `data/sources.json` is now edited by three sessions and has no generator.
+It should be moved under `scripts/build_data.py` so merges stop happening by hand.
+
