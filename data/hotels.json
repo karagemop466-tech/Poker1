@@ -1,5 +1,5 @@
 {
- "verified_on": "2026-11-16",
+ "verified_on": "2026-11-17",
  "rows": [
   {
    "id": "venetian",
@@ -62,7 +62,7 @@
     "room": "Venetian Newly Remodeled Luxury King",
     "checkout_total_usd": 4559.3
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "recheck": {
     "on": "2026-11-17",
     "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
@@ -130,7 +130,7 @@
     "room": "Palazzo Luxury Two Queen",
     "checkout_total_usd": 1600.08
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "recheck": {
     "on": "2026-11-17",
     "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
@@ -159,8 +159,8 @@
    "room_rate_usd": null,
    "room_rate_status": "unverified",
    "room_rate_note": "No nightly rate is published on an official Wynn page. Use the official booking engine.",
-   "parking_note": "Official Wynn parking page (read 2026-11-17): \"The daily parking fee for non-registered guests is $25 per day with the first three (3) hours complimentary. Prices may be higher during special events.\" and \"Complimentary self-parking is extended to Wynn Poker Room guests (please visit the Poker Room for details), Private Access members, and Wynn Rewards members in the Chairman, Black, and Platinum Tiers.\" Valet: \"Valet parking is $40 per day up to 24 hours (no grace period, no re-entry).\" Registered \"Resort and Tower Suite registered guests\" park free, and the official offer terms add complimentary self-parking for up to two vehicles.",
-   "parking_usd_per_day": 25,
+   "parking_note": "Official Wynn parking page (read 2026-11-17): \"The daily parking fee for non-registered guests is $25 per day with the first three (3) hours complimentary. Prices may be higher during special events.\" and \"Complimentary self-parking is extended to Wynn Poker Room guests (please visit the Poker Room for details), Private Access members, and Wynn Rewards members in the Chairman, Black, and Platinum Tiers.\" Valet: \"Valet parking is $40 per day up to 24 hours (no grace period, no re-entry).\" Registered \"Resort and Tower Suite registered guests\" park free, and the official offer terms add complimentary self-parking for up to two vehicles. A hotel stay's parking cost is therefore $0 self-park; the $25 figure is the non-registered-guest rate and is kept in this note so the two are never conflated.",
+   "parking_usd_per_day": 0,
    "parking_valet_usd": 40,
    "parking_poker_note": "Complimentary self-parking is extended to Wynn Poker Room guests, per the official parking page read 2026-11-17 - so a player staying at Wynn/Encore and playing at the poker room has no published parking cost to add to the trip. Ask the Poker Room to validate the plate.",
    "cancellation_note": "Official Wynn offer terms (special offer): \"a deposit of one (1) night of room and tax for each room booked under this offer will be charged at the time of booking and cancellations must be received at least 48 hours prior to arrival date or deposit will be forfeited.\" Official facts page: \"Deposit requirements, cancellation deadlines, and penalties vary by offer and travel dates.\"",
@@ -187,7 +187,7 @@
      "url": "https://www.wynnlasvegas.com/casino/poker"
     }
    ],
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "recheck": {
     "on": "2026-11-17",
     "url": "https://www.wynnlasvegas.com/about-us/parking",
@@ -217,7 +217,7 @@
    "room_rate_status": "unverified",
    "room_rate_note": "No nightly rate published on an official Wynn page. Use the official booking engine.",
    "parking_note": "Official Wynn parking page (read 2026-11-17), which covers Wynn and Encore together: \"Self-parking garages at Wynn and Encore are ... complimentary parking for all Wynn and Encore Resort and Tower Suite registered guests, subject to availability\"; \"The daily parking fee for non-registered guests is $25 per day with the first three (3) hours complimentary\"; valet is \"$40 per day up to 24 hours\".",
-   "parking_usd_per_day": 25,
+   "parking_usd_per_day": 0,
    "parking_valet_usd": 40,
    "parking_poker_note": "The same page extends complimentary self-parking to Wynn Poker Room guests; the Wynn poker room is inside Encore, so this is the parking that applies to the poker room's own guests.",
    "cancellation_note": "Official Wynn facts page: deposit and cancellation terms vary by offer and dates.",
@@ -240,7 +240,7 @@
      "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     }
    ],
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "recheck": {
     "on": "2026-11-17",
     "url": "https://www.wynnlasvegas.com/about-us/parking",
@@ -260,30 +260,42 @@
    "address_status": "unverified",
    "address_note": "The official Bellagio page read in this session does not print the street address in the text that was returned, so it is left blank.",
    "booking_url": "https://bellagio.mgmresorts.com/book-room/",
-   "resort_fee_usd": null,
-   "resort_fee_status": "unverified",
-   "resort_fee_note": "No Bellagio-specific resort fee amount was printed on an official page read in this session, so the value is left blank.",
-   "clark_county_tax_pct": null,
-   "tax_status": "unverified",
-   "tax_note": "No Bellagio-specific room tax rate printed on an official page read in this session.",
+   "resort_fee_usd": 55,
+   "resort_fee_status": "verified",
+   "resort_fee_note": "Official Bellagio Hotel Reservation Terms and Conditions: \"Daily Resort Fee. A daily resort fee of $55.00 plus applicable tax will be applied to all reservations.\" The same page lists what the fee covers and states the fee is waived for MGM Rewards Gold+ members on eligible reservations. Read 2026-11-17.",
+   "clark_county_tax_pct": 13.38,
+   "tax_status": "estimated",
+   "tax_note": "Estimate only, never used for a true cost. The Bellagio terms print the tax rule but not a percentage: \"Lodging taxes apply to the basic room rate, any resort fee, additional per occupant charges, upgrades, as well as any other charges as required by applicable law.\" A published MGM offer for a Bellagio/ARIA stay prints \"Nightly rates do not include 13.38% room tax\", but that page is a Cosmopolitan offer, not Bellagio's own terms, so 13.38% is shown only as the county rate used for an estimate and no true cost is calculated from it.",
    "room_rate_usd": null,
    "room_rate_status": "unverified",
    "room_rate_note": "No nightly rate published on an official page read in this session.",
-   "parking_note": "No Bellagio parking fee printed on an official page. Tried 2026-11-17: the official https://bellagio.mgmresorts.com/en/parking.html URL returns the property's 'Oops! We can't find that page' error, so there is nothing to quote and the value stays blank.",
-   "parking_usd_per_day": null,
-   "cancellation_note": "No Bellagio cancellation deadline printed on an official page read in this session.",
-   "check_in_out": null,
+   "parking_note": "Official MGM Resorts parking page: self-parking for a registered hotel guest is $20 per 24 hours on weekdays and $20 at weekends; valet is $40 per day. Nevada residents get the first 3 hours of self-parking free outside special events.",
+   "parking_usd_per_day": 20,
+   "cancellation_note": "Official Bellagio terms: \"The first night's deposit is fully refundable provided a timely notice of cancellation is received by Room Reservations ... at least 72 hours prior to the arrival date, unless specifically excluded by booked offer.\"",
+   "check_in_out": "Check-in 3:00 p.m.; check-out 11:00 a.m. (official Bellagio FAQ and terms)",
    "walk_to_venetian_min": 22,
    "walk_note": "Walking time from Bellagio to the Venetian poker room is not published by any official source; left blank and flagged.",
    "true_cost_per_night_usd": null,
-   "true_cost_note": "No rate, fee or property tax confirmed, so no true cost.",
+   "true_cost_note": "Resort fee and parking are verified, but no dated room rate and no Bellagio-specific tax percentage are verified, so no true cost is calculated.",
    "sources": [
+    {
+     "label": "Bellagio hotel reservation terms: $55 daily resort fee, tax rule, 72-hour cancellation (official)",
+     "url": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html"
+    },
+    {
+     "label": "Bellagio FAQ: check-in and check-out times (official)",
+     "url": "https://bellagio.mgmresorts.com/en/faq.html"
+    },
+    {
+     "label": "MGM Resorts parking rates: self-parking $20 (official)",
+     "url": "https://www.mgmresorts.com/en/things-to-do/parking.html"
+    },
     {
      "label": "Bellagio official home page (official)",
      "url": "https://bellagio.mgmresorts.com/en.html"
     }
    ],
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "recheck": {
     "on": "2026-11-17",
     "url": "https://bellagio.mgmresorts.com/en/parking.html",
@@ -303,24 +315,32 @@
    "address_status": "unverified",
    "address_note": "The official ARIA page read in this session does not print the street address in the text that was returned, so it is left blank.",
    "booking_url": "https://aria.mgmresorts.com/book-room/",
-   "resort_fee_usd": null,
-   "resort_fee_status": "unverified",
-   "resort_fee_note": "No ARIA resort fee amount printed on an official page read in this session.",
-   "clark_county_tax_pct": null,
-   "tax_status": "unverified",
-   "tax_note": "No ARIA-specific room tax rate printed on an official page read in this session.",
+   "resort_fee_usd": 55,
+   "resort_fee_status": "verified",
+   "resort_fee_note": "Official ARIA Hotel Reservation Terms and Conditions: \"Daily Resort Fee. A daily resort fee of $55.00 plus applicable tax will be applied to all reservations.\" Waived for MGM Rewards Gold+ members on eligible reservations. Read 2026-11-17.",
+   "clark_county_tax_pct": 13.38,
+   "tax_status": "estimated",
+   "tax_note": "Estimate only, never used for a true cost. The ARIA terms print the tax rule but not a percentage: \"Estimated taxes are based on current tax rates which are subject to change ... Lodging taxes apply to the basic room rate, any resort fee, additional per occupant charges and upgrades.\" No ARIA-specific percentage is verified, so no true cost is calculated for this property.",
    "room_rate_usd": null,
    "room_rate_status": "unverified",
    "room_rate_note": "Official ARIA poker page: \"Exclusive Room Rates for qualifying poker players\" - the rate itself is only available by phone (702.590.7232) or by e-mail, so no number is published.",
-   "parking_note": "No ARIA parking fee printed on an official page. Tried 2026-11-17: the official https://aria.mgmresorts.com/en/guest-services/parking.html URL returns the property's 'Oops! We can't find that page' error, so the value stays blank.",
-   "parking_usd_per_day": null,
-   "cancellation_note": "No ARIA cancellation deadline printed on an official page read in this session.",
-   "check_in_out": null,
+   "parking_note": "Official MGM Resorts parking page lists ARIA with the same rates as Bellagio: self-parking $20 per 24 hours for a registered hotel guest, valet $40 per day.",
+   "parking_usd_per_day": 20,
+   "cancellation_note": "Official ARIA terms: the first night's deposit is fully refundable if cancellation notice is received at least 72 hours prior to arrival, unless excluded by the booked offer.",
+   "check_in_out": "Check-in 3:00 p.m.; check-out 11:00 a.m. (official ARIA terms)",
    "walk_to_venetian_min": 34,
    "walk_note": "Walking time from ARIA to the Venetian poker room is not published by any official source; left blank and flagged. ARIA does run a poker room (official ARIA poker page).",
    "true_cost_per_night_usd": null,
-   "true_cost_note": "No rate, fee or property tax confirmed, so no true cost.",
+   "true_cost_note": "Resort fee and parking are verified, but no dated room rate and no ARIA-specific tax percentage are verified, so no true cost is calculated.",
    "sources": [
+    {
+     "label": "ARIA hotel reservation terms: $55 daily resort fee, tax rule, 72-hour cancellation (official)",
+     "url": "https://aria.mgmresorts.com/en/terms-and-conditions.html"
+    },
+    {
+     "label": "MGM Resorts parking rates: self-parking $20 (official)",
+     "url": "https://www.mgmresorts.com/en/things-to-do/parking.html"
+    },
     {
      "label": "ARIA official home page (official)",
      "url": "https://aria.mgmresorts.com/en.html"
@@ -330,7 +350,7 @@
      "url": "https://aria.mgmresorts.com/en/casino/poker.html"
     }
    ],
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "recheck": {
     "on": "2026-11-17",
     "url": "https://aria.mgmresorts.com/en/guest-services/parking.html",
@@ -352,7 +372,7 @@
    "booking_url": "https://www.caesars.com/book/hotel-calendar?propCode=CLV",
    "resort_fee_usd": null,
    "resort_fee_status": "unverified",
-   "resort_fee_note": "No Caesars Palace-specific resort fee amount was printed on an official page read in this session, so the value is left blank.",
+   "resort_fee_note": "Read on 2026-11-17: the Caesars Palace property pages and the Caesars Palace FAQ do not print a resort-fee amount for this property. The Caesars corporate disclaimer states only that \"Room reservations are subject to a daily resort fee between $45-$50 plus applicable tax\" across the Caesars portfolio, which does not name Caesars Palace, so it is not used as this property's fee.",
    "clark_county_tax_pct": null,
    "tax_status": "unverified",
    "tax_note": "No Caesars Palace-specific room tax rate printed on an official page read in this session.",
@@ -361,19 +381,27 @@
    "room_rate_note": "No nightly rate published on an official page read in this session.",
    "parking_note": "No Caesars Palace parking fee printed on an official page read in this session.",
    "parking_usd_per_day": null,
-   "cancellation_note": "Official Caesars Palace page advertises \"FREE 48-Hour Cancellation\" on best-rate bookings; the full deadline is not printed on the page read.",
-   "check_in_out": null,
+   "cancellation_note": "Official Caesars Palace FAQ (Policies & Guidelines, read 2026-11-17): \"For most hotel reservations made directly with Caesars Palace, cancellations are generally allowed up to 48 hours prior to the scheduled arrival date. Policies may differ for certain rates, special offers, or packages.\" The property page also advertises \"FREE 48-Hour Cancellation\" on best-rate bookings.",
+   "check_in_out": "Check-in 4:00 p.m.; check-out 11:00 a.m. (official Caesars Palace FAQ, read 2026-11-17: \"Check-in at Caesars Palace begins at 4:00 PM, and check-out is at 11:00 AM.\")",
    "walk_to_venetian_min": 23,
    "walk_note": "Walking time from Caesars Palace to the Venetian poker room is not published by any official source; left blank and flagged.",
    "true_cost_per_night_usd": null,
-   "true_cost_note": "No rate, fee or property tax confirmed, so no true cost.",
+   "true_cost_note": "No dated rate, no property-specific resort fee and no property-specific tax are verified, so no true cost is calculated.",
    "sources": [
+    {
+     "label": "Caesars Palace FAQ: check-in/out times and 48-hour cancellation (official)",
+     "url": "https://www.caesars.com/caesars-palace/faqs"
+    },
+    {
+     "label": "Caesars corporate disclaimer: portfolio-wide $45-$50 resort-fee range, not property-specific (official)",
+     "url": "https://www.caesars.com/corporate/disclaimer"
+    },
     {
      "label": "Caesars Palace official page incl. address (official)",
      "url": "https://www.caesars.com/caesars-palace"
     }
    ],
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "recheck": {
     "on": "2026-11-17",
     "url": "https://www.caesars.com/caesars-palace/things-to-do/parking",

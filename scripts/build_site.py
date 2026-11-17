@@ -72,7 +72,7 @@ PAGES = {
 <h2>Start here</h2>
 <div class="grid">
   <a class="card tile" href="pages/summary.html"><h3>Executive summary</h3><p>Bottom line, ranked events, hotel status, and the 8 AM question.</p></a>
-  <a class="card tile" href="pages/single-entry.html"><h3>Single entry (verified)</h3><p>Every event whose structure sheet confirms one entry only, with filters for date, venue, buy-in and labels.</p></a>
+  <a class="card tile" href="pages/single-entry.html"><h3>Single entry (verified)</h3><p>Every event whose official structure sheet, read clause by clause, contains no re-entry, rebuy, add-on or flight clause. The basis is printed on every row.</p></a>
   <a class="card tile" href="pages/separate-section.html"><h3>Separate section</h3><p>Possible multiple entries and re-entry events. Kept out of the ranking.</p></a>
   <a class="card tile" href="pages/unverified.html"><h3>Unverified</h3><p>Official rows whose entry rule is not yet confirmed.</p></a>
   <a class="card tile" href="pages/daily.html"><h3>Daily feed</h3><p>Wynn's recurring daily tournaments: format, guarantee, fee split and cut-offs.</p></a>
@@ -94,6 +94,7 @@ PAGES = {
     "pages/single-entry.html": ("Single entry", "singleEntry", """
 <h1>Single-entry tournaments (verified)</h1>
 <p class="lead">Each row has its structure sheet read, with no re-entry, rebuy, add-on, or flight clause. Guarantee ÷ buy-in is the default sort. Use the filters to narrow by date, venue, series, buy-in or label.</p>
+<div class="card callout">How the single-entry label is decided: the event's own official structure sheet was read clause by clause and contains <strong>no re-entry, rebuy, add-on or multi-flight clause</strong>. No Venetian sheet prints an affirmative "single entry" sentence, so this is single entry <strong>by absence of contrary terms</strong>, not a written maximum-entry promise — each row prints the exact basis with its sheet link. Anything with printed re-entry, limited-entry or flight language is in the separate section, not here.</div>
 """ + FILTERS + """
 <div class="toolbar"><span class="small">""" + COUNT + """</span></div>
 <div id="content"></div>
@@ -159,14 +160,8 @@ of a poker room, or search any column.</p>
 """),
     "pages/monitoring.html": ("Monitoring", "monitoring", """
 <h1>Source monitoring</h1>
-<<<<<<< HEAD
 <p class="lead">Two different checks, kept apart on purpose: the <strong>scheduled provenance check</strong> re-fetches every official document from GitHub Actions and reports whether the values printed on it moved, and the <strong>row-level check</strong> records which URLs answered and which dataset rows changed since the last snapshot. A run that reaches nothing is labelled a network blackout rather than a source outage.</p>
-=======
-<p class="lead">Which official sources answered on the last check, whether each page still prints the values
-its rows were captured from, which rows changed since the last snapshot, and every printed source flag. A row
-whose official source changed is listed under "Changed rows" with the source link and the date of the check
-that found it.</p>
->>>>>>> 8b1b2e6 (verify: pair-level schedule check, four new verified hotel cost fields, hotels-table cost columns and a 30-minute walk filter)
+
 <div id="content"></div>
 <h2>Rows carrying a source flag</h2>
 <div id="flagged"></div>

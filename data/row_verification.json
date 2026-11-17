@@ -2,7 +2,7 @@
   "verified_on": "2026-11-17",
   "method": "Each published numeric/date/time value was searched in the raw official document text archived under data/snapshots/. Missing = UNVERIFIED. Entry status was cross-checked against the independently parsed sheet verdict (structure_rules.json) or the WPT registration wording.",
   "rows_checked": 324,
-  "field_checks": 1122,
+  "field_checks": 1296,
   "hard_failures": [],
   "review_items": 1,
   "rate_arithmetic_failures": []

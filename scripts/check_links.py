@@ -36,6 +36,9 @@ OFFICIAL_SOURCE_HOSTS = {
     "aria.mgmresorts.com",
     "bellagio.mgmresorts.com",
     "www.caesars.com",
+    # MGM Resorts' shared corporate pages (parking, portfolio-wide fee text).
+    # Property pages stay on each property's own subdomain.
+    "www.mgmresorts.com",
     # Session 0d069ce0: the official property domains behind pages/other-rooms.html. Each is the
     # operator's own site for the property. The contentstack CDN that hosts the MGM PDFs is
     # deliberately not added, matching the existing F40 treatment of the Bellagio flyers: those
@@ -258,7 +261,7 @@ for index, row in enumerate(tournament_rows, 1):
             problems.append(f"{where} {identity}: SE entry_rule must explicitly state its verified classification")
         if re.search(r"unverified|not confirmed|unclear|possible multiple", entry_rule):
             problems.append(f"{where} {identity}: SE entry_rule contains unresolved wording")
-    elif status == "MULTI" and not re.search(r"multi|flight|multiple", entry_rule):
+    elif status == "MULTI" and not re.search(r"multi|flight|multiple|limit|limited", entry_rule):
         problems.append(f"{where} {identity}: MULTI entry_rule must explain possible additional entries")
     elif status == "RE" and not re.search(r"re[ -]?entr", entry_rule):
         problems.append(f"{where} {identity}: RE row must describe the re-entry rule")
@@ -282,8 +285,14 @@ for index, row in enumerate(tournament_rows, 1):
 
     fee = row.get("house_fee_usd")
     fee_pct = row.get("house_fee_pct")
-    if is_number(fee) and fee > 0 and is_number(buy_in) and buy_in > 0:
-        expected_fee_pct = round(100 * fee / buy_in, 2)
+    # A fee percentage is only meaningful against the entry the structure sheet
+    # prices, which the row records as house_fee_basis_usd.
+    fee_basis = row.get("house_fee_basis_usd", buy_in)
+    if is_number(fee_basis) and is_number(buy_in) and abs(fee_basis - buy_in) > 0.001 \
+            and not str(row.get("flags")):
+        problems.append(f"{where} {identity}: a fee basis different from the buy-in must be explained in flags")
+    if is_number(fee) and fee > 0 and is_number(fee_basis) and fee_basis > 0:
+        expected_fee_pct = round(100 * fee / fee_basis, 2)
         if not is_number(fee_pct) or abs(fee_pct - expected_fee_pct) > 0.01:
             problems.append(f"{where} {identity}: house_fee_pct should be {expected_fee_pct}")
     elif fee is None and fee_pct is not None:
@@ -341,20 +350,49 @@ for index, row in enumerate(hotel_rows, 1):
     if fee_status == "unverified" and fee is not None:
         problems.append(f"{where} {identity}: resort_fee_usd must be blank when resort_fee_status is unverified")
     tax_status = row.get("tax_status")
-    if tax_status not in ("verified", "unverified", "conditional"):
-        problems.append(f"{where} {identity}: tax_status must be verified, conditional or unverified")
-    if tax_status == "verified" and tax is None:
-        problems.append(f"{where} {identity}: tax_status is verified but the tax rate is blank")
+    # "estimated" (session c0714e1a) means the property's own terms print the tax *rule* but not a
+    # percentage; the county rate is then shown as an estimate and must never be used to calculate a
+    # true cost. "conditional" (older rows) is likewise never a basis for a true cost. Such an
+    # "estimated" row must say so in its tax_note (checked below).
+    if tax_status not in ("verified", "unverified", "estimated", "conditional"):
+        problems.append(f"{where} {identity}: tax_status must be verified, estimated, conditional or unverified")
+    if tax_status in ("verified", "estimated") and tax is None:
+        problems.append(f"{where} {identity}: tax_status is {tax_status} but the tax rate is blank")
     if tax_status == "unverified" and tax is not None:
         problems.append(f"{where} {identity}: tax_status is unverified but a tax rate is present")
+    if tax_status == "estimated" and "estimate" not in (row.get("tax_note") or "").lower():
+        problems.append(f"{where} {identity}: an estimated tax rate must be explained in tax_note")
+    if tax_status == "estimated" and is_number(total):
+        problems.append(f"{where} {identity}: true_cost_per_night_usd cannot use an estimated tax rate")
     if is_number(total):
+        # Combined rule (sessions baba1a15/54ae4633 and c0714e1a): a true cost may be
+        # published only when the property has a verified resort fee and a verified tax
+        # rate, and the value must come from a dated quote in data/rates.json whose own
+        # arithmetic reproduces it. The nightly room rate itself is never stored on the
+        # row because it changes by night; it lives inside the dated quote.
         quotes = quote_by_hotel.get(identity) or []
-        if not quotes:
+        if fee_status != "verified" or tax_status != "verified":
+            problems.append(f"{where} {identity}: true_cost_per_night_usd needs a verified resort fee and a verified tax rate")
+        elif not quotes:
             problems.append(f"{where} {identity}: true_cost_per_night_usd must come from a dated quote in data/rates.json")
         else:
             latest = max(quotes, key=lambda q: (q.get("arrival", ""), q.get("retrieved_on", "")))
             if abs(total - latest["true_cost_per_night_usd"]) > 0.01:
                 problems.append(f"{where} {identity}: true_cost_per_night_usd does not match its dated quote")
+
+# The verification date the site prints in its footer must be the date the
+# dataset itself records, so the site cannot claim a fresher check than the data.
+try:
+    app_js = open(os.path.join(ROOT, "assets", "app.js"), encoding="utf-8").read()
+except OSError as exc:  # noqa: BLE001
+    problems.append(f"assets/app.js: {exc}")
+else:
+    match = re.search(r'var checkedOn = "(\d{4}-\d{2}-\d{2})";', app_js)
+    if not match:
+        problems.append("assets/app.js: the site footer must declare its checkedOn date")
+    elif (tournaments_data or {}).get("verified_on") != match.group(1):
+        problems.append("assets/app.js: footer checkedOn %s does not match data/tournaments.json "
+                        "verified_on %s" % (match.group(1), (tournaments_data or {}).get("verified_on")))
 
 # Dated rate log: every quote is dated, sourced, and internally consistent.
 rate_entries = (rates_data or {}).get("entries", [])

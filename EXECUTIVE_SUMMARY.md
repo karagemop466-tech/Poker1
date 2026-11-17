@@ -14,19 +14,33 @@ re-checked on 2026-11-17.
 - **317 official rows are now published across 70 dates**, from Nov 16, 2026 to Jan 24, 2027. Every row
   carries the official URL it was read from and the excerpt that supports each rule field.
 - **80 rows are verified single entry.** 60 award cash, and 20 are milestone satellites that award a
-  **seat** into a bigger event rather than cash. All 37 DeepStack Extravaganza IV structure sheets and
-  all 15 New Year's Eve sheets have been read, so every Venetian row in the dataset now carries a
-  verified entry rule.
-- **106 rows sit in the separate section** because a second entry is possible: 60 multi-flight rows
-  whose sheets say a player who bags Day 2 chips may not play a later flight, and 46 re-entry rows whose
-  official terms publish unlimited or limited re-entry.
-- **129 rows are still unverified on the entry rule** and are not ranked: 91 Wynn WPT rows (the
-  milestone satellites and the events the WPT schedule prints without a structure sheet) and all 38
-  Wynn Signature Series rows, because Wynn's own structures PDF is still a "COMING SOON" placeholder.
-- **Hotels are much stronger than yesterday, with one hard limit.** $55 resort fee plus 13.38% room tax
-  is verified for The Venetian and The Palazzo, and the $55 fee alone for Wynn and Encore. **Five dated
-  quotes are on file**, all from the Venetian's official booking engine: $804.15 (Nov 26–29), $475.35
-  (Nov 18–20), $338.48 (Dec 13–20), $911.86 (Jan 1–6) and $320.02 (Jan 10–15) true cost per night. Every quote stores the per-night rates, resort fee, tax total, checkout
+  **seat** into a bigger event rather than cash. Every one of the 80 is a Venetian row: all 37
+  DeepStack Extravaganza IV structure sheets and all 15 New Year's Eve sheets have been read, so every
+  Venetian row carries a verified entry rule from the sheet the operator publishes for it.
+- **174 rows sit in the separate section** because a second entry is possible: 107 rows whose printed
+  sheet states re-entry terms (106 Wynn WPT rows with unlimited re-entry, plus the one Venetian event
+  whose sheet prices "any subsequent re-entry"), and 67 rows where a printed maximum-entry or
+  multi-flight clause leaves a second entry possible (60 Venetian multi-flight rows whose sheets say
+  only that a player who bags Day 2 chips may not play a later flight, plus 4 Prime Championship
+  flights with one entry plus one re-entry each and 3 World Championship flights with "Four (4)
+  Entries maximum"). A further 25 rows are continuation rows (Day 2, Day 3, final table) that never
+  sell a new entry.
+- **Only 38 rows are still unverified on the entry rule** — all Wynn Signature Series, because Wynn's
+  own structures PDF is still a "COMING SOON" placeholder. **No Wynn World Championship row is
+  unverified any more**: the official WPT structures PDF prints 69 sheets, and every one of the 113
+  WPT entry rows is now joined to the sheet that prints its own date, start time and buy-in. That took
+  the unverified count from 129 to 38 and is the largest correction in this pass.
+- **No Wynn World Championship event is single entry.** Wynn's printed terms allow re-entry on 67 of the
+  69 sheets ("Unlimited re-entry"), one entry plus one re-entry per flight on the $1,100 Prime
+  Championship, and up to four entries on the $10,400 World Championship. Only The Venetian publishes
+  single-entry events in this dataset.
+- **Hotels are the strongest per-property record yet, with one hard limit.** The $55 resort fee is
+  verified for **six** properties — The Venetian, The Palazzo, Wynn, Encore, Bellagio and ARIA —
+  together with parking, check-in and cancellation terms from each property's own official page, and
+  13.38% room tax verified for The Venetian and The Palazzo. For Bellagio and ARIA the tax percentage
+  is stored as a labelled **estimate** and never used to total a stay; Caesars Palace publishes no
+  property-specific resort fee, so that cell stays blank. **Five dated quotes are on file**, all from
+  the Venetian's official booking engine: $804.15 (Nov 26–29), $475.35 (Nov 18–20), $338.48 (Dec 13–20), $911.86 (Jan 1–6) and $320.02 (Jan 10–15) true cost per night. Every quote stores the per-night rates, resort fee, tax total, checkout
   total, cancellation terms and the date it was read, so a later quote is compared against these instead
   of replacing them.
 - **Every one of those five quotes reproduces exactly** — twice over: 13.38% applied to (room + resort fee)
@@ -65,7 +79,7 @@ re-checked on 2026-11-17.
   wrong-time) error that a time-only search cannot. It confirms all 94 DeepStack Extravaganza IV rows and every
   New Year's Eve row except one: the Jan 4 MSPT Day 2 restart, where the event page prints 11:10 AM and
   structure sheet #8 prints "Day 2 will resume at 11:00 AM". The earlier time is published and the conflict is
-  flagged on the row (F55) — planning around 11:00 AM is safe under either reading.
+  flagged on the row (F59) — planning around 11:00 AM is safe under either reading.
 
 ## 1. Best single-entry tournaments (verified)
 
@@ -98,14 +112,16 @@ and the structure sheet linked on each row.
 
 These are kept out of the ranking.
 
-- **Possible multiple entries (60 rows).** Every Venetian flight event in the dataset: Events 1, 7, 19,
-  26, 30, 47, 49, 56, 8, 20 and 27. Each structure sheet says: "Any player who bags chips for Day 2 may
-  not play a subsequent flight." Whether a player who busts may enter a later flight is not stated.
-  Event 26 has the highest guarantee multiple of any event in the dataset (625x, 13.75% house fee) but
-  sits here until this is confirmed with the poker room.
-- **Re-entry offered (46 rows).** 45 Wynn WPT rows whose official terms publish unlimited re-entry
-  per flight, or one entry plus one re-entry for the WPT Prime Championship, and one Venetian row
-  (NYE Event 29) whose sheet applies a discount to "any subsequent re-entry".
+- **Possible multiple entries (67 rows).** The Venetian flight events: Events 1, 7, 19, 26, 30, 47,
+  49, 56, 8, 20 and 27 (60 rows), plus the 7 Wynn limited-entry flights: the four WPT Prime
+  Championship flights ("One (1) Entry and One (1) re-entry for each starting flight") and the three
+  WPT World Championship flights ("Four (4) Entries maximum"). Each Venetian flight sheet says: "Any
+  player who bags chips for Day 2 may not play a subsequent flight." Whether a player who busts may
+  enter a later flight is not stated. Event 26 has the highest guarantee multiple of any event in the
+  dataset (625x, 13.75% house fee) but sits here until this is confirmed with the poker room.
+- **Re-entry confirmed (107 rows).** 106 Wynn WPT rows whose structure sheet prints its own
+  "Unlimited re-entry until the start of level N" clause, plus one Venetian row (NYE Event 29) whose
+  sheet applies a discount to "any subsequent re-entry". No WPT sheet prints an add-on.
 - **Rebuy and add-on (daily feed, not ranked).** The Wynn Friday $240 format allows unlimited $200
   rebuys and a $100 add-on. Rebuy events are excluded from the ranking.
 
@@ -130,7 +146,9 @@ split, their 200,000-chip milestone and their seat prize:
 | Events 15, 18, 21, 23, 24 (Dec 30 – Jan 2) | $200 | $35 / $165 | 28 × 20 min | 2 seats | Event #20, $1,600 MSPT |
 | Events 16, 19 (Dec 30, 31) | $200 | $30 / $170 | 28 × 15 min | 2 seats | Event #20, $1,600 MSPT |
 
-None of these sheets has a re-entry clause, so they are listed as single entry. Because the prize is a
+None of the Venetian milestone sheets has a re-entry clause, so they are listed as single entry. The
+Wynn milestone satellites are a different matter: their sheets print unlimited re-entry, so they sit in
+the separate section despite the same seat prize. Because the prize is a
 seat and not cash, each row carries a `prize_text` value and a `satellite` label instead of a dollar
 guarantee, and the calculator and the ranking both treat them differently from cash events.
 
@@ -146,9 +164,9 @@ resort fee and the tax; nothing is reconstructed from an assumed rate.
 | [The Palazzo](https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html) | $55 (verified) | 13.38% (verified) | $320.02 (Jan 10–15) | inside the resort | **14 min** (routed) |
 | [Wynn Las Vegas](https://www.wynnlasvegas.com/terms-and-conditions/848671) | $55 plus tax (verified) | blank (not printed; engine hides its breakdown) | blank (no Wynn quote captured yet) | **15 min** | inside the resort (the room is in Encore) |
 | [Encore at Wynn Las Vegas](https://www.wynnlasvegas.com/terms-and-conditions/848671) | $55 plus tax (verified) | blank | blank (no dated quote) | **14 min** | inside the resort |
-| [Bellagio](https://bellagio.mgmresorts.com/en.html) | blank | blank | blank | **22 min** | **31 min — over the limit** |
-| [ARIA Resort & Casino](https://aria.mgmresorts.com/en.html) | blank | blank | blank | **34 min — over the limit** | **43 min — over the limit** |
-| [Caesars Palace](https://www.caesars.com/caesars-palace) | blank | blank | blank | **23 min** | **32 min — over the limit** |
+| [Bellagio](https://bellagio.mgmresorts.com/en.html) | $55 + tax ([verified](https://bellagio.mgmresorts.com/en/terms-and-conditions.html)) | blank (rule printed, no percentage; 13.38% estimate) | blank | **22 min** | **31 min — over the limit** |
+| [ARIA Resort & Casino](https://aria.mgmresorts.com/en.html) | $55 + tax ([verified](https://aria.mgmresorts.com/en/terms-and-conditions.html)) | blank (rule printed, no percentage; 13.38% estimate) | blank | **34 min — over the limit** | **43 min — over the limit** |
+| [Caesars Palace](https://www.caesars.com/caesars-palace) | blank (not published for this property) | blank | blank | **23 min** | **32 min — over the limit** |
 
 **Like-for-like inside the one resort that publishes its breakdown.** Same property group, same engine,
 five different stays, so the comparison is between dates rather than between companies. The nightly
@@ -157,12 +175,15 @@ of the five figures is the number the engine itself printed, which is an indepen
 
 | Stay | Room | Nights | Nightly average<br>(room + fee) | Resort fee | Taxes | Checkout total | True cost / night |
 |---|---|---|---|---|---|---|---|
-| [Nov 18–20, 2026](https://www.venetianlasvegas.com/book) | Venetian Newly Remodeled Luxury Two Queen | 2 | $419.25 | $55 × 2 | $112.19 | $950.69 | **$475.35** |
+| [Nov 18–20, 2026](https://www.venetianlasvegas.com/book) | Venetian Newly Remodeled Luxury Two Queen | 2 | $364.25 | $55 × 2 | $112.19 | $950.69 | **$475.35** |
 | [Nov 26–29, 2026](https://www.venetianlasvegas.com/book) | Palazzo Luxury King | 3 | $709.25 | $55 × 3 | $284.69 | $2,412.44 | $804.15 |
 | [Dec 13–20, 2026](https://www.venetianlasvegas.com/book) | Venetian Newly Remodeled Luxury King | 7 | $298.54 | $55 × 7 | $279.63 | $2,369.38 | **$338.48** |
 | [Jan 1–6, 2027](https://www.venetianlasvegas.com/book) | Venetian Newly Remodeled Luxury King | 5 | $804.25 | $55 × 5 | $538.05 | $4,559.30 | **$911.86** |
 | [Jan 10–15, 2027](https://www.venetianlasvegas.com/book) | Palazzo Luxury Two Queen | 5 | $282.25 | $55 × 5 | $188.83 | $1,600.08 | **$320.02** |
 
+The engine's own "Average Rate" (room + resort fee ÷ nights, before tax) is stored as
+`nightly_average_usd` in `data/rates.json` — $419.25, $709.25, $298.54, $804.25 and $282.25 for the five
+stays — and the room-only average is stored beside it, so the two conventions are never mixed (F58).
 The lesson is in the spread, not the average: the same tower costs **$338.48 a night for Dec 13–20 and
 $911.86 a night for Jan 1–6**, because Jan 1 is quoted at $1,949.25 for the night. Two nights over a
 weekend in November cost $475.35 all in. Dates, not the hotel name, dominate the hotel budget.
@@ -170,17 +191,23 @@ weekend in November cost $475.35 all in. Dates, not the hotel name, dominate the
 **Cancellation.** Wynn publishes a 48-hour deadline and a one-night deposit
 ([terms](https://www.wynnlasvegas.com/terms-and-conditions/848671)). The Venetian publishes that prepaid
 offers are non-cancellable and non-refundable but prints **no fixed free-cancellation deadline** for a
-general rate, so the two properties cannot even be matched on that term yet. Both texts are stored
-verbatim in `data/rates.json`.
+general rate, so the two properties cannot even be matched on that term yet. Bellagio and ARIA refund
+the first night's deposit when cancelled at least 72 hours before arrival ([Bellagio terms](https://bellagio.mgmresorts.com/en/terms-and-conditions.html),
+[ARIA terms](https://aria.mgmresorts.com/en/terms-and-conditions.html)); Caesars Palace advertises
+"FREE 48-Hour Cancellation" on best-rate bookings ([FAQ](https://www.caesars.com/caesars-palace/faqs)).
+Each text is stored verbatim in `data/hotels.json` and `data/rates.json`.
 
 **Wynn's room tax stays blank on purpose.** No Wynn page prints the percentage, and its engine does not
 expose the breakdown to a text fetch, so there is no honest way to state it. Applying the Venetian's
 13.38% to Wynn would be exactly the kind of inference this dataset forbids.
 
-**Resort fees and room tax for Bellagio, ARIA and Caesars are still blank.** Eight candidate official URLs were tried
-on 2026-11-17 (resort-fee and policies pages on mgmresorts.com and caesars.com); every one either
-returned a 404 or redirected to a marketing page that prints no fee. They are left blank rather than
-borrowed from another property's terms, and the exact URLs tried are listed in `FLAGGED.md`.
+**The Bellagio and ARIA resort fees are now verified at $55 + tax**, each from the property's own
+official terms page, together with parking (self-park $20, valet $40) and the 72-hour cancellation
+policy. What stays blank is the room-tax **percentage**: both properties print the tax rule but no
+number, so 13.38% is stored for them as a labelled estimate and never used to total a stay. Caesars
+Palace publishes no property-specific resort fee or tax at all — the corporate "$45-$50" range does
+not name the property — so those cells stay blank rather than borrowed from another property's terms.
+Every attempted source is listed in `FLAGGED.md`.
 
 **Walking times are routed, not guessed.** All twelve pairs were measured on the OpenStreetMap foot
 network between geocoded coordinates, rounded up to the whole minute, and every row links both the
@@ -255,14 +282,20 @@ still unverified on the entry rule and are not counted.
 - No payout ladder for most events: only some structure sheets publish one.
 - No *published* nightly rate: both Venetian and Wynn sell through a booking engine that quotes a stay,
   not a rate card, so the only defensible per-night figure is checkout total ÷ nights from a dated quote.
-- No resort fee, room tax or rate for Bellagio, ARIA or Caesars Palace: eight candidate official URLs
-  returned 404s or marketing pages that print no fee.
-- No official structure sheets for the Wynn Signature Series (the PDF is a "COMING SOON" placeholder)
-  or for the WPT milestone satellites, so those entry rules stay unverified.
+  Five dated quotes are logged; none covers Wynn, Bellagio, ARIA or Caesars Palace.
+- No room-tax percentage for Bellagio, ARIA or Caesars Palace. Bellagio and ARIA print the tax rule but
+  no percentage (13.38% is stored as a labelled estimate and never used to total a stay); Caesars Palace
+  publishes neither a property-specific resort fee nor a tax rate, and the corporate "$45-$50" portfolio
+  range does not name the property, so it is not used.
+- No official structure sheets for the Wynn Signature Series (the PDF is a "COMING SOON" placeholder at
+  both published URLs), so those 38 entry rules stay unverified.
+- No officially published walking times: the site's times are routed on the OpenStreetMap foot network
+  and labelled as such, never as a property statement.
+- The only WPT structure sheet that could not be tied to a schedule row on an exact printed time is
+  the Dec 21 $600 NLH Turbo, which the schedule prints at 8 p.m. and the sheet at 6 p.m. (flag F4).
+  Its rule is quoted and the time difference is published on the row rather than reconciled.
 - No 8 AM *play* anywhere: registration opens at 8 AM at Wynn, but the earliest verified cash start is
   10:10 AM.
-- No official structure sheet exists for the Wynn WPT milestone satellites, so their entry rules stay
-  unverified even though their buy-in, prize, chips and level count are official.
 
 ## 8. How to use the site
 

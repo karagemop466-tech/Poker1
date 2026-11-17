@@ -117,9 +117,30 @@ Third-party sites were used to locate events and hotels only. They are not cited
   `data-page` attribute of every generated page.
 - `scripts/monitor_sources.py` checks every official URL and reports the rows that changed.
 - `scripts/smoke_test.js` renders every generated page in a headless DOM and fails on any page error.
-- Current counts (2026-11-17): **317 rows**. Single entry 80 (60 cash, 20 milestone satellites). Separate section
-  106 (60 possible multi-entry, 46 re-entry). Unverified 129. Continuation rows 2.
+- Current counts (2026-11-17, after the structure-sheet join): **317 rows**. Single entry 80 (60 cash, 20
+  Venetian milestone satellites). Separate section 174 (67 possible multi-entry, 107 re-entry). Unverified
+  **38**, all Wynn Signature Series. Continuation rows 25. Every one of the 113 WPT entry rows is joined to the
+  structure sheet that prints its own date, start time and buy-in, so the earlier 129 unverified rows are gone.
 - Row IDs are unique and assigned after the chronological sort (`r001` to `r317`). Restoring a row that sorts into the middle of the WPT block shifts every later ID by one; no row content changed (see `research/verification-2026-11-17.md`).
+
+## 7b. Structure-sheet join (2026-11-17, session `c0714e1a`)
+
+The earlier record said the WPT structures PDF publishes no sheet for the milestone satellites, which left 91
+WPT rows unverified. That was wrong. Read end to end, the PDF prints **69 sheets**, each with its own fee split
+and registration clause; 67 of them print "Unlimited re-entry", the $1,100 Prime Championship prints one entry
+plus one re-entry per flight, and the $10,400 World Championship prints "Four (4) Entries maximum".
+
+- `scripts/extract_wpt_struct.py` parses all 69 sheets → `data/wpt_struct_blocks.json`.
+- `scripts/extract_wpt_sheets.py` joins each schedule row to the sheet that prints its own date, start time and
+  buy-in, preferring printed title words over buy-in → `data/wpt_row_sheets.json` (**113 of 113 entry rows**,
+  0 unresolved).
+- `scripts/build_data.py` reads that join and writes the printed clause, fee split, starting stack and level
+  length onto each row; a Day 2 / final-table row is labelled a continuation and never inherits an entry rule.
+- One join needed a tolerance: the Dec 21 $600 NLH Turbo is printed 8 p.m. by the schedule and 6 p.m. by its
+  sheet (F4). The difference is stored as `printed_time_delta_min` and published as a row flag.
+- The Ladies Championship sheet prices a $11,100 entry that the schedule sells at $1,100 for ladies, so the row
+  stores the basis it used (`house_fee_basis_usd`) and the validator refuses to mix the two.
+- Full record with links: `research/verification-2026-11-17-structure-sheets.md`.
 
 ## 8. Cross-check from the parallel session `40ca34e5`
 
