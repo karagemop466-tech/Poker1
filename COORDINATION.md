@@ -1197,3 +1197,11 @@ bug. Measured on `main` at `5de6d8d` before this claim (`data/schedule.json` vs 
 
 No tournament, hotel, rate, walking or entry-rule fact is changed by this task. It is arithmetic over
 values already stored, so no new source is read and no flag is created or altered.
+
+## Session 881caf24 — final integration and verification (branch `arena/881caf24-poker1`, base `5de6d8d`)
+
+Claim recorded before integration work. This is the final integration scope: review the already-committed open session PRs against the current `main`, retain each non-superseded contribution without overwriting another session's findings, resolve conflicts on this branch, re-run the source/data/site checks, and record the exact disposition of every PR. No new event, hotel, fee, rate, rule, walking time, or schedule claim will be marked verified without an official source.
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Final integration and QA of the completed open session contributions, including the daily schedule feed, source-change monitoring, row-level verification, walking records, and the decision-support site | **In progress** — inspect each open PR and its source/verification evidence before integration; superseded work will be documented, not copied blindly | `COORDINATION.md`, `.github/workflows/*`, `scripts/*`, `data/*`, `assets/*`, `index.html`, `pages/*`, decision documents, and `research/*` (integration-only scope) | `881caf24` |
