@@ -797,27 +797,55 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
               (o.entry_status === "CONT" ? '<span class="chip info">Continuation</span>' :
                 (o.entry_status === "MULTI" ? '<span class="chip warn">Possible multiple entries</span>' :
                   (o.entry_status === "RE" ? '<span class="chip bad">Re-entry</span>' : '<span class="chip warn">Unverified</span>')));
+            var finish = !o.est_end ? "" :
+              (o.duration_basis === "no_day_bound"
+                ? " · its table spans more than one playing day (the flight ends at about 12.5% of the field,"
+                  + " not at a printed clock), so this day has no end time to plan against"
+                : (o.duration_basis === "satellite_maximum"
+                    ? " · table ends no later than " + timeFmt(o.est_end) +
+                      (o.est_end_next_day ? " (next day)" : "") +
+                      " - its sheet concludes it as soon as the remaining seats are awarded"
+                    : " · table ends no later than " + timeFmt(o.est_end) +
+                      (o.est_end_next_day ? " (next day)" : "") +
+                      " - no end time is printed, and it ends once the field is paid"));
             var marks = [];
             if (day.primary_id === o.id) marks.push('<span class="chip ok">Primary</span>');
-            if (day.fallback_id === o.id) marks.push('<span class="chip info">Conditional fallback</span>');
+            if (day.fallback_id === o.id) marks.push('<span class="chip info">Conditional fallback' +
+              (day.fallback_kind === "join in progress" ? " - join in progress" : "") + "</span>");
             return "<li><strong>" + timeFmt(o.start) + "</strong> · " + esc(o.name) + " · " + money(o.buy_in_usd) +
               (o.guarantee_usd ? " · GTD " + money(o.guarantee_usd) : "") +
               (o.prize_text ? " · " + esc(o.prize_text) : "") +
               " " + chip + " " + marks.join(" ") +
-              '<br><span class="small">' + esc(o.series) + " · " + esc(o.venue) +
-              (o.est_end ? " · estimated to finish about " + timeFmt(o.est_end) : "") +
+              '<br><span class="small">' + esc(o.series) + " · " + esc(o.venue) + finish +
               ' · <a href="' + esc(o.source) + '" target="_blank" rel="noopener">source</a></span>' +
               ((row.flags || []).length ? '<br><span class="chip warn">' + esc(row.flags[0]) + "</span>" : "") +
               "</li>";
           }).join("");
-          var conflicts = day.conflicts.length
-            ? '<div class="small" style="margin-top:6px"><span class="chip warn">' + day.conflicts.length +
-              " overlap(s) flagged</span> " + esc(day.conflicts[0].detail) + "</div>"
+          var bad = day.conflicts.filter(function (c) { return c.kind === "unplannable"; });
+          var late = day.conflicts.filter(function (c) { return c.kind === "join_in_progress"; });
+          var notes = [];
+          if (bad.length) notes.push('<span class="chip bad">' + bad.length +
+            " pair(s) no published schedule can support</span> " + esc(bad[0].detail));
+          if (late.length) notes.push('<span class="chip warn">' + late.length +
+            " pair(s) sensible only as a join in progress</span> " + esc(late[0].detail));
+          var conflicts = notes.length
+            ? '<div class="small" style="margin-top:6px">' + notes.join("<br>") + "</div>"
+            : "";
+          var alts = (day.alternatives || []).map(function (a) {
+            return "<li><strong>" + timeFmt(a.start) + "</strong> · " + esc(a.name) + " · " +
+              money(a.buy_in_usd) + (a.guarantee_usd ? " · GTD " + money(a.guarantee_usd) : "") +
+              ' · entry closes ' + timeFmt(a.entry_closes) +
+              (a.late_reg_published ? "" : " (no published cut-off: treated as closing at the start)") +
+              '<br><span class="small">' + esc(a.note) + "</span></li>";
+          }).join("");
+          var altBox = alts
+            ? '<div class="small" style="margin-top:6px"><strong>Alternatives on this date</strong>' +
+              ' - each of these is played <em>instead of</em> the primary, never as well:<ul>' + alts + "</ul></div>"
             : "";
           var fallback = day.fallback_note
             ? '<div class="small muted">' + esc(day.fallback_note) + "</div>" : "";
           return '<div class="card day" id="day-' + day.date + '"><h3>' + dateFmt(day.date) + "</h3><ul>" + list +
-            "</ul>" + conflicts + fallback + "</div>";
+            "</ul>" + conflicts + altBox + fallback + "</div>";
         }).join("");
       }
       render();
@@ -1061,7 +1089,7 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
             " on " + esc(dateFmt(cheapest.date)) + " at " + esc(timeFmt(cheapest.start)) + " for " + money(cheapest.buy_in_usd) + ".</p>" : "") +
           (richest ? '<p class="small">Largest guaranteed pool ÷ buy-in in the window: ' + esc(richest.name) +
             " on " + esc(dateFmt(richest.date)) + " (" + mult(richest.gtd_multiple) + "). Descriptive ratio only, not a forecast.</p>" : "") +
-          '<p class="small"><a href="' + BASE + 'pages/schedule.html">Open the day-by-day schedule</a> for the primary and fallback plan.</p>';
+          '<p class="small"><a href="' + BASE + 'pages/schedule.html">Open the day-by-day schedule</a> for the day plan: one primary per date, what can replace it, and what cannot be paired.</p>';
 
         /* like-for-like comparison */
         var cmp = document.getElementById("c-compare");

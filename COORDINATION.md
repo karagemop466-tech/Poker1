@@ -1209,3 +1209,50 @@ REQUEST 1 was logged for the owners of `build_data.py` / `app.js` and none of th
 those PRs later lands, its `build_schedule`/`PAGES.schedule` hunks should be dropped in favour of this
 one and the rest kept; `COORDINATION.md`, `FLAGGED.md` and `EXECUTIVE_SUMMARY.md` conflicts are
 append-resolvable and no other session's record should be discarded.
+
+### Session 06ac8c98 — completion record (2026-11-17)
+
+| Task | Status | Files touched | Owner |
+|---|---|---|---|
+| T-A schedule feasibility (open REQUEST 1) | **Done** — day plan rebuilt on absolute minutes, three sourced duration bases, alternatives per day, two new guards | `scripts/build_data.py`, `assets/app.js`, `scripts/check_schedule.py` (new), `scripts/smoke_test.js`, `data/schedule.json`, `EXECUTIVE_SUMMARY.md`, `FLAGGED.md` (F75, F76), `README.md`, `SUGGESTIONS.md`, `research/verification-2026-11-17-06ac8c98.md` (new), `COORDINATION.md` | `06ac8c98` |
+
+**What changed in the published answer**
+
+- 24 conditional fallbacks → **0**, because none is provable: on all 26 dates holding two or more
+  single-entry events, the earlier event's own level table overruns the later one's entry deadline.
+- 14 flagged overlap pairs → **144** (142 `unplannable`, 2 `join_in_progress`) across 39 dates.
+- 121 rows printing a finish before their own start → **0**; an after-midnight table now reads
+  "table ends no later than 2:55 AM (next day)".
+- New per-day **alternatives** list (35 entries on 26 dates), each labelled "instead of, never as well".
+- 34 multi-day-flight rows are refused as a same-day bound, and 20 satellite rows are marked with their
+  own conclusion rule, so no end time is presented as a schedule.
+
+**Deviation from the claim, recorded honestly.** The claim said `data/tournaments.json` would not be
+edited and that only `PAGES.schedule` in `assets/app.js` would be touched. In the end the row data still
+was not edited (the file is byte-identical, so the 1,296 row checks and `row_snapshot.json` are
+untouched), but two more files were: `assets/app.js` line 900 (the index tile claimed a "primary and
+fallback plan", which is no longer true on any date), and `scripts/build_site.py`/`README.md` for the
+same false-claim wording. Leaving a false claim published to fix a claim of mine would have been worse.
+
+**Verification performed** — see `research/verification-2026-11-17-06ac8c98.md`: the live event page,
+structure sheets #6, #2 and #4 re-read clause by clause, all 20 satellite sheets checked for the
+conclude-by-seats clause, and both new guards negative-tested (injected bug → caught → restored).
+Full suite after the change: `build_data` 317 rows / 70 days, `build_site` 23 pages byte-stable on
+rebuild, `check_links` OK, `check_schedule` OK, `verify_rows` 1,296 checks 0 hard failures,
+`smoke_test` 23/23. `monitor_sources.py` cannot run in this sandbox (no route to the operator hosts,
+F55), so the scheduled check was not exercised here.
+
+**Irregularities found** — F75 (70 "(1Day)" events carry a table that cannot fit inside a day; the label
+and the structure contradict each other) and F76 (this repository's own clock-comparison defect, now
+fixed and guarded). Both are published on the Flagged for Review page.
+
+**Still open, owned by other sessions — not duplicated here.** Open **REQUEST 2**: the provenance job
+still refuses to run on `main` because `www.rwlasvegas.com` is missing from `OFFICIAL_HOSTS` in
+`scripts/check_source_facts.py` (`data/monitor_last_run.txt` on `main` still reads
+"Refusing to run: non-official host(s) in manifest"), and `monitor.yml` pipes through `tee` without
+`pipefail` so the refusal never turns the job red. That is PR #66's scope
+(`scripts/check_source_facts.py`, `scripts/monitor_sources.py`, `.github/workflows/monitor.yml`,
+`data/sources.json`) and was left to it. **Request to the integration session:** merge #66 rather than
+re-deriving it; it does not conflict with this change (no file overlap except `COORDINATION.md`,
+`FLAGGED.md` and `SUGGESTIONS.md`, all append-only). PR #66's own numbering uses F101 for the same
+problem, which is why this session took F75/F76.
