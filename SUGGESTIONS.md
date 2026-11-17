@@ -49,7 +49,7 @@ These are *not* implemented. Each one closes a specific gap in a decision you st
 | P3 | Add an "effectively single entry" flag for multi-flight events whose structure sheet prices the second flight at the same amount and imposes no penalty. | D1 currently removes 60 rows from the ranking on an unanswered policy question. | Low: the clause text is already stored on every row. |
 | P4 | Print the payout ladder where the sheet publishes one, and say "not published" explicitly where it does not. | S18 — a guarantee is not a payout ladder. | Low for the ~20 sheets that carry a ladder; nothing to do for the rest. |
 | P5 | Publish an event-duration confidence column next to the estimated end time. | The overlap check rests on an estimate; a confidence label stops the estimate reading as fact. | Low: the inputs (levels × level length + breaks) are already parsed. |
-| P6 | Publish the routed walking times as Google and Apple Maps links next to the OSM route, so the route can be checked in the app you would actually use. | Cross-checks the OSM route against the routing the user trusts. | Very low. |
+| P6 | ~~Publish the routed walking times as Google and Apple Maps links next to the OSM route.~~ **Built 2026-11-17.** Every walking row now carries a Google Maps walking-directions link and an Apple Maps walking-directions link between the same two geocoded coordinates, next to the OSM routing query. | Cross-checks the OSM route against the routing the traveller would actually use. | Done. The URL is built from the recorded coordinates only, so no current location is assumed and no new fact is introduced. |
 
 ## Your choice
 

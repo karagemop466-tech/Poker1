@@ -1,0 +1,1410 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Other Las Vegas poker rooms · Las Vegas Strip Poker Plan</title>
+<style>
+:root {
+  --ink: #1d2433;
+  --muted: #5b6474;
+  --line: #e3e7ee;
+  --bg: #f6f8fb;
+  --card: #ffffff;
+  --accent: #1f6feb;
+  --ok: #1a7f37;
+  --warn: #9a6700;
+  --bad: #b42318;
+  --chip-ok: #e6f4ea;
+  --chip-warn: #fff4d6;
+  --chip-bad: #fde8e7;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--ink); background: var(--bg); line-height: 1.5;
+}
+header.site {
+  background: #0f1b2d; color: #fff; padding: 14px 20px;
+  display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; justify-content: space-between;
+}
+header.site .brand { font-weight: 700; font-size: 18px; color: #fff; text-decoration: none; }
+header.site nav { display: flex; flex-wrap: wrap; gap: 6px 14px; }
+header.site nav a { color: #cfe1ff; text-decoration: none; font-size: 14px; }
+header.site nav a:hover, header.site nav a.active { color: #fff; text-decoration: underline; }
+main { max-width: 1200px; margin: 0 auto; padding: 22px 18px 60px; }
+h1 { font-size: 26px; margin: 4px 0 6px; }
+h2 { font-size: 20px; margin: 26px 0 8px; }
+h3 { font-size: 17px; margin: 18px 0 6px; }
+p.lead { color: var(--muted); margin-top: 0; }
+a { color: var(--accent); }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; margin: 14px 0; }
+.grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.kpi .num { font-size: 28px; font-weight: 700; }
+.kpi .label { color: var(--muted); font-size: 13px; }
+.tile { display: block; text-decoration: none; color: var(--ink); }
+.tile:hover { border-color: var(--accent); }
+.tile h3 { margin-top: 0; color: var(--accent); }
+.tile p { margin: 4px 0 0; color: var(--muted); font-size: 14px; }
+.callout { border-left: 4px solid var(--warn); background: var(--chip-warn); padding: 12px 14px; border-radius: 6px; }
+.toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 10px 0; }
+.toolbar input, .toolbar select {
+  padding: 7px 10px; border: 1px solid var(--line); border-radius: 6px; font-size: 14px; background: #fff;
+}
+.table-wrap { overflow-x: auto; background: #fff; border: 1px solid var(--line); border-radius: 10px; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { background: #f0f3f8; position: sticky; top: 0; cursor: pointer; white-space: nowrap; }
+th.nosort { cursor: default; }
+tr:hover td { background: #fafcff; }
+td.num, th.num { text-align: right; white-space: nowrap; }
+.chip { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 12px; font-weight: 600; white-space: nowrap; }
+.chip.ok { background: var(--chip-ok); color: var(--ok); }
+.chip.warn { background: var(--chip-warn); color: var(--warn); }
+.chip.bad { background: var(--chip-bad); color: var(--bad); }
+.chip.info { background: #e8f0fe; color: var(--accent); }
+.muted { color: var(--muted); }
+.small { font-size: 12.5px; color: var(--muted); }
+.md h1 { font-size: 24px; }
+.md table { margin: 10px 0; }
+.md td, .md th { border: 1px solid var(--line); }
+.md pre, .md code { background: #f0f3f8; border-radius: 4px; padding: 1px 4px; font-size: 13px; }
+.notice { font-size: 13px; color: var(--muted); margin: 8px 0; }
+.day { margin: 12px 0; }
+.day h3 { margin-bottom: 4px; }
+footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20px; }
+
+/* ---------- advanced filter bar ---------- */
+.filters {
+  background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+  padding: 12px 14px; margin: 12px 0;
+}
+.filters .row { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: flex-end; margin-bottom: 8px; }
+.filters .field { display: flex; flex-direction: column; gap: 3px; }
+.filters label { font-size: 11.5px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); }
+.filters input, .filters select {
+  padding: 6px 9px; border: 1px solid var(--line); border-radius: 6px; font-size: 13.5px; background: #fff; min-width: 120px;
+}
+.filters input[type="search"] { min-width: 260px; }
+.filters .toggle { flex-direction: row; align-items: center; gap: 6px; }
+.filters .toggle label { text-transform: none; font-size: 13px; color: var(--ink); }
+.filters .labels { display: flex; flex-wrap: wrap; gap: 6px; }
+.filters .labels label {
+  display: inline-flex; align-items: center; gap: 5px; border: 1px solid var(--line);
+  border-radius: 999px; padding: 3px 10px; font-size: 12.5px; text-transform: none; color: var(--ink); cursor: pointer;
+}
+.filters .actions { display: flex; gap: 8px; align-items: center; margin-left: auto; }
+.filters button {
+  border: 1px solid var(--line); background: #fff; border-radius: 6px; padding: 6px 12px;
+  font-size: 13.5px; cursor: pointer;
+}
+.filters button:hover { border-color: var(--accent); color: var(--accent); }
+.filters .summary { font-size: 12.5px; color: var(--muted); margin-top: 4px; }
+
+/* ---------- venue / search / calculator / monitoring ---------- */
+.venue-card { border-left: 4px solid var(--accent); }
+.result { border-bottom: 1px solid var(--line); padding: 10px 0; }
+.result:last-child { border-bottom: 0; }
+.result .title { font-weight: 600; }
+.result .meta { font-size: 12.5px; color: var(--muted); }
+.form-grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); }
+.form-grid label { display: block; font-size: 12px; color: var(--muted); margin-bottom: 3px; }
+.form-grid input, .form-grid select {
+  width: 100%; padding: 8px 10px; border: 1px solid var(--line); border-radius: 6px; font-size: 14px; background: #fff;
+}
+.calc-out { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); margin-top: 12px; }
+.calc-out .box { border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; background: #fbfcfe; }
+.calc-out .box .n { font-size: 20px; font-weight: 700; }
+.calc-out .box .l { font-size: 12px; color: var(--muted); }
+.day-chip { border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; font-size: 13px; background: #fff; }
+.status-dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 6px; }
+.status-dot.ok { background: var(--ok); }
+.status-dot.warn { background: var(--warn); }
+.status-dot.bad { background: var(--bad); }
+.calendar { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+.calendar .slot { border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; background: #fff; }
+.calendar .slot .d { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+.calendar .slot .t { font-size: 18px; font-weight: 700; margin: 2px 0; }
+
+/* ---------- print-friendly views (S16) ----------
+   Ctrl/Cmd-P on any page: navigation, search, filters and buttons are dropped,
+   tables repeat their header sheet after sheet and never split a row mid-way,
+   status chips become outlines so they survive a black-and-white printer, and
+   every external link prints its URL so a paper copy still carries the official
+   source behind each row. */
+@media print {
+  @page { margin: 14mm 12mm; }
+
+  body { background: #fff; color: #000; font-size: 10.5pt; line-height: 1.4; }
+
+  /* Drop interactive chrome; the verification footer stays for provenance. */
+  header.site, #filters, .filters, .toolbar, button { display: none !important; }
+  footer { border-top: 1px solid #999; font-size: 8.5pt; padding: 6px 0 0; text-align: left; }
+
+  main { max-width: none; margin: 0; padding: 0; }
+  main::before {
+    content: "Las Vegas Strip Poker Plan · https://karagemop466-tech.github.io/Poker1/ · printed view — verify each value against the live site before travel.";
+    display: block; font-size: 8pt; color: #555; margin-bottom: 8px;
+  }
+
+  a { color: #000; text-decoration: none; }
+  /* Paper keeps the source: every external link prints its URL once. */
+  main a[href^="http"]::after, footer a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 7pt; font-weight: 400; color: #555; word-break: break-all;
+  }
+
+  /* Tables: full width, header repeated on every sheet, no split rows. */
+  .table-wrap { overflow: visible !important; border: none; border-radius: 0; }
+  table { font-size: 9.5pt; page-break-inside: auto; }
+  thead { display: table-header-group; }
+  tfoot { display: table-footer-group; }
+  th { position: static !important; background: transparent !important; border-bottom: 2px solid #444; }
+  tr, li, .card, .day, .result, .slot, .kpi, .box, .callout { page-break-inside: avoid; }
+
+  /* Section rhythm without wasting sheets. */
+  h1 { font-size: 20pt; }
+  h2 { font-size: 14pt; border-bottom: 1px solid #ccc; padding-bottom: 2px; }
+  h3 { font-size: 12pt; }
+  h1, h2, h3 { page-break-after: avoid; }
+  p, .lead { orphans: 3; widows: 3; }
+
+  /* Status chips become outlines so they stay legible without colour. */
+  .chip { background: #fff !important; border: 1px solid currentColor; }
+
+  .card { border-color: #999; }
+  .grid { gap: 8px; }
+  .md pre, .md code { white-space: pre-wrap; word-break: break-word; }
+}
+
+</style>
+</head>
+<body data-page="otherRooms">
+<div id="site-header"></div>
+<main>
+
+<h1>Other Las Vegas poker rooms</h1>
+<p class="lead">Every Strip and near-Strip poker room outside the two this site already covers,
+checked against its own website on 2026-11-17. A row appears only where the operator publishes
+the value. Blank means unverified, never estimated.</p>
+<div class="card callout"><strong>Method.</strong> Every room in this survey was checked against its own official website on 2026-11-17. A row is published only where an official page or an official PDF prints the value. Where the official source publishes a schedule as images with no text, nothing is transcribed and the gap is recorded instead. Third-party schedules were found for several of these rooms and were not used. "No poker room published" means the property's own casino page lists none; it is not a statement that the room does not exist.</div>
+<h2>Headline</h2>
+<ul>
+  <li><strong>MGM Grand's $120 dailies are the only events in this survey whose structure sheet
+      prints no re-entry clause.</strong> Read end to end, the sheet allows late registration
+      until Level 8 and nothing that permits a further entry. But $11 of the $120 buys 10,000
+      extra starting chips on a 15,000 base, so spending more buys a bigger stack. Under the
+      brief's own rule that belongs in the separate section, and that is where it sits here
+      (F62).</li>
+  <li><strong>Every Orleans daily event allows re-entry.</strong> All thirteen structure sheets
+      in the official PDF print the same late-entry and re-entry clause, and the Sunday Special
+      also sells a one-time $100 add-on (F67).</li>
+  <li><strong>South Point and Horseshoe run daily tournaments but publish nothing readable about
+      them.</strong> South Point's schedule and rules sheets are images (F68); Horseshoe's page
+      confirms six daily tournaments and prints no time, buy-in or structure (F69).</li>
+  <li><strong>Eight properties publish no live poker room at all</strong> on their own casino
+      pages (F70), and the MGM poker hub links two of them, Luxor and Excalibur, to pages that
+      list no poker room (F71).</li>
+  <li><strong>No walking time is published for these rooms</strong>, so none is stated here (F72).</li>
+</ul>
+<div class="grid">
+  <div class="card tile"><h3>14</h3><p>rooms surveyed on their own sites, 2026-11-17</p></div>
+  <div class="card tile"><h3>6</h3><p>publish a live poker room</p></div>
+  <div class="card tile"><h3>2</h3><p>publish a readable tournament schedule</p></div>
+  <div class="card tile"><h3>17</h3><p>recurring event rows stored, all with an official source</p></div>
+  <div class="card tile"><h3>0</h3><p>of those rows are single entry</p></div>
+</div>
+
+<div id="content">
+<h2 id="rooms">1. Rooms surveyed</h2>
+<table><thead><tr><th>Room</th><th>Poker room on the official page</th><th>Tournament schedule</th><th>What the official page says</th><th>Source</th></tr></thead><tbody>
+<tr><td><strong>MGM Grand</strong><br><span class="small">MGM Resorts International · on the Strip</span></td><td><strong>Poker room published</strong></td><td><span class="chip ok">Schedule published</span><br><span class="small">The official poker page links a weekly schedule PDF and one structure sheet (the $120 NLH). Both were read on 2026-11-17.</span></td><td><span class="small">"Known for the deepest $1-$3 No Limit Hold 'Em action in Las Vegas, the MGM Grand Poker Room is the Strip's #1 hotspot for Texas Hold'em." Hours: "Daily: 24 Hours". Contact (702) 891-7434.</span></td><td><span class="small"><a href="https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html">Official MGM Grand poker page</a>, <a href="https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt5f25277b8918da08/mgm-grand-casino-poker-tournament_schedule.pdf">MGM Grand weekly tournament schedule (official PDF)</a>, <a href="https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf">MGM Grand $120 NLH structure sheet (official PDF)</a>, <a href="https://www.mgmresorts.com/en/casino/poker.html">MGM Resorts official poker hub (lists the properties with poker rooms)</a></span></td></tr>
+<tr><td><strong>The Orleans Hotel &amp; Casino</strong><br><span class="small">Boyd Gaming · not stated on the official page read</span></td><td><strong>Poker room published</strong></td><td><span class="chip ok">Schedule published</span><br><span class="small">The official page links the "2026 Orleans Poker Daily Schedule" PDF. All four parts were read on 2026-11-17: a weekday grid plus a structure sheet for every event on it.</span></td><td><span class="small">"this comfortable 35-table room has been enhanced with state-of-the-art furnishings and 25 LED TV's" and "The Orleans Poker Room is open daily 24 hours and features Texas Hold'Em, Omaha Hi-Lo and 7-Card Stud."</span></td><td><span class="small"><a href="https://orleans.boydgaming.com/play/poker-room">Official Orleans poker room page</a>, <a href="https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0">2026 Orleans Poker Daily Schedule (official PDF)</a></span></td></tr>
+<tr><td><strong>South Point Hotel, Casino &amp; Spa</strong><br><span class="small">South Point (independent) · off the Strip by its own words</span></td><td><strong>Poker room published</strong></td><td><span class="chip bad">image only - cannot be transcribed</span><br><span class="small">The official "Daily Tournament Schedule" page publishes the schedule and all eight rules sheets as images, with no text layer. The page's own text gives the four start times and the two buy-in levels but does not say which buy-in belongs to which time, so no row is built from it.</span></td><td><span class="small">"We feature tournaments daily with aggressive guarantees at 10:10 am, 2:10 pm, 6:10 pm and 10:10 pm with buy-ins of $120 and $300." The room is "24-hour non-smoking" and "parking is always free".</span></td><td><span class="small"><a href="https://southpointcasino.com/casino/poker-room">Official South Point poker room page</a>, <a href="https://southpointcasino.com/casino/poker-room/daily-tournament-schedule">Official South Point daily tournament schedule page (images only)</a>, <a href="https://southpointcasino.com/">Official South Point home page (location wording)</a></span></td></tr>
+<tr><td><strong>Horseshoe Las Vegas</strong><br><span class="small">Caesars Entertainment · on the Strip</span></td><td><strong>Poker room published</strong></td><td><span class="chip warn">No schedule published</span><br><span class="small">The official page confirms six daily tournaments but prints no start time, buy-in, guarantee or structure, and no schedule PDF was found on caesars.com on 2026-11-17. Third-party sites publish times and buy-ins for these events; they are not official and are not used here.</span></td><td><span class="small">"The Hall of Fame Poker Room at Horseshoe Las Vegas features 20 tables and offers many exciting varieties of live poker ... Test your luck with 6 exciting tournament times daily."</span></td><td><span class="small"><a href="https://www.caesars.com/horseshoe-las-vegas/casino">Official Horseshoe Las Vegas casino page</a></span></td></tr>
+<tr><td><strong>Planet Hollywood</strong><br><span class="small">Caesars Entertainment · on the Strip</span></td><td><strong>Poker room published</strong></td><td><span class="chip warn">No schedule published</span><br><span class="small">The official casino page confirms a live poker room and table count but publishes no tournament schedule, buy-in or structure.</span></td><td><span class="small">"23 Live Poker Tables" and "Planet Hollywood Casino takes up a notch with an exciting gaming floor, new live action poker room and poolside blackjack."</span></td><td><span class="small"><a href="https://www.caesars.com/planet-hollywood/casino">Official Planet Hollywood casino page</a></span></td></tr>
+<tr><td><strong>Mandalay Bay</strong><br><span class="small">MGM Resorts International · on the Strip</span></td><td><strong>Poker room published</strong></td><td><span class="chip warn">No schedule published</span><br><span class="small">The official poker page publishes hours, a price range and a group booking number, but no recurring tournament schedule. It says: "To set up a Poker Tournament as a group, please contact 702.632.7790."</span></td><td><span class="small">"The cards are dealt, and the bets are in. Get set for hand after hand of classic poker action." Hours: "Wednesday - Monday: 10:00 AM - 4:00 AM", "Tuesday: Closed". Price range "$60 - $1,000".</span></td><td><span class="small"><a href="https://mandalaybay.mgmresorts.com/en/casino/poker-tables.html">Official Mandalay Bay poker page</a></span></td></tr>
+<tr><td><strong>Paris Las Vegas</strong><br><span class="small">Caesars Entertainment · on the Strip</span></td><td>No poker room published</td><td><span class="chip warn">No schedule published</span><br><span class="small">No live poker room is published on the official casino page, so there is no tournament schedule to look for.</span></td><td><span class="small">The official casino page lists "Poker Derivative Table Games" (Face Up Pai Gow, Ultimate Texas Hold'Em, Let It Ride, Three Card Poker, Mississippi Stud, I Luv Suits, Crazy 4 Poker) and no live poker room.</span></td><td><span class="small"><a href="https://www.caesars.com/paris-las-vegas/casino">Official Paris Las Vegas casino page</a></span></td></tr>
+<tr><td><strong>Luxor</strong><br><span class="small">MGM Resorts International · on the Strip</span></td><td>No poker room published</td><td><span class="chip warn">No schedule published</span><br><span class="small">No live poker room is published on the official page. See flag F71: the MGM Resorts poker hub links this page under "Luxor Poker Tournaments".</span></td><td><span class="small">The official table-games page lists craps, roulette, blackjack, 3 Card Poker, mini baccarat, Free Bet Blackjack and Ultimate Texas Hold'em, and no live poker room.</span></td><td><span class="small"><a href="https://luxor.mgmresorts.com/en/casino/table-games.html">Official Luxor table games page</a>, <a href="https://www.mgmresorts.com/en/casino/poker.html">MGM Resorts official poker hub (links Luxor here)</a></span></td></tr>
+<tr><td><strong>Excalibur</strong><br><span class="small">MGM Resorts International · on the Strip</span></td><td>No poker room published</td><td><span class="chip warn">No schedule published</span><br><span class="small">No live poker room is published on the official casino page. See flag F71: the MGM Resorts poker hub links excalibur.mgmresorts.com/en/casino/poker-room.html, which redirects to this page.</span></td><td><span class="small">The official casino page lists Slots, $5 Live Blackjack, Table Games and the BetMGM Sportsbook, and no poker room.</span></td><td><span class="small"><a href="https://excalibur.mgmresorts.com/en/casino.html">Official Excalibur casino page</a>, <a href="https://www.mgmresorts.com/en/casino/poker.html">MGM Resorts official poker hub (links Excalibur here)</a></span></td></tr>
+<tr><td><strong>SAHARA Las Vegas</strong><br><span class="small">SAHARA Las Vegas (independent) · on the Strip</span></td><td>No poker room published</td><td><span class="chip warn">No schedule published</span><br><span class="small">No live poker room is published on the official casino page.</span></td><td><span class="small">"SAHARA Las Vegas delivers one of the most unique gaming destinations on the Strip ... nearly 60,000 square foot casino ... Over 600 slot machines ... Over 50 table games." No poker room is listed.</span></td><td><span class="small"><a href="https://www.saharalasvegas.com/casino">Official SAHARA Las Vegas casino page</a></span></td></tr>
+<tr><td><strong>Resorts World Las Vegas</strong><br><span class="small">Genting · on the Strip</span></td><td>No poker room published</td><td><span class="chip warn">No schedule published</span><br><span class="small">No live poker room is published on the official gaming page or the official casino-events page.</span></td><td><span class="small">The official gaming page lists High Limit, Slots, Table Games and the Sky Casino, and no poker room. Its casino-events page lists slot and free-play promotions only.</span></td><td><span class="small"><a href="https://www.rwlasvegas.com/gaming/">Official Resorts World gaming page</a>, <a href="https://www.rwlasvegas.com/gaming/casino-events/">Official Resorts World casino events page</a></span></td></tr>
+<tr><td><strong>Fontainebleau Las Vegas</strong><br><span class="small">Fontainebleau Development · on the Strip</span></td><td>No poker room published</td><td><span class="chip warn">No schedule published</span><br><span class="small">No live poker room is published on the official casino page.</span></td><td><span class="small">The official casino page lists table games, "high-limit slots and poker machines" (electronic video poker) in the High Limit enclave, and the race and sports book. No live poker room is listed.</span></td><td><span class="small"><a href="https://www.fontainebleaulasvegas.com/casino/">Official Fontainebleau casino page</a></span></td></tr>
+<tr><td><strong>The STRAT Hotel, Casino &amp; Tower</strong><br><span class="small">Golden Entertainment · north Strip</span></td><td>No poker room published</td><td><span class="chip warn">No schedule published</span><br><span class="small">No live poker room is published on the official casino page. thestrat.com/casino/poker returns the official 404 page.</span></td><td><span class="small">"our casino has 784 machines and 31 tables offering high-energy games from craps and blackjack to baccarat and roulette." The official casino page lists Slots, Table Games and the William Hill Sports Book only.</span></td><td><span class="small"><a href="https://thestrat.com/casino">Official STRAT casino page</a></span></td></tr>
+<tr><td><strong>The Mirage (rebranding to Hard Rock Las Vegas)</strong><br><span class="small">MGM Resorts International / Hard Rock International · on the Strip</span></td><td>No poker room published</td><td><span class="chip warn">No schedule published</span><br><span class="small">The property page reached from the Mirage poker URL is a coming-soon page for the rebrand, with no poker room.</span></td><td><span class="small">mirage.mgmresorts.com/en/casino/poker-tables.html now resolves to the Hard Rock Las Vegas page: "Coming Soon to the Las Vegas Strip". No poker room or schedule is published.</span></td><td><span class="small"><a href="https://www.hardrockvegas.com/">Hard Rock Las Vegas official page (reached from the Mirage poker URL)</a></span></td></tr>
+</tbody></table>
+<h2 id="events">2. Recurring events published by these rooms</h2>
+<p class="small">These rooms print weekday schedules, not calendar dates, so the rows carry weekdays. They are not merged into the dated tables, which belong to the Venetian and Wynn series.</p>
+<table><thead><tr><th>Event</th><th>Room</th><th>Days</th><th>Start</th><th>Buy-in</th><th>Guarantee</th><th>Chips / levels</th><th>Late reg closes</th><th>Entry rule</th><th>Rule excerpt (official)</th><th>Source</th></tr></thead><tbody>
+<tr><td><strong>$120 No Limit Hold'em (late morning)</strong><br><span class="chip info">paid chip advantage</span></td><td>MGM Grand</td><td>Mon, Tue, Wed, Thu, Fri, Sun</td><td>11:10</td><td>$120</td><td><span class="muted">blank</span></td><td>25,000<br><span class="small">15 min</span></td><td>start of level 8</td><td><span class="chip warn">Extra spend buys chips</span><br><span class="small">No re-entry, rebuy or add-on clause in the sheet read end to end. Kept out of the single-entry list because $11 of the $120 buys 10,000 extra starting chips on a 15,000 base, so paying more buys a bigger stack.</span></td><td><span class="small">The sheet prints a late-registration clause only: "All levels are 15 minutes in length. There will be a break after levels 7 and 15. Registration is open until Level 8." No re-entry clause appears anywhere in the sheet.</span></td><td><span class="small"><a href="https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html">Official MGM Grand poker page: daily tournament times</a>, <a href="https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt5f25277b8918da08/mgm-grand-casino-poker-tournament_schedule.pdf">MGM Grand weekly tournament schedule (official PDF)</a>, <a href="https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf">MGM Grand $120 NLH structure sheet (official PDF)</a></span></td></tr>
+<tr><td><strong>$120 No Limit Hold'em (evening)</strong><br><span class="chip info">paid chip advantage</span></td><td>MGM Grand</td><td>Mon, Tue, Wed, Thu, Fri, Sat, Sun</td><td>19:10</td><td>$120</td><td><span class="muted">blank</span></td><td>25,000<br><span class="small">15 min</span></td><td>start of level 8</td><td><span class="chip warn">Extra spend buys chips</span><br><span class="small">Same structure sheet as the 11:10 event. No re-entry clause; the $11 gratuity buys 10,000 extra chips.</span></td><td><span class="small">The sheet prints a late-registration clause only: "All levels are 15 minutes in length. There will be a break after levels 7 and 15. Registration is open until Level 8." No re-entry clause appears anywhere in the sheet.</span></td><td><span class="small"><a href="https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html">Official MGM Grand poker page: daily tournament times</a>, <a href="https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt5f25277b8918da08/mgm-grand-casino-poker-tournament_schedule.pdf">MGM Grand weekly tournament schedule (official PDF)</a>, <a href="https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf">MGM Grand $120 NLH structure sheet (official PDF)</a></span></td></tr>
+<tr><td><strong>$120 No Limit Hold'em (late night)</strong><br><span class="chip info">paid chip advantage</span></td><td>MGM Grand</td><td>Mon, Tue, Wed, Thu, Fri, Sat, Sun</td><td>23:10</td><td>$120</td><td><span class="muted">blank</span></td><td>25,000<br><span class="small">15 min</span></td><td>start of level 8</td><td><span class="chip warn">Extra spend buys chips</span><br><span class="small">Same structure sheet as the 11:10 event. No re-entry clause; the $11 gratuity buys 10,000 extra chips.</span></td><td><span class="small">The sheet prints a late-registration clause only: "All levels are 15 minutes in length. There will be a break after levels 7 and 15. Registration is open until Level 8." No re-entry clause appears anywhere in the sheet.</span></td><td><span class="small"><a href="https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html">Official MGM Grand poker page: daily tournament times</a>, <a href="https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt5f25277b8918da08/mgm-grand-casino-poker-tournament_schedule.pdf">MGM Grand weekly tournament schedule (official PDF)</a>, <a href="https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf">MGM Grand $120 NLH structure sheet (official PDF)</a></span></td></tr>
+<tr><td><strong>$150 No Limit Hold'em $2,000 GTD (Saturday)</strong><br><span class="chip info">guarantee</span><br><span class="chip info">no structure sheet published</span></td><td>MGM Grand</td><td>Sat</td><td>11:10</td><td>$150</td><td>$2,000</td><td>25,000<br><span class="small">20 min</span></td><td>blank</td><td><span class="chip warn">Unverified - no structure sheet published</span><br><span class="small">The official schedule PDF prints this event with a $2,000 guarantee, 25K chips and 20-minute levels, but no structure sheet for it is published on the poker page, so its entry rule is not verified.</span></td><td><span class="small">No structure sheet published for this event.</span></td><td><span class="small"><a href="https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt5f25277b8918da08/mgm-grand-casino-poker-tournament_schedule.pdf">MGM Grand weekly tournament schedule (official PDF)</a>, <a href="https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html">Official MGM Grand poker page (links only the $120 structure sheet)</a></span></td></tr>
+<tr><td><strong>$200 NL Hold'em Sunday Special (RING EVENT)</strong><br><span class="chip info">re-entry</span><br><span class="chip info">add-on</span><br><span class="chip info">ring event</span></td><td>The Orleans Hotel &amp; Casino</td><td>Sun</td><td>11:05</td><td>$200</td><td>$50,000</td><td>25,000<br><span class="small">30 min</span></td><td>start of Level 12 (5:30pm)</td><td><span class="chip bad">Re-entry and add-on</span><br><span class="small">The official structure sheet prints re-entry until Level 12. It also prints a one-time $100 add-on for 25,000 chips.</span></td><td><span class="small">"Late entries and re-entries are available until the start of Level 12, approximately 5:30pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list."</span></td><td><span class="small"><a href="https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0">2026 Orleans Poker Daily Schedule (official PDF)</a>, <a href="https://orleans.boydgaming.com/play/poker-room">Official Orleans poker room page</a></span></td></tr>
+<tr><td><strong>$100 NL Hold'em AM Super Stack</strong><br><span class="chip info">re-entry</span></td><td>The Orleans Hotel &amp; Casino</td><td>Mon, Tue, Wed, Thu</td><td>11:05</td><td>$100</td><td>$4,000</td><td>25,000<br><span class="small">20 min</span></td><td>start of Level 9 (2:10pm)</td><td><span class="chip bad">Re-entry allowed</span><br><span class="small">The official structure sheet prints re-entry until Level 9.</span></td><td><span class="small">"Late entries and re-entries are available until the start of Level 9, approximately 2:10pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list."</span></td><td><span class="small"><a href="https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0">2026 Orleans Poker Daily Schedule (official PDF)</a>, <a href="https://orleans.boydgaming.com/play/poker-room">Official Orleans poker room page</a></span></td></tr>
+<tr><td><strong>$150 NL Hold'em Monster Stack (RING EVENT)</strong><br><span class="chip info">re-entry</span><br><span class="chip info">ring event</span></td><td>The Orleans Hotel &amp; Casino</td><td>Fri</td><td>11:05</td><td>$150</td><td>$10,000</td><td>30,000<br><span class="small">30 min</span></td><td>start of Level 12 (5:30pm)</td><td><span class="chip bad">Re-entry allowed</span><br><span class="small">The official structure sheet prints re-entry until Level 12.</span></td><td><span class="small">"Late entries and re-entries are available until the start of Level 12, approximately 5:30pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list."</span></td><td><span class="small"><a href="https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0">2026 Orleans Poker Daily Schedule (official PDF)</a>, <a href="https://orleans.boydgaming.com/play/poker-room">Official Orleans poker room page</a></span></td></tr>
+<tr><td><strong>$200 NL Hold'em Mega Stack (RING EVENT)</strong><br><span class="chip info">re-entry</span><br><span class="chip info">ring event</span></td><td>The Orleans Hotel &amp; Casino</td><td>Sat</td><td>11:05</td><td>$200</td><td>$15,000</td><td>40,000<br><span class="small">30 min</span></td><td>start of Level 12 (5:30pm)</td><td><span class="chip bad">Re-entry allowed</span><br><span class="small">The official structure sheet prints re-entry until Level 12.</span></td><td><span class="small">"Late entries and re-entries are available until the start of Level 12, approximately 5:30pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list."</span></td><td><span class="small"><a href="https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0">2026 Orleans Poker Daily Schedule (official PDF)</a>, <a href="https://orleans.boydgaming.com/play/poker-room">Official Orleans poker room page</a></span></td></tr>
+<tr><td><strong>$160 T.O.E.</strong><br><span class="chip info">re-entry</span><br><span class="chip info">mixed game</span></td><td>The Orleans Hotel &amp; Casino</td><td>Mon</td><td>16:05</td><td>$160</td><td>$3,000</td><td>25,000<br><span class="small">20 min</span></td><td>start of Level 11 (7:50pm)</td><td><span class="chip bad">Re-entry allowed</span><br><span class="small">The official structure sheet prints re-entry until Level 11.</span></td><td><span class="small">"Late entries and re-entries are available until the start of Level 11, approximately 7:50pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list."</span></td><td><span class="small"><a href="https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0">2026 Orleans Poker Daily Schedule (official PDF)</a>, <a href="https://orleans.boydgaming.com/play/poker-room">Official Orleans poker room page</a></span></td></tr>
+<tr><td><strong>$160 T.O.R.S.E.</strong><br><span class="chip info">re-entry</span><br><span class="chip info">mixed game</span></td><td>The Orleans Hotel &amp; Casino</td><td>Tue</td><td>16:05</td><td>$160</td><td>$3,000</td><td>25,000<br><span class="small">20 min</span></td><td>start of Level 11 (7:50pm)</td><td><span class="chip bad">Re-entry allowed</span><br><span class="small">The official structure sheet prints re-entry until Level 11.</span></td><td><span class="small">"Late entries and re-entries are available until the start of Level 11, approximately 7:50pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list."</span></td><td><span class="small"><a href="https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0">2026 Orleans Poker Daily Schedule (official PDF)</a>, <a href="https://orleans.boydgaming.com/play/poker-room">Official Orleans poker room page</a></span></td></tr>
+<tr><td><strong>$160 Drama Mix (Dramaha High / Dramaha 2-7)</strong><br><span class="chip info">re-entry</span><br><span class="chip info">mixed game</span></td><td>The Orleans Hotel &amp; Casino</td><td>Wed</td><td>16:05</td><td>$160</td><td>$4,000</td><td>25,000<br><span class="small">20 min</span></td><td>start of Level 11 (7:50pm)</td><td><span class="chip bad">Re-entry allowed</span><br><span class="small">The official structure sheet prints re-entry until Level 11.</span></td><td><span class="small">"Late entries and re-entries are available until the start of Level 11, approximately 7:50pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list."</span></td><td><span class="small"><a href="https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0">2026 Orleans Poker Daily Schedule (official PDF)</a>, <a href="https://orleans.boydgaming.com/play/poker-room">Official Orleans poker room page</a></span></td></tr>
+<tr><td><strong>$160 5 Game Draw Mix</strong><br><span class="chip info">re-entry</span><br><span class="chip info">mixed game</span></td><td>The Orleans Hotel &amp; Casino</td><td>Thu</td><td>16:05</td><td>$160</td><td>$3,000</td><td>25,000<br><span class="small">20 min</span></td><td>start of Level 11 (7:50pm)</td><td><span class="chip bad">Re-entry allowed</span><br><span class="small">The official structure sheet prints re-entry until Level 11.</span></td><td><span class="small">"Late entries and re-entries are available until the start of Level 11, approximately 7:50pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list."</span></td><td><span class="small"><a href="https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0">2026 Orleans Poker Daily Schedule (official PDF)</a>, <a href="https://orleans.boydgaming.com/play/poker-room">Official Orleans poker room page</a></span></td></tr>
+<tr><td><strong>$160 Omaha-8 / Stud-8</strong><br><span class="chip info">re-entry</span><br><span class="chip info">mixed game</span></td><td>The Orleans Hotel &amp; Casino</td><td>Fri</td><td>16:05</td><td>$160</td><td>$4,000</td><td>25,000<br><span class="small">20 min</span></td><td>start of Level 11 (7:50pm)</td><td><span class="chip bad">Re-entry allowed</span><br><span class="small">The official structure sheet prints re-entry until Level 11.</span></td><td><span class="small">"Late entries and re-entries are available until the start of Level 11, approximately 7:50pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list."</span></td><td><span class="small"><a href="https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0">2026 Orleans Poker Daily Schedule (official PDF)</a>, <a href="https://orleans.boydgaming.com/play/poker-room">Official Orleans poker room page</a></span></td></tr>
+<tr><td><strong>$160 Triple-Triple Draw</strong><br><span class="chip info">re-entry</span><br><span class="chip info">mixed game</span></td><td>The Orleans Hotel &amp; Casino</td><td>Sat</td><td>16:05</td><td>$160</td><td>$3,000</td><td>25,000<br><span class="small">20 min</span></td><td>start of Level 11 (7:50pm)</td><td><span class="chip bad">Re-entry allowed</span><br><span class="small">The official structure sheet prints re-entry until Level 11.</span></td><td><span class="small">"Late entries and re-entries are available until the start of Level 11, approximately 7:50pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list."</span></td><td><span class="small"><a href="https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0">2026 Orleans Poker Daily Schedule (official PDF)</a>, <a href="https://orleans.boydgaming.com/play/poker-room">Official Orleans poker room page</a></span></td></tr>
+<tr><td><strong>$200 Pot-Limit Big-O</strong><br><span class="chip info">re-entry</span><br><span class="chip info">mixed game</span></td><td>The Orleans Hotel &amp; Casino</td><td>Sun</td><td>18:05</td><td>$200</td><td>$4,000</td><td>25,000<br><span class="small">20 min</span></td><td>start of Level 11 (9:50pm)</td><td><span class="chip bad">Re-entry allowed</span><br><span class="small">The official structure sheet prints re-entry until Level 11.</span></td><td><span class="small">"Late entries and re-entries are available until the start of Level 11, approximately 9:50pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list."</span></td><td><span class="small"><a href="https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0">2026 Orleans Poker Daily Schedule (official PDF)</a>, <a href="https://orleans.boydgaming.com/play/poker-room">Official Orleans poker room page</a></span></td></tr>
+<tr><td><strong>$120 NL Hold'em PM Monster Stack</strong><br><span class="chip info">re-entry</span></td><td>The Orleans Hotel &amp; Casino</td><td>Mon, Tue, Wed, Thu, Sat</td><td>18:05</td><td>$120</td><td>$5,000</td><td>30,000<br><span class="small">20 min</span></td><td>start of Level 9 (9:10pm)</td><td><span class="chip bad">Re-entry allowed</span><br><span class="small">The official structure sheet prints re-entry until Level 9.</span></td><td><span class="small">"Late entries and re-entries are available until the start of Level 9, approximately 9:10pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list."</span></td><td><span class="small"><a href="https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0">2026 Orleans Poker Daily Schedule (official PDF)</a>, <a href="https://orleans.boydgaming.com/play/poker-room">Official Orleans poker room page</a></span></td></tr>
+<tr><td><strong>$150 NL Hold'em 20K Monster Stack (RING EVENT)</strong><br><span class="chip info">re-entry</span><br><span class="chip info">ring event</span></td><td>The Orleans Hotel &amp; Casino</td><td>Fri</td><td>18:05</td><td>$150</td><td>$20,000</td><td>30,000<br><span class="small">20 min</span></td><td>start of Level 11 (9:50pm)</td><td><span class="chip bad">Re-entry allowed</span><br><span class="small">The official structure sheet prints re-entry until Level 11.</span></td><td><span class="small">"Late entries and re-entries are available until the start of Level 11, approximately 9:50pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list."</span></td><td><span class="small"><a href="https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0">2026 Orleans Poker Daily Schedule (official PDF)</a>, <a href="https://orleans.boydgaming.com/play/poker-room">Official Orleans poker room page</a></span></td></tr>
+</tbody></table>
+<h2 id="fees">3. Registration and fee splits</h2>
+<table><thead><tr><th>Event</th><th>Registration opens</th><th>Fee split (official wording)</th><th>Starting stack</th><th>Source</th></tr></thead><tbody>
+<tr><td><strong>$120 No Limit Hold'em (late morning)</strong></td><td>blank</td><td><span class="small">$92 prize pool, $13 house fee, $11 voluntary gratuity (buys 10,000 extra chips), $4 promotions</span></td><td>25,000</td><td><span class="small"><a href="https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html">Official MGM Grand poker page: daily tournament times</a>, <a href="https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt5f25277b8918da08/mgm-grand-casino-poker-tournament_schedule.pdf">MGM Grand weekly tournament schedule (official PDF)</a>, <a href="https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf">MGM Grand $120 NLH structure sheet (official PDF)</a></span></td></tr>
+<tr><td><strong>$120 No Limit Hold'em (evening)</strong></td><td>blank</td><td><span class="small">$92 prize pool, $13 house fee, $11 voluntary gratuity (buys 10,000 extra chips), $4 promotions</span></td><td>25,000</td><td><span class="small"><a href="https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html">Official MGM Grand poker page: daily tournament times</a>, <a href="https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt5f25277b8918da08/mgm-grand-casino-poker-tournament_schedule.pdf">MGM Grand weekly tournament schedule (official PDF)</a>, <a href="https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf">MGM Grand $120 NLH structure sheet (official PDF)</a></span></td></tr>
+<tr><td><strong>$120 No Limit Hold'em (late night)</strong></td><td>blank</td><td><span class="small">$92 prize pool, $13 house fee, $11 voluntary gratuity (buys 10,000 extra chips), $4 promotions</span></td><td>25,000</td><td><span class="small"><a href="https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html">Official MGM Grand poker page: daily tournament times</a>, <a href="https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt5f25277b8918da08/mgm-grand-casino-poker-tournament_schedule.pdf">MGM Grand weekly tournament schedule (official PDF)</a>, <a href="https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf">MGM Grand $120 NLH structure sheet (official PDF)</a></span></td></tr>
+<tr><td><strong>$150 No Limit Hold'em $2,000 GTD (Saturday)</strong></td><td>blank</td><td><span class="small">The official poker page prints no fee split for this event.</span></td><td>25,000</td><td><span class="small"><a href="https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt5f25277b8918da08/mgm-grand-casino-poker-tournament_schedule.pdf">MGM Grand weekly tournament schedule (official PDF)</a>, <a href="https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html">Official MGM Grand poker page (links only the $120 structure sheet)</a></span></td></tr>
+<tr><td><strong>$200 NL Hold'em Sunday Special (RING EVENT)</strong></td><td>1 hour before the start</td><td><span class="small">$52 withheld per entry for admin, staffing and promotions</span></td><td>25,000</td><td><span class="small"><a href="https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0">2026 Orleans Poker Daily Schedule (official PDF)</a>, <a href="https://orleans.boydgaming.com/play/poker-room">Official Orleans poker room page</a></span></td></tr>
+<tr><td><strong>$100 NL Hold'em AM Super Stack</strong></td><td>1 hour before the start</td><td><span class="small">$23 withheld per entry for admin, staffing and promotions</span></td><td>25,000</td><td><span class="small"><a href="https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0">2026 Orleans Poker Daily Schedule (official PDF)</a>, <a href="https://orleans.boydgaming.com/play/poker-room">Official Orleans poker room page</a></span></td></tr>
+<tr><td><strong>$150 NL Hold'em Monster Stack (RING EVENT)</strong></td><td>1 hour before the start</td><td><span class="small">$30 withheld per entry for admin, staffing and promotions</span></td><td>30,000</td><td><span class="small"><a href="https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0">2026 Orleans Poker Daily Schedule (official PDF)</a>, <a href="https://orleans.boydgaming.com/play/poker-room">Official Orleans poker room page</a></span></td></tr>
+<tr><td><strong>$200 NL Hold'em Mega Stack (RING EVENT)</strong></td><td>1 hour before the start</td><td><span class="small">$35 withheld per entry for admin, staffing and promotions</span></td><td>40,000</td><td><span class="small"><a href="https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0">2026 Orleans Poker Daily Schedule (official PDF)</a>, <a href="https://orleans.boydgaming.com/play/poker-room">Official Orleans poker room page</a></span></td></tr>
+<tr><td><strong>$160 T.O.E.</strong></td><td>1 hour before the start</td><td><span class="small">$31 withheld per entry for admin, staffing and promotions</span></td><td>25,000</td><td><span class="small"><a href="https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0">2026 Orleans Poker Daily Schedule (official PDF)</a>, <a href="https://orleans.boydgaming.com/play/poker-room">Official Orleans poker room page</a></span></td></tr>
+<tr><td><strong>$160 T.O.R.S.E.</strong></td><td>1 hour before the start</td><td><span class="small">$31 withheld per entry for admin, staffing and promotions</span></td><td>25,000</td><td><span class="small"><a href="https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0">2026 Orleans Poker Daily Schedule (official PDF)</a>, <a href="https://orleans.boydgaming.com/play/poker-room">Official Orleans poker room page</a></span></td></tr>
+<tr><td><strong>$160 Drama Mix (Dramaha High / Dramaha 2-7)</strong></td><td>1 hour before the start</td><td><span class="small">$31 withheld per entry for admin, staffing and promotions</span></td><td>25,000</td><td><span class="small"><a href="https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0">2026 Orleans Poker Daily Schedule (official PDF)</a>, <a href="https://orleans.boydgaming.com/play/poker-room">Official Orleans poker room page</a></span></td></tr>
+<tr><td><strong>$160 5 Game Draw Mix</strong></td><td>1 hour before the start</td><td><span class="small">$31 withheld per entry for admin, staffing and promotions</span></td><td>25,000</td><td><span class="small"><a href="https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0">2026 Orleans Poker Daily Schedule (official PDF)</a>, <a href="https://orleans.boydgaming.com/play/poker-room">Official Orleans poker room page</a></span></td></tr>
+<tr><td><strong>$160 Omaha-8 / Stud-8</strong></td><td>1 hour before the start</td><td><span class="small">$31 withheld per entry for admin, staffing and promotions</span></td><td>25,000</td><td><span class="small"><a href="https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0">2026 Orleans Poker Daily Schedule (official PDF)</a>, <a href="https://orleans.boydgaming.com/play/poker-room">Official Orleans poker room page</a></span></td></tr>
+<tr><td><strong>$160 Triple-Triple Draw</strong></td><td>1 hour before the start</td><td><span class="small">$31 withheld per entry for admin, staffing and promotions</span></td><td>25,000</td><td><span class="small"><a href="https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0">2026 Orleans Poker Daily Schedule (official PDF)</a>, <a href="https://orleans.boydgaming.com/play/poker-room">Official Orleans poker room page</a></span></td></tr>
+<tr><td><strong>$200 Pot-Limit Big-O</strong></td><td>1 hour before the start</td><td><span class="small">$35 withheld per entry for admin, staffing and promotions</span></td><td>25,000</td><td><span class="small"><a href="https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0">2026 Orleans Poker Daily Schedule (official PDF)</a>, <a href="https://orleans.boydgaming.com/play/poker-room">Official Orleans poker room page</a></span></td></tr>
+<tr><td><strong>$120 NL Hold'em PM Monster Stack</strong></td><td>1 hour before the start</td><td><span class="small">$24 withheld per entry for admin, staffing and promotions</span></td><td>30,000</td><td><span class="small"><a href="https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0">2026 Orleans Poker Daily Schedule (official PDF)</a>, <a href="https://orleans.boydgaming.com/play/poker-room">Official Orleans poker room page</a></span></td></tr>
+<tr><td><strong>$150 NL Hold'em 20K Monster Stack (RING EVENT)</strong></td><td>1 hour before the start</td><td><span class="small">$30 withheld per entry for admin, staffing and promotions</span></td><td>30,000</td><td><span class="small"><a href="https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0">2026 Orleans Poker Daily Schedule (official PDF)</a>, <a href="https://orleans.boydgaming.com/play/poker-room">Official Orleans poker room page</a></span></td></tr>
+</tbody></table>
+<h2 id="gaps">4. Findings from rooms with no readable schedule</h2>
+<table><thead><tr><th>Room</th><th>Finding</th><th>Source</th></tr></thead><tbody>
+<tr><td><strong>South Point Hotel, Casino &amp; Spa</strong></td><td>The official room page states four daily start times (10:10 am, 2:10 pm, 6:10 pm, 10:10 pm) and two buy-in levels ($120 and $300) without mapping one to the other. No row is built, because a row needs a buy-in and an entry rule attached to a time.</td><td><span class="small"><a href="https://southpointcasino.com/casino/poker-room">Official South Point poker room page</a></span></td></tr>
+<tr><td><strong>South Point Hotel, Casino &amp; Spa</strong></td><td>The eight rules sheets published on the official schedule page are named for $120 and $200 events (NLH, NLH Chip Chop, Omaha-8 or Better, Crazy Pineapple Turbo, NLH Turbo Mega Stack, NLH Bounty, Deep Stack, NLH Turbo Bounty, all marked Oct2026). No $300 rules sheet is published, although the room page advertises a $300 buy-in.</td><td><span class="small"><a href="https://southpointcasino.com/casino/poker-room/daily-tournament-schedule">Official South Point daily tournament schedule page (images only)</a></span></td></tr>
+<tr><td><strong>Horseshoe Las Vegas</strong></td><td>Six daily tournaments are confirmed by the official page, but nothing else about them is published there. The URLs tried on 2026-11-17 (/casino/poker-room.html and /casino/poker) both resolve to the same casino page, which carries no schedule.</td><td><span class="small"><a href="https://www.caesars.com/horseshoe-las-vegas/casino">Official Horseshoe Las Vegas casino page</a></span></td></tr>
+</tbody></table>
+<h2 id="flags">5. Irregularities and blank values (F60-F72)</h2>
+<table><thead><tr><th>#</th><th>Irregularity</th><th>What the official source prints</th><th>How it is handled</th><th>Source</th></tr></thead><tbody>
+<tr id="f60"><td><strong>F60</strong></td><td>Start times conflict inside one operator's own sources</td><td><span class="small">The official MGM Grand poker page prints "Daily Texas Hold'em Tournaments 11:00am, 7:00pm and 11:00pm". The official schedule PDF linked from that same page prints 11:10am, 7:10pm and 11:10pm.</span></td><td><span class="small">Both times are kept. The rows use the schedule PDF's times, because the PDF is the document that also prints the buy-in, chips and level length for each slot. The page's times are quoted on the row.</span></td><td><a href="https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html">official source</a></td></tr>
+<tr id="f61"><td><strong>F61</strong></td><td>The weekly schedule PDF carries a month in its title</td><td><span class="small">The PDF linked as "Weekly Schedule" prints the heading "MGM Grand August Tournament Schedule" and a grid of weekday columns with no dates and no year.</span></td><td><span class="small">The grid is stored as a recurring weekday schedule, not as dated rows. Which month it describes cannot be read from the document, so no date range is claimed.</span></td><td><a href="https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt5f25277b8918da08/mgm-grand-casino-poker-tournament_schedule.pdf">official source</a></td></tr>
+<tr id="f62"><td><strong>F62</strong></td><td>Extra chips can be bought inside the buy-in</td><td><span class="small">"Each initial $120 buy-in is allocated as follows: $92 to Prize Pool, $13 House Fee and a one-time, voluntary gratuity of $11 which grants players an extra 10,000 chips. $4 will fund Tournament Promotions." and "Players start with 25,000 tournament chips, including the chips for staff gratuity. (15,000 + 10,000)".</span></td><td><span class="small">Paying $11 more takes a starting stack from 15,000 to 25,000 chips, so spending more buys an in-game advantage. These events are kept out of the single-entry list and shown in the separate section, which is what the brief asks for with events where money buys an advantage.</span></td><td><a href="https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf">official source</a></td></tr>
+<tr id="f63"><td><strong>F63</strong></td><td>The Saturday $150 event has no published structure sheet</td><td><span class="small">The official poker page links one structure sheet only, the $120 NLH. The schedule PDF prints a Saturday 11:10am "$150 NLH - $2,000" with 25K chips and 20-minute levels.</span></td><td><span class="small">The row keeps the buy-in, guarantee, chips and level length printed on the schedule PDF. Its entry rule, fee split and late-registration close stay blank and unverified.</span></td><td><a href="https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt5f25277b8918da08/mgm-grand-casino-poker-tournament_schedule.pdf">official source</a></td></tr>
+<tr id="f64"><td><strong>F64</strong></td><td>The two MGM PDFs are hosted off the property domain</td><td><span class="small">Both PDFs are served from assets.contentstack.io, not from mgmgrand.mgmresorts.com. They are reached only through links on the official poker page.</span></td><td><span class="small">They are cited as "linked from the official page", the same treatment the site already gives the Bellagio flyers (F40). No value is taken from a PDF that the official page does not link.</span></td><td><a href="https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html">official source</a></td></tr>
+<tr id="f65"><td><strong>F65</strong></td><td>The Orleans schedule PDF's file name and its printed period do not agree</td><td><span class="small">The file is named 2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf, while the official page links it as "2026 Orleans Poker Daily Schedule". Nothing inside the PDF prints a month, a year or a date range.</span></td><td><span class="small">The events are stored as a recurring weekly schedule with no dates. Which period the printed grid covers is not stated on the source, so no period is claimed.</span></td><td><a href="https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0">official source</a></td></tr>
+<tr id="f66"><td><strong>F66</strong></td><td>The Orleans PDF points at a dead URL</td><td><span class="small">The PDF's own footer prints: "For tournament structures or questions, contact a Poker Room staff member at 702-365-7150 or go to our website: https://www.orleanscasino.com/play/casino-games/poker-room". That URL returns "Not Found" on 2026-11-17.</span></td><td><span class="small">The live official page used instead is https://orleans.boydgaming.com/play/poker-room, which is where the PDF itself is linked from.</span></td><td><a href="https://orleans.boydgaming.com/play/poker-room">official source</a></td></tr>
+<tr id="f67"><td><strong>F67</strong></td><td>No Orleans daily event is single entry</td><td><span class="small">Every one of the thirteen structure sheets in the official PDF prints the same clause: "Late entries and re-entries are available until the start of Level ...". The Sunday Special additionally prints "One-Time Add-On: $100 = 25,000 Chips".</span></td><td><span class="small">All thirteen Orleans rows are stored with a re-entry rule and kept out of the single-entry list.</span></td><td><a href="https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0">official source</a></td></tr>
+<tr id="f68"><td><strong>F68</strong></td><td>South Point publishes its schedule and rules as images only</td><td><span class="small">The official "Daily Tournament Schedule" page carries one schedule image and sixteen rules-sheet images with no text layer. The eight named rules sheets are $120 and $200 events; the poker-room page advertises buy-ins of "$120 and $300".</span></td><td><span class="small">No South Point row is built. A row needs a buy-in and an entry rule tied to a start time, and neither can be read from an image here. The official text that does exist is quoted on this page instead.</span></td><td><a href="https://southpointcasino.com/casino/poker-room/daily-tournament-schedule">official source</a></td></tr>
+<tr id="f69"><td><strong>F69</strong></td><td>Horseshoe confirms six daily tournaments and publishes nothing else about them</td><td><span class="small">"Test your luck with 6 exciting tournament times daily." No time, buy-in, guarantee or structure appears on the official page, and no schedule PDF was found on caesars.com.</span></td><td><span class="small">Horseshoe is listed as a room with tournaments and no published schedule. Third-party schedules for it were found and deliberately not used.</span></td><td><a href="https://www.caesars.com/horseshoe-las-vegas/casino">official source</a></td></tr>
+<tr id="f70"><td><strong>F70</strong></td><td>No live poker room is published for Paris, Luxor, Excalibur, SAHARA, Resorts World, Fontainebleau, The STRAT or the Mirage site</td><td><span class="small">Each property's own casino page was read on 2026-11-17 and lists no live poker room. Absence from an official page is weaker evidence than a printed statement, so these are recorded as "no poker room published", not as "no poker room".</span></td><td><span class="small">They are listed in the survey with the page read, and no rows are invented for them.</span></td><td><a href="https://www.caesars.com/paris-las-vegas/casino">official source</a></td></tr>
+<tr id="f71"><td><strong>F71</strong></td><td>The MGM poker hub links two properties to pages that publish no poker room</td><td><span class="small">The hub lists "Luxor Poker Tournaments" with a link to luxor.mgmresorts.com/en/casino/table-games.html and "Excalibur Poker Tournaments" with a link to excalibur.mgmresorts.com/en/casino/poker-room.html, which redirects to excalibur.mgmresorts.com/en/casino.html. Neither page lists a live poker room.</span></td><td><span class="small">Both properties are recorded as "no poker room published", with the hub link and the page it resolves to.</span></td><td><a href="https://www.mgmresorts.com/en/casino/poker.html">official source</a></td></tr>
+<tr id="f72"><td><strong>F72</strong></td><td>No walking record exists for these rooms yet</td><td><span class="small">The site's walking table covers twelve hotel-to-poker-room pairs, all of them to the Venetian and Wynn poker rooms. No routed walking time was produced on 2026-11-17 from any hotel to MGM Grand, the Orleans or South Point.</span></td><td><span class="small">Walking cells for these rooms are blank and flagged. Producing them is logged as a request for the integration session in COORDINATION.md; none is estimated here.</span></td><td><a href="https://mandalaybay.mgmresorts.com/en/casino/poker-tables.html">official source</a></td></tr>
+</tbody></table>
+<h2 id="windows">6. What these windows cost, like for like</h2>
+<p class="small">Built from the dated official rate log and the per-day schedule. Every figure below is a published value; nothing is forecast.</p>
+<table><thead><tr><th>Stay window (dated official quote)</th><th>Nights</th><th>True cost / night</th><th>Checkout total</th><th>Days in the window holding a verified single-entry event</th><th>Verified single-entry entries</th><th>Source</th></tr></thead><tbody>
+<tr><td><strong>2026-11-18 &rarr; 2026-11-20</strong><br><span class="small">The Venetian Resort · Venetian Newly Remodeled Luxury Two Queen (best available rate &amp; suite) · 2 adults</span></td><td>2</td><td>$475.35</td><td>$950.69</td><td>2 of 2</td><td>2</td><td><a href="https://www.venetianlasvegas.com/booking?adults[]=2&amp;arrival_date=2026-11-18&amp;children[]=0&amp;departure_date=2026-11-20&amp;view=calendar">official booking engine</a><br><span class="small">quote read 2026-11-17</span></td></tr>
+<tr><td><strong>2026-11-26 &rarr; 2026-11-29</strong><br><span class="small">The Venetian Resort · Palazzo Luxury King · 2 adults</span></td><td>3</td><td>$804.15</td><td>$2,412.44</td><td>3 of 3</td><td>6</td><td><a href="https://www.venetianlasvegas.com/book">official booking engine</a><br><span class="small">quote read 2026-11-16</span></td></tr>
+<tr><td><strong>2026-12-13 &rarr; 2026-12-20</strong><br><span class="small">The Venetian Resort · Venetian Newly Remodeled Luxury King · 2 adults</span></td><td>7</td><td>$338.48</td><td>$2,369.38</td><td>7 of 7</td><td>7</td><td><a href="https://www.venetianlasvegas.com/book">official booking engine</a><br><span class="small">quote read 2026-11-17</span></td></tr>
+<tr><td><strong>2027-01-01 &rarr; 2027-01-06</strong><br><span class="small">The Venetian Resort · Venetian Newly Remodeled Luxury King · 2 adults</span></td><td>5</td><td>$911.86</td><td>$4,559.30</td><td>5 of 5</td><td>5</td><td><a href="https://www.venetianlasvegas.com/book">official booking engine</a><br><span class="small">quote read 2026-11-17</span></td></tr>
+<tr><td><strong>2027-01-10 &rarr; 2027-01-15</strong><br><span class="small">The Venetian Resort · Palazzo Luxury Two Queen · 2 adults</span></td><td>5</td><td>$320.02</td><td>$1,600.08</td><td>5 of 5</td><td>2</td><td><a href="https://www.venetianlasvegas.com/book">official booking engine</a><br><span class="small">quote read 2026-11-17</span></td></tr>
+</tbody></table>
+<div class="card callout"><strong>What the dated quotes say.</strong> Of the stay windows that carry an official quote, <strong>2026-12-13 &rarr; 2026-12-20</strong> holds the most verified single-entry entries (7) at $338.48 per night. The cheapest quoted window that holds any verified single-entry event is <strong>2027-01-10 &rarr; 2027-01-15</strong> at $320.02 per night.<br><br><strong>This is a comparison of published values, not a recommendation of dates.</strong> The trip dates and the nightly budget are still your decision (QUESTIONS.md D3 and D4); this table only prices the windows that were actually quoted, so the choice can be made like-for-like.</div>
+<p class="small">Verified single-entry events counted in the busiest window: $1,100 No Limit Hold'em Progressive Knock-Out Bounty $75K GTD (1Day), $300 No Limit Hold'em Bounty $15K GTD (1Day), $600 No Limit Hold'em Bounty $50K GTD (1Day) - $200 bounties to start &amp; $500 bounties in the money, $600 Pot Limit Omaha Double Board Bomb Pot $25K GTD (1Day).</p>
+<h2 id="next">7. What is still missing</h2>
+<ul><li><strong>Walking times.</strong> No routed walking record exists yet for any of these rooms, so no hotel can be ranked against the 30-minute rule for them. Logged as a request in COORDINATION.md (F72).</li><li><strong>South Point and Horseshoe schedules.</strong> Both need a text-readable official schedule or a call to the room (South Point is on its own site; the Horseshoe page publishes no number for the poker room).</li><li><strong>MGM Grand Saturday $150.</strong> No structure sheet is published, so its entry rule is still unverified (F63).</li><li><strong>The Orleans period.</strong> The PDF prints no month or date range, so the grid is stored as recurring and cannot be tied to a trip date (F65).</li></ul>
+<p class="small"><a href="venues.html">Back to the venue list →</a></p>
+</div>
+</main>
+<footer id="site-footer"></footer>
+<script>
+/* Shared site logic. Data is read from JSON and Markdown files in the repo.
+   Every path is relative so the site works under a GitHub Pages project URL. */
+(function () {
+  "use strict";
+
+  var IN_PAGES = /\/pages\//.test(location.pathname);
+  var BASE = IN_PAGES ? "../" : "./";
+
+  var NAV = [
+    ["index.html", "Home"],
+    ["pages/single-entry.html", "Single entry"],
+    ["pages/separate-section.html", "Separate section"],
+    ["pages/unverified.html", "Unverified"],
+    ["pages/daily.html", "Daily feed"],
+    ["pages/schedule.html", "Schedule"],
+    ["pages/hotels.html", "Hotels"],
+    ["pages/calculator.html", "Calculator"],
+    ["pages/venues.html", "Venues"],
+    ["pages/other-rooms.html", "Other rooms"],
+    ["pages/search.html", "Search"],
+    ["pages/monitoring.html", "Monitoring"],
+    ["pages/summary.html", "Summary"],
+    ["pages/questions.html", "Questions"],
+    ["pages/suggestions.html", "Suggestions"],
+    ["pages/flagged.html", "Flagged"],
+    ["pages/review.html", "Review"]
+  ];
+
+  var DOCS = [
+    ["EXECUTIVE_SUMMARY.md", "Executive summary"],
+    ["QUESTIONS.md", "Questions"],
+    ["SUGGESTIONS.md", "Suggestions"],
+    ["FLAGGED.md", "Flagged for review"],
+    ["REVIEW.md", "Repo review and sources"],
+    ["README.md", "README"]
+  ];
+
+  function esc(s) {
+    return String(s == null ? "" : s)
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+  function money(v) {
+    if (v == null || v === "") return '<span class="muted">blank</span>';
+    return "$" + Number(v).toLocaleString("en-US");
+  }
+  function pct(v) { return v == null ? '<span class="muted">n/a</span>' : v.toFixed(2).replace(/\.?0+$/, "") + "%"; }
+  function mult(v) { return v == null ? '<span class="muted">n/a</span>' : v.toLocaleString("en-US") + "x"; }
+  function dateFmt(iso) {
+    if (!iso) return '<span class="muted">blank</span>';
+    var d = new Date(iso + "T12:00:00Z");
+    return d.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric", year: "numeric", timeZone: "UTC" });
+  }
+  function dateShort(iso) {
+    if (!iso) return "";
+    var d = new Date(iso + "T12:00:00Z");
+    return d.toLocaleDateString("en-US", { month: "short", day: "numeric", timeZone: "UTC" });
+  }
+  function timeFmt(hhmm) {
+    if (!hhmm) return "";
+    var p = hhmm.split(":"), h = +p[0], m = p[1];
+    var ap = h >= 12 ? "PM" : "AM";
+    var hh = h % 12 === 0 ? 12 : h % 12;
+    return hh + ":" + m + " " + ap;
+  }
+  function statusChip(s) {
+    if (s === "SE") return '<span class="chip ok">Single entry (verified)</span>';
+    if (s === "MULTI") return '<span class="chip warn">Possible multiple entries</span>';
+    if (s === "RE") return '<span class="chip bad">Re-entry offered</span>';
+    if (s === "REBUY") return '<span class="chip bad">Rebuy / add-on</span>';
+    if (s === "CONT") return '<span class="chip info">Continuation</span>';
+    return '<span class="chip warn">Unverified</span>';
+  }
+  function srcLinks(sources) {
+    return (sources || []).map(function (s) {
+      return '<a href="' + esc(s.url) + '" target="_blank" rel="noopener">' + esc(s.label) + "</a>";
+    }).join("<br>");
+  }
+  function walkCell(min, status, within) {
+    if (min == null) return '<span class="muted">inside the resort</span>';
+    return min + " min " + (within === false ? '<span class="chip bad">over 30</span>' : '<span class="chip ok">within 30</span>');
+  }
+  function flagsHtml(row) {
+    var f = row.flags || [];
+    if (!f.length) return "";
+    return '<div class="small" style="margin-top:4px">' + f.map(function (x) {
+      return '<span class="chip warn" style="white-space:normal;display:block;margin-top:4px">' + esc(x) + "</span>";
+    }).join("") + "</div>";
+  }
+  function ruleCell(row) {
+    var parts = [];
+    ["single_entry", "re_entry", "add_on", "fee"].forEach(function (k) {
+      var f = (row.rules || {})[k];
+      if (!f) return;
+      parts.push("<strong>" + esc(k.replace(/_/g, " ")) + ":</strong> " + esc(f.value) +
+        '<br><span class="small">' + esc(f.excerpt) + "</span>" +
+        '<br><span class="small">' + esc(f.source.label) + " &middot; " +
+        '<a href="' + esc(f.source.url) + '" target="_blank" rel="noopener">' + esc(f.source.url) + "</a></span>");
+    });
+    return "<span class='small'>" + parts.join("<hr>") + "</span>";
+  }
+
+  function getJSON(path) {
+    return fetch(BASE + path, { cache: "no-cache" }).then(function (r) {
+      if (!r.ok) throw new Error("Could not load " + path + " (" + r.status + ")");
+      return r.json();
+    });
+  }
+  function getText(path) {
+    return fetch(BASE + path, { cache: "no-cache" }).then(function (r) {
+      if (!r.ok) throw new Error("Could not load " + path + " (" + r.status + ")");
+      return r.text();
+    });
+  }
+  function getJSONSafe(path) { return getJSON(path).catch(function () { return null; }); }
+  function getTextSafe(path) { return getText(path).catch(function () { return ""; }); }
+
+  /* ---------- tiny Markdown renderer (headings, lists, tables, bold, links, code) ---------- */
+  function inline(t) {
+    t = esc(t);
+    t = t.replace(/`([^`]+)`/g, "<code>$1</code>");
+    t = t.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+    t = t.replace(/\*([^*]+)\*/g, "<em>$1</em>");
+    t = t.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, function (m, label, url) {
+      var href = url.replace(/&amp;/g, "&");
+      var ext = /^https?:/.test(href);
+      return '<a href="' + href + '"' + (ext ? ' target="_blank" rel="noopener"' : "") + ">" + label + "</a>";
+    });
+    return t;
+  }
+  function renderMarkdown(src) {
+    var lines = src.replace(/\r/g, "").split("\n"), out = [], i = 0;
+    while (i < lines.length) {
+      var line = lines[i];
+      if (/^\s*$/.test(line)) { i++; continue; }
+      if (/^---+\s*$/.test(line)) { out.push("<hr>"); i++; continue; }
+      var h = /^(#{1,4})\s+(.*)$/.exec(line);
+      if (h) { var lvl = h[1].length; out.push("<h" + lvl + ">" + inline(h[2]) + "</h" + lvl + ">"); i++; continue; }
+      if (/^\|/.test(line)) {
+        var rows = [];
+        while (i < lines.length && /^\|/.test(lines[i])) { rows.push(lines[i]); i++; }
+        var cells = function (r) { return r.replace(/^\||\|\s*$/g, "").split("|").map(function (c) { return c.trim(); }); };
+        var head = cells(rows[0]);
+        var body = rows.slice(2).map(cells);
+        var html = '<div class="table-wrap"><table><thead><tr>' + head.map(function (c) { return "<th>" + inline(c) + "</th>"; }).join("") + "</tr></thead><tbody>";
+        body.forEach(function (r) { html += "<tr>" + r.map(function (c) { return "<td>" + inline(c) + "</td>"; }).join("") + "</tr>"; });
+        html += "</tbody></table></div>";
+        out.push(html);
+        continue;
+      }
+      if (/^\s*[-*]\s+/.test(line)) {
+        var items = [];
+        while (i < lines.length && /^\s*[-*]\s+/.test(lines[i])) { items.push(lines[i].replace(/^\s*[-*]\s+/, "")); i++; }
+        out.push("<ul>" + items.map(function (x) { return "<li>" + inline(x) + "</li>"; }).join("") + "</ul>");
+        continue;
+      }
+      if (/^\s*\d+\.\s+/.test(line)) {
+        var nitems = [];
+        while (i < lines.length && /^\s*\d+\.\s+/.test(lines[i])) { nitems.push(lines[i].replace(/^\s*\d+\.\s+/, "")); i++; }
+        out.push("<ol>" + nitems.map(function (x) { return "<li>" + inline(x) + "</li>"; }).join("") + "</ol>");
+        continue;
+      }
+      var para = [];
+      while (i < lines.length && !/^\s*$/.test(lines[i]) && !/^(#|\||\s*[-*]\s|\s*\d+\.\s|---)/.test(lines[i])) { para.push(lines[i]); i++; }
+      if (para.length === 0) { para.push(lines[i]); i++; }
+      out.push("<p>" + inline(para.join(" ")) + "</p>");
+    }
+    return out.join("\n");
+  }
+
+  /* ---------- generic sortable, filterable table ---------- */
+  function table(container, rows, cols, opts) {
+    opts = opts || {};
+    var state = { key: opts.sortKey || null, dir: opts.sortDir || -1 };
+    var wrap = document.createElement("div");
+    wrap.className = "table-wrap";
+    var t = document.createElement("table");
+    wrap.appendChild(t);
+    container.appendChild(wrap);
+    function value(r, c) { return c.sort ? c.sort(r) : r[c.key]; }
+    function draw() {
+      var q = (opts.filterInput ? opts.filterInput.value : "").toLowerCase();
+      var sel = opts.filterSelect ? opts.filterSelect.value : "";
+      var list = rows.filter(function (r) {
+        if (opts.predicate && !opts.predicate(r)) return false;
+        if (sel && opts.filterField && String(r[opts.filterField]) !== sel) return false;
+        if (!q) return true;
+        return cols.some(function (c) { return c.text && String(c.text(r) || "").toLowerCase().indexOf(q) >= 0; }) ||
+               JSON.stringify(r).toLowerCase().indexOf(q) >= 0;
+      });
+      if (state.key) {
+        var col = cols.filter(function (c) { return c.id === state.key; })[0];
+        if (col) {
+          list = list.slice().sort(function (a, b) {
+            var va = value(a, col), vb = value(b, col);
+            if (va == null && vb == null) return 0;
+            if (va == null) return 1;
+            if (vb == null) return -1;
+            if (typeof va === "number" && typeof vb === "number") return (va - vb) * state.dir;
+            return String(va).localeCompare(String(vb)) * state.dir;
+          });
+        }
+      }
+      var head = "<thead><tr>" + cols.map(function (c) {
+        var arrow = state.key === c.id ? (state.dir > 0 ? " ▲" : " ▼") : "";
+        var cls = (c.num ? "num " : "") + (c.sort === null ? "nosort" : "");
+        return '<th class="' + cls.trim() + '" data-id="' + c.id + '">' + esc(c.label) + arrow + "</th>";
+      }).join("") + "</tr></thead>";
+      var body = "<tbody>" + list.map(function (r) {
+        return "<tr>" + cols.map(function (c) {
+          var cls = c.num ? ' class="num"' : "";
+          return "<td" + cls + ">" + (c.html ? c.html(r) : esc(r[c.key])) + "</td>";
+        }).join("") + "</tr>";
+      }).join("") + "</tbody>";
+      t.innerHTML = head + body;
+      var count = opts.countEl;
+      if (count) count.textContent = list.length + " of " + rows.length + " rows";
+      if (opts.onDraw) opts.onDraw(list);
+      Array.prototype.forEach.call(t.querySelectorAll("th"), function (th) {
+        th.addEventListener("click", function () {
+          var id = th.getAttribute("data-id");
+          var c = cols.filter(function (x) { return x.id === id; })[0];
+          if (!c || c.sort === null) return;
+          if (state.key === id) state.dir = -state.dir; else { state.key = id; state.dir = -1; }
+          draw();
+        });
+      });
+    }
+    if (opts.filterInput) opts.filterInput.addEventListener("input", draw);
+    if (opts.filterSelect) opts.filterSelect.addEventListener("change", draw);
+    draw();
+    return { redraw: draw, rows: function () { return rows; } };
+  }
+
+  /* ---------- advanced filter bar ----------
+     One component used by every tournament table. It owns the text query, the
+     date range, the venue, the series, the entry status, the buy-in range, the
+     labels and the single-entry toggle, so the same behaviour is available
+     everywhere. */
+  function Filters(host, opts) {
+    opts = opts || {};
+    var el = document.createElement("div");
+    el.className = "filters";
+    var listeners = [];
+
+    function field(label, control) {
+      var w = document.createElement("div");
+      w.className = "field";
+      var l = document.createElement("label");
+      l.textContent = label;
+      l.setAttribute("for", control.id);
+      w.appendChild(l);
+      w.appendChild(control);
+      return w;
+    }
+    function input(id, type, attrs) {
+      var i = document.createElement("input");
+      i.id = id; i.type = type;
+      Object.keys(attrs || {}).forEach(function (k) { i.setAttribute(k, attrs[k]); });
+      return i;
+    }
+    function select(id, values, allLabel) {
+      var s = document.createElement("select");
+      s.id = id;
+      s.innerHTML = '<option value="">' + esc(allLabel) + "</option>" +
+        values.map(function (v) { return '<option value="' + esc(v) + '">' + esc(v) + "</option>"; }).join("");
+      return s;
+    }
+
+    var q = input("q", "search", { placeholder: "Search name, series, note, source" });
+    var from = input("date-from", "date", {});
+    var to = input("date-to", "date", {});
+    var buyMin = input("buy-min", "number", { min: "0", step: "50", placeholder: "min" });
+    var buyMax = input("buy-max", "number", { min: "0", step: "50", placeholder: "max" });
+    var venue = select("venue", opts.venues || [], "All venues");
+    var series = select("series", opts.series || [], "All series");
+    var status = select("status", opts.statuses || [], "Any entry rule");
+    var single = input("single-only", "checkbox", {});
+    var reset = document.createElement("button");
+    reset.type = "button"; reset.textContent = "Reset filters";
+
+    var row1 = document.createElement("div");
+    row1.className = "row";
+    row1.appendChild(field("Search", q));
+    row1.appendChild(field("From date", from));
+    row1.appendChild(field("To date", to));
+    row1.appendChild(field("Min buy-in", buyMin));
+    row1.appendChild(field("Max buy-in", buyMax));
+
+    var row2 = document.createElement("div");
+    row2.className = "row";
+    row2.appendChild(field("Venue", venue));
+    if ((opts.series || []).length) row2.appendChild(field("Series", series));
+    if ((opts.statuses || []).length) row2.appendChild(field("Entry rule", status));
+    var tog = document.createElement("div");
+    tog.className = "field toggle";
+    var tl = document.createElement("label");
+    tl.setAttribute("for", "single-only");
+    tl.textContent = "Single entry only";
+    tog.appendChild(single); tog.appendChild(tl);
+    row2.appendChild(tog);
+    var actions = document.createElement("div");
+    actions.className = "actions";
+    actions.appendChild(reset);
+    row2.appendChild(actions);
+
+    el.appendChild(row1);
+    el.appendChild(row2);
+
+    var labelBox = null;
+    if ((opts.labels || []).length) {
+      labelBox = document.createElement("div");
+      labelBox.className = "field";
+      var ll = document.createElement("label");
+      ll.textContent = "Labels";
+      var box = document.createElement("div");
+      box.className = "labels";
+      opts.labels.forEach(function (lab) {
+        var l = document.createElement("label");
+        var cb = input("label-" + lab.replace(/\W+/g, "-"), "checkbox", { value: lab });
+        l.appendChild(cb);
+        l.appendChild(document.createTextNode(" " + lab));
+        box.appendChild(l);
+      });
+      labelBox.appendChild(ll);
+      labelBox.appendChild(box);
+      el.appendChild(labelBox);
+    }
+
+    var summary = document.createElement("div");
+    summary.className = "summary";
+    el.appendChild(summary);
+    host.appendChild(el);
+
+    function selectedLabels() {
+      if (!labelBox) return [];
+      return Array.prototype.slice.call(labelBox.querySelectorAll("input:checked")).map(function (i) { return i.value; });
+    }
+    function num(v) { var n = parseFloat(v); return isNaN(n) ? null : n; }
+
+    function matches(row) {
+      var query = q.value.trim().toLowerCase();
+      if (query) {
+        var hay = JSON.stringify(row).toLowerCase();
+        if (hay.indexOf(query) < 0) return false;
+      }
+      if (from.value && row.date < from.value) return false;
+      if (to.value && row.date > to.value) return false;
+      if (venue.value && row.venue !== venue.value) return false;
+      if (series.value && row.series !== series.value) return false;
+      if (status.value && row.entry_status !== status.value) return false;
+      if (single.checked && row.entry_status !== "SE") return false;
+      var lo = num(buyMin.value), hi = num(buyMax.value);
+      if (lo != null && !(row.buy_in_usd != null && row.buy_in_usd >= lo)) return false;
+      if (hi != null && !(row.buy_in_usd != null && row.buy_in_usd <= hi)) return false;
+      var labs = selectedLabels();
+      if (labs.length) {
+        var have = row.labels || [];
+        if (!labs.every(function (l) { return have.indexOf(l) >= 0; })) return false;
+      }
+      return true;
+    }
+    function describe() {
+      var bits = [];
+      if (q.value.trim()) bits.push('search "' + q.value.trim() + '"');
+      if (from.value) bits.push("from " + dateShort(from.value));
+      if (to.value) bits.push("to " + dateShort(to.value));
+      if (venue.value) bits.push(venue.value);
+      if (series.value) bits.push(series.value);
+      if (status.value) bits.push(status.value);
+      if (single.checked) bits.push("single entry only");
+      if (lo2() != null) bits.push("buy-in ≥ " + money(lo2()));
+      if (hi2() != null) bits.push("buy-in ≤ " + money(hi2()));
+      var labs = selectedLabels();
+      if (labs.length) bits.push("labels: " + labs.join(", "));
+      return bits.length ? "Active: " + bits.join(" · ") : "No filters active - showing every row.";
+    }
+    function lo2() { return num(buyMin.value); }
+    function hi2() { return num(buyMax.value); }
+
+    function fire() {
+      summary.textContent = describe();
+      listeners.forEach(function (fn) { fn(); });
+    }
+    [q, from, to, buyMin, buyMax].forEach(function (c) { c.addEventListener("input", fire); });
+    [venue, series, status].forEach(function (c) { c.addEventListener("change", fire); });
+    single.addEventListener("change", fire);
+    if (labelBox) labelBox.querySelectorAll("input").forEach(function (c) { c.addEventListener("change", fire); });
+    reset.addEventListener("click", function () {
+      q.value = ""; from.value = ""; to.value = ""; buyMin.value = ""; buyMax.value = "";
+      venue.value = ""; series.value = ""; status.value = ""; single.checked = false;
+      if (labelBox) labelBox.querySelectorAll("input").forEach(function (c) { c.checked = false; });
+      fire();
+    });
+    fire();
+
+    return {
+      el: el,
+      matches: matches,
+      onChange: function (fn) { listeners.push(fn); },
+      reset: function () { reset.click(); }
+    };
+  }
+
+  /* ---------- nav ---------- */
+  function renderNav() {
+    var here = location.pathname.replace(/\/index\.html$/, "/");
+    var html = '<header class="site"><a class="brand" href="' + BASE + 'index.html">Las Vegas Strip Poker Plan</a><nav>';
+    NAV.forEach(function (n) {
+      var active = here.endsWith("/" + n[0]) || (n[0] === "index.html" && (here.endsWith("/") && !IN_PAGES));
+      html += '<a href="' + BASE + n[0] + '"' + (active ? ' class="active"' : "") + ">" + esc(n[1]) + "</a>";
+    });
+    html += "</nav></header>";
+    var el = document.getElementById("site-header");
+    if (el) el.outerHTML = html;
+    var f = document.getElementById("site-footer");
+    if (f) f.innerHTML = "Data verified against official sources on 2026-11-16. Blank cells are unverified, and no value is inferred. " +
+      '<a href="' + BASE + 'pages/flagged.html">Flagged for review</a> · ' +
+      '<a href="' + BASE + 'pages/monitoring.html">Monitoring</a>.';
+  }
+
+  /* ---------- page renderers ---------- */
+  var PAGES = {};
+
+  PAGES.index = function () {
+    Promise.all([getJSON("data/tournaments.json"), getJSON("data/hotels.json"), getJSON("data/daily.json")]).then(function (res) {
+      var rows = res[0].rows, hotels = res[1].rows, daily = res[2].rows;
+      var c = { SE: 0, MULTI: 0, RE: 0, UNV: 0 };
+      rows.forEach(function (r) { c[r.entry_status] = (c[r.entry_status] || 0) + 1; });
+      var verifiedFees = hotels.filter(function (h) { return h.resort_fee_status === "verified"; }).length;
+      var flagged = rows.filter(function (r) { return (r.flags || []).length; }).length;
+      var dates = {};
+      rows.forEach(function (r) { dates[r.date] = 1; });
+      document.getElementById("kpis").innerHTML =
+        kpi(rows.length, "official rows in this dataset") +
+        kpi(c.SE, "single entry, verified") +
+        kpi(c.MULTI + c.RE, "in the separate section") +
+        kpi(c.UNV, "unverified (entry rule)") +
+        kpi(Object.keys(dates).length, "dates covered") +
+        kpi(verifiedFees + " of " + hotels.length, "hotels with a verified resort fee") +
+        kpi(daily.length, "recurring daily formats") +
+        kpi(flagged, "rows carrying a source flag");
+    }).catch(showErr);
+  };
+  function kpi(n, label) {
+    return '<div class="card kpi"><div class="num">' + esc(n) + '</div><div class="label">' + esc(label) + "</div></div>";
+  }
+
+  function tournamentFilters(host, rows, opts) {
+    opts = opts || {};
+    var venues = Array.from(new Set(rows.map(function (r) { return r.venue; }))).sort();
+    var series = Array.from(new Set(rows.map(function (r) { return r.series; }))).sort();
+    var statuses = Array.from(new Set(rows.map(function (r) { return r.entry_status; }))).sort();
+    var labels = Array.from(new Set(rows.reduce(function (a, r) { return a.concat(r.labels || []); }, []))).sort();
+    return Filters(host, {
+      venues: venues, series: series, statuses: statuses, labels: labels,
+      showStatus: opts.showStatus !== false
+    });
+  }
+
+  function tournamentColumns(withRules) {
+    var cols = [
+      { id: "date", label: "Date", key: "date", sort: function (r) { return r.date + r.start; }, html: function (r) { return dateFmt(r.date); } },
+      { id: "start", label: "Start", key: "start", html: function (r) { return timeFmt(r.start); } },
+      { id: "name", label: "Event", key: "name", html: function (r) {
+          return "<strong>" + esc(r.name) + "</strong><br><span class='small'>" + esc(r.series) +
+            (r.event_no ? " · Event " + esc(r.event_no) : "") + " · " + esc(r.venue) +
+            (r.prize_text ? "<br>Prize: " + esc(r.prize_text) : "") + "</span>" + flagsHtml(r);
+        } },
+      { id: "buy", label: "Buy-in", key: "buy_in_usd", num: true, html: function (r) { return money(r.buy_in_usd); } },
+      { id: "gtd", label: "Guarantee", key: "guarantee_usd", num: true, html: function (r) { return money(r.guarantee_usd); } },
+      { id: "mult", label: "Guarantee ÷ buy-in", key: "gtd_multiple", num: true, html: function (r) { return mult(r.gtd_multiple); } },
+      { id: "status", label: "Entry rule", key: "entry_status", html: function (r) { return statusChip(r.entry_status); } }
+    ];
+    if (withRules) {
+      cols.push({ id: "rule", label: "Entry rule (official)", key: "entry_rule", sort: null, html: function (r) { return "<span class='small'>" + esc(r.entry_rule) + "</span>"; } });
+      cols.push({ id: "detail", label: "Rule excerpts and source", key: "rules", sort: null, html: function (r) { return ruleCell(r); } });
+    }
+    cols.push({ id: "note", label: "Notes", key: "note", sort: null, html: function (r) { return "<span class='small'>" + esc(r.note) + "</span>"; } });
+    cols.push({ id: "src", label: "Sources", key: "sources", sort: null, html: function (r) { return "<span class='small'>" + srcLinks(r.sources) + "</span>"; } });
+    return cols;
+  }
+
+  PAGES.singleEntry = function () {
+    getJSON("data/tournaments.json").then(function (d) {
+      var rows = d.rows.filter(function (r) { return r.entry_status === "SE"; });
+      var main = document.getElementById("content");
+      var count = document.getElementById("count");
+      var filters = tournamentFilters(document.getElementById("filters"), rows);
+      var tbl = table(main, rows, tournamentColumns(true), {
+        sortKey: "mult", sortDir: -1, predicate: filters.matches, countEl: count
+      });
+      filters.onChange(function () { tbl.redraw(); });
+    }).catch(showErr);
+  };
+
+  PAGES.separate = function () {
+    getJSON("data/tournaments.json").then(function (d) {
+      var rows = d.rows.filter(function (r) { return r.entry_status === "MULTI" || r.entry_status === "RE"; });
+      var main = document.getElementById("content");
+      var count = document.getElementById("count");
+      var filters = tournamentFilters(document.getElementById("filters"), rows);
+      var tbl = table(main, rows, tournamentColumns(true), {
+        sortKey: "date", sortDir: 1, predicate: filters.matches, countEl: count
+      });
+      filters.onChange(function () { tbl.redraw(); });
+    }).catch(showErr);
+  };
+
+  PAGES.unverified = function () {
+    getJSON("data/tournaments.json").then(function (d) {
+      var rows = d.rows.filter(function (r) { return r.entry_status === "UNV"; });
+      var main = document.getElementById("content");
+      var count = document.getElementById("count");
+      var filters = tournamentFilters(document.getElementById("filters"), rows);
+      var tbl = table(main, rows, tournamentColumns(true), {
+        sortKey: "date", sortDir: 1, predicate: filters.matches, countEl: count
+      });
+      filters.onChange(function () { tbl.redraw(); });
+    }).catch(showErr);
+  };
+
+  PAGES.daily = function () {
+    Promise.all([getJSON("data/daily.json"), getJSON("data/tournaments.json")]).then(function (res) {
+      var daily = res[0].rows, rows = res[1].rows;
+      var main = document.getElementById("content");
+      document.getElementById("note").innerHTML =
+        "<strong>" + esc(res[0].note) + "</strong>" +
+        "<br><br>Sources: " + srcLinks(res[0].sources);
+      var dayNames = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+      var calendar = '<div class="calendar">' + dayNames.map(function (d, i) {
+        var todays = daily.filter(function (x) { return x.days.indexOf(d.slice(0, 3)) >= 0 || x.days.indexOf(d) >= 0; });
+        return '<div class="slot"><div class="d">' + d + "</div>" + (todays.length
+          ? todays.map(function (x) {
+              return '<div class="t">' + timeFmt(x.start) + "</div><div class='small'>" + esc(x.name) +
+                "<br>" + money(x.buy_in_usd) + " · GTD " + money(x.guarantee_usd) + "</div>";
+            }).join("<hr>")
+          : "<div class='small muted'>No daily format published for this weekday.</div>") + "</div>";
+      }).join("") + "</div>";
+      main.innerHTML = "<h2>Weekly format map</h2>" + calendar + "<h2>Published formats</h2>";
+      var cols = [
+        { id: "name", label: "Format", key: "name", html: function (r) { return "<strong>" + esc(r.name) + "</strong><br><span class='small'>" + esc(r.days) + "</span>"; } },
+        { id: "start", label: "Start", key: "start", html: function (r) { return timeFmt(r.start); } },
+        { id: "buy", label: "Buy-in", key: "buy_in_usd", num: true, html: function (r) { return money(r.buy_in_usd); } },
+        { id: "gtd", label: "Guarantee", key: "guarantee_usd", num: true, html: function (r) { return money(r.guarantee_usd); } },
+        { id: "status", label: "Entry rule", key: "status", html: function (r) { return statusChip(r.status); } },
+        { id: "late", label: "Registration closes", key: "late", html: function (r) { return timeFmt(r.late); } },
+        { id: "levels", label: "Levels × minutes", key: "levels", num: true, html: function (r) { return r.levels + " × " + r.lmin + " min"; } },
+        { id: "fee", label: "Fee split", key: "fee", sort: null, html: function (r) { return "<span class='small'>" + esc(r.fee) + "</span>"; } },
+        { id: "ex", label: "Rule excerpt", key: "ex", sort: null, html: function (r) { return "<span class='small'>" + esc(r.ex) + "<br>" + esc(r.stack || "") + "</span>"; } }
+      ];
+      table(main, daily, cols, { sortKey: "start", sortDir: 1 });
+      var susp = rows.filter(function (r) { return r.venue === "Wynn Las Vegas"; });
+      var note = document.getElementById("series-note");
+      if (note) {
+        note.innerHTML = "<strong>Series dates that can suspend the daily schedule:</strong> " +
+          esc(susp.length) + " Wynn rows are published between 2026-11-27 and 2027-01-24 " +
+          "(WPT World Championship and Wynn Signature Series). Check the " +
+          '<a href="' + BASE + 'pages/schedule.html">schedule</a> before planning around a daily format.';
+      }
+    }).catch(showErr);
+  };
+
+  PAGES.schedule = function () {
+    Promise.all([getJSON("data/schedule.json"), getJSON("data/tournaments.json")]).then(function (res) {
+      var sched = res[0], rows = res[1].rows;
+      var main = document.getElementById("content");
+      document.getElementById("note").textContent = sched.note;
+      document.getElementById("earliest").textContent = timeFmt(sched.earliest_listed_start);
+
+      var byId = {};
+      rows.forEach(function (r) { byId[r.id] = r; });
+
+      var picker = document.createElement("div");
+      picker.className = "toolbar";
+      var sel = document.createElement("select");
+      sel.id = "day-picker";
+      sel.innerHTML = '<option value="">Jump to a date…</option>' +
+        sched.days.map(function (d) { return '<option value="' + d.date + '">' + esc(dateFmt(d.date)) + "</option>"; }).join("");
+      var prev = document.createElement("button"); prev.type = "button"; prev.textContent = "◀ Previous day";
+      var next = document.createElement("button"); next.type = "button"; next.textContent = "Next day ▶";
+      var count = document.createElement("span"); count.id = "count"; count.className = "small";
+      picker.appendChild(sel); picker.appendChild(prev); picker.appendChild(next); picker.appendChild(count);
+      main.parentNode.insertBefore(picker, main);
+
+      function render() {
+        main.innerHTML = sched.days.map(function (day) {
+          var list = day.events.map(function (o) {
+            var row = byId[o.id] || {};
+            var chip = o.entry_status === "SE" ? '<span class="chip ok">Single entry</span>' :
+              (o.entry_status === "CONT" ? '<span class="chip info">Continuation</span>' :
+                (o.entry_status === "MULTI" ? '<span class="chip warn">Possible multiple entries</span>' :
+                  (o.entry_status === "RE" ? '<span class="chip bad">Re-entry</span>' : '<span class="chip warn">Unverified</span>')));
+            var marks = [];
+            if (day.primary_id === o.id) marks.push('<span class="chip ok">Primary</span>');
+            if (day.fallback_id === o.id) marks.push('<span class="chip info">Conditional fallback</span>');
+            return "<li><strong>" + timeFmt(o.start) + "</strong> · " + esc(o.name) + " · " + money(o.buy_in_usd) +
+              (o.guarantee_usd ? " · GTD " + money(o.guarantee_usd) : "") +
+              (o.prize_text ? " · " + esc(o.prize_text) : "") +
+              " " + chip + " " + marks.join(" ") +
+              '<br><span class="small">' + esc(o.series) + " · " + esc(o.venue) +
+              (o.est_end ? " · estimated to finish about " + timeFmt(o.est_end) : "") +
+              ' · <a href="' + esc(o.source) + '" target="_blank" rel="noopener">source</a></span>' +
+              ((row.flags || []).length ? '<br><span class="chip warn">' + esc(row.flags[0]) + "</span>" : "") +
+              "</li>";
+          }).join("");
+          var conflicts = day.conflicts.length
+            ? '<div class="small" style="margin-top:6px"><span class="chip warn">' + day.conflicts.length +
+              " overlap(s) flagged</span> " + esc(day.conflicts[0].detail) + "</div>"
+            : "";
+          var fallback = day.fallback_note
+            ? '<div class="small muted">' + esc(day.fallback_note) + "</div>" : "";
+          return '<div class="card day" id="day-' + day.date + '"><h3>' + dateFmt(day.date) + "</h3><ul>" + list +
+            "</ul>" + conflicts + fallback + "</div>";
+        }).join("");
+      }
+      render();
+
+      var idx = 0;
+      function jump(delta) {
+        idx = Math.min(Math.max(idx + delta, 0), sched.days.length - 1);
+        var day = sched.days[idx];
+        sel.value = day.date;
+        var target = document.getElementById("day-" + day.date);
+        if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+      sel.addEventListener("change", function () {
+        var d = sched.days.filter(function (x) { return x.date === sel.value; })[0];
+        if (!d) return;
+        idx = sched.days.indexOf(d);
+        var target = document.getElementById("day-" + d.date);
+        if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+      prev.addEventListener("click", function () { jump(-1); });
+      next.addEventListener("click", function () { jump(1); });
+      count.textContent = sched.days.length + " dates";
+    }).catch(showErr);
+  };
+
+  PAGES.hotels = function () {
+    Promise.all([getJSON("data/hotels.json"), getJSON("data/walking.json"), getJSON("data/rates.json")]).then(function (res) {
+      var rows = res[0].rows, walking = res[1].rows, rates = res[2].entries;
+      var main = document.getElementById("content");
+      document.getElementById("method").textContent = res[0].method;
+      var chip = function (s) { return s === "verified" ? '<span class="chip ok">Verified</span>' : '<span class="chip warn">Unverified</span>'; };
+      var cols = [
+        { id: "name", label: "Hotel", key: "name", html: function (r) { return "<strong>" + esc(r.name) + "</strong><br><span class='small'>" + esc(r.address_note) + "</span>"; } },
+        { id: "fee", label: "Resort fee / night", key: "resort_fee_usd", num: true, html: function (r) { return chip(r.resort_fee_status) + "<br>" + money(r.resort_fee_usd) + "<br><span class='small'>" + esc(r.resort_fee_note) + "</span>"; } },
+        { id: "rate", label: "Room rate / night", key: "room_rate_usd", num: true, html: function (r) { return chip(r.room_rate_status) + "<br>" + money(r.room_rate_usd) + "<br><span class='small'>" + esc(r.room_rate_note) + "</span>"; } },
+        { id: "tax", label: "Room tax", key: "clark_county_tax_pct", num: true, html: function (r) { return r.clark_county_tax_pct == null ? '<span class="muted">Unverified</span><br><span class="small">' + esc(r.tax_status) + "</span>" : r.clark_county_tax_pct + "%<br><span class='small'>" + esc(r.tax_status) + "</span>"; } },
+        { id: "true", label: "True cost / night", key: "true_cost_per_night_usd", num: true, html: function (r) { return r.true_cost_per_night_usd == null ? '<span class="muted">blank (rate unverified)</span>' : money(r.true_cost_per_night_usd); } },
+        { id: "walkv", label: "Walk to Venetian poker room", key: "walk_to_venetian_min", num: true, html: function (r) { return walkCell(r.walk_to_venetian_min, r.walk_to_venetian_status, r.walk_to_venetian_within_30); } },
+        { id: "walkw", label: "Walk to Wynn poker room", key: "walk_to_wynn_min", num: true, html: function (r) { return walkCell(r.walk_to_wynn_min, "verified", r.walk_to_wynn_within_30); } },
+        { id: "src", label: "Sources", key: "sources", sort: null, html: function (r) { return "<span class='small'>" + srcLinks(r.sources) + "</span>"; } }
+      ];
+      table(main, rows, cols, { sortKey: "name", sortDir: 1 });
+
+      var w = document.getElementById("walking");
+      if (w) {
+        w.innerHTML = "<h2>Walking records</h2>" +
+          "<p class='small'>Times are routed on the OpenStreetMap foot network between the geocoded property " +
+          "coordinates and the poker-room coordinate, then rounded up to the whole minute; every row cites the " +
+          "geocoding lookup and the routing query it came from, plus the official statement that fixes where the " +
+          "poker room is. Walks inside one resort are marked internal rather than timed, because no street route " +
+          "is involved. The 30-minute rule is applied to every routed time: rows over it stay in the table, " +
+          "flagged, so nothing is hidden.</p>";
+        var wcols = [
+          { id: "hotel", label: "Hotel", key: "hotel" },
+          { id: "venue", label: "Venue", key: "venue" },
+          { id: "minutes", label: "Minutes", key: "minutes", num: true, html: function (r) { return r.minutes == null ? '<span class="muted">internal</span>' : r.minutes + (r.within_30_min === false ? ' <span class="chip bad">over 30</span>' : ' <span class="chip ok">within 30</span>'); } },
+          { id: "metres", label: "Metres", key: "metres", num: true },
+          { id: "status", label: "Status", key: "status" },
+          { id: "note", label: "Note", key: "note", sort: null, html: function (r) { return "<span class='small'>" + esc(r.note) + "</span>"; } },
+          { id: "route", label: "Route", key: "route_link", sort: null, html: function (r) { return '<a href="' + esc(r.route_link) + '" target="_blank" rel="noopener">routing query</a>'; } },
+          { id: "src", label: "Sources", key: "sources", sort: null, html: function (r) { return "<span class='small'>" + srcLinks(r.sources) + "</span>"; } }
+        ];
+        table(w, walking, wcols, { sortKey: "minutes", sortDir: 1 });
+      }
+
+      var rl = document.getElementById("rates");
+      if (rl) {
+        rl.innerHTML = "<h2>Dated rate log</h2><p class='small'>Every quote is stored with the date it was taken, so a later " +
+          "rate can be compared against it instead of replacing it.</p>";
+        var rcols = [
+          { id: "arrival", label: "Arrival", key: "arrival", html: function (r) { return dateFmt(r.arrival); } },
+          { id: "departure", label: "Departure", key: "departure", html: function (r) { return dateFmt(r.departure); } },
+          { id: "nights", label: "Nights", key: "nights", num: true },
+          { id: "avg", label: "Published average / night", key: "nightly_average_usd", num: true, html: function (r) { return money(r.nightly_average_usd); } },
+          { id: "checkout", label: "Checkout total", key: "checkout_total_usd", num: true, html: function (r) { return money(r.checkout_total_usd); } },
+          { id: "taxes", label: "Taxes", key: "taxes_total_usd", num: true, html: function (r) { return money(r.taxes_total_usd); } },
+          { id: "true", label: "True cost / night", key: "true_cost_per_night_usd", num: true, html: function (r) { return money(r.true_cost_per_night_usd); } },
+          { id: "room", label: "Room", key: "room", sort: null, html: function (r) { return "<span class='small'>" + esc(r.room) + " · " + esc(r.occupancy) + "<br>" + esc(r.caveat) + "</span>"; } },
+          { id: "src", label: "Source", key: "source", sort: null, html: function (r) { return '<a href="' + esc(r.source) + '" target="_blank" rel="noopener">official booking engine</a>'; } }
+        ];
+        table(rl, rates, rcols, { sortKey: "arrival", sortDir: -1 });
+      }
+    }).catch(showErr);
+  };
+
+  /* ---------- trip cost calculator: entries x buy-in + nights x true hotel cost ---------- */
+  PAGES.calculator = function () {
+    Promise.all([getJSON("data/hotels.json"), getJSON("data/rates.json"),
+                 getJSON("data/tournaments.json")]).then(function (res) {
+      var hotels = res[0].rows, rates = res[1].entries, rows = res[2].rows;
+      var main = document.getElementById("content");
+
+      main.innerHTML =
+        '<div class="card">' +
+        '<div class="form-grid">' +
+        '<div><label for="c-quote">Verified stay quote (dated rate log)</label><select id="c-quote"></select></div>' +
+        '<div><label for="c-entries">Tournament entries</label><input type="number" id="c-entries" min="0" step="1" value="1"></div>' +
+        '<div><label for="c-buyin">Buy-in each (USD)</label><input type="number" id="c-buyin" min="0" step="10" value="300"></div>' +
+        '<div><label for="c-parkdays">Parking days at the hotel</label><input type="number" id="c-parkdays" min="0" step="1" value="0"></div>' +
+        '<div><label for="c-extra">Other spend for the trip (USD)</label><input type="number" id="c-extra" min="0" step="10" value="0"></div>' +
+        '</div>' +
+        '<div class="calc-out" id="c-out"></div>' +
+        '<p class="small" id="c-note"></p>' +
+        '</div>' +
+        '<div class="card"><h2>What is in the selected window</h2><div id="c-window"></div></div>' +
+        '<div class="card"><h2>Like-for-like comparison of the logged quotes</h2><div id="c-compare"></div></div>';
+
+      var quoteSel = document.getElementById("c-quote");
+      quoteSel.innerHTML = rates.map(function (r, i) {
+        return '<option value="' + i + '">' + esc(r.property) + " · " + esc(r.room) + " · " +
+          esc(dateShort(r.arrival)) + "–" + esc(dateShort(r.departure)) + ", " + r.nights + " nights · " +
+          money(r.checkout_total_usd) + " total</option>";
+      }).join("");
+
+      var els = {
+        quote: quoteSel,
+        entries: document.getElementById("c-entries"),
+        buyin: document.getElementById("c-buyin"),
+        parkdays: document.getElementById("c-parkdays"),
+        extra: document.getElementById("c-extra")
+      };
+      function num(v) { var n = parseFloat(v); return isNaN(n) ? null : n; }
+      function money2(v) { return "$" + Number(v).toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+
+      function calc() {
+        var q = rates[+els.quote.value];
+        var out = document.getElementById("c-out");
+        var note = document.getElementById("c-note");
+        if (!q) { out.innerHTML = ""; note.textContent = "No dated quote is logged yet."; return; }
+        var hotel = hotels.filter(function (h) { return h.id === q.hotel_id; })[0] || null;
+        var entries = num(els.entries.value) || 0;
+        var buyin = num(els.buyin.value);
+        var parkdays = num(els.parkdays.value) || 0;
+        var extra = num(els.extra.value) || 0;
+        var parkRate = hotel ? hotel.parking_usd_per_day : null;
+        var parking = (parkRate == null || !parkdays) ? 0 : parkRate * parkdays;
+        var entryTotal = buyin == null ? null : entries * buyin;
+        var hotelTotal = q.checkout_total_usd;
+        var total = hotelTotal + (entryTotal == null ? 0 : entryTotal) + parking + extra;
+
+        var box = function (label, value, hint) {
+          return '<div class="box"><div class="n">' + (value == null ? '<span class="muted">n/a</span>' : value) +
+            '</div><div class="l">' + esc(label) + (hint ? "<br>" + esc(hint) : "") + "</div></div>";
+        };
+        out.innerHTML =
+          box("Nights", String(q.nights), esc(q.room)) +
+          box("Hotel total (engine quote)", money2(hotelTotal), "room + resort fee + tax, as the engine totals it") +
+          box("True hotel cost / night", money2(q.true_cost_per_night_usd), "checkout total ÷ nights") +
+          box("Tournament entries", entryTotal == null ? null : money2(entryTotal), entries + " × " + (buyin == null ? "?" : money2(buyin))) +
+          box("Parking", money2(parking), parkdays ? parkdays + " day(s) × " + (parkRate == null ? "unverified" : money2(parkRate)) : "none entered") +
+          box("Other spend", money2(extra), "as entered") +
+          box("Trip total", money2(total), "entries × buy-in + nights × true hotel cost + parking + other") +
+          box("Per night, all in", money2(total / q.nights), "trip total ÷ nights");
+
+        var msgs = [];
+        msgs.push("Rate timestamp: quote read from the official booking engine on " + q.retrieved_on + ".");
+        if (q.cancellation_note) msgs.push("Cancellation: " + q.cancellation_note);
+        if (hotel && hotel.parking_usd_per_day == null && parkdays) {
+          msgs.push("Parking is left out because this property's daily parking fee is not on an official source read so far.");
+        }
+        msgs.push("The hotel line moves with availability; re-check the booking engine before paying. " +
+                  "Nothing here is a forecast of winnings.");
+        note.textContent = msgs.join(" ");
+
+        /* what the selected window holds, from the verified dataset */
+        var win = document.getElementById("c-window");
+        var inWindow = rows.filter(function (r) { return r.date >= q.arrival && r.date <= q.departure; });
+        var se = inWindow.filter(function (r) { return r.entry_status === "SE"; });
+        var seCash = se.filter(function (r) { return r.kind === "entry" && !(r.labels || []).some(function (l) { return /satellite/i.test(l); }); });
+        var days = {};
+        se.forEach(function (r) { days[r.date] = 1; });
+        var cheapest = seCash.slice().sort(function (a, b) { return (a.buy_in_usd || 0) - (b.buy_in_usd || 0); })[0];
+        var richest = seCash.slice().sort(function (a, b) { return (b.gtd_multiple || 0) - (a.gtd_multiple || 0); })[0];
+        win.innerHTML =
+          '<p class="small">' + esc(dateFmt(q.arrival)) + " to " + esc(dateFmt(q.departure)) + ": " +
+          inWindow.length + " official tournament rows fall in this window, of which <strong>" + se.length +
+          "</strong> are verified single entry (" + seCash.length + " cash events, " + (se.length - seCash.length) +
+          " satellite/other), across " + Object.keys(days).length + " days with at least one verified single-entry event.</p>" +
+          (se.length ? '<p class="small">' + entries + " entr" + (entries === 1 ? "y" : "ies") + " fits " +
+            (entries <= se.length ? "inside the " + se.length + " verified single-entry options in the window."
+                                 : "only partly: the window holds " + se.length + " verified single-entry options.") + "</p>" : "") +
+          (cheapest ? '<p class="small">Cheapest verified single-entry cash event in the window: ' + esc(cheapest.name) +
+            " on " + esc(dateFmt(cheapest.date)) + " at " + esc(timeFmt(cheapest.start)) + " for " + money(cheapest.buy_in_usd) + ".</p>" : "") +
+          (richest ? '<p class="small">Largest guaranteed pool ÷ buy-in in the window: ' + esc(richest.name) +
+            " on " + esc(dateFmt(richest.date)) + " (" + mult(richest.gtd_multiple) + "). Descriptive ratio only, not a forecast.</p>" : "") +
+          '<p class="small"><a href="' + BASE + 'pages/schedule.html">Open the day-by-day schedule</a> for the primary and fallback plan.</p>';
+
+        /* like-for-like comparison */
+        var cmp = document.getElementById("c-compare");
+        var cols = [
+          { id: "prop", label: "Property", key: "property" },
+          { id: "room", label: "Room", key: "room", sort: null, html: function (r) { return "<span class='small'>" + esc(r.room) + "</span>"; } },
+          { id: "window", label: "Stay", key: "arrival", html: function (r) { return dateShort(r.arrival) + "–" + dateShort(r.departure) + "<br><span class='small'>" + r.nights + " nights, " + esc(r.occupancy) + "</span>"; } },
+          { id: "avg", label: "Nightly average (room + fee)", key: "nightly_average_usd", num: true, html: function (r) { return money2(r.nightly_average_usd) + (r.room_only_average_usd != null ? "<br><span class='small'>room only " + money2(r.room_only_average_usd) + "</span>" : ""); } },
+          { id: "fee", label: "Resort fee / night", key: "resort_fee_per_night_usd", num: true, html: function (r) { return money2(r.resort_fee_per_night_usd); } },
+          { id: "tax", label: "Tax total", key: "taxes_total_usd", num: true, html: function (r) { return money2(r.taxes_total_usd); } },
+          { id: "total", label: "Checkout total", key: "checkout_total_usd", num: true, html: function (r) { return money2(r.checkout_total_usd); } },
+          { id: "true", label: "True cost / night", key: "true_cost_per_night_usd", num: true, html: function (r) { return "<strong>" + money2(r.true_cost_per_night_usd) + "</strong>"; } },
+          { id: "cancel", label: "Cancellation", key: "cancellation_note", sort: null, html: function (r) { return "<span class='small'>" + esc(r.cancellation_note || "not stated in the quote") + "</span>"; } },
+          { id: "stamp", label: "Rate timestamp", key: "retrieved_on", html: function (r) { return "<span class='small'>read " + esc(r.retrieved_on) + "<br>logged " + esc(r.logged_on) + "</span>"; } }
+        ];
+        cmp.innerHTML = "";
+        table(cmp, rates, cols, { sortKey: "true", sortDir: 1 });
+      }
+
+      quoteSel.addEventListener("change", calc);
+      ["entries", "buyin", "parkdays", "extra"].forEach(function (k) { els[k].addEventListener("input", calc); });
+      calc();
+    }).catch(showErr);
+  };
+
+  PAGES.venues = function () {
+    Promise.all([getJSON("data/venues.json"), getJSON("data/tournaments.json"), getJSON("data/hotels.json"), getJSON("data/walking.json")]).then(function (res) {
+      var venues = res[0].rows, rows = res[1].rows, hotels = res[2].rows, walking = res[3].rows;
+      var main = document.getElementById("content");
+      main.innerHTML = venues.map(function (v) {
+        var vr = rows.filter(function (r) { return r.venue === v.name; });
+        var se = vr.filter(function (r) { return r.entry_status === "SE"; }).length;
+        var hs = hotels.filter(function (h) { return (v.hotel_ids || []).indexOf(h.id) >= 0; });
+        var wk = walking.filter(function (w) { return w.venue === v.name; });
+        return '<div class="card venue-card">' +
+          "<h3>" + esc(v.name) + "</h3>" +
+          '<p class="small">' + esc(v.note) + "</p>" +
+          "<p><strong>Poker room:</strong> " + (v.poker_room ? esc(v.poker_room) : '<span class="muted">not published on an official source read in this session</span>') + "</p>" +
+          "<p><strong>Address:</strong> " + (v.address ? esc(v.address) : '<span class="muted">unverified</span>') + "</p>" +
+          "<p><strong>Hotels here:</strong> " + (hs.length ? hs.map(function (h) { return esc(h.name); }).join(", ") : '<span class="muted">none listed</span>') + "</p>" +
+          "<p><strong>Tournament rows:</strong> " + vr.length + " (" + se + " single entry, verified)</p>" +
+          "<p><strong>Walking records:</strong> " + wk.length + "</p>" +
+          '<p><a href="' + BASE + 'pages/venue-' + esc(v.id) + '.html">Open ' + esc(v.name) + " venue page</a> " +
+          "· Official links: " + srcLinks((v.official_links || []).map(function (u) { return { label: u, url: u }; })) + "</p>" +
+          "</div>";
+      }).join("");
+    }).catch(showErr);
+  };
+
+  PAGES.venue = function (venueId) {
+    Promise.all([getJSON("data/venues.json"), getJSON("data/tournaments.json"), getJSON("data/hotels.json"), getJSON("data/walking.json")]).then(function (res) {
+      var venues = res[0].rows, rows = res[1].rows, hotels = res[2].rows, walking = res[3].rows;
+      var v = venues.filter(function (x) { return x.id === venueId; })[0];
+      var main = document.getElementById("content");
+      if (!v) { main.innerHTML = '<div class="card callout">Unknown venue.</div>'; return; }
+      var vr = rows.filter(function (r) { return r.venue === v.name; });
+      var hs = hotels.filter(function (h) { return (v.hotel_ids || []).indexOf(h.id) >= 0; });
+      var wk = walking.filter(function (w) { return w.venue === v.name; });
+      main.innerHTML =
+        '<div class="card venue-card"><h3>' + esc(v.name) + "</h3>" +
+        '<p class="small">' + esc(v.note) + "</p>" +
+        "<p><strong>Poker room:</strong> " + (v.poker_room ? esc(v.poker_room) : '<span class="muted">not published</span>') + "</p>" +
+        "<p><strong>Address:</strong> " + (v.address ? esc(v.address) : '<span class="muted">unverified</span>') + "</p>" +
+        "<p>Official links: " + srcLinks((v.official_links || []).map(function (u) { return { label: u, url: u }; })) + "</p>" +
+        "</div>";
+      var hsec = document.getElementById("hotels");
+      if (hsec && hs.length) {
+        hsec.innerHTML = "<h2>Hotels at this venue</h2>";
+        table(hsec, hs, [
+          { id: "name", label: "Hotel", key: "name", html: function (r) { return "<strong>" + esc(r.name) + "</strong>"; } },
+          { id: "fee", label: "Resort fee", key: "resort_fee_usd", num: true, html: function (r) { return money(r.resort_fee_usd) + " <span class='small'>(" + esc(r.resort_fee_status) + ")</span>"; } },
+          { id: "tax", label: "Room tax", key: "clark_county_tax_pct", num: true, html: function (r) { return r.clark_county_tax_pct == null ? '<span class="muted">unverified</span>' : r.clark_county_tax_pct + "%"; } },
+          { id: "walk", label: "Walk to Venetian room", key: "walk_to_venetian_min", num: true, html: function (r) { return walkCell(r.walk_to_venetian_min, r.walk_to_venetian_status, r.walk_to_venetian_within_30); } },
+          { id: "walkw", label: "Walk to Wynn room", key: "walk_to_wynn_min", num: true, html: function (r) { return walkCell(r.walk_to_wynn_min, "verified", r.walk_to_wynn_within_30); } },
+          { id: "src", label: "Sources", key: "sources", sort: null, html: function (r) { return "<span class='small'>" + srcLinks(r.sources) + "</span>"; } }
+        ], { sortKey: "name", sortDir: 1 });
+      }
+      var wsec = document.getElementById("walking");
+      if (wsec && wk.length) {
+        wsec.innerHTML = "<h2>Walking records</h2>";
+        table(wsec, wk, [
+          { id: "hotel", label: "Hotel", key: "hotel" },
+          { id: "from", label: "From", key: "from", sort: null },
+          { id: "minutes", label: "Minutes", key: "minutes", num: true, html: function (r) { return r.minutes == null ? '<span class="muted">unverified</span>' : r.minutes; } },
+          { id: "note", label: "Note", key: "note", sort: null, html: function (r) { return "<span class='small'>" + esc(r.note) + "</span>"; } },
+          { id: "route", label: "Route", key: "route_link", sort: null, html: function (r) { return '<a href="' + esc(r.route_link) + '" target="_blank" rel="noopener">routing query</a>'; } }
+        ], { sortKey: "hotel", sortDir: 1 });
+      }
+      var tsec = document.getElementById("events");
+      if (tsec) {
+        var filters = tournamentFilters(document.getElementById("filters"), vr);
+        var tbl = table(tsec, vr, tournamentColumns(true), {
+          sortKey: "date", sortDir: 1, predicate: filters.matches, countEl: document.getElementById("count")
+        });
+        filters.onChange(function () { tbl.redraw(); });
+      }
+    }).catch(showErr);
+  };
+
+  PAGES.search = function () {
+    var results = document.getElementById("results");
+    var input = document.getElementById("q");
+    var summary = document.getElementById("summary");
+    Promise.all([
+      getJSON("data/tournaments.json"), getJSON("data/hotels.json"), getJSON("data/venues.json"),
+      getJSON("data/daily.json"), getJSON("data/walking.json"), getJSON("data/rates.json")
+    ].concat(DOCS.map(function (d) { return getTextSafe(d[0]); }))).then(function (res) {
+      var rows = res[0].rows, hotels = res[1].rows, venues = res[2].rows, daily = res[3].rows;
+      var walking = res[4].rows, rates = res[5].entries;
+      var docs = DOCS.map(function (d, i) { return { file: d[0], title: d[1], text: res[6 + i] || "" }; });
+
+      function block(title, items) {
+        if (!items.length) return "";
+        return "<h3>" + esc(title) + " (" + items.length + ")</h3>" + items.join("");
+      }
+      function run() {
+        var q = input.value.trim().toLowerCase();
+        if (!q) { results.innerHTML = '<div class="card callout">Type to search every tournament, hotel, venue, daily format, walking record, rate log entry and document on this site.</div>'; summary.textContent = ""; return; }
+        var hitT = rows.filter(function (r) { return JSON.stringify(r).toLowerCase().indexOf(q) >= 0; }).slice(0, 60)
+          .map(function (r) {
+            return '<div class="result"><div class="title">' + esc(r.name) + "</div><div class='meta'>" +
+              esc(r.date) + " " + esc(r.start) + " · " + esc(r.venue) + " · " + esc(r.entry_status) +
+              (r.buy_in_usd ? " · " + money(r.buy_in_usd) : "") + " · <a href='" + BASE + "pages/schedule.html'>schedule</a></div></div>";
+          });
+        var hitH = hotels.filter(function (h) { return JSON.stringify(h).toLowerCase().indexOf(q) >= 0; })
+          .map(function (h) {
+            return '<div class="result"><div class="title">' + esc(h.name) + "</div><div class='meta'>" +
+              esc(h.resort_fee_status) + " resort fee · <a href='" + BASE + "pages/hotels.html'>hotels</a></div></div>";
+          });
+        var hitV = venues.filter(function (v) { return JSON.stringify(v).toLowerCase().indexOf(q) >= 0; })
+          .map(function (v) {
+            return '<div class="result"><div class="title">' + esc(v.name) + "</div><div class='meta'>venue · <a href='" +
+              BASE + "pages/venue-" + esc(v.id) + ".html'>venue page</a></div></div>";
+          });
+        var hitD = daily.filter(function (d) { return JSON.stringify(d).toLowerCase().indexOf(q) >= 0; })
+          .map(function (d) {
+            return '<div class="result"><div class="title">' + esc(d.name) + "</div><div class='meta'>" + esc(d.days) +
+              " · <a href='" + BASE + "pages/daily.html'>daily feed</a></div></div>";
+          });
+        var hitW = walking.filter(function (w) { return JSON.stringify(w).toLowerCase().indexOf(q) >= 0; })
+          .map(function (w) {
+            return '<div class="result"><div class="title">' + esc(w.hotel) + " → " + esc(w.venue) + "</div><div class='meta'>walking record · <a href='" + BASE + "pages/hotels.html'>hotels</a></div></div>";
+          });
+        var hitR = rates.filter(function (r) { return JSON.stringify(r).toLowerCase().indexOf(q) >= 0; })
+          .map(function (r) {
+            return '<div class="result"><div class="title">' + esc(r.room) + "</div><div class='meta'>rate log " +
+              esc(r.arrival) + " → " + esc(r.departure) + " · " + money(r.checkout_total_usd) + "</div></div>";
+          });
+        var hitDocs = docs.filter(function (d) { return d.text.toLowerCase().indexOf(q) >= 0; })
+          .map(function (d) {
+            var idx = d.text.toLowerCase().indexOf(q);
+            var start = Math.max(0, idx - 90);
+            var snippet = d.text.slice(start, idx + 140).replace(/\s+/g, " ");
+            return '<div class="result"><div class="title">' + esc(d.title) + "</div><div class='meta'>" +
+              esc(snippet) + "…</div></div>";
+          });
+        results.innerHTML = block("Tournaments", hitT) + block("Hotels", hitH) + block("Venues", hitV) +
+          block("Daily formats", hitD) + block("Walking records", hitW) + block("Rate log", hitR) +
+          block("Documents", hitDocs) ||
+          '<div class="card callout">Nothing matched " ' + esc(q) + ' ".</div>';
+        summary.textContent = "Search covers " + rows.length + " tournament rows, " + hotels.length + " hotels, " +
+          venues.length + " venues, " + daily.length + " daily formats, " + walking.length + " walking records, " +
+          rates.length + " rate log entries and " + docs.length + " documents.";
+      }
+      input.addEventListener("input", run);
+      run();
+    }).catch(showErr);
+  };
+
+  PAGES.monitoring = function () {
+    Promise.all([
+      getJSONSafe("data/monitoring.json"), getJSONSafe("data/changes.json"), getJSON("data/tournaments.json")
+    ]).then(function (res) {
+      var mon = res[0], ch = res[1], rows = res[2].rows;
+      var main = document.getElementById("content");
+      var flagged = rows.filter(function (r) { return (r.flags || []).length; });
+      var html = "";
+      if (mon) {
+        html += "<div class='grid'>" +
+          kpi(mon.sources_ok + " / " + mon.sources_total, "official sources reachable") +
+          kpi(mon.sources_unreachable, "unreachable on the last check") +
+          kpi(mon.sources_http_error, "HTTP errors on the last check") +
+          kpi(mon.rows_changed, "rows changed since the last snapshot") +
+          kpi(mon.rows_added + " / " + mon.rows_removed, "rows added / removed") +
+          kpi(flagged.length, "rows carrying a source flag") +
+          "</div>";
+        html += "<p class='small'>Last check: " + esc(mon.checked_at) + ". " + esc(mon.note) + "</p>";
+      } else {
+        html += "<div class='card callout'>No monitoring result is stored yet. The monitoring job writes data/monitoring.json after it checks every official source.</div>";
+      }
+      if (ch) {
+        var changed = ch.changed || [], added = ch.added || [], removed = ch.removed || [];
+        html += "<h2>Changed rows</h2>";
+        if (!changed.length && !added.length && !removed.length) {
+          html += "<div class='card callout'>No row changed since the snapshot in data/row_snapshot.json (" + esc(ch.checked_at) + ").</div>";
+        } else {
+          var list = added.map(function (r) { return ["added", r]; })
+            .concat(removed.map(function (r) { return ["removed", r]; }))
+            .concat(changed.map(function (r) { return ["changed", r]; }));
+          html += list.map(function (x) {
+            var kind = x[0], r = x[1];
+            var detail = r.diff ? Object.keys(r.diff).map(function (k) {
+              return esc(k) + ": " + esc(JSON.stringify(r.diff[k][0])) + " → " + esc(JSON.stringify(r.diff[k][1]));
+            }).join("<br>") : "";
+            return '<div class="result"><span class="chip ' + (kind === "removed" ? "bad" : (kind === "added" ? "ok" : "warn")) + '">' +
+              kind + '</span> <div class="title">' + esc(r.name) + "</div><div class='meta'>" + esc(r.id) + " · " + esc(r.date) +
+              "</div>" + (detail ? "<div class='meta'>" + detail + "</div>" : "") + "</div>";
+          }).join("");
+        }
+      }
+      main.innerHTML = html;
+      var tsec = document.getElementById("flagged");
+      if (tsec) {
+        tsec.innerHTML = "<h2>Rows carrying a source flag</h2>" +
+          "<p class='small'>A flag records a printed irregularity in an official source - a typo, a conflict between two " +
+          "official pages, or a source that cannot be reconciled. Every flag keeps its own source text.</p>";
+        table(tsec, flagged, [
+          { id: "date", label: "Date", key: "date", html: function (r) { return dateFmt(r.date); } },
+          { id: "name", label: "Event", key: "name", html: function (r) { return "<strong>" + esc(r.name) + "</strong><br><span class='small'>" + esc(r.series) + "</span>"; } },
+          { id: "flag", label: "Flag", key: "flags", sort: null, html: function (r) { return flagsHtml(r); } },
+          { id: "src", label: "Sources", key: "sources", sort: null, html: function (r) { return "<span class='small'>" + srcLinks(r.sources) + "</span>"; } }
+        ], { sortKey: "date", sortDir: 1 });
+      }
+      var ssec = document.getElementById("sources");
+      if (ssec && mon) {
+        var urls = Object.keys(mon.sources).map(function (u) { return { url: u, s: mon.sources[u] }; });
+        ssec.innerHTML = "<h2>Source status</h2>";
+        table(ssec, urls, [
+          { id: "status", label: "Status", key: "s", sort: null, html: function (r) {
+              var cls = r.s.status === "ok" ? "ok" : (r.s.status === "http-error" ? "bad" : "warn");
+              return '<span class="status-dot ' + cls + '"></span>' + esc(r.s.status) +
+                (r.s.http_status ? " (" + r.s.http_status + ")" : "") + (r.s.error ? "<br><span class='small'>" + esc(r.s.error) + "</span>" : "");
+            } },
+          { id: "url", label: "Official URL", key: "url", sort: null, html: function (r) { return '<a href="' + esc(r.url) + '" target="_blank" rel="noopener">' + esc(r.url) + "</a>"; } }
+        ], { sortKey: "status", sortDir: 1 });
+      }
+    }).catch(showErr);
+  };
+
+  function markdownPage(file) {
+    return function () {
+      getText(file).then(function (t) {
+        document.getElementById("content").innerHTML = '<div class="md">' + renderMarkdown(t) + "</div>";
+      }).catch(showErr);
+    };
+  }
+  // pages/other-rooms.html is generated statically by scripts/build_other_rooms.py, so the
+  // tables are already in the HTML and there is nothing to render at run time. The renderer
+  // exists because the validator requires one renderer per data-page, and it uses the
+  // dataset to stamp the page with the counts and the verification date, and to say so on
+  // the page if the dataset cannot be read (the tables stay: they were built from that file).
+  PAGES.otherRooms = function () {
+    getJSON("data/other_rooms.json").then(function (data) {
+      var main = document.getElementById("content");
+      if (!main || !data || !data.counts) return;
+      var stamp = document.createElement("p");
+      stamp.className = "small";
+      stamp.textContent = "Dataset: " + data.counts.events + " recurring events across " +
+        data.counts.rooms_surveyed + " rooms surveyed, verified " + data.verified_on + ".";
+      main.parentNode.insertBefore(stamp, main.nextSibling);
+    }).catch(function () {
+      var main = document.getElementById("content");
+      if (!main) return;
+      var note = document.createElement("p");
+      note.className = "small";
+      note.textContent = "data/other_rooms.json could not be read; the tables below are the " +
+        "copy generated with the site.";
+      main.parentNode.insertBefore(note, main.nextSibling);
+    });
+  };
+
+  PAGES.summary = markdownPage("EXECUTIVE_SUMMARY.md");
+  PAGES.questions = markdownPage("QUESTIONS.md");
+  PAGES.suggestions = markdownPage("SUGGESTIONS.md");
+  PAGES.flagged = markdownPage("FLAGGED.md");
+  PAGES.review = markdownPage("REVIEW.md");
+
+  function showErr(e) {
+    var main = document.getElementById("content");
+    if (main) main.innerHTML = '<div class="card callout">Could not load this page: ' + esc(e.message) + "</div>";
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    renderNav();
+    var page = document.body.getAttribute("data-page");
+    if (!page) return;
+    if (page.indexOf("venue:") === 0) PAGES.venue(page.slice("venue:".length));
+    else if (PAGES[page]) PAGES[page]();
+  });
+})();
+
+</script>
+</body>
+</html>

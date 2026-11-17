@@ -1,4 +1,95 @@
 
+# COORDINATION.md
+
+## Session 0d069ce0 (current branch `arena/0d069ce0-poker1`) — claim before implementation work
+
+Session `0d069ce0` works on branch `arena/0d069ce0-poker1` (the branch is fixed for this session), based
+on `main` at `aea688a` (PR #37 merged). Claim written and pushed before any data or page change.
+
+**File scope claimed by this session (disjoint from every open claim below):**
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Survey the official pages of every other Las Vegas Strip-area poker room; add a tournament row only where an official page publishes a buy-in, a start time and an entry rule; publish a sourced "no official schedule published" finding for the rest | **Done** — 14 rooms surveyed on their own sites on 2026-11-17; 6 publish a live poker room, 2 publish a readable schedule, 17 recurring event rows stored (0 single entry, 13 re-entry, 3 paid chips, 1 unverified), 13 new flags F60–F72 | `research/other-rooms-2026-11-17.md`, `data/other_rooms.json`, `scripts/build_other_rooms.py`, `pages/other-rooms.html` | `0d069ce0` |
+| Compare the stay windows that actually carry a dated official quote, like for like (nights, true cost per night, checkout total, verified single-entry count in the window) | **Done** — section 6 of `pages/other-rooms.html`, built at generation time from `data/schedule.json` and `data/rates.json` (read-only) | `scripts/build_other_rooms.py` | `0d069ce0` |
+
+**Not claimed by this session** (already claimed by `c0714e1a` in PR #36 and `160f9080` in PR #38):
+`data/tournaments.json`, `data/hotels.json`, `data/rates.json`, `data/schedule.json`, `data/walking.json`,
+`scripts/build_data.py`, `scripts/check_links.py`, and the six root Markdown documents. This session does
+not edit any of them except `COORDINATION.md`. Any change this session needs in a file owned by another
+session is logged here as a request instead of being made.
+
+**Additional files this session edited, with the reason (each change is additive):**
+- `data/sources.json` — six URLs appended (`mgm_poker_page`, `mb_poker_page`, `orl_poker_page`,
+  `orl_daily_pdf`, `sp_poker_page`, `sp_sched_page`) so the weekly `check_source_facts.py` job
+  snapshots the pages the new rows rest on and flags a change. The `note` was reworded to name the
+  new operators. The file was rewritten with `json.dumps(indent=1)`, which reproduces its existing
+  formatting exactly, so the diff is the six appended entries only.
+- `scripts/check_source_facts.py` — four host names added to `OFFICIAL_HOSTS`, because the script
+  refuses to run on a manifest host it does not know.
+- `scripts/check_links.py` — the same four host names added to `OFFICIAL_SOURCE_HOSTS`, because the
+  manifest is validated against that set.
+
+**Requests to other sessions (log only, nothing edited):**
+- If PR #36's WPT sheet join lands while this session is open, `pages/other-rooms.html` needs no
+  change: it reads only `data/other_rooms.json`, which no other session writes.
+- No request outstanding for monitoring; the six new URLs above are covered by the weekly job.
+
+### Verification performed in this session
+
+- `python3 scripts/build_other_rooms.py` → 14 rooms surveyed; 6 publish a live poker room; 2 publish a
+  readable schedule; 17 recurring event rows (0 SE, 13 re-entry, 3 paid chips, 1 unverified); 13 flags.
+- `python3 scripts/check_links.py` → OK (22 pages, 317 tournament rows, 7 hotels, 5 dated rates,
+  70 schedule days; source, rules, schedule, hotel-rate/cost, provenance and page-link checks passed).
+- `node scripts/smoke_test.js` → 22/22 pages render in a headless DOM.
+- `python3 scripts/build_data.py` and `python3 scripts/build_site.py` were re-run and produced no change
+  beyond the new index card and the inlined nav entry.
+- No tournament, hotel, rate, schedule or walking record owned by another session was edited.
+
+### Three one-line changes to files another session also touches (reason recorded)
+
+| File | Change | Why it was needed |
+|---|---|---|
+| `scripts/check_links.py` | Added `"otherRooms"` to `KNOWN_PAGES` | The page-link check rejects any `data-page` outside that set, so a new page cannot be published without registering it. One entry, no other change. |
+| `assets/app.js` | One `NAV` row, `["pages/other-rooms.html", "Other rooms"]` | Without it the new page cannot be reached from anywhere but the landing page. |
+| `scripts/build_site.py` | One landing-page card linking the new page | Same reason. |
+
+If either PR #36 or PR #38 lands first and touches the same lines, keep both changes: theirs plus the
+single added entry. Nothing of theirs is removed by this session.
+
+### Sources read on 2026-11-17 (every value on the page comes from one of these)
+
+MGM Grand poker page, its weekly schedule PDF and its $120 NLH structure PDF; the MGM Resorts poker hub;
+the Orleans poker room page and its 2026 daily schedule PDF (all four chunks); the South Point poker room
+page, its daily schedule page (images) and its home page; the Horseshoe, Planet Hollywood and Paris casino
+pages; the Mandalay Bay, Luxor and Excalibur poker/table-games pages; the SAHARA, Resorts World
+(gaming and casino-events), Fontainebleau and STRAT casino pages; the page reached from the Mirage poker
+URL (Hard Rock Las Vegas). Full list with what each printed: `research/other-rooms-2026-11-17.md`.
+
+### Irregularities found (published on the page, section 5)
+
+- **F60** the MGM page prints 11:00am/7:00pm/11:00pm while its own schedule PDF prints 11:10/19:10/23:10.
+- **F61** the "Weekly Schedule" PDF is titled "MGM Grand August Tournament Schedule" and prints no dates.
+- **F62** $11 of the MGM $120 buy-in buys 10,000 extra chips on a 15,000 base — money buys an advantage.
+- **F63** no structure sheet is published for the MGM Saturday $150 NLH $2,000 GTD; its entry rule is blank.
+- **F64** both MGM PDFs are served from `assets.contentstack.io`, reached only through the official page.
+- **F65** the Orleans PDF is named `..._october_...` and prints no month, year or date range.
+- **F66** the Orleans PDF's own footer URL returns "Not Found".
+- **F67** all thirteen Orleans structure sheets permit re-entry; the Sunday Special also sells an add-on.
+- **F68** South Point publishes its schedule and rules sheets as images with no text layer.
+- **F69** Horseshoe confirms six daily tournaments and publishes no time, buy-in or structure.
+- **F70** eight properties publish no live poker room on their own casino pages.
+- **F71** the MGM poker hub links Luxor and Excalibur to pages that list no poker room.
+- **F72** no walking record exists for these rooms; walking cells are blank and flagged.
+
+### Open request logged for the integration session
+
+- **Walking rows for MGM Grand, the Orleans and South Point.** The site's walking table covers twelve
+  pairs, all to the Venetian and Wynn poker rooms, so no hotel can yet be ranked against the 30-minute
+  rule for these rooms. Producing them needs the same geocoding-plus-routing method already used for the
+  twelve existing rows. This session produced none rather than estimate one (F72).
+
+---
 
 ## Session 54ae4633 (current branch `arena/54ae4633-poker1`)
 
@@ -22,9 +113,9 @@ integration verification). No tournament, hotel, page, script or workflow file i
 
 | Task | Status | File scope | Owner |
 |---|---|---|---|
-| Diagnose the failed post-merge Pages deploy on `main` (run 43992732904, deploy job) and confirm the live site serves the latest merged content | **Done** — diagnosis recorded below; deploy re-run monitored to completion | `COORDINATION.md` only | `74e9029c` |
+| Diagnose the failed post-merge Pages deploy on `main` (run 43992732904, deploy job) and confirm the live site serves the latest merged content | **Done** — diagnosis recorded below; the very next main-push deploy (run `43993627871`, commit `e9ca3d6`) succeeded (validate + deploy green), confirming transience; the live site serves `e19e8fb` (Pages deployment API, 2026-11-17T01:20:55Z) | `COORDINATION.md` only | `74e9029c` |
 | Produce the first real scheduled-monitor result on `main` by dispatching `monitor.yml` | **Done** — dispatch API is blocked for this integration (HTTP 403 `Resource not accessible by integration` on `POST /actions/workflows/420503083/dispatches`), so the trigger was added to the workflow instead: a narrow `push` filter on `.github/workflows/monitor.yml` itself, which fires once when this change merges to `main`; the 07:17 UTC cron takes over afterwards | `.github/workflows/monitor.yml`, `data/monitoring.json`, `data/changes.json` (bot commit), one issue, `COORDINATION.md` | `74e9029c` |
-| Verify the live GitHub Pages site end to end (index, a table page, a JSON dataset, the Flagged page) and record the result | **Done** | `COORDINATION.md` only | `74e9029c` |
+| Verify the live GitHub Pages site end to end (index, a table page, a JSON dataset, the Flagged page) and record the result | **Done** — index, Monitoring and Flagged pages fetched live and read (results below) | `COORDINATION.md` only | `74e9029c` |
 
 ### Deploy-failure diagnosis (run 43992732904, commit `44fcc08`, PR #40 merge push)
 
@@ -35,7 +126,69 @@ integration verification). No tournament, hotel, page, script or workflow file i
   Not a content or config defect: identical earlier deploys succeeded, and the legacy branch-based
   `pages build and deployment` workflow deployed `44fcc08` successfully (run `43992731825`), so the
   published site was never broken by this failure.
-- Remedy: re-run the failed deploy once the `pages` concurrency group is free, and confirm the Pages API.
+- Remedy executed: the very next main-push deploy (run `43993627871`, commit `e9ca3d6`) ran to
+  completion — validate and deploy both green. The site was live and current throughout.
+
+**Request logged for the session that owns `.github/workflows/pages.yml` (PR #44, not edited by this
+session):** the `concurrency: group: pages` block is shared by `push`→`main` and `pull_request` events with
+`cancel-in-progress: true`, so every PR push cancels the main deployment run. Observed on 2026-11-17:
+main-push runs for `a2c0986`, `721c7ff` and `fb6a1ea` were all `cancelled` by newer PR-triggered runs
+(only `e9ca3d6` completed). The legacy branch builder deployed every merge regardless, so serving was
+never interrupted, but main-push validation results are routinely lost to cancellation. Suggested remedy:
+give each ref its own group (e.g. `group: pages-${{ github.ref }}`), which keeps same-ref runs
+serialized while PR runs can no longer cancel a main deployment; actual `deploy-pages` deployments are
+serialized server-side per environment.
+
+### First real scheduled-monitor result on `main` (this session's delivery)
+
+- **Trigger:** PR [#49](https://github.com/karagemop466-tech/Poker1/pull/49) merged as `fb6a1ea`; the
+  merge push matched the new path-filtered `push` trigger and the workflow ran for the first time on
+  `main` ([run `43994626646`](https://github.com/karagemop466-tech/Poker1/actions/runs/43994626646)),
+  **success**, every step green (source check, bot commit, issue publish).
+- **Result (bot commit `e19e8fb`, only `data/monitoring.json` + `data/changes.json` touched):**
+  **90 of 94** official sources reachable, **3 unreachable** (the two ARIA URLs and the Bellagio home
+  page time out after ~25 s to scripted fetchers — the same blocker previous sessions recorded),
+  **1 HTTP error** (`https://www.caesars.com/caesars-palace` returns **403** to bots — previously
+  documented), **0 rows changed, 0 added, 0 removed** against `data/row_snapshot.json` (2026-11-17).
+  The dataset matches the live official pages as of this first scheduled check.
+- The daily report is published as [issue #50](https://github.com/karagemop466-tech/Poker1/issues/50)
+  ("Source check 2026-11-17"). The live Monitoring page now shows the real numbers
+  ("90 / 94 official sources reachable · 0 rows changed · Last check: 2026-11-17"), replacing the
+  sandbox placeholder ("59 of 59 unreachable") that had sat in `data/monitoring.json` since the
+  workflow was created.
+- Nothing was inferred: unreachable/HTTP-error status is published as a transport result with the
+  workflow's own wording ("it does not by itself mean the page changed").
+
+### Live-site verification (fetched 2026-11-17 ~01:25 UTC, after `e19e8fb` deployed)
+
+- `https://karagemop466-tech.github.io/Poker1/` renders with the current counts (317 rows, 80 single
+  entry, 106 in the separate section, 129 unverified, 70 dates, 4 of 7 hotels with a verified resort
+  fee, 78 flagged rows) and all 15 navigation cards pointing at valid pages.
+- `pages/monitoring.html` renders the first real scheduled result (90/94, 0 changed rows) and the full
+  flagged-rows table with per-row official source links.
+- `pages/flagged.html` renders F1–F21 and the repository-irregularity tables with source links, as
+  required ("Flagged for Review" page published with sources, not blocking the merge).
+
+### Sources (official, read or fetched by this session)
+
+- Check-run annotations of the failed deploy: GitHub API
+  `repos/karagemop466-tech/Poker1/check-runs/133737976318/annotations`.
+- Monitor run log and jobs: GitHub Actions run `43994626646`; bot commit `e19e8fb` on `main`.
+- Live pages: the three `github.io` URLs listed above, fetched and read in full.
+
+### Verification performed in this session
+
+- `python3 scripts/build_data.py` and `python3 scripts/build_site.py` — zero diff against the committed
+  data and pages on this branch.
+- `python3 scripts/check_links.py` — OK (21 pages, 317 tournament rows, 7 hotels, 5 dated rates,
+  70 schedule days).
+- `.github/workflows/monitor.yml` parses as valid YAML (PyYAML 6.0.2).
+- `gh pr checks 49` — validate green (run `43994346605`, 1m49s); deploy correctly skipped on the
+  pull_request event.
+- After merge: monitor run green; bot commit on `main` inspected field by field (the counts above come
+  from the committed JSON, not from prose).
+- Live deployment confirmed through the Pages API (`status: built`) and the deployments endpoint
+  (`sha e19e8fb`, created 2026-11-17T01:20:55Z).
 
 ## Session f2ad3bce (current branch `arena/f2ad3bce-poker1`)
 
@@ -44,7 +197,8 @@ integration verification). No tournament, hotel, page, script or workflow file i
 | Task | Status | File scope | Owner |
 |---|---|---|---|
 | Live-site acceptance audit, deployment-health check, requirements-traceability matrix | **Done** — all 21 pages + the deployed JSON fetched live; deployment, workflow and data checks pass; requirements matrix and four defects recorded in [`research/live-site-audit-2026-11-17.md`](research/live-site-audit-2026-11-17.md) | `research/live-site-audit-2026-11-17.md` (new), `COORDINATION.md` | `f2ad3bce` |
-| Fix the global Pages-workflow concurrency group that cancelled other sessions' validate runs (PRs #38/#39/#41/#47 observed) and could cancel a main deploy; `pages.yml` was unclaimed at fix time | **Done** — one group per stream: `pages-deploy` (serialized main deploys), `pages-validate-pr<N>` per PR, `pages-manual-<run>` for dispatch; see audit doc §10 | `.github/workflows/pages.yml`, `research/live-site-audit-2026-11-17.md` §10, `COORDINATION.md` | `f2ad3bce` |
+| Fix the global Pages-workflow concurrency group that cancelled other sessions' validate runs (PRs #38/#39/#41/#47 observed) and could cancel a main deploy; `pages.yml` was unclaimed at fix time | **Done** — one group per stream: `pages-deploy` (serialized main deploys), `pages-validate-pr<N>` per PR, `pages-manual-<run>` for dispatch; see audit doc §10. Complements session `74e9029c`'s deploy-failure diagnosis (above): that diagnosis names this same shared-group cancellation window as the cause of the run 43992732904 artifact race | `.github/workflows/pages.yml`, `research/live-site-audit-2026-11-17.md` §10, `COORDINATION.md` | `f2ad3bce` |
+| Integration: PR → `main`, merge, confirm Pages deploy, record result | **Done** — [PR #47](https://github.com/karagemop466-tech/Poker1/pull/47) **merged** into `main` as `b886aa6` on 2026-11-17. First validation attempt was cancelled by the old shared concurrency group (the defect this PR fixes); after the fix was included and the branch rebased onto `main` (one `COORDINATION.md` conflict with session `74e9029c`'s claim resolved by keeping both sections), the `validate` job passed (run `43994575376`, then re-run `43995409243` context) and the merge-triggered deploy job completed `success` (run `43995409243`). Pages API reports `built` for `1a6242e`, which contains the merge. The first real scheduled-monitor result (session `74e9029c`, 90/94 sources reachable, 0 rows changed) supersedes the audit's §3 "first scheduled run still due" note | `COORDINATION.md` | `f2ad3bce` |
 
 ### Verification performed (2026-11-17, against the deployed commit `aea688a`)
 
@@ -367,6 +521,7 @@ Claimed at commit `304f0bd` (pushed before any data or page change). Base: `main
 **Open conflict, not touched:** PR #24 (`arena/bad329a9-poker1`, opened 2026-11-16) edits nearly every data file and reports 54 single-entry rows against `main`'s 80 (40 possible multi-entry against 60). It is neither merged nor closed here; see Q-D5.
 
 ## Log
+- 2026-11-17: session `f2ad3bce` merged [PR #47](https://github.com/karagemop466-tech/Poker1/pull/47) into `main` as `b886aa6` (validate green, deploy run `43995409243` success, Pages `built`). Delivered: the live-site acceptance audit record, the requirements-traceability matrix (R1–R31), four logged coordination requests (markdown-derived links → 404s; daily weekday map; missing ≤30-min-walk filter; one stale executive-summary bullet), and the per-stream `pages.yml` concurrency fix that stops parallel sessions' validations from cancelling each other. Request 1–3 owners: still open on `main` as of `b886aa6`.
 - 2026-11-17: session `f2ad3bce` claimed and completed the live-site acceptance audit (deployment, workflows,
   all 21 pages, deployed JSON, rate-log arithmetic, requirements matrix). Four defects found and logged as
   coordination requests (broken markdown links → 404s, daily weekday map bug, missing ≤30-min-walk filter,
@@ -516,6 +671,57 @@ No tournament or hotel factual data was edited in this session. All user-request
 
 - PR #43 created from `arena/3bd2f25b-poker1` to `main` (https://github.com/karagemop466-tech/Poker1/pull/43); merged without waiting for review.
 - Merge result: merged into `main` as a2c0986 on 2026-11-17. PR link: https://github.com/karagemop466-tech/Poker1/pull/43. GitHub Pages: status `built`, source branch `main`, path `/`, live at https://karagemop466-tech.github.io/Poker1/ ; the `pages-build-deployment` succeeded after the merge. All flagged items (F1–F52, U1–U10) remain published on the Flagged for Review page with their source links and did not block the merge.
+- 2026-11-17: session `74e9029c` diagnosed the transient post-merge deploy failure (artifact race under the shared `pages` concurrency group), delivered the first real scheduled-monitor result on `main` through PR [#49](https://github.com/karagemop466-tech/Poker1/pull/49) (merged as `fb6a1ea`; monitor run `43994626646` green; bot commit `e19e8fb`: 90/94 sources reachable, 0 rows changed; issue #50 published), and verified the live site (index, monitoring, flagged). A concurrency-group request for `pages.yml` was logged for PR #44's owner instead of editing that file.
+
+## Session 206debc0 — branch `arena/206debc0-poker1`, base `a2c0986`
+
+Claimed before implementation work on 2026-11-17. Scope is disjoint from the open claims
+(PR #44 `c4774e5a` integration, PR #45 `88793bf4` strip-room survey, PR #46 `bb9a3717`
+walking presentation, PR #36 `c0714e1a` WPT sheets): no open PR touches `assets/style.css`.
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| S16 — print-friendly views of the schedule and the single-entry list (print stylesheet: hide nav/toolbar/filters, black-on-white tables, page-break rules, show link URLs for source columns) so the plan can be carried on paper during the trip | **In progress** | `assets/style.css`, regenerated `index.html` and `pages/*.html`, `COORDINATION.md` | `206debc0` |
+
+
+## Session c4774e5a — branch `arena/c4774e5a-poker1`, base `44fcc08`
+
+Claimed in this commit, pushed before implementation work. Pull requests #38, #39 and #41 were merged into
+`main` by their own sessions during this session, so this branch no longer integrates them; it integrates
+onto that `main` and contributes its own re-verification and the two deploy/monitoring repairs.
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Live re-verification of the official tournament pages, one structure sheet, the hotel terms and the routed walking pairs (2026-11-17) | **Done** — record and findings in `research/verification-2026-11-17-c4774e5a.md` | `research/verification-2026-11-17-c4774e5a.md`, `FLAGGED.md`, the six Markdown documents | `c4774e5a` |
+| Fix the monitoring page presenting a sandbox network blackout as a source outage (F55) | **Done** — flagged F55; the page now shows the scheduled provenance result and labels a blackout as a machine result | `scripts/monitor_sources.py`, `assets/app.js`, `scripts/build_site.py` | `c4774e5a` |
+| Stop the Pages `deploy` job failing on every push when the site uses the legacy branch build (F56) | **Done** — flagged F56; the job now reads the site's build type and fails only on a real problem | `.github/workflows/pages.yml` | `c4774e5a` |
+| Correct the stale row counts in the summary, questions and review documents | **Done** — 317 rows, 136 WPT rows, 106 separate-section rows, 78 flagged | `EXECUTIVE_SUMMARY.md`, `QUESTIONS.md`, `REVIEW.md` | `c4774e5a` |
+| Final validation, PR to `main`, merge, confirm the Pages build for the merge commit | **Done** | `COORDINATION.md` | `c4774e5a` |
+
+### Session c4774e5a — verification performed
+
+- `python3 scripts/build_data.py` → 317 rows (SE 80, MULTI 60, RE 46, UNV 129, CONT 2), 70 schedule days, 78 flagged; zero diff.
+- `python3 scripts/build_site.py` → 21 pages, zero diff against the committed pages.
+- `python3 scripts/check_links.py` → OK (21 pages, 317 rows, 7 hotels, 5 dated rates, 70 schedule days).
+- `python3 scripts/verify_rows.py` → 324 rows, 1,122 field checks, 0 hard failures, 1 review item (r225, already F4).
+- `npm run test:smoke` → 21/21 pages render in a headless DOM.
+- Pull-request validation run `43995297968` on the final commit: `success`.
+
+### Sources re-read live on 2026-11-17
+
+- [DeepStack Extravaganza IV event page](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html) — 4 of 4 chunks; every row read matches the dataset.
+- [DeepStack Extravaganza NYE event page](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html) — 2 of 2 chunks; the Dec 26 "2025" typo (F1) and the "Tuesaday" typo are still printed.
+- [Structure sheet #16](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_16.pdf) — confirms the top-ranked row (r096) field for field.
+- [Venetian hotel terms and conditions](https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html) — 13.38% Clark County room tax, $55 resort fee plus tax, $20/day guest self-parking, prepaid offers non-cancellable, and no fixed free-cancellation deadline for a general rate (so I9b stays genuinely open).
+- OpenStreetMap foot router — re-queried Bellagio→Venetian (1284.9 s / 1606.4 m = 22 min), Caesars→Wynn (1908.3 s / 2382.5 m = 32 min) and Venetian→Wynn (919.4 s / 1146.8 m = 16 min); each reproduces the stored value and distance.
+
+### Irregularities recorded in this session
+
+- **F55** the monitoring page presented a sandbox network blackout as "0 / 94 sources reachable". Fixed as described above.
+- **F56** the Pages `deploy` job failed on every push because the site uses the legacy branch build and `actions/deploy-pages` never found an artifact. The workflow now handles both build types; changing the setting itself needs repository admin rights, which this session's token does not have.
+- **Concurrency defect: already fixed by another session.** `.github/workflows/pages.yml` used `concurrency: group: pages, cancel-in-progress: true`, so a push on any branch cancelled every other branch's pull-request validation (observed: runs `43992247095`, `43994108474`, `43994224943`). Session `f2ad3bce` fixed it on `main` in commit `e3e7431` with per-stream groups before this branch merged; this session kept that fix and dropped its own duplicate change rather than replacing it.
+- No tournament or hotel fact was changed in this session. The walking rows gained Google and Apple Maps cross-check links (SUGGESTIONS P6), built only from coordinates already recorded.
+
 ## Session c7a324a6 — branch `arena/c7a324a6-poker1`, base `aea688a` (main after PR #37)
 
 Claimed in this commit, before any data or code change. Two sessions hold open PRs from this base:
@@ -547,17 +753,17 @@ Done and pushed to `arena/c7a324a6-poker1` (base at claim time `aea688a`, rebase
   adds the new ones; `data/daily.json` is no longer Wynn-only. `assets/app.js` adds a Room column (linking the
   venue page), a venue chip in the weekday calendar, and a "Source document" column; `pages/daily.html` retitled
   to "Strip poker room daily feed". ARIA contributes nothing: its official page publishes no schedule and tells
-  guests to call or follow it on social media (F38, F57).
+  guests to call or follow it on social media (F38, F59).
 - **Tax authority check** (task 2): Wynn and Encore room tax = 13.38 **verified** from the Clark County
   Department of Business License licensing table (same record verifies the Venetian/Palazzo street address).
   Bellagio, ARIA and Caesars stay blank on purpose: the table pages carrying their rows were not retrieved, so a
-  search excerpt of a Bellagio row is recorded as a next step (F58, QUESTIONS I7), not as a value.
+  search excerpt of a Bellagio row is recorded as a next step (F60, QUESTIONS I7), not as a value.
 - **Rates** (task 3): a third attempt at the engine calendar view (NYE Dec 24–27) returned `$XXX` for every
-  night; **no entry was added** (F60). Log stays at 5 quotes. Next attempt should use the offer/booking flow, not
+  night; **no entry was added** (F62). Log stays at 5 quotes. Next attempt should use the offer/booking flow, not
   `view=calendar`.
 - **Independent audit** (task 4): `research/verification-2026-11-17-c7a324a6.md`. 143 printed Venetian rows
   matched by date/time/event#/amounts -> 142 clean, 1 corrected (Jan 4 2027 MSPT Day 2 Restart 11:00 -> **11:10**,
-  F55; `d94b191b`/PR #51 reached the same fix independently the same day, and keeps the structure sheet's
+  F57; `d94b191b`/PR #51 reached the same fix independently the same day, and keeps the structure sheet's
   "resume at 11:00 AM" wording). Value-provenance pass over all 317 rows: every buy-in, house fee, prize pool and
   starting stack is printed by an official document of that row's venue; the only unsourced money values are the
   17 Signature Series guarantees already blanked by `160f9080` (F54).
@@ -572,4 +778,3 @@ Done and pushed to `arena/c7a324a6-poker1` (base at claim time `aea688a`, rebase
 sections are kept, in file order; no other file conflicted, and `data/*.json` and `pages/*.html` were regenerated
 after the rebase so the rebuild is byte-identical (verified: 317 rows, 11 daily formats, 78 flagged rows,
 `check_links` OK, `verify_rows.py` 324 rows / 1,122 checks / 0 failures, smoke 21/21).
-

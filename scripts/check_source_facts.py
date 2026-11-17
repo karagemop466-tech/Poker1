@@ -72,6 +72,11 @@ OFFICIAL_HOSTS = (
     # table records each Strip resort's address and room-tax class. A government record,
     # not an operator page - the site labels it as such.
     "www.clarkcountynv.gov",
+    # Session 0d069ce0: official property domains behind pages/other-rooms.html.
+    "mgmgrand.mgmresorts.com",
+    "mandalaybay.mgmresorts.com",
+    "orleans.boydgaming.com",
+    "southpointcasino.com",
 )
 
 

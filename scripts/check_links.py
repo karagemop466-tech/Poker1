@@ -41,6 +41,14 @@ OPERATOR_SOURCE_HOSTS = {
     # from bellagio.mgmresorts.com/en/casino/poker.html; the link is published by the
     # property, not chosen by us.
     "assets.contentstack.io",
+    # Session 0d069ce0: the official property domains behind pages/other-rooms.html. Each is the
+    # operator's own site for the property. The contentstack CDN that hosts the MGM PDFs is
+    # deliberately not added, matching the existing F40 treatment of the Bellagio flyers: those
+    # PDFs are cited through the official page that links them, never as a source host.
+    "mgmgrand.mgmresorts.com",
+    "mandalaybay.mgmresorts.com",
+    "orleans.boydgaming.com",
+    "southpointcasino.com",
 }
 # Government records: the taxing authority that sets the room tax. Accepted only for the
 # address / rate-class rows of the licensed-establishment table, and always labelled as a
@@ -54,7 +62,10 @@ DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 TIME_RE = re.compile(r"^(?:[01]\d|2[0-3]):[0-5]\d$")
 KNOWN_PAGES = {"index", "singleEntry", "separate", "unverified", "daily", "hotels", "calculator",
                "schedule", "venues", "search", "monitoring", "summary", "questions", "suggestions",
-               "flagged", "review"}
+               "flagged", "review",
+               # Session 0d069ce0: pages/other-rooms.html. Registered here because the page-link
+               # check rejects any data-page outside this set. One line, no other change.
+               "otherRooms"}
 
 
 def load_json(rel):

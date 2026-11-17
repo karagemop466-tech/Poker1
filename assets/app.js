@@ -16,6 +16,7 @@
     ["pages/hotels.html", "Hotels"],
     ["pages/calculator.html", "Calculator"],
     ["pages/venues.html", "Venues"],
+    ["pages/other-rooms.html", "Other rooms"],
     ["pages/search.html", "Search"],
     ["pages/monitoring.html", "Monitoring"],
     ["pages/summary.html", "Summary"],
@@ -70,6 +71,15 @@
     if (s === "CONT") return '<span class="chip info">Continuation</span>';
     return '<span class="chip warn">Unverified</span>';
   }
+  function routeLinks(r) {
+    var out = '<a href="' + esc(r.route_link) + '" target="_blank" rel="noopener">OSM routing query</a>';
+    (r.cross_check || []).forEach(function (c) {
+      var name = /Google/.test(c.label) ? "Google Maps" : (/Apple/.test(c.label) ? "Apple Maps" : c.label);
+      out += '<br><a href="' + esc(c.url) + '" target="_blank" rel="noopener">' + esc(name) + "</a>";
+    });
+    return '<span class="small">' + out + "</span>";
+  }
+
   function srcLinks(sources) {
     return (sources || []).map(function (s) {
       return '<a href="' + esc(s.url) + '" target="_blank" rel="noopener">' + esc(s.label) + "</a>";
@@ -684,7 +694,7 @@
           { id: "metres", label: "Metres", key: "metres", num: true },
           { id: "status", label: "Status", key: "status" },
           { id: "note", label: "Note", key: "note", sort: null, html: function (r) { return "<span class='small'>" + esc(r.note) + "</span>"; } },
-          { id: "route", label: "Route", key: "route_link", sort: null, html: function (r) { return '<a href="' + esc(r.route_link) + '" target="_blank" rel="noopener">routing query</a>'; } },
+          { id: "route", label: "Route", key: "route_link", sort: null, html: function (r) { return routeLinks(r); } },
           { id: "src", label: "Sources", key: "sources", sort: null, html: function (r) { return "<span class='small'>" + srcLinks(r.sources) + "</span>"; } }
         ];
         table(w, walking, wcols, { sortKey: "minutes", sortDir: 1 });
@@ -896,7 +906,7 @@
           { id: "from", label: "From", key: "from", sort: null },
           { id: "minutes", label: "Minutes", key: "minutes", num: true, html: function (r) { return r.minutes == null ? '<span class="muted">unverified</span>' : r.minutes; } },
           { id: "note", label: "Note", key: "note", sort: null, html: function (r) { return "<span class='small'>" + esc(r.note) + "</span>"; } },
-          { id: "route", label: "Route", key: "route_link", sort: null, html: function (r) { return '<a href="' + esc(r.route_link) + '" target="_blank" rel="noopener">routing query</a>'; } }
+          { id: "route", label: "Route", key: "route_link", sort: null, html: function (r) { return routeLinks(r); } }
         ], { sortKey: "hotel", sortDir: 1 });
       }
       var tsec = document.getElementById("events");
@@ -982,9 +992,10 @@
 
   PAGES.monitoring = function () {
     Promise.all([
-      getJSONSafe("data/monitoring.json"), getJSONSafe("data/changes.json"), getJSON("data/tournaments.json")
+      getJSONSafe("data/monitoring.json"), getJSONSafe("data/changes.json"), getJSON("data/tournaments.json"),
+      getJSONSafe("data/change_log.json")
     ]).then(function (res) {
-      var mon = res[0], ch = res[1], rows = res[2].rows;
+      var mon = res[0], ch = res[1], rows = res[2].rows, prov = res[3];
       var main = document.getElementById("content");
       var flagged = rows.filter(function (r) { return (r.flags || []).length; });
       var html = "";
@@ -998,6 +1009,42 @@
           kpi(flagged.length, "rows carrying a source flag") +
           "</div>";
         html += "<p class='small'>Last check: " + esc(mon.checked_at) + ". " + esc(mon.note) + "</p>";
+        if (mon.network_unavailable) {
+          html += "<div class='card callout'><strong>This result is a network blackout, not a source outage.</strong> " +
+            "The machine that produced the row-level check below reached none of the official hosts at all. " +
+            "Read the scheduled weekly provenance check underneath instead: it runs from GitHub Actions, " +
+            "where the operator domains answer, and it compares the money, date, time and entry-rule text " +
+            "printed on each page rather than the raw bytes.</div>";
+        }
+        if (prov && prov.sources) {
+          var fetched = prov.sources.filter(function (s) { return s.http_status && s.http_status >= 200 && s.http_status < 400; });
+          var inactive = prov.sources.filter(function (s) { return s.error && /inactive/i.test(String(s.error)); });
+          var errored = prov.sources.filter(function (s) { return s.error && !/inactive/i.test(String(s.error)); });
+          var factsMoved = prov.sources.filter(function (s) { return s.facts_changed; });
+          html += "<h2>Scheduled provenance check</h2>" +
+            "<p class='small'>Generated " + esc(prov.generated_utc) + " by the <em>Check official source facts</em> " +
+            "workflow, which fetches every official document from GitHub Actions. A raw page change is common " +
+            "because operator pages rotate promotions and cookie text; a <em>published-value</em> change is the " +
+            "event that matters.</p><div class='grid'>" +
+            kpi(fetched.length + " / " + prov.sources.length, "official documents fetched") +
+            kpi(factsMoved.length, "documents whose printed values changed") +
+            kpi(inactive.length, "documents marked inactive") +
+            kpi(errored.length, "documents that timed out or errored") +
+            "</div>";
+          var problems = prov.sources.filter(function (s) { return s.error || s.facts_changed; });
+          if (problems.length) {
+            html += "<div class='card'><table class='data'><thead><tr><th>Official document</th>" +
+              "<th>HTTP</th><th>Printed values changed</th><th>Note</th></tr></thead><tbody>";
+            problems.forEach(function (s) {
+              html += "<tr><td><a href='" + esc(s.url) + "' target='_blank' rel='noopener'>" + esc(s.label || s.url) + "</a></td>" +
+                "<td>" + (s.http_status == null ? "—" : esc(s.http_status)) + "</td>" +
+                "<td>" + (s.facts_changed ? "yes" : "no") + "</td><td class='small'>" + esc(s.error || "") + "</td></tr>";
+            });
+            html += "</tbody></table></div>";
+          } else {
+            html += "<div class='card callout'>No printed value moved on the last provenance check and no document errored.</div>";
+          }
+        }
       } else {
         html += "<div class='card callout'>No monitoring result is stored yet. The monitoring job writes data/monitoring.json after it checks every official source.</div>";
       }
@@ -1057,6 +1104,31 @@
       }).catch(showErr);
     };
   }
+  // pages/other-rooms.html is generated statically by scripts/build_other_rooms.py, so the
+  // tables are already in the HTML and there is nothing to render at run time. The renderer
+  // exists because the validator requires one renderer per data-page, and it uses the
+  // dataset to stamp the page with the counts and the verification date, and to say so on
+  // the page if the dataset cannot be read (the tables stay: they were built from that file).
+  PAGES.otherRooms = function () {
+    getJSON("data/other_rooms.json").then(function (data) {
+      var main = document.getElementById("content");
+      if (!main || !data || !data.counts) return;
+      var stamp = document.createElement("p");
+      stamp.className = "small";
+      stamp.textContent = "Dataset: " + data.counts.events + " recurring events across " +
+        data.counts.rooms_surveyed + " rooms surveyed, verified " + data.verified_on + ".";
+      main.parentNode.insertBefore(stamp, main.nextSibling);
+    }).catch(function () {
+      var main = document.getElementById("content");
+      if (!main) return;
+      var note = document.createElement("p");
+      note.className = "small";
+      note.textContent = "data/other_rooms.json could not be read; the tables below are the " +
+        "copy generated with the site.";
+      main.parentNode.insertBefore(note, main.nextSibling);
+    });
+  };
+
   PAGES.summary = markdownPage("EXECUTIVE_SUMMARY.md");
   PAGES.questions = markdownPage("QUESTIONS.md");
   PAGES.suggestions = markdownPage("SUGGESTIONS.md");

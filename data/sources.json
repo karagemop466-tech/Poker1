@@ -1,16 +1,16 @@
 {
- "note": "Every source URL monitored by scripts/monitor_sources.py. All hosts are official operator domains (venetianlasvegas.com, wynnlasvegas.com, cdn.wynnresorts.com, mgmresorts.com property domains, caesars.com). Nothing from a third-party site is fetched. Added 2026-11-17 (session c7a324a6): each Strip poker room in the dataset now has its official poker page and, where the room publishes one, its official daily or weekly schedule document in this manifest - Bellagio's three weekly structure PDFs, Caesars Palace's daily NLH schedule and ARIA's page, which publishes no schedule and is watched so that a first publication is noticed. The Clark County licensing table is included as a government record for the address and room-tax class; two hosts (assets.contentstack.io, which serves the PDFs the official Bellagio page links, and www.clarkcountynv.gov) are allow-listed in scripts/check_source_facts.py and scripts/check_links.py with the reason stated there.",
+ "note": "Every source URL monitored by scripts/monitor_sources.py. All hosts are official operator domains (venetianlasvegas.com, wynnlasvegas.com, cdn.wynnresorts.com, mgmresorts.com property domains, caesars.com, boydgaming.com property domains, southpointcasino.com). Nothing from a third-party site is fetched. Every source URL monitored by scripts/monitor_sources.py. All hosts are official operator domains (venetianlasvegas.com, wynnlasvegas.com, cdn.wynnresorts.com, mgmresorts.com property domains, caesars.com). Nothing from a third-party site is fetched. Added 2026-11-17 (session c7a324a6): each Strip poker room in the dataset now has its official poker page and, where the room publishes one, its official daily or weekly schedule document in this manifest - Bellagio's three weekly structure PDFs, Caesars Palace's daily NLH schedule and ARIA's page, which publishes no schedule and is watched so that a first publication is noticed. The Clark County licensing table is included as a government record for the address and room-tax class; two hosts (assets.contentstack.io, which serves the PDFs the official Bellagio page links, and www.clarkcountynv.gov) are allow-listed in scripts/check_source_facts.py and scripts/check_links.py with the reason stated there.",
  "sources": [
   {
    "id": "v_dse_nov_page",
-   "label": "Venetian DeepStack Extravaganza IV \u2014 official event page",
+   "label": "Venetian DeepStack Extravaganza IV — official event page",
    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "kind": "schedule",
    "venue": "Venetian"
   },
   {
    "id": "v_dse_dec_page",
-   "label": "Venetian DeepStack Extravaganza NYE \u2014 official event page",
+   "label": "Venetian DeepStack Extravaganza NYE — official event page",
    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
    "kind": "schedule",
    "venue": "Venetian"
@@ -502,14 +502,14 @@
   },
   {
    "id": "v_dse_series_page",
-   "label": "Venetian DeepStack series overview (current and next series dates) \u2014 official page",
+   "label": "Venetian DeepStack series overview (current and next series dates) — official page",
    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html",
    "kind": "schedule",
    "venue": "Venetian"
   },
   {
    "id": "bellagio_poker",
-   "label": "Bellagio poker room page (weekly tournament flyers) \u2014 official page",
+   "label": "Bellagio poker room page (weekly tournament flyers) — official page",
    "url": "https://bellagio.mgmresorts.com/en/casino/poker.html",
    "kind": "schedule",
    "venue": "Other"
@@ -520,6 +520,48 @@
    "url": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
    "kind": "schedule",
    "venue": "Other"
+  },
+  {
+   "id": "mgm_poker_page",
+   "label": "MGM Grand — official poker page (links the weekly schedule and the $120 structure sheet)",
+   "url": "https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html",
+   "kind": "schedule",
+   "venue": "MGM Grand"
+  },
+  {
+   "id": "mb_poker_page",
+   "label": "Mandalay Bay — official poker page",
+   "url": "https://mandalaybay.mgmresorts.com/en/casino/poker-tables.html",
+   "kind": "schedule",
+   "venue": "Mandalay Bay"
+  },
+  {
+   "id": "orl_poker_page",
+   "label": "The Orleans — official poker room page (links the 2026 daily schedule PDF)",
+   "url": "https://orleans.boydgaming.com/play/poker-room",
+   "kind": "schedule",
+   "venue": "Orleans"
+  },
+  {
+   "id": "orl_daily_pdf",
+   "label": "The Orleans — 2026 daily tournament schedule and structures (official PDF)",
+   "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0",
+   "kind": "structure",
+   "venue": "Orleans"
+  },
+  {
+   "id": "sp_poker_page",
+   "label": "South Point — official poker room page (daily times and buy-ins)",
+   "url": "https://southpointcasino.com/casino/poker-room",
+   "kind": "schedule",
+   "venue": "South Point"
+  },
+  {
+   "id": "sp_sched_page",
+   "label": "South Point — official daily tournament schedule page (images only on 2026-11-17)",
+   "url": "https://southpointcasino.com/casino/poker-room/daily-tournament-schedule",
+   "kind": "structure",
+   "venue": "South Point"
   },
   {
    "id": "v_poker_page",

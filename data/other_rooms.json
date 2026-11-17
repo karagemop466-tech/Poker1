@@ -1,0 +1,3060 @@
+{
+  "verified_on": "2026-11-17",
+  "method": "Every room in this survey was checked against its own official website on 2026-11-17. A row is published only where an official page or an official PDF prints the value. Where the official source publishes a schedule as images with no text, nothing is transcribed and the gap is recorded instead. Third-party schedules were found for several of these rooms and were not used. \"No poker room published\" means the property's own casino page lists none; it is not a statement that the room does not exist.",
+  "note": "Recurring daily and weekly events at Las Vegas poker rooms other than the Venetian and Wynn. These rooms print weekday schedules, not calendar dates, so the rows carry weekdays and no date. They are kept in this file and out of data/tournaments.json, whose rows are dated.",
+  "rooms": [
+    {
+      "id": "mgm-grand",
+      "name": "MGM Grand",
+      "operator": "MGM Resorts International",
+      "strip_status": "on the Strip",
+      "strip_note": "The official page is the MGM Grand property page; no address statement was captured from it in this session.",
+      "poker_room_status": "confirmed",
+      "poker_room_quote": "\"Known for the deepest $1-$3 No Limit Hold 'Em action in Las Vegas, the MGM Grand Poker Room is the Strip's #1 hotspot for Texas Hold'em.\" Hours: \"Daily: 24 Hours\". Contact (702) 891-7434.",
+      "schedule_status": "published",
+      "schedule_note": "The official poker page links a weekly schedule PDF and one structure sheet (the $120 NLH). Both were read on 2026-11-17.",
+      "sources": [
+        {
+          "label": "Official MGM Grand poker page",
+          "url": "https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html"
+        },
+        {
+          "label": "MGM Grand weekly tournament schedule (official PDF)",
+          "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt5f25277b8918da08/mgm-grand-casino-poker-tournament_schedule.pdf"
+        },
+        {
+          "label": "MGM Grand $120 NLH structure sheet (official PDF)",
+          "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf"
+        },
+        {
+          "label": "MGM Resorts official poker hub (lists the properties with poker rooms)",
+          "url": "https://www.mgmresorts.com/en/casino/poker.html"
+        }
+      ],
+      "events": [
+        {
+          "id": "mgm-120-am",
+          "room_id": "mgm-grand",
+          "name": "$120 No Limit Hold'em (late morning)",
+          "weekdays": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri",
+            "Sun"
+          ],
+          "start": "11:10",
+          "buy_in_usd": 120,
+          "guarantee_usd": null,
+          "starting_chips": 25000,
+          "level_minutes": 15,
+          "late_reg_close": "start of level 8",
+          "registration_opens": null,
+          "fee_split": "$92 prize pool, $13 house fee, $11 voluntary gratuity (buys 10,000 extra chips), $4 promotions",
+          "entry_status": "PAID_CHIPS",
+          "status_note": "No re-entry, rebuy or add-on clause in the sheet read end to end. Kept out of the single-entry list because $11 of the $120 buys 10,000 extra starting chips on a 15,000 base, so paying more buys a bigger stack.",
+          "rules": {
+            "single_entry": {
+              "value": "no clause permitting a further entry, but extra chips are sold",
+              "excerpt": "The structure sheet prints no re-entry, rebuy or add-on clause. It does print a paid chip advantage: \"Each initial $120 buy-in is allocated as follows: $92 to Prize Pool, $13 House Fee and a one-time, voluntary gratuity of $11 which grants players an extra 10,000 chips. $4 will fund Tournament Promotions.\" and \"Players start with 25,000 tournament chips, including the chips for staff gratuity. (15,000 + 10,000)\".",
+              "source": {
+                "label": "MGM Grand $120 NLH structure sheet (linked from the official poker page)",
+                "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf"
+              },
+              "retrieved_on": "2026-11-17"
+            },
+            "re_entry": {
+              "value": "not mentioned",
+              "excerpt": "The sheet prints a late-registration clause only: \"All levels are 15 minutes in length. There will be a break after levels 7 and 15. Registration is open until Level 8.\" No re-entry clause appears anywhere in the sheet.",
+              "source": {
+                "label": "MGM Grand $120 NLH structure sheet (linked from the official poker page)",
+                "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf"
+              },
+              "retrieved_on": "2026-11-17"
+            },
+            "add_on": {
+              "value": "not mentioned as an add-on; a paid extra-chip gratuity is printed",
+              "excerpt": "\"a one-time, voluntary gratuity of $11 which grants players an extra 10,000 chips\" and \"***The voluntary staff gratuity will grant players an extra 10,000 chips. This is an optional gratuity paid to staff and will not be kept by the house***\". The sheet prints no add-on or rebuy clause.",
+              "source": {
+                "label": "MGM Grand $120 NLH structure sheet (linked from the official poker page)",
+                "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf"
+              },
+              "retrieved_on": "2026-11-17"
+            },
+            "fee": {
+              "value": "$92 prize pool / $13 house fee / $11 voluntary gratuity / $4 promotions of $120",
+              "excerpt": "\"Each initial $120 buy-in is allocated as follows: $92 to Prize Pool, $13 House Fee and a one-time, voluntary gratuity of $11 which grants players an extra 10,000 chips. $4 will fund Tournament Promotions.\"",
+              "source": {
+                "label": "MGM Grand $120 NLH structure sheet (linked from the official poker page)",
+                "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf"
+              },
+              "retrieved_on": "2026-11-17"
+            }
+          },
+          "labels": [
+            "paid chip advantage"
+          ],
+          "flags": [
+            "F62",
+            "F60"
+          ],
+          "sources": [
+            {
+              "label": "Official MGM Grand poker page: daily tournament times",
+              "url": "https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html"
+            },
+            {
+              "label": "MGM Grand weekly tournament schedule (official PDF)",
+              "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt5f25277b8918da08/mgm-grand-casino-poker-tournament_schedule.pdf"
+            },
+            {
+              "label": "MGM Grand $120 NLH structure sheet (official PDF)",
+              "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf"
+            }
+          ],
+          "verified_on": "2026-11-17",
+          "last_checked": "2026-11-17"
+        },
+        {
+          "id": "mgm-120-pm",
+          "room_id": "mgm-grand",
+          "name": "$120 No Limit Hold'em (evening)",
+          "weekdays": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri",
+            "Sat",
+            "Sun"
+          ],
+          "start": "19:10",
+          "buy_in_usd": 120,
+          "guarantee_usd": null,
+          "starting_chips": 25000,
+          "level_minutes": 15,
+          "late_reg_close": "start of level 8",
+          "registration_opens": null,
+          "fee_split": "$92 prize pool, $13 house fee, $11 voluntary gratuity (buys 10,000 extra chips), $4 promotions",
+          "entry_status": "PAID_CHIPS",
+          "status_note": "Same structure sheet as the 11:10 event. No re-entry clause; the $11 gratuity buys 10,000 extra chips.",
+          "rules": {
+            "single_entry": {
+              "value": "no clause permitting a further entry, but extra chips are sold",
+              "excerpt": "The structure sheet prints no re-entry, rebuy or add-on clause. It does print a paid chip advantage: \"Each initial $120 buy-in is allocated as follows: $92 to Prize Pool, $13 House Fee and a one-time, voluntary gratuity of $11 which grants players an extra 10,000 chips. $4 will fund Tournament Promotions.\" and \"Players start with 25,000 tournament chips, including the chips for staff gratuity. (15,000 + 10,000)\".",
+              "source": {
+                "label": "MGM Grand $120 NLH structure sheet (linked from the official poker page)",
+                "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf"
+              },
+              "retrieved_on": "2026-11-17"
+            },
+            "re_entry": {
+              "value": "not mentioned",
+              "excerpt": "The sheet prints a late-registration clause only: \"All levels are 15 minutes in length. There will be a break after levels 7 and 15. Registration is open until Level 8.\" No re-entry clause appears anywhere in the sheet.",
+              "source": {
+                "label": "MGM Grand $120 NLH structure sheet (linked from the official poker page)",
+                "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf"
+              },
+              "retrieved_on": "2026-11-17"
+            },
+            "add_on": {
+              "value": "not mentioned as an add-on; a paid extra-chip gratuity is printed",
+              "excerpt": "\"a one-time, voluntary gratuity of $11 which grants players an extra 10,000 chips\" and \"***The voluntary staff gratuity will grant players an extra 10,000 chips. This is an optional gratuity paid to staff and will not be kept by the house***\". The sheet prints no add-on or rebuy clause.",
+              "source": {
+                "label": "MGM Grand $120 NLH structure sheet (linked from the official poker page)",
+                "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf"
+              },
+              "retrieved_on": "2026-11-17"
+            },
+            "fee": {
+              "value": "$92 prize pool / $13 house fee / $11 voluntary gratuity / $4 promotions of $120",
+              "excerpt": "\"Each initial $120 buy-in is allocated as follows: $92 to Prize Pool, $13 House Fee and a one-time, voluntary gratuity of $11 which grants players an extra 10,000 chips. $4 will fund Tournament Promotions.\"",
+              "source": {
+                "label": "MGM Grand $120 NLH structure sheet (linked from the official poker page)",
+                "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf"
+              },
+              "retrieved_on": "2026-11-17"
+            }
+          },
+          "labels": [
+            "paid chip advantage"
+          ],
+          "flags": [
+            "F62",
+            "F60"
+          ],
+          "sources": [
+            {
+              "label": "Official MGM Grand poker page: daily tournament times",
+              "url": "https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html"
+            },
+            {
+              "label": "MGM Grand weekly tournament schedule (official PDF)",
+              "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt5f25277b8918da08/mgm-grand-casino-poker-tournament_schedule.pdf"
+            },
+            {
+              "label": "MGM Grand $120 NLH structure sheet (official PDF)",
+              "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf"
+            }
+          ],
+          "verified_on": "2026-11-17",
+          "last_checked": "2026-11-17"
+        },
+        {
+          "id": "mgm-120-night",
+          "room_id": "mgm-grand",
+          "name": "$120 No Limit Hold'em (late night)",
+          "weekdays": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Fri",
+            "Sat",
+            "Sun"
+          ],
+          "start": "23:10",
+          "buy_in_usd": 120,
+          "guarantee_usd": null,
+          "starting_chips": 25000,
+          "level_minutes": 15,
+          "late_reg_close": "start of level 8",
+          "registration_opens": null,
+          "fee_split": "$92 prize pool, $13 house fee, $11 voluntary gratuity (buys 10,000 extra chips), $4 promotions",
+          "entry_status": "PAID_CHIPS",
+          "status_note": "Same structure sheet as the 11:10 event. No re-entry clause; the $11 gratuity buys 10,000 extra chips.",
+          "rules": {
+            "single_entry": {
+              "value": "no clause permitting a further entry, but extra chips are sold",
+              "excerpt": "The structure sheet prints no re-entry, rebuy or add-on clause. It does print a paid chip advantage: \"Each initial $120 buy-in is allocated as follows: $92 to Prize Pool, $13 House Fee and a one-time, voluntary gratuity of $11 which grants players an extra 10,000 chips. $4 will fund Tournament Promotions.\" and \"Players start with 25,000 tournament chips, including the chips for staff gratuity. (15,000 + 10,000)\".",
+              "source": {
+                "label": "MGM Grand $120 NLH structure sheet (linked from the official poker page)",
+                "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf"
+              },
+              "retrieved_on": "2026-11-17"
+            },
+            "re_entry": {
+              "value": "not mentioned",
+              "excerpt": "The sheet prints a late-registration clause only: \"All levels are 15 minutes in length. There will be a break after levels 7 and 15. Registration is open until Level 8.\" No re-entry clause appears anywhere in the sheet.",
+              "source": {
+                "label": "MGM Grand $120 NLH structure sheet (linked from the official poker page)",
+                "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf"
+              },
+              "retrieved_on": "2026-11-17"
+            },
+            "add_on": {
+              "value": "not mentioned as an add-on; a paid extra-chip gratuity is printed",
+              "excerpt": "\"a one-time, voluntary gratuity of $11 which grants players an extra 10,000 chips\" and \"***The voluntary staff gratuity will grant players an extra 10,000 chips. This is an optional gratuity paid to staff and will not be kept by the house***\". The sheet prints no add-on or rebuy clause.",
+              "source": {
+                "label": "MGM Grand $120 NLH structure sheet (linked from the official poker page)",
+                "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf"
+              },
+              "retrieved_on": "2026-11-17"
+            },
+            "fee": {
+              "value": "$92 prize pool / $13 house fee / $11 voluntary gratuity / $4 promotions of $120",
+              "excerpt": "\"Each initial $120 buy-in is allocated as follows: $92 to Prize Pool, $13 House Fee and a one-time, voluntary gratuity of $11 which grants players an extra 10,000 chips. $4 will fund Tournament Promotions.\"",
+              "source": {
+                "label": "MGM Grand $120 NLH structure sheet (linked from the official poker page)",
+                "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf"
+              },
+              "retrieved_on": "2026-11-17"
+            }
+          },
+          "labels": [
+            "paid chip advantage"
+          ],
+          "flags": [
+            "F62",
+            "F60"
+          ],
+          "sources": [
+            {
+              "label": "Official MGM Grand poker page: daily tournament times",
+              "url": "https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html"
+            },
+            {
+              "label": "MGM Grand weekly tournament schedule (official PDF)",
+              "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt5f25277b8918da08/mgm-grand-casino-poker-tournament_schedule.pdf"
+            },
+            {
+              "label": "MGM Grand $120 NLH structure sheet (official PDF)",
+              "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf"
+            }
+          ],
+          "verified_on": "2026-11-17",
+          "last_checked": "2026-11-17"
+        },
+        {
+          "id": "mgm-150-sat",
+          "room_id": "mgm-grand",
+          "name": "$150 No Limit Hold'em $2,000 GTD (Saturday)",
+          "weekdays": [
+            "Sat"
+          ],
+          "start": "11:10",
+          "buy_in_usd": 150,
+          "guarantee_usd": 2000,
+          "starting_chips": 25000,
+          "level_minutes": 20,
+          "late_reg_close": null,
+          "registration_opens": null,
+          "fee_split": null,
+          "entry_status": "UNV",
+          "status_note": "The official schedule PDF prints this event with a $2,000 guarantee, 25K chips and 20-minute levels, but no structure sheet for it is published on the poker page, so its entry rule is not verified.",
+          "rules": {
+            "single_entry": {
+              "value": "unverified",
+              "excerpt": "No structure sheet for the $150 Saturday event is published on the official poker page. The page links one structure sheet only, for the $120 NLH.",
+              "source": {
+                "label": "Official MGM Grand poker page",
+                "url": "https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html"
+              },
+              "retrieved_on": "2026-11-17"
+            },
+            "re_entry": {
+              "value": "unverified",
+              "excerpt": "No structure sheet published for this event.",
+              "source": {
+                "label": "Official MGM Grand poker page",
+                "url": "https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html"
+              },
+              "retrieved_on": "2026-11-17"
+            },
+            "add_on": {
+              "value": "unverified",
+              "excerpt": "No structure sheet published for this event.",
+              "source": {
+                "label": "Official MGM Grand poker page",
+                "url": "https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html"
+              },
+              "retrieved_on": "2026-11-17"
+            },
+            "fee": {
+              "value": "unverified",
+              "excerpt": "The official poker page prints no fee split for this event.",
+              "source": {
+                "label": "Official MGM Grand poker page",
+                "url": "https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html"
+              },
+              "retrieved_on": "2026-11-17"
+            }
+          },
+          "labels": [
+            "guarantee",
+            "no structure sheet published"
+          ],
+          "flags": [
+            "F63"
+          ],
+          "sources": [
+            {
+              "label": "MGM Grand weekly tournament schedule (official PDF)",
+              "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt5f25277b8918da08/mgm-grand-casino-poker-tournament_schedule.pdf"
+            },
+            {
+              "label": "Official MGM Grand poker page (links only the $120 structure sheet)",
+              "url": "https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html"
+            }
+          ],
+          "verified_on": "2026-11-17",
+          "last_checked": "2026-11-17"
+        }
+      ],
+      "findings": []
+    },
+    {
+      "id": "orleans",
+      "name": "The Orleans Hotel & Casino",
+      "operator": "Boyd Gaming",
+      "strip_status": "not stated on the official page read",
+      "strip_note": "The official poker-room page read in this session prints no address and no distance to the Strip, so no walking claim is made here.",
+      "poker_room_status": "confirmed",
+      "poker_room_quote": "\"this comfortable 35-table room has been enhanced with state-of-the-art furnishings and 25 LED TV's\" and \"The Orleans Poker Room is open daily 24 hours and features Texas Hold'Em, Omaha Hi-Lo and 7-Card Stud.\"",
+      "schedule_status": "published",
+      "schedule_note": "The official page links the \"2026 Orleans Poker Daily Schedule\" PDF. All four parts were read on 2026-11-17: a weekday grid plus a structure sheet for every event on it.",
+      "sources": [
+        {
+          "label": "Official Orleans poker room page",
+          "url": "https://orleans.boydgaming.com/play/poker-room"
+        },
+        {
+          "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+          "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+        }
+      ],
+      "events": [
+        {
+          "id": "orl-sun-special",
+          "room_id": "orleans",
+          "name": "$200 NL Hold'em Sunday Special (RING EVENT)",
+          "weekdays": [
+            "Sun"
+          ],
+          "start": "11:05",
+          "buy_in_usd": 200,
+          "guarantee_usd": 50000,
+          "starting_chips": 25000,
+          "level_minutes": 30,
+          "late_reg_close": "start of Level 12 (5:30pm)",
+          "registration_opens": "1 hour before the start",
+          "fee_split": "$52 withheld per entry for admin, staffing and promotions",
+          "entry_status": "RE_ADD",
+          "status_note": "The official structure sheet prints re-entry until Level 12. It also prints a one-time $100 add-on for 25,000 chips.",
+          "rules": {
+            "single_entry": {
+              "value": "not single entry - re-entry is printed",
+              "excerpt": "The official structure sheet for the $200 NL Hold'em Sunday Special (RING EVENT) states: \"Late entries and re-entries are available until the start of Level 12, approximately 5:30pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list.\"",
+              "source": {
+                "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+                "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+              },
+              "retrieved_on": "2026-11-17"
+            },
+            "re_entry": {
+              "value": "re-entry allowed",
+              "excerpt": "\"Late entries and re-entries are available until the start of Level 12, approximately 5:30pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list.\"",
+              "source": {
+                "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+                "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+              },
+              "retrieved_on": "2026-11-17"
+            },
+            "add_on": {
+              "value": "add-on sold",
+              "excerpt": "\"One-Time Add-On: $100 = 25,000 Chips\" and \"Add-on is optional and may be taken before any hand and prior to the end of level 11 unless registering during the dinner break. The add-on then must be taken while registering. Players may only add-on once per entry.\"",
+              "source": {
+                "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+                "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+              },
+              "retrieved_on": "2026-11-17"
+            },
+            "fee": {
+              "value": "$52 withheld per entry for admin, staffing and promotional fees",
+              "excerpt": "\"From each entry, $52 will be withheld for admin, staffing, and promotional fees.\" \"All add-ons will be added directly to the prize pool with no fees withheld.\"",
+              "source": {
+                "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+                "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+              },
+              "retrieved_on": "2026-11-17"
+            }
+          },
+          "labels": [
+            "re-entry",
+            "add-on",
+            "ring event"
+          ],
+          "flags": [
+            "F65"
+          ],
+          "sources": [
+            {
+              "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+              "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+            },
+            {
+              "label": "Official Orleans poker room page",
+              "url": "https://orleans.boydgaming.com/play/poker-room"
+            }
+          ],
+          "verified_on": "2026-11-17",
+          "last_checked": "2026-11-17"
+        },
+        {
+          "id": "orl-am-super",
+          "room_id": "orleans",
+          "name": "$100 NL Hold'em AM Super Stack",
+          "weekdays": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu"
+          ],
+          "start": "11:05",
+          "buy_in_usd": 100,
+          "guarantee_usd": 4000,
+          "starting_chips": 25000,
+          "level_minutes": 20,
+          "late_reg_close": "start of Level 9 (2:10pm)",
+          "registration_opens": "1 hour before the start",
+          "fee_split": "$23 withheld per entry for admin, staffing and promotions",
+          "entry_status": "RE",
+          "status_note": "The official structure sheet prints re-entry until Level 9.",
+          "rules": {
+            "single_entry": {
+              "value": "not single entry - re-entry is printed",
+              "excerpt": "The official structure sheet for the $100 NL Hold'em AM Super Stack states: \"Late entries and re-entries are available until the start of Level 9, approximately 2:10pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list.\"",
+              "source": {
+                "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+                "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+              },
+              "retrieved_on": "2026-11-17"
+            },
+            "re_entry": {
+              "value": "re-entry allowed",
+              "excerpt": "\"Late entries and re-entries are available until the start of Level 9, approximately 2:10pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list.\"",
+              "source": {
+                "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+                "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+              },
+              "retrieved_on": "2026-11-17"
+            },
+            "add_on": {
+              "value": "not mentioned",
+              "excerpt": "The structure sheet prints no add-on clause; re-entry is the clause it prints.",
+              "source": {
+                "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+                "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+              },
+              "retrieved_on": "2026-11-17"
+            },
+            "fee": {
+              "value": "$23 withheld per entry for admin, staffing and promotional fees",
+              "excerpt": "\"From each entry, $23 will be withheld for admin, staffing, and promotional fees.\"",
+              "source": {
+                "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+                "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+              },
+              "retrieved_on": "2026-11-17"
+            }
+          },
+          "labels": [
+            "re-entry"
+          ],
+          "flags": [
+            "F65"
+          ],
+          "sources": [
+            {
+              "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+              "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+            },
+            {
+              "label": "Official Orleans poker room page",
+              "url": "https://orleans.boydgaming.com/play/poker-room"
+            }
+          ],
+          "verified_on": "2026-11-17",
+          "last_checked": "2026-11-17"
+        },
+        {
+          "id": "orl-fri-monster",
+          "room_id": "orleans",
+          "name": "$150 NL Hold'em Monster Stack (RING EVENT)",
+          "weekdays": [
+            "Fri"
+          ],
+          "start": "11:05",
+          "buy_in_usd": 150,
+          "guarantee_usd": 10000,
+          "starting_chips": 30000,
+          "level_minutes": 30,
+          "late_reg_close": "start of Level 12 (5:30pm)",
+          "registration_opens": "1 hour before the start",
+          "fee_split": "$30 withheld per entry for admin, staffing and promotions",
+          "entry_status": "RE",
+          "status_note": "The official structure sheet prints re-entry until Level 12.",
+          "rules": {
+            "single_entry": {
+              "value": "not single entry - re-entry is printed",
+              "excerpt": "The official structure sheet for the $150 NL Hold'em Monster Stack (RING EVENT) states: \"Late entries and re-entries are available until the start of Level 12, approximately 5:30pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list.\"",
+              "source": {
+                "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+                "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+              },
+              "retrieved_on": "2026-11-17"
+            },
+            "re_entry": {
+              "value": "re-entry allowed",
+              "excerpt": "\"Late entries and re-entries are available until the start of Level 12, approximately 5:30pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list.\"",
+              "source": {
+                "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+                "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+              },
+              "retrieved_on": "2026-11-17"
+            },
+            "add_on": {
+              "value": "not mentioned",
+              "excerpt": "The structure sheet prints no add-on clause; re-entry is the clause it prints.",
+              "source": {
+                "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+                "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+              },
+              "retrieved_on": "2026-11-17"
+            },
+            "fee": {
+              "value": "$30 withheld per entry for admin, staffing and promotional fees",
+              "excerpt": "\"From each entry, $30 will be withheld for admin, staffing, and promotional fees.\"",
+              "source": {
+                "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+                "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+              },
+              "retrieved_on": "2026-11-17"
+            }
+          },
+          "labels": [
+            "re-entry",
+            "ring event"
+          ],
+          "flags": [
+            "F65"
+          ],
+          "sources": [
+            {
+              "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+              "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+            },
+            {
+              "label": "Official Orleans poker room page",
+              "url": "https://orleans.boydgaming.com/play/poker-room"
+            }
+          ],
+          "verified_on": "2026-11-17",
+          "last_checked": "2026-11-17"
+        },
+        {
+          "id": "orl-sat-mega",
+          "room_id": "orleans",
+          "name": "$200 NL Hold'em Mega Stack (RING EVENT)",
+          "weekdays": [
+            "Sat"
+          ],
+          "start": "11:05",
+          "buy_in_usd": 200,
+          "guarantee_usd": 15000,
+          "starting_chips": 40000,
+          "level_minutes": 30,
+          "late_reg_close": "start of Level 12 (5:30pm)",
+          "registration_opens": "1 hour before the start",
+          "fee_split": "$35 withheld per entry for admin, staffing and promotions",
+          "entry_status": "RE",
+          "status_note": "The official structure sheet prints re-entry until Level 12.",
+          "rules": {
+            "single_entry": {
+              "value": "not single entry - re-entry is printed",
+              "excerpt": "The official structure sheet for the $200 NL Hold'em Mega Stack (RING EVENT) states: \"Late entries and re-entries are available until the start of Level 12, approximately 5:30pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list.\"",
+              "source": {
+                "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+                "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+              },
+              "retrieved_on": "2026-11-17"
+            },
+            "re_entry": {
+              "value": "re-entry allowed",
+              "excerpt": "\"Late entries and re-entries are available until the start of Level 12, approximately 5:30pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list.\"",
+              "source": {
+                "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+                "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+              },
+              "retrieved_on": "2026-11-17"
+            },
+            "add_on": {
+              "value": "not mentioned",
+              "excerpt": "The structure sheet prints no add-on clause; re-entry is the clause it prints.",
+              "source": {
+                "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+                "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+              },
+              "retrieved_on": "2026-11-17"
+            },
+            "fee": {
+              "value": "$35 withheld per entry for admin, staffing and promotional fees",
+              "excerpt": "\"From each entry, $35 will be withheld for admin, staffing, and promotional fees.\"",
+              "source": {
+                "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+                "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+              },
+              "retrieved_on": "2026-11-17"
+            }
+          },
+          "labels": [
+            "re-entry",
+            "ring event"
+          ],
+          "flags": [
+            "F65"
+          ],
+          "sources": [
+            {
+              "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+              "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+            },
+            {
+              "label": "Official Orleans poker room page",
+              "url": "https://orleans.boydgaming.com/play/poker-room"
+            }
+          ],
+          "verified_on": "2026-11-17",
+          "last_checked": "2026-11-17"
+        },
+        {
+          "id": "orl-mon-toe",
+          "room_id": "orleans",
+          "name": "$160 T.O.E.",
+          "weekdays": [
+            "Mon"
+          ],
+          "start": "16:05",
+          "buy_in_usd": 160,
+          "guarantee_usd": 3000,
+          "starting_chips": 25000,
+          "level_minutes": 20,
+          "late_reg_close": "start of Level 11 (7:50pm)",
+          "registration_opens": "1 hour before the start",
+          "fee_split": "$31 withheld per entry for admin, staffing and promotions",
+          "entry_status": "RE",
+          "status_note": "The official structure sheet prints re-entry until Level 11.",
+          "rules": {
+            "single_entry": {
+              "value": "not single entry - re-entry is printed",
+              "excerpt": "The official structure sheet for the $160 T.O.E. states: \"Late entries and re-entries are available until the start of Level 11, approximately 7:50pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list.\"",
+              "source": {
+                "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+                "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+              },
+              "retrieved_on": "2026-11-17"
+            },
+            "re_entry": {
+              "value": "re-entry allowed",
+              "excerpt": "\"Late entries and re-entries are available until the start of Level 11, approximately 7:50pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list.\"",
+              "source": {
+                "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+                "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+              },
+              "retrieved_on": "2026-11-17"
+            },
+            "add_on": {
+              "value": "not mentioned",
+              "excerpt": "The structure sheet prints no add-on clause; re-entry is the clause it prints.",
+              "source": {
+                "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+                "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+              },
+              "retrieved_on": "2026-11-17"
+            },
+            "fee": {
+              "value": "$31 withheld per entry for admin, staffing and promotional fees",
+              "excerpt": "\"From each entry, $31 will be withheld for admin, staffing, and promotional fees.\"",
+              "source": {
+                "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+                "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+              },
+              "retrieved_on": "2026-11-17"
+            }
+          },
+          "labels": [
+            "re-entry",
+            "mixed game"
+          ],
+          "flags": [
+            "F65"
+          ],
+          "sources": [
+            {
+              "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+              "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+            },
+            {
+              "label": "Official Orleans poker room page",
+              "url": "https://orleans.boydgaming.com/play/poker-room"
+            }
+          ],
+          "verified_on": "2026-11-17",
+          "last_checked": "2026-11-17"
+        },
+        {
+          "id": "orl-tue-torse",
+          "room_id": "orleans",
+          "name": "$160 T.O.R.S.E.",
+          "weekdays": [
+            "Tue"
+          ],
+          "start": "16:05",
+          "buy_in_usd": 160,
+          "guarantee_usd": 3000,
+          "starting_chips": 25000,
+          "level_minutes": 20,
+          "late_reg_close": "start of Level 11 (7:50pm)",
+          "registration_opens": "1 hour before the start",
+          "fee_split": "$31 withheld per entry for admin, staffing and promotions",
+          "entry_status": "RE",
+          "status_note": "The official structure sheet prints re-entry until Level 11.",
+          "rules": {
+            "single_entry": {
+              "value": "not single entry - re-entry is printed",
+              "excerpt": "The official structure sheet for the $160 T.O.R.S.E. states: \"Late entries and re-entries are available until the start of Level 11, approximately 7:50pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list.\"",
+              "source": {
+                "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+                "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+              },
+              "retrieved_on": "2026-11-17"
+            },
+            "re_entry": {
+              "value": "re-entry allowed",
+              "excerpt": "\"Late entries and re-entries are available until the start of Level 11, approximately 7:50pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list.\"",
+              "source": {
+                "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+                "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+              },
+              "retrieved_on": "2026-11-17"
+            },
+            "add_on": {
+              "value": "not mentioned",
+              "excerpt": "The structure sheet prints no add-on clause; re-entry is the clause it prints.",
+              "source": {
+                "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+                "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+              },
+              "retrieved_on": "2026-11-17"
+            },
+            "fee": {
+              "value": "$31 withheld per entry for admin, staffing and promotional fees",
+              "excerpt": "\"From each entry, $31 will be withheld for admin, staffing, and promotional fees.\"",
+              "source": {
+                "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+                "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+              },
+              "retrieved_on": "2026-11-17"
+            }
+          },
+          "labels": [
+            "re-entry",
+            "mixed game"
+          ],
+          "flags": [
+            "F65"
+          ],
+          "sources": [
+            {
+              "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+              "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+            },
+            {
+              "label": "Official Orleans poker room page",
+              "url": "https://orleans.boydgaming.com/play/poker-room"
+            }
+          ],
+          "verified_on": "2026-11-17",
+          "last_checked": "2026-11-17"
+        },
+        {
+          "id": "orl-wed-drama",
+          "room_id": "orleans",
+          "name": "$160 Drama Mix (Dramaha High / Dramaha 2-7)",
+          "weekdays": [
+            "Wed"
+          ],
+          "start": "16:05",
+          "buy_in_usd": 160,
+          "guarantee_usd": 4000,
+          "starting_chips": 25000,
+          "level_minutes": 20,
+          "late_reg_close": "start of Level 11 (7:50pm)",
+          "registration_opens": "1 hour before the start",
+          "fee_split": "$31 withheld per entry for admin, staffing and promotions",
+          "entry_status": "RE",
+          "status_note": "The official structure sheet prints re-entry until Level 11.",
+          "rules": {
+            "single_entry": {
+              "value": "not single entry - re-entry is printed",
+              "excerpt": "The official structure sheet for the $160 Drama Mix (Dramaha High / Dramaha 2-7) states: \"Late entries and re-entries are available until the start of Level 11, approximately 7:50pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list.\"",
+              "source": {
+                "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+                "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+              },
+              "retrieved_on": "2026-11-17"
+            },
+            "re_entry": {
+              "value": "re-entry allowed",
+              "excerpt": "\"Late entries and re-entries are available until the start of Level 11, approximately 7:50pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list.\"",
+              "source": {
+                "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+                "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+              },
+              "retrieved_on": "2026-11-17"
+            },
+            "add_on": {
+              "value": "not mentioned",
+              "excerpt": "The structure sheet prints no add-on clause; re-entry is the clause it prints.",
+              "source": {
+                "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+                "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+              },
+              "retrieved_on": "2026-11-17"
+            },
+            "fee": {
+              "value": "$31 withheld per entry for admin, staffing and promotional fees",
+              "excerpt": "\"From each entry, $31 will be withheld for admin, staffing, and promotional fees.\"",
+              "source": {
+                "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+                "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+              },
+              "retrieved_on": "2026-11-17"
+            }
+          },
+          "labels": [
+            "re-entry",
+            "mixed game"
+          ],
+          "flags": [
+            "F65"
+          ],
+          "sources": [
+            {
+              "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+              "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+            },
+            {
+              "label": "Official Orleans poker room page",
+              "url": "https://orleans.boydgaming.com/play/poker-room"
+            }
+          ],
+          "verified_on": "2026-11-17",
+          "last_checked": "2026-11-17"
+        },
+        {
+          "id": "orl-thu-draw",
+          "room_id": "orleans",
+          "name": "$160 5 Game Draw Mix",
+          "weekdays": [
+            "Thu"
+          ],
+          "start": "16:05",
+          "buy_in_usd": 160,
+          "guarantee_usd": 3000,
+          "starting_chips": 25000,
+          "level_minutes": 20,
+          "late_reg_close": "start of Level 11 (7:50pm)",
+          "registration_opens": "1 hour before the start",
+          "fee_split": "$31 withheld per entry for admin, staffing and promotions",
+          "entry_status": "RE",
+          "status_note": "The official structure sheet prints re-entry until Level 11.",
+          "rules": {
+            "single_entry": {
+              "value": "not single entry - re-entry is printed",
+              "excerpt": "The official structure sheet for the $160 5 Game Draw Mix states: \"Late entries and re-entries are available until the start of Level 11, approximately 7:50pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list.\"",
+              "source": {
+                "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+                "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+              },
+              "retrieved_on": "2026-11-17"
+            },
+            "re_entry": {
+              "value": "re-entry allowed",
+              "excerpt": "\"Late entries and re-entries are available until the start of Level 11, approximately 7:50pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list.\"",
+              "source": {
+                "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+                "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+              },
+              "retrieved_on": "2026-11-17"
+            },
+            "add_on": {
+              "value": "not mentioned",
+              "excerpt": "The structure sheet prints no add-on clause; re-entry is the clause it prints.",
+              "source": {
+                "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+                "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+              },
+              "retrieved_on": "2026-11-17"
+            },
+            "fee": {
+              "value": "$31 withheld per entry for admin, staffing and promotional fees",
+              "excerpt": "\"From each entry, $31 will be withheld for admin, staffing, and promotional fees.\"",
+              "source": {
+                "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+                "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+              },
+              "retrieved_on": "2026-11-17"
+            }
+          },
+          "labels": [
+            "re-entry",
+            "mixed game"
+          ],
+          "flags": [
+            "F65"
+          ],
+          "sources": [
+            {
+              "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+              "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+            },
+            {
+              "label": "Official Orleans poker room page",
+              "url": "https://orleans.boydgaming.com/play/poker-room"
+            }
+          ],
+          "verified_on": "2026-11-17",
+          "last_checked": "2026-11-17"
+        },
+        {
+          "id": "orl-fri-oe",
+          "room_id": "orleans",
+          "name": "$160 Omaha-8 / Stud-8",
+          "weekdays": [
+            "Fri"
+          ],
+          "start": "16:05",
+          "buy_in_usd": 160,
+          "guarantee_usd": 4000,
+          "starting_chips": 25000,
+          "level_minutes": 20,
+          "late_reg_close": "start of Level 11 (7:50pm)",
+          "registration_opens": "1 hour before the start",
+          "fee_split": "$31 withheld per entry for admin, staffing and promotions",
+          "entry_status": "RE",
+          "status_note": "The official structure sheet prints re-entry until Level 11.",
+          "rules": {
+            "single_entry": {
+              "value": "not single entry - re-entry is printed",
+              "excerpt": "The official structure sheet for the $160 Omaha-8 / Stud-8 states: \"Late entries and re-entries are available until the start of Level 11, approximately 7:50pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list.\"",
+              "source": {
+                "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+                "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+              },
+              "retrieved_on": "2026-11-17"
+            },
+            "re_entry": {
+              "value": "re-entry allowed",
+              "excerpt": "\"Late entries and re-entries are available until the start of Level 11, approximately 7:50pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list.\"",
+              "source": {
+                "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+                "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+              },
+              "retrieved_on": "2026-11-17"
+            },
+            "add_on": {
+              "value": "not mentioned",
+              "excerpt": "The structure sheet prints no add-on clause; re-entry is the clause it prints.",
+              "source": {
+                "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+                "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+              },
+              "retrieved_on": "2026-11-17"
+            },
+            "fee": {
+              "value": "$31 withheld per entry for admin, staffing and promotional fees",
+              "excerpt": "\"From each entry, $31 will be withheld for admin, staffing, and promotional fees.\"",
+              "source": {
+                "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+                "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+              },
+              "retrieved_on": "2026-11-17"
+            }
+          },
+          "labels": [
+            "re-entry",
+            "mixed game"
+          ],
+          "flags": [
+            "F65"
+          ],
+          "sources": [
+            {
+              "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+              "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+            },
+            {
+              "label": "Official Orleans poker room page",
+              "url": "https://orleans.boydgaming.com/play/poker-room"
+            }
+          ],
+          "verified_on": "2026-11-17",
+          "last_checked": "2026-11-17"
+        },
+        {
+          "id": "orl-sat-ttd",
+          "room_id": "orleans",
+          "name": "$160 Triple-Triple Draw",
+          "weekdays": [
+            "Sat"
+          ],
+          "start": "16:05",
+          "buy_in_usd": 160,
+          "guarantee_usd": 3000,
+          "starting_chips": 25000,
+          "level_minutes": 20,
+          "late_reg_close": "start of Level 11 (7:50pm)",
+          "registration_opens": "1 hour before the start",
+          "fee_split": "$31 withheld per entry for admin, staffing and promotions",
+          "entry_status": "RE",
+          "status_note": "The official structure sheet prints re-entry until Level 11.",
+          "rules": {
+            "single_entry": {
+              "value": "not single entry - re-entry is printed",
+              "excerpt": "The official structure sheet for the $160 Triple-Triple Draw states: \"Late entries and re-entries are available until the start of Level 11, approximately 7:50pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list.\"",
+              "source": {
+                "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+                "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+              },
+              "retrieved_on": "2026-11-17"
+            },
+            "re_entry": {
+              "value": "re-entry allowed",
+              "excerpt": "\"Late entries and re-entries are available until the start of Level 11, approximately 7:50pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list.\"",
+              "source": {
+                "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+                "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+              },
+              "retrieved_on": "2026-11-17"
+            },
+            "add_on": {
+              "value": "not mentioned",
+              "excerpt": "The structure sheet prints no add-on clause; re-entry is the clause it prints.",
+              "source": {
+                "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+                "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+              },
+              "retrieved_on": "2026-11-17"
+            },
+            "fee": {
+              "value": "$31 withheld per entry for admin, staffing and promotional fees",
+              "excerpt": "\"From each entry, $31 will be withheld for admin, staffing, and promotional fees.\"",
+              "source": {
+                "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+                "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+              },
+              "retrieved_on": "2026-11-17"
+            }
+          },
+          "labels": [
+            "re-entry",
+            "mixed game"
+          ],
+          "flags": [
+            "F65"
+          ],
+          "sources": [
+            {
+              "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+              "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+            },
+            {
+              "label": "Official Orleans poker room page",
+              "url": "https://orleans.boydgaming.com/play/poker-room"
+            }
+          ],
+          "verified_on": "2026-11-17",
+          "last_checked": "2026-11-17"
+        },
+        {
+          "id": "orl-sun-bigo",
+          "room_id": "orleans",
+          "name": "$200 Pot-Limit Big-O",
+          "weekdays": [
+            "Sun"
+          ],
+          "start": "18:05",
+          "buy_in_usd": 200,
+          "guarantee_usd": 4000,
+          "starting_chips": 25000,
+          "level_minutes": 20,
+          "late_reg_close": "start of Level 11 (9:50pm)",
+          "registration_opens": "1 hour before the start",
+          "fee_split": "$35 withheld per entry for admin, staffing and promotions",
+          "entry_status": "RE",
+          "status_note": "The official structure sheet prints re-entry until Level 11.",
+          "rules": {
+            "single_entry": {
+              "value": "not single entry - re-entry is printed",
+              "excerpt": "The official structure sheet for the $200 Pot-Limit Big-O states: \"Late entries and re-entries are available until the start of Level 11, approximately 9:50pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list.\"",
+              "source": {
+                "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+                "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+              },
+              "retrieved_on": "2026-11-17"
+            },
+            "re_entry": {
+              "value": "re-entry allowed",
+              "excerpt": "\"Late entries and re-entries are available until the start of Level 11, approximately 9:50pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list.\"",
+              "source": {
+                "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+                "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+              },
+              "retrieved_on": "2026-11-17"
+            },
+            "add_on": {
+              "value": "not mentioned",
+              "excerpt": "The structure sheet prints no add-on clause; re-entry is the clause it prints.",
+              "source": {
+                "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+                "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+              },
+              "retrieved_on": "2026-11-17"
+            },
+            "fee": {
+              "value": "$35 withheld per entry for admin, staffing and promotional fees",
+              "excerpt": "\"From each entry, $35 will be withheld for admin, staffing, and promotional fees.\"",
+              "source": {
+                "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+                "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+              },
+              "retrieved_on": "2026-11-17"
+            }
+          },
+          "labels": [
+            "re-entry",
+            "mixed game"
+          ],
+          "flags": [
+            "F65"
+          ],
+          "sources": [
+            {
+              "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+              "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+            },
+            {
+              "label": "Official Orleans poker room page",
+              "url": "https://orleans.boydgaming.com/play/poker-room"
+            }
+          ],
+          "verified_on": "2026-11-17",
+          "last_checked": "2026-11-17"
+        },
+        {
+          "id": "orl-pm-monster",
+          "room_id": "orleans",
+          "name": "$120 NL Hold'em PM Monster Stack",
+          "weekdays": [
+            "Mon",
+            "Tue",
+            "Wed",
+            "Thu",
+            "Sat"
+          ],
+          "start": "18:05",
+          "buy_in_usd": 120,
+          "guarantee_usd": 5000,
+          "starting_chips": 30000,
+          "level_minutes": 20,
+          "late_reg_close": "start of Level 9 (9:10pm)",
+          "registration_opens": "1 hour before the start",
+          "fee_split": "$24 withheld per entry for admin, staffing and promotions",
+          "entry_status": "RE",
+          "status_note": "The official structure sheet prints re-entry until Level 9.",
+          "rules": {
+            "single_entry": {
+              "value": "not single entry - re-entry is printed",
+              "excerpt": "The official structure sheet for the $120 NL Hold'em PM Monster Stack states: \"Late entries and re-entries are available until the start of Level 9, approximately 9:10pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list.\"",
+              "source": {
+                "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+                "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+              },
+              "retrieved_on": "2026-11-17"
+            },
+            "re_entry": {
+              "value": "re-entry allowed",
+              "excerpt": "\"Late entries and re-entries are available until the start of Level 9, approximately 9:10pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list.\"",
+              "source": {
+                "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+                "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+              },
+              "retrieved_on": "2026-11-17"
+            },
+            "add_on": {
+              "value": "not mentioned",
+              "excerpt": "The structure sheet prints no add-on clause; re-entry is the clause it prints.",
+              "source": {
+                "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+                "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+              },
+              "retrieved_on": "2026-11-17"
+            },
+            "fee": {
+              "value": "$24 withheld per entry for admin, staffing and promotional fees",
+              "excerpt": "\"From each entry, $24 will be withheld for admin, staffing, and promotional fees.\"",
+              "source": {
+                "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+                "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+              },
+              "retrieved_on": "2026-11-17"
+            }
+          },
+          "labels": [
+            "re-entry"
+          ],
+          "flags": [
+            "F65"
+          ],
+          "sources": [
+            {
+              "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+              "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+            },
+            {
+              "label": "Official Orleans poker room page",
+              "url": "https://orleans.boydgaming.com/play/poker-room"
+            }
+          ],
+          "verified_on": "2026-11-17",
+          "last_checked": "2026-11-17"
+        },
+        {
+          "id": "orl-fri-night",
+          "room_id": "orleans",
+          "name": "$150 NL Hold'em 20K Monster Stack (RING EVENT)",
+          "weekdays": [
+            "Fri"
+          ],
+          "start": "18:05",
+          "buy_in_usd": 150,
+          "guarantee_usd": 20000,
+          "starting_chips": 30000,
+          "level_minutes": 20,
+          "late_reg_close": "start of Level 11 (9:50pm)",
+          "registration_opens": "1 hour before the start",
+          "fee_split": "$30 withheld per entry for admin, staffing and promotions",
+          "entry_status": "RE",
+          "status_note": "The official structure sheet prints re-entry until Level 11.",
+          "rules": {
+            "single_entry": {
+              "value": "not single entry - re-entry is printed",
+              "excerpt": "The official structure sheet for the $150 NL Hold'em 20K Monster Stack (RING EVENT) states: \"Late entries and re-entries are available until the start of Level 11, approximately 9:50pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list.\"",
+              "source": {
+                "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+                "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+              },
+              "retrieved_on": "2026-11-17"
+            },
+            "re_entry": {
+              "value": "re-entry allowed",
+              "excerpt": "\"Late entries and re-entries are available until the start of Level 11, approximately 9:50pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list.\"",
+              "source": {
+                "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+                "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+              },
+              "retrieved_on": "2026-11-17"
+            },
+            "add_on": {
+              "value": "not mentioned",
+              "excerpt": "The structure sheet prints no add-on clause; re-entry is the clause it prints.",
+              "source": {
+                "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+                "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+              },
+              "retrieved_on": "2026-11-17"
+            },
+            "fee": {
+              "value": "$30 withheld per entry for admin, staffing and promotional fees",
+              "excerpt": "\"From each entry, $30 will be withheld for admin, staffing, and promotional fees.\"",
+              "source": {
+                "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+                "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+              },
+              "retrieved_on": "2026-11-17"
+            }
+          },
+          "labels": [
+            "re-entry",
+            "ring event"
+          ],
+          "flags": [
+            "F65"
+          ],
+          "sources": [
+            {
+              "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+              "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+            },
+            {
+              "label": "Official Orleans poker room page",
+              "url": "https://orleans.boydgaming.com/play/poker-room"
+            }
+          ],
+          "verified_on": "2026-11-17",
+          "last_checked": "2026-11-17"
+        }
+      ],
+      "findings": []
+    },
+    {
+      "id": "south-point",
+      "name": "South Point Hotel, Casino & Spa",
+      "operator": "South Point (independent)",
+      "strip_status": "off the Strip by its own words",
+      "strip_note": "The official home page: \"South Point Hotel, Casino & Spa is a full-service Las Vegas resort nestled in the southwest valley, just a short drive from the iconic Las Vegas Strip!\"",
+      "poker_room_status": "confirmed",
+      "poker_room_quote": "\"We feature tournaments daily with aggressive guarantees at 10:10 am, 2:10 pm, 6:10 pm and 10:10 pm with buy-ins of $120 and $300.\" The room is \"24-hour non-smoking\" and \"parking is always free\".",
+      "schedule_status": "image only - cannot be transcribed",
+      "schedule_note": "The official \"Daily Tournament Schedule\" page publishes the schedule and all eight rules sheets as images, with no text layer. The page's own text gives the four start times and the two buy-in levels but does not say which buy-in belongs to which time, so no row is built from it.",
+      "sources": [
+        {
+          "label": "Official South Point poker room page",
+          "url": "https://southpointcasino.com/casino/poker-room"
+        },
+        {
+          "label": "Official South Point daily tournament schedule page (images only)",
+          "url": "https://southpointcasino.com/casino/poker-room/daily-tournament-schedule"
+        },
+        {
+          "label": "Official South Point home page (location wording)",
+          "url": "https://southpointcasino.com/"
+        }
+      ],
+      "events": [],
+      "findings": [
+        {
+          "text": "The official room page states four daily start times (10:10 am, 2:10 pm, 6:10 pm, 10:10 pm) and two buy-in levels ($120 and $300) without mapping one to the other. No row is built, because a row needs a buy-in and an entry rule attached to a time.",
+          "source": {
+            "label": "Official South Point poker room page",
+            "url": "https://southpointcasino.com/casino/poker-room"
+          }
+        },
+        {
+          "text": "The eight rules sheets published on the official schedule page are named for $120 and $200 events (NLH, NLH Chip Chop, Omaha-8 or Better, Crazy Pineapple Turbo, NLH Turbo Mega Stack, NLH Bounty, Deep Stack, NLH Turbo Bounty, all marked Oct2026). No $300 rules sheet is published, although the room page advertises a $300 buy-in.",
+          "source": {
+            "label": "Official South Point daily tournament schedule page (images only)",
+            "url": "https://southpointcasino.com/casino/poker-room/daily-tournament-schedule"
+          }
+        }
+      ]
+    },
+    {
+      "id": "horseshoe",
+      "name": "Horseshoe Las Vegas",
+      "operator": "Caesars Entertainment",
+      "strip_status": "on the Strip",
+      "strip_note": "Official Caesars property page for the centre-Strip casino.",
+      "poker_room_status": "confirmed",
+      "poker_room_quote": "\"The Hall of Fame Poker Room at Horseshoe Las Vegas features 20 tables and offers many exciting varieties of live poker ... Test your luck with 6 exciting tournament times daily.\"",
+      "schedule_status": "not published",
+      "schedule_note": "The official page confirms six daily tournaments but prints no start time, buy-in, guarantee or structure, and no schedule PDF was found on caesars.com on 2026-11-17. Third-party sites publish times and buy-ins for these events; they are not official and are not used here.",
+      "sources": [
+        {
+          "label": "Official Horseshoe Las Vegas casino page",
+          "url": "https://www.caesars.com/horseshoe-las-vegas/casino"
+        }
+      ],
+      "events": [],
+      "findings": [
+        {
+          "text": "Six daily tournaments are confirmed by the official page, but nothing else about them is published there. The URLs tried on 2026-11-17 (/casino/poker-room.html and /casino/poker) both resolve to the same casino page, which carries no schedule.",
+          "source": {
+            "label": "Official Horseshoe Las Vegas casino page",
+            "url": "https://www.caesars.com/horseshoe-las-vegas/casino"
+          }
+        }
+      ]
+    },
+    {
+      "id": "planet-hollywood",
+      "name": "Planet Hollywood",
+      "operator": "Caesars Entertainment",
+      "strip_status": "on the Strip",
+      "strip_note": "Official Caesars property page.",
+      "poker_room_status": "confirmed",
+      "poker_room_quote": "\"23 Live Poker Tables\" and \"Planet Hollywood Casino takes up a notch with an exciting gaming floor, new live action poker room and poolside blackjack.\"",
+      "schedule_status": "not published",
+      "schedule_note": "The official casino page confirms a live poker room and table count but publishes no tournament schedule, buy-in or structure.",
+      "sources": [
+        {
+          "label": "Official Planet Hollywood casino page",
+          "url": "https://www.caesars.com/planet-hollywood/casino"
+        }
+      ],
+      "events": [],
+      "findings": []
+    },
+    {
+      "id": "mandalay-bay",
+      "name": "Mandalay Bay",
+      "operator": "MGM Resorts International",
+      "strip_status": "on the Strip",
+      "strip_note": "Official MGM Resorts property page.",
+      "poker_room_status": "confirmed",
+      "poker_room_quote": "\"The cards are dealt, and the bets are in. Get set for hand after hand of classic poker action.\" Hours: \"Wednesday - Monday: 10:00 AM - 4:00 AM\", \"Tuesday: Closed\". Price range \"$60 - $1,000\".",
+      "schedule_status": "not published",
+      "schedule_note": "The official poker page publishes hours, a price range and a group booking number, but no recurring tournament schedule. It says: \"To set up a Poker Tournament as a group, please contact 702.632.7790.\"",
+      "sources": [
+        {
+          "label": "Official Mandalay Bay poker page",
+          "url": "https://mandalaybay.mgmresorts.com/en/casino/poker-tables.html"
+        }
+      ],
+      "events": [],
+      "findings": []
+    },
+    {
+      "id": "paris",
+      "name": "Paris Las Vegas",
+      "operator": "Caesars Entertainment",
+      "strip_status": "on the Strip",
+      "strip_note": "Official Caesars property page.",
+      "poker_room_status": "none published",
+      "poker_room_quote": "The official casino page lists \"Poker Derivative Table Games\" (Face Up Pai Gow, Ultimate Texas Hold'Em, Let It Ride, Three Card Poker, Mississippi Stud, I Luv Suits, Crazy 4 Poker) and no live poker room.",
+      "schedule_status": "not published",
+      "schedule_note": "No live poker room is published on the official casino page, so there is no tournament schedule to look for.",
+      "sources": [
+        {
+          "label": "Official Paris Las Vegas casino page",
+          "url": "https://www.caesars.com/paris-las-vegas/casino"
+        }
+      ],
+      "events": [],
+      "findings": []
+    },
+    {
+      "id": "luxor",
+      "name": "Luxor",
+      "operator": "MGM Resorts International",
+      "strip_status": "on the Strip",
+      "strip_note": "Official MGM Resorts property page.",
+      "poker_room_status": "none published",
+      "poker_room_quote": "The official table-games page lists craps, roulette, blackjack, 3 Card Poker, mini baccarat, Free Bet Blackjack and Ultimate Texas Hold'em, and no live poker room.",
+      "schedule_status": "not published",
+      "schedule_note": "No live poker room is published on the official page. See flag F71: the MGM Resorts poker hub links this page under \"Luxor Poker Tournaments\".",
+      "sources": [
+        {
+          "label": "Official Luxor table games page",
+          "url": "https://luxor.mgmresorts.com/en/casino/table-games.html"
+        },
+        {
+          "label": "MGM Resorts official poker hub (links Luxor here)",
+          "url": "https://www.mgmresorts.com/en/casino/poker.html"
+        }
+      ],
+      "events": [],
+      "findings": []
+    },
+    {
+      "id": "excalibur",
+      "name": "Excalibur",
+      "operator": "MGM Resorts International",
+      "strip_status": "on the Strip",
+      "strip_note": "Official MGM Resorts property page.",
+      "poker_room_status": "none published",
+      "poker_room_quote": "The official casino page lists Slots, $5 Live Blackjack, Table Games and the BetMGM Sportsbook, and no poker room.",
+      "schedule_status": "not published",
+      "schedule_note": "No live poker room is published on the official casino page. See flag F71: the MGM Resorts poker hub links excalibur.mgmresorts.com/en/casino/poker-room.html, which redirects to this page.",
+      "sources": [
+        {
+          "label": "Official Excalibur casino page",
+          "url": "https://excalibur.mgmresorts.com/en/casino.html"
+        },
+        {
+          "label": "MGM Resorts official poker hub (links Excalibur here)",
+          "url": "https://www.mgmresorts.com/en/casino/poker.html"
+        }
+      ],
+      "events": [],
+      "findings": []
+    },
+    {
+      "id": "sahara",
+      "name": "SAHARA Las Vegas",
+      "operator": "SAHARA Las Vegas (independent)",
+      "strip_status": "on the Strip",
+      "strip_note": "Official property page.",
+      "poker_room_status": "none published",
+      "poker_room_quote": "\"SAHARA Las Vegas delivers one of the most unique gaming destinations on the Strip ... nearly 60,000 square foot casino ... Over 600 slot machines ... Over 50 table games.\" No poker room is listed.",
+      "schedule_status": "not published",
+      "schedule_note": "No live poker room is published on the official casino page.",
+      "sources": [
+        {
+          "label": "Official SAHARA Las Vegas casino page",
+          "url": "https://www.saharalasvegas.com/casino"
+        }
+      ],
+      "events": [],
+      "findings": []
+    },
+    {
+      "id": "resorts-world",
+      "name": "Resorts World Las Vegas",
+      "operator": "Genting",
+      "strip_status": "on the Strip",
+      "strip_note": "Official property page.",
+      "poker_room_status": "none published",
+      "poker_room_quote": "The official gaming page lists High Limit, Slots, Table Games and the Sky Casino, and no poker room. Its casino-events page lists slot and free-play promotions only.",
+      "schedule_status": "not published",
+      "schedule_note": "No live poker room is published on the official gaming page or the official casino-events page.",
+      "sources": [
+        {
+          "label": "Official Resorts World gaming page",
+          "url": "https://www.rwlasvegas.com/gaming/"
+        },
+        {
+          "label": "Official Resorts World casino events page",
+          "url": "https://www.rwlasvegas.com/gaming/casino-events/"
+        }
+      ],
+      "events": [],
+      "findings": []
+    },
+    {
+      "id": "fontainebleau",
+      "name": "Fontainebleau Las Vegas",
+      "operator": "Fontainebleau Development",
+      "strip_status": "on the Strip",
+      "strip_note": "Official property page.",
+      "poker_room_status": "none published",
+      "poker_room_quote": "The official casino page lists table games, \"high-limit slots and poker machines\" (electronic video poker) in the High Limit enclave, and the race and sports book. No live poker room is listed.",
+      "schedule_status": "not published",
+      "schedule_note": "No live poker room is published on the official casino page.",
+      "sources": [
+        {
+          "label": "Official Fontainebleau casino page",
+          "url": "https://www.fontainebleaulasvegas.com/casino/"
+        }
+      ],
+      "events": [],
+      "findings": []
+    },
+    {
+      "id": "the-strat",
+      "name": "The STRAT Hotel, Casino & Tower",
+      "operator": "Golden Entertainment",
+      "strip_status": "north Strip",
+      "strip_note": "Official property page.",
+      "poker_room_status": "none published",
+      "poker_room_quote": "\"our casino has 784 machines and 31 tables offering high-energy games from craps and blackjack to baccarat and roulette.\" The official casino page lists Slots, Table Games and the William Hill Sports Book only.",
+      "schedule_status": "not published",
+      "schedule_note": "No live poker room is published on the official casino page. thestrat.com/casino/poker returns the official 404 page.",
+      "sources": [
+        {
+          "label": "Official STRAT casino page",
+          "url": "https://thestrat.com/casino"
+        }
+      ],
+      "events": [],
+      "findings": []
+    },
+    {
+      "id": "mirage",
+      "name": "The Mirage (rebranding to Hard Rock Las Vegas)",
+      "operator": "MGM Resorts International / Hard Rock International",
+      "strip_status": "on the Strip",
+      "strip_note": "Official property page reached from the MGM Resorts Mirage URL.",
+      "poker_room_status": "none published",
+      "poker_room_quote": "mirage.mgmresorts.com/en/casino/poker-tables.html now resolves to the Hard Rock Las Vegas page: \"Coming Soon to the Las Vegas Strip\". No poker room or schedule is published.",
+      "schedule_status": "not published",
+      "schedule_note": "The property page reached from the Mirage poker URL is a coming-soon page for the rebrand, with no poker room.",
+      "sources": [
+        {
+          "label": "Hard Rock Las Vegas official page (reached from the Mirage poker URL)",
+          "url": "https://www.hardrockvegas.com/"
+        }
+      ],
+      "events": [],
+      "findings": []
+    }
+  ],
+  "events": [
+    {
+      "id": "mgm-120-am",
+      "room_id": "mgm-grand",
+      "name": "$120 No Limit Hold'em (late morning)",
+      "weekdays": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sun"
+      ],
+      "start": "11:10",
+      "buy_in_usd": 120,
+      "guarantee_usd": null,
+      "starting_chips": 25000,
+      "level_minutes": 15,
+      "late_reg_close": "start of level 8",
+      "registration_opens": null,
+      "fee_split": "$92 prize pool, $13 house fee, $11 voluntary gratuity (buys 10,000 extra chips), $4 promotions",
+      "entry_status": "PAID_CHIPS",
+      "status_note": "No re-entry, rebuy or add-on clause in the sheet read end to end. Kept out of the single-entry list because $11 of the $120 buys 10,000 extra starting chips on a 15,000 base, so paying more buys a bigger stack.",
+      "rules": {
+        "single_entry": {
+          "value": "no clause permitting a further entry, but extra chips are sold",
+          "excerpt": "The structure sheet prints no re-entry, rebuy or add-on clause. It does print a paid chip advantage: \"Each initial $120 buy-in is allocated as follows: $92 to Prize Pool, $13 House Fee and a one-time, voluntary gratuity of $11 which grants players an extra 10,000 chips. $4 will fund Tournament Promotions.\" and \"Players start with 25,000 tournament chips, including the chips for staff gratuity. (15,000 + 10,000)\".",
+          "source": {
+            "label": "MGM Grand $120 NLH structure sheet (linked from the official poker page)",
+            "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf"
+          },
+          "retrieved_on": "2026-11-17"
+        },
+        "re_entry": {
+          "value": "not mentioned",
+          "excerpt": "The sheet prints a late-registration clause only: \"All levels are 15 minutes in length. There will be a break after levels 7 and 15. Registration is open until Level 8.\" No re-entry clause appears anywhere in the sheet.",
+          "source": {
+            "label": "MGM Grand $120 NLH structure sheet (linked from the official poker page)",
+            "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf"
+          },
+          "retrieved_on": "2026-11-17"
+        },
+        "add_on": {
+          "value": "not mentioned as an add-on; a paid extra-chip gratuity is printed",
+          "excerpt": "\"a one-time, voluntary gratuity of $11 which grants players an extra 10,000 chips\" and \"***The voluntary staff gratuity will grant players an extra 10,000 chips. This is an optional gratuity paid to staff and will not be kept by the house***\". The sheet prints no add-on or rebuy clause.",
+          "source": {
+            "label": "MGM Grand $120 NLH structure sheet (linked from the official poker page)",
+            "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf"
+          },
+          "retrieved_on": "2026-11-17"
+        },
+        "fee": {
+          "value": "$92 prize pool / $13 house fee / $11 voluntary gratuity / $4 promotions of $120",
+          "excerpt": "\"Each initial $120 buy-in is allocated as follows: $92 to Prize Pool, $13 House Fee and a one-time, voluntary gratuity of $11 which grants players an extra 10,000 chips. $4 will fund Tournament Promotions.\"",
+          "source": {
+            "label": "MGM Grand $120 NLH structure sheet (linked from the official poker page)",
+            "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf"
+          },
+          "retrieved_on": "2026-11-17"
+        }
+      },
+      "labels": [
+        "paid chip advantage"
+      ],
+      "flags": [
+        "F62",
+        "F60"
+      ],
+      "sources": [
+        {
+          "label": "Official MGM Grand poker page: daily tournament times",
+          "url": "https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html"
+        },
+        {
+          "label": "MGM Grand weekly tournament schedule (official PDF)",
+          "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt5f25277b8918da08/mgm-grand-casino-poker-tournament_schedule.pdf"
+        },
+        {
+          "label": "MGM Grand $120 NLH structure sheet (official PDF)",
+          "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf"
+        }
+      ],
+      "verified_on": "2026-11-17",
+      "last_checked": "2026-11-17"
+    },
+    {
+      "id": "mgm-120-pm",
+      "room_id": "mgm-grand",
+      "name": "$120 No Limit Hold'em (evening)",
+      "weekdays": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat",
+        "Sun"
+      ],
+      "start": "19:10",
+      "buy_in_usd": 120,
+      "guarantee_usd": null,
+      "starting_chips": 25000,
+      "level_minutes": 15,
+      "late_reg_close": "start of level 8",
+      "registration_opens": null,
+      "fee_split": "$92 prize pool, $13 house fee, $11 voluntary gratuity (buys 10,000 extra chips), $4 promotions",
+      "entry_status": "PAID_CHIPS",
+      "status_note": "Same structure sheet as the 11:10 event. No re-entry clause; the $11 gratuity buys 10,000 extra chips.",
+      "rules": {
+        "single_entry": {
+          "value": "no clause permitting a further entry, but extra chips are sold",
+          "excerpt": "The structure sheet prints no re-entry, rebuy or add-on clause. It does print a paid chip advantage: \"Each initial $120 buy-in is allocated as follows: $92 to Prize Pool, $13 House Fee and a one-time, voluntary gratuity of $11 which grants players an extra 10,000 chips. $4 will fund Tournament Promotions.\" and \"Players start with 25,000 tournament chips, including the chips for staff gratuity. (15,000 + 10,000)\".",
+          "source": {
+            "label": "MGM Grand $120 NLH structure sheet (linked from the official poker page)",
+            "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf"
+          },
+          "retrieved_on": "2026-11-17"
+        },
+        "re_entry": {
+          "value": "not mentioned",
+          "excerpt": "The sheet prints a late-registration clause only: \"All levels are 15 minutes in length. There will be a break after levels 7 and 15. Registration is open until Level 8.\" No re-entry clause appears anywhere in the sheet.",
+          "source": {
+            "label": "MGM Grand $120 NLH structure sheet (linked from the official poker page)",
+            "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf"
+          },
+          "retrieved_on": "2026-11-17"
+        },
+        "add_on": {
+          "value": "not mentioned as an add-on; a paid extra-chip gratuity is printed",
+          "excerpt": "\"a one-time, voluntary gratuity of $11 which grants players an extra 10,000 chips\" and \"***The voluntary staff gratuity will grant players an extra 10,000 chips. This is an optional gratuity paid to staff and will not be kept by the house***\". The sheet prints no add-on or rebuy clause.",
+          "source": {
+            "label": "MGM Grand $120 NLH structure sheet (linked from the official poker page)",
+            "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf"
+          },
+          "retrieved_on": "2026-11-17"
+        },
+        "fee": {
+          "value": "$92 prize pool / $13 house fee / $11 voluntary gratuity / $4 promotions of $120",
+          "excerpt": "\"Each initial $120 buy-in is allocated as follows: $92 to Prize Pool, $13 House Fee and a one-time, voluntary gratuity of $11 which grants players an extra 10,000 chips. $4 will fund Tournament Promotions.\"",
+          "source": {
+            "label": "MGM Grand $120 NLH structure sheet (linked from the official poker page)",
+            "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf"
+          },
+          "retrieved_on": "2026-11-17"
+        }
+      },
+      "labels": [
+        "paid chip advantage"
+      ],
+      "flags": [
+        "F62",
+        "F60"
+      ],
+      "sources": [
+        {
+          "label": "Official MGM Grand poker page: daily tournament times",
+          "url": "https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html"
+        },
+        {
+          "label": "MGM Grand weekly tournament schedule (official PDF)",
+          "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt5f25277b8918da08/mgm-grand-casino-poker-tournament_schedule.pdf"
+        },
+        {
+          "label": "MGM Grand $120 NLH structure sheet (official PDF)",
+          "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf"
+        }
+      ],
+      "verified_on": "2026-11-17",
+      "last_checked": "2026-11-17"
+    },
+    {
+      "id": "mgm-120-night",
+      "room_id": "mgm-grand",
+      "name": "$120 No Limit Hold'em (late night)",
+      "weekdays": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Fri",
+        "Sat",
+        "Sun"
+      ],
+      "start": "23:10",
+      "buy_in_usd": 120,
+      "guarantee_usd": null,
+      "starting_chips": 25000,
+      "level_minutes": 15,
+      "late_reg_close": "start of level 8",
+      "registration_opens": null,
+      "fee_split": "$92 prize pool, $13 house fee, $11 voluntary gratuity (buys 10,000 extra chips), $4 promotions",
+      "entry_status": "PAID_CHIPS",
+      "status_note": "Same structure sheet as the 11:10 event. No re-entry clause; the $11 gratuity buys 10,000 extra chips.",
+      "rules": {
+        "single_entry": {
+          "value": "no clause permitting a further entry, but extra chips are sold",
+          "excerpt": "The structure sheet prints no re-entry, rebuy or add-on clause. It does print a paid chip advantage: \"Each initial $120 buy-in is allocated as follows: $92 to Prize Pool, $13 House Fee and a one-time, voluntary gratuity of $11 which grants players an extra 10,000 chips. $4 will fund Tournament Promotions.\" and \"Players start with 25,000 tournament chips, including the chips for staff gratuity. (15,000 + 10,000)\".",
+          "source": {
+            "label": "MGM Grand $120 NLH structure sheet (linked from the official poker page)",
+            "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf"
+          },
+          "retrieved_on": "2026-11-17"
+        },
+        "re_entry": {
+          "value": "not mentioned",
+          "excerpt": "The sheet prints a late-registration clause only: \"All levels are 15 minutes in length. There will be a break after levels 7 and 15. Registration is open until Level 8.\" No re-entry clause appears anywhere in the sheet.",
+          "source": {
+            "label": "MGM Grand $120 NLH structure sheet (linked from the official poker page)",
+            "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf"
+          },
+          "retrieved_on": "2026-11-17"
+        },
+        "add_on": {
+          "value": "not mentioned as an add-on; a paid extra-chip gratuity is printed",
+          "excerpt": "\"a one-time, voluntary gratuity of $11 which grants players an extra 10,000 chips\" and \"***The voluntary staff gratuity will grant players an extra 10,000 chips. This is an optional gratuity paid to staff and will not be kept by the house***\". The sheet prints no add-on or rebuy clause.",
+          "source": {
+            "label": "MGM Grand $120 NLH structure sheet (linked from the official poker page)",
+            "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf"
+          },
+          "retrieved_on": "2026-11-17"
+        },
+        "fee": {
+          "value": "$92 prize pool / $13 house fee / $11 voluntary gratuity / $4 promotions of $120",
+          "excerpt": "\"Each initial $120 buy-in is allocated as follows: $92 to Prize Pool, $13 House Fee and a one-time, voluntary gratuity of $11 which grants players an extra 10,000 chips. $4 will fund Tournament Promotions.\"",
+          "source": {
+            "label": "MGM Grand $120 NLH structure sheet (linked from the official poker page)",
+            "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf"
+          },
+          "retrieved_on": "2026-11-17"
+        }
+      },
+      "labels": [
+        "paid chip advantage"
+      ],
+      "flags": [
+        "F62",
+        "F60"
+      ],
+      "sources": [
+        {
+          "label": "Official MGM Grand poker page: daily tournament times",
+          "url": "https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html"
+        },
+        {
+          "label": "MGM Grand weekly tournament schedule (official PDF)",
+          "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt5f25277b8918da08/mgm-grand-casino-poker-tournament_schedule.pdf"
+        },
+        {
+          "label": "MGM Grand $120 NLH structure sheet (official PDF)",
+          "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf"
+        }
+      ],
+      "verified_on": "2026-11-17",
+      "last_checked": "2026-11-17"
+    },
+    {
+      "id": "mgm-150-sat",
+      "room_id": "mgm-grand",
+      "name": "$150 No Limit Hold'em $2,000 GTD (Saturday)",
+      "weekdays": [
+        "Sat"
+      ],
+      "start": "11:10",
+      "buy_in_usd": 150,
+      "guarantee_usd": 2000,
+      "starting_chips": 25000,
+      "level_minutes": 20,
+      "late_reg_close": null,
+      "registration_opens": null,
+      "fee_split": null,
+      "entry_status": "UNV",
+      "status_note": "The official schedule PDF prints this event with a $2,000 guarantee, 25K chips and 20-minute levels, but no structure sheet for it is published on the poker page, so its entry rule is not verified.",
+      "rules": {
+        "single_entry": {
+          "value": "unverified",
+          "excerpt": "No structure sheet for the $150 Saturday event is published on the official poker page. The page links one structure sheet only, for the $120 NLH.",
+          "source": {
+            "label": "Official MGM Grand poker page",
+            "url": "https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html"
+          },
+          "retrieved_on": "2026-11-17"
+        },
+        "re_entry": {
+          "value": "unverified",
+          "excerpt": "No structure sheet published for this event.",
+          "source": {
+            "label": "Official MGM Grand poker page",
+            "url": "https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html"
+          },
+          "retrieved_on": "2026-11-17"
+        },
+        "add_on": {
+          "value": "unverified",
+          "excerpt": "No structure sheet published for this event.",
+          "source": {
+            "label": "Official MGM Grand poker page",
+            "url": "https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html"
+          },
+          "retrieved_on": "2026-11-17"
+        },
+        "fee": {
+          "value": "unverified",
+          "excerpt": "The official poker page prints no fee split for this event.",
+          "source": {
+            "label": "Official MGM Grand poker page",
+            "url": "https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html"
+          },
+          "retrieved_on": "2026-11-17"
+        }
+      },
+      "labels": [
+        "guarantee",
+        "no structure sheet published"
+      ],
+      "flags": [
+        "F63"
+      ],
+      "sources": [
+        {
+          "label": "MGM Grand weekly tournament schedule (official PDF)",
+          "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt5f25277b8918da08/mgm-grand-casino-poker-tournament_schedule.pdf"
+        },
+        {
+          "label": "Official MGM Grand poker page (links only the $120 structure sheet)",
+          "url": "https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html"
+        }
+      ],
+      "verified_on": "2026-11-17",
+      "last_checked": "2026-11-17"
+    },
+    {
+      "id": "orl-sun-special",
+      "room_id": "orleans",
+      "name": "$200 NL Hold'em Sunday Special (RING EVENT)",
+      "weekdays": [
+        "Sun"
+      ],
+      "start": "11:05",
+      "buy_in_usd": 200,
+      "guarantee_usd": 50000,
+      "starting_chips": 25000,
+      "level_minutes": 30,
+      "late_reg_close": "start of Level 12 (5:30pm)",
+      "registration_opens": "1 hour before the start",
+      "fee_split": "$52 withheld per entry for admin, staffing and promotions",
+      "entry_status": "RE_ADD",
+      "status_note": "The official structure sheet prints re-entry until Level 12. It also prints a one-time $100 add-on for 25,000 chips.",
+      "rules": {
+        "single_entry": {
+          "value": "not single entry - re-entry is printed",
+          "excerpt": "The official structure sheet for the $200 NL Hold'em Sunday Special (RING EVENT) states: \"Late entries and re-entries are available until the start of Level 12, approximately 5:30pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list.\"",
+          "source": {
+            "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+            "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+          },
+          "retrieved_on": "2026-11-17"
+        },
+        "re_entry": {
+          "value": "re-entry allowed",
+          "excerpt": "\"Late entries and re-entries are available until the start of Level 12, approximately 5:30pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list.\"",
+          "source": {
+            "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+            "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+          },
+          "retrieved_on": "2026-11-17"
+        },
+        "add_on": {
+          "value": "add-on sold",
+          "excerpt": "\"One-Time Add-On: $100 = 25,000 Chips\" and \"Add-on is optional and may be taken before any hand and prior to the end of level 11 unless registering during the dinner break. The add-on then must be taken while registering. Players may only add-on once per entry.\"",
+          "source": {
+            "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+            "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+          },
+          "retrieved_on": "2026-11-17"
+        },
+        "fee": {
+          "value": "$52 withheld per entry for admin, staffing and promotional fees",
+          "excerpt": "\"From each entry, $52 will be withheld for admin, staffing, and promotional fees.\" \"All add-ons will be added directly to the prize pool with no fees withheld.\"",
+          "source": {
+            "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+            "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+          },
+          "retrieved_on": "2026-11-17"
+        }
+      },
+      "labels": [
+        "re-entry",
+        "add-on",
+        "ring event"
+      ],
+      "flags": [
+        "F65"
+      ],
+      "sources": [
+        {
+          "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+          "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+        },
+        {
+          "label": "Official Orleans poker room page",
+          "url": "https://orleans.boydgaming.com/play/poker-room"
+        }
+      ],
+      "verified_on": "2026-11-17",
+      "last_checked": "2026-11-17"
+    },
+    {
+      "id": "orl-am-super",
+      "room_id": "orleans",
+      "name": "$100 NL Hold'em AM Super Stack",
+      "weekdays": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu"
+      ],
+      "start": "11:05",
+      "buy_in_usd": 100,
+      "guarantee_usd": 4000,
+      "starting_chips": 25000,
+      "level_minutes": 20,
+      "late_reg_close": "start of Level 9 (2:10pm)",
+      "registration_opens": "1 hour before the start",
+      "fee_split": "$23 withheld per entry for admin, staffing and promotions",
+      "entry_status": "RE",
+      "status_note": "The official structure sheet prints re-entry until Level 9.",
+      "rules": {
+        "single_entry": {
+          "value": "not single entry - re-entry is printed",
+          "excerpt": "The official structure sheet for the $100 NL Hold'em AM Super Stack states: \"Late entries and re-entries are available until the start of Level 9, approximately 2:10pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list.\"",
+          "source": {
+            "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+            "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+          },
+          "retrieved_on": "2026-11-17"
+        },
+        "re_entry": {
+          "value": "re-entry allowed",
+          "excerpt": "\"Late entries and re-entries are available until the start of Level 9, approximately 2:10pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list.\"",
+          "source": {
+            "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+            "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+          },
+          "retrieved_on": "2026-11-17"
+        },
+        "add_on": {
+          "value": "not mentioned",
+          "excerpt": "The structure sheet prints no add-on clause; re-entry is the clause it prints.",
+          "source": {
+            "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+            "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+          },
+          "retrieved_on": "2026-11-17"
+        },
+        "fee": {
+          "value": "$23 withheld per entry for admin, staffing and promotional fees",
+          "excerpt": "\"From each entry, $23 will be withheld for admin, staffing, and promotional fees.\"",
+          "source": {
+            "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+            "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+          },
+          "retrieved_on": "2026-11-17"
+        }
+      },
+      "labels": [
+        "re-entry"
+      ],
+      "flags": [
+        "F65"
+      ],
+      "sources": [
+        {
+          "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+          "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+        },
+        {
+          "label": "Official Orleans poker room page",
+          "url": "https://orleans.boydgaming.com/play/poker-room"
+        }
+      ],
+      "verified_on": "2026-11-17",
+      "last_checked": "2026-11-17"
+    },
+    {
+      "id": "orl-fri-monster",
+      "room_id": "orleans",
+      "name": "$150 NL Hold'em Monster Stack (RING EVENT)",
+      "weekdays": [
+        "Fri"
+      ],
+      "start": "11:05",
+      "buy_in_usd": 150,
+      "guarantee_usd": 10000,
+      "starting_chips": 30000,
+      "level_minutes": 30,
+      "late_reg_close": "start of Level 12 (5:30pm)",
+      "registration_opens": "1 hour before the start",
+      "fee_split": "$30 withheld per entry for admin, staffing and promotions",
+      "entry_status": "RE",
+      "status_note": "The official structure sheet prints re-entry until Level 12.",
+      "rules": {
+        "single_entry": {
+          "value": "not single entry - re-entry is printed",
+          "excerpt": "The official structure sheet for the $150 NL Hold'em Monster Stack (RING EVENT) states: \"Late entries and re-entries are available until the start of Level 12, approximately 5:30pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list.\"",
+          "source": {
+            "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+            "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+          },
+          "retrieved_on": "2026-11-17"
+        },
+        "re_entry": {
+          "value": "re-entry allowed",
+          "excerpt": "\"Late entries and re-entries are available until the start of Level 12, approximately 5:30pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list.\"",
+          "source": {
+            "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+            "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+          },
+          "retrieved_on": "2026-11-17"
+        },
+        "add_on": {
+          "value": "not mentioned",
+          "excerpt": "The structure sheet prints no add-on clause; re-entry is the clause it prints.",
+          "source": {
+            "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+            "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+          },
+          "retrieved_on": "2026-11-17"
+        },
+        "fee": {
+          "value": "$30 withheld per entry for admin, staffing and promotional fees",
+          "excerpt": "\"From each entry, $30 will be withheld for admin, staffing, and promotional fees.\"",
+          "source": {
+            "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+            "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+          },
+          "retrieved_on": "2026-11-17"
+        }
+      },
+      "labels": [
+        "re-entry",
+        "ring event"
+      ],
+      "flags": [
+        "F65"
+      ],
+      "sources": [
+        {
+          "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+          "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+        },
+        {
+          "label": "Official Orleans poker room page",
+          "url": "https://orleans.boydgaming.com/play/poker-room"
+        }
+      ],
+      "verified_on": "2026-11-17",
+      "last_checked": "2026-11-17"
+    },
+    {
+      "id": "orl-sat-mega",
+      "room_id": "orleans",
+      "name": "$200 NL Hold'em Mega Stack (RING EVENT)",
+      "weekdays": [
+        "Sat"
+      ],
+      "start": "11:05",
+      "buy_in_usd": 200,
+      "guarantee_usd": 15000,
+      "starting_chips": 40000,
+      "level_minutes": 30,
+      "late_reg_close": "start of Level 12 (5:30pm)",
+      "registration_opens": "1 hour before the start",
+      "fee_split": "$35 withheld per entry for admin, staffing and promotions",
+      "entry_status": "RE",
+      "status_note": "The official structure sheet prints re-entry until Level 12.",
+      "rules": {
+        "single_entry": {
+          "value": "not single entry - re-entry is printed",
+          "excerpt": "The official structure sheet for the $200 NL Hold'em Mega Stack (RING EVENT) states: \"Late entries and re-entries are available until the start of Level 12, approximately 5:30pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list.\"",
+          "source": {
+            "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+            "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+          },
+          "retrieved_on": "2026-11-17"
+        },
+        "re_entry": {
+          "value": "re-entry allowed",
+          "excerpt": "\"Late entries and re-entries are available until the start of Level 12, approximately 5:30pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list.\"",
+          "source": {
+            "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+            "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+          },
+          "retrieved_on": "2026-11-17"
+        },
+        "add_on": {
+          "value": "not mentioned",
+          "excerpt": "The structure sheet prints no add-on clause; re-entry is the clause it prints.",
+          "source": {
+            "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+            "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+          },
+          "retrieved_on": "2026-11-17"
+        },
+        "fee": {
+          "value": "$35 withheld per entry for admin, staffing and promotional fees",
+          "excerpt": "\"From each entry, $35 will be withheld for admin, staffing, and promotional fees.\"",
+          "source": {
+            "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+            "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+          },
+          "retrieved_on": "2026-11-17"
+        }
+      },
+      "labels": [
+        "re-entry",
+        "ring event"
+      ],
+      "flags": [
+        "F65"
+      ],
+      "sources": [
+        {
+          "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+          "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+        },
+        {
+          "label": "Official Orleans poker room page",
+          "url": "https://orleans.boydgaming.com/play/poker-room"
+        }
+      ],
+      "verified_on": "2026-11-17",
+      "last_checked": "2026-11-17"
+    },
+    {
+      "id": "orl-mon-toe",
+      "room_id": "orleans",
+      "name": "$160 T.O.E.",
+      "weekdays": [
+        "Mon"
+      ],
+      "start": "16:05",
+      "buy_in_usd": 160,
+      "guarantee_usd": 3000,
+      "starting_chips": 25000,
+      "level_minutes": 20,
+      "late_reg_close": "start of Level 11 (7:50pm)",
+      "registration_opens": "1 hour before the start",
+      "fee_split": "$31 withheld per entry for admin, staffing and promotions",
+      "entry_status": "RE",
+      "status_note": "The official structure sheet prints re-entry until Level 11.",
+      "rules": {
+        "single_entry": {
+          "value": "not single entry - re-entry is printed",
+          "excerpt": "The official structure sheet for the $160 T.O.E. states: \"Late entries and re-entries are available until the start of Level 11, approximately 7:50pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list.\"",
+          "source": {
+            "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+            "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+          },
+          "retrieved_on": "2026-11-17"
+        },
+        "re_entry": {
+          "value": "re-entry allowed",
+          "excerpt": "\"Late entries and re-entries are available until the start of Level 11, approximately 7:50pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list.\"",
+          "source": {
+            "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+            "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+          },
+          "retrieved_on": "2026-11-17"
+        },
+        "add_on": {
+          "value": "not mentioned",
+          "excerpt": "The structure sheet prints no add-on clause; re-entry is the clause it prints.",
+          "source": {
+            "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+            "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+          },
+          "retrieved_on": "2026-11-17"
+        },
+        "fee": {
+          "value": "$31 withheld per entry for admin, staffing and promotional fees",
+          "excerpt": "\"From each entry, $31 will be withheld for admin, staffing, and promotional fees.\"",
+          "source": {
+            "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+            "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+          },
+          "retrieved_on": "2026-11-17"
+        }
+      },
+      "labels": [
+        "re-entry",
+        "mixed game"
+      ],
+      "flags": [
+        "F65"
+      ],
+      "sources": [
+        {
+          "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+          "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+        },
+        {
+          "label": "Official Orleans poker room page",
+          "url": "https://orleans.boydgaming.com/play/poker-room"
+        }
+      ],
+      "verified_on": "2026-11-17",
+      "last_checked": "2026-11-17"
+    },
+    {
+      "id": "orl-tue-torse",
+      "room_id": "orleans",
+      "name": "$160 T.O.R.S.E.",
+      "weekdays": [
+        "Tue"
+      ],
+      "start": "16:05",
+      "buy_in_usd": 160,
+      "guarantee_usd": 3000,
+      "starting_chips": 25000,
+      "level_minutes": 20,
+      "late_reg_close": "start of Level 11 (7:50pm)",
+      "registration_opens": "1 hour before the start",
+      "fee_split": "$31 withheld per entry for admin, staffing and promotions",
+      "entry_status": "RE",
+      "status_note": "The official structure sheet prints re-entry until Level 11.",
+      "rules": {
+        "single_entry": {
+          "value": "not single entry - re-entry is printed",
+          "excerpt": "The official structure sheet for the $160 T.O.R.S.E. states: \"Late entries and re-entries are available until the start of Level 11, approximately 7:50pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list.\"",
+          "source": {
+            "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+            "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+          },
+          "retrieved_on": "2026-11-17"
+        },
+        "re_entry": {
+          "value": "re-entry allowed",
+          "excerpt": "\"Late entries and re-entries are available until the start of Level 11, approximately 7:50pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list.\"",
+          "source": {
+            "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+            "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+          },
+          "retrieved_on": "2026-11-17"
+        },
+        "add_on": {
+          "value": "not mentioned",
+          "excerpt": "The structure sheet prints no add-on clause; re-entry is the clause it prints.",
+          "source": {
+            "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+            "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+          },
+          "retrieved_on": "2026-11-17"
+        },
+        "fee": {
+          "value": "$31 withheld per entry for admin, staffing and promotional fees",
+          "excerpt": "\"From each entry, $31 will be withheld for admin, staffing, and promotional fees.\"",
+          "source": {
+            "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+            "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+          },
+          "retrieved_on": "2026-11-17"
+        }
+      },
+      "labels": [
+        "re-entry",
+        "mixed game"
+      ],
+      "flags": [
+        "F65"
+      ],
+      "sources": [
+        {
+          "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+          "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+        },
+        {
+          "label": "Official Orleans poker room page",
+          "url": "https://orleans.boydgaming.com/play/poker-room"
+        }
+      ],
+      "verified_on": "2026-11-17",
+      "last_checked": "2026-11-17"
+    },
+    {
+      "id": "orl-wed-drama",
+      "room_id": "orleans",
+      "name": "$160 Drama Mix (Dramaha High / Dramaha 2-7)",
+      "weekdays": [
+        "Wed"
+      ],
+      "start": "16:05",
+      "buy_in_usd": 160,
+      "guarantee_usd": 4000,
+      "starting_chips": 25000,
+      "level_minutes": 20,
+      "late_reg_close": "start of Level 11 (7:50pm)",
+      "registration_opens": "1 hour before the start",
+      "fee_split": "$31 withheld per entry for admin, staffing and promotions",
+      "entry_status": "RE",
+      "status_note": "The official structure sheet prints re-entry until Level 11.",
+      "rules": {
+        "single_entry": {
+          "value": "not single entry - re-entry is printed",
+          "excerpt": "The official structure sheet for the $160 Drama Mix (Dramaha High / Dramaha 2-7) states: \"Late entries and re-entries are available until the start of Level 11, approximately 7:50pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list.\"",
+          "source": {
+            "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+            "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+          },
+          "retrieved_on": "2026-11-17"
+        },
+        "re_entry": {
+          "value": "re-entry allowed",
+          "excerpt": "\"Late entries and re-entries are available until the start of Level 11, approximately 7:50pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list.\"",
+          "source": {
+            "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+            "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+          },
+          "retrieved_on": "2026-11-17"
+        },
+        "add_on": {
+          "value": "not mentioned",
+          "excerpt": "The structure sheet prints no add-on clause; re-entry is the clause it prints.",
+          "source": {
+            "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+            "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+          },
+          "retrieved_on": "2026-11-17"
+        },
+        "fee": {
+          "value": "$31 withheld per entry for admin, staffing and promotional fees",
+          "excerpt": "\"From each entry, $31 will be withheld for admin, staffing, and promotional fees.\"",
+          "source": {
+            "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+            "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+          },
+          "retrieved_on": "2026-11-17"
+        }
+      },
+      "labels": [
+        "re-entry",
+        "mixed game"
+      ],
+      "flags": [
+        "F65"
+      ],
+      "sources": [
+        {
+          "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+          "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+        },
+        {
+          "label": "Official Orleans poker room page",
+          "url": "https://orleans.boydgaming.com/play/poker-room"
+        }
+      ],
+      "verified_on": "2026-11-17",
+      "last_checked": "2026-11-17"
+    },
+    {
+      "id": "orl-thu-draw",
+      "room_id": "orleans",
+      "name": "$160 5 Game Draw Mix",
+      "weekdays": [
+        "Thu"
+      ],
+      "start": "16:05",
+      "buy_in_usd": 160,
+      "guarantee_usd": 3000,
+      "starting_chips": 25000,
+      "level_minutes": 20,
+      "late_reg_close": "start of Level 11 (7:50pm)",
+      "registration_opens": "1 hour before the start",
+      "fee_split": "$31 withheld per entry for admin, staffing and promotions",
+      "entry_status": "RE",
+      "status_note": "The official structure sheet prints re-entry until Level 11.",
+      "rules": {
+        "single_entry": {
+          "value": "not single entry - re-entry is printed",
+          "excerpt": "The official structure sheet for the $160 5 Game Draw Mix states: \"Late entries and re-entries are available until the start of Level 11, approximately 7:50pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list.\"",
+          "source": {
+            "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+            "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+          },
+          "retrieved_on": "2026-11-17"
+        },
+        "re_entry": {
+          "value": "re-entry allowed",
+          "excerpt": "\"Late entries and re-entries are available until the start of Level 11, approximately 7:50pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list.\"",
+          "source": {
+            "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+            "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+          },
+          "retrieved_on": "2026-11-17"
+        },
+        "add_on": {
+          "value": "not mentioned",
+          "excerpt": "The structure sheet prints no add-on clause; re-entry is the clause it prints.",
+          "source": {
+            "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+            "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+          },
+          "retrieved_on": "2026-11-17"
+        },
+        "fee": {
+          "value": "$31 withheld per entry for admin, staffing and promotional fees",
+          "excerpt": "\"From each entry, $31 will be withheld for admin, staffing, and promotional fees.\"",
+          "source": {
+            "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+            "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+          },
+          "retrieved_on": "2026-11-17"
+        }
+      },
+      "labels": [
+        "re-entry",
+        "mixed game"
+      ],
+      "flags": [
+        "F65"
+      ],
+      "sources": [
+        {
+          "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+          "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+        },
+        {
+          "label": "Official Orleans poker room page",
+          "url": "https://orleans.boydgaming.com/play/poker-room"
+        }
+      ],
+      "verified_on": "2026-11-17",
+      "last_checked": "2026-11-17"
+    },
+    {
+      "id": "orl-fri-oe",
+      "room_id": "orleans",
+      "name": "$160 Omaha-8 / Stud-8",
+      "weekdays": [
+        "Fri"
+      ],
+      "start": "16:05",
+      "buy_in_usd": 160,
+      "guarantee_usd": 4000,
+      "starting_chips": 25000,
+      "level_minutes": 20,
+      "late_reg_close": "start of Level 11 (7:50pm)",
+      "registration_opens": "1 hour before the start",
+      "fee_split": "$31 withheld per entry for admin, staffing and promotions",
+      "entry_status": "RE",
+      "status_note": "The official structure sheet prints re-entry until Level 11.",
+      "rules": {
+        "single_entry": {
+          "value": "not single entry - re-entry is printed",
+          "excerpt": "The official structure sheet for the $160 Omaha-8 / Stud-8 states: \"Late entries and re-entries are available until the start of Level 11, approximately 7:50pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list.\"",
+          "source": {
+            "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+            "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+          },
+          "retrieved_on": "2026-11-17"
+        },
+        "re_entry": {
+          "value": "re-entry allowed",
+          "excerpt": "\"Late entries and re-entries are available until the start of Level 11, approximately 7:50pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list.\"",
+          "source": {
+            "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+            "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+          },
+          "retrieved_on": "2026-11-17"
+        },
+        "add_on": {
+          "value": "not mentioned",
+          "excerpt": "The structure sheet prints no add-on clause; re-entry is the clause it prints.",
+          "source": {
+            "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+            "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+          },
+          "retrieved_on": "2026-11-17"
+        },
+        "fee": {
+          "value": "$31 withheld per entry for admin, staffing and promotional fees",
+          "excerpt": "\"From each entry, $31 will be withheld for admin, staffing, and promotional fees.\"",
+          "source": {
+            "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+            "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+          },
+          "retrieved_on": "2026-11-17"
+        }
+      },
+      "labels": [
+        "re-entry",
+        "mixed game"
+      ],
+      "flags": [
+        "F65"
+      ],
+      "sources": [
+        {
+          "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+          "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+        },
+        {
+          "label": "Official Orleans poker room page",
+          "url": "https://orleans.boydgaming.com/play/poker-room"
+        }
+      ],
+      "verified_on": "2026-11-17",
+      "last_checked": "2026-11-17"
+    },
+    {
+      "id": "orl-sat-ttd",
+      "room_id": "orleans",
+      "name": "$160 Triple-Triple Draw",
+      "weekdays": [
+        "Sat"
+      ],
+      "start": "16:05",
+      "buy_in_usd": 160,
+      "guarantee_usd": 3000,
+      "starting_chips": 25000,
+      "level_minutes": 20,
+      "late_reg_close": "start of Level 11 (7:50pm)",
+      "registration_opens": "1 hour before the start",
+      "fee_split": "$31 withheld per entry for admin, staffing and promotions",
+      "entry_status": "RE",
+      "status_note": "The official structure sheet prints re-entry until Level 11.",
+      "rules": {
+        "single_entry": {
+          "value": "not single entry - re-entry is printed",
+          "excerpt": "The official structure sheet for the $160 Triple-Triple Draw states: \"Late entries and re-entries are available until the start of Level 11, approximately 7:50pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list.\"",
+          "source": {
+            "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+            "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+          },
+          "retrieved_on": "2026-11-17"
+        },
+        "re_entry": {
+          "value": "re-entry allowed",
+          "excerpt": "\"Late entries and re-entries are available until the start of Level 11, approximately 7:50pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list.\"",
+          "source": {
+            "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+            "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+          },
+          "retrieved_on": "2026-11-17"
+        },
+        "add_on": {
+          "value": "not mentioned",
+          "excerpt": "The structure sheet prints no add-on clause; re-entry is the clause it prints.",
+          "source": {
+            "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+            "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+          },
+          "retrieved_on": "2026-11-17"
+        },
+        "fee": {
+          "value": "$31 withheld per entry for admin, staffing and promotional fees",
+          "excerpt": "\"From each entry, $31 will be withheld for admin, staffing, and promotional fees.\"",
+          "source": {
+            "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+            "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+          },
+          "retrieved_on": "2026-11-17"
+        }
+      },
+      "labels": [
+        "re-entry",
+        "mixed game"
+      ],
+      "flags": [
+        "F65"
+      ],
+      "sources": [
+        {
+          "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+          "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+        },
+        {
+          "label": "Official Orleans poker room page",
+          "url": "https://orleans.boydgaming.com/play/poker-room"
+        }
+      ],
+      "verified_on": "2026-11-17",
+      "last_checked": "2026-11-17"
+    },
+    {
+      "id": "orl-sun-bigo",
+      "room_id": "orleans",
+      "name": "$200 Pot-Limit Big-O",
+      "weekdays": [
+        "Sun"
+      ],
+      "start": "18:05",
+      "buy_in_usd": 200,
+      "guarantee_usd": 4000,
+      "starting_chips": 25000,
+      "level_minutes": 20,
+      "late_reg_close": "start of Level 11 (9:50pm)",
+      "registration_opens": "1 hour before the start",
+      "fee_split": "$35 withheld per entry for admin, staffing and promotions",
+      "entry_status": "RE",
+      "status_note": "The official structure sheet prints re-entry until Level 11.",
+      "rules": {
+        "single_entry": {
+          "value": "not single entry - re-entry is printed",
+          "excerpt": "The official structure sheet for the $200 Pot-Limit Big-O states: \"Late entries and re-entries are available until the start of Level 11, approximately 9:50pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list.\"",
+          "source": {
+            "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+            "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+          },
+          "retrieved_on": "2026-11-17"
+        },
+        "re_entry": {
+          "value": "re-entry allowed",
+          "excerpt": "\"Late entries and re-entries are available until the start of Level 11, approximately 9:50pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list.\"",
+          "source": {
+            "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+            "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+          },
+          "retrieved_on": "2026-11-17"
+        },
+        "add_on": {
+          "value": "not mentioned",
+          "excerpt": "The structure sheet prints no add-on clause; re-entry is the clause it prints.",
+          "source": {
+            "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+            "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+          },
+          "retrieved_on": "2026-11-17"
+        },
+        "fee": {
+          "value": "$35 withheld per entry for admin, staffing and promotional fees",
+          "excerpt": "\"From each entry, $35 will be withheld for admin, staffing, and promotional fees.\"",
+          "source": {
+            "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+            "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+          },
+          "retrieved_on": "2026-11-17"
+        }
+      },
+      "labels": [
+        "re-entry",
+        "mixed game"
+      ],
+      "flags": [
+        "F65"
+      ],
+      "sources": [
+        {
+          "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+          "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+        },
+        {
+          "label": "Official Orleans poker room page",
+          "url": "https://orleans.boydgaming.com/play/poker-room"
+        }
+      ],
+      "verified_on": "2026-11-17",
+      "last_checked": "2026-11-17"
+    },
+    {
+      "id": "orl-pm-monster",
+      "room_id": "orleans",
+      "name": "$120 NL Hold'em PM Monster Stack",
+      "weekdays": [
+        "Mon",
+        "Tue",
+        "Wed",
+        "Thu",
+        "Sat"
+      ],
+      "start": "18:05",
+      "buy_in_usd": 120,
+      "guarantee_usd": 5000,
+      "starting_chips": 30000,
+      "level_minutes": 20,
+      "late_reg_close": "start of Level 9 (9:10pm)",
+      "registration_opens": "1 hour before the start",
+      "fee_split": "$24 withheld per entry for admin, staffing and promotions",
+      "entry_status": "RE",
+      "status_note": "The official structure sheet prints re-entry until Level 9.",
+      "rules": {
+        "single_entry": {
+          "value": "not single entry - re-entry is printed",
+          "excerpt": "The official structure sheet for the $120 NL Hold'em PM Monster Stack states: \"Late entries and re-entries are available until the start of Level 9, approximately 9:10pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list.\"",
+          "source": {
+            "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+            "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+          },
+          "retrieved_on": "2026-11-17"
+        },
+        "re_entry": {
+          "value": "re-entry allowed",
+          "excerpt": "\"Late entries and re-entries are available until the start of Level 9, approximately 9:10pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list.\"",
+          "source": {
+            "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+            "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+          },
+          "retrieved_on": "2026-11-17"
+        },
+        "add_on": {
+          "value": "not mentioned",
+          "excerpt": "The structure sheet prints no add-on clause; re-entry is the clause it prints.",
+          "source": {
+            "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+            "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+          },
+          "retrieved_on": "2026-11-17"
+        },
+        "fee": {
+          "value": "$24 withheld per entry for admin, staffing and promotional fees",
+          "excerpt": "\"From each entry, $24 will be withheld for admin, staffing, and promotional fees.\"",
+          "source": {
+            "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+            "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+          },
+          "retrieved_on": "2026-11-17"
+        }
+      },
+      "labels": [
+        "re-entry"
+      ],
+      "flags": [
+        "F65"
+      ],
+      "sources": [
+        {
+          "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+          "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+        },
+        {
+          "label": "Official Orleans poker room page",
+          "url": "https://orleans.boydgaming.com/play/poker-room"
+        }
+      ],
+      "verified_on": "2026-11-17",
+      "last_checked": "2026-11-17"
+    },
+    {
+      "id": "orl-fri-night",
+      "room_id": "orleans",
+      "name": "$150 NL Hold'em 20K Monster Stack (RING EVENT)",
+      "weekdays": [
+        "Fri"
+      ],
+      "start": "18:05",
+      "buy_in_usd": 150,
+      "guarantee_usd": 20000,
+      "starting_chips": 30000,
+      "level_minutes": 20,
+      "late_reg_close": "start of Level 11 (9:50pm)",
+      "registration_opens": "1 hour before the start",
+      "fee_split": "$30 withheld per entry for admin, staffing and promotions",
+      "entry_status": "RE",
+      "status_note": "The official structure sheet prints re-entry until Level 11.",
+      "rules": {
+        "single_entry": {
+          "value": "not single entry - re-entry is printed",
+          "excerpt": "The official structure sheet for the $150 NL Hold'em 20K Monster Stack (RING EVENT) states: \"Late entries and re-entries are available until the start of Level 11, approximately 9:50pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list.\"",
+          "source": {
+            "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+            "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+          },
+          "retrieved_on": "2026-11-17"
+        },
+        "re_entry": {
+          "value": "re-entry allowed",
+          "excerpt": "\"Late entries and re-entries are available until the start of Level 11, approximately 9:50pm. If there are alternates waiting, re-entries will be placed at the bottom of the alternate list.\"",
+          "source": {
+            "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+            "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+          },
+          "retrieved_on": "2026-11-17"
+        },
+        "add_on": {
+          "value": "not mentioned",
+          "excerpt": "The structure sheet prints no add-on clause; re-entry is the clause it prints.",
+          "source": {
+            "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+            "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+          },
+          "retrieved_on": "2026-11-17"
+        },
+        "fee": {
+          "value": "$30 withheld per entry for admin, staffing and promotional fees",
+          "excerpt": "\"From each entry, $30 will be withheld for admin, staffing, and promotional fees.\"",
+          "source": {
+            "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+            "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+          },
+          "retrieved_on": "2026-11-17"
+        }
+      },
+      "labels": [
+        "re-entry",
+        "ring event"
+      ],
+      "flags": [
+        "F65"
+      ],
+      "sources": [
+        {
+          "label": "2026 Orleans Poker Daily Schedule (official PDF)",
+          "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+        },
+        {
+          "label": "Official Orleans poker room page",
+          "url": "https://orleans.boydgaming.com/play/poker-room"
+        }
+      ],
+      "verified_on": "2026-11-17",
+      "last_checked": "2026-11-17"
+    }
+  ],
+  "flags": [
+    {
+      "id": "F60",
+      "title": "Start times conflict inside one operator's own sources",
+      "found": "The official MGM Grand poker page prints \"Daily Texas Hold'em Tournaments 11:00am, 7:00pm and 11:00pm\". The official schedule PDF linked from that same page prints 11:10am, 7:10pm and 11:10pm.",
+      "handling": "Both times are kept. The rows use the schedule PDF's times, because the PDF is the document that also prints the buy-in, chips and level length for each slot. The page's times are quoted on the row.",
+      "source": "https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html"
+    },
+    {
+      "id": "F61",
+      "title": "The weekly schedule PDF carries a month in its title",
+      "found": "The PDF linked as \"Weekly Schedule\" prints the heading \"MGM Grand August Tournament Schedule\" and a grid of weekday columns with no dates and no year.",
+      "handling": "The grid is stored as a recurring weekday schedule, not as dated rows. Which month it describes cannot be read from the document, so no date range is claimed.",
+      "source": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt5f25277b8918da08/mgm-grand-casino-poker-tournament_schedule.pdf"
+    },
+    {
+      "id": "F62",
+      "title": "Extra chips can be bought inside the buy-in",
+      "found": "\"Each initial $120 buy-in is allocated as follows: $92 to Prize Pool, $13 House Fee and a one-time, voluntary gratuity of $11 which grants players an extra 10,000 chips. $4 will fund Tournament Promotions.\" and \"Players start with 25,000 tournament chips, including the chips for staff gratuity. (15,000 + 10,000)\".",
+      "handling": "Paying $11 more takes a starting stack from 15,000 to 25,000 chips, so spending more buys an in-game advantage. These events are kept out of the single-entry list and shown in the separate section, which is what the brief asks for with events where money buys an advantage.",
+      "source": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf"
+    },
+    {
+      "id": "F63",
+      "title": "The Saturday $150 event has no published structure sheet",
+      "found": "The official poker page links one structure sheet only, the $120 NLH. The schedule PDF prints a Saturday 11:10am \"$150 NLH - $2,000\" with 25K chips and 20-minute levels.",
+      "handling": "The row keeps the buy-in, guarantee, chips and level length printed on the schedule PDF. Its entry rule, fee split and late-registration close stay blank and unverified.",
+      "source": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt5f25277b8918da08/mgm-grand-casino-poker-tournament_schedule.pdf"
+    },
+    {
+      "id": "F64",
+      "title": "The two MGM PDFs are hosted off the property domain",
+      "found": "Both PDFs are served from assets.contentstack.io, not from mgmgrand.mgmresorts.com. They are reached only through links on the official poker page.",
+      "handling": "They are cited as \"linked from the official page\", the same treatment the site already gives the Bellagio flyers (F40). No value is taken from a PDF that the official page does not link.",
+      "source": "https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html"
+    },
+    {
+      "id": "F65",
+      "title": "The Orleans schedule PDF's file name and its printed period do not agree",
+      "found": "The file is named 2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf, while the official page links it as \"2026 Orleans Poker Daily Schedule\". Nothing inside the PDF prints a month, a year or a date range.",
+      "handling": "The events are stored as a recurring weekly schedule with no dates. Which period the printed grid covers is not stated on the source, so no period is claimed.",
+      "source": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+    },
+    {
+      "id": "F66",
+      "title": "The Orleans PDF points at a dead URL",
+      "found": "The PDF's own footer prints: \"For tournament structures or questions, contact a Poker Room staff member at 702-365-7150 or go to our website: https://www.orleanscasino.com/play/casino-games/poker-room\". That URL returns \"Not Found\" on 2026-11-17.",
+      "handling": "The live official page used instead is https://orleans.boydgaming.com/play/poker-room, which is where the PDF itself is linked from.",
+      "source": "https://orleans.boydgaming.com/play/poker-room"
+    },
+    {
+      "id": "F67",
+      "title": "No Orleans daily event is single entry",
+      "found": "Every one of the thirteen structure sheets in the official PDF prints the same clause: \"Late entries and re-entries are available until the start of Level ...\". The Sunday Special additionally prints \"One-Time Add-On: $100 = 25,000 Chips\".",
+      "handling": "All thirteen Orleans rows are stored with a re-entry rule and kept out of the single-entry list.",
+      "source": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0"
+    },
+    {
+      "id": "F68",
+      "title": "South Point publishes its schedule and rules as images only",
+      "found": "The official \"Daily Tournament Schedule\" page carries one schedule image and sixteen rules-sheet images with no text layer. The eight named rules sheets are $120 and $200 events; the poker-room page advertises buy-ins of \"$120 and $300\".",
+      "handling": "No South Point row is built. A row needs a buy-in and an entry rule tied to a start time, and neither can be read from an image here. The official text that does exist is quoted on this page instead.",
+      "source": "https://southpointcasino.com/casino/poker-room/daily-tournament-schedule"
+    },
+    {
+      "id": "F69",
+      "title": "Horseshoe confirms six daily tournaments and publishes nothing else about them",
+      "found": "\"Test your luck with 6 exciting tournament times daily.\" No time, buy-in, guarantee or structure appears on the official page, and no schedule PDF was found on caesars.com.",
+      "handling": "Horseshoe is listed as a room with tournaments and no published schedule. Third-party schedules for it were found and deliberately not used.",
+      "source": "https://www.caesars.com/horseshoe-las-vegas/casino"
+    },
+    {
+      "id": "F70",
+      "title": "No live poker room is published for Paris, Luxor, Excalibur, SAHARA, Resorts World, Fontainebleau, The STRAT or the Mirage site",
+      "found": "Each property's own casino page was read on 2026-11-17 and lists no live poker room. Absence from an official page is weaker evidence than a printed statement, so these are recorded as \"no poker room published\", not as \"no poker room\".",
+      "handling": "They are listed in the survey with the page read, and no rows are invented for them.",
+      "source": "https://www.caesars.com/paris-las-vegas/casino"
+    },
+    {
+      "id": "F71",
+      "title": "The MGM poker hub links two properties to pages that publish no poker room",
+      "found": "The hub lists \"Luxor Poker Tournaments\" with a link to luxor.mgmresorts.com/en/casino/table-games.html and \"Excalibur Poker Tournaments\" with a link to excalibur.mgmresorts.com/en/casino/poker-room.html, which redirects to excalibur.mgmresorts.com/en/casino.html. Neither page lists a live poker room.",
+      "handling": "Both properties are recorded as \"no poker room published\", with the hub link and the page it resolves to.",
+      "source": "https://www.mgmresorts.com/en/casino/poker.html"
+    },
+    {
+      "id": "F72",
+      "title": "No walking record exists for these rooms yet",
+      "found": "The site's walking table covers twelve hotel-to-poker-room pairs, all of them to the Venetian and Wynn poker rooms. No routed walking time was produced on 2026-11-17 from any hotel to MGM Grand, the Orleans or South Point.",
+      "handling": "Walking cells for these rooms are blank and flagged. Producing them is logged as a request for the integration session in COORDINATION.md; none is estimated here.",
+      "source": "https://mandalaybay.mgmresorts.com/en/casino/poker-tables.html"
+    }
+  ],
+  "counts": {
+    "rooms_surveyed": 14,
+    "rooms_with_poker_room_published": 6,
+    "rooms_with_a_schedule_published": 2,
+    "rooms_with_no_poker_room_published": 8,
+    "events": 17,
+    "events_single_entry": 0,
+    "events_re_entry": 13,
+    "events_paid_chips": 3,
+    "events_unverified": 1
+  }
+}

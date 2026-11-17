@@ -80,6 +80,7 @@ PAGES = {
   <a class="card tile" href="pages/hotels.html"><h3>Hotels</h3><p>Resort fees, room-rate status, walking records and the dated rate log.</p></a>
   <a class="card tile" href="pages/calculator.html"><h3>Trip cost calculator</h3><p>Entries × buy-in + nights × true hotel cost + parking, from dated official-engine quotes. Nothing is assumed.</p></a>
   <a class="card tile" href="pages/venues.html"><h3>Venues</h3><p>Each poker room, the hotels attached to it and the events played there.</p></a>
+  <a class="card tile" href="pages/other-rooms.html"><h3>Other rooms</h3><p>Every other Strip and near-Strip poker room, checked against its own site: what it publishes, and what it does not.</p></a>
   <a class="card tile" href="pages/search.html"><h3>Search</h3><p>One box across every row, hotel, venue, document and rate on the site.</p></a>
   <a class="card tile" href="pages/monitoring.html"><h3>Monitoring</h3><p>Source health, changed rows and every printed source flag.</p></a>
   <a class="card tile" href="pages/questions.html"><h3>Questions</h3><p>Open decisions and information gaps, with how to close each.</p></a>
@@ -154,7 +155,7 @@ PAGES = {
 """),
     "pages/monitoring.html": ("Monitoring", "monitoring", """
 <h1>Source monitoring</h1>
-<p class="lead">Which official sources answered on the last check, which rows changed since the last snapshot, and every printed source flag.</p>
+<p class="lead">Two different checks, kept apart on purpose: the <strong>scheduled provenance check</strong> re-fetches every official document from GitHub Actions and reports whether the values printed on it moved, and the <strong>row-level check</strong> records which URLs answered and which dataset rows changed since the last snapshot. A run that reaches nothing is labelled a network blackout rather than a source outage.</p>
 <div id="content"></div>
 <h2>Rows carrying a source flag</h2>
 <div id="flagged"></div>
