@@ -1,4 +1,15 @@
+# Session 212b84be — FINAL INTEGRATION SESSION (branch `arena/212b84be-poker1`, base `aea688a` = `main` at PR #37)
 
+Claim written 2026-11-17T01:02Z and pushed before any implementation work, per the shared-task-board rules.
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Final integration: integrate the open session branches `arena/160f9080-poker1` (PR #38, row-level verifier + LIPS fee split + WSS guarantee blanking) and `arena/c0714e1a-poker1` (PR #36, WPT sheet join + hotel fee records + flags F22–F25), resolve conflicts without discarding either session's work, re-verify the combined data line by line, close the stale superseded PR #24 with a disposition note, refresh the decision documents, PR to `main`, merge, and confirm the GitHub Pages deployment | **In progress** | `COORDINATION.md`, `scripts/*`, `data/*`, `pages/*`, `assets/*`, `index.html`, `EXECUTIVE_SUMMARY.md`, `FLAGGED.md`, `QUESTIONS.md`, `SUGGESTIONS.md`, `REVIEW.md`, `README.md`, `research/*` | `212b84be` |
+| Independent verification pass on the integrated dataset (official sources re-read through the page fetcher; entry-rule policy audit of every row labelled single entry against the "written maximum-entry / no-rebuy / no-add-on" requirement) | **In progress** | `research/*`, `data/sources.json`, `data/tournaments.json` (flag corrections only) | `212b84be` |
+
+Other sessions' claims are respected: no task claimed by a live session is taken over. PR #24 (session
+`bad329a9`) is >60 minutes old with no commits and is superseded by `main`'s richer dataset; its takeover
+and disposition are recorded below and on the PR itself.
 
 ## Session 54ae4633 (current branch `arena/54ae4633-poker1`)
 
