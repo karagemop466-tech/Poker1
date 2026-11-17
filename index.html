@@ -1384,7 +1384,11 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
   function markdownPage(file) {
     return function () {
       getText(file).then(function (t) {
-        document.getElementById("content").innerHTML = '<div class="md">' + renderMarkdown(t) + "</div>";
+        // The page template already prints the title as its <h1>; rendering the
+        // document's own leading '# Heading' as well printed every document page
+        // with two titles stacked on top of each other.
+        var body = t.replace(/^\s*#[^\n]*\n+/, "");
+        document.getElementById("content").innerHTML = '<div class="md">' + renderMarkdown(body) + "</div>";
       }).catch(showErr);
     };
   }

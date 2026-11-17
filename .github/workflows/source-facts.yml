@@ -36,8 +36,12 @@ jobs:
 
       - name: Re-check every official source
         # Output is also written into the repo so it can be reviewed without
-        # downloading the Actions log.
-        run: python3 scripts/check_source_facts.py 2>&1 | tee data/monitor_last_run.txt
+        # downloading the Actions log. `pipefail` matters: without it a refusal by
+        # the script (a non-official host in the manifest, for example) was written
+        # to the file, hidden behind `tee`'s success and the job stayed green (F75).
+        run: |
+          set -o pipefail
+          python3 scripts/check_source_facts.py 2>&1 | tee data/monitor_last_run.txt
 
       - name: Summarise
         run: |

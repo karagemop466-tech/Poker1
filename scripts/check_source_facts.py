@@ -70,6 +70,12 @@ OFFICIAL_HOSTS = (
     "mandalaybay.mgmresorts.com",
     "orleans.boydgaming.com",
     "southpointcasino.com",
+    # Session ce9941b8: Resorts World Las Vegas. Its official casino-events page is
+    # cited by the strip-room survey (data/strip_rooms.json) as the evidence that no
+    # poker event is listed there. The host is an operator domain, and leaving it out
+    # made the whole collector refuse to run (F75).
+    "rwlasvegas.com",
+    "www.rwlasvegas.com",
 )
 
 

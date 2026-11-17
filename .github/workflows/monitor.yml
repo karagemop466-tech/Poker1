@@ -64,6 +64,9 @@ jobs:
       - name: Check every official source, including its content
         id: check
         run: |
+          # pipefail: without it a script that refuses to run is hidden behind
+          # `tee`'s zero exit status and the job reports success (F75).
+          set -o pipefail
           args="--print --content --write-report"
           if [ "${{ inputs.accept_baseline }}" = "yes" ]; then args="$args --accept-baseline"; fi
           python3 scripts/monitor_sources.py $args | tee monitor.txt
