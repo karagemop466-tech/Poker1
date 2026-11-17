@@ -18,6 +18,18 @@
 
 Shared task board for the Las Vegas Strip poker tournament and hotel planner.
 
+## Session 6c031f5a — branch `arena/6c031f5a-poker1`
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Review current project deliverables and validation; correct current executive-summary count mismatch | **Done** — corrected the summary's stale WPT row count and overall row total; ran rebuild, link validation and all-page smoke test | `EXECUTIVE_SUMMARY.md`, `COORDINATION.md` | `6c031f5a` |
+
+### Verification (2026-11-17)
+- `python3 scripts/build_data.py`, `python3 scripts/build_site.py`, `python3 scripts/check_links.py` passed: 317 rows (80 SE, 60 MULTI, 46 RE, 129 UNV, 2 CONT), 70 schedule days, 21 pages, 7 hotels and 5 dated hotel-rate entries.
+- `npm ci --ignore-scripts --no-audit --no-fund` and `npm run test:smoke` passed; 21/21 generated pages rendered.
+- Found and corrected a stale executive-summary statement claiming 316 rows and 135 WPT rows. Current generated data and the verification log report 317 total rows and 136 WPT entries. No underlying event, rate or hotel facts were changed.
+- Sources for this documentation correction are the repository's generated dataset (`data/tournaments.json`), build output from `scripts/build_data.py`, and `research/verification-2026-11-17.md`; this was not a fresh external-source re-verification. All pre-existing factual caveats remain in `FLAGGED.md`.
+
 ## Current session and task claim
 
 Session `baba1a15` is working on branch `arena/baba1a15-poker1` (the branch is fixed for this session). Scope claimed below and pushed before implementation work.
