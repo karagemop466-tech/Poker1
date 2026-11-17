@@ -206,7 +206,7 @@ of the five figures is the number the engine itself printed, which is an indepen
 
 The engine's own "Average Rate" (room + resort fee ÷ nights, before tax) is stored as
 `nightly_average_usd` in `data/rates.json` — $419.25, $709.25, $298.54, $804.25 and $282.25 for the five
-stays — and the room-only average is stored beside it, so the two conventions are never mixed (F82).
+stays — and the room-only average is stored beside it, so the two conventions are never mixed (F58).
 The lesson is in the spread, not the average: the same tower costs **$338.48 a night for Dec 13–20 and
 $911.86 a night for Jan 1–6**, because Jan 1 is quoted at $1,949.25 for the night. Two nights over a
 weekend in November cost $475.35 all in. Dates, not the hotel name, dominate the hotel budget.
@@ -249,14 +249,22 @@ is applied to every routed time, and rows that fail it stay visible and flagged.
 
 - **Verified options:** 45 of the 70 dates carry at least one verified single-entry event, and 41 of
   them carry a cash one. The first cash single-entry event is Nov 18 (Event 2, $300 NLH, 11:10 AM).
-- **Primary and fallback:** each day names one verified single-entry event as the primary, and 24 days
-  also name a conditional fallback that starts after the primary is estimated to finish. Estimated end
-  times come from the published level structure and are labelled as estimates, never as official finish
-  times.
-- **Overlaps:** 14 row-pairs on two days are flagged. Dec 12 (six pairs) and Jan 2 (three pairs, and
-  eight counting both directions) all trace back to a milestone satellite on the same day whose
-  estimated end is an upper bound, because a satellite stops when the seats run out. Each of those
-  days still gets a single primary plus a conditional fallback; no impossible sequence is proposed.
+- **Primary and fallback:** each day with a verified single-entry event names one as the primary.
+  **No day currently names a conditional fallback**, and that is a corrected result rather than a gap:
+  earlier versions of this page put a fallback on 24 days, but all 24 were impossible sequences. The
+  fallback comparison treated the stored finish time as a clock string, so a primary printed 11:10 AM
+  and estimated to finish at 02:55 (the next day) looked already finished by a 5:10 PM start. On 26
+  dates two single-entry events are offered; on every one of them the earlier event is estimated to run
+  11 to 21 hours, so a second same-day entry is not playable. Estimated end times come from the
+  published level structure and are labelled as estimates, never as official finish times, and an
+  estimate that crosses midnight is now labelled "the next day".
+- **Overlaps:** 271 row-pairs across 51 dates are flagged, which is every pair whose starts cannot be
+  played in sequence. The earlier version of this page claimed 14 pairs on two days; that count came
+  from the same clock-string comparison and missed 231 real pairs. The bulk trace to milestone
+  satellites and multi-flight events whose estimated end is an upper bound (a satellite stops when the
+  seats run out), and to days where two series both print a card. Each flagged pair is published with
+  the two event names, both start times and the estimated finish, so the reader sees why it cannot be
+  played rather than being told an impossible sequence is fine.
 - **Wynn registration opens at 8 AM for the noon events.** The official Wynn daily tournament terms
   and conditions state: *"Registration for each Event will open four (4) hours prior to the scheduled
   start of play."* The daily events start at 12 p.m., so registration opens at **8 a.m.** That is the

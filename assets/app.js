@@ -105,7 +105,8 @@
       parts.push("<strong>" + esc(k.replace(/_/g, " ")) + ":</strong> " + esc(f.value) +
         '<br><span class="small">' + esc(f.excerpt) + "</span>" +
         '<br><span class="small">' + esc(f.source.label) + " &middot; " +
-        '<a href="' + esc(f.source.url) + '" target="_blank" rel="noopener">' + esc(f.source.url) + "</a></span>");
+        '<a href="' + esc(f.source.url) + '" target="_blank" rel="noopener">' + esc(f.source.url) + "</a>" +
+        (f.retrieved_on ? " &middot; retrieved " + esc(f.retrieved_on) : "") + "</span>");
     });
     return "<span class='small'>" + parts.join("<hr>") + "</span>";
   }
@@ -484,7 +485,8 @@
       { id: "buy", label: "Buy-in", key: "buy_in_usd", num: true, html: function (r) { return money(r.buy_in_usd); } },
       { id: "gtd", label: "Guarantee", key: "guarantee_usd", num: true, html: function (r) { return money(r.guarantee_usd); } },
       { id: "mult", label: "Guarantee ÷ buy-in", key: "gtd_multiple", num: true, html: function (r) { return mult(r.gtd_multiple); } },
-      { id: "status", label: "Entry rule", key: "entry_status", html: function (r) { return statusChip(r.entry_status); } }
+      { id: "status", label: "Entry rule", key: "entry_status", html: function (r) { return statusChip(r.entry_status); } },
+      { id: "checked", label: "Last checked", key: "last_checked", html: function (r) { return "<span class='small'>" + esc(r.last_checked) + "</span>"; } }
     ];
     if (withRules) {
       cols.push({ id: "rule", label: "Entry rule (official)", key: "entry_rule", sort: null, html: function (r) { return "<span class='small'>" + esc(r.entry_rule) + "</span>"; } });
@@ -542,8 +544,19 @@
         "<strong>" + esc(res[0].note) + "</strong>" +
         "<br><br>Sources: " + srcLinks(res[0].sources);
       var dayNames = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+      // days is stored as a string like "Monday-Thursday", "Friday", "Saturday-Sunday" or "Monday-Sunday"
+      function dayRuns(daysStr, dayFull) {
+        var order = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+        var idx = order.indexOf(dayFull);
+        if (idx < 0) return false;
+        var parts = String(daysStr).split("-");
+        if (parts.length === 1) return parts[0] === dayFull;
+        var a = order.indexOf(parts[0]), b = order.indexOf(parts[1]);
+        if (a < 0 || b < 0) return false;
+        return idx >= a && idx <= b;
+      }
       var calendar = '<div class="calendar">' + dayNames.map(function (d, i) {
-        var todays = daily.filter(function (x) { return x.days.indexOf(d.slice(0, 3)) >= 0 || x.days.indexOf(d) >= 0; });
+        var todays = daily.filter(function (x) { return dayRuns(x.days, d); });
         return '<div class="slot"><div class="d">' + d + "</div>" + (todays.length
           ? todays.map(function (x) {
               return '<div class="t">' + timeFmt(x.start) + "</div><div class='small'>" +
@@ -628,7 +641,7 @@
               " " + chip + " " + marks.join(" ") +
               '<br><span class="small">' + esc(o.series) + " · " + esc(o.venue) +
               (o.est_end ? " · estimated to finish about " + timeFmt(o.est_end) +
-                ((o.est_next_day || o.est_end < o.start) ? " (next day)" : "") : "") +
+                ((o.est_end_next_day || o.est_next_day || o.est_end < o.start) ? " the next day" : "") : "") +
               ' · <a href="' + esc(o.source) + '" target="_blank" rel="noopener">source</a></span>' +
               ((row.flags || []).length ? '<br><span class="chip warn">' + esc(row.flags[0]) + "</span>" : "") +
               "</li>";
@@ -1164,9 +1177,9 @@
   function markdownPage(file) {
     return function () {
       getText(file).then(function (t) {
-        // The page template already prints the <h1>; drop the Markdown file's own
-        // leading title so the page does not show the heading twice.
-        t = t.replace(/^\s*#\s+[^\n]*\n/, "");
+        // The page template already prints the page <h1>. Drop a leading "# Title" line from
+        // the document so a markdown-backed page does not show its title twice.
+        t = t.replace(/^\s*#\s+[^\r\n]*\r?\n/, "");
         document.getElementById("content").innerHTML = '<div class="md">' + renderMarkdown(t) + "</div>";
       }).catch(showErr);
     };

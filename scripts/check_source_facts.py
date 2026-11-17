@@ -81,6 +81,7 @@ OFFICIAL_HOSTS = (
     # pages/strip-rooms.html (data id strip_rwlv_events). Its absence made this
     # script refuse to run on main (REQUEST 2, session 206debc0).
     "www.rwlasvegas.com",
+    "rwlasvegas.com",
 )
 
 
