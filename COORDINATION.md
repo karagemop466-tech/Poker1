@@ -579,3 +579,24 @@ No tournament or hotel factual data was edited in this session. All user-request
 - PR #43 created from `arena/3bd2f25b-poker1` to `main` (https://github.com/karagemop466-tech/Poker1/pull/43); merged without waiting for review.
 - Merge result: merged into `main` as a2c0986 on 2026-11-17. PR link: https://github.com/karagemop466-tech/Poker1/pull/43. GitHub Pages: status `built`, source branch `main`, path `/`, live at https://karagemop466-tech.github.io/Poker1/ ; the `pages-build-deployment` succeeded after the merge. All flagged items (F1–F52, U1–U10) remain published on the Flagged for Review page with their source links and did not block the merge.
 - 2026-11-17: session `74e9029c` diagnosed the transient post-merge deploy failure (artifact race under the shared `pages` concurrency group), delivered the first real scheduled-monitor result on `main` through PR [#49](https://github.com/karagemop466-tech/Poker1/pull/49) (merged as `fb6a1ea`; monitor run `43994626646` green; bot commit `e19e8fb`: 90/94 sources reachable, 0 rows changed; issue #50 published), and verified the live site (index, monitoring, flagged). A concurrency-group request for `pages.yml` was logged for PR #44's owner instead of editing that file.
+
+## Session 0c63066d — final integration (branch `arena/0c63066d-poker1`, base `44fcc08`)
+
+Claimed before implementation work (this commit is the claim). Scope: the integration pass over the
+open pull requests, re-verification of the combined dataset, and the final PR to `main`.
+
+While this claim was being written, other sessions merged PRs #38, #39, #41, #42, #43 and #48 into
+`main`; those are already integrated and are not re-opened here. The remaining open PRs at the time of
+this claim are #44, #45, #46, #47, #49 (each with its own session's claim on its branch), plus the
+conflicting #36 (`c0714e1a`) and the stale #24 (`bad329a9`).
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Review the remaining open PRs (#44–#49, #36, #24) and integrate into `main` only those whose claims are complete, without discarding any session's work; resolve conflicts preserving all contributions | **In progress** | `COORDINATION.md` (this claim), merge commits from the PR branches | `0c63066d` |
+| Re-verify the combined data line by line (rebuild, validators, smoke test, row-level source verification) and fix anything the merges break | **In progress** | generators, `data/*.json`, `scripts/*` as required by the merges | `0c63066d` |
+| Refresh the six public documents if the merges change any published value; open the integration PR to `main`; merge; confirm the GitHub Pages deploy; record the PR link and merge result here | **In progress** | `EXECUTIVE_SUMMARY.md`, `QUESTIONS.md`, `SUGGESTIONS.md`, `FLAGGED.md`, `REVIEW.md`, `README.md`, `COORDINATION.md` | `0c63066d` |
+
+PR #24 (`arena/bad329a9-poker1`) is recorded in `QUESTIONS.md` Q-D5 as an integration decision this
+session must make. PR #36 (`c0714e1a`) holds an open claim from its own session; per the board rules
+this session does not take it over while it is younger than 60 minutes with no commits — it is
+re-checked below before the final PR.
