@@ -537,3 +537,39 @@ Note for other sessions: this session appends to `COORDINATION.md` and does not 
 `scripts/build_data.py`, `data/*.json`, `index.html` and `pages/*.html` are generated or shared: #36 and
 #38 own their own edits there; this session's edits to the same files are limited to the scopes above and
 are reconciled at integration, not by overwriting.
+
+### c7a324a6 — result, and the shared-file conflict this session resolved
+
+Done and pushed to `arena/c7a324a6-poker1` (base at claim time `aea688a`, rebased onto `fb6a1ea` before the PR):
+
+- **Daily feed extended to three rooms** (my task 1). `data/daily.json` now holds 11 formats: 4 Wynn (unchanged) + 3 Bellagio weekly + 4 Caesars Palace daily, each quoting its own structure document with a
+  per-document `verified_on`. `scripts/build_data.py` gained a `ROOM_DAILY` table that back-fills Wynn's rows and
+  adds the new ones; `data/daily.json` is no longer Wynn-only. `assets/app.js` adds a Room column (linking the
+  venue page), a venue chip in the weekday calendar, and a "Source document" column; `pages/daily.html` retitled
+  to "Strip poker room daily feed". ARIA contributes nothing: its official page publishes no schedule and tells
+  guests to call or follow it on social media (F38, F57).
+- **Tax authority check** (task 2): Wynn and Encore room tax = 13.38 **verified** from the Clark County
+  Department of Business License licensing table (same record verifies the Venetian/Palazzo street address).
+  Bellagio, ARIA and Caesars stay blank on purpose: the table pages carrying their rows were not retrieved, so a
+  search excerpt of a Bellagio row is recorded as a next step (F58, QUESTIONS I7), not as a value.
+- **Rates** (task 3): a third attempt at the engine calendar view (NYE Dec 24–27) returned `$XXX` for every
+  night; **no entry was added** (F60). Log stays at 5 quotes. Next attempt should use the offer/booking flow, not
+  `view=calendar`.
+- **Independent audit** (task 4): `research/verification-2026-11-17-c7a324a6.md`. 143 printed Venetian rows
+  matched by date/time/event#/amounts -> 142 clean, 1 corrected (Jan 4 2027 MSPT Day 2 Restart 11:00 -> **11:10**,
+  F55; `d94b191b`/PR #51 reached the same fix independently the same day, and keeps the structure sheet's
+  "resume at 11:00 AM" wording). Value-provenance pass over all 317 rows: every buy-in, house fee, prize pool and
+  starting stack is printed by an official document of that row's venue; the only unsourced money values are the
+  17 Signature Series guarantees already blanked by `160f9080` (F54).
+- New sources: 11 ids appended (Venetian poker page, Caesars casino + its poker page, 3 Bellagio PDFs, ARIA page,
+  county guide) -> `data/sources.json` at 82. `scripts/check_links.py` now splits the allow-list into
+  `OPERATOR_SOURCE_HOSTS` (adds `assets.contentstack.io`, MGM's asset host) and `GOVERNMENT_SOURCE_HOSTS`
+  (`www.clarkcountynv.gov`), and enforces the new daily-row contract (`late_printed: false` => `late` null +
+  mandatory `late_note`; mandatory venue / source URL / label / verified_on).
+
+**Conflict, resolved without discarding anyone's work:** `git pull --rebase origin main` produced one conflict, in
+`COORDINATION.md` only (my claim section vs `11c7cbe6` + `3bd2f25b`, which had landed on main in between). Both
+sections are kept, in file order; no other file conflicted, and `data/*.json` and `pages/*.html` were regenerated
+after the rebase so the rebuild is byte-identical (verified: 317 rows, 11 daily formats, 78 flagged rows,
+`check_links` OK, `verify_rows.py` 324 rows / 1,122 checks / 0 failures, smoke 21/21).
+

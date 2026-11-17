@@ -35,7 +35,11 @@ re-checked on 2026-11-17.
   is what keeps the log honest.
 - **Wynn cannot be priced the same way yet.** Its booking engine renders the nightly grid and the tax
   line client-side and returns only fee and policy text to a text fetch, so no Wynn quote could be
-  captured. Its room tax stays blank rather than borrowing the Venetian's 13.38%, and the like-for-like
+  captured. Its **room tax is no longer blank**: the Clark County licensing record lists "Wynn Las Vegas /
+  Encore at Wynn Las Vegas | 3131 Las Vegas Blvd S | Licensed | 13.38% | Transient Lodging Tax - Resort
+  Hotel (PGC)", so 13.38% is now verified from the authority that sets it rather than borrowed from the
+  Venetian ([record](https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf),
+  read 2026-11-17, flagged F58). One number is still missing - the nightly rate - so the like-for-like
   Wynn-versus-Venetian comparison still cannot be made. That is the last missing piece of the hotel
   picture.
 - **Walking times are now routed, not blank.** Twelve hotel-to-poker-room pairs were measured on the
@@ -49,6 +53,23 @@ re-checked on 2026-11-17.
   earlier single-entry start is the 9:10 AM $260 turbo milestone satellite on Dec 12, and it pays a
   seat rather than cash. The 8 to 10 AM window holds nothing all day. The one thing that *does* open at
   8 AM is **registration**, four hours before a noon start at Wynn (official Wynn terms) — not play.
+- **The live daily feed now covers three rooms, not one.** It previously held only Wynn's four printed
+  daily formats, because the other rooms published nothing machine-readable. That changed: the Bellagio
+  Friday $600 / Saturday multi-flight / Sunday $400 H.O.R.S.E. structure PDFs and the Caesars Palace daily
+  No-Limit schedule were read from the rooms' own pages and are published format by format, each with its
+  printed clause and retrieval date, at [Daily feed](pages/daily.html) (11 rows: 4 Wynn, 3 Bellagio, 4
+  Caesars Palace). Two of these matter for an early start: **Caesars runs a $100 daily at 10 a.m. with a
+  $1,000 guarantee**, and **Wynn's noon dailies open registration at 8 a.m.** Neither Caesars format can
+  be ranked as single entry - its own flyer allows a re-entry and a $50 add-on - so they are listed as
+  daily structures, not as verified single-entry rows. ARIA publishes no schedule at all and tells guests
+  to call the room or follow it on social media, which is recorded as a verified negative (F38, F57).
+- **Every printed Venetian row was re-audited against the page text, and one value was wrong.** All 143
+  printed rows across the two DeepStack Extravaganza pages were matched by date, start time, event number
+  and printed amounts: 142 matched, and the Jan 4, 2027 MSPT Day 2 Restart is republished at the printed
+  **11:10** instead of 11:00 (F55). The separately written provenance audit over all 317 rows found no
+  unsourced buy-in, house fee, prize pool or starting stack; the only unsourced money values in the dataset
+  were the 17 Signature Series guarantees, already blanked and published as F54. The record is
+  `research/verification-2026-11-17-c7a324a6.md`.
 - **Trip cost calculator.** The calculator now prices a whole trip: entries × buy-in + nights × true
   hotel cost + parking + other spend, using only logged quotes, and it shows what the selected stay
   window actually holds (verified single-entry events, days covered, cheapest buy-in, best
@@ -138,8 +159,8 @@ resort fee and the tax; nothing is reconstructed from an assumed rate.
 |---|---|---|---|---|---|
 | [The Venetian Resort](https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html) | $55 plus tax (verified) | 13.38% (verified) | $338.48 (Dec 13–20), $911.86 (Jan 1–6), $804.15 (Nov 26–29) | inside the resort | **16 min** (routed) |
 | [The Palazzo](https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html) | $55 (verified) | 13.38% (verified) | $320.02 (Jan 10–15) | inside the resort | **14 min** (routed) |
-| [Wynn Las Vegas](https://www.wynnlasvegas.com/terms-and-conditions/848671) | $55 plus tax (verified) | blank (not printed; engine hides its breakdown) | blank (no Wynn quote captured yet) | **15 min** | inside the resort (the room is in Encore) |
-| [Encore at Wynn Las Vegas](https://www.wynnlasvegas.com/terms-and-conditions/848671) | $55 plus tax (verified) | blank | blank (no dated quote) | **14 min** | inside the resort |
+| [Wynn Las Vegas](https://www.wynnlasvegas.com/terms-and-conditions/848671) | $55 plus tax (verified) | **13.38%** (Clark County licensing record; no Wynn page prints it) | blank (no Wynn quote captured yet) | **15 min** | inside the resort (the room is in Encore) |
+| [Encore at Wynn Las Vegas](https://www.wynnlasvegas.com/terms-and-conditions/848671) | $55 plus tax (verified) | **13.38%** (same county record, same licence) | blank (no dated quote) | **14 min** | inside the resort |
 | [Bellagio](https://bellagio.mgmresorts.com/en.html) | blank | blank | blank | **22 min** | **31 min — over the limit** |
 | [ARIA Resort & Casino](https://aria.mgmresorts.com/en.html) | blank | blank | blank | **34 min — over the limit** | **43 min — over the limit** |
 | [Caesars Palace](https://www.caesars.com/caesars-palace) | blank | blank | blank | **23 min** | **32 min — over the limit** |
@@ -167,9 +188,13 @@ offers are non-cancellable and non-refundable but prints **no fixed free-cancell
 general rate, so the two properties cannot even be matched on that term yet. Both texts are stored
 verbatim in `data/rates.json`.
 
-**Wynn's room tax stays blank on purpose.** No Wynn page prints the percentage, and its engine does not
-expose the breakdown to a text fetch, so there is no honest way to state it. Applying the Venetian's
-13.38% to Wynn would be exactly the kind of inference this dataset forbids.
+**Wynn's room tax is stated because the taxing authority states it.** No Wynn page prints the percentage,
+and its engine does not expose the breakdown to a text fetch. Applying the Venetian's 13.38% to Wynn would
+be exactly the kind of inference this dataset forbids, so it was not done; instead the Clark County
+Department of Business License licensing table was read, and it lists Wynn Las Vegas and Encore at Wynn Las
+Vegas together at **13.38%, Transient Lodging Tax - Resort Hotel (PGC)** - the same class and rate as the
+Venetian and Palazzo. That is a county record dated July 2021, labelled as such on the hotel row, and the
+nightly rate is still blank, so no Wynn true cost per night is shown.
 
 **Resort fees and room tax for Bellagio, ARIA and Caesars are still blank.** Eight candidate official URLs were tried
 on 2026-11-17 (resort-fee and policies pages on mgmresorts.com and caesars.com); every one either
