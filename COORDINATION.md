@@ -12,3 +12,4 @@
 - `python3 scripts/build_data.py`, `python3 scripts/build_site.py`, and `python3 scripts/check_links.py` — passed; 316 tournament rows, 7 hotels, 1 dated rate entry, 70 schedule days, 21 pages.
 - No tournament or hotel factual data was edited in this task. This task did not reread official operator sources; existing source verification and all known irregularities remain recorded above and in `FLAGGED.md` / `REVIEW.md`.
 - Change: CI now sets up Node 22, runs `npm ci`, and fails validation if the browser smoke test fails. Previously the smoke-test step was marked `continue-on-error: true`, so a broken page could pass validation.
+- [PR #29](https://github.com/karagemop466-tech/Poker1/pull/29) merged on 2026-11-17 as `f1eafd014dd53a5e67451907c7b275c5ad87571b`. PR validation passed (run `43988344614`); the merge-triggered Pages validation and deployment both passed (run `43988437822`).
