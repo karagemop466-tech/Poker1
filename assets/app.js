@@ -16,6 +16,7 @@
     ["pages/hotels.html", "Hotels"],
     ["pages/calculator.html", "Calculator"],
     ["pages/venues.html", "Venues"],
+    ["pages/strip-rooms.html", "Strip rooms"],
     ["pages/other-rooms.html", "Other rooms"],
     ["pages/search.html", "Search"],
     ["pages/monitoring.html", "Monitoring"],
@@ -1104,6 +1105,65 @@
       }).catch(showErr);
     };
   }
+  /* Strip-wide survey: rooms and formats that the venue pages do not cover (data/strip_rooms.json). */
+  PAGES.strips = function () {
+    var main = document.getElementById("content");
+    getJSON("data/strip_rooms.json").then(function (d) {
+      var roomById = {};
+      d.rooms.forEach(function (r) { roomById[r.id] = r; });
+      function blank(v) { return v ? esc(v) : '<span class="muted">blank</span>'; }
+      function roomName(id) { return roomById[id] ? esc(roomById[id].name) : esc(id); }
+      main.innerHTML =
+        '<p class="lead">Official poker-room facts for the Strip rooms that the venue pages do not cover, read on ' +
+        esc(d.verified_on) + ". Every value is quoted from an operator page, PDF or article linked in its row. " +
+        "A closure that is only reported in the press is listed separately and is never shown as confirmed.</p>" +
+        "<h2>Rooms</h2><div id=\"strip-rooms\"></div>" +
+        "<h2>Tournament formats</h2><p class=\"small\">Recurring formats have no calendar date on the official sources, so none is turned into a dated row. " +
+        "A format is kept out of the single-entry ranking when it sells extra chips for extra money (separate section).</p><div id=\"strip-formats\"></div>" +
+        "<h2>Reported changes (not confirmed on an official page)</h2><div id=\"strip-reported\"></div>" +
+        "<h2>Coverage</h2><div class=\"card\"><p class=\"small\">" + esc(d.strip_coverage.basis) + "</p>" +
+        "<p class=\"small\"><strong>Not surveyed in this session:</strong> " + esc(d.strip_coverage.not_surveyed.join(", ")) + ".</p>" +
+        "<p class=\"small\">Source: " + srcLinks([d.strip_coverage.source]) + "</p></div>";
+
+      table(document.getElementById("strip-rooms"), d.rooms, [
+        { id: "name", label: "Room", key: "name", html: function (r) { return "<strong>" + esc(r.name) + "</strong>"; } },
+        { id: "status", label: "Status", key: "status", sort: null, html: function (r) {
+            var cls = String(r.status).indexOf("reported") === 0 ? "bad" : "ok";
+            return '<span class="chip ' + cls + '">' + esc(r.status) + "</span>"; } },
+        { id: "hours", label: "Hours", key: "hours", sort: null, html: function (r) { return blank(r.hours); } },
+        { id: "contact", label: "Contact", key: "contact", sort: null, html: function (r) { return blank(r.contact); } },
+        { id: "summary", label: "Tournaments (as published)", key: "tournament_summary", sort: null, html: function (r) { return "<span class='small'>" + esc(r.tournament_summary) + "</span>"; } },
+        { id: "src", label: "Official sources", key: "sources", sort: null, html: function (r) { return srcLinks(r.sources); } }
+      ], { sortKey: "name", sortDir: 1 });
+
+      table(document.getElementById("strip-formats"), d.formats, [
+        { id: "name", label: "Format", key: "name", html: function (r) { return "<strong>" + esc(r.name) + "</strong><br><span class='small'>" + esc(r.days) + "</span>"; } },
+        { id: "venue", label: "Room", key: "venue", html: function (r) { return roomName(r.venue); } },
+        { id: "start", label: "Start times", key: "start", html: function (r) { return r.times.map(timeFmt).join(", "); } },
+        { id: "buy", label: "Buy-in", key: "buy_in_usd", num: true, html: function (r) { return money(r.buy_in_usd); } },
+        { id: "gtd", label: "Guarantee", key: "guarantee_usd", num: true, html: function (r) { return money(r.guarantee_usd); } },
+        { id: "chips", label: "Starting chips", key: "starting_chips", num: true, html: function (r) {
+            return r.starting_chips ? Number(r.starting_chips).toLocaleString("en-US") + "<br><span class='small'>" + esc(r.chips_note) + "</span>" : blank(r.chips_note); } },
+        { id: "fee", label: "Fee split", key: "fee_split", sort: null, html: function (r) { return "<span class='small'>" + blank(r.fee_split) + "</span>"; } },
+        { id: "late", label: "Late registration", key: "late_registration", sort: null, html: function (r) { return "<span class='small'>" + blank(r.late_registration) + "</span>"; } },
+        { id: "status", label: "Single-entry status", key: "status", sort: null, html: function (r) {
+            return statusChip(r.status) + "<br><span class='small'>" + esc(r.single_entry) + "</span>" +
+              (r.separate_reason ? "<br><span class='small'><strong>Separate section:</strong> " + esc(r.separate_reason) + "</span>" : ""); } },
+        { id: "excerpt", label: "Source excerpt", key: "excerpt", sort: null, html: function (r) { return "<span class='small'>" + esc(r.excerpt) + "</span>"; } },
+        { id: "src", label: "Official sources", key: "sources", sort: null, html: function (r) { return srcLinks(r.sources) + "<br><span class='small'>Read " + esc(r.retrieved_on) + "</span>"; } }
+      ], { sortKey: "start", sortDir: 1 });
+
+      table(document.getElementById("strip-reported"), d.reported_changes, [
+        { id: "room", label: "Room", key: "venue", html: function (r) { return roomName(r.venue); } },
+        { id: "change", label: "Reported change", key: "change", sort: null, html: function (r) { return esc(r.change); } },
+        { id: "by", label: "Reported by", key: "reported_by", sort: null, html: function (r) { return "<span class='small'>" + esc(r.reported_by) + "</span>"; } },
+        { id: "conf", label: "Official confirmation", key: "official_confirmed", sort: null, html: function (r) { return '<span class="chip warn">Not confirmed on an official page</span>'; } },
+        { id: "flag", label: "Flag", key: "flag", sort: null, html: function (r) { return '<a href="' + BASE + 'pages/flagged.html">' + esc(r.flag) + '</a>'; } },
+        { id: "link", label: "Report", key: "url", sort: null, html: function (r) { return '<a href="' + esc(r.url) + '" target="_blank" rel="noopener">Read the report</a>'; } }
+      ], { sortKey: "room", sortDir: 1 });
+    }).catch(showErr);
+  };
+
   // pages/other-rooms.html is generated statically by scripts/build_other_rooms.py, so the
   // tables are already in the HTML and there is nothing to render at run time. The renderer
   // exists because the validator requires one renderer per data-page, and it uses the

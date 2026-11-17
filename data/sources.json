@@ -1,5 +1,5 @@
 {
- "note": "Every source URL monitored by scripts/monitor_sources.py. All hosts are official operator domains (venetianlasvegas.com, wynnlasvegas.com, cdn.wynnresorts.com, mgmresorts.com property domains, caesars.com, boydgaming.com property domains, southpointcasino.com). Nothing from a third-party site is fetched. Every source URL monitored by scripts/monitor_sources.py. All hosts are official operator domains (venetianlasvegas.com, wynnlasvegas.com, cdn.wynnresorts.com, mgmresorts.com property domains, caesars.com). Nothing from a third-party site is fetched. Added 2026-11-17 (session c7a324a6): each Strip poker room in the dataset now has its official poker page and, where the room publishes one, its official daily or weekly schedule document in this manifest - Bellagio's three weekly structure PDFs, Caesars Palace's daily NLH schedule and ARIA's page, which publishes no schedule and is watched so that a first publication is noticed. The Clark County licensing table is included as a government record for the address and room-tax class; two hosts (assets.contentstack.io, which serves the PDFs the official Bellagio page links, and www.clarkcountynv.gov) are allow-listed in scripts/check_source_facts.py and scripts/check_links.py with the reason stated there.",
+ "note": "Every source URL monitored by scripts/monitor_sources.py. All hosts are official operator domains (venetianlasvegas.com, wynnlasvegas.com, cdn.wynnresorts.com, mgmresorts.com property domains, caesars.com, boydgaming.com property domains, southpointcasino.com). Nothing from a third-party site is fetched.",
  "sources": [
   {
    "id": "v_dse_nov_page",
@@ -562,6 +562,20 @@
    "url": "https://southpointcasino.com/casino/poker-room/daily-tournament-schedule",
    "kind": "structure",
    "venue": "South Point"
+  },
+  {
+   "id": "strip_rwlv_events",
+   "label": "Resorts World official casino events page (closure check: no poker event listed)",
+   "url": "https://www.rwlasvegas.com/gaming/casino-events/",
+   "kind": "schedule",
+   "venue": "Resorts World"
+  },
+  {
+   "id": "strip_ph_property",
+   "label": "Planet Hollywood official property page (closure check)",
+   "url": "https://www.caesars.com/planet-hollywood",
+   "kind": "schedule",
+   "venue": "Planet Hollywood"
   },
   {
    "id": "v_poker_page",

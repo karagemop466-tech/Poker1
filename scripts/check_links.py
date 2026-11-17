@@ -49,6 +49,9 @@ OPERATOR_SOURCE_HOSTS = {
     "mandalaybay.mgmresorts.com",
     "orleans.boydgaming.com",
     "southpointcasino.com",
+    # Session 88793bf4 (Strip-room survey): the Resorts World operator page. The MGM PDFs stay
+    # un-approved (F40); see FLAGGED.md S9.
+    "www.rwlasvegas.com",
 }
 # Government records: the taxing authority that sets the room tax. Accepted only for the
 # address / rate-class rows of the licensed-establishment table, and always labelled as a
@@ -62,7 +65,7 @@ DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 TIME_RE = re.compile(r"^(?:[01]\d|2[0-3]):[0-5]\d$")
 KNOWN_PAGES = {"index", "singleEntry", "separate", "unverified", "daily", "hotels", "calculator",
                "schedule", "venues", "search", "monitoring", "summary", "questions", "suggestions",
-               "flagged", "review",
+               "flagged", "review", "strips",
                # Session 0d069ce0: pages/other-rooms.html. Registered here because the page-link
                # check rejects any data-page outside this set. One line, no other change.
                "otherRooms"}
@@ -715,6 +718,65 @@ for rel in pages:
                 if unquote(parsed.fragment) not in anchor_parser.ids:
                     problems.append(f"{rel}: broken fragment link {href}")
 
+
+# --- Strip-room survey (data/strip_rooms.json): official-only fields, dated, sourced, flagged when unconfirmed.
+strip_doc = load_json("data/strip_rooms.json")
+if isinstance(strip_doc, dict):
+    check_date(strip_doc.get("verified_on"), "data/strip_rooms.json verified_on", required=True)
+    room_ids = set()
+    for index, room in enumerate(strip_doc.get("rooms") or [], 1):
+        where = f"data/strip_rooms.json room {index}"
+        rid = room.get("id")
+        if not isinstance(rid, str) or not rid or rid in room_ids:
+            problems.append(f"{where}: missing or duplicate id {rid!r}")
+            continue
+        room_ids.add(rid)
+        if not room.get("name"):
+            problems.append(f"{where} {rid}: name is blank")
+        for src in room.get("sources") or []:
+            check_official_https_url(src.get("url"), f"{where} {rid} source")
+        if not room.get("sources"):
+            problems.append(f"{where} {rid}: no official source")
+    format_ids = set()
+    for index, fmt in enumerate(strip_doc.get("formats") or [], 1):
+        where = f"data/strip_rooms.json format {index}"
+        fid = fmt.get("id")
+        if not isinstance(fid, str) or not fid or fid in format_ids:
+            problems.append(f"{where}: missing or duplicate id {fid!r}")
+            continue
+        format_ids.add(fid)
+        if fmt.get("venue") not in room_ids:
+            problems.append(f"{where} {fid}: venue {fmt.get('venue')!r} is not a room in this file")
+        if fmt.get("status") not in {"UNV", "SE"}:
+            problems.append(f"{where} {fid}: status must be UNV or SE, got {fmt.get('status')!r}")
+        for t in fmt.get("times") or []:
+            check_time(t, f"{where} {fid} time", required=True)
+        check_time(fmt.get("start"), f"{where} {fid} start", required=True)
+        if fmt.get("times") and fmt.get("start") not in fmt.get("times"):
+            problems.append(f"{where} {fid}: start must be one of times")
+        for key in ("buy_in_usd", "guarantee_usd", "starting_chips", "prize_pool_usd"):
+            value = fmt.get(key)
+            if value is not None:
+                check_number(value, f"{where} {fid} {key}")
+        if fmt.get("status") == "SE" and not fmt.get("single_entry_source"):
+            problems.append(f"{where} {fid}: a SE status needs a single_entry_source")
+        check_date(fmt.get("retrieved_on"), f"{where} {fid} retrieved_on", required=True)
+        if not fmt.get("sources"):
+            problems.append(f"{where} {fid}: no source")
+        for src in fmt.get("sources") or []:
+            check_official_https_url(src.get("url"), f"{where} {fid} source")
+    for index, change in enumerate(strip_doc.get("reported_changes") or [], 1):
+        where = f"data/strip_rooms.json reported change {index}"
+        if change.get("official_confirmed") is not False:
+            problems.append(f"{where}: a press report cannot be marked official_confirmed")
+        if not isinstance(change.get("url"), str) or not change["url"].startswith("https://"):
+            problems.append(f"{where}: needs an https link to the report")
+        if not str(change.get("flag", "")).startswith("S"):
+            problems.append(f"{where}: needs a flag id from FLAGGED.md section E")
+    if not strip_doc.get("rooms"):
+        problems.append("data/strip_rooms.json: no rooms")
+else:
+    problems.append("data/strip_rooms.json is missing or not an object")
 
 # --- one renderer per page: a duplicate PAGES.x silently overrides an earlier one and the page still loads,
 # so link checking cannot catch it. A merge once did exactly that to the calculator.

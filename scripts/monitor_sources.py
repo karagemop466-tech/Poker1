@@ -81,6 +81,13 @@ def main():
                     urls.add(src["url"])
             if row.get("route_link"):
                 urls.add(row["route_link"])
+    # The Strip-room survey (MGM Grand, Mandalay Bay, Horseshoe, closure checks) is monitored the same way.
+    strips = load("strip_rooms.json") or {}
+    for group in ("rooms", "formats"):
+        for item in strips.get(group, []):
+            for src in (item.get("sources") or []):
+                if src.get("url"):
+                    urls.add(src["url"])
     for entry in (load("rates.json") or {}).get("entries", []):
         if entry.get("source"):
             urls.add(entry["source"])
