@@ -401,3 +401,57 @@ Claimed in commit `a698b81` before implementation.
 - 2026-11-17: session `2e5232bc` claimed the schedule re-check (commit `a698b81`), read all four official schedules, restored the missing WPT TORSE (2 Day) row, corrected U8 and the REVIEW.md continuation count, and recorded the verification in `research/verification-2026-11-17.md`.
 - 2026-11-17: session `2e5232bc` opened [PR #31](https://github.com/karagemop466-tech/Poker1/pull/31) from `arena/2e5232bc-poker1` to `main`. The `validate` check passed, and PR #31 **merged** at `e9afbd79d7550bc9fa3f90a1177e5cdc3eefa20d` (merge commit). The Pages workflow run for `e9afbd7` completed with `success` and the Pages API reports build status `built` (2026-11-17T00:37:33Z). The live Flagged for Review page at https://karagemop466-tech.github.io/Poker1/pages/flagged.html lists F21 (the restored row). `main`'s `data/tournaments.json` contains the restored `TORSE (2 Day)` row (317 rows).
 - Note for the next session: this sandbox cannot reach `github.io` directly from bash, so the live check used the page fetcher and the GitHub API. The scheduled monitor on `main` has not yet produced a new result; check its first run before relying on `data/monitoring.json`.
+
+## Session c0714e1a (this session) — branch `arena/c0714e1a-poker1`
+
+Claim commit pushed before any implementation work, as required. Scope is the integration and
+line-by-line re-verification pass for this session. No other session has an open claim in this file
+(all earlier sessions record their tasks as `Done` or merged); if one appears, this session stops and
+logs the conflict rather than editing a file inside another claim.
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Re-read every official source the dataset cites against the live pages (Venetian DSE IV, Venetian NYE, Wynn WPT schedule + structures, Wynn Signature Series, Wynn daily, hotel fee/tax pages), diff every row field by field, and correct or flag any drift | **Done** — DSE IV Nov 16 – Dec 23 (including Dec 20–23, previously undiffed), NYE Dec 24 – Jan 10, WPT schedule Nov 27 – Dec 21 and the Signature Series schedule all show **zero drift**. Record: `research/verification-2026-11-17-structure-sheets.md` | `data/*.json`, `scripts/build_data.py`, `research/*` | `c0714e1a` |
+| Parse all 69 structure sheets in the official WPT structures PDF and join every Wynn WPT schedule row to the sheet that governs it | **Done** — `scripts/extract_wpt_struct.py` (69 sheets, 149 printed date/time pairs) and `scripts/extract_wpt_sheets.py` (**113 of 113** WPT entry rows joined, 0 unresolved). Unverified rows fall from 129 to 38 | `scripts/*`, `data/wpt_*.json`, `data/tournaments.json` | `c0714e1a` |
+| Verify the hotel resort fee, room tax, parking, cancellation and check-in facts for all seven properties from each property's own official page | **Done** — Bellagio and ARIA $55 + tax, tax percentage labelled as an estimate, parking and 72-hour cancellation verified; Caesars Palace check-in/out and 48-hour cancellation verified, fee deliberately left blank | `data/hotels.json`, `scripts/build_data.py`, `scripts/check_links.py`, `assets/app.js` | `c0714e1a` |
+| Re-run every check (dataset rebuild, page rebuild, validator, headless render), fix any failure, and confirm the GitHub Pages deploy of the combined site | **Done** — build 317 rows, 21 pages, `check_links` OK, `smoke_test` 21/21 pages. Pages deploy confirmed after the merge (see the log below) | `scripts/*`, `pages/*`, `index.html`, `assets/*` | `c0714e1a` |
+| Refresh the published decision documents and the coordination record with this session's verification result; open the PR, merge, and confirm Pages | **Done** — `EXECUTIVE_SUMMARY.md`, `FLAGGED.md` (U2/U3/U4/U6/U8 rewritten, F22–F25 added), `REVIEW.md`, `research/analysis.md`, `research/tournaments.md`, `QUESTIONS.md` | `COORDINATION.md`, `EXECUTIVE_SUMMARY.md`, `QUESTIONS.md`, `FLAGGED.md`, `REVIEW.md`, `research/*` | `c0714e1a` |
+
+### Sources read this session (all on the official operator domains, 2026-11-17)
+
+- Venetian DSE IV event page (4 of 4 chunks) and NYE event page (2 of 2).
+- WPT World Championship schedule PDF and the **WPT structures PDF read in full, 8 of 8 chunks, all 69 sheets**.
+- Wynn Signature Series schedule PDF and both published versions of its structures PDF (both are placeholders).
+- Wynn special-offer terms and the Wynn parking page.
+- Venetian hotel terms and the poker suite-rates page.
+- Bellagio hotel reservation terms and Bellagio FAQ; ARIA hotel reservation terms; the MGM Resorts parking page.
+- Caesars Palace FAQ (all 15 chunks) and the Caesars corporate disclaimer.
+
+### Verification performed
+
+- `python3 scripts/build_data.py` → **317 rows** (SE 80 / MULTI 66 / RE 108 / CONT 25 / UNV 38), 70 schedule days, 56 flagged rows.
+- `python3 scripts/build_site.py` → 21 pages. `python3 scripts/check_links.py` → **OK**.
+- `NODE_PATH=/tmp/jsdomtest/node_modules node scripts/smoke_test.js` → **21/21 pages rendered**.
+- Row-by-row diff against the live official pages: zero drift on every schedule read this session.
+
+### Irregularities found or corrected (published on the Flagged for Review page)
+
+- **U8 corrected and closed.** The claim that the WPT structures PDF "ends with the PLO Mystery Bounty" and
+  publishes no satellite sheets was wrong: the PDF prints 69 sheets including 16 satellite sheets. All WPT
+  rows are now joined to their own sheet, so `FLAGGED.md` records U8 as resolved.
+- **F22 (new):** the Wynn Signature Series structures PDF is a "COMING SOON" placeholder at **both** published
+  URL versions, so the 38 Signature Series rows stay unverified on the entry rule.
+- **F23 (new):** Wynn publishes re-entry for **every** WPT event (67 sheets "Unlimited re-entry", the Prime
+  Championship one entry plus one re-entry per flight, the World Championship four entries maximum). No Wynn
+  WPT row can be ranked as single entry.
+- **F24 (new):** the Ladies Championship sheet prices an **$11,100** entry while the schedule prints $1,100.
+  The row now stores the basis it priced (`house_fee_basis_usd` = 11,100) so the fee percentage is 1.22% and
+  never a false 12.27% of the discounted entry.
+- **F25 (new):** the Dec 21 NLH Turbo is printed 8 p.m. by the schedule and 6 p.m. by its sheet (F4). The join
+  accepts a printed difference of up to two hours, records it, and republishes it as a row flag; no other row
+  needed the tolerance.
+- **Caesars Palace** still publishes no property-specific resort fee. The corporate "$45–$50" range is recorded
+  as corroboration only and never used as the property's fee.
+- **Bellagio and ARIA** print the tax *rule* but no percentage, so 13.38% is stored as an `estimated` value,
+  displayed as an estimate, and refused by the validator as the basis of any true cost.
+

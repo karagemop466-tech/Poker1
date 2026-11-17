@@ -26,13 +26,16 @@ Session `baba1a15` · Checked 2026-11-16 · Inputs: `data/tournaments.json`, `da
 
 ## Hotel cost method
 - Only verified values are used. Nothing is inferred.
-- Fees are verified for four hotels and the room tax for one. Only one dated quote is on file, so the per-hotel
+- Fees are verified for six hotels; the room tax percentage is verified for one and shown as a labelled estimate
+  for two. Only one dated quote is on file, so the per-hotel
   true cost stays blank and the calculator asks for a rate instead of assuming one.
 
 ## Risks to the analysis
-- Multi-flight events (60 rows) could allow a second entry, which would change the value ranking. They are kept
+- Multi-flight events (66 rows) could allow a second entry, which would change the value ranking. They are kept
   out of the ranking until the poker room confirms.
-- The 129 unverified rows are listed but never ranked.
+- 108 rows carry a printed re-entry clause from their own structure sheet and are in the separate section.
+- The 38 unverified rows (all Wynn Signature Series) are listed but never ranked. No Wynn World Championship
+  row is unverified any more: all 113 WPT entry rows are joined to their printed sheet.
 - The full Venetian terms state a $55 resort fee plus applicable tax and a 13.38% Clark County room tax. The
   other hotels' property-specific tax values and all date-specific room rates remain unverified, so true-cost
   cells are blank.
