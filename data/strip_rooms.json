@@ -1,0 +1,222 @@
+{
+  "verified_on": "2026-11-17",
+  "note": "Strip-wide survey of poker rooms that were not yet covered by the venue dataset (data/tournaments.json). Every official value below was read on 2026-11-17 from the operator page, PDF or article named in its sources list, and carries the excerpt it came from. A closure reported only by the press is kept in reported_changes, never in an official field. Nothing here is a dated row: a weekly or recurring schedule with no calendar date is not turned into dated tournaments.",
+  "rooms": [
+    {
+      "id": "mgm_grand",
+      "name": "MGM Grand",
+      "status": "open (official poker page read 2026-11-17)",
+      "hours": "Daily: 24 Hours (official poker page)",
+      "contact": "(702) 891-7434 (official poker page and tournament schedule)",
+      "tournament_summary": "Official page lists daily Texas Hold'em tournaments at 11:00am, 7:00pm and 11:00pm. The official weekly schedule PDF prints 11:10am, 7:10pm and 11:10pm (flag S1).",
+      "sources": [
+        {"label": "MGM Grand official poker page", "url": "https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html"},
+        {"label": "MGM Grand official weekly tournament schedule (PDF, titled \"August Tournament Schedule\")", "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt5f25277b8918da08/mgm-grand-casino-poker-tournament_schedule.pdf"},
+        {"label": "MGM Grand official $120 NLH structure and rules (PDF, metadata title \"Max Stacks Tournament Series\")", "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf"}
+      ]
+    },
+    {
+      "id": "mandalay_bay",
+      "name": "Mandalay Bay",
+      "status": "open (official poker page read 2026-11-17); closed Tuesdays",
+      "hours": "Wednesday to Monday 10:00 AM to 4:00 AM; Tuesday closed (official poker page)",
+      "contact": "For reservations 702.632.7790; group tournaments: same number (official poker page)",
+      "tournament_summary": "The official poker page publishes no tournament schedule: \"Please Visit or Call Poker Room for Details\". Third-party listings show daily $60 and $100 events; they are not official and are not used (flag S4).",
+      "sources": [
+        {"label": "Mandalay Bay official poker page", "url": "https://mandalaybay.mgmresorts.com/en/casino/poker-tables.html"}
+      ]
+    },
+    {
+      "id": "horseshoe",
+      "name": "Horseshoe Las Vegas",
+      "status": "open per the Caesars official poker article (dated 2026-07-17, read 2026-11-17)",
+      "hours": "Not printed in the article read",
+      "contact": "Not printed in the article read",
+      "tournament_summary": "The Caesars article says Horseshoe runs six daily No-Limit Hold'em tournaments at 9 a.m., 11 a.m., 2 p.m., 5 p.m., 8 p.m. and 11 p.m., with \"a mixture of buy-ins, levels and guarantees\". No single buy-in, guarantee or structure is printed for any of them (flag S5).",
+      "sources": [
+        {"label": "Caesars official article: Poker Tournaments in Las Vegas (Caesars Palace and Horseshoe)", "url": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"}
+      ]
+    },
+    {
+      "id": "resorts_world",
+      "name": "Resorts World Las Vegas",
+      "status": "reported closed (not confirmed on any official page read)",
+      "hours": "",
+      "contact": "",
+      "tournament_summary": "No poker tournament is listed on the official Resorts World casino-events or gaming pages read on 2026-11-17 (flag S7).",
+      "sources": [
+        {"label": "Resorts World official casino events page (read 2026-11-17; lists no poker event)", "url": "https://www.rwlasvegas.com/gaming/casino-events/"},
+        {"label": "Resorts World official gaming page (read 2026-11-17)", "url": "https://www.rwlasvegas.com/gaming/"}
+      ]
+    },
+    {
+      "id": "planet_hollywood",
+      "name": "Planet Hollywood",
+      "status": "reported closed after 31 Jan 2026 (not confirmed on the official property page read)",
+      "hours": "",
+      "contact": "",
+      "tournament_summary": "Caesars Entertainment's statement, as reported, said the room would stop operating after 31 Jan 2026 and that operations were consolidated into Caesars Palace and Horseshoe (flag S8).",
+      "sources": [
+        {"label": "Official Planet Hollywood property page (read 2026-11-17; no poker room in the sections read)", "url": "https://www.caesars.com/planet-hollywood"}
+      ]
+    }
+  ],
+  "formats": [
+    {
+      "id": "mgm-120-am",
+      "venue": "mgm_grand",
+      "name": "$120 No Limit Hold'em (daily, 11:10 AM)",
+      "days": "Sunday to Friday",
+      "times": ["11:10"],
+      "start": "11:10",
+      "buy_in_usd": 120,
+      "guarantee_usd": null,
+      "starting_chips": 25000,
+      "chips_note": "25,000 chips including 10,000 bought with the optional $11 gratuity; 15,000 without it (structure PDF)",
+      "level_minutes": 15,
+      "prize_pool_usd": 92,
+      "fee_split": "$92 prize pool; $13 house fee; $11 optional gratuity that grants 10,000 extra chips; $4 tournament promotions",
+      "late_registration": "Registration is open until Level 8 (structure PDF)",
+      "status": "UNV",
+      "separate_reason": "The $11 gratuity is optional and buys 10,000 extra chips (a 67% larger starting stack). That is an advantage bought with extra money, so the format sits in the separate section.",
+      "single_entry": "Not stated. The structure PDF has no re-entry clause and no single-entry clause. Per the dataset rule, silence on re-entry does not prove single entry.",
+      "labels": ["recurring", "optional chip purchase", "payout ladder printed"],
+      "payout_note": "Payout percentages printed by entry count, from 1-14 entries (65/35) to the 85-91 entry row (structure PDF)",
+      "excerpt": "\"Each initial $120 buy-in is allocated as follows: $92 to Prize Pool, $13 House Fee and a onetime, voluntary gratuity of $11 which grants players an extra 10,000 chips. $4 will fund Tournament Promotions.\"",
+      "sources": [
+        {"label": "MGM Grand weekly schedule (PDF)", "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt5f25277b8918da08/mgm-grand-casino-poker-tournament_schedule.pdf"},
+        {"label": "MGM Grand $120 NLH structure and rules (PDF)", "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf"}
+      ],
+      "retrieved_on": "2026-11-17"
+    },
+    {
+      "id": "mgm-120-pm",
+      "venue": "mgm_grand",
+      "name": "$120 No Limit Hold'em (daily, 7:10 PM)",
+      "days": "Every day of the week",
+      "times": ["19:10"],
+      "start": "19:10",
+      "buy_in_usd": 120,
+      "guarantee_usd": null,
+      "starting_chips": 25000,
+      "chips_note": "25,000 chips including 10,000 bought with the optional $11 gratuity; 15,000 without it (structure PDF)",
+      "level_minutes": 15,
+      "prize_pool_usd": 92,
+      "fee_split": "$92 prize pool; $13 house fee; $11 optional gratuity that grants 10,000 extra chips; $4 tournament promotions",
+      "late_registration": "Registration is open until Level 8 (structure PDF)",
+      "status": "UNV",
+      "separate_reason": "Optional $11 gratuity buys 10,000 extra chips (see the 11:10 AM row).",
+      "single_entry": "Not stated (see the 11:10 AM row).",
+      "labels": ["recurring", "optional chip purchase", "payout ladder printed"],
+      "payout_note": "Same published payout table as the 11:10 AM format",
+      "excerpt": "Weekly schedule PDF: the 7:10pm row lists $120 NLH, 25K chips / 15 min, every day.",
+      "sources": [
+        {"label": "MGM Grand weekly schedule (PDF)", "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt5f25277b8918da08/mgm-grand-casino-poker-tournament_schedule.pdf"},
+        {"label": "MGM Grand $120 NLH structure and rules (PDF)", "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf"}
+      ],
+      "retrieved_on": "2026-11-17"
+    },
+    {
+      "id": "mgm-120-late",
+      "venue": "mgm_grand",
+      "name": "$120 No Limit Hold'em (daily, 11:10 PM)",
+      "days": "Every day of the week",
+      "times": ["23:10"],
+      "start": "23:10",
+      "buy_in_usd": 120,
+      "guarantee_usd": null,
+      "starting_chips": 25000,
+      "chips_note": "25,000 chips including 10,000 bought with the optional $11 gratuity; 15,000 without it (structure PDF)",
+      "level_minutes": 15,
+      "prize_pool_usd": 92,
+      "fee_split": "$92 prize pool; $13 house fee; $11 optional gratuity that grants 10,000 extra chips; $4 tournament promotions",
+      "late_registration": "Registration is open until Level 8 (structure PDF)",
+      "status": "UNV",
+      "separate_reason": "Optional $11 gratuity buys 10,000 extra chips (see the 11:10 AM row).",
+      "single_entry": "Not stated (see the 11:10 AM row).",
+      "labels": ["recurring", "optional chip purchase", "payout ladder printed"],
+      "payout_note": "Same published payout table as the 11:10 AM format",
+      "excerpt": "Weekly schedule PDF: the 11:10pm row lists $120 NLH, 25K chips / 15 min, every day.",
+      "sources": [
+        {"label": "MGM Grand weekly schedule (PDF)", "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt5f25277b8918da08/mgm-grand-casino-poker-tournament_schedule.pdf"},
+        {"label": "MGM Grand $120 NLH structure and rules (PDF)", "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf"}
+      ],
+      "retrieved_on": "2026-11-17"
+    },
+    {
+      "id": "mgm-150-sat",
+      "venue": "mgm_grand",
+      "name": "$150 No Limit Hold'em, $2,000 guarantee (Saturday, 11:10 AM)",
+      "days": "Saturday only",
+      "times": ["11:10"],
+      "start": "11:10",
+      "buy_in_usd": 150,
+      "guarantee_usd": 2000,
+      "starting_chips": 25000,
+      "chips_note": "Printed on the weekly schedule as 25K chips / 20 min. The structure PDF read covers only the $120 event.",
+      "level_minutes": 20,
+      "prize_pool_usd": null,
+      "fee_split": "Not published on the sources read",
+      "late_registration": "Not published on the sources read",
+      "status": "UNV",
+      "separate_reason": "The structure for this event was not published on the sources read, so whether it allows the optional chip purchase or re-entry cannot be confirmed.",
+      "single_entry": "Not confirmed: no structure for this event was read.",
+      "labels": ["recurring", "structure not published"],
+      "payout_note": "Not published on the sources read",
+      "excerpt": "Weekly schedule PDF, Saturday column: \"$150 NLH - $2,000\" at 11:10am, \"25K Chips / 20 Min\".",
+      "sources": [
+        {"label": "MGM Grand weekly schedule (PDF)", "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt5f25277b8918da08/mgm-grand-casino-poker-tournament_schedule.pdf"}
+      ],
+      "retrieved_on": "2026-11-17"
+    },
+    {
+      "id": "horseshoe-daily",
+      "venue": "horseshoe",
+      "name": "Daily No Limit Hold'em (six sessions; buy-ins not printed)",
+      "days": "Daily (article says \"daily\")",
+      "times": ["09:00", "11:00", "14:00", "17:00", "20:00", "23:00"],
+      "start": "09:00",
+      "buy_in_usd": null,
+      "guarantee_usd": null,
+      "starting_chips": null,
+      "chips_note": "Not printed",
+      "level_minutes": null,
+      "prize_pool_usd": null,
+      "fee_split": "Not printed",
+      "late_registration": "Not printed. The article says players usually sign up \"one hour before the scheduled start\" (general statement for the poker rooms it covers).",
+      "status": "UNV",
+      "separate_reason": "Not assessed: no buy-in, structure or rule is printed for any session.",
+      "single_entry": "Not confirmed: no structure read.",
+      "labels": ["recurring", "buy-in not printed"],
+      "payout_note": "Not printed",
+      "excerpt": "\"At Horseshoe Las Vegas ... six daily No-Limit Hold'em games. The times at 9 a.m., 11 a.m., 2 p.m., 5 p.m., 8 p.m. and 11 p.m. ...\" and \"A mixture of buy-ins, levels and guarantees\".",
+      "sources": [
+        {"label": "Caesars official article (dated 2026-07-17)", "url": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"}
+      ],
+      "retrieved_on": "2026-11-17"
+    }
+  ],
+  "reported_changes": [
+    {
+      "venue": "resorts_world",
+      "change": "Poker room to close on 30 March 2026",
+      "reported_by": "Casino.org, 13 March 2026, quoting a Resorts World representative: \"We can confirm that the poker room will close on March 30.\"",
+      "url": "https://www.casino.org/vitalvegas/resorts-world-confirms-closure-of-poker-room/",
+      "official_confirmed": false,
+      "flag": "S7"
+    },
+    {
+      "venue": "planet_hollywood",
+      "change": "Poker room to stop operating after 31 January 2026; operations consolidated into Caesars Palace and Horseshoe",
+      "reported_by": "Las Vegas Review-Journal, 28 January 2026, quoting a Caesars Entertainment statement: \"This consolidation is designed to better match current demand and enhance the player experience.\"",
+      "url": "https://www.reviewjournal.com/business/casinos-gaming/inside-gaming-strip-casino-to-close-poker-room-3612434/",
+      "official_confirmed": false,
+      "flag": "S8"
+    }
+  ],
+  "strip_coverage": {
+    "basis": "Strip rooms that Casino.org listed as still open in March 2026 (Aria, Bellagio, Caesars Palace, Horseshoe, Mandalay Bay, MGM Grand, Venetian, Wynn), plus the two rooms reported closed. Other Strip resorts were not surveyed in this session (flag S10).",
+    "source": {"label": "Casino.org: Resorts World confirms closure (lists the remaining Strip rooms)", "url": "https://www.casino.org/vitalvegas/resorts-world-confirms-closure-of-poker-room/"},
+    "not_surveyed": ["Paris Las Vegas", "Flamingo Las Vegas", "Linq", "Harrah's Las Vegas", "Excalibur", "Luxor", "New York-New York", "Park MGM", "Westgate Las Vegas", "Circus Circus"]
+  }
+}
