@@ -44,7 +44,10 @@ DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 TIME_RE = re.compile(r"^(?:[01]\d|2[0-3]):[0-5]\d$")
 KNOWN_PAGES = {"index", "singleEntry", "separate", "unverified", "daily", "hotels", "calculator",
                "schedule", "venues", "search", "monitoring", "summary", "questions", "suggestions",
-               "flagged", "review"}
+               "flagged", "review",
+               # Session 0d069ce0: pages/other-rooms.html. Registered here because the page-link
+               # check rejects any data-page outside this set. One line, no other change.
+               "otherRooms"}
 
 
 def load_json(rel):

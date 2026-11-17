@@ -16,6 +16,7 @@
     ["pages/hotels.html", "Hotels"],
     ["pages/calculator.html", "Calculator"],
     ["pages/venues.html", "Venues"],
+    ["pages/other-rooms.html", "Other rooms"],
     ["pages/search.html", "Search"],
     ["pages/monitoring.html", "Monitoring"],
     ["pages/summary.html", "Summary"],

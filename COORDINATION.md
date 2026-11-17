@@ -10,8 +10,8 @@ on `main` at `aea688a` (PR #37 merged). Claim written and pushed before any data
 
 | Task | Status | File scope | Owner |
 |---|---|---|---|
-| Survey the official pages of every other Las Vegas Strip-area poker room (MGM Grand, Mandalay Bay, Luxor, Excalibur, New York-New York, Park MGM, Horseshoe, Paris, Planet Hollywood, Flamingo, Caesars Palace, The STRAT, Sahara, Resorts World, Fontainebleau, Circa, Golden Nugget, Plaza, South Point, The Orleans, Gold Coast, Palms, Ellis Island); add a tournament row only where an official page publishes a date, a buy-in and an entry rule; publish a sourced "no official schedule published" finding for the rest | In progress | `research/other-rooms-2026-11-17.md`, `data/other_rooms.json`, `scripts/build_other_rooms.py`, `pages/other-rooms.html` (one nav entry added in `scripts/build_site.py`) | `0d069ce0` |
-| Recommend a trip window from verified values only (single-entry event density + the dated rate log), and state the nightly budget floor and quality floor the recommendation rests on | In progress | `research/trip-window-2026-11-17.md`, `pages/trip-window.html` (one nav entry added in `scripts/build_site.py`) | `0d069ce0` |
+| Survey the official pages of every other Las Vegas Strip-area poker room; add a tournament row only where an official page publishes a buy-in, a start time and an entry rule; publish a sourced "no official schedule published" finding for the rest | **Done** — 14 rooms surveyed on their own sites on 2026-11-17; 6 publish a live poker room, 2 publish a readable schedule, 17 recurring event rows stored (0 single entry, 13 re-entry, 3 paid chips, 1 unverified), 13 new flags F60–F72 | `research/other-rooms-2026-11-17.md`, `data/other_rooms.json`, `scripts/build_other_rooms.py`, `pages/other-rooms.html` | `0d069ce0` |
+| Compare the stay windows that actually carry a dated official quote, like for like (nights, true cost per night, checkout total, verified single-entry count in the window) | **Done** — section 6 of `pages/other-rooms.html`, built at generation time from `data/schedule.json` and `data/rates.json` (read-only) | `scripts/build_other_rooms.py` | `0d069ce0` |
 
 **Not claimed by this session** (already claimed by `c0714e1a` in PR #36 and `160f9080` in PR #38):
 `data/tournaments.json`, `data/hotels.json`, `data/rates.json`, `data/schedule.json`, `data/walking.json`,
@@ -22,6 +22,60 @@ session is logged here as a request instead of being made.
 **Requests to other sessions (log only, nothing edited):**
 - None yet. If PR #36's WPT sheet join lands while this session is open, `pages/other-rooms.html` needs no
   change: it reads only `data/other_rooms.json`, which no other session writes.
+
+### Verification performed in this session
+
+- `python3 scripts/build_other_rooms.py` → 14 rooms surveyed; 6 publish a live poker room; 2 publish a
+  readable schedule; 17 recurring event rows (0 SE, 13 re-entry, 3 paid chips, 1 unverified); 13 flags.
+- `python3 scripts/check_links.py` → OK (22 pages, 317 tournament rows, 7 hotels, 5 dated rates,
+  70 schedule days; source, rules, schedule, hotel-rate/cost, provenance and page-link checks passed).
+- `node scripts/smoke_test.js` → 22/22 pages render in a headless DOM.
+- `python3 scripts/build_data.py` and `python3 scripts/build_site.py` were re-run and produced no change
+  beyond the new index card and the inlined nav entry.
+- No tournament, hotel, rate, schedule or walking record owned by another session was edited.
+
+### Three one-line changes to files another session also touches (reason recorded)
+
+| File | Change | Why it was needed |
+|---|---|---|
+| `scripts/check_links.py` | Added `"otherRooms"` to `KNOWN_PAGES` | The page-link check rejects any `data-page` outside that set, so a new page cannot be published without registering it. One entry, no other change. |
+| `assets/app.js` | One `NAV` row, `["pages/other-rooms.html", "Other rooms"]` | Without it the new page cannot be reached from anywhere but the landing page. |
+| `scripts/build_site.py` | One landing-page card linking the new page | Same reason. |
+
+If either PR #36 or PR #38 lands first and touches the same lines, keep both changes: theirs plus the
+single added entry. Nothing of theirs is removed by this session.
+
+### Sources read on 2026-11-17 (every value on the page comes from one of these)
+
+MGM Grand poker page, its weekly schedule PDF and its $120 NLH structure PDF; the MGM Resorts poker hub;
+the Orleans poker room page and its 2026 daily schedule PDF (all four chunks); the South Point poker room
+page, its daily schedule page (images) and its home page; the Horseshoe, Planet Hollywood and Paris casino
+pages; the Mandalay Bay, Luxor and Excalibur poker/table-games pages; the SAHARA, Resorts World
+(gaming and casino-events), Fontainebleau and STRAT casino pages; the page reached from the Mirage poker
+URL (Hard Rock Las Vegas). Full list with what each printed: `research/other-rooms-2026-11-17.md`.
+
+### Irregularities found (published on the page, section 5)
+
+- **F60** the MGM page prints 11:00am/7:00pm/11:00pm while its own schedule PDF prints 11:10/19:10/23:10.
+- **F61** the "Weekly Schedule" PDF is titled "MGM Grand August Tournament Schedule" and prints no dates.
+- **F62** $11 of the MGM $120 buy-in buys 10,000 extra chips on a 15,000 base — money buys an advantage.
+- **F63** no structure sheet is published for the MGM Saturday $150 NLH $2,000 GTD; its entry rule is blank.
+- **F64** both MGM PDFs are served from `assets.contentstack.io`, reached only through the official page.
+- **F65** the Orleans PDF is named `..._october_...` and prints no month, year or date range.
+- **F66** the Orleans PDF's own footer URL returns "Not Found".
+- **F67** all thirteen Orleans structure sheets permit re-entry; the Sunday Special also sells an add-on.
+- **F68** South Point publishes its schedule and rules sheets as images with no text layer.
+- **F69** Horseshoe confirms six daily tournaments and publishes no time, buy-in or structure.
+- **F70** eight properties publish no live poker room on their own casino pages.
+- **F71** the MGM poker hub links Luxor and Excalibur to pages that list no poker room.
+- **F72** no walking record exists for these rooms; walking cells are blank and flagged.
+
+### Open request logged for the integration session
+
+- **Walking rows for MGM Grand, the Orleans and South Point.** The site's walking table covers twelve
+  pairs, all to the Venetian and Wynn poker rooms, so no hotel can yet be ranked against the 30-minute
+  rule for these rooms. Producing them needs the same geocoding-plus-routing method already used for the
+  twelve existing rows. This session produced none rather than estimate one (F72).
 
 ---
 
