@@ -6,8 +6,7 @@
 Every official tournament page and structure PDF listed below was re-fetched and re-read on
 **2026-11-17**, not carried forward: the DeepStack Extravaganza IV page (94 rows), the NYE page
 (49 rows), the Wynn Signature Series schedule PDF (38 rows) and the WPT World Championship schedule
-PDF (135 rows). The result is that **all 316 rows still match their official source today**, with one
-cosmetic difference noted in `FLAGGED.md`. Hotel fees, taxes, rates and walking times were also
+PDF (136 rows). The result is that **all 317 rows in the current dataset match their official sources**, with known source irregularities listed in `FLAGGED.md`. Hotel fees, taxes, rates and walking times were also
 re-checked on 2026-11-17.
 
 ## Bottom line
