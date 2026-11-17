@@ -60,6 +60,12 @@ re-checked on 2026-11-17.
   sheets withhold a house fee **and** a separate LIPS flat fee (the two are now stored separately),
   and 17 Wynn Signature Series main-event rows had published guarantees that appear on no official
   source (now left blank and flagged). See `FLAGGED.md` and `research/verification-2026-11-17-160f9080.md`.
+- **A second, stricter schedule check.** `scripts/verify_against_snapshots.py` matches each row's (date, start)
+  *pair* against the row printed on the official page, which catches a right-time-wrong-day (or right-day-
+  wrong-time) error that a time-only search cannot. It confirms all 94 DeepStack Extravaganza IV rows and every
+  New Year's Eve row except one: the Jan 4 MSPT Day 2 restart, where the event page prints 11:10 AM and
+  structure sheet #8 prints "Day 2 will resume at 11:00 AM". The earlier time is published and the conflict is
+  flagged on the row (F55) — planning around 11:00 AM is safe under either reading.
 
 ## 1. Best single-entry tournaments (verified)
 

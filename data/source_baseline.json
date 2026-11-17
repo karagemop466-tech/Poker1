@@ -1,0 +1,524 @@
+{
+ "generated_at_utc": "2026-11-17T01:11:11Z",
+ "note": "Facts baseline seeded from the last provenance fetch (data/change_log.json, generated 2026-11-17T00:44:11Z). Only the published-facts hash is stored, because the provenance job sometimes hashes the raw body and sometimes the extracted text; comparing facts is what decides whether a published value moved. scripts/monitor_sources.py --content --accept-baseline replaces this file with hashes of both.",
+ "sources": {
+  "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html": {
+   "sha256": null,
+   "facts_sha256": "30b79da3ec993c82f58ed493b7e8cbcaa51114686becfa728fa75d60e8bcecdc",
+   "facts_count": 81,
+   "checked_at_utc": "2026-11-17T00:40:54Z",
+   "source_id": "v_dse_nov_page"
+  },
+  "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html": {
+   "sha256": null,
+   "facts_sha256": "7fc7108439553da16cf7dae1357b739bf2d8bc7641dbf610ee02a03c48429396",
+   "facts_count": 45,
+   "checked_at_utc": "2026-11-17T00:40:54Z",
+   "source_id": "v_dse_dec_page"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf": {
+   "sha256": null,
+   "facts_sha256": "4c8c8b35b7a01cf09e9261d67787ab48b6b114bef8c4125531c817a288db9753",
+   "facts_count": 101,
+   "checked_at_utc": "2026-11-17T00:40:54Z",
+   "source_id": "v_dse_nov_sched"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf": {
+   "sha256": null,
+   "facts_sha256": null,
+   "facts_count": 0,
+   "checked_at_utc": null,
+   "source_id": "v_dse_dec_sched"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf": {
+   "sha256": null,
+   "facts_sha256": "97a576abf3946402c463cab0b9aa4ec202ca62c93fc8416e91166abb693bf932",
+   "facts_count": 11,
+   "checked_at_utc": "2026-11-17T00:40:55Z",
+   "source_id": "v_nov_struct_01"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_2.pdf": {
+   "sha256": null,
+   "facts_sha256": "5c64001a6ada3e5f6d92a7622fb450159e3bef88e7c8f47a7db07ae24cd86c54",
+   "facts_count": 8,
+   "checked_at_utc": "2026-11-17T00:40:55Z",
+   "source_id": "v_nov_struct_02"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf": {
+   "sha256": null,
+   "facts_sha256": "4670879754c9e61aaece76e9b5be78d0cd6324eb0c3a87614c7c0b512164f85a",
+   "facts_count": 8,
+   "checked_at_utc": "2026-11-17T00:40:55Z",
+   "source_id": "v_nov_struct_03"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf": {
+   "sha256": null,
+   "facts_sha256": "567b70958976a8c4703516a1504cad54394ad9be9d3d01aaec15c1097ec85e2c",
+   "facts_count": 10,
+   "checked_at_utc": "2026-11-17T00:40:55Z",
+   "source_id": "v_nov_struct_04"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf": {
+   "sha256": null,
+   "facts_sha256": "4da28f919ab9bfb420205b05ebcea6fdb735000e6e18e4a6d56d15e6be477cfa",
+   "facts_count": 7,
+   "checked_at_utc": "2026-11-17T00:40:55Z",
+   "source_id": "v_nov_struct_05"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_6.pdf": {
+   "sha256": null,
+   "facts_sha256": "1a3958c24c768df4cd9b7077130972e3000d56e42427d9b75349ec95569dccab",
+   "facts_count": 7,
+   "checked_at_utc": "2026-11-17T00:40:55Z",
+   "source_id": "v_nov_struct_06"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf": {
+   "sha256": null,
+   "facts_sha256": "bc90313803ae559f28460b033ae11d452d305d2b278a3637238bb96b21872d94",
+   "facts_count": 8,
+   "checked_at_utc": "2026-11-17T00:40:55Z",
+   "source_id": "v_nov_struct_07"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf": {
+   "sha256": null,
+   "facts_sha256": "8b3544f7df22b43c4971ed442ecde0ee5e4622dca6b116350c29c191acc542d0",
+   "facts_count": 16,
+   "checked_at_utc": "2026-11-17T00:40:55Z",
+   "source_id": "v_nov_struct_08"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf": {
+   "sha256": null,
+   "facts_sha256": "aa3dd70b6f7b15e6c0a14c60c0cfcca697bd7d4856656d5cb277a0133bc0934d",
+   "facts_count": 8,
+   "checked_at_utc": "2026-11-17T00:40:55Z",
+   "source_id": "v_nov_struct_09"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf": {
+   "sha256": null,
+   "facts_sha256": "cb817f11ca8550e02e0b5f22a71985998b0576c8dadb0cb734f95080ec12ea5b",
+   "facts_count": 8,
+   "checked_at_utc": "2026-11-17T00:40:56Z",
+   "source_id": "v_nov_struct_10"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf": {
+   "sha256": null,
+   "facts_sha256": "7c374ae3a6620ba5026a8a78868e3d5108afc2d594025159ccd22073ea5b5c56",
+   "facts_count": 11,
+   "checked_at_utc": "2026-11-17T00:40:56Z",
+   "source_id": "v_nov_struct_11"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf": {
+   "sha256": null,
+   "facts_sha256": "a367ffd2d8fe87f7c4c1b96d9e92842a038cced1a8ed4a86b60cae20edede8b6",
+   "facts_count": 8,
+   "checked_at_utc": "2026-11-17T00:40:56Z",
+   "source_id": "v_nov_struct_12"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf": {
+   "sha256": null,
+   "facts_sha256": "df0668ddd529a4cf71eb86e77bc11fd445cdbd516f474016f30da470b535b903",
+   "facts_count": 8,
+   "checked_at_utc": "2026-11-17T00:40:56Z",
+   "source_id": "v_nov_struct_13"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf": {
+   "sha256": null,
+   "facts_sha256": "31fef4064374b3950078133f1e72c27ca811c4445bf2c2b2f0b3ee2ef42f1fc1",
+   "facts_count": 8,
+   "checked_at_utc": "2026-11-17T00:40:56Z",
+   "source_id": "v_nov_struct_14"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf": {
+   "sha256": null,
+   "facts_sha256": "c519d5c5e6b401776611f868fdbfdb785292aaa709c76392e0bf71009a766d7e",
+   "facts_count": 11,
+   "checked_at_utc": "2026-11-17T00:40:56Z",
+   "source_id": "v_nov_struct_15"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_16.pdf": {
+   "sha256": null,
+   "facts_sha256": "07eb4e9688dcb665a24495625088d1e9069567dd69a853eb73c7f7209820de45",
+   "facts_count": 9,
+   "checked_at_utc": "2026-11-17T00:40:56Z",
+   "source_id": "v_nov_struct_16"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf": {
+   "sha256": null,
+   "facts_sha256": "d70f8e27e469219759af161cbdcccd5313a945a7b334b890713b1102693a72a6",
+   "facts_count": 7,
+   "checked_at_utc": "2026-11-17T00:40:56Z",
+   "source_id": "v_nov_struct_17"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf": {
+   "sha256": null,
+   "facts_sha256": "ccc980b7265afb45bac2f2f15afdd0088862517eaa34fe7dfcad08086d98c81b",
+   "facts_count": 6,
+   "checked_at_utc": "2026-11-17T00:40:57Z",
+   "source_id": "v_nov_struct_18"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_19.pdf": {
+   "sha256": null,
+   "facts_sha256": "bbb1b422583dc36b318a867441a1ee7c8eec790446f67a1d34e511ff4f442e37",
+   "facts_count": 12,
+   "checked_at_utc": "2026-11-17T00:40:57Z",
+   "source_id": "v_nov_struct_19"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_20.pdf": {
+   "sha256": null,
+   "facts_sha256": "8e9153b8e0ea11e0fff5ee3163b20b39a088d3fe806b3335582c9bc1f4718121",
+   "facts_count": 8,
+   "checked_at_utc": "2026-11-17T00:40:57Z",
+   "source_id": "v_nov_struct_20"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf": {
+   "sha256": null,
+   "facts_sha256": "e0b2af142e1b0a14694c362c2223cecba5e416f7c2b49f868a73369f9d049f53",
+   "facts_count": 9,
+   "checked_at_utc": "2026-11-17T00:40:57Z",
+   "source_id": "v_nov_struct_21"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_22.pdf": {
+   "sha256": null,
+   "facts_sha256": "272767140f49ae345c29e8a510648746ceed56199c16704edf97ccdbf7caea9c",
+   "facts_count": 7,
+   "checked_at_utc": "2026-11-17T00:40:57Z",
+   "source_id": "v_nov_struct_22"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_23.pdf": {
+   "sha256": null,
+   "facts_sha256": "8f72e33b7edc8f5209ce28e0e375d30fd77086744b3bde0b87ec56922066717a",
+   "facts_count": 7,
+   "checked_at_utc": "2026-11-17T00:40:57Z",
+   "source_id": "v_nov_struct_23"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_24.pdf": {
+   "sha256": null,
+   "facts_sha256": "d0982a8ce187f6034912eaba12abfc30f15f6250da1c8cab749d6c78aaebc265",
+   "facts_count": 12,
+   "checked_at_utc": "2026-11-17T00:40:57Z",
+   "source_id": "v_nov_struct_24"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_25.pdf": {
+   "sha256": null,
+   "facts_sha256": "d8233e4b8301c7d7da87f8232a6be9e812a8d58ad99e0bcf067a58281a593367",
+   "facts_count": 13,
+   "checked_at_utc": "2026-11-17T00:40:57Z",
+   "source_id": "v_nov_struct_25"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_26.pdf": {
+   "sha256": null,
+   "facts_sha256": "6d95d10dd66c6d2c571ae2f39f695886986130be8de6fdd0f33c9be7663219a2",
+   "facts_count": 11,
+   "checked_at_utc": "2026-11-17T00:40:57Z",
+   "source_id": "v_nov_struct_26"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_27.pdf": {
+   "sha256": null,
+   "facts_sha256": "9fa4451a9de60cad19c357e8b143e002ba23c29bf3727f6740d06e002680dadc",
+   "facts_count": 11,
+   "checked_at_utc": "2026-11-17T00:40:58Z",
+   "source_id": "v_nov_struct_27"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_28.pdf": {
+   "sha256": null,
+   "facts_sha256": "32a7b5907518e464da498113032f1841748dc2e8faac1fa602e0f549af9bfa50",
+   "facts_count": 7,
+   "checked_at_utc": "2026-11-17T00:40:58Z",
+   "source_id": "v_nov_struct_28"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_29.pdf": {
+   "sha256": null,
+   "facts_sha256": "2f0d44a5fac227256712455f0d73abdd6468ad8429ac9cfe37dcb5ea6acc86a4",
+   "facts_count": 6,
+   "checked_at_utc": "2026-11-17T00:40:58Z",
+   "source_id": "v_nov_struct_29"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_30.pdf": {
+   "sha256": null,
+   "facts_sha256": "938b6bf744af5c875fce7efe8e456a50ac67557eb049da1321e14eeb97bdea6c",
+   "facts_count": 9,
+   "checked_at_utc": "2026-11-17T00:40:58Z",
+   "source_id": "v_nov_struct_30"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_31.pdf": {
+   "sha256": null,
+   "facts_sha256": "9cde4022d08d774e2c8ce86ca24cb53d1aaee6c6cebeb4f04a627b16cd5384ee",
+   "facts_count": 8,
+   "checked_at_utc": "2026-11-17T00:40:58Z",
+   "source_id": "v_nov_struct_31"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf": {
+   "sha256": null,
+   "facts_sha256": "86b120a4882480cc3c2341bc3c37a94577c1a830de3c2d11091ba0d4965a9f62",
+   "facts_count": 8,
+   "checked_at_utc": "2026-11-17T00:40:58Z",
+   "source_id": "v_nov_struct_32"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_33.pdf": {
+   "sha256": null,
+   "facts_sha256": "1cf08c19351c9766a245f74eac00e3e26bd9dc33dc75bf050b8b38e0d1f361ed",
+   "facts_count": 9,
+   "checked_at_utc": "2026-11-17T00:40:58Z",
+   "source_id": "v_nov_struct_33"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_34.pdf": {
+   "sha256": null,
+   "facts_sha256": "668950577970798efe2478bea24bd4f1380fc42e80ab942a763f55e3c9c9adca",
+   "facts_count": 9,
+   "checked_at_utc": "2026-11-17T00:40:58Z",
+   "source_id": "v_nov_struct_34"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf": {
+   "sha256": null,
+   "facts_sha256": "0a6b6be8278e9cabfd472cf85efa9375aef303868b2ce3b086eece25dd7b0f8e",
+   "facts_count": 11,
+   "checked_at_utc": "2026-11-17T00:40:59Z",
+   "source_id": "v_nov_struct_35"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf": {
+   "sha256": null,
+   "facts_sha256": "3f3d015fff215f25fd5e907513745eadd53b6af20ca22643b80cc217a1fcc589",
+   "facts_count": 11,
+   "checked_at_utc": "2026-11-17T00:40:59Z",
+   "source_id": "v_nov_struct_36"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_37.pdf": {
+   "sha256": null,
+   "facts_sha256": "e2cd7b68f3026dc08ac4ddaf3803953487edb07cd3a50e78ab001769a2f7f0dd",
+   "facts_count": 9,
+   "checked_at_utc": "2026-11-17T00:40:59Z",
+   "source_id": "v_nov_struct_37"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_1.pdf": {
+   "sha256": null,
+   "facts_sha256": "1beebbd91b12f0bb226b200385fef70a9456db480c5f24854e62cbaed6a7fe7b",
+   "facts_count": 7,
+   "checked_at_utc": "2026-11-17T00:40:59Z",
+   "source_id": "v_dec_struct_01"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_2.pdf": {
+   "sha256": null,
+   "facts_sha256": "f1ebcefc83343cf216b4701e714de8b599fffd7f354784ad6ea23fd8cb7eed92",
+   "facts_count": 16,
+   "checked_at_utc": "2026-11-17T00:40:59Z",
+   "source_id": "v_dec_struct_02"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_3.pdf": {
+   "sha256": null,
+   "facts_sha256": "d638fc0cf070c6808df8f93718c943230b5f490400fd1bc5129140d4dd6c388c",
+   "facts_count": 9,
+   "checked_at_utc": "2026-11-17T00:40:59Z",
+   "source_id": "v_dec_struct_03"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_4.pdf": {
+   "sha256": null,
+   "facts_sha256": "33c6b05beb5b7d8b34ab356377ef258b352dc130f01bf9905a620cad94282e61",
+   "facts_count": 13,
+   "checked_at_utc": "2026-11-17T00:40:59Z",
+   "source_id": "v_dec_struct_04"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_5.pdf": {
+   "sha256": null,
+   "facts_sha256": "30c88d2a251d2a7b9df1f49ea341b23507ea017a6a5121d42c38f079008f6548",
+   "facts_count": 13,
+   "checked_at_utc": "2026-11-17T00:40:59Z",
+   "source_id": "v_dec_struct_05"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_6.pdf": {
+   "sha256": null,
+   "facts_sha256": "2ae4b1b3dd3fba856c117c8fe9c1866b38229b2bb042e19b58bbb4e45e322fba",
+   "facts_count": 9,
+   "checked_at_utc": "2026-11-17T00:41:00Z",
+   "source_id": "v_dec_struct_06"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_7.pdf": {
+   "sha256": null,
+   "facts_sha256": "6650cd31b08c421e7da9f8160ffd107a94efe6a31dcf5f85f959f621779c012a",
+   "facts_count": 12,
+   "checked_at_utc": "2026-11-17T00:41:00Z",
+   "source_id": "v_dec_struct_07"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_8.pdf": {
+   "sha256": null,
+   "facts_sha256": "c94e8303140b0f48b8a3ade8f7632e31852f81e9cec3d47781db6a9c8e231bc3",
+   "facts_count": 11,
+   "checked_at_utc": "2026-11-17T00:41:00Z",
+   "source_id": "v_dec_struct_08"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_9.pdf": {
+   "sha256": null,
+   "facts_sha256": "8b3544f7df22b43c4971ed442ecde0ee5e4622dca6b116350c29c191acc542d0",
+   "facts_count": 16,
+   "checked_at_utc": "2026-11-17T00:41:00Z",
+   "source_id": "v_dec_struct_09"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_10.pdf": {
+   "sha256": null,
+   "facts_sha256": "e18994b46149b96dea374e52be400e10675a378a9d43193da142012fcb4b19a7",
+   "facts_count": 7,
+   "checked_at_utc": "2026-11-17T00:41:00Z",
+   "source_id": "v_dec_struct_10"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_11.pdf": {
+   "sha256": null,
+   "facts_sha256": "1a3958c24c768df4cd9b7077130972e3000d56e42427d9b75349ec95569dccab",
+   "facts_count": 7,
+   "checked_at_utc": "2026-11-17T00:41:00Z",
+   "source_id": "v_dec_struct_11"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_12.pdf": {
+   "sha256": null,
+   "facts_sha256": "cacba66e8c15b0b13759c506ad16e1e3d5c71e5f61f0f9c892a99726ab47f050",
+   "facts_count": 7,
+   "checked_at_utc": "2026-11-17T00:41:00Z",
+   "source_id": "v_dec_struct_12"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_13.pdf": {
+   "sha256": null,
+   "facts_sha256": "7a1961c6f2f2e740c066dc5285fe8fc9edc7a12f09c38eff5d5fc12819ec6297",
+   "facts_count": 8,
+   "checked_at_utc": "2026-11-17T00:41:00Z",
+   "source_id": "v_dec_struct_13"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_14.pdf": {
+   "sha256": null,
+   "facts_sha256": "bf75ed703d5a0abd1d0d2d60ab6021c1a3b487128aa316d98ad8229e8d49811d",
+   "facts_count": 14,
+   "checked_at_utc": "2026-11-17T00:41:00Z",
+   "source_id": "v_dec_struct_14"
+  },
+  "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_15.pdf": {
+   "sha256": null,
+   "facts_sha256": "6fae50171799f16b258a568afdeb16113460a0a754f22b0c627689fd6819b1e9",
+   "facts_count": 13,
+   "checked_at_utc": "2026-11-17T00:41:01Z",
+   "source_id": "v_dec_struct_15"
+  },
+  "https://www.venetianlasvegas.com/resort/resort-fee.html": {
+   "sha256": null,
+   "facts_sha256": "a11fcd1b6cbfb2ae46c0174f9cd2b767cf38ac5391185db820a6532f85e1a669",
+   "facts_count": 1,
+   "checked_at_utc": "2026-11-17T00:41:01Z",
+   "source_id": "v_resort_fee"
+  },
+  "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html": {
+   "sha256": null,
+   "facts_sha256": "79717d9ec5a974940056acad7d7901b2511ed1374704d964439d15f119ffc0bd",
+   "facts_count": 6,
+   "checked_at_utc": "2026-11-17T00:41:01Z",
+   "source_id": "v_hotel_terms"
+  },
+  "https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html": {
+   "sha256": null,
+   "facts_sha256": "ef1eb5f6373b631318ed38c86d8344234832debc0f06063e57c8c42e2c73b928",
+   "facts_count": 3,
+   "checked_at_utc": "2026-11-17T00:41:01Z",
+   "source_id": "v_poker_suite_rates"
+  },
+  "https://www.wynnlasvegas.com/casino/poker": {
+   "sha256": null,
+   "facts_sha256": "8190f141c50d4b8e47f118a65cb4d5f755e6be18c5820c6b45235016d585de13",
+   "facts_count": 4,
+   "checked_at_utc": "2026-11-17T00:41:01Z",
+   "source_id": "w_poker_page"
+  },
+  "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf": {
+   "sha256": null,
+   "facts_sha256": "c6f938efbbaf1e19502e545a7448b4c0975da7a23b7f87d3d54f56c5419e20fd",
+   "facts_count": 45,
+   "checked_at_utc": "2026-11-17T00:41:02Z",
+   "source_id": "wpt_sched"
+  },
+  "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf": {
+   "sha256": null,
+   "facts_sha256": "6609157dcf367b1c8437c36c6e1110797b9e4aab082105e309ee454feb65fe4f",
+   "facts_count": 331,
+   "checked_at_utc": "2026-11-17T00:41:03Z",
+   "source_id": "wpt_struct"
+  },
+  "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf": {
+   "sha256": null,
+   "facts_sha256": "5cbd06f5075e317ba450b76fee8e7b119b37e2875549c1640d8e8a76416f6b49",
+   "facts_count": 35,
+   "checked_at_utc": "2026-11-17T00:41:08Z",
+   "source_id": "wss_sched"
+  },
+  "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf": {
+   "sha256": null,
+   "facts_sha256": null,
+   "facts_count": 0,
+   "checked_at_utc": "2026-11-17T00:41:09Z",
+   "source_id": "wss_struct"
+  },
+  "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf": {
+   "sha256": null,
+   "facts_sha256": "37b89bc7c5d7451eb61988a82267c307686e9e3b0f239124f0a19dfbeea6604d",
+   "facts_count": 9,
+   "checked_at_utc": "2026-11-17T00:41:09Z",
+   "source_id": "w_daily_sched"
+  },
+  "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf": {
+   "sha256": null,
+   "facts_sha256": "cbbd78a2976533a21b6a7acb0c12d8cdd6f975944ced9f74e0a1c1da667a1575",
+   "facts_count": 42,
+   "checked_at_utc": "2026-11-17T00:41:09Z",
+   "source_id": "w_daily_struct"
+  },
+  "https://www.wynnlasvegas.com/terms-and-conditions/848671": {
+   "sha256": null,
+   "facts_sha256": "faa5fea38efc7f2381db6576f62e8452fe33ad863b33c2b28995ffd75489f46f",
+   "facts_count": 2,
+   "checked_at_utc": "2026-11-17T00:41:09Z",
+   "source_id": "w_terms"
+  },
+  "https://bellagio.mgmresorts.com/en.html": {
+   "sha256": null,
+   "facts_sha256": null,
+   "facts_count": 0,
+   "checked_at_utc": "2026-11-17T00:41:10Z",
+   "source_id": "h_bellagio"
+  },
+  "https://aria.mgmresorts.com/en.html": {
+   "sha256": null,
+   "facts_sha256": null,
+   "facts_count": 0,
+   "checked_at_utc": "2026-11-17T00:42:10Z",
+   "source_id": "h_aria"
+  },
+  "https://www.caesars.com/corporate/disclaimer": {
+   "sha256": null,
+   "facts_sha256": "94a9cbb9c1d41dfb88f2d2a1816cd5f4a46a41f3c409b7bc1d88c7f4e44693b5",
+   "facts_count": 1,
+   "checked_at_utc": "2026-11-17T00:43:10Z",
+   "source_id": "h_caesars"
+  },
+  "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date=2026-12-01&children[]=0&departure_date=2026-12-08&view=calendar": {
+   "sha256": null,
+   "facts_sha256": "008f446a83efd76681be89b82f2ec7ab57106bcb7c10fdae0e5df43fb2ea74f3",
+   "facts_count": 3,
+   "checked_at_utc": "2026-11-17T00:43:10Z",
+   "source_id": "v_rate_calendar"
+  },
+  "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html": {
+   "sha256": null,
+   "facts_sha256": "3f02cab0e481ad73f49afa058a626126de777780bfb20c6c177e32ca9fe623ed",
+   "facts_count": 22,
+   "checked_at_utc": "2026-11-17T00:43:11Z",
+   "source_id": "v_dse_series_page"
+  },
+  "https://bellagio.mgmresorts.com/en/casino/poker.html": {
+   "sha256": null,
+   "facts_sha256": null,
+   "facts_count": 0,
+   "checked_at_utc": "2026-11-17T00:43:11Z",
+   "source_id": "bellagio_poker"
+  },
+  "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip": {
+   "sha256": null,
+   "facts_sha256": "b3252fe978c2590f3f8c2c3a7e0b672754e26d13e4d5e6814ad7804b6a45b8c8",
+   "facts_count": 2,
+   "checked_at_utc": "2026-11-17T00:44:11Z",
+   "source_id": "caesars_poker_article"
+  }
+ }
+}

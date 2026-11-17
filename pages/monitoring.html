@@ -183,7 +183,14 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
 <div id="site-header"></div>
 <main>
 <h1>Source monitoring</h1>
+<<<<<<< HEAD
 <p class="lead">Two different checks, kept apart on purpose: the <strong>scheduled provenance check</strong> re-fetches every official document from GitHub Actions and reports whether the values printed on it moved, and the <strong>row-level check</strong> records which URLs answered and which dataset rows changed since the last snapshot. A run that reaches nothing is labelled a network blackout rather than a source outage.</p>
+=======
+<p class="lead">Which official sources answered on the last check, whether each page still prints the values
+its rows were captured from, which rows changed since the last snapshot, and every printed source flag. A row
+whose official source changed is listed under "Changed rows" with the source link and the date of the check
+that found it.</p>
+>>>>>>> 8b1b2e6 (verify: pair-level schedule check, four new verified hotel cost fields, hotels-table cost columns and a 30-minute walk filter)
 <div id="content"></div>
 <h2>Rows carrying a source flag</h2>
 <div id="flagged"></div>
@@ -847,17 +854,67 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
       var main = document.getElementById("content");
       document.getElementById("method").textContent = res[0].method;
       var chip = function (s) { return s === "verified" ? '<span class="chip ok">Verified</span>' : '<span class="chip warn">Unverified</span>'; };
+      var notPub = '<span class="muted">not published on an official source</span>';
       var cols = [
         { id: "name", label: "Hotel", key: "name", html: function (r) { return "<strong>" + esc(r.name) + "</strong><br><span class='small'>" + esc(r.address_note) + "</span>"; } },
         { id: "fee", label: "Resort fee / night", key: "resort_fee_usd", num: true, html: function (r) { return chip(r.resort_fee_status) + "<br>" + money(r.resort_fee_usd) + "<br><span class='small'>" + esc(r.resort_fee_note) + "</span>"; } },
         { id: "rate", label: "Room rate / night", key: "room_rate_usd", num: true, html: function (r) { return chip(r.room_rate_status) + "<br>" + money(r.room_rate_usd) + "<br><span class='small'>" + esc(r.room_rate_note) + "</span>"; } },
         { id: "tax", label: "Room tax", key: "clark_county_tax_pct", num: true, html: function (r) { return r.clark_county_tax_pct == null ? '<span class="muted">Unverified</span><br><span class="small">' + esc(r.tax_status) + "</span>" : r.clark_county_tax_pct + "%<br><span class='small'>" + esc(r.tax_status) + "</span>"; } },
         { id: "true", label: "True cost / night", key: "true_cost_per_night_usd", num: true, html: function (r) { return r.true_cost_per_night_usd == null ? '<span class="muted">blank (rate unverified)</span>' : money(r.true_cost_per_night_usd); } },
-        { id: "walkv", label: "Walk to Venetian poker room", key: "walk_to_venetian_min", num: true, html: function (r) { return walkCell(r.walk_to_venetian_min, r.walk_to_venetian_status, r.walk_to_venetian_within_30); } },
+        { id: "park", label: "Parking / night", key: "parking_usd_per_day", num: true,
+          html: function (r) {
+            if (r.parking_usd_per_day == null && r.parking_valet_usd == null) return notPub;
+            return "<span class='small'>self" + (r.parking_usd_per_day == null ? " not published" : " " + money(r.parking_usd_per_day)) +
+              (r.parking_valet_usd == null ? "" : "<br>valet " + money(r.parking_valet_usd)) + "</span>" +
+              (r.parking_poker_note ? "<br><span class='chip ok'>poker room guests park free</span>" : "") +
+              "<br><span class='small'>" + esc(r.parking_note) + "</span>";
+          } },
+        { id: "extra", label: "Other mandatory charges", key: "incidentals_usd_per_night", num: true,
+          html: function (r) {
+            var bits = [];
+            if (r.incidentals_usd_per_night != null) bits.push("incidental deposit " + money(r.incidentals_usd_per_night) + " / night");
+            if (r.extra_guest_usd_per_night != null) bits.push("each guest beyond two " + money(r.extra_guest_usd_per_night) + " / night");
+            if (r.early_checkout_fee_usd != null) bits.push("early check-out " + money(r.early_checkout_fee_usd) + " plus tax");
+            if (!bits.length) return notPub;
+            return "<span class='small'>" + bits.join("<br>") + "</span>" +
+              (r.incidentals_note ? "<br><span class='small'>" + esc(r.incidentals_note) + "</span>" : "");
+          } },
+        { id: "cancel", label: "Cancellation and deposit", key: "cancellation_note", sort: null,
+          html: function (r) { return "<span class='small'>" + esc(r.cancellation_note || "no official cancellation term read") + "</span>"; } },
+        { id: "walkv", label: "Walk to Venetian poker room", key: "walk_to_venetian_min", num: true,
+          html: function (r) { return walkCell(r.walk_to_venetian_min, r.walk_to_venetian_status, r.walk_to_venetian_within_30); },
+          text: function (r) { return r.walk_to_venetian_min == null ? "not published" : String(r.walk_to_venetian_min); } },
         { id: "walkw", label: "Walk to Wynn poker room", key: "walk_to_wynn_min", num: true, html: function (r) { return walkCell(r.walk_to_wynn_min, "verified", r.walk_to_wynn_within_30); } },
+        { id: "checked", label: "Last checked", key: "last_checked", html: function (r) {
+            return esc(r.last_checked) + (r.recheck && r.recheck.on && r.recheck.on !== r.last_checked
+              ? "<br><span class='small'>fees re-read " + esc(r.recheck.on) + "</span>" : ""); } },
         { id: "src", label: "Sources", key: "sources", sort: null, html: function (r) { return "<span class='small'>" + srcLinks(r.sources) + "</span>"; } }
       ];
-      table(main, rows, cols, { sortKey: "name", sortDir: 1 });
+
+      /* filter bar: the ≤30-minute walking rule and a text box across every column */
+      var bar = document.createElement("div");
+      bar.className = "toolbar";
+      var q = document.createElement("input");
+      q.type = "search"; q.id = "hotel-q"; q.placeholder = "Filter hotels: fee, tax, parking, walk, resort…";
+      q.style.minWidth = "280px";
+      var walk30 = document.createElement("input");
+      walk30.type = "checkbox"; walk30.id = "hotel-walk30";
+      var lbl = document.createElement("label");
+      lbl.htmlFor = "hotel-walk30";
+      lbl.appendChild(walk30);
+      lbl.appendChild(document.createTextNode(" ≤30 min walk to a poker room"));
+      var count = document.createElement("span");
+      count.className = "small"; count.id = "hotel-count";
+      bar.appendChild(q); bar.appendChild(lbl); bar.appendChild(count);
+      main.appendChild(bar);
+      var handle = table(main, rows, cols, {
+        sortKey: "true", sortDir: 1, filterInput: q, countEl: count,
+        predicate: function (r) {
+          if (!walk30.checked) return true;
+          return r.walk_to_venetian_within_30 === true || r.walk_to_wynn_within_30 === true;
+        }
+      });
+      walk30.addEventListener("change", handle.redraw);
 
       var w = document.getElementById("walking");
       if (w) {

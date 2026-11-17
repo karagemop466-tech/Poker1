@@ -375,6 +375,19 @@ DATE_TYPO_DEC26 = ("Official page typo: the New York Year's Eve event page print
 DATE_TYPO_TUESDAY = ("Official page typo: the New Year\'s Eve event page prints \"Tuesaday, January 5, 2027\" "
                       "for this row. January 5, 2027 is a Tuesday, so the stored date is unchanged.")
 
+# Two official Venetian pages state different start times for the same Day 2 restart.
+# Recorded as a conflict rather than silently resolved: the stored time is the earlier
+# one, so a player who plans around it is never late for whichever is correct.
+MSPT_DAY2_START_CONFLICT = (
+    "Two official sources disagree on this start time. The New Year's Eve event page prints "
+    "\"Monday, January 4, 2027 | 11:10 AM | 20 | $1,600 No Limit Hold'em MSPT Day 2 Restart\" "
+    "(re-read live on 2026-11-17), while structure sheet #8 clause 3 prints \"Day 2 will resume at "
+    "11:00 AM combining all remaining players from 1A, 1B, and 1C\". The row is stored at the "
+    "earlier 11:00 AM so that a player planning around it cannot be late for either reading; "
+    "confirm with the poker room before travelling. The sheet's own \"Late Registration: 9 levels "
+    "+ Break (~ 5:55 PM)\" is measured from the 11:10 AM Day 1 flights, not from this restart, so "
+    "it does not settle the question.")
+
 # LIPS structure sheets withhold two separate amounts from the buy-in: a house fee (Rake +
 # Staff) and a separate flat fee for Vegas Connected, INC, DBA Ladies International Poker
 # Series (LIPS). The numeric house_fee_usd stores the pure house fee only; the LIPS flat fee
@@ -958,8 +971,17 @@ def build_venetian(rows, series_key, series, page_key, sheet_key, sched_key, str
             flags.append(DATE_TYPO_TUESDAY)
         if lips_fee:
             flags.append(LIPS_FEE_FLAG)
+        # Re-read 2026-11-17: the event page prints 11:10 AM for this restart, the structure
+        # sheet says Day 2 resumes at 11:00 AM. The conflict is published, not resolved.
+        start_conflict = date == "2027-01-04" and no == 20 and continuation
+        if start_conflict:
+            flags.append(MSPT_DAY2_START_CONFLICT)
         if sheet.get("note"):
             note = sheet["note"]
+        elif start_conflict:
+            note = ("Continuation of the event above - no new entry. The stored time comes from "
+                    "structure sheet #%d clause 3; the official event page prints 11:10 AM for this "
+                    "row, which is recorded as a flag on the row." % sheet_no)
         elif continuation:
             note = "Continuation of the event above - no new entry. Official event page row."
         else:
@@ -1171,6 +1193,38 @@ def build_schedule(rows):
 
 
 # ---------------- hotels ----------------
+# What was opened again on 2026-11-17, per property, so a reader can tell a re-read from a
+# carry-over. A field with no entry here was not re-read on that date.
+HOTEL_RECHECK = {
+    "venetian": {"on": "2026-11-17", "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+                 "what": "Hotel terms re-read in full: the $55 resort fee plus tax, the 13.38% Clark County Room "
+                         "Tax, the $20 / $25 / $40 parking fees, the $150 per-night incidental deposit, the $50 "
+                         "additional-guest charge, the $100 plus tax early check-out charge and the prepaid "
+                         "non-refundable rule are all still printed exactly as published."},
+    "palazzo": {"on": "2026-11-17", "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+                "what": "The same terms page was re-read; it governs The Venetian and The Palazzo as one resort, "
+                        "so the Palazzo row inherits the confirmed figures."},
+    "wynn": {"on": "2026-11-17", "url": "https://www.wynnlasvegas.com/about-us/parking",
+             "what": "The dedicated parking page was read and confirms the $25 non-registered self-parking day, the "
+                     "$40 valet day up to 24 hours and the complimentary parking for registered Resort and Tower "
+                     "Suite guests - and it adds a fact no earlier pass had: \"Complimentary self-parking is "
+                     "extended to Wynn Poker Room guests\"."},
+    "encore": {"on": "2026-11-17", "url": "https://www.wynnlasvegas.com/about-us/parking",
+               "what": "The Wynn parking page covers Wynn and Encore together (\"one integrated resort\"), so the "
+                       "same statements apply here; the poker room is inside Encore."},
+    "bellagio": {"on": "2026-11-17", "url": "https://bellagio.mgmresorts.com/en/parking.html",
+                 "what": "Official parking URL re-tried: the property returns its 'Oops! We can\'t find that page' "
+                         "error, so there is no Bellagio parking or fee value to publish."},
+    "aria": {"on": "2026-11-17", "url": "https://aria.mgmresorts.com/en/guest-services/parking.html",
+             "what": "Official parking URL re-tried: the property returns its 'Oops! We can\'t find that page' "
+                     "error, so there is no ARIA parking or fee value to publish."},
+    "caesars": {"on": "2026-11-17", "url": "https://www.caesars.com/caesars-palace/things-to-do/parking",
+                "what": "The parking URL redirects to the Things To Do page and prints no parking content, so the "
+                        "parking value stays blank. That page does print \"FREE 48-Hour Cancellation*\" and \"Best "
+                        "Rate Guarantee\"; the asterisked terms are not on the page, so only the headline is "
+                        "recorded."},
+}
+
 HOTELS = [
  {"id": "venetian", "name": "The Venetian Resort", "operator": "Venetian Resort (Las Vegas)",
   "venue_link": VEN, "address": None, "address_status": "unverified",
@@ -1194,10 +1248,24 @@ HOTELS = [
                   "For non-hotel guests, the fee is $20, Monday - Thursday, and $25/day Friday - Sunday. Valet parking is "
                   "$40/day.\" Official poker page: players who play three hours or more get complimentary self-parking.",
   "parking_usd_per_day": 20,
+  "parking_valet_usd": 40,
+  "incidentals_usd_per_night": 150,
+  "incidentals_note": "Official hotel terms (read 2026-11-17): \"A credit card incidental deposit of $150 per night "
+                      "is required upon check-in for suite charging privileges for non-Signature Suites. Signature "
+                      "Suite incidental deposits require a minimum of $500 for Penthouse suites or $2,500 for "
+                      "Presidential suites per stay.\" Refundable and not part of the room charge, but it is money "
+                      "held at check-in.",
+  "extra_guest_usd_per_night": 50,
+  "extra_guest_note": "Official hotel terms: \"For reservations with more than 2 guests per suite, a charge of $50 is "
+                      "added to the daily rate for each additional guest 13 years of age or older.\" Every quote in "
+                      "the rate log is for 2 adults, so this charge does not apply to them.",
+  "early_checkout_fee_usd": 100,
   "cancellation_note": "Official hotel terms: \"A deposit for your stay, including suite, fee, and tax, will be billed "
                         "upon reservation confirmation.\" \"Check-out prior to your scheduled departure date will "
                         "result in an additional charge of $100 plus tax.\" Prepaid offers are non-cancellable and "
-                        "non-refundable. A fixed free-cancellation deadline is not published for general rates.",
+                        "non-refundable, and \"if you do not check-in nor notify us\ ... your entire reservation will "
+                        "be canceled and your deposit for the first night's stay will not be refunded\". A fixed "
+                        "free-cancellation deadline is not published for general rates.",
   "check_in_out": "Check-in 3:00 p.m. - 11:59 p.m.; check-out 11:00 a.m. (official hotel terms)",
   "walk_to_venetian_min": None,
   "walk_note": "The poker room is inside the Venetian/Palazzo complex (The Palazzo, level 2, Grand Canal Shoppes), so "
@@ -1226,10 +1294,24 @@ HOTELS = [
   "room_rate_usd": None, "room_rate_status": "conditional",
   "room_rate_note": "Official poker suite page covers \"The Venetian or The Palazzo\" suites starting \"as low as $119 "
                      "and $209\", conditional on qualifying poker play and availability.",
-  "parking_note": "Official Venetian Resort hotel terms: \"The daily fee for registered hotel guests is $20/day, "
-                  "seven days a week\"; the poker room has direct access to The Palazzo self-parking garage.",
+  "parking_note": "Official Venetian Resort hotel terms (read 2026-11-17, the terms cover The Venetian and The "
+                  "Palazzo as one resort): \"The daily fee for registered hotel guests is $20/day, seven days a "
+                  "week\", valet is \"$40/day\", and \"Event parking rates may be in effect\". The poker room has "
+                  "direct access to The Palazzo self-parking garage.",
   "parking_usd_per_day": 20,
-  "cancellation_note": "See the Venetian hotel terms; no Palazzo-specific cancellation deadline is published.",
+  "parking_valet_usd": 40,
+  "incidentals_usd_per_night": 150,
+  "incidentals_note": "Official Venetian Resort hotel terms (read 2026-11-17): \"A credit card incidental deposit of "
+                      "$150 per night is required upon check-in for suite charging privileges for non-Signature "
+                      "Suites.\" Refundable, and not part of the room charge, but it is money held at check-in.",
+  "extra_guest_usd_per_night": 50,
+  "extra_guest_note": "Official Venetian Resort hotel terms: $50 per night for each additional guest 13 or older "
+                      "beyond two guests per suite. Every quote in the rate log is for 2 adults, so it does not "
+                      "apply to them.",
+  "early_checkout_fee_usd": 100,
+  "cancellation_note": "See the Venetian hotel terms (prepaid offers non-cancellable and non-refundable; early "
+                        "check-out \"will result in an additional charge of $100 plus tax\"); no Palazzo-specific "
+                        "free-cancellation deadline is published.",
   "check_in_out": "Same resort terms as The Venetian (official hotel terms).",
   "walk_to_venetian_min": None,
   "walk_note": "The poker room is at The Palazzo, level 2 of the Grand Canal Shoppes - inside the building.",
@@ -1253,11 +1335,18 @@ HOTELS = [
               "on 2026-11-17. The Venetian's 13.38% Clark County rate is therefore NOT applied to Wynn here.",
   "room_rate_usd": None, "room_rate_status": "unverified",
   "room_rate_note": "No nightly rate is published on an official Wynn page. Use the official booking engine.",
-  "parking_note": "Official Wynn facts page: \"Self-parking for nonregistered guests is $25 per day, with the first "
-                  "three hours complimentary. Valet parking is $40 for up to 24 hours... Registered Resort and Tower "
-                  "Suites guests receive complimentary self-parking.\" Official offer terms add complimentary "
-                  "self-parking for up to two vehicles.",
+  "parking_note": "Official Wynn parking page (read 2026-11-17): \"The daily parking fee for non-registered guests is "
+                  "$25 per day with the first three (3) hours complimentary. Prices may be higher during special "
+                  "events.\" and \"Complimentary self-parking is extended to Wynn Poker Room guests (please visit the "
+                  "Poker Room for details), Private Access members, and Wynn Rewards members in the Chairman, Black, "
+                  "and Platinum Tiers.\" Valet: \"Valet parking is $40 per day up to 24 hours (no grace period, no "
+                  "re-entry).\" Registered \"Resort and Tower Suite registered guests\" park free, and the official "
+                  "offer terms add complimentary self-parking for up to two vehicles.",
   "parking_usd_per_day": 25,
+  "parking_valet_usd": 40,
+  "parking_poker_note": "Complimentary self-parking is extended to Wynn Poker Room guests, per the official parking "
+                        "page read 2026-11-17 - so a player staying at Wynn/Encore and playing at the poker room has "
+                        "no published parking cost to add to the trip. Ask the Poker Room to validate the plate.",
   "cancellation_note": "Official Wynn offer terms (special offer): \"a deposit of one (1) night of room and tax for "
                         "each room booked under this offer will be charged at the time of booking and cancellations "
                         "must be received at least 48 hours prior to arrival date or deposit will be forfeited.\" "
@@ -1286,9 +1375,15 @@ HOTELS = [
   "tax_note": "No Encore-specific room tax rate printed on an official page read in this session.",
   "room_rate_usd": None, "room_rate_status": "unverified",
   "room_rate_note": "No nightly rate published on an official Wynn page. Use the official booking engine.",
-  "parking_note": "Official Wynn facts page: Tower Suites guests receive complimentary valet or self-parking; non "
-                  "registered guests pay $25 per day for self-parking.",
+  "parking_note": "Official Wynn parking page (read 2026-11-17), which covers Wynn and Encore together: "
+                  "\"Self-parking garages at Wynn and Encore are ... complimentary parking for all Wynn and Encore "
+                  "Resort and Tower Suite registered guests, subject to availability\"; \"The daily parking fee for "
+                  "non-registered guests is $25 per day with the first three (3) hours complimentary\"; valet is "
+                  "\"$40 per day up to 24 hours\".",
   "parking_usd_per_day": 25,
+  "parking_valet_usd": 40,
+  "parking_poker_note": "The same page extends complimentary self-parking to Wynn Poker Room guests; the Wynn poker "
+                        "room is inside Encore, so this is the parking that applies to the poker room's own guests.",
   "cancellation_note": "Official Wynn facts page: deposit and cancellation terms vary by offer and dates.",
   "check_in_out": "Check-in 3 p.m.; check-out at noon (official Wynn facts page)",
   "walk_to_venetian_min": None,
@@ -1309,7 +1404,9 @@ HOTELS = [
   "tax_note": "No Bellagio-specific room tax rate printed on an official page read in this session.",
   "room_rate_usd": None, "room_rate_status": "unverified",
   "room_rate_note": "No nightly rate published on an official page read in this session.",
-  "parking_note": "No Bellagio parking fee printed on an official page read in this session.",
+  "parking_note": "No Bellagio parking fee printed on an official page. Tried 2026-11-17: the official "
+                  "https://bellagio.mgmresorts.com/en/parking.html URL returns the property's 'Oops! We can\'t find "
+                  "that page' error, so there is nothing to quote and the value stays blank.",
   "parking_usd_per_day": None,
   "cancellation_note": "No Bellagio cancellation deadline printed on an official page read in this session.",
   "check_in_out": None,
@@ -1330,7 +1427,9 @@ HOTELS = [
   "room_rate_usd": None, "room_rate_status": "unverified",
   "room_rate_note": "Official ARIA poker page: \"Exclusive Room Rates for qualifying poker players\" - the rate itself "
                      "is only available by phone (702.590.7232) or by e-mail, so no number is published.",
-  "parking_note": "No ARIA parking fee printed on an official page read in this session.",
+  "parking_note": "No ARIA parking fee printed on an official page. Tried 2026-11-17: the official "
+                  "https://aria.mgmresorts.com/en/guest-services/parking.html URL returns the property's 'Oops! We "
+                  "can\'t find that page' error, so the value stays blank.",
   "parking_usd_per_day": None,
   "cancellation_note": "No ARIA cancellation deadline printed on an official page read in this session.",
   "check_in_out": None,
@@ -1656,6 +1755,9 @@ def main():
                                     "nights": quote["nights"], "room": quote["room"],
                                     "checkout_total_usd": quote["checkout_total_usd"]}
         h["last_checked"] = LAST_CHECKED
+        # What was actually opened again on 2026-11-17, per property - so a reader can tell a
+        # re-read from a carry-over. Fields not listed here were not re-read on that date.
+        h["recheck"] = HOTEL_RECHECK.get(h["id"])
         w = walk_by_key.get((h["id"], VEN))
         h["walk_to_venetian_min"] = w["minutes"] if w else None
         h["walk_to_venetian_status"] = w["status"] if w else "unverified"
