@@ -3,14 +3,14 @@
  "sources": [
   {
    "id": "v_dse_nov_page",
-   "label": "Venetian DeepStack Extravaganza IV — official event page",
+   "label": "Venetian DeepStack Extravaganza IV \u2014 official event page",
    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
    "kind": "schedule",
    "venue": "Venetian"
   },
   {
    "id": "v_dse_dec_page",
-   "label": "Venetian DeepStack Extravaganza NYE — official event page",
+   "label": "Venetian DeepStack Extravaganza NYE \u2014 official event page",
    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
    "kind": "schedule",
    "venue": "Venetian"
@@ -502,14 +502,14 @@
   },
   {
    "id": "v_dse_series_page",
-   "label": "Venetian DeepStack series overview (current and next series dates) — official page",
+   "label": "Venetian DeepStack series overview (current and next series dates) \u2014 official page",
    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html",
    "kind": "schedule",
    "venue": "Venetian"
   },
   {
    "id": "bellagio_poker",
-   "label": "Bellagio poker room page (weekly tournament flyers) — official page",
+   "label": "Bellagio poker room page (weekly tournament flyers) \u2014 official page",
    "url": "https://bellagio.mgmresorts.com/en/casino/poker.html",
    "kind": "schedule",
    "venue": "Other"
@@ -522,6 +522,7 @@
    "venue": "Other"
   },
   {
+<<<<<<< HEAD
    "id": "mgm_poker_page",
    "label": "MGM Grand — official poker page (links the weekly schedule and the $120 structure sheet)",
    "url": "https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html",
@@ -562,6 +563,7 @@
    "url": "https://southpointcasino.com/casino/poker-room/daily-tournament-schedule",
    "kind": "structure",
    "venue": "South Point"
+<<<<<<< HEAD
   },
   {
    "id": "strip_rwlv_events",
@@ -576,6 +578,71 @@
    "url": "https://www.caesars.com/planet-hollywood",
    "kind": "schedule",
    "venue": "Planet Hollywood"
+=======
+=======
+   "id": "v_book_hub",
+   "label": "Venetian booking hub (the page the rate quotes are taken from)",
+   "url": "https://www.venetianlasvegas.com/book",
+   "kind": "hotel",
+   "venue": "Venetian"
+  },
+  {
+   "id": "v_booking_quote_1118",
+   "label": "Venetian official booking engine calendar quote, 2 adults, 2026-11-18 to 2026-11-20",
+   "url": "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date=2026-11-18&children[]=0&departure_date=2026-11-20&view=calendar",
+   "kind": "hotel-rate",
+   "venue": "Venetian"
+  },
+  {
+   "id": "v_poker_page",
+   "label": "Venetian poker room main page (series index and poker-room directions)",
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker.html",
+   "kind": "poker-room",
+   "venue": "Venetian"
+  },
+  {
+   "id": "v_resort_map",
+   "label": "Venetian official resort map PDF (poker room level and hotel positions)",
+   "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/resort/map.pdf",
+   "kind": "map",
+   "venue": "Venetian"
+  },
+  {
+   "id": "w_daily_structures",
+   "label": "Wynn Signature Series structures PDF (cited by every Wynn Signature Series row)",
+   "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf",
+   "kind": "structures",
+   "venue": "Wynn"
+  },
+  {
+   "id": "w_parking",
+   "label": "Wynn Las Vegas official parking page",
+   "url": "https://www.wynnlasvegas.com/about-us/parking",
+   "kind": "hotel",
+   "venue": "Wynn"
+  },
+  {
+   "id": "w_ai_information",
+   "label": "Wynn Las Vegas official facts page (address, resort fee, check-in/out)",
+   "url": "https://www.wynnlasvegas.com/ai-information",
+   "kind": "hotel",
+   "venue": "Wynn"
+  },
+  {
+   "id": "h_aria_poker",
+   "label": "ARIA official poker room page",
+   "url": "https://aria.mgmresorts.com/en/casino/poker.html",
+   "kind": "poker-room",
+   "venue": "ARIA"
+  },
+  {
+   "id": "h_caesars_palace",
+   "label": "Caesars Palace official property page",
+   "url": "https://www.caesars.com/caesars-palace",
+   "kind": "hotel",
+   "venue": "Caesars"
+>>>>>>> 49de612 (monitor: detect content changes on official pages and mark the rows that cite them)
+>>>>>>> bce90b2 (monitor: detect content changes on official pages and mark the rows that cite them)
   }
  ]
 }

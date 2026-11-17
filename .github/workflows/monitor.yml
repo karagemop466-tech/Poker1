@@ -1,16 +1,32 @@
 name: Monitor official sources
 
-# Checks that every official source used by the dataset still answers, records
-# the result in data/monitoring.json, and lists the rows that changed since the
-# last verified snapshot. When something moves, the report is posted as an
-# issue so a reviewer can re-read the affected structure sheets.
+# Re-checks every official URL the dataset cites, records the result in
+# data/monitoring.json, marks every row whose source page printed a different
+# value on the last check, and opens an issue when a row needs re-reading.
+#
+# Two kinds of evidence are recorded and never mixed up:
+#   * the HTTP result of the fetch itself (this workflow, on a runner that can
+#     reach the operator domains), and
+#   * the content comparison against data/source_baseline.json, which is what
+#     decides whether a published number or rule actually moved.
+# When the machine running the script has no route to those domains, the script
+# says so in `kpi_basis` and falls back on the most recent real fetch instead of
+# publishing a misleading "all sources unreachable".
 
 on:
   schedule:
-    # Daily source check. (The previous entry used a `name:` key here, which the
-    # workflow schema does not accept, so the scheduled run never fired.)
+    # Daily at 07:17 UTC, before the first dealer's-shift postings matter to a reader.
+    # (An earlier revision of this file carried a `name:` key inside `schedule:`,
+    # which the workflow schema does not accept - that is why the job never fired.)
     - cron: "17 7 * * *"
   workflow_dispatch:
+    inputs:
+      accept_baseline:
+        description: "Accept today's fetched content as the new comparison baseline (do this only after the flagged rows have been re-read by hand)"
+        required: false
+        default: "no"
+        type: choice
+        options: [no, yes]
   # The sandbox integration cannot call the dispatch API (HTTP 403), so the first
   # real run is triggered by this narrow push filter: it fires when a change to
   # this workflow file itself lands on main, which is exactly once when the change
@@ -35,8 +51,24 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Check every official source
-        run: python3 scripts/monitor_sources.py --print | tee monitor.txt
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install the PDF text extractor
+        # The structure sheets are PDFs; without an extractor the monitor would
+        # report them as "no text" instead of comparing what they print.
+        run: python -m pip install --quiet pypdf
+
+      - name: Check every official source, including its content
+        id: check
+        run: |
+          args="--print --content"
+          if [ "${{ inputs.accept_baseline }}" = "yes" ]; then args="$args --accept-baseline"; fi
+          python3 scripts/monitor_sources.py $args | tee monitor.txt
+          echo "facts_changed=$(python3 -c "import json;print(json.load(open('data/monitoring.json'))['sources_facts_changed'])")" >> "$GITHUB_OUTPUT"
+          echo "rows_marked=$(python3 -c "import json;print(json.load(open('data/monitoring.json'))['rows_source_changed'])")" >> "$GITHUB_OUTPUT"
 
       - name: Summarise the result
         run: |
@@ -54,14 +86,17 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/monitoring.json data/changes.json
+          if [ "${{ inputs.accept_baseline }}" = "yes" ]; then git add data/source_baseline.json; fi
           if git diff --cached --quiet; then
             echo "No change in the monitoring result."
           else
             git commit -m "chore: refresh source monitoring result"
-            git push
+            git pull --rebase origin "$GITHUB_REF_NAME" || git rebase --abort
+            git push origin "HEAD:$GITHUB_REF_NAME"
           fi
 
-      - name: Publish the report as an issue
+      - name: Open an issue when a row needs re-reading
+        if: steps.check.outputs.rows_marked != '0' || steps.check.outputs.facts_changed != '0'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -69,29 +104,32 @@ jobs:
           import json
           mon = json.load(open("data/monitoring.json"))
           ch = json.load(open("data/changes.json"))
-          print("## Official source check")
+          print("## Official source re-check")
           print()
-          print(f"- checked: {mon['checked_at']}")
-          print(f"- sources reachable: {mon['sources_ok']} / {mon['sources_total']}")
-          print(f"- unreachable: {mon['sources_unreachable']}")
-          print(f"- HTTP errors: {mon['sources_http_error']}")
+          print(f"- checked: {mon['checked_at_utc']} on {mon['http_check']['ran_on']}")
+          print(f"- official sources reachable: {mon['sources_ok']} / {mon['sources_total']} ({mon['kpi_basis']})")
+          print(f"- pages re-rendered without a value change: {mon['sources_raw_changed'] - mon['sources_facts_changed']}")
+          print(f"- pages whose published values changed: {mon['sources_facts_changed']}")
+          print(f"- rows marked for re-reading: {mon['rows_source_changed']}")
           print()
-          print("### Rows that changed since the last verified snapshot")
+          print("### Marked rows")
           print()
           for row in ch["changed"]:
-              print(f"- **{row['name']}** ({row['date']}, {row['id']})")
-              for key, pair in row["diff"].items():
+              print(f"- **{row['name']}** ({row.get('date', 'no date')}, `{row['id']}`, {row.get('kind')})")
+              print(f"  - {row.get('reason', '')}")
+              for key, pair in (row.get("diff") or {}).items():
                   print(f"  - {key}: {pair[0]} -> {pair[1]}")
+              if row.get("source_url"):
+                  print(f"  - source: {row['source_url']}")
           for row in ch["added"]:
-              print(f"- added **{row['name']}** ({row['date']}, {row['id']})")
+              print(f"- added **{row['name']}** ({row['date']}, `{row['id']}`)")
           for row in ch["removed"]:
-              print(f"- removed **{row['name']}** ({row['date']}, {row['id']})")
-          if not (ch["changed"] or ch["added"] or ch["removed"]):
-              print("- no row changed")
+              print(f"- removed **{row['name']}** ({row.get('date')}, `{row['id']}`)")
           PY
           echo "---" >> report.md
           echo "" >> report.md
-          echo "Re-read the affected structure sheets before trusting the changed rows." >> report.md
+          echo "Re-read the affected structure sheets or policy pages before trusting a marked row." >> report.md
+          echo "After that, re-run this workflow with 'Accept today's content as the new comparison baseline' = yes." >> report.md
           title="Source check $(date -u +%Y-%m-%d)"
           existing=$(gh issue list --state open --search "$title in:title" --json number --jq '.[0].number' || true)
           if [ -n "$existing" ]; then
@@ -99,3 +137,14 @@ jobs:
           else
             gh issue create --title "$title" --body-file report.md >/dev/null
           fi
+
+      - name: Comment on the run when nothing moved
+        if: steps.check.outputs.rows_marked == '0' && steps.check.outputs.facts_changed == '0'
+        run: |
+          {
+            echo "### No published value moved"
+            echo
+            echo "Every official source was re-checked and no page printed a different money amount,"
+            echo "date, time or entry-rule word than the one its rows were captured from, so no row is"
+            echo "marked. Availability: $(python3 -c "import json;m=json.load(open('data/monitoring.json'));print(f\"{m['sources_ok']} / {m['sources_total']} official sources answered (basis: {m['kpi_basis']})\")")"
+          } >> "$GITHUB_STEP_SUMMARY"
