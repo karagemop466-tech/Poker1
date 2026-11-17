@@ -807,9 +807,39 @@ if os.path.isfile(app_js):
         if name != "home" and name not in assigned:
             problems.append(f"assets/app.js: no renderer for data-page {name!r}")
 
+# --- unresolved merge-conflict markers anywhere in the shipped site. A conflicted file was committed
+# to main once and the markers were served on a live page while every other check passed, because a
+# marker is not a broken link, an invalid JSON value or a missing id.
+MARKER = re.compile(r"^(?:<{7}|={7}|>{7})(?:\s|$)", re.MULTILINE)
+checked_for_markers = []
+for rel in ["index.html", "assets/app.js", "assets/style.css", "scripts/build_site.py", "scripts/build_data.py",
+            "scripts/check_links.py", "README.md", "EXECUTIVE_SUMMARY.md", "QUESTIONS.md", "SUGGESTIONS.md",
+            "FLAGGED.md", "REVIEW.md", "COORDINATION.md"]:
+    path = os.path.join(ROOT, rel)
+    if os.path.isfile(path):
+        checked_for_markers.append(rel)
+        with open(path, encoding="utf-8") as stream:
+            text = stream.read()
+        for match in MARKER.finditer(text):
+            line = text.count("\n", 0, match.start()) + 1
+            problems.append(f"{rel}:{line}: unresolved merge-conflict marker {match.group(0)!r}")
+for directory in ("pages", "data"):
+    base = os.path.join(ROOT, directory)
+    for name in sorted(os.listdir(base)) if os.path.isdir(base) else []:
+        if not name.endswith((".html", ".json")):
+            continue
+        rel = f"{directory}/{name}"
+        path = os.path.join(base, name)
+        checked_for_markers.append(rel)
+        with open(path, encoding="utf-8") as stream:
+            text = stream.read()
+        for match in MARKER.finditer(text):
+            line = text.count("\n", 0, match.start()) + 1
+            problems.append(f"{rel}:{line}: unresolved merge-conflict marker {match.group(0)!r}")
+
 if problems:
     print("\n".join(problems))
     sys.exit(1)
-print(f"check_links: OK ({len(pages)} pages, {len(tournament_rows)} tournament rows, "
+print(f"check_links: OK ({len(checked_for_markers)} files free of conflict markers, {len(pages)} pages, {len(tournament_rows)} tournament rows, "
       f"{len(hotel_rows)} hotels, {len(rate_entries)} dated rates, {len(schedule_days)} schedule days; "
       f"source, rules, schedule, hotel-rate/cost, provenance and page-link checks passed)")
