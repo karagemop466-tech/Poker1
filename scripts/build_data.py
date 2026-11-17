@@ -1508,6 +1508,11 @@ OFFICIAL_INTERIOR = {
  ("encore", WYN): "\"Players will register in the Wynn Las Vegas Poker Room, located in Encore at Wynn "
                   "Las Vegas.\"",
 }
+# Cross-check links for the same coordinate pair, so the routed time can be re-checked in the app a
+# traveller would actually use. Directions URLs built only from the coordinates already recorded above;
+# the traveller's own current location is never assumed.
+GMAPS = "https://www.google.com/maps/dir/?api=1&origin=%s,%s&destination=%s,%s&travelmode=walking"
+AMAPS = "https://maps.apple.com/?saddr=%s,%s&daddr=%s,%s&dirflg=w"
 WALKING = []
 for hotel_id, points in OSM_LOOKUP.items():
     for venue in (VEN, WYN):
@@ -1539,6 +1544,14 @@ for hotel_id, points in OSM_LOOKUP.items():
             "route_link": OSM_ROUTE % ("%s,%s" % (OSM_LOOKUP[hotel_id]["lon"], OSM_LOOKUP[hotel_id]["lat"]),
                                         "%s,%s" % (origin["lon"], origin["lat"])),
             "retrieved_on": "2026-11-17",
+            "cross_check": [
+                {"label": "Google Maps walking directions between the same two coordinates",
+                 "url": GMAPS % (OSM_LOOKUP[hotel_id]["lat"], OSM_LOOKUP[hotel_id]["lon"],
+                                 origin["lat"], origin["lon"])},
+                {"label": "Apple Maps walking directions between the same two coordinates",
+                 "url": AMAPS % (OSM_LOOKUP[hotel_id]["lat"], OSM_LOOKUP[hotel_id]["lon"],
+                                 origin["lat"], origin["lon"])},
+            ],
             "sources": [
                 {"label": "Nominatim lookup for the %s coordinate" % hotel_id,
                  "url": "https://nominatim.openstreetmap.org/search?q="

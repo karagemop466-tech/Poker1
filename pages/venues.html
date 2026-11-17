@@ -261,6 +261,15 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
     if (s === "CONT") return '<span class="chip info">Continuation</span>';
     return '<span class="chip warn">Unverified</span>';
   }
+  function routeLinks(r) {
+    var out = '<a href="' + esc(r.route_link) + '" target="_blank" rel="noopener">OSM routing query</a>';
+    (r.cross_check || []).forEach(function (c) {
+      var name = /Google/.test(c.label) ? "Google Maps" : (/Apple/.test(c.label) ? "Apple Maps" : c.label);
+      out += '<br><a href="' + esc(c.url) + '" target="_blank" rel="noopener">' + esc(name) + "</a>";
+    });
+    return '<span class="small">' + out + "</span>";
+  }
+
   function srcLinks(sources) {
     return (sources || []).map(function (s) {
       return '<a href="' + esc(s.url) + '" target="_blank" rel="noopener">' + esc(s.label) + "</a>";
@@ -861,7 +870,7 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
           { id: "metres", label: "Metres", key: "metres", num: true },
           { id: "status", label: "Status", key: "status" },
           { id: "note", label: "Note", key: "note", sort: null, html: function (r) { return "<span class='small'>" + esc(r.note) + "</span>"; } },
-          { id: "route", label: "Route", key: "route_link", sort: null, html: function (r) { return '<a href="' + esc(r.route_link) + '" target="_blank" rel="noopener">routing query</a>'; } },
+          { id: "route", label: "Route", key: "route_link", sort: null, html: function (r) { return routeLinks(r); } },
           { id: "src", label: "Sources", key: "sources", sort: null, html: function (r) { return "<span class='small'>" + srcLinks(r.sources) + "</span>"; } }
         ];
         table(w, walking, wcols, { sortKey: "minutes", sortDir: 1 });
@@ -1073,7 +1082,7 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
           { id: "from", label: "From", key: "from", sort: null },
           { id: "minutes", label: "Minutes", key: "minutes", num: true, html: function (r) { return r.minutes == null ? '<span class="muted">unverified</span>' : r.minutes; } },
           { id: "note", label: "Note", key: "note", sort: null, html: function (r) { return "<span class='small'>" + esc(r.note) + "</span>"; } },
-          { id: "route", label: "Route", key: "route_link", sort: null, html: function (r) { return '<a href="' + esc(r.route_link) + '" target="_blank" rel="noopener">routing query</a>'; } }
+          { id: "route", label: "Route", key: "route_link", sort: null, html: function (r) { return routeLinks(r); } }
         ], { sortKey: "hotel", sortDir: 1 });
       }
       var tsec = document.getElementById("events");
