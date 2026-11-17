@@ -1518,7 +1518,6 @@ HOTELS = [
                      "to a text fetch, so no Wynn quote is logged. Two offer averages appeared for the rendered "
                      "stay only: $1,254 (Flexible Getaway) and $1,074 (Your Fall to Have It All) per night, each "
                      "including the resort fee and excluding taxes.",
-    "room_rate_note": "No nightly rate is published on an official Wynn page. Use the official booking engine.",
   "parking_note": "Official Wynn parking page (read 2026-11-17): \"The daily parking fee for non-registered guests is "
                   "$25 per day with the first three (3) hours complimentary. Prices may be higher during special "
                   "events.\" and \"Complimentary self-parking is extended to Wynn Poker Room guests (please visit the "
@@ -1562,7 +1561,6 @@ HOTELS = [
   "room_rate_note": "No nightly rate published on an official Wynn page. Use the official booking engine. "
                      "Re-checked 2026-11-17: the Wynn booking engine ignores the date parameters in the URL "
                      "and exposes no tax or checkout total to a text fetch, so no Encore quote is logged.",
-    "room_rate_note": "No nightly rate published on an official Wynn page. Use the official booking engine.",
   "parking_note": "Official Wynn parking page (read 2026-11-17), which covers Wynn and Encore together: "
                   "\"Self-parking garages at Wynn and Encore are ... complimentary parking for all Wynn and Encore "
                   "Resort and Tower Suite registered guests, subject to availability\"; \"The daily parking fee for "
@@ -1834,6 +1832,9 @@ OFFICIAL_INTERIOR = {
 # the traveller's own current location is never assumed.
 GMAPS = "https://www.google.com/maps/dir/?api=1&origin=%s,%s&destination=%s,%s&travelmode=walking"
 AMAPS = "https://maps.apple.com/?saddr=%s,%s&daddr=%s,%s&dirflg=w"
+# PR #46 (session bb9a3717): display names for the walking rows; the geocoding query string
+# used for the lookup is kept separately in `from`.
+WALK_HOTEL_NAME = {h["id"]: h["name"] for h in HOTELS}
 WALKING = []
 for hotel_id, points in OSM_LOOKUP.items():
     for venue in (VEN, WYN):
@@ -1848,12 +1849,13 @@ for hotel_id, points in OSM_LOOKUP.items():
         else:
             minutes = int(math.ceil(secs / 60.0 - 0.02))  # round up; the 0.02 tolerates router jitter
             status = "verified"
-            note = ("OpenStreetMap foot router: %d seconds (%d m) between the geocoded %s coordinate and the "
-                    "%s poker-room coordinate, rounded up to %d minutes. This is a published routing source, not "
-                    "the hotel or the poker room itself, so the 30-minute rule is applied to the routed time." % (
-                        round(secs), round(metres), hotel_id, venue, minutes))
+            note = ("OpenStreetMap foot router: %d seconds (%d m) between the geocoded %s coordinate and %s, "
+                    "rounded up to %d minutes. This is a published routing source, not the hotel or the poker "
+                    "room itself, so the 30-minute rule is applied to the routed time." % (
+                        round(secs), round(metres), OSM_LOOKUP[hotel_id]["q"], origin["label"], minutes))
         WALKING.append({
             "hotel": hotel_id, "venue": venue,
+            "hotel_name": WALK_HOTEL_NAME.get(hotel_id) or OSM_LOOKUP[hotel_id]["q"],
             "from": "%s (%s, OSM %s)" % (hotel_id, OSM_LOOKUP[hotel_id]["q"], OSM_LOOKUP[hotel_id]["osm"]),
             "to": origin["label"],
             "metres": metres if not internal else 0,
