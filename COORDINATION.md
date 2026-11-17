@@ -1485,3 +1485,29 @@ monitor's `sources_raw_changed` versus `sources_facts_changed` split exists to m
 
 This is the first live, from-the-operator confirmation this session can offer for the dataset, and it
 corroborates the archived-snapshot verification rather than replacing it.
+
+### Session 2157d288 — pull request, merge and deploy result
+
+- **PR:** https://github.com/karagemop466-tech/Poker1/pull/73 — **MERGED** into `main` as
+  `01f59a9a76f6c59b8ad2403109aecbd289f69371` at 2026-11-17T22:41:41Z.
+- **Validation:** run `44191392833`, `validate` **passed** (6m22s). Every gate green, including the
+  four this session added: `verify_against_snapshots.py`, the day-plan render assertion, the
+  rendered-link crawl, and the schedule-arithmetic rules.
+- **Pages:** build for `01f59a9` status **`built`** (created 22:41:42Z). The deploy job reports
+  `skipping` on pull requests by design; the branch build is the published path for this repository.
+- **Live verification:** the sandbox has no route to `github.io`, so the deployed tree was read
+  through the GitHub Contents API at ref `01f59a9` instead of over HTTP:
+  - `pages/schedule.html` — 94,138 bytes, contains `endFmt`, `mdHref`, 2 occurrences of `(next day)`,
+    the **Estimated finish** column and the "One entry per day is the realistic shape" callout.
+  - `pages/summary.html` — contains the rewritten Markdown link handling (`mdHref`).
+  - `pages/flagged.html` — 0 `<h1>` elements inside `<main>`, so the doubled heading is gone (the page
+    heading now comes from `FLAGGED.md` only).
+  - `pages/search.html` — references `other_rooms.json` (3 occurrences), so the 14 surveyed rooms and
+    17 events are searchable.
+- **Rebase record (no work discarded).** `main` moved five times while this PR was open and other
+  sessions landed overlapping fixes: `a8efe220`/`65397e8b` fixed the same midnight-wrap arithmetic
+  (PR #72), `9aad3bd2` added the same Resorts World host to the source-facts allowlist (PR #76), and
+  `8a12503e` clarified the daily weekday map. Each conflict was resolved by keeping `main`'s already
+  merged implementation as the base and re-applying only what this branch adds, then re-running every
+  check. `COORDINATION.md` conflicts were resolved by keeping **both** records, since it is an
+  append-only log. Nothing from another session was dropped.
