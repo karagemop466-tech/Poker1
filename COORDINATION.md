@@ -51,6 +51,22 @@ chosen to be disjoint from all of them. `main` is confirmed to be the branch bas
    (90 of 94 sources answered) instead of replacing it with its own unreachable numbers.
 
 
+### Rebase and conflict record, 2026-11-17 (session `8a12503e`)
+
+`main` moved four times while this work was in flight; the branch was rebased each time and the
+PR was validated against the newest `main`.
+
+| Conflict | With | How it was resolved |
+|---|---|---|
+| `scripts/monitor_sources.py` | session `0d069ce0` (PR #55/#58 line) also rewrote this file: a dataset-wide URL sweep including the new `strip_rooms.json`, and a `network_unavailable` blackout flag that `assets/app.js` renders | **Both kept.** This session's content-facts baseline, `kpi_basis`, routing-vs-operator split, `--write-report` and `--update-snapshot` are combined with their broader URL sweep and their `network_unavailable` key. Neither session's behaviour was dropped; the monitor reaches 91 official URLs plus 23 routing endpoints. |
+| `data/sources.json` | both sessions appended entries at the same point | Union by `id`, main's entries first: 82 + this session's 9 = 91. **Disclosed, not hidden:** an earlier automated union left one bad resolution, so commit `eae1bbf` in this branch's history contains a `data/sources.json` with conflict markers in it. It is an intermediate commit only - the tip is clean, verified by `json.loads` and by `check_links.py`, and the PR's diff against `main` is correct. The repository merges PRs with merge commits, so no history rewrite was attempted. |
+| `SUGGESTIONS.md` | main marked P6 built | Kept main's built P6 and this session's new P7-P9; this session's now-redundant P6 text was dropped. |
+
+`data/monitoring.json` was deliberately **not** regenerated on this branch: the version on `main`
+records a real run that reached 90 of 94 sources, and this sandbox has no route to the operator
+hosts, so a local run would have replaced a good result with an unreachable one. The scheduled
+Actions run will refresh it with the merged 91-URL manifest and the new fields.
+
 # COORDINATION.md
 
 ## Session 0d069ce0 (current branch `arena/0d069ce0-poker1`) — claim before implementation work
