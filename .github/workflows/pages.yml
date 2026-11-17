@@ -75,19 +75,43 @@ jobs:
       - name: Render every page in a headless DOM
         run: npm run test:smoke | tee -a "$GITHUB_STEP_SUMMARY"
 
+  # The repository's Pages site is configured with `source: main:/` and the legacy branch build, so
+  # `actions/deploy-pages` can never find an artifact for this workflow and failed on every run while
+  # the site itself kept building fine. This job therefore asks GitHub which build type the site
+  # actually uses: with `workflow` it publishes the artifact exactly as before, and with `legacy` it
+  # confirms that the branch build for this commit reached status `built` instead of failing.
   deploy:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.site.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: validate
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Configure Pages
+
+      - name: Read the Pages build type
+        id: cfg
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          body=$(curl -sS -H "Authorization: Bearer $GH_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            "$GITHUB_API_URL/repos/$GITHUB_REPOSITORY/pages")
+          build_type=$(printf '%s' "$body" | python3 -c 'import json,sys; print(json.load(sys.stdin).get("build_type",""))')
+          page_url=$(printf '%s' "$body" | python3 -c 'import json,sys; print(json.load(sys.stdin).get("html_url",""))')
+          echo "build_type=$build_type" >> "$GITHUB_OUTPUT"
+          echo "pages build type: $build_type"
+          echo "$page_url" > page_url.txt
+
+      - name: Publish the artifact (workflow build type)
+        if: steps.cfg.outputs.build_type == 'workflow'
         uses: actions/configure-pages@v5
+
       - name: Stage public site
+        if: steps.cfg.outputs.build_type == 'workflow'
         run: |
           mkdir -p _site
           cp index.html _site/
@@ -96,10 +120,61 @@ jobs:
           for file in EXECUTIVE_SUMMARY.md QUESTIONS.md SUGGESTIONS.md FLAGGED.md REVIEW.md README.md; do
             test -s "_site/$file"
           done
+
       - name: Upload Pages artifact
+        if: steps.cfg.outputs.build_type == 'workflow'
         uses: actions/upload-pages-artifact@v3
         with:
           path: _site
+
       - name: Deploy to GitHub Pages
         id: deployment
+        if: steps.cfg.outputs.build_type == 'workflow'
         uses: actions/deploy-pages@v4
+
+      - name: Confirm the branch build for this commit is live (legacy build type)
+        if: steps.cfg.outputs.build_type != 'workflow'
+        id: site
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          url=$(cat page_url.txt)
+          echo "page_url=$url" >> "$GITHUB_OUTPUT"
+          if [ -z "$url" ]; then
+            echo "Pages did not report a site URL." >&2
+            exit 1
+          fi
+          echo "The site is published by the legacy branch build; waiting for the build of $GITHUB_SHA."
+          for attempt in $(seq 1 30); do
+            body=$(curl -sS -H "Authorization: Bearer $GH_TOKEN" \
+              -H "Accept: application/vnd.github+json" \
+              "$GITHUB_API_URL/repos/$GITHUB_REPOSITORY/pages/builds?per_page=20")
+            state=$(printf '%s' "$body" | python3 - "$GITHUB_SHA" <<'PY'
+          import json, sys
+          sha = sys.argv[1]
+          builds = json.load(sys.stdin)
+          for b in builds:
+              if b.get("commit") == sha:
+                  err = (b.get("error") or {}).get("message")
+                  print("%s\t%s" % (b.get("status"), err or ""))
+                  break
+          else:
+              print("pending\t")
+          PY
+          )
+            status=${state%%	*}
+            detail=${state#*	}
+            echo "attempt $attempt: $status ${detail}"
+            if [ "$status" = "built" ]; then
+              echo "Pages build for $GITHUB_SHA is built. Site: $url"
+              exit 0
+            fi
+            if [ "$status" = "errored" ]; then
+              echo "Pages build for $GITHUB_SHA failed: ${detail}" >&2
+              exit 1
+            fi
+            sleep 10
+          done
+          echo "Pages did not report a built state for $GITHUB_SHA within 5 minutes." >&2
+          exit 1
