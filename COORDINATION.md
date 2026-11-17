@@ -682,3 +682,42 @@ walking presentation, PR #36 `c0714e1a` WPT sheets): no open PR touches `assets/
 | Task | Status | File scope | Owner |
 |---|---|---|---|
 | S16 — print-friendly views of the schedule and the single-entry list (print stylesheet: hide nav/toolbar/filters, black-on-white tables, page-break rules, show link URLs for source columns) so the plan can be carried on paper during the trip | **In progress** | `assets/style.css`, regenerated `index.html` and `pages/*.html`, `COORDINATION.md` | `206debc0` |
+
+
+## Session c4774e5a — branch `arena/c4774e5a-poker1`, base `44fcc08`
+
+Claimed in this commit, pushed before implementation work. Pull requests #38, #39 and #41 were merged into
+`main` by their own sessions during this session, so this branch no longer integrates them; it integrates
+onto that `main` and contributes its own re-verification and the two deploy/monitoring repairs.
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Live re-verification of the official tournament pages, one structure sheet, the hotel terms and the routed walking pairs (2026-11-17) | **Done** — record and findings in `research/verification-2026-11-17-c4774e5a.md` | `research/verification-2026-11-17-c4774e5a.md`, `FLAGGED.md`, the six Markdown documents | `c4774e5a` |
+| Fix the monitoring page presenting a sandbox network blackout as a source outage (F55) | **Done** — flagged F55; the page now shows the scheduled provenance result and labels a blackout as a machine result | `scripts/monitor_sources.py`, `assets/app.js`, `scripts/build_site.py` | `c4774e5a` |
+| Stop the Pages `deploy` job failing on every push when the site uses the legacy branch build (F56) | **Done** — flagged F56; the job now reads the site's build type and fails only on a real problem | `.github/workflows/pages.yml` | `c4774e5a` |
+| Correct the stale row counts in the summary, questions and review documents | **Done** — 317 rows, 136 WPT rows, 106 separate-section rows, 78 flagged | `EXECUTIVE_SUMMARY.md`, `QUESTIONS.md`, `REVIEW.md` | `c4774e5a` |
+| Final validation, PR to `main`, merge, confirm the Pages build for the merge commit | **Done** | `COORDINATION.md` | `c4774e5a` |
+
+### Session c4774e5a — verification performed
+
+- `python3 scripts/build_data.py` → 317 rows (SE 80, MULTI 60, RE 46, UNV 129, CONT 2), 70 schedule days, 78 flagged; zero diff.
+- `python3 scripts/build_site.py` → 21 pages, zero diff against the committed pages.
+- `python3 scripts/check_links.py` → OK (21 pages, 317 rows, 7 hotels, 5 dated rates, 70 schedule days).
+- `python3 scripts/verify_rows.py` → 324 rows, 1,122 field checks, 0 hard failures, 1 review item (r225, already F4).
+- `npm run test:smoke` → 21/21 pages render in a headless DOM.
+- Pull-request validation run `43995297968` on the final commit: `success`.
+
+### Sources re-read live on 2026-11-17
+
+- [DeepStack Extravaganza IV event page](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html) — 4 of 4 chunks; every row read matches the dataset.
+- [DeepStack Extravaganza NYE event page](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html) — 2 of 2 chunks; the Dec 26 "2025" typo (F1) and the "Tuesaday" typo are still printed.
+- [Structure sheet #16](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_16.pdf) — confirms the top-ranked row (r096) field for field.
+- [Venetian hotel terms and conditions](https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html) — 13.38% Clark County room tax, $55 resort fee plus tax, $20/day guest self-parking, prepaid offers non-cancellable, and no fixed free-cancellation deadline for a general rate (so I9b stays genuinely open).
+- OpenStreetMap foot router — re-queried Bellagio→Venetian (1284.9 s / 1606.4 m = 22 min), Caesars→Wynn (1908.3 s / 2382.5 m = 32 min) and Venetian→Wynn (919.4 s / 1146.8 m = 16 min); each reproduces the stored value and distance.
+
+### Irregularities recorded in this session
+
+- **F55** the monitoring page presented a sandbox network blackout as "0 / 94 sources reachable". Fixed as described above.
+- **F56** the Pages `deploy` job failed on every push because the site uses the legacy branch build and `actions/deploy-pages` never found an artifact. The workflow now handles both build types; changing the setting itself needs repository admin rights, which this session's token does not have.
+- **Concurrency defect: already fixed by another session.** `.github/workflows/pages.yml` used `concurrency: group: pages, cancel-in-progress: true`, so a push on any branch cancelled every other branch's pull-request validation (observed: runs `43992247095`, `43994108474`, `43994224943`). Session `f2ad3bce` fixed it on `main` in commit `e3e7431` with per-stream groups before this branch merged; this session kept that fix and dropped its own duplicate change rather than replacing it.
+- No tournament or hotel fact was changed in this session. The walking rows gained Google and Apple Maps cross-check links (SUGGESTIONS P6), built only from coordinates already recorded.
