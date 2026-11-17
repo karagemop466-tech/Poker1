@@ -316,6 +316,24 @@ Claimed at commit `304f0bd` (pushed before any data or page change). Base: `main
 
 **Open conflict, not touched:** PR #24 (`arena/bad329a9-poker1`, opened 2026-11-16) edits nearly every data file and reports 54 single-entry rows against `main`'s 80 (40 possible multi-entry against 60). It is neither merged nor closed here; see Q-D5.
 
+
+## Session ca6d75b1 — branch `arena/ca6d75b1-poker1`, base `44fcc08`
+
+Claimed in the first commit of this session, pushed before any data or page change.
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Integration session: reconcile the five open pull requests (#41, #39, #38, #36, #24), re-verify every published value against the live official pages on 2026-11-17, and publish the site | **In progress** | `COORDINATION.md` | `ca6d75b1` |
+| Live re-verification of every tournament row and hotel value against the official pages today; correct or blank anything unsupported; flag every discrepancy | **Unclaimed → in progress** | `data/*.json` (via `scripts/build_data.py`), `research/verification-2026-11-17-ca6d75b1.md`, `FLAGGED.md`, `REVIEW.md` | `ca6d75b1` |
+| Merge the open PRs whose work is additive and correct; close/supersede the ones whose content `main` already carries | **In progress** | `COORDINATION.md` | `ca6d75b1` |
+| Rebuild, validate, smoke test, PR to `main`, merge, confirm Pages deploy | **Planned** | `index.html`, `pages/*.html`, `assets/*`, the six Markdown documents | `ca6d75b1` |
+
+### Scope note
+
+This session is the integration session the board requires before publishing. Other sessions' open PRs are
+**not** edited; they are merged, or adopted and closed with the reason recorded here. No file owned by an
+open claim is rewritten without recording the disposition.
+
 ## Log
 - 2026-11-17: session `3f878ff5` merged `main` at `b379927` through PR #32 (validate green on `2357366`; Pages deploy `43989560055` success). Live site checked: rate log shows both quotes; Flagged page shows F1–F40 with the section D findings.
 - 2026-11-17: session `3f878ff5` merged `origin/main` (PR #31, session `2e5232bc`). Both sessions created `research/verification-2026-11-17.md`; this session's log moved to `research/verification-2026-11-17-3f878ff5.md` and its flags were renumbered F31–F40 because `main` already uses F21 for a restored WPT row. Nothing from either session was dropped.
