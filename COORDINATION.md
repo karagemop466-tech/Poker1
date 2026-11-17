@@ -1441,3 +1441,31 @@ repository's own recorded source URLs, never against a live fetch.
 ## Pull request / deployment
 
 Recorded at the end of this section once the PR is merged and Pages is confirmed.
+
+### Live official-source refresh, run on a network-enabled runner (2026-11-17, commit `e7c09f3`)
+
+The `source-facts` workflow fired on this branch's push and **ran instead of refusing for the first
+time in this repo's history** — the allowlist fix in this session is what unblocked it. It fetched all
+91 manifest sources live and reported 14 pages whose extracted text differed from the stored snapshot,
+plus 6 timeouts (`h_bellagio`, `h_aria`, `bellagio_poker`, `mgm_poker_page`, `mb_poker_page`,
+`h_aria_poker`; all MGM-family read timeouts, recorded as errors, and `v_dse_dec_sched`, which the
+manifest marks inactive).
+
+**No published value moved.** Checked field by field against the pre-refresh snapshots at `0303053`:
+
+| Page | Money amounts | Start times | Dates |
+|---|---|---|---|
+| `v_dse_nov_page` | identical | identical | identical |
+| `v_dse_dec_page` | identical | identical | identical |
+| `v_dse_series_page` | identical | identical | identical |
+| `w_poker_page` | identical | identical | identical |
+
+The hotel-policy pages were also re-checked on the specific values this dataset publishes — the $55
+resort fee, the 13.38% Clark County rate, the $20/$25/$40 parking and valet figures — and every one is
+still printed. The textual diff is navigation and menu ordering (`v_hotel_terms`: the "Responsible
+Gaming / Casino Credit Application" links moved above "Table Games"; "Venetian Rewards" now appears
+twice). That is why the page hash moved while no fact did, and it is exactly the distinction the
+monitor's `sources_raw_changed` versus `sources_facts_changed` split exists to make.
+
+This is the first live, from-the-operator confirmation this session can offer for the dataset, and it
+corroborates the archived-snapshot verification rather than replacing it.
