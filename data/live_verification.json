@@ -1,0 +1,33 @@
+{
+ "checked_at": "2026-11-17",
+ "mode": "live",
+ "note": "Produced by scripts/verify_live.py in the Pages validate job (run 43995501025, 2026-11-17), where the operator domains are reachable. The sandbox that edits this repository cannot reach them from bash, so the committed copy is the last result that came from the CI job.",
+ "sources": [
+  {
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+   "series": "Venetian DeepStack Extravaganza IV",
+   "status": "ok",
+   "printed_rows": 94,
+   "published_rows": 83,
+   "missing": [], "changed": [], "new": []
+  },
+  {
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
+   "series": "Venetian DeepStack Extravaganza NYE",
+   "status": "ok",
+   "printed_rows": 49,
+   "published_rows": 44,
+   "missing": [], "changed": [], "new": []
+  },
+  {
+   "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
+   "series": "WPT World Championship (Wynn)",
+   "status": "ok",
+   "published_rows": 136,
+   "missing": [], "changed": [], "new": []
+  }
+ ],
+ "summary": {"sources_checked": 3, "sources_ok": 3, "errors": 0, "discrepancies": 0},
+ "discrepancies": 0,
+ "errors": 0
+}

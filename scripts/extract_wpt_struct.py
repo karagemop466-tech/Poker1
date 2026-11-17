@@ -48,6 +48,14 @@ FEE_RE = re.compile(
     r"\$([\d,]+)\s*\(Tournament Prize Pool\)\s*\+\s*"
     r"\$([\d, ]+?)\s*\(([^)]*)\)\s*\+\s*\$([\d, ]+?)\s*\(([^)]*)\)")
 
+# Every printed fee line in a block, including the "*Discounted ... Entry Fee:"
+# variant the Ladies Championship sheet prints beside its standard line. When a
+# block prints two lines, both are kept verbatim: the discounted line describes
+# the field that is actually sold, and the standard line is recorded beside it
+# in `printed_standard_fee_line` (FLAGGED F121).
+FEE_LINES_RE = re.compile(
+    r"(?:\*Discounted[^:]{0,40}?)?Entry Fee:\s*.{0,240}?\(Poker Staff Service Charge\)")
+
 
 def norm(s):
     return re.sub(r"\s+", " ", s)
@@ -86,14 +94,20 @@ def main():
     blocks = []
     for i, chunk in enumerate(chunks, 1):
         j = norm(chunk)
-        fee = FEE_RE.search(j)
+        fee_lines = [norm(m.group(0)) for m in FEE_LINES_RE.finditer(j)]
+        discounted = [l for l in fee_lines if l.lstrip().startswith("*Discounted")]
+        standard = [l for l in fee_lines if not l.lstrip().startswith("*Discounted")]
+        picked = discounted[0] if discounted else (standard[0] if standard else None)
+        fee = FEE_RE.search(picked) if picked else None
         reg = grab(r"Registration:\s*(.{0,900}?)\s*Starting Stack", j)
         unlimited = bool(reg and "unlimited re-entry" in reg.lower())
         blocks.append({
             "block": i,
             "title": grab(r"This (\$[\d,]+.{0,120}?)\(the \u201cTournament\u201d\)", j),
             "dates": printed_dates(chunk),
-            "entry_fee_line": grab(r"(Entry Fee:\s*.{0,240}?\(Poker Staff Service Charge\))", j),
+            "entry_fee_line": picked,
+            "printed_standard_fee_line": standard[0] if (discounted and standard) else None,
+            "printed_discounted_fee_line": discounted[0] if (discounted and standard) else None,
             "buyin_usd": money(fee.group(1)) if fee else None,
             "prize_pool_usd": int(re.sub(r"[^\d]", "", fee.group(2))) if fee else None,
             "tournament_fee_usd": money(fee.group(3)) if fee else None,

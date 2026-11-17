@@ -120,6 +120,8 @@ def main():
             "unlimited_re_entry": best["unlimited_re_entry"],
             "multi_entry": best["multi_entry"],
             "entry_fee_line": best["entry_fee_line"],
+            "printed_standard_fee_line": best.get("printed_standard_fee_line"),
+            "printed_discounted_fee_line": best.get("printed_discounted_fee_line"),
             "buyin_usd": best["buyin_usd"],
             "row_buyin_usd": row["buy_in_usd"],
             "prize_pool_usd": best["prize_pool_usd"],

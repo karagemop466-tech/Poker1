@@ -772,7 +772,45 @@ Claimed at commit `304f0bd` (pushed before any data or page change). Base: `main
 
 **Open conflict, not touched:** PR #24 (`arena/bad329a9-poker1`, opened 2026-11-16) edits nearly every data file and reports 54 single-entry rows against `main`'s 80 (40 possible multi-entry against 60). It is neither merged nor closed here; see Q-D5.
 
+## Session ca6d75b1 — branch `arena/ca6d75b1-poker1`, base `44fcc08`
+
+Claimed in the first commit of this session, pushed before any data or page change.
+(Record preserved at the `81c6f6bc` integration; the flag ids this record cites were
+renumbered for global uniqueness: its F55, F57, F58, F59 are now **F119–F122**, and its
+drafted F56 is covered by the printed-block flags on `r166`–`r175` and row F6.)
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Integration session: reconcile the open pull requests, re-verify every published value against the live official pages on 2026-11-17, and publish the site | **Done** — see the PR and verification record below | `COORDINATION.md` | `ca6d75b1` |
+| Live re-verification of every tournament row against the official pages today; correct or blank anything unsupported; flag every discrepancy | **Done** — nine transcribed values corrected (F119), fee-line arithmetic published (F120), the Ladies dual fee lines published (F121), the sandbox network limit recorded (F122) | `data/*.json` (via `scripts/build_data.py`), `FLAGGED.md`, `REVIEW.md`, `scripts/verify_live.py` | `ca6d75b1` |
+| Reconcile the open PRs whose work is additive and correct | **Done** — #39 and #38 merged; #36's two extraction scripts adopted (see the disposition table); #24 and #36's dataset superseded by `main`'s | `COORDINATION.md` | `ca6d75b1` |
+| Rebuild, validate, smoke test, PR to `main`, merge, confirm Pages deploy | **Done** — PR #52; the Pages workflow run `43995501025` passed every validate step including the new live check | `index.html`, `pages/*.html`, `assets/*`, the six Markdown documents | `ca6d75b1` |
+
+### Scope note
+
+This session is the integration session the board requires before publishing. Other sessions' open PRs are
+**not** edited; they are merged, or adopted and closed with the reason recorded here. No file owned by an
+open claim is rewritten without recording the disposition.
+
+## Session d94b191b — final integration + line-by-line re-verification (branch `arena/d94b191b-poker1`, base `44fcc08`)
+
+Claim written and pushed **before** any data or page change, as the board requires.
+(Claim preserved at the `81c6f6bc` integration; the branch stayed claim-only and was
+closed with a disposition comment. Its independent NYE 11:10 correction is published
+as F111, and its Q-E1 / "print, don't merge" points are preserved on `QUESTIONS.md`
+and the affected rows.)
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Re-fetch every official tournament / hotel / policy URL the dataset depends on (2026-11-17) and reconcile each row and hotel value against the live page | in progress | `research/verification-2026-11-17-d94b191b.md`, `data/*.json` (via generators) | `d94b191b` |
+| Fix the failing `Deploy to GitHub Pages` job on `main` so every merge leaves a green deploy | in progress | `.github/workflows/pages.yml` | `d94b191b` |
+| Resolve the open competing PRs (#36, #38, #41) by verifying their claims against the official sources, keeping what is correct and recording what is not | in progress | `data/*.json`, `scripts/*.py`, `FLAGGED.md`, `REVIEW.md` | `d94b191b` |
+| Refresh the six decision documents, validate, PR to `main`, merge, confirm the Pages deploy | in progress | `EXECUTIVE_SUMMARY.md`, `QUESTIONS.md`, `SUGGESTIONS.md`, `FLAGGED.md`, `REVIEW.md`, `README.md`, `COORDINATION.md` | `d94b191b` |
+
+No other session holds an open claim on these files. Open PRs #36, #38, #39 and #41 are reviewed in this scope; nothing is merged or closed by them here.
+
 ## Log
+- 2026-11-17: session `81c6f6bc` — stale-PR integration continued. **PR #53 (`arena/d57243e7-poker1`) merged in full** (row-level verification of all 317 rows + two transcribed-time corrections: r263 NYE MSPT Day 2 Restart 11:00→**11:10**, r225 Dec 21 $600 NLH Turbo 20:00→**18:00** with F4 retired as a transcription error). Flag ids made globally unique: F106 (marker finding), F107–F110 (`d57243e7`), F111–F118 (`c7a324a6`); the two verifiers stop clobbering one file (`verify_live_rows.py` owns `data/row_verification.json`, `verify_rows.py`'s summary moved to `data/row_field_checks.json`). **PR #46 (`arena/bb9a3717-poker1`) merged in full** (human-readable `hotel_name` on walking records). **PR #52 (`arena/ca6d75b1-poker1`) integrated and closed as superseded**: its WPT sheet join and dataset were superseded by main's richer integration, but its unique artefacts were adopted — `scripts/verify_live.py` (live re-fetch verifier, wired into the Pages validate job and the morning monitor job), `data/live_verification.json`, the nine transcription corrections (F119), the fee-line arithmetic flag (F120), the dual printed fee lines on the Ladies Championship (F121: `printed_standard_fee_line` / `printed_discounted_fee_line` in `data/wpt_row_sheets.json`), the sandbox-network record (F122), and its drafted F56 is already covered by the per-row printed-block flags (`r166`–`r175`, row F6). **PR #51 (`arena/d94b191b`) closed as superseded** with its claim preserved below: its NYE 11:10 correction is published as F111, its Q-E1 / “print, don’t merge” points are preserved (Q-E1 open, “two entry windows not merged” printed as the field’s rule), and its verify_rows “printed” column note is superseded by `verify_live_rows.py`'s per-row printed-vs-published evidence in `data/row_verification.json`.
 - 2026-11-17: session `f2ad3bce` merged [PR #47](https://github.com/karagemop466-tech/Poker1/pull/47) into `main` as `b886aa6` (validate green, deploy run `43995409243` success, Pages `built`). Delivered: the live-site acceptance audit record, the requirements-traceability matrix (R1–R31), four logged coordination requests (markdown-derived links → 404s; daily weekday map; missing ≤30-min-walk filter; one stale executive-summary bullet), and the per-stream `pages.yml` concurrency fix that stops parallel sessions' validations from cancelling each other. Request 1–3 owners: still open on `main` as of `b886aa6`.
 - 2026-11-17: session `f2ad3bce` claimed and completed the live-site acceptance audit (deployment, workflows,
   all 21 pages, deployed JSON, rate-log arithmetic, requirements matrix). Four defects found and logged as
@@ -1385,7 +1423,7 @@ deconflicted per the shared-task-board rules (never start a task another session
 | T2 — `est_end` midnight wrap / impossible fallbacks / unflagged overlaps (REQUEST 1) | **Released to the live sessions** — PR #72 (`a8efe220`, schedule overlap arithmetic + CI gate) and PR #73 (`2157d288`, day plan, wrapped finish times) both claim it and were committing at 22:04–22:12Z. This session will not touch `build_schedule`/`estimate_end`; whatever they merge is integrated as-is. Note for their owners: the two PRs overlap each other on `scripts/build_data.py` and `data/schedule.json`; whichever lands second must rebase and keep both fixes. | `a8efe220` / `2157d288` |
 | T3 — provenance check refuses to run on `main` (REQUEST 2: missing `www.rwlasvegas.com`, `tee` without `pipefail`) | **Released** — PR #73 claims `check_source_facts.py` and `source-facts.yml`. (The `www.rwlasvegas.com` half landed here anyway with PR #66's F101 fix; the `pipefail` half is still theirs.) | `2157d288` |
 | T4 — doubled `<h1>` on `pages/flagged.html` | **Released** — PR #73 claims `build_site.py` + rendered-page checks. Logged for them as a request if their pass misses it. | `2157d288` |
-| T1 — integration of the stale PRs #64/#66 (+ #51/#52/#53/#46 evaluation) | in progress — #64 and #66 merged in full (see the two merge commits) | `81c6f6bc` |
+| T1 — integration of the stale PRs #64/#66 (+ #51/#52/#53/#46 evaluation) | in progress — #64, #66, #53, #46 merged in full (see the four merge commits); #52 integrated (verify_live.py + F119–F122) and closed superseded; #51 closed superseded, claim preserved | `81c6f6bc` |
 | T5 — verification pass + record | in progress | `81c6f6bc` |
 
 Branches `arena/d94b191b-poker1` (PR #51), `arena/ca6d75b1-poker1` (PR #52),
