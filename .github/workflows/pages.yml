@@ -59,7 +59,23 @@ jobs:
         # never reported as a pass.
         run: |
           python3 -m pip install --quiet pypdf
-          python3 scripts/verify_live.py --print --json data/live_verification.json
+          python3 scripts/verify_live.py --print --json data/live_verification.json \
+            | tee live_verification.txt
+          {
+            echo "### Live re-read of the official schedule pages"
+            echo
+            cat live_verification.txt
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Keep the live verification result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: live-verification
+          path: |
+            data/live_verification.json
+            live_verification.txt
+          if-no-files-found: ignore
 
       - name: Check every official source and summarise the changed rows
         run: |
