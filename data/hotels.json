@@ -56,7 +56,7 @@
     "room": "Venetian Newly Remodeled Luxury King",
     "checkout_total_usd": 4559.3
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "walk_to_venetian_status": "internal",
    "walk_to_venetian_within_30": true,
    "walk_to_wynn_min": 16,
@@ -113,7 +113,7 @@
     "room": "Palazzo Luxury Two Queen",
     "checkout_total_usd": 1600.08
    },
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "walk_to_venetian_status": "internal",
    "walk_to_venetian_within_30": true,
    "walk_to_wynn_min": 14,
@@ -163,7 +163,7 @@
      "url": "https://www.wynnlasvegas.com/casino/poker"
     }
    ],
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "walk_to_venetian_status": "verified",
    "walk_to_venetian_within_30": true,
    "walk_to_wynn_min": null,
@@ -209,7 +209,7 @@
      "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     }
    ],
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "walk_to_venetian_status": "verified",
    "walk_to_venetian_within_30": true,
    "walk_to_wynn_min": null,
@@ -247,7 +247,7 @@
      "url": "https://bellagio.mgmresorts.com/en.html"
     }
    ],
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "walk_to_venetian_status": "verified",
    "walk_to_venetian_within_30": true,
    "walk_to_wynn_min": 31,
@@ -289,7 +289,7 @@
      "url": "https://aria.mgmresorts.com/en/casino/poker.html"
     }
    ],
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "walk_to_venetian_status": "verified",
    "walk_to_venetian_within_30": false,
    "walk_to_wynn_min": 43,
@@ -327,7 +327,7 @@
      "url": "https://www.caesars.com/caesars-palace"
     }
    ],
-   "last_checked": "2026-11-16",
+   "last_checked": "2026-11-17",
    "walk_to_venetian_status": "verified",
    "walk_to_venetian_within_30": true,
    "walk_to_wynn_min": 32,
