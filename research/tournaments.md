@@ -32,9 +32,9 @@ The field-by-field structure-sheet log is in `research/structure-sheets-verifica
 |---|---|---|---|---|---|---|
 | Venetian DeepStack IV | 54 | 38 | 0 | 0 | 2 | 94 |
 | Venetian DeepStack NYE | 26 | 22 | 1 | 0 | 0 | 49 |
-| Wynn WPT World Championship | 0 | 6 | 107 | 0 | 23 | 136 |
+| Wynn WPT World Championship | 0 | 7 | 106 | 0 | 23 | 136 |
 | Wynn Signature Series | 0 | 0 | 0 | 38 | 0 | 38 |
-| **Total** | **80** | **66** | **108** | **38** | **25** | **317** |
+| **Total** | **80** | **67** | **107** | **38** | **25** | **317** |
 
 Of the 80 verified single-entry rows, 60 award cash and 20 are milestone satellites that award a seat into a
 bigger event. Those 20 rows carry a `prize_text` value and a `satellite` label instead of a dollar guarantee.

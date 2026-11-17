@@ -4,12 +4,84 @@ Claim written 2026-11-17T01:02Z and pushed before any implementation work, per t
 
 | Task | Status | File scope | Owner |
 |---|---|---|---|
-| Final integration: integrate the open session branches `arena/160f9080-poker1` (PR #38, row-level verifier + LIPS fee split + WSS guarantee blanking) and `arena/c0714e1a-poker1` (PR #36, WPT sheet join + hotel fee records + flags F22–F25), resolve conflicts without discarding either session's work, re-verify the combined data line by line, close the stale superseded PR #24 with a disposition note, refresh the decision documents, PR to `main`, merge, and confirm the GitHub Pages deployment | **In progress** | `COORDINATION.md`, `scripts/*`, `data/*`, `pages/*`, `assets/*`, `index.html`, `EXECUTIVE_SUMMARY.md`, `FLAGGED.md`, `QUESTIONS.md`, `SUGGESTIONS.md`, `REVIEW.md`, `README.md`, `research/*` | `212b84be` |
-| Independent verification pass on the integrated dataset (official sources re-read through the page fetcher; entry-rule policy audit of every row labelled single entry against the "written maximum-entry / no-rebuy / no-add-on" requirement) | **In progress** | `research/*`, `data/sources.json`, `data/tournaments.json` (flag corrections only) | `212b84be` |
+| Final integration: integrate the open session branches `arena/160f9080-poker1` (PR #38, row-level verifier + LIPS fee split + WSS guarantee blanking) and `arena/c0714e1a-poker1` (PR #36, WPT sheet join + hotel fee records + flags F22–F25), resolve conflicts without discarding either session's work, re-verify the combined data line by line, close the stale superseded PR #24 with a disposition note, refresh the decision documents, PR to `main`, merge, and confirm the GitHub Pages deployment | **Done** (PR record at the end of this section) | `COORDINATION.md`, `scripts/*`, `data/*`, `pages/*`, `assets/*`, `index.html`, `EXECUTIVE_SUMMARY.md`, `FLAGGED.md`, `QUESTIONS.md`, `SUGGESTIONS.md`, `REVIEW.md`, `README.md`, `research/*` | `212b84be` |
+| Independent verification pass on the integrated dataset (official sources re-read through the page fetcher; entry-rule policy audit of every row labelled single entry against the "written maximum-entry / no-rebuy / no-add-on" requirement) | **Done** — see "Verification performed" below | `research/*`, `data/hotels.json` (Caesars check-in/out), `FLAGGED.md`, `scripts/build_data.py` | `212b84be` |
 
-Other sessions' claims are respected: no task claimed by a live session is taken over. PR #24 (session
-`bad329a9`) is >60 minutes old with no commits and is superseded by `main`'s richer dataset; its takeover
-and disposition are recorded below and on the PR itself.
+## Integration decisions (no session's work discarded)
+
+- **PR #38 (`arena/160f9080-poker1`) merged in full.** Its `scripts/verify_rows.py` row verifier is wired
+  into the build; the LIPS house-fee / flat-fee split (F53) and the WSS guarantee blanking (F54) are in the
+  generator. Its CI "failure" was a concurrency cancellation ("Canceling since a higher priority waiting
+  request for pages exists"), not a validation failure.
+- **PR #36 (`arena/c0714e1a-poker1`) merged in full.** The WPT structure-sheet join
+  (`scripts/extract_wpt_struct.py`, `scripts/extract_wpt_sheets.py`, `data/wpt_row_sheets.json`,
+  `data/wpt_struct_blocks.json`) prices every Wynn row from its own printed sheet; the property-specific
+  hotel fee/parking/cancellation records for Bellagio, ARIA and Caesars Palace are kept; flags F22–F25 and
+  the closure of U8 are kept.
+- **Conflicts resolved by combining, not choosing:** `scripts/check_links.py` now enforces both rules (a
+  true cost needs a verified resort fee **and** a verified tax rate **and** a dated quote whose arithmetic
+  reproduces it; tax_status may be `verified`, `estimated`, `conditional` or `unverified`).
+  `EXECUTIVE_SUMMARY.md` and `FLAGGED.md` were rewritten against the combined dataset. Generated files
+  (`data/*.json`, `pages/*.html`, `index.html`) were regenerated from the combined generator.
+- **PR #24 (`arena/bad329a9-poker1`) closed as superseded** (claim >60 minutes old with no commits). Its
+  clause-8 policy is already applied on `main`; its row universe is stale (225 vs 317 rows). Disposition:
+  F39 and Q-D5, and the closing comment on the PR.
+- **PR #39 (`arena/11c7cbe6-poker1`, documentation-only review record) left open for its own session** —
+  it touches `COORDINATION.md` and one research note and conflicts with this file's rewrite; if it merges
+  after this PR, resolve by keeping both session records.
+
+## Integration fixes found while re-verifying the combination
+
+1. **Colliding structure-sheet keys (new flag F55).** Two WPT sheets print the same date/start/buy-in
+   (Dec 7 11:00 $1,100: HORSE vs Prime Championship; Dec 14 12:00 $1,100: Milestone Satellite vs Mixed
+   Triple Draw). A join keyed only on those three values mis-priced one row of each pair. Fixed in
+   `scripts/build_data.py` `_sheet_for` and mirrored in `verify_rows.py`: each row is priced from the sheet
+   whose printed title matches the row name. Corrected values: Prime Championship Day 1C house fee
+   $90 + $40, Mixed Triple Draw $90 + $45. Classification shifted accordingly (RE 108 → 107, MULTI 66 →
+   67); every published count was re-synced.
+2. **WPT house-fee sums vs the raw-text verifier.** The sheets print the fee split but never the sum, so
+   `verify_rows.py` now accepts a sum only when it equals two printed components that both appear in the
+   official text. Result: 1,296 field checks, **0 hard failures** (1 documented review item: F4).
+3. **Wynn/Encore parking for a hotel stay.** The booking engine (read 2026-11-17) states "Self-parking is
+   complimentary to registered guests", so `parking_usd_per_day` is now **0** for a stay (the $25
+   non-guest rate stays in the note). The trip-cost calculator previously charged guests for free parking.
+4. **Caesars Palace check-in/out verified.** The official FAQ ("Policies & Guidelines") prints "Check-in at
+   Caesars Palace begins at 4:00 PM, and check-out is at 11:00 AM" and the 48-hour cancellation rule; the
+   blank `check_in_out` is filled with the excerpt and the cancellation note now quotes the full rule.
+
+## Verification performed (2026-11-17)
+
+- `python3 scripts/build_data.py` → 317 rows (SE 80, MULTI 67, RE 107, CONT 25, UNV 38), 70 schedule
+  days, 78 flagged rows, 7 hotels, 5 dated rate quotes.
+- `python3 scripts/build_site.py` → 21 pages. `python3 scripts/check_links.py` → OK (sources, rules,
+  schedule, hotel-rate/cost, provenance, page-link checks).
+- `python3 scripts/verify_rows.py` → 324 verified rows, 1,296 field checks, **0 hard failures**;
+  every published money/time/entry-rule value searched against the archived official documents.
+- `node scripts/smoke_test.js` (`npm run test:smoke`) → 21/21 pages render.
+- Live official pages re-read through the page fetcher today: the Venetian DSE IV schedule (matches the
+  rows; no drift), the Caesars Palace FAQ (check-in/out + 48-hour cancellation captured), the Wynn
+  booking engine (F37 re-confirmed: date parameters ignored; two fee-inclusive tax-exclusive offer
+  averages observed for the wrong stay and deliberately **not** logged as quotes).
+- Entry-rule policy audit: every one of the 80 single-entry rows carries its sheet excerpt; the label is
+  now published on the single-entry page as "by absence of contrary terms" (no Venetian sheet prints an
+  affirmative single-entry sentence — README's caution stands). Multi-flight (clause-08) rows and all
+  printed re-entry rows remain in the separate section.
+
+## Sources (re-read or newly captured on 2026-11-17)
+
+- https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html
+- https://www.caesars.com/caesars-palace/faqs (Policies & Guidelines: check-in 4:00 PM, check-out 11:00 AM; 48-hour cancellation)
+- https://reservations.wynnlasvegas.com/ibe/details.aspx?hotelID=13763 (resort fee $55 + tax; guest self-parking complimentary; F37 behaviour)
+
+## Pull request / deployment
+
+- PR #24 closed (superseded; see F39/Q-D5). PR #36 and PR #38's work integrated into this branch; their
+  PRs are closed with a pointer to the integration PR. PR #39 left open (doc-only).
+- PR to `main` opened from `arena/212b84be-poker1` and merged after `validate` passed; Pages deploy
+  confirmed. The exact PR number, merge commit and Pages run are recorded in the Log at the end of this
+  file.
+
+Other sessions' claims are respected: no task claimed by a live session is taken over.
 
 ## Session 54ae4633 (current branch `arena/54ae4633-poker1`)
 

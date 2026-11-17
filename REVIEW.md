@@ -118,7 +118,7 @@ Third-party sites were used to locate events and hotels only. They are not cited
 - `scripts/monitor_sources.py` checks every official URL and reports the rows that changed.
 - `scripts/smoke_test.js` renders every generated page in a headless DOM and fails on any page error.
 - Current counts (2026-11-17, after the structure-sheet join): **317 rows**. Single entry 80 (60 cash, 20
-  Venetian milestone satellites). Separate section 174 (66 possible multi-entry, 108 re-entry). Unverified
+  Venetian milestone satellites). Separate section 174 (67 possible multi-entry, 107 re-entry). Unverified
   **38**, all Wynn Signature Series. Continuation rows 25. Every one of the 113 WPT entry rows is joined to the
   structure sheet that prints its own date, start time and buy-in, so the earlier 129 unverified rows are gone.
 - Row IDs are unique and assigned after the chronological sort (`r001` to `r317`). Restoring a row that sorts into the middle of the WPT block shifts every later ID by one; no row content changed (see `research/verification-2026-11-17.md`).

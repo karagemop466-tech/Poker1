@@ -91,6 +91,12 @@ Continuation rows keep their own status: a Day 2 row does not sell a new entry, 
 | Continuation (`CONT`) | 2 | **25** |
 | Entry rule unverified (`UNV`) | 129 | **38** |
 
+Integration note (session `212b84be`, 2026-11-17): this table records session c0714e1a's numbers at the
+moment it finished. The integration re-attributed two ambiguous fee joins (two structure sheets print the
+same date/start/buy-in key on Dec 7 and Dec 14; each row is now priced from the sheet whose printed title
+matches the row name). That moved the WPT Prime Championship Day 1C from `RE` to `MULTI`, so the
+post-integration totals are `MULTI` **67** and `RE` **107**; all other counts are unchanged.
+
 The 38 remaining unverified rows are **all Wynn Signature Series rows**. Both published versions of
 the Signature Series structures PDF (the `v1753296112` and the `v1762299460` URLs) return a single
 page that reads **"LAS VEGAS / POKER / COMING SOON"** and prints no sheet, so no entry rule can be

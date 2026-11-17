@@ -18,10 +18,14 @@ re-checked on 2026-11-17.
   **seat** into a bigger event rather than cash. Every one of the 80 is a Venetian row: all 37
   DeepStack Extravaganza IV structure sheets and all 15 New Year's Eve sheets have been read, so every
   Venetian row carries a verified entry rule from the sheet the operator publishes for it.
-- **174 rows sit in the separate section** because a second entry is possible: 108 rows whose printed
-  sheet states re-entry terms, and 66 rows on multi-flight events where a player who bags Day 2 chips
-  may not play a later flight (so a second entry is not ruled out). A further 25 rows are continuation
-  rows (Day 2, Day 3, final table) that never sell a new entry.
+- **174 rows sit in the separate section** because a second entry is possible: 107 rows whose printed
+  sheet states re-entry terms (106 Wynn WPT rows with unlimited re-entry, plus the one Venetian event
+  whose sheet prices "any subsequent re-entry"), and 67 rows where a printed maximum-entry or
+  multi-flight clause leaves a second entry possible (60 Venetian multi-flight rows whose sheets say
+  only that a player who bags Day 2 chips may not play a later flight, plus 4 Prime Championship
+  flights with one entry plus one re-entry each and 3 World Championship flights with "Four (4)
+  Entries maximum"). A further 25 rows are continuation rows (Day 2, Day 3, final table) that never
+  sell a new entry.
 - **Only 38 rows are still unverified on the entry rule** — all Wynn Signature Series, because Wynn's
   own structures PDF is still a "COMING SOON" placeholder. **No Wynn World Championship row is
   unverified any more**: the official WPT structures PDF prints 69 sheets, and every one of the 113
@@ -101,16 +105,16 @@ and the structure sheet linked on each row.
 
 These are kept out of the ranking.
 
-- **Possible multiple entries (66 rows).** The Venetian flight events: Events 1, 7, 19, 26, 30, 47,
-  49, 56, 8, 20 and 27, plus the WPT Prime Championship flights. Each structure sheet says: "Any player
-  who bags chips for Day 2 may not play a subsequent flight." Whether a player who busts may enter a
-  later flight is not stated. Event 26 has the highest guarantee multiple of any event in the dataset
-  (625x, 13.75% house fee) but sits here until this is confirmed with the poker room.
-- **Re-entry confirmed (108 rows).** 107 Wynn WPT rows whose structure sheet prints its own re-entry
-  clause — 105 with "Unlimited re-entry until the start of level N", the $1,100 Prime Championship with
-  one entry plus one re-entry per flight, and the $10,400 World Championship with "Four (4) Entries
-  maximum" — plus one Venetian row (NYE Event 29) whose sheet applies a discount to "any subsequent
-  re-entry". No WPT sheet prints an add-on.
+- **Possible multiple entries (67 rows).** The Venetian flight events: Events 1, 7, 19, 26, 30, 47,
+  49, 56, 8, 20 and 27 (60 rows), plus the 7 Wynn limited-entry flights: the four WPT Prime
+  Championship flights ("One (1) Entry and One (1) re-entry for each starting flight") and the three
+  WPT World Championship flights ("Four (4) Entries maximum"). Each Venetian flight sheet says: "Any
+  player who bags chips for Day 2 may not play a subsequent flight." Whether a player who busts may
+  enter a later flight is not stated. Event 26 has the highest guarantee multiple of any event in the
+  dataset (625x, 13.75% house fee) but sits here until this is confirmed with the poker room.
+- **Re-entry confirmed (107 rows).** 106 Wynn WPT rows whose structure sheet prints its own
+  "Unlimited re-entry until the start of level N" clause, plus one Venetian row (NYE Event 29) whose
+  sheet applies a discount to "any subsequent re-entry". No WPT sheet prints an add-on.
 - **Rebuy and add-on (daily feed, not ranked).** The Wynn Friday $240 format allows unlimited $200
   rebuys and a $100 add-on. Rebuy events are excluded from the ranking.
 
