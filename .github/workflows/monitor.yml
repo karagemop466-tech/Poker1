@@ -11,6 +11,14 @@ on:
     # workflow schema does not accept, so the scheduled run never fired.)
     - cron: "17 7 * * *"
   workflow_dispatch:
+  # The sandbox integration cannot call the dispatch API (HTTP 403), so the first
+  # real run is triggered by this narrow push filter: it fires when a change to
+  # this workflow file itself lands on main, which is exactly once when the change
+  # adding this trigger is merged. The 07:17 UTC cron takes over afterwards.
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/monitor.yml"
 
 permissions:
   contents: write

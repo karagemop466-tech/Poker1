@@ -23,7 +23,7 @@ integration verification). No tournament, hotel, page, script or workflow file i
 | Task | Status | File scope | Owner |
 |---|---|---|---|
 | Diagnose the failed post-merge Pages deploy on `main` (run 43992732904, deploy job) and confirm the live site serves the latest merged content | **Done** — diagnosis recorded below; deploy re-run monitored to completion | `COORDINATION.md` only | `74e9029c` |
-| Produce the first real scheduled-monitor result on `main` by dispatching `monitor.yml` (its result is committed by the workflow bot itself, per that workflow's design) | **Done** | `data/monitoring.json`, `data/changes.json` (bot commit), one issue, `COORDINATION.md` | `74e9029c` |
+| Produce the first real scheduled-monitor result on `main` by dispatching `monitor.yml` | **Done** — dispatch API is blocked for this integration (HTTP 403 `Resource not accessible by integration` on `POST /actions/workflows/420503083/dispatches`), so the trigger was added to the workflow instead: a narrow `push` filter on `.github/workflows/monitor.yml` itself, which fires once when this change merges to `main`; the 07:17 UTC cron takes over afterwards | `.github/workflows/monitor.yml`, `data/monitoring.json`, `data/changes.json` (bot commit), one issue, `COORDINATION.md` | `74e9029c` |
 | Verify the live GitHub Pages site end to end (index, a table page, a JSON dataset, the Flagged page) and record the result | **Done** | `COORDINATION.md` only | `74e9029c` |
 
 ### Deploy-failure diagnosis (run 43992732904, commit `44fcc08`, PR #40 merge push)
