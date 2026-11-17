@@ -1486,6 +1486,8 @@ OFFICIAL_INTERIOR = {
  ("encore", WYN): "\"Players will register in the Wynn Las Vegas Poker Room, located in Encore at Wynn "
                   "Las Vegas.\"",
 }
+# Display names for the walking rows; the geocoding query string used for the lookup is kept separately in `from`.
+NEXT_HOTEL_NAME = {h["id"]: h["name"] for h in HOTELS}
 WALKING = []
 for hotel_id, points in OSM_LOOKUP.items():
     for venue in (VEN, WYN):
@@ -1500,12 +1502,13 @@ for hotel_id, points in OSM_LOOKUP.items():
         else:
             minutes = int(math.ceil(secs / 60.0 - 0.02))  # round up; the 0.02 tolerates router jitter
             status = "verified"
-            note = ("OpenStreetMap foot router: %d seconds (%d m) between the geocoded %s coordinate and the "
-                    "%s poker-room coordinate, rounded up to %d minutes. This is a published routing source, not "
-                    "the hotel or the poker room itself, so the 30-minute rule is applied to the routed time." % (
-                        round(secs), round(metres), hotel_id, venue, minutes))
+            note = ("OpenStreetMap foot router: %d seconds (%d m) between the geocoded %s coordinate and %s, "
+                    "rounded up to %d minutes. This is a published routing source, not the hotel or the poker "
+                    "room itself, so the 30-minute rule is applied to the routed time." % (
+                        round(secs), round(metres), OSM_LOOKUP[hotel_id]["q"], origin["label"], minutes))
         WALKING.append({
             "hotel": hotel_id, "venue": venue,
+            "hotel_name": NEXT_HOTEL_NAME.get(hotel_id) or OSM_LOOKUP[hotel_id]["q"],
             "from": "%s (%s, OSM %s)" % (hotel_id, OSM_LOOKUP[hotel_id]["q"], OSM_LOOKUP[hotel_id]["osm"]),
             "to": origin["label"],
             "metres": metres if not internal else 0,
