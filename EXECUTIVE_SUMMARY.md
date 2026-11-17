@@ -53,6 +53,13 @@ re-checked on 2026-11-17.
   hotel cost + parking + other spend, using only logged quotes, and it shows what the selected stay
   window actually holds (verified single-entry events, days covered, cheapest buy-in, best
   guarantee ÷ buy-in ratio). It refuses to total anything it cannot source.
+- **Every published value is now machine-checked against its official source.** A new verifier
+  (`scripts/verify_rows.py`) re-checks each money, time and entry-rule value in the dataset against
+  the raw official documents archived in `data/snapshots/` — 1,119 checks, **0 hard failures**. The
+  pass caught and fixed two data-quality problems, now flagged for review (F53, F54): the LIPS
+  sheets withhold a house fee **and** a separate LIPS flat fee (the two are now stored separately),
+  and 17 Wynn Signature Series main-event rows had published guarantees that appear on no official
+  source (now left blank and flagged). See `FLAGGED.md` and `research/verification-2026-11-17-160f9080.md`.
 
 ## 1. Best single-entry tournaments (verified)
 
