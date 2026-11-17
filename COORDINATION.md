@@ -43,7 +43,42 @@ integration verification). No tournament, hotel, page, script or workflow file i
 
 | Task | Status | File scope | Owner |
 |---|---|---|---|
-| Live-site acceptance audit, deployment-health check, requirements-traceability matrix | **In progress** | `research/live-site-audit-2026-11-17.md` (new), `COORDINATION.md` | `f2ad3bce` |
+| Live-site acceptance audit, deployment-health check, requirements-traceability matrix | **Done** — all 21 pages + the deployed JSON fetched live; deployment, workflow and data checks pass; requirements matrix and four defects recorded in [`research/live-site-audit-2026-11-17.md`](research/live-site-audit-2026-11-17.md) | `research/live-site-audit-2026-11-17.md` (new), `COORDINATION.md` | `f2ad3bce` |
+
+### Verification performed (2026-11-17, against the deployed commit `aea688a`)
+
+- Pages API: status `built` for `aea688a` = `main` HEAD. Landing page counts cross-check: 317 = 80 SE +
+  60 MULTI + 46 RE + 129 UNV + 2 CONT; 106 separate-section; 70 dates; 56 flagged; 4/7 verified fees.
+- All 21 pages fetched live and rendered (client-side tables render): single-entry "80 of 80",
+  separate-section "106 of 106", unverified "129 of 129", venue pages 143/174/0/0/0 rows as expected.
+- Live `data/rates.json`, `data/hotels.json` and the head of live `data/tournaments.json` are field-for-field
+  identical to the committed files. All five rate-log quotes re-computed: room sum + fees + printed tax =
+  engine checkout total; ÷ nights = true cost, for every entry.
+- Data spot-checks from the live JSON: earliest start 9:10 AM (Dec 12 satellite, r120); earliest cash
+  single-entry 10:10 AM; venue totals 143 + 174 = 317.
+- Workflows verified in the files on `main`: `monitor.yml` daily 07:17 UTC (first scheduled run still due at
+  audit time, ~01:30 UTC), `source-facts.yml` weekly Sundays 06:47 UTC, `pages.yml` PR-validate + push-deploy.
+
+### Coordination requests produced by the audit (logged, not edited — all touch open claims)
+
+1. **→ owner of `EXECUTIVE_SUMMARY.md`, `SUGGESTIONS.md`, `FLAGGED.md` (PR #36 / PR #38 scopes):** the
+   markdown documents use repo-root-relative links (`pages/calculator.html` …), which the pages under
+   `/Poker1/pages/` render as `/Poker1/pages/pages/…` — **11 live 404 links** (3 in EXECUTIVE_SUMMARY.md,
+   8 in SUGGESTIONS.md, 1 in FLAGGED.md; confirmed live). Fix options and the CI gap that let it through
+   are in the audit doc §4.1. Please fix in one of your open PRs.
+2. **→ owner of `assets/app.js` (PR #36 scope):** the daily-feed weekday map filters with
+   `x.days.indexOf(d.slice(0,3))`, so the stored ranges `Monday-Thursday` and `Monday-Sunday` match only
+   Mon/Thu and Mon/Sun — Tuesday and Wednesday print "No daily format published" although the data includes
+   them (audit doc §4.2). Please expand the ranges in the renderer.
+3. **→ owner of `assets/app.js` + `pages/hotels.html` (PR #36 scope):** the brief requires a
+   "≤30 min walk" filter on the hotels table; the walking verification exists but the filter control does
+   not (audit doc §4.3). Please add it.
+4. **→ owner of `EXECUTIVE_SUMMARY.md` (PR #36 / PR #38 scopes):** two stale counts — "all 316 rows" (dataset
+   is 317) and "105 rows … 45 Wynn rows" (data: 106 / 46, the F21 restored row is the 46th re-entry).
+   PR #36's current diff still carries both (audit doc §4.4).
+
+None of these four items was edited by session `f2ad3bce`; they are recorded here so the owning sessions
+fold them into their open PRs and no merge conflict is created.
 
 (Rebase note, session `f2ad3bce`: the claim was pushed while sessions `74e9029c` and `3bd2f25b` were also
 appending to this board; the conflict was resolved by keeping both sessions' sections unchanged — session
@@ -328,6 +363,11 @@ Claimed at commit `304f0bd` (pushed before any data or page change). Base: `main
 **Open conflict, not touched:** PR #24 (`arena/bad329a9-poker1`, opened 2026-11-16) edits nearly every data file and reports 54 single-entry rows against `main`'s 80 (40 possible multi-entry against 60). It is neither merged nor closed here; see Q-D5.
 
 ## Log
+- 2026-11-17: session `f2ad3bce` claimed and completed the live-site acceptance audit (deployment, workflows,
+  all 21 pages, deployed JSON, rate-log arithmetic, requirements matrix). Four defects found and logged as
+  coordination requests (broken markdown links → 404s, daily weekday map bug, missing ≤30-min-walk filter,
+  stale executive-summary counts); none edited inside other sessions' scopes. Record:
+  `research/live-site-audit-2026-11-17.md`.
 - 2026-11-17: session `3f878ff5` merged `main` at `b379927` through PR #32 (validate green on `2357366`; Pages deploy `43989560055` success). Live site checked: rate log shows both quotes; Flagged page shows F1–F40 with the section D findings.
 - 2026-11-17: session `3f878ff5` merged `origin/main` (PR #31, session `2e5232bc`). Both sessions created `research/verification-2026-11-17.md`; this session's log moved to `research/verification-2026-11-17-3f878ff5.md` and its flags were renumbered F31–F40 because `main` already uses F21 for a restored WPT row. Nothing from either session was dropped.
 - 2026-11-17: session `160f9080` (branch `arena/160f9080-poker1`) ran a line-by-line verification pass
