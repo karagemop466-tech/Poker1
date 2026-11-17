@@ -1058,3 +1058,30 @@ onto that `main` and contributes its own re-verification and the two deploy/moni
 - Final validation on the merged tree: 23 pages, 317 tournament rows (SE 80 / MULTI 67 / RE 107 /
   CONT 25 / UNV 38), 7 hotels, 5 dated rate quotes, 70 schedule days, `verify_rows` 1,296 field checks
   with 0 hard failures, smoke 23/23.
+
+### Session 206debc0 completion record (2026-11-17)
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| S16 — print-friendly views of every page | **Done** — one `@media print` block in `assets/style.css` (nav, search, filter bar and buttons hidden; verification footer kept; tables repeat their header sheet and never split a row; headings and cards break cleanly; status chips become outlines for mono printers; every external link prints its URL so a paper row keeps its official source; each sheet carries the site URL banner) | `assets/style.css`, regenerated `index.html` + `pages/*.html`, `COORDINATION.md` | `206debc0` |
+
+**Verification performed**
+
+- Claim pushed before implementation (commit `0bff1bf` / original `7826603`), rebased twice onto the moving `main` (conflicts in `COORDINATION.md` only; both sides preserved each time — no other session's record discarded).
+- `python3 scripts/build_data.py` → 317 rows (80 SE / 60 MULTI / 46 RE / 129 UNV / 2 CONT), 70 schedule days, 78 flagged; `data/` diff empty — no factual data touched.
+- `python3 scripts/build_site.py` → 21 pages; committed pages byte-identical to a fresh rebuild.
+- `python3 scripts/check_links.py` → OK (21 pages, 317 rows, 7 hotels, 5 dated rates, 70 schedule days).
+- `npm run test:smoke` → 21/21 pages render headlessly.
+- Page-diff audit: every page diff is +51 / −0 lines confined to the inlined `<style>` block.
+- CI: PR validate run `43995923553` **passed** (1m52s).
+
+**Sources / irregularities**
+
+- No official source was read or changed in this task; it is presentation-only, so no new flag was created and no existing flag (F1–F53, U1–U10) was altered.
+- Two rebases were needed because `main` advanced during the task (PRs #47, #48, #49, #54, #56, #57, #58 and a monitor refresh landed meanwhile). Each conflict was in `COORDINATION.md` and was resolved by keeping `main`'s record **and** this session's claim.
+
+**Pull request / merge**
+
+- PR: https://github.com/karagemop466-tech/Poker1/pull/55 — **MERGED** into `main` as `b292d220c50e2aae67a64f662bcb175853306213`.
+- Pages: build for `b292d22` status **built**; deploy run `43996205830` completed **success**; the deployed `pages/single-entry.html` at that commit contains the `@media print` block (checked through the GitHub API against the deployed tree).
+- Live check: https://karagemop466-tech.github.io/Poker1/pages/single-entry.html renders with all 80 single-entry rows and their source links.
