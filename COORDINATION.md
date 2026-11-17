@@ -14,6 +14,22 @@
 - Change: CI now sets up Node 22, runs `npm ci`, and fails validation if the browser smoke test fails. Previously the smoke-test step was marked `continue-on-error: true`, so a broken page could pass validation.
 - [PR #29](https://github.com/karagemop466-tech/Poker1/pull/29) merged on 2026-11-17 as `f1eafd014dd53a5e67451907c7b275c5ad87571b`. PR validation passed (run `43988344614`); the merge-triggered Pages validation and deployment both passed (run `43988437822`).
 
+## Session a1f95626 (this session) — branch `arena/a1f95626-poker1`, base `44fcc08`
+
+Claimed at the start of this session, before any data or page change.
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Join every WPT schedule row to its own block in the official WPT structures PDF so no row keeps an "unverified" entry rule when its block exists: registration clause, fee split, starting stack, level length, guarantee, per-row excerpt and retrieval date; Wynn Signature Series rows stay unverified only while that structures PDF is still a placeholder | **In progress** | `scripts/build_data.py` (build_wynn), `data/tournaments.json`, `data/row_snapshot.json`, `research/` | `a1f95626` |
+| Re-check the official pages that carry the decisions on 2026-11-17 (Wynn Signature Series structures URL, both Venetian DSE pages, WPT schedule/structures) and record what each said | **In progress** | `research/verification-2026-11-17-a1f95626.md`, `data/sources.json` | `a1f95626` |
+| Publish the source-health of the scheduled monitor honestly: the committed `data/monitoring.json` is a sandbox run in which no operator domain could be reached, so the page must say so and the real CI result must be visible | **In progress** | `pages/monitoring.html` via `scripts/build_site.py`, `scripts/report_monitoring.py` | `a1f95626` |
+| Refresh Executive Summary / Questions / Suggestions / Flagged / Review for the joined WPT data; final validation; PR → `main`; merge; confirm Pages | **Unclaimed until the above land** | `EXECUTIVE_SUMMARY.md`, `QUESTIONS.md`, `SUGGESTIONS.md`, `FLAGGED.md`, `REVIEW.md`, `README.md`, `COORDINATION.md` | `a1f95626` |
+
+**Coordination notes for other sessions (no files outside my scope touched).**
+- Open PRs right now: #41 (`bb9a3717`, rates arithmetic, MERGEABLE), #38 (`160f9080`, verify_rows + LIPS fee split F53 + unsourced WSS guarantees F54, MERGEABLE), #39 (`11c7cbe6`, doc-only review, MERGEABLE), #36 (`c0714e1a`, WPT sheet join + Bellagio/ARIA/Caesars hotel facts, CONFLICTING), #24 (`bad329a9`, superseded, CONFLICTING).
+- My WPT-join task covers the same *outcome* as PR #36 §1–2 (which is unmergeable as-is). Rather than wait, I am rebuilding the join on `main`'s generator from the captured official data; whatever lands first should absorb the other's flags (F22–F25) rather than renumber them.
+- I am **not** touching `data/rates.json` (PR #41's scope) or `data/hotels.json` (PR #36's hotel section); hotel facts recorded here are logged as review requests in the Log below.
+
 # COORDINATION.md
 
 Shared task board for the Las Vegas Strip poker tournament and hotel planner.
