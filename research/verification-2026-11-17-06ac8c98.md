@@ -14,7 +14,7 @@ Recomputed from the committed `data/tournaments.json` against the committed `dat
 | Conditional fallbacks published | 24 | 0 provable |
 | …of which unplayable (primary still running when the fallback's entry closes) | **24 of 24** | 0 |
 | Scheduled rows printing a finish **earlier** than their own start | **121 of 274** | 0 |
-| Overlap pairs flagged | 14 | 170 (168 unplannable, 2 join-in-progress) |
+| Overlap pairs flagged | 14 | 170 (168 unplannable, of which 26 are same-start pairs, + 2 join-in-progress) |
 
 Cause, line by line, in `scripts/build_data.py`:
 

@@ -70,9 +70,11 @@ OFFICIAL_HOSTS = (
     "mandalaybay.mgmresorts.com",
     "orleans.boydgaming.com",
     "southpointcasino.com",
-    # Session 9aad3bd2: Resorts World Las Vegas official casino-events page behind
-    # data/other_rooms.json.  Session 206debc0 logged that the weekly provenance check
-    # refused to run because this host was missing from the approved set.
+    # Resorts World Las Vegas official casino-events page behind data/other_rooms.json.
+    # Added by session 9aad3bd2; session 2157d288 independently hit the same gap. Without
+    # this host the weekly provenance check exited before checking anything, and because
+    # source-facts.yml piped its output through `tee` without `pipefail` the refusal was
+    # recorded in monitor_last_run.txt while the job still reported success.
     "www.rwlasvegas.com",
     "rwlasvegas.com",
 )

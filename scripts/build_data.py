@@ -1258,18 +1258,18 @@ def build_wynn():
     return out
 
 
-def end_minutes(row):
-    """Absolute minutes from midnight of the row's own date at which it is estimated to finish.
+def abs_end_minutes(row):
+    """Minutes from midnight *of that row's start day*, or None when unknown.
 
-    ``est_end`` is stored as a wall-clock ``HH:MM`` and therefore wraps at midnight: an 11:10 AM
-    start with a fifteen-hour structure stores ``02:25``, which reads *before* its own start if you
-    compare clock strings. Every comparison in this file and in the renderer must use this absolute
-    value (start + stored duration) instead, and ``to_hhmm`` keeps wrapping only for display.
-    Returns ``None`` when the row carries no duration, so an unknown can never be treated as known.
+    `est_end` is stored time-only, so an event that runs past midnight prints an
+    end time that reads before its own start (e.g. 11:10 -> 02:55). Comparing
+    wall-clock strings would then call an impossible sequence playable. Every
+    comparison on this page therefore uses the absolute minute offset built from
+    the stored `est_duration_min`; the wrap is never inferred from the clock text.
     """
     if row.get("est_duration_min") is None or not row.get("start"):
         return None
-    return to_min(row["start"]) + row["est_duration_min"]
+    return to_min(row["start"]) + int(row["est_duration_min"])
 
 
 # The official event name labels a single-playing-day event "(1Day)". That is the only case in
@@ -1319,7 +1319,7 @@ def seq_end(row):
     """
     if duration_basis(row) not in ("day_maximum", "satellite_maximum"):
         return None
-    return end_minutes(row)
+    return abs_end_minutes(row)
 
 
 def entry_deadline(row):
@@ -1465,7 +1465,7 @@ def build_schedule(rows):
                         "labels": e["labels"], "late_reg_close": e.get("late_reg_close"),
                         "est_end": e.get("est_end"), "est_duration_min": e.get("est_duration_min"),
                         "est_end_next_day": bool(e.get("est_end") and e.get("est_duration_min") is not None
-                                                 and end_minutes(e) >= 24 * 60),
+                                                 and abs_end_minutes(e) >= 24 * 60),
                         "duration_basis": duration_basis(e),
                         "source": e["sources"][-1]["url"]} for e in events],
             "primary_id": primary["id"] if primary else None,
@@ -1511,6 +1511,7 @@ def build_schedule(rows):
                     "single-entry event and, only where the primary cannot run past the second event's entry "
                     "deadline, a conditional fallback labelled from the start or as a join in progress. Everything "
                     "else on that date is listed as an alternative to the primary, never as an addition to it."}
+
 
 
 # ---------------- hotels ----------------

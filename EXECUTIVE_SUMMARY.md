@@ -25,6 +25,15 @@ re-checked on 2026-11-17.
   flights with one entry plus one re-entry each and 3 World Championship flights with "Four (4)
   Entries maximum"). A further 25 rows are continuation rows (Day 2, Day 3, final table) that never
   sell a new entry.
+- **The "play all day, as many events as possible" goal and the single-entry rule pull against each
+  other, and the data settles it: you get one single-entry event per day.** On the 45 dates with a
+  verified single-entry event, **not one date allows two of them back to back.** Every Venetian
+  one-day event is estimated at 8h45–21h05 from its own published levels: the 10:10 AM starters are
+  estimated to end at 01:55, 07:15, 19:25 or 21:15 the next day, and every 11:10 AM starter at 02:55
+  the next day, so no later same-date event can follow any of them. A vacation built on
+  single-entry events therefore yields **one entry per day**, and the day's remaining hours are the
+  post-bust window, not a second tournament. The multi-event days people picture require the re-entry
+  and multi-flight events that the brief puts in the separate section.
 - **Only 38 rows are still unverified on the entry rule** — all Wynn Signature Series, because Wynn's
   own structures PDF is still a "COMING SOON" placeholder. **No Wynn World Championship row is
   unverified any more**: the official WPT structures PDF prints 69 sheets, and every one of the 113
@@ -231,19 +240,24 @@ is applied to every routed time, and rows that fail it stay visible and flagged.
 - **End times are maxima, not schedules:** 127 of the 274 entry rows carry a structure end time, and
   every one is the end of the printed level table. No sheet in the series prints an end clock, and an
   event ends when its field is paid (sheet #6 clause 7: "This event pays 12.5% of the field"), so a
-  table end can rule a pairing out but never prove a finish. F75 records that 87 of the 93 rows
-  labelled "(1Day)" carry a table that runs past midnight, and that 70 of the 73 non-satellite ones
-  cannot fit inside a day at all. A flight of a multi-day event is
-  refused as a ceiling for its first day altogether, because its clause 3 ends the flight "when we are
-  down to approximately 12.5% of the field remaining" and only *Day 2* has a printed clock; satellites
-  are labelled with their own conclusion rule (clause 10, seats awarded), in all 20 of their sheets.
+  table end can rule a pairing out but never prove a finish. F75 records that of the 93 rows labelled
+  "(1Day)", 87 carry a table that runs past midnight and 70 of the 73 non-satellite ones cannot fit
+  inside a day at all. A flight of a multi-day event is refused as a ceiling for its first day
+  altogether, because its clause 3 ends the flight "when we are down to approximately 12.5% of the
+  field remaining" and only *Day 2* has a printed clock; satellites are labelled with their own
+  conclusion rule (clause 10, seats awarded - verified in all 20 of their sheets).
 - **Overlaps:** 170 row-pairs across 40 dates are flagged - 168 that no published schedule can support
   (26 of them are pairs printed at the same start time, which needs no estimate at all) and 2 that are
   sensible only as a join in progress. An earlier draft of this section reported 271 pairs across 51
-  dates; that counted a multi-day flight's whole-event table as if it finished its first day, which the
-  sheets do not support, so the count was tightened to what the published ceilings actually prove. Each
-  flagged pair names both events, both start times, the entry deadline and the ceiling, so the reader
-  sees why the pair is refused rather than being told an impossible sequence is fine.
+  dates; that count treated a multi-day flight's whole-event table as if it finished its first day, and
+  the 101 pairs that came only from that reading are now refused rather than asserted - the sheets
+  cannot support them. Each flagged pair names both events, both start times, the entry deadline and the
+  ceiling, so the reader sees why the pair is refused rather than being told an impossible sequence is
+  fine.
+- **What that means for the trip:** the brief's "play all day, as many events as possible" goal and the
+  single-entry rule pull against each other, and the data settles it — a single-entry vacation yields
+  **one entry per day**, and the rest of the day is the post-bust window. Playing more than once a day
+  requires the re-entry and multi-flight events kept in the separate section.
 - **Wynn registration opens at 8 AM for the noon events.** The official Wynn daily tournament terms
   and conditions state: *"Registration for each Event will open four (4) hours prior to the scheduled
   start of play."* The daily events start at 12 p.m., so registration opens at **8 a.m.** That is the
