@@ -1238,11 +1238,16 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
     var summary = document.getElementById("summary");
     Promise.all([
       getJSON("data/tournaments.json"), getJSON("data/hotels.json"), getJSON("data/venues.json"),
-      getJSON("data/daily.json"), getJSON("data/walking.json"), getJSON("data/rates.json")
+      getJSON("data/daily.json"), getJSON("data/walking.json"), getJSON("data/rates.json"),
+      getJSONSafe("data/other_rooms.json")
     ].concat(DOCS.map(function (d) { return getTextSafe(d[0]); }))).then(function (res) {
       var rows = res[0].rows, hotels = res[1].rows, venues = res[2].rows, daily = res[3].rows;
       var walking = res[4].rows, rates = res[5].entries;
-      var docs = DOCS.map(function (d, i) { return { file: d[0], title: d[1], text: res[6 + i] || "" }; });
+      /* The strip-room survey is a separate file (undated weekday formats), so it is
+         searched as its own block instead of being merged into the dated tournament rows. */
+      var otherRooms = (res[6] && res[6].rooms) || [];
+      var otherEvents = (res[6] && res[6].events) || [];
+      var docs = DOCS.map(function (d, i) { return { file: d[0], title: d[1], text: res[7 + i] || "" }; });
 
       function block(title, items) {
         if (!items.length) return "";
@@ -1281,6 +1286,22 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
             return '<div class="result"><div class="title">' + esc(r.room) + "</div><div class='meta'>rate log " +
               esc(r.arrival) + " → " + esc(r.departure) + " · " + money(r.checkout_total_usd) + "</div></div>";
           });
+        var hitO = otherRooms.filter(function (o) { return JSON.stringify(o).toLowerCase().indexOf(q) >= 0; })
+          .map(function (o) {
+            return '<div class="result"><div class="title">' + esc(o.name) + "</div><div class='meta'>" +
+              esc(o.strip_status) + " · poker room " + esc(o.poker_room_status) + " · schedule " +
+              esc(o.schedule_status) + " · <a href='" + BASE + "pages/other-rooms.html'>other rooms</a></div></div>";
+          });
+        var roomName = {};
+        otherRooms.forEach(function (r) { roomName[r.id] = r.name; });
+        var hitOE = otherEvents.filter(function (o) { return JSON.stringify(o).toLowerCase().indexOf(q) >= 0; })
+          .map(function (o) {
+            var weekdays = (o.weekdays || []).join(", ");
+            return '<div class="result"><div class="title">' + esc(o.name) + "</div><div class='meta'>" +
+              esc(roomName[o.room_id] || o.room_id) + (weekdays ? " · " + esc(weekdays) : "") +
+              " · " + esc(o.entry_status) +
+              " · <a href='" + BASE + "pages/other-rooms.html'>other rooms</a></div></div>";
+          });
         var hitDocs = docs.filter(function (d) { return d.text.toLowerCase().indexOf(q) >= 0; })
           .map(function (d) {
             var idx = d.text.toLowerCase().indexOf(q);
@@ -1291,11 +1312,13 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
           });
         results.innerHTML = block("Tournaments", hitT) + block("Hotels", hitH) + block("Venues", hitV) +
           block("Daily formats", hitD) + block("Walking records", hitW) + block("Rate log", hitR) +
+          block("Other poker rooms", hitO) + block("Other-room events", hitOE) +
           block("Documents", hitDocs) ||
           '<div class="card callout">Nothing matched " ' + esc(q) + ' ".</div>';
         summary.textContent = "Search covers " + rows.length + " tournament rows, " + hotels.length + " hotels, " +
           venues.length + " venues, " + daily.length + " daily formats, " + walking.length + " walking records, " +
-          rates.length + " rate log entries and " + docs.length + " documents.";
+          rates.length + " rate log entries, " + otherRooms.length + " surveyed other poker rooms, " +
+          otherEvents.length + " other-room events and " + docs.length + " documents.";
       }
       input.addEventListener("input", run);
       run();

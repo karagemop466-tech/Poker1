@@ -141,7 +141,8 @@ of a poker room, or search any column.</p>
 """),
     "pages/schedule.html": ("Schedule", "schedule", """
 <h1>Day-by-day schedule</h1>
-<p class="lead">Verified single-entry options per day, earliest first.</p>
+<p class="lead">Verified single-entry options per day, earliest first, with one primary event and a conditional fallback only where a fallback can actually be played.</p>
+<div class="card callout">One entry per day is the realistic shape of a single-entry trip. Every Venetian one-day event is estimated at 8h45&ndash;21h05 from its own published level structure, so 10:10 and 11:10 starts are still running after midnight and no later same-date event can follow them. Where that is the case the day says so instead of proposing a sequence that cannot happen. A finish time marked <strong>(next day)</strong> crossed midnight; the estimate is start + published levels, never an official finish time.</div>
 <div class="card callout" id="note"></div>
 <p class="small">Earliest start among the rows in this dataset: <strong id="earliest"></strong></p>
 <div id="content"></div>
