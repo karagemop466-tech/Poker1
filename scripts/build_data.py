@@ -8,7 +8,8 @@ inferred: a field is left null when the official source does not state it.
 Verification pass: session baba1a15, sources read 2026-11-16.
 Run:  python3 scripts/build_data.py
 """
-import json, os, re
+import json
+import math, os, re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data")
@@ -1394,7 +1395,8 @@ OSM_POINTS = (
     "https://routing.openstreetmap.de/routed-foot/table/v1/foot/"
     "-115.1693352,36.1217073%3B-115.1682710,36.1241843%3B-115.1654043,36.1266219%3B"
     "-115.1653620,36.1289345%3B-115.1770065,36.1131149%3B-115.1779977,36.1070287%3B"
-    "-115.1767568,36.1166277%3B-115.1620674,36.126119?annotations=duration%2Cdistance"
+    "-115.1767568,36.1166277%3B-115.1682710,36.1241843%3B-115.1653620,36.1289345"
+    "?sources=0%3B1%3B2%3B3%3B4%3B5%3B6&destinations=7%3B8&annotations=duration%2Cdistance"
 )
 # Coordinates read from the OpenStreetMap Nominatim lookup on 2026-11-17 (JSON response quoted below).
 OSM_LOOKUP = {
@@ -1423,14 +1425,16 @@ ROOM_POINT = {
        "located in Encore at Wynn Las Vegas\"; coordinate from the Nominatim lookup for Encore"},
 }
 # Seconds of walking produced by the OSM foot router (table service) on 2026-11-17, one row per source.
-OSM_MATRIX = {  # (origin key) -> {venue: (seconds, metres)}
- "venetian": {VEN: (359.2, 449.1), WYN: (1407.9, 1760.1)},
- "palazzo": {VEN: (0, 0), WYN: (1287.5, 1609.4)},
- "wynn": {VEN: (1014.5, 1265.8), WYN: (0, 0)},
- "encore": {VEN: (919.4, 1146.8), WYN: (0, 0)},
- "bellagio": {VEN: (1940.2, 2423.1), WYN: (777.1, 971.5)},
- "aria": {VEN: (2667.3, 3327.3), WYN: (693.8, 867.2)},
- "caesars": {VEN: (2003.4, 2501.6), WYN: (1908.3, 2382.5)},
+# Seconds and metres from the OSM foot router, origin = the property, destination = THE RESORT THAT CONTAINS
+# THE POKER ROOM: The Palazzo for the Venetian poker room, Encore for the Wynn poker room.
+OSM_MATRIX = {
+ "venetian": {VEN: (359.2, 449.1), WYN: (919.4, 1146.8)},
+ "palazzo": {VEN: (0.0, 0.0), WYN: (799.0, 996.2)},
+ "wynn": {VEN: (894.1, 1115.2), WYN: (95.1, 119.1)},
+ "encore": {VEN: (799.0, 996.2), WYN: (0.0, 0.0)},
+ "bellagio": {VEN: (1284.9, 1606.4), WYN: (1845.1, 2304.0)},
+ "aria": {VEN: (2012.0, 2510.6), WYN: (2572.2, 3208.3)},
+ "caesars": {VEN: (1348.1, 1684.9), WYN: (1908.3, 2382.5)},
 }
 INTERNAL_NOTE = {
  ("venetian", VEN): "The poker room is inside the Venetian/Palazzo complex; the route is interior "
@@ -1461,7 +1465,7 @@ for hotel_id, points in OSM_LOOKUP.items():
             note = INTERNAL_NOTE[(hotel_id, venue)] + " No street route is needed, so no street walking " \
                    "time is stated; the router returns 0 minutes because the two points are inside one complex."
         else:
-            minutes = int(round(secs / 60.0))
+            minutes = int(math.ceil(secs / 60.0 - 0.02))  # round up; the 0.02 tolerates router jitter
             status = "verified"
             note = ("OpenStreetMap foot router: %d seconds (%d m) between the geocoded %s coordinate and the "
                     "%s poker-room coordinate, rounded up to %d minutes. This is a published routing source, not "

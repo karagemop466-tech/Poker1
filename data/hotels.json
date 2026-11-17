@@ -59,7 +59,7 @@
    "last_checked": "2026-11-16",
    "walk_to_venetian_status": "internal",
    "walk_to_venetian_within_30": true,
-   "walk_to_wynn_min": 23,
+   "walk_to_wynn_min": 16,
    "walk_to_wynn_within_30": true
   },
   {
@@ -116,7 +116,7 @@
    "last_checked": "2026-11-16",
    "walk_to_venetian_status": "internal",
    "walk_to_venetian_within_30": true,
-   "walk_to_wynn_min": 21,
+   "walk_to_wynn_min": 14,
    "walk_to_wynn_within_30": true
   },
   {
@@ -141,7 +141,7 @@
    "parking_usd_per_day": 25,
    "cancellation_note": "Official Wynn offer terms (special offer): \"a deposit of one (1) night of room and tax for each room booked under this offer will be charged at the time of booking and cancellations must be received at least 48 hours prior to arrival date or deposit will be forfeited.\" Official facts page: \"Deposit requirements, cancellation deadlines, and penalties vary by offer and travel dates.\"",
    "check_in_out": "Check-in 3 p.m.; check-out at noon (official Wynn facts page)",
-   "walk_to_venetian_min": 17,
+   "walk_to_venetian_min": 15,
    "walk_note": "The poker room is at Encore, part of the Wynn Las Vegas resort (official WPT and daily tournament terms: \"Players will register in the Wynn Las Vegas Poker Room, located in Encore at Wynn Las Vegas\"), so the walk is inside the resort. The cross-property walk from Wynn/Encore to the Venetian is not published by any official source and is left blank.",
    "true_cost_per_night_usd": null,
    "true_cost_note": "No rate confirmed for a specific stay date set.",
@@ -191,7 +191,7 @@
    "parking_usd_per_day": 25,
    "cancellation_note": "Official Wynn facts page: deposit and cancellation terms vary by offer and dates.",
    "check_in_out": "Check-in 3 p.m.; check-out at noon (official Wynn facts page)",
-   "walk_to_venetian_min": 15,
+   "walk_to_venetian_min": 14,
    "walk_note": "The Wynn Las Vegas poker room is located in Encore - the walk is inside the resort.",
    "true_cost_per_night_usd": null,
    "true_cost_note": "No rate confirmed for a specific stay date set.",
@@ -237,7 +237,7 @@
    "parking_usd_per_day": null,
    "cancellation_note": "No Bellagio cancellation deadline printed on an official page read in this session.",
    "check_in_out": null,
-   "walk_to_venetian_min": 32,
+   "walk_to_venetian_min": 22,
    "walk_note": "Walking time from Bellagio to the Venetian poker room is not published by any official source; left blank and flagged.",
    "true_cost_per_night_usd": null,
    "true_cost_note": "No rate, fee or property tax confirmed, so no true cost.",
@@ -249,9 +249,9 @@
    ],
    "last_checked": "2026-11-16",
    "walk_to_venetian_status": "verified",
-   "walk_to_venetian_within_30": false,
-   "walk_to_wynn_min": 13,
-   "walk_to_wynn_within_30": true
+   "walk_to_venetian_within_30": true,
+   "walk_to_wynn_min": 31,
+   "walk_to_wynn_within_30": false
   },
   {
    "id": "aria",
@@ -275,7 +275,7 @@
    "parking_usd_per_day": null,
    "cancellation_note": "No ARIA cancellation deadline printed on an official page read in this session.",
    "check_in_out": null,
-   "walk_to_venetian_min": 44,
+   "walk_to_venetian_min": 34,
    "walk_note": "Walking time from ARIA to the Venetian poker room is not published by any official source; left blank and flagged. ARIA does run a poker room (official ARIA poker page).",
    "true_cost_per_night_usd": null,
    "true_cost_note": "No rate, fee or property tax confirmed, so no true cost.",
@@ -292,8 +292,8 @@
    "last_checked": "2026-11-16",
    "walk_to_venetian_status": "verified",
    "walk_to_venetian_within_30": false,
-   "walk_to_wynn_min": 12,
-   "walk_to_wynn_within_30": true
+   "walk_to_wynn_min": 43,
+   "walk_to_wynn_within_30": false
   },
   {
    "id": "caesars",
@@ -317,7 +317,7 @@
    "parking_usd_per_day": null,
    "cancellation_note": "Official Caesars Palace page advertises \"FREE 48-Hour Cancellation\" on best-rate bookings; the full deadline is not printed on the page read.",
    "check_in_out": null,
-   "walk_to_venetian_min": 33,
+   "walk_to_venetian_min": 23,
    "walk_note": "Walking time from Caesars Palace to the Venetian poker room is not published by any official source; left blank and flagged.",
    "true_cost_per_night_usd": null,
    "true_cost_note": "No rate, fee or property tax confirmed, so no true cost.",
@@ -329,7 +329,7 @@
    ],
    "last_checked": "2026-11-16",
    "walk_to_venetian_status": "verified",
-   "walk_to_venetian_within_30": false,
+   "walk_to_venetian_within_30": true,
    "walk_to_wynn_min": 32,
    "walk_to_wynn_within_30": false
   }

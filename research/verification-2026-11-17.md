@@ -177,23 +177,36 @@ Geocoding: Nominatim `search?format=json&limit=1` for each property; routing:
 | Poker-room point, Venetian (The Palazzo) | — | 36.1241843, -115.1682710 |
 | Poker-room point, Wynn (Encore) | — | 36.1289345, -115.1653620 |
 
-Router output (seconds, metres), rounded **up** to whole minutes for display:
+Router output (seconds, metres) for **origins = properties, destinations = the resort containing the poker
+room (The Palazzo, Encore)**, from the `table` query with `sources=0;1;2;3;4;5;6&destinations=7;8`:
 
 | From | To Palazzo (= Venetian poker room) | To Encore (= Wynn poker room) |
 |---|---|---|
-| The Venetian | 359.2 s / 449.1 m → **internal** (same complex) | 1,407.9 s / 1,760.1 m → **24 min** |
-| The Palazzo | same building → **internal** | 1,287.5 s / 1,609.4 m → **22 min** |
-| Wynn | 1,014.5 s / 1,265.8 m → **17 min** | same building → **internal** |
-| Encore | 919.4 s / 1,146.8 m → **16 min** | same building → **internal** |
-| Bellagio | 1,940.2 s / 2,423.1 m → **33 min** (over 30) | 777.1 s / 971.5 m → **13 min** |
-| ARIA | 2,667.3 s / 3,327.3 m → **45 min** (over 30) | 693.8 s / 867.2 m → **12 min** |
-| Caesars Palace | 2,003.4 s / 2,501.6 m → **34 min** (over 30) | 1,908.3 s / 2,382.5 m → **32 min** (over 30) |
+| The Venetian | 359.2 s / 449.1 m → **internal** (same complex) | 919.4 s / 1,146.8 m → **16 min** |
+| The Palazzo | same building → **internal** | 799.0 s / 996.2 m → **14 min** |
+| Wynn | 894.1 s / 1,115.2 m → **15 min** | 95.1 s / 119.1 m → **internal** (same resort) |
+| Encore | 799.0 s / 996.2 m → **14 min** | same building → **internal** |
+| Bellagio | 1,284.9 s / 1,606.4 m → **22 min** | 1,845.1 s / 2,304.0 m → **31 min (over 30)** |
+| ARIA | 2,012.0 s / 2,510.6 m → **34 min (over 30)** | 2,572.2 s / 3,208.3 m → **43 min (over 30)** |
+| Caesars Palace | 1,348.1 s / 1,684.9 m → **23 min** | 1,908.3 s / 2,382.5 m → **32 min (over 30)** |
 
-Displayed minutes are the raw seconds **divided by 60 and rounded up** to the whole minute, so the
-published number is never shorter than the routed walk. The raw seconds are quoted above so anyone can
-re-derive them. A cross-check with a second query using the Wynn address point instead of the Wynn
-polygon returned 1,442.2 s / 1,803 m for Venetian → Wynn (25 min by the same rule), consistent with the
-1,407.9 s used.
+Displayed minutes are the raw seconds **divided by 60 and rounded up**, so a published number is never
+shorter than the routed walk; the raw seconds above let anyone re-derive them. Single-pair `route`
+queries cross-check the matrix (e.g. Bellagio → Encore as a standalone query returned 1,845.1 s / 2,304 m,
+identical to the matrix cell).
+
+**Correction made in this session.** The first matrix run used the Wynn *address* point as the
+destination for the Wynn poker room. The official terms place that room in **Encore**, so the run was
+repeated with the Palazzo and Encore coordinates as the two destinations. Four conclusions changed:
+
+| Pair | First (wrong destination) | Corrected |
+|---|---|---|
+| Bellagio → Wynn poker room | 13 min | **31 min (over 30)** |
+| Caesars → Wynn poker room | 32 min | 32 min (unchanged by coincidence) |
+| Caesars → Venetian poker room | 33 min | **23 min** |
+| ARIA → Venetian poker room | 44 min | **34 min** |
+
+The corrected values are the published ones.
 
 ## 9. What could not be verified
 

@@ -38,11 +38,12 @@ re-checked on 2026-11-17.
   Wynn-versus-Venetian comparison still cannot be made. That is the last missing piece of the hotel
   picture.
 - **Walking times are now routed, not blank.** Twelve hotel-to-poker-room pairs were measured on the
-  OpenStreetMap foot network between geocoded coordinates, with the query and lookup linked on every
-  row. Walks inside one resort are marked internal instead of timed. Under the 30-minute rule: Wynn and
-  Encore reach the Venetian poker room in **17 and 15 minutes**, Bellagio reaches Wynn in **13**,
-  ARIA reaches Wynn in **12**, and Caesars is **33 minutes to the Venetian and 32 to Wynn**. Bellagio
-  (32), ARIA (44) and Caesars (33) miss the Venetian limit; Caesars misses both.
+  OpenStreetMap foot network between geocoded coordinates, with the destination being the resort that
+  actually contains the poker room (The Palazzo for the Venetian, Encore for Wynn), the lookup and query
+  linked on every row, and walks inside one resort marked internal instead of timed. Under the
+  30-minute rule: **Bellagio 22 min and Caesars 23 min reach the Venetian poker room; Wynn 15 and
+  Encore 14 reach it too; The Venetian 16 and The Palazzo 14 reach the Wynn poker room.** Over the
+  limit: **ARIA to the Venetian (34), Bellagio to Wynn (31), ARIA to Wynn (43) and Caesars to Wynn (32)**.
 - **8 AM start:** the earliest cash single-entry event in the dataset starts at **10:10 AM**. The only
   earlier single-entry start is the 9:10 AM $260 turbo milestone satellite on Dec 12, and it pays a
   seat rather than cash. The 8 to 10 AM window holds nothing all day. The one thing that *does* open at
@@ -121,13 +122,13 @@ resort fee and the tax; nothing is reconstructed from an assumed rate.
 
 | Hotel | Resort fee / night | Room tax | True cost / night (dated quote) | Walk to Venetian poker room | Walk to Wynn poker room |
 |---|---|---|---|---|---|
-| [The Venetian Resort](https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html) | $55 plus tax (verified) | 13.38% (verified) | $338.48 (Dec 13–20) and $911.86 (Jan 1–6) | inside the resort | **17 min** (routed) |
-| [The Palazzo](https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html) | $55 (verified) | 13.38% (verified) | $320.02 (Jan 10–15) | inside the resort | **21 min** (routed) |
-| [Wynn Las Vegas](https://www.wynnlasvegas.com/terms-and-conditions/848671) | $55 plus tax (verified) | blank (not printed; engine hides its breakdown) | blank (no Wynn quote captured yet) | **17 min** (routed) | inside the resort |
-| [Encore at Wynn Las Vegas](https://www.wynnlasvegas.com/terms-and-conditions/848671) | $55 plus tax (verified) | blank | blank (no dated quote) | **16 min** (routed) | inside the resort |
-| [Bellagio](https://bellagio.mgmresorts.com/en.html) | blank | blank | blank | **32 min — over the limit** | **13 min** |
-| [ARIA Resort & Casino](https://aria.mgmresorts.com/en.html) | blank | blank | blank | **44 min — over the limit** | **12 min** |
-| [Caesars Palace](https://www.caesars.com/caesars-palace) | blank | blank | blank | **33 min — over the limit** | **32 min — over the limit** |
+| [The Venetian Resort](https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html) | $55 plus tax (verified) | 13.38% (verified) | $338.48 (Dec 13–20), $911.86 (Jan 1–6), $804.15 (Nov 26–29) | inside the resort | **16 min** (routed) |
+| [The Palazzo](https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html) | $55 (verified) | 13.38% (verified) | $320.02 (Jan 10–15) | inside the resort | **14 min** (routed) |
+| [Wynn Las Vegas](https://www.wynnlasvegas.com/terms-and-conditions/848671) | $55 plus tax (verified) | blank (not printed; engine hides its breakdown) | blank (no Wynn quote captured yet) | **15 min** | inside the resort (the room is in Encore) |
+| [Encore at Wynn Las Vegas](https://www.wynnlasvegas.com/terms-and-conditions/848671) | $55 plus tax (verified) | blank | blank (no dated quote) | **14 min** | inside the resort |
+| [Bellagio](https://bellagio.mgmresorts.com/en.html) | blank | blank | blank | **22 min** | **31 min — over the limit** |
+| [ARIA Resort & Casino](https://aria.mgmresorts.com/en.html) | blank | blank | blank | **34 min — over the limit** | **43 min — over the limit** |
+| [Caesars Palace](https://www.caesars.com/caesars-palace) | blank | blank | blank | **23 min** | **32 min — over the limit** |
 
 **Like-for-like inside the one resort that publishes its breakdown.** Same property group, same engine,
 four different stays, so the comparison is between dates rather than between companies:
@@ -153,7 +154,7 @@ verbatim in `data/rates.json`.
 expose the breakdown to a text fetch, so there is no honest way to state it. Applying the Venetian's
 13.38% to Wynn would be exactly the kind of inference this dataset forbids.
 
-**Resort fees for Bellagio, ARIA and Caesars are still blank.** Eight candidate official URLs were tried
+**Resort fees and room tax for Bellagio, ARIA and Caesars are still blank.** Eight candidate official URLs were tried
 on 2026-11-17 (resort-fee and policies pages on mgmresorts.com and caesars.com); every one either
 returned a 404 or redirected to a marketing page that prints no fee. They are left blank rather than
 borrowed from another property's terms, and the exact URLs tried are listed in `FLAGGED.md`.
@@ -215,10 +216,11 @@ still unverified on the entry rule and are not counted.
    129 cannot be judged yet because Wynn has not published the sheets.
 3. Compare only surviving events on guarantee, buy-in, stack, level length, payout and daily fit. The
    guarantee ÷ buy-in ratio is descriptive, not a forecast, and bounty/flight events are labelled.
-4. Check the walking route against the hotel you picked: Wynn and Encore are inside the 30-minute
-   limit of both poker rooms, Bellagio and ARIA are inside it for Wynn only, and Caesars Palace is
-   outside both. The same-stay price comparison across the two companies is blocked until a Wynn quote
-   can be captured (see §4).
+4. Check the walking route against the hotel you picked. The Venetian, The Palazzo, Wynn, Encore,
+   Bellagio and Caesars Palace are all inside 30 minutes of the Venetian poker room; only ARIA is not.
+   Toward the Wynn poker room, only the Wynn/Encore cluster makes it — Bellagio (31), ARIA (43) and
+   Caesars (32) do not. The same-stay price comparison across the two companies is blocked until a Wynn
+   quote can be captured (see §4).
 5. Build one event per day first and only add an evening event where the earlier one can realistically
    end. Use the primary/fallback pair on the schedule page.
 6. Reconfirm schedule, rate and policy on the official page before any non-refundable payment. That is

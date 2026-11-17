@@ -70,7 +70,21 @@ def main():
         print("monitor: data/tournaments.json is missing; run scripts/build_data.py first", file=sys.stderr)
         return 1
 
-    urls = sorted({s["url"] for r in tournaments["rows"] for s in (r.get("sources") or [])})
+    urls = {s["url"] for r in tournaments["rows"] for s in (r.get("sources") or [])}
+    # The hotel and walking sources answer the "did a fee, a tax, a route or a rate change?" question for the
+    # non-tournament half of the site, so they are monitored on the same schedule.
+    for name in ("hotels.json", "walking.json"):
+        doc = load(name)
+        for row in (doc or {}).get("rows", []):
+            for src in (row.get("sources") or []):
+                if src.get("url"):
+                    urls.add(src["url"])
+            if row.get("route_link"):
+                urls.add(row["route_link"])
+    for entry in (load("rates.json") or {}).get("entries", []):
+        if entry.get("source"):
+            urls.add(entry["source"])
+    urls = sorted(urls)
     checked = {}
     for url in urls:
         checked[url] = check_url(url)
