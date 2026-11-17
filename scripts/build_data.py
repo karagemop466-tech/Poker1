@@ -1531,20 +1531,25 @@ def rate_entry(prop, room, offer, arrival, departure, nightly, fee, taxes, total
                cancel=None, extra=None):
     """One dated rate-log row. True cost per night is the engine's own checkout total divided by nights."""
     nights = len(nightly)
-    avg = round(sum(nightly) / nights, 2)
+    # The engine's printed "Average Rate" is (room charges + resort fee) / nights; store that same convention
+    # so every row in the log means the same thing, and keep the room-only figure beside it.
+    room_only = round(sum(nightly) / nights, 2)
+    avg = round((sum(nightly) + fee * nights) / nights, 2)
     entry = {
         "logged_on": logged, "property": prop, "hotel_id": hotel_id, "room": room, "offer": offer,
         "arrival": arrival, "departure": departure, "nights": nights, "occupancy": occupancy,
         "nightly_rates_usd": [round(n, 2) for n in nightly],
         "nightly_average_usd": avg,
+        "nightly_average_includes_resort_fee": True,
+        "room_only_average_usd": room_only,
         "resort_fee_per_night_usd": fee,
         "taxes_total_usd": taxes, "checkout_total_usd": total,
         "true_cost_per_night_usd": round(total / nights, 2),
         "true_cost_method": "checkout total (room + resort fee + taxes) / %d nights" % nights,
         "caveat": "Best-available quote for these exact dates and occupancy at the time of retrieval. Rates move "
-                  "with availability; re-check the official booking engine before paying. The nightly figures are "
-                  "the per-night room rates printed by the engine's breakdown and already exclude the resort fee "
-                  "and tax shown separately.",
+                  "with availability; re-check the official booking engine before paying. nightly_average_usd "
+                  "reproduces the engine's own printed Average Rate: (room charges + resort fee) / nights, before "
+                  "tax. The per-night room figures exclude the resort fee and tax, which are shown separately.",
         "source": source, "retrieved_on": retrieved, "logged_on_date": logged,
     }
     if cancel:

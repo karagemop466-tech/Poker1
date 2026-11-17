@@ -39,6 +39,14 @@ OFFICIAL_SOURCE_HOSTS = {
     # MGM Resorts' shared corporate pages (parking, portfolio-wide fee text).
     # Property pages stay on each property's own subdomain.
     "www.mgmresorts.com",
+    # Session 0d069ce0: the official property domains behind pages/other-rooms.html. Each is the
+    # operator's own site for the property. The contentstack CDN that hosts the MGM PDFs is
+    # deliberately not added, matching the existing F40 treatment of the Bellagio flyers: those
+    # PDFs are cited through the official page that links them, never as a source host.
+    "mgmgrand.mgmresorts.com",
+    "mandalaybay.mgmresorts.com",
+    "orleans.boydgaming.com",
+    "southpointcasino.com",
 }
 TOURNAMENT_STATUSES = {"SE", "MULTI", "RE", "REBUY", "CONT", "UNV"}
 TOURNAMENT_KINDS = {"entry", "continuation"}
@@ -47,7 +55,10 @@ DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 TIME_RE = re.compile(r"^(?:[01]\d|2[0-3]):[0-5]\d$")
 KNOWN_PAGES = {"index", "singleEntry", "separate", "unverified", "daily", "hotels", "calculator",
                "schedule", "venues", "search", "monitoring", "summary", "questions", "suggestions",
-               "flagged", "review"}
+               "flagged", "review",
+               # Session 0d069ce0: pages/other-rooms.html. Registered here because the page-link
+               # check rejects any data-page outside this set. One line, no other change.
+               "otherRooms"}
 
 
 def load_json(rel):
@@ -414,6 +425,28 @@ for index, entry in enumerate(rate_entries, 1):
             expected_nights = None
         if expected_nights is not None and expected_nights != nights:
             problems.append(f"{where}: nights should be {expected_nights}")
+    # The engine's own Average Rate is (room charges + resort fee) / nights, before tax. Re-derive it, and
+    # re-check that room + fee + tax == checkout total, so the log cannot drift from the quoted page.
+    nights_val = entry.get("nights")
+    room_only = entry.get("room_only_average_usd")
+    avg = entry.get("nightly_average_usd")
+    fee = entry.get("resort_fee_per_night_usd")
+    rooms = entry.get("nightly_rates_usd")
+    taxes = entry.get("taxes_total_usd")
+    if is_number(room_only) and isinstance(rooms, list) and rooms and is_number(nights_val) and nights_val > 0:
+        expected_room_only = round(sum(rooms) / nights_val, 2)
+        if abs(room_only - expected_room_only) > 0.01:
+            problems.append(f"{where}: room_only_average_usd should be {expected_room_only}")
+    if all(is_number(x) for x in (room_only, avg, fee)):
+        if abs(avg - (room_only + fee)) > 0.01:
+            problems.append(f"{where}: nightly_average_usd should be room_only + resort fee = {round(room_only + fee, 2)}")
+        if entry.get("nightly_average_includes_resort_fee") is not True:
+            problems.append(f"{where}: nightly_average_includes_resort_fee must be true")
+    if all(is_number(x) for x in (rooms and sum(rooms), fee, taxes, entry.get("checkout_total_usd"), nights_val)):
+        expected_total = round(sum(rooms) + fee * nights_val + taxes, 2)
+        if abs(entry["checkout_total_usd"] - expected_total) > 0.02:
+            problems.append(f"{where}: checkout_total_usd should be room + fee + tax = {expected_total}")
+
     checkout = entry.get("checkout_total_usd")
     per_night = entry.get("true_cost_per_night_usd")
     if is_number(checkout) and is_number(nights) and nights > 0 and is_number(per_night):

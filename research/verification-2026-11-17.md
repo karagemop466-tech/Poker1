@@ -220,6 +220,22 @@ The corrected values are the published ones.
 
 Every one of these is left blank in the data and listed as unverified in `FLAGGED.md` (F47, U1–U5).
 
+## 10. Two defects the live site exposed after the first merge
+
+Both were found by reading the deployed page, not by any local check, and both are now guarded.
+
+1. **Duplicate renderers.** Merging `main` left two definitions of `PAGES.calculator` and two of
+   `PAGES.hotels` in `assets/app.js`. Duplicate definitions are valid JavaScript, so the page loaded, links
+   resolved and the smoke test passed — but the later definition wins, and the live calculator was showing
+   the older per-night form while the nav said "Trip cost calculator". Fixed by deleting the superseded
+   blocks (the kept `hotels` block was diffed byte-for-byte against the one removed). `check_links.py` now
+   fails if any `PAGES.x` is defined twice.
+2. **Two nightly-average conventions.** See F56 (renumbered in the integration; it briefly collided with the LIPS F53). Four rate entries averaged room charges only; one averaged
+   room + resort fee, which is what the engine prints. Standardised on the engine's convention and added a
+   validator identity: `nightly_average_usd == room_only_average_usd + resort_fee_per_night_usd`, and
+   `checkout_total_usd == sum(nightly_rates) + fee x nights + taxes`. Both are re-derived on every build, and
+   a deliberately corrupted value was confirmed to fail the check before the fix was committed.
+
 ## Appendix — parallel re-check of the same day (session `2e5232bc`)
 
 A second session re-read the same four schedules on 2026-11-17 and reached the same row-level

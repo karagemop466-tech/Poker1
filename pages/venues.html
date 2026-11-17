@@ -155,6 +155,7 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
     ["pages/hotels.html", "Hotels"],
     ["pages/calculator.html", "Calculator"],
     ["pages/venues.html", "Venues"],
+    ["pages/other-rooms.html", "Other rooms"],
     ["pages/search.html", "Search"],
     ["pages/monitoring.html", "Monitoring"],
     ["pages/summary.html", "Summary"],
@@ -955,7 +956,7 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
           { id: "prop", label: "Property", key: "property" },
           { id: "room", label: "Room", key: "room", sort: null, html: function (r) { return "<span class='small'>" + esc(r.room) + "</span>"; } },
           { id: "window", label: "Stay", key: "arrival", html: function (r) { return dateShort(r.arrival) + "–" + dateShort(r.departure) + "<br><span class='small'>" + r.nights + " nights, " + esc(r.occupancy) + "</span>"; } },
-          { id: "avg", label: "Nightly average", key: "nightly_average_usd", num: true, html: function (r) { return money2(r.nightly_average_usd); } },
+          { id: "avg", label: "Nightly average (room + fee)", key: "nightly_average_usd", num: true, html: function (r) { return money2(r.nightly_average_usd) + (r.room_only_average_usd != null ? "<br><span class='small'>room only " + money2(r.room_only_average_usd) + "</span>" : ""); } },
           { id: "fee", label: "Resort fee / night", key: "resort_fee_per_night_usd", num: true, html: function (r) { return money2(r.resort_fee_per_night_usd); } },
           { id: "tax", label: "Tax total", key: "taxes_total_usd", num: true, html: function (r) { return money2(r.taxes_total_usd); } },
           { id: "total", label: "Checkout total", key: "checkout_total_usd", num: true, html: function (r) { return money2(r.checkout_total_usd); } },
@@ -1194,6 +1195,31 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
       }).catch(showErr);
     };
   }
+  // pages/other-rooms.html is generated statically by scripts/build_other_rooms.py, so the
+  // tables are already in the HTML and there is nothing to render at run time. The renderer
+  // exists because the validator requires one renderer per data-page, and it uses the
+  // dataset to stamp the page with the counts and the verification date, and to say so on
+  // the page if the dataset cannot be read (the tables stay: they were built from that file).
+  PAGES.otherRooms = function () {
+    getJSON("data/other_rooms.json").then(function (data) {
+      var main = document.getElementById("content");
+      if (!main || !data || !data.counts) return;
+      var stamp = document.createElement("p");
+      stamp.className = "small";
+      stamp.textContent = "Dataset: " + data.counts.events + " recurring events across " +
+        data.counts.rooms_surveyed + " rooms surveyed, verified " + data.verified_on + ".";
+      main.parentNode.insertBefore(stamp, main.nextSibling);
+    }).catch(function () {
+      var main = document.getElementById("content");
+      if (!main) return;
+      var note = document.createElement("p");
+      note.className = "small";
+      note.textContent = "data/other_rooms.json could not be read; the tables below are the " +
+        "copy generated with the site.";
+      main.parentNode.insertBefore(note, main.nextSibling);
+    });
+  };
+
   PAGES.summary = markdownPage("EXECUTIVE_SUMMARY.md");
   PAGES.questions = markdownPage("QUESTIONS.md");
   PAGES.suggestions = markdownPage("SUGGESTIONS.md");

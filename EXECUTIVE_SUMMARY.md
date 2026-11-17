@@ -6,8 +6,7 @@
 Every official tournament page and structure PDF listed below was re-fetched and re-read on
 **2026-11-17**, not carried forward: the DeepStack Extravaganza IV page (94 rows), the NYE page
 (49 rows), the Wynn Signature Series schedule PDF (38 rows) and the WPT World Championship schedule
-PDF (135 rows). The result is that **all 316 rows still match their official source today**, with one
-cosmetic difference noted in `FLAGGED.md`. Hotel fees, taxes, rates and walking times were also
+PDF (136 rows). The result is that **all 317 rows in the current dataset match their official sources**, with known source irregularities listed in `FLAGGED.md`. Hotel fees, taxes, rates and walking times were also
 re-checked on 2026-11-17.
 
 ## Bottom line
@@ -44,8 +43,10 @@ re-checked on 2026-11-17.
   the Venetian's official booking engine: $804.15 (Nov 26–29), $475.35 (Nov 18–20), $338.48 (Dec 13–20), $911.86 (Jan 1–6) and $320.02 (Jan 10–15) true cost per night. Every quote stores the per-night rates, resort fee, tax total, checkout
   total, cancellation terms and the date it was read, so a later quote is compared against these instead
   of replacing them.
-- **Every one of those five quotes reproduces exactly** when 13.38% is applied to room plus resort fee —
-  the arithmetic and the stored data agree to the cent, which is the check that keeps the log honest.
+- **Every one of those five quotes reproduces exactly** — twice over: 13.38% applied to (room + resort fee)
+  returns the stored tax total to the cent, and (room + fee) ÷ nights returns the Average Rate the engine
+  itself printed on the page (709.25, 298.54, 804.25, 282.25, 419.25). Two independent identities agreeing
+  is what keeps the log honest.
 - **Wynn cannot be priced the same way yet.** Its booking engine renders the nightly grid and the tax
   line client-side and returns only fee and policy text to a text fetch, so no Wynn quote could be
   captured. Its room tax stays blank rather than borrowing the Venetian's 13.38%, and the like-for-like
@@ -162,16 +163,21 @@ resort fee and the tax; nothing is reconstructed from an assumed rate.
 | [Caesars Palace](https://www.caesars.com/caesars-palace) | blank (not published for this property) | blank | blank | **23 min** | **32 min — over the limit** |
 
 **Like-for-like inside the one resort that publishes its breakdown.** Same property group, same engine,
-five different stays, so the comparison is between dates rather than between companies:
+five different stays, so the comparison is between dates rather than between companies. The nightly
+average column uses the engine's own convention, (room charges + resort fee) ÷ nights, before tax — each
+of the five figures is the number the engine itself printed, which is an independent check on the log:
 
-| Stay | Room | Nights | Nightly average | Resort fee | Taxes | Checkout total | True cost / night |
+| Stay | Room | Nights | Nightly average<br>(room + fee) | Resort fee | Taxes | Checkout total | True cost / night |
 |---|---|---|---|---|---|---|---|
-| [Nov 18–20, 2026](https://www.venetianlasvegas.com/book) | Venetian Newly Remodeled Luxury Two Queen | 2 | $419.25 | $55 × 2 | $112.19 | $950.69 | **$475.35** |
-| [Nov 26–29, 2026](https://www.venetianlasvegas.com/book) | Palazzo Luxury King | 3 | $654.25 | $55 × 3 | $284.69 | $2,412.44 | $804.15 |
-| [Dec 13–20, 2026](https://www.venetianlasvegas.com/book) | Venetian Newly Remodeled Luxury King | 7 | $243.54 | $55 × 7 | $279.63 | $2,369.38 | **$338.48** |
-| [Jan 1–6, 2027](https://www.venetianlasvegas.com/book) | Venetian Newly Remodeled Luxury King | 5 | $749.25 | $55 × 5 | $538.05 | $4,559.30 | **$911.86** |
-| [Jan 10–15, 2027](https://www.venetianlasvegas.com/book) | Palazzo Luxury Two Queen | 5 | $227.25 | $55 × 5 | $188.83 | $1,600.08 | **$320.02** |
+| [Nov 18–20, 2026](https://www.venetianlasvegas.com/book) | Venetian Newly Remodeled Luxury Two Queen | 2 | $364.25 | $55 × 2 | $112.19 | $950.69 | **$475.35** |
+| [Nov 26–29, 2026](https://www.venetianlasvegas.com/book) | Palazzo Luxury King | 3 | $709.25 | $55 × 3 | $284.69 | $2,412.44 | $804.15 |
+| [Dec 13–20, 2026](https://www.venetianlasvegas.com/book) | Venetian Newly Remodeled Luxury King | 7 | $298.54 | $55 × 7 | $279.63 | $2,369.38 | **$338.48** |
+| [Jan 1–6, 2027](https://www.venetianlasvegas.com/book) | Venetian Newly Remodeled Luxury King | 5 | $804.25 | $55 × 5 | $538.05 | $4,559.30 | **$911.86** |
+| [Jan 10–15, 2027](https://www.venetianlasvegas.com/book) | Palazzo Luxury Two Queen | 5 | $282.25 | $55 × 5 | $188.83 | $1,600.08 | **$320.02** |
 
+The engine's own "Average Rate" (room + resort fee ÷ nights, before tax) is stored as
+`nightly_average_usd` in `data/rates.json` — $419.25, $709.25, $298.54, $804.25 and $282.25 for the five
+stays — and the room-only average is stored beside it, so the two conventions are never mixed (F56).
 The lesson is in the spread, not the average: the same tower costs **$338.48 a night for Dec 13–20 and
 $911.86 a night for Jan 1–6**, because Jan 1 is quoted at $1,949.25 for the night. Two nights over a
 weekend in November cost $475.35 all in. Dates, not the hotel name, dominate the hotel budget.
