@@ -314,3 +314,16 @@ Claimed in commit `a698b81` before implementation.
 - 2026-11-17: session `2e5232bc` claimed the schedule re-check (commit `a698b81`), read all four official schedules, restored the missing WPT TORSE (2 Day) row, corrected U8 and the REVIEW.md continuation count, and recorded the verification in `research/verification-2026-11-17.md`.
 - 2026-11-17: session `2e5232bc` opened [PR #31](https://github.com/karagemop466-tech/Poker1/pull/31) from `arena/2e5232bc-poker1` to `main`. The `validate` check passed, and PR #31 **merged** at `e9afbd79d7550bc9fa3f90a1177e5cdc3eefa20d` (merge commit). The Pages workflow run for `e9afbd7` completed with `success` and the Pages API reports build status `built` (2026-11-17T00:37:33Z). The live Flagged for Review page at https://karagemop466-tech.github.io/Poker1/pages/flagged.html lists F21 (the restored row). `main`'s `data/tournaments.json` contains the restored `TORSE (2 Day)` row (317 rows).
 - Note for the next session: this sandbox cannot reach `github.io` directly from bash, so the live check used the page fetcher and the GitHub API. The scheduled monitor on `main` has not yet produced a new result; check its first run before relying on `data/monitoring.json`.
+
+## Session c0714e1a (this session) — branch `arena/c0714e1a-poker1`
+
+Claim commit pushed before any implementation work, as required. Scope is the integration and
+line-by-line re-verification pass for this session. No other session has an open claim in this file
+(all earlier sessions record their tasks as `Done` or merged); if one appears, this session stops and
+logs the conflict rather than editing a file inside another claim.
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Re-read every official source the dataset cites against the live pages (Venetian DSE IV, Venetian NYE, Wynn WPT schedule + structures, Wynn Signature Series, Wynn daily, hotel fee/tax pages), diff every row field by field, and correct or flag any drift | in progress | `data/*.json`, `scripts/build_data.py`, `research/verification-c0714e1a.md` | `c0714e1a` |
+| Re-run every check (dataset rebuild, page rebuild, validator, headless render), fix any failure, and confirm the GitHub Pages deploy of the combined site | in progress | `scripts/*`, `pages/*`, `index.html`, `assets/*` | `c0714e1a` |
+| Refresh the published decision documents and the coordination record with this session's verification result; open the PR, merge, and confirm Pages | in progress | `COORDINATION.md`, `EXECUTIVE_SUMMARY.md`, `QUESTIONS.md`, `SUGGESTIONS.md`, `FLAGGED.md`, `REVIEW.md`, `README.md` | `c0714e1a` |
