@@ -1,0 +1,556 @@
+EXIT
+EXIT
+EXIT
+EXIT
+EXIT
+EXIT
+EXIT
+EXIT
+Armillary
+Sphere
+Gondola
+Ride
+The Waterfall
+Atrium
+Las Vegas Blvd.
+T H E V E N E T I A N
+T H E PA L A Z Z O
+T H E PA L A Z Z O
+LO W E R L E V E L
+T H E V E N E T I A N
+S O U T H T O W E R
+Sands Ave.
+VIP
+Lounge
+VIP
+Lounge
+Box
+Office
+Clock 
+Tower
+Entrance
+The WaterfallAtrium Entrance
+Sands 
+Avenue
+Bridge 
+Entrance
+The Venetian Convention 
+& Expo Center Entrance, 
+Ground Transportation Access, 
+and Bridge to 
+Sphere at The Venetian
+Concierge
+Elevators to The Venetian 
+South Tower Guest Suites
+& Wedding Chapel
+ Arrivals
+Arrivals &
+Departures
+The PalazzoFront Desk
+The Venetian
+Front Desk
+Restaurant Row
+Casino Entrance
+CasinoEntrance
+Rideshare Pick Up,Departures, Limos, Taxis
+The Palazzo Casino
+Level 1
+N
+142
+171
+172
+145144
+147
+124
+148
+146
+150
+149
+159
+158
+155
+156
+153
+152
+154
+157
+160 163
+164
+166
+102 120
+131
+130
+105
+103
+141 140
+137 136
+135
+134
+129
+121
+118
+119
+113
+108
+169
+128
+133
+132
+125
+139 138
+127
+126
+167
+Sky Lounge
+Level 10
+Pool
+Garden
+Bellini Bar
+122
+162 
+165 101 104
+110
+400
+168
+161 169
+123 151
+114
+112
+401111
+109
+107
+106
+115 116
+117170
+The Venetian
+Casino
+Elevators to 
+The Venetian
+Guest Suites,
+Canyon Ranch & Pools
+Elevators to 
+The Palazzo, 
+Guest Suites,
+Canyon Ranch & Pools
+180
+181
+185 186
+184
+182
+183
+POOLS, SPA & PRESTIGE CLUB LOUNGE
+The Venetian Pools 4th Floor The Venetian  
+ North Tower
+The Palazzo Pools 3rd Floor
+Pool Garden The Venetian South Tower,  
+ Level 10
+Tao Beach 4th Floor of The Venetian 
+(Seasonal) North Tower, but only  
+ accessible through  
+ Tao Asian Bistro in  
+ Grand Canal Shoppes®
+Canyon Ranch® 4th Floor of The Venetian 
+Spa + Fitness North Tower  
+ 3rd Floor of The Palazzo
+Prestige Club Lounge 36th Floor of The Venetian 
+ North Tower   
+ 23rd Floor of The Palazzo
+LEGEND
+FOOD & LOUNGES SHOPPING & ENTERTAINMENT CASINO
+`
+CASINO
+164 Venetian Rewards Desk, The Palazzo
+123 Venetian Rewards Desk, The Venetian
+121 High-Limit Slot Lounge, The Venetian
+107 High-Limit Table Salon, The Venetian
+163 The Palazzo Cage
+162 The Palazzo High-Limit Gaming Lounge
+141 The Palazzo High-Limit Salon
+106 The Venetian Cage
+129 Yahoo Sportsbook
+RESTAURANTS
+124 Bazaar Meat® by José Andrés
+125 Black Tap Craft Burgers & Beer
+400 Bouchon Bistro
+132 Chica ®
+137 COTE Korean Steakhouse
+165 Cut by Wolfgang Puck
+136 Delmonico Steakhouse
+135 Estiatorio Milos
+134 Gjelina
+153 Grand Lux Cafe, The Palazzo
+108 Grand Lux Cafe, The Venetian
+150 HaSalon
+144 Lavo Italian Restaurant & Lounge
+102 Matteo's Ristorante Italiano
+149 Miznon
+152 Mott 32
+169 Nomikai
+130 Noodle Asia
+105 Sugarcane Raw Bar Grill
+148 Wakuda
+133 Yardbird
+LOUNGES
+160 Bar Luca
+120 Bar Mia
+122 Bellini Bar
+186 Close Company (Via Via Food Hall)
+159 Electra Cocktail Club
+131 Juliet Cocktail Room
+158 Rosina Cocktail Lounge
+117 Sala 118
+SHOPPES
+139 Bellusso Jewelers
+142 Bretling
+112 Corner Market
+116 Dandelion Chocolate
+155 Emporia
+168 FedEx Office Print & Ship Center
+401 La Bottega
+118 Madame Tussauds™
+161 The Palazzo Theatre Gift Shop
+126 Presto
+172 Tag Heuer
+171 Tudor
+115 Tumi & Brics
+151 The Venetian Shoppe
+128 Walgreens
+ENTERTAINMENT
+154 The Palazzo Theatre
+147 The Stadium
+104 The Summit Showroom
+110 The Venetian Theatre
+101 Voltaire
+HALLWAY/SUITE LOCATORS
+Use your suite number to find your resort location.  
+The first number indicates the 
+floor, followed by tower/hallway and your 
+suite number.
+ The Venetian North Suites: 100-300
+ The Venetian South Suites: 400-600 
+ The Palazzo Suites: 700-900
+Example: 46-712 
+46th Floor, The Palazzo Hallway 700, Suite 712
+MOBILE CHECK-IN & CHECKOUT
+Guests may visit venetianlasvegas.com/checkin  
+to check-in, venetianlasvegas.com/checkout 
+to checkout, and venetianlasvegas.com/folio 
+to view their folio.
+QUICK BITES
+114 Anita Gelato  
+111 Bouchon Bakery
+167 Donutique
+119 Five Guys
+166 Illy Caffè
+157/109 POMA: Juice, Açaí, Smoothies
+156 Starbucks, The Palazzo Casino
+103 Starbucks, The Venetian Convention Center
+127 Starbucks, The Venetian Sportsbook
+170 Starbucks, The Venetian Lobby
+113 Via Via Food Hall
+           All’Antico Vinaio - 180
+           B.S. Taqueria - 181
+           Howlin’ Ray’s - 182
+           Ivan Ramen - 183
+           Scarr’s Pizza - 184
+           Turkey and the Wolf - 185
+           Close Company - 186
+138 The Waterfall Café
+MEETING SPACE
+145 The Stella Studio
+ Enter through elevators next to Lavo
+RESTAURANTS 
+340   BOA Steakhouse
+205   Brera Osteria
+290    Buddy V's Ristorante
+203   Canaletto
+219   Cañonita
+261   Fogo de Chão
+321   Grimaldi‘s Pizzeria
+207   Mercato della Pescheria
+229   Red Head Burger
+288   Rockhouse 
+263   Smith & Wollensky
+323    SushiSamba
+252   Tao Asian Bistro & Nightclub
+221   Trattoria Reggiano
+325   The X Pot
+LOUNGES
+339    1923 Prohibition Bar Level 2M 
+326    The Black Door (Coming Soon)
+222    Casanova Tapas Bar
+233/251/272    Fat Tuesday
+231    Minus 5° Ice Experience
+327    Liam's Den & Bubble Bar
+252   Tao Asian Bistro & Nightclub
+QUICK BITES 
+225    Auntie Anne's and Häagen-Dazs  
+287     Carlo's Bakery
+270    Casa de Cantaritos
+206    Cocolini
+250/234    The Coffee Bean & Tea Leaf
+228     Food Court
+           Chipotle
+           Curry Pot
+           Fire de Brazil
+           Green Crush (Coming Soon)
+           Halo Halo Filipino Kitchen
+           Jay Bird’s Nashville Hot Chicken
+           Johnny Rockets
+           L.A. Brisket
+           Panda Express
+           Popeye’s Chicken
+           Social Life Pizza
+           Sourdough & Co.
+           Stagecoach Country Roadhouse
+220    LobsterMe
+314   Royce' Chocolate
+282   Sloan's Ice Cream
+235   Tipsy Robot
+266   TRA Viet Coffee and Tea
+208    Zeppola Cafe
+TRANSPORTATION
+BUS SERVICE
+Along the Las Vegas Strip 
+LIMO SERVICE
+To request limo service, please call 702.414.4300  
+for reservations or inquire at any valet stand at  
+The Venetian and The Palazzo
+RIDESHARE 
+Pickup at The Venetian: 2nd Floor of Guest Parking Garage
+Pickup at The Palazzo: Lower Level Porte Cochere  
+on the right
+HERTZ (CAR RENTAL)
+The Venetian: 2nd Floor Valet
+The Palazzo: Next to the Front Desk
+TAXI SERVICE
+The Venetian: Left side of the Porte Cochere
+The Palazzo: Lower Level Porte Cochere
+TOUR COMPANY TRANSPORTATION PICKUP 
+Ground Transportation 
+(located within The Convention Center)
+Monorail  
+Nearest station is located at Harrah’s 
+Wheelchairs and scooters available with Guest Services
+SHOPPES
+333     7 For All Mankind
+281/299   Animazing Gallery
+297    Aroma360
+237     Banana Republic
+329     Bauman Rare Books
+217/309    Bill Mack
+275    Brighton Collectibles
+273    Brilliance New York
+209    Brosway Italia 
+292    Burberry
+269    Chapel Hats
+242    Club Tattoo
+332     Coach
+212     Crazy Shirts
+317     Cuadra
+201     Emporio d‘Gondola
+265     First Place LV
+293     Ferragamo
+254    Field of Dreams
+258    Gol Art
+230    #Hashtag Vegas
+283    Horologio Fine Watches
+245    International News
+CASINO
+330    Poker Room
+320/243    It'Sugar
+298    Jimmy Choo
+253    Just Fun Socks
+305    Kallu
+215    Kalifano
+214    Karma and Luck
+307   Kate Spade New York
+211     K. Kreate
+331     La Jette
+257     Laterra Gems
+274    Le Macaron
+311    Le Savon
+232    Lionesse
+301    Louis Vuitton
+200    Michael Kors
+308    Miner‘s Gems
+295    Montblanc
+279    Na Hoku
+239    Nectar Life
+204   Optica
+210    Pandora 
+260   Pearl Factory
+259    Peter Lik Gallery
+267    Printeesfly
+256    Regenerate Me
+316     Robert Graham
+241    Saint Ceoo
+276    Shoe Palace
+216    Si Scent
+224    Signature Art Gallery
+236    Skechers
+255    Spirits & Spice
+284    Steve Madden
+318    Stuart Weitzman
+315    Studs
+264    Sugarboo & Co.
+296     Suitsupply
+306     Sun‘s Up 
+268     Sunglass Hut
+303    Swarovski
+238    Tommy Bahama 
+294    Tory Burch 
+300   Tumi 
+202    UnoDe50 
+310    Valiant by Jean Philippe 
+223/244/278    Welcome to Las Vegas  
+285    White House | Black Market
+ENTERTAINMENT 
+335    Atomic Saloon Show 
+302    Flight Club 
+324    Kamu Ultra Karaoke 
+336    PanIQ Escape Room & Lounge Level 2M 
+280    Sandbox VR
+EXIT
+EXIT
+EXIT
+EXIT
+Gondola
+Ride
+Las Vegas Blvd.
+T H E PA L A Z Z O
+Sands Ave.
+THE VENETIAN
+St. 
+Mark’s
+Square
+Parking Garage and Rideshare Pick up
+The Waterfall
+Atrium
+Scenic Overlook
+The Wishing Tree
+Level 2
+L E V E L 2 M
+L E V E L 2 M
+N
+227
+Elevators to 
+Guest Suites
+Rialto
+Bridge
+321 319
+315
+316
+313
+314
+326
+318
+317
+312
+302
+320
+340
+323
+324
+325
+298 297
+296
+295 294
+293
+292
+305
+300299
+308
+309
+301
+303
+311
+310
+307 331
+306
+327
+328
+329
+330
+332
+333
+200
+200
+291 280285
+278
+290
+335
+334
+336
+337
+204
+202
+201
+203
+The Grand Canal
+205 
+206
+207
+212
+216
+338
+199
+273
+272
+271 270 269 268
+211
+210
+275
+274
+209 219
+339
+218217 222 228
+220
+232 233
+267
+266
+265
+264
+224 225221
+223
+284 282 281 279283 277
+276
+263
+261
+238
+237
+259
+258
+244
+243
+236
+231
+230
+229
+257
+256
+255 242
+241
+240
+239
+235
+234
+245
+254252
+288
+287
+253
+251 250
+260
+289
+208 215
+214
+The Venetian Convention & Expo Center
+and Ground Transportation Lobby Access
+ Elevators to 
+Guest Suites
+Elevators to 
+1923 Prohibition 
+Bar
+LEGEND
+FOOD & LOUNGES SHOPPING & ENTERTAINMENT CASINO
