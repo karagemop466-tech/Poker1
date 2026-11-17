@@ -46,23 +46,17 @@ SRC = {
     "wynn_info": "https://www.wynnlasvegas.com/ai-information",
     "wynn_parking": "https://www.wynnlasvegas.com/about-us/parking",
     "bellagio": "https://bellagio.mgmresorts.com/en.html",
-<<<<<<< HEAD
     "bellagio_poker": "https://bellagio.mgmresorts.com/en/casino/poker.html",
-=======
     "bellagio_terms": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
     "bellagio_faq": "https://bellagio.mgmresorts.com/en/faq.html",
->>>>>>> a56dda7 (Verify every WPT structure sheet, join all 135 Wynn WPT rows to their printed sheet, and add the property-specific hotel fee, tax, parking and cancellation facts)
     "aria": "https://aria.mgmresorts.com/en.html",
     "aria_poker": "https://aria.mgmresorts.com/en/casino/poker.html",
     "aria_terms": "https://aria.mgmresorts.com/en/terms-and-conditions.html",
     "mgm_parking": "https://www.mgmresorts.com/en/things-to-do/parking.html",
     "caesars": "https://www.caesars.com/caesars-palace",
-<<<<<<< HEAD
     "caesars_poker_article": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
-=======
     "caesars_faq": "https://www.caesars.com/caesars-palace/faqs",
     "caesars_disclaimer": "https://www.caesars.com/corporate/disclaimer",
->>>>>>> a56dda7 (Verify every WPT structure sheet, join all 135 Wynn WPT rows to their printed sheet, and add the property-specific hotel fee, tax, parking and cancellation facts)
 }
 
 # ---------- rule excerpt strings reused by the Venetian structure sheets ----------
@@ -750,11 +744,10 @@ WPT_STRUCTS = {
         "December 7, 2026, at 12 p.m."),
  "SAT_WPT": dict(label="Milestone / satellite rows printed in the official WPT schedule PDF",
    fee=None, status="UNV",
-   ex="The official WPT World Championship Structures PDF was read in full (eight sections, ending with the $1,600 "
-      "PLO Mystery Bounty). It publishes no structure sheet for the milestone and satellite events, so the entry "
-      "rule, the fee split and the late-registration cut-off for these rows are not published in an official "
-      "structure sheet. The schedule PDF publishes the buy-in, the prize (for example \"25 Seats\"), the starting "
-      "chips and the level count only.",
+   ex="The official WPT World Championship Structures PDF (all 69 sheets) does publish a sheet for every "
+      "milestone-satellite event, and those sheets are joined to these rows on their printed date, start "
+      "time and buy-in by scripts/extract_wpt_sheets.py. This fallback text is only used if that join ever "
+      "stops resolving a row.",
    stack=None, length=None, breaks=None, payout=None),
 }
 
@@ -1035,6 +1028,14 @@ def build_wynn():
         sid = None
         if sheet_row:
             sid = "block %d" % sheet_row["block"]
+            delta = sheet_row.get("printed_time_delta_min") or 0
+            if delta:
+                printed = [t for d, t in sheet_row.get("sheet_dates") or [] if d == date and t != time]
+                flags.append(
+                    "Start time conflict between the two official documents: the schedule PDF prints %s "
+                    "for this event, while structure sheet %s prints %s on the same date. The schedule's "
+                    "time is kept and the difference (%d minutes) is published rather than reconciled."
+                    % (time, sid, " / ".join(printed) or "a different time", delta))
             status = "RE" if sheet_row["unlimited_re_entry"] else "MULTI"
             ex = "Registration: \"%s\"" % sheet_row["registration"]
             fee_text = sheet_row["entry_fee_line"]
@@ -1140,8 +1141,21 @@ def build_wynn():
             "flags": flags,
             "sources": srcs, "verified_on": VERIFIED_ON, "last_checked": LAST_CHECKED,
         }
-        if row["house_fee_usd"] and buy:
-            row["house_fee_pct"] = round(100.0 * row["house_fee_usd"] / buy, 2)
+        # The fee percentage is computed against the entry the structure sheet
+        # actually prices (``house_fee_basis_usd``), which is the row's buy-in on
+        # every row except the Ladies Championship: that sheet is headed "$11,100
+        # (***discounted to $1,100 for Ladies)", so its $135 fee is 1.22% of
+        # $11,100 and would be a false 12.27% of the discounted $1,100 entry.
+        basis = (sheet_row["buyin_usd"] if sheet_row else buy) or buy
+        if row["house_fee_usd"] and basis:
+            row["house_fee_pct"] = round(100.0 * row["house_fee_usd"] / basis, 2)
+            row["house_fee_basis_usd"] = basis
+        if sheet_row and sheet_row["row_buyin_usd"] != buy:
+            flags.append(
+                "The structure sheet prices this event at $%s, while the schedule prints a $%s entry for "
+                "this field; the sheet's own heading says it is discounted for Ladies. The fee split is "
+                "quoted from the sheet but no fee percentage is calculated, because the two documents "
+                "price different entries." % (format(sheet_row["buyin_usd"], ","), format(buy, ",")))
         if sheet_row and sheet_row.get("length_of_play"):
             row["structure_days"] = sheet_row["length_of_play"]
         if st and st.get("payout"):

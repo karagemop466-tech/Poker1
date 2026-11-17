@@ -67,7 +67,7 @@ def venue_page(title, venue_id):
 PAGES = {
     "index.html": ("Home", "index", """
 <h1>Las Vegas Strip Poker Plan</h1>
-<p class="lead">Single-entry tournaments and walkable hotels, checked against official sources on 2026-11-16. Blank cells are unverified. No value is inferred.</p>
+<p class="lead">Single-entry tournaments and walkable hotels, checked against official sources on 2026-11-17. Blank cells are unverified. No value is inferred.</p>
 <div class="grid" id="kpis"></div>
 <h2>Start here</h2>
 <div class="grid">

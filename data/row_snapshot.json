@@ -1511,7 +1511,7 @@
    "buy_in_usd": null,
    "guarantee_usd": null,
    "entry_status": "CONT",
-   "buy_in": "Entry Fee: $400 Buy-in = $333 (Tournament Prize Pool) + $45 (Tournament Fee) + $22 (Poker Staff Service Charge)",
+   "buy_in": "not published for this event",
    "flags": 1
   },
   "r127": {
@@ -1523,7 +1523,7 @@
    "buy_in_usd": null,
    "guarantee_usd": null,
    "entry_status": "CONT",
-   "buy_in": "Entry Fee: $400 Buy-in = $333 (Tournament Prize Pool) + $45 (Tournament Fee) + $22 (Poker Staff Service Charge)",
+   "buy_in": "Entry Fee: $1,100 Buy-in = $970 (Tournament Prize Pool) + $90 (Tournament Fee) + $40 (Poker Staff Service Charge)",
    "flags": 2
   },
   "r128": {
@@ -1595,7 +1595,7 @@
    "buy_in_usd": 1100,
    "guarantee_usd": 250000,
    "entry_status": "RE",
-   "buy_in": "Entry Fee: $1,100 Buy-in = $965 (Tournament Prize Pool) + $90 (Tournament Fee) + $45 (Poker Staff Service Charge)",
+   "buy_in": "Entry Fee: $11,100 Buy-in = $10,965 (Tournament Prize Pool) + $90 (Tournament Fee) + $45 (Poker Staff Service Charge)",
    "flags": 2
   },
   "r134": {
@@ -1619,7 +1619,7 @@
    "buy_in_usd": 1100,
    "guarantee_usd": null,
    "entry_status": "RE",
-   "buy_in": "Entry Fee: $1,100 Buy-in = $965 (Tournament Prize Pool) + $90 (Tournament Fee) + $45 (Poker Staff Service Charge)",
+   "buy_in": "Entry Fee: $11,100 Buy-in = $10,965 (Tournament Prize Pool) + $90 (Tournament Fee) + $45 (Poker Staff Service Charge)",
    "flags": 2
   },
   "r136": {
@@ -1679,7 +1679,7 @@
    "buy_in_usd": null,
    "guarantee_usd": null,
    "entry_status": "CONT",
-   "buy_in": "Entry Fee: $400 Buy-in = $333 (Tournament Prize Pool) + $45 (Tournament Fee) + $22 (Poker Staff Service Charge)",
+   "buy_in": "not published for this event",
    "flags": 1
   },
   "r141": {
@@ -1799,7 +1799,7 @@
    "buy_in_usd": null,
    "guarantee_usd": null,
    "entry_status": "CONT",
-   "buy_in": "Entry Fee: $400 Buy-in = $333 (Tournament Prize Pool) + $45 (Tournament Fee) + $22 (Poker Staff Service Charge)",
+   "buy_in": "not published for this event",
    "flags": 1
   },
   "r151": {
@@ -2027,7 +2027,7 @@
    "buy_in_usd": null,
    "guarantee_usd": null,
    "entry_status": "CONT",
-   "buy_in": "Entry Fee: $10,400 Buy-in = $9,800 (Tournament Prize Pool) + $400 (Tournament Fee) + $200 (Poker Staff Service Charge)",
+   "buy_in": "not published for this event",
    "flags": 2
   },
   "r170": {
@@ -2159,7 +2159,7 @@
    "buy_in_usd": null,
    "guarantee_usd": null,
    "entry_status": "CONT",
-   "buy_in": "Entry Fee: $10,400 Buy-in = $9,800 (Tournament Prize Pool) + $400 (Tournament Fee) + $200 (Poker Staff Service Charge)",
+   "buy_in": "not published for this event",
    "flags": 1
   },
   "r181": {
@@ -2171,7 +2171,7 @@
    "buy_in_usd": null,
    "guarantee_usd": null,
    "entry_status": "CONT",
-   "buy_in": "Entry Fee: $10,400 Buy-in = $9,800 (Tournament Prize Pool) + $400 (Tournament Fee) + $200 (Poker Staff Service Charge)",
+   "buy_in": "not published for this event",
    "flags": 1
   },
   "r182": {
@@ -2303,7 +2303,7 @@
    "buy_in_usd": null,
    "guarantee_usd": null,
    "entry_status": "CONT",
-   "buy_in": "Entry Fee: $10,400 Buy-in = $9,800 (Tournament Prize Pool) + $400 (Tournament Fee) + $200 (Poker Staff Service Charge)",
+   "buy_in": "not published for this event",
    "flags": 1
   },
   "r193": {
@@ -2411,7 +2411,7 @@
    "buy_in_usd": null,
    "guarantee_usd": null,
    "entry_status": "CONT",
-   "buy_in": "Entry Fee: $10,400 Buy-in = $9,800 (Tournament Prize Pool) + $400 (Tournament Fee) + $200 (Poker Staff Service Charge)",
+   "buy_in": "not published for this event",
    "flags": 1
   },
   "r202": {
@@ -2423,7 +2423,7 @@
    "buy_in_usd": null,
    "guarantee_usd": null,
    "entry_status": "CONT",
-   "buy_in": "Entry Fee: $10,400 Buy-in = $9,800 (Tournament Prize Pool) + $400 (Tournament Fee) + $200 (Poker Staff Service Charge)",
+   "buy_in": "not published for this event",
    "flags": 1
   },
   "r203": {
@@ -2603,7 +2603,7 @@
    "buy_in_usd": null,
    "guarantee_usd": null,
    "entry_status": "CONT",
-   "buy_in": "Entry Fee: $10,400 Buy-in = $9,800 (Tournament Prize Pool) + $400 (Tournament Fee) + $200 (Poker Staff Service Charge)",
+   "buy_in": "not published for this event",
    "flags": 1
   },
   "r218": {
@@ -2675,7 +2675,7 @@
    "buy_in_usd": null,
    "guarantee_usd": null,
    "entry_status": "CONT",
-   "buy_in": "Entry Fee: $1,600 Buy-in = $930 (Tournament Prize Pool) + $500 (Mystery Bounty Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge)",
+   "buy_in": "not published for this event",
    "flags": 1
   },
   "r224": {
@@ -2700,7 +2700,7 @@
    "guarantee_usd": 50000,
    "entry_status": "RE",
    "buy_in": "Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge)",
-   "flags": 1
+   "flags": 2
   },
   "r226": {
    "date": "2026-12-22",

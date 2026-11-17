@@ -271,8 +271,14 @@ for index, row in enumerate(tournament_rows, 1):
 
     fee = row.get("house_fee_usd")
     fee_pct = row.get("house_fee_pct")
-    if is_number(fee) and fee > 0 and is_number(buy_in) and buy_in > 0:
-        expected_fee_pct = round(100 * fee / buy_in, 2)
+    # A fee percentage is only meaningful against the entry the structure sheet
+    # prices, which the row records as house_fee_basis_usd.
+    fee_basis = row.get("house_fee_basis_usd", buy_in)
+    if is_number(fee_basis) and is_number(buy_in) and abs(fee_basis - buy_in) > 0.001 \
+            and not str(row.get("flags")):
+        problems.append(f"{where} {identity}: a fee basis different from the buy-in must be explained in flags")
+    if is_number(fee) and fee > 0 and is_number(fee_basis) and fee_basis > 0:
+        expected_fee_pct = round(100 * fee / fee_basis, 2)
         if not is_number(fee_pct) or abs(fee_pct - expected_fee_pct) > 0.01:
             problems.append(f"{where} {identity}: house_fee_pct should be {expected_fee_pct}")
     elif fee is None and fee_pct is not None:
@@ -342,6 +348,20 @@ for index, row in enumerate(hotel_rows, 1):
             expected_total = round((rate + fee) * (1 + tax / 100), 2)
             if abs(total - expected_total) > 0.01:
                 problems.append(f"{where} {identity}: true_cost_per_night_usd should be {expected_total}")
+
+# The verification date the site prints in its footer must be the date the
+# dataset itself records, so the site cannot claim a fresher check than the data.
+try:
+    app_js = open(os.path.join(ROOT, "assets", "app.js"), encoding="utf-8").read()
+except OSError as exc:  # noqa: BLE001
+    problems.append(f"assets/app.js: {exc}")
+else:
+    match = re.search(r'var checkedOn = "(\d{4}-\d{2}-\d{2})";', app_js)
+    if not match:
+        problems.append("assets/app.js: the site footer must declare its checkedOn date")
+    elif (tournaments_data or {}).get("verified_on") != match.group(1):
+        problems.append("assets/app.js: footer checkedOn %s does not match data/tournaments.json "
+                        "verified_on %s" % (match.group(1), (tournaments_data or {}).get("verified_on")))
 
 # Dated rate log: every quote is dated, sourced, and internally consistent.
 rate_entries = (rates_data or {}).get("entries", [])

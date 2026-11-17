@@ -23,6 +23,8 @@ The field-by-field structure-sheet log is in `research/structure-sheets-verifica
    Day 2 / Day 3 / Day 4 / final-table continuation rows and the published chip counts and level counts.
 5. The Wynn Signature Series schedule was transcribed in full for Jan 11 – 24, 2027. The official structures PDF
    is a "COMING SOON" placeholder, so those rows stay unverified.
+   The WPT counts are the post-join figures: every WPT entry row is joined to the
+   structure sheet that prints its own date, start time and buy-in.
 6. Where two official sources disagree, both values are kept and the row carries the conflict as a flag.
 
 ## Counts
@@ -30,17 +32,17 @@ The field-by-field structure-sheet log is in `research/structure-sheets-verifica
 |---|---|---|---|---|---|---|
 | Venetian DeepStack IV | 54 | 38 | 0 | 0 | 2 | 94 |
 | Venetian DeepStack NYE | 26 | 22 | 1 | 0 | 0 | 49 |
-| Wynn WPT World Championship | 0 | 0 | 44 | 91 | 0 | 135 |
+| Wynn WPT World Championship | 0 | 6 | 107 | 0 | 23 | 136 |
 | Wynn Signature Series | 0 | 0 | 0 | 38 | 0 | 38 |
-| **Total** | **80** | **60** | **45** | **129** | **2** | **316** |
+| **Total** | **80** | **66** | **108** | **38** | **25** | **317** |
 
 Of the 80 verified single-entry rows, 60 award cash and 20 are milestone satellites that award a seat into a
 bigger event. Those 20 rows carry a `prize_text` value and a `satellite` label instead of a dollar guarantee.
 
 ## Still open (see QUESTIONS.md)
-- Entry-rule confirmation for the 129 unverified rows: 91 Wynn WPT rows (no structure sheet is published for the
-  milestone satellites and the remaining events) and 38 Wynn Signature Series rows (the official structures PDF is
-  still a placeholder).
+- Entry-rule confirmation for the 38 unverified rows: all Wynn Signature Series, whose official structures PDF is
+  still a "COMING SOON" placeholder. The WPT rows that were previously unverified are now joined to their own
+  printed sheets (see `research/verification-2026-11-17-structure-sheets.md`).
 - Whether a player who busts from one flight may enter a later flight. 60 rows depend on the answer.
 - Whether the WPT $1M ClubWPT addition is paid to Nevada players, and what a ladies player actually pays for the
   $11,100 ladies championship entry.

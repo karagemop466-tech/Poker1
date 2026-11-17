@@ -548,10 +548,14 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
     var el = document.getElementById("site-header");
     if (el) el.outerHTML = html;
     var f = document.getElementById("site-footer");
-    if (f) f.innerHTML = "Data verified against official sources on 2026-11-16. Blank cells are unverified, and no value is inferred. " +
+    if (f) f.innerHTML = "Data verified against official sources on " + checkedOn + ". Blank cells are unverified, and no value is inferred. " +
       '<a href="' + BASE + 'pages/flagged.html">Flagged for review</a> · ' +
       '<a href="' + BASE + 'pages/monitoring.html">Monitoring</a>.';
   }
+
+  // The verification date printed in the footer is read from the dataset itself,
+  // so the site can never claim a fresher check than data/tournaments.json says.
+  var checkedOn = "2026-11-17";
 
   /* ---------- page renderers ---------- */
   var PAGES = {};

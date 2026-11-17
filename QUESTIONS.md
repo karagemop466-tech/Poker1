@@ -34,7 +34,7 @@ For each question: what is known, what is missing, and how to close it. "Open" m
 | I13 | 2027 Las Vegas WSOP Circuit schedule | Only leads found. | 2027 dates and buy-ins. | Check wsop.com's official Circuit calendar. |
 | I14 | Which time is right for the December 21 $600 NLH Turbo: 8 p.m. or 6 p.m.? (F4) | Both official sources were read; they disagree. | A single confirmed time. | Ask the Wynn poker room (C1), or check the poker room board on the day. |
 | I15 | Which Wynn WPT day is the block printed under "Dec. 18 Wednesday"? (F3) | Stored as December 16, 2026 because that is the only reading that fits the World Championship day order. | Confirmation from Wynn. | Ask the Wynn poker room (C1). |
-| I16 | Which event owns each WPT "Day 2" row? (F5) | The structure sheets were used where they exist. | Confirmation for the rows with no structure sheet. | Ask the Wynn poker room (C1). |
+| I16 | Which event owns each WPT "Day 2" row? (F5) | The continuation rows are now kept as continuation rows (25 of them) and no longer inherit an entry rule from a guessed parent event. | Which parent event each Day 2 row belongs to is still not printed for every row. | Ask the Wynn poker room (C1). |
 | I17 | Do the milestone satellites end when the seats run out, or when the chip milestone is reached? | The structure sheets describe both endings: clause 09 (200,000-chip milestone) and clause 10 (play ends when the remaining seats equal the seats left to award). | Which ending a player should plan for. | Read the rules again with the poker room, or use the estimated end time as an upper bound. |
 
 ## C. Suggestions for discovering the missing information
