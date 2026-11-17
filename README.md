@@ -61,7 +61,8 @@ Live site: https://karagemop466-tech.github.io/Poker1/
 python3 scripts/build_data.py        # regenerate data/*.json and data/row_snapshot.json
 python3 scripts/build_site.py        # regenerate index.html and pages/*.html
 python3 scripts/check_links.py       # data schema, official hosts, rule objects, schedule, hotel rates, page links
-python3 scripts/monitor_sources.py   # check every official URL, report changed rows
+python3 scripts/monitor_sources.py   # check every official URL, report changed rows (reports only; the
+                                     # scheduled job adds --write-report to publish data/monitoring.json)
 node scripts/smoke_test.js           # render every page in a headless DOM (needs jsdom)
 ```
 
@@ -76,8 +77,10 @@ rule field keeps its excerpt, source and retrieval date, that the day schedule m
 dated rate log is internally consistent, and that the generated pages have no broken link or fragment.
 Automated checks do not replace reading the official source documents.
 
-The monitoring workflow (`.github/workflows/monitor.yml`) runs daily, checks every official URL,
-records the result in `data/monitoring.json`, compares every row with `data/row_snapshot.json` and
+The monitoring workflow (`.github/workflows/monitor.yml`) runs daily, checks every official URL the
+published rows cite - 117 of them, covering the tournament, hotel, rate, walking, daily, venue, Strip-survey
+and other-rooms rows - records the result in `data/monitoring.json`, compares every row with
+`data/row_snapshot.json` and
 posts the result as an issue so a reviewer can re-read any structure sheet that moved.
 
 Coordination and open items: `COORDINATION.md`.

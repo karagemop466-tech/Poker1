@@ -1,4 +1,5 @@
 {
+  "note": "Every source URL monitored by scripts/monitor_sources.py. All hosts are official operator domains (venetianlasvegas.com, wynnlasvegas.com, cdn.wynnresorts.com, mgmresorts.com property domains, caesars.com, boydgaming.com property domains, southpointcasino.com). Nothing from a third-party site is fetched. Widened 2026-11-17 with the four official booking and rooms pages that hotel rows cite but no job read (ARIA, Bellagio, the Caesars Palace room calendar, Wynn rooms and suites).",
   "sources": [
     {
       "id": "v_dse_nov_page",
@@ -689,6 +690,34 @@
       "kind": "hotel",
       "venue": "Other",
       "note": "A county government record, not an operator page. Used only for the Venetian/Palazzo and Wynn/Encore address and rate-class rows read on 2026-11-17."
+    },
+    {
+      "id": "h_aria_book",
+      "label": "ARIA - official booking entry point",
+      "url": "https://aria.mgmresorts.com/book-room/",
+      "kind": "rate",
+      "venue": "Other"
+    },
+    {
+      "id": "h_bellagio_book",
+      "label": "Bellagio - official booking entry point",
+      "url": "https://bellagio.mgmresorts.com/book-room/",
+      "kind": "rate",
+      "venue": "Other"
+    },
+    {
+      "id": "h_caesars_book",
+      "label": "Caesars Palace - official room calendar",
+      "url": "https://www.caesars.com/book/hotel-calendar?propCode=CLV",
+      "kind": "rate",
+      "venue": "Other"
+    },
+    {
+      "id": "w_rooms",
+      "label": "Wynn Las Vegas - rooms and suites page cited by the hotel row",
+      "url": "https://www.wynnlasvegas.com/rooms-and-suites",
+      "kind": "rate",
+      "venue": "Wynn"
     }
   ]
 }
