@@ -208,7 +208,12 @@ def main():
     assert_official(sources)
 
     prev_log = {s["id"]: s for s in load_json(CHANGE_LOG, {"sources": []}).get("sources", [])}
-    baseline = load_json(BASELINE, {})
+    # PR #66 (session 1ebc7e08): the file is {"note", "captured_utc", "hashes": {id: sha256}};
+    # reading the wrapper made every lookup miss, so changed_vs_baseline was false for every
+    # source forever (the "dead baseline lookup").
+    baseline_doc = load_json(BASELINE, {})
+    baseline = baseline_doc.get("hashes", baseline_doc) if isinstance(baseline_doc, dict) else {}
+    baseline_captured = baseline_doc.get("captured_utc") if isinstance(baseline_doc, dict) else None
     ids = set(args.id) if args.id else None
 
     out = []
@@ -297,8 +302,11 @@ def main():
             rec["changed"] = True
             rec["last_changed_utc"] = rec["last_checked_utc"]
             changed.append(sid)
-        if rec["sha256"] and baseline.get(sid) and rec["sha256"] != baseline[sid]:
-            rec["changed_vs_baseline"] = True
+        if rec["sha256"] and baseline.get(sid):
+            rec["baseline_sha256"] = baseline[sid]
+            rec["baseline_captured_utc"] = baseline_captured
+            if rec["sha256"] != baseline[sid]:
+                rec["changed_vs_baseline"] = True
 
         # Meaningful change: did any published number, date, time or rule word move?
         rec["facts_signature"] = facts_signature(text) if rec.get("extracted_chars") else []
