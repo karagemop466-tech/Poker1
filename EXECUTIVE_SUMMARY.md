@@ -5,7 +5,7 @@
 
 ## Bottom line
 
-- **316 official rows are now published across 70 dates**, from Nov 16, 2026 to Jan 24, 2027. Every row
+- **317 official rows are now published across 70 dates**, from Nov 16, 2026 to Jan 24, 2027. Every row
   carries the official URL it was read from and the excerpt that supports each rule field.
 - **80 rows are verified single entry.** 60 award cash, and 20 are milestone satellites that award a
   **seat** into a bigger event rather than cash. All 37 DeepStack Extravaganza IV structure sheets and
@@ -63,7 +63,7 @@ These are kept out of the ranking.
   not play a subsequent flight." Whether a player who busts may enter a later flight is not stated.
   Event 26 has the highest guarantee multiple of any event in the dataset (625x, 13.75% house fee) but
   sits here until this is confirmed with the poker room.
-- **Re-entry offered (45 rows).** 44 Wynn WPT rows whose official terms publish unlimited re-entry
+- **Re-entry offered (46 rows).** 45 Wynn WPT rows whose official terms publish unlimited re-entry
   per flight, or one entry plus one re-entry for the WPT Prime Championship, and one Venetian row
   (NYE Event 29) whose sheet applies a discount to "any subsequent re-entry".
 - **Rebuy and add-on (daily feed, not ranked).** The Wynn Friday $240 format allows unlimited $200
