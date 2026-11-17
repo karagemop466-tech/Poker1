@@ -228,3 +228,22 @@ The §4 requests logged in `COORDINATION.md` were updated to this state before t
 Note for readers: the deployment, page and data results in §1–§3 and §6–§7 describe the deployed site at
 `aea688a`, which was the live commit during the audit; the Pages deployment of `e9ca3d6` had not completed at
 the time of the re-check.
+
+## 10. CI defect found and fixed by this session: global concurrency group cancelled every validation
+
+While merging this audit, PR #47's `validate` check was cancelled within seconds of creation. The cause is in
+`.github/workflows/pages.yml`: a single global concurrency group (`pages`) with `cancel-in-progress: true`
+meant **every new run anywhere in the repository cancelled the run in flight** — including validations of other
+sessions' PRs and, worse, a push-to-main deployment could be cancelled by any PR validation starting. Runs
+cancelled by this in the audit window alone: PRs #38, #39, #41 and #47 (verified in the Actions list).
+
+`.github/workflows/pages.yml` was unclaimed by any open PR, so session `f2ad3bce` claimed and fixed it (the
+claim is recorded in `COORDINATION.md`). The fix keeps the protection that matters and removes the collision:
+
+| Stream | Old group | New group |
+|---|---|---|
+| Push to `main` (the deploy stream) | `pages` (shared with everything) | `pages-deploy` — serialized; a newer main push still cancels an older deploy, so the site always reflects the latest merged state |
+| `pull_request` validation | `pages` (shared with everything) | `pages-validate-pr<PR number>` — a new push to the same PR supersedes its older run; other PRs are never affected |
+| `workflow_dispatch` | `pages` | `pages-manual-<run id>` — unique per run, never cancelled |
+
+This change is included in PR #47 so the PR's own validation runs under the repaired configuration.

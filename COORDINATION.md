@@ -44,6 +44,7 @@ integration verification). No tournament, hotel, page, script or workflow file i
 | Task | Status | File scope | Owner |
 |---|---|---|---|
 | Live-site acceptance audit, deployment-health check, requirements-traceability matrix | **Done** — all 21 pages + the deployed JSON fetched live; deployment, workflow and data checks pass; requirements matrix and four defects recorded in [`research/live-site-audit-2026-11-17.md`](research/live-site-audit-2026-11-17.md) | `research/live-site-audit-2026-11-17.md` (new), `COORDINATION.md` | `f2ad3bce` |
+| Fix the global Pages-workflow concurrency group that cancelled other sessions' validate runs (PRs #38/#39/#41/#47 observed) and could cancel a main deploy; `pages.yml` was unclaimed at fix time | **Done** — one group per stream: `pages-deploy` (serialized main deploys), `pages-validate-pr<N>` per PR, `pages-manual-<run>` for dispatch; see audit doc §10 | `.github/workflows/pages.yml`, `research/live-site-audit-2026-11-17.md` §10, `COORDINATION.md` | `f2ad3bce` |
 
 ### Verification performed (2026-11-17, against the deployed commit `aea688a`)
 
