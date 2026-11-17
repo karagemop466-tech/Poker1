@@ -117,9 +117,9 @@ Third-party sites were used to locate events and hotels only. They are not cited
   `data-page` attribute of every generated page.
 - `scripts/monitor_sources.py` checks every official URL and reports the rows that changed.
 - `scripts/smoke_test.js` renders every generated page in a headless DOM and fails on any page error.
-- Current counts: **316 rows**. Single entry 80 (60 cash, 20 milestone satellites). Separate section
-  105 (60 possible multi-entry, 45 re-entry). Unverified 129. Continuation rows 43.
-- Row IDs are unique and assigned after the chronological sort (`r001` to `r316`).
+- Current counts (2026-11-17): **317 rows**. Single entry 80 (60 cash, 20 milestone satellites). Separate section
+  106 (60 possible multi-entry, 46 re-entry). Unverified 129. Continuation rows 2.
+- Row IDs are unique and assigned after the chronological sort (`r001` to `r317`). Restoring a row that sorts into the middle of the WPT block shifts every later ID by one; no row content changed (see `research/verification-2026-11-17.md`).
 
 ## 8. Cross-check from the parallel session `40ca34e5`
 
@@ -156,7 +156,7 @@ row.
 
 | Source | Rows checked | Result |
 |---|---|---|
-| [Venetian DeepStack Extravaganza IV page](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html) | 94 | All match. Two name spellings kept as printed ("No LImit"), one word-order difference on Dec 15 Event 52 (F22). |
+| [Venetian DeepStack Extravaganza IV page](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html) | 94 | All match. Two name spellings kept as printed ("No LImit"), one word-order difference on Dec 15 Event 52 (F42). |
 | [Venetian NYE page](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html) | 49 | All match. Both printed-year/typo defects still present (F1, F2). |
 | [Wynn Signature Series schedule PDF](https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf) | 38 | All match. |
 | [WPT World Championship schedule PDF](https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf) | 135 | All match. F3/F4/F5 conflicts still printed by the source. |
@@ -187,7 +187,7 @@ Being explicit, because these are the kind of errors that would otherwise ship a
 1. **A Wynn rate quote was invented by arithmetic, then removed.** A five-night Wynn figure ($190/night,
    $188.83 tax, $1,600.08 total) was written into the rate log. Re-fetching the engine showed it returns no
    nightly grid and no tax line, so the numbers were not reproducible from the source. The entry was
-   deleted from `data/rates.json` and from every document, and F25b records the withdrawal.
+   deleted from `data/rates.json` and from every document, and F45 records the withdrawal.
 2. **The check that caught it.** Running the four surviving Venetian quotes through 13.38% of room plus
    resort fee reproduced the engine's own total **to the cent** every time (0.00 difference on all four).
    The drafted Wynn figures did not, which is exactly why the arithmetic check is now written into the
@@ -201,14 +201,14 @@ Being explicit, because these are the kind of errors that would otherwise ship a
    query sent every origin to the Wynn *address* point; the official terms place the Wynn poker room inside
    **Encore**. Re-running with the Palazzo and Encore coordinates as destinations changed Bellagio→Wynn from
    13 to **31 minutes** (into the over-limit set) and Caesars→Venetian from 33 to **23 minutes** (out of it).
-   Four published figures were affected; all were corrected before publication and F31 records it.
+   Four published figures were affected; all were corrected before publication and F52 records it.
 6. **A stale claim that the Wynn poker room is "in Encore" was checked rather than assumed** — official
    WPT clause 3 states it verbatim, so the Encore coordinate is a defensible walking destination.
 
 ### 9.4 Verification performed
 
 ```
-python3 scripts/build_data.py     # 316 rows: 80 SE (60 cash + 20 satellites), 60 MULTI, 45 RE, 129 UNV, 2 CONT; 70 days; 55 flagged; 7 hotels; 4 dated rates; 12 walking records
+python3 scripts/build_data.py     # 317 rows: 80 SE (60 cash + 20 satellites), 60 MULTI, 46 RE, 129 UNV, 2 CONT; 70 days; 56 flagged; 7 hotels; 5 dated rates; 12 walking records
 python3 scripts/build_site.py     # 21 pages, zero diff against the committed pages
 python3 scripts/check_links.py    # OK: schemas, local links, official hosts, rule objects, schedule contract, quote-backed costs, walking limit, provenance
 node scripts/smoke_test.js        # 21/21 pages render in a headless DOM with no page error

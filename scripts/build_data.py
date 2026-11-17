@@ -23,6 +23,8 @@ WYN = "Wynn Las Vegas"
 
 # ---------- official source URLs (all read on 2026-11-16) ----------
 SRC = {
+    "venetian_dse_series": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html",
+    "venetian_quote_1118": "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date=2026-11-18&children[]=0&departure_date=2026-11-20&view=calendar",
     "dse_nov_page": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
     "dse_dec_page": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
     "dse_nov_sched": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
@@ -45,9 +47,11 @@ SRC = {
     "wynn_info": "https://www.wynnlasvegas.com/ai-information",
     "wynn_parking": "https://www.wynnlasvegas.com/about-us/parking",
     "bellagio": "https://bellagio.mgmresorts.com/en.html",
+    "bellagio_poker": "https://bellagio.mgmresorts.com/en/casino/poker.html",
     "aria": "https://aria.mgmresorts.com/en.html",
     "aria_poker": "https://aria.mgmresorts.com/en/casino/poker.html",
     "caesars": "https://www.caesars.com/caesars-palace",
+    "caesars_poker_article": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
 }
 
 # ---------- rule excerpt strings reused by the Venetian structure sheets ----------
@@ -466,6 +470,9 @@ WPT = [
  ("2026-12-13","11:00","Ladies NIH Championship (2 Day)",1100,250000,None,40000,"40","entry",None,
   ["Schedule footnote: \"The Tournament Entry for the Ladies Championship is $11,100. Ladies will receive a discounted entry.\"",
    "The published $1,100 buy-in therefore does not apply to the ladies field."]),
+ ("2026-12-13","11:00","TORSE (2 Day)",1100,None,None,40000,"40","entry","TORSE1100",
+  ["Restored on 2026-11-17: the official WPT schedule PDF prints this row (Dec. 13 Sunday, 11 a.m., $1,100, 40,000 chips, 40-minute levels) and the earlier build omitted it.",
+   "Re-entry: the official structures PDF block for the $1,100 TORSE (2 Day) prints \"Unlimited re-entry will be available until the start of level 10\"."]),
  ("2026-12-13","11:00","No Limit Hold'em Day 1A",800,500000,None,40000,"40","entry",None,[]),
  ("2026-12-13","12:00","PLO Day 1A",1600,1000000,None,40000,"40","entry",None,[]),
  ("2026-12-13","12:00","Milestone Satellite to $10,400 World Championship 1B",1100,None,"25 Seats",20000,"25","entry","SAT_WPT",[]),
@@ -603,6 +610,13 @@ WPT_STRUCTS = {
    length="30 minutes per level until a winner is declared.",
    breaks="15-minute break every 4 levels of play.",
    payout="Single day event; the structure sheet publishes no Day 1 payout structure."),
+ "TORSE1100": dict(label="$1,100 TORSE (2 Day)",
+   fee="Entry Fee: $1,100 Buy-in = $965 (Tournament Prize Pool) + $90 (Tournament Fee) + $45 (Poker Staff Service Charge)",
+   status="RE", ex="Registration: \"Unlimited re-entry will be available until the start of level 10 (approximately 6:30 p.m.).\"",
+   stack="Players will start with 40,000 in tournament chips.",
+   length="Day 1: Fifteen (15) levels of 40 minutes each. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter.",
+   breaks="Break schedule not transcribed for this block; see the official WPT structures PDF.",
+   payout="Payout structure not transcribed for this block; see the official WPT structures PDF."),
  "PLO400": dict(label="$400 Pot Limit Omaha",
    fee="Entry Fee: $400 Buy-in = $337 (Tournament Prize Pool) + $45 (Tournament Fee) + $18 (Poker Staff Service Charge)",
    status="RE",
@@ -1151,7 +1165,9 @@ HOTELS = [
   "room_rate_note": "Official poker suite page: suite rates \"will start as low as $119 and $209 and can be higher\", "
                      "conditional on qualifying poker play (6 hours of live cash play or a $300+ tournament buy-in per "
                      "night) and on availability; book by calling 866.255.8936 with code EPOKR25. The page does not say "
-                     "which rate applies to which tower or date.",
+                     "which rate applies to which tower or date. Logged official booking-engine quote on 2026-11-17 for Nov 18-20 (2 adults): "
+                     "room charges $204.25 and $524.25 a night, $55.00 resort fee each night, taxes $112.19, total $950.69 "
+                     "(see data/rates.json). It is not copied into room_rate_usd because the rate changes by night.",
   "parking_note": "Official hotel terms: \"The daily fee for registered hotel guests is $20/day, seven days a week. "
                   "For non-hotel guests, the fee is $20, Monday - Thursday, and $25/day Friday - Sunday. Valet parking is "
                   "$40/day.\" Official poker page: players who play three hours or more get complimentary self-parking.",
@@ -1386,6 +1402,18 @@ RATES = [
                    "free-cancellation deadline is printed for a general rate.",
             extra={"trip_window": "Venetian NYE finale (Jan 10) and Wynn Signature Series opening (Jan 11)",
                    "engine_quote": "Average Rate $282.25; Taxes $188.83; Total $1,600.08 for 5 nights"}),
+
+ # Same stay read by the parallel session on 2026-11-17 (Nov 18-20, Venetian tower); kept because it is a distinct
+ # dated quote, not a duplicate.
+ rate_entry("The Venetian Resort", "Venetian Newly Remodeled Luxury Two Queen (best available rate & suite)",
+            "Book Direct: Up to 25% Off (offer shown on the official booking page)",
+            "2026-11-18", "2026-11-20", [204.25, 524.25], 55.00, 112.19, 950.69,
+            SRC["venetian_quote_1118"], hotel_id="venetian", retrieved="2026-11-17", logged="2026-11-17",
+            cancel="Official hotel terms: prepaid offers are non-cancellable and non-refundable; no fixed "
+                   "free-cancellation deadline is printed for a general rate.",
+            extra={"engine_quote": "Average Rate $419.25; Taxes $112.19; Total $950.69 for 2 nights",
+                   "note": "Read by the parallel session on 2026-11-17. Arithmetic checked in this build: "
+                           "204.25 + 524.25 + 2 x 55 = 838.50, and 13.38% of 838.50 = 112.19."}),
 ]
 
 # ---------------- walking routes (hotel <-> venue) ----------------
@@ -1513,18 +1541,33 @@ VENUES = [
   "official_links": [SRC["wynn_poker"], SRC["wpt_sched"], SRC["wpt_struct"], SRC["wss_sched"], SRC["wynn_daily_poster"]]},
  {"id": "aria", "name": "ARIA Resort & Casino", "poker_room": "ARIA poker room, east side of the casino floor next to main valet pick-up",
   "address": None, "address_status": "unverified",
-  "note": "Official ARIA poker page: 24 tables and exclusive room rates for qualifying poker players (rate by phone or "
-          "e-mail). No tournament schedule with entry rules was published on the official page read in this session.",
+  "note": "Official ARIA poker page (read 2026-11-17): 24 tables and exclusive room rates for qualifying poker players, "
+          "by phone 702.590.7232 or e-mail PokerRoomRates@aria.com. The page says the Daily Tournaments run \"as scheduled\" "
+          "but publishes no schedule, buy-in or structure, and tells guests to call the room or follow @ARIAPoker. "
+          "No ARIA tournament row is listed because no official schedule or structure sheet was read.",
   "hotel_ids": ["aria"], "official_links": [SRC["aria_poker"], SRC["aria"]]},
- {"id": "bellagio", "name": "Bellagio", "poker_room": None, "address": None, "address_status": "unverified",
-  "note": "No official tournament schedule or structure sheet was read for this property in this session, so no "
-          "tournament rows are listed for it.",
-  "hotel_ids": ["bellagio"], "official_links": [SRC["bellagio"]]},
- {"id": "caesars", "name": "Caesars Palace", "poker_room": None, "address": "3570 Las Vegas Blvd South, Las Vegas, NV 89109",
+ {"id": "bellagio", "name": "Bellagio", "poker_room": "Bellagio poker room, northside of the casino next to the Sportsbook (official poker page)",
+  "address": None, "address_status": "unverified",
+  "note": "Official Bellagio poker page (read 2026-11-17) links three weekly tournament flyers. None prints a calendar date, so "
+          "no dated row is listed. Friday $600 NLH, 11:00 a.m.: $510 prize pool, $50 house fee, $40 optional staff gratuity; "
+          "rule 3 says players \"may buy-in and re-enter through the end of level 8\", so it is a re-entry event and not single "
+          "entry. Saturday, 11:00 a.m.: the flyer heading says a $1,100 buy-in, the page label and file name say $1,000, and "
+          "rule 7 refers to a \"$600 Buy-in\"; flight rules say each flight plays until the money. Its entry rule is not "
+          "confirmed. Sunday $400 H.O.R.S.E., 11:00 a.m.: $340 prize pool, $35 house fee, $25 optional gratuity; rule 5 says "
+          "\"buy-in and re-enter through the end of level 8\", so it is not single entry. The page notice \"Tournament play will "
+          "resume on Saturday, July 26\" does not match the calendar: July 26, 2026 is a Sunday. The flyers are hosted on a "
+          "CMS domain that is not on the approved list, so they are cited through the official page.",
+  "hotel_ids": ["bellagio"], "official_links": [SRC["bellagio_poker"], SRC["bellagio"]]},
+ {"id": "caesars", "name": "Caesars Palace", "poker_room": "The Poker Room at Caesars Palace, Appian Way promenade (16 tables per official article)",
+  "address": "3570 Las Vegas Blvd South, Las Vegas, NV 89109",
   "address_status": "verified",
-  "note": "No official tournament schedule or structure sheet was read for this property in this session, so no "
-          "tournament rows are listed for it.",
-  "hotel_ids": ["caesars"], "official_links": [SRC["caesars"]]},
+  "note": "Official Caesars article dated 2026-07-17 (read 2026-11-17) says the room is open 24/7 and runs four no-limit "
+          "hold'em tournaments a day at 10 a.m., 2 p.m., 6 p.m. and 9 p.m. with a $100 buy-in, 20,000 starting chips and a "
+          "$1,000 guarantee, plus a $50 add-on at the first break for 15,000 chips. Because of that add-on the format is "
+          "not single entry and belongs in the separate section; no rank is given. The article is editorial, not a structure "
+          "sheet, so no row is created. The same article lists six daily games at Horseshoe Las Vegas (9 a.m., 11 a.m., 2 p.m., "
+          "5 p.m., 8 p.m., 11 p.m.), which are not in this dataset.",
+  "hotel_ids": ["caesars"], "official_links": [SRC["caesars"], SRC["caesars_poker_article"]]},
 ]
 
 

@@ -12,7 +12,7 @@ re-checked on 2026-11-17.
 
 ## Bottom line
 
-- **316 official rows are now published across 70 dates**, from Nov 16, 2026 to Jan 24, 2027. Every row
+- **317 official rows are now published across 70 dates**, from Nov 16, 2026 to Jan 24, 2027. Every row
   carries the official URL it was read from and the excerpt that supports each rule field.
 - **80 rows are verified single entry.** 60 award cash, and 20 are milestone satellites that award a
   **seat** into a bigger event rather than cash. All 37 DeepStack Extravaganza IV structure sheets and
@@ -25,12 +25,12 @@ re-checked on 2026-11-17.
   milestone satellites and the events the WPT schedule prints without a structure sheet) and all 38
   Wynn Signature Series rows, because Wynn's own structures PDF is still a "COMING SOON" placeholder.
 - **Hotels are much stronger than yesterday, with one hard limit.** $55 resort fee plus 13.38% room tax
-  is verified for The Venetian and The Palazzo, and the $55 fee alone for Wynn and Encore. **Four dated
-  quotes are on file**, all from the Venetian's official booking engine: $804.15, $338.48, $911.86 and
-  $320.02 true cost per night. Every quote stores the per-night rates, resort fee, tax total, checkout
+  is verified for The Venetian and The Palazzo, and the $55 fee alone for Wynn and Encore. **Five dated
+  quotes are on file**, all from the Venetian's official booking engine: $804.15 (Nov 26–29), $475.35
+  (Nov 18–20), $338.48 (Dec 13–20), $911.86 (Jan 1–6) and $320.02 (Jan 10–15) true cost per night. Every quote stores the per-night rates, resort fee, tax total, checkout
   total, cancellation terms and the date it was read, so a later quote is compared against these instead
   of replacing them.
-- **Every one of those four quotes reproduces exactly** when 13.38% is applied to room plus resort fee —
+- **Every one of those five quotes reproduces exactly** when 13.38% is applied to room plus resort fee —
   the arithmetic and the stored data agree to the cent, which is the check that keeps the log honest.
 - **Wynn cannot be priced the same way yet.** Its booking engine renders the nightly grid and the tax
   line client-side and returns only fee and policy text to a text fetch, so no Wynn quote could be
@@ -89,11 +89,17 @@ These are kept out of the ranking.
   not play a subsequent flight." Whether a player who busts may enter a later flight is not stated.
   Event 26 has the highest guarantee multiple of any event in the dataset (625x, 13.75% house fee) but
   sits here until this is confirmed with the poker room.
-- **Re-entry offered (45 rows).** 44 Wynn WPT rows whose official terms publish unlimited re-entry
+- **Re-entry offered (46 rows).** 45 Wynn WPT rows whose official terms publish unlimited re-entry
   per flight, or one entry plus one re-entry for the WPT Prime Championship, and one Venetian row
   (NYE Event 29) whose sheet applies a discount to "any subsequent re-entry".
 - **Rebuy and add-on (daily feed, not ranked).** The Wynn Friday $240 format allows unlimited $200
   rebuys and a $100 add-on. Rebuy events are excluded from the ranking.
+
+### Other Strip poker rooms checked on 2026-11-17 (no rows added)
+
+- **Bellagio** publishes three weekly flyers on its official poker page: Friday $600 NLH and Sunday $400 H.O.R.S.E. at 11 a.m., and a Saturday event at 11 a.m. Both the Friday and the Sunday flyers allow buy-in and re-entry through level 8, so **neither is single entry**. The Saturday flyer contradicts itself on its buy-in ($1,100 heading, $1,000 label), so its entry rule is not confirmed. No flyer prints a calendar date, so no dated row is created.
+- **Caesars Palace**: an official article (dated 2026-07-17) describes four daily no-limit hold'em events at 10 a.m., 2 p.m., 6 p.m. and 9 p.m. with a **$50 add-on**. That makes them **not single entry**, so they belong in the separate section. The article is not a structure sheet, so no rows are created.
+- **ARIA** says its Daily Tournaments run but publishes no schedule or structure. The official poker page gives a phone number (702.590.7232) for the current schedule.
 
 ## 3. Milestone satellites (now published)
 
@@ -131,18 +137,19 @@ resort fee and the tax; nothing is reconstructed from an assumed rate.
 | [Caesars Palace](https://www.caesars.com/caesars-palace) | blank | blank | blank | **23 min** | **32 min — over the limit** |
 
 **Like-for-like inside the one resort that publishes its breakdown.** Same property group, same engine,
-four different stays, so the comparison is between dates rather than between companies:
+five different stays, so the comparison is between dates rather than between companies:
 
 | Stay | Room | Nights | Nightly average | Resort fee | Taxes | Checkout total | True cost / night |
 |---|---|---|---|---|---|---|---|
+| [Nov 18–20, 2026](https://www.venetianlasvegas.com/book) | Venetian Newly Remodeled Luxury Two Queen | 2 | $419.25 | $55 × 2 | $112.19 | $950.69 | **$475.35** |
 | [Nov 26–29, 2026](https://www.venetianlasvegas.com/book) | Palazzo Luxury King | 3 | $654.25 | $55 × 3 | $284.69 | $2,412.44 | $804.15 |
 | [Dec 13–20, 2026](https://www.venetianlasvegas.com/book) | Venetian Newly Remodeled Luxury King | 7 | $243.54 | $55 × 7 | $279.63 | $2,369.38 | **$338.48** |
 | [Jan 1–6, 2027](https://www.venetianlasvegas.com/book) | Venetian Newly Remodeled Luxury King | 5 | $749.25 | $55 × 5 | $538.05 | $4,559.30 | **$911.86** |
 | [Jan 10–15, 2027](https://www.venetianlasvegas.com/book) | Palazzo Luxury Two Queen | 5 | $227.25 | $55 × 5 | $188.83 | $1,600.08 | **$320.02** |
 
 The lesson is in the spread, not the average: the same tower costs **$338.48 a night for Dec 13–20 and
-$911.86 a night for Jan 1–6**, because Jan 1 is quoted at $1,949.25 for the night. Dates, not the hotel
-name, dominate the hotel budget.
+$911.86 a night for Jan 1–6**, because Jan 1 is quoted at $1,949.25 for the night. Two nights over a
+weekend in November cost $475.35 all in. Dates, not the hotel name, dominate the hotel budget.
 
 **Cancellation.** Wynn publishes a 48-hour deadline and a one-night deposit
 ([terms](https://www.wynnlasvegas.com/terms-and-conditions/848671)). The Venetian publishes that prepaid

@@ -43,7 +43,7 @@
    "poker_room": "ARIA poker room, east side of the casino floor next to main valet pick-up",
    "address": null,
    "address_status": "unverified",
-   "note": "Official ARIA poker page: 24 tables and exclusive room rates for qualifying poker players (rate by phone or e-mail). No tournament schedule with entry rules was published on the official page read in this session.",
+   "note": "Official ARIA poker page (read 2026-11-17): 24 tables and exclusive room rates for qualifying poker players, by phone 702.590.7232 or e-mail PokerRoomRates@aria.com. The page says the Daily Tournaments run \"as scheduled\" but publishes no schedule, buy-in or structure, and tells guests to call the room or follow @ARIAPoker. No ARIA tournament row is listed because no official schedule or structure sheet was read.",
    "hotel_ids": [
     "aria"
    ],
@@ -55,29 +55,31 @@
   {
    "id": "bellagio",
    "name": "Bellagio",
-   "poker_room": null,
+   "poker_room": "Bellagio poker room, northside of the casino next to the Sportsbook (official poker page)",
    "address": null,
    "address_status": "unverified",
-   "note": "No official tournament schedule or structure sheet was read for this property in this session, so no tournament rows are listed for it.",
+   "note": "Official Bellagio poker page (read 2026-11-17) links three weekly tournament flyers. None prints a calendar date, so no dated row is listed. Friday $600 NLH, 11:00 a.m.: $510 prize pool, $50 house fee, $40 optional staff gratuity; rule 3 says players \"may buy-in and re-enter through the end of level 8\", so it is a re-entry event and not single entry. Saturday, 11:00 a.m.: the flyer heading says a $1,100 buy-in, the page label and file name say $1,000, and rule 7 refers to a \"$600 Buy-in\"; flight rules say each flight plays until the money. Its entry rule is not confirmed. Sunday $400 H.O.R.S.E., 11:00 a.m.: $340 prize pool, $35 house fee, $25 optional gratuity; rule 5 says \"buy-in and re-enter through the end of level 8\", so it is not single entry. The page notice \"Tournament play will resume on Saturday, July 26\" does not match the calendar: July 26, 2026 is a Sunday. The flyers are hosted on a CMS domain that is not on the approved list, so they are cited through the official page.",
    "hotel_ids": [
     "bellagio"
    ],
    "official_links": [
+    "https://bellagio.mgmresorts.com/en/casino/poker.html",
     "https://bellagio.mgmresorts.com/en.html"
    ]
   },
   {
    "id": "caesars",
    "name": "Caesars Palace",
-   "poker_room": null,
+   "poker_room": "The Poker Room at Caesars Palace, Appian Way promenade (16 tables per official article)",
    "address": "3570 Las Vegas Blvd South, Las Vegas, NV 89109",
    "address_status": "verified",
-   "note": "No official tournament schedule or structure sheet was read for this property in this session, so no tournament rows are listed for it.",
+   "note": "Official Caesars article dated 2026-07-17 (read 2026-11-17) says the room is open 24/7 and runs four no-limit hold'em tournaments a day at 10 a.m., 2 p.m., 6 p.m. and 9 p.m. with a $100 buy-in, 20,000 starting chips and a $1,000 guarantee, plus a $50 add-on at the first break for 15,000 chips. Because of that add-on the format is not single entry and belongs in the separate section; no rank is given. The article is editorial, not a structure sheet, so no row is created. The same article lists six daily games at Horseshoe Las Vegas (9 a.m., 11 a.m., 2 p.m., 5 p.m., 8 p.m., 11 p.m.), which are not in this dataset.",
    "hotel_ids": [
     "caesars"
    ],
    "official_links": [
-    "https://www.caesars.com/caesars-palace"
+    "https://www.caesars.com/caesars-palace",
+    "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
    ]
   }
  ]

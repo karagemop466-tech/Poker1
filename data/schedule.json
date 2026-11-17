@@ -2318,6 +2318,21 @@
     {
      "id": "r135",
      "start": "11:00",
+     "name": "TORSE (2 Day)",
+     "series": "WPT World Championship (Wynn)",
+     "venue": "Wynn Las Vegas",
+     "buy_in_usd": 1100,
+     "guarantee_usd": null,
+     "prize_text": null,
+     "entry_status": "RE",
+     "labels": [],
+     "late_reg_close": null,
+     "est_end": null,
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+    },
+    {
+     "id": "r136",
+     "start": "11:00",
      "name": "WPT World Championship Day 1A $1,000,000 Added",
      "series": "WPT World Championship (Wynn)",
      "venue": "Wynn Las Vegas",
@@ -2333,7 +2348,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
     },
     {
-     "id": "r136",
+     "id": "r137",
      "start": "12:00",
      "name": "Milestone Satellite to $10,400 World Championship 1B",
      "series": "WPT World Championship (Wynn)",
@@ -2350,7 +2365,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
-     "id": "r137",
+     "id": "r138",
      "start": "12:00",
      "name": "PLO Day 1A",
      "series": "WPT World Championship (Wynn)",
@@ -2367,7 +2382,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
     },
     {
-     "id": "r140",
+     "id": "r141",
      "start": "17:10",
      "name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)",
      "series": "Venetian DeepStack Extravaganza IV",
@@ -2384,7 +2399,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
     },
     {
-     "id": "r141",
+     "id": "r142",
      "start": "18:00",
      "name": "Milestone Satellite to $10,400 World Championship 1B/C",
      "series": "WPT World Championship (Wynn)",
@@ -2401,7 +2416,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     }
    ],
-   "primary_id": "r140",
+   "primary_id": "r141",
    "fallback_id": null,
    "fallback_note": "No second single-entry event starts after the primary event is estimated to finish.",
    "conflicts": []
@@ -2410,7 +2425,7 @@
    "date": "2026-12-14",
    "events": [
     {
-     "id": "r142",
+     "id": "r143",
      "start": "10:10",
      "name": "$1,100 No Limit Hold'em Seniors 1B $300K GTD - must be 50+ years of age",
      "series": "Venetian DeepStack Extravaganza IV",
@@ -2428,7 +2443,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_20.pdf"
     },
     {
-     "id": "r144",
+     "id": "r145",
      "start": "11:00",
      "name": "No Limit Hold'em Day 1B",
      "series": "WPT World Championship (Wynn)",
@@ -2445,7 +2460,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
     },
     {
-     "id": "r145",
+     "id": "r146",
      "start": "11:00",
      "name": "WPT World Championship Day 1B $1,000,000 Added",
      "series": "WPT World Championship (Wynn)",
@@ -2462,7 +2477,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
     },
     {
-     "id": "r146",
+     "id": "r147",
      "start": "12:00",
      "name": "Milestone Satellite to $10,400 World Championship 1C",
      "series": "WPT World Championship (Wynn)",
@@ -2479,7 +2494,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
-     "id": "r147",
+     "id": "r148",
      "start": "12:00",
      "name": "Mixed Triple Draw (A-5, 2-7, Badugi) (2 Day)",
      "series": "WPT World Championship (Wynn)",
@@ -2494,7 +2509,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
     },
     {
-     "id": "r148",
+     "id": "r149",
      "start": "12:00",
      "name": "PLO Day 1B",
      "series": "WPT World Championship (Wynn)",
@@ -2511,7 +2526,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
     },
     {
-     "id": "r150",
+     "id": "r151",
      "start": "17:10",
      "name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)",
      "series": "Venetian DeepStack Extravaganza IV",
@@ -2528,7 +2543,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
     },
     {
-     "id": "r151",
+     "id": "r152",
      "start": "18:00",
      "name": "Milestone Satellite to $10,400 World Championship 1C",
      "series": "WPT World Championship (Wynn)",
@@ -2545,7 +2560,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
-     "id": "r152",
+     "id": "r153",
      "start": "19:00",
      "name": "PLO Turbo",
      "series": "WPT World Championship (Wynn)",
@@ -2562,7 +2577,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
     },
     {
-     "id": "r153",
+     "id": "r154",
      "start": "21:00",
      "name": "NIH Turbo",
      "series": "WPT World Championship (Wynn)",
@@ -2579,7 +2594,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
     }
    ],
-   "primary_id": "r150",
+   "primary_id": "r151",
    "fallback_id": null,
    "fallback_note": "No second single-entry event starts after the primary event is estimated to finish.",
    "conflicts": []
@@ -2588,7 +2603,7 @@
    "date": "2026-12-15",
    "events": [
     {
-     "id": "r155",
+     "id": "r156",
      "start": "11:00",
      "name": "Milestone Satellite to $10,400 World Championship 1C/Day 2",
      "series": "WPT World Championship (Wynn)",
@@ -2606,7 +2621,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
-     "id": "r157",
+     "id": "r158",
      "start": "11:00",
      "name": "WPT World Championship Day 1C $1,000,000 Added",
      "series": "WPT World Championship (Wynn)",
@@ -2623,7 +2638,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
     },
     {
-     "id": "r158",
+     "id": "r159",
      "start": "11:10",
      "name": "$1,100 No Limit Hold'em Progressive Knock-Out Bounty $75K GTD (1Day)",
      "series": "Venetian DeepStack Extravaganza IV",
@@ -2641,7 +2656,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_34.pdf"
     },
     {
-     "id": "r159",
+     "id": "r160",
      "start": "12:00",
      "name": "Big O",
      "series": "WPT World Championship (Wynn)",
@@ -2656,7 +2671,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
     },
     {
-     "id": "r161",
+     "id": "r162",
      "start": "13:00",
      "name": "PLO Progressive Bounty (PKO)",
      "series": "WPT World Championship (Wynn)",
@@ -2673,7 +2688,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
     },
     {
-     "id": "r162",
+     "id": "r163",
      "start": "17:10",
      "name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)",
      "series": "Venetian DeepStack Extravaganza IV",
@@ -2690,7 +2705,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
     },
     {
-     "id": "r163",
+     "id": "r164",
      "start": "18:00",
      "name": "Milestone Satellite to $10,400 World Championship Day 2",
      "series": "WPT World Championship (Wynn)",
@@ -2708,7 +2723,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
-     "id": "r164",
+     "id": "r165",
      "start": "19:00",
      "name": "NIH $500 Bounty Turbo",
      "series": "WPT World Championship (Wynn)",
@@ -2726,8 +2741,8 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
     }
    ],
-   "primary_id": "r158",
-   "fallback_id": "r162",
+   "primary_id": "r159",
+   "fallback_id": "r163",
    "fallback_note": "",
    "conflicts": []
   },
@@ -2735,7 +2750,7 @@
    "date": "2026-12-16",
    "events": [
     {
-     "id": "r165",
+     "id": "r166",
      "start": "11:00",
      "name": "No Limit Hold'em Day 1A",
      "series": "WPT World Championship (Wynn)",
@@ -2752,7 +2767,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
     },
     {
-     "id": "r166",
+     "id": "r167",
      "start": "11:10",
      "name": "$600 No Limit Hold'em Bounty $50K GTD (1Day) - $200 bounties to start & $500 bounties in the money",
      "series": "Venetian DeepStack Extravaganza IV",
@@ -2769,7 +2784,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf"
     },
     {
-     "id": "r167",
+     "id": "r168",
      "start": "12:00",
      "name": "PLO Double Board Bomb Pot",
      "series": "WPT World Championship (Wynn)",
@@ -2784,7 +2799,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
     },
     {
-     "id": "r169",
+     "id": "r170",
      "start": "13:00",
      "name": "HORSE",
      "series": "WPT World Championship (Wynn)",
@@ -2799,7 +2814,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
     },
     {
-     "id": "r170",
+     "id": "r171",
      "start": "13:00",
      "name": "PLO 6-Max",
      "series": "WPT World Championship (Wynn)",
@@ -2814,7 +2829,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
     },
     {
-     "id": "r171",
+     "id": "r172",
      "start": "17:10",
      "name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)",
      "series": "Venetian DeepStack Extravaganza IV",
@@ -2831,7 +2846,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf"
     },
     {
-     "id": "r172",
+     "id": "r173",
      "start": "18:00",
      "name": "Milestone Satellite to $25K NIH High Roller",
      "series": "WPT World Championship (Wynn)",
@@ -2848,7 +2863,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
-     "id": "r173",
+     "id": "r174",
      "start": "18:00",
      "name": "Milestone Satellite to $3,000 NLH",
      "series": "WPT World Championship (Wynn)",
@@ -2865,7 +2880,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
-     "id": "r174",
+     "id": "r175",
      "start": "19:00",
      "name": "No Limit Hold'em Day 1B",
      "series": "WPT World Championship (Wynn)",
@@ -2882,8 +2897,8 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
     }
    ],
-   "primary_id": "r166",
-   "fallback_id": "r171",
+   "primary_id": "r167",
+   "fallback_id": "r172",
    "fallback_note": "",
    "conflicts": []
   },
@@ -2891,7 +2906,7 @@
    "date": "2026-12-17",
    "events": [
     {
-     "id": "r175",
+     "id": "r176",
      "start": "10:10",
      "name": "$1,100 No Limit Hold'em 1A $500K GTD - $40 Rake Discount for Entries Before 10:10 a.m.",
      "series": "Venetian DeepStack Extravaganza IV",
@@ -2909,7 +2924,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf"
     },
     {
-     "id": "r176",
+     "id": "r177",
      "start": "11:00",
      "name": "Seniors NLH Championship (3 Day)",
      "series": "WPT World Championship (Wynn)",
@@ -2926,7 +2941,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
     },
     {
-     "id": "r177",
+     "id": "r178",
      "start": "11:00",
      "name": "Wynn Mixed Championship (2 Day)",
      "series": "WPT World Championship (Wynn)",
@@ -2941,7 +2956,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
     },
     {
-     "id": "r178",
+     "id": "r179",
      "start": "12:00",
      "name": "No Limit Hold'em Day 1A",
      "series": "WPT World Championship (Wynn)",
@@ -2958,7 +2973,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
     },
     {
-     "id": "r181",
+     "id": "r182",
      "start": "12:10",
      "name": "$600 Pot Limit Omaha Double Board Bomb Pot $25K GTD (1Day)",
      "series": "Venetian DeepStack Extravaganza IV",
@@ -2976,7 +2991,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_23.pdf"
     },
     {
-     "id": "r182",
+     "id": "r183",
      "start": "13:00",
      "name": "NLH High Roller (2 Day)",
      "series": "WPT World Championship (Wynn)",
@@ -2991,7 +3006,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
     },
     {
-     "id": "r183",
+     "id": "r184",
      "start": "14:00",
      "name": "Milestone Satellite to $3,000 NLH",
      "series": "WPT World Championship (Wynn)",
@@ -3008,7 +3023,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
-     "id": "r184",
+     "id": "r185",
      "start": "18:10",
      "name": "$1,100 No Limit Hold'em 1B $500K GTD - $40 Rake Discount for Entries Before 6:10 p.m.",
      "series": "Venetian DeepStack Extravaganza IV",
@@ -3026,7 +3041,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf"
     },
     {
-     "id": "r185",
+     "id": "r186",
      "start": "19:00",
      "name": "Milestone Satellite to $3,000 NLH",
      "series": "WPT World Championship (Wynn)",
@@ -3043,7 +3058,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     }
    ],
-   "primary_id": "r181",
+   "primary_id": "r182",
    "fallback_id": null,
    "fallback_note": "No second single-entry event starts after the primary event is estimated to finish.",
    "conflicts": []
@@ -3052,7 +3067,7 @@
    "date": "2026-12-18",
    "events": [
     {
-     "id": "r186",
+     "id": "r187",
      "start": "10:00",
      "name": "Milestone Satellite to $3,000 NLH",
      "series": "WPT World Championship (Wynn)",
@@ -3069,7 +3084,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
-     "id": "r187",
+     "id": "r188",
      "start": "10:10",
      "name": "$1,100 No Limit Hold'em 1C $500K GTD",
      "series": "Venetian DeepStack Extravaganza IV",
@@ -3087,7 +3102,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf"
     },
     {
-     "id": "r188",
+     "id": "r189",
      "start": "12:00",
      "name": "Limit Omaha 8 Championship (2 Day)",
      "series": "WPT World Championship (Wynn)",
@@ -3102,7 +3117,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
     },
     {
-     "id": "r189",
+     "id": "r190",
      "start": "12:00",
      "name": "No Limit Hold'em",
      "series": "WPT World Championship (Wynn)",
@@ -3117,7 +3132,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
     },
     {
-     "id": "r190",
+     "id": "r191",
      "start": "12:00",
      "name": "No Limit Hold'em Day 1B",
      "series": "WPT World Championship (Wynn)",
@@ -3134,7 +3149,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
     },
     {
-     "id": "r192",
+     "id": "r193",
      "start": "13:00",
      "name": "NLH 6-Max",
      "series": "WPT World Championship (Wynn)",
@@ -3149,7 +3164,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
     },
     {
-     "id": "r193",
+     "id": "r194",
      "start": "14:00",
      "name": "Milestone Satellite to $5,000 Seniors High Roller",
      "series": "WPT World Championship (Wynn)",
@@ -3167,7 +3182,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
-     "id": "r194",
+     "id": "r195",
      "start": "18:00",
      "name": "NLH Turbo",
      "series": "WPT World Championship (Wynn)",
@@ -3184,7 +3199,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
     },
     {
-     "id": "r195",
+     "id": "r196",
      "start": "18:10",
      "name": "$1,100 No Limit Hold'em 1D $500K GTD",
      "series": "Venetian DeepStack Extravaganza IV",
@@ -3211,7 +3226,7 @@
    "date": "2026-12-19",
    "events": [
     {
-     "id": "r196",
+     "id": "r197",
      "start": "10:10",
      "name": "$1,100 No Limit Hold'em 1E $500K GTD",
      "series": "Venetian DeepStack Extravaganza IV",
@@ -3229,7 +3244,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf"
     },
     {
-     "id": "r197",
+     "id": "r198",
      "start": "11:00",
      "name": "NLH Mystery Bounty Day 1A",
      "series": "WPT World Championship (Wynn)",
@@ -3248,7 +3263,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
     },
     {
-     "id": "r198",
+     "id": "r199",
      "start": "11:00",
      "name": "Seniors High Roller (3 Day)",
      "series": "WPT World Championship (Wynn)",
@@ -3265,7 +3280,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
     },
     {
-     "id": "r199",
+     "id": "r200",
      "start": "12:00",
      "name": "Milestone Satellite to $1,600 Mystery Bounty",
      "series": "WPT World Championship (Wynn)",
@@ -3284,7 +3299,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
-     "id": "r202",
+     "id": "r203",
      "start": "13:00",
      "name": "NLH 6-Max",
      "series": "WPT World Championship (Wynn)",
@@ -3299,7 +3314,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
     },
     {
-     "id": "r203",
+     "id": "r204",
      "start": "13:00",
      "name": "PLO",
      "series": "WPT World Championship (Wynn)",
@@ -3314,7 +3329,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
     },
     {
-     "id": "r204",
+     "id": "r205",
      "start": "13:00",
      "name": "TORSE Championship (2 Day)",
      "series": "WPT World Championship (Wynn)",
@@ -3329,7 +3344,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
     },
     {
-     "id": "r205",
+     "id": "r206",
      "start": "17:00",
      "name": "Milestone Satellite to $1,600 Mystery Bounty",
      "series": "WPT World Championship (Wynn)",
@@ -3348,7 +3363,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
-     "id": "r206",
+     "id": "r207",
      "start": "17:10",
      "name": "$200 NLH PokerAtlas Valuetown Bounty $20K GTD (1Day) - PokerAtlas PRO member $20 rake discount",
      "series": "Venetian DeepStack Extravaganza IV",
@@ -3366,7 +3381,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf"
     },
     {
-     "id": "r207",
+     "id": "r208",
      "start": "18:00",
      "name": "NLH 6-Max Turbo",
      "series": "WPT World Championship (Wynn)",
@@ -3383,7 +3398,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
     },
     {
-     "id": "r208",
+     "id": "r209",
      "start": "19:00",
      "name": "NLH Mystery Bounty Day 1B",
      "series": "WPT World Championship (Wynn)",
@@ -3411,7 +3426,7 @@
    "date": "2026-12-20",
    "events": [
     {
-     "id": "r210",
+     "id": "r211",
      "start": "11:00",
      "name": "NLH Mystery Bounty Day 1C",
      "series": "WPT World Championship (Wynn)",
@@ -3430,7 +3445,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
     },
     {
-     "id": "r211",
+     "id": "r212",
      "start": "11:10",
      "name": "$600 No Limit Hold'em 1A $150K GTD - $20 Rake Discount for Entries Before 11:10 a.m.",
      "series": "Venetian DeepStack Extravaganza IV",
@@ -3448,7 +3463,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf"
     },
     {
-     "id": "r212",
+     "id": "r213",
      "start": "12:00",
      "name": "No Limit Hold'em",
      "series": "WPT World Championship (Wynn)",
@@ -3463,7 +3478,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
     },
     {
-     "id": "r214",
+     "id": "r215",
      "start": "13:00",
      "name": "Mixed Triple Draw (A-5, 2-7, Badugi)",
      "series": "WPT World Championship (Wynn)",
@@ -3478,7 +3493,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
-     "id": "r215",
+     "id": "r216",
      "start": "13:00",
      "name": "NLH 8-Max",
      "series": "WPT World Championship (Wynn)",
@@ -3493,7 +3508,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
     },
     {
-     "id": "r217",
+     "id": "r218",
      "start": "17:10",
      "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
      "series": "Venetian DeepStack Extravaganza IV",
@@ -3510,7 +3525,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
     },
     {
-     "id": "r218",
+     "id": "r219",
      "start": "18:00",
      "name": "5-Card PLO Turbo",
      "series": "WPT World Championship (Wynn)",
@@ -3527,7 +3542,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
     },
     {
-     "id": "r219",
+     "id": "r220",
      "start": "19:00",
      "name": "NLH Mystery Bounty Day 1D",
      "series": "WPT World Championship (Wynn)",
@@ -3546,7 +3561,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
     }
    ],
-   "primary_id": "r217",
+   "primary_id": "r218",
    "fallback_id": null,
    "fallback_note": "No second single-entry event starts after the primary event is estimated to finish.",
    "conflicts": []
@@ -3555,7 +3570,7 @@
    "date": "2026-12-21",
    "events": [
     {
-     "id": "r220",
+     "id": "r221",
      "start": "11:10",
      "name": "$600 No Limit Hold'em 1B $150K GTD",
      "series": "Venetian DeepStack Extravaganza IV",
@@ -3573,7 +3588,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf"
     },
     {
-     "id": "r221",
+     "id": "r222",
      "start": "12:00",
      "name": "No Limit Hold'em",
      "series": "WPT World Championship (Wynn)",
@@ -3588,7 +3603,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
     },
     {
-     "id": "r223",
+     "id": "r224",
      "start": "17:10",
      "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
      "series": "Venetian DeepStack Extravaganza IV",
@@ -3605,7 +3620,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
     },
     {
-     "id": "r224",
+     "id": "r225",
      "start": "20:00",
      "name": "NLH Turbo",
      "series": "WPT World Championship (Wynn)",
@@ -3622,7 +3637,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     }
    ],
-   "primary_id": "r223",
+   "primary_id": "r224",
    "fallback_id": null,
    "fallback_note": "No second single-entry event starts after the primary event is estimated to finish.",
    "conflicts": []
@@ -3631,7 +3646,7 @@
    "date": "2026-12-22",
    "events": [
     {
-     "id": "r225",
+     "id": "r226",
      "start": "11:10",
      "name": "$600 No Limit Hold'em 1C $150K GTD",
      "series": "Venetian DeepStack Extravaganza IV",
@@ -3649,7 +3664,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf"
     },
     {
-     "id": "r226",
+     "id": "r227",
      "start": "17:10",
      "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
      "series": "Venetian DeepStack Extravaganza IV",
@@ -3666,7 +3681,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
     }
    ],
-   "primary_id": "r226",
+   "primary_id": "r227",
    "fallback_id": null,
    "fallback_note": "No second single-entry event starts after the primary event is estimated to finish.",
    "conflicts": []
@@ -3675,7 +3690,7 @@
    "date": "2026-12-23",
    "events": [
     {
-     "id": "r228",
+     "id": "r229",
      "start": "11:10",
      "name": "$600 No Limit Hold'em $30K GTD (1Day)",
      "series": "Venetian DeepStack Extravaganza IV",
@@ -3690,7 +3705,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf"
     },
     {
-     "id": "r229",
+     "id": "r230",
      "start": "17:10",
      "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
      "series": "Venetian DeepStack Extravaganza IV",
@@ -3707,8 +3722,8 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
     }
    ],
-   "primary_id": "r228",
-   "fallback_id": "r229",
+   "primary_id": "r229",
+   "fallback_id": "r230",
    "fallback_note": "",
    "conflicts": []
   },
@@ -3716,7 +3731,7 @@
    "date": "2026-12-24",
    "events": [
     {
-     "id": "r230",
+     "id": "r231",
      "start": "11:10",
      "name": "$400 No Limit Hold'em $15K GTD (1Day)",
      "series": "Venetian DeepStack Extravaganza NYE",
@@ -3731,7 +3746,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_1.pdf"
     },
     {
-     "id": "r231",
+     "id": "r232",
      "start": "17:10",
      "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
      "series": "Venetian DeepStack Extravaganza NYE",
@@ -3748,8 +3763,8 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_2.pdf"
     }
    ],
-   "primary_id": "r230",
-   "fallback_id": "r231",
+   "primary_id": "r231",
+   "fallback_id": "r232",
    "fallback_note": "",
    "conflicts": []
   },
@@ -3757,7 +3772,7 @@
    "date": "2026-12-25",
    "events": [
     {
-     "id": "r232",
+     "id": "r233",
      "start": "11:10",
      "name": "$400 No Limit Hold'em $15K GTD (1Day)",
      "series": "Venetian DeepStack Extravaganza NYE",
@@ -3772,7 +3787,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_1.pdf"
     },
     {
-     "id": "r233",
+     "id": "r234",
      "start": "17:10",
      "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
      "series": "Venetian DeepStack Extravaganza NYE",
@@ -3789,8 +3804,8 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_2.pdf"
     }
    ],
-   "primary_id": "r232",
-   "fallback_id": "r233",
+   "primary_id": "r233",
+   "fallback_id": "r234",
    "fallback_note": "",
    "conflicts": []
   },
@@ -3798,7 +3813,7 @@
    "date": "2026-12-26",
    "events": [
     {
-     "id": "r234",
+     "id": "r235",
      "start": "11:10",
      "name": "$600 No Limit Hold'em Bounty $40K GTD (1Day) - $200 bounties to start & $500 bounties in the money",
      "series": "Venetian DeepStack Extravaganza NYE",
@@ -3815,7 +3830,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_3.pdf"
     },
     {
-     "id": "r235",
+     "id": "r236",
      "start": "15:10",
      "name": "$260 NLH Milestone Satellite (1Day) - Awards 1 in 5 (20%) Direct Entry into Event # 08",
      "series": "Venetian DeepStack Extravaganza NYE",
@@ -3833,7 +3848,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_4.pdf"
     },
     {
-     "id": "r236",
+     "id": "r237",
      "start": "18:10",
      "name": "$260 NLH Milestone Satellite (1Day) - Awards 1 in 5 (20%) Direct Entry into Event # 08",
      "series": "Venetian DeepStack Extravaganza NYE",
@@ -3851,8 +3866,8 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_4.pdf"
     }
    ],
-   "primary_id": "r234",
-   "fallback_id": "r235",
+   "primary_id": "r235",
+   "fallback_id": "r236",
    "fallback_note": "",
    "conflicts": []
   },
@@ -3860,7 +3875,7 @@
    "date": "2026-12-27",
    "events": [
     {
-     "id": "r237",
+     "id": "r238",
      "start": "11:10",
      "name": "$1,100 No Limit Hold'em 1A $300K GTD - Ante Up Championship",
      "series": "Venetian DeepStack Extravaganza NYE",
@@ -3877,7 +3892,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_6.pdf"
     },
     {
-     "id": "r238",
+     "id": "r239",
      "start": "15:10",
      "name": "$260 NLH Milestone Satellite (1Day) - Awards 1 in 5 (20%) Direct Entry into Event # 08",
      "series": "Venetian DeepStack Extravaganza NYE",
@@ -3895,7 +3910,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_4.pdf"
     },
     {
-     "id": "r239",
+     "id": "r240",
      "start": "18:10",
      "name": "$260 NLH Milestone Satellite (1Day) - Awards 1 in 5 (20%) Direct Entry into Event # 08",
      "series": "Venetian DeepStack Extravaganza NYE",
@@ -3913,8 +3928,8 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_4.pdf"
     }
    ],
-   "primary_id": "r238",
-   "fallback_id": "r239",
+   "primary_id": "r239",
+   "fallback_id": "r240",
    "fallback_note": "",
    "conflicts": []
   },
@@ -3922,7 +3937,7 @@
    "date": "2026-12-28",
    "events": [
     {
-     "id": "r240",
+     "id": "r241",
      "start": "11:10",
      "name": "$1,100 No Limit Hold'em 1B $300K GTD - Ante Up Championship",
      "series": "Venetian DeepStack Extravaganza NYE",
@@ -3939,7 +3954,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_6.pdf"
     },
     {
-     "id": "r241",
+     "id": "r242",
      "start": "15:10",
      "name": "$260 NLH Milestone Satellite (1Day) - Awards 1 in 5 (20%) Direct Entry into Event # 08",
      "series": "Venetian DeepStack Extravaganza NYE",
@@ -3957,7 +3972,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_4.pdf"
     },
     {
-     "id": "r242",
+     "id": "r243",
      "start": "18:10",
      "name": "$260 NLH Milestone Satellite (1Day) - Awards 1 in 5 (20%) Direct Entry into Event # 08",
      "series": "Venetian DeepStack Extravaganza NYE",
@@ -3975,8 +3990,8 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_4.pdf"
     }
    ],
-   "primary_id": "r241",
-   "fallback_id": "r242",
+   "primary_id": "r242",
+   "fallback_id": "r243",
    "fallback_note": "",
    "conflicts": []
   },
@@ -3984,7 +3999,7 @@
    "date": "2026-12-29",
    "events": [
     {
-     "id": "r243",
+     "id": "r244",
      "start": "11:10",
      "name": "$1,100 No Limit Hold'em 1C $300K GTD - Ante Up Championship",
      "series": "Venetian DeepStack Extravaganza NYE",
@@ -4001,7 +4016,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_6.pdf"
     },
     {
-     "id": "r244",
+     "id": "r245",
      "start": "17:10",
      "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
      "series": "Venetian DeepStack Extravaganza NYE",
@@ -4018,7 +4033,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_2.pdf"
     }
    ],
-   "primary_id": "r244",
+   "primary_id": "r245",
    "fallback_id": null,
    "fallback_note": "No second single-entry event starts after the primary event is estimated to finish.",
    "conflicts": []
@@ -4027,7 +4042,7 @@
    "date": "2026-12-30",
    "events": [
     {
-     "id": "r246",
+     "id": "r247",
      "start": "11:10",
      "name": "$600 No Limit Hold'em $50K GTD (1Day)",
      "series": "Venetian DeepStack Extravaganza NYE",
@@ -4042,7 +4057,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_12.pdf"
     },
     {
-     "id": "r247",
+     "id": "r248",
      "start": "15:10",
      "name": "$200 NLH Milestone Satellite (1Day) - Awards Direct Entry into Event # 20",
      "series": "Venetian DeepStack Extravaganza NYE",
@@ -4060,7 +4075,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_5.pdf"
     },
     {
-     "id": "r248",
+     "id": "r249",
      "start": "18:10",
      "name": "$200 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry into Event # 20",
      "series": "Venetian DeepStack Extravaganza NYE",
@@ -4079,8 +4094,8 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_7.pdf"
     }
    ],
-   "primary_id": "r246",
-   "fallback_id": "r247",
+   "primary_id": "r247",
+   "fallback_id": "r248",
    "fallback_note": "",
    "conflicts": []
   },
@@ -4088,7 +4103,7 @@
    "date": "2026-12-31",
    "events": [
     {
-     "id": "r250",
+     "id": "r251",
      "start": "11:10",
      "name": "$400 No Limit Hold'em $15K GTD (1Day)",
      "series": "Venetian DeepStack Extravaganza NYE",
@@ -4103,7 +4118,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_1.pdf"
     },
     {
-     "id": "r251",
+     "id": "r252",
      "start": "15:10",
      "name": "$200 NLH Milestone Satellite (1Day) - Awards Direct Entry into Event # 20",
      "series": "Venetian DeepStack Extravaganza NYE",
@@ -4121,7 +4136,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_5.pdf"
     },
     {
-     "id": "r252",
+     "id": "r253",
      "start": "18:10",
      "name": "$200 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry into Event # 20",
      "series": "Venetian DeepStack Extravaganza NYE",
@@ -4140,8 +4155,8 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_7.pdf"
     }
    ],
-   "primary_id": "r250",
-   "fallback_id": "r251",
+   "primary_id": "r251",
+   "fallback_id": "r252",
    "fallback_note": "",
    "conflicts": []
   },
@@ -4149,7 +4164,7 @@
    "date": "2027-01-01",
    "events": [
     {
-     "id": "r253",
+     "id": "r254",
      "start": "11:10",
      "name": "$1,600 No Limit Hold'em MSPT 1A $400K GTD - $40 Reduced Rake until the start of Level 4",
      "series": "Venetian DeepStack Extravaganza NYE",
@@ -4167,7 +4182,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_8.pdf"
     },
     {
-     "id": "r254",
+     "id": "r255",
      "start": "15:10",
      "name": "$200 NLH Milestone Satellite (1Day) - Awards Direct Entry into Event # 20",
      "series": "Venetian DeepStack Extravaganza NYE",
@@ -4185,7 +4200,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_5.pdf"
     },
     {
-     "id": "r255",
+     "id": "r256",
      "start": "17:10",
      "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
      "series": "Venetian DeepStack Extravaganza NYE",
@@ -4202,8 +4217,8 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_2.pdf"
     }
    ],
-   "primary_id": "r254",
-   "fallback_id": "r255",
+   "primary_id": "r255",
+   "fallback_id": "r256",
    "fallback_note": "",
    "conflicts": []
   },
@@ -4211,7 +4226,7 @@
    "date": "2027-01-02",
    "events": [
     {
-     "id": "r256",
+     "id": "r257",
      "start": "10:10",
      "name": "$200 NLH Milestone Satellite (1Day) - Awards Direct Entry into Event # 20",
      "series": "Venetian DeepStack Extravaganza NYE",
@@ -4229,7 +4244,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_5.pdf"
     },
     {
-     "id": "r257",
+     "id": "r258",
      "start": "11:10",
      "name": "$1,600 No Limit Hold'em MSPT 1B $400K GTD",
      "series": "Venetian DeepStack Extravaganza NYE",
@@ -4247,7 +4262,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_8.pdf"
     },
     {
-     "id": "r258",
+     "id": "r259",
      "start": "15:10",
      "name": "$200 NLH Milestone Satellite (1Day) - Awards Direct Entry into Event # 20",
      "series": "Venetian DeepStack Extravaganza NYE",
@@ -4265,7 +4280,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_5.pdf"
     },
     {
-     "id": "r259",
+     "id": "r260",
      "start": "17:10",
      "name": "$200 NLH PokerAtlas Valuetown Bounty $20K GTD (1Day) - PokerAtlas PRO member $20 rake discount",
      "series": "Venetian DeepStack Extravaganza NYE",
@@ -4283,23 +4298,23 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_9.pdf"
     }
    ],
-   "primary_id": "r256",
+   "primary_id": "r257",
    "fallback_id": null,
    "fallback_note": "No second single-entry event starts after the primary event is estimated to finish.",
    "conflicts": [
     {
-     "a": "r256",
-     "b": "r257",
+     "a": "r257",
+     "b": "r258",
      "detail": "$1,600 No Limit Hold'em MSPT 1B $400K GTD starts 11:10 while $200 NLH Milestone Satellite (1Day) - Awards Direct Entry into Event # 20 is still estimated to run until 21:15"
     },
     {
-     "a": "r256",
-     "b": "r258",
+     "a": "r257",
+     "b": "r259",
      "detail": "$200 NLH Milestone Satellite (1Day) - Awards Direct Entry into Event # 20 starts 15:10 while $200 NLH Milestone Satellite (1Day) - Awards Direct Entry into Event # 20 is still estimated to run until 21:15"
     },
     {
-     "a": "r256",
-     "b": "r259",
+     "a": "r257",
+     "b": "r260",
      "detail": "$200 NLH PokerAtlas Valuetown Bounty $20K GTD (1Day) - PokerAtlas PRO member $20 rake discount starts 17:10 while $200 NLH Milestone Satellite (1Day) - Awards Direct Entry into Event # 20 is still estimated to run until 21:15"
     }
    ]
@@ -4308,7 +4323,7 @@
    "date": "2027-01-03",
    "events": [
     {
-     "id": "r260",
+     "id": "r261",
      "start": "11:10",
      "name": "$1,600 No Limit Hold'em MSPT 1C $400K GTD",
      "series": "Venetian DeepStack Extravaganza NYE",
@@ -4326,7 +4341,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_8.pdf"
     },
     {
-     "id": "r261",
+     "id": "r262",
      "start": "17:10",
      "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
      "series": "Venetian DeepStack Extravaganza NYE",
@@ -4343,7 +4358,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_2.pdf"
     }
    ],
-   "primary_id": "r261",
+   "primary_id": "r262",
    "fallback_id": null,
    "fallback_note": "No second single-entry event starts after the primary event is estimated to finish.",
    "conflicts": []
@@ -4352,7 +4367,7 @@
    "date": "2027-01-04",
    "events": [
     {
-     "id": "r263",
+     "id": "r264",
      "start": "11:10",
      "name": "$250 No Limit Hold'em 1A $75K GTD (1Day) - Day 1 Payouts with 5% advancing to Day 2 - $10 Reduced Rake for Entry before 11:10 AM",
      "series": "Venetian DeepStack Extravaganza NYE",
@@ -4370,7 +4385,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_15.pdf"
     },
     {
-     "id": "r264",
+     "id": "r265",
      "start": "17:10",
      "name": "$250 No Limit Hold'em 1B $75K GTD (1Day) - Day 1 Payouts with 5% advancing to Day 2 - $10 Reduced Rake for Entry before 5:10 PM",
      "series": "Venetian DeepStack Extravaganza NYE",
@@ -4397,7 +4412,7 @@
    "date": "2027-01-05",
    "events": [
     {
-     "id": "r265",
+     "id": "r266",
      "start": "11:10",
      "name": "$250 No Limit Hold'em 1C $75K GTD (1Day) - Day 1 Payouts with 5% advancing to Day 2",
      "series": "Venetian DeepStack Extravaganza NYE",
@@ -4415,7 +4430,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_15.pdf"
     },
     {
-     "id": "r266",
+     "id": "r267",
      "start": "17:10",
      "name": "$250 No Limit Hold'em 1D $75K GTD (1Day) - Day 1 Payouts with 5% advancing to Day 2",
      "series": "Venetian DeepStack Extravaganza NYE",
@@ -4442,7 +4457,7 @@
    "date": "2027-01-06",
    "events": [
     {
-     "id": "r267",
+     "id": "r268",
      "start": "11:10",
      "name": "$400 No Limit Hold'em $15K GTD (1Day)",
      "series": "Venetian DeepStack Extravaganza NYE",
@@ -4457,7 +4472,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_11.pdf"
     },
     {
-     "id": "r269",
+     "id": "r270",
      "start": "17:10",
      "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day) - Show Your CES Badge - $10 Rake Discount",
      "series": "Venetian DeepStack Extravaganza NYE",
@@ -4474,7 +4489,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_2.pdf"
     }
    ],
-   "primary_id": "r267",
+   "primary_id": "r268",
    "fallback_id": null,
    "fallback_note": "No second single-entry event starts after the primary event is estimated to finish.",
    "conflicts": []
@@ -4483,7 +4498,7 @@
    "date": "2027-01-07",
    "events": [
     {
-     "id": "r270",
+     "id": "r271",
      "start": "11:10",
      "name": "$300 No Limit Hold'em 1A $100K GTD (1Day)",
      "series": "Venetian DeepStack Extravaganza NYE",
@@ -4500,7 +4515,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_13.pdf"
     },
     {
-     "id": "r271",
+     "id": "r272",
      "start": "17:10",
      "name": "$300 No Limit Hold'em 1B $100K GTD (1Day) - Show Your CES Badge - $10 Rake Discount",
      "series": "Venetian DeepStack Extravaganza NYE",
@@ -4526,7 +4541,7 @@
    "date": "2027-01-08",
    "events": [
     {
-     "id": "r272",
+     "id": "r273",
      "start": "11:10",
      "name": "$300 No Limit Hold'em 1C $100K GTD (1Day)",
      "series": "Venetian DeepStack Extravaganza NYE",
@@ -4543,7 +4558,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_13.pdf"
     },
     {
-     "id": "r273",
+     "id": "r274",
      "start": "17:10",
      "name": "$300 No Limit Hold'em 1D $100K GTD (1Day) - Show Your CES Badge - $10 Rake Discount",
      "series": "Venetian DeepStack Extravaganza NYE",
@@ -4569,7 +4584,7 @@
    "date": "2027-01-09",
    "events": [
     {
-     "id": "r274",
+     "id": "r275",
      "start": "11:10",
      "name": "$300 No Limit Hold'em 1E $100K GTD (1Day)",
      "series": "Venetian DeepStack Extravaganza NYE",
@@ -4586,7 +4601,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_13.pdf"
     },
     {
-     "id": "r275",
+     "id": "r276",
      "start": "17:10",
      "name": "$300 No Limit Hold'em 1F $100K GTD (1Day) - Show Your CES Badge - $10 Rake Discount",
      "series": "Venetian DeepStack Extravaganza NYE",
@@ -4612,7 +4627,7 @@
    "date": "2027-01-10",
    "events": [
     {
-     "id": "r276",
+     "id": "r277",
      "start": "10:10",
      "name": "$400 No Limit Hold'em Seniors $20K GTD (1Day) - must be 50+ years of age",
      "series": "Venetian DeepStack Extravaganza NYE",
@@ -4629,7 +4644,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_10.pdf"
     },
     {
-     "id": "r278",
+     "id": "r279",
      "start": "17:10",
      "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
      "series": "Venetian DeepStack Extravaganza NYE",
@@ -4646,8 +4661,8 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_2.pdf"
     }
    ],
-   "primary_id": "r276",
-   "fallback_id": "r278",
+   "primary_id": "r277",
+   "fallback_id": "r279",
    "fallback_note": "",
    "conflicts": []
   },
@@ -4655,7 +4670,7 @@
    "date": "2027-01-11",
    "events": [
     {
-     "id": "r279",
+     "id": "r280",
      "start": "12:00",
      "name": "No Limit Hold'em Day 1A",
      "series": "Wynn Signature Series",
@@ -4672,7 +4687,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     },
     {
-     "id": "r280",
+     "id": "r281",
      "start": "17:00",
      "name": "No Limit Hold'em Day 1B",
      "series": "Wynn Signature Series",
@@ -4698,7 +4713,7 @@
    "date": "2027-01-12",
    "events": [
     {
-     "id": "r281",
+     "id": "r282",
      "start": "12:00",
      "name": "No Limit Hold'em Day 1C",
      "series": "Wynn Signature Series",
@@ -4715,7 +4730,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     },
     {
-     "id": "r282",
+     "id": "r283",
      "start": "17:00",
      "name": "No Limit Hold'em Day 1D",
      "series": "Wynn Signature Series",
@@ -4741,7 +4756,7 @@
    "date": "2027-01-13",
    "events": [
     {
-     "id": "r283",
+     "id": "r284",
      "start": "12:00",
      "name": "No Limit Hold'em Day 1E",
      "series": "Wynn Signature Series",
@@ -4758,7 +4773,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     },
     {
-     "id": "r284",
+     "id": "r285",
      "start": "17:00",
      "name": "No Limit Hold'em Day 1F",
      "series": "Wynn Signature Series",
@@ -4784,7 +4799,7 @@
    "date": "2027-01-14",
    "events": [
     {
-     "id": "r285",
+     "id": "r286",
      "start": "11:00",
      "name": "No Limit Hold'em Day 1A",
      "series": "Wynn Signature Series",
@@ -4801,7 +4816,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     },
     {
-     "id": "r287",
+     "id": "r288",
      "start": "18:00",
      "name": "Milestone Satellite to $600 NLH",
      "series": "Wynn Signature Series",
@@ -4828,7 +4843,7 @@
    "date": "2027-01-15",
    "events": [
     {
-     "id": "r288",
+     "id": "r289",
      "start": "11:00",
      "name": "No Limit Hold'em Day 1B",
      "series": "Wynn Signature Series",
@@ -4845,7 +4860,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     },
     {
-     "id": "r289",
+     "id": "r290",
      "start": "18:00",
      "name": "NLH Turbo",
      "series": "Wynn Signature Series",
@@ -4871,7 +4886,7 @@
    "date": "2027-01-16",
    "events": [
     {
-     "id": "r290",
+     "id": "r291",
      "start": "11:00",
      "name": "No Limit Hold'em Day 1C",
      "series": "Wynn Signature Series",
@@ -4888,7 +4903,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     },
     {
-     "id": "r291",
+     "id": "r292",
      "start": "18:00",
      "name": "No Limit Hold'em Day 1D",
      "series": "Wynn Signature Series",
@@ -4914,7 +4929,7 @@
    "date": "2027-01-17",
    "events": [
     {
-     "id": "r292",
+     "id": "r293",
      "start": "12:00",
      "name": "No Limit Hold'em",
      "series": "Wynn Signature Series",
@@ -4931,7 +4946,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     },
     {
-     "id": "r294",
+     "id": "r295",
      "start": "18:00",
      "name": "NLH Turbo",
      "series": "Wynn Signature Series",
@@ -4957,7 +4972,7 @@
    "date": "2027-01-18",
    "events": [
     {
-     "id": "r295",
+     "id": "r296",
      "start": "11:00",
      "name": "No Limit Hold'em Day 1A",
      "series": "Wynn Signature Series",
@@ -4974,7 +4989,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     },
     {
-     "id": "r296",
+     "id": "r297",
      "start": "13:00",
      "name": "PLO",
      "series": "Wynn Signature Series",
@@ -4991,7 +5006,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     },
     {
-     "id": "r297",
+     "id": "r298",
      "start": "18:00",
      "name": "NLH Turbo",
      "series": "Wynn Signature Series",
@@ -5017,7 +5032,7 @@
    "date": "2027-01-19",
    "events": [
     {
-     "id": "r298",
+     "id": "r299",
      "start": "11:00",
      "name": "No Limit Hold'em Day 1B",
      "series": "Wynn Signature Series",
@@ -5034,7 +5049,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     },
     {
-     "id": "r299",
+     "id": "r300",
      "start": "13:00",
      "name": "Mixed Game (TORSE)",
      "series": "Wynn Signature Series",
@@ -5051,7 +5066,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     },
     {
-     "id": "r300",
+     "id": "r301",
      "start": "18:00",
      "name": "NLH Turbo",
      "series": "Wynn Signature Series",
@@ -5077,7 +5092,7 @@
    "date": "2027-01-20",
    "events": [
     {
-     "id": "r301",
+     "id": "r302",
      "start": "11:00",
      "name": "No Limit Hold'em Day 1C",
      "series": "Wynn Signature Series",
@@ -5094,7 +5109,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     },
     {
-     "id": "r302",
+     "id": "r303",
      "start": "13:00",
      "name": "Mixed Triple Draw (A-5, 2-7, Badugi)",
      "series": "Wynn Signature Series",
@@ -5111,7 +5126,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     },
     {
-     "id": "r303",
+     "id": "r304",
      "start": "18:00",
      "name": "NLH Turbo",
      "series": "Wynn Signature Series",
@@ -5137,7 +5152,7 @@
    "date": "2027-01-21",
    "events": [
     {
-     "id": "r304",
+     "id": "r305",
      "start": "11:00",
      "name": "No Limit Hold'em Day 1A",
      "series": "Wynn Signature Series",
@@ -5154,7 +5169,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     },
     {
-     "id": "r306",
+     "id": "r307",
      "start": "13:00",
      "name": "Mixed Game (TOE)",
      "series": "Wynn Signature Series",
@@ -5171,7 +5186,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     },
     {
-     "id": "r307",
+     "id": "r308",
      "start": "18:00",
      "name": "Milestone Satellite to $800 NLH",
      "series": "Wynn Signature Series",
@@ -5198,7 +5213,7 @@
    "date": "2027-01-22",
    "events": [
     {
-     "id": "r308",
+     "id": "r309",
      "start": "11:00",
      "name": "No Limit Hold'em Day 1B",
      "series": "Wynn Signature Series",
@@ -5215,7 +5230,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     },
     {
-     "id": "r309",
+     "id": "r310",
      "start": "13:00",
      "name": "Big O",
      "series": "Wynn Signature Series",
@@ -5232,7 +5247,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     },
     {
-     "id": "r310",
+     "id": "r311",
      "start": "18:00",
      "name": "Milestone Satellite to $800 NLH",
      "series": "Wynn Signature Series",
@@ -5259,7 +5274,7 @@
    "date": "2027-01-23",
    "events": [
     {
-     "id": "r311",
+     "id": "r312",
      "start": "11:00",
      "name": "No Limit Hold'em Day 1C",
      "series": "Wynn Signature Series",
@@ -5276,7 +5291,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     },
     {
-     "id": "r312",
+     "id": "r313",
      "start": "18:00",
      "name": "No Limit Hold'em Day 1D",
      "series": "Wynn Signature Series",
@@ -5302,7 +5317,7 @@
    "date": "2027-01-24",
    "events": [
     {
-     "id": "r313",
+     "id": "r314",
      "start": "12:00",
      "name": "Seniors No Limit Hold'em 50+",
      "series": "Wynn Signature Series",
@@ -5319,7 +5334,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     },
     {
-     "id": "r315",
+     "id": "r316",
      "start": "13:00",
      "name": "PLO Double Board Bomb Pot",
      "series": "Wynn Signature Series",
@@ -5336,7 +5351,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     },
     {
-     "id": "r316",
+     "id": "r317",
      "start": "18:00",
      "name": "NLH Turbo",
      "series": "Wynn Signature Series",

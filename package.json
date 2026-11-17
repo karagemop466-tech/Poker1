@@ -1,0 +1,14 @@
+{
+  "name": "poker-trip-planner",
+  "private": true,
+  "description": "Test tooling for the static Las Vegas poker trip planner",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test:smoke": "node scripts/smoke_test.js"
+  },
+  "devDependencies": {
+    "jsdom": "^26.1.0"
+  }
+}
