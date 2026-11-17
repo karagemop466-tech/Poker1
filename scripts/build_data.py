@@ -371,7 +371,7 @@ DSE_NYE = [
  ("2027-01-02","17:10",25,"$200 NLH PokerAtlas Valuetown Bounty $20K GTD (1Day) - PokerAtlas PRO member $20 rake discount",20000,9),
  ("2027-01-03","11:10",20,"$1,600 No Limit Hold'em MSPT 1C $400K GTD",400000,8),
  ("2027-01-03","17:10",26,"$200 No Limit Hold'em Bounty $8K GTD (1Day)",8000,2),
- ("2027-01-04","11:10",20,"$1,600 No Limit Hold'em MSPT Day 2 Restart",None,8),  # 11:10 per the official NYE page (re-read 2026-11-17); was published as 11:00 - see FLAGGED.md F55
+ ("2027-01-04","11:10",20,"$1,600 No Limit Hold'em MSPT Day 2 Restart",None,8),  # 11:10 per the official NYE page (re-read 2026-11-17); was published as 11:00 - see FLAGGED.md F57
  ("2027-01-04","11:10",27,"$250 No Limit Hold'em 1A $75K GTD (1Day) - Day 1 Payouts with 5% advancing to Day 2 - $10 Reduced Rake for Entry before 11:10 AM",75000,15),
  ("2027-01-04","17:10",27,"$250 No Limit Hold'em 1B $75K GTD (1Day) - Day 1 Payouts with 5% advancing to Day 2 - $10 Reduced Rake for Entry before 5:10 PM",75000,15),
  ("2027-01-05","11:10",27,"$250 No Limit Hold'em 1C $75K GTD (1Day) - Day 1 Payouts with 5% advancing to Day 2",75000,15),
@@ -932,7 +932,7 @@ ROOM_DAILY = WYNN_DAILY + [
       single_entry="not single entry - four labelled flights (1A-1D) with a combined Day 2; a player who busts on "
                    "Day 1 without bagging chips may enter another flight",
       flag="Rule 04 prints \"Combined Final Day 2 (9/13/26)\", a September 2026 date, so the flyer cannot be "
-           "assumed current for a November 2026 - January 2027 trip (FLAGGED.md F56)."),
+           "assumed current for a November 2026 - January 2027 trip (FLAGGED.md F58)."),
  dict(id="bellagio-sun", venue="Bellagio", venue_id="bellagio", verified_on="2026-11-17",
       name="$400 H.O.R.S.E. (every Sunday)", days="Sunday", start="11:00",
       buy_in_usd=400, guarantee_usd=None, status="RE",
@@ -1502,7 +1502,7 @@ HOTELS = [
               "General Information Guide for Transient Lodging Establishments, licensed-establishment table row "
               "\"1003760.RES-001 | Bellagio | 3600 Las Vegas Blvd S | Las Vegas | NV | Licensed | 13.38% | RES | 1 | "
               "Transient Lodging Tax - Resort Hotel (PGC)\" (read 2026-11-17; the county record, dated July 2021, is the "
-              "source - no Bellagio page prints the percentage, FLAGGED.md F47, and F58 records why a county record is "
+              "source - no Bellagio page prints the percentage, FLAGGED.md F47, and F60 records why a county record is "
               "used for the rate and never for a fee).",
   "room_rate_usd": None, "room_rate_status": "unverified",
   "room_rate_note": "No nightly rate published on an official page read in this session.",
@@ -1531,7 +1531,7 @@ HOTELS = [
               "Vegas | NV | Licensed | 13.38% | RES | 1 | Transient Lodging Tax - Resort Hotel (PGC)\" (read "
               "2026-11-17). The official ARIA pages print no fee and no tax: the ARIA poker page (read 2026-11-17) "
               "publishes 24 tables, the room's location and a phone/e-mail for player rates only. County record for the "
-              "rate, never for a fee (FLAGGED.md F47, F58).",
+              "rate, never for a fee (FLAGGED.md F47, F60).",
   "room_rate_usd": None, "room_rate_status": "unverified",
   "room_rate_note": "Official ARIA poker page: \"Exclusive Room Rates for qualifying poker players\" - the rate itself "
                      "is only available by phone (702.590.7232) or by e-mail, so no number is published.",
@@ -1561,7 +1561,7 @@ HOTELS = [
               "NV | Licensed | 13.38% | RES | 1 | Transient Lodging Tax - Resort Hotel (PGC)\" (read 2026-11-17). No "
               "Caesars Palace page prints the percentage - eight candidate official URLs produced no fee (FLAGGED.md "
               "F47) - so the rate is taken from the authority that levies it, and the resort fee stays blank because a "
-              "county tax record says nothing about a property fee (F58).",
+              "county tax record says nothing about a property fee (F60).",
   "room_rate_usd": None, "room_rate_status": "unverified",
   "room_rate_note": "No nightly rate published on an official page read in this session.",
   "parking_note": "No Caesars Palace parking fee printed on an official page read in this session.",
@@ -1785,7 +1785,7 @@ VENUES = [
   "note": "Official poker page (re-read 2026-11-17): the room is at The Palazzo, level 2 of the Grand Canal Shoppes; "
           "\"50 tables spread across 14,000 square feet ... the largest room on the Las Vegas Strip\"; open 24 hours "
           "daily; complimentary self-parking for guests who play three hours or more. The page's Current Series card "
-          "still advertises the WPT Fall Festival of Oct 28 - Nov 15, 2026 (a stale promo on 2026-11-17, flagged F59). "
+          "still advertises the WPT Fall Festival of Oct 28 - Nov 15, 2026 (a stale promo on 2026-11-17, flagged F61). "
           "Street address from the Clark County licensing record 1000389.RES-001.",
   "hotel_ids": ["venetian", "palazzo"],
   "official_links": [SRC["venetian_poker"], SRC["venetian_map"], SRC["venetian_book"],

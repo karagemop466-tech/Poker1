@@ -24,7 +24,7 @@ seniors, ladies, turbo, streamed).
   Day 2 Restart, Monday, January 4, 2027** was stored with a start of `11:00`. The official page prints
   `11:10 AM` (re-read on 2026-11-17 at
   <https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html>).
-  The row is republished at **11:10** and flagged (F55). The row is a continuation row, so the correction
+  The row is republished at **11:10** and flagged (F57). The row is a continuation row, so the correction
   changes no buy-in, guarantee or entry rule — it changes when a player must be seated.
   Session `d94b191b` reached the same correction independently on the same day; the two records agree, and
   its note that the structure sheet prints "Day 2 will resume at 11:00 AM" is the reason both readings are kept.
@@ -35,7 +35,7 @@ seniors, ladies, turbo, streamed).
   "Show Your CES Badge - $10 RAKE DISCOUNT" appears under **three** rows only - Jan 6 event 29 (Bounty),
   Jan 7 5:10 p.m. event 30 flight 1B and Jan 8 5:10 p.m. event 30 flight 1D. It is **not** printed under
   event 30 flights 1A, 1C or 1F. The dataset carried it on **Jan 9 5:10 p.m. flight 1F** as well, so that row
-  is republished without the clause (F62); its amounts were already correct and are unchanged. The three rows
+  is republished without the clause (F64); its amounts were already correct and are unchanged. The three rows
   that do print it keep it, because the words sit on the same printed row as their buy-in.
 * The stored name `… $1 Mill GTD …` was re-checked against the guarantee arithmetic: the printed token is
   `$1 Mill GTD` = $1,000,000, which is what the row stores.
@@ -116,7 +116,7 @@ What changed, and what did not:
   county agree on the address (`3570 Las Vegas Blvd South` vs `3570 Las Vegas Blvd S`), which is said on the
   row. **What did not change: the resort fee, the nightly rate and the cancellation deadline.** A county tax
   record says nothing about a hotel's own amenity fee, so those stay blank (U2-U4) - which is exactly the
-  division this record was written to enforce. The published flag F58 carries the whole story, including that
+  division this record was written to enforce. The published flag F60 carries the whole story, including that
   the snippet route was rejected before the document itself arrived.
 * This record is a county publication dated July 2021. It is cited for the address and the tax **class**,
   and the 13.38% figure it prints for these resorts agrees with the Venetian's 2026 hotel terms and with

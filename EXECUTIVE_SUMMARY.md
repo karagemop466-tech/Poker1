@@ -39,7 +39,7 @@ re-checked on 2026-11-17.
   Encore at Wynn Las Vegas | 3131 Las Vegas Blvd S | Licensed | 13.38% | Transient Lodging Tax - Resort
   Hotel (PGC)", so 13.38% is now verified from the authority that sets it rather than borrowed from the
   Venetian ([record](https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf),
-  read 2026-11-17, flagged F58). One number is still missing - the nightly rate - so the like-for-like
+  read 2026-11-17, flagged F60). One number is still missing - the nightly rate - so the like-for-like
   Wynn-versus-Venetian comparison still cannot be made. That is the last missing piece of the hotel
   picture.
 - **Walking times are now routed, not blank.** Twelve hotel-to-poker-room pairs were measured on the
@@ -62,11 +62,11 @@ re-checked on 2026-11-17.
   $1,000 guarantee**, and **Wynn's noon dailies open registration at 8 a.m.** Neither Caesars format can
   be ranked as single entry - its own flyer allows a re-entry and a $50 add-on - so they are listed as
   daily structures, not as verified single-entry rows. ARIA publishes no schedule at all and tells guests
-  to call the room or follow it on social media, which is recorded as a verified negative (F38, F57).
+  to call the room or follow it on social media, which is recorded as a verified negative (F38, F59).
 - **Every printed Venetian row was re-audited against the page text, and one value was wrong.** All 143
   printed rows across the two DeepStack Extravaganza pages were matched by date, start time, event number
   and printed amounts: 142 matched, and the Jan 4, 2027 MSPT Day 2 Restart is republished at the printed
-  **11:10** instead of 11:00 (F55). The separately written provenance audit over all 317 rows found no
+  **11:10** instead of 11:00 (F57). The separately written provenance audit over all 317 rows found no
   unsourced buy-in, house fee, prize pool or starting stack; the only unsourced money values in the dataset
   were the 17 Signature Series guarantees, already blanked and published as F54. The record is
   `research/verification-2026-11-17-c7a324a6.md`.
@@ -200,7 +200,7 @@ nightly rate is still blank, so no Wynn true cost per night is shown.
 Bellagio, ARIA and Caesars Palace closed on 2026-11-17, but not from the hotel pages: eight candidate official
 URLs (resort-fee and policies pages on mgmresorts.com and caesars.com) returned a 404 or a marketing page with
 no fee, so the percentage was taken from the authority that levies it - the Clark County licensing table, cited
-by licence number, which puts all three in the 13.38% Resort Hotel (PGC) class (F58). **The resort fee is still
+by licence number, which puts all three in the 13.38% Resort Hotel (PGC) class (F60). **The resort fee is still
 blank at those three properties, and so is their nightly rate**, because a tax record says nothing about a
 hotel's amenity fee and this dataset will not borrow one property's fee for another. The exact URLs tried are
 listed in `FLAGGED.md`.

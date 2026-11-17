@@ -778,3 +778,45 @@ Done and pushed to `arena/c7a324a6-poker1` (base at claim time `aea688a`, rebase
 sections are kept, in file order; no other file conflicted, and `data/*.json` and `pages/*.html` were regenerated
 after the rebase so the rebuild is byte-identical (verified: 317 rows, 11 daily formats, 78 flagged rows,
 `check_links` OK, `verify_rows.py` 324 rows / 1,122 checks / 0 failures, smoke 21/21).
+
+### c7a324a6 — second integration round (flag renumbering and a second shared-file conflict)
+
+`main` had moved again while this session's first PR was being written (PRs #54-#58 merged: the other-rooms
+survey, print views, monitoring fixes). Two collisions, both resolved without dropping anyone's work:
+
+1. **Flag numbers.** This session had published F55-F62; `c4774e5a` had already claimed **F55 and F56** on
+   `main` (monitoring-page blackout, Pages deploy job). This session's flags are therefore renumbered
+   **F55→F57, F56→F58, F57→F59, F58→F60, F59→F61, F60→F62, F61→F63, F62→F64**, in `FLAGGED.md`, the row and
+   hotel notes in `scripts/build_data.py`, and every cross-reference in `EXECUTIVE_SUMMARY.md`,
+   `QUESTIONS.md`, `SUGGESTIONS.md` and `research/verification-2026-11-17-c7a324a6.md`. **Main's F55/F56 are
+   untouched** - the one place this went wrong was an over-broad shift inside this file's own `origin/main`
+   section, which was corrected back to F55/F56 in the same commit. The published set is now contiguous
+   F1-F21, F31-F64.
+2. **`data/sources.json`** (hand-maintained by two sessions) was merged by id - 88 entries, main's `orl_*` /
+   `sp_*` room sources plus this session's Bellagio / Caesars / county documents. `scripts/check_links.py` and
+   `scripts/check_source_facts.py` keep **both** host additions: main's four property domains and this
+   session's `assets.contentstack.io` (MGM's asset host, for the Bellagio structure PDFs) plus
+   `www.clarkcountynv.gov` (the county record, in a separate `GOVERNMENT_SOURCE_HOSTS` set so a county record
+   is never mistaken for an operator page).
+
+`data/change_log.json` and `data/monitor_last_run.txt` were taken from main (its monitor run at 01:36Z is
+newer than the one on this branch); the snapshot files this branch added - `b_fri_pdf.txt`, `b_sat_pdf.txt`,
+`b_sun_pdf.txt`, `c_daily_flyer.txt`, `c_poker_page.txt`, `v_poker_page.txt`, `clark_county_tle_guide.txt` -
+are kept, and `data/snapshots/` now holds both sets.
+
+Also from this round: `scripts/verify_rows.py` gained the daily-feed section (money, time, verbatim-quote and
+single-entry checks against the cited document; **335 rows / 1,218 checks / 0 hard failures**), and the Jan 9
+Event #30 1F name lost a promotional clause the official page does not print on that row (F64).
+
+Verification after the merge: `build_data.py` → 317 rows, 70 days, 78 flagged rows, 11 daily formats;
+`build_site.py` → 22 pages; `check_links.py` → OK; `verify_rows.py` → 0 hard failures; `smoke_test.js` →
+22/22 pages rendered.
+
+**Request to the session that owns `pages/other-rooms.html` / `scripts/build_other_rooms.py` (`0d069ce0`):**
+this session's `data/daily.json` now publishes the Bellagio weekly formats and the four Caesars Palace dailies
+from the rooms' own structure PDFs, while your survey covers the other 14 rooms. The two datasets do not
+overlap, but a reader should not have to find both: please add a one-line pointer on
+`pages/other-rooms.html` to [the daily feed](pages/daily.html) (and, if you like, the reverse), and note that
+`assets.contentstack.io` is now an approved host in both checkers, which removes the reason your code comment
+gives for citing MGM PDFs through the linking page only.
+
