@@ -1,7 +1,7 @@
 # Las Vegas Strip Poker Plan
 
 A source-verified plan for single-entry poker tournaments on the Las Vegas Strip and walkable hotels.
-Snapshot date: **2026-11-16** (hotel rate log, venue facts and an official re-read were added on **2026-11-17**; see `research/verification-2026-11-17.md`).
+Snapshot date: **2026-11-16** (hotel rate log, venue facts and an official re-read were added on **2026-11-17**; see `research/verification-2026-11-17-3f878ff5.md`).
 
 Live site: https://karagemop466-tech.github.io/Poker1/
 

@@ -11613,6 +11613,97 @@
    "start": "11:00",
    "kind": "entry",
    "event_no": null,
+   "name": "TORSE (2 Day)",
+   "buy_in_usd": 1100,
+   "guarantee_usd": null,
+   "prize_text": null,
+   "house_fee_usd": null,
+   "house_fee_pct": null,
+   "prize_pool_usd": null,
+   "gtd_multiple": null,
+   "entry_status": "RE",
+   "rules": {
+    "single_entry": {
+     "value": "not single entry",
+     "excerpt": "Registration: \"Unlimited re-entry will be available until the start of level 10 (approximately 6:30 p.m.).\"",
+     "source": {
+      "label": "Official structures / terms ($1,100 TORSE (2 Day))",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+     },
+     "retrieved_on": "2026-11-16"
+    },
+    "re_entry": {
+     "value": "allowed",
+     "excerpt": "Registration: \"Unlimited re-entry will be available until the start of level 10 (approximately 6:30 p.m.).\"",
+     "source": {
+      "label": "Official structures / terms ($1,100 TORSE (2 Day))",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+     },
+     "retrieved_on": "2026-11-16"
+    },
+    "add_on": {
+     "value": "not mentioned",
+     "excerpt": "Registration: \"Unlimited re-entry will be available until the start of level 10 (approximately 6:30 p.m.).\"",
+     "source": {
+      "label": "Official structures / terms ($1,100 TORSE (2 Day))",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+     },
+     "retrieved_on": "2026-11-16"
+    },
+    "fee": {
+     "value": "Entry Fee: $1,100 Buy-in = $965 (Tournament Prize Pool) + $90 (Tournament Fee) + $45 (Poker Staff Service Charge)",
+     "excerpt": "Entry Fee: $1,100 Buy-in = $965 (Tournament Prize Pool) + $90 (Tournament Fee) + $45 (Poker Staff Service Charge)",
+     "source": {
+      "label": "Official structures / terms ($1,100 TORSE (2 Day))",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+     },
+     "retrieved_on": "2026-11-16"
+    },
+    "starting_chips": {
+     "value": "Players will start with 40,000 in tournament chips.",
+     "excerpt": "Players will start with 40,000 in tournament chips.",
+     "source": {
+      "label": "Official structures / terms ($1,100 TORSE (2 Day))",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+     },
+     "retrieved_on": "2026-11-16"
+    }
+   },
+   "entry_rule": "Re-entry confirmed: official structure terms state re-entry terms.",
+   "labels": [],
+   "late_reg_close": null,
+   "levels": null,
+   "level_minutes": null,
+   "starting_chips": 40000,
+   "levels_published": "40",
+   "est_end": null,
+   "est_duration_min": null,
+   "note": "Buy-in, guarantee, starting chips and level count from the official WPT World Championship schedule PDF.",
+   "flags": [
+    "Restored on 2026-11-17: the official WPT schedule PDF prints this row (Dec. 13 Sunday, 11 a.m., $1,100, 40,000 chips, 40-minute levels) and the earlier build omitted it.",
+    "Re-entry: the official structures PDF block for the $1,100 TORSE (2 Day) prints \"Unlimited re-entry will be available until the start of level 10\"."
+   ],
+   "sources": [
+    {
+     "label": "Official schedule PDF",
+     "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+    },
+    {
+     "label": "Official structures / terms ($1,100 TORSE (2 Day))",
+     "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+    }
+   ],
+   "verified_on": "2026-11-16",
+   "last_checked": "2026-11-16"
+  },
+  {
+   "id": "r136",
+   "series": "WPT World Championship (Wynn)",
+   "venue": "Wynn Las Vegas",
+   "date": "2026-12-13",
+   "start": "11:00",
+   "kind": "entry",
+   "event_no": null,
    "name": "WPT World Championship Day 1A $1,000,000 Added",
    "buy_in_usd": 10400,
    "guarantee_usd": null,
@@ -11685,7 +11776,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r136",
+   "id": "r137",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-13",
@@ -11766,7 +11857,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r137",
+   "id": "r138",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-13",
@@ -11843,7 +11934,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r138",
+   "id": "r139",
    "series": "Venetian DeepStack Extravaganza IV",
    "venue": "The Venetian Resort",
    "date": "2026-12-13",
@@ -11931,7 +12022,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r139",
+   "id": "r140",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-13",
@@ -12012,7 +12103,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r140",
+   "id": "r141",
    "series": "Venetian DeepStack Extravaganza IV",
    "venue": "The Venetian Resort",
    "date": "2026-12-13",
@@ -12097,7 +12188,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r141",
+   "id": "r142",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-13",
@@ -12178,7 +12269,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r142",
+   "id": "r143",
    "series": "Venetian DeepStack Extravaganza IV",
    "venue": "The Venetian Resort",
    "date": "2026-12-14",
@@ -12265,7 +12356,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r143",
+   "id": "r144",
    "series": "Venetian DeepStack Extravaganza IV",
    "venue": "The Venetian Resort",
    "date": "2026-12-14",
@@ -12353,7 +12444,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r144",
+   "id": "r145",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-14",
@@ -12430,7 +12521,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r145",
+   "id": "r146",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-14",
@@ -12509,7 +12600,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r146",
+   "id": "r147",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-14",
@@ -12590,7 +12681,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r147",
+   "id": "r148",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-14",
@@ -12665,7 +12756,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r148",
+   "id": "r149",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-14",
@@ -12742,7 +12833,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r149",
+   "id": "r150",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-14",
@@ -12824,7 +12915,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r150",
+   "id": "r151",
    "series": "Venetian DeepStack Extravaganza IV",
    "venue": "The Venetian Resort",
    "date": "2026-12-14",
@@ -12909,7 +13000,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r151",
+   "id": "r152",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-14",
@@ -12990,7 +13081,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r152",
+   "id": "r153",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-14",
@@ -13067,7 +13158,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r153",
+   "id": "r154",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-14",
@@ -13146,7 +13237,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r154",
+   "id": "r155",
    "series": "Venetian DeepStack Extravaganza IV",
    "venue": "The Venetian Resort",
    "date": "2026-12-15",
@@ -13234,7 +13325,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r155",
+   "id": "r156",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-15",
@@ -13316,7 +13407,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r156",
+   "id": "r157",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-15",
@@ -13396,7 +13487,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r157",
+   "id": "r158",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-15",
@@ -13475,7 +13566,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r158",
+   "id": "r159",
    "series": "Venetian DeepStack Extravaganza IV",
    "venue": "The Venetian Resort",
    "date": "2026-12-15",
@@ -13561,7 +13652,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r159",
+   "id": "r160",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-15",
@@ -13636,7 +13727,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r160",
+   "id": "r161",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-15",
@@ -13716,7 +13807,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r161",
+   "id": "r162",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-15",
@@ -13793,7 +13884,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r162",
+   "id": "r163",
    "series": "Venetian DeepStack Extravaganza IV",
    "venue": "The Venetian Resort",
    "date": "2026-12-15",
@@ -13878,7 +13969,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r163",
+   "id": "r164",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-15",
@@ -13960,7 +14051,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r164",
+   "id": "r165",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-15",
@@ -14038,7 +14129,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r165",
+   "id": "r166",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-16",
@@ -14117,7 +14208,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r166",
+   "id": "r167",
    "series": "Venetian DeepStack Extravaganza IV",
    "venue": "The Venetian Resort",
    "date": "2026-12-16",
@@ -14202,7 +14293,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r167",
+   "id": "r168",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-16",
@@ -14279,7 +14370,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r168",
+   "id": "r169",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-16",
@@ -14360,7 +14451,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r169",
+   "id": "r170",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-16",
@@ -14437,7 +14528,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r170",
+   "id": "r171",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-16",
@@ -14515,7 +14606,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r171",
+   "id": "r172",
    "series": "Venetian DeepStack Extravaganza IV",
    "venue": "The Venetian Resort",
    "date": "2026-12-16",
@@ -14600,7 +14691,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r172",
+   "id": "r173",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-16",
@@ -14684,7 +14775,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r173",
+   "id": "r174",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-16",
@@ -14767,7 +14858,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r174",
+   "id": "r175",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-16",
@@ -14846,7 +14937,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r175",
+   "id": "r176",
    "series": "Venetian DeepStack Extravaganza IV",
    "venue": "The Venetian Resort",
    "date": "2026-12-17",
@@ -14933,7 +15024,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r176",
+   "id": "r177",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-17",
@@ -15010,7 +15101,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r177",
+   "id": "r178",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-17",
@@ -15085,7 +15176,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r178",
+   "id": "r179",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-17",
@@ -15162,7 +15253,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r179",
+   "id": "r180",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-17",
@@ -15242,7 +15333,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r180",
+   "id": "r181",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-17",
@@ -15321,7 +15412,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r181",
+   "id": "r182",
    "series": "Venetian DeepStack Extravaganza IV",
    "venue": "The Venetian Resort",
    "date": "2026-12-17",
@@ -15407,7 +15498,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r182",
+   "id": "r183",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-17",
@@ -15484,7 +15575,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r183",
+   "id": "r184",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-17",
@@ -15565,7 +15656,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r184",
+   "id": "r185",
    "series": "Venetian DeepStack Extravaganza IV",
    "venue": "The Venetian Resort",
    "date": "2026-12-17",
@@ -15652,7 +15743,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r185",
+   "id": "r186",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-17",
@@ -15733,7 +15824,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r186",
+   "id": "r187",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-18",
@@ -15814,7 +15905,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r187",
+   "id": "r188",
    "series": "Venetian DeepStack Extravaganza IV",
    "venue": "The Venetian Resort",
    "date": "2026-12-18",
@@ -15901,7 +15992,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r188",
+   "id": "r189",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-18",
@@ -15976,7 +16067,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r189",
+   "id": "r190",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-18",
@@ -16051,7 +16142,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r190",
+   "id": "r191",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-18",
@@ -16128,7 +16219,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r191",
+   "id": "r192",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-18",
@@ -16207,7 +16298,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r192",
+   "id": "r193",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-18",
@@ -16284,7 +16375,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r193",
+   "id": "r194",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-18",
@@ -16366,7 +16457,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r194",
+   "id": "r195",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-18",
@@ -16443,7 +16534,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r195",
+   "id": "r196",
    "series": "Venetian DeepStack Extravaganza IV",
    "venue": "The Venetian Resort",
    "date": "2026-12-18",
@@ -16530,7 +16621,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r196",
+   "id": "r197",
    "series": "Venetian DeepStack Extravaganza IV",
    "venue": "The Venetian Resort",
    "date": "2026-12-19",
@@ -16617,7 +16708,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r197",
+   "id": "r198",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-19",
@@ -16696,7 +16787,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r198",
+   "id": "r199",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-19",
@@ -16773,7 +16864,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r199",
+   "id": "r200",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-19",
@@ -16856,7 +16947,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r200",
+   "id": "r201",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-19",
@@ -16936,7 +17027,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r201",
+   "id": "r202",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-19",
@@ -17015,7 +17106,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r202",
+   "id": "r203",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-19",
@@ -17090,7 +17181,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r203",
+   "id": "r204",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-19",
@@ -17167,7 +17258,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r204",
+   "id": "r205",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-19",
@@ -17242,7 +17333,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r205",
+   "id": "r206",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-19",
@@ -17325,7 +17416,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r206",
+   "id": "r207",
    "series": "Venetian DeepStack Extravaganza IV",
    "venue": "The Venetian Resort",
    "date": "2026-12-19",
@@ -17412,7 +17503,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r207",
+   "id": "r208",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-19",
@@ -17489,7 +17580,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r208",
+   "id": "r209",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-19",
@@ -17568,7 +17659,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r209",
+   "id": "r210",
    "series": "Venetian DeepStack Extravaganza IV",
    "venue": "The Venetian Resort",
    "date": "2026-12-20",
@@ -17656,7 +17747,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r210",
+   "id": "r211",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-20",
@@ -17735,7 +17826,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r211",
+   "id": "r212",
    "series": "Venetian DeepStack Extravaganza IV",
    "venue": "The Venetian Resort",
    "date": "2026-12-20",
@@ -17822,7 +17913,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r212",
+   "id": "r213",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-20",
@@ -17897,7 +17988,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r213",
+   "id": "r214",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-20",
@@ -17977,7 +18068,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r214",
+   "id": "r215",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-20",
@@ -18067,7 +18158,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r215",
+   "id": "r216",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-20",
@@ -18144,7 +18235,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r216",
+   "id": "r217",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-20",
@@ -18224,7 +18315,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r217",
+   "id": "r218",
    "series": "Venetian DeepStack Extravaganza IV",
    "venue": "The Venetian Resort",
    "date": "2026-12-20",
@@ -18309,7 +18400,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r218",
+   "id": "r219",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-20",
@@ -18386,7 +18477,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r219",
+   "id": "r220",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-20",
@@ -18465,7 +18556,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r220",
+   "id": "r221",
    "series": "Venetian DeepStack Extravaganza IV",
    "venue": "The Venetian Resort",
    "date": "2026-12-21",
@@ -18552,7 +18643,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r221",
+   "id": "r222",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-21",
@@ -18627,7 +18718,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r222",
+   "id": "r223",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-21",
@@ -18709,7 +18800,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r223",
+   "id": "r224",
    "series": "Venetian DeepStack Extravaganza IV",
    "venue": "The Venetian Resort",
    "date": "2026-12-21",
@@ -18794,7 +18885,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r224",
+   "id": "r225",
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-21",
@@ -18887,7 +18978,7 @@
    "structure_days": "Saturday, December 5, 2026 at 9 p.m. Sunday, December 6, 2026 at 9 p.m. Monday, December 7, 2026 at 9 p.m. Tuesday, December 8, 2026 at 9 p.m. Wednesday, December 9, 2026 at 9 p.m. Saturday, December 12, 2026 at 9 p.m. Monday, December 14, 2026 at 9 p.m. Monday, December 21, 2026 at 6 p.m."
   },
   {
-   "id": "r225",
+   "id": "r226",
    "series": "Venetian DeepStack Extravaganza IV",
    "venue": "The Venetian Resort",
    "date": "2026-12-22",
@@ -18974,7 +19065,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r226",
+   "id": "r227",
    "series": "Venetian DeepStack Extravaganza IV",
    "venue": "The Venetian Resort",
    "date": "2026-12-22",
@@ -19059,7 +19150,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r227",
+   "id": "r228",
    "series": "Venetian DeepStack Extravaganza IV",
    "venue": "The Venetian Resort",
    "date": "2026-12-23",
@@ -19147,7 +19238,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r228",
+   "id": "r229",
    "series": "Venetian DeepStack Extravaganza IV",
    "venue": "The Venetian Resort",
    "date": "2026-12-23",
@@ -19230,7 +19321,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r229",
+   "id": "r230",
    "series": "Venetian DeepStack Extravaganza IV",
    "venue": "The Venetian Resort",
    "date": "2026-12-23",
@@ -19315,7 +19406,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r230",
+   "id": "r231",
    "series": "Venetian DeepStack Extravaganza NYE",
    "venue": "The Venetian Resort",
    "date": "2026-12-24",
@@ -19398,7 +19489,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r231",
+   "id": "r232",
    "series": "Venetian DeepStack Extravaganza NYE",
    "venue": "The Venetian Resort",
    "date": "2026-12-24",
@@ -19483,7 +19574,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r232",
+   "id": "r233",
    "series": "Venetian DeepStack Extravaganza NYE",
    "venue": "The Venetian Resort",
    "date": "2026-12-25",
@@ -19566,7 +19657,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r233",
+   "id": "r234",
    "series": "Venetian DeepStack Extravaganza NYE",
    "venue": "The Venetian Resort",
    "date": "2026-12-25",
@@ -19651,7 +19742,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r234",
+   "id": "r235",
    "series": "Venetian DeepStack Extravaganza NYE",
    "venue": "The Venetian Resort",
    "date": "2026-12-26",
@@ -19738,7 +19829,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r235",
+   "id": "r236",
    "series": "Venetian DeepStack Extravaganza NYE",
    "venue": "The Venetian Resort",
    "date": "2026-12-26",
@@ -19832,7 +19923,7 @@
    }
   },
   {
-   "id": "r236",
+   "id": "r237",
    "series": "Venetian DeepStack Extravaganza NYE",
    "venue": "The Venetian Resort",
    "date": "2026-12-26",
@@ -19926,7 +20017,7 @@
    }
   },
   {
-   "id": "r237",
+   "id": "r238",
    "series": "Venetian DeepStack Extravaganza NYE",
    "venue": "The Venetian Resort",
    "date": "2026-12-27",
@@ -20012,7 +20103,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r238",
+   "id": "r239",
    "series": "Venetian DeepStack Extravaganza NYE",
    "venue": "The Venetian Resort",
    "date": "2026-12-27",
@@ -20104,7 +20195,7 @@
    }
   },
   {
-   "id": "r239",
+   "id": "r240",
    "series": "Venetian DeepStack Extravaganza NYE",
    "venue": "The Venetian Resort",
    "date": "2026-12-27",
@@ -20196,7 +20287,7 @@
    }
   },
   {
-   "id": "r240",
+   "id": "r241",
    "series": "Venetian DeepStack Extravaganza NYE",
    "venue": "The Venetian Resort",
    "date": "2026-12-28",
@@ -20282,7 +20373,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r241",
+   "id": "r242",
    "series": "Venetian DeepStack Extravaganza NYE",
    "venue": "The Venetian Resort",
    "date": "2026-12-28",
@@ -20374,7 +20465,7 @@
    }
   },
   {
-   "id": "r242",
+   "id": "r243",
    "series": "Venetian DeepStack Extravaganza NYE",
    "venue": "The Venetian Resort",
    "date": "2026-12-28",
@@ -20466,7 +20557,7 @@
    }
   },
   {
-   "id": "r243",
+   "id": "r244",
    "series": "Venetian DeepStack Extravaganza NYE",
    "venue": "The Venetian Resort",
    "date": "2026-12-29",
@@ -20552,7 +20643,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r244",
+   "id": "r245",
    "series": "Venetian DeepStack Extravaganza NYE",
    "venue": "The Venetian Resort",
    "date": "2026-12-29",
@@ -20637,7 +20728,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r245",
+   "id": "r246",
    "series": "Venetian DeepStack Extravaganza NYE",
    "venue": "The Venetian Resort",
    "date": "2026-12-30",
@@ -20724,7 +20815,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r246",
+   "id": "r247",
    "series": "Venetian DeepStack Extravaganza NYE",
    "venue": "The Venetian Resort",
    "date": "2026-12-30",
@@ -20807,7 +20898,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r247",
+   "id": "r248",
    "series": "Venetian DeepStack Extravaganza NYE",
    "venue": "The Venetian Resort",
    "date": "2026-12-30",
@@ -20899,7 +20990,7 @@
    }
   },
   {
-   "id": "r248",
+   "id": "r249",
    "series": "Venetian DeepStack Extravaganza NYE",
    "venue": "The Venetian Resort",
    "date": "2026-12-30",
@@ -20992,7 +21083,7 @@
    }
   },
   {
-   "id": "r249",
+   "id": "r250",
    "series": "Venetian DeepStack Extravaganza NYE",
    "venue": "The Venetian Resort",
    "date": "2026-12-31",
@@ -21079,7 +21170,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r250",
+   "id": "r251",
    "series": "Venetian DeepStack Extravaganza NYE",
    "venue": "The Venetian Resort",
    "date": "2026-12-31",
@@ -21162,7 +21253,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r251",
+   "id": "r252",
    "series": "Venetian DeepStack Extravaganza NYE",
    "venue": "The Venetian Resort",
    "date": "2026-12-31",
@@ -21254,7 +21345,7 @@
    }
   },
   {
-   "id": "r252",
+   "id": "r253",
    "series": "Venetian DeepStack Extravaganza NYE",
    "venue": "The Venetian Resort",
    "date": "2026-12-31",
@@ -21347,7 +21438,7 @@
    }
   },
   {
-   "id": "r253",
+   "id": "r254",
    "series": "Venetian DeepStack Extravaganza NYE",
    "venue": "The Venetian Resort",
    "date": "2027-01-01",
@@ -21434,7 +21525,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r254",
+   "id": "r255",
    "series": "Venetian DeepStack Extravaganza NYE",
    "venue": "The Venetian Resort",
    "date": "2027-01-01",
@@ -21526,7 +21617,7 @@
    }
   },
   {
-   "id": "r255",
+   "id": "r256",
    "series": "Venetian DeepStack Extravaganza NYE",
    "venue": "The Venetian Resort",
    "date": "2027-01-01",
@@ -21611,7 +21702,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r256",
+   "id": "r257",
    "series": "Venetian DeepStack Extravaganza NYE",
    "venue": "The Venetian Resort",
    "date": "2027-01-02",
@@ -21703,7 +21794,7 @@
    }
   },
   {
-   "id": "r257",
+   "id": "r258",
    "series": "Venetian DeepStack Extravaganza NYE",
    "venue": "The Venetian Resort",
    "date": "2027-01-02",
@@ -21790,7 +21881,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r258",
+   "id": "r259",
    "series": "Venetian DeepStack Extravaganza NYE",
    "venue": "The Venetian Resort",
    "date": "2027-01-02",
@@ -21882,7 +21973,7 @@
    }
   },
   {
-   "id": "r259",
+   "id": "r260",
    "series": "Venetian DeepStack Extravaganza NYE",
    "venue": "The Venetian Resort",
    "date": "2027-01-02",
@@ -21969,7 +22060,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r260",
+   "id": "r261",
    "series": "Venetian DeepStack Extravaganza NYE",
    "venue": "The Venetian Resort",
    "date": "2027-01-03",
@@ -22056,7 +22147,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r261",
+   "id": "r262",
    "series": "Venetian DeepStack Extravaganza NYE",
    "venue": "The Venetian Resort",
    "date": "2027-01-03",
@@ -22141,7 +22232,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r262",
+   "id": "r263",
    "series": "Venetian DeepStack Extravaganza NYE",
    "venue": "The Venetian Resort",
    "date": "2027-01-04",
@@ -22229,7 +22320,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r263",
+   "id": "r264",
    "series": "Venetian DeepStack Extravaganza NYE",
    "venue": "The Venetian Resort",
    "date": "2027-01-04",
@@ -22316,7 +22407,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r264",
+   "id": "r265",
    "series": "Venetian DeepStack Extravaganza NYE",
    "venue": "The Venetian Resort",
    "date": "2027-01-04",
@@ -22403,7 +22494,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r265",
+   "id": "r266",
    "series": "Venetian DeepStack Extravaganza NYE",
    "venue": "The Venetian Resort",
    "date": "2027-01-05",
@@ -22492,7 +22583,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r266",
+   "id": "r267",
    "series": "Venetian DeepStack Extravaganza NYE",
    "venue": "The Venetian Resort",
    "date": "2027-01-05",
@@ -22581,7 +22672,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r267",
+   "id": "r268",
    "series": "Venetian DeepStack Extravaganza NYE",
    "venue": "The Venetian Resort",
    "date": "2027-01-06",
@@ -22664,7 +22755,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r268",
+   "id": "r269",
    "series": "Venetian DeepStack Extravaganza NYE",
    "venue": "The Venetian Resort",
    "date": "2027-01-06",
@@ -22752,7 +22843,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r269",
+   "id": "r270",
    "series": "Venetian DeepStack Extravaganza NYE",
    "venue": "The Venetian Resort",
    "date": "2027-01-06",
@@ -22838,7 +22929,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r270",
+   "id": "r271",
    "series": "Venetian DeepStack Extravaganza NYE",
    "venue": "The Venetian Resort",
    "date": "2027-01-07",
@@ -22924,7 +23015,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r271",
+   "id": "r272",
    "series": "Venetian DeepStack Extravaganza NYE",
    "venue": "The Venetian Resort",
    "date": "2027-01-07",
@@ -23010,7 +23101,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r272",
+   "id": "r273",
    "series": "Venetian DeepStack Extravaganza NYE",
    "venue": "The Venetian Resort",
    "date": "2027-01-08",
@@ -23096,7 +23187,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r273",
+   "id": "r274",
    "series": "Venetian DeepStack Extravaganza NYE",
    "venue": "The Venetian Resort",
    "date": "2027-01-08",
@@ -23182,7 +23273,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r274",
+   "id": "r275",
    "series": "Venetian DeepStack Extravaganza NYE",
    "venue": "The Venetian Resort",
    "date": "2027-01-09",
@@ -23268,7 +23359,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r275",
+   "id": "r276",
    "series": "Venetian DeepStack Extravaganza NYE",
    "venue": "The Venetian Resort",
    "date": "2027-01-09",
@@ -23354,7 +23445,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r276",
+   "id": "r277",
    "series": "Venetian DeepStack Extravaganza NYE",
    "venue": "The Venetian Resort",
    "date": "2027-01-10",
@@ -23439,7 +23530,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r277",
+   "id": "r278",
    "series": "Venetian DeepStack Extravaganza NYE",
    "venue": "The Venetian Resort",
    "date": "2027-01-10",
@@ -23526,7 +23617,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r278",
+   "id": "r279",
    "series": "Venetian DeepStack Extravaganza NYE",
    "venue": "The Venetian Resort",
    "date": "2027-01-10",
@@ -23611,7 +23702,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r279",
+   "id": "r280",
    "series": "Wynn Signature Series",
    "venue": "Wynn Las Vegas",
    "date": "2027-01-11",
@@ -23692,7 +23783,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r280",
+   "id": "r281",
    "series": "Wynn Signature Series",
    "venue": "Wynn Las Vegas",
    "date": "2027-01-11",
@@ -23773,7 +23864,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r281",
+   "id": "r282",
    "series": "Wynn Signature Series",
    "venue": "Wynn Las Vegas",
    "date": "2027-01-12",
@@ -23854,7 +23945,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r282",
+   "id": "r283",
    "series": "Wynn Signature Series",
    "venue": "Wynn Las Vegas",
    "date": "2027-01-12",
@@ -23935,7 +24026,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r283",
+   "id": "r284",
    "series": "Wynn Signature Series",
    "venue": "Wynn Las Vegas",
    "date": "2027-01-13",
@@ -24016,7 +24107,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r284",
+   "id": "r285",
    "series": "Wynn Signature Series",
    "venue": "Wynn Las Vegas",
    "date": "2027-01-13",
@@ -24097,7 +24188,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r285",
+   "id": "r286",
    "series": "Wynn Signature Series",
    "venue": "Wynn Las Vegas",
    "date": "2027-01-14",
@@ -24178,7 +24269,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r286",
+   "id": "r287",
    "series": "Wynn Signature Series",
    "venue": "Wynn Las Vegas",
    "date": "2027-01-14",
@@ -24262,7 +24353,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r287",
+   "id": "r288",
    "series": "Wynn Signature Series",
    "venue": "Wynn Las Vegas",
    "date": "2027-01-14",
@@ -24346,7 +24437,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r288",
+   "id": "r289",
    "series": "Wynn Signature Series",
    "venue": "Wynn Las Vegas",
    "date": "2027-01-15",
@@ -24427,7 +24518,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r289",
+   "id": "r290",
    "series": "Wynn Signature Series",
    "venue": "Wynn Las Vegas",
    "date": "2027-01-15",
@@ -24508,7 +24599,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r290",
+   "id": "r291",
    "series": "Wynn Signature Series",
    "venue": "Wynn Las Vegas",
    "date": "2027-01-16",
@@ -24589,7 +24680,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r291",
+   "id": "r292",
    "series": "Wynn Signature Series",
    "venue": "Wynn Las Vegas",
    "date": "2027-01-16",
@@ -24670,7 +24761,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r292",
+   "id": "r293",
    "series": "Wynn Signature Series",
    "venue": "Wynn Las Vegas",
    "date": "2027-01-17",
@@ -24751,7 +24842,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r293",
+   "id": "r294",
    "series": "Wynn Signature Series",
    "venue": "Wynn Las Vegas",
    "date": "2027-01-17",
@@ -24835,7 +24926,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r294",
+   "id": "r295",
    "series": "Wynn Signature Series",
    "venue": "Wynn Las Vegas",
    "date": "2027-01-17",
@@ -24916,7 +25007,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r295",
+   "id": "r296",
    "series": "Wynn Signature Series",
    "venue": "Wynn Las Vegas",
    "date": "2027-01-18",
@@ -24997,7 +25088,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r296",
+   "id": "r297",
    "series": "Wynn Signature Series",
    "venue": "Wynn Las Vegas",
    "date": "2027-01-18",
@@ -25078,7 +25169,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r297",
+   "id": "r298",
    "series": "Wynn Signature Series",
    "venue": "Wynn Las Vegas",
    "date": "2027-01-18",
@@ -25159,7 +25250,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r298",
+   "id": "r299",
    "series": "Wynn Signature Series",
    "venue": "Wynn Las Vegas",
    "date": "2027-01-19",
@@ -25240,7 +25331,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r299",
+   "id": "r300",
    "series": "Wynn Signature Series",
    "venue": "Wynn Las Vegas",
    "date": "2027-01-19",
@@ -25321,7 +25412,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r300",
+   "id": "r301",
    "series": "Wynn Signature Series",
    "venue": "Wynn Las Vegas",
    "date": "2027-01-19",
@@ -25402,7 +25493,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r301",
+   "id": "r302",
    "series": "Wynn Signature Series",
    "venue": "Wynn Las Vegas",
    "date": "2027-01-20",
@@ -25483,7 +25574,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r302",
+   "id": "r303",
    "series": "Wynn Signature Series",
    "venue": "Wynn Las Vegas",
    "date": "2027-01-20",
@@ -25564,7 +25655,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r303",
+   "id": "r304",
    "series": "Wynn Signature Series",
    "venue": "Wynn Las Vegas",
    "date": "2027-01-20",
@@ -25645,7 +25736,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r304",
+   "id": "r305",
    "series": "Wynn Signature Series",
    "venue": "Wynn Las Vegas",
    "date": "2027-01-21",
@@ -25726,7 +25817,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r305",
+   "id": "r306",
    "series": "Wynn Signature Series",
    "venue": "Wynn Las Vegas",
    "date": "2027-01-21",
@@ -25810,7 +25901,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r306",
+   "id": "r307",
    "series": "Wynn Signature Series",
    "venue": "Wynn Las Vegas",
    "date": "2027-01-21",
@@ -25891,7 +25982,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r307",
+   "id": "r308",
    "series": "Wynn Signature Series",
    "venue": "Wynn Las Vegas",
    "date": "2027-01-21",
@@ -25975,7 +26066,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r308",
+   "id": "r309",
    "series": "Wynn Signature Series",
    "venue": "Wynn Las Vegas",
    "date": "2027-01-22",
@@ -26056,7 +26147,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r309",
+   "id": "r310",
    "series": "Wynn Signature Series",
    "venue": "Wynn Las Vegas",
    "date": "2027-01-22",
@@ -26137,7 +26228,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r310",
+   "id": "r311",
    "series": "Wynn Signature Series",
    "venue": "Wynn Las Vegas",
    "date": "2027-01-22",
@@ -26221,7 +26312,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r311",
+   "id": "r312",
    "series": "Wynn Signature Series",
    "venue": "Wynn Las Vegas",
    "date": "2027-01-23",
@@ -26302,7 +26393,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r312",
+   "id": "r313",
    "series": "Wynn Signature Series",
    "venue": "Wynn Las Vegas",
    "date": "2027-01-23",
@@ -26383,7 +26474,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r313",
+   "id": "r314",
    "series": "Wynn Signature Series",
    "venue": "Wynn Las Vegas",
    "date": "2027-01-24",
@@ -26464,7 +26555,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r314",
+   "id": "r315",
    "series": "Wynn Signature Series",
    "venue": "Wynn Las Vegas",
    "date": "2027-01-24",
@@ -26548,7 +26639,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r315",
+   "id": "r316",
    "series": "Wynn Signature Series",
    "venue": "Wynn Las Vegas",
    "date": "2027-01-24",
@@ -26629,7 +26720,7 @@
    "last_checked": "2026-11-16"
   },
   {
-   "id": "r316",
+   "id": "r317",
    "series": "Wynn Signature Series",
    "venue": "Wynn Las Vegas",
    "date": "2027-01-24",

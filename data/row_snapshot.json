@@ -1,6 +1,6 @@
 {
  "generated_on": "2026-11-16",
- "row_count": 316,
+ "row_count": 317,
  "rows": {
   "r001": {
    "date": "2026-11-16",
@@ -1613,6 +1613,18 @@
   "r135": {
    "date": "2026-12-13",
    "start": "11:00",
+   "name": "TORSE (2 Day)",
+   "venue": "Wynn Las Vegas",
+   "series": "WPT World Championship (Wynn)",
+   "buy_in_usd": 1100,
+   "guarantee_usd": null,
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $1,100 Buy-in = $965 (Tournament Prize Pool) + $90 (Tournament Fee) + $45 (Poker Staff Service Charge)",
+   "flags": 2
+  },
+  "r136": {
+   "date": "2026-12-13",
+   "start": "11:00",
    "name": "WPT World Championship Day 1A $1,000,000 Added",
    "venue": "Wynn Las Vegas",
    "series": "WPT World Championship (Wynn)",
@@ -1622,7 +1634,7 @@
    "buy_in": "not published for this event",
    "flags": 1
   },
-  "r136": {
+  "r137": {
    "date": "2026-12-13",
    "start": "12:00",
    "name": "Milestone Satellite to $10,400 World Championship 1B",
@@ -1634,7 +1646,7 @@
    "buy_in": "not published for this event",
    "flags": 0
   },
-  "r137": {
+  "r138": {
    "date": "2026-12-13",
    "start": "12:00",
    "name": "PLO Day 1A",
@@ -1646,7 +1658,7 @@
    "buy_in": "not published for this event",
    "flags": 0
   },
-  "r138": {
+  "r139": {
    "date": "2026-12-13",
    "start": "13:00",
    "name": "$2,200 NLH PokerAtlas Championship title event Day 2 Restart - Play Down to Final 7 - Streamed Final Table (PokerGO)",
@@ -1658,7 +1670,7 @@
    "buy_in": "house fee $225 of the $2,200 buy-in; prize pool $1975",
    "flags": 0
   },
-  "r139": {
+  "r140": {
    "date": "2026-12-13",
    "start": "13:00",
    "name": "Super Gold Million Mystery Bounty Day 3",
@@ -1670,7 +1682,7 @@
    "buy_in": "not published for this event",
    "flags": 1
   },
-  "r140": {
+  "r141": {
    "date": "2026-12-13",
    "start": "17:10",
    "name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)",
@@ -1682,7 +1694,7 @@
    "buy_in": "house fee $50 of the $300 buy-in; prize pool $250",
    "flags": 0
   },
-  "r141": {
+  "r142": {
    "date": "2026-12-13",
    "start": "18:00",
    "name": "Milestone Satellite to $10,400 World Championship 1B/C",
@@ -1694,7 +1706,7 @@
    "buy_in": "not published for this event",
    "flags": 0
   },
-  "r142": {
+  "r143": {
    "date": "2026-12-14",
    "start": "10:10",
    "name": "$1,100 No Limit Hold'em Seniors 1B $300K GTD - must be 50+ years of age",
@@ -1706,7 +1718,7 @@
    "buy_in": "house fee $140 of the $1,100 buy-in; prize pool $960",
    "flags": 0
   },
-  "r143": {
+  "r144": {
    "date": "2026-12-14",
    "start": "11:00",
    "name": "$2,200 NLH PokerAtlas Championship title event Day 3 Restart - Streamed Final Table (PokerGO)",
@@ -1718,7 +1730,7 @@
    "buy_in": "house fee $225 of the $2,200 buy-in; prize pool $1975",
    "flags": 0
   },
-  "r144": {
+  "r145": {
    "date": "2026-12-14",
    "start": "11:00",
    "name": "No Limit Hold'em Day 1B",
@@ -1730,7 +1742,7 @@
    "buy_in": "not published for this event",
    "flags": 0
   },
-  "r145": {
+  "r146": {
    "date": "2026-12-14",
    "start": "11:00",
    "name": "WPT World Championship Day 1B $1,000,000 Added",
@@ -1742,22 +1754,10 @@
    "buy_in": "not published for this event",
    "flags": 1
   },
-  "r146": {
-   "date": "2026-12-14",
-   "start": "12:00",
-   "name": "Milestone Satellite to $10,400 World Championship 1C",
-   "venue": "Wynn Las Vegas",
-   "series": "WPT World Championship (Wynn)",
-   "buy_in_usd": 1100,
-   "guarantee_usd": null,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
-   "flags": 0
-  },
   "r147": {
    "date": "2026-12-14",
    "start": "12:00",
-   "name": "Mixed Triple Draw (A-5, 2-7, Badugi) (2 Day)",
+   "name": "Milestone Satellite to $10,400 World Championship 1C",
    "venue": "Wynn Las Vegas",
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 1100,
@@ -1769,6 +1769,18 @@
   "r148": {
    "date": "2026-12-14",
    "start": "12:00",
+   "name": "Mixed Triple Draw (A-5, 2-7, Badugi) (2 Day)",
+   "venue": "Wynn Las Vegas",
+   "series": "WPT World Championship (Wynn)",
+   "buy_in_usd": 1100,
+   "guarantee_usd": null,
+   "entry_status": "UNV",
+   "buy_in": "not published for this event",
+   "flags": 0
+  },
+  "r149": {
+   "date": "2026-12-14",
+   "start": "12:00",
    "name": "PLO Day 1B",
    "venue": "Wynn Las Vegas",
    "series": "WPT World Championship (Wynn)",
@@ -1778,7 +1790,7 @@
    "buy_in": "not published for this event",
    "flags": 0
   },
-  "r149": {
+  "r150": {
    "date": "2026-12-14",
    "start": "14:00",
    "name": "Super Gold Million Mystery Bounty Final Table",
@@ -1790,7 +1802,7 @@
    "buy_in": "not published for this event",
    "flags": 1
   },
-  "r150": {
+  "r151": {
    "date": "2026-12-14",
    "start": "17:10",
    "name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)",
@@ -1802,7 +1814,7 @@
    "buy_in": "house fee $50 of the $300 buy-in; prize pool $250",
    "flags": 0
   },
-  "r151": {
+  "r152": {
    "date": "2026-12-14",
    "start": "18:00",
    "name": "Milestone Satellite to $10,400 World Championship 1C",
@@ -1814,7 +1826,7 @@
    "buy_in": "not published for this event",
    "flags": 0
   },
-  "r152": {
+  "r153": {
    "date": "2026-12-14",
    "start": "19:00",
    "name": "PLO Turbo",
@@ -1826,7 +1838,7 @@
    "buy_in": "not published for this event",
    "flags": 0
   },
-  "r153": {
+  "r154": {
    "date": "2026-12-14",
    "start": "21:00",
    "name": "NIH Turbo",
@@ -1838,7 +1850,7 @@
    "buy_in": "not published for this event",
    "flags": 1
   },
-  "r154": {
+  "r155": {
    "date": "2026-12-15",
    "start": "10:00",
    "name": "$1,100 No Limit Hold'em Seniors Day 2 Restart",
@@ -1850,7 +1862,7 @@
    "buy_in": "house fee $140 of the $1,100 buy-in; prize pool $960",
    "flags": 0
   },
-  "r155": {
+  "r156": {
    "date": "2026-12-15",
    "start": "11:00",
    "name": "Milestone Satellite to $10,400 World Championship 1C/Day 2",
@@ -1862,7 +1874,7 @@
    "buy_in": "not published for this event",
    "flags": 0
   },
-  "r156": {
+  "r157": {
    "date": "2026-12-15",
    "start": "11:00",
    "name": "No Limit Hold'em Day 2",
@@ -1874,7 +1886,7 @@
    "buy_in": "not published for this event",
    "flags": 1
   },
-  "r157": {
+  "r158": {
    "date": "2026-12-15",
    "start": "11:00",
    "name": "WPT World Championship Day 1C $1,000,000 Added",
@@ -1886,7 +1898,7 @@
    "buy_in": "not published for this event",
    "flags": 1
   },
-  "r158": {
+  "r159": {
    "date": "2026-12-15",
    "start": "11:10",
    "name": "$1,100 No Limit Hold'em Progressive Knock-Out Bounty $75K GTD (1Day)",
@@ -1898,7 +1910,7 @@
    "buy_in": "house fee $130 of the $1,100 buy-in; prize pool $970",
    "flags": 0
   },
-  "r159": {
+  "r160": {
    "date": "2026-12-15",
    "start": "12:00",
    "name": "Big O",
@@ -1910,7 +1922,7 @@
    "buy_in": "not published for this event",
    "flags": 0
   },
-  "r160": {
+  "r161": {
    "date": "2026-12-15",
    "start": "12:00",
    "name": "PLO Day 2",
@@ -1922,7 +1934,7 @@
    "buy_in": "not published for this event",
    "flags": 1
   },
-  "r161": {
+  "r162": {
    "date": "2026-12-15",
    "start": "13:00",
    "name": "PLO Progressive Bounty (PKO)",
@@ -1934,7 +1946,7 @@
    "buy_in": "not published for this event",
    "flags": 0
   },
-  "r162": {
+  "r163": {
    "date": "2026-12-15",
    "start": "17:10",
    "name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)",
@@ -1946,7 +1958,7 @@
    "buy_in": "house fee $50 of the $300 buy-in; prize pool $250",
    "flags": 0
   },
-  "r163": {
+  "r164": {
    "date": "2026-12-15",
    "start": "18:00",
    "name": "Milestone Satellite to $10,400 World Championship Day 2",
@@ -1958,7 +1970,7 @@
    "buy_in": "not published for this event",
    "flags": 0
   },
-  "r164": {
+  "r165": {
    "date": "2026-12-15",
    "start": "19:00",
    "name": "NIH $500 Bounty Turbo",
@@ -1970,7 +1982,7 @@
    "buy_in": "not published for this event",
    "flags": 0
   },
-  "r165": {
+  "r166": {
    "date": "2026-12-16",
    "start": "11:00",
    "name": "No Limit Hold'em Day 1A",
@@ -1982,7 +1994,7 @@
    "buy_in": "not published for this event",
    "flags": 1
   },
-  "r166": {
+  "r167": {
    "date": "2026-12-16",
    "start": "11:10",
    "name": "$600 No Limit Hold'em Bounty $50K GTD (1Day) - $200 bounties to start & $500 bounties in the money",
@@ -1994,7 +2006,7 @@
    "buy_in": "house fee $90 of the $600 buy-in; prize pool $510",
    "flags": 0
   },
-  "r167": {
+  "r168": {
    "date": "2026-12-16",
    "start": "12:00",
    "name": "PLO Double Board Bomb Pot",
@@ -2006,7 +2018,7 @@
    "buy_in": "not published for this event",
    "flags": 1
   },
-  "r168": {
+  "r169": {
    "date": "2026-12-16",
    "start": "12:00",
    "name": "WPT World Championship Day 2 (Registration open until the start of Day 2)",
@@ -2018,7 +2030,7 @@
    "buy_in": "not published for this event",
    "flags": 2
   },
-  "r169": {
+  "r170": {
    "date": "2026-12-16",
    "start": "13:00",
    "name": "HORSE",
@@ -2030,7 +2042,7 @@
    "buy_in": "not published for this event",
    "flags": 1
   },
-  "r170": {
+  "r171": {
    "date": "2026-12-16",
    "start": "13:00",
    "name": "PLO 6-Max",
@@ -2042,7 +2054,7 @@
    "buy_in": "not published for this event",
    "flags": 2
   },
-  "r171": {
+  "r172": {
    "date": "2026-12-16",
    "start": "17:10",
    "name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)",
@@ -2054,7 +2066,7 @@
    "buy_in": "house fee $50 of the $300 buy-in; prize pool $250",
    "flags": 0
   },
-  "r172": {
+  "r173": {
    "date": "2026-12-16",
    "start": "18:00",
    "name": "Milestone Satellite to $25K NIH High Roller",
@@ -2066,7 +2078,7 @@
    "buy_in": "not published for this event",
    "flags": 2
   },
-  "r173": {
+  "r174": {
    "date": "2026-12-16",
    "start": "18:00",
    "name": "Milestone Satellite to $3,000 NLH",
@@ -2078,7 +2090,7 @@
    "buy_in": "not published for this event",
    "flags": 1
   },
-  "r174": {
+  "r175": {
    "date": "2026-12-16",
    "start": "19:00",
    "name": "No Limit Hold'em Day 1B",
@@ -2090,7 +2102,7 @@
    "buy_in": "not published for this event",
    "flags": 1
   },
-  "r175": {
+  "r176": {
    "date": "2026-12-17",
    "start": "10:10",
    "name": "$1,100 No Limit Hold'em 1A $500K GTD - $40 Rake Discount for Entries Before 10:10 a.m.",
@@ -2102,7 +2114,7 @@
    "buy_in": "house fee $140 of the $1,100 buy-in; prize pool $960",
    "flags": 0
   },
-  "r176": {
+  "r177": {
    "date": "2026-12-17",
    "start": "11:00",
    "name": "Seniors NLH Championship (3 Day)",
@@ -2114,7 +2126,7 @@
    "buy_in": "not published for this event",
    "flags": 0
   },
-  "r177": {
+  "r178": {
    "date": "2026-12-17",
    "start": "11:00",
    "name": "Wynn Mixed Championship (2 Day)",
@@ -2126,7 +2138,7 @@
    "buy_in": "not published for this event",
    "flags": 0
   },
-  "r178": {
+  "r179": {
    "date": "2026-12-17",
    "start": "12:00",
    "name": "No Limit Hold'em Day 1A",
@@ -2138,7 +2150,7 @@
    "buy_in": "not published for this event",
    "flags": 0
   },
-  "r179": {
+  "r180": {
    "date": "2026-12-17",
    "start": "12:00",
    "name": "No Limit Hold'em Day 2",
@@ -2150,7 +2162,7 @@
    "buy_in": "not published for this event",
    "flags": 1
   },
-  "r180": {
+  "r181": {
    "date": "2026-12-17",
    "start": "12:00",
    "name": "WPT World Championship Day 3",
@@ -2162,7 +2174,7 @@
    "buy_in": "not published for this event",
    "flags": 1
   },
-  "r181": {
+  "r182": {
    "date": "2026-12-17",
    "start": "12:10",
    "name": "$600 Pot Limit Omaha Double Board Bomb Pot $25K GTD (1Day)",
@@ -2174,7 +2186,7 @@
    "buy_in": "house fee $90 of the $600 buy-in; prize pool $510",
    "flags": 0
   },
-  "r182": {
+  "r183": {
    "date": "2026-12-17",
    "start": "13:00",
    "name": "NLH High Roller (2 Day)",
@@ -2186,7 +2198,7 @@
    "buy_in": "not published for this event",
    "flags": 1
   },
-  "r183": {
+  "r184": {
    "date": "2026-12-17",
    "start": "14:00",
    "name": "Milestone Satellite to $3,000 NLH",
@@ -2198,7 +2210,7 @@
    "buy_in": "not published for this event",
    "flags": 0
   },
-  "r184": {
+  "r185": {
    "date": "2026-12-17",
    "start": "18:10",
    "name": "$1,100 No Limit Hold'em 1B $500K GTD - $40 Rake Discount for Entries Before 6:10 p.m.",
@@ -2210,7 +2222,7 @@
    "buy_in": "house fee $140 of the $1,100 buy-in; prize pool $960",
    "flags": 0
   },
-  "r185": {
+  "r186": {
    "date": "2026-12-17",
    "start": "19:00",
    "name": "Milestone Satellite to $3,000 NLH",
@@ -2222,7 +2234,7 @@
    "buy_in": "not published for this event",
    "flags": 0
   },
-  "r186": {
+  "r187": {
    "date": "2026-12-18",
    "start": "10:00",
    "name": "Milestone Satellite to $3,000 NLH",
@@ -2234,7 +2246,7 @@
    "buy_in": "not published for this event",
    "flags": 0
   },
-  "r187": {
+  "r188": {
    "date": "2026-12-18",
    "start": "10:10",
    "name": "$1,100 No Limit Hold'em 1C $500K GTD",
@@ -2246,7 +2258,7 @@
    "buy_in": "house fee $140 of the $1,100 buy-in; prize pool $960",
    "flags": 0
   },
-  "r188": {
+  "r189": {
    "date": "2026-12-18",
    "start": "12:00",
    "name": "Limit Omaha 8 Championship (2 Day)",
@@ -2258,7 +2270,7 @@
    "buy_in": "not published for this event",
    "flags": 0
   },
-  "r189": {
+  "r190": {
    "date": "2026-12-18",
    "start": "12:00",
    "name": "No Limit Hold'em",
@@ -2270,7 +2282,7 @@
    "buy_in": "not published for this event",
    "flags": 0
   },
-  "r190": {
+  "r191": {
    "date": "2026-12-18",
    "start": "12:00",
    "name": "No Limit Hold'em Day 1B",
@@ -2282,7 +2294,7 @@
    "buy_in": "not published for this event",
    "flags": 0
   },
-  "r191": {
+  "r192": {
    "date": "2026-12-18",
    "start": "12:00",
    "name": "WPT World Championship Day 4",
@@ -2294,7 +2306,7 @@
    "buy_in": "not published for this event",
    "flags": 1
   },
-  "r192": {
+  "r193": {
    "date": "2026-12-18",
    "start": "13:00",
    "name": "NLH 6-Max",
@@ -2306,7 +2318,7 @@
    "buy_in": "not published for this event",
    "flags": 1
   },
-  "r193": {
+  "r194": {
    "date": "2026-12-18",
    "start": "14:00",
    "name": "Milestone Satellite to $5,000 Seniors High Roller",
@@ -2318,7 +2330,7 @@
    "buy_in": "not published for this event",
    "flags": 0
   },
-  "r194": {
+  "r195": {
    "date": "2026-12-18",
    "start": "18:00",
    "name": "NLH Turbo",
@@ -2330,7 +2342,7 @@
    "buy_in": "not published for this event",
    "flags": 0
   },
-  "r195": {
+  "r196": {
    "date": "2026-12-18",
    "start": "18:10",
    "name": "$1,100 No Limit Hold'em 1D $500K GTD",
@@ -2342,7 +2354,7 @@
    "buy_in": "house fee $140 of the $1,100 buy-in; prize pool $960",
    "flags": 0
   },
-  "r196": {
+  "r197": {
    "date": "2026-12-19",
    "start": "10:10",
    "name": "$1,100 No Limit Hold'em 1E $500K GTD",
@@ -2354,7 +2366,7 @@
    "buy_in": "house fee $140 of the $1,100 buy-in; prize pool $960",
    "flags": 0
   },
-  "r197": {
+  "r198": {
    "date": "2026-12-19",
    "start": "11:00",
    "name": "NLH Mystery Bounty Day 1A",
@@ -2366,7 +2378,7 @@
    "buy_in": "not published for this event",
    "flags": 0
   },
-  "r198": {
+  "r199": {
    "date": "2026-12-19",
    "start": "11:00",
    "name": "Seniors High Roller (3 Day)",
@@ -2378,7 +2390,7 @@
    "buy_in": "not published for this event",
    "flags": 0
   },
-  "r199": {
+  "r200": {
    "date": "2026-12-19",
    "start": "12:00",
    "name": "Milestone Satellite to $1,600 Mystery Bounty",
@@ -2390,7 +2402,7 @@
    "buy_in": "not published for this event",
    "flags": 0
   },
-  "r200": {
+  "r201": {
    "date": "2026-12-19",
    "start": "12:00",
    "name": "No Limit Hold'em Day 2",
@@ -2402,7 +2414,7 @@
    "buy_in": "not published for this event",
    "flags": 1
   },
-  "r201": {
+  "r202": {
    "date": "2026-12-19",
    "start": "12:00",
    "name": "WPT World Championship Day 5",
@@ -2414,7 +2426,7 @@
    "buy_in": "not published for this event",
    "flags": 1
   },
-  "r202": {
+  "r203": {
    "date": "2026-12-19",
    "start": "13:00",
    "name": "NLH 6-Max",
@@ -2426,7 +2438,7 @@
    "buy_in": "not published for this event",
    "flags": 0
   },
-  "r203": {
+  "r204": {
    "date": "2026-12-19",
    "start": "13:00",
    "name": "PLO",
@@ -2438,7 +2450,7 @@
    "buy_in": "not published for this event",
    "flags": 1
   },
-  "r204": {
+  "r205": {
    "date": "2026-12-19",
    "start": "13:00",
    "name": "TORSE Championship (2 Day)",
@@ -2450,7 +2462,7 @@
    "buy_in": "not published for this event",
    "flags": 0
   },
-  "r205": {
+  "r206": {
    "date": "2026-12-19",
    "start": "17:00",
    "name": "Milestone Satellite to $1,600 Mystery Bounty",
@@ -2462,7 +2474,7 @@
    "buy_in": "not published for this event",
    "flags": 0
   },
-  "r206": {
+  "r207": {
    "date": "2026-12-19",
    "start": "17:10",
    "name": "$200 NLH PokerAtlas Valuetown Bounty $20K GTD (1Day) - PokerAtlas PRO member $20 rake discount",
@@ -2474,7 +2486,7 @@
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
    "flags": 0
   },
-  "r207": {
+  "r208": {
    "date": "2026-12-19",
    "start": "18:00",
    "name": "NLH 6-Max Turbo",
@@ -2486,7 +2498,7 @@
    "buy_in": "not published for this event",
    "flags": 0
   },
-  "r208": {
+  "r209": {
    "date": "2026-12-19",
    "start": "19:00",
    "name": "NLH Mystery Bounty Day 1B",
@@ -2498,7 +2510,7 @@
    "buy_in": "not published for this event",
    "flags": 0
   },
-  "r209": {
+  "r210": {
    "date": "2026-12-20",
    "start": "11:00",
    "name": "$1,100 No Limit Hold'em Day 2 Restart",
@@ -2510,7 +2522,7 @@
    "buy_in": "house fee $140 of the $1,100 buy-in; prize pool $960",
    "flags": 0
   },
-  "r210": {
+  "r211": {
    "date": "2026-12-20",
    "start": "11:00",
    "name": "NLH Mystery Bounty Day 1C",
@@ -2522,7 +2534,7 @@
    "buy_in": "not published for this event",
    "flags": 0
   },
-  "r211": {
+  "r212": {
    "date": "2026-12-20",
    "start": "11:10",
    "name": "$600 No Limit Hold'em 1A $150K GTD - $20 Rake Discount for Entries Before 11:10 a.m.",
@@ -2534,7 +2546,7 @@
    "buy_in": "house fee $95 of the $600 buy-in; prize pool $505",
    "flags": 0
   },
-  "r212": {
+  "r213": {
    "date": "2026-12-20",
    "start": "12:00",
    "name": "No Limit Hold'em",
@@ -2546,7 +2558,7 @@
    "buy_in": "not published for this event",
    "flags": 0
   },
-  "r213": {
+  "r214": {
    "date": "2026-12-20",
    "start": "12:00",
    "name": "No Limit Hold'em Final Table",
@@ -2558,7 +2570,7 @@
    "buy_in": "not published for this event",
    "flags": 1
   },
-  "r214": {
+  "r215": {
    "date": "2026-12-20",
    "start": "13:00",
    "name": "Mixed Triple Draw (A-5, 2-7, Badugi)",
@@ -2570,7 +2582,7 @@
    "buy_in": "Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge)",
    "flags": 1
   },
-  "r215": {
+  "r216": {
    "date": "2026-12-20",
    "start": "13:00",
    "name": "NLH 8-Max",
@@ -2582,7 +2594,7 @@
    "buy_in": "not published for this event",
    "flags": 1
   },
-  "r216": {
+  "r217": {
    "date": "2026-12-20",
    "start": "14:00",
    "name": "WPT World Championship Final Table",
@@ -2594,7 +2606,7 @@
    "buy_in": "not published for this event",
    "flags": 1
   },
-  "r217": {
+  "r218": {
    "date": "2026-12-20",
    "start": "17:10",
    "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
@@ -2606,7 +2618,7 @@
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
    "flags": 0
   },
-  "r218": {
+  "r219": {
    "date": "2026-12-20",
    "start": "18:00",
    "name": "5-Card PLO Turbo",
@@ -2618,7 +2630,7 @@
    "buy_in": "not published for this event",
    "flags": 0
   },
-  "r219": {
+  "r220": {
    "date": "2026-12-20",
    "start": "19:00",
    "name": "NLH Mystery Bounty Day 1D",
@@ -2630,7 +2642,7 @@
    "buy_in": "not published for this event",
    "flags": 0
   },
-  "r220": {
+  "r221": {
    "date": "2026-12-21",
    "start": "11:10",
    "name": "$600 No Limit Hold'em 1B $150K GTD",
@@ -2642,7 +2654,7 @@
    "buy_in": "house fee $95 of the $600 buy-in; prize pool $505",
    "flags": 0
   },
-  "r221": {
+  "r222": {
    "date": "2026-12-21",
    "start": "12:00",
    "name": "No Limit Hold'em",
@@ -2654,7 +2666,7 @@
    "buy_in": "not published for this event",
    "flags": 0
   },
-  "r222": {
+  "r223": {
    "date": "2026-12-21",
    "start": "13:00",
    "name": "NLH Mystery Bounty Day 2",
@@ -2666,7 +2678,7 @@
    "buy_in": "not published for this event",
    "flags": 1
   },
-  "r223": {
+  "r224": {
    "date": "2026-12-21",
    "start": "17:10",
    "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
@@ -2678,7 +2690,7 @@
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
    "flags": 0
   },
-  "r224": {
+  "r225": {
    "date": "2026-12-21",
    "start": "20:00",
    "name": "NLH Turbo",
@@ -2690,7 +2702,7 @@
    "buy_in": "Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge)",
    "flags": 1
   },
-  "r225": {
+  "r226": {
    "date": "2026-12-22",
    "start": "11:10",
    "name": "$600 No Limit Hold'em 1C $150K GTD",
@@ -2702,7 +2714,7 @@
    "buy_in": "house fee $95 of the $600 buy-in; prize pool $505",
    "flags": 0
   },
-  "r226": {
+  "r227": {
    "date": "2026-12-22",
    "start": "17:10",
    "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
@@ -2714,7 +2726,7 @@
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
    "flags": 0
   },
-  "r227": {
+  "r228": {
    "date": "2026-12-23",
    "start": "11:00",
    "name": "$600 No Limit Hold'em Day 2 Restart",
@@ -2726,7 +2738,7 @@
    "buy_in": "house fee $95 of the $600 buy-in; prize pool $505",
    "flags": 0
   },
-  "r228": {
+  "r229": {
    "date": "2026-12-23",
    "start": "11:10",
    "name": "$600 No Limit Hold'em $30K GTD (1Day)",
@@ -2738,7 +2750,7 @@
    "buy_in": "house fee $90 of the $600 buy-in; prize pool $510",
    "flags": 0
   },
-  "r229": {
+  "r230": {
    "date": "2026-12-23",
    "start": "17:10",
    "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
@@ -2750,7 +2762,7 @@
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
    "flags": 0
   },
-  "r230": {
+  "r231": {
    "date": "2026-12-24",
    "start": "11:10",
    "name": "$400 No Limit Hold'em $15K GTD (1Day)",
@@ -2762,7 +2774,7 @@
    "buy_in": "house fee $65 of the $400 buy-in; prize pool $335",
    "flags": 0
   },
-  "r231": {
+  "r232": {
    "date": "2026-12-24",
    "start": "17:10",
    "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
@@ -2772,22 +2784,22 @@
    "guarantee_usd": 8000,
    "entry_status": "SE",
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
-   "flags": 0
-  },
-  "r232": {
-   "date": "2026-12-25",
-   "start": "11:10",
-   "name": "$400 No Limit Hold'em $15K GTD (1Day)",
-   "venue": "The Venetian Resort",
-   "series": "Venetian DeepStack Extravaganza NYE",
-   "buy_in_usd": 400,
-   "guarantee_usd": 15000,
-   "entry_status": "SE",
-   "buy_in": "house fee $65 of the $400 buy-in; prize pool $335",
    "flags": 0
   },
   "r233": {
    "date": "2026-12-25",
+   "start": "11:10",
+   "name": "$400 No Limit Hold'em $15K GTD (1Day)",
+   "venue": "The Venetian Resort",
+   "series": "Venetian DeepStack Extravaganza NYE",
+   "buy_in_usd": 400,
+   "guarantee_usd": 15000,
+   "entry_status": "SE",
+   "buy_in": "house fee $65 of the $400 buy-in; prize pool $335",
+   "flags": 0
+  },
+  "r234": {
+   "date": "2026-12-25",
    "start": "17:10",
    "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
    "venue": "The Venetian Resort",
@@ -2798,7 +2810,7 @@
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
    "flags": 0
   },
-  "r234": {
+  "r235": {
    "date": "2026-12-26",
    "start": "11:10",
    "name": "$600 No Limit Hold'em Bounty $40K GTD (1Day) - $200 bounties to start & $500 bounties in the money",
@@ -2810,7 +2822,7 @@
    "buy_in": "house fee $90 of the $600 buy-in; prize pool $510",
    "flags": 1
   },
-  "r235": {
+  "r236": {
    "date": "2026-12-26",
    "start": "15:10",
    "name": "$260 NLH Milestone Satellite (1Day) - Awards 1 in 5 (20%) Direct Entry into Event # 08",
@@ -2822,7 +2834,7 @@
    "buy_in": "house fee $40 of the $260 buy-in; prize pool $220",
    "flags": 1
   },
-  "r236": {
+  "r237": {
    "date": "2026-12-26",
    "start": "18:10",
    "name": "$260 NLH Milestone Satellite (1Day) - Awards 1 in 5 (20%) Direct Entry into Event # 08",
@@ -2834,7 +2846,7 @@
    "buy_in": "house fee $40 of the $260 buy-in; prize pool $220",
    "flags": 1
   },
-  "r237": {
+  "r238": {
    "date": "2026-12-27",
    "start": "11:10",
    "name": "$1,100 No Limit Hold'em 1A $300K GTD - Ante Up Championship",
@@ -2846,7 +2858,7 @@
    "buy_in": "house fee $140 of the $1,100 buy-in; prize pool $960",
    "flags": 0
   },
-  "r238": {
+  "r239": {
    "date": "2026-12-27",
    "start": "15:10",
    "name": "$260 NLH Milestone Satellite (1Day) - Awards 1 in 5 (20%) Direct Entry into Event # 08",
@@ -2858,7 +2870,7 @@
    "buy_in": "house fee $40 of the $260 buy-in; prize pool $220",
    "flags": 0
   },
-  "r239": {
+  "r240": {
    "date": "2026-12-27",
    "start": "18:10",
    "name": "$260 NLH Milestone Satellite (1Day) - Awards 1 in 5 (20%) Direct Entry into Event # 08",
@@ -2870,7 +2882,7 @@
    "buy_in": "house fee $40 of the $260 buy-in; prize pool $220",
    "flags": 0
   },
-  "r240": {
+  "r241": {
    "date": "2026-12-28",
    "start": "11:10",
    "name": "$1,100 No Limit Hold'em 1B $300K GTD - Ante Up Championship",
@@ -2882,7 +2894,7 @@
    "buy_in": "house fee $140 of the $1,100 buy-in; prize pool $960",
    "flags": 0
   },
-  "r241": {
+  "r242": {
    "date": "2026-12-28",
    "start": "15:10",
    "name": "$260 NLH Milestone Satellite (1Day) - Awards 1 in 5 (20%) Direct Entry into Event # 08",
@@ -2894,7 +2906,7 @@
    "buy_in": "house fee $40 of the $260 buy-in; prize pool $220",
    "flags": 0
   },
-  "r242": {
+  "r243": {
    "date": "2026-12-28",
    "start": "18:10",
    "name": "$260 NLH Milestone Satellite (1Day) - Awards 1 in 5 (20%) Direct Entry into Event # 08",
@@ -2906,7 +2918,7 @@
    "buy_in": "house fee $40 of the $260 buy-in; prize pool $220",
    "flags": 0
   },
-  "r243": {
+  "r244": {
    "date": "2026-12-29",
    "start": "11:10",
    "name": "$1,100 No Limit Hold'em 1C $300K GTD - Ante Up Championship",
@@ -2918,7 +2930,7 @@
    "buy_in": "house fee $140 of the $1,100 buy-in; prize pool $960",
    "flags": 0
   },
-  "r244": {
+  "r245": {
    "date": "2026-12-29",
    "start": "17:10",
    "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
@@ -2930,7 +2942,7 @@
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
    "flags": 0
   },
-  "r245": {
+  "r246": {
    "date": "2026-12-30",
    "start": "11:00",
    "name": "$1,100 No Limit Hold'em Ante Up Day 2 Restart - Play Down to Final 7 - Streamed Final Table (POKERGO)",
@@ -2942,7 +2954,7 @@
    "buy_in": "house fee $140 of the $1,100 buy-in; prize pool $960",
    "flags": 0
   },
-  "r246": {
+  "r247": {
    "date": "2026-12-30",
    "start": "11:10",
    "name": "$600 No Limit Hold'em $50K GTD (1Day)",
@@ -2954,7 +2966,7 @@
    "buy_in": "house fee $90 of the $600 buy-in; prize pool $510",
    "flags": 0
   },
-  "r247": {
+  "r248": {
    "date": "2026-12-30",
    "start": "15:10",
    "name": "$200 NLH Milestone Satellite (1Day) - Awards Direct Entry into Event # 20",
@@ -2966,7 +2978,7 @@
    "buy_in": "house fee $35 of the $200 buy-in; prize pool $165",
    "flags": 0
   },
-  "r248": {
+  "r249": {
    "date": "2026-12-30",
    "start": "18:10",
    "name": "$200 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry into Event # 20",
@@ -2978,7 +2990,7 @@
    "buy_in": "house fee $30 of the $200 buy-in; prize pool $170",
    "flags": 0
   },
-  "r249": {
+  "r250": {
    "date": "2026-12-31",
    "start": "10:00",
    "name": "$1,100 No Limit Hold'em Ante Up Day 3 Restart - Streamed Final Table (POKERGO)",
@@ -2990,7 +3002,7 @@
    "buy_in": "house fee $140 of the $1,100 buy-in; prize pool $960",
    "flags": 0
   },
-  "r250": {
+  "r251": {
    "date": "2026-12-31",
    "start": "11:10",
    "name": "$400 No Limit Hold'em $15K GTD (1Day)",
@@ -3002,7 +3014,7 @@
    "buy_in": "house fee $65 of the $400 buy-in; prize pool $335",
    "flags": 0
   },
-  "r251": {
+  "r252": {
    "date": "2026-12-31",
    "start": "15:10",
    "name": "$200 NLH Milestone Satellite (1Day) - Awards Direct Entry into Event # 20",
@@ -3014,7 +3026,7 @@
    "buy_in": "house fee $35 of the $200 buy-in; prize pool $165",
    "flags": 0
   },
-  "r252": {
+  "r253": {
    "date": "2026-12-31",
    "start": "18:10",
    "name": "$200 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry into Event # 20",
@@ -3026,7 +3038,7 @@
    "buy_in": "house fee $30 of the $200 buy-in; prize pool $170",
    "flags": 0
   },
-  "r253": {
+  "r254": {
    "date": "2027-01-01",
    "start": "11:10",
    "name": "$1,600 No Limit Hold'em MSPT 1A $400K GTD - $40 Reduced Rake until the start of Level 4",
@@ -3038,7 +3050,7 @@
    "buy_in": "house fee $180 of the $1,600 buy-in; prize pool $1420",
    "flags": 0
   },
-  "r254": {
+  "r255": {
    "date": "2027-01-01",
    "start": "15:10",
    "name": "$200 NLH Milestone Satellite (1Day) - Awards Direct Entry into Event # 20",
@@ -3050,7 +3062,7 @@
    "buy_in": "house fee $35 of the $200 buy-in; prize pool $165",
    "flags": 0
   },
-  "r255": {
+  "r256": {
    "date": "2027-01-01",
    "start": "17:10",
    "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
@@ -3062,7 +3074,7 @@
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
    "flags": 0
   },
-  "r256": {
+  "r257": {
    "date": "2027-01-02",
    "start": "10:10",
    "name": "$200 NLH Milestone Satellite (1Day) - Awards Direct Entry into Event # 20",
@@ -3074,7 +3086,7 @@
    "buy_in": "house fee $35 of the $200 buy-in; prize pool $165",
    "flags": 0
   },
-  "r257": {
+  "r258": {
    "date": "2027-01-02",
    "start": "11:10",
    "name": "$1,600 No Limit Hold'em MSPT 1B $400K GTD",
@@ -3086,7 +3098,7 @@
    "buy_in": "house fee $180 of the $1,600 buy-in; prize pool $1420",
    "flags": 0
   },
-  "r258": {
+  "r259": {
    "date": "2027-01-02",
    "start": "15:10",
    "name": "$200 NLH Milestone Satellite (1Day) - Awards Direct Entry into Event # 20",
@@ -3098,7 +3110,7 @@
    "buy_in": "house fee $35 of the $200 buy-in; prize pool $165",
    "flags": 0
   },
-  "r259": {
+  "r260": {
    "date": "2027-01-02",
    "start": "17:10",
    "name": "$200 NLH PokerAtlas Valuetown Bounty $20K GTD (1Day) - PokerAtlas PRO member $20 rake discount",
@@ -3110,7 +3122,7 @@
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
    "flags": 0
   },
-  "r260": {
+  "r261": {
    "date": "2027-01-03",
    "start": "11:10",
    "name": "$1,600 No Limit Hold'em MSPT 1C $400K GTD",
@@ -3122,7 +3134,7 @@
    "buy_in": "house fee $180 of the $1,600 buy-in; prize pool $1420",
    "flags": 0
   },
-  "r261": {
+  "r262": {
    "date": "2027-01-03",
    "start": "17:10",
    "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
@@ -3134,7 +3146,7 @@
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
    "flags": 0
   },
-  "r262": {
+  "r263": {
    "date": "2027-01-04",
    "start": "11:00",
    "name": "$1,600 No Limit Hold'em MSPT Day 2 Restart",
@@ -3146,7 +3158,7 @@
    "buy_in": "house fee $180 of the $1,600 buy-in; prize pool $1420",
    "flags": 0
   },
-  "r263": {
+  "r264": {
    "date": "2027-01-04",
    "start": "11:10",
    "name": "$250 No Limit Hold'em 1A $75K GTD (1Day) - Day 1 Payouts with 5% advancing to Day 2 - $10 Reduced Rake for Entry before 11:10 AM",
@@ -3158,7 +3170,7 @@
    "buy_in": "house fee $50 of the $250 buy-in; prize pool $200",
    "flags": 0
   },
-  "r264": {
+  "r265": {
    "date": "2027-01-04",
    "start": "17:10",
    "name": "$250 No Limit Hold'em 1B $75K GTD (1Day) - Day 1 Payouts with 5% advancing to Day 2 - $10 Reduced Rake for Entry before 5:10 PM",
@@ -3170,7 +3182,7 @@
    "buy_in": "house fee $50 of the $250 buy-in; prize pool $200",
    "flags": 0
   },
-  "r265": {
+  "r266": {
    "date": "2027-01-05",
    "start": "11:10",
    "name": "$250 No Limit Hold'em 1C $75K GTD (1Day) - Day 1 Payouts with 5% advancing to Day 2",
@@ -3182,7 +3194,7 @@
    "buy_in": "house fee $50 of the $250 buy-in; prize pool $200",
    "flags": 1
   },
-  "r266": {
+  "r267": {
    "date": "2027-01-05",
    "start": "17:10",
    "name": "$250 No Limit Hold'em 1D $75K GTD (1Day) - Day 1 Payouts with 5% advancing to Day 2",
@@ -3194,7 +3206,7 @@
    "buy_in": "house fee $50 of the $250 buy-in; prize pool $200",
    "flags": 1
   },
-  "r267": {
+  "r268": {
    "date": "2027-01-06",
    "start": "11:10",
    "name": "$400 No Limit Hold'em $15K GTD (1Day)",
@@ -3206,7 +3218,7 @@
    "buy_in": "house fee $65 of the $400 buy-in; prize pool $335",
    "flags": 0
   },
-  "r268": {
+  "r269": {
    "date": "2027-01-06",
    "start": "12:00",
    "name": "$250 No Limit Hold'em Day 2 Restart",
@@ -3218,7 +3230,7 @@
    "buy_in": "house fee $50 of the $250 buy-in; prize pool $200",
    "flags": 0
   },
-  "r269": {
+  "r270": {
    "date": "2027-01-06",
    "start": "17:10",
    "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day) - Show Your CES Badge - $10 Rake Discount",
@@ -3230,7 +3242,7 @@
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
    "flags": 0
   },
-  "r270": {
+  "r271": {
    "date": "2027-01-07",
    "start": "11:10",
    "name": "$300 No Limit Hold'em 1A $100K GTD (1Day)",
@@ -3242,7 +3254,7 @@
    "buy_in": "house fee $60 of the $300 buy-in; prize pool $240",
    "flags": 0
   },
-  "r271": {
+  "r272": {
    "date": "2027-01-07",
    "start": "17:10",
    "name": "$300 No Limit Hold'em 1B $100K GTD (1Day) - Show Your CES Badge - $10 Rake Discount",
@@ -3254,7 +3266,7 @@
    "buy_in": "house fee $60 of the $300 buy-in; prize pool $240",
    "flags": 0
   },
-  "r272": {
+  "r273": {
    "date": "2027-01-08",
    "start": "11:10",
    "name": "$300 No Limit Hold'em 1C $100K GTD (1Day)",
@@ -3266,7 +3278,7 @@
    "buy_in": "house fee $60 of the $300 buy-in; prize pool $240",
    "flags": 0
   },
-  "r273": {
+  "r274": {
    "date": "2027-01-08",
    "start": "17:10",
    "name": "$300 No Limit Hold'em 1D $100K GTD (1Day) - Show Your CES Badge - $10 Rake Discount",
@@ -3278,7 +3290,7 @@
    "buy_in": "house fee $60 of the $300 buy-in; prize pool $240",
    "flags": 0
   },
-  "r274": {
+  "r275": {
    "date": "2027-01-09",
    "start": "11:10",
    "name": "$300 No Limit Hold'em 1E $100K GTD (1Day)",
@@ -3290,7 +3302,7 @@
    "buy_in": "house fee $60 of the $300 buy-in; prize pool $240",
    "flags": 0
   },
-  "r275": {
+  "r276": {
    "date": "2027-01-09",
    "start": "17:10",
    "name": "$300 No Limit Hold'em 1F $100K GTD (1Day) - Show Your CES Badge - $10 Rake Discount",
@@ -3302,7 +3314,7 @@
    "buy_in": "house fee $60 of the $300 buy-in; prize pool $240",
    "flags": 0
   },
-  "r276": {
+  "r277": {
    "date": "2027-01-10",
    "start": "10:10",
    "name": "$400 No Limit Hold'em Seniors $20K GTD (1Day) - must be 50+ years of age",
@@ -3314,7 +3326,7 @@
    "buy_in": "house fee $65 of the $400 buy-in; prize pool $335",
    "flags": 0
   },
-  "r277": {
+  "r278": {
    "date": "2027-01-10",
    "start": "12:00",
    "name": "$300 No Limit Hold'em Day 2 Restart",
@@ -3326,7 +3338,7 @@
    "buy_in": "house fee $60 of the $300 buy-in; prize pool $240",
    "flags": 0
   },
-  "r278": {
+  "r279": {
    "date": "2027-01-10",
    "start": "17:10",
    "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
@@ -3338,7 +3350,7 @@
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
    "flags": 0
   },
-  "r279": {
+  "r280": {
    "date": "2027-01-11",
    "start": "12:00",
    "name": "No Limit Hold'em Day 1A",
@@ -3350,7 +3362,7 @@
    "buy_in": "not published",
    "flags": 0
   },
-  "r280": {
+  "r281": {
    "date": "2027-01-11",
    "start": "17:00",
    "name": "No Limit Hold'em Day 1B",
@@ -3362,7 +3374,7 @@
    "buy_in": "not published",
    "flags": 0
   },
-  "r281": {
+  "r282": {
    "date": "2027-01-12",
    "start": "12:00",
    "name": "No Limit Hold'em Day 1C",
@@ -3374,7 +3386,7 @@
    "buy_in": "not published",
    "flags": 0
   },
-  "r282": {
+  "r283": {
    "date": "2027-01-12",
    "start": "17:00",
    "name": "No Limit Hold'em Day 1D",
@@ -3386,7 +3398,7 @@
    "buy_in": "not published",
    "flags": 0
   },
-  "r283": {
+  "r284": {
    "date": "2027-01-13",
    "start": "12:00",
    "name": "No Limit Hold'em Day 1E",
@@ -3398,7 +3410,7 @@
    "buy_in": "not published",
    "flags": 0
   },
-  "r284": {
+  "r285": {
    "date": "2027-01-13",
    "start": "17:00",
    "name": "No Limit Hold'em Day 1F",
@@ -3410,7 +3422,7 @@
    "buy_in": "not published",
    "flags": 0
   },
-  "r285": {
+  "r286": {
    "date": "2027-01-14",
    "start": "11:00",
    "name": "No Limit Hold'em Day 1A",
@@ -3422,7 +3434,7 @@
    "buy_in": "not published",
    "flags": 0
   },
-  "r286": {
+  "r287": {
    "date": "2027-01-14",
    "start": "13:00",
    "name": "No Limit Hold'em Day 2",
@@ -3434,7 +3446,7 @@
    "buy_in": "not published",
    "flags": 1
   },
-  "r287": {
+  "r288": {
    "date": "2027-01-14",
    "start": "18:00",
    "name": "Milestone Satellite to $600 NLH",
@@ -3446,7 +3458,7 @@
    "buy_in": "not published",
    "flags": 1
   },
-  "r288": {
+  "r289": {
    "date": "2027-01-15",
    "start": "11:00",
    "name": "No Limit Hold'em Day 1B",
@@ -3458,7 +3470,7 @@
    "buy_in": "not published",
    "flags": 0
   },
-  "r289": {
+  "r290": {
    "date": "2027-01-15",
    "start": "18:00",
    "name": "NLH Turbo",
@@ -3470,7 +3482,7 @@
    "buy_in": "not published",
    "flags": 0
   },
-  "r290": {
+  "r291": {
    "date": "2027-01-16",
    "start": "11:00",
    "name": "No Limit Hold'em Day 1C",
@@ -3482,7 +3494,7 @@
    "buy_in": "not published",
    "flags": 0
   },
-  "r291": {
+  "r292": {
    "date": "2027-01-16",
    "start": "18:00",
    "name": "No Limit Hold'em Day 1D",
@@ -3494,7 +3506,7 @@
    "buy_in": "not published",
    "flags": 0
   },
-  "r292": {
+  "r293": {
    "date": "2027-01-17",
    "start": "12:00",
    "name": "No Limit Hold'em",
@@ -3506,7 +3518,7 @@
    "buy_in": "not published",
    "flags": 0
   },
-  "r293": {
+  "r294": {
    "date": "2027-01-17",
    "start": "13:00",
    "name": "No Limit Hold'em Day 2",
@@ -3518,7 +3530,7 @@
    "buy_in": "not published",
    "flags": 1
   },
-  "r294": {
+  "r295": {
    "date": "2027-01-17",
    "start": "18:00",
    "name": "NLH Turbo",
@@ -3530,7 +3542,7 @@
    "buy_in": "not published",
    "flags": 0
   },
-  "r295": {
+  "r296": {
    "date": "2027-01-18",
    "start": "11:00",
    "name": "No Limit Hold'em Day 1A",
@@ -3542,7 +3554,7 @@
    "buy_in": "not published",
    "flags": 0
   },
-  "r296": {
+  "r297": {
    "date": "2027-01-18",
    "start": "13:00",
    "name": "PLO",
@@ -3554,7 +3566,7 @@
    "buy_in": "not published",
    "flags": 0
   },
-  "r297": {
+  "r298": {
    "date": "2027-01-18",
    "start": "18:00",
    "name": "NLH Turbo",
@@ -3566,7 +3578,7 @@
    "buy_in": "not published",
    "flags": 0
   },
-  "r298": {
+  "r299": {
    "date": "2027-01-19",
    "start": "11:00",
    "name": "No Limit Hold'em Day 1B",
@@ -3578,7 +3590,7 @@
    "buy_in": "not published",
    "flags": 0
   },
-  "r299": {
+  "r300": {
    "date": "2027-01-19",
    "start": "13:00",
    "name": "Mixed Game (TORSE)",
@@ -3590,7 +3602,7 @@
    "buy_in": "not published",
    "flags": 0
   },
-  "r300": {
+  "r301": {
    "date": "2027-01-19",
    "start": "18:00",
    "name": "NLH Turbo",
@@ -3602,7 +3614,7 @@
    "buy_in": "not published",
    "flags": 0
   },
-  "r301": {
+  "r302": {
    "date": "2027-01-20",
    "start": "11:00",
    "name": "No Limit Hold'em Day 1C",
@@ -3614,7 +3626,7 @@
    "buy_in": "not published",
    "flags": 0
   },
-  "r302": {
+  "r303": {
    "date": "2027-01-20",
    "start": "13:00",
    "name": "Mixed Triple Draw (A-5, 2-7, Badugi)",
@@ -3626,7 +3638,7 @@
    "buy_in": "not published",
    "flags": 0
   },
-  "r303": {
+  "r304": {
    "date": "2027-01-20",
    "start": "18:00",
    "name": "NLH Turbo",
@@ -3638,7 +3650,7 @@
    "buy_in": "not published",
    "flags": 0
   },
-  "r304": {
+  "r305": {
    "date": "2027-01-21",
    "start": "11:00",
    "name": "No Limit Hold'em Day 1A",
@@ -3650,7 +3662,7 @@
    "buy_in": "not published",
    "flags": 0
   },
-  "r305": {
+  "r306": {
    "date": "2027-01-21",
    "start": "12:00",
    "name": "No Limit Hold'em Day 2",
@@ -3662,7 +3674,7 @@
    "buy_in": "not published",
    "flags": 1
   },
-  "r306": {
+  "r307": {
    "date": "2027-01-21",
    "start": "13:00",
    "name": "Mixed Game (TOE)",
@@ -3674,7 +3686,7 @@
    "buy_in": "not published",
    "flags": 0
   },
-  "r307": {
+  "r308": {
    "date": "2027-01-21",
    "start": "18:00",
    "name": "Milestone Satellite to $800 NLH",
@@ -3686,7 +3698,7 @@
    "buy_in": "not published",
    "flags": 1
   },
-  "r308": {
+  "r309": {
    "date": "2027-01-22",
    "start": "11:00",
    "name": "No Limit Hold'em Day 1B",
@@ -3698,7 +3710,7 @@
    "buy_in": "not published",
    "flags": 0
   },
-  "r309": {
+  "r310": {
    "date": "2027-01-22",
    "start": "13:00",
    "name": "Big O",
@@ -3710,7 +3722,7 @@
    "buy_in": "not published",
    "flags": 0
   },
-  "r310": {
+  "r311": {
    "date": "2027-01-22",
    "start": "18:00",
    "name": "Milestone Satellite to $800 NLH",
@@ -3722,7 +3734,7 @@
    "buy_in": "not published",
    "flags": 1
   },
-  "r311": {
+  "r312": {
    "date": "2027-01-23",
    "start": "11:00",
    "name": "No Limit Hold'em Day 1C",
@@ -3734,7 +3746,7 @@
    "buy_in": "not published",
    "flags": 0
   },
-  "r312": {
+  "r313": {
    "date": "2027-01-23",
    "start": "18:00",
    "name": "No Limit Hold'em Day 1D",
@@ -3746,7 +3758,7 @@
    "buy_in": "not published",
    "flags": 0
   },
-  "r313": {
+  "r314": {
    "date": "2027-01-24",
    "start": "12:00",
    "name": "Seniors No Limit Hold'em 50+",
@@ -3758,7 +3770,7 @@
    "buy_in": "not published",
    "flags": 0
   },
-  "r314": {
+  "r315": {
    "date": "2027-01-24",
    "start": "13:00",
    "name": "No Limit Hold'em Day 2",
@@ -3770,7 +3782,7 @@
    "buy_in": "not published",
    "flags": 1
   },
-  "r315": {
+  "r316": {
    "date": "2027-01-24",
    "start": "13:00",
    "name": "PLO Double Board Bomb Pot",
@@ -3782,7 +3794,7 @@
    "buy_in": "not published",
    "flags": 0
   },
-  "r316": {
+  "r317": {
    "date": "2027-01-24",
    "start": "18:00",
    "name": "NLH Turbo",

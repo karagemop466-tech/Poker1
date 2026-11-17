@@ -117,9 +117,9 @@ Third-party sites were used to locate events and hotels only. They are not cited
   `data-page` attribute of every generated page.
 - `scripts/monitor_sources.py` checks every official URL and reports the rows that changed.
 - `scripts/smoke_test.js` renders every generated page in a headless DOM and fails on any page error.
-- Current counts: **316 rows**. Single entry 80 (60 cash, 20 milestone satellites). Separate section
-  105 (60 possible multi-entry, 45 re-entry). Unverified 129. Continuation rows 43.
-- Row IDs are unique and assigned after the chronological sort (`r001` to `r316`).
+- Current counts (2026-11-17): **317 rows**. Single entry 80 (60 cash, 20 milestone satellites). Separate section
+  106 (60 possible multi-entry, 46 re-entry). Unverified 129. Continuation rows 2.
+- Row IDs are unique and assigned after the chronological sort (`r001` to `r317`). Restoring a row that sorts into the middle of the WPT block shifts every later ID by one; no row content changed (see `research/verification-2026-11-17.md`).
 
 ## 8. Cross-check from the parallel session `40ca34e5`
 

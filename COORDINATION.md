@@ -1,3 +1,19 @@
+
+
+## Session 54ae4633 (current branch `arena/54ae4633-poker1`)
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Make GitHub Pages' headless rendering check deterministic and blocking instead of silently allowing a failed smoke test | **Done** — pinned the test dependency through npm lockfile and made the 21-page smoke check a required validation step | `.github/workflows/pages.yml`, `package.json`, `package-lock.json`, `COORDINATION.md` | `54ae4633` |
+
+### Verification (2026-11-17)
+- `npm ci --ignore-scripts --no-audit --no-fund` — passed using the committed lockfile.
+- `npm run test:smoke` — passed, all 21 generated pages rendered.
+- `python3 scripts/build_data.py`, `python3 scripts/build_site.py`, and `python3 scripts/check_links.py` — passed; 316 tournament rows, 7 hotels, 1 dated rate entry, 70 schedule days, 21 pages.
+- No tournament or hotel factual data was edited in this task. This task did not reread official operator sources; existing source verification and all known irregularities remain recorded above and in `FLAGGED.md` / `REVIEW.md`.
+- Change: CI now sets up Node 22, runs `npm ci`, and fails validation if the browser smoke test fails. Previously the smoke-test step was marked `continue-on-error: true`, so a broken page could pass validation.
+- [PR #29](https://github.com/karagemop466-tech/Poker1/pull/29) merged on 2026-11-17 as `f1eafd014dd53a5e67451907c7b275c5ad87571b`. PR validation passed (run `43988344614`); the merge-triggered Pages validation and deployment both passed (run `43988437822`).
+
 # COORDINATION.md
 
 Shared task board for the Las Vegas Strip poker tournament and hotel planner.
@@ -229,35 +245,19 @@ Claimed at commit `304f0bd` (pushed before any data or page change). Base: `main
 
 | Task | Status | Sources (official) | Verification performed | File scope | Owner |
 |---|---|---|---|---|---|
-| Hotel fee / Clark County tax / parking / cancellation terms for Palazzo, Bellagio, ARIA, Caesars Palace; fill only what an official page states | **Done — no new fee or tax value found.** Bellagio, ARIA and Caesars fees stay blank. Third-party pages were not used. | [Venetian hotel terms](https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html), [Caesars Palace](https://www.caesars.com/caesars-palace), [Bellagio poker](https://bellagio.mgmresorts.com/en/casino/poker.html), [ARIA poker](https://aria.mgmresorts.com/en/casino/poker.html) | Read 2026-11-17; blockers recorded in `research/verification-2026-11-17.md` (#14). | `scripts/build_data.py`, `data/hotels.json` | `3f878ff5` |
+| Hotel fee / Clark County tax / parking / cancellation terms for Palazzo, Bellagio, ARIA, Caesars Palace; fill only what an official page states | **Done — no new fee or tax value found.** Bellagio, ARIA and Caesars fees stay blank. Third-party pages were not used. | [Venetian hotel terms](https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html), [Caesars Palace](https://www.caesars.com/caesars-palace), [Bellagio poker](https://bellagio.mgmresorts.com/en/casino/poker.html), [ARIA poker](https://aria.mgmresorts.com/en/casino/poker.html) | Read 2026-11-17; blockers recorded in `research/verification-2026-11-17-3f878ff5.md` (#14). | `scripts/build_data.py`, `data/hotels.json` | `3f878ff5` |
 | Live official booking-engine rate capture for the trip window; log numeric checkout totals with a timestamp; record blockers | **Done for the Venetian** — one quote logged (Nov 18–20, 2 adults, $950.69 total, $475.35 per night all-in). **Blocked** for Wynn (engine ignored the date parameters) and Bellagio (pricing error). | [Venetian booking engine quote](https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date=2026-11-18&children[]=0&departure_date=2026-11-20&view=calendar); [Wynn reservation page](https://reservations.wynnlasvegas.com/ibe/details.aspx?hotelID=13763&langID=1&rmID=68658&arrival=11/18/2026&departure=11/20/2026&adults=2); [Bellagio booking](https://bellagio.mgmresorts.com/book-room/) | Arithmetic checked: 204.25 + 524.25 + 2×55 = 838.50; 13.38% = 112.19; total 950.69; 950.69 ÷ 2 = 475.35. The validator passes. | `scripts/build_data.py`, `data/rates.json` | `3f878ff5` |
 | Official poker pages of Bellagio, ARIA and Caesars: tournaments on each venue page; no invented rows | **Done** — Bellagio: three weekly flyers recorded (Fri and Sun are re-entry, so not single entry; Sat has a contradictory buy-in and no confirmed rule). ARIA: no schedule published. Caesars: daily format with a $50 add-on → separate section. No dated rows created. | [Bellagio poker](https://bellagio.mgmresorts.com/en/casino/poker.html) and its three flyers; [ARIA poker](https://aria.mgmresorts.com/en/casino/poker.html); [Caesars article (2026-07-17)](https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip) | Friday, Saturday and Sunday flyers each read in full; Sunday flyer needed a second fetch. | `scripts/build_data.py` (VENUES), `data/venues.json`, `data/sources.json` | `3f878ff5` |
-| Re-check official pages on 2026-11-17 and record what was re-read | **Done** — Venetian poker page, Venetian series overview, Wynn poker page, Bellagio poker page, ARIA poker page, Caesars article and Caesars page were read today. The 52 structure sheets and the WPT PDFs were **not** re-read today. | As listed above | `research/verification-2026-11-17.md` lists each URL, the read date and what it said. | `research/verification-2026-11-17.md`, `data/sources.json` | `3f878ff5` |
-| Refresh decision documents and log the competing PR #24 | **Done** — executive summary, flagged list (F21–F30), questions (Q-D1–Q-D9), README date. | — | `python3 scripts/check_links.py` passes. | `EXECUTIVE_SUMMARY.md`, `FLAGGED.md`, `QUESTIONS.md`, `README.md`, `COORDINATION.md` | `3f878ff5` |
+| Re-check official pages on 2026-11-17 and record what was re-read | **Done** — Venetian poker page, Venetian series overview, Wynn poker page, Bellagio poker page, ARIA poker page, Caesars article and Caesars page were read today. The 52 structure sheets and the WPT PDFs were **not** re-read today. | As listed above | `research/verification-2026-11-17-3f878ff5.md` lists each URL, the read date and what it said. | `research/verification-2026-11-17-3f878ff5.md`, `data/sources.json` | `3f878ff5` |
+| Refresh decision documents and log the competing PR #24 | **Done** — executive summary, flagged list (F31–F40), questions (Q-D1–Q-D9), README date. | — | `python3 scripts/check_links.py` passes. | `EXECUTIVE_SUMMARY.md`, `FLAGGED.md`, `QUESTIONS.md`, `README.md`, `COORDINATION.md` | `3f878ff5` |
 | Integration: validate, PR to `main`, merge, confirm Pages | in progress (see log) | — | — | all of the above | `3f878ff5` |
 
-**Irregularities found in this pass** (full list with links in `FLAGGED.md` section D): Bellagio Saturday flyer buy-in conflict and copied "$600" rule (F22); Friday and Sunday Bellagio flyers allow re-entry (F21, F23); Bellagio notice "resume on Saturday, July 26" is a Sunday in 2026 (F24); Caesars daily add-on (F25); Wynn booking engine ignored the date parameters (F27); ARIA publishes no schedule (F28); open PR #24 conflicts with `main` (F29).
+**Irregularities found in this pass** (full list with links in `FLAGGED.md` section D): Bellagio Saturday flyer buy-in conflict and copied "$600" rule (F32); Friday and Sunday Bellagio flyers allow re-entry (F31, F33); Bellagio notice "resume on Saturday, July 26" is a Sunday in 2026 (F34); Caesars daily add-on (F35); Wynn booking engine ignored the date parameters (F37); ARIA publishes no schedule (F38); open PR #24 conflicts with `main` (F39).
 
 **Open conflict, not touched:** PR #24 (`arena/bad329a9-poker1`, opened 2026-11-16) edits nearly every data file and reports 54 single-entry rows against `main`'s 80 (40 possible multi-entry against 60). It is neither merged nor closed here; see Q-D5.
 
-## Session 54ae4633 (current branch `arena/54ae4633-poker1`)
-
-| Task | Status | File scope | Owner |
-|---|---|---|---|
-| Make GitHub Pages' headless rendering check deterministic and blocking instead of silently allowing a failed smoke test | **Done** — pinned the test dependency through npm lockfile and made the 21-page smoke check a required validation step | `.github/workflows/pages.yml`, `package.json`, `package-lock.json`, `COORDINATION.md` | `54ae4633` |
-
-### Verification (2026-11-17)
-- `npm ci --ignore-scripts --no-audit --no-fund` — passed using the committed lockfile.
-- `npm run test:smoke` — passed, all 21 generated pages rendered.
-- `python3 scripts/build_data.py`, `python3 scripts/build_site.py`, and `python3 scripts/check_links.py` — passed; 316 tournament rows, 7 hotels, 1 dated rate entry, 70 schedule days, 21 pages.
-- No tournament or hotel factual data was edited in this task. This task did not reread official operator sources; existing source verification and all known irregularities remain recorded above and in `FLAGGED.md` / `REVIEW.md`.
-- Change: CI now sets up Node 22, runs `npm ci`, and fails validation if the browser smoke test fails. Previously the smoke-test step was marked `continue-on-error: true`, so a broken page could pass validation.
-- [PR #29](https://github.com/karagemop466-tech/Poker1/pull/29) merged on 2026-11-17 as `f1eafd014dd53a5e67451907c7b275c5ad87571b`. PR validation passed (run `43988344614`); the merge-triggered Pages validation and deployment both passed (run `43988437822`).
-
 ## Log
-- 2026-11-17: `COORDINATION.md` on `main` had been reduced to the 54ae4633 section (PR #29 / #30 replaced the file, dropping the 241-line history of earlier sessions). Session `3f878ff5` restored that history from `bfc8951` and kept the 54ae4633 section unchanged, so no earlier session record is lost. Nothing else was removed.
-- 2026-11-17: session `3f878ff5` claimed the scope above on branch `arena/3f878ff5-poker1` (base `main` `bfc8951`), commit `304f0bd`.
-- 2026-11-17: session `3f878ff5` committed the official Venetian booking quote, the Bellagio, ARIA and Caesars venue facts and three new monitored official URLs (`ecf759b`). `check_links.py` and the headless render test (21/21) passed.
+- 2026-11-17: session `3f878ff5` merged `origin/main` (PR #31, session `2e5232bc`). Both sessions created `research/verification-2026-11-17.md`; this session's log moved to `research/verification-2026-11-17-3f878ff5.md` and its flags were renumbered F31–F40 because `main` already uses F21 for a restored WPT row. Nothing from either session was dropped.
 - 2026-11-16: session `40ca34e5` integrated onto `main` (which had advanced with session `baba1a15`'s
   full integration). `main`'s dataset, pages, styles, scripts and workflows were adopted unchanged; this
   session's branch was rebased on top of `main` and force-pushed with `--force-with-lease` so no other
@@ -273,3 +273,41 @@ Claimed at commit `304f0bd` (pushed before any data or page change). Base: `main
   - Dropped as superseded by `main`: `scripts/check_sources.py`, `.github/workflows/source-monitor.yml`, `data/changelog.json`, `data/hotel_rates.json`, `pages/changes.html`, `pages/trip-cost.html`.
   - **Value added by this session:** read two official sources `main` had not used and recorded the one new verified fact they contain — the Wynn daily tournament terms state *"Registration for each Event will open four (4) hours prior to the scheduled start of play"*, so registration for the 12 p.m. daily events opens at **8 a.m.** This is the only registration *opening* time on any official source read so far, and it closes question I12 for Wynn. Recorded in the Wynn venue note, `data/daily.json`, `EXECUTIVE_SUMMARY.md` section 5 and `QUESTIONS.md` I12.
   - Also recorded in `data/daily.json`: the two official sources word the daily suspension differently (the poker page names Wynn Signature, Wynn Millions and Classic series; each daily structure sheet says "may be suspended during Seniors Events, Classic Events, or other Tournament Series"). Neither names the WPT World Championship explicitly, so it is flagged as confirm-before-travelling.
+- 2026-11-17: `origin/main`'s COORDINATION.md had been reduced to the single session 54ae4633 section (15 lines), dropping the board history from `bfc8951`. Session `2e5232bc` restored the full history below the 54ae4633 section, unchanged, so no earlier session's record is lost. Other sessions should append to this file rather than overwrite it.
+
+## Session 2e5232bc — branch `arena/2e5232bc-poker1`, base `bfc8951`
+
+Claimed in commit `a698b81` before implementation.
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Line-by-line re-check of every official schedule row (Venetian DSE IV, Venetian NYE, Wynn Signature Series, WPT World Championship) against the live official pages | **Done** — 94 + 49 + 38 + 136 printed rows; 1 missing WPT row restored; all other rows match. Record: `research/verification-2026-11-17.md` | `research/verification-2026-11-17.md`, `scripts/build_data.py`, `data/*.json`, `FLAGGED.md`, `REVIEW.md`, `EXECUTIVE_SUMMARY.md` | `2e5232bc` |
+| Make the Node page smoke test runnable (jsdom was missing) without committing `node_modules` or a new lockfile | **Done** — jsdom installed under `/tmp` and passed through `NODE_PATH`; `smoke_test.js` unchanged; 21/21 pages render | none tracked | `2e5232bc` |
+| Re-check the Wynn Signature Series schedule row by row | **Done** — 38/38 rows match the official PDF | `research/verification-2026-11-17.md` | `2e5232bc` |
+
+### Sources (read 2026-11-17 on the official sites)
+
+- Venetian DeepStack Extravaganza IV schedule: https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html (4 of 4 chunks)
+- Venetian DeepStack Extravaganza NYE schedule: https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html (2 of 2 chunks)
+- Wynn Signature Series schedule PDF: https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf
+- WPT World Championship schedule PDF: https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf
+- WPT structures PDF (block for the $1,100 TORSE (2 Day)): https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf
+
+### Irregularities found (all published on the Flagged for Review page)
+
+- **F21 (restored row):** the WPT schedule prints a Dec 13, 11:00 AM $1,100 TORSE (2 Day) row that the dataset lacked. It is now restored from the generator. Its re-entry clause comes from the structures PDF block.
+- Row IDs after the restored row shifted by one (r135 onward, 182 IDs). A content comparison with the previous build, ignoring IDs, shows the restored row is the only difference.
+- **U8 corrected:** the earlier FLAGGED wording said the WPT structures PDF has no sheet for the milestone satellites. That was wrong: `data/wpt_rules.json` holds all 69 blocks. Linking them to the unverified WPT rows is still open.
+- **REVIEW.md counts corrected:** it said "Continuation rows 43"; the data has 2.
+- Existing F1 (Dec 26 printed as 2025) and F5 (Dec 5 printed $1,100 / $5M) were re-confirmed against the live pages.
+- The official NYE page prints "Tuesaday" for Jan 5. No effect on the data.
+- The monitor job (`monitor.yml`) is scheduled for 07:17 UTC on `main`. The local `monitoring.json` still shows the sandbox result (59 of 59 unreachable). The first scheduled run after this merge should replace it; check the Actions run before relying on it.
+
+### Verification performed
+
+- `python3 scripts/build_data.py` → 317 rows (SE 80, MULTI 60, RE 46, UNV 129, CONT 2); WPT 136 rows.
+- `python3 scripts/build_site.py` → 21 pages.
+- `python3 scripts/check_links.py` → OK (21 pages, 317 rows, 7 hotels, 1 dated rate, 70 schedule days).
+- `NODE_PATH=/tmp/jsdom/node_modules node scripts/smoke_test.js` → 21/21 pages render.
+- Row content comparison with the previous build (ID removed) → only the restored row differs.
+- 2026-11-17: session `2e5232bc` claimed the schedule re-check (commit `a698b81`), read all four official schedules, restored the missing WPT TORSE (2 Day) row, corrected U8 and the REVIEW.md continuation count, and recorded the verification in `research/verification-2026-11-17.md`.
