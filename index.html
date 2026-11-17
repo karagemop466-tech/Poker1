@@ -824,7 +824,8 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
               (o.prize_text ? " · " + esc(o.prize_text) : "") +
               " " + chip + " " + marks.join(" ") +
               '<br><span class="small">' + esc(o.series) + " · " + esc(o.venue) +
-              (o.est_end ? " · estimated to finish about " + timeFmt(o.est_end) : "") +
+              (o.est_end ? " · estimated to finish about " + timeFmt(o.est_end) +
+                (o.est_end_next_day ? " the next day" : "") : "") +
               ' · <a href="' + esc(o.source) + '" target="_blank" rel="noopener">source</a></span>' +
               ((row.flags || []).length ? '<br><span class="chip warn">' + esc(row.flags[0]) + "</span>" : "") +
               "</li>";
