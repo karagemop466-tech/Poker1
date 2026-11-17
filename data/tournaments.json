@@ -4209,7 +4209,7 @@
    "start": "12:00",
    "kind": "entry",
    "event_no": null,
-   "name": "Limit Omaha 8/5/stud 8",
+   "name": "Limit Omaha 8/Stud 8",
    "buy_in_usd": 600,
    "guarantee_usd": null,
    "prize_text": null,
@@ -4303,7 +4303,9 @@
    "est_end": null,
    "est_duration_min": null,
    "note": "Buy-in, guarantee, starting chips and level count from the official WPT World Championship schedule PDF; the entry rule, fee split, starting stack and registration cut-off from the sheet of the official structures PDF that the row is joined to.",
-   "flags": [],
+   "flags": [
+    "Name corrected on 2026-11-17: the live official schedule PDF prints 'Limit Omaha 8/Stud 8', which is also the name of the structure sheet the row joins to. The earlier build published a garbled '8/5/stud 8'."
+   ],
    "sources": [
     {
      "label": "Official schedule PDF",
@@ -12357,7 +12359,7 @@
    "start": "14:00",
    "kind": "entry",
    "event_no": null,
-   "name": "Milestone Satellite to $10,400 World Championship 1A/8",
+   "name": "Milestone Satellite to $10,400 World Championship 1A/B",
    "buy_in_usd": 1100,
    "guarantee_usd": null,
    "prize_text": "75 Seats",
@@ -12453,7 +12455,9 @@
    "est_end": null,
    "est_duration_min": null,
    "note": "Buy-in, guarantee, starting chips and level count from the official WPT World Championship schedule PDF; the entry rule, fee split, starting stack and registration cut-off from the sheet of the official structures PDF that the row is joined to.",
-   "flags": [],
+   "flags": [
+    "Flight unit corrected on 2026-11-17: the live official schedule PDF prints '... World Championship 1A/B'. The earlier build published '1A/8', a misread of the extracted text."
+   ],
    "sources": [
     {
      "label": "Official schedule PDF",
@@ -12642,111 +12646,77 @@
    "start": "16:00",
    "kind": "entry",
    "event_no": null,
-   "name": "Milestone Satellite to $10,400 Ladies NLH Championship",
+   "name": "Milestone Satellite to $1,100 Ladies NLH Championship",
    "buy_in_usd": 200,
    "guarantee_usd": null,
    "prize_text": "10 Seats",
-   "house_fee_usd": 35,
-   "house_fee_pct": 17.5,
-   "prize_pool_usd": 165,
+   "house_fee_usd": null,
+   "house_fee_pct": null,
+   "prize_pool_usd": null,
    "gtd_multiple": null,
-   "entry_status": "RE",
+   "entry_status": "UNV",
    "rules": {
     "single_entry": {
-     "value": "not single entry",
-     "excerpt": "Registration clause as printed on sheet 59: \"Unlimited re-entry will be available until the start of level 9.\"",
+     "value": "unknown",
+     "excerpt": "The official WPT World Championship Structures PDF was read in full (eight sections, ending with the $1,600 PLO Mystery Bounty). It publishes no structure sheet for the milestone and satellite events, so the entry rule, the fee split and the late-registration cut-off for these rows are not published in an official structure sheet. The schedule PDF publishes the buy-in, the prize (for example \"25 Seats\"), the starting chips and the level count only.",
      "source": {
-      "label": "Official WPT structures PDF, sheet 59",
+      "label": "Official structures / terms (Milestone / satellite rows printed in the official WPT schedule PDF)",
       "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
      },
      "retrieved_on": "2026-11-16"
     },
     "re_entry": {
-     "value": "allowed",
-     "excerpt": "Registration clause as printed on sheet 59: \"Unlimited re-entry will be available until the start of level 9.\"",
+     "value": "unknown",
+     "excerpt": "The official WPT World Championship Structures PDF was read in full (eight sections, ending with the $1,600 PLO Mystery Bounty). It publishes no structure sheet for the milestone and satellite events, so the entry rule, the fee split and the late-registration cut-off for these rows are not published in an official structure sheet. The schedule PDF publishes the buy-in, the prize (for example \"25 Seats\"), the starting chips and the level count only.",
      "source": {
-      "label": "Official WPT structures PDF, sheet 59",
+      "label": "Official structures / terms (Milestone / satellite rows printed in the official WPT schedule PDF)",
       "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
      },
      "retrieved_on": "2026-11-16"
     },
     "add_on": {
-     "value": "not mentioned in the structure sheet",
-     "excerpt": "Registration clause as printed on sheet 59: \"Unlimited re-entry will be available until the start of level 9.\"",
+     "value": "not mentioned",
+     "excerpt": "The official WPT World Championship Structures PDF was read in full (eight sections, ending with the $1,600 PLO Mystery Bounty). It publishes no structure sheet for the milestone and satellite events, so the entry rule, the fee split and the late-registration cut-off for these rows are not published in an official structure sheet. The schedule PDF publishes the buy-in, the prize (for example \"25 Seats\"), the starting chips and the level count only.",
      "source": {
-      "label": "Official WPT structures PDF, sheet 59",
+      "label": "Official structures / terms (Milestone / satellite rows printed in the official WPT schedule PDF)",
       "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
      },
      "retrieved_on": "2026-11-16"
     },
     "fee": {
-     "value": "Entry Fee: $200 Buy-in = $165 (Tournament Prize Pool) + $20 (Tournament Fee) + $15 (Poker Staff Service Charge)",
-     "excerpt": "Entry Fee: $200 Buy-in = $165 (Tournament Prize Pool) + $20 (Tournament Fee) + $15 (Poker Staff Service Charge)",
+     "value": "not published for this event",
+     "excerpt": "The official WPT World Championship Structures PDF was read in full (eight sections, ending with the $1,600 PLO Mystery Bounty). It publishes no structure sheet for the milestone and satellite events, so the entry rule, the fee split and the late-registration cut-off for these rows are not published in an official structure sheet. The schedule PDF publishes the buy-in, the prize (for example \"25 Seats\"), the starting chips and the level count only.",
      "source": {
-      "label": "Official WPT structures PDF, sheet 59",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
-     },
-     "retrieved_on": "2026-11-16"
-    },
-    "starting_chips": {
-     "value": "Players will start with 20,000 in tournament chips.",
-     "excerpt": "Players will start with 20,000 in tournament chips.",
-     "source": {
-      "label": "Official WPT structures PDF, sheet 59",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
-     },
-     "retrieved_on": "2026-11-16"
-    },
-    "level_length": {
-     "value": "20 minutes per level until completion.",
-     "excerpt": "20 minutes per level until completion.",
-     "source": {
-      "label": "Official WPT structures PDF, sheet 59",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
-     },
-     "retrieved_on": "2026-11-16"
-    },
-    "late_registration": {
-     "value": "registration closes at the start of level 9, no clock time printed",
-     "excerpt": "Registration clause as printed on sheet 59: \"Unlimited re-entry will be available until the start of level 9.\"",
-     "source": {
-      "label": "Official WPT structures PDF, sheet 59",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
-     },
-     "retrieved_on": "2026-11-16"
-    },
-    "prize_pool_component": {
-     "value": "$165 of the $200 buy-in",
-     "excerpt": "Entry Fee: $200 Buy-in = $165 (Tournament Prize Pool) + $20 (Tournament Fee) + $15 (Poker Staff Service Charge)",
-     "source": {
-      "label": "Official WPT structures PDF, sheet 59",
+      "label": "Official structures / terms (Milestone / satellite rows printed in the official WPT schedule PDF)",
       "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
      },
      "retrieved_on": "2026-11-16"
     }
    },
-   "entry_rule": "Re-entry confirmed: the structure sheet prints a re-entry clause (see the excerpt).",
+   "entry_rule": "Entry rule not verified: no structure sheet for this event is published in the official structures PDF.",
    "labels": [
     "satellite",
     "ladies"
    ],
    "late_reg_close": null,
-   "late_reg_level": "level 9",
+   "late_reg_level": null,
    "levels": null,
-   "level_minutes": 20,
+   "level_minutes": null,
    "starting_chips": 20000,
    "levels_published": "20",
    "est_end": null,
    "est_duration_min": null,
-   "note": "Buy-in, guarantee, starting chips and level count from the official WPT World Championship schedule PDF; the entry rule, fee split, starting stack and registration cut-off from the sheet of the official structures PDF that the row is joined to.",
-   "flags": [],
+   "note": "Buy-in, guarantee, starting chips and level count from the official WPT World Championship schedule PDF.",
+   "flags": [
+    "Target corrected on 2026-11-17: the live official schedule PDF prints 'Milestone Satellite to $1,100 Ladies NLH Championship', and the Ladies NLH Championship's own printed entry is $1,100. The earlier build published '$10,400', which the schedule does not print."
+   ],
    "sources": [
     {
      "label": "Official schedule PDF",
      "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
     },
     {
-     "label": "Official WPT structures PDF, sheet 59",
+     "label": "Official structures / terms (Milestone / satellite rows printed in the official WPT schedule PDF)",
      "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     }
    ],
@@ -12849,7 +12819,7 @@
    "start": "19:00",
    "kind": "entry",
    "event_no": null,
-   "name": "Milestone Satellite to $10,400 World Championship 1A/8",
+   "name": "Milestone Satellite to $10,400 World Championship 1A/B",
    "buy_in_usd": 1100,
    "guarantee_usd": null,
    "prize_text": "25 Seats",
@@ -12945,7 +12915,9 @@
    "est_end": null,
    "est_duration_min": null,
    "note": "Buy-in, guarantee, starting chips and level count from the official WPT World Championship schedule PDF; the entry rule, fee split, starting stack and registration cut-off from the sheet of the official structures PDF that the row is joined to.",
-   "flags": [],
+   "flags": [
+    "Flight unit corrected on 2026-11-17: the live official schedule PDF prints '... World Championship 1A/B'. The earlier build published '1A/8', a misread of the extracted text."
+   ],
    "sources": [
     {
      "label": "Official schedule PDF",
@@ -13174,7 +13146,7 @@
    "start": "11:00",
    "kind": "entry",
    "event_no": null,
-   "name": "Ladies NIH Championship (2 Day)",
+   "name": "Ladies NLH Championship (2 Day)",
    "buy_in_usd": 1100,
    "guarantee_usd": 250000,
    "prize_text": null,
@@ -15435,7 +15407,7 @@
    "start": "21:00",
    "kind": "entry",
    "event_no": null,
-   "name": "NIH Turbo",
+   "name": "NLH Turbo",
    "buy_in_usd": 600,
    "guarantee_usd": 50000,
    "prize_text": null,
@@ -15532,7 +15504,7 @@
    "est_duration_min": null,
    "note": "Buy-in, guarantee, starting chips and level count from the official WPT World Championship schedule PDF; the entry rule, fee split, starting stack and registration cut-off from the sheet of the official structures PDF that the row is joined to.",
    "flags": [
-    "The $600 NLH Turbo structure sheet lists \"Monday, December 14, 2026 at 9 p.m.\" for the $600 turbo; this row is printed by the schedule PDF as \"NIH Turbo\" with a $600 buy-in and a $50,000 guarantee."
+    "Name corrected on 2026-11-17: the live official schedule PDF prints \"NLH Turbo\" for this row. The earlier build published \"NIH Turbo\", which is a misread of the extracted text (capital I for capital L followed by H). The $600 NLH Turbo structure sheet lists \"Monday, December 14, 2026 at 9 p.m.\" as well."
    ],
    "sources": [
     {
@@ -15545,7 +15517,8 @@
     }
    ],
    "verified_on": "2026-11-16",
-   "last_checked": "2026-11-16"
+   "last_checked": "2026-11-16",
+   "structure_days": "Saturday, December 5, 2026 at 9 p.m. Sunday, December 6, 2026 at 9 p.m. Monday, December 7, 2026 at 9 p.m. Tuesday, December 8, 2026 at 9 p.m. Wednesday, December 9, 2026 at 9 p.m. Saturday, December 12, 2026 at 9 p.m. Monday, December 14, 2026 at 9 p.m. Monday, December 21, 2026 at 6 p.m."
   },
   {
    "id": "r155",
@@ -16580,7 +16553,7 @@
    "start": "19:00",
    "kind": "entry",
    "event_no": null,
-   "name": "NIH $500 Bounty Turbo",
+   "name": "NLH $500 Bounty Turbo",
    "buy_in_usd": 1600,
    "guarantee_usd": 100000,
    "prize_text": null,
@@ -16686,7 +16659,9 @@
    "est_end": null,
    "est_duration_min": null,
    "note": "Buy-in, guarantee, starting chips and level count from the official WPT World Championship schedule PDF; the entry rule, fee split, starting stack and registration cut-off from the sheet of the official structures PDF that the row is joined to.",
-   "flags": [],
+   "flags": [
+    "Name corrected on 2026-11-17: the live official schedule PDF prints \"NLH $500 Bounty Turbo\". The earlier build published \"NIH\", a misread of the extracted text."
+   ],
    "sources": [
     {
      "label": "Official schedule PDF",
@@ -17437,102 +17412,66 @@
    "start": "18:00",
    "kind": "entry",
    "event_no": null,
-   "name": "Milestone Satellite to $25K NIH High Roller",
+   "name": "Milestone Satellite to $25K NLH High Roller",
    "buy_in_usd": 3000,
    "guarantee_usd": null,
    "prize_text": null,
-   "house_fee_usd": 270,
-   "house_fee_pct": 9.0,
-   "prize_pool_usd": 2730,
+   "house_fee_usd": null,
+   "house_fee_pct": null,
+   "prize_pool_usd": null,
    "gtd_multiple": null,
-   "entry_status": "RE",
+   "entry_status": "UNV",
    "rules": {
     "single_entry": {
-     "value": "not single entry",
-     "excerpt": "Registration clause as printed on sheet 65: \"Unlimited re-entry will be available until the start of level 9.\"",
+     "value": "unknown",
+     "excerpt": "The official WPT World Championship Structures PDF was read in full (eight sections, ending with the $1,600 PLO Mystery Bounty). It publishes no structure sheet for the milestone and satellite events, so the entry rule, the fee split and the late-registration cut-off for these rows are not published in an official structure sheet. The schedule PDF publishes the buy-in, the prize (for example \"25 Seats\"), the starting chips and the level count only.",
      "source": {
-      "label": "Official WPT structures PDF, sheet 65",
+      "label": "Official structures / terms (Milestone / satellite rows printed in the official WPT schedule PDF)",
       "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
      },
      "retrieved_on": "2026-11-16"
     },
     "re_entry": {
-     "value": "allowed",
-     "excerpt": "Registration clause as printed on sheet 65: \"Unlimited re-entry will be available until the start of level 9.\"",
+     "value": "unknown",
+     "excerpt": "The official WPT World Championship Structures PDF was read in full (eight sections, ending with the $1,600 PLO Mystery Bounty). It publishes no structure sheet for the milestone and satellite events, so the entry rule, the fee split and the late-registration cut-off for these rows are not published in an official structure sheet. The schedule PDF publishes the buy-in, the prize (for example \"25 Seats\"), the starting chips and the level count only.",
      "source": {
-      "label": "Official WPT structures PDF, sheet 65",
+      "label": "Official structures / terms (Milestone / satellite rows printed in the official WPT schedule PDF)",
       "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
      },
      "retrieved_on": "2026-11-16"
     },
     "add_on": {
-     "value": "not mentioned in the structure sheet",
-     "excerpt": "Registration clause as printed on sheet 65: \"Unlimited re-entry will be available until the start of level 9.\"",
+     "value": "not mentioned",
+     "excerpt": "The official WPT World Championship Structures PDF was read in full (eight sections, ending with the $1,600 PLO Mystery Bounty). It publishes no structure sheet for the milestone and satellite events, so the entry rule, the fee split and the late-registration cut-off for these rows are not published in an official structure sheet. The schedule PDF publishes the buy-in, the prize (for example \"25 Seats\"), the starting chips and the level count only.",
      "source": {
-      "label": "Official WPT structures PDF, sheet 65",
+      "label": "Official structures / terms (Milestone / satellite rows printed in the official WPT schedule PDF)",
       "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
      },
      "retrieved_on": "2026-11-16"
     },
     "fee": {
-     "value": "Entry Fee: $3,000 Buy-in = $2,730 (Tournament Prize Pool) + $200 (Tournament Fee) + $70 (Poker Staff Service Charge)",
-     "excerpt": "Entry Fee: $3,000 Buy-in = $2,730 (Tournament Prize Pool) + $200 (Tournament Fee) + $70 (Poker Staff Service Charge)",
+     "value": "not published for this event",
+     "excerpt": "The official WPT World Championship Structures PDF was read in full (eight sections, ending with the $1,600 PLO Mystery Bounty). It publishes no structure sheet for the milestone and satellite events, so the entry rule, the fee split and the late-registration cut-off for these rows are not published in an official structure sheet. The schedule PDF publishes the buy-in, the prize (for example \"25 Seats\"), the starting chips and the level count only.",
      "source": {
-      "label": "Official WPT structures PDF, sheet 65",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
-     },
-     "retrieved_on": "2026-11-16"
-    },
-    "starting_chips": {
-     "value": "Players will start with 20,000 in tournament chips.",
-     "excerpt": "Players will start with 20,000 in tournament chips.",
-     "source": {
-      "label": "Official WPT structures PDF, sheet 65",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
-     },
-     "retrieved_on": "2026-11-16"
-    },
-    "level_length": {
-     "value": "25 minutes per level until completion.",
-     "excerpt": "25 minutes per level until completion.",
-     "source": {
-      "label": "Official WPT structures PDF, sheet 65",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
-     },
-     "retrieved_on": "2026-11-16"
-    },
-    "late_registration": {
-     "value": "registration closes at the start of level 9, no clock time printed",
-     "excerpt": "Registration clause as printed on sheet 65: \"Unlimited re-entry will be available until the start of level 9.\"",
-     "source": {
-      "label": "Official WPT structures PDF, sheet 65",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
-     },
-     "retrieved_on": "2026-11-16"
-    },
-    "prize_pool_component": {
-     "value": "$2,730 of the $3,000 buy-in",
-     "excerpt": "Entry Fee: $3,000 Buy-in = $2,730 (Tournament Prize Pool) + $200 (Tournament Fee) + $70 (Poker Staff Service Charge)",
-     "source": {
-      "label": "Official WPT structures PDF, sheet 65",
+      "label": "Official structures / terms (Milestone / satellite rows printed in the official WPT schedule PDF)",
       "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
      },
      "retrieved_on": "2026-11-16"
     }
    },
-   "entry_rule": "Re-entry confirmed: the structure sheet prints a re-entry clause (see the excerpt).",
+   "entry_rule": "Entry rule not verified: no structure sheet for this event is published in the official structures PDF.",
    "labels": [
     "satellite"
    ],
    "late_reg_close": null,
-   "late_reg_level": "level 9",
+   "late_reg_level": null,
    "levels": null,
-   "level_minutes": 25,
+   "level_minutes": null,
    "starting_chips": 20000,
    "levels_published": "25",
    "est_end": null,
    "est_duration_min": null,
-   "note": "Buy-in, guarantee, starting chips and level count from the official WPT World Championship schedule PDF; the entry rule, fee split, starting stack and registration cut-off from the sheet of the official structures PDF that the row is joined to.",
+   "note": "Buy-in, guarantee, starting chips and level count from the official WPT World Championship schedule PDF.",
    "flags": [
     "Printed on the schedule PDF under the heading \"Dec. 18 Wednesday\" and stored as December 16, 2026.",
     "Schedule footnote: \"Players registered prior to the start of the event will receive a discounted entry.\""
@@ -17543,7 +17482,7 @@
      "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
     },
     {
-     "label": "Official WPT structures PDF, sheet 65",
+     "label": "Official structures / terms (Milestone / satellite rows printed in the official WPT schedule PDF)",
      "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     }
    ],
@@ -22951,7 +22890,7 @@
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-21",
-   "start": "20:00",
+   "start": "18:00",
    "kind": "entry",
    "event_no": null,
    "name": "NLH Turbo",
@@ -23051,8 +22990,7 @@
    "est_duration_min": null,
    "note": "Buy-in, guarantee, starting chips and level count from the official WPT World Championship schedule PDF; the entry rule, fee split, starting stack and registration cut-off from the sheet of the official structures PDF that the row is joined to.",
    "flags": [
-    "Time conflict between two official sources: the schedule PDF prints this turbo at 8 p.m. on December 21, while the $600 NLH Turbo structure sheet lists \"Monday, December 21, 2026 at 6 p.m.\" The schedule time is kept and the conflict is flagged.",
-    "The structures PDF prints this event at a start time 120 minutes away from the start time on the official schedule PDF; the schedule's time is published here and the difference is flagged rather than reconciled silently."
+    "Time corrected on 2026-11-17: the live official schedule PDF prints this turbo at 6 p.m. on December 21, and the $600 NLH Turbo structure sheet lists 'Monday, December 21, 2026 at 6 p.m.' as well, so both official sources now agree. The earlier build published 8 p.m. from a misread of the archived text extraction."
    ],
    "sources": [
     {

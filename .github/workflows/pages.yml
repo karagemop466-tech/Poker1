@@ -48,6 +48,19 @@ jobs:
       - name: Verify every published value against the archived official documents
         run: python3 scripts/verify_rows.py
 
+      - name: Replay the live page checks against the archived official schedule
+        # Exercises the parser used by the scheduled live check with no network needed.
+        run: python3 scripts/verify_live.py --offline
+
+      - name: Re-fetch the official schedule pages and diff every published row
+        # The live half of the verification. A discrepancy (a row the official page no
+        # longer prints, or a name/time that changed) fails this step so no stale row
+        # can be published; an unreachable source fails it too, so a broken check is
+        # never reported as a pass.
+        run: |
+          python3 -m pip install --quiet pypdf
+          python3 scripts/verify_live.py --print --json data/live_verification.json
+
       - name: Check every official source and summarise the changed rows
         run: |
           python3 scripts/monitor_sources.py --print | tee monitor.txt

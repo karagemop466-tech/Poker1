@@ -825,7 +825,7 @@
     {
      "id": "r045",
      "start": "12:00",
-     "name": "Limit Omaha 8/5/stud 8",
+     "name": "Limit Omaha 8/Stud 8",
      "series": "WPT World Championship (Wynn)",
      "venue": "Wynn Las Vegas",
      "buy_in_usd": 600,
@@ -2114,7 +2114,7 @@
     {
      "id": "r125",
      "start": "14:00",
-     "name": "Milestone Satellite to $10,400 World Championship 1A/8",
+     "name": "Milestone Satellite to $10,400 World Championship 1A/B",
      "series": "WPT World Championship (Wynn)",
      "venue": "Wynn Las Vegas",
      "buy_in_usd": 1100,
@@ -2131,13 +2131,13 @@
     {
      "id": "r128",
      "start": "16:00",
-     "name": "Milestone Satellite to $10,400 Ladies NLH Championship",
+     "name": "Milestone Satellite to $1,100 Ladies NLH Championship",
      "series": "WPT World Championship (Wynn)",
      "venue": "Wynn Las Vegas",
      "buy_in_usd": 200,
      "guarantee_usd": null,
      "prize_text": "10 Seats",
-     "entry_status": "RE",
+     "entry_status": "UNV",
      "labels": [
       "satellite",
       "ladies"
@@ -2167,7 +2167,7 @@
     {
      "id": "r130",
      "start": "19:00",
-     "name": "Milestone Satellite to $10,400 World Championship 1A/8",
+     "name": "Milestone Satellite to $10,400 World Championship 1A/B",
      "series": "WPT World Championship (Wynn)",
      "venue": "Wynn Las Vegas",
      "buy_in_usd": 1100,
@@ -2226,12 +2226,12 @@
     {
      "a": "r120",
      "b": "r125",
-     "detail": "Milestone Satellite to $10,400 World Championship 1A/8 starts 14:00 while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 is still estimated to run until 17:55"
+     "detail": "Milestone Satellite to $10,400 World Championship 1A/B starts 14:00 while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 is still estimated to run until 17:55"
     },
     {
      "a": "r120",
      "b": "r128",
-     "detail": "Milestone Satellite to $10,400 Ladies NLH Championship starts 16:00 while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 is still estimated to run until 17:55"
+     "detail": "Milestone Satellite to $1,100 Ladies NLH Championship starts 16:00 while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 is still estimated to run until 17:55"
     },
     {
      "a": "r123",
@@ -2241,12 +2241,12 @@
     {
      "a": "r123",
      "b": "r125",
-     "detail": "Milestone Satellite to $10,400 World Championship 1A/8 starts 14:00 while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 is still estimated to run until 20:55"
+     "detail": "Milestone Satellite to $10,400 World Championship 1A/B starts 14:00 while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 is still estimated to run until 20:55"
     },
     {
      "a": "r123",
      "b": "r128",
-     "detail": "Milestone Satellite to $10,400 Ladies NLH Championship starts 16:00 while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 is still estimated to run until 20:55"
+     "detail": "Milestone Satellite to $1,100 Ladies NLH Championship starts 16:00 while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 is still estimated to run until 20:55"
     },
     {
      "a": "r123",
@@ -2256,7 +2256,7 @@
     {
      "a": "r123",
      "b": "r130",
-     "detail": "Milestone Satellite to $10,400 World Championship 1A/8 starts 19:00 while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 is still estimated to run until 20:55"
+     "detail": "Milestone Satellite to $10,400 World Championship 1A/B starts 19:00 while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 is still estimated to run until 20:55"
     }
    ]
   },
@@ -2284,7 +2284,7 @@
     {
      "id": "r133",
      "start": "11:00",
-     "name": "Ladies NIH Championship (2 Day)",
+     "name": "Ladies NLH Championship (2 Day)",
      "series": "WPT World Championship (Wynn)",
      "venue": "Wynn Las Vegas",
      "buy_in_usd": 1100,
@@ -2579,7 +2579,7 @@
     {
      "id": "r154",
      "start": "21:00",
-     "name": "NIH Turbo",
+     "name": "NLH Turbo",
      "series": "WPT World Championship (Wynn)",
      "venue": "Wynn Las Vegas",
      "buy_in_usd": 600,
@@ -2725,7 +2725,7 @@
     {
      "id": "r165",
      "start": "19:00",
-     "name": "NIH $500 Bounty Turbo",
+     "name": "NLH $500 Bounty Turbo",
      "series": "WPT World Championship (Wynn)",
      "venue": "Wynn Las Vegas",
      "buy_in_usd": 1600,
@@ -2848,13 +2848,13 @@
     {
      "id": "r173",
      "start": "18:00",
-     "name": "Milestone Satellite to $25K NIH High Roller",
+     "name": "Milestone Satellite to $25K NLH High Roller",
      "series": "WPT World Championship (Wynn)",
      "venue": "Wynn Las Vegas",
      "buy_in_usd": 3000,
      "guarantee_usd": null,
      "prize_text": null,
-     "entry_status": "RE",
+     "entry_status": "UNV",
      "labels": [
       "satellite"
      ],
@@ -3621,7 +3621,7 @@
     },
     {
      "id": "r225",
-     "start": "20:00",
+     "start": "18:00",
      "name": "NLH Turbo",
      "series": "WPT World Championship (Wynn)",
      "venue": "Wynn Las Vegas",
