@@ -34,6 +34,8 @@ row itself says what is odd about it.
 | # | Irregularity | Handling |
 |---|---|---|
 | F20 | `.github/workflows/monitor.yml` used a `name:` key inside its `schedule:` entry. The workflow schema accepts only `cron` there, so the daily source check never fired, and `data/monitoring.json` still shows a run made from a sandbox where every operator domain was unreachable (0 of 59 sources). | Fixed by removing the unsupported key, so the daily job will now run. The parallel provenance job (`scripts/check_source_facts.py`, weekly) already runs in GitHub Actions and reports 68 of 71 sources fetched, which is the reachability evidence the monitoring page is still missing. |
+| F53 | The LIPS structure sheets (31, 32, 33) withhold **two separate** amounts from the buy-in: a house fee (Rake + Staff) and a flat fee for Vegas Connected, INC, DBA Ladies International Poker Series (LIPS). An earlier build stored the *combined* withholding as `house_fee_usd` (e.g. $90 = $80 house + $10 LIPS on the $600 sheets), conflating the two and contradicting the sheet's own clause 06 wording. | [Sheet 31](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_31.pdf), [sheet 32](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf), [sheet 33](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_33.pdf) | Corrected: `house_fee_usd` now stores the pure house fee ($80 on the $600 sheets, $90 on the $800 sheet) and the LIPS flat fee is stored separately in `lips_fee_usd` ($10 / $20). The prize pool is unchanged. Each affected row carries the flag. Found by the line-by-line verifier `scripts/verify_rows.py`. |
+| F54 | The Wynn Signature Series schedule PDF prints a buy-in, starting chips and levels for the multi-day Day 1x main events but **no guarantee**, and the structures PDF is a "COMING SOON" placeholder. An earlier build published guarantee amounts ($150,000 / $250,000 / $100,000 / $300,000) that appear on **no** official source. | [Wynn Signature Series schedule PDF](https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf) and the [structures PDF](https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf) (placeholder) | Corrected: the unsourced guarantees are left blank and each affected row is flagged. The guarantees the schedule **does** print are kept: the NLH Turbo ($10,000) and the Sunday NLH events ($30,000). Found by `scripts/verify_rows.py`. |
 
 ### Irregularities re-checked on 2026-11-17
 
@@ -74,7 +76,7 @@ row itself says what is odd about it.
 
 ## C. Rows carrying a flag in the dataset
 
-56 of the 317 rows carry at least one flag. They are listed with their flag text on the
+78 of the 317 rows carry at least one flag. They are listed with their flag text on the
 [Monitoring page](pages/monitoring.html), and the same flag text is stored in the row itself under
 `flags`, so the row can never be separated from the reason it is unusual.
 

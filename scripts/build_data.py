@@ -375,6 +375,15 @@ DATE_TYPO_DEC26 = ("Official page typo: the New York Year's Eve event page print
 DATE_TYPO_TUESDAY = ("Official page typo: the New Year\'s Eve event page prints \"Tuesaday, January 5, 2027\" "
                       "for this row. January 5, 2027 is a Tuesday, so the stored date is unchanged.")
 
+# LIPS structure sheets withhold two separate amounts from the buy-in: a house fee (Rake +
+# Staff) and a separate flat fee for Vegas Connected, INC, DBA Ladies International Poker
+# Series (LIPS). The numeric house_fee_usd stores the pure house fee only; the LIPS flat fee
+# is kept in its own field so the two are never conflated (read from the sheets on 2026-11-16).
+LIPS_FEE_FLAG = ("The structure sheet withholds two separate amounts from the buy-in: the house fee "
+                 "(Rake + Staff) and a flat fee for Vegas Connected, INC, DBA Ladies International Poker "
+                 "Series (LIPS). house_fee_usd stores the pure house fee only; the LIPS flat fee is stored "
+                 "separately in lips_fee_usd. The prize pool is the buy-in less both withholdings.")
+
 # ---------- Wynn WPT World Championship schedule rows (official schedule PDF, read 2026-11-16) ----------
 # date, time, name, buy-in, guarantee (None = no dollar guarantee), guarantee text,
 # published chips, published levels, kind, structure key, flags
@@ -749,50 +758,58 @@ WPT_STRUCTS = {
 
 # ---------- Wynn Signature Series schedule rows (official schedule PDF, structures not yet published) ----------
 # date, time, name, buy-in, guarantee, published chips, published levels, kind, flags
+# The official schedule prints a guarantee only for the NLH Turbo ($10,000) and the Sunday
+# NLH events ($30,000). The multi-day Day 1x main events print a buy-in, chips and levels but
+# NO guarantee, and the structures PDF is a "COMING SOON" placeholder. Their guarantee is left
+# blank (None) and flagged rather than inferred.
+WSS_GTD_UNVERIFIED = ("Guarantee left blank: the official Wynn Signature Series schedule PDF prints "
+                      "a buy-in, starting chips and levels for this event but no guarantee amount, and the "
+                      "structures PDF is a \"COMING SOON\" placeholder. No official value was available, so "
+                      "no guarantee is published for this row.")
 WSS = [
- ("2027-01-11","12:00","No Limit Hold'em Day 1A",400,150000,40000,"30/40","entry",[]),
- ("2027-01-11","17:00","No Limit Hold'em Day 1B",400,150000,40000,"30/40","entry",[]),
- ("2027-01-12","12:00","No Limit Hold'em Day 1C",400,150000,40000,"30/40","entry",[]),
- ("2027-01-12","17:00","No Limit Hold'em Day 1D",400,150000,40000,"30/40","entry",[]),
- ("2027-01-13","12:00","No Limit Hold'em Day 1E",400,150000,40000,"30/40","entry",[]),
- ("2027-01-13","17:00","No Limit Hold'em Day 1F",400,150000,40000,"30/40","entry",[]),
- ("2027-01-14","11:00","No Limit Hold'em Day 1A",600,250000,40000,"40","entry",[]),
+ ("2027-01-11","12:00","No Limit Hold'em Day 1A",400,None,40000,"30/40","entry",[WSS_GTD_UNVERIFIED]),
+ ("2027-01-11","17:00","No Limit Hold'em Day 1B",400,None,40000,"30/40","entry",[WSS_GTD_UNVERIFIED]),
+ ("2027-01-12","12:00","No Limit Hold'em Day 1C",400,None,40000,"30/40","entry",[WSS_GTD_UNVERIFIED]),
+ ("2027-01-12","17:00","No Limit Hold'em Day 1D",400,None,40000,"30/40","entry",[WSS_GTD_UNVERIFIED]),
+ ("2027-01-13","12:00","No Limit Hold'em Day 1E",400,None,40000,"30/40","entry",[WSS_GTD_UNVERIFIED]),
+ ("2027-01-13","17:00","No Limit Hold'em Day 1F",400,None,40000,"30/40","entry",[WSS_GTD_UNVERIFIED]),
+ ("2027-01-14","11:00","No Limit Hold'em Day 1A",600,None,40000,"40","entry",[WSS_GTD_UNVERIFIED]),
  ("2027-01-14","13:00","No Limit Hold'em Day 2",None,None,None,None,"continuation",
   ["Continuation row. The official schedule PDF prints no buy-in, guarantee, chips or levels for this row."]),
  ("2027-01-14","18:00","Milestone Satellite to $600 NLH",125,None,20000,"20","entry",
   ["Prize printed as \"10 Seats\". Schedule footnote: \"Winners will receive direct entry to the corresponding "
    "event(s) for which it was held. See structure sheet for details.\""]),
- ("2027-01-15","11:00","No Limit Hold'em Day 1B",600,250000,40000,"40","entry",[]),
+ ("2027-01-15","11:00","No Limit Hold'em Day 1B",600,None,40000,"40","entry",[WSS_GTD_UNVERIFIED]),
  ("2027-01-15","18:00","NLH Turbo",200,10000,25000,"20","entry",[]),
- ("2027-01-16","11:00","No Limit Hold'em Day 1C",600,250000,40000,"40","entry",[]),
- ("2027-01-16","18:00","No Limit Hold'em Day 1D",600,250000,40000,"20/40","entry",[]),
+ ("2027-01-16","11:00","No Limit Hold'em Day 1C",600,None,40000,"40","entry",[WSS_GTD_UNVERIFIED]),
+ ("2027-01-16","18:00","No Limit Hold'em Day 1D",600,None,40000,"20/40","entry",[WSS_GTD_UNVERIFIED]),
  ("2027-01-17","12:00","No Limit Hold'em",400,30000,30000,"30","entry",[]),
  ("2027-01-17","13:00","No Limit Hold'em Day 2",None,None,None,None,"continuation",
   ["Continuation row. The official schedule PDF prints no buy-in, guarantee, chips or levels for this row."]),
  ("2027-01-17","18:00","NLH Turbo",200,10000,25000,"20","entry",[]),
- ("2027-01-18","11:00","No Limit Hold'em Day 1A",400,100000,40000,"40","entry",[]),
+ ("2027-01-18","11:00","No Limit Hold'em Day 1A",400,None,40000,"40","entry",[WSS_GTD_UNVERIFIED]),
  ("2027-01-18","13:00","PLO",400,None,30000,"30","entry",[]),
  ("2027-01-18","18:00","NLH Turbo",200,10000,25000,"20","entry",[]),
- ("2027-01-19","11:00","No Limit Hold'em Day 1B",400,100000,40000,"40","entry",[]),
+ ("2027-01-19","11:00","No Limit Hold'em Day 1B",400,None,40000,"40","entry",[WSS_GTD_UNVERIFIED]),
  ("2027-01-19","13:00","Mixed Game (TORSE)",400,None,35000,"30","entry",[]),
  ("2027-01-19","18:00","NLH Turbo",200,10000,25000,"20","entry",[]),
- ("2027-01-20","11:00","No Limit Hold'em Day 1C",400,100000,40000,"40","entry",[]),
+ ("2027-01-20","11:00","No Limit Hold'em Day 1C",400,None,40000,"40","entry",[WSS_GTD_UNVERIFIED]),
  ("2027-01-20","13:00","Mixed Triple Draw (A-5, 2-7, Badugi)",400,None,35000,"30","entry",[]),
  ("2027-01-20","18:00","NLH Turbo",200,10000,25000,"20","entry",[]),
- ("2027-01-21","11:00","No Limit Hold'em Day 1A",800,300000,40000,"40","entry",[]),
+ ("2027-01-21","11:00","No Limit Hold'em Day 1A",800,None,40000,"40","entry",[WSS_GTD_UNVERIFIED]),
  ("2027-01-21","12:00","No Limit Hold'em Day 2",None,None,None,None,"continuation",
   ["Continuation row. The official schedule PDF prints no buy-in, guarantee, chips or levels for this row."]),
  ("2027-01-21","13:00","Mixed Game (TOE)",400,None,35000,"30","entry",[]),
  ("2027-01-21","18:00","Milestone Satellite to $800 NLH",160,None,20000,"20","entry",
   ["Prize printed as \"10 Seats\". Schedule footnote: \"Winners will receive direct entry to the corresponding "
    "event(s) for which it was held. See structure sheet for details.\""]),
- ("2027-01-22","11:00","No Limit Hold'em Day 1B",800,300000,40000,"40","entry",[]),
+ ("2027-01-22","11:00","No Limit Hold'em Day 1B",800,None,40000,"40","entry",[WSS_GTD_UNVERIFIED]),
  ("2027-01-22","13:00","Big O",400,None,30000,"30","entry",[]),
  ("2027-01-22","18:00","Milestone Satellite to $800 NLH",160,None,20000,"20","entry",
   ["Prize printed as \"10 Seats\". Schedule footnote: \"Winners will receive direct entry to the corresponding "
    "event(s) for which it was held. See structure sheet for details.\""]),
- ("2027-01-23","11:00","No Limit Hold'em Day 1C",800,300000,40000,"40","entry",[]),
- ("2027-01-23","18:00","No Limit Hold'em Day 1D",800,300000,40000,"20/40","entry",[]),
+ ("2027-01-23","11:00","No Limit Hold'em Day 1C",800,None,40000,"40","entry",[WSS_GTD_UNVERIFIED]),
+ ("2027-01-23","18:00","No Limit Hold'em Day 1D",800,None,40000,"20/40","entry",[WSS_GTD_UNVERIFIED]),
  ("2027-01-24","12:00","Seniors No Limit Hold'em 50+",400,30000,30000,"30","entry",[]),
  ("2027-01-24","13:00","No Limit Hold'em Day 2",None,None,None,None,"continuation",
   ["Continuation row. The official schedule PDF prints no buy-in, guarantee, chips or levels for this row."]),
@@ -907,12 +924,14 @@ def build_venetian(rows, series_key, series, page_key, sheet_key, sched_key, str
         struct_url = SRC[struct_key].format(sheet_no)
         fee_ex = ("Clause 06: \"$%d of the $%s Buy-In is withheld for house fees (Rake + Staff). The prize pool "
                   "consists of $%d of every $%s Buy In.\"" % (sheet["fee"], format(buy, ","), sheet["pool"], format(buy, ",")))
+        lips_fee = 10 if sheet_no in (31, 33) else (20 if sheet_no == 32 else 0)
+        house_fee_value = sheet["fee"] - lips_fee
         if sheet_no in (31, 32, 33):
             fee_ex = ("Clause 06: \"$%d of the $%s Buy-In is withheld for house fees (Rake + Staff). "
                       "$%d of the $%s Buy In will be withheld as a flat fee for Vegas Connected, INC, DBA Ladies "
                       "International Poker Series (LIPS). Prize pool consists of $%d of every $%s Buy In.\""
-                      % (sheet["fee"] - (10 if sheet_no in (31, 33) else 20), format(buy, ","),
-                         10 if sheet_no in (31, 33) else 20, format(buy, ","),
+                      % (house_fee_value, format(buy, ","),
+                         lips_fee, format(buy, ","),
                          sheet["pool"], format(buy, ",")))
         rules = {
             "single_entry": rule_field(
@@ -937,6 +956,8 @@ def build_venetian(rows, series_key, series, page_key, sheet_key, sched_key, str
             flags.append(DATE_TYPO_DEC26)
         if date == "2027-01-05":
             flags.append(DATE_TYPO_TUESDAY)
+        if lips_fee:
+            flags.append(LIPS_FEE_FLAG)
         if sheet.get("note"):
             note = sheet["note"]
         elif continuation:
@@ -950,7 +971,8 @@ def build_venetian(rows, series_key, series, page_key, sheet_key, sched_key, str
             "event_no": no, "name": name,
             "buy_in_usd": buy, "guarantee_usd": gtd,
             "prize_text": ("%d seats to %s" % (sheet["seats"], sheet["target"])) if sheet.get("seats") else None,
-            "house_fee_usd": sheet["fee"], "house_fee_pct": round(100.0 * sheet["fee"] / buy, 2),
+            "house_fee_usd": house_fee_value, "house_fee_pct": round(100.0 * house_fee_value / buy, 2),
+            "lips_fee_usd": lips_fee if lips_fee else None,
             "prize_pool_usd": sheet["pool"],
             "gtd_multiple": round(gtd / buy, 1) if gtd and buy else None,
             "entry_status": status, "rules": rules,
