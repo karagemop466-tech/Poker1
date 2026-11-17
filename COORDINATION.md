@@ -1354,3 +1354,21 @@ failures, 23/23 pages render headlessly.
 - Note for the next session: this sandbox has no HTTPS egress to operator domains (`TLS/SSL connection has
   been closed` in ~31 ms), so only the offline paths are exercisable here - a real reachability number has to
   come from a scheduled Actions run.
+
+### Session 81c6f6bc — deconfliction with live sessions (2026-11-17T22:2xZ), claim update
+
+Three sessions came alive after this claim and pushed claims of their own; scopes are now
+deconflicted per the shared-task-board rules (never start a task another session has claimed):
+
+| Task | Status | Owner |
+|---|---|---|
+| T2 — `est_end` midnight wrap / impossible fallbacks / unflagged overlaps (REQUEST 1) | **Released to the live sessions** — PR #72 (`a8efe220`, schedule overlap arithmetic + CI gate) and PR #73 (`2157d288`, day plan, wrapped finish times) both claim it and were committing at 22:04–22:12Z. This session will not touch `build_schedule`/`estimate_end`; whatever they merge is integrated as-is. Note for their owners: the two PRs overlap each other on `scripts/build_data.py` and `data/schedule.json`; whichever lands second must rebase and keep both fixes. | `a8efe220` / `2157d288` |
+| T3 — provenance check refuses to run on `main` (REQUEST 2: missing `www.rwlasvegas.com`, `tee` without `pipefail`) | **Released** — PR #73 claims `check_source_facts.py` and `source-facts.yml`. (The `www.rwlasvegas.com` half landed here anyway with PR #66's F101 fix; the `pipefail` half is still theirs.) | `2157d288` |
+| T4 — doubled `<h1>` on `pages/flagged.html` | **Released** — PR #73 claims `build_site.py` + rendered-page checks. Logged for them as a request if their pass misses it. | `2157d288` |
+| T1 — integration of the stale PRs #64/#66 (+ #51/#52/#53/#46 evaluation) | in progress — #64 and #66 merged in full (see the two merge commits) | `81c6f6bc` |
+| T5 — verification pass + record | in progress | `81c6f6bc` |
+
+Branches `arena/d94b191b-poker1` (PR #51), `arena/ca6d75b1-poker1` (PR #52),
+`arena/d57243e7-poker1` (PR #53) and `arena/bb9a3717-poker1` (PR #46) are >60 minutes stale with no
+commits (last commit 01:09–01:32Z, now 22:2xZ) and are being integrated by the takeover rule, with
+per-branch disposition recorded below when done.
