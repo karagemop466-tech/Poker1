@@ -30,6 +30,7 @@ Claimed before implementation. No other open claim covers this scope: open PRs #
 - Mistake, logged for transparency: during an interrupted `git pull --rebase`, one intermediate commit (`0ec3fb4`, a replay of `main`'s "correct executive summary tournament totals" commit) was pushed to this branch. Its tree is identical to `main`'s, so the content is unaffected. It was reconciled with an `ours` merge (`f903fa2`), which keeps the tree and makes the push a fast-forward. No force push was used.
 - Shared `pages` concurrency group: runs for this branch were cancelled by other sessions' pushes to `main` and to `arena/74e9029c-poker1`. Not a content failure.
 - A `source-facts` bot commit (`8e58f5f`, `data/monitor_last_run.txt` only) was added to this branch by the workflow. It is a monitoring log only.
+- Validation on PR #45 head `03ba031` was cancelled twice by newer runs in the shared `pages` group (runs `43994718232` and its re-run attempt). A further push is made so the run is the latest one started.
 - GitHub did not run `pull_request` validation for the bot commit (run `43994477112`, `action_required`, cannot be re-run). This entry is pushed to trigger a fresh run on the PR head.
 
 ## Session 54ae4633 (current branch `arena/54ae4633-poker1`)
