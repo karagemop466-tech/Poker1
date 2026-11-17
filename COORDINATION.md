@@ -73,6 +73,22 @@ session's work discarded:
   `data/schedule.json` is byte-identical to `main`'s (deterministic). Rebased and force-pushed with
   `--force-with-lease` as `5af9004`.
 
+### Session 9aad3bd2 — pull request, merge and deploy record
+
+- **PR: [#76](https://github.com/karagemop466-tech/Poker1/pull/76)** — "Session 9aad3bd2: schedule provenance +
+  last-checked/rule-date rendering + monitoring guard", from `arena/9aad3bd2-poker1` to `main`. CI `validate`
+  **passed** (5m57s; rebuild, page-match, schema/link, row-verification and source-check steps all green).
+- **Merged** 2026-11-17T22:26:08Z as merge commit `8f63653c204c9bcff11bc809dfef2fd098b951af`. `origin/main` is
+  now `8f63653`.
+- **GitHub Pages:** `GET /repos/karagemop466-tech/Poker1/pages` reports `status: built`, live at
+  https://karagemop466-tech.github.io/Poker1/ . The deployed tree was checked through the GitHub API:
+  `pages/schedule.html` carries `est_end_next_day` and the "the next day" renderer;
+  `pages/single-entry.html` carries the "Last checked" column and rule "retrieved" dates;
+  `pages/flagged.html` has a single real `<h1>` (the template heading — the markdown's own heading is stripped
+  at runtime).
+- Flagged irregularities and the one open review item (`r225`) do not block the merge and remain published on
+  the Flagged for Review page.
+
 ## Session 212b84be — FINAL INTEGRATION SESSION (branch `arena/212b84be-poker1`, base `aea688a` = `main` at PR #37)
 ## Session 8a12503e — branch `arena/8a12503e-poker1` (base `aea688a`, `main` after PR #37)
 
