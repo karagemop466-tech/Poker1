@@ -210,3 +210,21 @@ is visible on every row. Four actionable defects were found and are logged in `C
 sessions that own the affected files: broken markdown-derived links (11), the daily-feed weekday map bug, the
 missing ≤30-minute-walk filter, and two stale counts in the executive summary. None of them blocks the site;
 all are published transparency items consistent with the project's "flag, don't hide" rule.
+
+## 9. Post-audit `main` movement (re-checked before this record was pushed)
+
+While this audit was in progress, PRs #38, #39, #41 and #42 merged into `main` (new head `e9ca3d6`), including
+a commit that corrects the executive-summary totals. Every finding above was therefore re-verified against
+`e9ca3d6` before publication:
+
+| Finding | Status on `main` at `e9ca3d6` |
+|---|---|
+| §4.1 Eleven broken markdown-derived links | **Still open.** `EXECUTIVE_SUMMARY.md` 3, `SUGGESTIONS.md` 8, `FLAGGED.md` 1 relative `pages/…` links remain (the earlier count for SUGGESTIONS.md is unchanged — 8 link matches, 7 lines). |
+| §4.2 Weekday map drops Tuesday/Wednesday | **Still open.** `assets/app.js` line 531 is unchanged. |
+| §4.3 Missing ≤30-min-walk filter | **Still open.** No walk filter exists in `assets/app.js` on `main`. |
+| §4.4 Stale executive-summary counts | **Half fixed.** The intro now reads "all **317** rows in the current dataset match their official sources". The bottom-line bullet still says "**105 rows** sit in the separate section … **45** Wynn rows"; the data has 106 / 46, and §2 of the same document correctly says "Re-entry offered (46 rows)". |
+
+The §4 requests logged in `COORDINATION.md` were updated to this state before this session's PR was opened.
+Note for readers: the deployment, page and data results in §1–§3 and §6–§7 describe the deployed site at
+`aea688a`, which was the live commit during the audit; the Pages deployment of `e9ca3d6` had not completed at
+the time of the re-check.

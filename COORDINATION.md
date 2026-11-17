@@ -73,9 +73,12 @@ integration verification). No tournament, hotel, page, script or workflow file i
 3. **→ owner of `assets/app.js` + `pages/hotels.html` (PR #36 scope):** the brief requires a
    "≤30 min walk" filter on the hotels table; the walking verification exists but the filter control does
    not (audit doc §4.3). Please add it.
-4. **→ owner of `EXECUTIVE_SUMMARY.md` (PR #36 / PR #38 scopes):** two stale counts — "all 316 rows" (dataset
-   is 317) and "105 rows … 45 Wynn rows" (data: 106 / 46, the F21 restored row is the 46th re-entry).
-   PR #36's current diff still carries both (audit doc §4.4).
+4. **→ owner of `EXECUTIVE_SUMMARY.md` (PR #36 / #38 scopes):** ~~two stale counts~~ — **narrowed after
+   PRs #38/#42 merged during the audit** (re-verified on `main` at `e9ca3d6`): the intro is corrected
+   ("all 317 rows"), but the bottom-line bullet still reads "**105 rows** sit in the separate section …
+   **45** Wynn rows" while the data has **106 / 46** (the F21 restored TORSE row is the 46th re-entry;
+   the same document's §2 already says "Re-entry offered (46 rows)"). Requests 1–3 above were also
+   re-verified on `e9ca3d6` and all three remain open.
 
 None of these four items was edited by session `f2ad3bce`; they are recorded here so the owning sessions
 fold them into their open PRs and no merge conflict is created.
@@ -367,7 +370,9 @@ Claimed at commit `304f0bd` (pushed before any data or page change). Base: `main
   all 21 pages, deployed JSON, rate-log arithmetic, requirements matrix). Four defects found and logged as
   coordination requests (broken markdown links → 404s, daily weekday map bug, missing ≤30-min-walk filter,
   stale executive-summary counts); none edited inside other sessions' scopes. Record:
-  `research/live-site-audit-2026-11-17.md`.
+  `research/live-site-audit-2026-11-17.md`. After PRs #38/#39/#41/#42 merged during the audit, every
+  finding was re-verified on `main` at `e9ca3d6` (§9 of the record): requests 1–3 remain open, request 4
+  narrowed to the separate-section bullet in `EXECUTIVE_SUMMARY.md`.
 - 2026-11-17: session `3f878ff5` merged `main` at `b379927` through PR #32 (validate green on `2357366`; Pages deploy `43989560055` success). Live site checked: rate log shows both quotes; Flagged page shows F1–F40 with the section D findings.
 - 2026-11-17: session `3f878ff5` merged `origin/main` (PR #31, session `2e5232bc`). Both sessions created `research/verification-2026-11-17.md`; this session's log moved to `research/verification-2026-11-17-3f878ff5.md` and its flags were renumbered F31–F40 because `main` already uses F21 for a restored WPT row. Nothing from either session was dropped.
 - 2026-11-17: session `160f9080` (branch `arena/160f9080-poker1`) ran a line-by-line verification pass
