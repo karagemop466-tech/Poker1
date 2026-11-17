@@ -905,6 +905,30 @@ def estimate_end(start, levels, level_min, breaks=15, every=4, level_min2=None, 
     return to_hhmm(to_min(start) + total), total
 
 
+def end_abs_min(event):
+    """Absolute end time in minutes from midnight of the event's own date.
+
+    ``est_end`` is stored time-only (``to_hhmm`` wraps at 24h), so every comparison
+    must use this unwrapped value instead. Returns None when no duration is known.
+    """
+    if event.get("est_duration_min") is not None:
+        return to_min(event["start"]) + event["est_duration_min"]
+    if event.get("est_end"):
+        # Reconstruct the duration from the wrapped pair (24h ambiguity is not
+        # resolvable here; the generator always sets est_duration_min, so this is
+        # only a defensive fallback).
+        return to_min(event["start"]) + ((to_min(event["est_end"]) - to_min(event["start"])) % (24 * 60))
+    return None
+
+
+def fmt_est_end(event):
+    """Human end time: '02:55 (next day)' when the estimate wraps past midnight."""
+    if not event.get("est_end"):
+        return None
+    end = end_abs_min(event)
+    return event["est_end"] + (" (next day)" if end is not None and end >= 24 * 60 else "")
+
+
 def rule_field(value, excerpt, source_label, source_url, clause=None, retrieved=LAST_CHECKED):
     out = {"value": value, "excerpt": excerpt, "source": {"label": source_label, "url": source_url},
            "retrieved_on": retrieved}
@@ -1259,50 +1283,91 @@ def build_wynn():
 
 
 def build_schedule(rows):
-    """Day plan: verified single-entry primary, conditional fallback, overlap flags."""
+    """Day plan: verified single-entry primary, conditional fallback, overlap flags.
+
+    All time comparisons run in absolute minutes (``end_abs_min`` / date ordinal),
+    so an event whose estimate wraps past midnight no longer reads as finishing
+    early the same day, no impossible fallback sequence can be proposed, and an
+    event that runs into the next calendar day is flagged against events starting
+    there (midnight-wrap fix, session df94b75e).
+    """
     days = {}
     for r in rows:
         if r["kind"] != "entry":
             continue
         days.setdefault(r["date"], []).append(r)
+    order = {d: i for i, d in enumerate(sorted(days))}
+
+    def abs_start(e):
+        return order[e["date"]] * 24 * 60 + to_min(e["start"])
+
+    def abs_end(e):
+        return abs_start(e) + e["est_duration_min"] if e.get("est_duration_min") is not None else None
+
+    # Overlap scan over the whole dataset in absolute time: b cannot be played
+    # after (or during) a when b starts before a's estimated end.
+    conflicts_by_day = {}
+    flat = sorted((r for r in rows if r["kind"] == "entry"),
+                  key=lambda e: (e["date"], e["start"], e["name"]))
+    for i, a in enumerate(flat):
+        a_end = abs_end(a)
+        if a_end is None:
+            continue
+        for b in flat[i + 1:]:
+            if abs_start(b) < a_end:
+                if a["date"] != b["date"]:
+                    detail = ("%s starts %s on %s while %s (started %s on %s) is still estimated to run until %s"
+                              % (b["name"], b["start"], b["date"], a["name"], a["start"], a["date"],
+                                 fmt_est_end(a)))
+                else:
+                    detail = ("%s starts %s while %s is still estimated to run until %s"
+                              % (b["name"], b["start"], a["name"], fmt_est_end(a)))
+                conflicts_by_day.setdefault(b["date"], []).append(
+                    {"a": a["id"], "b": b["id"], "detail": detail})
     plan = []
     for d in sorted(days):
         events = sorted(days[d], key=lambda e: (e["start"], e["name"]))
         se = [e for e in events if e["entry_status"] == "SE"]
         primary = se[0] if se else None
         fallback = None
-        if primary and primary.get("est_end"):
+        primary_end = abs_end(primary) if primary else None
+        if primary_end is not None:
             for cand in se[1:]:
-                if to_min(cand["start"]) >= to_min(primary["est_end"]):
+                if to_min(cand["start"]) >= primary_end:
                     fallback = cand
                     break
-        conflicts = []
-        for i, a in enumerate(events):
-            for b in events[i + 1:]:
-                if a.get("est_end") and to_min(b["start"]) < to_min(a["est_end"]):
-                    conflicts.append({"a": a["id"], "b": b["id"],
-                                      "detail": "%s starts %s while %s is still estimated to run until %s"
-                                                % (b["name"], b["start"], a["name"], a["est_end"])})
+        if primary and primary_end is not None and primary_end >= 24 * 60:
+            fallback_note = ("The primary event is estimated to run past midnight (about %s), so no second "
+                             "event the same day can be played after it." % fmt_est_end(primary))
+        elif primary and not fallback:
+            fallback_note = "No second single-entry event starts after the primary event is estimated to finish."
+        elif not primary:
+            fallback_note = "No verified single-entry event on this date."
+        else:
+            fallback_note = ""
         plan.append({
             "date": d,
             "events": [{"id": e["id"], "start": e["start"], "name": e["name"], "series": e["series"],
                         "venue": e["venue"], "buy_in_usd": e["buy_in_usd"], "guarantee_usd": e["guarantee_usd"],
                         "prize_text": e.get("prize_text"), "entry_status": e["entry_status"],
                         "labels": e["labels"], "late_reg_close": e.get("late_reg_close"),
-                        "est_end": e.get("est_end"), "source": e["sources"][-1]["url"]} for e in events],
+                        "est_end": e.get("est_end"),
+                        "est_next_day": bool(e.get("est_duration_min") is not None
+                                             and to_min(e["start"]) + e["est_duration_min"] >= 24 * 60),
+                        "source": e["sources"][-1]["url"]} for e in events],
             "primary_id": primary["id"] if primary else None,
             "fallback_id": fallback["id"] if fallback else None,
-            "fallback_note": ("No second single-entry event starts after the primary event is estimated to finish."
-                              if primary and not fallback else
-                              ("No verified single-entry event on this date." if not primary else "")),
-            "conflicts": conflicts,
+            "fallback_note": fallback_note,
+            "conflicts": conflicts_by_day.get(d, []),
         })
     starts = sorted({r["start"] for r in rows if r["kind"] == "entry"})
     return {"verified_on": VERIFIED_ON, "days": plan,
             "earliest_listed_start": starts[0] if starts else None,
             "note": "Estimated end times are calculated from the published level structure (levels x level length plus "
-                    "the published breaks). They are an estimate, not an official finish time. A day can hold a primary "
-                    "single-entry event and a conditional fallback; no impossible sequence is proposed."}
+                    "the published breaks). They are an estimate, not an official finish time. An estimate that runs "
+                    "past midnight is shown as (next day), and overlaps are flagged even when the earlier event runs "
+                    "into the following calendar day. A day can hold a primary single-entry event and a conditional "
+                    "fallback; no impossible sequence is proposed."}
 
 
 # ---------------- hotels ----------------

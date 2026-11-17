@@ -50,6 +50,7 @@ async function run(rel) {
     : (page === "search" ? doc.getElementById("results") : doc.getElementById("content"));
   const html_out = primary ? primary.innerHTML : "";
   const tablePages = ["singleEntry", "separate", "unverified", "hotels", "daily"];
+  const markdownPages = ["summary", "questions", "suggestions", "flagged", "review"];
   const problems = [];
   if (errors.length) problems.push("js error: " + errors.join(" | "));
   if (html_out.indexOf("Could not load") >= 0) problems.push("page reported a load error");
@@ -59,6 +60,15 @@ async function run(rel) {
   }
   if (page.indexOf("venue:") === 0 && doc.querySelectorAll("table").length === 0) {
     problems.push("no table rendered");
+  }
+  // Doubled-title guard: the page template prints the one and only <h1>. A
+  // markdown body that renders its own top heading duplicates it (the defect
+  // found on pages/flagged.html, session 206debc0).
+  const h1Count = doc.querySelectorAll("h1").length;
+  if (h1Count !== 1) problems.push("expected exactly 1 <h1>, found " + h1Count);
+  if (markdownPages.indexOf(page) >= 0 && doc.getElementById("content") &&
+      doc.getElementById("content").querySelectorAll("h1").length !== 0) {
+    problems.push("markdown body rendered an <h1> inside #content (doubled title)");
   }
   dom.window.close();
   return problems;

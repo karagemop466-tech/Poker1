@@ -36,8 +36,12 @@ jobs:
 
       - name: Re-check every official source
         # Output is also written into the repo so it can be reviewed without
-        # downloading the Actions log.
-        run: python3 scripts/check_source_facts.py 2>&1 | tee data/monitor_last_run.txt
+        # downloading the Actions log. pipefail: a refusal or failure of the
+        # script must fail this step even though its output is piped through tee
+        # (REQUEST 2, session 206debc0: the refusal was recorded but never red).
+        run: |
+          set -eo pipefail
+          python3 scripts/check_source_facts.py 2>&1 | tee data/monitor_last_run.txt
 
       - name: Summarise
         run: |

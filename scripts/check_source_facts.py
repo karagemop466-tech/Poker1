@@ -70,6 +70,10 @@ OFFICIAL_HOSTS = (
     "mandalaybay.mgmresorts.com",
     "orleans.boydgaming.com",
     "southpointcasino.com",
+    # Session df94b75e: official Resorts World Las Vegas domain behind
+    # pages/strip-rooms.html (data id strip_rwlv_events). Its absence made this
+    # script refuse to run on main (REQUEST 2, session 206debc0).
+    "www.rwlasvegas.com",
 )
 
 
