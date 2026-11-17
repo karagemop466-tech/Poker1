@@ -1922,6 +1922,9 @@ OFFICIAL_INTERIOR = {
 # the traveller's own current location is never assumed.
 GMAPS = "https://www.google.com/maps/dir/?api=1&origin=%s,%s&destination=%s,%s&travelmode=walking"
 AMAPS = "https://maps.apple.com/?saddr=%s,%s&daddr=%s,%s&dirflg=w"
+# The walking table is read by a traveller, so it prints the property name and the
+# name of the building the poker room is actually in, not the internal slug.
+HOTEL_NAME = {h["id"]: h["name"] for h in HOTELS}
 WALKING = []
 for hotel_id, points in OSM_LOOKUP.items():
     for venue in (VEN, WYN):
@@ -1936,13 +1939,15 @@ for hotel_id, points in OSM_LOOKUP.items():
         else:
             minutes = int(math.ceil(secs / 60.0 - 0.02))  # round up; the 0.02 tolerates router jitter
             status = "verified"
-            note = ("OpenStreetMap foot router: %d seconds (%d m) between the geocoded %s coordinate and the "
-                    "%s poker-room coordinate, rounded up to %d minutes. This is a published routing source, not "
-                    "the hotel or the poker room itself, so the 30-minute rule is applied to the routed time." % (
-                        round(secs), round(metres), hotel_id, venue, minutes))
+            note = ("OpenStreetMap foot router: %d seconds (%d m) from %s to %s - the building the %s poker "
+                    "room is in - rounded up to %d minutes. This is a published routing source, not the hotel "
+                    "or the poker room itself, so the 30-minute rule is applied to the routed time." % (
+                        round(secs), round(metres), HOTEL_NAME[hotel_id], origin["label"], venue, minutes))
         WALKING.append({
-            "hotel": hotel_id, "venue": venue,
-            "from": "%s (%s, OSM %s)" % (hotel_id, OSM_LOOKUP[hotel_id]["q"], OSM_LOOKUP[hotel_id]["osm"]),
+            "hotel": hotel_id, "hotel_name": HOTEL_NAME[hotel_id], "venue": venue,
+            "destination": origin["label"],
+            "from": "%s (%s, OSM %s)" % (HOTEL_NAME[hotel_id], OSM_LOOKUP[hotel_id]["q"],
+                                         OSM_LOOKUP[hotel_id]["osm"]),
             "to": origin["label"],
             "metres": metres if not internal else 0,
             "minutes": minutes,
@@ -1962,7 +1967,7 @@ for hotel_id, points in OSM_LOOKUP.items():
                                  origin["lat"], origin["lon"])},
             ],
             "sources": [
-                {"label": "Nominatim lookup for the %s coordinate" % hotel_id,
+                {"label": "Nominatim lookup for the %s coordinate" % HOTEL_NAME[hotel_id],
                  "url": "https://nominatim.openstreetmap.org/search?q="
                         + OSM_LOOKUP[hotel_id]["q"].replace(" ", "+") + "&format=json&limit=1"},
                 {"label": "Foot-routing query for this pair",
