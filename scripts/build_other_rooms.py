@@ -452,7 +452,7 @@ ROOMS = [
                             "3 Card Poker, mini baccarat, Free Bet Blackjack and Ultimate "
                             "Texas Hold'em, and no live poker room.",
         "schedule_status": "not published",
-        "schedule_note": "No live poker room is published on the official page. See flag F72: "
+        "schedule_note": "No live poker room is published on the official page. See flag F71: "
                          "the MGM Resorts poker hub links this page under \"Luxor Poker "
                          "Tournaments\".",
         "sources": [src("Official Luxor table games page", LUXOR_PAGE),
@@ -471,7 +471,7 @@ ROOMS = [
                             "Games and the BetMGM Sportsbook, and no poker room.",
         "schedule_status": "not published",
         "schedule_note": "No live poker room is published on the official casino page. See flag "
-                         "F73: the MGM Resorts poker hub links excalibur.mgmresorts.com/en/"
+                         "F71: the MGM Resorts poker hub links excalibur.mgmresorts.com/en/"
                          "casino/poker-room.html, which redirects to this page.",
         "sources": [src("Official Excalibur casino page", EXCAL_PAGE),
                     src("MGM Resorts official poker hub (links Excalibur here)", MGM_HUB)],
