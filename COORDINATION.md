@@ -1630,3 +1630,64 @@ can be answered from an official source; all three need one call or e-mail to th
 **Irregularities published on the Flagged for Review page:** F62 (the impossible-sequences defect),
 F63 (the four unrenderable table rows), and the **F58 → F61** renumbering that removed a genuine
 duplicate flag id created by two parallel sessions.
+
+---
+
+---
+
+### Session 06ac8c98 — integration and deploy record (2026-11-17, end of task)
+
+**Merged.** This task's work reached `main` in two PRs, because a third session's Markdown-table rule
+landed between them and caught this session's own rows:
+
+| PR | Merged | Result |
+|---|---|---|
+| #78 schedule feasibility: prove the day plan, add F75/F76, integrate main's clock fix | `01ed496` 2026-11-17 22:48:49Z | CI `validate` pass 6m5s |
+| #84 fix the deploy: repair the two SUGGESTIONS rows main's table validator rejected | `643005a` 2026-11-17 23:00:10Z | CI `validate` pass, `deploy` pass |
+
+**Why a second PR was needed, stated plainly.** After #78 merged, `main` went **red** for ~12 minutes: run
+44193963128 failed at `Validate JSON schemas, local links, and source links` and `deploy` was skipped,
+so Pages was still serving the previous artifact. The cause was not #80's checker being wrong - it was
+**two rows this session wrote while merging against #73/#77**: the `S27` row had a blank line between it
+and its table and had swallowed main's *"New pages added with these…"* paragraph (one cell short, plus a
+dangling sentence), and this session had appended a **duplicate id `P10`** where main's per-day row already
+held that number. #84 closed the row, restored the paragraph, renumbered the row to `P13`, and restated the
+`S27` count to the merged model. Nothing else in #80, #73 or #77 was touched.
+
+**Deploy confirmed live** for `main` head: run 44195391196 - `✓ Validate JSON schemas, local links, and source
+links`, `✓ Rebuild the dataset from the verified sources`, `✓ Confirm generated pages match committed pages`,
+`✓ Verify every published value against the archived official documents`, `✓ Pair each row's date and start
+time to a line the official document prints`, `✓ Render every page in a headless DOM`, **`✓ Assert the day
+plan renders a feasible sequence`** (this task's `scripts/check_schedule.py`, now a deploy gate),
+`✓ Resolve every link the renderer builds at run time`, `✓ Confirm the branch build for this commit is live`.
+The live artifact was then read back over HTTP: `https://karagemop466-tech.github.io/Poker1/data/schedule.json`
+carries `duration_basis`, `est_duration_min`, `conflicts_join_in_progress` and `alternatives` **alongside**
+`main`'s `est_end_next_day` - all three sessions' fields coexisting in the published file.
+
+**Final published numbers** (after both merges, not the pre-merge ones this session first reported):
+**170 overlap pairs across 40 dates** - 168 `unplannable`, of which 26 are pairs printed at the same start
+time, plus 2 `join_in_progress`; **45 of 70 dates carry a primary**, 25 carry none; **0 fallbacks**, because
+no date's published ceiling proves one; **35 alternatives on 26 dates**. `EXECUTIVE_SUMMARY.md`, `FLAGGED.md`
+F76, `README.md` and `research/verification-2026-11-17-06ac8c98.md` all carry these numbers, and the 271-pair
+figure that `main` briefly reported is explained in place rather than deleted: 101 of those pairs rested on
+reading a multi-day flight's whole-event table as a first-day finish, which clause 3 of that flight's own
+sheet does not support.
+
+**Open REQUEST 1: closed by this session.** The `est_end` clock-wrap defect and the "no impossible sequence
+is proposed" claim behind it are fixed and guarded (F76 records both). Another session fixed the same wrap
+independently in `end_minutes`/`abs_end_minutes`; that code is kept and this session's duration-basis layer
+sits on top of it.
+
+**Open REQUEST 2: resolved in the tree, though PR #66 was closed unmerged.** Verified on `main` at the merge:
+`scripts/check_source_facts.py` lists `www.rwlasvegas.com` (2 references) and the workflow steps use
+`set -euo pipefail`, so the collector refusal can no longer hide behind `tee`. The content of #66 arrived
+through `5af9004`, which is why #66 shows as CLOSED rather than MERGED. **No action left for the
+integration session.** The only remaining limitation is environmental, not a code gap: from this sandbox the
+operator hosts are unreachable (F55), so `monitor_sources.py` is exercised in CI only, where it passed.
+
+**Next free flag id: F77** (F63 is `main`'s highest, F75/F76 this session's; no id above 76 is in use).
+
+**Shared-output note for the next session:** `data/tournaments.json`, `data/row_snapshot.json` and
+`data/row_verification.json` are byte-identical to what this task found on `main` - no official value moved
+during any of it. `data/schedule.json` is the file that changed, and it is generated: edit
+`scripts/build_data.py`, never the JSON.
