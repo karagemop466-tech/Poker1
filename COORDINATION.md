@@ -147,11 +147,21 @@ Claim written 2026-11-17T01:02Z and pushed before any implementation work, per t
 
 ## Pull request / deployment
 
-- PR #24 closed (superseded; see F39/Q-D5). PR #36 and PR #38's work integrated into this branch; their
-  PRs are closed with a pointer to the integration PR. PR #39 left open (doc-only).
-- PR to `main` opened from `arena/212b84be-poker1` and merged after `validate` passed; Pages deploy
-  confirmed. The exact PR number, merge commit and Pages run are recorded in the Log at the end of this
-  file.
+- **Integration PR: [#60](https://github.com/karagemop466-tech/Poker1/pull/60)** — "Integration: merge the
+  open session branches (WPT sheet join + row verifier), re-verify every published value, close stale
+  PR #24", from `arena/212b84be-poker1` to `main`. CI `validate` passed (3m42s on the content that landed).
+  **Merged 2026-11-17T01:57:36Z as merge commit `5d4bb9244da4bdda6c2248a7e21b96196be9ff8b`.**
+- GitHub Pages: legacy branch build `pages-build-deployment` succeeded for the merge and
+  `GET /repos/…/pages` reports `status: built`, live at https://karagemop466-tech.github.io/Poker1/ . The
+  workflow's own deploy run for this commit was superseded (cancelled by the `pages-deploy` concurrency
+  group) when the next session's push to `main` arrived seconds later — by design the newest push wins;
+  the site reflects `main`, which contains this integration.
+- PR #24 closed as superseded (clause-8 policy already applied on main; stale 225-row universe);
+  disposition in `FLAGGED.md` F39 and `QUESTIONS.md` Q-D5, with the row-level comparison in the PR's
+  closing comment. PR #36 and PR #38 are merged into `main` (this integration carried both).
+- Merge-path note: `main` moved under this PR five times while it was open (PRs #44/#55/#57/#58/#59/#62/
+  #63/#65 and snapshot refreshes). Each move was merged in, never dropped, and the combined tree was
+  re-validated after every resolution (23 pages, 317 rows, 1,296 field checks, 0 hard failures).
 
 Other sessions' claims are respected: no task claimed by a live session is taken over.
 # COORDINATION.md
@@ -1029,3 +1039,18 @@ onto that `main` and contributes its own re-verification and the two deploy/moni
   Google and Apple Maps cross-checks. A crawl of the extracted site tree found no broken local link or asset.
 - One rendering defect found on the live page and fixed: "Rows carrying a source flag" was printed twice, once by
   the page shell and once by the renderer.
+
+## Session 212b84be — final record
+
+- 2026-11-17: [PR #60](https://github.com/karagemop466-tech/Poker1/pull/60) merged into `main` at
+  `5d4bb92` (2026-11-17T01:57:36Z). It integrates PR #36's WPT structure-sheet join and hotel facts,
+  PR #38's row verifier and fee corrections (already on `main` from `e9ca3d6`), the fixes their
+  combination required (F57/F58/F59/F60, Wynn/Encore guest parking at $0, Caesars check-in/out), and the
+  row-level verification record `research/verification-2026-11-17-212b84be.md`. PR #24 was closed with a
+  disposition comment before the merge.
+- Pages deploy for the merge commit succeeded (`pages-build-deployment`, legacy branch build); the site
+  is live at https://karagemop466-tech.github.io/Poker1/ (`status: built`). Later pushes to `main` by
+  parallel sessions superseded the workflow run via the `pages-deploy` concurrency group, as designed.
+- Final validation on the merged tree: 23 pages, 317 tournament rows (SE 80 / MULTI 67 / RE 107 /
+  CONT 25 / UNV 38), 7 hotels, 5 dated rate quotes, 70 schedule days, `verify_rows` 1,296 field checks
+  with 0 hard failures, smoke 23/23.
