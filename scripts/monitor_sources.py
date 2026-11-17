@@ -108,6 +108,11 @@ def main():
 
     checked_at = time.strftime("%Y-%m-%d", time.gmtime())
     ok = sum(1 for v in checked.values() if v["status"] == "ok")
+    # A check that reaches nothing at all is a statement about the machine that ran it, not about the
+    # official pages. Mark it so the site never presents a network blackout as "every source is down".
+    blackout = bool(checked) and ok == 0 and all(
+        v["status"] == "unreachable" and (v.get("error") or "").startswith("<urlopen error")
+        for v in checked.values())
     result = {
         "checked_at": checked_at,
         "sources_total": len(checked),
@@ -119,9 +124,15 @@ def main():
         "rows_added": len(changes["added"]),
         "rows_removed": len(changes["removed"]),
         "sources": checked,
+        "network_unavailable": blackout,
         "note": "Status is the HTTP result of fetching each official URL on the date shown. "
                 "'unreachable' means the host did not answer from the machine that ran the check; it does "
-                "not by itself mean the page changed.",
+                "not by itself mean the page changed."
+                + ("" if not blackout else
+                   " This run reached none of the official hosts at all (every attempt failed at the TLS"
+                   " or DNS layer), so it is a statement about the network of the machine that ran the"
+                   " check and not about the sources. The scheduled GitHub Actions job reaches the"
+                   " operator domains; its provenance result is in data/change_log.json."),
     }
     with open(os.path.join(DATA, "monitoring.json"), "w", encoding="utf-8") as f:
         json.dump(result, f, indent=1)
