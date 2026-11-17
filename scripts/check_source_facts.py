@@ -65,6 +65,13 @@ OFFICIAL_HOSTS = (
     "aria.mgmresorts.com",
     "www.caesars.com",
     "caesars.com",
+    # MGM's own asset host; only used for the Bellagio structure PDFs that the official
+    # Bellagio poker page links.
+    "assets.contentstack.io",
+    # Clark County Department of Business License: the taxing/licensing authority whose
+    # table records each Strip resort's address and room-tax class. A government record,
+    # not an operator page - the site labels it as such.
+    "www.clarkcountynv.gov",
 )
 
 

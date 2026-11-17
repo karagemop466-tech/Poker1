@@ -22236,7 +22236,7 @@
    "series": "Venetian DeepStack Extravaganza NYE",
    "venue": "The Venetian Resort",
    "date": "2027-01-04",
-   "start": "11:00",
+   "start": "11:10",
    "kind": "continuation",
    "event_no": 20,
    "name": "$1,600 No Limit Hold'em MSPT Day 2 Restart",
@@ -22298,7 +22298,7 @@
    "levels": 30,
    "level_minutes": 40,
    "starting_chips": null,
-   "est_end": "08:45",
+   "est_end": "08:55",
    "est_duration_min": 1305,
    "note": "Continuation of the event above - no new entry. Official event page row.",
    "flags": [],
@@ -26830,6 +26830,12 @@
   "aria": "https://aria.mgmresorts.com/en.html",
   "aria_poker": "https://aria.mgmresorts.com/en/casino/poker.html",
   "caesars": "https://www.caesars.com/caesars-palace",
-  "caesars_poker_article": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+  "caesars_poker_article": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+  "caesars_poker_page": "https://www.caesars.com/caesars-palace/casino/poker",
+  "caesars_daily_flyer": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+  "bellagio_fri_pdf": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf",
+  "bellagio_sat_pdf": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf",
+  "bellagio_sun_pdf": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf",
+  "clark_county_tle_guide": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf"
  }
 }
