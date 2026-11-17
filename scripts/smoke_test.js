@@ -49,8 +49,40 @@ async function run(rel) {
   const primary = page === "index" ? doc.getElementById("kpis")
     : (page === "search" ? doc.getElementById("results") : doc.getElementById("content"));
   const html_out = primary ? primary.innerHTML : "";
-  const tablePages = ["singleEntry", "separate", "unverified", "hotels", "daily"];
   const problems = [];
+  if (page === "schedule") {
+    /* The defect this check exists for: an event that runs past midnight has an estimated
+       finish that reads as EARLIER than its start. If the render ever drops the next-day
+       marker, a reader is told an 11:10 event finishes at 2:55 in the morning of the same
+       day, and the day plan below it inverts. So every rendered event line is re-read. */
+    const TIME = /\b(\d{1,2}):(\d{2})\s*(AM|PM)/g;
+    const toMin = (m) => {
+      let h = parseInt(m[1], 10) % 12;
+      if (m[3] === "PM") h += 12;
+      return h * 60 + parseInt(m[2], 10);
+    };
+    let inverted = 0;
+    doc.querySelectorAll("#content li").forEach((li) => {
+      const txt = li.textContent.replace(/\s+/g, " ").trim();
+      const starts = [...txt.matchAll(TIME)];
+      const at = txt.search(/(finish about|at most|no later than)\s/);
+      if (!starts.length || at < 0) return;
+      const ends = [...txt.slice(at).matchAll(TIME)];
+      if (!ends.length) return;
+      if (toMin(ends[0]) < toMin(starts[0]) && !/next day/.test(txt.slice(at, at + 120))) inverted++;
+    });
+    if (inverted) {
+      problems.push(inverted + " rendered event line(s) show a finish before their start with no next-day marker");
+    }
+    if (html_out.indexOf("Alternatives on this date") < 0) {
+      problems.push("schedule page renders no alternatives block although the data carries them");
+    }
+    if (/impossible sequence is proposed/.test(html_out)) {
+      problems.push("schedule page still claims no impossible sequence is proposed without proving it");
+    }
+  }
+  const tablePages = ["singleEntry", "separate", "unverified", "hotels", "daily"];
+
   if (errors.length) problems.push("js error: " + errors.join(" | "));
   if (html_out.indexOf("Could not load") >= 0) problems.push("page reported a load error");
   if (!html_out || html_out.length < 40) problems.push("page rendered no content");

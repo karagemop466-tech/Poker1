@@ -667,16 +667,27 @@ if isinstance(schedule_data, dict):
             f_row = tournament_by_id.get(fallback_id) or {}
             p_end = _abs_end(p_row)
             f_start = _abs_start(f_row)
+            f_close = f_row.get("late_reg_close") or f_row.get("start")
+            f_deadline = None
+            if f_close:
+                fh, fm = str(f_close).split(":")
+                f_deadline = int(fh) * 60 + int(fm)
+            kind = day.get("fallback_kind")
             if p_end is None:
                 problems.append(f"{where}: fallback {fallback_id!r} is proposed but the primary "
-                                f"{primary_id!r} has no stored duration, so its finish is unknown")
+                                f"{primary_id!r} has no same-day ceiling, so it cannot be paired")
+            elif kind == "join in progress":
+                # Legal only while the fallback's own entry window is still open at the end of the
+                # primary's published table; promising it earlier than that would be a guess.
+                if f_deadline is None or p_end > f_deadline:
+                    problems.append(f"{where}: fallback {fallback_id!r} is labelled a join in progress but "
+                                    f"entry closes at {f_close}, before the primary's table ends at {p_end}")
+            elif kind not in ("from the start", None, ""):
+                problems.append(f"{where}: fallback_kind {kind!r} is not a published kind")
             elif f_start is not None and f_start < p_end:
                 problems.append(f"{where}: fallback {fallback_id!r} starts {f_row.get('start')} but the "
-                                f"primary {primary_id!r} is estimated to finish at minute {p_end} "
+                                f"primary {primary_id!r} can run to minute {p_end} on its own table "
                                 f"({'the next day' if p_end >= 1440 else 'the same day'}) - impossible sequence")
-            elif p_end >= 1440:
-                problems.append(f"{where}: fallback {fallback_id!r} is proposed but the primary "
-                                f"{primary_id!r} is estimated to finish on the next day")
 
         # 2. Every real overlap on the date must be published, and every published one must be real.
         #    A pair overlaps when the later event starts before the earlier one is estimated to
@@ -690,6 +701,14 @@ if isinstance(schedule_data, dict):
             ref = tournament_by_id.get(event.get("id")) or {}
             start = _abs_start(ref)
             end = _abs_end(ref)
+            # A published level table bounds its first playing day only when the event is a
+            # single-day event or a satellite. A flight whose table spans several days - "Each
+            # starting flight will play until we are down to approximately 12.5% of the field
+            # remaining. Day 2 will resume at 11:00 AM" - says nothing about when day one ends,
+            # so it must not be used to prove an overlap. The generator publishes the basis it
+            # applied, and the expectation below follows it.
+            if event.get("duration_basis") not in ("day_maximum", "satellite_maximum"):
+                end = None
             if start is not None:
                 timed.append((event.get("id"), start, end))
         timed.sort(key=lambda item: (item[1], str(item[0])))

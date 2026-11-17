@@ -1485,3 +1485,104 @@ monitor's `sources_raw_changed` versus `sources_facts_changed` split exists to m
 
 This is the first live, from-the-operator confirmation this session can offer for the dataset, and it
 corroborates the archived-snapshot verification rather than replacing it.
+
+
+---
+
+
+
+---
+
+---
+
+## Session 06ac8c98 — claim (2026-11-17 22:05 UTC), branch `arena/06ac8c98-poker1`, base `5de6d8d` (= `main`)
+
+**Task T-A — schedule feasibility correctness (implements open REQUEST 1).** Status: **in progress**, owner `06ac8c98`.
+
+Reproduced on pristine `main` at `5de6d8d` before any edit:
+
+- 24 of 24 conditional fallbacks are impossible sequences (every one of them wraps past midnight),
+- 121 of 274 scheduled entry rows print an estimated end time that reads *before* their start,
+- 14 overlaps are flagged, against 245 pairs that genuinely cannot be played in sequence.
+
+`build_schedule()` compares `to_min(cand.start) >= to_min(primary.est_end)`. `est_end` is stored as a
+time-of-day only, so an event that starts 11:10 and runs 945 minutes is stored as `02:55` and the
+comparison reads 175 >= 02:55 as an end *earlier* than the start. `EXECUTIVE_SUMMARY.md` §"Primary and
+fallback" currently claims "no impossible sequence is proposed", which is false while this stands.
+
+**File scope of this claim (edit only here):** `scripts/build_data.py` (`build_schedule` and its
+helpers), `assets/app.js` (the `PAGES.schedule` renderer only), `scripts/check_schedule.py` (new file,
+no other session owns it), `data/schedule.json` (regenerated), `research/verification-2026-11-17-06ac8c98.md`
+(new file), the `EXECUTIVE_SUMMARY.md` primary/fallback paragraph, one new flag row in `FLAGGED.md`, and
+`COORDINATION.md`.
+
+**Deliberately NOT touched:** `scripts/check_source_facts.py`, `scripts/monitor_sources.py`,
+`.github/workflows/monitor.yml`, `data/sources.json` — open **REQUEST 2** (the collector refusing to run
+on `www.rwlasvegas.com`, plus the missing `pipefail`) is owned by PR #66 and is *not* duplicated here;
+see the handoff note below. `data/tournaments.json` is not edited: the next-day marker is derived in the
+renderer from `est_end < start`, so the row data and its 1,296 field checks stay byte-identical.
+
+**Handoff note (per the 60-minute rule).** Six PRs are open whose claims are ~20 h old with no commits:
+#46, #51, #52, #53, #64, #66. This session takes over only the schedule task, which no PR implements -
+REQUEST 1 was logged for the owners of `build_data.py` / `app.js` and none of them touched it. If any of
+those PRs later lands, its `build_schedule`/`PAGES.schedule` hunks should be dropped in favour of this
+one and the rest kept; `COORDINATION.md`, `FLAGGED.md` and `EXECUTIVE_SUMMARY.md` conflicts are
+append-resolvable and no other session's record should be discarded.
+
+### Session 06ac8c98 — completion record (2026-11-17)
+
+| Task | Status | Files touched | Owner |
+|---|---|---|---|
+| T-A schedule feasibility (open REQUEST 1) | **Done** — day plan rebuilt on absolute minutes, three sourced duration bases, alternatives per day, two new guards | `scripts/build_data.py`, `assets/app.js`, `scripts/check_schedule.py` (new), `scripts/smoke_test.js`, `data/schedule.json`, `EXECUTIVE_SUMMARY.md`, `FLAGGED.md` (F75, F76), `README.md`, `SUGGESTIONS.md`, `research/verification-2026-11-17-06ac8c98.md` (new), `COORDINATION.md` | `06ac8c98` |
+
+**What changed in the published answer**
+
+- 24 conditional fallbacks → **0**, because none is provable: on all 26 dates holding two or more
+  single-entry events, the earlier event's own level table overruns the later one's entry deadline.
+- 14 flagged overlap pairs → **170** (168 `unplannable`, of which 26 are pairs printed at the same start
+  time, plus 2 `join_in_progress`) across 40 dates.
+- 121 rows printing a finish before their own start → **0**; an after-midnight table now reads
+  "table ends no later than 2:55 AM (next day)".
+- New per-day **alternatives** list (35 entries on 26 dates), each labelled "instead of, never as well".
+- 34 multi-day-flight rows are refused as a same-day bound, and 20 satellite rows are marked with their
+  own conclusion rule, so no end time is presented as a schedule.
+
+**Deviation from the claim, recorded honestly.** The claim said `data/tournaments.json` would not be
+edited and that only `PAGES.schedule` in `assets/app.js` would be touched. In the end the row data still
+was not edited (the file is byte-identical, so the 1,296 row checks and `row_snapshot.json` are
+untouched), but two more files were: `assets/app.js` line 900 (the index tile claimed a "primary and
+fallback plan", which is no longer true on any date), and `scripts/build_site.py`/`README.md` for the
+same false-claim wording. Leaving a false claim published to fix a claim of mine would have been worse.
+
+**Verification performed** — see `research/verification-2026-11-17-06ac8c98.md`: the live event page,
+structure sheets #6, #2 and #4 re-read clause by clause, all 20 satellite sheets checked for the
+conclude-by-seats clause, and both new guards negative-tested (injected bug → caught → restored).
+Full suite after the change: `build_data` 317 rows / 70 days, `build_site` 23 pages byte-stable on
+rebuild, `check_links` OK, `check_schedule` OK, `verify_rows` 1,296 checks 0 hard failures,
+`smoke_test` 23/23. `monitor_sources.py` cannot run in this sandbox (no route to the operator hosts,
+F55), so the scheduled check was not exercised here.
+
+**Irregularities found** — F75 (87 of the 93 "(1Day)" rows carry a table that runs past midnight, 70 of
+them cannot fit inside a day at all: the label and the structure contradict each other) and F76 (this
+repository's own clock-comparison defect, now fixed and guarded). Both are published on the Flagged for
+Review page.
+
+**Merged against `main`, not overwritten.** `main` moved during this task and already carried another
+session's midnight-wrap fix (PR #72: `end_minutes()`, `est_end_next_day`, the same-start overlap rule)
+and the REQUEST 2 monitor fixes. This branch keeps all of it - `end_minutes` is reused, `overlap_pairs`
+and the per-conflict `a_start`/`a_end`/`b_start` fields survive, and `check_links.py`'s new schedule rules
+were only adjusted where they demanded a flag the sheets cannot support (a multi-day flight's whole-event
+table read as a first-day ceiling). Row data is untouched: `data/tournaments.json`,
+`data/row_snapshot.json` and `data/row_verification.json` are byte-identical to `main`. The full
+integration table is in `research/verification-2026-11-17-06ac8c98.md` §7.
+
+**REQUEST 2: now resolved by another session, not by this one.** PR #72 landed the collector fix, so
+the note below is kept only as history of what this session found and deliberately did not duplicate. on `main` because `www.rwlasvegas.com` is missing from `OFFICIAL_HOSTS` in
+`scripts/check_source_facts.py` (`data/monitor_last_run.txt` on `main` still reads
+"Refusing to run: non-official host(s) in manifest"), and `monitor.yml` pipes through `tee` without
+`pipefail` so the refusal never turns the job red. That is PR #66's scope
+(`scripts/check_source_facts.py`, `scripts/monitor_sources.py`, `.github/workflows/monitor.yml`,
+`data/sources.json`) and was left to it. **Request to the integration session:** merge #66 rather than
+re-deriving it; it does not conflict with this change (no file overlap except `COORDINATION.md`,
+`FLAGGED.md` and `SUGGESTIONS.md`, all append-only). PR #66's own numbering uses F101 for the same
+problem, which is why this session took F75/F76.

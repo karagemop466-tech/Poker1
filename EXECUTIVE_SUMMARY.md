@@ -228,22 +228,32 @@ is applied to every routed time, and rows that fail it stay visible and flagged.
 
 - **Verified options:** 45 of the 70 dates carry at least one verified single-entry event, and 41 of
   them carry a cash one. The first cash single-entry event is Nov 18 (Event 2, $300 NLH, 11:10 AM).
-- **Primary and fallback:** each day with a verified single-entry event names one as the primary.
-  **No day currently names a conditional fallback**, and that is a corrected result rather than a gap:
-  earlier versions of this page put a fallback on 24 days, but all 24 were impossible sequences. The
-  fallback comparison treated the stored finish time as a clock string, so a primary printed 11:10 AM
-  and estimated to finish at 02:55 (the next day) looked already finished by a 5:10 PM start. On 26
-  dates two single-entry events are offered; on every one of them the earlier event is estimated to run
-  at least 8h45 (and up to 21h05), so a second same-day entry is not playable. Estimated end times come from the
-  published level structure and are labelled as estimates, never as official finish times, and an
-  estimate that crosses midnight is now labelled "the next day".
-- **Overlaps:** 271 row-pairs across 51 dates are flagged, which is every pair whose starts cannot be
-  played in sequence. The earlier version of this page claimed 14 pairs on two days; that count came
-  from the same clock-string comparison and missed 231 real pairs. The bulk trace to milestone
-  satellites and multi-flight events whose estimated end is an upper bound (a satellite stops when the
-  seats run out), and to days where two series both print a card. Each flagged pair is published with
-  the two event names, both start times and the estimated finish, so the reader sees why it cannot be
-  played rather than being told an impossible sequence is fine.
+- **Primary and fallback:** each of the 45 dates that carries a verified single-entry event names its
+  earliest one as the primary. **No date names a conditional fallback**, and that is a corrected result
+  rather than a gap: earlier versions of this page put a fallback on 24 days, but all 24 were impossible
+  sequences - the comparison treated the stored finish time as a clock string, so a primary printed
+  11:10 AM whose own table ends at 02:55 the next day looked already finished by a 5:10 PM start (F76).
+  A fallback is published only where the primary's table cannot run past the second event's entry
+  deadline, and on the 26 dates that hold two or more single-entry events no pair satisfies that.
+- **What is offered instead:** those 26 dates list 35 alternative single-entry events, each labelled as
+  a choice to play *instead of* the primary and never as well, with the entry deadline that decides it.
+- **End times are maxima, not schedules:** 127 of the 274 entry rows carry a structure end time, and
+  every one is the end of the printed level table. No sheet in the series prints an end clock, and an
+  event ends when its field is paid (sheet #6 clause 7: "This event pays 12.5% of the field"), so a
+  table end can rule a pairing out but never prove a finish. F75 records that of the 93 rows labelled
+  "(1Day)", 87 carry a table that runs past midnight and 70 of the 73 non-satellite ones cannot fit
+  inside a day at all. A flight of a multi-day event is refused as a ceiling for its first day
+  altogether, because its clause 3 ends the flight "when we are down to approximately 12.5% of the
+  field remaining" and only *Day 2* has a printed clock; satellites are labelled with their own
+  conclusion rule (clause 10, seats awarded - verified in all 20 of their sheets).
+- **Overlaps:** 170 row-pairs across 40 dates are flagged - 168 that no published schedule can support
+  (26 of them are pairs printed at the same start time, which needs no estimate at all) and 2 that are
+  sensible only as a join in progress. An earlier draft of this section reported 271 pairs across 51
+  dates; that count treated a multi-day flight's whole-event table as if it finished its first day, and
+  the 101 pairs that came only from that reading are now refused rather than asserted - the sheets
+  cannot support them. Each flagged pair names both events, both start times, the entry deadline and the
+  ceiling, so the reader sees why the pair is refused rather than being told an impossible sequence is
+  fine.
 - **What that means for the trip:** the brief's "play all day, as many events as possible" goal and the
   single-entry rule pull against each other, and the data settles it — a single-entry vacation yields
   **one entry per day**, and the rest of the day is the post-bust window. Playing more than once a day
