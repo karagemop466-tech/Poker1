@@ -18,6 +18,19 @@
 
 Shared task board for the Las Vegas Strip poker tournament and hotel planner.
 
+## Session d94b191b — final integration + line-by-line re-verification (branch `arena/d94b191b-poker1`, base `44fcc08`)
+
+Claim written and pushed **before** any data or page change, as the board requires.
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Re-fetch every official tournament / hotel / policy URL the dataset depends on (2026-11-17) and reconcile each row and hotel value against the live page | in progress | `research/verification-2026-11-17-d94b191b.md`, `data/*.json` (via generators) | `d94b191b` |
+| Fix the failing `Deploy to GitHub Pages` job on `main` so every merge leaves a green deploy | in progress | `.github/workflows/pages.yml` | `d94b191b` |
+| Resolve the open competing PRs (#36, #38, #41) by verifying their claims against the official sources, keeping what is correct and recording what is not | in progress | `data/*.json`, `scripts/*.py`, `FLAGGED.md`, `REVIEW.md` | `d94b191b` |
+| Refresh the six decision documents, validate, PR to `main`, merge, confirm the Pages deploy | in progress | `EXECUTIVE_SUMMARY.md`, `QUESTIONS.md`, `SUGGESTIONS.md`, `FLAGGED.md`, `REVIEW.md`, `README.md`, `COORDINATION.md` | `d94b191b` |
+
+No other session holds an open claim on these files. Open PRs #36, #38, #39 and #41 are reviewed in this scope; nothing is merged or closed by them here.
+
 ## Current session and task claim
 
 Session `baba1a15` is working on branch `arena/baba1a15-poker1` (the branch is fixed for this session). Scope claimed below and pushed before implementation work.
