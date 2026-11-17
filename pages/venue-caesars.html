@@ -324,7 +324,8 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
       parts.push("<strong>" + esc(k.replace(/_/g, " ")) + ":</strong> " + esc(f.value) +
         '<br><span class="small">' + esc(f.excerpt) + "</span>" +
         '<br><span class="small">' + esc(f.source.label) + " &middot; " +
-        '<a href="' + esc(f.source.url) + '" target="_blank" rel="noopener">' + esc(f.source.url) + "</a></span>");
+        '<a href="' + esc(f.source.url) + '" target="_blank" rel="noopener">' + esc(f.source.url) + "</a>" +
+        (f.retrieved_on ? " &middot; retrieved " + esc(f.retrieved_on) : "") + "</span>");
     });
     return "<span class='small'>" + parts.join("<hr>") + "</span>";
   }
@@ -703,7 +704,8 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
       { id: "buy", label: "Buy-in", key: "buy_in_usd", num: true, html: function (r) { return money(r.buy_in_usd); } },
       { id: "gtd", label: "Guarantee", key: "guarantee_usd", num: true, html: function (r) { return money(r.guarantee_usd); } },
       { id: "mult", label: "Guarantee ÷ buy-in", key: "gtd_multiple", num: true, html: function (r) { return mult(r.gtd_multiple); } },
-      { id: "status", label: "Entry rule", key: "entry_status", html: function (r) { return statusChip(r.entry_status); } }
+      { id: "status", label: "Entry rule", key: "entry_status", html: function (r) { return statusChip(r.entry_status); } },
+      { id: "checked", label: "Last checked", key: "last_checked", html: function (r) { return "<span class='small'>" + esc(r.last_checked) + "</span>"; } }
     ];
     if (withRules) {
       cols.push({ id: "rule", label: "Entry rule (official)", key: "entry_rule", sort: null, html: function (r) { return "<span class='small'>" + esc(r.entry_rule) + "</span>"; } });
@@ -742,10 +744,12 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
         return parts.length ? " · " + parts.join(" · ") : "";
       }
 
-      function dayLine(o, isPrimary) {
+      function dayLine(o, isPrimary, isSequence) {
         if (!o) return "";
         var finish = o.est_end_label || o.est_end;
-        return "<li><strong>" + (isPrimary ? "Play" : "If you bust out or finish early") + "</strong> · " +
+        var lead = isPrimary ? "Play"
+          : (isSequence ? "Then play" : "Only if you bust out or finish early");
+        return "<li><strong>" + lead + "</strong> · " +
           timeFmt(o.start) + " · " + esc(o.name) + " · " + money(o.buy_in_usd) +
           (o.guarantee_usd ? " · GTD " + money(o.guarantee_usd) : (o.prize_text ? " · " + esc(o.prize_text) : "")) +
           regLine(o) +
@@ -759,21 +763,34 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
         '<h2>Trip diary &mdash; one line per playable day</h2>' +
         '<p class="small">' + days.length + ' of the ' + sched.days.length +
         ' dates in this dataset hold at least one verified single-entry event. Each line names the ' +
-        "event chosen as that day's primary and, where one exists, the conditional fallback behind it. " +
-        "<strong>No day offers a guaranteed two-event sequence</strong>: under the published level " +
-        "structures, no day's primary is estimated to finish before another single-entry event on that " +
-        "date starts, so the fallback is only ever available to a player who busts out or finishes " +
-        "early. Finish times are <em>estimates</em> computed from the printed structure, never official " +
-        "finish times, and " + sched.undecidable_total + " same-day pairs cannot be checked at all " +
-        "because the sheet prints a level length with no level count.</p>";
+        "event chosen as that day's primary and, where one is printed, the later single-entry event on " +
+        "the same date &mdash; labelled either a sequence that can be planned or a chance that depends " +
+        "on being eliminated in time. " +
+        "<strong>Under the published level structures, no day's primary is estimated to finish before " +
+        "another single-entry event on that date starts</strong>, so " +
+        sched.days.filter(function (d) { return d.fallback_id; }).length +
+        " of these dates offer a true two-event sequence. The " +
+        sched.days.filter(function (d) { return d.second_entry_id; }).length +
+        " dates marked <em>second entry</em> are different: a second single-entry event is printed on " +
+        "the same date, but the primary may still be running when it starts, so entering it is a " +
+        "chance that depends on being eliminated in time, not a plan. Each line prints the " +
+        "registration deadline that decides it. Finish times are <em>estimates</em> computed from the " +
+        "printed structure, never official finish times, and " + sched.undecidable_total +
+        " same-day pairs cannot be checked at all because the sheet prints a level length with no " +
+        "level count.</p>";
       var list = document.createElement("ul");
       list.className = "diary";
       list.innerHTML = days.map(function (d) {
         var prim = d.events.filter(function (o) { return o.id === d.primary_id; })[0];
-        var fb = d.events.filter(function (o) { return o.id === d.fallback_id; })[0];
+        var fb = d.events.filter(function (o) {
+          return o.id === (d.fallback_id || d.second_entry_id);
+        })[0];
+        var fbIsSequence = !!d.fallback_id;
         return '<li class="card"><h3>' + dateFmt(d.date) + "</h3><ul>" +
-          dayLine(prim, true) + dayLine(fb, false) + "</ul>" +
-          (d.fallback_note ? '<p class="small muted">' + esc(d.fallback_note) + "</p>" : "") +
+          dayLine(prim, true) + dayLine(fb, false, fbIsSequence) + "</ul>" +
+          (fbIsSequence
+            ? (d.fallback_note ? '<p class="small muted">' + esc(d.fallback_note) + "</p>" : "")
+            : (d.second_entry_note ? '<p class="small muted">' + esc(d.second_entry_note) + "</p>" : "")) +
           "</li>";
       }).join("");
       diary.appendChild(list);
@@ -821,8 +838,19 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
         "<strong>" + esc(res[0].note) + "</strong>" +
         "<br><br>Sources: " + srcLinks(res[0].sources);
       var dayNames = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+      // days is stored as a string like "Monday-Thursday", "Friday", "Saturday-Sunday" or "Monday-Sunday"
+      function dayRuns(daysStr, dayFull) {
+        var order = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+        var idx = order.indexOf(dayFull);
+        if (idx < 0) return false;
+        var parts = String(daysStr).split("-");
+        if (parts.length === 1) return parts[0] === dayFull;
+        var a = order.indexOf(parts[0]), b = order.indexOf(parts[1]);
+        if (a < 0 || b < 0) return false;
+        return idx >= a && idx <= b;
+      }
       var calendar = '<div class="calendar">' + dayNames.map(function (d, i) {
-        var todays = daily.filter(function (x) { return x.days.indexOf(d.slice(0, 3)) >= 0 || x.days.indexOf(d) >= 0; });
+        var todays = daily.filter(function (x) { return dayRuns(x.days, d); });
         return '<div class="slot"><div class="d">' + d + "</div>" + (todays.length
           ? todays.map(function (x) {
               return '<div class="t">' + timeFmt(x.start) + "</div><div class='small'><strong>" +
@@ -876,9 +904,15 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
       document.getElementById("earliest").textContent = timeFmt(sched.earliest_listed_start);
       var kpi = document.getElementById("overlap-kpi");
       if (kpi) {
+        var seqDays = sched.days.filter(function (d) { return d.fallback_id; }).length;
+        var chanceDays = sched.days.filter(function (d) { return d.second_entry_id; }).length;
         kpi.textContent = sched.conflicts_total + " overlapping pair(s) flagged across the " +
           sched.days.length + " dates, and " + sched.undecidable_total +
-          " pair(s) that cannot be checked because an event publishes no level structure.";
+          " pair(s) that cannot be checked because an event publishes no level structure. " +
+          seqDays + " date(s) offer two events that can genuinely be played in sequence; " +
+          chanceDays + " further date(s) print a second single-entry event that the primary may " +
+          "still be running when it starts, so those are shown as a conditional second entry, " +
+          "never as a sequence.";
       }
 
       var byId = {};
@@ -906,14 +940,17 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
                   (o.entry_status === "RE" ? '<span class="chip bad">Re-entry</span>' : '<span class="chip warn">Unverified</span>')));
             var marks = [];
             if (day.primary_id === o.id) marks.push('<span class="chip ok">Primary</span>');
-            if (day.fallback_id === o.id) marks.push('<span class="chip info">Conditional fallback</span>');
+            if (day.fallback_id === o.id) marks.push('<span class="chip info">Fallback (plays in sequence)</span>');
+            if (day.second_entry_id === o.id) marks.push('<span class="chip warn">Second entry &mdash; not a sequence</span>');
             var finish = o.est_end_label || o.est_end;
             return "<li><strong>" + timeFmt(o.start) + "</strong> · " + esc(o.name) + " · " + money(o.buy_in_usd) +
               (o.guarantee_usd ? " · GTD " + money(o.guarantee_usd) : "") +
               (o.prize_text ? " · " + esc(o.prize_text) : "") +
               " " + chip + " " + marks.join(" ") +
               '<br><span class="small">' + esc(o.series) + " · " + esc(o.venue) +
-              (finish ? " · estimated to finish about " + endFmt(finish) : "") +
+              (finish ? " · estimated to finish about " + endFmt(finish)
+                : (o.est_end && o.est_end_next_day ? " · estimated to finish about "
+                   + timeFmt(o.est_end) + " the next day" : "")) +
               ' · <a href="' + esc(o.source) + '" target="_blank" rel="noopener">source</a></span>' +
               ((row.flags || []).length ? '<br><span class="chip warn">' + esc(row.flags[0]) + "</span>" : "") +
               "</li>";
@@ -932,8 +969,10 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
           var unknown = pairList(day.undecidable_pairs || [], "pair(s) cannot be checked", "info");
           var fallback = day.fallback_note
             ? '<div class="small muted">' + esc(day.fallback_note) + "</div>" : "";
+          var second = day.second_entry_note
+            ? '<div class="small muted">' + esc(day.second_entry_note) + "</div>" : "";
           return '<div class="card day" id="day-' + day.date + '"><h3>' + dateFmt(day.date) + "</h3><ul>" + list +
-            "</ul>" + conflicts + unknown + fallback + "</div>";
+            "</ul>" + conflicts + unknown + fallback + second + "</div>";
         }).join("");
       }
       render();
@@ -1517,11 +1556,12 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
   function markdownPage(file) {
     return function () {
       getText(file).then(function (t) {
-        // The page template already prints the title as its <h1>; rendering the
-        // document's own leading '# Heading' as well printed every document page
-        // with two titles stacked on top of each other.
-        var body = t.replace(/^\s*#[^\n]*\n+/, "");
-        document.getElementById("content").innerHTML = '<div class="md">' + renderMarkdown(body) + "</div>";
+        // The page template already prints the page <h1>. Drop a leading "# Title" line from
+        // the document so a markdown-backed page does not show its title twice. The looser
+        // pattern matters: a document whose heading has no space after the "#" was still
+        // rendering two stacked titles, and the smoke test now fails on more than one <h1>.
+        t = t.replace(/^\s*#[^\r\n]*\r?\n+/, "");
+        document.getElementById("content").innerHTML = '<div class="md">' + renderMarkdown(t) + "</div>";
       }).catch(showErr);
     };
   }

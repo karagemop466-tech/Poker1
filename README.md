@@ -14,7 +14,10 @@ Live site: https://karagemop466-tech.github.io/Poker1/
   - `separate-section.html` - possible multiple entries and re-entry events, kept out of the ranking.
   - `unverified.html` - official rows whose entry rule is not published in a structure sheet.
   - `daily.html` - the recurring Wynn daily formats, with fee splits and registration cut-offs.
-  - `schedule.html` - day-by-day plan with a primary event, a conditional fallback and overlap flags.
+  - `schedule.html` - day-by-day plan with a primary event, a conditional fallback (only when one
+    genuinely starts after the primary is estimated to finish) and every real overlap flagged. Finish
+    times are compared in absolute minutes, not clock strings, and a finish crossing midnight is
+    labelled "the next day"; `scripts/check_links.py` fails the build if either rule is broken.
   - `hotels.html` - resort fees, room-rate status, walking records and the dated rate log.
   - `calculator.html` - trip cost = entries x buy-in + nights x true hotel cost + parking + other, from
     dated official-engine quotes, with what the chosen stay window holds.

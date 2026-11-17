@@ -235,18 +235,30 @@ is applied to every routed time, and rows that fail it stay visible and flagged.
 
 - **Verified options:** 45 of the 70 dates carry at least one verified single-entry event, and 41 of
   them carry a cash one. The first cash single-entry event is Nov 18 (Event 2, $300 NLH, 11:10 AM).
-- **Primary and fallback, after the arithmetic was fixed:** a finish that ran past midnight used to
-  be stored as a bare clock time, so 137 of 317 rows printed a finish earlier than their own start,
-  **all 24 conditional fallbacks were impossible sequences**, and only 14 of the real overlaps were
-  flagged. The day plan now compares in minutes from midnight and prints "(next day)" on those rows
-  (F73). Rebuilt: **245 overlapping pairs are flagged, 0 days propose an impossible sequence, and 26
-  days name a conditional fallback** — each one labelled conditional, with the printed registration
-  deadline that decides whether a player who busts out of the primary can still enter it. Under the
-  full published structure, no day's primary can finish before a later single-entry event on the same
-  date starts, so no day offers a guaranteed two-event sequence.
-- **402 same-day pairs cannot be checked at all**, because every WPT and Wynn Signature Series sheet
-  prints a level length but no level count ("30 minutes per level until a winner is declared"). Those
-  are published as "cannot be checked" rather than treated as playable (F74).
+- **Primary and fallback, after the arithmetic was fixed.** A finish that ran past midnight used to be
+  stored as a bare clock time, so 137 of 317 rows printed a finish earlier than their own start, the
+  day planner compared two times of day rather than two instants, **all 24 conditional fallbacks it
+  published were impossible sequences**, and only 14 of the real overlaps were flagged. The plan now
+  compares minutes from midnight and prints "(next day)" on the 121 rows whose estimated finish runs
+  into the next morning **(F73)**. Rebuilt: **45 of the 70 dates hold a verified single-entry primary,
+  and 26 of them also print a second single-entry event on the same date.** None of those 26 is a
+  sequence: under the full published structure no day's primary is estimated to finish before the
+  later event starts. So the site separates the two things that an earlier version conflated —
+  a **sequence** (play both; 0 dates qualify, and `check_links.py` fails the build if a day ever
+  claims one that the arithmetic does not support) and a **conditional second entry** (26 dates:
+  the later event exists and its printed registration deadline decides whether a player who busts out
+  in time can still enter it). **No day offers a guaranteed two-event sequence** — that is the
+  arithmetic answer to "8 AM until late", not a gap in the data.
+- **Overlaps: 271 row-pairs across 51 dates are flagged**, every one published with both event names,
+  both start times and the estimated finish so the reader can see why the pair cannot both be played.
+  The earlier version of this page claimed 14 pairs on two dates; that count came from the same
+  clock-string comparison and missed 257 real pairs. **A further 376 same-day pairs are published as
+  "cannot be checked" rather than treated as playable**: every WPT and Wynn Signature Series sheet
+  prints a level length but no level count ("30 minutes per level until a winner is declared"), so no
+  finish can be estimated for them at all **(F74)**. Reporting them as uncheckable instead of silently
+  pairing them is what keeps "no guaranteed sequence" an honest statement. The bulk of the flagged
+  pairs trace to milestone satellites and multi-flight events whose estimated end is an upper bound —
+  a satellite stops when the seats run out — and to dates where two series both print a card.
 - **Wynn registration opens at 8 AM for the noon events.** The official Wynn daily tournament terms
   and conditions state: *"Registration for each Event will open four (4) hours prior to the scheduled
   start of play."* The daily events start at 12 p.m., so registration opens at **8 a.m.** That is the
