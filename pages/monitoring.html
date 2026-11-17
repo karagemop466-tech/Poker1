@@ -258,6 +258,26 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
     var hh = h % 12 === 0 ? 12 : h % 12;
     return hh + ":" + m + " " + ap;
   }
+  /* An `est_end` is stored time-only, so an event whose estimated duration crosses
+     midnight prints an end time that reads earlier than its own start (11:10 AM ->
+     02:55 AM). Comparing clock text would make an impossible sequence look playable,
+     and printing "02:55 AM" after an 11:10 AM start reads like a typo. Both the
+     comparison (in scripts/build_data.py) and this label use the absolute minute
+     offset built from start + est_duration_min, and the wrap is stated, never implied. */
+  function endFmt(row) {
+    var s = row && (row.est_end || row.end);
+    if (!s) return "";
+    var start = row.start || "";
+    var dur = row.est_duration_min;
+    var wraps = row.est_end_next_day === true;
+    if (!wraps && dur != null && start) wraps = toMinJS(start) + (+dur) >= 1440;
+    return timeFmt(s) + (wraps ? " (next day)" : "");
+  }
+  function toMinJS(hhmm) {
+    if (!hhmm) return 0;
+    var p = String(hhmm).split(":");
+    return (+p[0]) * 60 + (+p[1] || 0);
+  }
   function statusChip(s) {
     if (s === "SE") return '<span class="chip ok">Single entry (verified)</span>';
     if (s === "MULTI") return '<span class="chip warn">Possible multiple entries</span>';
@@ -321,13 +341,26 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
   function getTextSafe(path) { return getText(path).catch(function () { return ""; }); }
 
   /* ---------- tiny Markdown renderer (headings, lists, tables, bold, links, code) ---------- */
+
+  /* The Markdown documents are written for a reader at the repository root, so they
+     link to `pages/calculator.html`, `data/rates.json`, `README.md` and so on. The
+     same documents are also rendered *inside* `/pages/*.html`, where a raw relative
+     link would resolve to `/pages/pages/calculator.html` and 404. Rewrite repo-relative
+     links against BASE so one Markdown file works from both locations. Absolute URLs,
+     root-absolute paths, fragments and mailto links are left exactly as written. */
+  function mdHref(href) {
+    if (!href) return href;
+    if (/^(?:[a-z][a-z0-9+.-]*:|\/\/|\/|#)/i.test(href)) return href;
+    if (/^\.\.?\//.test(href)) return href;          // already relative to the current page
+    return BASE + href;
+  }
+
   function inline(t) {
-    t = esc(t);
-    t = t.replace(/`([^`]+)`/g, "<code>$1</code>");
+    t = esc(t);    t = t.replace(/`([^`]+)`/g, "<code>$1</code>");
     t = t.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
     t = t.replace(/\*([^*]+)\*/g, "<em>$1</em>");
     t = t.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, function (m, label, url) {
-      var href = url.replace(/&amp;/g, "&");
+      var href = mdHref(url.replace(/&amp;/g, "&"));
       var ext = /^https?:/.test(href);
       return '<a href="' + href + '"' + (ext ? ' target="_blank" rel="noopener"' : "") + ">" + label + "</a>";
     });
@@ -671,6 +704,12 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
     var cols = [
       { id: "date", label: "Date", key: "date", sort: function (r) { return r.date + r.start; }, html: function (r) { return dateFmt(r.date); } },
       { id: "start", label: "Start", key: "start", html: function (r) { return timeFmt(r.start); } },
+      { id: "finish", label: "Estimated finish", key: "est_duration_min", num: true, sort: function (r) {
+          return r.est_duration_min == null ? null : toMinJS(r.start) + (+r.est_duration_min);
+        }, html: function (r) {
+          return r.est_end ? endFmt(r) + "<br><span class='small muted'>estimate, not official</span>"
+                           : '<span class="muted">no published structure</span>';
+        } },
       { id: "name", label: "Event", key: "name", html: function (r) {
           return "<strong>" + esc(r.name) + "</strong><br><span class='small'>" + esc(r.series) +
             (r.event_no ? " · Event " + esc(r.event_no) : "") + " · " + esc(r.venue) +
@@ -834,8 +873,7 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
               (o.prize_text ? " · " + esc(o.prize_text) : "") +
               " " + chip + " " + marks.join(" ") +
               '<br><span class="small">' + esc(o.series) + " · " + esc(o.venue) +
-              (o.est_end ? " · estimated to finish about " + timeFmt(o.est_end) +
-                ((o.est_end_next_day || o.est_next_day || o.est_end < o.start) ? " the next day" : "") : "") +
+              (o.est_end ? " · estimated to finish about " + endFmt(o) : "") +
               ' · <a href="' + esc(o.source) + '" target="_blank" rel="noopener">source</a></span>' +
               ((row.flags || []).length ? '<br><span class="chip warn">' + esc(row.flags[0]) + "</span>" : "") +
               "</li>";
@@ -1197,11 +1235,16 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
     var summary = document.getElementById("summary");
     Promise.all([
       getJSON("data/tournaments.json"), getJSON("data/hotels.json"), getJSON("data/venues.json"),
-      getJSON("data/daily.json"), getJSON("data/walking.json"), getJSON("data/rates.json")
+      getJSON("data/daily.json"), getJSON("data/walking.json"), getJSON("data/rates.json"),
+      getJSONSafe("data/other_rooms.json")
     ].concat(DOCS.map(function (d) { return getTextSafe(d[0]); }))).then(function (res) {
       var rows = res[0].rows, hotels = res[1].rows, venues = res[2].rows, daily = res[3].rows;
       var walking = res[4].rows, rates = res[5].entries;
-      var docs = DOCS.map(function (d, i) { return { file: d[0], title: d[1], text: res[6 + i] || "" }; });
+      /* The strip-room survey is a separate file (undated weekday formats), so it is
+         searched as its own block instead of being merged into the dated tournament rows. */
+      var otherRooms = (res[6] && res[6].rooms) || [];
+      var otherEvents = (res[6] && res[6].events) || [];
+      var docs = DOCS.map(function (d, i) { return { file: d[0], title: d[1], text: res[7 + i] || "" }; });
 
       function block(title, items) {
         if (!items.length) return "";
@@ -1240,6 +1283,22 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
             return '<div class="result"><div class="title">' + esc(r.room) + "</div><div class='meta'>rate log " +
               esc(r.arrival) + " → " + esc(r.departure) + " · " + money(r.checkout_total_usd) + "</div></div>";
           });
+        var hitO = otherRooms.filter(function (o) { return JSON.stringify(o).toLowerCase().indexOf(q) >= 0; })
+          .map(function (o) {
+            return '<div class="result"><div class="title">' + esc(o.name) + "</div><div class='meta'>" +
+              esc(o.strip_status) + " · poker room " + esc(o.poker_room_status) + " · schedule " +
+              esc(o.schedule_status) + " · <a href='" + BASE + "pages/other-rooms.html'>other rooms</a></div></div>";
+          });
+        var roomName = {};
+        otherRooms.forEach(function (r) { roomName[r.id] = r.name; });
+        var hitOE = otherEvents.filter(function (o) { return JSON.stringify(o).toLowerCase().indexOf(q) >= 0; })
+          .map(function (o) {
+            var weekdays = (o.weekdays || []).join(", ");
+            return '<div class="result"><div class="title">' + esc(o.name) + "</div><div class='meta'>" +
+              esc(roomName[o.room_id] || o.room_id) + (weekdays ? " · " + esc(weekdays) : "") +
+              " · " + esc(o.entry_status) +
+              " · <a href='" + BASE + "pages/other-rooms.html'>other rooms</a></div></div>";
+          });
         var hitDocs = docs.filter(function (d) { return d.text.toLowerCase().indexOf(q) >= 0; })
           .map(function (d) {
             var idx = d.text.toLowerCase().indexOf(q);
@@ -1250,11 +1309,13 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
           });
         results.innerHTML = block("Tournaments", hitT) + block("Hotels", hitH) + block("Venues", hitV) +
           block("Daily formats", hitD) + block("Walking records", hitW) + block("Rate log", hitR) +
+          block("Other poker rooms", hitO) + block("Other-room events", hitOE) +
           block("Documents", hitDocs) ||
           '<div class="card callout">Nothing matched " ' + esc(q) + ' ".</div>';
         summary.textContent = "Search covers " + rows.length + " tournament rows, " + hotels.length + " hotels, " +
           venues.length + " venues, " + daily.length + " daily formats, " + walking.length + " walking records, " +
-          rates.length + " rate log entries and " + docs.length + " documents.";
+          rates.length + " rate log entries, " + otherRooms.length + " surveyed other poker rooms, " +
+          otherEvents.length + " other-room events and " + docs.length + " documents.";
       }
       input.addEventListener("input", run);
       run();
