@@ -180,8 +180,6 @@ of a poker room, or search any column.</p>
 <div id="content"></div>
 """),
     "pages/flagged.html": ("Flagged for review", "flagged", """
-<h1>Flagged for review</h1>
-<p class="lead">Published so you can review each item. Flags do not block the merge.</p>
 <div id="content"></div>
 """),
     "pages/strip-rooms.html": ("Strip rooms", "strips", """

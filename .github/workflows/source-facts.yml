@@ -36,8 +36,11 @@ jobs:
 
       - name: Re-check every official source
         # Output is also written into the repo so it can be reviewed without
-        # downloading the Actions log. set -o pipefail makes the job fail when the
-        # script exits non-zero even though its output is piped through tee.
+        # downloading the Actions log. `set -o pipefail` makes the job fail when the
+        # script exits non-zero even though its output is piped through `tee`. Without it
+        # the script's own refusal (a non-official host in the manifest) was written into
+        # monitor_last_run.txt while `tee` still exited 0, so the job went green on a run
+        # that checked nothing. A refusal must be red.
         run: set -o pipefail; python3 scripts/check_source_facts.py 2>&1 | tee data/monitor_last_run.txt
 
       - name: Summarise

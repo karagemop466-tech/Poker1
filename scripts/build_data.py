@@ -1258,28 +1258,22 @@ def build_wynn():
     return out
 
 
-def end_minutes(row):
-    """Absolute minutes from midnight of the row's own date at which it is estimated to finish.
+def abs_end_minutes(row):
+    """Minutes from midnight *of that row's start day*, or None when unknown.
 
-    ``est_end`` is stored as a wall-clock ``HH:MM`` and therefore wraps at midnight: an 11:10 AM
-    start with a fifteen-hour structure stores ``02:25``, which reads *before* its own start if you
-    compare clock strings. Every comparison in this file and in the renderer must use this absolute
-    value (start + stored duration) instead, and ``to_hhmm`` keeps wrapping only for display.
-    Returns ``None`` when the row carries no duration, so an unknown can never be treated as known.
+    `est_end` is stored time-only, so an event that runs past midnight prints an
+    end time that reads before its own start (e.g. 11:10 -> 02:55). Comparing
+    wall-clock strings would then call an impossible sequence playable. Every
+    comparison on this page therefore uses the absolute minute offset built from
+    the stored `est_duration_min`; the wrap is never inferred from the clock text.
     """
     if row.get("est_duration_min") is None or not row.get("start"):
         return None
-    return to_min(row["start"]) + row["est_duration_min"]
+    return to_min(row["start"]) + int(row["est_duration_min"])
 
 
 def build_schedule(rows):
-    """Day plan: verified single-entry primary, conditional fallback, overlap flags.
-
-    All comparisons are in absolute minutes since midnight (see ``end_minutes``). Booking an event
-    that starts on the next calendar day is not proposed: the plan covers same-day sequences, so a
-    candidate only qualifies as a conditional fallback when it starts on the same date and at or
-    after the primary's estimated finish.
-    """
+    """Day plan: verified single-entry primary, conditional fallback, overlap flags."""
     days = {}
     for r in rows:
         if r["kind"] != "entry":
@@ -1291,17 +1285,31 @@ def build_schedule(rows):
         se = [e for e in events if e["entry_status"] == "SE"]
         primary = se[0] if se else None
         fallback = None
-        if primary:
-            primary_end = end_minutes(primary)
-            if primary_end is not None and primary_end < 24 * 60:
-                for cand in se[1:]:
-                    if to_min(cand["start"]) >= primary_end:
-                        fallback = cand
-                        break
+        fallback_note = ""
+        if primary and primary.get("est_end"):
+            p_end = abs_end_minutes(primary)
+            candidates = [c for c in se[1:] if p_end is not None and to_min(c["start"]) >= p_end]
+            # A fallback must actually be reachable: the primary has to finish on
+            # the same calendar day, otherwise there is no later event it can follow.
+            if p_end is not None and p_end < 1440 and candidates:
+                fallback = candidates[0]
+            elif p_end is not None and p_end >= 1440:
+                later = len(se) - 1
+                fallback_note = ("The primary event is estimated to finish at %s, after midnight, so no "
+                                 "later event on this calendar day can follow it. " % primary["est_end"]) + (
+                    ("%d other single-entry event(s) on this date start earlier or overlap it; they are "
+                     "listed above, not proposed as a sequence." % later) if later > 0 else
+                    "It is the only verified single-entry event on this date.")
+            else:
+                fallback_note = ("No second single-entry event starts after the primary event is estimated to "
+                                 "finish (%s)." % primary["est_end"])
+        elif primary:
+            fallback_note = "The primary event has no published level structure, so no finish time is estimated."
+        else:
+            fallback_note = "No verified single-entry event on this date."
         conflicts = []
         for i, a in enumerate(events):
-            a_end = end_minutes(a)
-            same_start_seen = set()
+            a_end = abs_end_minutes(a)
             for b in events[i + 1:]:
                 # Two events printed with the same start time overlap by definition; otherwise the
                 # pair overlaps only when a's estimated finish is known and reaches past b's start.
@@ -1313,7 +1321,7 @@ def build_schedule(rows):
                     continue
                 if a_end is None:
                     finish = "an unknown time (no published level structure)"
-                elif a_end >= 24 * 60:
+                elif a_end >= 1440:
                     finish = "%s the next day" % to_hhmm(a_end)
                 else:
                     finish = to_hhmm(a_end)
@@ -1323,7 +1331,10 @@ def build_schedule(rows):
                     detail = ("%s starts %s while %s is still estimated to run until %s"
                               % (b["name"], b["start"], a["name"], finish))
                 conflicts.append({"a": a["id"], "b": b["id"],
-                                  "a_start": a["start"], "a_end": finish, "b_start": b["start"],
+                                  "a_start": a["start"],
+                                  "a_end": finish,
+                                  "a_end_next_day": bool(a_end is not None and a_end >= 1440),
+                                  "b_start": b["start"],
                                   "detail": detail})
         plan.append({
             "date": d,
@@ -1333,13 +1344,11 @@ def build_schedule(rows):
                         "labels": e["labels"], "late_reg_close": e.get("late_reg_close"),
                         "est_end": e.get("est_end"),
                         "est_end_next_day": bool(e.get("est_end") and e.get("est_duration_min") is not None
-                                                 and end_minutes(e) >= 24 * 60),
+                                                 and abs_end_minutes(e) >= 1440),
                         "source": e["sources"][-1]["url"]} for e in events],
             "primary_id": primary["id"] if primary else None,
             "fallback_id": fallback["id"] if fallback else None,
-            "fallback_note": ("No second single-entry event starts later on this date after the primary event "
-                              "is estimated to finish." if primary and not fallback else
-                              ("No verified single-entry event on this date." if not primary else "")),
+            "fallback_note": fallback_note,
             "conflicts": conflicts,
         })
     starts = sorted({r["start"] for r in rows if r["kind"] == "entry"})
@@ -1347,10 +1356,8 @@ def build_schedule(rows):
             "earliest_listed_start": starts[0] if starts else None,
             "overlap_pairs": sum(len(day["conflicts"]) for day in plan),
             "note": "Estimated end times are calculated from the published level structure (levels x level length plus "
-                    "the published breaks). They are an estimate, not an official finish time. An end time that "
-                    "crosses midnight is marked as the next day rather than read as a time before its own start, and "
-                    "a day can hold a primary single-entry event and a conditional fallback only when the fallback "
-                    "starts after the primary is estimated to finish; no impossible sequence is proposed."}
+                    "the published breaks). They are an estimate, not an official finish time. A day can hold a primary "
+                    "single-entry event and a conditional fallback; no impossible sequence is proposed."}
 
 
 # ---------------- hotels ----------------

@@ -75,6 +75,12 @@ jobs:
       - name: Render every page in a headless DOM
         run: npm run test:smoke | tee -a "$GITHUB_STEP_SUMMARY"
 
+      - name: Assert the day plan renders a feasible sequence
+        # The midnight wrap in `est_end` is the defect that made all 24 conditional
+        # fallbacks impossible and hid 231 real conflicts; this renders the schedule
+        # page and fails if a wrapped finish loses its "(next day)" qualifier.
+        run: node scripts/check_schedule_render.js | tee -a "$GITHUB_STEP_SUMMARY"
+
   # The repository's Pages site is configured with `source: main:/` and the legacy branch build, so
   # `actions/deploy-pages` can never find an artifact for this workflow and failed on every run while
   # the site itself kept building fine. This job therefore asks GitHub which build type the site

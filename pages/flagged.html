@@ -182,8 +182,6 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
 <body data-page="flagged">
 <div id="site-header"></div>
 <main>
-<h1>Flagged for review</h1>
-<p class="lead">Published so you can review each item. Flags do not block the merge.</p>
 <div id="content"></div>
 </main>
 <footer id="site-footer"></footer>
@@ -254,6 +252,26 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
     var hh = h % 12 === 0 ? 12 : h % 12;
     return hh + ":" + m + " " + ap;
   }
+  /* An `est_end` is stored time-only, so an event whose estimated duration crosses
+     midnight prints an end time that reads earlier than its own start (11:10 AM ->
+     02:55 AM). Comparing clock text would make an impossible sequence look playable,
+     and printing "02:55 AM" after an 11:10 AM start reads like a typo. Both the
+     comparison (in scripts/build_data.py) and this label use the absolute minute
+     offset built from start + est_duration_min, and the wrap is stated, never implied. */
+  function endFmt(row) {
+    var s = row && (row.est_end || row.end);
+    if (!s) return "";
+    var start = row.start || "";
+    var dur = row.est_duration_min;
+    var wraps = row.est_end_next_day === true;
+    if (!wraps && dur != null && start) wraps = toMinJS(start) + (+dur) >= 1440;
+    return timeFmt(s) + (wraps ? " (next day)" : "");
+  }
+  function toMinJS(hhmm) {
+    if (!hhmm) return 0;
+    var p = String(hhmm).split(":");
+    return (+p[0]) * 60 + (+p[1] || 0);
+  }
   function statusChip(s) {
     if (s === "SE") return '<span class="chip ok">Single entry (verified)</span>';
     if (s === "MULTI") return '<span class="chip warn">Possible multiple entries</span>';
@@ -317,13 +335,26 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
   function getTextSafe(path) { return getText(path).catch(function () { return ""; }); }
 
   /* ---------- tiny Markdown renderer (headings, lists, tables, bold, links, code) ---------- */
+
+  /* The Markdown documents are written for a reader at the repository root, so they
+     link to `pages/calculator.html`, `data/rates.json`, `README.md` and so on. The
+     same documents are also rendered *inside* `/pages/*.html`, where a raw relative
+     link would resolve to `/pages/pages/calculator.html` and 404. Rewrite repo-relative
+     links against BASE so one Markdown file works from both locations. Absolute URLs,
+     root-absolute paths, fragments and mailto links are left exactly as written. */
+  function mdHref(href) {
+    if (!href) return href;
+    if (/^(?:[a-z][a-z0-9+.-]*:|\/\/|\/|#)/i.test(href)) return href;
+    if (/^\.\.?\//.test(href)) return href;          // already relative to the current page
+    return BASE + href;
+  }
+
   function inline(t) {
-    t = esc(t);
-    t = t.replace(/`([^`]+)`/g, "<code>$1</code>");
+    t = esc(t);    t = t.replace(/`([^`]+)`/g, "<code>$1</code>");
     t = t.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
     t = t.replace(/\*([^*]+)\*/g, "<em>$1</em>");
     t = t.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, function (m, label, url) {
-      var href = url.replace(/&amp;/g, "&");
+      var href = mdHref(url.replace(/&amp;/g, "&"));
       var ext = /^https?:/.test(href);
       return '<a href="' + href + '"' + (ext ? ' target="_blank" rel="noopener"' : "") + ">" + label + "</a>";
     });
@@ -667,6 +698,12 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
     var cols = [
       { id: "date", label: "Date", key: "date", sort: function (r) { return r.date + r.start; }, html: function (r) { return dateFmt(r.date); } },
       { id: "start", label: "Start", key: "start", html: function (r) { return timeFmt(r.start); } },
+      { id: "finish", label: "Estimated finish", key: "est_duration_min", num: true, sort: function (r) {
+          return r.est_duration_min == null ? null : toMinJS(r.start) + (+r.est_duration_min);
+        }, html: function (r) {
+          return r.est_end ? endFmt(r) + "<br><span class='small muted'>estimate, not official</span>"
+                           : '<span class="muted">no published structure</span>';
+        } },
       { id: "name", label: "Event", key: "name", html: function (r) {
           return "<strong>" + esc(r.name) + "</strong><br><span class='small'>" + esc(r.series) +
             (r.event_no ? " · Event " + esc(r.event_no) : "") + " · " + esc(r.venue) +
@@ -816,8 +853,7 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
               (o.prize_text ? " · " + esc(o.prize_text) : "") +
               " " + chip + " " + marks.join(" ") +
               '<br><span class="small">' + esc(o.series) + " · " + esc(o.venue) +
-              (o.est_end ? " · estimated to finish about " + timeFmt(o.est_end) +
-                (o.est_end_next_day ? " the next day" : "") : "") +
+              (o.est_end ? " · estimated to finish about " + endFmt(o) : "") +
               ' · <a href="' + esc(o.source) + '" target="_blank" rel="noopener">source</a></span>' +
               ((row.flags || []).length ? '<br><span class="chip warn">' + esc(row.flags[0]) + "</span>" : "") +
               "</li>";
