@@ -1173,3 +1173,39 @@ fixed-string grep of every file on `main`:
   `scripts/check_links.py`** — keep that. Its `pages/monitoring.html` / `build_site.py`
   repairs may already be redundant against current `main`; PR #67 merged as `bc3420b` after this verification was written; please drop whatever
   no longer differs.
+
+---
+
+## Session 06ac8c98 — claim (2026-11-17 22:05 UTC), branch `arena/06ac8c98-poker1`, base `5de6d8d` (= `main`)
+
+**Task T-A — schedule feasibility correctness (implements open REQUEST 1).** Status: **in progress**, owner `06ac8c98`.
+
+Reproduced on pristine `main` at `5de6d8d` before any edit:
+
+- 24 of 24 conditional fallbacks are impossible sequences (every one of them wraps past midnight),
+- 121 of 274 scheduled entry rows print an estimated end time that reads *before* their start,
+- 14 overlaps are flagged, against 245 pairs that genuinely cannot be played in sequence.
+
+`build_schedule()` compares `to_min(cand.start) >= to_min(primary.est_end)`. `est_end` is stored as a
+time-of-day only, so an event that starts 11:10 and runs 945 minutes is stored as `02:55` and the
+comparison reads 175 >= 02:55 as an end *earlier* than the start. `EXECUTIVE_SUMMARY.md` §"Primary and
+fallback" currently claims "no impossible sequence is proposed", which is false while this stands.
+
+**File scope of this claim (edit only here):** `scripts/build_data.py` (`build_schedule` and its
+helpers), `assets/app.js` (the `PAGES.schedule` renderer only), `scripts/check_schedule.py` (new file,
+no other session owns it), `data/schedule.json` (regenerated), `research/verification-2026-11-17-06ac8c98.md`
+(new file), the `EXECUTIVE_SUMMARY.md` primary/fallback paragraph, one new flag row in `FLAGGED.md`, and
+`COORDINATION.md`.
+
+**Deliberately NOT touched:** `scripts/check_source_facts.py`, `scripts/monitor_sources.py`,
+`.github/workflows/monitor.yml`, `data/sources.json` — open **REQUEST 2** (the collector refusing to run
+on `www.rwlasvegas.com`, plus the missing `pipefail`) is owned by PR #66 and is *not* duplicated here;
+see the handoff note below. `data/tournaments.json` is not edited: the next-day marker is derived in the
+renderer from `est_end < start`, so the row data and its 1,296 field checks stay byte-identical.
+
+**Handoff note (per the 60-minute rule).** Six PRs are open whose claims are ~20 h old with no commits:
+#46, #51, #52, #53, #64, #66. This session takes over only the schedule task, which no PR implements -
+REQUEST 1 was logged for the owners of `build_data.py` / `app.js` and none of them touched it. If any of
+those PRs later lands, its `build_schedule`/`PAGES.schedule` hunks should be dropped in favour of this
+one and the rest kept; `COORDINATION.md`, `FLAGGED.md` and `EXECUTIVE_SUMMARY.md` conflicts are
+append-resolvable and no other session's record should be discarded.
