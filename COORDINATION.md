@@ -1362,3 +1362,82 @@ sources remain the Venetian structure sheets and the WPT structures PDF cited on
 **Note on the six older open PRs.** #46, #51, #52, #53, #64 and #66 were all `CONFLICTING` against `main`
 throughout this session and none touches this defect; none was reviewed or merged here. They remain for
 their own sessions.
+### Overlap with session `2157d288` (logged, not a conflict)
+
+Session `2157d288` was fixing the same midnight-wrap defect on its own branch at the same time and
+independently reached the same conclusion. Neither branch was discarded: `a8efe220`'s arithmetic,
+same-start rule, `est_end_next_day` field, `overlap_pairs` total and three-rule validator landed
+first on `main`, so the rebase kept **that** implementation as the base and re-applied only what
+`2157d288` added on top of it — the `(next day)` render path in `endFmt()`, the Estimated finish
+column, the `mdHref()` Markdown-link rewrite, the schedule-page lead, the source-facts allowlist
+and `pipefail` fix, the rendered-link crawl, the QUESTIONS/EXECUTIVE_SUMMARY corrections, and the
+`verify_against_snapshots.py` CI step. Numbers on the merged base: 271 overlap pairs across 51
+dates, 0 fallbacks proposed, 121 events marked `est_end_next_day`.
+
+---
+
+# Session 2157d288 — branch `arena/2157d288-poker1`, base `5de6d8d`
+
+**Claim.** One session, no overlapping branch. Scope: the four defects already logged against this
+repo by earlier sessions plus the schedule arithmetic, and the documents that describe them —
+`scripts/build_data.py` (schedule only), `assets/app.js`, `scripts/build_site.py`,
+`scripts/check_links.py`, `scripts/check_source_facts.py`, `.github/workflows/pages.yml`,
+`.github/workflows/source-facts.yml`, `scripts/check_schedule_render.js` (new),
+`EXECUTIVE_SUMMARY.md`, `QUESTIONS.md`, `data/*.json` (regenerated, never hand-edited), and the
+generated `index.html` / `pages/*.html`. No other session was active on `main`'s head at `5de6d8d`, so
+nothing was claimed twice.
+
+**Environment note that affects every claim below.** This sandbox has **no network route to the
+operator domains**: `curl https://www.venetianlasvegas.com/...` and
+`https://www.wynnlasvegas.com/...` both fail at TLS, and `scripts/monitor_sources.py` reports
+"its own HTTP check returned unreachable for all 93 URLs". No official page was re-read in this
+session, so **no value in the dataset was changed** and no verification date was advanced. Everything
+below is either a defect in the code that produces the site, or text that described the code's old
+behaviour. Verification was therefore done against the archived official-source snapshots under
+`data/snapshots/` (via `scripts/verify_rows.py`, 1,296 field checks, 0 hard failures) and against the
+repository's own recorded source URLs, never against a live fetch.
+
+## Defects fixed
+
+| # | Defect | Evidence, before | After |
+|---|---|---|---|
+| 1 | **Every conditional fallback was an impossible sequence** (session 206debc0 request 1) | `est_end` is time-only. `build_schedule` compared `to_min(fallback.start) >= to_min(primary.est_end)`, so a primary ending 02:55 next day read as *before* a 17:10 fallback on the same date. Measured on the base commit: **24 of 24 fallbacks impossible**. | Comparison is now absolute minutes (`start + est_duration_min`) via `abs_end_minutes()`. A fallback requires `start >= absolute end` **and** `absolute end < 1440`. Result: **0 fallbacks proposed, 0 impossible**, and each day prints why none is possible. |
+| 2 | **231 real conflicts unflagged** (session 206debc0 request 1) | 14 pairs flagged. | 245 pairs flagged; the renderer marks a wrapped end "(next day)". |
+| 3 | **137 rows printed a finish time reading before their start** (session 206debc0 request 1) | `timeFmt(est_end)` with no wrap handling. | `endFmt()` appends "(next day)" using `start + est_duration_min`; a new **Estimated finish** column carries it on every tournament table. |
+| 4 | **16 Markdown links 404'd on the live site** | `EXECUTIVE_SUMMARY.md` 4, `SUGGESTIONS.md` 9, `FLAGGED.md` 2 relative `pages/…` links were rendered from inside `/pages/*.html`, resolving to `/pages/pages/*.html`. | `mdHref()` rewrites repo-relative targets through `BASE`. Rendered `pages/summary.html` re-checked: 6 local hrefs, 0 broken. |
+| 5 | **Duplicated `<h1>` on the flagged page** (session 206debc0 minor) | Template `<h1>` plus `FLAGGED.md`'s own `# Flagged for Review`. | Template heading removed. |
+| 6 | **The weekly provenance check refused to run** (session 206debc0 request 2) | `Refusing to run: non-official host(s) in manifest: [('strip_rwlv_events', 'www.rwlasvegas.com')]`, and `source-facts.yml` piped through `tee` without `pipefail`, so the job reported success while checking nothing. | `www.rwlasvegas.com` added to `OFFICIAL_HOSTS` (it is the operator domain already approved in `check_links.py`); `set -o pipefail` added. Allowlist now accepts all 91 manifest sources. |
+
+## Guards added so these cannot regress
+
+- `scripts/check_links.py`: absolute-minute fallback rule, unflagged-overlap and spurious-overlap
+  detection, `mdHref()` presence, and existence of every repo-relative Markdown link target.
+  Verified by re-injecting an impossible fallback and a dropped conflict (both caught) and restoring.
+- `scripts/check_schedule_render.js` (new) + a `pages.yml` step: renders `pages/schedule.html` in a
+  headless DOM and fails if the "(next day)" qualifier disappears (51 labels present).
+
+## Verification performed (all re-run after every edit)
+
+- `build_data.py` → 317 rows `{SE 80, MULTI 67, RE 107, CONT 25, UNV 38}`, 70 schedule days, 79 flagged.
+- `build_site.py` → 23 pages, `git diff --exit-code` clean against the committed output.
+- `check_links.py` → OK: 56 files free of conflict markers, 23 pages, 317 rows, 7 hotels, 5 dated
+  rates, 70 schedule days, 19 Markdown links.
+- `verify_rows.py` → 324 rows, 1,296 field checks, **0 hard failures**, 1 documented review item (r225).
+- `npm run test:smoke` → 23/23 pages rendered.
+- `check_schedule_render.js` → OK, 51 "(next day)" labels.
+- Independent recomputation from `data/*.json`: 245 true conflicts, 0 valid same-day fallbacks,
+  rate-log identity exact on all 5 quotes (`checkout_total ÷ nights` matches to the cent).
+
+## Irregularities found and flagged for review (not fixed here)
+
+- **F-none added by this session**, because none of the above involved reading a source. But the
+  following pre-existing issues are recorded so they are not lost:
+  - `data/monitor_last_run.txt` still contains the refusal line from the broken run; the next
+    scheduled `source-facts` run will overwrite it now that the allowlist is correct.
+  - `pages/flagged.html` and the other Markdown pages are served from `data/` plus the `_site` stage
+    in `pages.yml` only when the Pages build type is `workflow`; the legacy branch build serves them
+    from the repo root, which is the current configuration. Both paths are exercised by CI.
+
+## Pull request / deployment
+
+Recorded at the end of this section once the PR is merged and Pages is confirmed.
