@@ -443,7 +443,7 @@
      "prize_text": null,
      "entry_status": "RE",
      "labels": [],
-     "late_reg_close": null,
+     "late_reg_close": "17:30",
      "est_end": null,
      "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
@@ -848,7 +848,7 @@
      "prize_text": null,
      "entry_status": "RE",
      "labels": [],
-     "late_reg_close": null,
+     "late_reg_close": "17:30",
      "est_end": null,
      "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
@@ -1049,7 +1049,7 @@
      "buy_in_usd": 400,
      "guarantee_usd": null,
      "prize_text": "25 Prizes",
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [
       "satellite"
      ],
@@ -1111,7 +1111,7 @@
      "prize_text": null,
      "entry_status": "RE",
      "labels": [],
-     "late_reg_close": null,
+     "late_reg_close": "16:30",
      "est_end": null,
      "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
@@ -1141,7 +1141,7 @@
      "buy_in_usd": 400,
      "guarantee_usd": null,
      "prize_text": "25 Prizes",
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [
       "satellite"
      ],
@@ -1167,12 +1167,12 @@
      "buy_in_usd": 1100,
      "guarantee_usd": 5000000,
      "prize_text": null,
-     "entry_status": "RE",
+     "entry_status": "MULTI",
      "labels": [
       "multi-flight",
       "limited-re-entry"
      ],
-     "late_reg_close": null,
+     "late_reg_close": "18:45",
      "est_end": null,
      "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
@@ -1265,12 +1265,12 @@
      "buy_in_usd": 1100,
      "guarantee_usd": 5000000,
      "prize_text": null,
-     "entry_status": "RE",
+     "entry_status": "MULTI",
      "labels": [
       "multi-flight",
       "limited-re-entry"
      ],
-     "late_reg_close": null,
+     "late_reg_close": "18:45",
      "est_end": null,
      "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
@@ -1298,7 +1298,7 @@
      "buy_in_usd": 200,
      "guarantee_usd": null,
      "prize_text": "50 Seats",
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [
       "satellite"
      ],
@@ -1351,7 +1351,7 @@
      "buy_in_usd": 400,
      "guarantee_usd": null,
      "prize_text": "25 Prizes",
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [
       "satellite"
      ],
@@ -1394,11 +1394,11 @@
      "buy_in_usd": 1100,
      "guarantee_usd": null,
      "prize_text": null,
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [],
-     "late_reg_close": null,
+     "late_reg_close": "18:30",
      "est_end": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
      "id": "r081",
@@ -1409,12 +1409,12 @@
      "buy_in_usd": 1100,
      "guarantee_usd": 5000000,
      "prize_text": null,
-     "entry_status": "RE",
+     "entry_status": "MULTI",
      "labels": [
       "multi-flight",
       "limited-re-entry"
      ],
-     "late_reg_close": null,
+     "late_reg_close": "18:45",
      "est_end": null,
      "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
@@ -1444,13 +1444,13 @@
      "buy_in_usd": 1600,
      "guarantee_usd": 100000,
      "prize_text": null,
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [
       "bounty"
      ],
-     "late_reg_close": null,
+     "late_reg_close": "17:30",
      "est_end": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
      "id": "r085",
@@ -1478,7 +1478,7 @@
      "buy_in_usd": 1600,
      "guarantee_usd": null,
      "prize_text": "25 Prizes",
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [
       "satellite"
      ],
@@ -1538,12 +1538,12 @@
      "buy_in_usd": 1100,
      "guarantee_usd": 5000000,
      "prize_text": null,
-     "entry_status": "RE",
+     "entry_status": "MULTI",
      "labels": [
       "multi-flight",
       "limited-re-entry"
      ],
-     "late_reg_close": null,
+     "late_reg_close": "18:45",
      "est_end": null,
      "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
@@ -1592,7 +1592,7 @@
      "buy_in_usd": 1100,
      "guarantee_usd": null,
      "prize_text": "25 Seats",
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [
       "satellite"
      ],
@@ -1653,11 +1653,11 @@
      "buy_in_usd": 1600,
      "guarantee_usd": 1000000,
      "prize_text": null,
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [],
      "late_reg_close": null,
      "est_end": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
      "id": "r096",
@@ -1685,11 +1685,11 @@
      "buy_in_usd": 800,
      "guarantee_usd": null,
      "prize_text": null,
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [],
      "late_reg_close": null,
      "est_end": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
      "id": "r099",
@@ -1700,13 +1700,13 @@
      "buy_in_usd": 3000,
      "guarantee_usd": 250000,
      "prize_text": null,
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [
       "bounty"
      ],
-     "late_reg_close": null,
+     "late_reg_close": "17:30",
      "est_end": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
      "id": "r100",
@@ -1717,7 +1717,7 @@
      "buy_in_usd": 1100,
      "guarantee_usd": null,
      "prize_text": "25 Seats",
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [
       "satellite"
      ],
@@ -1770,7 +1770,7 @@
      "buy_in_usd": 1100,
      "guarantee_usd": null,
      "prize_text": "25 Seats",
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [
       "satellite"
      ],
@@ -1813,7 +1813,7 @@
      "buy_in_usd": 400,
      "guarantee_usd": 3000000,
      "prize_text": null,
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [
       "bounty",
       "mystery-bounty",
@@ -1821,7 +1821,7 @@
      ],
      "late_reg_close": null,
      "est_end": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
      "id": "r106",
@@ -1904,7 +1904,7 @@
      "buy_in_usd": 400,
      "guarantee_usd": 3000000,
      "prize_text": null,
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [
       "bounty",
       "mystery-bounty",
@@ -1912,7 +1912,7 @@
      ],
      "late_reg_close": null,
      "est_end": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     }
    ],
    "primary_id": "r106",
@@ -1932,7 +1932,7 @@
      "buy_in_usd": 400,
      "guarantee_usd": 3000000,
      "prize_text": null,
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [
       "bounty",
       "mystery-bounty",
@@ -1940,7 +1940,7 @@
      ],
      "late_reg_close": null,
      "est_end": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
      "id": "r114",
@@ -1987,7 +1987,7 @@
      "buy_in_usd": 400,
      "guarantee_usd": 3000000,
      "prize_text": null,
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [
       "bounty",
       "mystery-bounty",
@@ -1995,7 +1995,7 @@
      ],
      "late_reg_close": null,
      "est_end": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
      "id": "r119",
@@ -2053,11 +2053,11 @@
      "buy_in_usd": 800,
      "guarantee_usd": 100000,
      "prize_text": null,
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [],
-     "late_reg_close": null,
+     "late_reg_close": "14:30",
      "est_end": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
      "id": "r122",
@@ -2105,11 +2105,11 @@
      "buy_in_usd": 3000,
      "guarantee_usd": 250000,
      "prize_text": null,
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [],
-     "late_reg_close": null,
+     "late_reg_close": "17:30",
      "est_end": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
      "id": "r125",
@@ -2120,7 +2120,7 @@
      "buy_in_usd": 1100,
      "guarantee_usd": null,
      "prize_text": "75 Seats",
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [
       "satellite"
      ],
@@ -2137,7 +2137,7 @@
      "buy_in_usd": 200,
      "guarantee_usd": null,
      "prize_text": "10 Seats",
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [
       "satellite",
       "ladies"
@@ -2173,7 +2173,7 @@
      "buy_in_usd": 1100,
      "guarantee_usd": null,
      "prize_text": "25 Seats",
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [
       "satellite"
      ],
@@ -2290,13 +2290,13 @@
      "buy_in_usd": 1100,
      "guarantee_usd": 250000,
      "prize_text": null,
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [
       "ladies"
      ],
-     "late_reg_close": null,
+     "late_reg_close": "18:30",
      "est_end": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
      "id": "r134",
@@ -2307,13 +2307,13 @@
      "buy_in_usd": 800,
      "guarantee_usd": 500000,
      "prize_text": null,
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [
       "multi-flight"
      ],
      "late_reg_close": null,
      "est_end": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
      "id": "r135",
@@ -2326,7 +2326,7 @@
      "prize_text": null,
      "entry_status": "RE",
      "labels": [],
-     "late_reg_close": null,
+     "late_reg_close": "18:30",
      "est_end": null,
      "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
@@ -2339,13 +2339,13 @@
      "buy_in_usd": 10400,
      "guarantee_usd": null,
      "prize_text": null,
-     "entry_status": "UNV",
+     "entry_status": "MULTI",
      "labels": [
       "multi-flight"
      ],
      "late_reg_close": null,
      "est_end": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
      "id": "r137",
@@ -2356,7 +2356,7 @@
      "buy_in_usd": 1100,
      "guarantee_usd": null,
      "prize_text": "25 Seats",
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [
       "satellite"
      ],
@@ -2373,13 +2373,13 @@
      "buy_in_usd": 1600,
      "guarantee_usd": 1000000,
      "prize_text": null,
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [
       "multi-flight"
      ],
      "late_reg_close": null,
      "est_end": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
      "id": "r141",
@@ -2407,7 +2407,7 @@
      "buy_in_usd": 1100,
      "guarantee_usd": null,
      "prize_text": "25 Seats",
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [
       "satellite"
      ],
@@ -2451,13 +2451,13 @@
      "buy_in_usd": 800,
      "guarantee_usd": 500000,
      "prize_text": null,
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [
       "multi-flight"
      ],
      "late_reg_close": null,
      "est_end": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
      "id": "r146",
@@ -2468,13 +2468,13 @@
      "buy_in_usd": 10400,
      "guarantee_usd": null,
      "prize_text": null,
-     "entry_status": "UNV",
+     "entry_status": "MULTI",
      "labels": [
       "multi-flight"
      ],
      "late_reg_close": null,
      "est_end": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
      "id": "r147",
@@ -2485,7 +2485,7 @@
      "buy_in_usd": 1100,
      "guarantee_usd": null,
      "prize_text": "25 Seats",
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [
       "satellite"
      ],
@@ -2502,11 +2502,11 @@
      "buy_in_usd": 1100,
      "guarantee_usd": null,
      "prize_text": null,
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [],
-     "late_reg_close": null,
+     "late_reg_close": "19:30",
      "est_end": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
      "id": "r149",
@@ -2517,13 +2517,13 @@
      "buy_in_usd": 1600,
      "guarantee_usd": 1000000,
      "prize_text": null,
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [
       "multi-flight"
      ],
      "late_reg_close": null,
      "est_end": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
      "id": "r151",
@@ -2551,7 +2551,7 @@
      "buy_in_usd": 1100,
      "guarantee_usd": null,
      "prize_text": "25 Seats",
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [
       "satellite"
      ],
@@ -2568,13 +2568,13 @@
      "buy_in_usd": 1100,
      "guarantee_usd": 100000,
      "prize_text": null,
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [
       "turbo"
      ],
-     "late_reg_close": null,
+     "late_reg_close": "21:00",
      "est_end": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
      "id": "r154",
@@ -2585,13 +2585,13 @@
      "buy_in_usd": 600,
      "guarantee_usd": 50000,
      "prize_text": null,
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [
       "turbo"
      ],
      "late_reg_close": null,
      "est_end": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     }
    ],
    "primary_id": "r151",
@@ -2611,7 +2611,7 @@
      "buy_in_usd": 1100,
      "guarantee_usd": null,
      "prize_text": "10 Seats",
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [
       "satellite",
       "multi-flight"
@@ -2629,13 +2629,13 @@
      "buy_in_usd": 10400,
      "guarantee_usd": null,
      "prize_text": null,
-     "entry_status": "UNV",
+     "entry_status": "MULTI",
      "labels": [
       "multi-flight"
      ],
      "late_reg_close": null,
      "est_end": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
      "id": "r159",
@@ -2664,11 +2664,11 @@
      "buy_in_usd": 1100,
      "guarantee_usd": null,
      "prize_text": null,
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [],
-     "late_reg_close": null,
+     "late_reg_close": "16:30",
      "est_end": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
      "id": "r162",
@@ -2679,13 +2679,13 @@
      "buy_in_usd": 3000,
      "guarantee_usd": 250000,
      "prize_text": null,
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [
       "bounty"
      ],
-     "late_reg_close": null,
+     "late_reg_close": "17:30",
      "est_end": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
      "id": "r163",
@@ -2713,7 +2713,7 @@
      "buy_in_usd": 1100,
      "guarantee_usd": null,
      "prize_text": "10 Seats",
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [
       "satellite",
       "multi-flight"
@@ -2731,14 +2731,14 @@
      "buy_in_usd": 1600,
      "guarantee_usd": 100000,
      "prize_text": null,
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [
       "bounty",
       "turbo"
      ],
      "late_reg_close": null,
      "est_end": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     }
    ],
    "primary_id": "r159",
@@ -2758,13 +2758,13 @@
      "buy_in_usd": 1100,
      "guarantee_usd": 1000000,
      "prize_text": null,
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [
       "multi-flight"
      ],
      "late_reg_close": null,
      "est_end": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
      "id": "r167",
@@ -2792,11 +2792,11 @@
      "buy_in_usd": 800,
      "guarantee_usd": null,
      "prize_text": null,
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [],
-     "late_reg_close": null,
+     "late_reg_close": "16:30",
      "est_end": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
      "id": "r170",
@@ -2807,11 +2807,11 @@
      "buy_in_usd": 800,
      "guarantee_usd": null,
      "prize_text": null,
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [],
-     "late_reg_close": null,
+     "late_reg_close": "17:30",
      "est_end": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
      "id": "r171",
@@ -2822,11 +2822,11 @@
      "buy_in_usd": 10500,
      "guarantee_usd": null,
      "prize_text": null,
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [],
-     "late_reg_close": null,
+     "late_reg_close": "16:30",
      "est_end": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
      "id": "r172",
@@ -2854,7 +2854,7 @@
      "buy_in_usd": 3000,
      "guarantee_usd": null,
      "prize_text": null,
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [
       "satellite"
      ],
@@ -2871,7 +2871,7 @@
      "buy_in_usd": 400,
      "guarantee_usd": null,
      "prize_text": "25 Seats",
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [
       "satellite"
      ],
@@ -2888,13 +2888,13 @@
      "buy_in_usd": 1100,
      "guarantee_usd": 1000000,
      "prize_text": null,
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [
       "multi-flight"
      ],
      "late_reg_close": null,
      "est_end": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     }
    ],
    "primary_id": "r167",
@@ -2932,13 +2932,13 @@
      "buy_in_usd": 1100,
      "guarantee_usd": 500000,
      "prize_text": null,
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [
       "seniors-50-plus"
      ],
-     "late_reg_close": null,
+     "late_reg_close": "18:30",
      "est_end": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
      "id": "r178",
@@ -2949,11 +2949,11 @@
      "buy_in_usd": 1600,
      "guarantee_usd": null,
      "prize_text": null,
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [],
-     "late_reg_close": null,
+     "late_reg_close": "18:30",
      "est_end": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
      "id": "r179",
@@ -2964,13 +2964,13 @@
      "buy_in_usd": 3000,
      "guarantee_usd": 2000000,
      "prize_text": null,
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [
       "multi-flight"
      ],
-     "late_reg_close": null,
+     "late_reg_close": "19:30",
      "est_end": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
      "id": "r182",
@@ -2999,11 +2999,11 @@
      "buy_in_usd": 25800,
      "guarantee_usd": null,
      "prize_text": null,
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [],
-     "late_reg_close": null,
+     "late_reg_close": "20:30",
      "est_end": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
      "id": "r184",
@@ -3014,7 +3014,7 @@
      "buy_in_usd": 400,
      "guarantee_usd": null,
      "prize_text": "25 Prizes",
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [
       "satellite"
      ],
@@ -3049,7 +3049,7 @@
      "buy_in_usd": 400,
      "guarantee_usd": null,
      "prize_text": "25 Prizes",
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [
       "satellite"
      ],
@@ -3075,7 +3075,7 @@
      "buy_in_usd": 400,
      "guarantee_usd": null,
      "prize_text": "10 Seats",
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [
       "satellite"
      ],
@@ -3110,11 +3110,11 @@
      "buy_in_usd": 1600,
      "guarantee_usd": null,
      "prize_text": null,
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [],
-     "late_reg_close": null,
+     "late_reg_close": "19:30",
      "est_end": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
      "id": "r190",
@@ -3125,11 +3125,11 @@
      "buy_in_usd": 600,
      "guarantee_usd": 100000,
      "prize_text": null,
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [],
-     "late_reg_close": null,
+     "late_reg_close": "16:30",
      "est_end": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
      "id": "r191",
@@ -3140,13 +3140,13 @@
      "buy_in_usd": 3000,
      "guarantee_usd": 2000000,
      "prize_text": null,
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [
       "multi-flight"
      ],
-     "late_reg_close": null,
+     "late_reg_close": "19:30",
      "est_end": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
      "id": "r193",
@@ -3157,11 +3157,11 @@
      "buy_in_usd": 10500,
      "guarantee_usd": null,
      "prize_text": null,
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [],
-     "late_reg_close": null,
+     "late_reg_close": "16:30",
      "est_end": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
      "id": "r194",
@@ -3172,12 +3172,12 @@
      "buy_in_usd": 600,
      "guarantee_usd": null,
      "prize_text": "10 Seats",
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [
       "satellite",
       "seniors-50-plus"
      ],
-     "late_reg_close": null,
+     "late_reg_close": "17:00",
      "est_end": null,
      "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
@@ -3190,13 +3190,13 @@
      "buy_in_usd": 1100,
      "guarantee_usd": 100000,
      "prize_text": null,
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [
       "turbo"
      ],
      "late_reg_close": null,
      "est_end": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
      "id": "r196",
@@ -3252,7 +3252,7 @@
      "buy_in_usd": 1600,
      "guarantee_usd": 1000000,
      "prize_text": null,
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [
       "bounty",
       "mystery-bounty",
@@ -3260,7 +3260,7 @@
      ],
      "late_reg_close": null,
      "est_end": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
      "id": "r199",
@@ -3271,13 +3271,13 @@
      "buy_in_usd": 5000,
      "guarantee_usd": 250000,
      "prize_text": null,
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [
       "seniors-50-plus"
      ],
      "late_reg_close": null,
      "est_end": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
      "id": "r200",
@@ -3288,7 +3288,7 @@
      "buy_in_usd": 300,
      "guarantee_usd": null,
      "prize_text": "10 Seats",
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [
       "bounty",
       "mystery-bounty",
@@ -3307,11 +3307,11 @@
      "buy_in_usd": 3000,
      "guarantee_usd": 500000,
      "prize_text": null,
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [],
-     "late_reg_close": null,
+     "late_reg_close": "17:30",
      "est_end": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
      "id": "r204",
@@ -3322,11 +3322,11 @@
      "buy_in_usd": 10500,
      "guarantee_usd": null,
      "prize_text": null,
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [],
-     "late_reg_close": null,
+     "late_reg_close": "16:30",
      "est_end": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
      "id": "r205",
@@ -3337,11 +3337,11 @@
      "buy_in_usd": 1600,
      "guarantee_usd": null,
      "prize_text": null,
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [],
-     "late_reg_close": null,
+     "late_reg_close": "19:30",
      "est_end": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
      "id": "r206",
@@ -3352,7 +3352,7 @@
      "buy_in_usd": 300,
      "guarantee_usd": null,
      "prize_text": "10 Seats",
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [
       "bounty",
       "mystery-bounty",
@@ -3389,13 +3389,13 @@
      "buy_in_usd": 600,
      "guarantee_usd": 50000,
      "prize_text": null,
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [
       "turbo"
      ],
      "late_reg_close": null,
      "est_end": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
      "id": "r209",
@@ -3406,7 +3406,7 @@
      "buy_in_usd": 1600,
      "guarantee_usd": 1000000,
      "prize_text": null,
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [
       "bounty",
       "mystery-bounty",
@@ -3414,7 +3414,7 @@
      ],
      "late_reg_close": null,
      "est_end": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     }
    ],
    "primary_id": null,
@@ -3434,7 +3434,7 @@
      "buy_in_usd": 1600,
      "guarantee_usd": 1000000,
      "prize_text": null,
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [
       "bounty",
       "mystery-bounty",
@@ -3442,7 +3442,7 @@
      ],
      "late_reg_close": null,
      "est_end": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
      "id": "r212",
@@ -3471,11 +3471,11 @@
      "buy_in_usd": 600,
      "guarantee_usd": 50000,
      "prize_text": null,
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [],
      "late_reg_close": null,
      "est_end": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
      "id": "r215",
@@ -3501,11 +3501,11 @@
      "buy_in_usd": 10500,
      "guarantee_usd": null,
      "prize_text": null,
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [],
-     "late_reg_close": null,
+     "late_reg_close": "16:30",
      "est_end": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
      "id": "r218",
@@ -3533,13 +3533,13 @@
      "buy_in_usd": 600,
      "guarantee_usd": 50000,
      "prize_text": null,
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [
       "turbo"
      ],
-     "late_reg_close": null,
+     "late_reg_close": "21:00",
      "est_end": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
      "id": "r220",
@@ -3550,7 +3550,7 @@
      "buy_in_usd": 1600,
      "guarantee_usd": 1000000,
      "prize_text": null,
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [
       "bounty",
       "mystery-bounty",
@@ -3558,7 +3558,7 @@
      ],
      "late_reg_close": null,
      "est_end": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     }
    ],
    "primary_id": "r218",
@@ -3596,11 +3596,11 @@
      "buy_in_usd": 1100,
      "guarantee_usd": 100000,
      "prize_text": null,
-     "entry_status": "UNV",
+     "entry_status": "RE",
      "labels": [],
      "late_reg_close": null,
      "est_end": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     },
     {
      "id": "r224",

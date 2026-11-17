@@ -887,6 +887,84 @@ def estimate_end(start, levels, level_min, breaks=15, every=4, level_min2=None, 
     return to_hhmm(to_min(start) + total), total
 
 
+# ---------- WPT row -> structure-sheet join (official structures PDF, text snapshot) ----------
+# data/wpt_row_sheets.json is produced by scripts/extract_wpt_sheets.py from the verbatim text
+# snapshot of the official WPT_World_Championship_Structures.pdf. Each match records the printed
+# registration clause, the printed fee breakdown and the printed stack for the sheet that governs
+# the row. A row with no match stays unverified.
+WPT_ROW_SHEETS = {}
+try:
+    with open(os.path.join(ROOT, "data", "wpt_row_sheets.json"), encoding="utf-8") as _f:
+        _wrs = json.load(_f)
+    WPT_ROW_SHEETS = _wrs.get("by_row", {})
+    WPT_SHEET_SOURCE = {"label": "Official WPT structures PDF", "url": _wrs.get("source")}
+except (IOError, ValueError):
+    WPT_SHEET_SOURCE = None
+
+
+ITEMISED_POOL_MISMATCH = ("The structures PDF's own fee line does not add up: the itemised amounts for a $%s "
+                          "buy-in total $%s, more than the buy-in. The pool, fee and staff charge are "
+                          "published exactly as printed, not corrected, so the sheet's arithmetic can be checked "
+                          "by hand.")
+
+
+def itemised_pool_sum(parts):
+    """Sum the printed components of a fee line, or None when any component is missing."""
+    vals = [parts.get("prize_pool"), parts.get("fee"), parts.get("staff")]
+    vals += [a for a, _ in parts.get("other") or []]
+    if any(v is None for v in vals):
+        return None
+    total = sum(vals)
+    return total if parts.get("buy_in") and total != parts["buy_in"] else None
+
+
+def late_reg_from_clause(reg):
+    """Return the printed late-registration cut-off in an official clause, or None.
+
+    Only a time the clause itself prints is returned. When the clause names a level and no
+    clock time, the level is returned as text instead so the row never carries an invented time.
+    """
+    if not reg:
+        return None, None
+    m = re.search(r"until the start of level(?:s)?\s+(\d+)(?:\s*\((?:approximately\s*)?([\d:]+\s*[ap]\.?m\.?)\))?",
+                  reg, re.I)
+    if not m:
+        return None, None
+    level = "level " + m.group(1)
+    clock = None
+    if m.group(2):
+        hm = re.match(r"(\d{1,2})(?::(\d\d))?\s*([ap])", m.group(2), re.I)
+        if hm:
+            h = int(hm.group(1)) % 12
+            if hm.group(3).lower() == "p":
+                h += 12
+            clock = "%02d:%s" % (h, hm.group(2) or "00")
+    return clock, level
+
+
+def wpt_fee_parts(line):
+    """Split a printed WPT fee line into (buy-in, prize pool, other withholdings, fee, staff).
+
+    Only the printed numbers are returned; nothing is derived. Bounty and Mystery Bounty
+    amounts are reported separately because they are not part of the tournament prize pool.
+    """
+    if not line:
+        return {}
+    m = re.match(r"(?:\*?Discounted[^:]*)?Entry Fee:\s*\$([\d,]+)\s*Buy-in\s*=\s*(.+)$", line.strip())
+    if not m:
+        return {}
+    buy = int(m.group(1).replace(",", ""))
+    terms = []
+    for amt, what in re.findall(r"\$\s*([\d,]+)\s*\(([^)]*)\)", m.group(2)):
+        terms.append((int(amt.replace(",", "")), what.strip()))
+    pool = next((a for a, w in terms if "Tournament Prize Pool" in w), None)
+    fee = next((a for a, w in terms if "Tournament Fee" in w), None)
+    staff = next((a for a, w in terms if "Staff Service Charge" in w), None)
+    other = [(a, w) for a, w in terms if "Bounty" in w]
+    return {"buy_in": buy, "prize_pool": pool, "fee": fee, "staff": staff, "other": other,
+            "other_total": sum(a for a, _ in other)}
+
+
 def rule_field(value, excerpt, source_label, source_url, clause=None, retrieved=LAST_CHECKED):
     out = {"value": value, "excerpt": excerpt, "source": {"label": source_label, "url": source_url},
            "retrieved_on": retrieved}
@@ -1008,8 +1086,60 @@ def build_venetian(rows, series_key, series, page_key, sheet_key, sched_key, str
 def build_wynn():
     out = []
     for (date, time, name, buy, gtd, gtext, chips, levels_pub, kind, skey, flags) in WPT:
-        if skey and skey in WPT_STRUCTS:
-            st = WPT_STRUCTS[skey]
+        flags = list(flags)
+        sheets_parts = {}
+        # The join to the official structures PDF is authoritative: it is made element by element
+        # (printed date, printed start time within two hours, printed title) and the matched sheet
+        # carries its own registration clause and fee line. The hand-written WPT_STRUCTS entry is
+        # used for the descriptive fields the sheet does not state (payout, breaks, day list).
+        sheet = WPT_ROW_SHEETS.get("%s|%s|%s" % (date, time, name)) if kind == "entry" else None
+        st = WPT_STRUCTS.get(skey) if skey else None
+        if sheet:
+            reg = (sheet.get("registration") or "").strip()
+            unlimited = bool(sheet.get("unlimited_re_entry"))
+            multi = bool(sheet.get("multi_entry"))
+            if unlimited:
+                status = "RE"
+            elif multi:
+                status = "MULTI"
+            else:
+                status = "SE"
+            parts = wpt_fee_parts(sheet.get("entry_fee_line"))
+            if parts.get("other"):
+                fee_text = ("%s Buy-in = $%s Tournament Prize Pool + %s + $%s Tournament Fee + $%s Poker Staff "
+                            "Service Charge" % (
+                                format(parts["buy_in"], ","), format(parts["prize_pool"], ","),
+                                " + ".join("$%s %s" % (format(a, ","), w) for a, w in parts["other"]),
+                                format(parts["fee"], ","), format(parts["staff"], ",")))
+            else:
+                fee_text = sheet.get("entry_fee_line")
+            struct_url = WPT_SHEET_SOURCE["url"] if WPT_SHEET_SOURCE else SRC["wpt_struct"]
+            struct_label = "Official WPT structures PDF, sheet %d" % sheet["block"]
+            ex = ("Registration clause as printed on sheet %d: \"%s\"" % (sheet["block"], reg))
+            if itemised_pool_sum(parts):
+                flags.append(ITEMISED_POOL_MISMATCH % (format(parts["buy_in"], ","),
+                                                       format(itemised_pool_sum(parts), ",")))
+            sheets_parts = parts
+            if sheet.get("printed_time_delta_min"):
+                flags.append("The structures PDF prints this event at a start time %d minutes away from the "
+                             "start time on the official schedule PDF; the schedule's time is published here "
+                             "and the difference is flagged rather than reconciled silently."
+                             % sheet["printed_time_delta_min"])
+            if parts.get("buy_in") and buy and parts["buy_in"] != buy and "Ladies" not in name:
+                flags.append("The structures PDF prints a $%s buy-in for this event while the schedule PDF "
+                             "prints $%s; both are published as printed and the difference is flagged."
+                             % (format(parts["buy_in"], ","), format(buy, ",")))
+        elif kind == "continuation":
+            # A continuation day sells no new entry, so the entry-rule fields are marked as not
+            # applicable rather than borrowing a clause from a starting flight.
+            status = "CONT"
+            ex = ("Continuation day: this row is a Day 2, Day 3 or final-table restart of a starting flight and "
+                  "the schedule PDF prints no new entry for it. The entry rule applies to the starting flight and "
+                  "is published on that row.")
+            fee_text = None
+            struct_url = None
+            struct_label = None
+        elif st:
             status = st["status"]
             ex = st["ex"]
             fee_text = st["fee"]
@@ -1018,7 +1148,7 @@ def build_wynn():
         else:
             status = "UNV"
             ex = ("No structure sheet for this event is published in the official WPT World Championship Structures "
-                  "PDF (read in full on 2026-11-16). Entry rule unknown.")
+                  "PDF (read in full on 2026-11-17). Entry rule unknown.")
             fee_text = None
             struct_url = None
             struct_label = None
@@ -1045,37 +1175,84 @@ def build_wynn():
         srcs = [{"label": "Official schedule PDF", "url": SRC["wpt_sched"]}]
         if struct_url:
             srcs.append({"label": struct_label, "url": struct_url})
+        parts = sheets_parts
+        late_clock, late_level = late_reg_from_clause(sheet.get("registration") if sheet else None)
+        # A sheet that prints "Unlimited re-entry" and no add-on or re-buy is a multiple-entry event,
+        # never a single-entry one; a sheet that prints a fixed number of entries is reported as the
+        # sheet words it and stays out of the single-entry ranking.
+        if status == "CONT":
+            se_value = "not applicable (continuation day)"
+        elif status == "SE":
+            se_value = "confirmed"
+        elif status in ("RE", "REBUY"):
+            se_value = "not single entry"
+        elif status == "MULTI":
+            se_value = "multiple entries printed"
+        else:
+            se_value = "unknown"
         rules = {
-            "single_entry": rule_field(
-                "not single entry" if status in ("RE", "REBUY") else ("unknown" if status == "UNV" else "confirmed"),
-                ex, struct_label or "Official schedule PDF", struct_url or SRC["wpt_sched"]),
-            "re_entry": rule_field("allowed" if status in ("RE", "REBUY") else "unknown",
+            "single_entry": rule_field(se_value, ex, struct_label or "Official schedule PDF",
+                                       struct_url or SRC["wpt_sched"]),
+            "re_entry": rule_field("allowed" if status in ("RE", "REBUY", "MULTI") else
+                                   ("unknown" if status == "UNV" else "not mentioned"),
                                    ex, struct_label or "Official schedule PDF", struct_url or SRC["wpt_sched"]),
-            "add_on": rule_field("not mentioned", ex, struct_label or "Official schedule PDF",
-                                 struct_url or SRC["wpt_sched"]),
+            "add_on": rule_field("not mentioned in the structure sheet" if sheet else "not mentioned",
+                                 ex, struct_label or "Official schedule PDF", struct_url or SRC["wpt_sched"]),
             "fee": rule_field(fee_text or "not published for this event", fee_text or ex,
                               struct_label or "Official schedule PDF", struct_url or SRC["wpt_sched"]),
         }
-        if skey and skey in WPT_STRUCTS and WPT_STRUCTS[skey].get("stack"):
-            rules["starting_chips"] = rule_field(WPT_STRUCTS[skey]["stack"], WPT_STRUCTS[skey]["stack"],
-                                                  struct_label, struct_url)
+        if sheet and sheet.get("starting_stack"):
+            rules["starting_chips"] = rule_field(sheet["starting_stack"], sheet["starting_stack"],
+                                                 struct_label, struct_url)
+        if sheet and sheet.get("length_of_play"):
+            rules["level_length"] = rule_field(sheet["length_of_play"], sheet["length_of_play"],
+                                               struct_label, struct_url)
+        if sheet and sheet.get("registration"):
+            rules["late_registration"] = rule_field(
+                (late_clock and ("registration closes at the start of %s (%s)" % (late_level, late_clock)))
+                or (late_level and ("registration closes at the start of %s, no clock time printed" % late_level))
+                or "not printed in the registration clause",
+                ex, struct_label, struct_url)
+        if sheet and parts.get("prize_pool") is not None:
+            rules["prize_pool_component"] = rule_field(
+                "$%s of the $%s buy-in" % (format(parts["prize_pool"], ","), format(parts["buy_in"], ",")),
+                sheet.get("entry_fee_line") or "", struct_label, struct_url)
+        if sheet and parts.get("other"):
+            rules["bounty_component"] = rule_field(
+                " + ".join("$%s %s" % (format(a, ","), w) for a, w in parts["other"]),
+                sheet.get("entry_fee_line") or "", struct_label, struct_url)
         row = {
             "id": None, "series": "WPT World Championship (Wynn)", "venue": WYN, "date": date, "start": time,
             "kind": kind, "event_no": None, "name": name,
             "buy_in_usd": buy, "guarantee_usd": gtd, "prize_text": gtext,
-            "house_fee_usd": None, "house_fee_pct": None, "prize_pool_usd": None,
+            "house_fee_usd": (parts["fee"] + parts["staff"]) if parts.get("fee") is not None
+                             and parts.get("staff") is not None else None,
+            "house_fee_pct": round(100.0 * (parts["fee"] + parts["staff"]) / parts["buy_in"], 2)
+                             if parts.get("fee") is not None and parts.get("staff") is not None
+                             and parts.get("buy_in") else None,
+            "prize_pool_usd": parts.get("prize_pool"),
             "gtd_multiple": round(gtd / buy, 1) if gtd and buy else None,
             "entry_status": status, "rules": rules,
             "entry_rule": {
-                "RE": "Re-entry confirmed: official structure terms state re-entry terms.",
+                "SE": "Single entry: the structure sheet prints no re-entry, re-buy or add-on clause.",
+                "RE": "Re-entry confirmed: the structure sheet prints a re-entry clause (see the excerpt).",
+                "MULTI": "Multiple entries printed: the sheet allows more than one entry per player but not "
+                         "unlimited re-entry.",
+                "CONT": "Continuation day: a Day 2, Day 3 or final-table restart that sells no new entry. "
+                         "The entry rule is published on the starting-flight row.",
                 "UNV": "Entry rule not verified: no structure sheet for this event is published in the official structures PDF.",
             }.get(status, ""),
             "labels": labels,
-            "late_reg_close": None, "levels": None, "level_minutes": None,
+            "late_reg_close": late_clock, "late_reg_level": late_level,
+            "levels": None, "level_minutes": (sheet.get("level_minutes") if sheet else None),
             "starting_chips": chips, "levels_published": levels_pub,
             "est_end": None, "est_duration_min": None,
-            "note": "Buy-in, guarantee, starting chips and level count from the official WPT World Championship "
-                    "schedule PDF.",
+            "note": ("Buy-in, guarantee, starting chips and level count from the official WPT World Championship "
+                     "schedule PDF; the entry rule, fee split, starting stack and registration cut-off from the "
+                     "sheet of the official structures PDF that the row is joined to.")
+                    if sheet else
+                    ("Buy-in, guarantee, starting chips and level count from the official WPT World Championship "
+                     "schedule PDF."),
             "flags": flags,
             "sources": srcs, "verified_on": VERIFIED_ON, "last_checked": LAST_CHECKED,
         }

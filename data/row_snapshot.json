@@ -478,8 +478,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 800,
    "guarantee_usd": 1000000,
-   "entry_status": "RE",
-   "buy_in": "Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge)",
+   "entry_status": "CONT",
+   "buy_in": "not published for this event",
    "flags": 1
   },
   "r041": {
@@ -552,7 +552,7 @@
    "guarantee_usd": null,
    "entry_status": "RE",
    "buy_in": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $45 (Poker Staff Service Charge)",
-   "flags": 0
+   "flags": 1
   },
   "r047": {
    "date": "2026-12-01",
@@ -682,8 +682,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 1600,
    "guarantee_usd": 1000000,
-   "entry_status": "RE",
-   "buy_in": "Entry Fee: $800 Buy-in = $695 (Tournament Prize Pool) + $72 (Tournament Fee) + $33 (Poker Staff Service Charge)",
+   "entry_status": "CONT",
+   "buy_in": "not published for this event",
    "flags": 2
   },
   "r058": {
@@ -706,8 +706,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 400,
    "guarantee_usd": null,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $400 Buy-in = $337 (Tournament Prize Pool) + $45 (Tournament Fee) + $18 (Poker Staff Service Charge)",
    "flags": 0
   },
   "r060": {
@@ -754,8 +754,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": null,
    "guarantee_usd": null,
-   "entry_status": "RE",
-   "buy_in": "Entry Fee: $800 Buy-in = $695 (Tournament Prize Pool) + $72 (Tournament Fee) + $33 (Poker Staff Service Charge)",
+   "entry_status": "CONT",
+   "buy_in": "not published for this event",
    "flags": 2
   },
   "r064": {
@@ -778,8 +778,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 400,
    "guarantee_usd": null,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $400 Buy-in = $337 (Tournament Prize Pool) + $45 (Tournament Fee) + $18 (Poker Staff Service Charge)",
    "flags": 0
   },
   "r066": {
@@ -790,8 +790,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 1600,
    "guarantee_usd": 1000000,
-   "entry_status": "RE",
-   "buy_in": "Entry Fee: $1,600 Buy-in = $1,430 (Tournament Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge)",
+   "entry_status": "CONT",
+   "buy_in": "not published for this event",
    "flags": 2
   },
   "r067": {
@@ -802,7 +802,7 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 1100,
    "guarantee_usd": 5000000,
-   "entry_status": "RE",
+   "entry_status": "MULTI",
    "buy_in": "Entry Fee: $1,100 Buy-in = $970 (Tournament Prize Pool) + $90 (Tournament Fee) + $40 (Poker Staff Service Charge)",
    "flags": 0
   },
@@ -851,7 +851,7 @@
    "buy_in_usd": 1600,
    "guarantee_usd": 500000,
    "entry_status": "RE",
-   "buy_in": "Entry Fee: $1,600 Buy-in = $930 (Tournament Prize Pool) + $500 (Mystery Bounty Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge)",
+   "buy_in": "1,600 Buy-in = $930 Tournament Prize Pool + $500 Mystery Bounty Prize Pool + $120 Tournament Fee + $50 Poker Staff Service Charge",
    "flags": 0
   },
   "r072": {
@@ -862,7 +862,7 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 1100,
    "guarantee_usd": 5000000,
-   "entry_status": "RE",
+   "entry_status": "MULTI",
    "buy_in": "Entry Fee: $1,100 Buy-in = $970 (Tournament Prize Pool) + $90 (Tournament Fee) + $40 (Poker Staff Service Charge)",
    "flags": 0
   },
@@ -898,8 +898,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 200,
    "guarantee_usd": null,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $200 Buy-in = $165 (Tournament Prize Pool) + $20 (Tournament Fee) + $15 (Poker Staff Service Charge)",
    "flags": 0
   },
   "r076": {
@@ -923,7 +923,7 @@
    "buy_in_usd": 1600,
    "guarantee_usd": 500000,
    "entry_status": "RE",
-   "buy_in": "Entry Fee: $1,600 Buy-in = $930 (Tournament Prize Pool) + $500 (Mystery Bounty Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge)",
+   "buy_in": "1,600 Buy-in = $930 Tournament Prize Pool + $500 Mystery Bounty Prize Pool + $120 Tournament Fee + $50 Poker Staff Service Charge",
    "flags": 0
   },
   "r078": {
@@ -934,8 +934,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 400,
    "guarantee_usd": null,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $400 Buy-in = $337 (Tournament Prize Pool) + $45 (Tournament Fee) + $18 (Poker Staff Service Charge)",
    "flags": 0
   },
   "r079": {
@@ -958,8 +958,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 1100,
    "guarantee_usd": null,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $1,100 Buy-in = $965 (Tournament Prize Pool) + $90 (Tournament Fee) + $45 (Poker Staff Service Charge)",
    "flags": 0
   },
   "r081": {
@@ -970,7 +970,7 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 1100,
    "guarantee_usd": 5000000,
-   "entry_status": "RE",
+   "entry_status": "MULTI",
    "buy_in": "Entry Fee: $1,100 Buy-in = $970 (Tournament Prize Pool) + $90 (Tournament Fee) + $40 (Poker Staff Service Charge)",
    "flags": 0
   },
@@ -994,8 +994,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": null,
    "guarantee_usd": null,
-   "entry_status": "RE",
-   "buy_in": "Entry Fee: $1,600 Buy-in = $930 (Tournament Prize Pool) + $500 (Mystery Bounty Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge)",
+   "entry_status": "CONT",
+   "buy_in": "not published for this event",
    "flags": 2
   },
   "r084": {
@@ -1006,8 +1006,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 1600,
    "guarantee_usd": 100000,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "1,600 Buy-in = $940 Tournament Prize Pool + $500 Bounty Prize Pool + $115 Tournament Fee + $45 Poker Staff Service Charge",
    "flags": 0
   },
   "r085": {
@@ -1030,8 +1030,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 1600,
    "guarantee_usd": null,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $1,600 Buy-in = $1,440 (Tournament Prize Pool) + $115 (Tournament Fee) + $45 (Poker Staff Service Charge)",
    "flags": 0
   },
   "r087": {
@@ -1066,7 +1066,7 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 1100,
    "guarantee_usd": 5000000,
-   "entry_status": "RE",
+   "entry_status": "MULTI",
    "buy_in": "Entry Fee: $1,100 Buy-in = $970 (Tournament Prize Pool) + $90 (Tournament Fee) + $40 (Poker Staff Service Charge)",
    "flags": 0
   },
@@ -1102,8 +1102,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 1100,
    "guarantee_usd": null,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge)",
    "flags": 0
   },
   "r093": {
@@ -1138,8 +1138,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 1600,
    "guarantee_usd": 1000000,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $1,600 Buy-in = $1,430 (Tournament Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge)",
    "flags": 0
   },
   "r096": {
@@ -1162,8 +1162,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": null,
    "guarantee_usd": null,
-   "entry_status": "RE",
-   "buy_in": "Entry Fee: $1,100 Buy-in = $970 (Tournament Prize Pool) + $90 (Tournament Fee) + $40 (Poker Staff Service Charge)",
+   "entry_status": "CONT",
+   "buy_in": "not published for this event",
    "flags": 2
   },
   "r098": {
@@ -1174,8 +1174,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 800,
    "guarantee_usd": null,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $800 Buy-in = $695 (Tournament Prize Pool) + $72 (Tournament Fee) + $33 (Poker Staff Service Charge)",
    "flags": 0
   },
   "r099": {
@@ -1186,8 +1186,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 3000,
    "guarantee_usd": 250000,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "3,000 Buy-in = $1,730 Tournament Prize Pool + $1,000 Bounty Prize Pool + $200 Tournament Fee + $70 Poker Staff Service Charge",
    "flags": 0
   },
   "r100": {
@@ -1198,8 +1198,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 1100,
    "guarantee_usd": null,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge)",
    "flags": 0
   },
   "r101": {
@@ -1234,8 +1234,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 1100,
    "guarantee_usd": null,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge)",
    "flags": 0
   },
   "r104": {
@@ -1258,8 +1258,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 400,
    "guarantee_usd": 3000000,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $400 Buy-in = $333 (Tournament Prize Pool) + $45 (Tournament Fee) + $22 (Poker Staff Service Charge)",
    "flags": 0
   },
   "r106": {
@@ -1282,8 +1282,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": null,
    "guarantee_usd": null,
-   "entry_status": "RE",
-   "buy_in": "Entry Fee: $1,100 Buy-in = $970 (Tournament Prize Pool) + $90 (Tournament Fee) + $40 (Poker Staff Service Charge)",
+   "entry_status": "CONT",
+   "buy_in": "not published for this event",
    "flags": 2
   },
   "r108": {
@@ -1330,8 +1330,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 400,
    "guarantee_usd": 3000000,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $400 Buy-in = $333 (Tournament Prize Pool) + $45 (Tournament Fee) + $22 (Poker Staff Service Charge)",
    "flags": 0
   },
   "r112": {
@@ -1354,8 +1354,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 400,
    "guarantee_usd": 3000000,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $400 Buy-in = $333 (Tournament Prize Pool) + $45 (Tournament Fee) + $22 (Poker Staff Service Charge)",
    "flags": 0
   },
   "r114": {
@@ -1378,8 +1378,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": null,
    "guarantee_usd": null,
-   "entry_status": "RE",
-   "buy_in": "Entry Fee: $1,100 Buy-in = $970 (Tournament Prize Pool) + $90 (Tournament Fee) + $40 (Poker Staff Service Charge)",
+   "entry_status": "CONT",
+   "buy_in": "not published for this event",
    "flags": 2
   },
   "r116": {
@@ -1402,8 +1402,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 400,
    "guarantee_usd": 3000000,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $400 Buy-in = $333 (Tournament Prize Pool) + $45 (Tournament Fee) + $22 (Poker Staff Service Charge)",
    "flags": 0
   },
   "r118": {
@@ -1450,8 +1450,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 800,
    "guarantee_usd": 100000,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $800 Buy-in = $700 (Tournament Prize Pool) + $70 (Tournament Fee) + $30 (Poker Staff Service Charge)",
    "flags": 0
   },
   "r122": {
@@ -1486,8 +1486,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 3000,
    "guarantee_usd": 250000,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $3,000 Buy-in = $2,730 (Tournament Prize Pool) + $200 (Tournament Fee) + $70 (Poker Staff Service Charge)",
    "flags": 0
   },
   "r125": {
@@ -1498,8 +1498,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 1100,
    "guarantee_usd": null,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge)",
    "flags": 0
   },
   "r126": {
@@ -1510,7 +1510,7 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": null,
    "guarantee_usd": null,
-   "entry_status": "UNV",
+   "entry_status": "CONT",
    "buy_in": "not published for this event",
    "flags": 1
   },
@@ -1522,8 +1522,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": null,
    "guarantee_usd": null,
-   "entry_status": "RE",
-   "buy_in": "Entry Fee: $1,100 Buy-in = $970 (Tournament Prize Pool) + $90 (Tournament Fee) + $40 (Poker Staff Service Charge)",
+   "entry_status": "CONT",
+   "buy_in": "not published for this event",
    "flags": 2
   },
   "r128": {
@@ -1534,8 +1534,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 200,
    "guarantee_usd": null,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $200 Buy-in = $165 (Tournament Prize Pool) + $20 (Tournament Fee) + $15 (Poker Staff Service Charge)",
    "flags": 0
   },
   "r129": {
@@ -1558,8 +1558,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 1100,
    "guarantee_usd": null,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge)",
    "flags": 0
   },
   "r131": {
@@ -1594,8 +1594,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 1100,
    "guarantee_usd": 250000,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "*Discounted Ladies Entry Fee: $1,100 Buy-in = $965 (Tournament Prize Pool) + $90 (Tournament Fee) + $45 (Poker Staff Service Charge)",
    "flags": 2
   },
   "r134": {
@@ -1606,8 +1606,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 800,
    "guarantee_usd": 500000,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $800 Buy-in = $695 (Tournament Prize Pool) + $72 (Tournament Fee) + $33 (Poker Staff Service Charge)",
    "flags": 0
   },
   "r135": {
@@ -1630,8 +1630,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 10400,
    "guarantee_usd": null,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "MULTI",
+   "buy_in": "Entry Fee: $10,400 Buy-in = $9,800 (Tournament Prize Pool) + $400 (Tournament Fee) + $200 (Poker Staff Service Charge)",
    "flags": 1
   },
   "r137": {
@@ -1642,8 +1642,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 1100,
    "guarantee_usd": null,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge)",
    "flags": 0
   },
   "r138": {
@@ -1654,8 +1654,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 1600,
    "guarantee_usd": 1000000,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $1,600 Buy-in = $1,430 (Tournament Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge)",
    "flags": 0
   },
   "r139": {
@@ -1678,7 +1678,7 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": null,
    "guarantee_usd": null,
-   "entry_status": "UNV",
+   "entry_status": "CONT",
    "buy_in": "not published for this event",
    "flags": 1
   },
@@ -1702,8 +1702,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 1100,
    "guarantee_usd": null,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge)",
    "flags": 0
   },
   "r143": {
@@ -1738,8 +1738,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 800,
    "guarantee_usd": 500000,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $800 Buy-in = $695 (Tournament Prize Pool) + $72 (Tournament Fee) + $33 (Poker Staff Service Charge)",
    "flags": 0
   },
   "r146": {
@@ -1750,8 +1750,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 10400,
    "guarantee_usd": null,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "MULTI",
+   "buy_in": "Entry Fee: $10,400 Buy-in = $9,800 (Tournament Prize Pool) + $400 (Tournament Fee) + $200 (Poker Staff Service Charge)",
    "flags": 1
   },
   "r147": {
@@ -1762,8 +1762,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 1100,
    "guarantee_usd": null,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge)",
    "flags": 0
   },
   "r148": {
@@ -1774,8 +1774,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 1100,
    "guarantee_usd": null,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $1,100 Buy-in = $965 (Tournament Prize Pool) + $90 (Tournament Fee) + $45 (Poker Staff Service Charge)",
    "flags": 0
   },
   "r149": {
@@ -1786,8 +1786,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 1600,
    "guarantee_usd": 1000000,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $1,600 Buy-in = $1,430 (Tournament Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge)",
    "flags": 0
   },
   "r150": {
@@ -1798,7 +1798,7 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": null,
    "guarantee_usd": null,
-   "entry_status": "UNV",
+   "entry_status": "CONT",
    "buy_in": "not published for this event",
    "flags": 1
   },
@@ -1822,8 +1822,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 1100,
    "guarantee_usd": null,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge)",
    "flags": 0
   },
   "r153": {
@@ -1834,8 +1834,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 1100,
    "guarantee_usd": 100000,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge)",
    "flags": 0
   },
   "r154": {
@@ -1846,8 +1846,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 600,
    "guarantee_usd": 50000,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge)",
    "flags": 1
   },
   "r155": {
@@ -1870,8 +1870,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 1100,
    "guarantee_usd": null,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge)",
    "flags": 0
   },
   "r157": {
@@ -1882,7 +1882,7 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": null,
    "guarantee_usd": null,
-   "entry_status": "UNV",
+   "entry_status": "CONT",
    "buy_in": "not published for this event",
    "flags": 1
   },
@@ -1894,8 +1894,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 10400,
    "guarantee_usd": null,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "MULTI",
+   "buy_in": "Entry Fee: $10,400 Buy-in = $9,800 (Tournament Prize Pool) + $400 (Tournament Fee) + $200 (Poker Staff Service Charge)",
    "flags": 1
   },
   "r159": {
@@ -1918,8 +1918,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 1100,
    "guarantee_usd": null,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge)",
    "flags": 0
   },
   "r161": {
@@ -1930,7 +1930,7 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": null,
    "guarantee_usd": null,
-   "entry_status": "UNV",
+   "entry_status": "CONT",
    "buy_in": "not published for this event",
    "flags": 1
   },
@@ -1942,8 +1942,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 3000,
    "guarantee_usd": 250000,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "3,000 Buy-in = $1,730 Tournament Prize Pool + $1,000 Bounty Prize Pool + $200 Tournament Fee + $70 Poker Staff Service Charge",
    "flags": 0
   },
   "r163": {
@@ -1966,8 +1966,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 1100,
    "guarantee_usd": null,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge)",
    "flags": 0
   },
   "r165": {
@@ -1978,8 +1978,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 1600,
    "guarantee_usd": 100000,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "1,600 Buy-in = $940 Tournament Prize Pool + $500 Bounty Prize Pool + $115 Tournament Fee + $45 Poker Staff Service Charge",
    "flags": 0
   },
   "r166": {
@@ -1990,8 +1990,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 1100,
    "guarantee_usd": 1000000,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $1,100 Buy-in = $965 (Tournament Prize Pool) + $90 (Tournament Fee) + $45 (Poker Staff Service Charge)",
    "flags": 1
   },
   "r167": {
@@ -2014,8 +2014,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 800,
    "guarantee_usd": null,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $800 Buy-in = $700 (Tournament Prize Pool) + $70 (Tournament Fee) + $30 (Poker Staff Service Charge)",
    "flags": 1
   },
   "r169": {
@@ -2026,7 +2026,7 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": null,
    "guarantee_usd": null,
-   "entry_status": "UNV",
+   "entry_status": "CONT",
    "buy_in": "not published for this event",
    "flags": 2
   },
@@ -2038,8 +2038,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 800,
    "guarantee_usd": null,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $800 Buy-in = $695 (Tournament Prize Pool) + $72 (Tournament Fee) + $33 (Poker Staff Service Charge)",
    "flags": 1
   },
   "r171": {
@@ -2050,8 +2050,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 10500,
    "guarantee_usd": null,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $10,500 Buy-in = $10,000 (Tournament Prize Pool) + $420 (Tournament Fee) + $80 (Poker Staff Service Charge)",
    "flags": 2
   },
   "r172": {
@@ -2074,8 +2074,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 3000,
    "guarantee_usd": null,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $3,000 Buy-in = $2,730 (Tournament Prize Pool) + $200 (Tournament Fee) + $70 (Poker Staff Service Charge)",
    "flags": 2
   },
   "r174": {
@@ -2086,8 +2086,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 400,
    "guarantee_usd": null,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $400 Buy-in = $337 (Tournament Prize Pool) + $45 (Tournament Fee) + $18 (Poker Staff Service Charge)",
    "flags": 1
   },
   "r175": {
@@ -2098,8 +2098,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 1100,
    "guarantee_usd": 1000000,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $1,100 Buy-in = $965 (Tournament Prize Pool) + $90 (Tournament Fee) + $45 (Poker Staff Service Charge)",
    "flags": 1
   },
   "r176": {
@@ -2122,8 +2122,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 1100,
    "guarantee_usd": 500000,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $1,100 Buy-in = $965 (Tournament Prize Pool) + $90 (Tournament Fee) + $45 (Poker Staff Service Charge)",
    "flags": 0
   },
   "r178": {
@@ -2134,8 +2134,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 1600,
    "guarantee_usd": null,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $1,600 Buy-in = $1,430 (Tournament Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge)",
    "flags": 0
   },
   "r179": {
@@ -2146,8 +2146,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 3000,
    "guarantee_usd": 2000000,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $3,000 Buy-in = $2,720 (Tournament Prize Pool) + $205 (Tournament Fee) + $75 (Poker Staff Service Charge)",
    "flags": 0
   },
   "r180": {
@@ -2158,7 +2158,7 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": null,
    "guarantee_usd": null,
-   "entry_status": "UNV",
+   "entry_status": "CONT",
    "buy_in": "not published for this event",
    "flags": 1
   },
@@ -2170,7 +2170,7 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": null,
    "guarantee_usd": null,
-   "entry_status": "UNV",
+   "entry_status": "CONT",
    "buy_in": "not published for this event",
    "flags": 1
   },
@@ -2194,8 +2194,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 25800,
    "guarantee_usd": null,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $25,800 Buy-in = $25,000 (Tournament Prize Pool) + $700 (Tournament Fee) + $100 (Poker Staff Service Charge)",
    "flags": 1
   },
   "r184": {
@@ -2206,8 +2206,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 400,
    "guarantee_usd": null,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $400 Buy-in = $337 (Tournament Prize Pool) + $45 (Tournament Fee) + $18 (Poker Staff Service Charge)",
    "flags": 0
   },
   "r185": {
@@ -2230,8 +2230,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 400,
    "guarantee_usd": null,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $400 Buy-in = $337 (Tournament Prize Pool) + $45 (Tournament Fee) + $18 (Poker Staff Service Charge)",
    "flags": 0
   },
   "r187": {
@@ -2242,8 +2242,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 400,
    "guarantee_usd": null,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $400 Buy-in = $337 (Tournament Prize Pool) + $45 (Tournament Fee) + $18 (Poker Staff Service Charge)",
    "flags": 0
   },
   "r188": {
@@ -2266,8 +2266,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 1600,
    "guarantee_usd": null,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $1,600 Buy-in = $1,430 (Tournament Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge)",
    "flags": 0
   },
   "r190": {
@@ -2278,8 +2278,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 600,
    "guarantee_usd": 100000,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge)",
    "flags": 0
   },
   "r191": {
@@ -2290,8 +2290,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 3000,
    "guarantee_usd": 2000000,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $3,000 Buy-in = $2,720 (Tournament Prize Pool) + $205 (Tournament Fee) + $75 (Poker Staff Service Charge)",
    "flags": 0
   },
   "r192": {
@@ -2302,7 +2302,7 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": null,
    "guarantee_usd": null,
-   "entry_status": "UNV",
+   "entry_status": "CONT",
    "buy_in": "not published for this event",
    "flags": 1
   },
@@ -2314,8 +2314,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 10500,
    "guarantee_usd": null,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $10,500 Buy-in = $10,000 (Tournament Prize Pool) + $420 (Tournament Fee) + $80 (Poker Staff Service Charge)",
    "flags": 1
   },
   "r194": {
@@ -2326,8 +2326,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 600,
    "guarantee_usd": null,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge)",
    "flags": 0
   },
   "r195": {
@@ -2338,8 +2338,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 1100,
    "guarantee_usd": 100000,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge)",
    "flags": 0
   },
   "r196": {
@@ -2374,8 +2374,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 1600,
    "guarantee_usd": 1000000,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "1,600 Buy-in = $930 Tournament Prize Pool + $500 Mystery Bounty Prize Pool + $120 Tournament Fee + $50 Poker Staff Service Charge",
    "flags": 0
   },
   "r199": {
@@ -2386,8 +2386,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 5000,
    "guarantee_usd": 250000,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $5,000 Buy-in = $4,650 (Tournament Prize Pool) + $ 250 (Tournament Fee) + $100 (Poker Staff Service Charge)",
    "flags": 0
   },
   "r200": {
@@ -2398,8 +2398,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 300,
    "guarantee_usd": null,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $300 Buy-in = $250 (Tournament Prize Pool) + $34 (Tournament Fee) + $16 (Poker Staff Service Charge)",
    "flags": 0
   },
   "r201": {
@@ -2410,7 +2410,7 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": null,
    "guarantee_usd": null,
-   "entry_status": "UNV",
+   "entry_status": "CONT",
    "buy_in": "not published for this event",
    "flags": 1
   },
@@ -2422,7 +2422,7 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": null,
    "guarantee_usd": null,
-   "entry_status": "UNV",
+   "entry_status": "CONT",
    "buy_in": "not published for this event",
    "flags": 1
   },
@@ -2434,8 +2434,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 3000,
    "guarantee_usd": 500000,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $3,000 Buy-in = $2,730 (Tournament Prize Pool) + $200 (Tournament Fee) + $70 (Poker Staff Service Charge)",
    "flags": 0
   },
   "r204": {
@@ -2446,8 +2446,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 10500,
    "guarantee_usd": null,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $10,500 Buy-in = $10,000 (Tournament Prize Pool) + $420 (Tournament Fee) + $80 (Poker Staff Service Charge)",
    "flags": 1
   },
   "r205": {
@@ -2458,8 +2458,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 1600,
    "guarantee_usd": null,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $1,600 Buy-in = $1,430 (Tournament Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge)",
    "flags": 0
   },
   "r206": {
@@ -2470,8 +2470,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 300,
    "guarantee_usd": null,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $300 Buy-in = $250 (Tournament Prize Pool) + $34 (Tournament Fee) + $16 (Poker Staff Service Charge)",
    "flags": 0
   },
   "r207": {
@@ -2494,8 +2494,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 600,
    "guarantee_usd": 50000,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge)",
    "flags": 0
   },
   "r209": {
@@ -2506,8 +2506,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 1600,
    "guarantee_usd": 1000000,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "1,600 Buy-in = $930 Tournament Prize Pool + $500 Mystery Bounty Prize Pool + $120 Tournament Fee + $50 Poker Staff Service Charge",
    "flags": 0
   },
   "r210": {
@@ -2530,8 +2530,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 1600,
    "guarantee_usd": 1000000,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "1,600 Buy-in = $930 Tournament Prize Pool + $500 Mystery Bounty Prize Pool + $120 Tournament Fee + $50 Poker Staff Service Charge",
    "flags": 0
   },
   "r212": {
@@ -2554,8 +2554,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 600,
    "guarantee_usd": 50000,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge)",
    "flags": 0
   },
   "r214": {
@@ -2566,7 +2566,7 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": null,
    "guarantee_usd": null,
-   "entry_status": "UNV",
+   "entry_status": "CONT",
    "buy_in": "not published for this event",
    "flags": 1
   },
@@ -2590,8 +2590,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 10500,
    "guarantee_usd": null,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $10,500 Buy-in = $10,000 (Tournament Prize Pool) + $420 (Tournament Fee) + $80 (Poker Staff Service Charge)",
    "flags": 1
   },
   "r217": {
@@ -2602,7 +2602,7 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": null,
    "guarantee_usd": null,
-   "entry_status": "UNV",
+   "entry_status": "CONT",
    "buy_in": "not published for this event",
    "flags": 1
   },
@@ -2626,8 +2626,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 600,
    "guarantee_usd": 50000,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge)",
    "flags": 0
   },
   "r220": {
@@ -2638,8 +2638,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 1600,
    "guarantee_usd": 1000000,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "1,600 Buy-in = $930 Tournament Prize Pool + $500 Mystery Bounty Prize Pool + $120 Tournament Fee + $50 Poker Staff Service Charge",
    "flags": 0
   },
   "r221": {
@@ -2662,8 +2662,8 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 1100,
    "guarantee_usd": 100000,
-   "entry_status": "UNV",
-   "buy_in": "not published for this event",
+   "entry_status": "RE",
+   "buy_in": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge)",
    "flags": 0
   },
   "r223": {
@@ -2674,7 +2674,7 @@
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": null,
    "guarantee_usd": null,
-   "entry_status": "UNV",
+   "entry_status": "CONT",
    "buy_in": "not published for this event",
    "flags": 1
   },
@@ -2700,7 +2700,7 @@
    "guarantee_usd": 50000,
    "entry_status": "RE",
    "buy_in": "Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge)",
-   "flags": 1
+   "flags": 2
   },
   "r226": {
    "date": "2026-12-22",
