@@ -126,6 +126,57 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
 .calendar .slot .d { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
 .calendar .slot .t { font-size: 18px; font-weight: 700; margin: 2px 0; }
 
+/* ---------- print-friendly views (S16) ----------
+   Ctrl/Cmd-P on any page: navigation, search, filters and buttons are dropped,
+   tables repeat their header sheet after sheet and never split a row mid-way,
+   status chips become outlines so they survive a black-and-white printer, and
+   every external link prints its URL so a paper copy still carries the official
+   source behind each row. */
+@media print {
+  @page { margin: 14mm 12mm; }
+
+  body { background: #fff; color: #000; font-size: 10.5pt; line-height: 1.4; }
+
+  /* Drop interactive chrome; the verification footer stays for provenance. */
+  header.site, #filters, .filters, .toolbar, button { display: none !important; }
+  footer { border-top: 1px solid #999; font-size: 8.5pt; padding: 6px 0 0; text-align: left; }
+
+  main { max-width: none; margin: 0; padding: 0; }
+  main::before {
+    content: "Las Vegas Strip Poker Plan · https://karagemop466-tech.github.io/Poker1/ · printed view — verify each value against the live site before travel.";
+    display: block; font-size: 8pt; color: #555; margin-bottom: 8px;
+  }
+
+  a { color: #000; text-decoration: none; }
+  /* Paper keeps the source: every external link prints its URL once. */
+  main a[href^="http"]::after, footer a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 7pt; font-weight: 400; color: #555; word-break: break-all;
+  }
+
+  /* Tables: full width, header repeated on every sheet, no split rows. */
+  .table-wrap { overflow: visible !important; border: none; border-radius: 0; }
+  table { font-size: 9.5pt; page-break-inside: auto; }
+  thead { display: table-header-group; }
+  tfoot { display: table-footer-group; }
+  th { position: static !important; background: transparent !important; border-bottom: 2px solid #444; }
+  tr, li, .card, .day, .result, .slot, .kpi, .box, .callout { page-break-inside: avoid; }
+
+  /* Section rhythm without wasting sheets. */
+  h1 { font-size: 20pt; }
+  h2 { font-size: 14pt; border-bottom: 1px solid #ccc; padding-bottom: 2px; }
+  h3 { font-size: 12pt; }
+  h1, h2, h3 { page-break-after: avoid; }
+  p, .lead { orphans: 3; widows: 3; }
+
+  /* Status chips become outlines so they stay legible without colour. */
+  .chip { background: #fff !important; border: 1px solid currentColor; }
+
+  .card { border-color: #999; }
+  .grid { gap: 8px; }
+  .md pre, .md code { white-space: pre-wrap; word-break: break-word; }
+}
+
 </style>
 </head>
 <body data-page="venue:bellagio">

@@ -1,6 +1,5 @@
 # Session 212b84be — FINAL INTEGRATION SESSION (branch `arena/212b84be-poker1`, base `aea688a` = `main` at PR #37)
 
-<<<<<<< HEAD
 Claim written 2026-11-17T01:02Z and pushed before any implementation work, per the shared-task-board rules.
 
 | Task | Status | File scope | Owner |
@@ -83,7 +82,6 @@ Claim written 2026-11-17T01:02Z and pushed before any implementation work, per t
   file.
 
 Other sessions' claims are respected: no task claimed by a live session is taken over.
-=======
 # COORDINATION.md
 
 ## Session 0d069ce0 (current branch `arena/0d069ce0-poker1`) — claim before implementation work
@@ -175,7 +173,6 @@ URL (Hard Rock Las Vegas). Full list with what each printed: `research/other-roo
   twelve existing rows. This session produced none rather than estimate one (F72).
 
 ---
->>>>>>> origin/main
 
 ## Session 54ae4633 (current branch `arena/54ae4633-poker1`)
 
@@ -283,7 +280,8 @@ serialized server-side per environment.
 | Task | Status | File scope | Owner |
 |---|---|---|---|
 | Live-site acceptance audit, deployment-health check, requirements-traceability matrix | **Done** — all 21 pages + the deployed JSON fetched live; deployment, workflow and data checks pass; requirements matrix and four defects recorded in [`research/live-site-audit-2026-11-17.md`](research/live-site-audit-2026-11-17.md) | `research/live-site-audit-2026-11-17.md` (new), `COORDINATION.md` | `f2ad3bce` |
-| Fix the global Pages-workflow concurrency group that cancelled other sessions' validate runs (PRs #38/#39/#41/#47 observed) and could cancel a main deploy; `pages.yml` was unclaimed at fix time | **Done** — one group per stream: `pages-deploy` (serialized main deploys), `pages-validate-pr<N>` per PR, `pages-manual-<run>` for dispatch; see audit doc §10 | `.github/workflows/pages.yml`, `research/live-site-audit-2026-11-17.md` §10, `COORDINATION.md` | `f2ad3bce` |
+| Fix the global Pages-workflow concurrency group that cancelled other sessions' validate runs (PRs #38/#39/#41/#47 observed) and could cancel a main deploy; `pages.yml` was unclaimed at fix time | **Done** — one group per stream: `pages-deploy` (serialized main deploys), `pages-validate-pr<N>` per PR, `pages-manual-<run>` for dispatch; see audit doc §10. Complements session `74e9029c`'s deploy-failure diagnosis (above): that diagnosis names this same shared-group cancellation window as the cause of the run 43992732904 artifact race | `.github/workflows/pages.yml`, `research/live-site-audit-2026-11-17.md` §10, `COORDINATION.md` | `f2ad3bce` |
+| Integration: PR → `main`, merge, confirm Pages deploy, record result | **Done** — [PR #47](https://github.com/karagemop466-tech/Poker1/pull/47) **merged** into `main` as `b886aa6` on 2026-11-17. First validation attempt was cancelled by the old shared concurrency group (the defect this PR fixes); after the fix was included and the branch rebased onto `main` (one `COORDINATION.md` conflict with session `74e9029c`'s claim resolved by keeping both sections), the `validate` job passed (run `43994575376`, then re-run `43995409243` context) and the merge-triggered deploy job completed `success` (run `43995409243`). Pages API reports `built` for `1a6242e`, which contains the merge. The first real scheduled-monitor result (session `74e9029c`, 90/94 sources reachable, 0 rows changed) supersedes the audit's §3 "first scheduled run still due" note | `COORDINATION.md` | `f2ad3bce` |
 
 ### Verification performed (2026-11-17, against the deployed commit `aea688a`)
 
@@ -606,6 +604,7 @@ Claimed at commit `304f0bd` (pushed before any data or page change). Base: `main
 **Open conflict, not touched:** PR #24 (`arena/bad329a9-poker1`, opened 2026-11-16) edits nearly every data file and reports 54 single-entry rows against `main`'s 80 (40 possible multi-entry against 60). It is neither merged nor closed here; see Q-D5.
 
 ## Log
+- 2026-11-17: session `f2ad3bce` merged [PR #47](https://github.com/karagemop466-tech/Poker1/pull/47) into `main` as `b886aa6` (validate green, deploy run `43995409243` success, Pages `built`). Delivered: the live-site acceptance audit record, the requirements-traceability matrix (R1–R31), four logged coordination requests (markdown-derived links → 404s; daily weekday map; missing ≤30-min-walk filter; one stale executive-summary bullet), and the per-stream `pages.yml` concurrency fix that stops parallel sessions' validations from cancelling each other. Request 1–3 owners: still open on `main` as of `b886aa6`.
 - 2026-11-17: session `f2ad3bce` claimed and completed the live-site acceptance audit (deployment, workflows,
   all 21 pages, deployed JSON, rate-log arithmetic, requirements matrix). Four defects found and logged as
   coordination requests (broken markdown links → 404s, daily weekday map bug, missing ≤30-min-walk filter,
@@ -723,7 +722,6 @@ Claimed in commit `a698b81` before implementation.
 - 2026-11-17: session `2e5232bc` opened [PR #31](https://github.com/karagemop466-tech/Poker1/pull/31) from `arena/2e5232bc-poker1` to `main`. The `validate` check passed, and PR #31 **merged** at `e9afbd79d7550bc9fa3f90a1177e5cdc3eefa20d` (merge commit). The Pages workflow run for `e9afbd7` completed with `success` and the Pages API reports build status `built` (2026-11-17T00:37:33Z). The live Flagged for Review page at https://karagemop466-tech.github.io/Poker1/pages/flagged.html lists F21 (the restored row). `main`'s `data/tournaments.json` contains the restored `TORSE (2 Day)` row (317 rows).
 - Note for the next session: this sandbox cannot reach `github.io` directly from bash, so the live check used the page fetcher and the GitHub API. The scheduled monitor on `main` has not yet produced a new result; check its first run before relying on `data/monitoring.json`.
 
-<<<<<<< HEAD
 ## Session c0714e1a (this session) — branch `arena/c0714e1a-poker1`
 
 Claim commit pushed before any implementation work, as required. Scope is the integration and
@@ -777,7 +775,6 @@ logs the conflict rather than editing a file inside another claim.
 - **Bellagio and ARIA** print the tax *rule* but no percentage, so 13.38% is stored as an `estimated` value,
   displayed as an estimate, and refused by the validator as the basis of any true cost.
 
-=======
 ## Session 11c7cbe6 — repository review (2026-11-17)
 
 | Task | Status | File scope | Owner |
@@ -811,4 +808,13 @@ No tournament or hotel factual data was edited in this session. All user-request
 - PR #43 created from `arena/3bd2f25b-poker1` to `main` (https://github.com/karagemop466-tech/Poker1/pull/43); merged without waiting for review.
 - Merge result: merged into `main` as a2c0986 on 2026-11-17. PR link: https://github.com/karagemop466-tech/Poker1/pull/43. GitHub Pages: status `built`, source branch `main`, path `/`, live at https://karagemop466-tech.github.io/Poker1/ ; the `pages-build-deployment` succeeded after the merge. All flagged items (F1–F52, U1–U10) remain published on the Flagged for Review page with their source links and did not block the merge.
 - 2026-11-17: session `74e9029c` diagnosed the transient post-merge deploy failure (artifact race under the shared `pages` concurrency group), delivered the first real scheduled-monitor result on `main` through PR [#49](https://github.com/karagemop466-tech/Poker1/pull/49) (merged as `fb6a1ea`; monitor run `43994626646` green; bot commit `e19e8fb`: 90/94 sources reachable, 0 rows changed; issue #50 published), and verified the live site (index, monitoring, flagged). A concurrency-group request for `pages.yml` was logged for PR #44's owner instead of editing that file.
->>>>>>> origin/main
+
+## Session 206debc0 — branch `arena/206debc0-poker1`, base `a2c0986`
+
+Claimed before implementation work on 2026-11-17. Scope is disjoint from the open claims
+(PR #44 `c4774e5a` integration, PR #45 `88793bf4` strip-room survey, PR #46 `bb9a3717`
+walking presentation, PR #36 `c0714e1a` WPT sheets): no open PR touches `assets/style.css`.
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| S16 — print-friendly views of the schedule and the single-entry list (print stylesheet: hide nav/toolbar/filters, black-on-white tables, page-break rules, show link URLs for source columns) so the plan can be carried on paper during the trip | **In progress** | `assets/style.css`, regenerated `index.html` and `pages/*.html`, `COORDINATION.md` | `206debc0` |
