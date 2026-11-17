@@ -236,16 +236,16 @@
    "name": "Bellagio",
    "operator": "MGM Resorts International",
    "venue_link": null,
-   "address": null,
-   "address_status": "unverified",
-   "address_note": "The official Bellagio page read in this session does not print the street address in the text that was returned, so it is left blank.",
+   "address": "3600 Las Vegas Blvd S, Las Vegas, NV",
+   "address_status": "verified",
+   "address_note": "Clark County Department of Business License licensing record 1003760.RES-001: \"Bellagio | 3600 Las Vegas Blvd S | Las Vegas | NV | Licensed\" (read 2026-11-17). A county licensing address, not a statement on the property's own page - the Bellagio page text returned in this session does not print one.",
    "booking_url": "https://bellagio.mgmresorts.com/book-room/",
    "resort_fee_usd": null,
    "resort_fee_status": "unverified",
    "resort_fee_note": "No Bellagio-specific resort fee amount was printed on an official page read in this session, so the value is left blank.",
-   "clark_county_tax_pct": null,
-   "tax_status": "unverified",
-   "tax_note": "No Bellagio-specific room tax rate is published on the property's own pages (FLAGGED.md F47). The Clark County licensing table that settles this for the Venetian, Palazzo, Wynn and Encore is where to look: a search excerpt of that PDF prints a Bellagio row (\"3600 Las Vegas Blvd S ... 13.38% ... Resort Hotel (PGC)\"), but the page of the table carrying it was not retrieved on 2026-11-17, so the value is left blank here rather than published from a snippet (FLAGGED.md F58).",
+   "clark_county_tax_pct": 13.38,
+   "tax_status": "verified",
+   "tax_note": "Verified from the taxing authority, not from the property: Clark County Department of Business License, General Information Guide for Transient Lodging Establishments, licensed-establishment table row \"1003760.RES-001 | Bellagio | 3600 Las Vegas Blvd S | Las Vegas | NV | Licensed | 13.38% | RES | 1 | Transient Lodging Tax - Resort Hotel (PGC)\" (read 2026-11-17; the county record, dated July 2021, is the source - no Bellagio page prints the percentage, FLAGGED.md F47, and F58 records why a county record is used for the rate and never for a fee).",
    "room_rate_usd": null,
    "room_rate_status": "unverified",
    "room_rate_note": "No nightly rate published on an official page read in this session.",
@@ -261,6 +261,14 @@
     {
      "label": "Bellagio official home page (official)",
      "url": "https://bellagio.mgmresorts.com/en.html"
+    },
+    {
+     "label": "Bellagio poker room page: tables, phone, weekly tournament flyers (official)",
+     "url": "https://bellagio.mgmresorts.com/en/casino/poker.html"
+    },
+    {
+     "label": "Clark County licensing table: licensed address and 13.38% Resort Hotel (PGC) rate class (read 2026-11-17)",
+     "url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf"
     }
    ],
    "last_checked": "2026-11-16",
@@ -274,16 +282,16 @@
    "name": "ARIA Resort & Casino",
    "operator": "MGM Resorts International",
    "venue_link": null,
-   "address": null,
-   "address_status": "unverified",
-   "address_note": "The official ARIA page read in this session does not print the street address in the text that was returned, so it is left blank.",
+   "address": "3730 Las Vegas Blvd S, Las Vegas, NV",
+   "address_status": "verified",
+   "address_note": "Clark County licensing record 2000035.RES-001: \"Aria Resort & Casino | 3730 Las Vegas Blvd S | Las Vegas | NV | Licensed\" (read 2026-11-17). A county licensing address; the official ARIA pages read in this session print none.",
    "booking_url": "https://aria.mgmresorts.com/book-room/",
    "resort_fee_usd": null,
    "resort_fee_status": "unverified",
    "resort_fee_note": "No ARIA resort fee amount printed on an official page read in this session.",
-   "clark_county_tax_pct": null,
-   "tax_status": "unverified",
-   "tax_note": "No ARIA-specific room tax rate is published on the property's own poker or hotel pages (the official ARIA poker page, read 2026-11-17, prints 24 tables, the room's location and a phone/e-mail for rates, and no fee or tax). The Clark County licensing table cited for the Venetian and Wynn rows is the place to read the ARIA row; that page was not retrieved in this session, so no rate is published here (FLAGGED.md F58).",
+   "clark_county_tax_pct": 13.38,
+   "tax_status": "verified",
+   "tax_note": "Clark County licensing record 2000035.RES-001: \"Aria Resort & Casino | 3730 Las Vegas Blvd S | Las Vegas | NV | Licensed | 13.38% | RES | 1 | Transient Lodging Tax - Resort Hotel (PGC)\" (read 2026-11-17). The official ARIA pages print no fee and no tax: the ARIA poker page (read 2026-11-17) publishes 24 tables, the room's location and a phone/e-mail for player rates only. County record for the rate, never for a fee (FLAGGED.md F47, F58).",
    "room_rate_usd": null,
    "room_rate_status": "unverified",
    "room_rate_note": "Official ARIA poker page: \"Exclusive Room Rates for qualifying poker players\" - the rate itself is only available by phone (702.590.7232) or by e-mail, so no number is published.",
@@ -303,6 +311,10 @@
     {
      "label": "ARIA poker room and player rates (official)",
      "url": "https://aria.mgmresorts.com/en/casino/poker.html"
+    },
+    {
+     "label": "Clark County licensing table: licensed address and 13.38% Resort Hotel (PGC) rate class (read 2026-11-17)",
+     "url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf"
     }
    ],
    "last_checked": "2026-11-16",
@@ -318,14 +330,14 @@
    "venue_link": null,
    "address": "3570 Las Vegas Blvd South, Las Vegas, NV 89109",
    "address_status": "verified",
-   "address_note": "Official Caesars Palace property page footer.",
+   "address_note": "Official Caesars Palace property page footer: \"3570 Las Vegas Blvd South, Las Vegas, NV 89109\". The Clark County licensing record 1136233.RES-001 lists the same street address for Caesars Palace (\"3570 Las Vegas Blvd S\"), so the operator and the county agree (county record read 2026-11-17).",
    "booking_url": "https://www.caesars.com/book/hotel-calendar?propCode=CLV",
    "resort_fee_usd": null,
    "resort_fee_status": "unverified",
    "resort_fee_note": "No Caesars Palace-specific resort fee amount was printed on an official page read in this session, so the value is left blank.",
-   "clark_county_tax_pct": null,
-   "tax_status": "unverified",
-   "tax_note": "No Caesars Palace-specific room tax rate is published on the property's own pages (eight candidate official URLs produced no fee, FLAGGED.md F47). The Clark County licensing table cited for the Venetian and Wynn rows carries a \"Caesars Palace\" entry class, but that page of the table was not retrieved on 2026-11-17, so no rate is published here (FLAGGED.md F58).",
+   "clark_county_tax_pct": 13.38,
+   "tax_status": "verified",
+   "tax_note": "Clark County licensing record 1136233.RES-001: \"Caesars Palace | 3570 Las Vegas Blvd S | Las Vegas | NV | Licensed | 13.38% | RES | 1 | Transient Lodging Tax - Resort Hotel (PGC)\" (read 2026-11-17). No Caesars Palace page prints the percentage - eight candidate official URLs produced no fee (FLAGGED.md F47) - so the rate is taken from the authority that levies it, and the resort fee stays blank because a county tax record says nothing about a property fee (F58).",
    "room_rate_usd": null,
    "room_rate_status": "unverified",
    "room_rate_note": "No nightly rate published on an official page read in this session.",
@@ -341,6 +353,14 @@
     {
      "label": "Caesars Palace official page incl. address (official)",
      "url": "https://www.caesars.com/caesars-palace"
+    },
+    {
+     "label": "Caesars Palace poker page: 24/7 room and the daily tournament schedule link (official)",
+     "url": "https://www.caesars.com/caesars-palace/casino/poker"
+    },
+    {
+     "label": "Clark County licensing table: licensed address and 13.38% Resort Hotel (PGC) rate class (read 2026-11-17)",
+     "url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf"
     }
    ],
    "last_checked": "2026-11-16",

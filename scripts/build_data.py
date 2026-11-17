@@ -913,7 +913,8 @@ ROOM_DAILY = WYNN_DAILY + [
       labels=["recurring", "multi-flight", "two-day", "prize-figure conflict"],
       fee="Flyer rule 07 prints \"Of the $600 Buy-in, $510 goes to the Prize Pool, $50 is Admin Fees and $40 is "
           "optional staff gratuity\" on a flyer headed \"NLH $1100 BUY-IN\"; the official poker page labels the "
-          "same event \"SATURDAYS | $1,000 NLH\". Three different buy-ins are printed, so buy_in_usd is left blank.",
+          "same event as a $1,000 buy-in (page wording, not this document's). Three different buy-ins are printed, so "
+          "buy_in_usd is left blank rather than choosing one.",
       ex="Rule 08: \"Bellagio guarantees that the total Combined Prize Pool will be at least $50,000.\" "
          "Rule 03: \"Registration will be open until the start of Level 10. (Approximately 5:15pm for Flights 1A, "
          "1B, 4:15pm for 1C and 9:30pm for Flight D).\" Rule 06: \"Each Flight would play until the money (12.5%). "
@@ -955,7 +956,7 @@ ROOM_DAILY = WYNN_DAILY + [
       fee="Flyer rule 06: \"Of the $100 buy in, $70 goes to the prize pool and $30 is held by Caesars Palace as a "
           "maintenance fee.\" Rule 08: \"Of the $50 add-on, $45 goes to the prize pool and $5 is held by Caesars "
           "Palace as a maintenance fee.\"",
-      ex="Schedule table: \"$100 | Add-On Optional $50 | 20,000 starting chips | 20 Minutes | $1,000 guarantee\". "
+      ex="Schedule table row, printed verbatim: \"10 AM $100 $50 20,000 20 Minutes $1,000\". "
          "Rules: \"All Tournaments feature a $50 add-on for 15,000 tournament chips that can only be taken at the "
          "first break. Registration will close at the start of level seven. All tournaments will have a 10-minute "
          "break every six levels.\" Sign-up rule 3: \"Participants may only register themselves, but may re-enter, "
@@ -976,7 +977,7 @@ ROOM_DAILY = WYNN_DAILY + [
       fee="Flyer rule 07: \"Of the $160 buy in, $115 goes to the prize pool and $45 is held by Caesars Palace as a "
           "maintenance fee.\" Rule 08: \"Of the $50 add-on, $45 goes to the prize pool and $5 is held by Caesars "
           "Palace as a maintenance fee.\"",
-      ex="Schedule table: \"$160 | Add-On Optional $50 | 20,000 starting chips | 20 Minutes | $1,000 guarantee\". "
+      ex="Schedule table row, printed verbatim: \"2 PM $160 $50 20,000 20 Minutes $1,000\". "
          "Sign-ups: \"Sign-ups start one hour before the scheduled start of the event\" - 1:00 p.m. for this start.",
       late=None, late_printed=False,
       late_note="No clock time printed: \"Registration will close at the start of level seven\" with 20-minute levels.",
@@ -992,7 +993,7 @@ ROOM_DAILY = WYNN_DAILY + [
       labels=["recurring", "re-entry", "add-on"],
       fee="Flyer rule 06: \"Of the $100 buy in, $70 goes to the prize pool and $30 is held by Caesars Palace as a "
           "maintenance fee.\"",
-      ex="Schedule table: \"$100 | Add-On Optional $50 | 20,000 starting chips | 20 Minutes | $1,000 guarantee\". "
+      ex="Schedule table row, printed verbatim: \"6 PM $100 $50 20,000 20 Minutes $1,000\". "
          "Sign-ups open 5 p.m. (\"one hour before the scheduled start\").",
       late=None, late_printed=False,
       late_note="No clock time printed: \"Registration will close at the start of level seven\" with 20-minute levels.",
@@ -1008,7 +1009,7 @@ ROOM_DAILY = WYNN_DAILY + [
       labels=["recurring", "re-entry", "add-on", "nightcap"],
       fee="Flyer rule 07: \"Of the $160 buy in, $115 goes to the prize pool and $45 is held by Caesars Palace as a "
           "maintenance fee.\"",
-      ex="Schedule table: \"$160 | Add-On Optional $50 | 20,000 starting chips | 20 Minutes | $1,000 guarantee\". "
+      ex="Schedule table row, printed verbatim: \"9 PM $160 $50 20,000 20 Minutes $1,000\". "
          "Rule 27: \"Prize pool may not be chopped until the end of registration.\"",
       late=None, late_printed=False,
       late_note="No clock time printed: \"Registration will close at the start of level seven\" with 20-minute levels.",
@@ -1484,19 +1485,22 @@ HOTELS = [
               {"label": "Clark County licensing table: address and 13.38% Resort Hotel (PGC) rate class (read 2026-11-17)",
                "url": SRC["clark_county_tle_guide"]}]},
  {"id": "bellagio", "name": "Bellagio", "operator": "MGM Resorts International",
-  "venue_link": None, "address": None, "address_status": "unverified",
-  "address_note": "The official Bellagio page read in this session does not print the street address in the text that "
-                  "was returned, so it is left blank.",
+  "venue_link": None, "address": "3600 Las Vegas Blvd S, Las Vegas, NV", "address_status": "verified",
+  "address_note": "Clark County Department of Business License licensing record 1003760.RES-001: \"Bellagio | 3600 "
+                  "Las Vegas Blvd S | Las Vegas | NV | Licensed\" (read 2026-11-17). A county licensing address, not a "
+                  "statement on the property's own page - the Bellagio page text returned in this session does not print "
+                  "one.",
   "booking_url": "https://bellagio.mgmresorts.com/book-room/",
   "resort_fee_usd": None, "resort_fee_status": "unverified",
   "resort_fee_note": "No Bellagio-specific resort fee amount was printed on an official page read in this session, "
                       "so the value is left blank.",
-  "clark_county_tax_pct": None, "tax_status": "unverified",
-  "tax_note": "No Bellagio-specific room tax rate is published on the property's own pages (FLAGGED.md F47). The Clark "
-              "County licensing table that settles this for the Venetian, Palazzo, Wynn and Encore is where to look: a "
-              "search excerpt of that PDF prints a Bellagio row (\"3600 Las Vegas Blvd S ... 13.38% ... Resort Hotel "
-              "(PGC)\"), but the page of the table carrying it was not retrieved on 2026-11-17, so the value is left "
-              "blank here rather than published from a snippet (FLAGGED.md F58).",
+  "clark_county_tax_pct": 13.38, "tax_status": "verified",
+  "tax_note": "Verified from the taxing authority, not from the property: Clark County Department of Business License, "
+              "General Information Guide for Transient Lodging Establishments, licensed-establishment table row "
+              "\"1003760.RES-001 | Bellagio | 3600 Las Vegas Blvd S | Las Vegas | NV | Licensed | 13.38% | RES | 1 | "
+              "Transient Lodging Tax - Resort Hotel (PGC)\" (read 2026-11-17; the county record, dated July 2021, is the "
+              "source - no Bellagio page prints the percentage, FLAGGED.md F47, and F58 records why a county record is "
+              "used for the rate and never for a fee).",
   "room_rate_usd": None, "room_rate_status": "unverified",
   "room_rate_note": "No nightly rate published on an official page read in this session.",
   "parking_note": "No Bellagio parking fee printed on an official page read in this session.",
@@ -1507,19 +1511,24 @@ HOTELS = [
   "walk_note": "Walking time from Bellagio to the Venetian poker room is not published by any official source; "
                "left blank and flagged.",
   "true_cost_per_night_usd": None, "true_cost_note": "No rate, fee or property tax confirmed, so no true cost.",
-  "sources": [{"label": "Bellagio official home page (official)", "url": SRC["bellagio"]}]},
+  "sources": [{"label": "Bellagio official home page (official)", "url": SRC["bellagio"]},
+              {"label": "Bellagio poker room page: tables, phone, weekly tournament flyers (official)", "url": SRC["bellagio_poker"]},
+              {"label": "Clark County licensing table: licensed address and 13.38% Resort Hotel (PGC) rate class (read 2026-11-17)",
+               "url": SRC["clark_county_tle_guide"]}]},
  {"id": "aria", "name": "ARIA Resort & Casino", "operator": "MGM Resorts International",
-  "venue_link": None, "address": None, "address_status": "unverified",
-  "address_note": "The official ARIA page read in this session does not print the street address in the text that was "
-                  "returned, so it is left blank.",
+  "venue_link": None, "address": "3730 Las Vegas Blvd S, Las Vegas, NV", "address_status": "verified",
+  "address_note": "Clark County licensing record 2000035.RES-001: \"Aria Resort & Casino | 3730 Las Vegas Blvd S | "
+                  "Las Vegas | NV | Licensed\" (read 2026-11-17). A county licensing address; the official ARIA pages "
+                  "read in this session print none.",
   "booking_url": "https://aria.mgmresorts.com/book-room/",
   "resort_fee_usd": None, "resort_fee_status": "unverified",
   "resort_fee_note": "No ARIA resort fee amount printed on an official page read in this session.",
-  "clark_county_tax_pct": None, "tax_status": "unverified",
-  "tax_note": "No ARIA-specific room tax rate is published on the property's own poker or hotel pages (the official ARIA "
-              "poker page, read 2026-11-17, prints 24 tables, the room's location and a phone/e-mail for rates, and no "
-              "fee or tax). The Clark County licensing table cited for the Venetian and Wynn rows is the place to read "
-              "the ARIA row; that page was not retrieved in this session, so no rate is published here (FLAGGED.md F58).",
+  "clark_county_tax_pct": 13.38, "tax_status": "verified",
+  "tax_note": "Clark County licensing record 2000035.RES-001: \"Aria Resort & Casino | 3730 Las Vegas Blvd S | Las "
+              "Vegas | NV | Licensed | 13.38% | RES | 1 | Transient Lodging Tax - Resort Hotel (PGC)\" (read "
+              "2026-11-17). The official ARIA pages print no fee and no tax: the ARIA poker page (read 2026-11-17) "
+              "publishes 24 tables, the room's location and a phone/e-mail for player rates only. County record for the "
+              "rate, never for a fee (FLAGGED.md F47, F58).",
   "room_rate_usd": None, "room_rate_status": "unverified",
   "room_rate_note": "Official ARIA poker page: \"Exclusive Room Rates for qualifying poker players\" - the rate itself "
                      "is only available by phone (702.590.7232) or by e-mail, so no number is published.",
@@ -1532,19 +1541,24 @@ HOTELS = [
                "and flagged. ARIA does run a poker room (official ARIA poker page).",
   "true_cost_per_night_usd": None, "true_cost_note": "No rate, fee or property tax confirmed, so no true cost.",
   "sources": [{"label": "ARIA official home page (official)", "url": SRC["aria"]},
-              {"label": "ARIA poker room and player rates (official)", "url": SRC["aria_poker"]}]},
+              {"label": "ARIA poker room and player rates (official)", "url": SRC["aria_poker"]},
+              {"label": "Clark County licensing table: licensed address and 13.38% Resort Hotel (PGC) rate class (read 2026-11-17)",
+               "url": SRC["clark_county_tle_guide"]}]},
  {"id": "caesars", "name": "Caesars Palace", "operator": "Caesars Entertainment",
   "venue_link": None, "address": "3570 Las Vegas Blvd South, Las Vegas, NV 89109", "address_status": "verified",
-  "address_note": "Official Caesars Palace property page footer.",
+  "address_note": "Official Caesars Palace property page footer: \"3570 Las Vegas Blvd South, Las Vegas, NV 89109\". "
+                  "The Clark County licensing record 1136233.RES-001 lists the same street address for Caesars Palace "
+                  "(\"3570 Las Vegas Blvd S\"), so the operator and the county agree (county record read 2026-11-17).",
   "booking_url": "https://www.caesars.com/book/hotel-calendar?propCode=CLV",
   "resort_fee_usd": None, "resort_fee_status": "unverified",
   "resort_fee_note": "No Caesars Palace-specific resort fee amount was printed on an official page read in this "
                       "session, so the value is left blank.",
-  "clark_county_tax_pct": None, "tax_status": "unverified",
-  "tax_note": "No Caesars Palace-specific room tax rate is published on the property's own pages (eight candidate "
-              "official URLs produced no fee, FLAGGED.md F47). The Clark County licensing table cited for the Venetian "
-              "and Wynn rows carries a \"Caesars Palace\" entry class, but that page of the table was not retrieved on "
-              "2026-11-17, so no rate is published here (FLAGGED.md F58).",
+  "clark_county_tax_pct": 13.38, "tax_status": "verified",
+  "tax_note": "Clark County licensing record 1136233.RES-001: \"Caesars Palace | 3570 Las Vegas Blvd S | Las Vegas | "
+              "NV | Licensed | 13.38% | RES | 1 | Transient Lodging Tax - Resort Hotel (PGC)\" (read 2026-11-17). No "
+              "Caesars Palace page prints the percentage - eight candidate official URLs produced no fee (FLAGGED.md "
+              "F47) - so the rate is taken from the authority that levies it, and the resort fee stays blank because a "
+              "county tax record says nothing about a property fee (F58).",
   "room_rate_usd": None, "room_rate_status": "unverified",
   "room_rate_note": "No nightly rate published on an official page read in this session.",
   "parking_note": "No Caesars Palace parking fee printed on an official page read in this session.",
@@ -1556,7 +1570,10 @@ HOTELS = [
   "walk_note": "Walking time from Caesars Palace to the Venetian poker room is not published by any official source; "
                "left blank and flagged.",
   "true_cost_per_night_usd": None, "true_cost_note": "No rate, fee or property tax confirmed, so no true cost.",
-  "sources": [{"label": "Caesars Palace official page incl. address (official)", "url": SRC["caesars"]}]},
+  "sources": [{"label": "Caesars Palace official page incl. address (official)", "url": SRC["caesars"]},
+              {"label": "Caesars Palace poker page: 24/7 room and the daily tournament schedule link (official)", "url": SRC["caesars_poker_page"]},
+              {"label": "Clark County licensing table: licensed address and 13.38% Resort Hotel (PGC) rate class (read 2026-11-17)",
+               "url": SRC["clark_county_tle_guide"]}]},
 ]
 
 # ---------------- dated rate log ----------------

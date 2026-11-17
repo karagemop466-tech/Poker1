@@ -161,9 +161,9 @@ resort fee and the tax; nothing is reconstructed from an assumed rate.
 | [The Palazzo](https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html) | $55 (verified) | 13.38% (verified) | $320.02 (Jan 10–15) | inside the resort | **14 min** (routed) |
 | [Wynn Las Vegas](https://www.wynnlasvegas.com/terms-and-conditions/848671) | $55 plus tax (verified) | **13.38%** (Clark County licensing record; no Wynn page prints it) | blank (no Wynn quote captured yet) | **15 min** | inside the resort (the room is in Encore) |
 | [Encore at Wynn Las Vegas](https://www.wynnlasvegas.com/terms-and-conditions/848671) | $55 plus tax (verified) | **13.38%** (same county record, same licence) | blank (no dated quote) | **14 min** | inside the resort |
-| [Bellagio](https://bellagio.mgmresorts.com/en.html) | blank | blank | blank | **22 min** | **31 min — over the limit** |
-| [ARIA Resort & Casino](https://aria.mgmresorts.com/en.html) | blank | blank | blank | **34 min — over the limit** | **43 min — over the limit** |
-| [Caesars Palace](https://www.caesars.com/caesars-palace) | blank | blank | blank | **23 min** | **32 min — over the limit** |
+| [Bellagio](https://bellagio.mgmresorts.com/en.html) | blank (no official page prints it) | **13.38%** (county licensing record `1003760.RES-001`) | blank (no quote captured) | **22 min** | **31 min — over the limit** |
+| [ARIA Resort & Casino](https://aria.mgmresorts.com/en.html) | blank | **13.38%** (county record `2000035.RES-001`) | blank (rates by phone/e-mail only) | **34 min — over the limit** | **43 min — over the limit** |
+| [Caesars Palace](https://www.caesars.com/caesars-palace) | blank | **13.38%** (county record `1136233.RES-001`) | blank (no quote captured) | **23 min** | **32 min — over the limit** |
 
 **Like-for-like inside the one resort that publishes its breakdown.** Same property group, same engine,
 five different stays, so the comparison is between dates rather than between companies. The nightly
@@ -196,10 +196,14 @@ Vegas together at **13.38%, Transient Lodging Tax - Resort Hotel (PGC)** - the s
 Venetian and Palazzo. That is a county record dated July 2021, labelled as such on the hotel row, and the
 nightly rate is still blank, so no Wynn true cost per night is shown.
 
-**Resort fees and room tax for Bellagio, ARIA and Caesars are still blank.** Eight candidate official URLs were tried
-on 2026-11-17 (resort-fee and policies pages on mgmresorts.com and caesars.com); every one either
-returned a 404 or redirected to a marketing page that prints no fee. They are left blank rather than
-borrowed from another property's terms, and the exact URLs tried are listed in `FLAGGED.md`.
+**Room tax is verified at all seven hotels; the resort fee at three of them is not.** The room-tax gap for
+Bellagio, ARIA and Caesars Palace closed on 2026-11-17, but not from the hotel pages: eight candidate official
+URLs (resort-fee and policies pages on mgmresorts.com and caesars.com) returned a 404 or a marketing page with
+no fee, so the percentage was taken from the authority that levies it - the Clark County licensing table, cited
+by licence number, which puts all three in the 13.38% Resort Hotel (PGC) class (F58). **The resort fee is still
+blank at those three properties, and so is their nightly rate**, because a tax record says nothing about a
+hotel's amenity fee and this dataset will not borrow one property's fee for another. The exact URLs tried are
+listed in `FLAGGED.md`.
 
 **Walking times are routed, not guessed.** All twelve pairs were measured on the OpenStreetMap foot
 network between geocoded coordinates, rounded up to the whole minute, and every row links both the

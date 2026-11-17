@@ -20,7 +20,9 @@ the site; everything under "Still open" is a proposal that has **not** been impl
 | S14 | Put the build script in CI so the site cannot publish with a broken link or missing source. | The workflow rebuilds the data and the pages, fails on any diff, runs the schema and link checks, checks every official source, and renders every page in a headless DOM. | `.github/workflows/pages.yml` |
 | S15 | Require a source URL on every new row. | Enforced by the generator and re-checked by `scripts/check_links.py`. | `scripts/build_data.py`, `scripts/check_links.py` |
 
-New pages added with these: [Daily feed](pages/daily.html) for the recurring Wynn formats, and
+New pages added with these: [Daily feed](pages/daily.html) for the recurring formats - the Wynn dailies first,
+and since 2026-11-17 the Bellagio weekly formats and the Caesars Palace dailies too, each quoted from the room's
+own structure document - and
 [Monitoring](pages/monitoring.html) for source health and changed rows.
 
 ## 2. Still open
@@ -32,9 +34,9 @@ New pages added with these: [Daily feed](pages/daily.html) for the recurring Wyn
 | S18 | Show the payout table for each event, not just the guarantee. | A guarantee is not the same as a payout ladder. | The structure sheets publish full ladders only for some events; the rest would stay blank. |
 | S19 | Track the prize pool actually reached once an event finishes. | Shows how close a guarantee was. | Needs results, which the official pages publish as links only. |
 | S20 | Verify walking times and store them. | **Done 2026-11-17** for all twelve pairs, from OpenStreetMap foot routing between geocoded coordinates, with the 30-minute rule applied and four pairs flagged as over it. | The open part is official confirmation: no property publishes its own walking time, so these remain routed, not published. |
-| S21 | A per-property true cost for the MGM and Caesars properties. | Completes the hotel comparison. | Blocked on I7: eight candidate official URLs returned 404s or marketing pages with no fee (F47). Needs either a working fee page or a booking-engine breakdown for a specific stay. |
+| S21 | A per-property true cost for the MGM and Caesars properties. | **Room tax closed 2026-11-17** for Bellagio, ARIA and Caesars Palace (13.38%, verified from the Clark County licensing record, F58), which removes one of the two unknowns. Completes the hotel comparison as soon as a nightly rate and a resort fee are captured. | Blocked on I7: eight candidate official URLs returned 404s or marketing pages with no fee (F47). Needs either a working fee page or a booking-engine breakdown for a specific stay. |
 | S22 | Track several quoted rates for the same property on different dates. | **Partly done:** five dated quotes are logged and the calculator sorts them by true cost per night. | The reporting view is live; what is missing is repeat quotes on the *same* dates to show movement. |
-| S23 | A weekly calendar of the daily formats across a whole trip. | See at a glance which nights have a format. | The daily page already shows the weekday map. A date-based version needs the trip dates. |
+| S23 | A weekly calendar of the daily formats across a whole trip. | See at a glance which nights have a format. | **Better supported since 2026-11-17:** the feed now carries 11 formats over three rooms, so the weekday map covers the Strip rather than one property. A date-based version needs the trip dates. |
 
 ## 3. Proposed next, ranked by decision value
 

@@ -151,7 +151,7 @@
     "two-day",
     "prize-figure conflict"
    ],
-   "fee": "Flyer rule 07 prints \"Of the $600 Buy-in, $510 goes to the Prize Pool, $50 is Admin Fees and $40 is optional staff gratuity\" on a flyer headed \"NLH $1100 BUY-IN\"; the official poker page labels the same event \"SATURDAYS | $1,000 NLH\". Three different buy-ins are printed, so buy_in_usd is left blank.",
+   "fee": "Flyer rule 07 prints \"Of the $600 Buy-in, $510 goes to the Prize Pool, $50 is Admin Fees and $40 is optional staff gratuity\" on a flyer headed \"NLH $1100 BUY-IN\"; the official poker page labels the same event as a $1,000 buy-in (page wording, not this document's). Three different buy-ins are printed, so buy_in_usd is left blank rather than choosing one.",
    "ex": "Rule 08: \"Bellagio guarantees that the total Combined Prize Pool will be at least $50,000.\" Rule 03: \"Registration will be open until the start of Level 10. (Approximately 5:15pm for Flights 1A, 1B, 4:15pm for 1C and 9:30pm for Flight D).\" Rule 06: \"Each Flight would play until the money (12.5%). Must bag chips to make Day 2 and be in the money.\"",
    "late": "17:15",
    "late_printed": true,
@@ -212,7 +212,7 @@
     "earliest daily on the Strip"
    ],
    "fee": "Flyer rule 06: \"Of the $100 buy in, $70 goes to the prize pool and $30 is held by Caesars Palace as a maintenance fee.\" Rule 08: \"Of the $50 add-on, $45 goes to the prize pool and $5 is held by Caesars Palace as a maintenance fee.\"",
-   "ex": "Schedule table: \"$100 | Add-On Optional $50 | 20,000 starting chips | 20 Minutes | $1,000 guarantee\". Rules: \"All Tournaments feature a $50 add-on for 15,000 tournament chips that can only be taken at the first break. Registration will close at the start of level seven. All tournaments will have a 10-minute break every six levels.\" Sign-up rule 3: \"Participants may only register themselves, but may re-enter, by paying the entry fee, upon elimination within the first break of play.\"",
+   "ex": "Schedule table row, printed verbatim: \"10 AM $100 $50 20,000 20 Minutes $1,000\". Rules: \"All Tournaments feature a $50 add-on for 15,000 tournament chips that can only be taken at the first break. Registration will close at the start of level seven. All tournaments will have a 10-minute break every six levels.\" Sign-up rule 3: \"Participants may only register themselves, but may re-enter, by paying the entry fee, upon elimination within the first break of play.\"",
    "late": null,
    "late_printed": false,
    "late_note": "No clock time printed: \"Registration will close at the start of level seven\" with 20-minute levels.",
@@ -241,7 +241,7 @@
     "add-on"
    ],
    "fee": "Flyer rule 07: \"Of the $160 buy in, $115 goes to the prize pool and $45 is held by Caesars Palace as a maintenance fee.\" Rule 08: \"Of the $50 add-on, $45 goes to the prize pool and $5 is held by Caesars Palace as a maintenance fee.\"",
-   "ex": "Schedule table: \"$160 | Add-On Optional $50 | 20,000 starting chips | 20 Minutes | $1,000 guarantee\". Sign-ups: \"Sign-ups start one hour before the scheduled start of the event\" - 1:00 p.m. for this start.",
+   "ex": "Schedule table row, printed verbatim: \"2 PM $160 $50 20,000 20 Minutes $1,000\". Sign-ups: \"Sign-ups start one hour before the scheduled start of the event\" - 1:00 p.m. for this start.",
    "late": null,
    "late_printed": false,
    "late_note": "No clock time printed: \"Registration will close at the start of level seven\" with 20-minute levels.",
@@ -270,7 +270,7 @@
     "add-on"
    ],
    "fee": "Flyer rule 06: \"Of the $100 buy in, $70 goes to the prize pool and $30 is held by Caesars Palace as a maintenance fee.\"",
-   "ex": "Schedule table: \"$100 | Add-On Optional $50 | 20,000 starting chips | 20 Minutes | $1,000 guarantee\". Sign-ups open 5 p.m. (\"one hour before the scheduled start\").",
+   "ex": "Schedule table row, printed verbatim: \"6 PM $100 $50 20,000 20 Minutes $1,000\". Sign-ups open 5 p.m. (\"one hour before the scheduled start\").",
    "late": null,
    "late_printed": false,
    "late_note": "No clock time printed: \"Registration will close at the start of level seven\" with 20-minute levels.",
@@ -300,7 +300,7 @@
     "nightcap"
    ],
    "fee": "Flyer rule 07: \"Of the $160 buy in, $115 goes to the prize pool and $45 is held by Caesars Palace as a maintenance fee.\"",
-   "ex": "Schedule table: \"$160 | Add-On Optional $50 | 20,000 starting chips | 20 Minutes | $1,000 guarantee\". Rule 27: \"Prize pool may not be chopped until the end of registration.\"",
+   "ex": "Schedule table row, printed verbatim: \"9 PM $160 $50 20,000 20 Minutes $1,000\". Rule 27: \"Prize pool may not be chopped until the end of registration.\"",
    "late": null,
    "late_printed": false,
    "late_note": "No clock time printed: \"Registration will close at the start of level seven\" with 20-minute levels.",

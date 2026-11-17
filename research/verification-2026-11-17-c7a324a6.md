@@ -101,11 +101,21 @@ What changed, and what did not:
   page read in any session printed the address, so it had been left blank; the county record prints it. The
   property's own map and poker page remain the source for the room being at The Palazzo, level 2 of the
   Grand Canal Shoppes.
-* **Bellagio, ARIA and Caesars Palace: still blank, deliberately.** The same table carries their rows, but
-  the page of the table holding them was not retrieved in this session — the document is 12 chunks and only
-  the W and V ends were read. A search excerpt of the PDF shows a Bellagio row
-  (`3600 Las Vegas Blvd S … 13.38% … Resort Hotel (PGC)`), and that is recorded as a *next step*, not as a
-  verified value (F58). The one-line task for the next session is in `QUESTIONS.md` I7.
+* **Bellagio, ARIA and Caesars Palace: verified from the same record, one step later.** This session's own
+  fetch of the guide returned only the W and V end of the table (the document is 12 chunks), so those three
+  hotels were deliberately left blank rather than filled from a search excerpt. The monitor job then archived
+  the whole PDF at `data/snapshots/clark_county_tle_guide.txt` (1,106 lines, fetched by GitHub Actions from the
+  county's own URL at 2026-11-17T01:25Z), whose licensed-establishment table prints
+  `1003760.RES-001 | Bellagio | 3600 Las Vegas Blvd S | 13.38% | RES | 1 | Resort Hotel (PGC)`,
+  `2000035.RES-001 | Aria Resort & Casino | 3730 Las Vegas Blvd S | 13.38% | RES | 1 | Resort Hotel (PGC)` and
+  `1136233.RES-001 | Caesars Palace | 3570 Las Vegas Blvd S | 13.38% | RES | 1 | Resort Hotel (PGC)`. All three
+  rows now publish **13.38%, `verified`**, citing the licence number, and Bellagio (3600) and ARIA (3730) gain
+  a licensed street address where they had none. Caesars Palace is the one property where the operator and the
+  county agree on the address (`3570 Las Vegas Blvd South` vs `3570 Las Vegas Blvd S`), which is said on the
+  row. **What did not change: the resort fee, the nightly rate and the cancellation deadline.** A county tax
+  record says nothing about a hotel's own amenity fee, so those stay blank (U2-U4) - which is exactly the
+  division this record was written to enforce. The published flag F58 carries the whole story, including that
+  the snippet route was rejected before the document itself arrived.
 * This record is a county publication dated July 2021. It is cited for the address and the tax **class**,
   and the 13.38% figure it prints for these resorts agrees with the Venetian's 2026 hotel terms and with
   both booking-engine breakdowns, each of which reproduces at exactly 13.38% of room + resort fee. Where
@@ -123,13 +133,35 @@ third session to hit the same wall on the calendar view; the quotes that worked 
 flow, not the calendar, and the difference is recorded here so the next session does not re-run the
 calendar URL expecting numbers.
 
-## 6. Commands run
+## 6. The daily feed is now machine-checked too (`scripts/verify_rows.py` gained a daily section)
+
+Recurring formats have no dated row, so nothing checked them. `verify_rows.py` now verifies every row of
+`data/daily.json` against the official document its own `source_url` points at, using the snapshot the monitor
+job archived (`data/snapshots/<source id>.txt`), with four checks per row:
+
+1. **money** — `buy_in_usd` and `guarantee_usd` must be printed as a number token in that document;
+2. **time** — the published start (and any printed late-registration close) must appear as a time token;
+3. **quote** — every text span a row prints inside double quotes must occur **verbatim** in the document, after
+   whitespace and ligature normalisation. A quotation the source does not contain is a hard failure, not a review
+   item;
+4. **entry** — a row published as single entry fails if the document contains any re-entry, add-on, flight or
+   Day 2 wording, and a re-entry / multi-entry row is reported for review if the document shows no such relief.
+
+Running it found **five real defects in this session's own rows**, which are fixed: four Caesars rows quoted a
+pipe-separated reflow of the schedule *table* as if it were a sentence from the flyer (the flyer prints
+`10 AM $100 $50 20,000 20 Minutes $1,000`), and the Bellagio Saturday row carried a quotation mark pair whose
+text came from the *poker page* rather than the structure PDF the row cites - that label is now described in
+prose instead of quoted, since this check can only certify the cited document. Total after the fixes:
+**335 rows, 1,218 field checks, 0 hard failures, 1 review item** (the pre-existing WPT Dec 21 8 p.m./6 p.m.
+conflict, F4).
+
+## 7. Commands run
 
 - `python3 scripts/build_data.py` → 317 rows, 70 schedule days, 11 daily-feed formats (4 Wynn, 3 Bellagio,
   4 Caesars Palace), 78 flagged rows.
 - `python3 scripts/build_site.py` → 21 pages.
 - `python3 scripts/check_links.py` → OK (schemas, local links, approved source hosts, rule objects,
   schedule contract, dated rate log, provenance manifest, page links).
-- `python3 scripts/verify_rows.py` → 324 rows, 1,122 field checks, 0 hard failures, 1 review item
-  (the WPT Dec 21 8 p.m./6 p.m. conflict, published as F4).
+- `python3 scripts/verify_rows.py` → **335 rows (324 tournament + 11 daily feed), 1,218 field checks,
+  0 hard failures, 1 review item** (the WPT Dec 21 8 p.m./6 p.m. conflict, published as F4).
 - `NODE_PATH=/tmp/jsdom/node_modules node scripts/smoke_test.js` → 21/21 pages render.

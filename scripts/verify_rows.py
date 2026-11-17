@@ -149,6 +149,87 @@ def entry_expected(series, url, status, event_no=None):
     return None, None
 
 
+# ---------------------------------------------------------------------------
+# The morning daily feed (data/daily.json): recurring formats, no dated row.
+# Same principle as the tournament rows - every published value must be found in
+# the official document the monitor archived for the source the row cites.
+# ---------------------------------------------------------------------------
+
+QUOTED = re.compile("\u201c([^\u201d]{25,})\u201d|\"([^\"\\n]{25,})\"")
+RELIEF = ("re enter", "re-enter", "rebuy", "re buy", "add on", "add-on", "flight",
+          "day 2", "late registration", "restart")
+
+
+def snapshot_for_source_url(url):
+    """The archived official text for a source URL, via data/sources.json ids."""
+    if not url:
+        return None, None
+    try:
+        srcs = load("sources.json")["sources"]
+    except (KeyError, FileNotFoundError):
+        return None, None
+    sid = next((e["id"] for e in srcs if e.get("url") == url), None)
+    if not sid:
+        return None, None
+    path = SNAP / ("%s.txt" % sid)
+    return (sid, path.read_text(errors="ignore")) if path.exists() else (sid, None)
+
+
+def verify_daily():
+    """(results, n_checks, failures) for every row of the daily feed."""
+    daily = load("daily.json")["rows"]
+    results, n_checks = [], 0
+    for row in daily:
+        sid, text = snapshot_for_source_url(row.get("source_url"))
+        checks = []
+        if not text:
+            checks.append(("source document archived", False,
+                           "no snapshot for source id %r - re-run check_source_facts.py" % sid,
+                           "fail"))
+        else:
+            ntext = norm(text).lower()
+            mt = money_tokens(text)
+            tt = time_tokens(text)
+            for f in ("buy_in_usd", "guarantee_usd"):
+                v = row.get(f)
+                if v is not None:
+                    n_checks += 1
+                    checks.append((f, str(int(v)) in mt, "$%s not printed in %s" % (v, sid), "fail"))
+            for f in ("start", "late"):
+                v = row.get(f)
+                if v:
+                    n_checks += 1
+                    checks.append((f, row_time(v) in tt, "%s not printed in %s" % (v, sid), "fail"))
+            for f in ("fee", "ex", "stack", "late_note", "single_entry", "flag"):
+                v = row.get(f)
+                if isinstance(v, str):
+                    for m in QUOTED.finditer(v):
+                        q = m.group(1) or m.group(2)
+                        n_checks += 1
+                        checks.append(("%s quote" % f, norm(q).lower() in ntext,
+                                       "quoted from %s but not found in it: %s" % (sid, q[:70]), "fail"))
+            low = ntext
+            relief = any(k in low for k in RELIEF)
+            n_checks += 1
+            if row.get("status") == "SE":
+                checks.append(("single entry", not relief,
+                               "published as single entry, but %s prints re-entry / add-on / "
+                               "flight wording" % sid, "fail"))
+            else:
+                checks.append(("registration relief", relief,
+                               "%s but no re-entry / add-on / flight wording in %s" %
+                               (row.get("status"), sid), "review"))
+        failed = [c for c in checks if not c[1] and c[3] == "fail"]
+        review = [c for c in checks if not c[1] and c[3] == "review"]
+        results.append({"id": row["id"], "venue": row.get("venue"), "name": row.get("name"),
+                        "source": row.get("source_url"), "snapshot": sid,
+                        "checked": len(checks) if text else 0,
+                        "failed": [{"field": f, "detail": d} for f, _, d, _ in failed],
+                        "review": [{"field": f, "detail": d} for f, _, d, _ in review]})
+    return results, n_checks
+
+
+
 def main():
     rows = load("tournaments.json")["rows"]
     results, issues = [], []
@@ -234,7 +315,16 @@ def main():
 
     n_checked = sum(x["checked"] for x in results)
     n_review = sum(len(x.get("review") or []) for x in results)
-    print(f"verified rows: {len(results)}   field checks: {n_checked}   "
+    daily_results, n_daily_checks = verify_daily()
+    for d in daily_results:
+        for f in d["failed"]:
+            issues.append({"id": d["id"], "series": "Daily feed (%s)" % d.get("venue"),
+                           "name": d.get("name"), "source": d.get("source"),
+                           "failed": [f]})
+    n_checked += n_daily_checks
+    n_review += sum(len(x.get("review") or []) for x in daily_results)
+
+    print(f"verified rows: {len(results) + len(daily_results)}   field checks: {n_checked}   "
           f"hard failures: {len(issues)}   review items: {n_review}")
     if issues:
         print("\nUNVERIFIED / CONTRADICTED VALUES (left blank or flagged, never guessed):")
@@ -244,9 +334,9 @@ def main():
                 print(f"      - {f['field']}: {f['detail']}  (source: {i.get('source')})")
     if n_review:
         print("\nREVIEW ITEMS (documented interpretation, not a data error):")
-        for x in results:
+        for x in results + daily_results:
             for f in (x.get("review") or []):
-                print(f"  {x['id']}  {x.get('series','')}  {f['field']}: {f['detail']}")
+                print(f"  {x['id']}  {x.get('series') or x.get('venue','')}  {f['field']}: {f['detail']}")
     if rate_issues:
         print("\nRATE ARITHMETIC FAILURES:")
         for i in rate_issues:
@@ -259,12 +349,18 @@ def main():
         "method": "Each published numeric/date/time value was searched in the raw official "
                   "document text archived under data/snapshots/. Missing = UNVERIFIED. "
                   "Entry status was cross-checked against the independently parsed sheet "
-                  "verdict (structure_rules.json) or the WPT registration wording.",
+                  "verdict (structure_rules.json) or the WPT registration wording. The daily "
+                  "feed (data/daily.json) is checked the same way against the document its own "
+                  "source_url points at, and every text span it prints in quotes must appear "
+                  "verbatim in that document.",
         "rows_checked": len(results),
         "field_checks": n_checked,
         "hard_failures": issues,
-        "review_items": sum(len(x.get("review") or []) for x in results),
+        "review_items": n_review,
         "rate_arithmetic_failures": rate_issues,
+        "daily_feed_rows": len(daily_results),
+        "daily_feed_checks": n_daily_checks,
+        "daily_feed": daily_results,
     }
     (ROOT / "data" / "row_verification.json").write_text(json.dumps(out, indent=2))
     print("\nwrote data/row_verification.json")
