@@ -11,8 +11,8 @@ primary event and a conditional fallback, not an impossible sequence" and the sc
 
 | Task | Status | File scope | Owner |
 |---|---|---|---|
-| Fix the `est_end` midnight-wrap in the day plan: compare fallbacks and overlaps in absolute minutes using the stored `est_duration_min`, and stop proposing a fallback that starts on the same day as a primary that runs past midnight. Store an `est_end_next_day` flag so the renderer can print "(next day)". | **Done** — `build_schedule` now computes `a_end = to_min(a.start) + a.est_duration_min` and treats `a_end >= 1440` as a next-day finish. A primary that ends the next day gets no same-day fallback; every later event that day is flagged as an overlap. | `scripts/build_data.py` (`build_schedule`), `data/schedule.json` (generated) | `9aad3bd2` |
-| Render the "(next day)" marker for a wrapped `est_end` on the schedule page so a finish time that reads before its start is never shown as a same-day time. | **Done** — the schedule renderer prints "(next day)" when `est_end_next_day` is set; conflict details say "until HH:MM the next day". | `assets/app.js` (schedule renderer), regenerated `pages/schedule.html` | `9aad3bd2` |
+| Fix the `est_end` midnight-wrap in the day plan: compare fallbacks and overlaps in absolute minutes using the stored `est_duration_min`, and stop proposing a fallback that starts on the same day as a primary that runs past midnight. Store an `est_end_next_day` flag so the renderer can print "(next day)". | **Superseded by `main`** — `main` already carries this fix via PR #72 (`aecf003`), a more complete `end_minutes` implementation with same-start-time overlap detection and `overlap_pairs`. This session's independent rewrite was dropped during the rebase in favour of `main`'s version; verified 0 impossible fallbacks / 271 overlaps on the merged tree. | `scripts/build_data.py` (adopted from `main`), `data/schedule.json` (matches `main`) | `9aad3bd2` |
+| Render the "(next day)" marker for a wrapped `est_end` on the schedule page so a finish time that reads before its start is never shown as a same-day time. | **Superseded by `main`** — `main`'s schedule renderer already prints "the next day" via `est_end_next_day`. The one wording conflict during the rebase was resolved to `main`'s text. | `assets/app.js` (schedule renderer, adopted from `main`) | `9aad3bd2` |
 | REQUEST 2 (session 206debc0): add `www.rwlasvegas.com` to the approved official-host set in `check_source_facts.py` and add `set -o pipefail` to the source-facts workflow so a refusal to run is a red job, not a silent success. | **Done** — both `www.rwlasvegas.com` and `rwlasvegas.com` added to `OFFICIAL_HOSTS`; `assert_official(manifest["sources"])` now passes (no refusal); the workflow step runs `set -o pipefail; … | tee`. | `scripts/check_source_facts.py`, `.github/workflows/source-facts.yml` | `9aad3bd2` |
 | Remove the doubled `<h1>` on the five markdown-backed pages (summary, questions, suggestions, flagged, review): the template prints a static `<h1>` and the Markdown file prints its own `#` heading. Keep one heading. | **Done** — `markdownPage` strips a leading `# Title` line from the document; the template `<h1>` is the single heading. Verified in a headless DOM: each of the five pages renders exactly one `<h1>`. | `assets/app.js` (`markdownPage`), regenerated `pages/summary.html`, `pages/questions.html`, `pages/suggestions.html`, `pages/flagged.html`, `pages/review.html` | `9aad3bd2` |
 | Requirement 4 ("Add a 'last checked' date to each row"): the tournament rows carry `last_checked` but the tournament tables did not render it. Add a "Last checked" column to every tournament table. | **Done** — `tournamentColumns` now renders a "Last checked" column from `row.last_checked` (all 317 rows carry 2026-11-17). | `assets/app.js` (`tournamentColumns`), regenerated all tournament pages | `9aad3bd2` |
@@ -28,30 +28,50 @@ already in the dataset keeps its source and retrieval date.
 ### Session 9aad3bd2 — verification performed and results
 
 - `python3 scripts/build_data.py` → 317 rows (80 SE / 67 MULTI / 107 RE / 25 CONT / 38 UNV), 70 schedule
-  days, 79 flagged rows. `data/schedule.json` regenerated with the midnight-wrap fix.
-- **Midnight-wrap fix measured.** Before: 121 rows had `est_end` earlier than their start, 24 of 24
-  conditional fallbacks were impossible sequences, 14 overlaps flagged. After: 121 events carry
-  `est_end_next_day`, **0** impossible fallbacks remain, **245** overlaps are flagged, and the 40 days whose
-  primary runs past midnight correctly report "no same-day fallback" instead of a false fallback. The
-  estimate is derived from the published level structure (e.g. the $300 NLH 1A $75K GTD: 30 levels × 40 min
-  + 7 × 15-min breaks = 1305 min = 21.75 h, start 11:10 → 08:55 next day) — an estimate, labelled as such, not
-  an official finish time.
-- `python3 scripts/build_site.py` → 23 pages, no diff beyond the regenerated content.
+  days, 79 flagged rows. `data/schedule.json` matches `main` exactly (deterministic).
+- **Midnight-wrap — resolution via rebase.** While rebasing onto the moving `main`, this session found that
+  **`main` already carries the midnight-wrap fix** (PR #72, commit `aecf003` "Fix the midnight-wrap in the
+  schedule overlap arithmetic and gate it in CI", merged as `39e36b0`). Its `build_schedule` is the more
+  complete of the two: an `end_minutes` helper, same-start-time overlap detection, an `overlap_pairs` total,
+  and a "the next day" renderer. This session's independent `build_schedule` rewrite was therefore **redundant
+  and was dropped** in favour of `main`'s version (`git checkout HEAD -- scripts/build_data.py
+  data/schedule.json index.html pages/`), and the single `app.js` wording conflict was resolved to `main`'s
+  "the next day". Measured on the merged tree: 121 events carry `est_end_next_day`, **0** impossible
+  fallbacks remain, **271** overlaps are flagged (the higher count vs. this session's first draft is `main`'s
+  same-start-time detection). The estimate is derived from the published level structure (e.g. the $300 NLH 1A
+  $75K GTD: 30 levels × 40 min + 7 × 15-min breaks = 1305 min = 21.75 h, start 11:10 → 08:55 next day) — an
+  estimate, labelled as such, not an official finish time.
+- `python3 scripts/build_site.py` → 23 pages, regenerated to inline the merged `assets/app.js`.
 - `python3 scripts/check_links.py` → OK (56 files free of conflict markers, 23 pages, 317 rows, 7 hotels,
   5 dated rates, 70 schedule days; source, rules, schedule, hotel-rate/cost, provenance and page-link checks).
 - `python3 scripts/verify_rows.py` → 324 verified rows, 1,296 field checks, 0 hard failures, 1 documented
   review item (`r225` start 20:00 — interpretation, not a data error).
 - `node scripts/smoke_test.js` → 23/23 pages render headlessly.
-- Headless-DOM render checks: schedule page shows 171 "(next day)" markers and 52 overlap-flagged blocks;
-  the five markdown pages each render exactly one `<h1>`; the single-entry page renders 80 rows with the new
-  "Last checked" column and 327 rule "retrieved" dates.
+- Headless-DOM render checks: the five markdown pages each render exactly one `<h1>`; the single-entry page
+  renders 80 rows with the new "Last checked" column and rule "retrieved" dates.
 - `assert_official(manifest["sources"])` in `check_source_facts.py` → PASS (the rwlasvegas refusal is gone).
 
-**No new irregularity was introduced.** The fixes correct presentation and derived-schedule correctness only;
-they do not change any value read from an official source. The one open review item (`r225`) is unchanged and
-is already published on the Flagged for Review page.
+**What this session uniquely contributes** (the midnight-wrap work being already on `main`): the "Last checked"
+column on every tournament table (requirement 4), the rule-field `retrieved_on` in the rule cell (requirement
+2), the doubled-`<h1>` strip on the five markdown pages, the `www.rwlasvegas.com` host approval and the
+`set -o pipefail` guard (REQUEST 2). **No new irregularity was introduced.** These are presentation and
+provenance-guard fixes only; they do not change any value read from an official source. The one open review
+item (`r225`) is unchanged and is already published on the Flagged for Review page.
 
-## Session 212b84be — FINAL INTEGRATION SESSION (branch `arena/212b84be-poker1`, base `aea688a` = `main` at PR #37)
+### Session 9aad3bd2 — rebase conflict log
+
+`git pull --rebase origin main` hit a conflict in `scripts/build_data.py`, `assets/app.js`,
+`data/schedule.json`, `index.html` and `pages/*.html` because `main` advanced (PR #72 landed the midnight-wrap
+fix and regenerated the derived files) while this session's fix commit was in flight. Resolution, with no other
+session's work discarded:
+- `scripts/build_data.py`, `data/schedule.json`, `index.html`, `pages/*.html` → taken from `main` (HEAD), since
+  this session's `build_schedule` was redundant against PR #72.
+- `assets/app.js` → the one wording conflict (`" the next day"` vs `" (next day)"`) resolved to `main`'s; this
+  session's three unique `app.js` edits (rule-cell retrieval date, "Last checked" column, markdown `<h1>` strip)
+  were already applied cleanly and were kept.
+- Regenerated `data/schedule.json` and the pages with `build_data.py` / `build_site.py`; the regenerated
+  `data/schedule.json` is byte-identical to `main`'s (deterministic). Rebased and force-pushed with
+  `--force-with-lease` as `5af9004`.
 
 ## Session 212b84be — FINAL INTEGRATION SESSION (branch `arena/212b84be-poker1`, base `aea688a` = `main` at PR #37)
 ## Session 8a12503e — branch `arena/8a12503e-poker1` (base `aea688a`, `main` after PR #37)
