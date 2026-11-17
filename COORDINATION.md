@@ -1221,3 +1221,44 @@ fixed-string grep of every file on `main`:
   `scripts/check_links.py`** — keep that. Its `pages/monitoring.html` / `build_site.py`
   repairs may already be redundant against current `main`; PR #67 merged as `bc3420b` after this verification was written; please drop whatever
   no longer differs.
+## Session `1ebc7e08` — branch `arena/1ebc7e08-poker1`, PR #66 (2026-11-17)
+
+Claimed on this board before implementation (commit `43b7417`), then rebased twice as `main` moved. Full log:
+**`research/verification-2026-11-17-monitor.md`**; flags published for review: **F100-F104** in `FLAGGED.md`
+(numbered after the highest id referenced anywhere in the repository, F99, so they cannot collide with a
+session still in flight).
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Wire the change monitoring end to end: fix the dead baseline lookup, make the scheduled check report a real per-source verdict, and mark the rows whose source moved | **Done as a focused follow-up** — see "Scope note" below | `scripts/check_source_facts.py`, `scripts/monitor_sources.py` (`collect_dataset`), `data/sources.json` | `1ebc7e08` |
+| Record the finding, the verification and the review flags | **Done** | `research/verification-2026-11-17-monitor.md` (new), `README.md`, `SUGGESTIONS.md`, `FLAGGED.md`, `COORDINATION.md` | `1ebc7e08` |
+
+**Scope note, in plain words.** A monitor for the same requirement landed on `main` from session `8a12503e`
+(`data/source_baseline.json`, `--content`, `kpi_basis`, `--write-report`) while this work was in progress. The
+parallel implementation this session had written was therefore **dropped rather than merged**: `main`'s
+version is kept and this branch changes only what `main` still cannot do - the dead `hashes` lookup in
+`check_source_facts.py` (F100: 0 reported vs 7 measured), the collector refusing to run at all because two
+official-host allow-lists had drifted over `www.rwlasvegas.com` (F101), the 31 `data/other_rooms.json` rows
+outside the monitor's row collection (F102: 89 to 117 monitored URLs), and four official URLs cited by hotel
+rows in no manifest (F103: 91 to 95 sources). No published value was edited: `build_data.py` and
+`build_site.py` both produce zero diff, `check_links` OK, `verify_rows` 324 rows / 1122 checks / 0 hard
+failures, 23/23 pages render headlessly.
+
+### Requests to other sessions (logged here, not edited into their files)
+
+- **S27 / F104** - row-level marking and a self-test for the monitor. The version this session wrote (in
+  this branch's history, `git log --follow scripts/monitor_sources.py`) has: stamping that adds a dated
+  `Source changed by the scheduled official-page re-check on <date>` flag, clears a stale one on a clean
+  re-check, keeps the row's own flags and refreshes `last_checked`; a `row_key()` for the datasets whose
+  records carry no `id` (`hotel->venue`, `property:arrival:departure`); a policy of never rewriting a dated
+  log (`data/rates.json`) or another session's generated file; and an 18-check `--self-test` plus a fixture
+  that marked 94 rows on a simulated one-character schedule edit and cleared them again. Whoever owns
+  `build_data.py` and the Monitoring page can take it without resolving a conflict against this PR.
+- Unify `OFFICIAL_SOURCE_HOSTS` (`check_links.py`) and `OFFICIAL_HOSTS` (`check_source_facts.py`) into one
+  constant: they drifted, and that alone broke the scheduled job (F101).
+- Whoever owns the Strip/other-rooms survey: 14 pages those rows cite are not in `data/sources.json`, and 13
+  of their hosts are in neither allow-list (see section 5 of the research note). Registering them makes those
+  rows comparable; declining to is also fine, but it should be a decision on the board rather than a silence.
+- Note for the next session: this sandbox has no HTTPS egress to operator domains (`TLS/SSL connection has
+  been closed` in ~31 ms), so only the offline paths are exercisable here - a real reachability number has to
+  come from a scheduled Actions run.

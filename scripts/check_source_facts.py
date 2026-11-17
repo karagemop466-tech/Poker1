@@ -70,6 +70,12 @@ OFFICIAL_HOSTS = (
     "mandalaybay.mgmresorts.com",
     "orleans.boydgaming.com",
     "southpointcasino.com",
+    # Session 88793bf4: the Resorts World operator page, cited by data/strip_rooms.json. It was in
+    # check_links.py's OFFICIAL_SOURCE_HOSTS but not here, so assert_official() made the whole
+    # provenance job refuse to run ("non-official host(s) in manifest: strip_rwlv_events") on every
+    # schedule and every push. The two lists are duplicated and had drifted; keep them in step - the
+    # MGM contentstack CDN stays out of both, per F40.
+    "www.rwlasvegas.com",
 )
 
 
@@ -204,7 +210,11 @@ def main():
     assert_official(sources)
 
     prev_log = {s["id"]: s for s in load_json(CHANGE_LOG, {"sources": []}).get("sources", [])}
-    baseline = load_json(BASELINE, {})
+    # The file is {"note", "captured_utc", "hashes": {id: sha256}}: reading the wrapper made every
+    # lookup miss, so changed_vs_baseline was false for every source forever.
+    baseline_doc = load_json(BASELINE, {})
+    baseline = baseline_doc.get("hashes", baseline_doc) if isinstance(baseline_doc, dict) else {}
+    baseline_captured = baseline_doc.get("captured_utc") if isinstance(baseline_doc, dict) else None
     ids = set(args.id) if args.id else None
 
     out = []
@@ -293,8 +303,11 @@ def main():
             rec["changed"] = True
             rec["last_changed_utc"] = rec["last_checked_utc"]
             changed.append(sid)
-        if rec["sha256"] and baseline.get(sid) and rec["sha256"] != baseline[sid]:
-            rec["changed_vs_baseline"] = True
+        if rec["sha256"] and baseline.get(sid):
+            rec["baseline_sha256"] = baseline[sid]
+            rec["baseline_captured_utc"] = baseline_captured
+            if rec["sha256"] != baseline[sid]:
+                rec["changed_vs_baseline"] = True
 
         # Meaningful change: did any published number, date, time or rule word move?
         rec["facts_signature"] = facts_signature(text) if rec.get("extracted_chars") else []
