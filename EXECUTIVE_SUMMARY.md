@@ -1,6 +1,6 @@
 # Executive Summary: Las Vegas Strip Poker Plan
 
-*Checked 2026-11-16 · Data: `data/tournaments.json`, `data/hotels.json`, `data/schedule.json`,
+*Checked 2026-11-16; hotel rate log, venue pages and official re-read on 2026-11-17 · Data: `data/tournaments.json`, `data/hotels.json`, `data/schedule.json`,
 `data/daily.json`, `data/rates.json`, `data/venues.json`, `data/walking.json`*
 
 ## Bottom line
@@ -19,10 +19,7 @@
   Wynn Signature Series rows, because Wynn's own structures PDF is still a "COMING SOON" placeholder.
 - **Hotels are still the weakest part of the data.** The $55 resort fee is verified for The Venetian,
   The Palazzo, Wynn and Encore, and the 13.38% Clark County Room Tax is verified for The Venetian only.
-  Bellagio, Caesars Palace and ARIA have no verified fee or tax. **One dated quote is on file**: a
-  Palazzo Luxury King for Nov 26 – 29, 2026, two adults, three nights, $2,412.44 at checkout,
-  $804.15 true cost per night. No generic nightly rate is published, so the per-hotel true cost stays
-  blank and the calculator asks for a rate rather than inventing one.
+  Bellagio, Caesars Palace and ARIA have no verified fee or tax. **Two dated quotes are on file**, both from the official booking engine and both including the resort fee and the 13.38% tax: a Palazzo Luxury King for Nov 26 – 29, 2026 (three nights, $2,412.44 at checkout, $804.15 per night all-in), and a Venetian Newly Remodeled Luxury Two Queen for **Nov 18 – 20, 2026** (two adults, $950.69 at checkout, **$475.35 per night all-in**, read 2026-11-17). They are different rooms and dates, so they are not like-for-like. No generic nightly rate is published, so no per-hotel true cost is shown for other dates and the calculator asks for a rate rather than inventing one.
 - **8 AM start:** the earliest cash single-entry event in the dataset starts at **10:10 AM**. The only
   earlier single-entry start is the 9:10 AM $260 turbo milestone satellite on Dec 12, and it pays a
   seat rather than cash. The 8 to 10 AM window still holds nothing.
@@ -69,6 +66,12 @@ These are kept out of the ranking.
 - **Rebuy and add-on (daily feed, not ranked).** The Wynn Friday $240 format allows unlimited $200
   rebuys and a $100 add-on. Rebuy events are excluded from the ranking.
 
+### Other Strip poker rooms checked on 2026-11-17 (no rows added)
+
+- **Bellagio** publishes three weekly flyers on its official poker page: Friday $600 NLH and Sunday $400 H.O.R.S.E. at 11 a.m., and a Saturday event at 11 a.m. Both the Friday and the Sunday flyers allow buy-in and re-entry through level 8, so **neither is single entry**. The Saturday flyer contradicts itself on its buy-in ($1,100 heading, $1,000 label), so its entry rule is not confirmed. No flyer prints a calendar date, so no dated row is created.
+- **Caesars Palace**: an official article (dated 2026-07-17) describes four daily no-limit hold'em events at 10 a.m., 2 p.m., 6 p.m. and 9 p.m. with a **$50 add-on**. That makes them **not single entry**, so they belong in the separate section. The article is not a structure sheet, so no rows are created.
+- **ARIA** says its Daily Tournaments run but publishes no schedule or structure. The official poker page gives a phone number (702.590.7232) for the current schedule.
+
 ## 3. Milestone satellites (now published)
 
 Twenty Venetian rows were missing from the earlier draft because the official event pages list them in
@@ -92,11 +95,11 @@ guarantee, and the calculator and the ranking both treat them differently from c
 
 | Hotel | Resort fee per night | Room rate | True cost per night | Walk to Venetian poker room | Source |
 |---|---|---|---|---|---|
-| The Venetian Resort | $55 plus tax (verified) | Blank (one dated quote in the rate log) | Blank (rate unverified) | Host property | [Hotel terms (official)](https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html) |
+| The Venetian Resort | $55 plus tax (verified) | $204.25 and $524.25 a night (official quote, Nov 18–20, 2026; room charges only) | **$475.35 per night all-in for that stay** (2 nights, $950.69 with $110 resort fee and $112.19 tax; read 2026-11-17) | Host property | [Hotel terms (official)](https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html) |
 | The Palazzo | $55 (verified; tax not stated) | Blank | Blank | Host property | [Poker suite rates incl. $55 resort fee (official)](https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html) |
 | Wynn Las Vegas | $55 plus tax (verified) | Blank | Blank | Not published | [Resort fee terms (official)](https://www.wynnlasvegas.com/terms-and-conditions/848671) |
 | Encore at Wynn Las Vegas | $55 plus tax (verified) | Blank | Blank | Not published | [Resort fee terms (official)](https://www.wynnlasvegas.com/terms-and-conditions/848671) |
-| Bellagio | Blank | Blank | Blank | Not published | [Bellagio official home page](https://bellagio.mgmresorts.com/en.html); no Bellagio-specific fee or tax confirmed. |
+| Bellagio | Blank | Blank | Blank | Not published | [Bellagio official home page](https://bellagio.mgmresorts.com/en.html); no Bellagio-specific fee or tax confirmed. The official booking calendar showed a pricing error when read on 2026-11-17, so no quote was captured. |
 | ARIA Resort & Casino | Blank | Blank | Blank | Not published | [ARIA official home page](https://aria.mgmresorts.com/en.html) and [ARIA poker page](https://aria.mgmresorts.com/en/casino/poker.html) |
 | Caesars Palace | Blank | Blank | Blank | Not published | [Caesars Palace official page](https://www.caesars.com/caesars-palace); no property fee confirmed. |
 
@@ -136,6 +139,10 @@ a walking-route link instead.
 - No walking times, and no nightly rate for any hotel other than the single logged quote.
 - No official structure sheet exists for the Wynn WPT milestone satellites, so their entry rules stay
   unverified even though their buy-in, prize, chips and level count are official.
+
+- Bellagio's weekly flyers and Caesars Palace's daily add-on format are described above but have no dated rows, because the official sources do not print the dates in a form that can be checked.
+- Horseshoe Las Vegas (Caesars, on the Strip) runs six daily games according to the same Caesars article. No structure sheet was read, so it is not in the dataset.
+- Walking times from hotel to poker room were not checked on Google or Apple Maps in this session.
 
 ## 7. How to use the site
 

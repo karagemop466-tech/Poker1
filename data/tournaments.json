@@ -26802,6 +26802,8 @@
   }
  ],
  "sources": {
+  "venetian_dse_series": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html",
+  "venetian_quote_1118": "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date=2026-11-18&children[]=0&departure_date=2026-11-20&view=calendar",
   "dse_nov_page": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
   "dse_dec_page": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
   "dse_nov_sched": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
@@ -26824,8 +26826,10 @@
   "wynn_info": "https://www.wynnlasvegas.com/ai-information",
   "wynn_parking": "https://www.wynnlasvegas.com/about-us/parking",
   "bellagio": "https://bellagio.mgmresorts.com/en.html",
+  "bellagio_poker": "https://bellagio.mgmresorts.com/en/casino/poker.html",
   "aria": "https://aria.mgmresorts.com/en.html",
   "aria_poker": "https://aria.mgmresorts.com/en/casino/poker.html",
-  "caesars": "https://www.caesars.com/caesars-palace"
+  "caesars": "https://www.caesars.com/caesars-palace",
+  "caesars_poker_article": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
  }
 }
