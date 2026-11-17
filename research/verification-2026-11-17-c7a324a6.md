@@ -31,10 +31,12 @@ seniors, ladies, turbo, streamed).
 * The three NYE rows on Dec 26 are printed by the operator as **"Saturday, December 26, 2025"**; the
   dataset stores 2026-12-26 (already flagged as F1). Confirmed again on the live page on 2026-11-17.
 * The page still prints **"Tuesaday, January 5, 2027"**. No effect on the data.
-* Two rows are stored with the operator's own second line merged into the name
-  (`… (1Day) - Show Your CES Badge - $10 Rake Discount`, and the "Race to finish before the Race"
-  lines). The printed amounts are identical; only the copy differs. Left as published, since the extra
-  words are on the same printed row.
+* The promotional second line the page prints under some events was checked line by line instead of trusted:
+  "Show Your CES Badge - $10 RAKE DISCOUNT" appears under **three** rows only - Jan 6 event 29 (Bounty),
+  Jan 7 5:10 p.m. event 30 flight 1B and Jan 8 5:10 p.m. event 30 flight 1D. It is **not** printed under
+  event 30 flights 1A, 1C or 1F. The dataset carried it on **Jan 9 5:10 p.m. flight 1F** as well, so that row
+  is republished without the clause (F62); its amounts were already correct and are unchanged. The three rows
+  that do print it keep it, because the words sit on the same printed row as their buy-in.
 * The stored name `… $1 Mill GTD …` was re-checked against the guarantee arithmetic: the printed token is
   `$1 Mill GTD` = $1,000,000, which is what the row stores.
 

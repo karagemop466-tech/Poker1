@@ -384,7 +384,10 @@ DSE_NYE = [
  ("2027-01-08","11:10",30,"$300 No Limit Hold'em 1C $100K GTD (1Day)",100000,13),
  ("2027-01-08","17:10",30,"$300 No Limit Hold'em 1D $100K GTD (1Day) - Show Your CES Badge - $10 Rake Discount",100000,14),
  ("2027-01-09","11:10",30,"$300 No Limit Hold'em 1E $100K GTD (1Day)",100000,13),
- ("2027-01-09","17:10",30,"$300 No Limit Hold'em 1F $100K GTD (1Day) - Show Your CES Badge - $10 Rake Discount",100000,14),
+ # 2026-11-17 audit: the official NYE page prints the "Show Your CES Badge - $10 RAKE DISCOUNT" second
+ # line on the Jan 6 Bounty event and on only two of the six Event #30 flights (Jan 7 1B, Jan 8 1D). It is
+ # NOT printed on this Jan 9 1F row (nor on 1A/1C/1E), so the clause is removed from the published name.
+ ("2027-01-09","17:10",30,"$300 No Limit Hold'em 1F $100K GTD (1Day)",100000,14),
  ("2027-01-10","10:10",31,"$400 No Limit Hold'em Seniors $20K GTD (1Day) - must be 50+ years of age",20000,10),
  ("2027-01-10","12:00",30,"$300 No Limit Hold'em Day 2 Restart",None,13),
  ("2027-01-10","17:10",32,"$200 No Limit Hold'em Bounty $8K GTD (1Day)",8000,2),
