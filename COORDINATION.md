@@ -1606,6 +1606,33 @@ absolute-minutes rule and each carries a check the other does not. The merge con
 `scripts/check_links.py` was resolved by keeping both blocks; nothing from either session was dropped.
 This session's morning record above still describes PR #72 accurately; this note adds the follow-up.
 
+### Session a8efe220 — final record (table-shape gates reach the other documents)
+
+| Item | Result |
+|---|---|
+| PR | [#83](https://github.com/karagemop466-tech/Poker1/pull/83) — **MERGED** as `b861f933c7583d34ca752ba98d4fe870d2219168`; Pages build for `b861f933` = **built** (2026-11-17T23:07:26Z) |
+| What happened | The table-shape rules merged in `fecf567` were pointed at every Markdown document and immediately found defects **in a table another session had just extended**: `SUGGESTIONS.md` **S27** had three cells in a four-column table, and a **second `\| P10 \|` row** was detached from its table by a blank line *and* reused an existing id |
+| Fix | S27's merged cell split back into its suggestion and its description; the detached row reattached and renumbered **P13** (no P13 existed). No text rewritten |
+| Verified | All **30** rendered tables across `suggestions`, `flagged`, `questions`, `summary` and `review` have every row's cell count equal to its header (0 ragged). `check_links` OK, `verify_rows` 1,296 checks / 0 hard failures, pair check 0 unexplained, smoke 23/23 |
+| No data changed | `data/` untouched; no source re-read |
+
+**Second reconciliation, not duplication.** `main` advanced again during this PR and **PR #84 (session
+`06ac8c98`) had fixed the same two `SUGGESTIONS.md` rows** — that session was responding to the very
+validator this one added. `main`'s S27 text was kept (it also preserved the surrounding prose) and this
+session's `P13` renumbering was applied on top, so neither side's work was dropped.
+
+**Open items this session could not close, published rather than hidden.** `QUESTIONS.md` §F records the
+three questions the arithmetic fix exposed — the typical field size and running time (**Q-F1**, now also
+`SUGGESTIONS` P13), whether to adopt a labelled duration assumption so a day plan may propose an evening
+event (**Q-F2**), and whether a cross-midnight finish should block the next date's plan (**Q-F3**). None
+can be answered from an official source; all three need one call or e-mail to the poker room.
+
+**Irregularities published on the Flagged for Review page:** F62 (the impossible-sequences defect),
+F63 (the four unrenderable table rows), and the **F58 → F61** renumbering that removed a genuine
+duplicate flag id created by two parallel sessions.
+
+---
+
 ---
 
 ### Session 06ac8c98 — integration and deploy record (2026-11-17, end of task)
