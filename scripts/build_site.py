@@ -128,9 +128,9 @@ PAGES = {
 <div id="rates"></div>
 <p class="small"><a href="calculator.html">Price a trip with the trip cost calculator →</a></p>
 """),
-    "pages/calculator.html": ("Rate calculator", "calculator", """
-<h1>Hotel rate and cost calculator</h1>
-<p class="lead">Price a stay from the verified resort fee, the verified room tax and a room rate. Any value that is not verified stays blank and is reported as missing instead of being guessed.</p>
+    "pages/calculator.html": ("Trip cost calculator", "calculator", """
+<h1>Trip cost calculator</h1>
+<p class="lead">Price a whole trip: tournament entries x buy-in, plus nights x true hotel cost, plus parking. The hotel side is bound to the dated rate log, so a stay is priced from an official booking-engine quote rather than an assumed rate. Anything unverified stays blank and is reported as missing, never guessed.</p>
 <div id="content"></div>
 """),
     "pages/schedule.html": ("Schedule", "schedule", """

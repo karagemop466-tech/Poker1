@@ -659,6 +659,21 @@ for rel in pages:
                 if unquote(parsed.fragment) not in anchor_parser.ids:
                     problems.append(f"{rel}: broken fragment link {href}")
 
+
+# --- one renderer per page: a duplicate PAGES.x silently overrides an earlier one and the page still loads,
+# so link checking cannot catch it. A merge once did exactly that to the calculator.
+app_js = os.path.join(ROOT, "assets", "app.js")
+if os.path.isfile(app_js):
+    with open(app_js, encoding="utf-8") as stream:
+        js = stream.read()
+    assigned = re.findall(r"^\s*PAGES\.(\w+)\s*=\s*(?:function|markdownPage)", js, flags=re.MULTILINE)
+    duplicates = sorted({name for name in assigned if assigned.count(name) > 1})
+    if duplicates:
+        problems.append("assets/app.js: duplicate renderer(s) defined twice: " + ", ".join(duplicates))
+    for name in sorted(set(KNOWN_PAGES)):
+        if name != "home" and name not in assigned:
+            problems.append(f"assets/app.js: no renderer for data-page {name!r}")
+
 if problems:
     print("\n".join(problems))
     sys.exit(1)
