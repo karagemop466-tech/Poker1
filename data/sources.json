@@ -1,5 +1,5 @@
 {
- "note": "Every source URL monitored by scripts/monitor_sources.py. All hosts are official operator domains (venetianlasvegas.com, wynnlasvegas.com, cdn.wynnresorts.com, mgmresorts.com property domains, caesars.com, boydgaming.com property domains, southpointcasino.com). Nothing from a third-party site is fetched.",
+ "note": "Every source URL monitored by scripts/monitor_sources.py. The hosts are the official operator domains (venetianlasvegas.com, wynnlasvegas.com, cdn.wynnresorts.com, mgmresorts.com property domains, caesars.com, boydgaming.com property domains, southpointcasino.com, rwlasvegas.com) plus one government authority, www.clarkcountynv.gov, which levies the transient lodging (room) tax that the hotel rows publish. Nothing from a third-party site is fetched.",
  "sources": [
   {
    "id": "v_dse_nov_page",
@@ -639,6 +639,14 @@
    "url": "https://www.caesars.com/caesars-palace",
    "kind": "hotel",
    "venue": "Caesars"
+  },
+  {
+   "id": "cc_tle_guide",
+   "label": "Clark County Department of Business License \u2014 General Information Guide for Transient Lodging Establishments (combined transient lodging tax rates and the licensed-establishment table)",
+   "url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf",
+   "kind": "tax",
+   "authority": "Clark County, Nevada (taxing authority)",
+   "note": "Not an operator page. This is the county that levies the room tax: Appendix III prints the combined rate by establishment category and district, and the licensed-establishment table prints each property's licence number, DBA name, address, status and rate. The establishment table is a snapshot (as of April 2021); the rate for a Resort Hotel in the Stadium District and Primary Gaming Corridor is fixed at 13.38% by Clark County Code 4.08.010 (F77)."
   }
  ]
 }

@@ -51,6 +51,15 @@ OFFICIAL_SOURCE_HOSTS = {
     # un-approved (F40); see FLAGGED.md S9.
     "www.rwlasvegas.com",
 }
+
+# The taxing authority, kept as its own set so a government record can never be
+# mistaken for an operator page. Clark County levies the transient lodging (room)
+# tax that every hotel row publishes; its licensed-establishment table is the only
+# source that prints a rate for the properties whose own pages do not (F77).
+GOVERNMENT_SOURCE_HOSTS = {
+    "www.clarkcountynv.gov",
+    "clarkcountynv.gov",
+}
 TOURNAMENT_STATUSES = {"SE", "MULTI", "RE", "REBUY", "CONT", "UNV"}
 TOURNAMENT_KINDS = {"entry", "continuation"}
 RULE_FIELDS = ("single_entry", "re_entry", "add_on", "fee")
@@ -118,7 +127,7 @@ def check_official_https_url(url, where):
     if parsed.scheme != "https" or not parsed.hostname:
         problems.append(f"{where} must use an https URL: {url}")
         return False
-    if parsed.hostname.lower() not in OFFICIAL_SOURCE_HOSTS:
+    if parsed.hostname.lower() not in OFFICIAL_SOURCE_HOSTS | GOVERNMENT_SOURCE_HOSTS:
         problems.append(f"{where} has a non-approved source host: {parsed.hostname}")
         return False
     return True

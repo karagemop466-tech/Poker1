@@ -58,6 +58,14 @@ SRC = {
     "caesars_poker_article": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
     "caesars_faq": "https://www.caesars.com/caesars-palace/faqs",
     "caesars_disclaimer": "https://www.caesars.com/corporate/disclaimer",
+    # Session ce9941b8: the taxing authority. Clark County Department of Business
+    # License, "General Information Guide for Transient Lodging Establishments"
+    # (July 2021) — Appendix III prints the combined transient lodging tax rate by
+    # establishment category and district, and the licensed-establishment table
+    # prints each property's licence number, DBA name, address, status and rate.
+    "clark_county_tle_guide": ("https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:"
+                               "689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/"
+                               "genl-info-guide-for-tles-july-2021.pdf"),
 }
 
 # ---------- rule excerpt strings reused by the Venetian structure sheets ----------
@@ -1398,6 +1406,54 @@ def build_schedule(rows):
                     "fallback; no impossible sequence is proposed."}
 
 
+# The room tax, from the taxing authority rather than from a hotel's own page.
+# Every value below was read out of the Clark County Department of Business License guide on
+# 2026-11-17: the rate table in Appendix III ("Resort Hotel in SD & PGC ... Combined Transient
+# Lodging Tax Rate 13.38%", components 5.5 + 2 + 1 + 1 + 3 + .88, "Rates Effective 3-1-17") and
+# the licensed-establishment table that follows it, which prints for each licence its number,
+# DBA name, street address, status and rate. `licensed_as` is the category as printed.
+# The establishment table is a snapshot ("as of April 2021"); the rate itself is fixed by
+# Clark County Code 4.08.010, and the Venetian's own current terms (read 2026-11-17) still
+# print 13.38%, so the operator and the county agree. Both facts are stated on the row (F77).
+CLARK_COUNTY_TAX = {
+    "venetian": {"licence": "1000389.RES-001",
+                 "dba": "Venetian Resort Hotel Casino / Palazzo Resort Hotel Casino",
+                 "address": "3325 Las Vegas Blvd S", "licensed_as": "Resort Hotel (PGC)"},
+    "palazzo": {"licence": "1000389.RES-001",
+                "dba": "Venetian Resort Hotel Casino / Palazzo Resort Hotel Casino",
+                "address": "3325 Las Vegas Blvd S", "licensed_as": "Resort Hotel (PGC)"},
+    "wynn": {"licence": "2000013.RES-001", "dba": "Wynn Las Vegas / Encore at Wynn Las Vegas",
+             "address": "3131 Las Vegas Blvd S", "licensed_as": "Resort Hotel (PGC)"},
+    "encore": {"licence": "2000013.RES-001", "dba": "Wynn Las Vegas / Encore at Wynn Las Vegas",
+               "address": "3131 Las Vegas Blvd S", "licensed_as": "Resort Hotel (PGC)"},
+    "bellagio": {"licence": "1003760.RES-001", "dba": "Bellagio",
+                 "address": "3600 Las Vegas Blvd S", "licensed_as": "Resort Hotel (PGC)"},
+    "aria": {"licence": "2000035.RES-001", "dba": "Aria Resort & Casino",
+             "address": "3730 Las Vegas Blvd S", "licensed_as": "Resort Hotel (PGC)"},
+    "caesars": {"licence": "1136233.RES-001", "dba": "Caesars Palace",
+                "address": "3570 Las Vegas Blvd S", "licensed_as": "Resort Hotel (PGC)"},
+}
+CC_TAX_RATE = 13.38
+CC_TAX_AS_OF = "the licensed-establishment table as of April 2021"
+CC_TAX_LABEL = ("Clark County Department of Business License, General Information Guide for "
+                "Transient Lodging Establishments (official)")
+
+
+def cc_tax_note(hotel_id, extra=None):
+    """The tax note printed on a hotel row, quotable line by line."""
+    rec = CLARK_COUNTY_TAX[hotel_id]
+    note = ("Taxing authority: licence %s, \"%s\", %s, Las Vegas NV, status Licensed, transient "
+            "lodging tax rate 13.38%%, category %s (Clark County Department of Business License, "
+            "General Information Guide for Transient Lodging Establishments, Appendix III and the "
+            "licensed-establishment table; %s). Appendix III sets the combined rate for a Resort "
+            "Hotel in the Stadium District and Primary Gaming Corridor at 13.38%% "
+            "(5.5 + 2 + 1 + 1 + 3 + .88), rates effective 3-1-17."
+            % (rec["licence"], rec["dba"], rec["address"], rec["licensed_as"], CC_TAX_AS_OF))
+    if extra:
+        note += " " + extra
+    return note
+
+
 # ---------------- hotels ----------------
 # What was opened again on 2026-11-17, per property, so a reader can tell a re-read from a
 # carry-over. A field with no entry here was not re-read on that date.
@@ -1441,8 +1497,9 @@ HOTELS = [
   "resort_fee_usd": 55, "resort_fee_status": "verified",
   "resort_fee_note": "Official hotel terms: \"The Venetian Resort has a standard Las Vegas Resort Fee of $55 plus "
                       "applicable tax per night, payable upon check-in.\"",
-  "clark_county_tax_pct": 13.38, "tax_status": "verified",
-  "tax_note": "Official hotel terms: \"Daily rates do not include the applicable Clark County Room Tax of 13.38%.\"",
+  "clark_county_tax_pct": CC_TAX_RATE, "tax_status": "verified",
+  "tax_note": cc_tax_note("venetian", "The operator's own current terms agree: \"Daily rates do not include the "
+                                      "applicable Clark County Room Tax of 13.38%.\""),
   "room_rate_usd": None, "room_rate_status": "conditional",
   "room_rate_note": "Official poker suite page: suite rates \"will start as low as $119 and $209 and can be higher\", "
                      "conditional on qualifying poker play (6 hours of live cash play or a $300+ tournament buy-in per "
@@ -1493,10 +1550,10 @@ HOTELS = [
   "resort_fee_usd": 55, "resort_fee_status": "verified",
   "resort_fee_note": "Official poker suite page: \"There is a $55 resort fee per night stayed\" for a suite booked at "
                       "The Venetian or The Palazzo.",
-  "clark_county_tax_pct": 13.38, "tax_status": "verified",
-  "tax_note": "The official Venetian Resort hotel terms cover \"The Venetian Resort\" (the Venetian and The Palazzo "
-              "are one licensed resort) and state \"Daily rates do not include the applicable Clark County Room Tax "
-              "of 13.38%\". Re-read 2026-11-17.",
+  "clark_county_tax_pct": CC_TAX_RATE, "tax_status": "verified",
+  "tax_note": cc_tax_note("palazzo", "The county licence covers the Venetian and the Palazzo as one establishment, "
+                                     "which is why the same licence number appears on both rows. The operator's own "
+                                     "current terms, which cover \"The Venetian Resort\", also print 13.38%."),
   "room_rate_usd": None, "room_rate_status": "conditional",
   "room_rate_note": "Official poker suite page covers \"The Venetian or The Palazzo\" suites starting \"as low as $119 "
                      "and $209\", conditional on qualifying poker play and availability.",
@@ -1534,11 +1591,11 @@ HOTELS = [
   "resort_fee_note": "Official Wynn offer terms: \"A daily resort fee of $55 plus tax will be added to your room "
                       "account for each room night\". Official Wynn facts page repeats $55 plus tax for Resort and Tower "
                       "Suites.",
-  "clark_county_tax_pct": None, "tax_status": "unverified",
-  "tax_note": "No Wynn room-tax rate is printed on any official Wynn page, and the official Wynn booking engine "
-              "(reservations.wynnlasvegas.com) returns only its fee and policy text to a text fetch - it renders the "
-              "nightly rate grid and the tax line client-side, so no Wynn quote with a tax figure could be captured "
-              "on 2026-11-17. The Venetian's 13.38% Clark County rate is therefore NOT applied to Wynn here.",
+  "clark_county_tax_pct": CC_TAX_RATE, "tax_status": "verified",
+  "tax_note": cc_tax_note("wynn", "No Wynn page prints a room-tax rate and the official Wynn booking "
+                                  "engine renders its rate grid and tax line client-side, so the "
+                                  "taxing authority is the source for this figure rather than the "
+                                  "operator."),
   "room_rate_usd": None, "room_rate_status": "unverified",
   "room_rate_note": "No nightly rate is published on an official Wynn page. Use the official booking engine. "
                      "Re-checked 2026-11-17: the engine again ignored the requested date parameters (asked for "
@@ -1584,8 +1641,10 @@ HOTELS = [
   "resort_fee_usd": 55, "resort_fee_status": "verified",
   "resort_fee_note": "Official Wynn facts page: the $55 plus tax daily resort fee applies to Resort and Tower Suites "
                       "reservations; the official offer terms cover the Wynn/Encore resort account.",
-  "clark_county_tax_pct": None, "tax_status": "unverified",
-  "tax_note": "No Encore-specific room tax rate printed on an official page read in this session.",
+  "clark_county_tax_pct": CC_TAX_RATE, "tax_status": "verified",
+  "tax_note": cc_tax_note("encore", "The county licence covers Wynn Las Vegas and Encore as one establishment, so "
+                                    "the same rate applies to both rows. No Encore-specific rate is printed on any "
+                                    "operator page."),
   "room_rate_usd": None, "room_rate_status": "unverified",
   "room_rate_note": "No nightly rate published on an official Wynn page. Use the official booking engine. "
                      "Re-checked 2026-11-17: the Wynn booking engine ignores the date parameters in the URL "
@@ -1618,12 +1677,12 @@ HOTELS = [
                      "of $55.00 plus applicable tax will be applied to all reservations.\" The same page lists what "
                      "the fee covers and states the fee is waived for MGM Rewards Gold+ members on eligible "
                      "reservations. Read 2026-11-17.",
-  "clark_county_tax_pct": 13.38, "tax_status": "estimated",
-  "tax_note": "Estimate only, never used for a true cost. The Bellagio terms print the tax rule but not a percentage: \"Lodging taxes apply to the basic room "
-              "rate, any resort fee, additional per occupant charges, upgrades, as well as any other charges as "
-              "required by applicable law.\" A published MGM offer for a Bellagio/ARIA stay prints \"Nightly rates "
-              "do not include 13.38% room tax\", but that page is a Cosmopolitan offer, not Bellagio's own terms, "
-              "so 13.38% is shown only as the county rate used for an estimate and no true cost is calculated from it.",
+  "clark_county_tax_pct": CC_TAX_RATE, "tax_status": "verified",
+  "tax_note": cc_tax_note("bellagio", "This replaces an earlier estimate. The Bellagio terms state the "
+                                      "rule but print no percentage: \"Lodging taxes apply to the basic "
+                                      "room rate, any resort fee, additional per occupant charges, "
+                                      "upgrades, as well as any other charges as required by applicable "
+                                      "law.\""),
   "room_rate_usd": None, "room_rate_status": "unverified",
   "room_rate_note": "No nightly rate published on an official page read in this session.",
   "parking_note": "Official MGM Resorts parking page: self-parking for a registered hotel guest is $20 per 24 hours "
@@ -1653,11 +1712,11 @@ HOTELS = [
   "resort_fee_note": "Official ARIA Hotel Reservation Terms and Conditions: \"Daily Resort Fee. A daily resort fee "
                      "of $55.00 plus applicable tax will be applied to all reservations.\" Waived for MGM Rewards "
                      "Gold+ members on eligible reservations. Read 2026-11-17.",
-  "clark_county_tax_pct": 13.38, "tax_status": "estimated",
-  "tax_note": "Estimate only, never used for a true cost. The ARIA terms print the tax rule but not a percentage: \"Estimated taxes are based on current tax "
-              "rates which are subject to change ... Lodging taxes apply to the basic room rate, any resort fee, "
-              "additional per occupant charges and upgrades.\" No ARIA-specific percentage is verified, so no true "
-              "cost is calculated for this property.",
+  "clark_county_tax_pct": CC_TAX_RATE, "tax_status": "verified",
+  "tax_note": cc_tax_note("aria", "This replaces an earlier estimate. The ARIA terms state the rule but "
+                                  "print no percentage: \"Estimated taxes are based on current tax rates "
+                                  "which are subject to change ... Lodging taxes apply to the basic room "
+                                  "rate, any resort fee, additional per occupant charges and upgrades.\""),
   "room_rate_usd": None, "room_rate_status": "unverified",
   "room_rate_note": "Official ARIA poker page: \"Exclusive Room Rates for qualifying poker players\" - the rate itself "
                      "is only available by phone (702.590.7232) or by e-mail, so no number is published.",
@@ -1687,8 +1746,9 @@ HOTELS = [
                      "\"Room reservations are subject to a daily resort fee between $45-$50 plus applicable tax\" "
                      "across the Caesars portfolio, which does not name Caesars Palace, so it is not used as this "
                      "property's fee.",
-  "clark_county_tax_pct": None, "tax_status": "unverified",
-  "tax_note": "No Caesars Palace-specific room tax rate printed on an official page read in this session.",
+  "clark_county_tax_pct": CC_TAX_RATE, "tax_status": "verified",
+  "tax_note": cc_tax_note("caesars", "No Caesars page read prints a room-tax percentage; the taxing authority is the "
+                                     "source. The resort fee for this property is still unverified (blank)."),
   "room_rate_usd": None, "room_rate_status": "unverified",
   "room_rate_note": "No nightly rate published on an official page read in this session.",
   "parking_note": "No Caesars Palace parking fee printed on an official page read in this session.",
@@ -1993,6 +2053,13 @@ def main():
     walk_by_key = {(w["hotel"], w["venue"]): w for w in WALKING}
     for h in HOTELS:
         h = dict(h)
+        # The room tax on every row now cites the taxing authority, so that source is
+        # listed on the row next to the operator's own pages.
+        h["sources"] = list(h.get("sources") or []) + [
+            {"label": CC_TAX_LABEL, "url": SRC["clark_county_tle_guide"]}]
+        h["tax_licence"] = CLARK_COUNTY_TAX[h["id"]]["licence"]
+        h["tax_licensed_as"] = CLARK_COUNTY_TAX[h["id"]]["licensed_as"]
+        h["tax_source_url"] = SRC["clark_county_tle_guide"]
         cost, quote = true_cost(h)
         h["true_cost_per_night_usd"] = cost
         if quote:
