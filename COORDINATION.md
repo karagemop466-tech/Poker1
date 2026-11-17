@@ -237,12 +237,39 @@ The repository contains a static dashboard (`index.html`, `pages/`, `assets/`), 
   - **Value added by this session:** read two official sources `main` had not used and recorded the one new verified fact they contain — the Wynn daily tournament terms state *"Registration for each Event will open four (4) hours prior to the scheduled start of play"*, so registration for the 12 p.m. daily events opens at **8 a.m.** This is the only registration *opening* time on any official source read so far, and it closes question I12 for Wynn. Recorded in the Wynn venue note, `data/daily.json`, `EXECUTIVE_SUMMARY.md` section 5 and `QUESTIONS.md` I12.
   - Also recorded in `data/daily.json`: the two official sources word the daily suspension differently (the poker page names Wynn Signature, Wynn Millions and Classic series; each daily structure sheet says "may be suspended during Seniors Events, Classic Events, or other Tournament Series"). Neither names the WPT World Championship explicitly, so it is flagged as confirm-before-travelling.
 
-## Session 2e5232bc (this session) — branch `arena/2e5232bc-poker1`, base `bfc8951`
+## Session 2e5232bc — branch `arena/2e5232bc-poker1`, base `bfc8951`
 
-Claimed before implementation. Scope is limited to the files listed; no other session's files are touched.
+Claimed in commit `a698b81` before implementation.
 
 | Task | Status | File scope | Owner |
 |---|---|---|---|
-| Line-by-line re-check of every Venetian DeepStack IV (Nov 16–Dec 23) and NYE (Dec 24–Jan 10) schedule row against the live official schedule pages, recording any mismatch | in progress | `research/verification-2026-11-17.md`, `data/tournaments.json` only if a mismatch is confirmed | `2e5232bc` |
-| Make the Node page smoke test runnable (jsdom was missing) without committing `node_modules` or a new lockfile | in progress | `scripts/smoke_test.js` (only if needed), no new tracked dependency files | `2e5232bc` |
-| Re-check the Wynn Signature Series schedule PDF row by row | queued after the Venetian pass | `research/verification-2026-11-17.md` | `2e5232bc` |
+| Line-by-line re-check of every official schedule row (Venetian DSE IV, Venetian NYE, Wynn Signature Series, WPT World Championship) against the live official pages | **Done** — 94 + 49 + 38 + 136 printed rows; 1 missing WPT row restored; all other rows match. Record: `research/verification-2026-11-17.md` | `research/verification-2026-11-17.md`, `scripts/build_data.py`, `data/*.json`, `FLAGGED.md`, `REVIEW.md`, `EXECUTIVE_SUMMARY.md` | `2e5232bc` |
+| Make the Node page smoke test runnable (jsdom was missing) without committing `node_modules` or a new lockfile | **Done** — jsdom installed under `/tmp` and passed through `NODE_PATH`; `smoke_test.js` unchanged; 21/21 pages render | none tracked | `2e5232bc` |
+| Re-check the Wynn Signature Series schedule row by row | **Done** — 38/38 rows match the official PDF | `research/verification-2026-11-17.md` | `2e5232bc` |
+
+### Sources (read 2026-11-17 on the official sites)
+
+- Venetian DeepStack Extravaganza IV schedule: https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html (4 of 4 chunks)
+- Venetian DeepStack Extravaganza NYE schedule: https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html (2 of 2 chunks)
+- Wynn Signature Series schedule PDF: https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf
+- WPT World Championship schedule PDF: https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf
+- WPT structures PDF (block for the $1,100 TORSE (2 Day)): https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf
+
+### Irregularities found (all published on the Flagged for Review page)
+
+- **F21 (restored row):** the WPT schedule prints a Dec 13, 11:00 AM $1,100 TORSE (2 Day) row that the dataset lacked. It is now restored from the generator. Its re-entry clause comes from the structures PDF block.
+- Row IDs after the restored row shifted by one (r135 onward, 182 IDs). A content comparison with the previous build, ignoring IDs, shows the restored row is the only difference.
+- **U8 corrected:** the earlier FLAGGED wording said the WPT structures PDF has no sheet for the milestone satellites. That was wrong: `data/wpt_rules.json` holds all 69 blocks. Linking them to the unverified WPT rows is still open.
+- **REVIEW.md counts corrected:** it said "Continuation rows 43"; the data has 2.
+- Existing F1 (Dec 26 printed as 2025) and F5 (Dec 5 printed $1,100 / $5M) were re-confirmed against the live pages.
+- The official NYE page prints "Tuesaday" for Jan 5. No effect on the data.
+- The monitor job (`monitor.yml`) is scheduled for 07:17 UTC on `main`. The local `monitoring.json` still shows the sandbox result (59 of 59 unreachable). The first scheduled run after this merge should replace it; check the Actions run before relying on it.
+
+### Verification performed
+
+- `python3 scripts/build_data.py` → 317 rows (SE 80, MULTI 60, RE 46, UNV 129, CONT 2); WPT 136 rows.
+- `python3 scripts/build_site.py` → 21 pages.
+- `python3 scripts/check_links.py` → OK (21 pages, 317 rows, 7 hotels, 1 dated rate, 70 schedule days).
+- `NODE_PATH=/tmp/jsdom/node_modules node scripts/smoke_test.js` → 21/21 pages render.
+- Row content comparison with the previous build (ID removed) → only the restored row differs.
+- 2026-11-17: session `2e5232bc` claimed the schedule re-check (commit `a698b81`), read all four official schedules, restored the missing WPT TORSE (2 Day) row, corrected U8 and the REVIEW.md continuation count, and recorded the verification in `research/verification-2026-11-17.md`.
