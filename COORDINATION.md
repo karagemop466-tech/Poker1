@@ -1586,3 +1586,22 @@ the note below is kept only as history of what this session found and deliberate
 re-deriving it; it does not conflict with this change (no file overlap except `COORDINATION.md`,
 `FLAGGED.md` and `SUGGESTIONS.md`, all append-only). PR #66's own numbering uses F101 for the same
 problem, which is why this session took F75/F76.
+
+### Session a8efe220 — follow-up record (F63, table rendering)
+
+| Item | Result |
+|---|---|
+| PR | [#80](https://github.com/karagemop466-tech/Poker1/pull/80) — **MERGED** as `fecf567cbec3267325c6a90e39581ce7a900ea49`; Pages build for `fecf567` = **built** (2026-11-17T22:50:48Z) |
+| Found by | Reading the **deployed** Flagged page back after PR #72 merged, not by reading the Markdown: the new F62 row printed under its table's separator |
+| Defect | Four rows could not render as a grid — F62, F59 and F48 were each detached from their table by a blank line, and **F39 carried 3 cells in a 4-column table**. A second cause: the renderer split table cells on every `|`, so F59's correctly escaped official quote rendered as 6 cells |
+| Fix | Rows reattached; F39's merged cell split back into its source and its resolution from text already present (nothing removed or rewritten); renderer now splits on `(?<!\\)|` and unescapes after |
+| New gates | `check_links.py` fails on (a) a table row separated from its table by a blank line and (b) a row whose cell count differs from its header. Both proven to fire by re-inserting a broken row |
+| Verified | Headless render of the Flagged page: **7 tables, 0 ragged**; F39/F48/F58/F59/F61/F62/F63 all present; `check_links` OK; `verify_rows` 1,296 checks / 0 hard failures; pair check 0 unexplained; smoke 23/23; build idempotent |
+| No data changed | `data/` untouched; no source re-read; no `last_checked` advanced |
+
+**Reconciliation, not duplication.** `main` advanced 8 commits while this branch was open, including
+PR #73 (session `2157d288`), which **independently fixed the same midnight-wrap defect** and added an
+`mdHref()` guard plus a rendered-link crawl. Both fixes are kept because they agree on the
+absolute-minutes rule and each carries a check the other does not. The merge conflict in
+`scripts/check_links.py` was resolved by keeping both blocks; nothing from either session was dropped.
+This session's morning record above still describes PR #72 accurately; this note adds the follow-up.
