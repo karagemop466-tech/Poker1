@@ -6055,7 +6055,7 @@
     {
      "id": "r276",
      "start": "17:10",
-     "name": "$300 No Limit Hold'em 1F $100K GTD (1Day) - Show Your CES Badge - $10 Rake Discount",
+     "name": "$300 No Limit Hold'em 1F $100K GTD (1Day)",
      "series": "Venetian DeepStack Extravaganza NYE",
      "venue": "The Venetian Resort",
      "buy_in_usd": 300,
@@ -6078,7 +6078,7 @@
     {
      "a": "r275",
      "b": "r276",
-     "detail": "$300 No Limit Hold'em 1F $100K GTD (1Day) - Show Your CES Badge - $10 Rake Discount starts 17:10 while $300 No Limit Hold'em 1E $100K GTD (1Day) is still estimated to run until 08:55 (next day)"
+     "detail": "$300 No Limit Hold'em 1F $100K GTD (1Day) starts 17:10 while $300 No Limit Hold'em 1E $100K GTD (1Day) is still estimated to run until 08:55 (next day)"
     }
    ]
   },
