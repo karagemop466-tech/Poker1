@@ -1205,3 +1205,12 @@ Claim recorded before integration work. This is the final integration scope: rev
 | Task | Status | File scope | Owner |
 |---|---|---|---|
 | Final integration and QA of the completed open session contributions, including the daily schedule feed, source-change monitoring, row-level verification, walking records, and the decision-support site | **In progress** — inspect each open PR and its source/verification evidence before integration; superseded work will be documented, not copied blindly | `COORDINATION.md`, `.github/workflows/*`, `scripts/*`, `data/*`, `assets/*`, `index.html`, `pages/*`, decision documents, and `research/*` (integration-only scope) | `881caf24` |
+
+
+### Scope update — active-session handoff protection (2026-11-17 22:07 UTC)
+
+Final integration is **paused before importing any session branch**: GitHub reported fresh commits on PR #64 (`c6da8a1`, 22:06:57 UTC) and PR #66 (`95bd3cf`, 22:06:58 UTC), and both branches touch the shared data/site/monitor files. Their owners' work is therefore treated as active; this session will not edit or merge those scopes until their tasks are complete. The work below is independent and read-only with respect to their files.
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Independent schedule chronology audit: test whether the published primary/fallback and overlap data uses absolute event durations across midnight; report any impossible sequences with the data/source evidence and a non-overlapping fix request to the owning integration session | **In progress** — claim before implementation; read-only against generated data and shared renderer | `scripts/check_schedule_plan.py`, `research/qa-schedule-2026-11-17-881caf24.md`, `COORDINATION.md` | `881caf24` |
