@@ -1,7 +1,14 @@
 # Executive Summary: Las Vegas Strip Poker Plan
 
-*Checked 2026-11-16 · Data: `data/tournaments.json`, `data/hotels.json`, `data/schedule.json`,
+*Checked 2026-11-17 · Data: `data/tournaments.json`, `data/hotels.json`, `data/schedule.json`,
 `data/daily.json`, `data/rates.json`, `data/venues.json`, `data/walking.json`*
+
+Every official tournament page and structure PDF listed below was re-fetched and re-read on
+**2026-11-17**, not carried forward: the DeepStack Extravaganza IV page (94 rows), the NYE page
+(49 rows), the Wynn Signature Series schedule PDF (38 rows) and the WPT World Championship schedule
+PDF (135 rows). The result is that **all 316 rows still match their official source today**, with one
+cosmetic difference noted in `FLAGGED.md`. Hotel fees, taxes, rates and walking times were also
+re-checked on 2026-11-17.
 
 ## Bottom line
 
@@ -17,15 +24,33 @@
 - **129 rows are still unverified on the entry rule** and are not ranked: 91 Wynn WPT rows (the
   milestone satellites and the events the WPT schedule prints without a structure sheet) and all 38
   Wynn Signature Series rows, because Wynn's own structures PDF is still a "COMING SOON" placeholder.
-- **Hotels are still the weakest part of the data.** The $55 resort fee is verified for The Venetian,
-  The Palazzo, Wynn and Encore, and the 13.38% Clark County Room Tax is verified for The Venetian only.
-  Bellagio, Caesars Palace and ARIA have no verified fee or tax. **One dated quote is on file**: a
-  Palazzo Luxury King for Nov 26 – 29, 2026, two adults, three nights, $2,412.44 at checkout,
-  $804.15 true cost per night. No generic nightly rate is published, so the per-hotel true cost stays
-  blank and the calculator asks for a rate rather than inventing one.
+- **Hotels are much stronger than yesterday, with one hard limit.** $55 resort fee plus 13.38% room tax
+  is verified for The Venetian and The Palazzo, and the $55 fee alone for Wynn and Encore. **Four dated
+  quotes are on file**, all from the Venetian's official booking engine: $804.15, $338.48, $911.86 and
+  $320.02 true cost per night. Every quote stores the per-night rates, resort fee, tax total, checkout
+  total, cancellation terms and the date it was read, so a later quote is compared against these instead
+  of replacing them.
+- **Every one of those four quotes reproduces exactly** when 13.38% is applied to room plus resort fee —
+  the arithmetic and the stored data agree to the cent, which is the check that keeps the log honest.
+- **Wynn cannot be priced the same way yet.** Its booking engine renders the nightly grid and the tax
+  line client-side and returns only fee and policy text to a text fetch, so no Wynn quote could be
+  captured. Its room tax stays blank rather than borrowing the Venetian's 13.38%, and the like-for-like
+  Wynn-versus-Venetian comparison still cannot be made. That is the last missing piece of the hotel
+  picture.
+- **Walking times are now routed, not blank.** Twelve hotel-to-poker-room pairs were measured on the
+  OpenStreetMap foot network between geocoded coordinates, with the query and lookup linked on every
+  row. Walks inside one resort are marked internal instead of timed. Under the 30-minute rule: Wynn and
+  Encore reach the Venetian poker room in **17 and 15 minutes**, Bellagio reaches Wynn in **13**,
+  ARIA reaches Wynn in **12**, and Caesars is **33 minutes to the Venetian and 32 to Wynn**. Bellagio
+  (32), ARIA (44) and Caesars (33) miss the Venetian limit; Caesars misses both.
 - **8 AM start:** the earliest cash single-entry event in the dataset starts at **10:10 AM**. The only
   earlier single-entry start is the 9:10 AM $260 turbo milestone satellite on Dec 12, and it pays a
-  seat rather than cash. The 8 to 10 AM window still holds nothing.
+  seat rather than cash. The 8 to 10 AM window holds nothing all day. The one thing that *does* open at
+  8 AM is **registration**, four hours before a noon start at Wynn (official Wynn terms) — not play.
+- **Trip cost calculator.** The calculator now prices a whole trip: entries × buy-in + nights × true
+  hotel cost + parking + other spend, using only logged quotes, and it shows what the selected stay
+  window actually holds (verified single-entry events, days covered, cheapest buy-in, best
+  guarantee ÷ buy-in ratio). It refuses to total anything it cannot source.
 
 ## 1. Best single-entry tournaments (verified)
 
@@ -88,22 +113,56 @@ None of these sheets has a re-entry clause, so they are listed as single entry. 
 seat and not cash, each row carries a `prize_text` value and a `satellite` label instead of a dollar
 guarantee, and the calculator and the ranking both treat them differently from cash events.
 
-## 4. Hotels
+## 4. Hotels, true cost and walking
 
-| Hotel | Resort fee per night | Room rate | True cost per night | Walk to Venetian poker room | Source |
+Every figure below was read from the property's own site on **2026-11-17**. "True cost per night" is the
+official booking engine's own checkout total divided by the nights, so it already contains the room, the
+resort fee and the tax; nothing is reconstructed from an assumed rate.
+
+| Hotel | Resort fee / night | Room tax | True cost / night (dated quote) | Walk to Venetian poker room | Walk to Wynn poker room |
 |---|---|---|---|---|---|
-| The Venetian Resort | $55 plus tax (verified) | Blank (one dated quote in the rate log) | Blank (rate unverified) | Host property | [Hotel terms (official)](https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html) |
-| The Palazzo | $55 (verified; tax not stated) | Blank | Blank | Host property | [Poker suite rates incl. $55 resort fee (official)](https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html) |
-| Wynn Las Vegas | $55 plus tax (verified) | Blank | Blank | Not published | [Resort fee terms (official)](https://www.wynnlasvegas.com/terms-and-conditions/848671) |
-| Encore at Wynn Las Vegas | $55 plus tax (verified) | Blank | Blank | Not published | [Resort fee terms (official)](https://www.wynnlasvegas.com/terms-and-conditions/848671) |
-| Bellagio | Blank | Blank | Blank | Not published | [Bellagio official home page](https://bellagio.mgmresorts.com/en.html); no Bellagio-specific fee or tax confirmed. |
-| ARIA Resort & Casino | Blank | Blank | Blank | Not published | [ARIA official home page](https://aria.mgmresorts.com/en.html) and [ARIA poker page](https://aria.mgmresorts.com/en/casino/poker.html) |
-| Caesars Palace | Blank | Blank | Blank | Not published | [Caesars Palace official page](https://www.caesars.com/caesars-palace); no property fee confirmed. |
+| [The Venetian Resort](https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html) | $55 plus tax (verified) | 13.38% (verified) | $338.48 (Dec 13–20) and $911.86 (Jan 1–6) | inside the resort | **17 min** (routed) |
+| [The Palazzo](https://www.venetianlasvegas.com/resort/casino/poker/suite-rates.html) | $55 (verified) | 13.38% (verified) | $320.02 (Jan 10–15) | inside the resort | **21 min** (routed) |
+| [Wynn Las Vegas](https://www.wynnlasvegas.com/terms-and-conditions/848671) | $55 plus tax (verified) | blank (not printed; engine hides its breakdown) | blank (no Wynn quote captured yet) | **17 min** (routed) | inside the resort |
+| [Encore at Wynn Las Vegas](https://www.wynnlasvegas.com/terms-and-conditions/848671) | $55 plus tax (verified) | blank | blank (no dated quote) | **16 min** (routed) | inside the resort |
+| [Bellagio](https://bellagio.mgmresorts.com/en.html) | blank | blank | blank | **32 min — over the limit** | **13 min** |
+| [ARIA Resort & Casino](https://aria.mgmresorts.com/en.html) | blank | blank | blank | **44 min — over the limit** | **12 min** |
+| [Caesars Palace](https://www.caesars.com/caesars-palace) | blank | blank | blank | **33 min — over the limit** | **32 min — over the limit** |
 
-The Venetian's official hotel terms state a 13.38% Clark County Room Tax and a $55 resort fee plus
-applicable tax. That tax rate is not applied to the other hotels without property-specific
-confirmation. Walking times are not on any official source, so they stay blank and each record carries
-a walking-route link instead.
+**Like-for-like inside the one resort that publishes its breakdown.** Same property group, same engine,
+four different stays, so the comparison is between dates rather than between companies:
+
+| Stay | Room | Nights | Nightly average | Resort fee | Taxes | Checkout total | True cost / night |
+|---|---|---|---|---|---|---|---|
+| [Nov 26–29, 2026](https://www.venetianlasvegas.com/book) | Palazzo Luxury King | 3 | $654.25 | $55 × 3 | $284.69 | $2,412.44 | $804.15 |
+| [Dec 13–20, 2026](https://www.venetianlasvegas.com/book) | Venetian Newly Remodeled Luxury King | 7 | $243.54 | $55 × 7 | $279.63 | $2,369.38 | **$338.48** |
+| [Jan 1–6, 2027](https://www.venetianlasvegas.com/book) | Venetian Newly Remodeled Luxury King | 5 | $749.25 | $55 × 5 | $538.05 | $4,559.30 | **$911.86** |
+| [Jan 10–15, 2027](https://www.venetianlasvegas.com/book) | Palazzo Luxury Two Queen | 5 | $227.25 | $55 × 5 | $188.83 | $1,600.08 | **$320.02** |
+
+The lesson is in the spread, not the average: the same tower costs **$338.48 a night for Dec 13–20 and
+$911.86 a night for Jan 1–6**, because Jan 1 is quoted at $1,949.25 for the night. Dates, not the hotel
+name, dominate the hotel budget.
+
+**Cancellation.** Wynn publishes a 48-hour deadline and a one-night deposit
+([terms](https://www.wynnlasvegas.com/terms-and-conditions/848671)). The Venetian publishes that prepaid
+offers are non-cancellable and non-refundable but prints **no fixed free-cancellation deadline** for a
+general rate, so the two properties cannot even be matched on that term yet. Both texts are stored
+verbatim in `data/rates.json`.
+
+**Wynn's room tax stays blank on purpose.** No Wynn page prints the percentage, and its engine does not
+expose the breakdown to a text fetch, so there is no honest way to state it. Applying the Venetian's
+13.38% to Wynn would be exactly the kind of inference this dataset forbids.
+
+**Resort fees for Bellagio, ARIA and Caesars are still blank.** Eight candidate official URLs were tried
+on 2026-11-17 (resort-fee and policies pages on mgmresorts.com and caesars.com); every one either
+returned a 404 or redirected to a marketing page that prints no fee. They are left blank rather than
+borrowed from another property's terms, and the exact URLs tried are listed in `FLAGGED.md`.
+
+**Walking times are routed, not guessed.** All twelve pairs were measured on the OpenStreetMap foot
+network between geocoded coordinates, rounded up to the whole minute, and every row links both the
+geocoding lookup and the routing query. Walks inside one resort are marked internal rather than timed,
+and the official statement that fixes where each poker room sits is quoted on the row. The 30-minute rule
+is applied to every routed time, and rows that fail it stay visible and flagged.
 
 ## 5. Schedule and the 8 AM goal
 
@@ -113,10 +172,10 @@ a walking-route link instead.
   also name a conditional fallback that starts after the primary is estimated to finish. Estimated end
   times come from the published level structure and are labelled as estimates, never as official finish
   times.
-- **Overlaps:** two days are flagged. Dec 12 (the $2,200 PokerAtlas flight 1A at 10:10 AM against the
-  9:10 AM milestone satellite) and Jan 2 (the $1,600 MSPT 1B at 11:10 AM against the 10:10 AM
-  satellite). Both involve a satellite whose end time is an upper bound, because the tournament ends
-  when the seats run out.
+- **Overlaps:** 14 row-pairs on two days are flagged. Dec 12 (six pairs) and Jan 2 (three pairs, and
+  eight counting both directions) all trace back to a milestone satellite on the same day whose
+  estimated end is an upper bound, because a satellite stops when the seats run out. Each of those
+  days still gets a single primary plus a conditional fallback; no impossible sequence is proposed.
 - **Wynn registration opens at 8 AM for the noon events.** The official Wynn daily tournament terms
   and conditions state: *"Registration for each Event will open four (4) hours prior to the scheduled
   start of play."* The daily events start at 12 p.m., so registration opens at **8 a.m.** That is the
@@ -129,21 +188,65 @@ a walking-route link instead.
   in the separate section. Wynn states that the daily schedule is suspended during each Wynn Signature, Wynn Millions and
   Classic series, and the WPT and Signature Series dates are listed on the schedule page.
 
-## 6. What is not in the data
+## 6. Trip cost and how to plan a stay
+
+The calculator prices a trip the way the brief asks: **entries × buy-in + nights × true hotel cost**,
+plus parking and any other spend, using only logged quotes. For the Jan 10–15 window it returns:
+
+| Line | Value | Where it comes from |
+|---|---|---|
+| Hotel total, 5 nights | $1,600.08 | official engine checkout total (room + $55 resort fee + $188.83 tax) |
+| True hotel cost / night | $320.02 | checkout total ÷ 5 |
+| One $300 entry | $300.00 | buy-in entered by you, matching the event you pick |
+| Trip total | $1,900.08 | hotel + entries + parking + other |
+| All in per night | $380.02 | trip total ÷ 5 |
+| Events in the window | verified single-entry rows dated inside the stay | `data/tournaments.json` |
+
+It also shows what the window actually contains, so a stay is never bought against an empty schedule:
+for Jan 10–15 the window holds the NYE finale on Jan 10 (Event 31 seniors $400, Event 32 $200 bounty)
+and nothing on Jan 11–15 at the Venetian, because the Wynn Signature Series rows for those dates are
+still unverified on the entry rule and are not counted.
+
+**The practical planning sequence the data supports:**
+
+1. Fix the dates and the nightly budget/quality floor first — the rate log shows that the same tower
+   swings from $164.25 to $1,949.25 a night inside one week, so dates dominate the budget.
+2. Pick the event, then read its structure sheet for the written single-entry rule. 80 rows pass today;
+   129 cannot be judged yet because Wynn has not published the sheets.
+3. Compare only surviving events on guarantee, buy-in, stack, level length, payout and daily fit. The
+   guarantee ÷ buy-in ratio is descriptive, not a forecast, and bounty/flight events are labelled.
+4. Check the walking route against the hotel you picked: Wynn and Encore are inside the 30-minute
+   limit of both poker rooms, Bellagio and ARIA are inside it for Wynn only, and Caesars Palace is
+   outside both. The same-stay price comparison across the two companies is blocked until a Wynn quote
+   can be captured (see §4).
+5. Build one event per day first and only add an evening event where the earlier one can realistically
+   end. Use the primary/fallback pair on the schedule page.
+6. Reconfirm schedule, rate and policy on the official page before any non-refundable payment. That is
+   exactly what the dated rate log and the daily monitor are for.
+
+## 7. What is not in the data
 
 - No 2027 Las Vegas WSOP Circuit schedule: no official source was found (I13).
 - No payout ladder for most events: only some structure sheets publish one.
-- No walking times, and no nightly rate for any hotel other than the single logged quote.
+- No *published* nightly rate: both Venetian and Wynn sell through a booking engine that quotes a stay,
+  not a rate card, so the only defensible per-night figure is checkout total ÷ nights from a dated quote.
+- No resort fee, room tax or rate for Bellagio, ARIA or Caesars Palace: eight candidate official URLs
+  returned 404s or marketing pages that print no fee.
+- No official structure sheets for the Wynn Signature Series (the PDF is a "COMING SOON" placeholder)
+  or for the WPT milestone satellites, so those entry rules stay unverified.
+- No 8 AM *play* anywhere: registration opens at 8 AM at Wynn, but the earliest verified cash start is
+  10:10 AM.
 - No official structure sheet exists for the Wynn WPT milestone satellites, so their entry rules stay
   unverified even though their buy-in, prize, chips and level count are official.
 
-## 7. How to use the site
+## 8. How to use the site
 
 - Every tournament table has the same filter bar: text search, date range, venue, series, entry rule,
   buy-in range, labels and a single-entry-only switch.
 - The schedule page has a date picker and previous/next day buttons.
-- The [calculator](pages/calculator.html) prices a stay from the verified fee, tax and a rate you enter,
-  and refuses to total anything that depends on an unverified figure.
+- The [calculator](pages/calculator.html) prices a whole trip (entries × buy-in + nights × true hotel
+  cost + parking + other) from the dated rate log, shows what the chosen stay window holds, and compares
+  every logged quote like-for-like. It refuses to total anything it cannot source.
 - The [monitoring page](pages/monitoring.html) shows which official sources answered on the last
   check, which rows changed since the last verified snapshot, and every flagged row.
 - The [search box](pages/search.html) covers every row, hotel, venue, daily format, walking record,

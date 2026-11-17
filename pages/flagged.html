@@ -214,6 +214,10 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
       return '<a href="' + esc(s.url) + '" target="_blank" rel="noopener">' + esc(s.label) + "</a>";
     }).join("<br>");
   }
+  function walkCell(min, status, within) {
+    if (min == null) return '<span class="muted">inside the resort</span>';
+    return min + " min " + (within === false ? '<span class="chip bad">over 30</span>' : '<span class="chip ok">within 30</span>');
+  }
   function flagsHtml(row) {
     var f = row.flags || [];
     if (!f.length) return "";
@@ -783,7 +787,8 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
         { id: "rate", label: "Room rate / night", key: "room_rate_usd", num: true, html: function (r) { return chip(r.room_rate_status) + "<br>" + money(r.room_rate_usd) + "<br><span class='small'>" + esc(r.room_rate_note) + "</span>"; } },
         { id: "tax", label: "Room tax", key: "clark_county_tax_pct", num: true, html: function (r) { return r.clark_county_tax_pct == null ? '<span class="muted">Unverified</span><br><span class="small">' + esc(r.tax_status) + "</span>" : r.clark_county_tax_pct + "%<br><span class='small'>" + esc(r.tax_status) + "</span>"; } },
         { id: "true", label: "True cost / night", key: "true_cost_per_night_usd", num: true, html: function (r) { return r.true_cost_per_night_usd == null ? '<span class="muted">blank (rate unverified)</span>' : money(r.true_cost_per_night_usd); } },
-        { id: "walk", label: "Walk to Venetian", key: "walk_to_venetian_min", sort: null, html: function (r) { return r.walk_to_venetian_min == null ? '<span class="muted">Unverified</span>' : r.walk_to_venetian_min + " min"; } },
+        { id: "walkv", label: "Walk to Venetian poker room", key: "walk_to_venetian_min", num: true, html: function (r) { return walkCell(r.walk_to_venetian_min, r.walk_to_venetian_status, r.walk_to_venetian_within_30); } },
+        { id: "walkw", label: "Walk to Wynn poker room", key: "walk_to_wynn_min", num: true, html: function (r) { return walkCell(r.walk_to_wynn_min, "verified", r.walk_to_wynn_within_30); } },
         { id: "src", label: "Sources", key: "sources", sort: null, html: function (r) { return "<span class='small'>" + srcLinks(r.sources) + "</span>"; } }
       ];
       table(main, rows, cols, { sortKey: "name", sortDir: 1 });
@@ -791,17 +796,209 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
       var w = document.getElementById("walking");
       if (w) {
         w.innerHTML = "<h2>Walking records</h2>" +
-          "<p class='small'>A walking time is only filled in when an official source publishes one. None does today, " +
-          "so every time is blank and the 30-minute rule cannot be applied yet. Each row links a walking route instead.</p>";
+          "<p class='small'>Times are routed on the OpenStreetMap foot network between the geocoded property " +
+          "coordinates and the poker-room coordinate, then rounded up to the whole minute; every row cites the " +
+          "geocoding lookup and the routing query it came from, plus the official statement that fixes where the " +
+          "poker room is. Walks inside one resort are marked internal rather than timed, because no street route " +
+          "is involved. The 30-minute rule is applied to every routed time: rows over it stay in the table, " +
+          "flagged, so nothing is hidden.</p>";
         var wcols = [
           { id: "hotel", label: "Hotel", key: "hotel" },
           { id: "venue", label: "Venue", key: "venue" },
-          { id: "minutes", label: "Minutes", key: "minutes", num: true, html: function (r) { return r.minutes == null ? '<span class="muted">unverified</span>' : r.minutes; } },
+          { id: "minutes", label: "Minutes", key: "minutes", num: true, html: function (r) { return r.minutes == null ? '<span class="muted">internal</span>' : r.minutes + (r.within_30_min === false ? ' <span class="chip bad">over 30</span>' : ' <span class="chip ok">within 30</span>'); } },
+          { id: "metres", label: "Metres", key: "metres", num: true },
           { id: "status", label: "Status", key: "status" },
           { id: "note", label: "Note", key: "note", sort: null, html: function (r) { return "<span class='small'>" + esc(r.note) + "</span>"; } },
-          { id: "route", label: "Route", key: "route_link", sort: null, html: function (r) { return '<a href="' + esc(r.route_link) + '" target="_blank" rel="noopener">walking route</a>'; } }
+          { id: "route", label: "Route", key: "route_link", sort: null, html: function (r) { return '<a href="' + esc(r.route_link) + '" target="_blank" rel="noopener">routing query</a>'; } },
+          { id: "src", label: "Sources", key: "sources", sort: null, html: function (r) { return "<span class='small'>" + srcLinks(r.sources) + "</span>"; } }
         ];
-        table(w, walking, wcols, { sortKey: "hotel", sortDir: 1 });
+        table(w, walking, wcols, { sortKey: "minutes", sortDir: 1 });
+      }
+
+      var rl = document.getElementById("rates");
+      if (rl) {
+        rl.innerHTML = "<h2>Dated rate log</h2><p class='small'>Every quote is stored with the date it was taken, so a later " +
+          "rate can be compared against it instead of replacing it.</p>";
+        var rcols = [
+          { id: "arrival", label: "Arrival", key: "arrival", html: function (r) { return dateFmt(r.arrival); } },
+          { id: "departure", label: "Departure", key: "departure", html: function (r) { return dateFmt(r.departure); } },
+          { id: "nights", label: "Nights", key: "nights", num: true },
+          { id: "avg", label: "Published average / night", key: "nightly_average_usd", num: true, html: function (r) { return money(r.nightly_average_usd); } },
+          { id: "checkout", label: "Checkout total", key: "checkout_total_usd", num: true, html: function (r) { return money(r.checkout_total_usd); } },
+          { id: "taxes", label: "Taxes", key: "taxes_total_usd", num: true, html: function (r) { return money(r.taxes_total_usd); } },
+          { id: "true", label: "True cost / night", key: "true_cost_per_night_usd", num: true, html: function (r) { return money(r.true_cost_per_night_usd); } },
+          { id: "room", label: "Room", key: "room", sort: null, html: function (r) { return "<span class='small'>" + esc(r.room) + " · " + esc(r.occupancy) + "<br>" + esc(r.caveat) + "</span>"; } },
+          { id: "src", label: "Source", key: "source", sort: null, html: function (r) { return '<a href="' + esc(r.source) + '" target="_blank" rel="noopener">official booking engine</a>'; } }
+        ];
+        table(rl, rates, rcols, { sortKey: "arrival", sortDir: -1 });
+      }
+    }).catch(showErr);
+  };
+
+  /* ---------- trip cost calculator: entries x buy-in + nights x true hotel cost ---------- */
+  PAGES.calculator = function () {
+    Promise.all([getJSON("data/hotels.json"), getJSON("data/rates.json"),
+                 getJSON("data/tournaments.json")]).then(function (res) {
+      var hotels = res[0].rows, rates = res[1].entries, rows = res[2].rows;
+      var main = document.getElementById("content");
+
+      main.innerHTML =
+        '<div class="card">' +
+        '<div class="form-grid">' +
+        '<div><label for="c-quote">Verified stay quote (dated rate log)</label><select id="c-quote"></select></div>' +
+        '<div><label for="c-entries">Tournament entries</label><input type="number" id="c-entries" min="0" step="1" value="1"></div>' +
+        '<div><label for="c-buyin">Buy-in each (USD)</label><input type="number" id="c-buyin" min="0" step="10" value="300"></div>' +
+        '<div><label for="c-parkdays">Parking days at the hotel</label><input type="number" id="c-parkdays" min="0" step="1" value="0"></div>' +
+        '<div><label for="c-extra">Other spend for the trip (USD)</label><input type="number" id="c-extra" min="0" step="10" value="0"></div>' +
+        '</div>' +
+        '<div class="calc-out" id="c-out"></div>' +
+        '<p class="small" id="c-note"></p>' +
+        '</div>' +
+        '<div class="card"><h2>What is in the selected window</h2><div id="c-window"></div></div>' +
+        '<div class="card"><h2>Like-for-like comparison of the logged quotes</h2><div id="c-compare"></div></div>';
+
+      var quoteSel = document.getElementById("c-quote");
+      quoteSel.innerHTML = rates.map(function (r, i) {
+        return '<option value="' + i + '">' + esc(r.property) + " · " + esc(r.room) + " · " +
+          esc(dateShort(r.arrival)) + "–" + esc(dateShort(r.departure)) + ", " + r.nights + " nights · " +
+          money(r.checkout_total_usd) + " total</option>";
+      }).join("");
+
+      var els = {
+        quote: quoteSel,
+        entries: document.getElementById("c-entries"),
+        buyin: document.getElementById("c-buyin"),
+        parkdays: document.getElementById("c-parkdays"),
+        extra: document.getElementById("c-extra")
+      };
+      function num(v) { var n = parseFloat(v); return isNaN(n) ? null : n; }
+      function money2(v) { return "$" + Number(v).toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+
+      function calc() {
+        var q = rates[+els.quote.value];
+        var out = document.getElementById("c-out");
+        var note = document.getElementById("c-note");
+        if (!q) { out.innerHTML = ""; note.textContent = "No dated quote is logged yet."; return; }
+        var hotel = hotels.filter(function (h) { return h.id === q.hotel_id; })[0] || null;
+        var entries = num(els.entries.value) || 0;
+        var buyin = num(els.buyin.value);
+        var parkdays = num(els.parkdays.value) || 0;
+        var extra = num(els.extra.value) || 0;
+        var parkRate = hotel ? hotel.parking_usd_per_day : null;
+        var parking = (parkRate == null || !parkdays) ? 0 : parkRate * parkdays;
+        var entryTotal = buyin == null ? null : entries * buyin;
+        var hotelTotal = q.checkout_total_usd;
+        var total = hotelTotal + (entryTotal == null ? 0 : entryTotal) + parking + extra;
+
+        var box = function (label, value, hint) {
+          return '<div class="box"><div class="n">' + (value == null ? '<span class="muted">n/a</span>' : value) +
+            '</div><div class="l">' + esc(label) + (hint ? "<br>" + esc(hint) : "") + "</div></div>";
+        };
+        out.innerHTML =
+          box("Nights", String(q.nights), esc(q.room)) +
+          box("Hotel total (engine quote)", money2(hotelTotal), "room + resort fee + tax, as the engine totals it") +
+          box("True hotel cost / night", money2(q.true_cost_per_night_usd), "checkout total ÷ nights") +
+          box("Tournament entries", entryTotal == null ? null : money2(entryTotal), entries + " × " + (buyin == null ? "?" : money2(buyin))) +
+          box("Parking", money2(parking), parkdays ? parkdays + " day(s) × " + (parkRate == null ? "unverified" : money2(parkRate)) : "none entered") +
+          box("Other spend", money2(extra), "as entered") +
+          box("Trip total", money2(total), "entries × buy-in + nights × true hotel cost + parking + other") +
+          box("Per night, all in", money2(total / q.nights), "trip total ÷ nights");
+
+        var msgs = [];
+        msgs.push("Rate timestamp: quote read from the official booking engine on " + q.retrieved_on + ".");
+        if (q.cancellation_note) msgs.push("Cancellation: " + q.cancellation_note);
+        if (hotel && hotel.parking_usd_per_day == null && parkdays) {
+          msgs.push("Parking is left out because this property's daily parking fee is not on an official source read so far.");
+        }
+        msgs.push("The hotel line moves with availability; re-check the booking engine before paying. " +
+                  "Nothing here is a forecast of winnings.");
+        note.textContent = msgs.join(" ");
+
+        /* what the selected window holds, from the verified dataset */
+        var win = document.getElementById("c-window");
+        var inWindow = rows.filter(function (r) { return r.date >= q.arrival && r.date <= q.departure; });
+        var se = inWindow.filter(function (r) { return r.entry_status === "SE"; });
+        var seCash = se.filter(function (r) { return r.kind === "entry" && !(r.labels || []).some(function (l) { return /satellite/i.test(l); }); });
+        var days = {};
+        se.forEach(function (r) { days[r.date] = 1; });
+        var cheapest = seCash.slice().sort(function (a, b) { return (a.buy_in_usd || 0) - (b.buy_in_usd || 0); })[0];
+        var richest = seCash.slice().sort(function (a, b) { return (b.gtd_multiple || 0) - (a.gtd_multiple || 0); })[0];
+        win.innerHTML =
+          '<p class="small">' + esc(dateFmt(q.arrival)) + " to " + esc(dateFmt(q.departure)) + ": " +
+          inWindow.length + " official tournament rows fall in this window, of which <strong>" + se.length +
+          "</strong> are verified single entry (" + seCash.length + " cash events, " + (se.length - seCash.length) +
+          " satellite/other), across " + Object.keys(days).length + " days with at least one verified single-entry event.</p>" +
+          (se.length ? '<p class="small">' + entries + " entr" + (entries === 1 ? "y" : "ies") + " fits " +
+            (entries <= se.length ? "inside the " + se.length + " verified single-entry options in the window."
+                                 : "only partly: the window holds " + se.length + " verified single-entry options.") + "</p>" : "") +
+          (cheapest ? '<p class="small">Cheapest verified single-entry cash event in the window: ' + esc(cheapest.name) +
+            " on " + esc(dateFmt(cheapest.date)) + " at " + esc(timeFmt(cheapest.start)) + " for " + money(cheapest.buy_in_usd) + ".</p>" : "") +
+          (richest ? '<p class="small">Largest guaranteed pool ÷ buy-in in the window: ' + esc(richest.name) +
+            " on " + esc(dateFmt(richest.date)) + " (" + mult(richest.gtd_multiple) + "). Descriptive ratio only, not a forecast.</p>" : "") +
+          '<p class="small"><a href="' + BASE + 'pages/schedule.html">Open the day-by-day schedule</a> for the primary and fallback plan.</p>';
+
+        /* like-for-like comparison */
+        var cmp = document.getElementById("c-compare");
+        var cols = [
+          { id: "prop", label: "Property", key: "property" },
+          { id: "room", label: "Room", key: "room", sort: null, html: function (r) { return "<span class='small'>" + esc(r.room) + "</span>"; } },
+          { id: "window", label: "Stay", key: "arrival", html: function (r) { return dateShort(r.arrival) + "–" + dateShort(r.departure) + "<br><span class='small'>" + r.nights + " nights, " + esc(r.occupancy) + "</span>"; } },
+          { id: "avg", label: "Nightly average", key: "nightly_average_usd", num: true, html: function (r) { return money2(r.nightly_average_usd); } },
+          { id: "fee", label: "Resort fee / night", key: "resort_fee_per_night_usd", num: true, html: function (r) { return money2(r.resort_fee_per_night_usd); } },
+          { id: "tax", label: "Tax total", key: "taxes_total_usd", num: true, html: function (r) { return money2(r.taxes_total_usd); } },
+          { id: "total", label: "Checkout total", key: "checkout_total_usd", num: true, html: function (r) { return money2(r.checkout_total_usd); } },
+          { id: "true", label: "True cost / night", key: "true_cost_per_night_usd", num: true, html: function (r) { return "<strong>" + money2(r.true_cost_per_night_usd) + "</strong>"; } },
+          { id: "cancel", label: "Cancellation", key: "cancellation_note", sort: null, html: function (r) { return "<span class='small'>" + esc(r.cancellation_note || "not stated in the quote") + "</span>"; } },
+          { id: "stamp", label: "Rate timestamp", key: "retrieved_on", html: function (r) { return "<span class='small'>read " + esc(r.retrieved_on) + "<br>logged " + esc(r.logged_on) + "</span>"; } }
+        ];
+        cmp.innerHTML = "";
+        table(cmp, rates, cols, { sortKey: "true", sortDir: 1 });
+      }
+
+      quoteSel.addEventListener("change", calc);
+      ["entries", "buyin", "parkdays", "extra"].forEach(function (k) { els[k].addEventListener("input", calc); });
+      calc();
+    }).catch(showErr);
+  };
+
+  PAGES.hotels = function () {
+    Promise.all([getJSON("data/hotels.json"), getJSON("data/walking.json"), getJSON("data/rates.json")]).then(function (res) {
+      var rows = res[0].rows, walking = res[1].rows, rates = res[2].entries;
+      var main = document.getElementById("content");
+      document.getElementById("method").textContent = res[0].method;
+      var chip = function (s) { return s === "verified" ? '<span class="chip ok">Verified</span>' : '<span class="chip warn">Unverified</span>'; };
+      var cols = [
+        { id: "name", label: "Hotel", key: "name", html: function (r) { return "<strong>" + esc(r.name) + "</strong><br><span class='small'>" + esc(r.address_note) + "</span>"; } },
+        { id: "fee", label: "Resort fee / night", key: "resort_fee_usd", num: true, html: function (r) { return chip(r.resort_fee_status) + "<br>" + money(r.resort_fee_usd) + "<br><span class='small'>" + esc(r.resort_fee_note) + "</span>"; } },
+        { id: "rate", label: "Room rate / night", key: "room_rate_usd", num: true, html: function (r) { return chip(r.room_rate_status) + "<br>" + money(r.room_rate_usd) + "<br><span class='small'>" + esc(r.room_rate_note) + "</span>"; } },
+        { id: "tax", label: "Room tax", key: "clark_county_tax_pct", num: true, html: function (r) { return r.clark_county_tax_pct == null ? '<span class="muted">Unverified</span><br><span class="small">' + esc(r.tax_status) + "</span>" : r.clark_county_tax_pct + "%<br><span class='small'>" + esc(r.tax_status) + "</span>"; } },
+        { id: "true", label: "True cost / night", key: "true_cost_per_night_usd", num: true, html: function (r) { return r.true_cost_per_night_usd == null ? '<span class="muted">blank (rate unverified)</span>' : money(r.true_cost_per_night_usd); } },
+        { id: "walkv", label: "Walk to Venetian poker room", key: "walk_to_venetian_min", num: true, html: function (r) { return walkCell(r.walk_to_venetian_min, r.walk_to_venetian_status, r.walk_to_venetian_within_30); } },
+        { id: "walkw", label: "Walk to Wynn poker room", key: "walk_to_wynn_min", num: true, html: function (r) { return walkCell(r.walk_to_wynn_min, "verified", r.walk_to_wynn_within_30); } },
+        { id: "src", label: "Sources", key: "sources", sort: null, html: function (r) { return "<span class='small'>" + srcLinks(r.sources) + "</span>"; } }
+      ];
+      table(main, rows, cols, { sortKey: "name", sortDir: 1 });
+
+      var w = document.getElementById("walking");
+      if (w) {
+        w.innerHTML = "<h2>Walking records</h2>" +
+          "<p class='small'>Times are routed on the OpenStreetMap foot network between the geocoded property " +
+          "coordinates and the poker-room coordinate, then rounded up to the whole minute; every row cites the " +
+          "geocoding lookup and the routing query it came from, plus the official statement that fixes where the " +
+          "poker room is. Walks inside one resort are marked internal rather than timed, because no street route " +
+          "is involved. The 30-minute rule is applied to every routed time: rows over it stay in the table, " +
+          "flagged, so nothing is hidden.</p>";
+        var wcols = [
+          { id: "hotel", label: "Hotel", key: "hotel" },
+          { id: "venue", label: "Venue", key: "venue" },
+          { id: "minutes", label: "Minutes", key: "minutes", num: true, html: function (r) { return r.minutes == null ? '<span class="muted">internal</span>' : r.minutes + (r.within_30_min === false ? ' <span class="chip bad">over 30</span>' : ' <span class="chip ok">within 30</span>'); } },
+          { id: "metres", label: "Metres", key: "metres", num: true },
+          { id: "status", label: "Status", key: "status" },
+          { id: "note", label: "Note", key: "note", sort: null, html: function (r) { return "<span class='small'>" + esc(r.note) + "</span>"; } },
+          { id: "route", label: "Route", key: "route_link", sort: null, html: function (r) { return '<a href="' + esc(r.route_link) + '" target="_blank" rel="noopener">routing query</a>'; } },
+          { id: "src", label: "Sources", key: "sources", sort: null, html: function (r) { return "<span class='small'>" + srcLinks(r.sources) + "</span>"; } }
+        ];
+        table(w, walking, wcols, { sortKey: "minutes", sortDir: 1 });
       }
 
       var rl = document.getElementById("rates");
@@ -994,7 +1191,8 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
           { id: "name", label: "Hotel", key: "name", html: function (r) { return "<strong>" + esc(r.name) + "</strong>"; } },
           { id: "fee", label: "Resort fee", key: "resort_fee_usd", num: true, html: function (r) { return money(r.resort_fee_usd) + " <span class='small'>(" + esc(r.resort_fee_status) + ")</span>"; } },
           { id: "tax", label: "Room tax", key: "clark_county_tax_pct", num: true, html: function (r) { return r.clark_county_tax_pct == null ? '<span class="muted">unverified</span>' : r.clark_county_tax_pct + "%"; } },
-          { id: "walk", label: "Walk", key: "walk_to_venetian_min", sort: null, html: function (r) { return r.walk_to_venetian_min == null ? '<span class="muted">unverified</span>' : r.walk_to_venetian_min + " min"; } },
+          { id: "walk", label: "Walk to Venetian room", key: "walk_to_venetian_min", num: true, html: function (r) { return walkCell(r.walk_to_venetian_min, r.walk_to_venetian_status, r.walk_to_venetian_within_30); } },
+          { id: "walkw", label: "Walk to Wynn room", key: "walk_to_wynn_min", num: true, html: function (r) { return walkCell(r.walk_to_wynn_min, "verified", r.walk_to_wynn_within_30); } },
           { id: "src", label: "Sources", key: "sources", sort: null, html: function (r) { return "<span class='small'>" + srcLinks(r.sources) + "</span>"; } }
         ], { sortKey: "name", sortDir: 1 });
       }
@@ -1006,7 +1204,7 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
           { id: "from", label: "From", key: "from", sort: null },
           { id: "minutes", label: "Minutes", key: "minutes", num: true, html: function (r) { return r.minutes == null ? '<span class="muted">unverified</span>' : r.minutes; } },
           { id: "note", label: "Note", key: "note", sort: null, html: function (r) { return "<span class='small'>" + esc(r.note) + "</span>"; } },
-          { id: "route", label: "Route", key: "route_link", sort: null, html: function (r) { return '<a href="' + esc(r.route_link) + '" target="_blank" rel="noopener">walking route</a>'; } }
+          { id: "route", label: "Route", key: "route_link", sort: null, html: function (r) { return '<a href="' + esc(r.route_link) + '" target="_blank" rel="noopener">routing query</a>'; } }
         ], { sortKey: "hotel", sortDir: 1 });
       }
       var tsec = document.getElementById("events");

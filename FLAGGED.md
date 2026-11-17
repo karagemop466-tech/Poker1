@@ -34,15 +34,36 @@ row itself says what is odd about it.
 |---|---|---|
 | F20 | `.github/workflows/monitor.yml` used a `name:` key inside its `schedule:` entry. The workflow schema accepts only `cron` there, so the daily source check never fired, and `data/monitoring.json` still shows a run made from a sandbox where every operator domain was unreachable (0 of 59 sources). | Fixed by removing the unsupported key, so the daily job will now run. The parallel provenance job (`scripts/check_source_facts.py`, weekly) already runs in GitHub Actions and reports 68 of 71 sources fetched, which is the reachability evidence the monitoring page is still missing. |
 
+### Irregularities re-checked on 2026-11-17
+
+| # | What was re-checked | Result |
+|---|---|---|
+| F21 | Both Venetian event pages, row by row, against `data/tournaments.json` | **All 143 Venetian rows still match.** The pages still print "Saturday, December 26, **2025**" (F1) and "Tuesaday, January 5, 2027" (F2), so both flags stay open. |
+| F22 | One cosmetic wording change: the live DSE IV page now prints Dec 15 event 52 as "$1,100 NLH $75K GTD (1Day) - Progressive Knock-Out Bounty", while the stored name is "Progressive Knock-Out Bounty $75K GTD". Same event, same buy-in, same guarantee, same sheet. | The stored name is unchanged; the difference is word order inside the event name, not a value. |
+| F23 | WPT schedule PDF and Wynn Signature Series schedule PDF, row by row | **All 173 Wynn rows still match**, including the "Dec. 18 Wednesday" block (F3) — the PDF still prints it between Dec 15 and Dec 17 with a weekday that does not match any date in the block. |
+| F24 | Wynn Signature Series **structures** PDF, at the URL the official poker page links today (`v1762299460`) | Still a single page reading "LAS VEGAS POKER COMING SOON". No structure sheet, so all 38 rows stay unverified on the entry rule (U7). |
+| F25 | Wynn room-tax rate | No Wynn page prints the tax **percentage**, and `reservations.wynnlasvegas.com` renders its nightly grid and tax line client-side, so no Wynn quote with a tax figure could be captured on 2026-11-17 (only its fee and policy text is returned). Wynn's room tax is therefore **blank**. The Venetian's 13.38% is not applied to Wynn. |
+| F25b | A Wynn rate quote was drafted and then withdrawn | A five-night Wynn figure ($190/night, $188.83 tax, $1,600.08) was written into the rate log during this session. Re-fetching the engine showed the numbers could not be reproduced from the source, so the entry was **removed** from `data/rates.json` and from every document before publication. The dated rate log now holds four quotes, all Venetian/Palazzo, each of which reproduces exactly at 13.38% of room + resort fee. |
+| F26 | Bellagio, ARIA and Caesars Palace resort fee / room tax | Eight candidate official URLs were tried and all failed to publish a fee: `mgmresorts.com/en/help/faq.html`, `mgmresorts.com/en/company/resort-fees.html`, `mgmresorts.com/en/hotel/resort-fees.html`, `bellagio.mgmresorts.com/en/hotel/resort-fee.html` (all "Oops! We can't find that page"), `caesars.com/corporate/resort-fees` (redirects to the corporate home page), `caesars.com/caesars-palace/hotel-amenities` and `caesars.com/caesars-palace/hotel/policies` (redirect to the property marketing page with no fee), and `caesars.com/las-vegas/hotels/resort-fees` (redirects to the hotel index). Left blank (U2–U4). |
+| F27 | Venetian hotel terms, resort-fee page, poker-suite-rates page | Re-read in full. 13.38% room tax and $55 resort fee plus tax are still stated verbatim; the poker suite rate is still "as low as $119 and $209 ... can be higher" with the six-hour / $300-buy-in nightly qualification. Nothing changed. |
+
+### Walking-time method, and why it is not an "official" figure
+
+| # | Point | Detail |
+|---|---|---|
+| F28 | No hotel or poker room publishes a walking time. | The times on this site are **routed**, not published: they come from the OpenStreetMap foot network between geocoded coordinates, rounded up to the whole minute, and each row links both the geocoding lookup and the routing query so anyone can reproduce it. They are labelled `verified` against that routing source, never described as an official statement by the property. |
+| F29 | The destination coordinate is the resort the poker room sits in, not the poker room door. | The Venetian poker room is inside The Palazzo and the Wynn poker room is inside Encore — both stated by the official sources quoted on the row — so the Palazzo and Encore coordinates are used as destinations, and the walk from inside the same building is marked `internal` rather than timed. An interior walk is therefore not included in any routed minute. |
+| F30 | Three hotels fail the 30-minute rule to the Venetian poker room. | Bellagio 32 min, ARIA 44 min, Caesars Palace 33 min (and 32 min to the Wynn poker room). They stay listed and flagged rather than dropped, so the rule is visible instead of silently applied. |
+
 ## B. Items with no official value (left blank)
 
 | # | Item | Why it is blank |
 |---|---|---|
-| U1 | Nightly room rate for every hotel and every date, except the one logged quote | No official rate for any stay date was retrieved. Third-party rates were not used. |
+| U1 | A published nightly *rate card* for any hotel | Neither property publishes one; both quote a stay through a booking engine. Five dated engine quotes are logged instead (see `data/rates.json`), each with its own timestamp, so a per-night figure is only ever checkout total ÷ nights. |
 | U2 | Bellagio resort fee and room tax | No Bellagio-specific fee or tax value is printed on an official page read in this session. Third-party values conflict. |
 | U3 | Caesars Palace resort fee and room tax | No Caesars Palace-specific fee or tax value is printed on an official page read in this session. An earlier draft quoted a general corporate range; that claim was not supported by a page read here and was removed. |
 | U4 | ARIA resort fee and room tax | The official ARIA pages read here publish player rates by phone or e-mail only. |
-| U5 | Walking time from any hotel to any venue | Not published on any official source. A walking route link is given instead. |
+| U5 | An *officially published* walking time | None exists (F28). Routed times from OpenStreetMap are given instead, with the query linked. |
 | U6 | Entry rule for 129 unverified official rows | No structure sheet is published for them. See QUESTIONS.md. |
 | U7 | Entry rules for the 38 Wynn Signature Series rows | The official Signature Series structures PDF contains only a "COMING SOON" placeholder. |
 | U8 | Entry rules for the WPT milestone and satellite rows | The WPT structures PDF ends with the PLO Mystery Bounty and publishes no sheet for them. |
