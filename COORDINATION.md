@@ -1,5 +1,13 @@
 
 
+## Session 88793bf4 — branch `arena/88793bf4-poker1`, base `44fcc08` (claim, 2026-11-17)
+
+Claimed before implementation. No other open claim covers this scope: open PRs #36 (`c0714e1a`, WPT join and hotel fee records), #38 (`160f9080`, row verification) and #39 (`11c7cbe6`, planner review) are not touched here.
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Strip-wide poker-room survey: official schedules, structures and closures for every Strip room not yet covered (MGM Grand, Mandalay Bay, Horseshoe, Resorts World, Planet Hollywood); add an official-source-only strip page with a flag for every reported-but-unconfirmed item | **In progress** | `data/strip_rooms.json` (new), `research/strip-room-survey-2026-11-17.md` (new), `pages/strip-rooms.html` (generated), `scripts/build_site.py`, `assets/app.js` (one renderer), `scripts/check_links.py` (allow-list and page id), `scripts/monitor_sources.py` (monitor the new URLs), `data/sources.json`, `FLAGGED.md` (appended S-series only), `EXECUTIVE_SUMMARY.md` (appended section), `COORDINATION.md` | `88793bf4` |
+
 ## Session 54ae4633 (current branch `arena/54ae4633-poker1`)
 
 | Task | Status | File scope | Owner |
