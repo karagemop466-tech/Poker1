@@ -160,8 +160,7 @@ of a poker room, or search any column.</p>
 """),
     "pages/monitoring.html": ("Monitoring", "monitoring", """
 <h1>Source monitoring</h1>
-<p class="lead">Two different checks, kept apart on purpose: the <strong>scheduled provenance check</strong> re-fetches every official document from GitHub Actions and reports whether the values printed on it moved, and the <strong>row-level check</strong> records which URLs answered and which dataset rows changed since the last snapshot. A run that reaches nothing is labelled a network blackout rather than a source outage.</p>
-
+<p class="lead">Three things are kept apart on purpose. The <strong>scheduled provenance check</strong> re-fetches every official document from GitHub Actions and reports whether the values printed on it moved. The <strong>row-level check</strong> records which official URL answered, whether each page still prints the values its rows were captured from, and which rows changed since the last snapshot. Every printed source flag is listed below with its source link. A run that reaches nothing at all is labelled a network blackout rather than a source outage.</p>
 <div id="content"></div>
 <h2>Rows carrying a source flag</h2>
 <div id="flagged"></div>

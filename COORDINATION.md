@@ -1123,3 +1123,20 @@ verified fees / 4 daily formats / 79 flagged at `985678f`); hotels, schedule, si
 flagged pages all render live with per-row official source links; GitHub Pages status `built`;
 the Venetian DSE IV spot-check matched 31/31 rows on date, start, event number, name and
 structure-sheet URL.
+## Session c4774e5a — urgent fix: conflict markers were live on the site
+
+While confirming the deploy of PR #63 the live monitoring page at
+https://karagemop466-tech.github.io/Poker1/pages/monitoring.html was found to be serving **unresolved
+merge-conflict markers** around the page's lead paragraph. `scripts/build_site.py` had a `<<<<<<<` /
+`=======` / `>>>>>>>` block committed by the session that added the pair-level checks, and the generated
+`pages/monitoring.html` carried it into the published site. Every existing check passed, because a marker
+is not a broken link, an invalid JSON value, a missing id or a failed render.
+
+- Both versions of the paragraph were true, so they are merged into one lead that states all three
+  checks: the scheduled provenance check, the row-level source/content check and the flagged rows.
+- `scripts/check_links.py` now scans `index.html`, `assets/`, `scripts/`, the six Markdown documents,
+  every file under `pages/` and every file under `data/` for conflict markers and fails on any hit,
+  reporting the file and line. Verified by re-inserting a marker into the generated page (caught) and
+  removing it again (passes); it now reports "54 files free of conflict markers".
+- This is exactly the class of defect the user asked to be caught before publication, so it is also
+  recorded in `FLAGGED.md` (F58).
