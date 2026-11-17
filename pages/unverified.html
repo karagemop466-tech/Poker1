@@ -183,7 +183,7 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
 <div id="site-header"></div>
 <main>
 <h1>Unverified official rows</h1>
-<p class="lead">Official schedule rows whose structure sheet has not been read. Entry rule unknown. Not ranked.</p>
+<p class="lead">Official schedule rows whose structure sheet has not been read, so their entry rule and fee split are unknown. Every Venetian and WPT World Championship row is joined to its published structure sheet; what remains here is the Wynn Signature Series, whose official structures PDF is still a "COMING SOON" placeholder (checked live on 2026-11-17). These rows are not ranked.</p>
 <div id="filters"></div>
 <div class="toolbar"><span class="small"><span id="count" class="small"></span></span></div>
 <div id="content"></div>
@@ -627,8 +627,7 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
     var el = document.getElementById("site-header");
     if (el) el.outerHTML = html;
     var f = document.getElementById("site-footer");
-    if (f) f.innerHTML = "Data verified against official sources on " + checkedOn + ". Blank cells are unverified, and no value is inferred. " +
-      '<a href="' + BASE + 'pages/flagged.html">Flagged for review</a> · ' +
+    if (f) f.innerHTML = "Data verified against official sources on " + checkedOn + ". Blank cells are unverified, and no value is inferred. " +      '<a href="' + BASE + 'pages/flagged.html">Flagged for review</a> · ' +
       '<a href="' + BASE + 'pages/monitoring.html">Monitoring</a>.';
   }
 
@@ -1276,10 +1275,9 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
   PAGES.monitoring = function () {
     Promise.all([
       getJSONSafe("data/monitoring.json"), getJSONSafe("data/changes.json"), getJSON("data/tournaments.json"),
-      getJSONSafe("data/change_log.json")
+      getJSONSafe("data/change_log.json"), getJSONSafe("data/live_verification.json")
     ]).then(function (res) {
-      var mon = res[0], ch = res[1], rows = res[2].rows, prov = res[3];
-      var main = document.getElementById("content");
+      var mon = res[0], ch = res[1], rows = res[2].rows, prov = res[3], live = res[4];      var main = document.getElementById("content");
       var flagged = rows.filter(function (r) { return (r.flags || []).length; });
       var html = "";
       if (mon) {
@@ -1330,6 +1328,38 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
         }
       } else {
         html += "<div class='card callout'>No monitoring result is stored yet. The monitoring job writes data/monitoring.json after it checks every official source.</div>";
+      }
+      if (live) {
+        html += "<h2>Live re-check of the official schedule pages</h2>";
+        html += "<div class='grid'>" +
+          kpi(live.summary.sources_ok + " / " + live.summary.sources_checked, "official schedule sources parsed") +
+          kpi(live.summary.discrepancies, "discrepancies against the published rows") +
+          kpi(live.summary.errors, "sources that could not be checked") +
+          "</div>";
+        html += "<p class='small'>Checked " + esc(live.checked_at) + " (" + esc(live.mode) +
+          "). Each source is re-fetched, what it prints today is parsed, and that parse is compared with every " +
+          "published row: a row the page no longer prints, a changed name or a moved start time is listed here. " +
+          "This check runs on every pull request and every morning.</p>";
+        html += live.sources.map(function (s) {
+          var items = [].concat(
+            (s.missing || []).map(function (x) { return ["missing", x]; }),
+            (s.changed || []).map(function (x) { return ["changed", x]; }),
+            (s.new || []).map(function (x) { return ["new", x]; })
+          );
+          var chip = s.status === "ok" ? "ok" : "bad";
+          return '<div class="result"><span class="chip ' + chip + '">' + esc(s.status) + '</span> ' +
+            '<div class="title">' + esc(s.series) + '</div>' +
+            "<div class='meta'>" + esc(s.url) + "</div>" +
+            (s.printed_rows != null ? "<div class='meta'>" + s.printed_rows + " rows printed by the page, " +
+              s.published_rows + " published</div>" : "") +
+            (s.error ? "<div class='meta'>" + esc(s.error) + "</div>" : "") +
+            (items.length ? items.map(function (x) {
+              return "<div class='meta'><span class='chip " + (x[0] === "new" ? "warn" : "bad") + "'>" +
+                esc(x[0]) + "</span> " + esc(x[1].date || "") + " " + esc(x[1].start || "") + " " +
+                esc(x[1].name || x[1].printed_name || "") + " — " + esc(x[1].reason || "") + "</div>";
+            }).join("") : "<div class='meta'>No discrepancy.</div>") +
+            "</div>";
+        }).join("");
       }
       if (ch) {
         var changed = ch.changed || [], added = ch.added || [], removed = ch.removed || [];

@@ -479,7 +479,7 @@
    "buy_in_usd": 800,
    "guarantee_usd": 1000000,
    "entry_status": "CONT",
-   "buy_in": "Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge)",
+   "buy_in": "not published for this event",
    "flags": 1
   },
   "r041": {
@@ -533,14 +533,14 @@
   "r045": {
    "date": "2026-12-01",
    "start": "12:00",
-   "name": "Limit Omaha 8/5/stud 8",
+   "name": "Limit Omaha 8/Stud 8",
    "venue": "Wynn Las Vegas",
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 600,
    "guarantee_usd": null,
    "entry_status": "RE",
    "buy_in": "Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge)",
-   "flags": 0
+   "flags": 1
   },
   "r046": {
    "date": "2026-12-01",
@@ -552,7 +552,7 @@
    "guarantee_usd": null,
    "entry_status": "RE",
    "buy_in": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $45 (Poker Staff Service Charge)",
-   "flags": 0
+   "flags": 1
   },
   "r047": {
    "date": "2026-12-01",
@@ -683,7 +683,7 @@
    "buy_in_usd": 1600,
    "guarantee_usd": 1000000,
    "entry_status": "CONT",
-   "buy_in": "Entry Fee: $800 Buy-in = $695 (Tournament Prize Pool) + $72 (Tournament Fee) + $33 (Poker Staff Service Charge)",
+   "buy_in": "not published for this event",
    "flags": 2
   },
   "r058": {
@@ -755,7 +755,7 @@
    "buy_in_usd": null,
    "guarantee_usd": null,
    "entry_status": "CONT",
-   "buy_in": "Entry Fee: $800 Buy-in = $695 (Tournament Prize Pool) + $72 (Tournament Fee) + $33 (Poker Staff Service Charge)",
+   "buy_in": "not published for this event",
    "flags": 2
   },
   "r064": {
@@ -791,7 +791,7 @@
    "buy_in_usd": 1600,
    "guarantee_usd": 1000000,
    "entry_status": "CONT",
-   "buy_in": "Entry Fee: $1,600 Buy-in = $1,430 (Tournament Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge)",
+   "buy_in": "not published for this event",
    "flags": 2
   },
   "r067": {
@@ -851,7 +851,7 @@
    "buy_in_usd": 1600,
    "guarantee_usd": 500000,
    "entry_status": "RE",
-   "buy_in": "Entry Fee: $1,600 Buy-in = $930 (Tournament Prize Pool) + $500 (Mystery Bounty Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge)",
+   "buy_in": "1,600 Buy-in = $930 Tournament Prize Pool + $500 Mystery Bounty Prize Pool + $120 Tournament Fee + $50 Poker Staff Service Charge",
    "flags": 0
   },
   "r072": {
@@ -923,7 +923,7 @@
    "buy_in_usd": 1600,
    "guarantee_usd": 500000,
    "entry_status": "RE",
-   "buy_in": "Entry Fee: $1,600 Buy-in = $930 (Tournament Prize Pool) + $500 (Mystery Bounty Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge)",
+   "buy_in": "1,600 Buy-in = $930 Tournament Prize Pool + $500 Mystery Bounty Prize Pool + $120 Tournament Fee + $50 Poker Staff Service Charge",
    "flags": 0
   },
   "r078": {
@@ -995,7 +995,7 @@
    "buy_in_usd": null,
    "guarantee_usd": null,
    "entry_status": "CONT",
-   "buy_in": "Entry Fee: $1,600 Buy-in = $930 (Tournament Prize Pool) + $500 (Mystery Bounty Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge)",
+   "buy_in": "not published for this event",
    "flags": 2
   },
   "r084": {
@@ -1007,7 +1007,7 @@
    "buy_in_usd": 1600,
    "guarantee_usd": 100000,
    "entry_status": "RE",
-   "buy_in": "Entry Fee: $1,600 Buy-in = $940 (Tournament Prize Pool) + $500 (Bounty Prize Pool) + $115 (Tournament Fee) + $45 (Poker Staff Service Charge)",
+   "buy_in": "1,600 Buy-in = $940 Tournament Prize Pool + $500 Bounty Prize Pool + $115 Tournament Fee + $45 Poker Staff Service Charge",
    "flags": 0
   },
   "r085": {
@@ -1163,7 +1163,7 @@
    "buy_in_usd": null,
    "guarantee_usd": null,
    "entry_status": "CONT",
-   "buy_in": "Entry Fee: $1,100 Buy-in = $970 (Tournament Prize Pool) + $90 (Tournament Fee) + $40 (Poker Staff Service Charge)",
+   "buy_in": "not published for this event",
    "flags": 2
   },
   "r098": {
@@ -1187,7 +1187,7 @@
    "buy_in_usd": 3000,
    "guarantee_usd": 250000,
    "entry_status": "RE",
-   "buy_in": "Entry Fee: $3,000 Buy-in = $1,730 (Tournament Prize Pool) + $1,000 (Bounty Prize Pool) + $200 (Tournament Fee) + $70 (Poker Staff Service Charge)",
+   "buy_in": "3,000 Buy-in = $1,730 Tournament Prize Pool + $1,000 Bounty Prize Pool + $200 Tournament Fee + $70 Poker Staff Service Charge",
    "flags": 0
   },
   "r100": {
@@ -1283,7 +1283,7 @@
    "buy_in_usd": null,
    "guarantee_usd": null,
    "entry_status": "CONT",
-   "buy_in": "Entry Fee: $1,100 Buy-in = $970 (Tournament Prize Pool) + $90 (Tournament Fee) + $40 (Poker Staff Service Charge)",
+   "buy_in": "not published for this event",
    "flags": 2
   },
   "r108": {
@@ -1379,7 +1379,7 @@
    "buy_in_usd": null,
    "guarantee_usd": null,
    "entry_status": "CONT",
-   "buy_in": "Entry Fee: $1,100 Buy-in = $970 (Tournament Prize Pool) + $90 (Tournament Fee) + $40 (Poker Staff Service Charge)",
+   "buy_in": "not published for this event",
    "flags": 2
   },
   "r116": {
@@ -1493,14 +1493,14 @@
   "r125": {
    "date": "2026-12-12",
    "start": "14:00",
-   "name": "Milestone Satellite to $10,400 World Championship 1A/8",
+   "name": "Milestone Satellite to $10,400 World Championship 1A/B",
    "venue": "Wynn Las Vegas",
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 1100,
    "guarantee_usd": null,
    "entry_status": "RE",
    "buy_in": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge)",
-   "flags": 0
+   "flags": 1
   },
   "r126": {
    "date": "2026-12-12",
@@ -1523,20 +1523,20 @@
    "buy_in_usd": null,
    "guarantee_usd": null,
    "entry_status": "CONT",
-   "buy_in": "Entry Fee: $1,100 Buy-in = $970 (Tournament Prize Pool) + $90 (Tournament Fee) + $40 (Poker Staff Service Charge)",
+   "buy_in": "not published for this event",
    "flags": 2
   },
   "r128": {
    "date": "2026-12-12",
    "start": "16:00",
-   "name": "Milestone Satellite to $10,400 Ladies NLH Championship",
+   "name": "Milestone Satellite to $1,100 Ladies NLH Championship",
    "venue": "Wynn Las Vegas",
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 200,
    "guarantee_usd": null,
    "entry_status": "RE",
    "buy_in": "Entry Fee: $200 Buy-in = $165 (Tournament Prize Pool) + $20 (Tournament Fee) + $15 (Poker Staff Service Charge)",
-   "flags": 0
+   "flags": 1
   },
   "r129": {
    "date": "2026-12-12",
@@ -1553,14 +1553,14 @@
   "r130": {
    "date": "2026-12-12",
    "start": "19:00",
-   "name": "Milestone Satellite to $10,400 World Championship 1A/8",
+   "name": "Milestone Satellite to $10,400 World Championship 1A/B",
    "venue": "Wynn Las Vegas",
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 1100,
    "guarantee_usd": null,
    "entry_status": "RE",
    "buy_in": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge)",
-   "flags": 0
+   "flags": 1
   },
   "r131": {
    "date": "2026-12-12",
@@ -1589,13 +1589,13 @@
   "r133": {
    "date": "2026-12-13",
    "start": "11:00",
-   "name": "Ladies NIH Championship (2 Day)",
+   "name": "Ladies NLH Championship (2 Day)",
    "venue": "Wynn Las Vegas",
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 1100,
    "guarantee_usd": 250000,
    "entry_status": "RE",
-   "buy_in": "Entry Fee: $11,100 Buy-in = $10,965 (Tournament Prize Pool) + $90 (Tournament Fee) + $45 (Poker Staff Service Charge)",
+   "buy_in": "*Discounted Ladies Entry Fee: $1,100 Buy-in = $965 (Tournament Prize Pool) + $90 (Tournament Fee) + $45 (Poker Staff Service Charge)",
    "flags": 2
   },
   "r134": {
@@ -1841,7 +1841,7 @@
   "r154": {
    "date": "2026-12-14",
    "start": "21:00",
-   "name": "NIH Turbo",
+   "name": "NLH Turbo",
    "venue": "Wynn Las Vegas",
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 600,
@@ -1943,7 +1943,7 @@
    "buy_in_usd": 3000,
    "guarantee_usd": 250000,
    "entry_status": "RE",
-   "buy_in": "Entry Fee: $3,000 Buy-in = $1,730 (Tournament Prize Pool) + $1,000 (Bounty Prize Pool) + $200 (Tournament Fee) + $70 (Poker Staff Service Charge)",
+   "buy_in": "3,000 Buy-in = $1,730 Tournament Prize Pool + $1,000 Bounty Prize Pool + $200 Tournament Fee + $70 Poker Staff Service Charge",
    "flags": 0
   },
   "r163": {
@@ -1973,14 +1973,14 @@
   "r165": {
    "date": "2026-12-15",
    "start": "19:00",
-   "name": "NIH $500 Bounty Turbo",
+   "name": "NLH $500 Bounty Turbo",
    "venue": "Wynn Las Vegas",
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 1600,
    "guarantee_usd": 100000,
    "entry_status": "RE",
-   "buy_in": "Entry Fee: $1,600 Buy-in = $940 (Tournament Prize Pool) + $500 (Bounty Prize Pool) + $115 (Tournament Fee) + $45 (Poker Staff Service Charge)",
-   "flags": 0
+   "buy_in": "1,600 Buy-in = $940 Tournament Prize Pool + $500 Bounty Prize Pool + $115 Tournament Fee + $45 Poker Staff Service Charge",
+   "flags": 1
   },
   "r166": {
    "date": "2026-12-16",
@@ -2069,7 +2069,7 @@
   "r173": {
    "date": "2026-12-16",
    "start": "18:00",
-   "name": "Milestone Satellite to $25K NIH High Roller",
+   "name": "Milestone Satellite to $25K NLH High Roller",
    "venue": "Wynn Las Vegas",
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 3000,
@@ -2375,7 +2375,7 @@
    "buy_in_usd": 1600,
    "guarantee_usd": 1000000,
    "entry_status": "RE",
-   "buy_in": "Entry Fee: $1,600 Buy-in = $930 (Tournament Prize Pool) + $500 (Mystery Bounty Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge)",
+   "buy_in": "1,600 Buy-in = $930 Tournament Prize Pool + $500 Mystery Bounty Prize Pool + $120 Tournament Fee + $50 Poker Staff Service Charge",
    "flags": 0
   },
   "r199": {
@@ -2507,7 +2507,7 @@
    "buy_in_usd": 1600,
    "guarantee_usd": 1000000,
    "entry_status": "RE",
-   "buy_in": "Entry Fee: $1,600 Buy-in = $930 (Tournament Prize Pool) + $500 (Mystery Bounty Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge)",
+   "buy_in": "1,600 Buy-in = $930 Tournament Prize Pool + $500 Mystery Bounty Prize Pool + $120 Tournament Fee + $50 Poker Staff Service Charge",
    "flags": 0
   },
   "r210": {
@@ -2531,7 +2531,7 @@
    "buy_in_usd": 1600,
    "guarantee_usd": 1000000,
    "entry_status": "RE",
-   "buy_in": "Entry Fee: $1,600 Buy-in = $930 (Tournament Prize Pool) + $500 (Mystery Bounty Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge)",
+   "buy_in": "1,600 Buy-in = $930 Tournament Prize Pool + $500 Mystery Bounty Prize Pool + $120 Tournament Fee + $50 Poker Staff Service Charge",
    "flags": 0
   },
   "r212": {
@@ -2639,7 +2639,7 @@
    "buy_in_usd": 1600,
    "guarantee_usd": 1000000,
    "entry_status": "RE",
-   "buy_in": "Entry Fee: $1,600 Buy-in = $930 (Tournament Prize Pool) + $500 (Mystery Bounty Prize Pool) + $120 (Tournament Fee) + $50 (Poker Staff Service Charge)",
+   "buy_in": "1,600 Buy-in = $930 Tournament Prize Pool + $500 Mystery Bounty Prize Pool + $120 Tournament Fee + $50 Poker Staff Service Charge",
    "flags": 0
   },
   "r221": {

@@ -60,8 +60,7 @@ sources". It was not — it was a transcription error in this dataset. The flag 
   13.38% room tax verified for The Venetian and The Palazzo. For Bellagio and ARIA the tax percentage
   is stored as a labelled **estimate** and never used to total a stay; Caesars Palace publishes no
   property-specific resort fee, so that cell stays blank. **Five dated quotes are on file**, all from
-  the Venetian's official booking engine: $804.15 (Nov 26–29), $475.35 (Nov 18–20), $338.48 (Dec 13–20), $911.86 (Jan 1–6) and $320.02 (Jan 10–15) true cost per night. Every quote stores the per-night rates, resort fee, tax total, checkout
-  total, cancellation terms and the date it was read, so a later quote is compared against these instead
+  the Venetian's official booking engine: $804.15 (Nov 26–29), $475.35 (Nov 18–20), $338.48 (Dec 13–20), $911.86 (Jan 1–6) and $320.02 (Jan 10–15) true cost per night. Every quote stores the per-night rates, resort fee, tax total, checkout  total, cancellation terms and the date it was read, so a later quote is compared against these instead
   of replacing them.
 - **Every one of those five quotes reproduces exactly** — twice over: 13.38% applied to (room + resort fee)
   returns the stored tax total to the cent, and (room + fee) ÷ nights returns the Average Rate the engine
@@ -168,8 +167,7 @@ These are kept out of the ranking.
   dataset (625x, 13.75% house fee) but sits here until this is confirmed with the poker room.
 - **Re-entry confirmed (107 rows).** 106 Wynn WPT rows whose structure sheet prints its own
   "Unlimited re-entry until the start of level N" clause, plus one Venetian row (NYE Event 29) whose
-  sheet applies a discount to "any subsequent re-entry". No WPT sheet prints an add-on.
-- **Rebuy and add-on (daily feed, not ranked).** The Wynn Friday $240 format allows unlimited $200
+  sheet applies a discount to "any subsequent re-entry". No WPT sheet prints an add-on.- **Rebuy and add-on (daily feed, not ranked).** The Wynn Friday $240 format allows unlimited $200
   rebuys and a $100 add-on. Rebuy events are excluded from the ranking.
 
 ### Other Strip poker rooms checked on 2026-11-17 (no rows added)
@@ -318,7 +316,8 @@ still unverified on the entry rule and are not counted.
 1. Fix the dates and the nightly budget/quality floor first — the rate log shows that the same tower
    swings from $164.25 to $1,949.25 a night inside one week, so dates dominate the budget.
 2. Pick the event, then read its structure sheet for the written single-entry rule. 80 rows pass today;
-   129 cannot be judged yet because Wynn has not published the sheets.
+   42 cannot be judged yet because Wynn has not published the Signature Series sheets. Every Venetian
+   and WPT World Championship sheet has now been read and joined to its rows.
 3. Compare only surviving events on guarantee, buy-in, stack, level length, payout and daily fit. The
    guarantee ÷ buy-in ratio is descriptive, not a forecast, and bounty/flight events are labelled.
 4. Check the walking route against the hotel you picked. The Venetian, The Palazzo, Wynn, Encore,

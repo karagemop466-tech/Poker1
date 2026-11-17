@@ -51,7 +51,7 @@ No official source used by the dataset is left unread.
 | R9 | Wrong URL | The draft pointed the Wynn Signature Series structures at a URL variant that was never fetched. | The fetched URL (`v1753296112`) is restored, and the row records that the file is a "COMING SOON" placeholder. |
 | R10 | Rule wording | The draft's generic "no re-entry clause" excerpt was applied to rows where the sheet says something more specific (clause 08 on the flight events, clause 07 on the PokerAtlas rows, clause 06 on NYE Event 29). | Each row now quotes its own clause. |
 | R11 | Payout and stack data | The draft carried starting stacks, level lengths, breaks and payout rules only for the two WPT structures that had been read. | All eight WPT structure sections were read, so every WPT row with a published sheet now carries the fee split, stack, level length, break rule and payout note. |
-| R12 | Entry status | The draft's separate section did not include the Wynn re-entry rows, so the published ranking mixed verified and unverified rows. | The separate section now holds all 105 rows that are not verified single entry. |
+| R12 | Entry status | The draft's separate section did not include the Wynn re-entry rows, so the published ranking mixed verified and unverified rows. | The separate section now holds every row that is not verified single entry (170 on 2026-11-17, after the WPT rows were joined to their structure sheets). |
 | R13 | Schedule schema | `assets/app.js` read `days[].options`, but the generator emits `days[].events`, so the schedule page rendered nothing. | Fixed in both places, and `scripts/check_links.py` now checks the schedule schema. |
 | R14 | Missing data files | `data/daily.json`, `data/rates.json`, `data/venues.json` and `data/walking.json` were created by the earlier draft but were never validated, rendered or linked. | All four are generated, validated, rendered on their own pages and linked from the navigation. |
 
@@ -120,8 +120,7 @@ Third-party sites were used to locate events and hotels only. They are not cited
 - Current counts (2026-11-17, after the structure-sheet join): **317 rows**. Single entry 80 (60 cash, 20
   Venetian milestone satellites). Separate section 174 (67 possible multi-entry, 107 re-entry). Unverified
   **38**, all Wynn Signature Series. Continuation rows 25. Every one of the 113 WPT entry rows is joined to the
-  structure sheet that prints its own date, start time and buy-in, so the earlier 129 unverified rows are gone.
-- Row IDs are unique and assigned after the chronological sort (`r001` to `r317`). Restoring a row that sorts into the middle of the WPT block shifts every later ID by one; no row content changed (see `research/verification-2026-11-17.md`).
+  structure sheet that prints its own date, start time and buy-in, so the earlier 129 unverified rows are gone.- Row IDs are unique and assigned after the chronological sort (`r001` to `r317`). Restoring a row that sorts into the middle of the WPT block shifts every later ID by one; no row content changed (see `research/verification-2026-11-17.md`).
 
 ## 7b. Structure-sheet join (2026-11-17, session `c0714e1a`)
 
@@ -234,8 +233,7 @@ Being explicit, because these are the kind of errors that would otherwise ship a
 ### 9.4 Verification performed
 
 ```
-python3 scripts/build_data.py     # 317 rows: 80 SE (60 cash + 20 satellites), 60 MULTI, 46 RE, 129 UNV, 2 CONT; 70 days; 78 flagged; 7 hotels; 5 dated rates; 12 walking records
-python3 scripts/build_site.py     # 21 pages, zero diff against the committed pages
+python3 scripts/build_data.py     # 317 rows: 80 SE (60 cash + 20 satellites), 67 MULTI, 107 RE, 38 UNV, 25 CONT; 70 days; 85 flagged; 7 hotels; 5 dated rates; 12 walking recordspython3 scripts/build_site.py     # 21 pages, zero diff against the committed pages
 python3 scripts/check_links.py    # OK: schemas, local links, official hosts, rule objects, schedule contract, quote-backed costs, walking limit, provenance
 node scripts/smoke_test.js        # 21/21 pages render in a headless DOM with no page error
 ```
@@ -317,6 +315,8 @@ row can drift unnoticed — it could, and now it cannot).
 - Wynn/Encore nightly rates and Wynn's room-tax rate (its engine hides the breakdown).
 - Bellagio, ARIA and Caesars Palace resort fee and room tax (twelve official URLs tried, none publishes).
 - Venetian free-cancellation deadline for a general rate.
-- Entry rules for 129 rows: 38 Signature Series (placeholder PDF) and 91 WPT rows without a sheet.
+- Entry rules for 42 rows: 38 Wynn Signature Series (placeholder PDF, re-checked live on 2026-11-17) and
+  4 WPT continuation rows. Every one of the 113 WPT rows that sells an entry is joined to its sheet by
+  `scripts/extract_wpt_sheets.py`, which reports 0 unresolved.
 - Whether a busted multi-flight player counts as a second entry (D1) — a policy question only the poker
   room can settle.

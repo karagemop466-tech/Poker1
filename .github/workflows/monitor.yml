@@ -75,6 +75,13 @@ jobs:
           python3 scripts/monitor_sources.py $args | tee monitor.txt
           echo "facts_changed=$(python3 -c "import json;print(json.load(open('data/monitoring.json'))['sources_facts_changed'])")" >> "$GITHUB_OUTPUT"
           echo "rows_marked=$(python3 -c "import json;print(json.load(open('data/monitoring.json'))['rows_source_changed'])")" >> "$GITHUB_OUTPUT"
+      - name: Re-fetch the official schedule pages and diff every published row
+        # Compares what the official pages print today with the published rows. A row
+        # the page no longer prints, a name that changed or a start time that moved is
+        # recorded in data/live_verification.json and listed in the daily issue. The
+        # step does not fail the job: the issue is the deliverable, and the committed
+        # file is the record. `|| true` keeps the report step running after a diff.
+        run: python3 scripts/verify_live.py --print --json data/live_verification.json || true
 
       - name: Summarise the result
         run: |
@@ -91,9 +98,8 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/monitoring.json data/changes.json
-          if [ "${{ inputs.accept_baseline }}" = "yes" ]; then git add data/source_baseline.json; fi
-          if git diff --cached --quiet; then
+          git add data/monitoring.json data/changes.json data/live_verification.json
+          if [ "${{ inputs.accept_baseline }}" = "yes" ]; then git add data/source_baseline.json; fi          if git diff --cached --quiet; then
             echo "No change in the monitoring result."
           else
             git commit -m "chore: refresh source monitoring result"
@@ -126,8 +132,24 @@ jobs:
           print(f"- pages whose published values changed: {mon['sources_facts_changed']}")
           print(f"- rows marked for re-reading: {mon['rows_source_changed']}")
           print()
-          print("### Marked rows")
+          live = json.load(open("data/live_verification.json"))
+          print("### Live re-read of the official schedule pages")
           print()
+          print(f"- mode: {live.get('mode')}")
+          print(f"- sources parsed: {live['summary']['sources_ok']} / {live['summary']['sources_checked']}")
+          print(f"- errors: {live['summary']['errors']}, discrepancies: {live['summary']['discrepancies']}")
+          for src in live["sources"]:
+              print(f"- `{src['url']}`: {src['status']}")
+              if src.get("error"):
+                  print(f"  - {src['error']}")
+              for key in ("missing", "changed", "new"):
+                  for item in src.get(key) or []:
+                      print(f"  - **{key}** {item.get('date')} {item.get('start')} "
+                            f"{item.get('name') or item.get('printed_name')}")
+          print()
+          print("### Rows that changed since the last verified snapshot")
+          print()
+          print("### Marked rows")          print()
           for row in ch["changed"]:
               print(f"- **{row['name']}** ({row.get('date', 'no date')}, `{row['id']}`, {row.get('kind')})")
               print(f"  - {row.get('reason', '')}")

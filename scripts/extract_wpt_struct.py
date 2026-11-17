@@ -43,10 +43,26 @@ DATE_RE = re.compile(
     r"(\d{1,2}),?\s+(20\d\d),?\s*(?:at|, at)?\s*(\d{1,2})(?::(\d\d))?\s*([ap])\.?\s*m\.?",
     re.I)
 
+# The fee line is parsed by the label printed beside each amount, never by position:
+# a Mystery Bounty sheet prints four components (prize pool, mystery-bounty pool,
+# tournament fee, staff service charge) and a positional parse silently reads the
+# mystery pool as the fee. session 71eacf83 fix, found by verify_rows.
 FEE_RE = re.compile(
     r"Entry Fee:\s*(\$[\d,]+(?:\*\*)?)\s*Buy-in\s*=\s*"
-    r"\$([\d,]+)\s*\(Tournament Prize Pool\)\s*\+\s*"
-    r"\$([\d, ]+?)\s*\(([^)]*)\)\s*\+\s*\$([\d, ]+?)\s*\(([^)]*)\)")
+    r"(.{0,240}?\(Poker Staff Service Charge\))")
+
+
+def fee_split(fee_m):
+    """Return (buyin, prize_pool, tournament_fee, staff_fee) from the printed line."""
+    if not fee_m:
+        return None, None, None, None
+    by_label = {}
+    for amt, label in re.findall(r"\$([\d, ]+?)\s*\(([^)]*)\)", fee_m.group(2)):
+        by_label[label.strip().lower()] = money(amt)
+    return (money(fee_m.group(1)),
+            by_label.get("tournament prize pool"),
+            by_label.get("tournament fee"),
+            by_label.get("poker staff service charge"))
 
 
 def norm(s):
@@ -87,6 +103,7 @@ def main():
     for i, chunk in enumerate(chunks, 1):
         j = norm(chunk)
         fee = FEE_RE.search(j)
+        buyin_usd, pool_usd, tfee_usd, sfee_usd = fee_split(fee)
         reg = grab(r"Registration:\s*(.{0,900}?)\s*Starting Stack", j)
         unlimited = bool(reg and "unlimited re-entry" in reg.lower())
         blocks.append({
@@ -94,10 +111,17 @@ def main():
             "title": grab(r"This (\$[\d,]+.{0,120}?)\(the \u201cTournament\u201d\)", j),
             "dates": printed_dates(chunk),
             "entry_fee_line": grab(r"(Entry Fee:\s*.{0,240}?\(Poker Staff Service Charge\))", j),
-            "buyin_usd": money(fee.group(1)) if fee else None,
-            "prize_pool_usd": int(re.sub(r"[^\d]", "", fee.group(2))) if fee else None,
-            "tournament_fee_usd": money(fee.group(3)) if fee else None,
-            "staff_fee_usd": money(fee.group(5)) if fee else None,
+            # A discounted entry line is printed separately (the Ladies Championship prints the
+            # standard $11,100 entry and a "*Discounted Ladies Entry Fee" of $1,100). Kept apart
+            # so a row is never described by the price it does not pay.
+            "discounted_fee_line": grab(
+                r"(\*?Discounted[^:]*Entry Fee:\s*.{0,240}?\(Poker Staff Service Charge\))", j),
+            "discounted_buyin_usd": (lambda m: money(m.group(1)) if m else None)(
+                re.search(r"\*?Discounted[^:]*Entry Fee:\s*\$([\d,]+)\s*Buy-in", j)),
+            "buyin_usd": buyin_usd,
+            "prize_pool_usd": pool_usd,
+            "tournament_fee_usd": tfee_usd,
+            "staff_fee_usd": sfee_usd,
             "reg": reg,
             # "Unlimited re-entry" is a printed statement, so the sheet itself
             # confirms that more than one entry may be bought.

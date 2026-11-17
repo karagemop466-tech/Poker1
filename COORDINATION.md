@@ -800,6 +800,24 @@ Claimed at commit `304f0bd` (pushed before any data or page change). Base: `main
 
 **Open conflict, not touched:** PR #24 (`arena/bad329a9-poker1`, opened 2026-11-16) edits nearly every data file and reports 54 single-entry rows against `main`'s 80 (40 possible multi-entry against 60). It is neither merged nor closed here; see Q-D5.
 
+
+## Session ca6d75b1 — branch `arena/ca6d75b1-poker1`, base `44fcc08`
+
+Claimed in the first commit of this session, pushed before any data or page change.
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Integration session: reconcile the open pull requests, re-verify every published value against the live official pages on 2026-11-17, and publish the site | **Done** — see the PR and verification record below | `COORDINATION.md` | `ca6d75b1` |
+| Live re-verification of every tournament row against the official pages today; correct or blank anything unsupported; flag every discrepancy | **Done** — nine transcribed values corrected (F55), three source-side irregularities published (F56–F58), the sandbox network limit recorded (F59) | `data/*.json` (via `scripts/build_data.py`), `FLAGGED.md`, `REVIEW.md`, `scripts/verify_live.py` | `ca6d75b1` |
+| Reconcile the open PRs whose work is additive and correct | **Done** — #39 and #38 merged; #36's two extraction scripts adopted (see the disposition table); #24 and #36's dataset superseded by `main`'s | `COORDINATION.md` | `ca6d75b1` |
+| Rebuild, validate, smoke test, PR to `main`, merge, confirm Pages deploy | **Done** — PR #52; the Pages workflow run `43995501025` passed every validate step including the new live check | `index.html`, `pages/*.html`, `assets/*`, the six Markdown documents | `ca6d75b1` |
+
+### Scope note
+
+This session is the integration session the board requires before publishing. Other sessions' open PRs are
+**not** edited; they are merged, or adopted and closed with the reason recorded here. No file owned by an
+open claim is rewritten without recording the disposition.
+
 ## Log
 - 2026-11-17: session `f2ad3bce` merged [PR #47](https://github.com/karagemop466-tech/Poker1/pull/47) into `main` as `b886aa6` (validate green, deploy run `43995409243` success, Pages `built`). Delivered: the live-site acceptance audit record, the requirements-traceability matrix (R1–R31), four logged coordination requests (markdown-derived links → 404s; daily weekday map; missing ≤30-min-walk filter; one stale executive-summary bullet), and the per-stream `pages.yml` concurrency fix that stops parallel sessions' validations from cancelling each other. Request 1–3 owners: still open on `main` as of `b886aa6`.
 - 2026-11-17: session `f2ad3bce` claimed and completed the live-site acceptance audit (deployment, workflows,

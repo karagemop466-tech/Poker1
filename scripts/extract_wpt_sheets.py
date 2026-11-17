@@ -111,6 +111,13 @@ def main():
                                "candidates": [[c[2]["block"], c[2]["title"]] for c in scored]})
             continue
         best, delta = scored[0][2], scored[0][1]
+        # When the sheet prints a discounted entry line for the row's buy-in, that is the line
+        # the row must be described by.
+        fee_line = best["entry_fee_line"]
+        disc = best.get("discounted_fee_line")
+        disc_buy = best.get("discounted_buyin_usd")
+        if disc and disc_buy and row["buy_in_usd"] == disc_buy and best.get("buyin_usd") != disc_buy:
+            fee_line = disc
         matched[row["id"]] = {
             "row_id": row["id"],
             "key": [row["date"], row["start"], row["buy_in_usd"]],
@@ -119,9 +126,14 @@ def main():
             "registration": best["reg"],
             "unlimited_re_entry": best["unlimited_re_entry"],
             "multi_entry": best["multi_entry"],
-            "entry_fee_line": best["entry_fee_line"],
+            "entry_fee_line": fee_line,
+            "printed_standard_fee_line": best["entry_fee_line"],
+            "discounted_fee_line": best.get("discounted_fee_line"),
             "buyin_usd": best["buyin_usd"],
             "row_buyin_usd": row["buy_in_usd"],
+            "row_name": row["name"],
+            "row_date": row["date"],
+            "row_start": row["start"],
             "prize_pool_usd": best["prize_pool_usd"],
             "tournament_fee_usd": best["tournament_fee_usd"],
             "staff_fee_usd": best["staff_fee_usd"],
@@ -140,6 +152,10 @@ def main():
         "blocks_total": len(blocks),
         "rows_total": len(rows),
         "matched": matched,
+        # Keyed by the schedule's printed date, start and event name so the generator can
+        # attach the sheet to a row without depending on row ids (which are positional).
+        "by_row": {"%s|%s|%s" % (v["row_date"], v["row_start"], v["row_name"]): v
+                   for v in matched.values()},
         "unresolved": unresolved,
     }
     with open(OUT, "w", encoding="utf-8") as f:

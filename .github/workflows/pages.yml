@@ -60,15 +60,50 @@ jobs:
       - name: Validate JSON schemas, local links, and source links
         run: python3 scripts/check_links.py
 
-      # Two independent row-level checks, because they answer different questions.
-      #   verify_rows.py     - value-by-value against the archived official text
+      # Four checks, because they answer different questions.
+      #   verify_rows.py      - value-by-value against the archived official text
       #   verify_live_rows.py - row-by-row against the document that prints the row
+      #   verify_live.py      - re-fetches the official schedule pages and diffs every published row
+      #                         (offline replay first, then the live fetch)
       - name: Verify every published value against the archived official documents
         run: python3 scripts/verify_rows.py
 
       - name: Verify every published row against the official document that prints it
         run: python3 scripts/verify_live_rows.py | tee -a "$GITHUB_STEP_SUMMARY"
 
+      - name: Replay the live page checks against the archived official schedule
+        # Exercises the parser used by the scheduled live check with no network needed.
+        run: python3 scripts/verify_live.py --offline
+
+      - name: Re-fetch the official schedule pages and diff every published row
+        # The live half of the verification. A discrepancy (a row the official page no
+        # longer prints, or a name/time that changed) fails this step so no stale row
+        # can be published; an unreachable source fails it too, so a broken check is
+        # never reported as a pass.
+        #
+        # The result is not committed from this job: a pull-request job must not push,
+        # and a push to main would race the deploy. The published copy of
+        # data/live_verification.json is written by the daily monitor job, which is
+        # allowed to commit. This job keeps its own result as an artifact.
+        run: |
+          python3 -m pip install --quiet pypdf
+          python3 scripts/verify_live.py --print --json data/live_verification.json \
+            | tee live_verification.txt
+          {
+            echo "### Live re-read of the official schedule pages"
+            echo
+            cat live_verification.txt
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Keep the live verification result
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: live-verification
+          path: |
+            data/live_verification.json
+            live_verification.txt
+          if-no-files-found: ignore
       - name: Check every official source and summarise the changed rows
         run: |
           python3 scripts/monitor_sources.py --print | tee monitor.txt

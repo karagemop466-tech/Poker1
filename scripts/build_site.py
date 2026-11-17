@@ -109,7 +109,7 @@ PAGES = {
 """),
     "pages/unverified.html": ("Unverified", "unverified", """
 <h1>Unverified official rows</h1>
-<p class="lead">Official schedule rows whose structure sheet has not been read. Entry rule unknown. Not ranked.</p>
+<p class="lead">Official schedule rows whose structure sheet has not been read, so their entry rule and fee split are unknown. Every Venetian and WPT World Championship row is joined to its published structure sheet; what remains here is the Wynn Signature Series, whose official structures PDF is still a "COMING SOON" placeholder (checked live on 2026-11-17). These rows are not ranked.</p>
 """ + FILTERS + """
 <div class="toolbar"><span class="small">""" + COUNT + """</span></div>
 <div id="content"></div>

@@ -55,6 +55,24 @@ def money_tokens(text):
     return toks
 
 
+def money_pairs(text):
+    """Every pair of dollar amounts printed on adjacent lines of the official text.
+
+    The Wynn structure sheets print the fee split as
+        $1,100 Buy-in = $970 (Tournament Prize Pool) + $90 (Tournament Fee) + $40 (Poker
+        Staff Service Charge)
+    so the tournament fee and the staff charge are often on the same line but sometimes
+    split across two. Returning every adjacent pair lets a check confirm that the
+    published total is a sum the sheet itself prints.
+    """
+    amounts = [int(re.sub(r"[^0-9]", "", m)) for m in
+               re.findall(r"\$\s?(\d[\d,]*)\s*\(", text or "")]
+    pairs = set()
+    for i in range(len(amounts) - 1):
+        pairs.add((amounts[i], amounts[i + 1]))
+    return pairs
+
+
 def time_tokens(text):
     """Every time-of-day in the text normalised to HHMM."""
     out = set()
