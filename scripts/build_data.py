@@ -15,7 +15,11 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data")
 os.makedirs(DATA, exist_ok=True)
 
-VERIFIED_ON = "2026-11-16"
+# The date every official source in this dataset was last read. The WPT schedule and
+# structures PDFs were re-read live on 2026-11-17 (see data/live_verification.json); the
+# Venetian structure sheets were read on 2026-11-16 and their pages re-checked on
+# 2026-11-17 by the scheduled live check, which commits its result.
+VERIFIED_ON = "2026-11-17"
 LAST_CHECKED = "2026-11-16"
 
 VEN = "The Venetian Resort"
@@ -1266,7 +1270,8 @@ def build_wynn():
                     ("Buy-in, guarantee, starting chips and level count from the official WPT World Championship "
                      "schedule PDF."),
             "flags": flags,
-            "sources": srcs, "verified_on": VERIFIED_ON, "last_checked": LAST_CHECKED,
+            "sources": srcs, "verified_on": "2026-11-17" if sheet else VERIFIED_ON,
+            "last_checked": "2026-11-17" if sheet else LAST_CHECKED,
         }
         if skey and skey in WPT_STRUCTS and WPT_STRUCTS[skey].get("days"):
             row["structure_days"] = WPT_STRUCTS[skey]["days"]

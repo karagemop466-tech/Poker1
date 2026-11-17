@@ -57,6 +57,11 @@ jobs:
         # longer prints, or a name/time that changed) fails this step so no stale row
         # can be published; an unreachable source fails it too, so a broken check is
         # never reported as a pass.
+        #
+        # The result is not committed from this job: a pull-request job must not push,
+        # and a push to main would race the deploy. The published copy of
+        # data/live_verification.json is written by the daily monitor job, which is
+        # allowed to commit. This job keeps its own result as an artifact.
         run: |
           python3 -m pip install --quiet pypdf
           python3 scripts/verify_live.py --print --json data/live_verification.json \

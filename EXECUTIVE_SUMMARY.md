@@ -17,12 +17,14 @@ re-checked on 2026-11-17.
   **seat** into a bigger event rather than cash. All 37 DeepStack Extravaganza IV structure sheets and
   all 15 New Year's Eve sheets have been read, so every Venetian row in the dataset now carries a
   verified entry rule.
-- **105 rows sit in the separate section** because a second entry is possible: 60 multi-flight rows
-  whose sheets say a player who bags Day 2 chips may not play a later flight, and 45 Wynn rows whose
-  official terms publish unlimited or limited re-entry.
-- **129 rows are still unverified on the entry rule** and are not ranked: 91 Wynn WPT rows (the
-  milestone satellites and the events the WPT schedule prints without a structure sheet) and all 38
-  Wynn Signature Series rows, because Wynn's own structures PDF is still a "COMING SOON" placeholder.
+- **170 rows sit in the separate section** because a second entry is possible: 67 multi-flight rows
+  whose sheets say a player who bags Day 2 chips may not play a later flight, and 103 Wynn and Venetian
+  rows whose official terms publish unlimited or limited re-entry. 25 further rows are continuation
+  days (Day 2, Day 3, final table) that sell no new entry.
+- **42 rows are still unverified on the entry rule** and are not ranked: all 38 Wynn Signature Series
+  rows, because Wynn's own structures PDF is still a "COMING SOON" placeholder (re-checked live on
+  2026-11-17), and 4 Wynn WPT continuation rows. **Every one of the 113 Wynn WPT rows that sells an
+  entry is now joined to its published structure sheet**, which is why this count fell from 129.
 - **Hotels are much stronger than yesterday, with one hard limit.** $55 resort fee plus 13.38% room tax
   is verified for The Venetian and The Palazzo, and the $55 fee alone for Wynn and Encore. **Five dated
   quotes are on file**, all from the Venetian's official booking engine: $804.15 (Nov 26–29), $475.35
@@ -92,14 +94,17 @@ and the structure sheet linked on each row.
 
 These are kept out of the ranking.
 
-- **Possible multiple entries (60 rows).** Every Venetian flight event in the dataset: Events 1, 7, 19,
+- **Possible multiple entries (67 rows).** Every Venetian flight event in the dataset, plus the WPT
+  starting flights whose sheets print a fixed number of entries rather than unlimited re-entry: Events 1, 7, 19,
   26, 30, 47, 49, 56, 8, 20 and 27. Each structure sheet says: "Any player who bags chips for Day 2 may
   not play a subsequent flight." Whether a player who busts may enter a later flight is not stated.
   Event 26 has the highest guarantee multiple of any event in the dataset (625x, 13.75% house fee) but
   sits here until this is confirmed with the poker room.
-- **Re-entry offered (46 rows).** 45 Wynn WPT rows whose official terms publish unlimited re-entry
-  per flight, or one entry plus one re-entry for the WPT Prime Championship, and one Venetian row
-  (NYE Event 29) whose sheet applies a discount to "any subsequent re-entry".
+- **Re-entry offered (103 rows).** 102 Wynn WPT rows whose sheets print "Unlimited re-entry" (or one entry
+  plus one re-entry for the WPT Prime Championship), and one Venetian row (NYE Event 29) whose sheet
+  applies a discount to "any subsequent re-entry". Every row's re-entry wording is quoted from its own
+  sheet in the rule fields; the reading is now taken from the sheet the row is joined to, not from a
+  hand-written summary of the series.
 - **Rebuy and add-on (daily feed, not ranked).** The Wynn Friday $240 format allows unlimited $200
   rebuys and a $100 add-on. Rebuy events are excluded from the ranking.
 
@@ -230,7 +235,8 @@ still unverified on the entry rule and are not counted.
 1. Fix the dates and the nightly budget/quality floor first — the rate log shows that the same tower
    swings from $164.25 to $1,949.25 a night inside one week, so dates dominate the budget.
 2. Pick the event, then read its structure sheet for the written single-entry rule. 80 rows pass today;
-   129 cannot be judged yet because Wynn has not published the sheets.
+   42 cannot be judged yet because Wynn has not published the Signature Series sheets. Every Venetian
+   and WPT World Championship sheet has now been read and joined to its rows.
 3. Compare only surviving events on guarantee, buy-in, stack, level length, payout and daily fit. The
    guarantee ÷ buy-in ratio is descriptive, not a forecast, and bounty/flight events are labelled.
 4. Check the walking route against the hotel you picked. The Venetian, The Palazzo, Wynn, Encore,

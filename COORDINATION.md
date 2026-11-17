@@ -323,10 +323,10 @@ Claimed in the first commit of this session, pushed before any data or page chan
 
 | Task | Status | File scope | Owner |
 |---|---|---|---|
-| Integration session: reconcile the five open pull requests (#41, #39, #38, #36, #24), re-verify every published value against the live official pages on 2026-11-17, and publish the site | **In progress** | `COORDINATION.md` | `ca6d75b1` |
-| Live re-verification of every tournament row and hotel value against the official pages today; correct or blank anything unsupported; flag every discrepancy | **Unclaimed → in progress** | `data/*.json` (via `scripts/build_data.py`), `research/verification-2026-11-17-ca6d75b1.md`, `FLAGGED.md`, `REVIEW.md` | `ca6d75b1` |
-| Merge the open PRs whose work is additive and correct; close/supersede the ones whose content `main` already carries | **In progress** | `COORDINATION.md` | `ca6d75b1` |
-| Rebuild, validate, smoke test, PR to `main`, merge, confirm Pages deploy | **Planned** | `index.html`, `pages/*.html`, `assets/*`, the six Markdown documents | `ca6d75b1` |
+| Integration session: reconcile the open pull requests, re-verify every published value against the live official pages on 2026-11-17, and publish the site | **Done** — see the PR and verification record below | `COORDINATION.md` | `ca6d75b1` |
+| Live re-verification of every tournament row against the official pages today; correct or blank anything unsupported; flag every discrepancy | **Done** — nine transcribed values corrected (F55), three source-side irregularities published (F56–F58), the sandbox network limit recorded (F59) | `data/*.json` (via `scripts/build_data.py`), `FLAGGED.md`, `REVIEW.md`, `scripts/verify_live.py` | `ca6d75b1` |
+| Reconcile the open PRs whose work is additive and correct | **Done** — #39 and #38 merged; #36's two extraction scripts adopted (see the disposition table); #24 and #36's dataset superseded by `main`'s | `COORDINATION.md` | `ca6d75b1` |
+| Rebuild, validate, smoke test, PR to `main`, merge, confirm Pages deploy | **Done** — PR #52; the Pages workflow run `43995501025` passed every validate step including the new live check | `index.html`, `pages/*.html`, `assets/*`, the six Markdown documents | `ca6d75b1` |
 
 ### Scope note
 
