@@ -579,3 +579,13 @@ No tournament or hotel factual data was edited in this session. All user-request
 - PR #43 created from `arena/3bd2f25b-poker1` to `main` (https://github.com/karagemop466-tech/Poker1/pull/43); merged without waiting for review.
 - Merge result: merged into `main` as a2c0986 on 2026-11-17. PR link: https://github.com/karagemop466-tech/Poker1/pull/43. GitHub Pages: status `built`, source branch `main`, path `/`, live at https://karagemop466-tech.github.io/Poker1/ ; the `pages-build-deployment` succeeded after the merge. All flagged items (F1–F52, U1–U10) remain published on the Flagged for Review page with their source links and did not block the merge.
 - 2026-11-17: session `74e9029c` diagnosed the transient post-merge deploy failure (artifact race under the shared `pages` concurrency group), delivered the first real scheduled-monitor result on `main` through PR [#49](https://github.com/karagemop466-tech/Poker1/pull/49) (merged as `fb6a1ea`; monitor run `43994626646` green; bot commit `e19e8fb`: 90/94 sources reachable, 0 rows changed; issue #50 published), and verified the live site (index, monitoring, flagged). A concurrency-group request for `pages.yml` was logged for PR #44's owner instead of editing that file.
+
+## Session 206debc0 — branch `arena/206debc0-poker1`, base `a2c0986`
+
+Claimed before implementation work on 2026-11-17. Scope is disjoint from the open claims
+(PR #44 `c4774e5a` integration, PR #45 `88793bf4` strip-room survey, PR #46 `bb9a3717`
+walking presentation, PR #36 `c0714e1a` WPT sheets): no open PR touches `assets/style.css`.
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| S16 — print-friendly views of the schedule and the single-entry list (print stylesheet: hide nav/toolbar/filters, black-on-white tables, page-break rules, show link URLs for source columns) so the plan can be carried on paper during the trip | **In progress** | `assets/style.css`, regenerated `index.html` and `pages/*.html`, `COORDINATION.md` | `206debc0` |
