@@ -1001,7 +1001,7 @@
     {
      "id": "r045",
      "start": "12:00",
-     "name": "Limit Omaha 8/5/stud 8",
+     "name": "Limit Omaha 8/Stud 8",
      "series": "WPT World Championship (Wynn)",
      "venue": "Wynn Las Vegas",
      "buy_in_usd": 600,
@@ -1074,7 +1074,7 @@
     {
      "a": "r044",
      "b": "r045",
-     "detail": "Limit Omaha 8/5/stud 8 starts 12:00 while $400 No Limit Hold'em 1C $75K GTD is still estimated to run until 08:55 (next day)"
+     "detail": "Limit Omaha 8/Stud 8 starts 12:00 while $400 No Limit Hold'em 1C $75K GTD is still estimated to run until 08:55 (next day)"
     },
     {
      "a": "r044",
@@ -2775,7 +2775,7 @@
     {
      "id": "r125",
      "start": "14:00",
-     "name": "Milestone Satellite to $10,400 World Championship 1A/8",
+     "name": "Milestone Satellite to $10,400 World Championship 1A/B",
      "series": "WPT World Championship (Wynn)",
      "venue": "Wynn Las Vegas",
      "buy_in_usd": 1100,
@@ -2793,7 +2793,7 @@
     {
      "id": "r128",
      "start": "16:00",
-     "name": "Milestone Satellite to $10,400 Ladies NLH Championship",
+     "name": "Milestone Satellite to $1,100 Ladies NLH Championship",
      "series": "WPT World Championship (Wynn)",
      "venue": "Wynn Las Vegas",
      "buy_in_usd": 200,
@@ -2831,7 +2831,7 @@
     {
      "id": "r130",
      "start": "19:00",
-     "name": "Milestone Satellite to $10,400 World Championship 1A/8",
+     "name": "Milestone Satellite to $10,400 World Championship 1A/B",
      "series": "WPT World Championship (Wynn)",
      "venue": "Wynn Las Vegas",
      "buy_in_usd": 1100,
@@ -2892,12 +2892,12 @@
     {
      "a": "r120",
      "b": "r125",
-     "detail": "Milestone Satellite to $10,400 World Championship 1A/8 starts 14:00 while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 is still estimated to run until 17:55"
+     "detail": "Milestone Satellite to $10,400 World Championship 1A/B starts 14:00 while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 is still estimated to run until 17:55"
     },
     {
      "a": "r120",
      "b": "r128",
-     "detail": "Milestone Satellite to $10,400 Ladies NLH Championship starts 16:00 while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 is still estimated to run until 17:55"
+     "detail": "Milestone Satellite to $1,100 Ladies NLH Championship starts 16:00 while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 is still estimated to run until 17:55"
     },
     {
      "a": "r122",
@@ -2912,12 +2912,12 @@
     {
      "a": "r122",
      "b": "r125",
-     "detail": "Milestone Satellite to $10,400 World Championship 1A/8 starts 14:00 while $2,200 No Limit Hold'em 1A $1 Mill GTD - PokerAtlas Championship title event is still estimated to run until 07:15 (next day)"
+     "detail": "Milestone Satellite to $10,400 World Championship 1A/B starts 14:00 while $2,200 No Limit Hold'em 1A $1 Mill GTD - PokerAtlas Championship title event is still estimated to run until 07:15 (next day)"
     },
     {
      "a": "r122",
      "b": "r128",
-     "detail": "Milestone Satellite to $10,400 Ladies NLH Championship starts 16:00 while $2,200 No Limit Hold'em 1A $1 Mill GTD - PokerAtlas Championship title event is still estimated to run until 07:15 (next day)"
+     "detail": "Milestone Satellite to $1,100 Ladies NLH Championship starts 16:00 while $2,200 No Limit Hold'em 1A $1 Mill GTD - PokerAtlas Championship title event is still estimated to run until 07:15 (next day)"
     },
     {
      "a": "r122",
@@ -2927,7 +2927,7 @@
     {
      "a": "r122",
      "b": "r130",
-     "detail": "Milestone Satellite to $10,400 World Championship 1A/8 starts 19:00 while $2,200 No Limit Hold'em 1A $1 Mill GTD - PokerAtlas Championship title event is still estimated to run until 07:15 (next day)"
+     "detail": "Milestone Satellite to $10,400 World Championship 1A/B starts 19:00 while $2,200 No Limit Hold'em 1A $1 Mill GTD - PokerAtlas Championship title event is still estimated to run until 07:15 (next day)"
     },
     {
      "a": "r122",
@@ -2942,12 +2942,12 @@
     {
      "a": "r123",
      "b": "r125",
-     "detail": "Milestone Satellite to $10,400 World Championship 1A/8 starts 14:00 while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 is still estimated to run until 20:55"
+     "detail": "Milestone Satellite to $10,400 World Championship 1A/B starts 14:00 while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 is still estimated to run until 20:55"
     },
     {
      "a": "r123",
      "b": "r128",
-     "detail": "Milestone Satellite to $10,400 Ladies NLH Championship starts 16:00 while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 is still estimated to run until 20:55"
+     "detail": "Milestone Satellite to $1,100 Ladies NLH Championship starts 16:00 while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 is still estimated to run until 20:55"
     },
     {
      "a": "r123",
@@ -2957,12 +2957,12 @@
     {
      "a": "r123",
      "b": "r130",
-     "detail": "Milestone Satellite to $10,400 World Championship 1A/8 starts 19:00 while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 is still estimated to run until 20:55"
+     "detail": "Milestone Satellite to $10,400 World Championship 1A/B starts 19:00 while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 is still estimated to run until 20:55"
     },
     {
      "a": "r129",
      "b": "r130",
-     "detail": "Milestone Satellite to $10,400 World Championship 1A/8 starts 19:00 while $2,200 No Limit Hold'em 1B $1 Mill GTD - PokerAtlas Championship title event is still estimated to run until 10:55 (next day)"
+     "detail": "Milestone Satellite to $10,400 World Championship 1A/B starts 19:00 while $2,200 No Limit Hold'em 1B $1 Mill GTD - PokerAtlas Championship title event is still estimated to run until 10:55 (next day)"
     },
     {
      "a": "r129",
@@ -2996,7 +2996,7 @@
     {
      "id": "r133",
      "start": "11:00",
-     "name": "Ladies NIH Championship (2 Day)",
+     "name": "Ladies NLH Championship (2 Day)",
      "series": "WPT World Championship (Wynn)",
      "venue": "Wynn Las Vegas",
      "buy_in_usd": 1100,
@@ -3149,7 +3149,7 @@
     {
      "a": "r132",
      "b": "r133",
-     "detail": "Ladies NIH Championship (2 Day) starts 11:00 while $1,100 No Limit Hold'em Seniors 1A $300K GTD - must be 50+ years of age is still estimated to run until 07:15 (next day)"
+     "detail": "Ladies NLH Championship (2 Day) starts 11:00 while $1,100 No Limit Hold'em Seniors 1A $300K GTD - must be 50+ years of age is still estimated to run until 07:15 (next day)"
     },
     {
      "a": "r132",
@@ -3361,7 +3361,7 @@
     {
      "id": "r154",
      "start": "21:00",
-     "name": "NIH Turbo",
+     "name": "NLH Turbo",
      "series": "WPT World Championship (Wynn)",
      "venue": "Wynn Las Vegas",
      "buy_in_usd": 600,
@@ -3424,7 +3424,7 @@
     {
      "a": "r143",
      "b": "r154",
-     "detail": "NIH Turbo starts 21:00 while $1,100 No Limit Hold'em Seniors 1B $300K GTD - must be 50+ years of age is still estimated to run until 07:15 (next day)"
+     "detail": "NLH Turbo starts 21:00 while $1,100 No Limit Hold'em Seniors 1B $300K GTD - must be 50+ years of age is still estimated to run until 07:15 (next day)"
     },
     {
      "a": "r151",
@@ -3439,7 +3439,7 @@
     {
      "a": "r151",
      "b": "r154",
-     "detail": "NIH Turbo starts 21:00 while $300 No Limit Hold'em Bounty $15K GTD (1Day) is still estimated to run until 08:55 (next day)"
+     "detail": "NLH Turbo starts 21:00 while $300 No Limit Hold'em Bounty $15K GTD (1Day) is still estimated to run until 08:55 (next day)"
     }
    ]
   },
@@ -3577,7 +3577,7 @@
     {
      "id": "r165",
      "start": "19:00",
-     "name": "NIH $500 Bounty Turbo",
+     "name": "NLH $500 Bounty Turbo",
      "series": "WPT World Championship (Wynn)",
      "venue": "Wynn Las Vegas",
      "buy_in_usd": 1600,
@@ -3621,7 +3621,7 @@
     {
      "a": "r159",
      "b": "r165",
-     "detail": "NIH $500 Bounty Turbo starts 19:00 while $1,100 No Limit Hold'em Progressive Knock-Out Bounty $75K GTD (1Day) is still estimated to run until 02:55 (next day)"
+     "detail": "NLH $500 Bounty Turbo starts 19:00 while $1,100 No Limit Hold'em Progressive Knock-Out Bounty $75K GTD (1Day) is still estimated to run until 02:55 (next day)"
     },
     {
      "a": "r163",
@@ -3631,7 +3631,7 @@
     {
      "a": "r163",
      "b": "r165",
-     "detail": "NIH $500 Bounty Turbo starts 19:00 while $300 No Limit Hold'em Bounty $15K GTD (1Day) is still estimated to run until 08:55 (next day)"
+     "detail": "NLH $500 Bounty Turbo starts 19:00 while $300 No Limit Hold'em Bounty $15K GTD (1Day) is still estimated to run until 08:55 (next day)"
     }
    ]
   },
@@ -3743,7 +3743,7 @@
     {
      "id": "r173",
      "start": "18:00",
-     "name": "Milestone Satellite to $25K NIH High Roller",
+     "name": "Milestone Satellite to $25K NLH High Roller",
      "series": "WPT World Championship (Wynn)",
      "venue": "Wynn Las Vegas",
      "buy_in_usd": 3000,
@@ -3822,7 +3822,7 @@
     {
      "a": "r167",
      "b": "r173",
-     "detail": "Milestone Satellite to $25K NIH High Roller starts 18:00 while $600 No Limit Hold'em Bounty $50K GTD (1Day) - $200 bounties to start & $500 bounties in the money is still estimated to run until 02:55 (next day)"
+     "detail": "Milestone Satellite to $25K NLH High Roller starts 18:00 while $600 No Limit Hold'em Bounty $50K GTD (1Day) - $200 bounties to start & $500 bounties in the money is still estimated to run until 02:55 (next day)"
     },
     {
      "a": "r167",
@@ -3837,7 +3837,7 @@
     {
      "a": "r172",
      "b": "r173",
-     "detail": "Milestone Satellite to $25K NIH High Roller starts 18:00 while $300 No Limit Hold'em Bounty $15K GTD (1Day) is still estimated to run until 08:55 (next day)"
+     "detail": "Milestone Satellite to $25K NLH High Roller starts 18:00 while $300 No Limit Hold'em Bounty $15K GTD (1Day) is still estimated to run until 08:55 (next day)"
     },
     {
      "a": "r172",

@@ -449,7 +449,7 @@ WPT = [
   ["Continuation row. The $600 No Limit Hold'em structure sheet prints \"Day 2: Monday, November 30, 2026 at 1 p.m.\""]),
  ("2026-11-30","17:00","No Limit Hold'em Day 1B",800,1000000,None,40000,"30/40","entry","NLH800",[]),
  ("2026-12-01","11:00","No Limit Hold'em Day 1C",800,1000000,None,40000,"30/40","entry","NLH800",[]),
- ("2026-12-01","12:00","Limit Omaha 8/5/stud 8",600,None,None,35000,"30","entry","LO8S8",[]),
+ ("2026-12-01","12:00","Limit Omaha 8/Stud 8",600,None,None,35000,"30","entry","LO8S8",[]),
  ("2026-12-01","13:00","PLO",1100,None,None,30000,"30","entry","PLO1100",[]),
  ("2026-12-01","17:00","No Limit Hold'em Day 1D",800,1000000,None,40000,"30/40","entry","NLH800",[]),
  ("2026-12-02","11:00","No Limit Hold'em Day 1E",800,1000000,None,40000,"30/40","entry","NLH800",[]),
@@ -515,13 +515,13 @@ WPT = [
  ("2026-12-12","14:00","Super Gold Million Mystery Bounty Day 2",None,None,None,None,None,"continuation",None,
   ["Continuation row. The schedule PDF prints no buy-in, guarantee, chips or levels for this row and no structure "
    "sheet for this event is published."]),
- ("2026-12-12","14:00","Milestone Satellite to $10,400 World Championship 1A/8",1100,None,"75 Seats",20000,"25","entry","SAT_WPT",[]),
- ("2026-12-12","16:00","Milestone Satellite to $10,400 Ladies NLH Championship",200,None,"10 Seats",20000,"20","entry","SAT_WPT",[]),
- ("2026-12-12","19:00","Milestone Satellite to $10,400 World Championship 1A/8",1100,None,"25 Seats",20000,"25","entry","SAT_WPT",[]),
+ ("2026-12-12","14:00","Milestone Satellite to $10,400 World Championship 1A/B",1100,None,"75 Seats",20000,"25","entry","SAT_WPT",[]),
+ ("2026-12-12","16:00","Milestone Satellite to $1,100 Ladies NLH Championship",200,None,"10 Seats",20000,"20","entry","SAT_WPT",[]),
+ ("2026-12-12","19:00","Milestone Satellite to $10,400 World Championship 1A/B",1100,None,"25 Seats",20000,"25","entry","SAT_WPT",[]),
  ("2026-12-12","21:00","NLH Turbo",600,50000,None,30000,"20","entry","TURBO600",[]),
  ("2026-12-13","11:00","WPT World Championship Day 1A $1,000,000 Added",10400,None,None,100000,"60/90","entry",None,
   ["Schedule footnote: \"$1,000,000 will be added in cash prizes by ClubWPT Gold. ClubWPT Gold is not available in Nevada.\""]),
- ("2026-12-13","11:00","Ladies NIH Championship (2 Day)",1100,250000,None,40000,"40","entry",None,
+ ("2026-12-13","11:00","Ladies NLH Championship (2 Day)",1100,250000,None,40000,"40","entry",None,
   ["Schedule footnote: \"The Tournament Entry for the Ladies Championship is $11,100. Ladies will receive a discounted entry.\"",
    "The published $1,100 buy-in therefore does not apply to the ladies field."]),
  ("2026-12-13","11:00","TORSE (2 Day)",1100,None,None,40000,"40","entry","TORSE1100",
@@ -545,9 +545,11 @@ WPT = [
    "sheet for this event is published."]),
  ("2026-12-14","18:00","Milestone Satellite to $10,400 World Championship 1C",1100,None,"25 Seats",20000,"25","entry","SAT_WPT",[]),
  ("2026-12-14","19:00","PLO Turbo",1100,100000,None,30000,"20","entry",None,[]),
- ("2026-12-14","21:00","NIH Turbo",600,50000,None,30000,"20","entry",None,
-  ["The $600 NLH Turbo structure sheet lists \"Monday, December 14, 2026 at 9 p.m.\" for the $600 turbo; this row is "
-   "printed by the schedule PDF as \"NIH Turbo\" with a $600 buy-in and a $50,000 guarantee."]),
+ ("2026-12-14","21:00","NLH Turbo",600,50000,None,30000,"20","entry",None,
+  ["The $600 NLH Turbo structure sheet lists \"Monday, December 14, 2026 at 9 p.m.\" for the $600 turbo; the schedule "
+   "PDF prints this row as \"NLH Turbo\" with a $600 buy-in and a $50,000 guarantee. (Name corrected 2026-11-17 from "
+   "the transcription \"NIH Turbo\" - no official document ever printed NIH; PR #52 session ca6d75b1 found it and "
+   "session df94b75e verified the correction against data/snapshots/wpt_sched.txt.)"]),
  ("2026-12-15","11:00","WPT World Championship Day 1C $1,000,000 Added",10400,None,None,100000,"60/90","entry",None,
   ["Schedule footnote: \"$1,000,000 will be added in cash prizes by ClubWPT Gold. ClubWPT Gold is not available in Nevada.\""]),
  ("2026-12-15","11:00","No Limit Hold'em Day 2",None,None,None,None,None,"continuation",None,
@@ -561,7 +563,7 @@ WPT = [
  ("2026-12-15","12:00","Big O",1100,None,None,30000,"30","entry",None,[]),
  ("2026-12-15","13:00","PLO Progressive Bounty (PKO)",3000,250000,None,30000,"30","entry",None,[]),
  ("2026-12-15","18:00","Milestone Satellite to $10,400 World Championship Day 2",1100,None,"10 Seats",20000,"25","entry","SAT_WPT",[]),
- ("2026-12-15","19:00","NIH $500 Bounty Turbo",1600,100000,None,30000,"20","entry",None,[]),
+ ("2026-12-15","19:00","NLH $500 Bounty Turbo",1600,100000,None,30000,"20","entry",None,[]),
  ("2026-12-16","11:00","No Limit Hold'em Day 1A",1100,1000000,None,40000,"40","entry",None,
   ["Printed on the schedule PDF under the heading \"Dec. 18 Wednesday\". December 18, 2026 is a Friday and the PDF "
    "prints \"Dec. 18 Friday\" for a separate block, so this block is stored as December 16, 2026 (a Wednesday). "
@@ -577,7 +579,7 @@ WPT = [
    "Schedule footnote: \"Players registered prior to the start of the event will receive a discounted entry.\""]),
  ("2026-12-16","13:00","HORSE",800,None,None,35000,"30","entry",None,
   ["Printed on the schedule PDF under the heading \"Dec. 18 Wednesday\" and stored as December 16, 2026."]),
- ("2026-12-16","18:00","Milestone Satellite to $25K NIH High Roller",3000,None,None,20000,"25","entry","SAT_WPT",
+ ("2026-12-16","18:00","Milestone Satellite to $25K NLH High Roller",3000,None,None,20000,"25","entry","SAT_WPT",
   ["Printed on the schedule PDF under the heading \"Dec. 18 Wednesday\" and stored as December 16, 2026.",
    "Schedule footnote: \"Players registered prior to the start of the event will receive a discounted entry.\""]),
  ("2026-12-16","18:00","Milestone Satellite to $3,000 NLH",400,None,"25 Seats",20000,"20","entry","SAT_WPT",
