@@ -1140,3 +1140,17 @@ is not a broken link, an invalid JSON value, a missing id or a failed render.
   removing it again (passes); it now reports "54 files free of conflict markers".
 - This is exactly the class of defect the user asked to be caught before publication, so it is also
   recorded in `FLAGGED.md` (F58).
+
+### Session c4774e5a — final merge and deploy results (superseding the note above)
+
+- [PR #63](https://github.com/karagemop466-tech/Poker1/pull/63) merged as `9cfb332`. The Pages build for that merge
+  commit is `built`, and the first fully green Pages workflow on `main` followed (`validate` and `deploy` both
+  `success`, run `43998715747`): the artifact race and the legacy-build mismatch are both handled now.
+- [PR #67](https://github.com/karagemop466-tech/Poker1/pull/67) merged as `bc3420b` at 2026-11-17T02:17:34Z and the
+  Pages build for `bc3420b` is `built`. The live page
+  https://karagemop466-tech.github.io/Poker1/pages/monitoring.html was re-read after that build and no longer
+  serves any conflict marker; the merged lead paragraph reads as one sentence set describing all three checks.
+- Final state checked on `main` after the merge: `build_data.py` 317 rows / 70 schedule days / 79 flagged,
+  `build_site.py` 23 pages with zero diff, `check_links.py` OK including "56 files free of conflict markers",
+  `verify_rows.py` 1,296 field checks with 0 hard failures, headless render 23/23, and a crawl of the extracted
+  site tree found no broken local link, stylesheet or asset.
