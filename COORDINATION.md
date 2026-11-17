@@ -1,4 +1,28 @@
-# Session 212b84be — FINAL INTEGRATION SESSION (branch `arena/212b84be-poker1`, base `aea688a` = `main` at PR #37)
+# Session 9aad3bd2 — branch `arena/9aad3bd2-poker1` (base `5de6d8d` = `main` at PR #69)
+
+Session `9aad3bd2` works on branch `arena/9aad3bd2-poker1` (the branch is fixed for this session), based
+on `main` at `5de6d8d740e12cfaf5c37866e7d7a714da8542c5` (PR #69 merged). `git rev-list --left-right
+--count origin/main...HEAD` = `0 0`, so the branch starts exactly on `main` with a clean tree. Claim
+written and pushed before any data, script or page change.
+
+The user's master requirement list is implemented on `main`; this session takes the three open correctness
+items that earlier sessions logged but did not own, all of which block the requirement "give each day a
+primary event and a conditional fallback, not an impossible sequence" and the schedule overlap check:
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Fix the `est_end` midnight-wrap in the day plan: compare fallbacks and overlaps in absolute minutes using the stored `est_duration_min`, and stop proposing a fallback that starts on the same day as a primary that runs past midnight. Store an `est_end_next_day` flag so the renderer can print "(next day)". | **In progress** | `scripts/build_data.py` (`build_schedule`), `data/schedule.json` (generated) | `9aad3bd2` |
+| Render the "(next day)" marker for a wrapped `est_end` on the schedule page so a finish time that reads before its start is never shown as a same-day time. | **In progress** | `assets/app.js` (schedule renderer), regenerated `pages/schedule.html` | `9aad3bd2` |
+| REQUEST 2 (session 206debc0): add `www.rwlasvegas.com` to the approved official-host set in `check_source_facts.py` and add `set -o pipefail` to the source-facts workflow so a refusal to run is a red job, not a silent success. | **In progress** | `scripts/check_source_facts.py`, `.github/workflows/source-facts.yml` | `9aad3bd2` |
+| Remove the doubled `<h1>` on the five markdown-backed pages (summary, questions, suggestions, flagged, review): the template prints a static `<h1>` and the Markdown file prints its own `#` heading. Keep one heading. | **In progress** | `scripts/build_site.py`, regenerated `pages/summary.html`, `pages/questions.html`, `pages/suggestions.html`, `pages/flagged.html`, `pages/review.html` | `9aad3bd2` |
+| Final integration: re-run every generator and check, re-verify the combined data line by line, confirm no broken links, publish to GitHub Pages, open and merge the PR to `main`, record the PR link and merge result here. | **Pending** | all files above + `COORDINATION.md` | `9aad3bd2` |
+
+**Files deliberately NOT edited by this session:** the tournament, hotel, rate, walking and structure-rule
+facts in `data/*.json` are unchanged by this session except the regenerated `data/schedule.json` (the
+midnight-wrap fix only changes the derived day-plan fields, not any official value). No official source
+is re-read or altered; every fact already in the dataset keeps its source and retrieval date.
+
+## Session 212b84be — FINAL INTEGRATION SESSION (branch `arena/212b84be-poker1`, base `aea688a` = `main` at PR #37)
 ## Session 8a12503e — branch `arena/8a12503e-poker1` (base `aea688a`, `main` after PR #37)
 
 Claimed and pushed before any data, script or page change. Four pull requests were already open when this
