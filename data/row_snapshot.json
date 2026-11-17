@@ -1128,7 +1128,7 @@
    "guarantee_usd": 10000,
    "entry_status": "SE",
    "buy_in": "house fee $90 of the $600 buy-in; prize pool $510",
-   "flags": 0
+   "flags": 1
   },
   "r095": {
    "date": "2026-12-09",
@@ -1272,7 +1272,7 @@
    "guarantee_usd": 40000,
    "entry_status": "SE",
    "buy_in": "house fee $110 of the $800 buy-in; prize pool $690",
-   "flags": 0
+   "flags": 1
   },
   "r107": {
    "date": "2026-12-10",
@@ -1344,7 +1344,7 @@
    "guarantee_usd": null,
    "entry_status": "CONT",
    "buy_in": "house fee $110 of the $800 buy-in; prize pool $690",
-   "flags": 0
+   "flags": 1
   },
   "r113": {
    "date": "2026-12-11",
@@ -1368,7 +1368,7 @@
    "guarantee_usd": 30000,
    "entry_status": "SE",
    "buy_in": "house fee $90 of the $600 buy-in; prize pool $510",
-   "flags": 0
+   "flags": 1
   },
   "r115": {
    "date": "2026-12-11",
@@ -1416,7 +1416,7 @@
    "guarantee_usd": null,
    "entry_status": "CONT",
    "buy_in": "house fee $110 of the $800 buy-in; prize pool $690",
-   "flags": 0
+   "flags": 1
   },
   "r119": {
    "date": "2026-12-11",
@@ -3357,10 +3357,10 @@
    "venue": "Wynn Las Vegas",
    "series": "Wynn Signature Series",
    "buy_in_usd": 400,
-   "guarantee_usd": 150000,
+   "guarantee_usd": null,
    "entry_status": "UNV",
    "buy_in": "not published",
-   "flags": 0
+   "flags": 1
   },
   "r281": {
    "date": "2027-01-11",
@@ -3369,10 +3369,10 @@
    "venue": "Wynn Las Vegas",
    "series": "Wynn Signature Series",
    "buy_in_usd": 400,
-   "guarantee_usd": 150000,
+   "guarantee_usd": null,
    "entry_status": "UNV",
    "buy_in": "not published",
-   "flags": 0
+   "flags": 1
   },
   "r282": {
    "date": "2027-01-12",
@@ -3381,10 +3381,10 @@
    "venue": "Wynn Las Vegas",
    "series": "Wynn Signature Series",
    "buy_in_usd": 400,
-   "guarantee_usd": 150000,
+   "guarantee_usd": null,
    "entry_status": "UNV",
    "buy_in": "not published",
-   "flags": 0
+   "flags": 1
   },
   "r283": {
    "date": "2027-01-12",
@@ -3393,10 +3393,10 @@
    "venue": "Wynn Las Vegas",
    "series": "Wynn Signature Series",
    "buy_in_usd": 400,
-   "guarantee_usd": 150000,
+   "guarantee_usd": null,
    "entry_status": "UNV",
    "buy_in": "not published",
-   "flags": 0
+   "flags": 1
   },
   "r284": {
    "date": "2027-01-13",
@@ -3405,10 +3405,10 @@
    "venue": "Wynn Las Vegas",
    "series": "Wynn Signature Series",
    "buy_in_usd": 400,
-   "guarantee_usd": 150000,
+   "guarantee_usd": null,
    "entry_status": "UNV",
    "buy_in": "not published",
-   "flags": 0
+   "flags": 1
   },
   "r285": {
    "date": "2027-01-13",
@@ -3417,10 +3417,10 @@
    "venue": "Wynn Las Vegas",
    "series": "Wynn Signature Series",
    "buy_in_usd": 400,
-   "guarantee_usd": 150000,
+   "guarantee_usd": null,
    "entry_status": "UNV",
    "buy_in": "not published",
-   "flags": 0
+   "flags": 1
   },
   "r286": {
    "date": "2027-01-14",
@@ -3429,10 +3429,10 @@
    "venue": "Wynn Las Vegas",
    "series": "Wynn Signature Series",
    "buy_in_usd": 600,
-   "guarantee_usd": 250000,
+   "guarantee_usd": null,
    "entry_status": "UNV",
    "buy_in": "not published",
-   "flags": 0
+   "flags": 1
   },
   "r287": {
    "date": "2027-01-14",
@@ -3465,10 +3465,10 @@
    "venue": "Wynn Las Vegas",
    "series": "Wynn Signature Series",
    "buy_in_usd": 600,
-   "guarantee_usd": 250000,
+   "guarantee_usd": null,
    "entry_status": "UNV",
    "buy_in": "not published",
-   "flags": 0
+   "flags": 1
   },
   "r290": {
    "date": "2027-01-15",
@@ -3489,10 +3489,10 @@
    "venue": "Wynn Las Vegas",
    "series": "Wynn Signature Series",
    "buy_in_usd": 600,
-   "guarantee_usd": 250000,
+   "guarantee_usd": null,
    "entry_status": "UNV",
    "buy_in": "not published",
-   "flags": 0
+   "flags": 1
   },
   "r292": {
    "date": "2027-01-16",
@@ -3501,10 +3501,10 @@
    "venue": "Wynn Las Vegas",
    "series": "Wynn Signature Series",
    "buy_in_usd": 600,
-   "guarantee_usd": 250000,
+   "guarantee_usd": null,
    "entry_status": "UNV",
    "buy_in": "not published",
-   "flags": 0
+   "flags": 1
   },
   "r293": {
    "date": "2027-01-17",
@@ -3549,10 +3549,10 @@
    "venue": "Wynn Las Vegas",
    "series": "Wynn Signature Series",
    "buy_in_usd": 400,
-   "guarantee_usd": 100000,
+   "guarantee_usd": null,
    "entry_status": "UNV",
    "buy_in": "not published",
-   "flags": 0
+   "flags": 1
   },
   "r297": {
    "date": "2027-01-18",
@@ -3585,10 +3585,10 @@
    "venue": "Wynn Las Vegas",
    "series": "Wynn Signature Series",
    "buy_in_usd": 400,
-   "guarantee_usd": 100000,
+   "guarantee_usd": null,
    "entry_status": "UNV",
    "buy_in": "not published",
-   "flags": 0
+   "flags": 1
   },
   "r300": {
    "date": "2027-01-19",
@@ -3621,10 +3621,10 @@
    "venue": "Wynn Las Vegas",
    "series": "Wynn Signature Series",
    "buy_in_usd": 400,
-   "guarantee_usd": 100000,
+   "guarantee_usd": null,
    "entry_status": "UNV",
    "buy_in": "not published",
-   "flags": 0
+   "flags": 1
   },
   "r303": {
    "date": "2027-01-20",
@@ -3657,10 +3657,10 @@
    "venue": "Wynn Las Vegas",
    "series": "Wynn Signature Series",
    "buy_in_usd": 800,
-   "guarantee_usd": 300000,
+   "guarantee_usd": null,
    "entry_status": "UNV",
    "buy_in": "not published",
-   "flags": 0
+   "flags": 1
   },
   "r306": {
    "date": "2027-01-21",
@@ -3705,10 +3705,10 @@
    "venue": "Wynn Las Vegas",
    "series": "Wynn Signature Series",
    "buy_in_usd": 800,
-   "guarantee_usd": 300000,
+   "guarantee_usd": null,
    "entry_status": "UNV",
    "buy_in": "not published",
-   "flags": 0
+   "flags": 1
   },
   "r310": {
    "date": "2027-01-22",
@@ -3741,10 +3741,10 @@
    "venue": "Wynn Las Vegas",
    "series": "Wynn Signature Series",
    "buy_in_usd": 800,
-   "guarantee_usd": 300000,
+   "guarantee_usd": null,
    "entry_status": "UNV",
    "buy_in": "not published",
-   "flags": 0
+   "flags": 1
   },
   "r313": {
    "date": "2027-01-23",
@@ -3753,10 +3753,10 @@
    "venue": "Wynn Las Vegas",
    "series": "Wynn Signature Series",
    "buy_in_usd": 800,
-   "guarantee_usd": 300000,
+   "guarantee_usd": null,
    "entry_status": "UNV",
    "buy_in": "not published",
-   "flags": 0
+   "flags": 1
   },
   "r314": {
    "date": "2027-01-24",

@@ -31,6 +31,30 @@ Shared task board for the Las Vegas Strip poker tournament and hotel planner.
 
 ## Current session and task claim
 
+Session `160f9080` is working on branch `arena/160f9080-poker1` (the branch is fixed for this session). The claim below was committed and pushed before implementation work.
+
+**Session `160f9080` claim (this session) — verification pass and data-quality corrections.**
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Line-by-line verification of every published row against the archived official documents; correct and flag any value not supported by an official source | **Done** — `scripts/verify_rows.py` checks 1,119 money/time/entry values across 323 rows with **0 hard failures**; found and corrected two real irregularities (F21 LIPS house-fee conflation, F22 unsourced Wynn Signature Series guarantees), blanking/fixing and flagging each; wired the verifier into the `pages.yml` validate job | `scripts/verify_rows.py`, `scripts/build_data.py`, `data/tournaments.json`, `data/row_verification.json`, `FLAGGED.md`, `research/verification-2026-11-17.md`, `.github/workflows/pages.yml`, `COORDINATION.md` | `160f9080` |
+
+### Verification performed in this session (160f9080)
+
+- `python3 scripts/verify_rows.py` → 323 rows, 1,119 field checks, **0 hard failures**, 1 review
+  item (the WPT NLH Turbo start time, already documented as F4).
+- Corrected **F21**: LIPS structure sheets (31, 32, 33) withhold a house fee and a separate LIPS
+  flat fee; the earlier build stored the combined amount as `house_fee_usd`. Now
+  `house_fee_usd` = pure house fee ($80 / $90) and `lips_fee_usd` = $10 / $20, prize pool
+  unchanged. Rows r094, r106, r112, r114, r118 flagged.
+- Corrected **F22**: 17 Wynn Signature Series multi-day main-event rows published guarantees
+  ($150,000 / $250,000 / $100,000 / $300,000) that appear on no official source. Left blank and
+  flagged. The schedule-printed NLH Turbo ($10,000) and Sunday NLH ($30,000) guarantees kept.
+- `python3 scripts/build_data.py` → 316 rows (80 SE, 60 MULTI, 45 RE, 129 UNV, 2 CONT); 77 flagged
+  rows (up from 55).
+- `python3 scripts/build_site.py` → 21 pages; `python3 scripts/check_links.py` → OK; headless
+  smoke test → 21/21 pages render.
+
 Session `baba1a15` is working on branch `arena/baba1a15-poker1` (the branch is fixed for this session). Scope claimed below and pushed before implementation work.
 
 **Session `baba1a15` claim (this session) — integration session.**
@@ -270,6 +294,18 @@ Claimed at commit `304f0bd` (pushed before any data or page change). Base: `main
 ## Log
 - 2026-11-17: session `3f878ff5` merged `main` at `b379927` through PR #32 (validate green on `2357366`; Pages deploy `43989560055` success). Live site checked: rate log shows both quotes; Flagged page shows F1–F40 with the section D findings.
 - 2026-11-17: session `3f878ff5` merged `origin/main` (PR #31, session `2e5232bc`). Both sessions created `research/verification-2026-11-17.md`; this session's log moved to `research/verification-2026-11-17-3f878ff5.md` and its flags were renumbered F31–F40 because `main` already uses F21 for a restored WPT row. Nothing from either session was dropped.
+- 2026-11-17: session `160f9080` (branch `arena/160f9080-poker1`) ran a line-by-line verification pass
+  with a new `scripts/verify_rows.py`: every published money/time/entry value in the 317 tournament
+  rows, 7 hotel rows and the rate log was checked against the raw official text archived under
+  `data/snapshots/`. Result: 1,119 field checks, **0 hard failures**, 1 review item (the WPT NLH
+  Turbo start time, already F4). Two real irregularities were found and corrected, each blanked or
+  split and flagged: **F53** the LIPS house fee conflated the separate LIPS flat fee (now
+  `house_fee_usd` = pure house fee, `lips_fee_usd` = the flat fee); **F54** 17 Wynn Signature Series
+  multi-day main-event rows published guarantees with no official source (now left blank and
+  flagged; the schedule-printed NLH Turbo and Sunday guarantees kept). Flagged rows rose to 78 of 317.
+  The verifier was added as a validate step in `.github/workflows/pages.yml`. Full detail in
+  `research/verification-2026-11-17-160f9080.md` (renamed to avoid colliding with the
+  `research/verification-2026-11-17.md` written by session `bb9a3717`).
 - 2026-11-16: session `40ca34e5` integrated onto `main` (which had advanced with session `baba1a15`'s
   full integration). `main`'s dataset, pages, styles, scripts and workflows were adopted unchanged; this
   session's branch was rebased on top of `main` and force-pushed with `--force-with-lease` so no other
