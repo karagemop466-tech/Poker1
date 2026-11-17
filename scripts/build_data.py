@@ -18,6 +18,46 @@ os.makedirs(DATA, exist_ok=True)
 VERIFIED_ON = "2026-11-17"
 LAST_CHECKED = "2026-11-17"
 
+
+def load_source_check_dates():
+    """The date each official document was actually fetched, from the source log.
+
+    ``data/change_log.json`` is written by ``scripts/check_source_facts.py`` in GitHub
+    Actions, where the operator domains are reachable. For every source id it records
+    ``last_checked_utc`` and the URL. This turns "last checked" into evidence rather
+    than a hand-typed date: a row's date is the latest fetch of the document that
+    prints it. When the log is missing or a source was never fetched, the value is
+    None, which the UI prints as "not recorded" instead of inventing a date.
+    """
+    path = os.path.join(DATA, "change_log.json")
+    if not os.path.isfile(path):
+        return {}, {}
+    try:
+        with open(path, encoding="utf-8") as f:
+            log = json.load(f)
+    except (ValueError, OSError):
+        return {}, {}
+    by_id, by_url = {}, {}
+    for src in log.get("sources") or []:
+        stamp = (src.get("last_checked_utc") or "")[:10]
+        if not stamp:
+            continue
+        by_id[src.get("id")] = stamp
+        if src.get("url"):
+            by_url[src["url"]] = max(stamp, by_url.get(src["url"], ""))
+    return by_id, by_url
+
+
+SOURCE_CHECKED_BY_ID, SOURCE_CHECKED_BY_URL = load_source_check_dates()
+LAST_CHECKED = (max(SOURCE_CHECKED_BY_URL.values())
+                if SOURCE_CHECKED_BY_URL else "2026-11-16")
+
+
+def checked_for(urls, fallback=LAST_CHECKED):
+    """Latest date on which any of the documents behind a row was fetched."""
+    stamps = [SOURCE_CHECKED_BY_URL[u] for u in urls if u in SOURCE_CHECKED_BY_URL]
+    return max(stamps) if stamps else fallback
+
 VEN = "The Venetian Resort"
 WYN = "Wynn Las Vegas"
 
@@ -377,7 +417,7 @@ DSE_NYE = [
  ("2027-01-02","17:10",25,"$200 NLH PokerAtlas Valuetown Bounty $20K GTD (1Day) - PokerAtlas PRO member $20 rake discount",20000,9),
  ("2027-01-03","11:10",20,"$1,600 No Limit Hold'em MSPT 1C $400K GTD",400000,8),
  ("2027-01-03","17:10",26,"$200 No Limit Hold'em Bounty $8K GTD (1Day)",8000,2),
- ("2027-01-04","11:10",20,"$1,600 No Limit Hold'em MSPT Day 2 Restart",None,8),  # 11:10 per the official NYE page (re-read 2026-11-17); was published as 11:00 - see FLAGGED.md F57
+ ("2027-01-04","11:10",20,"$1,600 No Limit Hold'em MSPT Day 2 Restart",None,8),  # 11:10 per the official NYE page (re-read 2026-11-17); was published as 11:00 - see FLAGGED.md F59 and F111
  ("2027-01-04","11:10",27,"$250 No Limit Hold'em 1A $75K GTD (1Day) - Day 1 Payouts with 5% advancing to Day 2 - $10 Reduced Rake for Entry before 11:10 AM",75000,15),
  ("2027-01-04","17:10",27,"$250 No Limit Hold'em 1B $75K GTD (1Day) - Day 1 Payouts with 5% advancing to Day 2 - $10 Reduced Rake for Entry before 5:10 PM",75000,15),
  ("2027-01-05","11:10",27,"$250 No Limit Hold'em 1C $75K GTD (1Day) - Day 1 Payouts with 5% advancing to Day 2",75000,15),
@@ -640,10 +680,12 @@ WPT = [
  ("2026-12-21","12:00","No Limit Hold'em",1100,100000,None,30000,"30","entry",None,[]),
  ("2026-12-21","13:00","NLH Mystery Bounty Day 2",None,None,None,None,None,"continuation",None,
   ["Continuation row. The schedule PDF prints no buy-in, guarantee, chips or levels for this row."]),
- ("2026-12-21","20:00","NLH Turbo",600,50000,None,30000,"20","entry","TURBO600",
-  ["Time conflict between two official sources: the schedule PDF prints this turbo at 8 p.m. on December 21, while "
-   "the $600 NLH Turbo structure sheet lists \"Monday, December 21, 2026 at 6 p.m.\" The schedule time is kept and "
-   "the conflict is flagged."]),
+ ("2026-12-21","18:00","NLH Turbo",600,50000,None,30000,"20","entry","TURBO600",
+  ["Corrected 2026-11-17. This row was published as 8 p.m. and flagged as a conflict with the $600 NLH Turbo "
+   "structure sheet, which prints \"Monday, December 21, 2026 at 6 p.m.\". Re-reading the schedule PDF's final "
+   "block, the last time values are 1 p.m. and 6 p.m.; the string \"8 p.m.\" occurs nowhere on the schedule. The "
+   "8 p.m. figure was a transcription error, not a source conflict, so the row now prints 6 p.m. and the schedule "
+   "and structure sheet agree (FLAGGED F4, corrected)."]),
 ]
 
 # Wynn structure sheets read in the official structures PDF (read in full on 2026-11-16).
@@ -954,7 +996,7 @@ ROOM_DAILY = WYNN_DAILY + [
       single_entry="not single entry - four labelled flights (1A-1D) with a combined Day 2; a player who busts on "
                    "Day 1 without bagging chips may enter another flight",
       flag="Rule 04 prints \"Combined Final Day 2 (9/13/26)\", a September 2026 date, so the flyer cannot be "
-           "assumed current for a November 2026 - January 2027 trip (FLAGGED.md F58)."),
+           "assumed current for a November 2026 - January 2027 trip (FLAGGED.md F112)."),
  dict(id="bellagio-sun", venue="Bellagio", venue_id="bellagio", verified_on="2026-11-17",
       name="$400 H.O.R.S.E. (every Sunday)", days="Sunday", start="11:00",
       buy_in_usd=400, guarantee_usd=None, status="RE",
@@ -1195,7 +1237,8 @@ def build_venetian(rows, series_key, series, page_key, sheet_key, sched_key, str
             "est_end": est_end, "est_duration_min": est_min,
             "note": note,
             "flags": flags,
-            "sources": srcs, "verified_on": VERIFIED_ON, "last_checked": LAST_CHECKED,
+            "sources": srcs, "verified_on": VERIFIED_ON,
+            "last_checked": checked_for([s["url"] for s in srcs]),
         }
         if sheet.get("seats"):
             row["satellite"] = {
@@ -1370,7 +1413,8 @@ def build_wynn():
                      "schedule PDF. " + ("Entry rule, fee split and starting stack from %s of the official "
                      "structures PDF." % sid if sheet_row else "No structure sheet is published for this row.")),
             "flags": flags,
-            "sources": srcs, "verified_on": VERIFIED_ON, "last_checked": LAST_CHECKED,
+            "sources": srcs, "verified_on": VERIFIED_ON,
+            "last_checked": checked_for([s["url"] for s in srcs]),
         }
         # The fee percentage is computed against the entry the structure sheet
         # actually prices (``house_fee_basis_usd``), which is the row's buy-in on
@@ -1430,7 +1474,8 @@ def build_wynn():
             "flags": flags,
             "sources": [{"label": "Official schedule PDF", "url": SRC["wss_sched"]},
                         {"label": "Official structures PDF (placeholder: COMING SOON)", "url": SRC["wss_struct"]}],
-            "verified_on": VERIFIED_ON, "last_checked": LAST_CHECKED,
+            "verified_on": VERIFIED_ON,
+            "last_checked": checked_for([s["url"] for s in srcs]),
         })
     return out
 
@@ -1726,7 +1771,7 @@ HOTELS = [
               "General Information Guide for Transient Lodging Establishments, licensed-establishment table row "
               "\"1003760.RES-001 | Bellagio | 3600 Las Vegas Blvd S | Las Vegas | NV | Licensed | 13.38% | RES | 1 | "
               "Transient Lodging Tax - Resort Hotel (PGC)\" (read 2026-11-17; the county record, dated July 2021, is the "
-              "source - no Bellagio page prints the percentage, FLAGGED.md F47, and F60 records why a county record is "
+              "source - no Bellagio page prints the percentage, FLAGGED.md F47, and F114 records why a county record is "
               "used for the rate and never for a fee).",
   "room_rate_usd": None, "room_rate_status": "unverified",
   "room_rate_note": "No nightly rate published on an official page read in this session.",
@@ -1768,7 +1813,7 @@ HOTELS = [
               "Vegas | NV | Licensed | 13.38% | RES | 1 | Transient Lodging Tax - Resort Hotel (PGC)\" (read "
               "2026-11-17). The official ARIA pages print no fee and no tax: the ARIA poker page (read 2026-11-17) "
               "publishes 24 tables, the room's location and a phone/e-mail for player rates only. County record for the "
-              "rate, never for a fee (FLAGGED.md F47, F60).",
+              "rate, never for a fee (FLAGGED.md F47, F114).",
   "room_rate_usd": None, "room_rate_status": "unverified",
   "room_rate_note": "Official ARIA poker page: \"Exclusive Room Rates for qualifying poker players\" - the rate itself "
                      "is only available by phone (702.590.7232) or by e-mail, so no number is published.",
@@ -1808,7 +1853,7 @@ HOTELS = [
               "NV | Licensed | 13.38% | RES | 1 | Transient Lodging Tax - Resort Hotel (PGC)\" (read 2026-11-17). No "
               "Caesars Palace page prints the percentage - eight candidate official URLs produced no fee (FLAGGED.md "
               "F47) - so the rate is taken from the authority that levies it, and the resort fee stays blank because a "
-              "county tax record says nothing about a property fee (F60).",
+              "county tax record says nothing about a property fee (F114).",
   "room_rate_usd": None, "room_rate_status": "unverified",
   "room_rate_note": "No nightly rate published on an official page read in this session.",
   "parking_note": "No Caesars Palace parking fee printed on an official page read in this session.",
@@ -2043,7 +2088,7 @@ VENUES = [
   "note": "Official poker page (re-read 2026-11-17): the room is at The Palazzo, level 2 of the Grand Canal Shoppes; "
           "\"50 tables spread across 14,000 square feet ... the largest room on the Las Vegas Strip\"; open 24 hours "
           "daily; complimentary self-parking for guests who play three hours or more. The page's Current Series card "
-          "still advertises the WPT Fall Festival of Oct 28 - Nov 15, 2026 (a stale promo on 2026-11-17, flagged F61). "
+          "still advertises the WPT Fall Festival of Oct 28 - Nov 15, 2026 (a stale promo on 2026-11-17, flagged F115). "
           "Street address from the Clark County licensing record 1000389.RES-001.",
   "hotel_ids": ["venetian", "palazzo"],
   "official_links": [SRC["venetian_poker"], SRC["venetian_map"], SRC["venetian_book"],
@@ -2146,7 +2191,7 @@ def main():
             h["true_cost_quote"] = {"arrival": quote["arrival"], "departure": quote["departure"],
                                     "nights": quote["nights"], "room": quote["room"],
                                     "checkout_total_usd": quote["checkout_total_usd"]}
-        h["last_checked"] = LAST_CHECKED
+        h["last_checked"] = checked_for([s["url"] for s in (h.get("sources") or [])])
         # What was actually opened again on 2026-11-17, per property - so a reader can tell a
         # re-read from a carry-over. Fields not listed here were not re-read on that date.
         h["recheck"] = HOTEL_RECHECK.get(h["id"])

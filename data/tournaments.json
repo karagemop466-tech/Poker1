@@ -21217,16 +21217,16 @@
    "series": "WPT World Championship (Wynn)",
    "venue": "Wynn Las Vegas",
    "date": "2026-12-21",
-   "start": "20:00",
+   "start": "18:00",
    "kind": "entry",
    "event_no": null,
    "name": "NLH Turbo",
    "buy_in_usd": 600,
    "guarantee_usd": 50000,
    "prize_text": null,
-   "house_fee_usd": 85,
-   "house_fee_pct": 14.17,
-   "prize_pool_usd": 515,
+   "house_fee_usd": null,
+   "house_fee_pct": null,
+   "prize_pool_usd": null,
    "gtd_multiple": 83.3,
    "entry_status": "RE",
    "rules": {
@@ -21234,7 +21234,7 @@
      "value": "not single entry",
      "excerpt": "Registration: \"Unlimited re-entry will be available until the start of level 9.\"",
      "source": {
-      "label": "Official structures PDF, block 12",
+      "label": "Official structures PDF ($600 NLH Turbo $50,000 Guarantee)",
       "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
      },
      "retrieved_on": "2026-11-17"
@@ -21243,7 +21243,7 @@
      "value": "allowed",
      "excerpt": "Registration: \"Unlimited re-entry will be available until the start of level 9.\"",
      "source": {
-      "label": "Official structures PDF, block 12",
+      "label": "Official structures PDF ($600 NLH Turbo $50,000 Guarantee)",
       "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
      },
      "retrieved_on": "2026-11-17"
@@ -21252,7 +21252,7 @@
      "value": "not mentioned on the structure sheet",
      "excerpt": "Registration: \"Unlimited re-entry will be available until the start of level 9.\"",
      "source": {
-      "label": "Official structures PDF, block 12",
+      "label": "Official structures PDF ($600 NLH Turbo $50,000 Guarantee)",
       "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
      },
      "retrieved_on": "2026-11-17"
@@ -21261,7 +21261,7 @@
      "value": "Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge)",
      "excerpt": "Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge)",
      "source": {
-      "label": "Official structures PDF, block 12",
+      "label": "Official structures PDF ($600 NLH Turbo $50,000 Guarantee)",
       "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
      },
      "retrieved_on": "2026-11-17"
@@ -21270,7 +21270,7 @@
      "value": "Players will start with 30,000 in tournament chips.",
      "excerpt": "Players will start with 30,000 in tournament chips.",
      "source": {
-      "label": "Official structures PDF, block 12",
+      "label": "Official structures PDF ($600 NLH Turbo $50,000 Guarantee)",
       "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
      },
      "retrieved_on": "2026-11-17"
@@ -21279,7 +21279,7 @@
      "value": "20 minutes per level until a winner is declared.",
      "excerpt": "20 minutes per level until a winner is declared.",
      "source": {
-      "label": "Official structures PDF, block 12",
+      "label": "Official structures PDF ($600 NLH Turbo $50,000 Guarantee)",
       "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
      },
      "retrieved_on": "2026-11-17"
@@ -21291,15 +21291,14 @@
    ],
    "late_reg_close": null,
    "levels": null,
-   "level_minutes": 20,
+   "level_minutes": null,
    "starting_chips": 30000,
    "levels_published": "20",
    "est_end": null,
    "est_duration_min": null,
-   "note": "Buy-in, guarantee, starting chips and level count from the official WPT World Championship schedule PDF. Entry rule, fee split and starting stack from block 12 of the official structures PDF.",
+   "note": "Buy-in, guarantee, starting chips and level count from the official WPT World Championship schedule PDF. No structure sheet is published for this row.",
    "flags": [
-    "Time conflict between two official sources: the schedule PDF prints this turbo at 8 p.m. on December 21, while the $600 NLH Turbo structure sheet lists \"Monday, December 21, 2026 at 6 p.m.\" The schedule time is kept and the conflict is flagged.",
-    "Start time conflict between the two official documents: the schedule PDF prints 20:00 for this event, while structure sheet block 12 prints 18:00 on the same date. The schedule's time is kept and the difference (120 minutes) is published rather than reconciled."
+    "Corrected 2026-11-17. This row was published as 8 p.m. and flagged as a conflict with the $600 NLH Turbo structure sheet, which prints \"Monday, December 21, 2026 at 6 p.m.\". Re-reading the schedule PDF's final block, the last time values are 1 p.m. and 6 p.m.; the string \"8 p.m.\" occurs nowhere on the schedule. The 8 p.m. figure was a transcription error, not a source conflict, so the row now prints 6 p.m. and the schedule and structure sheet agree (FLAGGED F4, corrected)."
    ],
    "sources": [
     {
@@ -21307,14 +21306,12 @@
      "url": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf"
     },
     {
-     "label": "Official structures PDF, block 12",
+     "label": "Official structures PDF ($600 NLH Turbo $50,000 Guarantee)",
      "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     }
    ],
    "verified_on": "2026-11-17",
    "last_checked": "2026-11-17",
-   "house_fee_basis_usd": 600,
-   "structure_days": "20 minutes per level until a winner is declared.",
    "structure_payout": "Single day event; the structure sheet publishes no Day 1 payout structure.",
    "structure_breaks": "10-minute break every 4 levels of play."
   },

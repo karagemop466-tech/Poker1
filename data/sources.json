@@ -1,5 +1,5 @@
 {
-  "note": "Every source URL monitored by scripts/monitor_sources.py. All hosts are official operator domains (venetianlasvegas.com, wynnlasvegas.com, cdn.wynnresorts.com, mgmresorts.com property domains, caesars.com, boydgaming.com property domains, southpointcasino.com). Nothing from a third-party site is fetched. Widened 2026-11-17 with the four official booking and rooms pages that hotel rows cite but no job read (ARIA, Bellagio, the Caesars Palace room calendar, Wynn rooms and suites).",
+  "note": "Every source URL monitored by scripts/monitor_sources.py. All hosts are official operator domains (venetianlasvegas.com, wynnlasvegas.com, cdn.wynnresorts.com, mgmresorts.com property domains, caesars.com). Nothing from a third-party site is fetched.",
   "sources": [
     {
       "id": "v_dse_nov_page",
@@ -718,6 +718,27 @@
       "url": "https://www.wynnlasvegas.com/rooms-and-suites",
       "kind": "rate",
       "venue": "Wynn"
+    },
+    {
+      "id": "h_bellagio_poker",
+      "label": "Bellagio poker room page (flyers for the daily events)",
+      "url": "https://bellagio.mgmresorts.com/en/casino/poker.html",
+      "kind": "hotel",
+      "venue": "Bellagio"
+    },
+    {
+      "id": "h_caesars_article",
+      "label": "Caesars Palace poker tournament article (add-on wording)",
+      "url": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+      "kind": "hotel",
+      "venue": "Caesars Palace"
+    },
+    {
+      "id": "v_deepstack_series",
+      "label": "Venetian DeepStack Extravaganza series index",
+      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html",
+      "kind": "schedule",
+      "venue": "Venetian"
     }
   ]
 }

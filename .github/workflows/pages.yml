@@ -60,8 +60,14 @@ jobs:
       - name: Validate JSON schemas, local links, and source links
         run: python3 scripts/check_links.py
 
+      # Two independent row-level checks, because they answer different questions.
+      #   verify_rows.py     - value-by-value against the archived official text
+      #   verify_live_rows.py - row-by-row against the document that prints the row
       - name: Verify every published value against the archived official documents
         run: python3 scripts/verify_rows.py
+
+      - name: Verify every published row against the official document that prints it
+        run: python3 scripts/verify_live_rows.py | tee -a "$GITHUB_STEP_SUMMARY"
 
       - name: Check every official source and summarise the changed rows
         run: |
@@ -75,16 +81,16 @@ jobs:
       - name: Render every page in a headless DOM
         run: npm run test:smoke | tee -a "$GITHUB_STEP_SUMMARY"
 
-  # The repository's Pages site is configured with `source: main:/` and the legacy branch build, so
-  # `actions/deploy-pages` can never find an artifact for this workflow and failed on every run while
-  # the site itself kept building fine. This job therefore asks GitHub which build type the site
-  # actually uses: with `workflow` it publishes the artifact exactly as before, and with `legacy` it
-  # confirms that the branch build for this commit reached status `built` instead of failing.
-  # The repository's Pages site is configured with `source: main:/` and the legacy branch build, so
-  # `actions/deploy-pages` can never find an artifact for this workflow and failed on every run while
-  # the site itself kept building fine. This job therefore asks GitHub which build type the site
-  # actually uses: with `workflow` it publishes the artifact exactly as before, and with `legacy` it
-  # confirms that the branch build for this commit reached status `built` instead of failing.
+      - name: Assert the tables, filters, search and 30-minute walking rule work
+        run: npm run test:ui | tee -a "$GITHUB_STEP_SUMMARY"
+
+  # This repository's Pages site uses the legacy branch build (`source: main:/`). With that build type
+  # `actions/deploy-pages` can never find a `github-pages` artifact, so the deploy job failed on every run
+  # (run 43992732904: "No artifacts named \"github-pages\" were found for this workflow run") while the
+  # site itself kept building. The job therefore asks GitHub which build type the site actually uses:
+  #   workflow -> publish the artifact exactly as before;
+  #   legacy   -> confirm the branch build for this exact commit reached `built`, and fail if it errored
+  #               or never appeared. Either way the job's exit status now means what it says.
   deploy:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     environment:

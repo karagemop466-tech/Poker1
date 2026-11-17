@@ -1372,3 +1372,17 @@ Branches `arena/d94b191b-poker1` (PR #51), `arena/ca6d75b1-poker1` (PR #52),
 `arena/d57243e7-poker1` (PR #53) and `arena/bb9a3717-poker1` (PR #46) are >60 minutes stale with no
 commits (last commit 01:09–01:32Z, now 22:2xZ) and are being integrated by the takeover rule, with
 per-branch disposition recorded below when done.
+
+## Session d57243e7 — branch `arena/d57243e7-poker1`, base `44fcc08` (2026-11-17)
+
+Claimed in this commit before implementation work. No other session holds an open claim on these files at
+the time of writing; PRs #36, #38, #39 and #41 belong to other sessions and are not edited here (PR #41 is
+reviewed and merged by this session because it is CLEAN and its `validate` check passed — the merge is
+recorded below, and its own author's branch is not modified).
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| T1 Live line-by-line re-verification of every published value (schedules, structure-sheet rules, hotel fees, dated rates, walking records) against the official pages on 2026-11-17, with a machine-checkable record and a fresh provenance run in GitHub Actions (network is open there) | in progress | `research/verification-2026-11-17-*.md`, `data/verification*.json`, `scripts/*`, `data/*.json` (via generators) | `d57243e7` |
+| T2 Make the Pages deploy resilient: `main` run `43992732904` failed at "Deploy to GitHub Pages" with *No artifacts named "github-pages" were found for this workflow run* although "Upload Pages artifact" reported success | in progress | `.github/workflows/pages.yml`, `COORDINATION.md` | `d57243e7` |
+| T3 Confirm every requested UI capability is present and enforced, not just claimed: shared search across all tables, date filter, single-entry toggle, per-day primary + fallback, overlap flags, trip-cost calculator, walking ≤30 min filter, "last checked" column, dated rate log | in progress | `assets/app.js`, `scripts/build_site.py`, `scripts/check_links.py`, `index.html`, `pages/*` | `d57243e7` |
+| T4 Refresh the six decision documents, PR to `main`, merge without waiting, confirm the Pages deploy, record the result | in progress | `EXECUTIVE_SUMMARY.md`, `QUESTIONS.md`, `SUGGESTIONS.md`, `FLAGGED.md`, `REVIEW.md`, `README.md`, `COORDINATION.md` | `d57243e7` |

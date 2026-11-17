@@ -402,8 +402,8 @@ def main():
         "daily_feed_checks": n_daily_checks,
         "daily_feed": daily_results,
     }
-    (ROOT / "data" / "row_verification.json").write_text(json.dumps(out, indent=2))
-    print("\nwrote data/row_verification.json")
+    (ROOT / "data" / "row_field_checks.json").write_text(json.dumps(out, indent=2))
+    print("\nwrote data/row_field_checks.json")
     return 1 if (issues or rate_issues) else 0
 
 

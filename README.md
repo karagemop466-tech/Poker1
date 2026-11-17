@@ -54,6 +54,12 @@ Live site: https://karagemop466-tech.github.io/Poker1/
   poker room is, and marks walks inside one resort as `internal` instead of timing them. The 30-minute
   rule is applied and the three hotels that fail it stay listed and flagged.
 - Every table row links to an official source, and every rule field keeps the clause text it came from.
+- **"Last checked"** on every row is the date the official document behind that row was actually fetched,
+  taken from `data/change_log.json` (written by the scheduled fetch job), not a date typed into the
+  generator. Where no fetch is recorded, the row says "not recorded" rather than borrowing a date.
+- **Verification levels are stated, not implied.** The Venetian event pages and the Wynn Signature Series
+  PDF print one line per event and are compared field by field; the WPT schedule PDF prints its columns
+  separately and is compared as a printed (time, buy-in) multiset. See FLAGGED.md F110.
 
 ## Rebuild and check
 
@@ -61,10 +67,21 @@ Live site: https://karagemop466-tech.github.io/Poker1/
 python3 scripts/build_data.py        # regenerate data/*.json and data/row_snapshot.json
 python3 scripts/build_site.py        # regenerate index.html and pages/*.html
 python3 scripts/check_links.py       # data schema, official hosts, rule objects, schedule, hotel rates, page links
+python3 scripts/verify_live_rows.py  # compare every published row with the official document that prints it
+python3 scripts/monitor_sources.py   # check every official URL, report changed rows
 python3 scripts/monitor_sources.py   # check every official URL, report changed rows (reports only; the
                                      # scheduled job adds --write-report to publish data/monitoring.json)
 node scripts/smoke_test.js           # render every page in a headless DOM (needs jsdom)
+node scripts/ui_test.js              # assert the tables, filters, search and 30-minute rule actually work
 ```
+
+`scripts/verify_live_rows.py` is the row-level check, and it is the one that matters most. The page-level
+monitor answers "did this page change?"; this answers "does every published value still match the official
+document?". On 2026-11-17 it found two rows whose start time was wrong while the page-level check reported
+"0 published values changed" — the pages contained both times, and only the rows held the wrong one. Run it
+with `--fetch` where the operator domains are reachable (GitHub Actions does this on every build) or with
+`--live DIR` against documents you fetched yourself. It exits non-zero on any contradiction, so the build
+cannot publish a row the official source does not support.
 
 The Pages workflow (`.github/workflows/pages.yml`) rebuilds the data and the pages on every pull
 request, fails on any diff, runs the schema and link checks, checks every official source, and

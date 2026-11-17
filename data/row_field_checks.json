@@ -1,0 +1,123 @@
+{
+  "verified_on": "2026-11-17",
+  "method": "Each published numeric/date/time value was searched in the raw official document text archived under data/snapshots/. Missing = UNVERIFIED. Entry status was cross-checked against the independently parsed sheet verdict (structure_rules.json) or the WPT registration wording. The daily feed (data/daily.json) is checked the same way against the document its own source_url points at, and every text span it prints in quotes must appear verbatim in that document.",
+  "rows_checked": 324,
+  "field_checks": 1391,
+  "hard_failures": [],
+  "review_items": 0,
+  "rate_arithmetic_failures": [],
+  "daily_feed_rows": 11,
+  "daily_feed_checks": 96,
+  "daily_feed": [
+    {
+      "id": "daily-mon-thu",
+      "venue": "Wynn Las Vegas",
+      "name": "$200 No Limit Hold'em (daily)",
+      "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "snapshot": "w_daily_struct",
+      "checked": 8,
+      "failed": [],
+      "review": []
+    },
+    {
+      "id": "daily-fri",
+      "venue": "Wynn Las Vegas",
+      "name": "$240 No Limit Hold'em Rebuy & Add-on (daily)",
+      "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "snapshot": "w_daily_struct",
+      "checked": 8,
+      "failed": [],
+      "review": []
+    },
+    {
+      "id": "daily-weekend",
+      "venue": "Wynn Las Vegas",
+      "name": "$200 No Limit Hold'em (daily)",
+      "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "snapshot": "w_daily_struct",
+      "checked": 8,
+      "failed": [],
+      "review": []
+    },
+    {
+      "id": "daily-nightly",
+      "venue": "Wynn Las Vegas",
+      "name": "$160 No Limit Hold'em nightly (daily)",
+      "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "snapshot": "w_daily_struct",
+      "checked": 8,
+      "failed": [],
+      "review": []
+    },
+    {
+      "id": "bellagio-fri",
+      "venue": "Bellagio",
+      "name": "$600 No Limit Hold'em (every Friday)",
+      "source": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf",
+      "snapshot": "b_fri_pdf",
+      "checked": 8,
+      "failed": [],
+      "review": []
+    },
+    {
+      "id": "bellagio-sat",
+      "venue": "Bellagio",
+      "name": "$1,100 No Limit Hold'em, 4 flights with a combined Day 2 (every Saturday)",
+      "source": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf",
+      "snapshot": "b_sat_pdf",
+      "checked": 11,
+      "failed": [],
+      "review": []
+    },
+    {
+      "id": "bellagio-sun",
+      "venue": "Bellagio",
+      "name": "$400 H.O.R.S.E. (every Sunday)",
+      "source": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf",
+      "snapshot": "b_sun_pdf",
+      "checked": 9,
+      "failed": [],
+      "review": []
+    },
+    {
+      "id": "caesars-daily-10",
+      "venue": "Caesars Palace",
+      "name": "$100 No Limit Texas Hold'em daily (10 a.m.)",
+      "source": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "snapshot": "c_daily_flyer",
+      "checked": 11,
+      "failed": [],
+      "review": []
+    },
+    {
+      "id": "caesars-daily-14",
+      "venue": "Caesars Palace",
+      "name": "$160 No Limit Texas Hold'em daily (2 p.m.)",
+      "source": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "snapshot": "c_daily_flyer",
+      "checked": 9,
+      "failed": [],
+      "review": []
+    },
+    {
+      "id": "caesars-daily-18",
+      "venue": "Caesars Palace",
+      "name": "$100 No Limit Texas Hold'em daily (6 p.m.)",
+      "source": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "snapshot": "c_daily_flyer",
+      "checked": 8,
+      "failed": [],
+      "review": []
+    },
+    {
+      "id": "caesars-daily-21",
+      "venue": "Caesars Palace",
+      "name": "$160 No Limit Texas Hold'em daily (9 p.m.)",
+      "source": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+      "snapshot": "c_daily_flyer",
+      "checked": 8,
+      "failed": [],
+      "review": []
+    }
+  ]
+}

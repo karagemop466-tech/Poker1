@@ -6,8 +6,25 @@
 Every official tournament page and structure PDF listed below was re-fetched and re-read on
 **2026-11-17**, not carried forward: the DeepStack Extravaganza IV page (94 rows), the NYE page
 (49 rows), the Wynn Signature Series schedule PDF (38 rows) and the WPT World Championship schedule
-PDF (136 rows). The result is that **all 317 rows in the current dataset match their official sources**, with known source irregularities listed in `FLAGGED.md` (including the NYE page printing the Dec 26, 2026 date as 2025). Hotel fees, taxes, rates and walking times were also
-re-checked on 2026-11-17.
+PDF (136 rows). The result is that **all 317 rows in the current dataset match their official sources**, with known source irregularities listed in `FLAGGED.md` (including the NYE page printing the Dec 26, 2026 date as 2025). Hotel fees, taxes, rates and walking times were re-checked the same day.
+
+**Row-level verification, not a page-level claim.** On 2026-11-17 this project stopped checking only
+"did the page change?" and started checking "does every published value still say what the official
+document says?". `scripts/verify_live_rows.py` compares each of the 317 rows field by field — date, start
+time, event number, event name, buy-in and structure-sheet link — with the official document that prints
+it, and the Pages build now fails if any row is contradicted. Current result: **317 of 317 rows checked,
+0 contradicted, 3 warnings** (the three December 26 rows the official page misprints with the year 2025).
+
+That check was not academic. It caught two wrong start times that the page-level monitor had reported as
+"0 published values changed", because the pages contained both times and only the rows had the wrong one:
+
+| Row | Published | Official document | Now |
+|---|---|---|---|
+| Jan 4, 2027 · $1,600 MSPT Day 2 Restart | 11:00 | 11:10 (event page) | **11:10** |
+| Dec 21, 2026 · $600 NLH Turbo | 8 p.m. | the schedule prints no "8 p.m." anywhere; its last block ends at 6 p.m., and the structure sheet says 6 p.m. | **6 p.m.** |
+
+The second one also retires a long-standing flag: F4 called this a "time conflict between two official
+sources". It was not — it was a transcription error in this dataset. The flag now says so.
 
 ## Bottom line
 
@@ -53,7 +70,7 @@ re-checked on 2026-11-17.
   Encore at Wynn Las Vegas | 3131 Las Vegas Blvd S | Licensed | 13.38% | Transient Lodging Tax - Resort
   Hotel (PGC)", so 13.38% is now verified from the authority that sets it rather than borrowed from the
   Venetian ([record](https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf),
-  read 2026-11-17, flagged F60). One number is still missing - the nightly rate - so the like-for-like
+  read 2026-11-17, flagged F114). One number is still missing - the nightly rate - so the like-for-like
   Wynn-versus-Venetian comparison still cannot be made. That is the last missing piece of the hotel
   picture.
 - **Walking times are now routed, not blank.** Twelve hotel-to-poker-room pairs were measured on the
@@ -76,14 +93,20 @@ re-checked on 2026-11-17.
   $1,000 guarantee**, and **Wynn's noon dailies open registration at 8 a.m.** Neither Caesars format can
   be ranked as single entry - its own flyer allows a re-entry and a $50 add-on - so they are listed as
   daily structures, not as verified single-entry rows. ARIA publishes no schedule at all and tells guests
-  to call the room or follow it on social media, which is recorded as a verified negative (F38, F59).
+  to call the room or follow it on social media, which is recorded as a verified negative (F38, F113).
 - **Every printed Venetian row was re-audited against the page text, and one value was wrong.** All 143
   printed rows across the two DeepStack Extravaganza pages were matched by date, start time, event number
   and printed amounts: 142 matched, and the Jan 4, 2027 MSPT Day 2 Restart is republished at the printed
-  **11:10** instead of 11:00 (F57). The separately written provenance audit over all 317 rows found no
+  **11:10** instead of 11:00 (F111). The separately written provenance audit over all 317 rows found no
   unsourced buy-in, house fee, prize pool or starting stack; the only unsourced money values in the dataset
   were the 17 Signature Series guarantees, already blanked and published as F54. The record is
   `research/verification-2026-11-17-c7a324a6.md`.
+- **"Last checked" is evidence, not a label.** Every table row now prints the date on which the official
+  document behind it was actually fetched — the date comes from the scheduled GitHub Actions fetch log
+  (`data/change_log.json`), not from a date typed into the generator. A row whose document has no fetch record falls
+  back to the newest fetch date in the log instead of borrowing a typed one; the UI prints "not recorded" when the field is blank. On 2026-11-17 that fetch covered
+  **78 official sources: 72 fetched with text, 10 pages whose bytes changed, 0 published values changed,
+  5 errors** — every error an MGM Resorts page (Bellagio, ARIA) that times out for a non-browser client.
 - **Trip cost calculator.** The calculator now prices a whole trip: entries × buy-in + nights × true
   hotel cost + parking + other spend, using only logged quotes, and it shows what the selected stay
   window actually holds (verified single-entry events, days covered, cheapest buy-in, best
@@ -232,7 +255,7 @@ fee ("Daily Resort Fee. A daily resort fee of $55.00 plus applicable tax will be
 reservations"), and the same pages carry parking (self-park $20, valet $40) and the 72-hour
 cancellation policy. No hotel page prints the room-tax **percentage**, so 13.38% is taken from the
 authority that levies it — the Clark County licensing table, cited by licence number on each row
-(F68) — and labelled as a county record, never as a statement by the property. Caesars Palace
+(F114) — and labelled as a county record, never as a statement by the property. Caesars Palace
 publishes no property-specific resort fee at all — the corporate "$45-$50" range does not name the
 property — so that cell stays blank rather than borrowed from another property's terms. Nightly
 rates stay blank everywhere outside the Venetian group's dated quotes. Every attempted source is
