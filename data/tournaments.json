@@ -24614,7 +24614,7 @@
    "series": "Venetian DeepStack Extravaganza NYE",
    "venue": "The Venetian Resort",
    "date": "2027-01-04",
-   "start": "11:00",
+   "start": "11:10",
    "kind": "continuation",
    "event_no": 20,
    "name": "$1,600 No Limit Hold'em MSPT Day 2 Restart",
@@ -24677,11 +24677,11 @@
    "levels": 30,
    "level_minutes": 40,
    "starting_chips": null,
-   "est_end": "08:45",
+   "est_end": "08:55",
    "est_duration_min": 1305,
    "note": "Continuation of the event above - no new entry. The stored time comes from structure sheet #8 clause 3; the official event page prints 11:10 AM for this row, which is recorded as a flag on the row.",
    "flags": [
-    "Two official sources disagree on this start time. The New Year's Eve event page prints \"Monday, January 4, 2027 | 11:10 AM | 20 | $1,600 No Limit Hold'em MSPT Day 2 Restart\" (re-read live on 2026-11-17), while structure sheet #8 clause 3 prints \"Day 2 will resume at 11:00 AM combining all remaining players from 1A, 1B, and 1C\". The row is stored at the earlier 11:00 AM so that a player planning around it cannot be late for either reading; confirm with the poker room before travelling. The sheet's own \"Late Registration: 9 levels + Break (~ 5:55 PM)\" is measured from the 11:10 AM Day 1 flights, not from this restart, so it does not settle the question."
+    "Two official sources disagree on this start time. The New Year's Eve event page prints \"Monday, January 4, 2027 | 11:10 AM | 20 | $1,600 No Limit Hold'em MSPT Day 2 Restart\" (re-read live on 2026-11-17), while structure sheet #8 clause 3 prints \"Day 2 will resume at 11:00 AM combining all remaining players from 1A, 1B, and 1C\". The row is stored at the event page's 11:10 AM, the time its printed row carries (sessions c7a324a6, d57243e7 and d94b191b each corrected an earlier transcription of 11:00 AM); the sheet's 11:00 AM wording is kept here as the conflict. Confirm with the poker room before travelling. The sheet's own \"Late Registration: 9 levels + Break (~ 5:55 PM)\" is measured from the 11:10 AM Day 1 flights, not from this restart, so it does not settle the question."
    ],
    "sources": [
     {
@@ -25759,7 +25759,7 @@
    "start": "17:10",
    "kind": "entry",
    "event_no": 30,
-   "name": "$300 No Limit Hold'em 1F $100K GTD (1Day) - Show Your CES Badge - $10 Rake Discount",
+   "name": "$300 No Limit Hold'em 1F $100K GTD (1Day)",
    "buy_in_usd": 300,
    "guarantee_usd": 100000,
    "prize_text": null,
@@ -29267,6 +29267,12 @@
   "caesars": "https://www.caesars.com/caesars-palace",
   "caesars_poker_article": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
   "caesars_faq": "https://www.caesars.com/caesars-palace/faqs",
-  "caesars_disclaimer": "https://www.caesars.com/corporate/disclaimer"
+  "caesars_disclaimer": "https://www.caesars.com/corporate/disclaimer",
+  "caesars_poker_page": "https://www.caesars.com/caesars-palace/casino/poker",
+  "caesars_daily_flyer": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+  "bellagio_fri_pdf": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf",
+  "bellagio_sat_pdf": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf",
+  "bellagio_sun_pdf": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf",
+  "clark_county_tle_guide": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf"
  }
 }

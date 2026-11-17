@@ -18,7 +18,13 @@
    "late": "16:30",
    "levels": 28,
    "lmin": 30,
-   "stack": "Clause 5: \"Players will start with 25,000 in Tournament chips.\""
+   "stack": "Clause 5: \"Players will start with 25,000 in Tournament chips.\"",
+   "venue": "Wynn Las Vegas",
+   "venue_id": "wynn",
+   "verified_on": "2026-11-16",
+   "source_label": "Official Wynn daily tournament structures PDF (read 2026-11-16)",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+   "late_printed": true
   },
   {
    "id": "daily-fri",
@@ -38,7 +44,13 @@
    "late": "16:30",
    "levels": 28,
    "lmin": 30,
-   "stack": "Clause 5: \"Players will start with 25,000 in Tournament chips.\""
+   "stack": "Clause 5: \"Players will start with 25,000 in Tournament chips.\"",
+   "venue": "Wynn Las Vegas",
+   "venue_id": "wynn",
+   "verified_on": "2026-11-16",
+   "source_label": "Official Wynn daily tournament structures PDF (read 2026-11-16)",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+   "late_printed": true
   },
   {
    "id": "daily-weekend",
@@ -58,7 +70,13 @@
    "late": "17:30",
    "levels": 28,
    "lmin": 30,
-   "stack": "Clause 5: \"Players will start with 25,000 in Tournament chips.\""
+   "stack": "Clause 5: \"Players will start with 25,000 in Tournament chips.\"",
+   "venue": "Wynn Las Vegas",
+   "venue_id": "wynn",
+   "verified_on": "2026-11-16",
+   "source_label": "Official Wynn daily tournament structures PDF (read 2026-11-16)",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+   "late_printed": true
   },
   {
    "id": "daily-nightly",
@@ -78,10 +96,224 @@
    "late": "21:00",
    "levels": 30,
    "lmin": 20,
-   "stack": "Clause 5: \"Players will start with 25,000 in Tournament chips.\""
+   "stack": "Clause 5: \"Players will start with 25,000 in Tournament chips.\"",
+   "venue": "Wynn Las Vegas",
+   "venue_id": "wynn",
+   "verified_on": "2026-11-16",
+   "source_label": "Official Wynn daily tournament structures PDF (read 2026-11-16)",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+   "late_printed": true
+  },
+  {
+   "id": "bellagio-fri",
+   "venue": "Bellagio",
+   "venue_id": "bellagio",
+   "verified_on": "2026-11-17",
+   "name": "$600 No Limit Hold'em (every Friday)",
+   "days": "Friday",
+   "start": "11:00",
+   "buy_in_usd": 600,
+   "guarantee_usd": null,
+   "status": "RE",
+   "labels": [
+    "recurring",
+    "re-entry",
+    "add-on not offered",
+    "voluntary staff gratuity"
+   ],
+   "fee": "Flyer rule 05: \"The $600 Buy-In is allocated as follows: $510 to Prize Pool; $50 House Fee; $40 Voluntary Staff Gratuity.\"",
+   "ex": "Rule 03: \"Players may buy-in and re-enter through the end of level 8 (Including Break). Tournament Surrender is allowed on Level 8 break.\" Rule 02: \"Levels will be 30 Minutes in Length with a 12 minute break every 4 levels.\" Rule 04: \"Tournament will be played 8-handed. Final table will be 9-handed.\"",
+   "late": null,
+   "late_printed": false,
+   "late_note": "No clock time printed: registration closes at the end of level 8 including the break.",
+   "levels": 28,
+   "lmin": 30,
+   "stack": "Rule 01: \"Players will start with 30,000 tournament chips, including the optional Staff Gratuity. (15,000 + 15,000)\"",
+   "source_label": "Official Bellagio poker page (page) and the Friday structure PDF it links (both read 2026-11-17)",
+   "source_url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf",
+   "single_entry": "not single entry - the flyer's own rule 03 allows re-entry through level 8",
+   "flag": "No guarantee is printed on the flyer, so the guarantee is blank rather than assumed."
+  },
+  {
+   "id": "bellagio-sat",
+   "venue": "Bellagio",
+   "venue_id": "bellagio",
+   "verified_on": "2026-11-17",
+   "name": "$1,100 No Limit Hold'em, 4 flights with a combined Day 2 (every Saturday)",
+   "days": "Saturday",
+   "start": "11:00",
+   "buy_in_usd": null,
+   "guarantee_usd": 50000,
+   "status": "MULTI",
+   "labels": [
+    "recurring",
+    "multi-flight",
+    "two-day",
+    "prize-figure conflict"
+   ],
+   "fee": "Flyer rule 07 prints \"Of the $600 Buy-in, $510 goes to the Prize Pool, $50 is Admin Fees and $40 is optional staff gratuity\" on a flyer headed \"NLH $1100 BUY-IN\"; the official poker page labels the same event as a $1,000 buy-in (page wording, not this document's). Three different buy-ins are printed, so buy_in_usd is left blank rather than choosing one.",
+   "ex": "Rule 08: \"Bellagio guarantees that the total Combined Prize Pool will be at least $50,000.\" Rule 03: \"Registration will be open until the start of Level 10. (Approximately 5:15pm for Flights 1A, 1B, 4:15pm for 1C and 9:30pm for Flight D).\" Rule 06: \"Each Flight would play until the money (12.5%). Must bag chips to make Day 2 and be in the money.\"",
+   "late": "17:15",
+   "late_printed": true,
+   "late_note": "Printed as an approximation for flights 1A/1B only: \"Approximately 5:15pm for Flights 1A, 1B, 4:15pm for 1C and 9:30pm for Flight D\".",
+   "levels": 28,
+   "lmin": 30,
+   "stack": "Rule 01: \"Players start with 40,000 in tournament chips (20,000 + 20,000 optional).\"",
+   "source_label": "Official Bellagio Saturday structure PDF linked from the official poker page (read 2026-11-17)",
+   "source_url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf",
+   "single_entry": "not single entry - four labelled flights (1A-1D) with a combined Day 2; a player who busts on Day 1 without bagging chips may enter another flight",
+   "flag": "Rule 04 prints \"Combined Final Day 2 (9/13/26)\", a September 2026 date, so the flyer cannot be assumed current for a November 2026 - January 2027 trip (FLAGGED.md F58)."
+  },
+  {
+   "id": "bellagio-sun",
+   "venue": "Bellagio",
+   "venue_id": "bellagio",
+   "verified_on": "2026-11-17",
+   "name": "$400 H.O.R.S.E. (every Sunday)",
+   "days": "Sunday",
+   "start": "11:00",
+   "buy_in_usd": 400,
+   "guarantee_usd": null,
+   "status": "RE",
+   "labels": [
+    "recurring",
+    "re-entry",
+    "mixed games",
+    "voluntary staff gratuity"
+   ],
+   "fee": "Flyer rule 01: \"The $400 Buy-In is allocated as follows: $340 to Prize Pool; $35 House Fee; $25 Voluntary Staff Gratuity.\"",
+   "ex": "Rule 05: \"Players may buy-in and re-enter through the end of level 8 (Including Break). Tournament Surrender is allowed on Level 8 break.\" Rule 07: \"Payout structure based on number of entries and will be approximately 12.5% of field.\" Rule 04: \"Each level will last thirty (30) minutes, game will change every 8 hands...\" Rule 06: \"Twelve (12) minute breaks will be every 4 levels.\"",
+   "late": null,
+   "late_printed": false,
+   "late_note": "No clock time printed: registration closes at the end of level 8 including the break.",
+   "levels": 26,
+   "lmin": 30,
+   "stack": "Rule 03: \"Players will start with 30,000 tournament chips, including the optional Staff Gratuity. (15,000 + 15,000)\"",
+   "source_label": "Official Bellagio Sunday H.O.R.S.E. structure PDF linked from the official poker page (read 2026-11-17)",
+   "source_url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf",
+   "single_entry": "not single entry - the flyer's own rule 05 allows re-entry through level 8",
+   "flag": "The blind ladder prints 26 levels; the level table is the printed ladder, not a promise of the event's length."
+  },
+  {
+   "id": "caesars-daily-10",
+   "venue": "Caesars Palace",
+   "venue_id": "caesars",
+   "verified_on": "2026-11-17",
+   "name": "$100 No Limit Texas Hold'em daily (10 a.m.)",
+   "days": "Monday-Sunday",
+   "start": "10:00",
+   "buy_in_usd": 100,
+   "guarantee_usd": 1000,
+   "status": "REBUY",
+   "labels": [
+    "recurring",
+    "re-entry",
+    "add-on",
+    "earliest daily on the Strip"
+   ],
+   "fee": "Flyer rule 06: \"Of the $100 buy in, $70 goes to the prize pool and $30 is held by Caesars Palace as a maintenance fee.\" Rule 08: \"Of the $50 add-on, $45 goes to the prize pool and $5 is held by Caesars Palace as a maintenance fee.\"",
+   "ex": "Schedule table row, printed verbatim: \"10 AM $100 $50 20,000 20 Minutes $1,000\". Rules: \"All Tournaments feature a $50 add-on for 15,000 tournament chips that can only be taken at the first break. Registration will close at the start of level seven. All tournaments will have a 10-minute break every six levels.\" Sign-up rule 3: \"Participants may only register themselves, but may re-enter, by paying the entry fee, upon elimination within the first break of play.\"",
+   "late": null,
+   "late_printed": false,
+   "late_note": "No clock time printed: \"Registration will close at the start of level seven\" with 20-minute levels.",
+   "levels": null,
+   "lmin": 20,
+   "stack": "Schedule table: \"Starting Chips 20,000\"",
+   "source_label": "Official Caesars Palace daily NLH tournament schedule PDF (read 2026-11-17)",
+   "source_url": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+   "single_entry": "not single entry - re-entry on elimination within the first break, plus a $50 add-on",
+   "flag": "Rule 26: \"Must have at least 6 players to start a tournament. If a tournament does not have at least 6 players at the scheduled start time the tournament will be canceled, and refunds will be issued.\""
+  },
+  {
+   "id": "caesars-daily-14",
+   "venue": "Caesars Palace",
+   "venue_id": "caesars",
+   "verified_on": "2026-11-17",
+   "name": "$160 No Limit Texas Hold'em daily (2 p.m.)",
+   "days": "Monday-Sunday",
+   "start": "14:00",
+   "buy_in_usd": 160,
+   "guarantee_usd": 1000,
+   "status": "REBUY",
+   "labels": [
+    "recurring",
+    "re-entry",
+    "add-on"
+   ],
+   "fee": "Flyer rule 07: \"Of the $160 buy in, $115 goes to the prize pool and $45 is held by Caesars Palace as a maintenance fee.\" Rule 08: \"Of the $50 add-on, $45 goes to the prize pool and $5 is held by Caesars Palace as a maintenance fee.\"",
+   "ex": "Schedule table row, printed verbatim: \"2 PM $160 $50 20,000 20 Minutes $1,000\". Sign-ups: \"Sign-ups start one hour before the scheduled start of the event\" - 1:00 p.m. for this start.",
+   "late": null,
+   "late_printed": false,
+   "late_note": "No clock time printed: \"Registration will close at the start of level seven\" with 20-minute levels.",
+   "levels": null,
+   "lmin": 20,
+   "stack": "Schedule table: \"Starting Chips 20,000\"",
+   "source_label": "Official Caesars Palace daily NLH tournament schedule PDF (read 2026-11-17)",
+   "source_url": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+   "single_entry": "not single entry - re-entry on elimination within the first break, plus a $50 add-on",
+   "flag": null
+  },
+  {
+   "id": "caesars-daily-18",
+   "venue": "Caesars Palace",
+   "venue_id": "caesars",
+   "verified_on": "2026-11-17",
+   "name": "$100 No Limit Texas Hold'em daily (6 p.m.)",
+   "days": "Monday-Sunday",
+   "start": "18:00",
+   "buy_in_usd": 100,
+   "guarantee_usd": 1000,
+   "status": "REBUY",
+   "labels": [
+    "recurring",
+    "re-entry",
+    "add-on"
+   ],
+   "fee": "Flyer rule 06: \"Of the $100 buy in, $70 goes to the prize pool and $30 is held by Caesars Palace as a maintenance fee.\"",
+   "ex": "Schedule table row, printed verbatim: \"6 PM $100 $50 20,000 20 Minutes $1,000\". Sign-ups open 5 p.m. (\"one hour before the scheduled start\").",
+   "late": null,
+   "late_printed": false,
+   "late_note": "No clock time printed: \"Registration will close at the start of level seven\" with 20-minute levels.",
+   "levels": null,
+   "lmin": 20,
+   "stack": "Schedule table: \"Starting Chips 20,000\"",
+   "source_label": "Official Caesars Palace daily NLH tournament schedule PDF (read 2026-11-17)",
+   "source_url": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+   "single_entry": "not single entry - re-entry on elimination within the first break, plus a $50 add-on",
+   "flag": null
+  },
+  {
+   "id": "caesars-daily-21",
+   "venue": "Caesars Palace",
+   "venue_id": "caesars",
+   "verified_on": "2026-11-17",
+   "name": "$160 No Limit Texas Hold'em daily (9 p.m.)",
+   "days": "Monday-Sunday",
+   "start": "21:00",
+   "buy_in_usd": 160,
+   "guarantee_usd": 1000,
+   "status": "REBUY",
+   "labels": [
+    "recurring",
+    "re-entry",
+    "add-on",
+    "nightcap"
+   ],
+   "fee": "Flyer rule 07: \"Of the $160 buy in, $115 goes to the prize pool and $45 is held by Caesars Palace as a maintenance fee.\"",
+   "ex": "Schedule table row, printed verbatim: \"9 PM $160 $50 20,000 20 Minutes $1,000\". Rule 27: \"Prize pool may not be chopped until the end of registration.\"",
+   "late": null,
+   "late_printed": false,
+   "late_note": "No clock time printed: \"Registration will close at the start of level seven\" with 20-minute levels.",
+   "levels": null,
+   "lmin": 20,
+   "stack": "Schedule table: \"Starting Chips 20,000\"",
+   "source_label": "Official Caesars Palace daily NLH tournament schedule PDF (read 2026-11-17)",
+   "source_url": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+   "single_entry": "not single entry - re-entry on elimination within the first break, plus a $50 add-on",
+   "flag": null
   }
  ],
- "note": "Recurring daily tournaments published by Wynn Las Vegas. The official poker page states: \"The Daily Tournament schedule will be suspended during each Wynn Signature, Wynn Millions, and Classic tournament series.\" The official daily terms and conditions state: \"Registration for each Event will open four (4) hours prior to the scheduled start of play\", so registration for the 12 p.m. daily events opens at 8 a.m. Note the suspension wording differs between the two official sources: the poker page names Wynn Signature, Wynn Millions and Classic series, while each daily structure sheet says the event \"may be suspended during Seniors Events, Classic Events, or other Tournament Series\". Neither names the WPT World Championship explicitly, so confirm before travelling. Read 2026-11-16.",
+ "note": "Recurring daily and weekly formats published by each Strip poker room whose official schedule document has been read: Wynn Las Vegas (daily poster and daily structures, read 2026-11-16), Bellagio (three weekly structure PDFs linked from its official poker page, read 2026-11-17) and Caesars Palace (its own 2026 daily NLH schedule PDF, read 2026-11-17). ARIA publishes no schedule on its official poker page, and the Venetian publishes only dated series pages, so neither contributes rows here. Every row carries its own source and retrieval date. None of the Bellagio or Caesars formats is single entry - each prints re-entry, flights or an add-on - so none is ranked; they are listed for the separate-section comparison only. Wynn: the official poker page states: \"The Daily Tournament schedule will be suspended during each Wynn Signature, Wynn Millions, and Classic tournament series.\" The official daily terms and conditions state: \"Registration for each Event will open four (4) hours prior to the scheduled start of play\", so registration for the 12 p.m. daily events opens at 8 a.m. Note the suspension wording differs between the two official sources: the poker page names Wynn Signature, Wynn Millions and Classic series, while each daily structure sheet says the event \"may be suspended during Seniors Events, Classic Events, or other Tournament Series\". Neither names the WPT World Championship explicitly, so confirm before travelling. Read 2026-11-16.",
  "sources": [
   {
    "label": "Official daily tournament poster",
@@ -94,6 +326,30 @@
   {
    "label": "Official poker room page",
    "url": "https://www.wynnlasvegas.com/casino/poker"
+  },
+  {
+   "label": "Official Bellagio poker page",
+   "url": "https://bellagio.mgmresorts.com/en/casino/poker.html"
+  },
+  {
+   "label": "Official Bellagio Friday structure PDF",
+   "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf"
+  },
+  {
+   "label": "Official Bellagio Saturday structure PDF",
+   "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf"
+  },
+  {
+   "label": "Official Bellagio Sunday structure PDF",
+   "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf"
+  },
+  {
+   "label": "Official Caesars Palace daily NLH schedule PDF",
+   "url": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf"
+  },
+  {
+   "label": "Official Caesars Palace poker page",
+   "url": "https://www.caesars.com/caesars-palace/casino/poker"
   }
  ]
 }
