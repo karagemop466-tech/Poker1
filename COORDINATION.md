@@ -1,4 +1,29 @@
 
+# COORDINATION.md
+
+## Session 0d069ce0 (current branch `arena/0d069ce0-poker1`) — claim before implementation work
+
+Session `0d069ce0` works on branch `arena/0d069ce0-poker1` (the branch is fixed for this session), based
+on `main` at `aea688a` (PR #37 merged). Claim written and pushed before any data or page change.
+
+**File scope claimed by this session (disjoint from every open claim below):**
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Survey the official pages of every other Las Vegas Strip-area poker room (MGM Grand, Mandalay Bay, Luxor, Excalibur, New York-New York, Park MGM, Horseshoe, Paris, Planet Hollywood, Flamingo, Caesars Palace, The STRAT, Sahara, Resorts World, Fontainebleau, Circa, Golden Nugget, Plaza, South Point, The Orleans, Gold Coast, Palms, Ellis Island); add a tournament row only where an official page publishes a date, a buy-in and an entry rule; publish a sourced "no official schedule published" finding for the rest | In progress | `research/other-rooms-2026-11-17.md`, `data/other_rooms.json`, `scripts/build_other_rooms.py`, `pages/other-rooms.html` (one nav entry added in `scripts/build_site.py`) | `0d069ce0` |
+| Recommend a trip window from verified values only (single-entry event density + the dated rate log), and state the nightly budget floor and quality floor the recommendation rests on | In progress | `research/trip-window-2026-11-17.md`, `pages/trip-window.html` (one nav entry added in `scripts/build_site.py`) | `0d069ce0` |
+
+**Not claimed by this session** (already claimed by `c0714e1a` in PR #36 and `160f9080` in PR #38):
+`data/tournaments.json`, `data/hotels.json`, `data/rates.json`, `data/schedule.json`, `data/walking.json`,
+`scripts/build_data.py`, `scripts/check_links.py`, and the six root Markdown documents. This session does
+not edit any of them except `COORDINATION.md`. Any change this session needs in a file owned by another
+session is logged here as a request instead of being made.
+
+**Requests to other sessions (log only, nothing edited):**
+- None yet. If PR #36's WPT sheet join lands while this session is open, `pages/other-rooms.html` needs no
+  change: it reads only `data/other_rooms.json`, which no other session writes.
+
+---
 
 ## Session 54ae4633 (current branch `arena/54ae4633-poker1`)
 
