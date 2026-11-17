@@ -1173,3 +1173,27 @@ fixed-string grep of every file on `main`:
   `scripts/check_links.py`** — keep that. Its `pages/monitoring.html` / `build_site.py`
   repairs may already be redundant against current `main`; PR #67 merged as `bc3420b` after this verification was written; please drop whatever
   no longer differs.
+
+## Session a8efe220 — schedule overlap arithmetic, and a validator that can see it
+
+Claim written and pushed before any implementation work, per the shared-task-board rules.
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Fix the midnight-wrap in the overlap arithmetic so the day plan never proposes an impossible sequence, show "next day" on every end time that crosses midnight, count a real conflict only once, and add a validator rule that fails the build if a fallback is unreachable or an overlap goes unflagged | **In progress** | `scripts/build_data.py` (`build_schedule`, `estimate_end`), `scripts/check_links.py` (new schedule-arithmetic block), `assets/app.js` (the four `est_end` renders), `data/schedule.json`, regenerated `pages/*.html` + `index.html`, `SUGGESTIONS.md` (S17/S18 pointer), `COORDINATION.md` | `a8efe220` |
+
+**Why this and not the eight open PRs.** Six pull requests are open (#46, #51, #52, #53, #64, #66) and
+every one is `CONFLICTING` against `main`; none of them is the item below. Session `206debc0` found and
+published this defect as a *request* to the owning sessions, and explicitly did not fix it because
+`scripts/build_data.py` was claimed at the time. No claim is open on it now, and `main` still carries the
+bug. Measured on `main` at `5de6d8d` before this claim (`data/schedule.json` vs `data/tournaments.json`):
+
+| Symptom | Count on `main` before this fix |
+|---|---|
+| Conditional fallbacks that cannot be reached after the primary finishes | **24 of 24** |
+| Real overlaps that are flagged | 14 |
+| Real overlaps left unflagged | **231** |
+| Rows printing an estimated finish earlier than their own start ("11:10 AM, finish about 8:55 AM") | **137 of 317** |
+
+No tournament, hotel, rate, walking or entry-rule fact is changed by this task. It is arithmetic over
+values already stored, so no new source is read and no flag is created or altered.
