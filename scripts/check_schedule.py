@@ -146,13 +146,11 @@ def main():
                 if p_end is None:
                     problems.append(f"{date}: a fallback is published although the primary has no "
                                     f"same-day finish time")
-                elif not is_firm(p) and day.get("fallback_kind") == "from the start" \
-                        and p_end > to_min(f_["start"]):
-                    problems.append(f"{date}: a satellite bound cannot promise a clean start-to-start"
-                                    f" fallback")
-                elif p_end > deadline(entries[f_["id"]]):
-                    problems.append(f"{date}: fallback {f_['id']} cannot be entered after the primary "
-                                    f"is estimated to finish")
+                elif day.get("fallback_kind") == "from the start" and p_end > to_min(f_["start"]):
+                    problems.append(f"{date}: a from-the-start fallback cannot start {f_['start']} after the "
+                                    f"primary's ceiling at {p_end}")
+                elif day.get("fallback_kind") not in ("from the start", "join in progress"):
+                    problems.append(f"{date}: fallback_kind {day.get('fallback_kind')!r} is not a published kind")
                 if to_min(f_["start"]) < to_min(p["start"]):
                     problems.append(f"{date}: fallback {f_['id']} starts before the primary")
         elif se and day.get("primary_id") and not day.get("fallback_note"):
@@ -163,9 +161,14 @@ def main():
         want = []
         for i, a in enumerate(ordered):
             a_end = day_bound(a)
-            if a_end is None:
-                continue
             for b in ordered[i + 1:]:
+                # Two events printed at the same instant can never both be played; that needs no
+                # estimate at all and applies even when neither carries a structure.
+                if a["start"] == b["start"]:
+                    want.append((a["id"], b["id"], "unplannable"))
+                    continue
+                if a_end is None:
+                    continue
                 if a_end > deadline(entries[b["id"]]):
                     want.append((a["id"], b["id"], "unplannable"))
                 elif a_end > to_min(b["start"]):

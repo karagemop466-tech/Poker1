@@ -1,4 +1,79 @@
-# Session 212b84be — FINAL INTEGRATION SESSION (branch `arena/212b84be-poker1`, base `aea688a` = `main` at PR #37)
+# Session 9aad3bd2 — branch `arena/9aad3bd2-poker1` (base `5de6d8d` = `main` at PR #69)
+
+Session `9aad3bd2` works on branch `arena/9aad3bd2-poker1` (the branch is fixed for this session), based
+on `main` at `5de6d8d740e12cfaf5c37866e7d7a714da8542c5` (PR #69 merged). `git rev-list --left-right
+--count origin/main...HEAD` = `0 0`, so the branch starts exactly on `main` with a clean tree. Claim
+written and pushed before any data, script or page change.
+
+The user's master requirement list is implemented on `main`; this session takes the three open correctness
+items that earlier sessions logged but did not own, all of which block the requirement "give each day a
+primary event and a conditional fallback, not an impossible sequence" and the schedule overlap check:
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Fix the `est_end` midnight-wrap in the day plan: compare fallbacks and overlaps in absolute minutes using the stored `est_duration_min`, and stop proposing a fallback that starts on the same day as a primary that runs past midnight. Store an `est_end_next_day` flag so the renderer can print "(next day)". | **Superseded by `main`** — `main` already carries this fix via PR #72 (`aecf003`), a more complete `end_minutes` implementation with same-start-time overlap detection and `overlap_pairs`. This session's independent rewrite was dropped during the rebase in favour of `main`'s version; verified 0 impossible fallbacks / 271 overlaps on the merged tree. | `scripts/build_data.py` (adopted from `main`), `data/schedule.json` (matches `main`) | `9aad3bd2` |
+| Render the "(next day)" marker for a wrapped `est_end` on the schedule page so a finish time that reads before its start is never shown as a same-day time. | **Superseded by `main`** — `main`'s schedule renderer already prints "the next day" via `est_end_next_day`. The one wording conflict during the rebase was resolved to `main`'s text. | `assets/app.js` (schedule renderer, adopted from `main`) | `9aad3bd2` |
+| REQUEST 2 (session 206debc0): add `www.rwlasvegas.com` to the approved official-host set in `check_source_facts.py` and add `set -o pipefail` to the source-facts workflow so a refusal to run is a red job, not a silent success. | **Done** — both `www.rwlasvegas.com` and `rwlasvegas.com` added to `OFFICIAL_HOSTS`; `assert_official(manifest["sources"])` now passes (no refusal); the workflow step runs `set -o pipefail; … | tee`. | `scripts/check_source_facts.py`, `.github/workflows/source-facts.yml` | `9aad3bd2` |
+| Remove the doubled `<h1>` on the five markdown-backed pages (summary, questions, suggestions, flagged, review): the template prints a static `<h1>` and the Markdown file prints its own `#` heading. Keep one heading. | **Done** — `markdownPage` strips a leading `# Title` line from the document; the template `<h1>` is the single heading. Verified in a headless DOM: each of the five pages renders exactly one `<h1>`. | `assets/app.js` (`markdownPage`), regenerated `pages/summary.html`, `pages/questions.html`, `pages/suggestions.html`, `pages/flagged.html`, `pages/review.html` | `9aad3bd2` |
+| Requirement 4 ("Add a 'last checked' date to each row"): the tournament rows carry `last_checked` but the tournament tables did not render it. Add a "Last checked" column to every tournament table. | **Done** — `tournamentColumns` now renders a "Last checked" column from `row.last_checked` (all 317 rows carry 2026-11-17). | `assets/app.js` (`tournamentColumns`), regenerated all tournament pages | `9aad3bd2` |
+| Requirement 2 ("each with its source excerpt and retrieval date"): `ruleCell` showed the excerpt and source but not the retrieval date. Add the rule `retrieved_on` to the rule cell. | **Done** — each rule field now prints "retrieved <date>" next to its source link. | `assets/app.js` (`ruleCell`), regenerated all tournament pages | `9aad3bd2` |
+| Final integration: re-run every generator and check, re-verify the combined data line by line, confirm no broken links, publish to GitHub Pages, open and merge the PR to `main`, record the PR link and merge result here. | **In progress** | all files above + `COORDINATION.md` | `9aad3bd2` |
+
+**Files deliberately NOT edited by this session:** the tournament, hotel, rate, walking and structure-rule
+facts in `data/*.json` are unchanged by this session except the regenerated `data/schedule.json` (the
+midnight-wrap fix only changes the derived day-plan fields — primary/fallback selection, overlap flags and
+the `est_end_next_day` marker — not any official value). No official source is re-read or altered; every fact
+already in the dataset keeps its source and retrieval date.
+
+### Session 9aad3bd2 — verification performed and results
+
+- `python3 scripts/build_data.py` → 317 rows (80 SE / 67 MULTI / 107 RE / 25 CONT / 38 UNV), 70 schedule
+  days, 79 flagged rows. `data/schedule.json` matches `main` exactly (deterministic).
+- **Midnight-wrap — resolution via rebase.** While rebasing onto the moving `main`, this session found that
+  **`main` already carries the midnight-wrap fix** (PR #72, commit `aecf003` "Fix the midnight-wrap in the
+  schedule overlap arithmetic and gate it in CI", merged as `39e36b0`). Its `build_schedule` is the more
+  complete of the two: an `end_minutes` helper, same-start-time overlap detection, an `overlap_pairs` total,
+  and a "the next day" renderer. This session's independent `build_schedule` rewrite was therefore **redundant
+  and was dropped** in favour of `main`'s version (`git checkout HEAD -- scripts/build_data.py
+  data/schedule.json index.html pages/`), and the single `app.js` wording conflict was resolved to `main`'s
+  "the next day". Measured on the merged tree: 121 events carry `est_end_next_day`, **0** impossible
+  fallbacks remain, **271** overlaps are flagged (the higher count vs. this session's first draft is `main`'s
+  same-start-time detection). The estimate is derived from the published level structure (e.g. the $300 NLH 1A
+  $75K GTD: 30 levels × 40 min + 7 × 15-min breaks = 1305 min = 21.75 h, start 11:10 → 08:55 next day) — an
+  estimate, labelled as such, not an official finish time.
+- `python3 scripts/build_site.py` → 23 pages, regenerated to inline the merged `assets/app.js`.
+- `python3 scripts/check_links.py` → OK (56 files free of conflict markers, 23 pages, 317 rows, 7 hotels,
+  5 dated rates, 70 schedule days; source, rules, schedule, hotel-rate/cost, provenance and page-link checks).
+- `python3 scripts/verify_rows.py` → 324 verified rows, 1,296 field checks, 0 hard failures, 1 documented
+  review item (`r225` start 20:00 — interpretation, not a data error).
+- `node scripts/smoke_test.js` → 23/23 pages render headlessly.
+- Headless-DOM render checks: the five markdown pages each render exactly one `<h1>`; the single-entry page
+  renders 80 rows with the new "Last checked" column and rule "retrieved" dates.
+- `assert_official(manifest["sources"])` in `check_source_facts.py` → PASS (the rwlasvegas refusal is gone).
+
+**What this session uniquely contributes** (the midnight-wrap work being already on `main`): the "Last checked"
+column on every tournament table (requirement 4), the rule-field `retrieved_on` in the rule cell (requirement
+2), the doubled-`<h1>` strip on the five markdown pages, the `www.rwlasvegas.com` host approval and the
+`set -o pipefail` guard (REQUEST 2). **No new irregularity was introduced.** These are presentation and
+provenance-guard fixes only; they do not change any value read from an official source. The one open review
+item (`r225`) is unchanged and is already published on the Flagged for Review page.
+
+### Session 9aad3bd2 — rebase conflict log
+
+`git pull --rebase origin main` hit a conflict in `scripts/build_data.py`, `assets/app.js`,
+`data/schedule.json`, `index.html` and `pages/*.html` because `main` advanced (PR #72 landed the midnight-wrap
+fix and regenerated the derived files) while this session's fix commit was in flight. Resolution, with no other
+session's work discarded:
+- `scripts/build_data.py`, `data/schedule.json`, `index.html`, `pages/*.html` → taken from `main` (HEAD), since
+  this session's `build_schedule` was redundant against PR #72.
+- `assets/app.js` → the one wording conflict (`" the next day"` vs `" (next day)"`) resolved to `main`'s; this
+  session's three unique `app.js` edits (rule-cell retrieval date, "Last checked" column, markdown `<h1>` strip)
+  were already applied cleanly and were kept.
+- Regenerated `data/schedule.json` and the pages with `build_data.py` / `build_site.py`; the regenerated
+  `data/schedule.json` is byte-identical to `main`'s (deterministic). Rebased and force-pushed with
+  `--force-with-lease` as `5af9004`.
+
+## Session 212b84be — FINAL INTEGRATION SESSION (branch `arena/212b84be-poker1`, base `aea688a` = `main` at PR #37)
 ## Session 8a12503e — branch `arena/8a12503e-poker1` (base `aea688a`, `main` after PR #37)
 
 Claimed and pushed before any data, script or page change. Four pull requests were already open when this
@@ -1174,6 +1249,65 @@ fixed-string grep of every file on `main`:
   repairs may already be redundant against current `main`; PR #67 merged as `bc3420b` after this verification was written; please drop whatever
   no longer differs.
 
+## Session a8efe220 — schedule overlap arithmetic, and a validator that can see it
+
+Claim written and pushed before any implementation work, per the shared-task-board rules.
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Fix the midnight-wrap in the overlap arithmetic so the day plan never proposes an impossible sequence, show "next day" on every end time that crosses midnight, count a real conflict only once, and add a validator rule that fails the build if a fallback is unreachable or an overlap goes unflagged | **In progress** | `scripts/build_data.py` (`build_schedule`, `estimate_end`), `scripts/check_links.py` (new schedule-arithmetic block), `assets/app.js` (the four `est_end` renders), `data/schedule.json`, regenerated `pages/*.html` + `index.html`, `SUGGESTIONS.md` (S17/S18 pointer), `COORDINATION.md` | `a8efe220` |
+
+**Why this and not the eight open PRs.** Six pull requests are open (#46, #51, #52, #53, #64, #66) and
+every one is `CONFLICTING` against `main`; none of them is the item below. Session `206debc0` found and
+published this defect as a *request* to the owning sessions, and explicitly did not fix it because
+`scripts/build_data.py` was claimed at the time. No claim is open on it now, and `main` still carries the
+bug. Measured on `main` at `5de6d8d` before this claim (`data/schedule.json` vs `data/tournaments.json`):
+
+| Symptom | Count on `main` before this fix |
+|---|---|
+| Conditional fallbacks that cannot be reached after the primary finishes | **24 of 24** |
+| Real overlaps that are flagged | 14 |
+| Real overlaps left unflagged | **231** |
+| Rows printing an estimated finish earlier than their own start ("11:10 AM, finish about 8:55 AM") | **137 of 317** |
+
+No tournament, hotel, rate, walking or entry-rule fact is changed by this task. It is arithmetic over
+values already stored, so no new source is read and no flag is created or altered.
+
+## Session 65397e8b — branch `arena/65397e8b-poker1` (this session)
+
+Claimed and pushed before any implementation work. Scope: final full verification of the shipped site,
+one confirmed bug fix, and publication to GitHub Pages. No other session had an open claim on
+`assets/app.js` at claim time.
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Re-run the complete build/verify pipeline on the checked-out tree and confirm every gate is green | **Done** | `scripts/build_data.py`, `scripts/build_site.py`, `scripts/check_links.py`, `scripts/verify_rows.py`, `scripts/smoke_test.js` | `65397e8b` |
+| Fix the daily weekday map so Tuesday/Wednesday show the $200 NLH daily (they printed "No daily format published" because the renderer treated the stored `days` string as an array) | **Done** | `assets/app.js` (new `dayRuns()` helper), regenerated `index.html` + `pages/*.html` | `65397e8b` |
+| Open PR → `main`, merge, confirm GitHub Pages deploys, record result | **Done** | PR #71, merged as `6bbd2e95327be53b2b4bb8d9d52895161e9c9788` at 2026-11-17T22:15:18Z; Pages `status: built`, live at https://karagemop466-tech.github.io/Poker1/ | `65397e8b` |
+
+### Verification performed in this session
+
+- `python3 scripts/build_data.py` → 317 rows (SE 80 / MULTI 67 / RE 107 / CONT 25 / UNV 38), 79 flagged, 70 schedule days; zero diff vs committed data.
+- `python3 scripts/build_site.py` → 23 pages; committed pages byte-identical to a fresh rebuild.
+- `python3 scripts/check_links.py` → OK (56 files free of conflict markers, 23 pages, 317 rows, 7 hotels, 5 dated rates, 70 schedule days; source/rules/schedule/hotel-rate/cost/provenance/page-link checks passed).
+- `python3 scripts/verify_rows.py` → 324 verified rows, 1,296 field checks, 0 hard failures (1 documented review item: r225 WPT start time).
+- `npm run test:smoke` → 23/23 pages render in a headless DOM.
+- Fix verified directly against `data/daily.json`: all seven weekdays now list correct formats; Tuesday/Wednesday show the 12:00 $200 NLH + 18:00 $160 nightly (previously "No daily format published").
+- Official Venetian DSE IV schedule page re-fetched and spot-checked row-for-row against the data: https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html
+
+### Irregularities
+
+None introduced by this change. No tournament, hotel, rate, walking or entry-rule fact was changed. Pre-existing flags (F1–F60 and the U-series) remain published on the Flagged for Review page with source links and do not block publication. The schedule overlap/midnight-wrap defect logged as a request by session `206debc0` was independently fixed and merged by session `a8efe220` (PR #72, `39e36b0`) and is now on `main`.
+
+### Pull request / deployment
+
+- PR: https://github.com/karagemop466-tech/Poker1/pull/71 — "Fix daily weekday map: Tuesday/Wednesday now show the $200 NLH daily", from `arena/65397e8b-poker1` to `main`.
+- CI `validate` run 44186796874: all steps success (dataset rebuild, page match, link validation, value verification, official-source check, headless render).
+- **Merged** as merge commit `6bbd2e95327be53b2b4bb8d9d52895161e9c9788` at 2026-11-17T22:15:18Z.
+- GitHub Pages: deployment triggered for `6bbd2e9`; Pages API reports `status: built`, source branch `main`, path `/`, live at https://karagemop466-tech.github.io/Poker1/ . The built site carries the weekday-map fix and the full verified dataset (317 rows, 7 hotels, 5 dated rates, 70 schedule days, 79 flagged rows).
+
+---
+
 ---
 
 ## Session 06ac8c98 — claim (2026-11-17 22:05 UTC), branch `arena/06ac8c98-poker1`, base `5de6d8d` (= `main`)
@@ -1220,7 +1354,8 @@ append-resolvable and no other session's record should be discarded.
 
 - 24 conditional fallbacks → **0**, because none is provable: on all 26 dates holding two or more
   single-entry events, the earlier event's own level table overruns the later one's entry deadline.
-- 14 flagged overlap pairs → **144** (142 `unplannable`, 2 `join_in_progress`) across 39 dates.
+- 14 flagged overlap pairs → **170** (168 `unplannable`, of which 26 are pairs printed at the same start
+  time, plus 2 `join_in_progress`) across 40 dates.
 - 121 rows printing a finish before their own start → **0**; an after-midnight table now reads
   "table ends no later than 2:55 AM (next day)".
 - New per-day **alternatives** list (35 entries on 26 dates), each labelled "instead of, never as well".
@@ -1242,12 +1377,22 @@ rebuild, `check_links` OK, `check_schedule` OK, `verify_rows` 1,296 checks 0 har
 `smoke_test` 23/23. `monitor_sources.py` cannot run in this sandbox (no route to the operator hosts,
 F55), so the scheduled check was not exercised here.
 
-**Irregularities found** — F75 (70 "(1Day)" events carry a table that cannot fit inside a day; the label
-and the structure contradict each other) and F76 (this repository's own clock-comparison defect, now
-fixed and guarded). Both are published on the Flagged for Review page.
+**Irregularities found** — F75 (87 of the 93 "(1Day)" rows carry a table that runs past midnight, 70 of
+them cannot fit inside a day at all: the label and the structure contradict each other) and F76 (this
+repository's own clock-comparison defect, now fixed and guarded). Both are published on the Flagged for
+Review page.
 
-**Still open, owned by other sessions — not duplicated here.** Open **REQUEST 2**: the provenance job
-still refuses to run on `main` because `www.rwlasvegas.com` is missing from `OFFICIAL_HOSTS` in
+**Merged against `main`, not overwritten.** `main` moved during this task and already carried another
+session's midnight-wrap fix (PR #72: `end_minutes()`, `est_end_next_day`, the same-start overlap rule)
+and the REQUEST 2 monitor fixes. This branch keeps all of it - `end_minutes` is reused, `overlap_pairs`
+and the per-conflict `a_start`/`a_end`/`b_start` fields survive, and `check_links.py`'s new schedule rules
+were only adjusted where they demanded a flag the sheets cannot support (a multi-day flight's whole-event
+table read as a first-day ceiling). Row data is untouched: `data/tournaments.json`,
+`data/row_snapshot.json` and `data/row_verification.json` are byte-identical to `main`. The full
+integration table is in `research/verification-2026-11-17-06ac8c98.md` §7.
+
+**REQUEST 2: now resolved by another session, not by this one.** PR #72 landed the collector fix, so
+the note below is kept only as history of what this session found and deliberately did not duplicate. on `main` because `www.rwlasvegas.com` is missing from `OFFICIAL_HOSTS` in
 `scripts/check_source_facts.py` (`data/monitor_last_run.txt` on `main` still reads
 "Refusing to run: non-official host(s) in manifest"), and `monitor.yml` pipes through `tee` without
 `pipefail` so the refusal never turns the job red. That is PR #66's scope

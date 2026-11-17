@@ -637,6 +637,121 @@ if isinstance(schedule_data, dict):
                 continue
             if pointer_id not in day_se:
                 problems.append(f"{where}: {pointer} must reference a verified single-entry row on this day")
+
+        # --- schedule arithmetic, in absolute minutes since midnight ----------------------
+        # `est_end` is a wall-clock HH:MM and wraps at midnight, so a long structure stores a
+        # time that reads earlier than its own start. Comparing clock strings made the day plan
+        # propose 24 of 24 fallbacks that start before the primary finishes, flag 14 of 245 real
+        # overlaps and print 137 finish times that read before their start (measured on main at
+        # 5de6d8d). These three rules make that class of error a build failure instead of a
+        # silently published one. Nothing here reads a new source: it is arithmetic over stored
+        # values, so a mismatch is always a defect in the generator or the page, never a new fact.
+        def _abs_end(row_ref):
+            """Absolute finish, from the tournament row's own start and stored duration."""
+            if row_ref.get("est_duration_min") is None or not row_ref.get("start"):
+                return None
+            hh, mm = row_ref["start"].split(":")
+            return int(hh) * 60 + int(mm) + row_ref["est_duration_min"]
+
+        def _abs_start(row_ref):
+            if not row_ref.get("start"):
+                return None
+            hh, mm = row_ref["start"].split(":")
+            return int(hh) * 60 + int(mm)
+
+        # 1. A conditional fallback must be reachable on the same date.
+        fallback_id = day.get("fallback_id")
+        primary_id = day.get("primary_id")
+        if fallback_id is not None and primary_id is not None:
+            p_row = tournament_by_id.get(primary_id) or {}
+            f_row = tournament_by_id.get(fallback_id) or {}
+            p_end = _abs_end(p_row)
+            f_start = _abs_start(f_row)
+            f_close = f_row.get("late_reg_close") or f_row.get("start")
+            f_deadline = None
+            if f_close:
+                fh, fm = str(f_close).split(":")
+                f_deadline = int(fh) * 60 + int(fm)
+            kind = day.get("fallback_kind")
+            if p_end is None:
+                problems.append(f"{where}: fallback {fallback_id!r} is proposed but the primary "
+                                f"{primary_id!r} has no same-day ceiling, so it cannot be paired")
+            elif kind == "join in progress":
+                # Legal only while the fallback's own entry window is still open at the end of the
+                # primary's published table; promising it earlier than that would be a guess.
+                if f_deadline is None or p_end > f_deadline:
+                    problems.append(f"{where}: fallback {fallback_id!r} is labelled a join in progress but "
+                                    f"entry closes at {f_close}, before the primary's table ends at {p_end}")
+            elif kind not in ("from the start", None, ""):
+                problems.append(f"{where}: fallback_kind {kind!r} is not a published kind")
+            elif f_start is not None and f_start < p_end:
+                problems.append(f"{where}: fallback {fallback_id!r} starts {f_row.get('start')} but the "
+                                f"primary {primary_id!r} can run to minute {p_end} on its own table "
+                                f"({'the next day' if p_end >= 1440 else 'the same day'}) - impossible sequence")
+
+        # 2. Every real overlap on the date must be published, and every published one must be real.
+        #    A pair overlaps when the later event starts before the earlier one is estimated to
+        #    finish. An event with no stored duration can still be the later member of a pair (its
+        #    own finish is unknown, but its start is not), so it is kept and only excluded as the
+        #    earlier member.
+        timed = []
+        for event in events:
+            if not isinstance(event, dict):
+                continue
+            ref = tournament_by_id.get(event.get("id")) or {}
+            start = _abs_start(ref)
+            end = _abs_end(ref)
+            # A published level table bounds its first playing day only when the event is a
+            # single-day event or a satellite. A flight whose table spans several days - "Each
+            # starting flight will play until we are down to approximately 12.5% of the field
+            # remaining. Day 2 will resume at 11:00 AM" - says nothing about when day one ends,
+            # so it must not be used to prove an overlap. The generator publishes the basis it
+            # applied, and the expectation below follows it.
+            if event.get("duration_basis") not in ("day_maximum", "satellite_maximum"):
+                end = None
+            if start is not None:
+                timed.append((event.get("id"), start, end))
+        timed.sort(key=lambda item: (item[1], str(item[0])))
+        expected_pairs = set()
+        for index, (aid, a_start, a_end) in enumerate(timed):
+            for bid, b_start, b_end in timed[index + 1:]:
+                # a_start <= b_start after the sort. Two events printed with the same start time
+                # overlap by definition. Otherwise the pair overlaps only when the earlier one's
+                # estimated finish is known and reaches past the later one's start; an unknown
+                # finish is never treated as a known one.
+                if a_start == b_start:
+                    expected_pairs.add(frozenset((aid, bid)))
+                elif a_end is not None and b_start < a_end:
+                    expected_pairs.add(frozenset((aid, bid)))
+        published_pairs = set()
+        for conflict in day.get("conflicts") or []:
+            if not isinstance(conflict, dict):
+                problems.append(f"{where}: conflict entry must be an object")
+                continue
+            pair = frozenset((conflict.get("a"), conflict.get("b")))
+            if len(pair) != 2:
+                problems.append(f"{where}: conflict entry must name two distinct events")
+                continue
+            if pair in published_pairs:
+                problems.append(f"{where}: the same overlap pair is published more than once: {sorted(pair)}")
+            published_pairs.add(pair)
+            if pair not in expected_pairs:
+                problems.append(f"{where}: published overlap {sorted(pair)} is not a real overlap")
+        for missing in sorted(expected_pairs - published_pairs, key=lambda p: sorted(p, key=str)):
+            problems.append(f"{where}: unflagged overlap between {sorted(missing)}")
+
+        # 3. A published finish that crosses midnight must be marked, and a marked one must cross.
+        for event in events:
+            if not isinstance(event, dict):
+                continue
+            ref = tournament_by_id.get(event.get("id")) or {}
+            end = _abs_end(ref)
+            if end is None:
+                continue
+            crosses = end >= 1440
+            if event.get("est_end_next_day") != crosses:
+                problems.append(f"{where}: event {event.get('id')!r} est_end_next_day must be "
+                                f"{crosses} (estimated finish at minute {end})")
     expected_ids = {identity for identity, row in tournament_by_id.items() if row.get("kind") == "entry"}
     if scheduled_ids != expected_ids:
         missing = sorted(expected_ids - scheduled_ids)

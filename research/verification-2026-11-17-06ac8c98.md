@@ -14,7 +14,7 @@ Recomputed from the committed `data/tournaments.json` against the committed `dat
 | Conditional fallbacks published | 24 | 0 provable |
 | …of which unplayable (primary still running when the fallback's entry closes) | **24 of 24** | 0 |
 | Scheduled rows printing a finish **earlier** than their own start | **121 of 274** | 0 |
-| Overlap pairs flagged | 14 | 144 |
+| Overlap pairs flagged | 14 | 170 (168 unplannable, 2 join-in-progress) |
 
 Cause, line by line, in `scripts/build_data.py`:
 
@@ -58,13 +58,15 @@ Consequences published on the schedule page:
   (labelled "from the start", or "join in progress" when it lands inside the late-registration window);
 - a pair is flagged `unplannable` when the earlier event's table runs past the later event's entry
   deadline, and `join_in_progress` when it passes that start but not the deadline;
-- 142 `unplannable` + 2 `join_in_progress` pairs on 39 dates; 0 publishable fallbacks; 26 dates carry 35
-  alternatives, each labelled as a choice to play **instead of** the primary and never as well;
+- 168 `unplannable` (26 of them pairs printed at the same start time) + 2 `join_in_progress` pairs on 40
+  dates; 0 publishable fallbacks; 26 dates carry 35 alternatives, each labelled as a choice to play
+  **instead of** the primary and never as well;
 - 45 of 70 dates have a primary; 25 have no verified single-entry event at all.
 
 ## 4. Irregularities raised
 
-- **F75** — 70 of the 73 "(1Day)" rows carry a table that cannot fit inside a day (e.g. a 17:10 start with
+- **F75** — 87 of the 93 "(1Day)" rows carry a table that runs past midnight; 70 of the 73 non-satellite
+  ones cannot fit inside a day (e.g. a 17:10 start with
   28 × 30-minute levels plus seven 15-minute breaks ends at 08:55 next morning). The label and the table
   contradict each other, which is what forces "maximum" wording everywhere. Published in `FLAGGED.md`.
 - **F76** — the generator defect in §1, its measured effect, and the fix. Published in `FLAGGED.md`.
@@ -102,3 +104,21 @@ python3 scripts/verify_rows.py     324 rows, 1,296 field checks, 0 hard failures
 python3 scripts/monitor_sources.py not run here: the sandbox has no route to the operator hosts (see F55).
 node   scripts/smoke_test.js       23/23 pages rendered
 ```
+
+## 7. Integration with `main` during this session
+
+While this task ran, `main` took PRs #71, #72, #74 and #76, including another session's own
+midnight-wrap fix (`end_minutes()`, the `est_end_next_day` flag, a render marker, and a same-start
+overlap rule) plus the REQUEST 2 monitor fixes. This branch was merged against that state rather than
+overwriting it:
+
+| Piece | Source kept | Note |
+|---|---|---|
+| `end_minutes()`, `est_end_next_day` | main's | reused; `seq_end()` layers the duration-basis filter on top of it, and `est_duration_min` was added back to the scheduled events so the ceiling can be re-derived from the published file alone |
+| same-start overlap rule | main's | kept, and the new guard learned it (the guard disagreed at first; the generator was right to flag those pairs and wrong to be checked without the rule) |
+| `overlap_pairs` key, per-conflict `a_start`/`a_end`/`b_start` fields | main's | kept for the pages and the renderer |
+| `check_links.py` schedule rules | main's, adjusted | its expected-pair rule now honours the published `duration_basis`, and its fallback rule now accepts a labelled join-in-progress pair; without this the validator demanded a flag from a multi-day flight's table that the sheet cannot support |
+| three duration bases, entry-deadline tiers, alternatives, `check_schedule.py`, render check, F75 | this session | additive |
+
+`data/tournaments.json`, `data/row_snapshot.json` and `data/row_verification.json` remain byte-identical
+to `main` (`git diff origin/main -- …` empty), so no official value moved during the integration.

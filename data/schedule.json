@@ -426,6 +426,9 @@
      "a": "r016",
      "b": "r017",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "02:55 (+1 day)",
+     "b_start": "17:10",
      "kind": "unplannable",
      "gap_min": -315,
      "detail": "$200 No Limit Hold'em Bounty $8K GTD (1Day) starts 17:10 and its entry closes 21:40, while $400 No Limit Hold'em $15K GTD (1Day)'s own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -497,6 +500,9 @@
      "a": "r018",
      "b": "r019",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "02:55 (+1 day)",
+     "b_start": "17:10",
      "kind": "unplannable",
      "gap_min": -315,
      "detail": "$200 No Limit Hold'em Bounty $8K GTD (1Day) starts 17:10 and its entry closes 21:40, while $300 No Limit Hold'em $10K GTD (1Day)'s own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -644,6 +650,9 @@
      "a": "r021",
      "b": "r022",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "02:55 (+1 day)",
+     "b_start": "12:00",
      "kind": "unplannable",
      "gap_min": -895,
      "detail": "TORSE starts 12:00 and its entry closes 12:00, while $600 No Limit Hold'em $30K GTD (1Day)'s own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -652,6 +661,9 @@
      "a": "r021",
      "b": "r023",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "02:55 (+1 day)",
+     "b_start": "13:00",
      "kind": "unplannable",
      "gap_min": -835,
      "detail": "PLO starts 13:00 and its entry closes 13:00, while $600 No Limit Hold'em $30K GTD (1Day)'s own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -660,6 +672,9 @@
      "a": "r021",
      "b": "r024",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "02:55 (+1 day)",
+     "b_start": "17:00",
      "kind": "unplannable",
      "gap_min": -595,
      "detail": "No Limit Hold'em Day 1B starts 17:00 and its entry closes 17:00, while $600 No Limit Hold'em $30K GTD (1Day)'s own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -668,6 +683,9 @@
      "a": "r021",
      "b": "r025",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "02:55 (+1 day)",
+     "b_start": "17:10",
      "kind": "unplannable",
      "gap_min": -315,
      "detail": "$200 No Limit Hold'em Bounty $8K GTD (1Day) starts 17:10 and its entry closes 21:40, while $600 No Limit Hold'em $30K GTD (1Day)'s own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -821,6 +839,9 @@
      "a": "r027",
      "b": "r028",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "02:55 (+1 day)",
+     "b_start": "12:00",
      "kind": "unplannable",
      "gap_min": -895,
      "detail": "Mixed Triple Draw (A-5, 2-7, Badugi) starts 12:00 and its entry closes 12:00, while $600 No Limit Hold'em Bounty $30K GTD (1Day) - $200 bounties to start & $500 bounties in the money's own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -829,6 +850,9 @@
      "a": "r027",
      "b": "r029",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "02:55 (+1 day)",
+     "b_start": "12:10",
      "kind": "unplannable",
      "gap_min": -615,
      "detail": "$400 Pot Limit Omaha Bounty $15K GTD (1Day) starts 12:10 and its entry closes 16:40, while $600 No Limit Hold'em Bounty $30K GTD (1Day) - $200 bounties to start & $500 bounties in the money's own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -837,6 +861,9 @@
      "a": "r027",
      "b": "r030",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "02:55 (+1 day)",
+     "b_start": "17:00",
      "kind": "unplannable",
      "gap_min": -595,
      "detail": "No Limit Hold'em Day 1D starts 17:00 and its entry closes 17:00, while $600 No Limit Hold'em Bounty $30K GTD (1Day) - $200 bounties to start & $500 bounties in the money's own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -845,6 +872,9 @@
      "a": "r027",
      "b": "r031",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "02:55 (+1 day)",
+     "b_start": "17:10",
      "kind": "unplannable",
      "gap_min": -315,
      "detail": "$200 NLH PokerAtlas Valuetown Bounty $20K GTD (1Day) - PokerAtlas PRO member $20 rake discount starts 17:10 and its entry closes 21:40, while $600 No Limit Hold'em Bounty $30K GTD (1Day) - $200 bounties to start & $500 bounties in the money's own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -853,6 +883,9 @@
      "a": "r029",
      "b": "r030",
      "a_basis": "day_maximum",
+     "a_start": "12:10",
+     "a_end": "03:55 (+1 day)",
+     "b_start": "17:00",
      "kind": "unplannable",
      "gap_min": -655,
      "detail": "No Limit Hold'em Day 1D starts 17:00 and its entry closes 17:00, while $400 Pot Limit Omaha Bounty $15K GTD (1Day)'s own table can run as late as 03:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -861,6 +894,9 @@
      "a": "r029",
      "b": "r031",
      "a_basis": "day_maximum",
+     "a_start": "12:10",
+     "a_end": "03:55 (+1 day)",
+     "b_start": "17:10",
      "kind": "unplannable",
      "gap_min": -375,
      "detail": "$200 NLH PokerAtlas Valuetown Bounty $20K GTD (1Day) - PokerAtlas PRO member $20 rake discount starts 17:10 and its entry closes 21:40, while $400 Pot Limit Omaha Bounty $15K GTD (1Day)'s own table can run as late as 03:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -995,6 +1031,9 @@
      "a": "r034",
      "b": "r035",
      "a_basis": "day_maximum",
+     "a_start": "12:10",
+     "a_end": "03:55 (+1 day)",
+     "b_start": "17:10",
      "kind": "unplannable",
      "gap_min": -375,
      "detail": "$200 No Limit Hold'em Bounty $8K GTD (1Day) starts 17:10 and its entry closes 21:40, while $300 Pot Limit Omaha Double Board Bomb Pot $10K GTD (1Day)'s own table can run as late as 03:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -1003,6 +1042,9 @@
      "a": "r034",
      "b": "r036",
      "a_basis": "day_maximum",
+     "a_start": "12:10",
+     "a_end": "03:55 (+1 day)",
+     "b_start": "18:00",
      "kind": "unplannable",
      "gap_min": -595,
      "detail": "No Limit Hold'em Day 1F starts 18:00 and its entry closes 18:00, while $300 Pot Limit Omaha Double Board Bomb Pot $10K GTD (1Day)'s own table can run as late as 03:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -1011,6 +1053,9 @@
      "a": "r035",
      "b": "r036",
      "a_basis": "day_maximum",
+     "a_start": "17:10",
+     "a_end": "08:55 (+1 day)",
+     "b_start": "18:00",
      "kind": "unplannable",
      "gap_min": -895,
      "detail": "No Limit Hold'em Day 1F starts 18:00 and its entry closes 18:00, while $200 No Limit Hold'em Bounty $8K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -1364,6 +1409,9 @@
      "a": "r049",
      "b": "r051",
      "a_basis": "day_maximum",
+     "a_start": "10:10",
+     "a_end": "01:55 (+1 day)",
+     "b_start": "11:00",
      "kind": "unplannable",
      "gap_min": -895,
      "detail": "No Limit Hold'em Day 1E starts 11:00 and its entry closes 11:00, while $600 No Limit Hold'em Seniors $40K GTD (1Day) - must be 50+ years of age's own table can run as late as 01:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -1372,6 +1420,9 @@
      "a": "r049",
      "b": "r052",
      "a_basis": "day_maximum",
+     "a_start": "10:10",
+     "a_end": "01:55 (+1 day)",
+     "b_start": "17:10",
      "kind": "unplannable",
      "gap_min": -255,
      "detail": "$200 No Limit Hold'em Bounty $8K GTD (1Day) starts 17:10 and its entry closes 21:40, while $600 No Limit Hold'em Seniors $40K GTD (1Day) - must be 50+ years of age's own table can run as late as 01:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -1380,6 +1431,9 @@
      "a": "r049",
      "b": "r053",
      "a_basis": "day_maximum",
+     "a_start": "10:10",
+     "a_end": "01:55 (+1 day)",
+     "b_start": "18:00",
      "kind": "unplannable",
      "gap_min": -475,
      "detail": "No Limit Hold'em Day 1F starts 18:00 and its entry closes 18:00, while $600 No Limit Hold'em Seniors $40K GTD (1Day) - must be 50+ years of age's own table can run as late as 01:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -1388,6 +1442,9 @@
      "a": "r052",
      "b": "r053",
      "a_basis": "day_maximum",
+     "a_start": "17:10",
+     "a_end": "08:55 (+1 day)",
+     "b_start": "18:00",
      "kind": "unplannable",
      "gap_min": -895,
      "detail": "No Limit Hold'em Day 1F starts 18:00 and its entry closes 18:00, while $200 No Limit Hold'em Bounty $8K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -1521,6 +1578,9 @@
      "a": "r056",
      "b": "r058",
      "a_basis": "day_maximum",
+     "a_start": "12:10",
+     "a_end": "03:55 (+1 day)",
+     "b_start": "17:10",
      "kind": "unplannable",
      "gap_min": -435,
      "detail": "$800 No Limit Hold'em 1B $500K GTD starts 17:10 and its entry closes 20:40, while $600 BIG O $25K GTD (1Day)'s own table can run as late as 03:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -1529,6 +1589,9 @@
      "a": "r056",
      "b": "r059",
      "a_basis": "day_maximum",
+     "a_start": "12:10",
+     "a_end": "03:55 (+1 day)",
+     "b_start": "19:00",
      "kind": "unplannable",
      "gap_min": -535,
      "detail": "Double Play Milestone Satellite (2 X $1,100 Ticket) starts 19:00 and its entry closes 19:00, while $600 BIG O $25K GTD (1Day)'s own table can run as late as 03:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -1917,9 +1980,23 @@
    "fallback_note": "No other single-entry event on this date can still be entered by the time the primary's own table ends at 02:55 (+1 day) - the day is planned around the primary alone.",
    "conflicts": [
     {
+     "a": "r071",
+     "b": "r072",
+     "a_basis": null,
+     "a_start": "11:00",
+     "a_end": "unknown (no same-day structure)",
+     "b_start": "11:00",
+     "kind": "unplannable",
+     "gap_min": 0,
+     "detail": "PLO Mystery Bounty Day 1A and WPT Prime Championship Day 1B both start at 11:00 - one table cannot seat a player twice, so no published schedule can put both on one day"
+    },
+    {
      "a": "r073",
      "b": "r075",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "02:55 (+1 day)",
+     "b_start": "12:00",
      "kind": "unplannable",
      "gap_min": -895,
      "detail": "Milestone Satellite to $1,100 Prime Championship starts 12:00 and its entry closes 12:00, while $600 No Limit Hold'em $40K GTD (1Day)'s own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -1928,6 +2005,9 @@
      "a": "r073",
      "b": "r076",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "02:55 (+1 day)",
+     "b_start": "17:10",
      "kind": "unplannable",
      "gap_min": -315,
      "detail": "$300 No Limit Hold'em Bounty $15K GTD (1Day) starts 17:10 and its entry closes 21:40, while $600 No Limit Hold'em $40K GTD (1Day)'s own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -1936,6 +2016,9 @@
      "a": "r073",
      "b": "r077",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "02:55 (+1 day)",
+     "b_start": "18:00",
      "kind": "unplannable",
      "gap_min": -535,
      "detail": "PLO Mystery Bounty Day 1B starts 18:00 and its entry closes 18:00, while $600 No Limit Hold'em $40K GTD (1Day)'s own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -1944,6 +2027,9 @@
      "a": "r073",
      "b": "r078",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "02:55 (+1 day)",
+     "b_start": "19:00",
      "kind": "unplannable",
      "gap_min": -475,
      "detail": "Double Play Milestone Satellite (2 X $1,100 Ticket) starts 19:00 and its entry closes 19:00, while $600 No Limit Hold'em $40K GTD (1Day)'s own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -1952,6 +2038,9 @@
      "a": "r073",
      "b": "r079",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "02:55 (+1 day)",
+     "b_start": "21:00",
      "kind": "unplannable",
      "gap_min": -355,
      "detail": "NLH Turbo starts 21:00 and its entry closes 21:00, while $600 No Limit Hold'em $40K GTD (1Day)'s own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -1960,6 +2049,9 @@
      "a": "r076",
      "b": "r077",
      "a_basis": "day_maximum",
+     "a_start": "17:10",
+     "a_end": "08:55 (+1 day)",
+     "b_start": "18:00",
      "kind": "unplannable",
      "gap_min": -895,
      "detail": "PLO Mystery Bounty Day 1B starts 18:00 and its entry closes 18:00, while $300 No Limit Hold'em Bounty $15K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -1968,6 +2060,9 @@
      "a": "r076",
      "b": "r078",
      "a_basis": "day_maximum",
+     "a_start": "17:10",
+     "a_end": "08:55 (+1 day)",
+     "b_start": "19:00",
      "kind": "unplannable",
      "gap_min": -835,
      "detail": "Double Play Milestone Satellite (2 X $1,100 Ticket) starts 19:00 and its entry closes 19:00, while $300 No Limit Hold'em Bounty $15K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -1976,12 +2071,15 @@
      "a": "r076",
      "b": "r079",
      "a_basis": "day_maximum",
+     "a_start": "17:10",
+     "a_end": "08:55 (+1 day)",
+     "b_start": "21:00",
      "kind": "unplannable",
      "gap_min": -715,
      "detail": "NLH Turbo starts 21:00 and its entry closes 21:00, while $300 No Limit Hold'em Bounty $15K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
-   "conflicts_unplannable": 8,
+   "conflicts_unplannable": 9,
    "conflicts_join_in_progress": 0,
    "alternatives": [
     {
@@ -2145,9 +2243,23 @@
    "fallback_note": "No other single-entry event on this date can still be entered by the time the primary's own table ends at 02:55 (+1 day) - the day is planned around the primary alone.",
    "conflicts": [
     {
+     "a": "r080",
+     "b": "r081",
+     "a_basis": null,
+     "a_start": "11:00",
+     "a_end": "unknown (no same-day structure)",
+     "b_start": "11:00",
+     "kind": "unplannable",
+     "gap_min": 0,
+     "detail": "HORSE (2 Day) and WPT Prime Championship Day 1C both start at 11:00 - one table cannot seat a player twice, so no published schedule can put both on one day"
+    },
+    {
      "a": "r082",
      "b": "r084",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "02:55 (+1 day)",
+     "b_start": "13:00",
      "kind": "unplannable",
      "gap_min": -835,
      "detail": "PLO $500 Bounty starts 13:00 and its entry closes 13:00, while $600 No Limit Hold'em Bounty $40K GTD (1Day) - $200 bounties to start & $500 bounties in the money's own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -2156,6 +2268,9 @@
      "a": "r082",
      "b": "r085",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "02:55 (+1 day)",
+     "b_start": "17:10",
      "kind": "unplannable",
      "gap_min": -315,
      "detail": "$300 No Limit Hold'em Bounty $15K GTD (1Day) starts 17:10 and its entry closes 21:40, while $600 No Limit Hold'em Bounty $40K GTD (1Day) - $200 bounties to start & $500 bounties in the money's own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -2164,6 +2279,9 @@
      "a": "r082",
      "b": "r086",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "02:55 (+1 day)",
+     "b_start": "19:00",
      "kind": "unplannable",
      "gap_min": -475,
      "detail": "Milestone Satellite Package to Prime and World Championship starts 19:00 and its entry closes 19:00, while $600 No Limit Hold'em Bounty $40K GTD (1Day) - $200 bounties to start & $500 bounties in the money's own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -2172,6 +2290,9 @@
      "a": "r082",
      "b": "r087",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "02:55 (+1 day)",
+     "b_start": "21:00",
      "kind": "unplannable",
      "gap_min": -355,
      "detail": "NLH Turbo starts 21:00 and its entry closes 21:00, while $600 No Limit Hold'em Bounty $40K GTD (1Day) - $200 bounties to start & $500 bounties in the money's own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -2180,6 +2301,9 @@
      "a": "r085",
      "b": "r086",
      "a_basis": "day_maximum",
+     "a_start": "17:10",
+     "a_end": "08:55 (+1 day)",
+     "b_start": "19:00",
      "kind": "unplannable",
      "gap_min": -835,
      "detail": "Milestone Satellite Package to Prime and World Championship starts 19:00 and its entry closes 19:00, while $300 No Limit Hold'em Bounty $15K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -2188,12 +2312,15 @@
      "a": "r085",
      "b": "r087",
      "a_basis": "day_maximum",
+     "a_start": "17:10",
+     "a_end": "08:55 (+1 day)",
+     "b_start": "21:00",
      "kind": "unplannable",
      "gap_min": -715,
      "detail": "NLH Turbo starts 21:00 and its entry closes 21:00, while $300 No Limit Hold'em Bounty $15K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
-   "conflicts_unplannable": 6,
+   "conflicts_unplannable": 7,
    "conflicts_join_in_progress": 0,
    "alternatives": [
     {
@@ -2344,6 +2471,9 @@
      "a": "r088",
      "b": "r089",
      "a_basis": "day_maximum",
+     "a_start": "10:10",
+     "a_end": "01:55 (+1 day)",
+     "b_start": "11:00",
      "kind": "unplannable",
      "gap_min": -895,
      "detail": "WPT Prime Championship Day 1D starts 11:00 and its entry closes 11:00, while $600 No Limit Hold'em Seniors $40K GTD (1Day) - must be 50+ years of age's own table can run as late as 01:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -2352,6 +2482,9 @@
      "a": "r088",
      "b": "r090",
      "a_basis": "day_maximum",
+     "a_start": "10:10",
+     "a_end": "01:55 (+1 day)",
+     "b_start": "16:10",
      "kind": "unplannable",
      "gap_min": -450,
      "detail": "$100 NLH LIPS Ladies Milestone Satellite (1Day) - Awards Direct Entry to Event # 39 starts 16:10 and its entry closes 18:25, while $600 No Limit Hold'em Seniors $40K GTD (1Day) - must be 50+ years of age's own table can run as late as 01:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -2360,6 +2493,9 @@
      "a": "r088",
      "b": "r091",
      "a_basis": "day_maximum",
+     "a_start": "10:10",
+     "a_end": "01:55 (+1 day)",
+     "b_start": "17:10",
      "kind": "unplannable",
      "gap_min": -255,
      "detail": "$300 No Limit Hold'em Bounty $15K GTD (1Day) starts 17:10 and its entry closes 21:40, while $600 No Limit Hold'em Seniors $40K GTD (1Day) - must be 50+ years of age's own table can run as late as 01:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -2368,6 +2504,9 @@
      "a": "r088",
      "b": "r092",
      "a_basis": "day_maximum",
+     "a_start": "10:10",
+     "a_end": "01:55 (+1 day)",
+     "b_start": "19:00",
      "kind": "unplannable",
      "gap_min": -415,
      "detail": "Milestone Satellite to $10,400 World Championship starts 19:00 and its entry closes 19:00, while $600 No Limit Hold'em Seniors $40K GTD (1Day) - must be 50+ years of age's own table can run as late as 01:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -2376,6 +2515,9 @@
      "a": "r088",
      "b": "r093",
      "a_basis": "day_maximum",
+     "a_start": "10:10",
+     "a_end": "01:55 (+1 day)",
+     "b_start": "21:00",
      "kind": "unplannable",
      "gap_min": -295,
      "detail": "NLH Turbo starts 21:00 and its entry closes 21:00, while $600 No Limit Hold'em Seniors $40K GTD (1Day) - must be 50+ years of age's own table can run as late as 01:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -2384,6 +2526,9 @@
      "a": "r090",
      "b": "r091",
      "a_basis": "satellite_maximum",
+     "a_start": "16:10",
+     "a_end": "03:15 (+1 day)",
+     "b_start": "17:10",
      "kind": "unplannable",
      "gap_min": -335,
      "detail": "$300 No Limit Hold'em Bounty $15K GTD (1Day) starts 17:10 and its entry closes 21:40, while $100 NLH LIPS Ladies Milestone Satellite (1Day) - Awards Direct Entry to Event # 39's own table can run as late as 03:15 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -2392,6 +2537,9 @@
      "a": "r090",
      "b": "r092",
      "a_basis": "satellite_maximum",
+     "a_start": "16:10",
+     "a_end": "03:15 (+1 day)",
+     "b_start": "19:00",
      "kind": "unplannable",
      "gap_min": -495,
      "detail": "Milestone Satellite to $10,400 World Championship starts 19:00 and its entry closes 19:00, while $100 NLH LIPS Ladies Milestone Satellite (1Day) - Awards Direct Entry to Event # 39's own table can run as late as 03:15 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -2400,6 +2548,9 @@
      "a": "r090",
      "b": "r093",
      "a_basis": "satellite_maximum",
+     "a_start": "16:10",
+     "a_end": "03:15 (+1 day)",
+     "b_start": "21:00",
      "kind": "unplannable",
      "gap_min": -375,
      "detail": "NLH Turbo starts 21:00 and its entry closes 21:00, while $100 NLH LIPS Ladies Milestone Satellite (1Day) - Awards Direct Entry to Event # 39's own table can run as late as 03:15 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -2408,6 +2559,9 @@
      "a": "r091",
      "b": "r092",
      "a_basis": "day_maximum",
+     "a_start": "17:10",
+     "a_end": "08:55 (+1 day)",
+     "b_start": "19:00",
      "kind": "unplannable",
      "gap_min": -835,
      "detail": "Milestone Satellite to $10,400 World Championship starts 19:00 and its entry closes 19:00, while $300 No Limit Hold'em Bounty $15K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -2416,6 +2570,9 @@
      "a": "r091",
      "b": "r093",
      "a_basis": "day_maximum",
+     "a_start": "17:10",
+     "a_end": "08:55 (+1 day)",
+     "b_start": "21:00",
      "kind": "unplannable",
      "gap_min": -715,
      "detail": "NLH Turbo starts 21:00 and its entry closes 21:00, while $300 No Limit Hold'em Bounty $15K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -2658,6 +2815,9 @@
      "a": "r094",
      "b": "r095",
      "a_basis": "day_maximum",
+     "a_start": "10:10",
+     "a_end": "01:55 (+1 day)",
+     "b_start": "11:00",
      "kind": "unplannable",
      "gap_min": -895,
      "detail": "No Limit Hold'em (2 Day) starts 11:00 and its entry closes 11:00, while $600 NLH LIPS Poker Jingle Tag Team $10K GTD (1Day) - tag teams consist of female/female or female/male's own table can run as late as 01:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -2666,6 +2826,9 @@
      "a": "r094",
      "b": "r096",
      "a_basis": "day_maximum",
+     "a_start": "10:10",
+     "a_end": "01:55 (+1 day)",
+     "b_start": "11:10",
      "kind": "unplannable",
      "gap_min": -540,
      "detail": "$800 No Limit Hold'em Bounty $75K GTD (1Day) - $200 bounties to start & $500 bounties in the money starts 11:10 and its entry closes 16:55, while $600 NLH LIPS Poker Jingle Tag Team $10K GTD (1Day) - tag teams consist of female/female or female/male's own table can run as late as 01:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -2674,6 +2837,9 @@
      "a": "r094",
      "b": "r098",
      "a_basis": "day_maximum",
+     "a_start": "10:10",
+     "a_end": "01:55 (+1 day)",
+     "b_start": "13:00",
      "kind": "unplannable",
      "gap_min": -775,
      "detail": "Limit Omaha 8 starts 13:00 and its entry closes 13:00, while $600 NLH LIPS Poker Jingle Tag Team $10K GTD (1Day) - tag teams consist of female/female or female/male's own table can run as late as 01:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -2682,6 +2848,9 @@
      "a": "r094",
      "b": "r099",
      "a_basis": "day_maximum",
+     "a_start": "10:10",
+     "a_end": "01:55 (+1 day)",
+     "b_start": "13:00",
      "kind": "unplannable",
      "gap_min": -775,
      "detail": "PLO $1,000 Bounty starts 13:00 and its entry closes 13:00, while $600 NLH LIPS Poker Jingle Tag Team $10K GTD (1Day) - tag teams consist of female/female or female/male's own table can run as late as 01:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -2690,6 +2859,9 @@
      "a": "r094",
      "b": "r100",
      "a_basis": "day_maximum",
+     "a_start": "10:10",
+     "a_end": "01:55 (+1 day)",
+     "b_start": "14:00",
      "kind": "unplannable",
      "gap_min": -715,
      "detail": "Milestone Satellite to $10,400 World Championship starts 14:00 and its entry closes 14:00, while $600 NLH LIPS Poker Jingle Tag Team $10K GTD (1Day) - tag teams consist of female/female or female/male's own table can run as late as 01:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -2698,6 +2870,9 @@
      "a": "r094",
      "b": "r101",
      "a_basis": "day_maximum",
+     "a_start": "10:10",
+     "a_end": "01:55 (+1 day)",
+     "b_start": "16:10",
      "kind": "unplannable",
      "gap_min": -450,
      "detail": "$100 NLH LIPS Ladies Milestone Satellite (1Day) - Awards Direct Entry to Event # 39 starts 16:10 and its entry closes 18:25, while $600 NLH LIPS Poker Jingle Tag Team $10K GTD (1Day) - tag teams consist of female/female or female/male's own table can run as late as 01:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -2706,6 +2881,9 @@
      "a": "r094",
      "b": "r102",
      "a_basis": "day_maximum",
+     "a_start": "10:10",
+     "a_end": "01:55 (+1 day)",
+     "b_start": "17:10",
      "kind": "unplannable",
      "gap_min": -255,
      "detail": "$300 No Limit Hold'em Bounty $15K GTD (1Day) starts 17:10 and its entry closes 21:40, while $600 NLH LIPS Poker Jingle Tag Team $10K GTD (1Day) - tag teams consist of female/female or female/male's own table can run as late as 01:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -2714,6 +2892,9 @@
      "a": "r094",
      "b": "r103",
      "a_basis": "day_maximum",
+     "a_start": "10:10",
+     "a_end": "01:55 (+1 day)",
+     "b_start": "19:00",
      "kind": "unplannable",
      "gap_min": -415,
      "detail": "Milestone Satellite to $10,400 World Championship starts 19:00 and its entry closes 19:00, while $600 NLH LIPS Poker Jingle Tag Team $10K GTD (1Day) - tag teams consist of female/female or female/male's own table can run as late as 01:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -2722,6 +2903,9 @@
      "a": "r094",
      "b": "r104",
      "a_basis": "day_maximum",
+     "a_start": "10:10",
+     "a_end": "01:55 (+1 day)",
+     "b_start": "21:00",
      "kind": "unplannable",
      "gap_min": -295,
      "detail": "NLH Turbo starts 21:00 and its entry closes 21:00, while $600 NLH LIPS Poker Jingle Tag Team $10K GTD (1Day) - tag teams consist of female/female or female/male's own table can run as late as 01:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -2730,6 +2914,9 @@
      "a": "r096",
      "b": "r098",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "02:55 (+1 day)",
+     "b_start": "13:00",
      "kind": "unplannable",
      "gap_min": -835,
      "detail": "Limit Omaha 8 starts 13:00 and its entry closes 13:00, while $800 No Limit Hold'em Bounty $75K GTD (1Day) - $200 bounties to start & $500 bounties in the money's own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -2738,6 +2925,9 @@
      "a": "r096",
      "b": "r099",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "02:55 (+1 day)",
+     "b_start": "13:00",
      "kind": "unplannable",
      "gap_min": -835,
      "detail": "PLO $1,000 Bounty starts 13:00 and its entry closes 13:00, while $800 No Limit Hold'em Bounty $75K GTD (1Day) - $200 bounties to start & $500 bounties in the money's own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -2746,6 +2936,9 @@
      "a": "r096",
      "b": "r100",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "02:55 (+1 day)",
+     "b_start": "14:00",
      "kind": "unplannable",
      "gap_min": -775,
      "detail": "Milestone Satellite to $10,400 World Championship starts 14:00 and its entry closes 14:00, while $800 No Limit Hold'em Bounty $75K GTD (1Day) - $200 bounties to start & $500 bounties in the money's own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -2754,6 +2947,9 @@
      "a": "r096",
      "b": "r101",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "02:55 (+1 day)",
+     "b_start": "16:10",
      "kind": "unplannable",
      "gap_min": -510,
      "detail": "$100 NLH LIPS Ladies Milestone Satellite (1Day) - Awards Direct Entry to Event # 39 starts 16:10 and its entry closes 18:25, while $800 No Limit Hold'em Bounty $75K GTD (1Day) - $200 bounties to start & $500 bounties in the money's own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -2762,6 +2958,9 @@
      "a": "r096",
      "b": "r102",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "02:55 (+1 day)",
+     "b_start": "17:10",
      "kind": "unplannable",
      "gap_min": -315,
      "detail": "$300 No Limit Hold'em Bounty $15K GTD (1Day) starts 17:10 and its entry closes 21:40, while $800 No Limit Hold'em Bounty $75K GTD (1Day) - $200 bounties to start & $500 bounties in the money's own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -2770,6 +2969,9 @@
      "a": "r096",
      "b": "r103",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "02:55 (+1 day)",
+     "b_start": "19:00",
      "kind": "unplannable",
      "gap_min": -475,
      "detail": "Milestone Satellite to $10,400 World Championship starts 19:00 and its entry closes 19:00, while $800 No Limit Hold'em Bounty $75K GTD (1Day) - $200 bounties to start & $500 bounties in the money's own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -2778,14 +2980,31 @@
      "a": "r096",
      "b": "r104",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "02:55 (+1 day)",
+     "b_start": "21:00",
      "kind": "unplannable",
      "gap_min": -355,
      "detail": "NLH Turbo starts 21:00 and its entry closes 21:00, while $800 No Limit Hold'em Bounty $75K GTD (1Day) - $200 bounties to start & $500 bounties in the money's own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     },
     {
+     "a": "r098",
+     "b": "r099",
+     "a_basis": null,
+     "a_start": "13:00",
+     "a_end": "unknown (no same-day structure)",
+     "b_start": "13:00",
+     "kind": "unplannable",
+     "gap_min": 0,
+     "detail": "Limit Omaha 8 and PLO $1,000 Bounty both start at 13:00 - one table cannot seat a player twice, so no published schedule can put both on one day"
+    },
+    {
      "a": "r101",
      "b": "r102",
      "a_basis": "satellite_maximum",
+     "a_start": "16:10",
+     "a_end": "03:15 (+1 day)",
+     "b_start": "17:10",
      "kind": "unplannable",
      "gap_min": -335,
      "detail": "$300 No Limit Hold'em Bounty $15K GTD (1Day) starts 17:10 and its entry closes 21:40, while $100 NLH LIPS Ladies Milestone Satellite (1Day) - Awards Direct Entry to Event # 39's own table can run as late as 03:15 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -2794,6 +3013,9 @@
      "a": "r101",
      "b": "r103",
      "a_basis": "satellite_maximum",
+     "a_start": "16:10",
+     "a_end": "03:15 (+1 day)",
+     "b_start": "19:00",
      "kind": "unplannable",
      "gap_min": -495,
      "detail": "Milestone Satellite to $10,400 World Championship starts 19:00 and its entry closes 19:00, while $100 NLH LIPS Ladies Milestone Satellite (1Day) - Awards Direct Entry to Event # 39's own table can run as late as 03:15 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -2802,6 +3024,9 @@
      "a": "r101",
      "b": "r104",
      "a_basis": "satellite_maximum",
+     "a_start": "16:10",
+     "a_end": "03:15 (+1 day)",
+     "b_start": "21:00",
      "kind": "unplannable",
      "gap_min": -375,
      "detail": "NLH Turbo starts 21:00 and its entry closes 21:00, while $100 NLH LIPS Ladies Milestone Satellite (1Day) - Awards Direct Entry to Event # 39's own table can run as late as 03:15 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -2810,6 +3035,9 @@
      "a": "r102",
      "b": "r103",
      "a_basis": "day_maximum",
+     "a_start": "17:10",
+     "a_end": "08:55 (+1 day)",
+     "b_start": "19:00",
      "kind": "unplannable",
      "gap_min": -835,
      "detail": "Milestone Satellite to $10,400 World Championship starts 19:00 and its entry closes 19:00, while $300 No Limit Hold'em Bounty $15K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -2818,12 +3046,15 @@
      "a": "r102",
      "b": "r104",
      "a_basis": "day_maximum",
+     "a_start": "17:10",
+     "a_end": "08:55 (+1 day)",
+     "b_start": "21:00",
      "kind": "unplannable",
      "gap_min": -715,
      "detail": "NLH Turbo starts 21:00 and its entry closes 21:00, while $300 No Limit Hold'em Bounty $15K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
-   "conflicts_unplannable": 21,
+   "conflicts_unplannable": 22,
    "conflicts_join_in_progress": 0,
    "alternatives": [
     {
@@ -2993,12 +3224,15 @@
    "primary_id": "r106",
    "fallback_id": null,
    "fallback_kind": null,
-   "fallback_note": "The primary event's structure spans more than one playing day - its sheet says the flight plays until about 12.5% of the field remains and that Day 2 resumes at a printed clock - so the official sources give this day no end time to plan against.",
+   "fallback_note": "The primary event's table spans more than one playing day - its sheet says the flight plays until about 12.5% of the field remains and that Day 2 resumes at a printed clock - so the official sources give this day no ceiling to plan against.",
    "conflicts": [
     {
      "a": "r108",
      "b": "r109",
      "a_basis": "day_maximum",
+     "a_start": "12:10",
+     "a_end": "03:55 (+1 day)",
+     "b_start": "16:10",
      "kind": "unplannable",
      "gap_min": -570,
      "detail": "$260 NLH Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 starts 16:10 and its entry closes 18:25, while $600 Pot Limit Omaha Bounty $25K GTD (1Day)'s own table can run as late as 03:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -3007,6 +3241,9 @@
      "a": "r108",
      "b": "r110",
      "a_basis": "day_maximum",
+     "a_start": "12:10",
+     "a_end": "03:55 (+1 day)",
+     "b_start": "17:10",
      "kind": "unplannable",
      "gap_min": -375,
      "detail": "$300 No Limit Hold'em Bounty $15K GTD (1Day) starts 17:10 and its entry closes 21:40, while $600 Pot Limit Omaha Bounty $25K GTD (1Day)'s own table can run as late as 03:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -3015,6 +3252,9 @@
      "a": "r108",
      "b": "r111",
      "a_basis": "day_maximum",
+     "a_start": "12:10",
+     "a_end": "03:55 (+1 day)",
+     "b_start": "18:00",
      "kind": "unplannable",
      "gap_min": -595,
      "detail": "Super Gold Million Mystery Bounty Day 1B starts 18:00 and its entry closes 18:00, while $600 Pot Limit Omaha Bounty $25K GTD (1Day)'s own table can run as late as 03:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -3023,6 +3263,9 @@
      "a": "r109",
      "b": "r110",
      "a_basis": "satellite_maximum",
+     "a_start": "16:10",
+     "a_end": "03:15 (+1 day)",
+     "b_start": "17:10",
      "kind": "unplannable",
      "gap_min": -335,
      "detail": "$300 No Limit Hold'em Bounty $15K GTD (1Day) starts 17:10 and its entry closes 21:40, while $260 NLH Milestone Satellite (1Day) - Awards Direct Entry to Event # 47's own table can run as late as 03:15 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -3031,6 +3274,9 @@
      "a": "r109",
      "b": "r111",
      "a_basis": "satellite_maximum",
+     "a_start": "16:10",
+     "a_end": "03:15 (+1 day)",
+     "b_start": "18:00",
      "kind": "unplannable",
      "gap_min": -555,
      "detail": "Super Gold Million Mystery Bounty Day 1B starts 18:00 and its entry closes 18:00, while $260 NLH Milestone Satellite (1Day) - Awards Direct Entry to Event # 47's own table can run as late as 03:15 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -3039,6 +3285,9 @@
      "a": "r110",
      "b": "r111",
      "a_basis": "day_maximum",
+     "a_start": "17:10",
+     "a_end": "08:55 (+1 day)",
+     "b_start": "18:00",
      "kind": "unplannable",
      "gap_min": -895,
      "detail": "Super Gold Million Mystery Bounty Day 1B starts 18:00 and its entry closes 18:00, while $300 No Limit Hold'em Bounty $15K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -3055,7 +3304,7 @@
      "guarantee_usd": 25000,
      "entry_closes": "16:40",
      "late_reg_published": true,
-     "note": "The primary event has no published end time at all, so it is not known whether this one can be reached - choose it instead of the primary, not as well."
+     "note": "The primary event has no same-day ceiling to plan against, so it is not known whether this one can be reached - choose it instead of the primary, not as well."
     },
     {
      "id": "r109",
@@ -3065,7 +3314,7 @@
      "guarantee_usd": null,
      "entry_closes": "18:25",
      "late_reg_published": true,
-     "note": "The primary event has no published end time at all, so it is not known whether this one can be reached - choose it instead of the primary, not as well."
+     "note": "The primary event has no same-day ceiling to plan against, so it is not known whether this one can be reached - choose it instead of the primary, not as well."
     },
     {
      "id": "r110",
@@ -3075,7 +3324,7 @@
      "guarantee_usd": 15000,
      "entry_closes": "21:40",
      "late_reg_published": true,
-     "note": "The primary event has no published end time at all, so it is not known whether this one can be reached - choose it instead of the primary, not as well."
+     "note": "The primary event has no same-day ceiling to plan against, so it is not known whether this one can be reached - choose it instead of the primary, not as well."
     }
    ]
   },
@@ -3200,6 +3449,9 @@
      "a": "r114",
      "b": "r116",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "02:55 (+1 day)",
+     "b_start": "16:10",
      "kind": "unplannable",
      "gap_min": -510,
      "detail": "$260 NLH Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 starts 16:10 and its entry closes 18:25, while $600 No Limit Hold'em LIPS $30K GTD (1Day) - KINGS and QUEENS bounty, open to all players's own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -3208,6 +3460,9 @@
      "a": "r114",
      "b": "r117",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "02:55 (+1 day)",
+     "b_start": "18:00",
      "kind": "unplannable",
      "gap_min": -535,
      "detail": "Super Gold Million Mystery Bounty Day 1D starts 18:00 and its entry closes 18:00, while $600 No Limit Hold'em LIPS $30K GTD (1Day) - KINGS and QUEENS bounty, open to all players's own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -3216,6 +3471,9 @@
      "a": "r114",
      "b": "r119",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "02:55 (+1 day)",
+     "b_start": "20:10",
      "kind": "unplannable",
      "gap_min": -315,
      "detail": "$260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 starts 20:10 and its entry closes 21:40, while $600 No Limit Hold'em LIPS $30K GTD (1Day) - KINGS and QUEENS bounty, open to all players's own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -3224,6 +3482,9 @@
      "a": "r116",
      "b": "r117",
      "a_basis": "satellite_maximum",
+     "a_start": "16:10",
+     "a_end": "03:15 (+1 day)",
+     "b_start": "18:00",
      "kind": "unplannable",
      "gap_min": -555,
      "detail": "Super Gold Million Mystery Bounty Day 1D starts 18:00 and its entry closes 18:00, while $260 NLH Milestone Satellite (1Day) - Awards Direct Entry to Event # 47's own table can run as late as 03:15 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -3232,6 +3493,9 @@
      "a": "r116",
      "b": "r119",
      "a_basis": "satellite_maximum",
+     "a_start": "16:10",
+     "a_end": "03:15 (+1 day)",
+     "b_start": "20:10",
      "kind": "unplannable",
      "gap_min": -335,
      "detail": "$260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 starts 20:10 and its entry closes 21:40, while $260 NLH Milestone Satellite (1Day) - Awards Direct Entry to Event # 47's own table can run as late as 03:15 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -3478,6 +3742,9 @@
      "a": "r120",
      "b": "r121",
      "a_basis": "satellite_maximum",
+     "a_start": "09:10",
+     "a_end": "17:55",
+     "b_start": "10:00",
      "kind": "unplannable",
      "gap_min": -475,
      "detail": "No Limit Hold'em starts 10:00 and its entry closes 10:00, while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47's own table can run as late as 17:55 and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -3486,6 +3753,9 @@
      "a": "r120",
      "b": "r122",
      "a_basis": "satellite_maximum",
+     "a_start": "09:10",
+     "a_end": "17:55",
+     "b_start": "10:10",
      "kind": "unplannable",
      "gap_min": -60,
      "detail": "$2,200 No Limit Hold'em 1A $1 Mill GTD - PokerAtlas Championship title event starts 10:10 and its entry closes 16:55, while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47's own table can run as late as 17:55 and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -3494,6 +3764,9 @@
      "a": "r120",
      "b": "r123",
      "a_basis": "satellite_maximum",
+     "a_start": "09:10",
+     "a_end": "17:55",
+     "b_start": "12:10",
      "kind": "unplannable",
      "gap_min": -255,
      "detail": "$260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 starts 12:10 and its entry closes 13:40, while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47's own table can run as late as 17:55 and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -3502,6 +3775,9 @@
      "a": "r120",
      "b": "r124",
      "a_basis": "satellite_maximum",
+     "a_start": "09:10",
+     "a_end": "17:55",
+     "b_start": "13:00",
      "kind": "unplannable",
      "gap_min": -295,
      "detail": "PLO starts 13:00 and its entry closes 13:00, while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47's own table can run as late as 17:55 and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -3510,6 +3786,9 @@
      "a": "r120",
      "b": "r125",
      "a_basis": "satellite_maximum",
+     "a_start": "09:10",
+     "a_end": "17:55",
+     "b_start": "14:00",
      "kind": "unplannable",
      "gap_min": -235,
      "detail": "Milestone Satellite to $10,400 World Championship 1A/8 starts 14:00 and its entry closes 14:00, while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47's own table can run as late as 17:55 and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -3518,6 +3797,9 @@
      "a": "r120",
      "b": "r128",
      "a_basis": "satellite_maximum",
+     "a_start": "09:10",
+     "a_end": "17:55",
+     "b_start": "16:00",
      "kind": "unplannable",
      "gap_min": -115,
      "detail": "Milestone Satellite to $10,400 Ladies NLH Championship starts 16:00 and its entry closes 16:00, while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47's own table can run as late as 17:55 and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -3526,6 +3808,9 @@
      "a": "r123",
      "b": "r124",
      "a_basis": "satellite_maximum",
+     "a_start": "12:10",
+     "a_end": "20:55",
+     "b_start": "13:00",
      "kind": "unplannable",
      "gap_min": -475,
      "detail": "PLO starts 13:00 and its entry closes 13:00, while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47's own table can run as late as 20:55 and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -3534,6 +3819,9 @@
      "a": "r123",
      "b": "r125",
      "a_basis": "satellite_maximum",
+     "a_start": "12:10",
+     "a_end": "20:55",
+     "b_start": "14:00",
      "kind": "unplannable",
      "gap_min": -415,
      "detail": "Milestone Satellite to $10,400 World Championship 1A/8 starts 14:00 and its entry closes 14:00, while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47's own table can run as late as 20:55 and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -3542,6 +3830,9 @@
      "a": "r123",
      "b": "r128",
      "a_basis": "satellite_maximum",
+     "a_start": "12:10",
+     "a_end": "20:55",
+     "b_start": "16:00",
      "kind": "unplannable",
      "gap_min": -295,
      "detail": "Milestone Satellite to $10,400 Ladies NLH Championship starts 16:00 and its entry closes 16:00, while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47's own table can run as late as 20:55 and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -3550,6 +3841,9 @@
      "a": "r123",
      "b": "r129",
      "a_basis": "satellite_maximum",
+     "a_start": "12:10",
+     "a_end": "20:55",
+     "b_start": "18:10",
      "kind": "join_in_progress",
      "gap_min": -165,
      "detail": "$2,200 No Limit Hold'em 1B $1 Mill GTD - PokerAtlas Championship title event starts 18:10 while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 can still be running as late as 20:55 - the pair is only sensible if you are willing to sit down in progress"
@@ -3558,6 +3852,9 @@
      "a": "r123",
      "b": "r130",
      "a_basis": "satellite_maximum",
+     "a_start": "12:10",
+     "a_end": "20:55",
+     "b_start": "19:00",
      "kind": "unplannable",
      "gap_min": -115,
      "detail": "Milestone Satellite to $10,400 World Championship 1A/8 starts 19:00 and its entry closes 19:00, while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47's own table can run as late as 20:55 and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -3768,15 +4065,95 @@
    "fallback_note": "This is the only verified single-entry event on this date, so the day is planned around it alone.",
    "conflicts": [
     {
+     "a": "r133",
+     "b": "r134",
+     "a_basis": null,
+     "a_start": "11:00",
+     "a_end": "unknown (no same-day structure)",
+     "b_start": "11:00",
+     "kind": "unplannable",
+     "gap_min": 0,
+     "detail": "Ladies NIH Championship (2 Day) and No Limit Hold'em Day 1A both start at 11:00 - one table cannot seat a player twice, so no published schedule can put both on one day"
+    },
+    {
+     "a": "r133",
+     "b": "r135",
+     "a_basis": null,
+     "a_start": "11:00",
+     "a_end": "unknown (no same-day structure)",
+     "b_start": "11:00",
+     "kind": "unplannable",
+     "gap_min": 0,
+     "detail": "Ladies NIH Championship (2 Day) and TORSE (2 Day) both start at 11:00 - one table cannot seat a player twice, so no published schedule can put both on one day"
+    },
+    {
+     "a": "r133",
+     "b": "r136",
+     "a_basis": null,
+     "a_start": "11:00",
+     "a_end": "unknown (no same-day structure)",
+     "b_start": "11:00",
+     "kind": "unplannable",
+     "gap_min": 0,
+     "detail": "Ladies NIH Championship (2 Day) and WPT World Championship Day 1A $1,000,000 Added both start at 11:00 - one table cannot seat a player twice, so no published schedule can put both on one day"
+    },
+    {
+     "a": "r134",
+     "b": "r135",
+     "a_basis": null,
+     "a_start": "11:00",
+     "a_end": "unknown (no same-day structure)",
+     "b_start": "11:00",
+     "kind": "unplannable",
+     "gap_min": 0,
+     "detail": "No Limit Hold'em Day 1A and TORSE (2 Day) both start at 11:00 - one table cannot seat a player twice, so no published schedule can put both on one day"
+    },
+    {
+     "a": "r134",
+     "b": "r136",
+     "a_basis": null,
+     "a_start": "11:00",
+     "a_end": "unknown (no same-day structure)",
+     "b_start": "11:00",
+     "kind": "unplannable",
+     "gap_min": 0,
+     "detail": "No Limit Hold'em Day 1A and WPT World Championship Day 1A $1,000,000 Added both start at 11:00 - one table cannot seat a player twice, so no published schedule can put both on one day"
+    },
+    {
+     "a": "r135",
+     "b": "r136",
+     "a_basis": null,
+     "a_start": "11:00",
+     "a_end": "unknown (no same-day structure)",
+     "b_start": "11:00",
+     "kind": "unplannable",
+     "gap_min": 0,
+     "detail": "TORSE (2 Day) and WPT World Championship Day 1A $1,000,000 Added both start at 11:00 - one table cannot seat a player twice, so no published schedule can put both on one day"
+    },
+    {
+     "a": "r137",
+     "b": "r138",
+     "a_basis": null,
+     "a_start": "12:00",
+     "a_end": "unknown (no same-day structure)",
+     "b_start": "12:00",
+     "kind": "unplannable",
+     "gap_min": 0,
+     "detail": "Milestone Satellite to $10,400 World Championship 1B and PLO Day 1A both start at 12:00 - one table cannot seat a player twice, so no published schedule can put both on one day"
+    },
+    {
      "a": "r141",
      "b": "r142",
      "a_basis": "day_maximum",
+     "a_start": "17:10",
+     "a_end": "08:55 (+1 day)",
+     "b_start": "18:00",
      "kind": "unplannable",
      "gap_min": -895,
      "detail": "Milestone Satellite to $10,400 World Championship 1B/C starts 18:00 and its entry closes 18:00, while $300 No Limit Hold'em Bounty $15K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
-   "conflicts_unplannable": 1,
+   "conflicts_unplannable": 8,
    "conflicts_join_in_progress": 0,
    "alternatives": []
   },
@@ -3990,9 +4367,56 @@
    "fallback_note": "This is the only verified single-entry event on this date, so the day is planned around it alone.",
    "conflicts": [
     {
+     "a": "r145",
+     "b": "r146",
+     "a_basis": null,
+     "a_start": "11:00",
+     "a_end": "unknown (no same-day structure)",
+     "b_start": "11:00",
+     "kind": "unplannable",
+     "gap_min": 0,
+     "detail": "No Limit Hold'em Day 1B and WPT World Championship Day 1B $1,000,000 Added both start at 11:00 - one table cannot seat a player twice, so no published schedule can put both on one day"
+    },
+    {
+     "a": "r147",
+     "b": "r148",
+     "a_basis": null,
+     "a_start": "12:00",
+     "a_end": "unknown (no same-day structure)",
+     "b_start": "12:00",
+     "kind": "unplannable",
+     "gap_min": 0,
+     "detail": "Milestone Satellite to $10,400 World Championship 1C and Mixed Triple Draw (A-5, 2-7, Badugi) (2 Day) both start at 12:00 - one table cannot seat a player twice, so no published schedule can put both on one day"
+    },
+    {
+     "a": "r147",
+     "b": "r149",
+     "a_basis": null,
+     "a_start": "12:00",
+     "a_end": "unknown (no same-day structure)",
+     "b_start": "12:00",
+     "kind": "unplannable",
+     "gap_min": 0,
+     "detail": "Milestone Satellite to $10,400 World Championship 1C and PLO Day 1B both start at 12:00 - one table cannot seat a player twice, so no published schedule can put both on one day"
+    },
+    {
+     "a": "r148",
+     "b": "r149",
+     "a_basis": null,
+     "a_start": "12:00",
+     "a_end": "unknown (no same-day structure)",
+     "b_start": "12:00",
+     "kind": "unplannable",
+     "gap_min": 0,
+     "detail": "Mixed Triple Draw (A-5, 2-7, Badugi) (2 Day) and PLO Day 1B both start at 12:00 - one table cannot seat a player twice, so no published schedule can put both on one day"
+    },
+    {
      "a": "r151",
      "b": "r152",
      "a_basis": "day_maximum",
+     "a_start": "17:10",
+     "a_end": "08:55 (+1 day)",
+     "b_start": "18:00",
      "kind": "unplannable",
      "gap_min": -895,
      "detail": "Milestone Satellite to $10,400 World Championship 1C starts 18:00 and its entry closes 18:00, while $300 No Limit Hold'em Bounty $15K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -4001,6 +4425,9 @@
      "a": "r151",
      "b": "r153",
      "a_basis": "day_maximum",
+     "a_start": "17:10",
+     "a_end": "08:55 (+1 day)",
+     "b_start": "19:00",
      "kind": "unplannable",
      "gap_min": -835,
      "detail": "PLO Turbo starts 19:00 and its entry closes 19:00, while $300 No Limit Hold'em Bounty $15K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -4009,12 +4436,15 @@
      "a": "r151",
      "b": "r154",
      "a_basis": "day_maximum",
+     "a_start": "17:10",
+     "a_end": "08:55 (+1 day)",
+     "b_start": "21:00",
      "kind": "unplannable",
      "gap_min": -715,
      "detail": "NIH Turbo starts 21:00 and its entry closes 21:00, while $300 No Limit Hold'em Bounty $15K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
-   "conflicts_unplannable": 3,
+   "conflicts_unplannable": 7,
    "conflicts_join_in_progress": 0,
    "alternatives": []
   },
@@ -4191,9 +4621,23 @@
    "fallback_note": "No other single-entry event on this date can still be entered by the time the primary's own table ends at 02:55 (+1 day) - the day is planned around the primary alone.",
    "conflicts": [
     {
+     "a": "r156",
+     "b": "r158",
+     "a_basis": null,
+     "a_start": "11:00",
+     "a_end": "unknown (no same-day structure)",
+     "b_start": "11:00",
+     "kind": "unplannable",
+     "gap_min": 0,
+     "detail": "Milestone Satellite to $10,400 World Championship 1C/Day 2 and WPT World Championship Day 1C $1,000,000 Added both start at 11:00 - one table cannot seat a player twice, so no published schedule can put both on one day"
+    },
+    {
      "a": "r159",
      "b": "r160",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "02:55 (+1 day)",
+     "b_start": "12:00",
      "kind": "unplannable",
      "gap_min": -895,
      "detail": "Big O starts 12:00 and its entry closes 12:00, while $1,100 No Limit Hold'em Progressive Knock-Out Bounty $75K GTD (1Day)'s own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -4202,6 +4646,9 @@
      "a": "r159",
      "b": "r162",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "02:55 (+1 day)",
+     "b_start": "13:00",
      "kind": "unplannable",
      "gap_min": -835,
      "detail": "PLO Progressive Bounty (PKO) starts 13:00 and its entry closes 13:00, while $1,100 No Limit Hold'em Progressive Knock-Out Bounty $75K GTD (1Day)'s own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -4210,6 +4657,9 @@
      "a": "r159",
      "b": "r163",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "02:55 (+1 day)",
+     "b_start": "17:10",
      "kind": "unplannable",
      "gap_min": -315,
      "detail": "$300 No Limit Hold'em Bounty $15K GTD (1Day) starts 17:10 and its entry closes 21:40, while $1,100 No Limit Hold'em Progressive Knock-Out Bounty $75K GTD (1Day)'s own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -4218,6 +4668,9 @@
      "a": "r159",
      "b": "r164",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "02:55 (+1 day)",
+     "b_start": "18:00",
      "kind": "unplannable",
      "gap_min": -535,
      "detail": "Milestone Satellite to $10,400 World Championship Day 2 starts 18:00 and its entry closes 18:00, while $1,100 No Limit Hold'em Progressive Knock-Out Bounty $75K GTD (1Day)'s own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -4226,6 +4679,9 @@
      "a": "r159",
      "b": "r165",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "02:55 (+1 day)",
+     "b_start": "19:00",
      "kind": "unplannable",
      "gap_min": -475,
      "detail": "NIH $500 Bounty Turbo starts 19:00 and its entry closes 19:00, while $1,100 No Limit Hold'em Progressive Knock-Out Bounty $75K GTD (1Day)'s own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -4234,6 +4690,9 @@
      "a": "r163",
      "b": "r164",
      "a_basis": "day_maximum",
+     "a_start": "17:10",
+     "a_end": "08:55 (+1 day)",
+     "b_start": "18:00",
      "kind": "unplannable",
      "gap_min": -895,
      "detail": "Milestone Satellite to $10,400 World Championship Day 2 starts 18:00 and its entry closes 18:00, while $300 No Limit Hold'em Bounty $15K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -4242,12 +4701,15 @@
      "a": "r163",
      "b": "r165",
      "a_basis": "day_maximum",
+     "a_start": "17:10",
+     "a_end": "08:55 (+1 day)",
+     "b_start": "19:00",
      "kind": "unplannable",
      "gap_min": -835,
      "detail": "NIH $500 Bounty Turbo starts 19:00 and its entry closes 19:00, while $300 No Limit Hold'em Bounty $15K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
-   "conflicts_unplannable": 7,
+   "conflicts_unplannable": 8,
    "conflicts_join_in_progress": 0,
    "alternatives": [
     {
@@ -4449,6 +4911,9 @@
      "a": "r167",
      "b": "r168",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "02:55 (+1 day)",
+     "b_start": "12:00",
      "kind": "unplannable",
      "gap_min": -895,
      "detail": "PLO Double Board Bomb Pot starts 12:00 and its entry closes 12:00, while $600 No Limit Hold'em Bounty $50K GTD (1Day) - $200 bounties to start & $500 bounties in the money's own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -4457,6 +4922,9 @@
      "a": "r167",
      "b": "r170",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "02:55 (+1 day)",
+     "b_start": "13:00",
      "kind": "unplannable",
      "gap_min": -835,
      "detail": "HORSE starts 13:00 and its entry closes 13:00, while $600 No Limit Hold'em Bounty $50K GTD (1Day) - $200 bounties to start & $500 bounties in the money's own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -4465,6 +4933,9 @@
      "a": "r167",
      "b": "r171",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "02:55 (+1 day)",
+     "b_start": "13:00",
      "kind": "unplannable",
      "gap_min": -835,
      "detail": "PLO 6-Max starts 13:00 and its entry closes 13:00, while $600 No Limit Hold'em Bounty $50K GTD (1Day) - $200 bounties to start & $500 bounties in the money's own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -4473,6 +4944,9 @@
      "a": "r167",
      "b": "r172",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "02:55 (+1 day)",
+     "b_start": "17:10",
      "kind": "unplannable",
      "gap_min": -315,
      "detail": "$300 No Limit Hold'em Bounty $15K GTD (1Day) starts 17:10 and its entry closes 21:40, while $600 No Limit Hold'em Bounty $50K GTD (1Day) - $200 bounties to start & $500 bounties in the money's own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -4481,6 +4955,9 @@
      "a": "r167",
      "b": "r173",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "02:55 (+1 day)",
+     "b_start": "18:00",
      "kind": "unplannable",
      "gap_min": -535,
      "detail": "Milestone Satellite to $25K NIH High Roller starts 18:00 and its entry closes 18:00, while $600 No Limit Hold'em Bounty $50K GTD (1Day) - $200 bounties to start & $500 bounties in the money's own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -4489,6 +4966,9 @@
      "a": "r167",
      "b": "r174",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "02:55 (+1 day)",
+     "b_start": "18:00",
      "kind": "unplannable",
      "gap_min": -535,
      "detail": "Milestone Satellite to $3,000 NLH starts 18:00 and its entry closes 18:00, while $600 No Limit Hold'em Bounty $50K GTD (1Day) - $200 bounties to start & $500 bounties in the money's own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -4497,14 +4977,31 @@
      "a": "r167",
      "b": "r175",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "02:55 (+1 day)",
+     "b_start": "19:00",
      "kind": "unplannable",
      "gap_min": -475,
      "detail": "No Limit Hold'em Day 1B starts 19:00 and its entry closes 19:00, while $600 No Limit Hold'em Bounty $50K GTD (1Day) - $200 bounties to start & $500 bounties in the money's own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     },
     {
+     "a": "r170",
+     "b": "r171",
+     "a_basis": null,
+     "a_start": "13:00",
+     "a_end": "unknown (no same-day structure)",
+     "b_start": "13:00",
+     "kind": "unplannable",
+     "gap_min": 0,
+     "detail": "HORSE and PLO 6-Max both start at 13:00 - one table cannot seat a player twice, so no published schedule can put both on one day"
+    },
+    {
      "a": "r172",
      "b": "r173",
      "a_basis": "day_maximum",
+     "a_start": "17:10",
+     "a_end": "08:55 (+1 day)",
+     "b_start": "18:00",
      "kind": "unplannable",
      "gap_min": -895,
      "detail": "Milestone Satellite to $25K NIH High Roller starts 18:00 and its entry closes 18:00, while $300 No Limit Hold'em Bounty $15K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -4513,6 +5010,9 @@
      "a": "r172",
      "b": "r174",
      "a_basis": "day_maximum",
+     "a_start": "17:10",
+     "a_end": "08:55 (+1 day)",
+     "b_start": "18:00",
      "kind": "unplannable",
      "gap_min": -895,
      "detail": "Milestone Satellite to $3,000 NLH starts 18:00 and its entry closes 18:00, while $300 No Limit Hold'em Bounty $15K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -4521,12 +5021,26 @@
      "a": "r172",
      "b": "r175",
      "a_basis": "day_maximum",
+     "a_start": "17:10",
+     "a_end": "08:55 (+1 day)",
+     "b_start": "19:00",
      "kind": "unplannable",
      "gap_min": -835,
      "detail": "No Limit Hold'em Day 1B starts 19:00 and its entry closes 19:00, while $300 No Limit Hold'em Bounty $15K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
+    },
+    {
+     "a": "r173",
+     "b": "r174",
+     "a_basis": null,
+     "a_start": "18:00",
+     "a_end": "unknown (no same-day structure)",
+     "b_start": "18:00",
+     "kind": "unplannable",
+     "gap_min": 0,
+     "detail": "Milestone Satellite to $25K NIH High Roller and Milestone Satellite to $3,000 NLH both start at 18:00 - one table cannot seat a player twice, so no published schedule can put both on one day"
     }
    ],
-   "conflicts_unplannable": 10,
+   "conflicts_unplannable": 12,
    "conflicts_join_in_progress": 0,
    "alternatives": [
     {
@@ -4730,9 +5244,23 @@
    "fallback_note": "This is the only verified single-entry event on this date, so the day is planned around it alone.",
    "conflicts": [
     {
+     "a": "r177",
+     "b": "r178",
+     "a_basis": null,
+     "a_start": "11:00",
+     "a_end": "unknown (no same-day structure)",
+     "b_start": "11:00",
+     "kind": "unplannable",
+     "gap_min": 0,
+     "detail": "Seniors NLH Championship (3 Day) and Wynn Mixed Championship (2 Day) both start at 11:00 - one table cannot seat a player twice, so no published schedule can put both on one day"
+    },
+    {
      "a": "r182",
      "b": "r183",
      "a_basis": "day_maximum",
+     "a_start": "12:10",
+     "a_end": "03:55 (+1 day)",
+     "b_start": "13:00",
      "kind": "unplannable",
      "gap_min": -895,
      "detail": "NLH High Roller (2 Day) starts 13:00 and its entry closes 13:00, while $600 Pot Limit Omaha Double Board Bomb Pot $25K GTD (1Day)'s own table can run as late as 03:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -4741,6 +5269,9 @@
      "a": "r182",
      "b": "r184",
      "a_basis": "day_maximum",
+     "a_start": "12:10",
+     "a_end": "03:55 (+1 day)",
+     "b_start": "14:00",
      "kind": "unplannable",
      "gap_min": -835,
      "detail": "Milestone Satellite to $3,000 NLH starts 14:00 and its entry closes 14:00, while $600 Pot Limit Omaha Double Board Bomb Pot $25K GTD (1Day)'s own table can run as late as 03:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -4749,6 +5280,9 @@
      "a": "r182",
      "b": "r185",
      "a_basis": "day_maximum",
+     "a_start": "12:10",
+     "a_end": "03:55 (+1 day)",
+     "b_start": "18:10",
      "kind": "unplannable",
      "gap_min": -285,
      "detail": "$1,100 No Limit Hold'em 1B $500K GTD - $40 Rake Discount for Entries Before 6:10 p.m. starts 18:10 and its entry closes 23:10, while $600 Pot Limit Omaha Double Board Bomb Pot $25K GTD (1Day)'s own table can run as late as 03:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -4757,12 +5291,15 @@
      "a": "r182",
      "b": "r186",
      "a_basis": "day_maximum",
+     "a_start": "12:10",
+     "a_end": "03:55 (+1 day)",
+     "b_start": "19:00",
      "kind": "unplannable",
      "gap_min": -535,
      "detail": "Milestone Satellite to $3,000 NLH starts 19:00 and its entry closes 19:00, while $600 Pot Limit Omaha Double Board Bomb Pot $25K GTD (1Day)'s own table can run as late as 03:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
-   "conflicts_unplannable": 4,
+   "conflicts_unplannable": 5,
    "conflicts_join_in_progress": 0,
    "alternatives": []
   },
@@ -4951,8 +5488,42 @@
    "fallback_id": null,
    "fallback_kind": null,
    "fallback_note": "No verified single-entry event on this date.",
-   "conflicts": [],
-   "conflicts_unplannable": 0,
+   "conflicts": [
+    {
+     "a": "r189",
+     "b": "r190",
+     "a_basis": null,
+     "a_start": "12:00",
+     "a_end": "unknown (no same-day structure)",
+     "b_start": "12:00",
+     "kind": "unplannable",
+     "gap_min": 0,
+     "detail": "Limit Omaha 8 Championship (2 Day) and No Limit Hold'em both start at 12:00 - one table cannot seat a player twice, so no published schedule can put both on one day"
+    },
+    {
+     "a": "r189",
+     "b": "r191",
+     "a_basis": null,
+     "a_start": "12:00",
+     "a_end": "unknown (no same-day structure)",
+     "b_start": "12:00",
+     "kind": "unplannable",
+     "gap_min": 0,
+     "detail": "Limit Omaha 8 Championship (2 Day) and No Limit Hold'em Day 1B both start at 12:00 - one table cannot seat a player twice, so no published schedule can put both on one day"
+    },
+    {
+     "a": "r190",
+     "b": "r191",
+     "a_basis": null,
+     "a_start": "12:00",
+     "a_end": "unknown (no same-day structure)",
+     "b_start": "12:00",
+     "kind": "unplannable",
+     "gap_min": 0,
+     "detail": "No Limit Hold'em and No Limit Hold'em Day 1B both start at 12:00 - one table cannot seat a player twice, so no published schedule can put both on one day"
+    }
+   ],
+   "conflicts_unplannable": 3,
    "conflicts_join_in_progress": 0,
    "alternatives": []
   },
@@ -5190,9 +5761,56 @@
    "fallback_note": "No verified single-entry event on this date.",
    "conflicts": [
     {
+     "a": "r198",
+     "b": "r199",
+     "a_basis": null,
+     "a_start": "11:00",
+     "a_end": "unknown (no same-day structure)",
+     "b_start": "11:00",
+     "kind": "unplannable",
+     "gap_min": 0,
+     "detail": "NLH Mystery Bounty Day 1A and Seniors High Roller (3 Day) both start at 11:00 - one table cannot seat a player twice, so no published schedule can put both on one day"
+    },
+    {
+     "a": "r203",
+     "b": "r204",
+     "a_basis": null,
+     "a_start": "13:00",
+     "a_end": "unknown (no same-day structure)",
+     "b_start": "13:00",
+     "kind": "unplannable",
+     "gap_min": 0,
+     "detail": "NLH 6-Max and PLO both start at 13:00 - one table cannot seat a player twice, so no published schedule can put both on one day"
+    },
+    {
+     "a": "r203",
+     "b": "r205",
+     "a_basis": null,
+     "a_start": "13:00",
+     "a_end": "unknown (no same-day structure)",
+     "b_start": "13:00",
+     "kind": "unplannable",
+     "gap_min": 0,
+     "detail": "NLH 6-Max and TORSE Championship (2 Day) both start at 13:00 - one table cannot seat a player twice, so no published schedule can put both on one day"
+    },
+    {
+     "a": "r204",
+     "b": "r205",
+     "a_basis": null,
+     "a_start": "13:00",
+     "a_end": "unknown (no same-day structure)",
+     "b_start": "13:00",
+     "kind": "unplannable",
+     "gap_min": 0,
+     "detail": "PLO and TORSE Championship (2 Day) both start at 13:00 - one table cannot seat a player twice, so no published schedule can put both on one day"
+    },
+    {
      "a": "r207",
      "b": "r208",
      "a_basis": "day_maximum",
+     "a_start": "17:10",
+     "a_end": "08:55 (+1 day)",
+     "b_start": "18:00",
      "kind": "unplannable",
      "gap_min": -895,
      "detail": "NLH 6-Max Turbo starts 18:00 and its entry closes 18:00, while $200 NLH PokerAtlas Valuetown Bounty $20K GTD (1Day) - PokerAtlas PRO member $20 rake discount's own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -5201,12 +5819,15 @@
      "a": "r207",
      "b": "r209",
      "a_basis": "day_maximum",
+     "a_start": "17:10",
+     "a_end": "08:55 (+1 day)",
+     "b_start": "19:00",
      "kind": "unplannable",
      "gap_min": -835,
      "detail": "NLH Mystery Bounty Day 1B starts 19:00 and its entry closes 19:00, while $200 NLH PokerAtlas Valuetown Bounty $20K GTD (1Day) - PokerAtlas PRO member $20 rake discount's own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
-   "conflicts_unplannable": 2,
+   "conflicts_unplannable": 6,
    "conflicts_join_in_progress": 0,
    "alternatives": []
   },
@@ -5379,9 +6000,23 @@
    "fallback_note": "This is the only verified single-entry event on this date, so the day is planned around it alone.",
    "conflicts": [
     {
+     "a": "r215",
+     "b": "r216",
+     "a_basis": null,
+     "a_start": "13:00",
+     "a_end": "unknown (no same-day structure)",
+     "b_start": "13:00",
+     "kind": "unplannable",
+     "gap_min": 0,
+     "detail": "Mixed Triple Draw (A-5, 2-7, Badugi) and NLH 8-Max both start at 13:00 - one table cannot seat a player twice, so no published schedule can put both on one day"
+    },
+    {
      "a": "r218",
      "b": "r219",
      "a_basis": "day_maximum",
+     "a_start": "17:10",
+     "a_end": "08:55 (+1 day)",
+     "b_start": "18:00",
      "kind": "unplannable",
      "gap_min": -895,
      "detail": "5-Card PLO Turbo starts 18:00 and its entry closes 18:00, while $200 No Limit Hold'em Bounty $8K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -5390,12 +6025,15 @@
      "a": "r218",
      "b": "r220",
      "a_basis": "day_maximum",
+     "a_start": "17:10",
+     "a_end": "08:55 (+1 day)",
+     "b_start": "19:00",
      "kind": "unplannable",
      "gap_min": -835,
      "detail": "NLH Mystery Bounty Day 1D starts 19:00 and its entry closes 19:00, while $200 No Limit Hold'em Bounty $8K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
-   "conflicts_unplannable": 2,
+   "conflicts_unplannable": 3,
    "conflicts_join_in_progress": 0,
    "alternatives": []
   },
@@ -5491,6 +6129,9 @@
      "a": "r224",
      "b": "r225",
      "a_basis": "day_maximum",
+     "a_start": "17:10",
+     "a_end": "08:55 (+1 day)",
+     "b_start": "20:00",
      "kind": "unplannable",
      "gap_min": -775,
      "detail": "NLH Turbo starts 20:00 and its entry closes 20:00, while $200 No Limit Hold'em Bounty $8K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -5605,6 +6246,9 @@
      "a": "r229",
      "b": "r230",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "02:55 (+1 day)",
+     "b_start": "17:10",
      "kind": "unplannable",
      "gap_min": -315,
      "detail": "$200 No Limit Hold'em Bounty $8K GTD (1Day) starts 17:10 and its entry closes 21:40, while $600 No Limit Hold'em $30K GTD (1Day)'s own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -5676,6 +6320,9 @@
      "a": "r231",
      "b": "r232",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "02:55 (+1 day)",
+     "b_start": "17:10",
      "kind": "unplannable",
      "gap_min": -315,
      "detail": "$200 No Limit Hold'em Bounty $8K GTD (1Day) starts 17:10 and its entry closes 21:40, while $400 No Limit Hold'em $15K GTD (1Day)'s own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -5747,6 +6394,9 @@
      "a": "r233",
      "b": "r234",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "02:55 (+1 day)",
+     "b_start": "17:10",
      "kind": "unplannable",
      "gap_min": -315,
      "detail": "$200 No Limit Hold'em Bounty $8K GTD (1Day) starts 17:10 and its entry closes 21:40, while $400 No Limit Hold'em $15K GTD (1Day)'s own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -5842,6 +6492,9 @@
      "a": "r235",
      "b": "r236",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "02:55 (+1 day)",
+     "b_start": "15:10",
      "kind": "unplannable",
      "gap_min": -570,
      "detail": "$260 NLH Milestone Satellite (1Day) - Awards 1 in 5 (20%) Direct Entry into Event # 08 starts 15:10 and its entry closes 17:25, while $600 No Limit Hold'em Bounty $40K GTD (1Day) - $200 bounties to start & $500 bounties in the money's own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -5850,6 +6503,9 @@
      "a": "r235",
      "b": "r237",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "02:55 (+1 day)",
+     "b_start": "18:10",
      "kind": "unplannable",
      "gap_min": -390,
      "detail": "$260 NLH Milestone Satellite (1Day) - Awards 1 in 5 (20%) Direct Entry into Event # 08 starts 18:10 and its entry closes 20:25, while $600 No Limit Hold'em Bounty $40K GTD (1Day) - $200 bounties to start & $500 bounties in the money's own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -5858,6 +6514,9 @@
      "a": "r236",
      "b": "r237",
      "a_basis": "satellite_maximum",
+     "a_start": "15:10",
+     "a_end": "02:15 (+1 day)",
+     "b_start": "18:10",
      "kind": "unplannable",
      "gap_min": -350,
      "detail": "$260 NLH Milestone Satellite (1Day) - Awards 1 in 5 (20%) Direct Entry into Event # 08 starts 18:10 and its entry closes 20:25, while $260 NLH Milestone Satellite (1Day) - Awards 1 in 5 (20%) Direct Entry into Event # 08's own table can run as late as 02:15 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -5963,6 +6622,9 @@
      "a": "r239",
      "b": "r240",
      "a_basis": "satellite_maximum",
+     "a_start": "15:10",
+     "a_end": "02:15 (+1 day)",
+     "b_start": "18:10",
      "kind": "unplannable",
      "gap_min": -350,
      "detail": "$260 NLH Milestone Satellite (1Day) - Awards 1 in 5 (20%) Direct Entry into Event # 08 starts 18:10 and its entry closes 20:25, while $260 NLH Milestone Satellite (1Day) - Awards 1 in 5 (20%) Direct Entry into Event # 08's own table can run as late as 02:15 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -6058,6 +6720,9 @@
      "a": "r242",
      "b": "r243",
      "a_basis": "satellite_maximum",
+     "a_start": "15:10",
+     "a_end": "02:15 (+1 day)",
+     "b_start": "18:10",
      "kind": "unplannable",
      "gap_min": -350,
      "detail": "$260 NLH Milestone Satellite (1Day) - Awards 1 in 5 (20%) Direct Entry into Event # 08 starts 18:10 and its entry closes 20:25, while $260 NLH Milestone Satellite (1Day) - Awards 1 in 5 (20%) Direct Entry into Event # 08's own table can run as late as 02:15 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -6205,6 +6870,9 @@
      "a": "r247",
      "b": "r248",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "02:55 (+1 day)",
+     "b_start": "15:10",
      "kind": "unplannable",
      "gap_min": -570,
      "detail": "$200 NLH Milestone Satellite (1Day) - Awards Direct Entry into Event # 20 starts 15:10 and its entry closes 17:25, while $600 No Limit Hold'em $50K GTD (1Day)'s own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -6213,6 +6881,9 @@
      "a": "r247",
      "b": "r249",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "02:55 (+1 day)",
+     "b_start": "18:10",
      "kind": "unplannable",
      "gap_min": -420,
      "detail": "$200 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry into Event # 20 starts 18:10 and its entry closes 19:55, while $600 No Limit Hold'em $50K GTD (1Day)'s own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -6221,6 +6892,9 @@
      "a": "r248",
      "b": "r249",
      "a_basis": "satellite_maximum",
+     "a_start": "15:10",
+     "a_end": "02:15 (+1 day)",
+     "b_start": "18:10",
      "kind": "unplannable",
      "gap_min": -380,
      "detail": "$200 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry into Event # 20 starts 18:10 and its entry closes 19:55, while $200 NLH Milestone Satellite (1Day) - Awards Direct Entry into Event # 20's own table can run as late as 02:15 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -6325,6 +6999,9 @@
      "a": "r251",
      "b": "r252",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "02:55 (+1 day)",
+     "b_start": "15:10",
      "kind": "unplannable",
      "gap_min": -570,
      "detail": "$200 NLH Milestone Satellite (1Day) - Awards Direct Entry into Event # 20 starts 15:10 and its entry closes 17:25, while $400 No Limit Hold'em $15K GTD (1Day)'s own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -6333,6 +7010,9 @@
      "a": "r251",
      "b": "r253",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "02:55 (+1 day)",
+     "b_start": "18:10",
      "kind": "unplannable",
      "gap_min": -420,
      "detail": "$200 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry into Event # 20 starts 18:10 and its entry closes 19:55, while $400 No Limit Hold'em $15K GTD (1Day)'s own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -6341,6 +7021,9 @@
      "a": "r252",
      "b": "r253",
      "a_basis": "satellite_maximum",
+     "a_start": "15:10",
+     "a_end": "02:15 (+1 day)",
+     "b_start": "18:10",
      "kind": "unplannable",
      "gap_min": -380,
      "detail": "$200 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry into Event # 20 starts 18:10 and its entry closes 19:55, while $200 NLH Milestone Satellite (1Day) - Awards Direct Entry into Event # 20's own table can run as late as 02:15 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -6446,6 +7129,9 @@
      "a": "r255",
      "b": "r256",
      "a_basis": "satellite_maximum",
+     "a_start": "15:10",
+     "a_end": "02:15 (+1 day)",
+     "b_start": "17:10",
      "kind": "unplannable",
      "gap_min": -275,
      "detail": "$200 No Limit Hold'em Bounty $8K GTD (1Day) starts 17:10 and its entry closes 21:40, while $200 NLH Milestone Satellite (1Day) - Awards Direct Entry into Event # 20's own table can run as late as 02:15 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -6563,6 +7249,9 @@
      "a": "r257",
      "b": "r258",
      "a_basis": "satellite_maximum",
+     "a_start": "10:10",
+     "a_end": "21:15",
+     "b_start": "11:10",
      "kind": "unplannable",
      "gap_min": -200,
      "detail": "$1,600 No Limit Hold'em MSPT 1B $400K GTD starts 11:10 and its entry closes 17:55, while $200 NLH Milestone Satellite (1Day) - Awards Direct Entry into Event # 20's own table can run as late as 21:15 and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -6571,6 +7260,9 @@
      "a": "r257",
      "b": "r259",
      "a_basis": "satellite_maximum",
+     "a_start": "10:10",
+     "a_end": "21:15",
+     "b_start": "15:10",
      "kind": "unplannable",
      "gap_min": -230,
      "detail": "$200 NLH Milestone Satellite (1Day) - Awards Direct Entry into Event # 20 starts 15:10 and its entry closes 17:25, while $200 NLH Milestone Satellite (1Day) - Awards Direct Entry into Event # 20's own table can run as late as 21:15 and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -6579,6 +7271,9 @@
      "a": "r257",
      "b": "r260",
      "a_basis": "satellite_maximum",
+     "a_start": "10:10",
+     "a_end": "21:15",
+     "b_start": "17:10",
      "kind": "join_in_progress",
      "gap_min": -245,
      "detail": "$200 NLH PokerAtlas Valuetown Bounty $20K GTD (1Day) - PokerAtlas PRO member $20 rake discount starts 17:10 while $200 NLH Milestone Satellite (1Day) - Awards Direct Entry into Event # 20 can still be running as late as 21:15 - the pair is only sensible if you are willing to sit down in progress"
@@ -6587,6 +7282,9 @@
      "a": "r259",
      "b": "r260",
      "a_basis": "satellite_maximum",
+     "a_start": "15:10",
+     "a_end": "02:15 (+1 day)",
+     "b_start": "17:10",
      "kind": "unplannable",
      "gap_min": -275,
      "detail": "$200 NLH PokerAtlas Valuetown Bounty $20K GTD (1Day) - PokerAtlas PRO member $20 rake discount starts 17:10 and its entry closes 21:40, while $200 NLH Milestone Satellite (1Day) - Awards Direct Entry into Event # 20's own table can run as late as 02:15 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -6716,6 +7414,9 @@
      "a": "r264",
      "b": "r265",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "03:55 (+1 day)",
+     "b_start": "17:10",
      "kind": "unplannable",
      "gap_min": -735,
      "detail": "$250 No Limit Hold'em 1B $75K GTD (1Day) - Day 1 Payouts with 5% advancing to Day 2 - $10 Reduced Rake for Entry before 5:10 PM starts 17:10 and its entry closes 15:40, while $250 No Limit Hold'em 1A $75K GTD (1Day) - Day 1 Payouts with 5% advancing to Day 2 - $10 Reduced Rake for Entry before 11:10 AM's own table can run as late as 03:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -6780,6 +7481,9 @@
      "a": "r266",
      "b": "r267",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "03:55 (+1 day)",
+     "b_start": "17:10",
      "kind": "unplannable",
      "gap_min": -735,
      "detail": "$250 No Limit Hold'em 1D $75K GTD (1Day) - Day 1 Payouts with 5% advancing to Day 2 starts 17:10 and its entry closes 15:40, while $250 No Limit Hold'em 1C $75K GTD (1Day) - Day 1 Payouts with 5% advancing to Day 2's own table can run as late as 03:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -6840,6 +7544,9 @@
      "a": "r268",
      "b": "r270",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "02:55 (+1 day)",
+     "b_start": "17:10",
      "kind": "unplannable",
      "gap_min": -315,
      "detail": "$200 No Limit Hold'em Bounty $8K GTD (1Day) - Show Your CES Badge - $10 Rake Discount starts 17:10 and its entry closes 21:40, while $400 No Limit Hold'em $15K GTD (1Day)'s own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -6902,6 +7609,9 @@
      "a": "r271",
      "b": "r272",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "08:55 (+1 day)",
+     "b_start": "17:10",
      "kind": "unplannable",
      "gap_min": -735,
      "detail": "$300 No Limit Hold'em 1B $100K GTD (1Day) - Show Your CES Badge - $10 Rake Discount starts 17:10 and its entry closes 20:40, while $300 No Limit Hold'em 1A $100K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -6964,6 +7674,9 @@
      "a": "r273",
      "b": "r274",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "08:55 (+1 day)",
+     "b_start": "17:10",
      "kind": "unplannable",
      "gap_min": -735,
      "detail": "$300 No Limit Hold'em 1D $100K GTD (1Day) - Show Your CES Badge - $10 Rake Discount starts 17:10 and its entry closes 20:40, while $300 No Limit Hold'em 1C $100K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -7026,6 +7739,9 @@
      "a": "r275",
      "b": "r276",
      "a_basis": "day_maximum",
+     "a_start": "11:10",
+     "a_end": "08:55 (+1 day)",
+     "b_start": "17:10",
      "kind": "unplannable",
      "gap_min": -735,
      "detail": "$300 No Limit Hold'em 1F $100K GTD (1Day) - Show Your CES Badge - $10 Rake Discount starts 17:10 and its entry closes 20:40, while $300 No Limit Hold'em 1E $100K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -7088,6 +7804,9 @@
      "a": "r277",
      "b": "r279",
      "a_basis": "day_maximum",
+     "a_start": "10:10",
+     "a_end": "01:55 (+1 day)",
+     "b_start": "17:10",
      "kind": "unplannable",
      "gap_min": -255,
      "detail": "$200 No Limit Hold'em Bounty $8K GTD (1Day) starts 17:10 and its entry closes 21:40, while $400 No Limit Hold'em Seniors $20K GTD (1Day) - must be 50+ years of age's own table can run as late as 01:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
@@ -7975,5 +8694,6 @@
   }
  ],
  "earliest_listed_start": "09:10",
- "note": "Structure end times are calculated from the published level table (levels x level length plus the published breaks). They are a MAXIMUM, not an official finish time: no Venetian sheet prints an end clock, and each event ends when its field is paid (or, for a satellite, when its seats are awarded), which can be much earlier. They are compared as minutes from the start day's midnight, so an event whose table runs past midnight is marked (+1 day) instead of reading as an earlier finish; that also exposes flag F75, where 70 events labelled \"(1Day)\" carry a table that cannot fit inside a day. A day names one primary single-entry event and, only where the primary's table ends before the second event's entry closes, a conditional fallback - labelled either from the start or as a join in progress. A flight of a multi-day event has no same-day bound at all, so its day is never paired with a second event. Everything else on that date is listed as an alternative to the primary, never as an addition to it."
+ "overlap_pairs": 170,
+ "note": "Every end time here is the end of the event's own printed level table (levels x level length plus the published breaks), compared as minutes from the start day's midnight. It is a MAXIMUM, not an official finish time: no sheet in the series prints an end clock, and an event ends when its field is paid - or, for a satellite, when its seats are awarded - which can be much earlier. Of the 93 rows the official page labels \"(1Day)\", 87 carry a table that runs past midnight and 70 cannot fit inside a day at all (flag F75). A table spanning more than one playing day bounds its first day not at all, so those rows carry no ceiling and their day is never paired. A day names one primary single-entry event and, only where the primary cannot run past the second event's entry deadline, a conditional fallback labelled from the start or as a join in progress. Everything else on that date is listed as an alternative to the primary, never as an addition to it."
 }

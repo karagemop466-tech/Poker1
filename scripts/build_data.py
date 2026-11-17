@@ -894,13 +894,6 @@ def clock(hhmm):
     return "%02d:%02d" % (h, mm)
 
 
-# The official event name labels a single-playing-day event "(1Day)". That is the only
-# case in which the level structure printed on the sheet ends on the day it starts; a
-# flight of a multi-day event prints the whole event's structure, so its total is not a
-# finish time for the day.
-ONE_DAY_RE = re.compile(r"\(\s*1\s*Day\s*\)", re.I)
-
-
 def estimate_end(start, levels, level_min, breaks=15, every=4, level_min2=None, level_min2_from=None):
     """Plausible end time from the published level structure (estimate, not an official time)."""
     if level_min2 and level_min2_from:
@@ -1265,52 +1258,50 @@ def build_wynn():
     return out
 
 
-def est_abs_end(row):
-    """Estimated finish, in minutes from the START DAY's midnight.
+def end_minutes(row):
+    """Absolute minutes from midnight of the row's own date at which it is estimated to finish.
 
-    est_end is stored as a time of day, so an event that runs past midnight has an
-    est_end that is numerically earlier than its own start. Every sequence test in the
-    day plan uses this absolute value instead of the bare clock time.
+    ``est_end`` is stored as a wall-clock ``HH:MM`` and therefore wraps at midnight: an 11:10 AM
+    start with a fifteen-hour structure stores ``02:25``, which reads *before* its own start if you
+    compare clock strings. Every comparison in this file and in the renderer must use this absolute
+    value (start + stored duration) instead, and ``to_hhmm`` keeps wrapping only for display.
+    Returns ``None`` when the row carries no duration, so an unknown can never be treated as known.
     """
-    if not row.get("est_end"):
+    if row.get("est_duration_min") is None or not row.get("start"):
         return None
-    if row.get("est_duration_min"):
-        return to_min(row["start"]) + row["est_duration_min"]
-    return to_min(row["est_end"])
+    return to_min(row["start"]) + row["est_duration_min"]
 
 
+# The official event name labels a single-playing-day event "(1Day)". That is the only case in
+# which the level structure printed on a sheet ends on the day it starts.
+ONE_DAY_RE = re.compile(r"\(\s*1\s*Day\s*\)", re.I)
 SATELLITE_LABELS = ("satellite", "milestone-satellite")
 
 
 def is_satellite(row):
-    """A satellite stops when the seats it awards are given out, not when its table ends."""
+    """A satellite stops when the seats it awards are given out, not when its level table ends."""
     return ("satellite" in (row.get("name") or "").lower()
             or bool(set(SATELLITE_LABELS) & set(row.get("labels") or [])))
 
 
 def duration_basis(row):
-    """What the printed level structure is allowed to say about the event's first day.
+    """What a printed level table is entitled to say about the event's first playing day.
 
-    day_maximum              - the official name labels the event "(1Day)", so the sheet's
-                               structure is that day's structure. No sheet prints an end clock
-                               and every one-day sheet pays a share of the field instead (for
-                               example sheet #6, clause 7: "This event pays 12.5% of the
-                               field"), so the end of the table is the LATEST the event can run,
-                               never a scheduled finish. See flag F75: 70 of the 127 rows that
-                               carry a structure end past their own start time are labelled
-                               "(1Day)", which the printed table cannot fit inside a day.
+    day_maximum              - the event is labelled "(1Day)", so the table is that day's table.
+                               No sheet prints an end clock; the event ends when its field is paid
+                               (sheet #6 clause 7: "This event pays 12.5% of the field"), so the
+                               end of the table is the LATEST the event can run, never a schedule.
+                               70 of these 73 rows carry a table that cannot fit inside a day at
+                               all, which is flag F75.
     satellite_maximum        - every satellite sheet read for this dataset prints, as its own
-                               clause 10, "The tournament will conclude when the number of
-                               players remaining is equal to the remaining number of ... direct
-                               entry seats to be awarded". A satellite therefore cannot outlive
-                               the structure that awards its seats, but nothing prints when it
-                               does end: the structure total is a maximum, never a schedule.
-    no_day_bound             - a flight of a multi-day event, or a "(2Day)" event. Its clause 3
-                               reads "Each starting flight will play until we are down to
-                               approximately 12.5% of the field remaining. Day 2 will resume at
-                               11:00 AM" (or 12:00 PM), so the level table spans more than one
-                               playing day and says nothing about when the first day ends.
-
+                               clause 10, "The tournament will conclude when the number of players
+                               remaining is equal to the remaining number of ... direct entry seats
+                               to be awarded". A ceiling on the day, never a clock.
+    no_day_bound             - a flight of a multi-day event, or a "(2Day)" event. Clause 3 reads
+                               "Each starting flight will play until we are down to approximately
+                               12.5% of the field remaining. Day 2 will resume at 11:00 AM", so the
+                               table spans more than one playing day and bounds nothing about the
+                               first day.
     """
     if not row.get("est_end"):
         return None
@@ -1322,39 +1313,39 @@ def duration_basis(row):
 def seq_end(row):
     """The latest minute from the start day's midnight at which the event can still be running.
 
-    Both accepted bases bound the day from above: a one-day event cannot outlive its own
-    structure and neither can a satellite. A multi-day structure is not a bound on the first
-    day at all, so it is refused here rather than read as a finish time. This is a maximum,
-    so it can only ever rule a pairing OUT as unplannable - it never proves a clock.
+    Both accepted bases bound the day from above. A table that spans more than one playing day is
+    refused here rather than read as a finish time, and a row with no structure at all stays
+    unknown. Because this is a maximum it can rule a pairing out; it can never prove a clock.
     """
     if duration_basis(row) not in ("day_maximum", "satellite_maximum"):
         return None
-    return est_abs_end(row)
+    return end_minutes(row)
 
 
 def entry_deadline(row):
     """Last minute of the start day at which a player can still be seated.
 
-    The published late-registration cut-off when the structure sheet gives one,
-    otherwise the start time. Never a guess: an event with no printed cut-off is
-    treated as closed at its start.
+    The published late-registration cut-off when the sheet gives one; otherwise the start time.
+    An event with no printed cut-off is treated as closed at its start, never assumed open.
     """
     return to_min(row.get("late_reg_close") or row["start"])
 
 
 def clock_label(mins):
-    """Minutes from the start day's midnight, as 'HH:MM' plus a day marker."""
+    """Minutes from the start day's midnight, as 'HH:MM' plus the day it crosses into."""
     return to_hhmm(mins) + (" (+1 day)" if mins >= 24 * 60 else "")
 
 
 def build_schedule(rows):
-    """Day plan: one verified single-entry primary, a conditional fallback, overlap flags.
+    """Day plan: one verified single-entry primary per date, a provable fallback or none, overlap flags.
 
-    A fallback is only published when the primary can realistically be finished before
-    the fallback's entry closes. Two events on one day are flagged `unplannable` when the
-    earlier event's own printed structure runs past the later one's entry deadline, and
-    `join_in_progress` when that latest time passes the later start but not its deadline.
-    Every structure total is a maximum, never a scheduled finish - see duration_basis.
+    Every comparison is in absolute minutes from the start day's midnight (``seq_end``), because
+    ``est_end`` is a wall-clock time that wraps at midnight. A second event is published as a
+    conditional fallback only when the primary cannot run past the second event's entry deadline.
+    Pairs are flagged ``unplannable`` when the earlier event's own table runs past the later
+    event's entry deadline (or when both start at the same instant, which no schedule can serve),
+    and ``join_in_progress`` when that ceiling passes the later start but not its deadline. A
+    structure that spans more than one playing day bounds nothing, so such a day is never paired.
     """
     days = {}
     for r in rows:
@@ -1371,30 +1362,37 @@ def build_schedule(rows):
         fallback_kind = None
         if p_end is not None:
             for cand in se[1:]:
-                cand_deadline = entry_deadline(cand)
                 if p_end <= to_min(cand["start"]):
                     fallback, fallback_kind = cand, "from the start"
                     break
-                if p_end <= cand_deadline:
+                if p_end <= entry_deadline(cand):
                     fallback, fallback_kind = cand, "join in progress"
                     break
-        # A published structure can only ever rule a pairing out: it says when the earlier
-        # event is AT THE LATEST still running, never when it actually ends. So two events
-        # are "unplannable" together only when the earlier one's own table runs past the
-        # later one's entry deadline; anything looser is reported as a join-in-progress pair.
         conflicts = []
         for i, a in enumerate(events):
             a_end = seq_end(a)
-            if a_end is None:
-                continue
+            same_start_seen = set()
             for b in events[i + 1:]:
+                # Two events printed with the same start time overlap by definition - that needs no
+                # estimate at all. Otherwise a pair is unplannable only when the earlier event's own
+                # table runs past the later event's entry deadline.
+                same_start = a["start"] == b["start"]
+                if not same_start and a_end is None:
+                    continue
                 b_start, b_close = to_min(b["start"]), entry_deadline(b)
-                base = {"a": a["id"], "b": b["id"], "a_basis": duration_basis(a)}
-                if a_end > b_close:
+                base = {"a": a["id"], "b": b["id"], "a_basis": duration_basis(a),
+                        "a_start": a["start"], "a_end": clock_label(a_end) if a_end is not None
+                        else "unknown (no same-day structure)", "b_start": b["start"]}
+                if same_start:
+                    base.update({"kind": "unplannable", "gap_min": 0,
+                                 "detail": "%s and %s both start at %s - one table cannot seat a "
+                                           "player twice, so no published schedule can put both on one day"
+                                           % (a["name"], b["name"], a["start"])})
+                elif a_end > b_close:
                     base.update({"kind": "unplannable", "gap_min": b_close - a_end,
-                                 "detail": "%s starts %s and its entry closes %s, while %s's own table can run "
-                                           "as late as %s and no source prints an earlier end - so nothing "
-                                           "published supports planning both on one day"
+                                 "detail": "%s starts %s and its entry closes %s, while %s's own table can "
+                                           "run as late as %s and no source prints an earlier end - so "
+                                           "nothing published supports planning both on one day"
                                            % (b["name"], b["start"], b.get("late_reg_close") or b["start"],
                                               a["name"], clock_label(a_end))})
                 elif a_end > b_start:
@@ -1406,42 +1404,41 @@ def build_schedule(rows):
                     continue
                 conflicts.append(base)
         # Every other single-entry event that day is an alternative to the primary, never an
-        # addition to it: to play it you have to be free of the primary by its entry deadline,
-        # which is a question of when you are eliminated, not of any schedule.
+        # addition to it: playing it means being free of the primary by its entry deadline, which
+        # is a question of when you are eliminated, not of any schedule.
+        basis = duration_basis(primary) if primary else None
         alternatives = []
-        for other in se[1:] if primary else se:
+        for other in (se[1:] if primary else se):
             if primary and other["id"] == (fallback or {}).get("id"):
                 continue
             close = other.get("late_reg_close") or other["start"]
             if p_end is None:
-                why = ("The primary event has no published end time at all, so it is not known whether this"
-                       " one can be reached - choose it instead of the primary, not as well.")
-            elif duration_basis(primary) == "no_day_bound" or duration_basis(other) == "no_day_bound":
-                why = ("The primary event's structure spans more than one playing day, so this day has no"
-                       " published end time to plan against - choose it instead of the primary, not as well.")
+                why = ("The primary event has no same-day ceiling to plan against, so it is not known"
+                       " whether this one can be reached - choose it instead of the primary, not as well.")
+            elif basis == "no_day_bound" or duration_basis(other) == "no_day_bound":
+                why = ("The primary event's table spans more than one playing day, so this date has no"
+                       " published ceiling to plan against - choose it instead of the primary, not as well.")
             elif p_end > to_min(other["start"]):
-                why = ("The primary's own table can run as late as %s; reaching this event means being out of"
-                       " the primary and seated before its entry closes at %s - a question of when you are"
-                       " eliminated, which no source publishes." % (clock_label(p_end), close))
+                why = ("The primary's own table can run as late as %s; reaching this event means being out"
+                       " of the primary and seated before its entry closes at %s - a question of when you"
+                       " are eliminated, which no source publishes." % (clock_label(p_end), close))
             else:
-                why = ("Starts at or after the end of the primary's published structure, so it is a genuine"
+                why = ("Starts at or after the end of the primary's published table, so it is a genuine"
                        " either/or for the day.")
             alternatives.append({"id": other["id"], "start": other["start"], "name": other["name"],
                                  "buy_in_usd": other["buy_in_usd"], "guarantee_usd": other["guarantee_usd"],
                                  "entry_closes": close, "late_reg_published": bool(other.get("late_reg_close")),
                                  "note": why})
-
-        basis = duration_basis(primary) if primary else None
         if not primary:
             note = "No verified single-entry event on this date."
         elif not fallback:
             if basis == "no_day_bound":
-                note = ("The primary event's structure spans more than one playing day - its sheet says the"
+                note = ("The primary event's table spans more than one playing day - its sheet says the"
                         " flight plays until about 12.5% of the field remains and that Day 2 resumes at a"
-                        " printed clock - so the official sources give this day no end time to plan against.")
+                        " printed clock - so the official sources give this day no ceiling to plan against.")
             elif p_end is None:
-                note = ("No structure sheet was published for the primary event, so it has no end time at all"
-                        " and no second event can be promised after it.")
+                note = ("No structure sheet was published for the primary event, so it has no end time at"
+                        " all and no second event can be promised after it.")
             elif basis == "satellite_maximum":
                 note = ("The primary event is a satellite, which its own sheet concludes as soon as the"
                         " remaining seats are awarded; nothing prints when that happens, so no second event"
@@ -1454,7 +1451,7 @@ def build_schedule(rows):
                         " primary's own table ends at %s - the day is planned around the primary alone."
                         % clock_label(p_end))
         elif fallback_kind == "join in progress":
-            note = ("Conditional fallback: even at the end of the primary's printed structure (%s) you are"
+            note = ("Conditional fallback: even at the end of the primary's published table (%s) you are"
                     " still inside %s's entry window, which closes at %s - plan on sitting down in progress."
                     % (clock_label(p_end), fallback["name"],
                        fallback.get("late_reg_close") or fallback["start"]))
@@ -1467,7 +1464,8 @@ def build_schedule(rows):
                         "prize_text": e.get("prize_text"), "entry_status": e["entry_status"],
                         "labels": e["labels"], "late_reg_close": e.get("late_reg_close"),
                         "est_end": e.get("est_end"), "est_duration_min": e.get("est_duration_min"),
-                        "est_end_next_day": est_abs_end(e) is not None and est_abs_end(e) >= 24 * 60,
+                        "est_end_next_day": bool(e.get("est_end") and e.get("est_duration_min") is not None
+                                                 and end_minutes(e) >= 24 * 60),
                         "duration_basis": duration_basis(e),
                         "source": e["sources"][-1]["url"]} for e in events],
             "primary_id": primary["id"] if primary else None,
@@ -1479,37 +1477,40 @@ def build_schedule(rows):
             "conflicts_join_in_progress": sum(1 for c in conflicts if c["kind"] == "join_in_progress"),
             "alternatives": alternatives,
         })
-    # Self-check: a day plan must never publish the defect it exists to detect.
+    # Self-check: the day plan must never publish the defect it exists to detect.
     for day in plan:
         by_id = {e["id"]: e for e in day["events"]}
         if day.get("fallback_id"):
             p, f = by_id[day["primary_id"]], by_id[day["fallback_id"]]
             pe = seq_end(p)
             if pe is None or pe > entry_deadline(f):
-                raise SystemExit("build_schedule: %s publishes an unplayable fallback %s -> %s"
+                raise SystemExit("build_schedule: %s publishes an unenterable fallback %s -> %s"
                                  % (day["date"], p["id"], f["id"]))
         for c in day["conflicts"]:
             a_end = seq_end(by_id[c["a"]])
-            ok = a_end > (entry_deadline(by_id[c["b"]]) if c["kind"] == "unplannable"
-                          else to_min(by_id[c["b"]]["start"]))
+            if c["kind"] == "join_in_progress":
+                ok = a_end is not None and to_min(by_id[c["b"]]["start"]) < a_end <= entry_deadline(by_id[c["b"]])
+            elif by_id[c["a"]]["start"] == by_id[c["b"]]["start"]:
+                ok = True                      # same-instant pairs need no estimate
+            else:
+                ok = a_end is not None and a_end > entry_deadline(by_id[c["b"]])
             if not ok:
-                raise SystemExit("build_schedule: %s flags a conflict that is not one (%s/%s)"
-                                 % (day["date"], c["a"], c["b"]))
+                raise SystemExit("build_schedule: %s flags a %s pair that the published tables do not "
+                                 "support (%s/%s)" % (day["date"], c["kind"], c["a"], c["b"]))
     starts = sorted({r["start"] for r in rows if r["kind"] == "entry"})
     return {"verified_on": VERIFIED_ON, "days": plan,
             "earliest_listed_start": starts[0] if starts else None,
-            "note": "Structure end times are calculated from the published level table (levels x level length "
-                    "plus the published breaks). They are a MAXIMUM, not an official finish time: no Venetian "
-                    "sheet prints an end clock, and each event ends when its field is paid (or, for a satellite, "
-                    "when its seats are awarded), which can be much earlier. They are compared as minutes from "
-                    "the start day's midnight, so an event whose table runs past midnight is marked (+1 day) "
-                    "instead of reading as an earlier finish; that also exposes flag F75, where 70 events "
-                    "labelled \"(1Day)\" carry a table that cannot fit inside a day. A day names one primary "
-                    "single-entry event and, only where the primary's table ends before the second event's entry "
-                    "closes, a conditional fallback - labelled either from the start or as a join in progress. A "
-                    "flight of a multi-day event has no same-day bound at all, so its day is never paired with a "
-                    "second event. Everything else on that date is listed as an alternative to the primary, "
-                    "never as an addition to it."}
+            "overlap_pairs": sum(len(day["conflicts"]) for day in plan),
+            "note": "Every end time here is the end of the event's own printed level table (levels x level length "
+                    "plus the published breaks), compared as minutes from the start day's midnight. It is a "
+                    "MAXIMUM, not an official finish time: no sheet in the series prints an end clock, and an event "
+                    "ends when its field is paid - or, for a satellite, when its seats are awarded - which can be "
+                    "much earlier. Of the 93 rows the official page labels \"(1Day)\", 87 carry a table that runs past "
+                    "midnight and 70 cannot fit inside a day at all (flag F75). A table spanning more than one playing day bounds its first day not at all, so "
+                    "those rows carry no ceiling and their day is never paired. A day names one primary "
+                    "single-entry event and, only where the primary cannot run past the second event's entry "
+                    "deadline, a conditional fallback labelled from the start or as a join in progress. Everything "
+                    "else on that date is listed as an alternative to the primary, never as an addition to it."}
 
 
 # ---------------- hotels ----------------

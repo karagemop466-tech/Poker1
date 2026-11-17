@@ -220,24 +220,30 @@ is applied to every routed time, and rows that fail it stay visible and flagged.
 - **Verified options:** 45 of the 70 dates carry at least one verified single-entry event, and 41 of
   them carry a cash one. The first cash single-entry event is Nov 18 (Event 2, $300 NLH, 11:10 AM).
 - **Primary and fallback:** each of the 45 dates that carries a verified single-entry event names its
-  earliest one as the primary. **No date publishes a conditional fallback.** A fallback is only
-  publishable when the primary's own level table ends before the second event's entry closes, and on
-  the 26 dates that hold two or more single-entry events, no pair satisfies that. The 24 fallbacks
-  that appeared here before 2026-11-17 were an artefact of a clock comparison that read an
-  after-midnight finish as an earlier time; that defect and its correction are recorded as F76.
-- **What is offered instead:** 26 dates list 35 alternative single-entry events, each labelled as a
-  choice to play *instead of* the primary and never as well, with the entry deadline that decides it.
+  earliest one as the primary. **No date names a conditional fallback**, and that is a corrected result
+  rather than a gap: earlier versions of this page put a fallback on 24 days, but all 24 were impossible
+  sequences - the comparison treated the stored finish time as a clock string, so a primary printed
+  11:10 AM whose own table ends at 02:55 the next day looked already finished by a 5:10 PM start (F76).
+  A fallback is published only where the primary's table cannot run past the second event's entry
+  deadline, and on the 26 dates that hold two or more single-entry events no pair satisfies that.
+- **What is offered instead:** those 26 dates list 35 alternative single-entry events, each labelled as
+  a choice to play *instead of* the primary and never as well, with the entry deadline that decides it.
 - **End times are maxima, not schedules:** 127 of the 274 entry rows carry a structure end time, and
-  every one of them is the end of the printed level table. No sheet in the series prints an end clock,
-  and 70 of them label an event "(1Day)" whose table cannot fit inside a day (F75), so a table end can
-  rule a pairing out but never prove a finishing time. Rows whose sheet spans more than one playing day
-  - the flight ends at about 12.5% of the field, per clause 3 - get no same-day bound at all, and
-  satellites are labelled with their own conclusion rule (clause 10: the field ends when the remaining
-  seats are awarded).
-- **Overlaps:** 144 row-pairs on 39 dates are flagged - 142 that no published schedule can support and
-  2 that are sensible only as a join in progress. `scripts/check_schedule.py` re-derives the whole day
-  plan from `data/tournaments.json` and fails the build if any published fallback is unenterable, any
-  flagged pair is actually playable, or any clock disagrees with its own duration.
+  every one is the end of the printed level table. No sheet in the series prints an end clock, and an
+  event ends when its field is paid (sheet #6 clause 7: "This event pays 12.5% of the field"), so a
+  table end can rule a pairing out but never prove a finish. F75 records that 87 of the 93 rows
+  labelled "(1Day)" carry a table that runs past midnight, and that 70 of the 73 non-satellite ones
+  cannot fit inside a day at all. A flight of a multi-day event is
+  refused as a ceiling for its first day altogether, because its clause 3 ends the flight "when we are
+  down to approximately 12.5% of the field remaining" and only *Day 2* has a printed clock; satellites
+  are labelled with their own conclusion rule (clause 10, seats awarded), in all 20 of their sheets.
+- **Overlaps:** 170 row-pairs across 40 dates are flagged - 168 that no published schedule can support
+  (26 of them are pairs printed at the same start time, which needs no estimate at all) and 2 that are
+  sensible only as a join in progress. An earlier draft of this section reported 271 pairs across 51
+  dates; that counted a multi-day flight's whole-event table as if it finished its first day, which the
+  sheets do not support, so the count was tightened to what the published ceilings actually prove. Each
+  flagged pair names both events, both start times, the entry deadline and the ceiling, so the reader
+  sees why the pair is refused rather than being told an impossible sequence is fine.
 - **Wynn registration opens at 8 AM for the noon events.** The official Wynn daily tournament terms
   and conditions state: *"Registration for each Event will open four (4) hours prior to the scheduled
   start of play."* The daily events start at 12 p.m., so registration opens at **8 a.m.** That is the
@@ -283,8 +289,7 @@ still unverified on the entry rule and are not counted.
    Caesars (32) do not. The same-stay price comparison across the two companies is blocked until a Wynn
    quote can be captured (see §4).
 5. Build one event per day first and only add an evening event where the earlier one can realistically
-   end. Use the day plan on the schedule page: one primary per date, plus the alternatives that can
-   replace it - never two events that the published tables cannot fit inside the same day.
+   end. Use the primary/fallback pair on the schedule page.
 6. Reconfirm schedule, rate and policy on the official page before any non-refundable payment. That is
    exactly what the dated rate log and the daily monitor are for.
 

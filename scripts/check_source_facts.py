@@ -70,6 +70,11 @@ OFFICIAL_HOSTS = (
     "mandalaybay.mgmresorts.com",
     "orleans.boydgaming.com",
     "southpointcasino.com",
+    # Session 9aad3bd2: Resorts World Las Vegas official casino-events page behind
+    # data/other_rooms.json.  Session 206debc0 logged that the weekly provenance check
+    # refused to run because this host was missing from the approved set.
+    "www.rwlasvegas.com",
+    "rwlasvegas.com",
 )
 
 
