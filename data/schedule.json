@@ -50,6 +50,7 @@
      "b": "r002",
      "a_start": "11:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "17:10",
      "detail": "$300 No Limit Hold'em 1B $75K GTD starts 17:10 while $300 No Limit Hold'em 1A $75K GTD is still estimated to run until 08:55 the next day"
     }
@@ -104,6 +105,7 @@
      "b": "r004",
      "a_start": "11:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "17:10",
      "detail": "$300 No Limit Hold'em 1D $75K GTD starts 17:10 while $300 No Limit Hold'em 1C $75K GTD is still estimated to run until 08:55 the next day"
     }
@@ -131,7 +133,7 @@
    ],
    "primary_id": "r005",
    "fallback_id": null,
-   "fallback_note": "No second single-entry event starts later on this date after the primary event is estimated to finish.",
+   "fallback_note": "The primary event is estimated to finish at 02:55, after midnight, so no later event on this calendar day can follow it. It is the only verified single-entry event on this date.",
    "conflicts": []
   },
   {
@@ -158,7 +160,7 @@
    ],
    "primary_id": "r007",
    "fallback_id": null,
-   "fallback_note": "No second single-entry event starts later on this date after the primary event is estimated to finish.",
+   "fallback_note": "No second single-entry event starts after the primary event is estimated to finish (19:25).",
    "conflicts": []
   },
   {
@@ -185,7 +187,7 @@
    ],
    "primary_id": "r008",
    "fallback_id": null,
-   "fallback_note": "No second single-entry event starts later on this date after the primary event is estimated to finish.",
+   "fallback_note": "No second single-entry event starts after the primary event is estimated to finish (19:25).",
    "conflicts": []
   },
   {
@@ -212,7 +214,7 @@
    ],
    "primary_id": "r009",
    "fallback_id": null,
-   "fallback_note": "No second single-entry event starts later on this date after the primary event is estimated to finish.",
+   "fallback_note": "No second single-entry event starts after the primary event is estimated to finish (19:25).",
    "conflicts": []
   },
   {
@@ -237,7 +239,7 @@
    ],
    "primary_id": "r010",
    "fallback_id": null,
-   "fallback_note": "No second single-entry event starts later on this date after the primary event is estimated to finish.",
+   "fallback_note": "The primary event is estimated to finish at 02:55, after midnight, so no later event on this calendar day can follow it. It is the only verified single-entry event on this date.",
    "conflicts": []
   },
   {
@@ -283,13 +285,14 @@
    ],
    "primary_id": "r012",
    "fallback_id": null,
-   "fallback_note": "No second single-entry event starts later on this date after the primary event is estimated to finish.",
+   "fallback_note": "The primary event is estimated to finish at 08:55, after midnight, so no later event on this calendar day can follow it. It is the only verified single-entry event on this date.",
    "conflicts": [
     {
      "a": "r011",
      "b": "r012",
      "a_start": "11:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "17:10",
      "detail": "$200 No Limit Hold'em Progressive Knock-Out Bounty $8K GTD (1Day) starts 17:10 while $400 No Limit Hold'em 1A $75K GTD is still estimated to run until 08:55 the next day"
     }
@@ -337,13 +340,14 @@
    ],
    "primary_id": "r014",
    "fallback_id": null,
-   "fallback_note": "No second single-entry event starts later on this date after the primary event is estimated to finish.",
+   "fallback_note": "The primary event is estimated to finish at 08:55, after midnight, so no later event on this calendar day can follow it. It is the only verified single-entry event on this date.",
    "conflicts": [
     {
      "a": "r013",
      "b": "r014",
      "a_start": "11:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "17:10",
      "detail": "$200 No Limit Hold'em Bounty $8K GTD (1Day) starts 17:10 while $400 No Limit Hold'em 1B $75K GTD is still estimated to run until 08:55 the next day"
     }
@@ -389,13 +393,14 @@
    ],
    "primary_id": "r016",
    "fallback_id": null,
-   "fallback_note": "No second single-entry event starts later on this date after the primary event is estimated to finish.",
+   "fallback_note": "The primary event is estimated to finish at 02:55, after midnight, so no later event on this calendar day can follow it. 1 other single-entry event(s) on this date start earlier or overlap it; they are listed above, not proposed as a sequence.",
    "conflicts": [
     {
      "a": "r016",
      "b": "r017",
      "a_start": "11:10",
      "a_end": "02:55 the next day",
+     "a_end_next_day": true,
      "b_start": "17:10",
      "detail": "$200 No Limit Hold'em Bounty $8K GTD (1Day) starts 17:10 while $400 No Limit Hold'em $15K GTD (1Day) is still estimated to run until 02:55 the next day"
     }
@@ -441,13 +446,14 @@
    ],
    "primary_id": "r018",
    "fallback_id": null,
-   "fallback_note": "No second single-entry event starts later on this date after the primary event is estimated to finish.",
+   "fallback_note": "The primary event is estimated to finish at 02:55, after midnight, so no later event on this calendar day can follow it. 1 other single-entry event(s) on this date start earlier or overlap it; they are listed above, not proposed as a sequence.",
    "conflicts": [
     {
      "a": "r018",
      "b": "r019",
      "a_start": "11:10",
      "a_end": "02:55 the next day",
+     "a_end_next_day": true,
      "b_start": "17:10",
      "detail": "$200 No Limit Hold'em Bounty $8K GTD (1Day) starts 17:10 while $300 No Limit Hold'em $10K GTD (1Day) is still estimated to run until 02:55 the next day"
     }
@@ -561,13 +567,14 @@
    ],
    "primary_id": "r021",
    "fallback_id": null,
-   "fallback_note": "No second single-entry event starts later on this date after the primary event is estimated to finish.",
+   "fallback_note": "The primary event is estimated to finish at 02:55, after midnight, so no later event on this calendar day can follow it. 1 other single-entry event(s) on this date start earlier or overlap it; they are listed above, not proposed as a sequence.",
    "conflicts": [
     {
      "a": "r021",
      "b": "r022",
      "a_start": "11:10",
      "a_end": "02:55 the next day",
+     "a_end_next_day": true,
      "b_start": "12:00",
      "detail": "TORSE starts 12:00 while $600 No Limit Hold'em $30K GTD (1Day) is still estimated to run until 02:55 the next day"
     },
@@ -576,6 +583,7 @@
      "b": "r023",
      "a_start": "11:10",
      "a_end": "02:55 the next day",
+     "a_end_next_day": true,
      "b_start": "13:00",
      "detail": "PLO starts 13:00 while $600 No Limit Hold'em $30K GTD (1Day) is still estimated to run until 02:55 the next day"
     },
@@ -584,6 +592,7 @@
      "b": "r024",
      "a_start": "11:10",
      "a_end": "02:55 the next day",
+     "a_end_next_day": true,
      "b_start": "17:00",
      "detail": "No Limit Hold'em Day 1B starts 17:00 while $600 No Limit Hold'em $30K GTD (1Day) is still estimated to run until 02:55 the next day"
     },
@@ -592,6 +601,7 @@
      "b": "r025",
      "a_start": "11:10",
      "a_end": "02:55 the next day",
+     "a_end_next_day": true,
      "b_start": "17:10",
      "detail": "$200 No Limit Hold'em Bounty $8K GTD (1Day) starts 17:10 while $600 No Limit Hold'em $30K GTD (1Day) is still estimated to run until 02:55 the next day"
     }
@@ -711,13 +721,14 @@
    ],
    "primary_id": "r027",
    "fallback_id": null,
-   "fallback_note": "No second single-entry event starts later on this date after the primary event is estimated to finish.",
+   "fallback_note": "The primary event is estimated to finish at 02:55, after midnight, so no later event on this calendar day can follow it. 1 other single-entry event(s) on this date start earlier or overlap it; they are listed above, not proposed as a sequence.",
    "conflicts": [
     {
      "a": "r027",
      "b": "r028",
      "a_start": "11:10",
      "a_end": "02:55 the next day",
+     "a_end_next_day": true,
      "b_start": "12:00",
      "detail": "Mixed Triple Draw (A-5, 2-7, Badugi) starts 12:00 while $600 No Limit Hold'em Bounty $30K GTD (1Day) - $200 bounties to start & $500 bounties in the money is still estimated to run until 02:55 the next day"
     },
@@ -726,6 +737,7 @@
      "b": "r029",
      "a_start": "11:10",
      "a_end": "02:55 the next day",
+     "a_end_next_day": true,
      "b_start": "12:10",
      "detail": "$400 Pot Limit Omaha Bounty $15K GTD (1Day) starts 12:10 while $600 No Limit Hold'em Bounty $30K GTD (1Day) - $200 bounties to start & $500 bounties in the money is still estimated to run until 02:55 the next day"
     },
@@ -734,6 +746,7 @@
      "b": "r030",
      "a_start": "11:10",
      "a_end": "02:55 the next day",
+     "a_end_next_day": true,
      "b_start": "17:00",
      "detail": "No Limit Hold'em Day 1D starts 17:00 while $600 No Limit Hold'em Bounty $30K GTD (1Day) - $200 bounties to start & $500 bounties in the money is still estimated to run until 02:55 the next day"
     },
@@ -742,6 +755,7 @@
      "b": "r031",
      "a_start": "11:10",
      "a_end": "02:55 the next day",
+     "a_end_next_day": true,
      "b_start": "17:10",
      "detail": "$200 NLH PokerAtlas Valuetown Bounty $20K GTD (1Day) - PokerAtlas PRO member $20 rake discount starts 17:10 while $600 No Limit Hold'em Bounty $30K GTD (1Day) - $200 bounties to start & $500 bounties in the money is still estimated to run until 02:55 the next day"
     },
@@ -750,6 +764,7 @@
      "b": "r030",
      "a_start": "12:10",
      "a_end": "03:55 the next day",
+     "a_end_next_day": true,
      "b_start": "17:00",
      "detail": "No Limit Hold'em Day 1D starts 17:00 while $400 Pot Limit Omaha Bounty $15K GTD (1Day) is still estimated to run until 03:55 the next day"
     },
@@ -758,6 +773,7 @@
      "b": "r031",
      "a_start": "12:10",
      "a_end": "03:55 the next day",
+     "a_end_next_day": true,
      "b_start": "17:10",
      "detail": "$200 NLH PokerAtlas Valuetown Bounty $20K GTD (1Day) - PokerAtlas PRO member $20 rake discount starts 17:10 while $400 Pot Limit Omaha Bounty $15K GTD (1Day) is still estimated to run until 03:55 the next day"
     }
@@ -860,13 +876,14 @@
    ],
    "primary_id": "r034",
    "fallback_id": null,
-   "fallback_note": "No second single-entry event starts later on this date after the primary event is estimated to finish.",
+   "fallback_note": "The primary event is estimated to finish at 03:55, after midnight, so no later event on this calendar day can follow it. 1 other single-entry event(s) on this date start earlier or overlap it; they are listed above, not proposed as a sequence.",
    "conflicts": [
     {
      "a": "r033",
      "b": "r034",
      "a_start": "11:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "12:10",
      "detail": "$300 Pot Limit Omaha Double Board Bomb Pot $10K GTD (1Day) starts 12:10 while $400 No Limit Hold'em 1A $75K GTD is still estimated to run until 08:55 the next day"
     },
@@ -875,6 +892,7 @@
      "b": "r035",
      "a_start": "11:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "17:10",
      "detail": "$200 No Limit Hold'em Bounty $8K GTD (1Day) starts 17:10 while $400 No Limit Hold'em 1A $75K GTD is still estimated to run until 08:55 the next day"
     },
@@ -883,6 +901,7 @@
      "b": "r036",
      "a_start": "11:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "18:00",
      "detail": "No Limit Hold'em Day 1F starts 18:00 while $400 No Limit Hold'em 1A $75K GTD is still estimated to run until 08:55 the next day"
     },
@@ -891,6 +910,7 @@
      "b": "r035",
      "a_start": "12:10",
      "a_end": "03:55 the next day",
+     "a_end_next_day": true,
      "b_start": "17:10",
      "detail": "$200 No Limit Hold'em Bounty $8K GTD (1Day) starts 17:10 while $300 Pot Limit Omaha Double Board Bomb Pot $10K GTD (1Day) is still estimated to run until 03:55 the next day"
     },
@@ -899,6 +919,7 @@
      "b": "r036",
      "a_start": "12:10",
      "a_end": "03:55 the next day",
+     "a_end_next_day": true,
      "b_start": "18:00",
      "detail": "No Limit Hold'em Day 1F starts 18:00 while $300 Pot Limit Omaha Double Board Bomb Pot $10K GTD (1Day) is still estimated to run until 03:55 the next day"
     },
@@ -907,6 +928,7 @@
      "b": "r036",
      "a_start": "17:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "18:00",
      "detail": "No Limit Hold'em Day 1F starts 18:00 while $200 No Limit Hold'em Bounty $8K GTD (1Day) is still estimated to run until 08:55 the next day"
     }
@@ -1006,13 +1028,14 @@
    ],
    "primary_id": "r042",
    "fallback_id": null,
-   "fallback_note": "No second single-entry event starts later on this date after the primary event is estimated to finish.",
+   "fallback_note": "The primary event is estimated to finish at 08:55, after midnight, so no later event on this calendar day can follow it. It is the only verified single-entry event on this date.",
    "conflicts": [
     {
      "a": "r038",
      "b": "r039",
      "a_start": "11:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "12:00",
      "detail": "Limit Omaha 8 starts 12:00 while $400 No Limit Hold'em 1B $75K GTD is still estimated to run until 08:55 the next day"
     },
@@ -1021,6 +1044,7 @@
      "b": "r041",
      "a_start": "11:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "17:00",
      "detail": "No Limit Hold'em Day 1B starts 17:00 while $400 No Limit Hold'em 1B $75K GTD is still estimated to run until 08:55 the next day"
     },
@@ -1029,6 +1053,7 @@
      "b": "r042",
      "a_start": "11:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "17:10",
      "detail": "$200 No Limit Hold'em Bounty $8K GTD (1Day) starts 17:10 while $400 No Limit Hold'em 1B $75K GTD is still estimated to run until 08:55 the next day"
     }
@@ -1144,13 +1169,14 @@
    ],
    "primary_id": "r048",
    "fallback_id": null,
-   "fallback_note": "No second single-entry event starts later on this date after the primary event is estimated to finish.",
+   "fallback_note": "The primary event is estimated to finish at 08:55, after midnight, so no later event on this calendar day can follow it. It is the only verified single-entry event on this date.",
    "conflicts": [
     {
      "a": "r044",
      "b": "r045",
      "a_start": "11:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "12:00",
      "detail": "Limit Omaha 8/5/stud 8 starts 12:00 while $400 No Limit Hold'em 1C $75K GTD is still estimated to run until 08:55 the next day"
     },
@@ -1159,6 +1185,7 @@
      "b": "r046",
      "a_start": "11:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "13:00",
      "detail": "PLO starts 13:00 while $400 No Limit Hold'em 1C $75K GTD is still estimated to run until 08:55 the next day"
     },
@@ -1167,6 +1194,7 @@
      "b": "r047",
      "a_start": "11:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "17:00",
      "detail": "No Limit Hold'em Day 1D starts 17:00 while $400 No Limit Hold'em 1C $75K GTD is still estimated to run until 08:55 the next day"
     },
@@ -1175,6 +1203,7 @@
      "b": "r048",
      "a_start": "11:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "17:10",
      "detail": "$200 No Limit Hold'em Bounty $8K GTD (1Day) starts 17:10 while $400 No Limit Hold'em 1C $75K GTD is still estimated to run until 08:55 the next day"
     }
@@ -1258,13 +1287,14 @@
    ],
    "primary_id": "r049",
    "fallback_id": null,
-   "fallback_note": "No second single-entry event starts later on this date after the primary event is estimated to finish.",
+   "fallback_note": "The primary event is estimated to finish at 01:55, after midnight, so no later event on this calendar day can follow it. 1 other single-entry event(s) on this date start earlier or overlap it; they are listed above, not proposed as a sequence.",
    "conflicts": [
     {
      "a": "r049",
      "b": "r051",
      "a_start": "10:10",
      "a_end": "01:55 the next day",
+     "a_end_next_day": true,
      "b_start": "11:00",
      "detail": "No Limit Hold'em Day 1E starts 11:00 while $600 No Limit Hold'em Seniors $40K GTD (1Day) - must be 50+ years of age is still estimated to run until 01:55 the next day"
     },
@@ -1273,6 +1303,7 @@
      "b": "r052",
      "a_start": "10:10",
      "a_end": "01:55 the next day",
+     "a_end_next_day": true,
      "b_start": "17:10",
      "detail": "$200 No Limit Hold'em Bounty $8K GTD (1Day) starts 17:10 while $600 No Limit Hold'em Seniors $40K GTD (1Day) - must be 50+ years of age is still estimated to run until 01:55 the next day"
     },
@@ -1281,6 +1312,7 @@
      "b": "r053",
      "a_start": "10:10",
      "a_end": "01:55 the next day",
+     "a_end_next_day": true,
      "b_start": "18:00",
      "detail": "No Limit Hold'em Day 1F starts 18:00 while $600 No Limit Hold'em Seniors $40K GTD (1Day) - must be 50+ years of age is still estimated to run until 01:55 the next day"
     },
@@ -1289,6 +1321,7 @@
      "b": "r053",
      "a_start": "17:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "18:00",
      "detail": "No Limit Hold'em Day 1F starts 18:00 while $200 No Limit Hold'em Bounty $8K GTD (1Day) is still estimated to run until 08:55 the next day"
     }
@@ -1390,13 +1423,14 @@
    ],
    "primary_id": "r056",
    "fallback_id": null,
-   "fallback_note": "No second single-entry event starts later on this date after the primary event is estimated to finish.",
+   "fallback_note": "The primary event is estimated to finish at 03:55, after midnight, so no later event on this calendar day can follow it. It is the only verified single-entry event on this date.",
    "conflicts": [
     {
      "a": "r055",
      "b": "r056",
      "a_start": "11:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "12:10",
      "detail": "$600 BIG O $25K GTD (1Day) starts 12:10 while $800 No Limit Hold'em 1A $500K GTD is still estimated to run until 08:55 the next day"
     },
@@ -1405,6 +1439,7 @@
      "b": "r058",
      "a_start": "11:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "17:10",
      "detail": "$800 No Limit Hold'em 1B $500K GTD starts 17:10 while $800 No Limit Hold'em 1A $500K GTD is still estimated to run until 08:55 the next day"
     },
@@ -1413,6 +1448,7 @@
      "b": "r059",
      "a_start": "11:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "19:00",
      "detail": "Double Play Milestone Satellite (2 X $1,100 Ticket) starts 19:00 while $800 No Limit Hold'em 1A $500K GTD is still estimated to run until 08:55 the next day"
     },
@@ -1421,6 +1457,7 @@
      "b": "r058",
      "a_start": "12:10",
      "a_end": "03:55 the next day",
+     "a_end_next_day": true,
      "b_start": "17:10",
      "detail": "$800 No Limit Hold'em 1B $500K GTD starts 17:10 while $600 BIG O $25K GTD (1Day) is still estimated to run until 03:55 the next day"
     },
@@ -1429,6 +1466,7 @@
      "b": "r059",
      "a_start": "12:10",
      "a_end": "03:55 the next day",
+     "a_end_next_day": true,
      "b_start": "19:00",
      "detail": "Double Play Milestone Satellite (2 X $1,100 Ticket) starts 19:00 while $600 BIG O $25K GTD (1Day) is still estimated to run until 03:55 the next day"
     },
@@ -1437,6 +1475,7 @@
      "b": "r059",
      "a_start": "17:10",
      "a_end": "09:55 the next day",
+     "a_end_next_day": true,
      "b_start": "19:00",
      "detail": "Double Play Milestone Satellite (2 X $1,100 Ticket) starts 19:00 while $800 No Limit Hold'em 1B $500K GTD is still estimated to run until 09:55 the next day"
     }
@@ -1543,6 +1582,7 @@
      "b": "r062",
      "a_start": "11:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "12:00",
      "detail": "HORSE starts 12:00 while $800 No Limit Hold'em 1C $500K GTD is still estimated to run until 08:55 the next day"
     },
@@ -1551,6 +1591,7 @@
      "b": "r064",
      "a_start": "11:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "17:10",
      "detail": "$800 No Limit Hold'em 1D $500K GTD starts 17:10 while $800 No Limit Hold'em 1C $500K GTD is still estimated to run until 08:55 the next day"
     },
@@ -1559,6 +1600,7 @@
      "b": "r065",
      "a_start": "11:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "19:00",
      "detail": "Double Play Milestone Satellite (2 X $1,100 Ticket) starts 19:00 while $800 No Limit Hold'em 1C $500K GTD is still estimated to run until 08:55 the next day"
     },
@@ -1567,6 +1609,7 @@
      "b": "r065",
      "a_start": "17:10",
      "a_end": "09:55 the next day",
+     "a_end_next_day": true,
      "b_start": "19:00",
      "detail": "Double Play Milestone Satellite (2 X $1,100 Ticket) starts 19:00 while $800 No Limit Hold'em 1D $500K GTD is still estimated to run until 09:55 the next day"
     }
@@ -1659,6 +1702,7 @@
      "b": "r069",
      "a_start": "11:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "17:10",
      "detail": "$800 No Limit Hold'em 1F (Turbo) $500K GTD starts 17:10 while $800 No Limit Hold'em 1E $500K GTD is still estimated to run until 08:55 the next day"
     },
@@ -1667,6 +1711,7 @@
      "b": "r070",
      "a_start": "11:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "21:00",
      "detail": "NLH Turbo starts 21:00 while $800 No Limit Hold'em 1E $500K GTD is still estimated to run until 08:55 the next day"
     },
@@ -1675,6 +1720,7 @@
      "b": "r070",
      "a_start": "17:10",
      "a_end": "04:55 the next day",
+     "a_end_next_day": true,
      "b_start": "21:00",
      "detail": "NLH Turbo starts 21:00 while $800 No Limit Hold'em 1F (Turbo) $500K GTD is still estimated to run until 04:55 the next day"
     }
@@ -1833,13 +1879,14 @@
    ],
    "primary_id": "r073",
    "fallback_id": null,
-   "fallback_note": "No second single-entry event starts later on this date after the primary event is estimated to finish.",
+   "fallback_note": "The primary event is estimated to finish at 02:55, after midnight, so no later event on this calendar day can follow it. 1 other single-entry event(s) on this date start earlier or overlap it; they are listed above, not proposed as a sequence.",
    "conflicts": [
     {
      "a": "r071",
      "b": "r072",
      "a_start": "11:00",
      "a_end": "an unknown time (no published level structure)",
+     "a_end_next_day": false,
      "b_start": "11:00",
      "detail": "PLO Mystery Bounty Day 1A and WPT Prime Championship Day 1B both start at 11:00"
     },
@@ -1848,6 +1895,7 @@
      "b": "r075",
      "a_start": "11:10",
      "a_end": "02:55 the next day",
+     "a_end_next_day": true,
      "b_start": "12:00",
      "detail": "Milestone Satellite to $1,100 Prime Championship starts 12:00 while $600 No Limit Hold'em $40K GTD (1Day) is still estimated to run until 02:55 the next day"
     },
@@ -1856,6 +1904,7 @@
      "b": "r076",
      "a_start": "11:10",
      "a_end": "02:55 the next day",
+     "a_end_next_day": true,
      "b_start": "17:10",
      "detail": "$300 No Limit Hold'em Bounty $15K GTD (1Day) starts 17:10 while $600 No Limit Hold'em $40K GTD (1Day) is still estimated to run until 02:55 the next day"
     },
@@ -1864,6 +1913,7 @@
      "b": "r077",
      "a_start": "11:10",
      "a_end": "02:55 the next day",
+     "a_end_next_day": true,
      "b_start": "18:00",
      "detail": "PLO Mystery Bounty Day 1B starts 18:00 while $600 No Limit Hold'em $40K GTD (1Day) is still estimated to run until 02:55 the next day"
     },
@@ -1872,6 +1922,7 @@
      "b": "r078",
      "a_start": "11:10",
      "a_end": "02:55 the next day",
+     "a_end_next_day": true,
      "b_start": "19:00",
      "detail": "Double Play Milestone Satellite (2 X $1,100 Ticket) starts 19:00 while $600 No Limit Hold'em $40K GTD (1Day) is still estimated to run until 02:55 the next day"
     },
@@ -1880,6 +1931,7 @@
      "b": "r079",
      "a_start": "11:10",
      "a_end": "02:55 the next day",
+     "a_end_next_day": true,
      "b_start": "21:00",
      "detail": "NLH Turbo starts 21:00 while $600 No Limit Hold'em $40K GTD (1Day) is still estimated to run until 02:55 the next day"
     },
@@ -1888,6 +1940,7 @@
      "b": "r077",
      "a_start": "17:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "18:00",
      "detail": "PLO Mystery Bounty Day 1B starts 18:00 while $300 No Limit Hold'em Bounty $15K GTD (1Day) is still estimated to run until 08:55 the next day"
     },
@@ -1896,6 +1949,7 @@
      "b": "r078",
      "a_start": "17:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "19:00",
      "detail": "Double Play Milestone Satellite (2 X $1,100 Ticket) starts 19:00 while $300 No Limit Hold'em Bounty $15K GTD (1Day) is still estimated to run until 08:55 the next day"
     },
@@ -1904,6 +1958,7 @@
      "b": "r079",
      "a_start": "17:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "21:00",
      "detail": "NLH Turbo starts 21:00 while $300 No Limit Hold'em Bounty $15K GTD (1Day) is still estimated to run until 08:55 the next day"
     }
@@ -2040,13 +2095,14 @@
    ],
    "primary_id": "r082",
    "fallback_id": null,
-   "fallback_note": "No second single-entry event starts later on this date after the primary event is estimated to finish.",
+   "fallback_note": "The primary event is estimated to finish at 02:55, after midnight, so no later event on this calendar day can follow it. 1 other single-entry event(s) on this date start earlier or overlap it; they are listed above, not proposed as a sequence.",
    "conflicts": [
     {
      "a": "r080",
      "b": "r081",
      "a_start": "11:00",
      "a_end": "an unknown time (no published level structure)",
+     "a_end_next_day": false,
      "b_start": "11:00",
      "detail": "HORSE (2 Day) and WPT Prime Championship Day 1C both start at 11:00"
     },
@@ -2055,6 +2111,7 @@
      "b": "r084",
      "a_start": "11:10",
      "a_end": "02:55 the next day",
+     "a_end_next_day": true,
      "b_start": "13:00",
      "detail": "PLO $500 Bounty starts 13:00 while $600 No Limit Hold'em Bounty $40K GTD (1Day) - $200 bounties to start & $500 bounties in the money is still estimated to run until 02:55 the next day"
     },
@@ -2063,6 +2120,7 @@
      "b": "r085",
      "a_start": "11:10",
      "a_end": "02:55 the next day",
+     "a_end_next_day": true,
      "b_start": "17:10",
      "detail": "$300 No Limit Hold'em Bounty $15K GTD (1Day) starts 17:10 while $600 No Limit Hold'em Bounty $40K GTD (1Day) - $200 bounties to start & $500 bounties in the money is still estimated to run until 02:55 the next day"
     },
@@ -2071,6 +2129,7 @@
      "b": "r086",
      "a_start": "11:10",
      "a_end": "02:55 the next day",
+     "a_end_next_day": true,
      "b_start": "19:00",
      "detail": "Milestone Satellite Package to Prime and World Championship starts 19:00 while $600 No Limit Hold'em Bounty $40K GTD (1Day) - $200 bounties to start & $500 bounties in the money is still estimated to run until 02:55 the next day"
     },
@@ -2079,6 +2138,7 @@
      "b": "r087",
      "a_start": "11:10",
      "a_end": "02:55 the next day",
+     "a_end_next_day": true,
      "b_start": "21:00",
      "detail": "NLH Turbo starts 21:00 while $600 No Limit Hold'em Bounty $40K GTD (1Day) - $200 bounties to start & $500 bounties in the money is still estimated to run until 02:55 the next day"
     },
@@ -2087,6 +2147,7 @@
      "b": "r086",
      "a_start": "17:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "19:00",
      "detail": "Milestone Satellite Package to Prime and World Championship starts 19:00 while $300 No Limit Hold'em Bounty $15K GTD (1Day) is still estimated to run until 08:55 the next day"
     },
@@ -2095,6 +2156,7 @@
      "b": "r087",
      "a_start": "17:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "21:00",
      "detail": "NLH Turbo starts 21:00 while $300 No Limit Hold'em Bounty $15K GTD (1Day) is still estimated to run until 08:55 the next day"
     }
@@ -2217,13 +2279,14 @@
    ],
    "primary_id": "r088",
    "fallback_id": null,
-   "fallback_note": "No second single-entry event starts later on this date after the primary event is estimated to finish.",
+   "fallback_note": "The primary event is estimated to finish at 01:55, after midnight, so no later event on this calendar day can follow it. 2 other single-entry event(s) on this date start earlier or overlap it; they are listed above, not proposed as a sequence.",
    "conflicts": [
     {
      "a": "r088",
      "b": "r089",
      "a_start": "10:10",
      "a_end": "01:55 the next day",
+     "a_end_next_day": true,
      "b_start": "11:00",
      "detail": "WPT Prime Championship Day 1D starts 11:00 while $600 No Limit Hold'em Seniors $40K GTD (1Day) - must be 50+ years of age is still estimated to run until 01:55 the next day"
     },
@@ -2232,6 +2295,7 @@
      "b": "r090",
      "a_start": "10:10",
      "a_end": "01:55 the next day",
+     "a_end_next_day": true,
      "b_start": "16:10",
      "detail": "$100 NLH LIPS Ladies Milestone Satellite (1Day) - Awards Direct Entry to Event # 39 starts 16:10 while $600 No Limit Hold'em Seniors $40K GTD (1Day) - must be 50+ years of age is still estimated to run until 01:55 the next day"
     },
@@ -2240,6 +2304,7 @@
      "b": "r091",
      "a_start": "10:10",
      "a_end": "01:55 the next day",
+     "a_end_next_day": true,
      "b_start": "17:10",
      "detail": "$300 No Limit Hold'em Bounty $15K GTD (1Day) starts 17:10 while $600 No Limit Hold'em Seniors $40K GTD (1Day) - must be 50+ years of age is still estimated to run until 01:55 the next day"
     },
@@ -2248,6 +2313,7 @@
      "b": "r092",
      "a_start": "10:10",
      "a_end": "01:55 the next day",
+     "a_end_next_day": true,
      "b_start": "19:00",
      "detail": "Milestone Satellite to $10,400 World Championship starts 19:00 while $600 No Limit Hold'em Seniors $40K GTD (1Day) - must be 50+ years of age is still estimated to run until 01:55 the next day"
     },
@@ -2256,6 +2322,7 @@
      "b": "r093",
      "a_start": "10:10",
      "a_end": "01:55 the next day",
+     "a_end_next_day": true,
      "b_start": "21:00",
      "detail": "NLH Turbo starts 21:00 while $600 No Limit Hold'em Seniors $40K GTD (1Day) - must be 50+ years of age is still estimated to run until 01:55 the next day"
     },
@@ -2264,6 +2331,7 @@
      "b": "r091",
      "a_start": "16:10",
      "a_end": "03:15 the next day",
+     "a_end_next_day": true,
      "b_start": "17:10",
      "detail": "$300 No Limit Hold'em Bounty $15K GTD (1Day) starts 17:10 while $100 NLH LIPS Ladies Milestone Satellite (1Day) - Awards Direct Entry to Event # 39 is still estimated to run until 03:15 the next day"
     },
@@ -2272,6 +2340,7 @@
      "b": "r092",
      "a_start": "16:10",
      "a_end": "03:15 the next day",
+     "a_end_next_day": true,
      "b_start": "19:00",
      "detail": "Milestone Satellite to $10,400 World Championship starts 19:00 while $100 NLH LIPS Ladies Milestone Satellite (1Day) - Awards Direct Entry to Event # 39 is still estimated to run until 03:15 the next day"
     },
@@ -2280,6 +2349,7 @@
      "b": "r093",
      "a_start": "16:10",
      "a_end": "03:15 the next day",
+     "a_end_next_day": true,
      "b_start": "21:00",
      "detail": "NLH Turbo starts 21:00 while $100 NLH LIPS Ladies Milestone Satellite (1Day) - Awards Direct Entry to Event # 39 is still estimated to run until 03:15 the next day"
     },
@@ -2288,6 +2358,7 @@
      "b": "r092",
      "a_start": "17:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "19:00",
      "detail": "Milestone Satellite to $10,400 World Championship starts 19:00 while $300 No Limit Hold'em Bounty $15K GTD (1Day) is still estimated to run until 08:55 the next day"
     },
@@ -2296,6 +2367,7 @@
      "b": "r093",
      "a_start": "17:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "21:00",
      "detail": "NLH Turbo starts 21:00 while $300 No Limit Hold'em Bounty $15K GTD (1Day) is still estimated to run until 08:55 the next day"
     }
@@ -2486,13 +2558,14 @@
    ],
    "primary_id": "r094",
    "fallback_id": null,
-   "fallback_note": "No second single-entry event starts later on this date after the primary event is estimated to finish.",
+   "fallback_note": "The primary event is estimated to finish at 01:55, after midnight, so no later event on this calendar day can follow it. 3 other single-entry event(s) on this date start earlier or overlap it; they are listed above, not proposed as a sequence.",
    "conflicts": [
     {
      "a": "r094",
      "b": "r095",
      "a_start": "10:10",
      "a_end": "01:55 the next day",
+     "a_end_next_day": true,
      "b_start": "11:00",
      "detail": "No Limit Hold'em (2 Day) starts 11:00 while $600 NLH LIPS Poker Jingle Tag Team $10K GTD (1Day) - tag teams consist of female/female or female/male is still estimated to run until 01:55 the next day"
     },
@@ -2501,6 +2574,7 @@
      "b": "r096",
      "a_start": "10:10",
      "a_end": "01:55 the next day",
+     "a_end_next_day": true,
      "b_start": "11:10",
      "detail": "$800 No Limit Hold'em Bounty $75K GTD (1Day) - $200 bounties to start & $500 bounties in the money starts 11:10 while $600 NLH LIPS Poker Jingle Tag Team $10K GTD (1Day) - tag teams consist of female/female or female/male is still estimated to run until 01:55 the next day"
     },
@@ -2509,6 +2583,7 @@
      "b": "r098",
      "a_start": "10:10",
      "a_end": "01:55 the next day",
+     "a_end_next_day": true,
      "b_start": "13:00",
      "detail": "Limit Omaha 8 starts 13:00 while $600 NLH LIPS Poker Jingle Tag Team $10K GTD (1Day) - tag teams consist of female/female or female/male is still estimated to run until 01:55 the next day"
     },
@@ -2517,6 +2592,7 @@
      "b": "r099",
      "a_start": "10:10",
      "a_end": "01:55 the next day",
+     "a_end_next_day": true,
      "b_start": "13:00",
      "detail": "PLO $1,000 Bounty starts 13:00 while $600 NLH LIPS Poker Jingle Tag Team $10K GTD (1Day) - tag teams consist of female/female or female/male is still estimated to run until 01:55 the next day"
     },
@@ -2525,6 +2601,7 @@
      "b": "r100",
      "a_start": "10:10",
      "a_end": "01:55 the next day",
+     "a_end_next_day": true,
      "b_start": "14:00",
      "detail": "Milestone Satellite to $10,400 World Championship starts 14:00 while $600 NLH LIPS Poker Jingle Tag Team $10K GTD (1Day) - tag teams consist of female/female or female/male is still estimated to run until 01:55 the next day"
     },
@@ -2533,6 +2610,7 @@
      "b": "r101",
      "a_start": "10:10",
      "a_end": "01:55 the next day",
+     "a_end_next_day": true,
      "b_start": "16:10",
      "detail": "$100 NLH LIPS Ladies Milestone Satellite (1Day) - Awards Direct Entry to Event # 39 starts 16:10 while $600 NLH LIPS Poker Jingle Tag Team $10K GTD (1Day) - tag teams consist of female/female or female/male is still estimated to run until 01:55 the next day"
     },
@@ -2541,6 +2619,7 @@
      "b": "r102",
      "a_start": "10:10",
      "a_end": "01:55 the next day",
+     "a_end_next_day": true,
      "b_start": "17:10",
      "detail": "$300 No Limit Hold'em Bounty $15K GTD (1Day) starts 17:10 while $600 NLH LIPS Poker Jingle Tag Team $10K GTD (1Day) - tag teams consist of female/female or female/male is still estimated to run until 01:55 the next day"
     },
@@ -2549,6 +2628,7 @@
      "b": "r103",
      "a_start": "10:10",
      "a_end": "01:55 the next day",
+     "a_end_next_day": true,
      "b_start": "19:00",
      "detail": "Milestone Satellite to $10,400 World Championship starts 19:00 while $600 NLH LIPS Poker Jingle Tag Team $10K GTD (1Day) - tag teams consist of female/female or female/male is still estimated to run until 01:55 the next day"
     },
@@ -2557,6 +2637,7 @@
      "b": "r104",
      "a_start": "10:10",
      "a_end": "01:55 the next day",
+     "a_end_next_day": true,
      "b_start": "21:00",
      "detail": "NLH Turbo starts 21:00 while $600 NLH LIPS Poker Jingle Tag Team $10K GTD (1Day) - tag teams consist of female/female or female/male is still estimated to run until 01:55 the next day"
     },
@@ -2565,6 +2646,7 @@
      "b": "r098",
      "a_start": "11:10",
      "a_end": "02:55 the next day",
+     "a_end_next_day": true,
      "b_start": "13:00",
      "detail": "Limit Omaha 8 starts 13:00 while $800 No Limit Hold'em Bounty $75K GTD (1Day) - $200 bounties to start & $500 bounties in the money is still estimated to run until 02:55 the next day"
     },
@@ -2573,6 +2655,7 @@
      "b": "r099",
      "a_start": "11:10",
      "a_end": "02:55 the next day",
+     "a_end_next_day": true,
      "b_start": "13:00",
      "detail": "PLO $1,000 Bounty starts 13:00 while $800 No Limit Hold'em Bounty $75K GTD (1Day) - $200 bounties to start & $500 bounties in the money is still estimated to run until 02:55 the next day"
     },
@@ -2581,6 +2664,7 @@
      "b": "r100",
      "a_start": "11:10",
      "a_end": "02:55 the next day",
+     "a_end_next_day": true,
      "b_start": "14:00",
      "detail": "Milestone Satellite to $10,400 World Championship starts 14:00 while $800 No Limit Hold'em Bounty $75K GTD (1Day) - $200 bounties to start & $500 bounties in the money is still estimated to run until 02:55 the next day"
     },
@@ -2589,6 +2673,7 @@
      "b": "r101",
      "a_start": "11:10",
      "a_end": "02:55 the next day",
+     "a_end_next_day": true,
      "b_start": "16:10",
      "detail": "$100 NLH LIPS Ladies Milestone Satellite (1Day) - Awards Direct Entry to Event # 39 starts 16:10 while $800 No Limit Hold'em Bounty $75K GTD (1Day) - $200 bounties to start & $500 bounties in the money is still estimated to run until 02:55 the next day"
     },
@@ -2597,6 +2682,7 @@
      "b": "r102",
      "a_start": "11:10",
      "a_end": "02:55 the next day",
+     "a_end_next_day": true,
      "b_start": "17:10",
      "detail": "$300 No Limit Hold'em Bounty $15K GTD (1Day) starts 17:10 while $800 No Limit Hold'em Bounty $75K GTD (1Day) - $200 bounties to start & $500 bounties in the money is still estimated to run until 02:55 the next day"
     },
@@ -2605,6 +2691,7 @@
      "b": "r103",
      "a_start": "11:10",
      "a_end": "02:55 the next day",
+     "a_end_next_day": true,
      "b_start": "19:00",
      "detail": "Milestone Satellite to $10,400 World Championship starts 19:00 while $800 No Limit Hold'em Bounty $75K GTD (1Day) - $200 bounties to start & $500 bounties in the money is still estimated to run until 02:55 the next day"
     },
@@ -2613,6 +2700,7 @@
      "b": "r104",
      "a_start": "11:10",
      "a_end": "02:55 the next day",
+     "a_end_next_day": true,
      "b_start": "21:00",
      "detail": "NLH Turbo starts 21:00 while $800 No Limit Hold'em Bounty $75K GTD (1Day) - $200 bounties to start & $500 bounties in the money is still estimated to run until 02:55 the next day"
     },
@@ -2621,6 +2709,7 @@
      "b": "r099",
      "a_start": "13:00",
      "a_end": "an unknown time (no published level structure)",
+     "a_end_next_day": false,
      "b_start": "13:00",
      "detail": "Limit Omaha 8 and PLO $1,000 Bounty both start at 13:00"
     },
@@ -2629,6 +2718,7 @@
      "b": "r102",
      "a_start": "16:10",
      "a_end": "03:15 the next day",
+     "a_end_next_day": true,
      "b_start": "17:10",
      "detail": "$300 No Limit Hold'em Bounty $15K GTD (1Day) starts 17:10 while $100 NLH LIPS Ladies Milestone Satellite (1Day) - Awards Direct Entry to Event # 39 is still estimated to run until 03:15 the next day"
     },
@@ -2637,6 +2727,7 @@
      "b": "r103",
      "a_start": "16:10",
      "a_end": "03:15 the next day",
+     "a_end_next_day": true,
      "b_start": "19:00",
      "detail": "Milestone Satellite to $10,400 World Championship starts 19:00 while $100 NLH LIPS Ladies Milestone Satellite (1Day) - Awards Direct Entry to Event # 39 is still estimated to run until 03:15 the next day"
     },
@@ -2645,6 +2736,7 @@
      "b": "r104",
      "a_start": "16:10",
      "a_end": "03:15 the next day",
+     "a_end_next_day": true,
      "b_start": "21:00",
      "detail": "NLH Turbo starts 21:00 while $100 NLH LIPS Ladies Milestone Satellite (1Day) - Awards Direct Entry to Event # 39 is still estimated to run until 03:15 the next day"
     },
@@ -2653,6 +2745,7 @@
      "b": "r103",
      "a_start": "17:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "19:00",
      "detail": "Milestone Satellite to $10,400 World Championship starts 19:00 while $300 No Limit Hold'em Bounty $15K GTD (1Day) is still estimated to run until 08:55 the next day"
     },
@@ -2661,6 +2754,7 @@
      "b": "r104",
      "a_start": "17:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "21:00",
      "detail": "NLH Turbo starts 21:00 while $300 No Limit Hold'em Bounty $15K GTD (1Day) is still estimated to run until 08:55 the next day"
     }
@@ -2788,13 +2882,14 @@
    ],
    "primary_id": "r106",
    "fallback_id": null,
-   "fallback_note": "No second single-entry event starts later on this date after the primary event is estimated to finish.",
+   "fallback_note": "The primary event is estimated to finish at 07:15, after midnight, so no later event on this calendar day can follow it. 3 other single-entry event(s) on this date start earlier or overlap it; they are listed above, not proposed as a sequence.",
    "conflicts": [
     {
      "a": "r106",
      "b": "r108",
      "a_start": "10:10",
      "a_end": "07:15 the next day",
+     "a_end_next_day": true,
      "b_start": "12:10",
      "detail": "$600 Pot Limit Omaha Bounty $25K GTD (1Day) starts 12:10 while $800 No Limit Hold'em LIPS Ladies $40K GTD (2Day) - Women in Poker main event is still estimated to run until 07:15 the next day"
     },
@@ -2803,6 +2898,7 @@
      "b": "r109",
      "a_start": "10:10",
      "a_end": "07:15 the next day",
+     "a_end_next_day": true,
      "b_start": "16:10",
      "detail": "$260 NLH Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 starts 16:10 while $800 No Limit Hold'em LIPS Ladies $40K GTD (2Day) - Women in Poker main event is still estimated to run until 07:15 the next day"
     },
@@ -2811,6 +2907,7 @@
      "b": "r110",
      "a_start": "10:10",
      "a_end": "07:15 the next day",
+     "a_end_next_day": true,
      "b_start": "17:10",
      "detail": "$300 No Limit Hold'em Bounty $15K GTD (1Day) starts 17:10 while $800 No Limit Hold'em LIPS Ladies $40K GTD (2Day) - Women in Poker main event is still estimated to run until 07:15 the next day"
     },
@@ -2819,6 +2916,7 @@
      "b": "r111",
      "a_start": "10:10",
      "a_end": "07:15 the next day",
+     "a_end_next_day": true,
      "b_start": "18:00",
      "detail": "Super Gold Million Mystery Bounty Day 1B starts 18:00 while $800 No Limit Hold'em LIPS Ladies $40K GTD (2Day) - Women in Poker main event is still estimated to run until 07:15 the next day"
     },
@@ -2827,6 +2925,7 @@
      "b": "r109",
      "a_start": "12:10",
      "a_end": "03:55 the next day",
+     "a_end_next_day": true,
      "b_start": "16:10",
      "detail": "$260 NLH Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 starts 16:10 while $600 Pot Limit Omaha Bounty $25K GTD (1Day) is still estimated to run until 03:55 the next day"
     },
@@ -2835,6 +2934,7 @@
      "b": "r110",
      "a_start": "12:10",
      "a_end": "03:55 the next day",
+     "a_end_next_day": true,
      "b_start": "17:10",
      "detail": "$300 No Limit Hold'em Bounty $15K GTD (1Day) starts 17:10 while $600 Pot Limit Omaha Bounty $25K GTD (1Day) is still estimated to run until 03:55 the next day"
     },
@@ -2843,6 +2943,7 @@
      "b": "r111",
      "a_start": "12:10",
      "a_end": "03:55 the next day",
+     "a_end_next_day": true,
      "b_start": "18:00",
      "detail": "Super Gold Million Mystery Bounty Day 1B starts 18:00 while $600 Pot Limit Omaha Bounty $25K GTD (1Day) is still estimated to run until 03:55 the next day"
     },
@@ -2851,6 +2952,7 @@
      "b": "r110",
      "a_start": "16:10",
      "a_end": "03:15 the next day",
+     "a_end_next_day": true,
      "b_start": "17:10",
      "detail": "$300 No Limit Hold'em Bounty $15K GTD (1Day) starts 17:10 while $260 NLH Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 is still estimated to run until 03:15 the next day"
     },
@@ -2859,6 +2961,7 @@
      "b": "r111",
      "a_start": "16:10",
      "a_end": "03:15 the next day",
+     "a_end_next_day": true,
      "b_start": "18:00",
      "detail": "Super Gold Million Mystery Bounty Day 1B starts 18:00 while $260 NLH Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 is still estimated to run until 03:15 the next day"
     },
@@ -2867,6 +2970,7 @@
      "b": "r111",
      "a_start": "17:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "18:00",
      "detail": "Super Gold Million Mystery Bounty Day 1B starts 18:00 while $300 No Limit Hold'em Bounty $15K GTD (1Day) is still estimated to run until 08:55 the next day"
     }
@@ -2976,13 +3080,14 @@
    ],
    "primary_id": "r114",
    "fallback_id": null,
-   "fallback_note": "No second single-entry event starts later on this date after the primary event is estimated to finish.",
+   "fallback_note": "The primary event is estimated to finish at 02:55, after midnight, so no later event on this calendar day can follow it. 2 other single-entry event(s) on this date start earlier or overlap it; they are listed above, not proposed as a sequence.",
    "conflicts": [
     {
      "a": "r114",
      "b": "r116",
      "a_start": "11:10",
      "a_end": "02:55 the next day",
+     "a_end_next_day": true,
      "b_start": "16:10",
      "detail": "$260 NLH Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 starts 16:10 while $600 No Limit Hold'em LIPS $30K GTD (1Day) - KINGS and QUEENS bounty, open to all players is still estimated to run until 02:55 the next day"
     },
@@ -2991,6 +3096,7 @@
      "b": "r117",
      "a_start": "11:10",
      "a_end": "02:55 the next day",
+     "a_end_next_day": true,
      "b_start": "18:00",
      "detail": "Super Gold Million Mystery Bounty Day 1D starts 18:00 while $600 No Limit Hold'em LIPS $30K GTD (1Day) - KINGS and QUEENS bounty, open to all players is still estimated to run until 02:55 the next day"
     },
@@ -2999,6 +3105,7 @@
      "b": "r119",
      "a_start": "11:10",
      "a_end": "02:55 the next day",
+     "a_end_next_day": true,
      "b_start": "20:10",
      "detail": "$260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 starts 20:10 while $600 No Limit Hold'em LIPS $30K GTD (1Day) - KINGS and QUEENS bounty, open to all players is still estimated to run until 02:55 the next day"
     },
@@ -3007,6 +3114,7 @@
      "b": "r117",
      "a_start": "16:10",
      "a_end": "03:15 the next day",
+     "a_end_next_day": true,
      "b_start": "18:00",
      "detail": "Super Gold Million Mystery Bounty Day 1D starts 18:00 while $260 NLH Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 is still estimated to run until 03:15 the next day"
     },
@@ -3015,6 +3123,7 @@
      "b": "r119",
      "a_start": "16:10",
      "a_end": "03:15 the next day",
+     "a_end_next_day": true,
      "b_start": "20:10",
      "detail": "$260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 starts 20:10 while $260 NLH Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 is still estimated to run until 03:15 the next day"
     }
@@ -3209,13 +3318,14 @@
    ],
    "primary_id": "r120",
    "fallback_id": null,
-   "fallback_note": "No second single-entry event starts later on this date after the primary event is estimated to finish.",
+   "fallback_note": "No second single-entry event starts after the primary event is estimated to finish (17:55).",
    "conflicts": [
     {
      "a": "r120",
      "b": "r121",
      "a_start": "09:10",
      "a_end": "17:55",
+     "a_end_next_day": false,
      "b_start": "10:00",
      "detail": "No Limit Hold'em starts 10:00 while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 is still estimated to run until 17:55"
     },
@@ -3224,6 +3334,7 @@
      "b": "r122",
      "a_start": "09:10",
      "a_end": "17:55",
+     "a_end_next_day": false,
      "b_start": "10:10",
      "detail": "$2,200 No Limit Hold'em 1A $1 Mill GTD - PokerAtlas Championship title event starts 10:10 while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 is still estimated to run until 17:55"
     },
@@ -3232,6 +3343,7 @@
      "b": "r123",
      "a_start": "09:10",
      "a_end": "17:55",
+     "a_end_next_day": false,
      "b_start": "12:10",
      "detail": "$260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 starts 12:10 while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 is still estimated to run until 17:55"
     },
@@ -3240,6 +3352,7 @@
      "b": "r124",
      "a_start": "09:10",
      "a_end": "17:55",
+     "a_end_next_day": false,
      "b_start": "13:00",
      "detail": "PLO starts 13:00 while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 is still estimated to run until 17:55"
     },
@@ -3248,6 +3361,7 @@
      "b": "r125",
      "a_start": "09:10",
      "a_end": "17:55",
+     "a_end_next_day": false,
      "b_start": "14:00",
      "detail": "Milestone Satellite to $10,400 World Championship 1A/8 starts 14:00 while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 is still estimated to run until 17:55"
     },
@@ -3256,6 +3370,7 @@
      "b": "r128",
      "a_start": "09:10",
      "a_end": "17:55",
+     "a_end_next_day": false,
      "b_start": "16:00",
      "detail": "Milestone Satellite to $10,400 Ladies NLH Championship starts 16:00 while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 is still estimated to run until 17:55"
     },
@@ -3264,6 +3379,7 @@
      "b": "r123",
      "a_start": "10:10",
      "a_end": "07:15 the next day",
+     "a_end_next_day": true,
      "b_start": "12:10",
      "detail": "$260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 starts 12:10 while $2,200 No Limit Hold'em 1A $1 Mill GTD - PokerAtlas Championship title event is still estimated to run until 07:15 the next day"
     },
@@ -3272,6 +3388,7 @@
      "b": "r124",
      "a_start": "10:10",
      "a_end": "07:15 the next day",
+     "a_end_next_day": true,
      "b_start": "13:00",
      "detail": "PLO starts 13:00 while $2,200 No Limit Hold'em 1A $1 Mill GTD - PokerAtlas Championship title event is still estimated to run until 07:15 the next day"
     },
@@ -3280,6 +3397,7 @@
      "b": "r125",
      "a_start": "10:10",
      "a_end": "07:15 the next day",
+     "a_end_next_day": true,
      "b_start": "14:00",
      "detail": "Milestone Satellite to $10,400 World Championship 1A/8 starts 14:00 while $2,200 No Limit Hold'em 1A $1 Mill GTD - PokerAtlas Championship title event is still estimated to run until 07:15 the next day"
     },
@@ -3288,6 +3406,7 @@
      "b": "r128",
      "a_start": "10:10",
      "a_end": "07:15 the next day",
+     "a_end_next_day": true,
      "b_start": "16:00",
      "detail": "Milestone Satellite to $10,400 Ladies NLH Championship starts 16:00 while $2,200 No Limit Hold'em 1A $1 Mill GTD - PokerAtlas Championship title event is still estimated to run until 07:15 the next day"
     },
@@ -3296,6 +3415,7 @@
      "b": "r129",
      "a_start": "10:10",
      "a_end": "07:15 the next day",
+     "a_end_next_day": true,
      "b_start": "18:10",
      "detail": "$2,200 No Limit Hold'em 1B $1 Mill GTD - PokerAtlas Championship title event starts 18:10 while $2,200 No Limit Hold'em 1A $1 Mill GTD - PokerAtlas Championship title event is still estimated to run until 07:15 the next day"
     },
@@ -3304,6 +3424,7 @@
      "b": "r130",
      "a_start": "10:10",
      "a_end": "07:15 the next day",
+     "a_end_next_day": true,
      "b_start": "19:00",
      "detail": "Milestone Satellite to $10,400 World Championship 1A/8 starts 19:00 while $2,200 No Limit Hold'em 1A $1 Mill GTD - PokerAtlas Championship title event is still estimated to run until 07:15 the next day"
     },
@@ -3312,6 +3433,7 @@
      "b": "r131",
      "a_start": "10:10",
      "a_end": "07:15 the next day",
+     "a_end_next_day": true,
      "b_start": "21:00",
      "detail": "NLH Turbo starts 21:00 while $2,200 No Limit Hold'em 1A $1 Mill GTD - PokerAtlas Championship title event is still estimated to run until 07:15 the next day"
     },
@@ -3320,6 +3442,7 @@
      "b": "r124",
      "a_start": "12:10",
      "a_end": "20:55",
+     "a_end_next_day": false,
      "b_start": "13:00",
      "detail": "PLO starts 13:00 while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 is still estimated to run until 20:55"
     },
@@ -3328,6 +3451,7 @@
      "b": "r125",
      "a_start": "12:10",
      "a_end": "20:55",
+     "a_end_next_day": false,
      "b_start": "14:00",
      "detail": "Milestone Satellite to $10,400 World Championship 1A/8 starts 14:00 while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 is still estimated to run until 20:55"
     },
@@ -3336,6 +3460,7 @@
      "b": "r128",
      "a_start": "12:10",
      "a_end": "20:55",
+     "a_end_next_day": false,
      "b_start": "16:00",
      "detail": "Milestone Satellite to $10,400 Ladies NLH Championship starts 16:00 while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 is still estimated to run until 20:55"
     },
@@ -3344,6 +3469,7 @@
      "b": "r129",
      "a_start": "12:10",
      "a_end": "20:55",
+     "a_end_next_day": false,
      "b_start": "18:10",
      "detail": "$2,200 No Limit Hold'em 1B $1 Mill GTD - PokerAtlas Championship title event starts 18:10 while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 is still estimated to run until 20:55"
     },
@@ -3352,6 +3478,7 @@
      "b": "r130",
      "a_start": "12:10",
      "a_end": "20:55",
+     "a_end_next_day": false,
      "b_start": "19:00",
      "detail": "Milestone Satellite to $10,400 World Championship 1A/8 starts 19:00 while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 is still estimated to run until 20:55"
     },
@@ -3360,6 +3487,7 @@
      "b": "r130",
      "a_start": "18:10",
      "a_end": "10:55 the next day",
+     "a_end_next_day": true,
      "b_start": "19:00",
      "detail": "Milestone Satellite to $10,400 World Championship 1A/8 starts 19:00 while $2,200 No Limit Hold'em 1B $1 Mill GTD - PokerAtlas Championship title event is still estimated to run until 10:55 the next day"
     },
@@ -3368,6 +3496,7 @@
      "b": "r131",
      "a_start": "18:10",
      "a_end": "10:55 the next day",
+     "a_end_next_day": true,
      "b_start": "21:00",
      "detail": "NLH Turbo starts 21:00 while $2,200 No Limit Hold'em 1B $1 Mill GTD - PokerAtlas Championship title event is still estimated to run until 10:55 the next day"
     }
@@ -3541,13 +3670,14 @@
    ],
    "primary_id": "r141",
    "fallback_id": null,
-   "fallback_note": "No second single-entry event starts later on this date after the primary event is estimated to finish.",
+   "fallback_note": "The primary event is estimated to finish at 08:55, after midnight, so no later event on this calendar day can follow it. It is the only verified single-entry event on this date.",
    "conflicts": [
     {
      "a": "r132",
      "b": "r133",
      "a_start": "10:10",
      "a_end": "07:15 the next day",
+     "a_end_next_day": true,
      "b_start": "11:00",
      "detail": "Ladies NIH Championship (2 Day) starts 11:00 while $1,100 No Limit Hold'em Seniors 1A $300K GTD - must be 50+ years of age is still estimated to run until 07:15 the next day"
     },
@@ -3556,6 +3686,7 @@
      "b": "r134",
      "a_start": "10:10",
      "a_end": "07:15 the next day",
+     "a_end_next_day": true,
      "b_start": "11:00",
      "detail": "No Limit Hold'em Day 1A starts 11:00 while $1,100 No Limit Hold'em Seniors 1A $300K GTD - must be 50+ years of age is still estimated to run until 07:15 the next day"
     },
@@ -3564,6 +3695,7 @@
      "b": "r135",
      "a_start": "10:10",
      "a_end": "07:15 the next day",
+     "a_end_next_day": true,
      "b_start": "11:00",
      "detail": "TORSE (2 Day) starts 11:00 while $1,100 No Limit Hold'em Seniors 1A $300K GTD - must be 50+ years of age is still estimated to run until 07:15 the next day"
     },
@@ -3572,6 +3704,7 @@
      "b": "r136",
      "a_start": "10:10",
      "a_end": "07:15 the next day",
+     "a_end_next_day": true,
      "b_start": "11:00",
      "detail": "WPT World Championship Day 1A $1,000,000 Added starts 11:00 while $1,100 No Limit Hold'em Seniors 1A $300K GTD - must be 50+ years of age is still estimated to run until 07:15 the next day"
     },
@@ -3580,6 +3713,7 @@
      "b": "r137",
      "a_start": "10:10",
      "a_end": "07:15 the next day",
+     "a_end_next_day": true,
      "b_start": "12:00",
      "detail": "Milestone Satellite to $10,400 World Championship 1B starts 12:00 while $1,100 No Limit Hold'em Seniors 1A $300K GTD - must be 50+ years of age is still estimated to run until 07:15 the next day"
     },
@@ -3588,6 +3722,7 @@
      "b": "r138",
      "a_start": "10:10",
      "a_end": "07:15 the next day",
+     "a_end_next_day": true,
      "b_start": "12:00",
      "detail": "PLO Day 1A starts 12:00 while $1,100 No Limit Hold'em Seniors 1A $300K GTD - must be 50+ years of age is still estimated to run until 07:15 the next day"
     },
@@ -3596,6 +3731,7 @@
      "b": "r141",
      "a_start": "10:10",
      "a_end": "07:15 the next day",
+     "a_end_next_day": true,
      "b_start": "17:10",
      "detail": "$300 No Limit Hold'em Bounty $15K GTD (1Day) starts 17:10 while $1,100 No Limit Hold'em Seniors 1A $300K GTD - must be 50+ years of age is still estimated to run until 07:15 the next day"
     },
@@ -3604,6 +3740,7 @@
      "b": "r142",
      "a_start": "10:10",
      "a_end": "07:15 the next day",
+     "a_end_next_day": true,
      "b_start": "18:00",
      "detail": "Milestone Satellite to $10,400 World Championship 1B/C starts 18:00 while $1,100 No Limit Hold'em Seniors 1A $300K GTD - must be 50+ years of age is still estimated to run until 07:15 the next day"
     },
@@ -3612,6 +3749,7 @@
      "b": "r134",
      "a_start": "11:00",
      "a_end": "an unknown time (no published level structure)",
+     "a_end_next_day": false,
      "b_start": "11:00",
      "detail": "Ladies NIH Championship (2 Day) and No Limit Hold'em Day 1A both start at 11:00"
     },
@@ -3620,6 +3758,7 @@
      "b": "r135",
      "a_start": "11:00",
      "a_end": "an unknown time (no published level structure)",
+     "a_end_next_day": false,
      "b_start": "11:00",
      "detail": "Ladies NIH Championship (2 Day) and TORSE (2 Day) both start at 11:00"
     },
@@ -3628,6 +3767,7 @@
      "b": "r136",
      "a_start": "11:00",
      "a_end": "an unknown time (no published level structure)",
+     "a_end_next_day": false,
      "b_start": "11:00",
      "detail": "Ladies NIH Championship (2 Day) and WPT World Championship Day 1A $1,000,000 Added both start at 11:00"
     },
@@ -3636,6 +3776,7 @@
      "b": "r135",
      "a_start": "11:00",
      "a_end": "an unknown time (no published level structure)",
+     "a_end_next_day": false,
      "b_start": "11:00",
      "detail": "No Limit Hold'em Day 1A and TORSE (2 Day) both start at 11:00"
     },
@@ -3644,6 +3785,7 @@
      "b": "r136",
      "a_start": "11:00",
      "a_end": "an unknown time (no published level structure)",
+     "a_end_next_day": false,
      "b_start": "11:00",
      "detail": "No Limit Hold'em Day 1A and WPT World Championship Day 1A $1,000,000 Added both start at 11:00"
     },
@@ -3652,6 +3794,7 @@
      "b": "r136",
      "a_start": "11:00",
      "a_end": "an unknown time (no published level structure)",
+     "a_end_next_day": false,
      "b_start": "11:00",
      "detail": "TORSE (2 Day) and WPT World Championship Day 1A $1,000,000 Added both start at 11:00"
     },
@@ -3660,6 +3803,7 @@
      "b": "r138",
      "a_start": "12:00",
      "a_end": "an unknown time (no published level structure)",
+     "a_end_next_day": false,
      "b_start": "12:00",
      "detail": "Milestone Satellite to $10,400 World Championship 1B and PLO Day 1A both start at 12:00"
     },
@@ -3668,6 +3812,7 @@
      "b": "r142",
      "a_start": "17:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "18:00",
      "detail": "Milestone Satellite to $10,400 World Championship 1B/C starts 18:00 while $300 No Limit Hold'em Bounty $15K GTD (1Day) is still estimated to run until 08:55 the next day"
     }
@@ -3859,13 +4004,14 @@
    ],
    "primary_id": "r151",
    "fallback_id": null,
-   "fallback_note": "No second single-entry event starts later on this date after the primary event is estimated to finish.",
+   "fallback_note": "The primary event is estimated to finish at 08:55, after midnight, so no later event on this calendar day can follow it. It is the only verified single-entry event on this date.",
    "conflicts": [
     {
      "a": "r143",
      "b": "r145",
      "a_start": "10:10",
      "a_end": "07:15 the next day",
+     "a_end_next_day": true,
      "b_start": "11:00",
      "detail": "No Limit Hold'em Day 1B starts 11:00 while $1,100 No Limit Hold'em Seniors 1B $300K GTD - must be 50+ years of age is still estimated to run until 07:15 the next day"
     },
@@ -3874,6 +4020,7 @@
      "b": "r146",
      "a_start": "10:10",
      "a_end": "07:15 the next day",
+     "a_end_next_day": true,
      "b_start": "11:00",
      "detail": "WPT World Championship Day 1B $1,000,000 Added starts 11:00 while $1,100 No Limit Hold'em Seniors 1B $300K GTD - must be 50+ years of age is still estimated to run until 07:15 the next day"
     },
@@ -3882,6 +4029,7 @@
      "b": "r147",
      "a_start": "10:10",
      "a_end": "07:15 the next day",
+     "a_end_next_day": true,
      "b_start": "12:00",
      "detail": "Milestone Satellite to $10,400 World Championship 1C starts 12:00 while $1,100 No Limit Hold'em Seniors 1B $300K GTD - must be 50+ years of age is still estimated to run until 07:15 the next day"
     },
@@ -3890,6 +4038,7 @@
      "b": "r148",
      "a_start": "10:10",
      "a_end": "07:15 the next day",
+     "a_end_next_day": true,
      "b_start": "12:00",
      "detail": "Mixed Triple Draw (A-5, 2-7, Badugi) (2 Day) starts 12:00 while $1,100 No Limit Hold'em Seniors 1B $300K GTD - must be 50+ years of age is still estimated to run until 07:15 the next day"
     },
@@ -3898,6 +4047,7 @@
      "b": "r149",
      "a_start": "10:10",
      "a_end": "07:15 the next day",
+     "a_end_next_day": true,
      "b_start": "12:00",
      "detail": "PLO Day 1B starts 12:00 while $1,100 No Limit Hold'em Seniors 1B $300K GTD - must be 50+ years of age is still estimated to run until 07:15 the next day"
     },
@@ -3906,6 +4056,7 @@
      "b": "r151",
      "a_start": "10:10",
      "a_end": "07:15 the next day",
+     "a_end_next_day": true,
      "b_start": "17:10",
      "detail": "$300 No Limit Hold'em Bounty $15K GTD (1Day) starts 17:10 while $1,100 No Limit Hold'em Seniors 1B $300K GTD - must be 50+ years of age is still estimated to run until 07:15 the next day"
     },
@@ -3914,6 +4065,7 @@
      "b": "r152",
      "a_start": "10:10",
      "a_end": "07:15 the next day",
+     "a_end_next_day": true,
      "b_start": "18:00",
      "detail": "Milestone Satellite to $10,400 World Championship 1C starts 18:00 while $1,100 No Limit Hold'em Seniors 1B $300K GTD - must be 50+ years of age is still estimated to run until 07:15 the next day"
     },
@@ -3922,6 +4074,7 @@
      "b": "r153",
      "a_start": "10:10",
      "a_end": "07:15 the next day",
+     "a_end_next_day": true,
      "b_start": "19:00",
      "detail": "PLO Turbo starts 19:00 while $1,100 No Limit Hold'em Seniors 1B $300K GTD - must be 50+ years of age is still estimated to run until 07:15 the next day"
     },
@@ -3930,6 +4083,7 @@
      "b": "r154",
      "a_start": "10:10",
      "a_end": "07:15 the next day",
+     "a_end_next_day": true,
      "b_start": "21:00",
      "detail": "NIH Turbo starts 21:00 while $1,100 No Limit Hold'em Seniors 1B $300K GTD - must be 50+ years of age is still estimated to run until 07:15 the next day"
     },
@@ -3938,6 +4092,7 @@
      "b": "r146",
      "a_start": "11:00",
      "a_end": "an unknown time (no published level structure)",
+     "a_end_next_day": false,
      "b_start": "11:00",
      "detail": "No Limit Hold'em Day 1B and WPT World Championship Day 1B $1,000,000 Added both start at 11:00"
     },
@@ -3946,6 +4101,7 @@
      "b": "r148",
      "a_start": "12:00",
      "a_end": "an unknown time (no published level structure)",
+     "a_end_next_day": false,
      "b_start": "12:00",
      "detail": "Milestone Satellite to $10,400 World Championship 1C and Mixed Triple Draw (A-5, 2-7, Badugi) (2 Day) both start at 12:00"
     },
@@ -3954,6 +4110,7 @@
      "b": "r149",
      "a_start": "12:00",
      "a_end": "an unknown time (no published level structure)",
+     "a_end_next_day": false,
      "b_start": "12:00",
      "detail": "Milestone Satellite to $10,400 World Championship 1C and PLO Day 1B both start at 12:00"
     },
@@ -3962,6 +4119,7 @@
      "b": "r149",
      "a_start": "12:00",
      "a_end": "an unknown time (no published level structure)",
+     "a_end_next_day": false,
      "b_start": "12:00",
      "detail": "Mixed Triple Draw (A-5, 2-7, Badugi) (2 Day) and PLO Day 1B both start at 12:00"
     },
@@ -3970,6 +4128,7 @@
      "b": "r152",
      "a_start": "17:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "18:00",
      "detail": "Milestone Satellite to $10,400 World Championship 1C starts 18:00 while $300 No Limit Hold'em Bounty $15K GTD (1Day) is still estimated to run until 08:55 the next day"
     },
@@ -3978,6 +4137,7 @@
      "b": "r153",
      "a_start": "17:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "19:00",
      "detail": "PLO Turbo starts 19:00 while $300 No Limit Hold'em Bounty $15K GTD (1Day) is still estimated to run until 08:55 the next day"
     },
@@ -3986,6 +4146,7 @@
      "b": "r154",
      "a_start": "17:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "21:00",
      "detail": "NIH Turbo starts 21:00 while $300 No Limit Hold'em Bounty $15K GTD (1Day) is still estimated to run until 08:55 the next day"
     }
@@ -4144,13 +4305,14 @@
    ],
    "primary_id": "r159",
    "fallback_id": null,
-   "fallback_note": "No second single-entry event starts later on this date after the primary event is estimated to finish.",
+   "fallback_note": "The primary event is estimated to finish at 02:55, after midnight, so no later event on this calendar day can follow it. 1 other single-entry event(s) on this date start earlier or overlap it; they are listed above, not proposed as a sequence.",
    "conflicts": [
     {
      "a": "r156",
      "b": "r158",
      "a_start": "11:00",
      "a_end": "an unknown time (no published level structure)",
+     "a_end_next_day": false,
      "b_start": "11:00",
      "detail": "Milestone Satellite to $10,400 World Championship 1C/Day 2 and WPT World Championship Day 1C $1,000,000 Added both start at 11:00"
     },
@@ -4159,6 +4321,7 @@
      "b": "r160",
      "a_start": "11:10",
      "a_end": "02:55 the next day",
+     "a_end_next_day": true,
      "b_start": "12:00",
      "detail": "Big O starts 12:00 while $1,100 No Limit Hold'em Progressive Knock-Out Bounty $75K GTD (1Day) is still estimated to run until 02:55 the next day"
     },
@@ -4167,6 +4330,7 @@
      "b": "r162",
      "a_start": "11:10",
      "a_end": "02:55 the next day",
+     "a_end_next_day": true,
      "b_start": "13:00",
      "detail": "PLO Progressive Bounty (PKO) starts 13:00 while $1,100 No Limit Hold'em Progressive Knock-Out Bounty $75K GTD (1Day) is still estimated to run until 02:55 the next day"
     },
@@ -4175,6 +4339,7 @@
      "b": "r163",
      "a_start": "11:10",
      "a_end": "02:55 the next day",
+     "a_end_next_day": true,
      "b_start": "17:10",
      "detail": "$300 No Limit Hold'em Bounty $15K GTD (1Day) starts 17:10 while $1,100 No Limit Hold'em Progressive Knock-Out Bounty $75K GTD (1Day) is still estimated to run until 02:55 the next day"
     },
@@ -4183,6 +4348,7 @@
      "b": "r164",
      "a_start": "11:10",
      "a_end": "02:55 the next day",
+     "a_end_next_day": true,
      "b_start": "18:00",
      "detail": "Milestone Satellite to $10,400 World Championship Day 2 starts 18:00 while $1,100 No Limit Hold'em Progressive Knock-Out Bounty $75K GTD (1Day) is still estimated to run until 02:55 the next day"
     },
@@ -4191,6 +4357,7 @@
      "b": "r165",
      "a_start": "11:10",
      "a_end": "02:55 the next day",
+     "a_end_next_day": true,
      "b_start": "19:00",
      "detail": "NIH $500 Bounty Turbo starts 19:00 while $1,100 No Limit Hold'em Progressive Knock-Out Bounty $75K GTD (1Day) is still estimated to run until 02:55 the next day"
     },
@@ -4199,6 +4366,7 @@
      "b": "r164",
      "a_start": "17:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "18:00",
      "detail": "Milestone Satellite to $10,400 World Championship Day 2 starts 18:00 while $300 No Limit Hold'em Bounty $15K GTD (1Day) is still estimated to run until 08:55 the next day"
     },
@@ -4207,6 +4375,7 @@
      "b": "r165",
      "a_start": "17:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "19:00",
      "detail": "NIH $500 Bounty Turbo starts 19:00 while $300 No Limit Hold'em Bounty $15K GTD (1Day) is still estimated to run until 08:55 the next day"
     }
@@ -4374,13 +4543,14 @@
    ],
    "primary_id": "r167",
    "fallback_id": null,
-   "fallback_note": "No second single-entry event starts later on this date after the primary event is estimated to finish.",
+   "fallback_note": "The primary event is estimated to finish at 02:55, after midnight, so no later event on this calendar day can follow it. 1 other single-entry event(s) on this date start earlier or overlap it; they are listed above, not proposed as a sequence.",
    "conflicts": [
     {
      "a": "r167",
      "b": "r168",
      "a_start": "11:10",
      "a_end": "02:55 the next day",
+     "a_end_next_day": true,
      "b_start": "12:00",
      "detail": "PLO Double Board Bomb Pot starts 12:00 while $600 No Limit Hold'em Bounty $50K GTD (1Day) - $200 bounties to start & $500 bounties in the money is still estimated to run until 02:55 the next day"
     },
@@ -4389,6 +4559,7 @@
      "b": "r170",
      "a_start": "11:10",
      "a_end": "02:55 the next day",
+     "a_end_next_day": true,
      "b_start": "13:00",
      "detail": "HORSE starts 13:00 while $600 No Limit Hold'em Bounty $50K GTD (1Day) - $200 bounties to start & $500 bounties in the money is still estimated to run until 02:55 the next day"
     },
@@ -4397,6 +4568,7 @@
      "b": "r171",
      "a_start": "11:10",
      "a_end": "02:55 the next day",
+     "a_end_next_day": true,
      "b_start": "13:00",
      "detail": "PLO 6-Max starts 13:00 while $600 No Limit Hold'em Bounty $50K GTD (1Day) - $200 bounties to start & $500 bounties in the money is still estimated to run until 02:55 the next day"
     },
@@ -4405,6 +4577,7 @@
      "b": "r172",
      "a_start": "11:10",
      "a_end": "02:55 the next day",
+     "a_end_next_day": true,
      "b_start": "17:10",
      "detail": "$300 No Limit Hold'em Bounty $15K GTD (1Day) starts 17:10 while $600 No Limit Hold'em Bounty $50K GTD (1Day) - $200 bounties to start & $500 bounties in the money is still estimated to run until 02:55 the next day"
     },
@@ -4413,6 +4586,7 @@
      "b": "r173",
      "a_start": "11:10",
      "a_end": "02:55 the next day",
+     "a_end_next_day": true,
      "b_start": "18:00",
      "detail": "Milestone Satellite to $25K NIH High Roller starts 18:00 while $600 No Limit Hold'em Bounty $50K GTD (1Day) - $200 bounties to start & $500 bounties in the money is still estimated to run until 02:55 the next day"
     },
@@ -4421,6 +4595,7 @@
      "b": "r174",
      "a_start": "11:10",
      "a_end": "02:55 the next day",
+     "a_end_next_day": true,
      "b_start": "18:00",
      "detail": "Milestone Satellite to $3,000 NLH starts 18:00 while $600 No Limit Hold'em Bounty $50K GTD (1Day) - $200 bounties to start & $500 bounties in the money is still estimated to run until 02:55 the next day"
     },
@@ -4429,6 +4604,7 @@
      "b": "r175",
      "a_start": "11:10",
      "a_end": "02:55 the next day",
+     "a_end_next_day": true,
      "b_start": "19:00",
      "detail": "No Limit Hold'em Day 1B starts 19:00 while $600 No Limit Hold'em Bounty $50K GTD (1Day) - $200 bounties to start & $500 bounties in the money is still estimated to run until 02:55 the next day"
     },
@@ -4437,6 +4613,7 @@
      "b": "r171",
      "a_start": "13:00",
      "a_end": "an unknown time (no published level structure)",
+     "a_end_next_day": false,
      "b_start": "13:00",
      "detail": "HORSE and PLO 6-Max both start at 13:00"
     },
@@ -4445,6 +4622,7 @@
      "b": "r173",
      "a_start": "17:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "18:00",
      "detail": "Milestone Satellite to $25K NIH High Roller starts 18:00 while $300 No Limit Hold'em Bounty $15K GTD (1Day) is still estimated to run until 08:55 the next day"
     },
@@ -4453,6 +4631,7 @@
      "b": "r174",
      "a_start": "17:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "18:00",
      "detail": "Milestone Satellite to $3,000 NLH starts 18:00 while $300 No Limit Hold'em Bounty $15K GTD (1Day) is still estimated to run until 08:55 the next day"
     },
@@ -4461,6 +4640,7 @@
      "b": "r175",
      "a_start": "17:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "19:00",
      "detail": "No Limit Hold'em Day 1B starts 19:00 while $300 No Limit Hold'em Bounty $15K GTD (1Day) is still estimated to run until 08:55 the next day"
     },
@@ -4469,6 +4649,7 @@
      "b": "r174",
      "a_start": "18:00",
      "a_end": "an unknown time (no published level structure)",
+     "a_end_next_day": false,
      "b_start": "18:00",
      "detail": "Milestone Satellite to $25K NIH High Roller and Milestone Satellite to $3,000 NLH both start at 18:00"
     }
@@ -4641,13 +4822,14 @@
    ],
    "primary_id": "r182",
    "fallback_id": null,
-   "fallback_note": "No second single-entry event starts later on this date after the primary event is estimated to finish.",
+   "fallback_note": "The primary event is estimated to finish at 03:55, after midnight, so no later event on this calendar day can follow it. It is the only verified single-entry event on this date.",
    "conflicts": [
     {
      "a": "r176",
      "b": "r177",
      "a_start": "10:10",
      "a_end": "07:55 the next day",
+     "a_end_next_day": true,
      "b_start": "11:00",
      "detail": "Seniors NLH Championship (3 Day) starts 11:00 while $1,100 No Limit Hold'em 1A $500K GTD - $40 Rake Discount for Entries Before 10:10 a.m. is still estimated to run until 07:55 the next day"
     },
@@ -4656,6 +4838,7 @@
      "b": "r178",
      "a_start": "10:10",
      "a_end": "07:55 the next day",
+     "a_end_next_day": true,
      "b_start": "11:00",
      "detail": "Wynn Mixed Championship (2 Day) starts 11:00 while $1,100 No Limit Hold'em 1A $500K GTD - $40 Rake Discount for Entries Before 10:10 a.m. is still estimated to run until 07:55 the next day"
     },
@@ -4664,6 +4847,7 @@
      "b": "r179",
      "a_start": "10:10",
      "a_end": "07:55 the next day",
+     "a_end_next_day": true,
      "b_start": "12:00",
      "detail": "No Limit Hold'em Day 1A starts 12:00 while $1,100 No Limit Hold'em 1A $500K GTD - $40 Rake Discount for Entries Before 10:10 a.m. is still estimated to run until 07:55 the next day"
     },
@@ -4672,6 +4856,7 @@
      "b": "r182",
      "a_start": "10:10",
      "a_end": "07:55 the next day",
+     "a_end_next_day": true,
      "b_start": "12:10",
      "detail": "$600 Pot Limit Omaha Double Board Bomb Pot $25K GTD (1Day) starts 12:10 while $1,100 No Limit Hold'em 1A $500K GTD - $40 Rake Discount for Entries Before 10:10 a.m. is still estimated to run until 07:55 the next day"
     },
@@ -4680,6 +4865,7 @@
      "b": "r183",
      "a_start": "10:10",
      "a_end": "07:55 the next day",
+     "a_end_next_day": true,
      "b_start": "13:00",
      "detail": "NLH High Roller (2 Day) starts 13:00 while $1,100 No Limit Hold'em 1A $500K GTD - $40 Rake Discount for Entries Before 10:10 a.m. is still estimated to run until 07:55 the next day"
     },
@@ -4688,6 +4874,7 @@
      "b": "r184",
      "a_start": "10:10",
      "a_end": "07:55 the next day",
+     "a_end_next_day": true,
      "b_start": "14:00",
      "detail": "Milestone Satellite to $3,000 NLH starts 14:00 while $1,100 No Limit Hold'em 1A $500K GTD - $40 Rake Discount for Entries Before 10:10 a.m. is still estimated to run until 07:55 the next day"
     },
@@ -4696,6 +4883,7 @@
      "b": "r185",
      "a_start": "10:10",
      "a_end": "07:55 the next day",
+     "a_end_next_day": true,
      "b_start": "18:10",
      "detail": "$1,100 No Limit Hold'em 1B $500K GTD - $40 Rake Discount for Entries Before 6:10 p.m. starts 18:10 while $1,100 No Limit Hold'em 1A $500K GTD - $40 Rake Discount for Entries Before 10:10 a.m. is still estimated to run until 07:55 the next day"
     },
@@ -4704,6 +4892,7 @@
      "b": "r186",
      "a_start": "10:10",
      "a_end": "07:55 the next day",
+     "a_end_next_day": true,
      "b_start": "19:00",
      "detail": "Milestone Satellite to $3,000 NLH starts 19:00 while $1,100 No Limit Hold'em 1A $500K GTD - $40 Rake Discount for Entries Before 10:10 a.m. is still estimated to run until 07:55 the next day"
     },
@@ -4712,6 +4901,7 @@
      "b": "r178",
      "a_start": "11:00",
      "a_end": "an unknown time (no published level structure)",
+     "a_end_next_day": false,
      "b_start": "11:00",
      "detail": "Seniors NLH Championship (3 Day) and Wynn Mixed Championship (2 Day) both start at 11:00"
     },
@@ -4720,6 +4910,7 @@
      "b": "r183",
      "a_start": "12:10",
      "a_end": "03:55 the next day",
+     "a_end_next_day": true,
      "b_start": "13:00",
      "detail": "NLH High Roller (2 Day) starts 13:00 while $600 Pot Limit Omaha Double Board Bomb Pot $25K GTD (1Day) is still estimated to run until 03:55 the next day"
     },
@@ -4728,6 +4919,7 @@
      "b": "r184",
      "a_start": "12:10",
      "a_end": "03:55 the next day",
+     "a_end_next_day": true,
      "b_start": "14:00",
      "detail": "Milestone Satellite to $3,000 NLH starts 14:00 while $600 Pot Limit Omaha Double Board Bomb Pot $25K GTD (1Day) is still estimated to run until 03:55 the next day"
     },
@@ -4736,6 +4928,7 @@
      "b": "r185",
      "a_start": "12:10",
      "a_end": "03:55 the next day",
+     "a_end_next_day": true,
      "b_start": "18:10",
      "detail": "$1,100 No Limit Hold'em 1B $500K GTD - $40 Rake Discount for Entries Before 6:10 p.m. starts 18:10 while $600 Pot Limit Omaha Double Board Bomb Pot $25K GTD (1Day) is still estimated to run until 03:55 the next day"
     },
@@ -4744,6 +4937,7 @@
      "b": "r186",
      "a_start": "12:10",
      "a_end": "03:55 the next day",
+     "a_end_next_day": true,
      "b_start": "19:00",
      "detail": "Milestone Satellite to $3,000 NLH starts 19:00 while $600 Pot Limit Omaha Double Board Bomb Pot $25K GTD (1Day) is still estimated to run until 03:55 the next day"
     },
@@ -4752,6 +4946,7 @@
      "b": "r186",
      "a_start": "18:10",
      "a_end": "10:55 the next day",
+     "a_end_next_day": true,
      "b_start": "19:00",
      "detail": "Milestone Satellite to $3,000 NLH starts 19:00 while $1,100 No Limit Hold'em 1B $500K GTD - $40 Rake Discount for Entries Before 6:10 p.m. is still estimated to run until 10:55 the next day"
     }
@@ -4929,6 +5124,7 @@
      "b": "r189",
      "a_start": "10:10",
      "a_end": "07:55 the next day",
+     "a_end_next_day": true,
      "b_start": "12:00",
      "detail": "Limit Omaha 8 Championship (2 Day) starts 12:00 while $1,100 No Limit Hold'em 1C $500K GTD is still estimated to run until 07:55 the next day"
     },
@@ -4937,6 +5133,7 @@
      "b": "r190",
      "a_start": "10:10",
      "a_end": "07:55 the next day",
+     "a_end_next_day": true,
      "b_start": "12:00",
      "detail": "No Limit Hold'em starts 12:00 while $1,100 No Limit Hold'em 1C $500K GTD is still estimated to run until 07:55 the next day"
     },
@@ -4945,6 +5142,7 @@
      "b": "r191",
      "a_start": "10:10",
      "a_end": "07:55 the next day",
+     "a_end_next_day": true,
      "b_start": "12:00",
      "detail": "No Limit Hold'em Day 1B starts 12:00 while $1,100 No Limit Hold'em 1C $500K GTD is still estimated to run until 07:55 the next day"
     },
@@ -4953,6 +5151,7 @@
      "b": "r193",
      "a_start": "10:10",
      "a_end": "07:55 the next day",
+     "a_end_next_day": true,
      "b_start": "13:00",
      "detail": "NLH 6-Max starts 13:00 while $1,100 No Limit Hold'em 1C $500K GTD is still estimated to run until 07:55 the next day"
     },
@@ -4961,6 +5160,7 @@
      "b": "r194",
      "a_start": "10:10",
      "a_end": "07:55 the next day",
+     "a_end_next_day": true,
      "b_start": "14:00",
      "detail": "Milestone Satellite to $5,000 Seniors High Roller starts 14:00 while $1,100 No Limit Hold'em 1C $500K GTD is still estimated to run until 07:55 the next day"
     },
@@ -4969,6 +5169,7 @@
      "b": "r195",
      "a_start": "10:10",
      "a_end": "07:55 the next day",
+     "a_end_next_day": true,
      "b_start": "18:00",
      "detail": "NLH Turbo starts 18:00 while $1,100 No Limit Hold'em 1C $500K GTD is still estimated to run until 07:55 the next day"
     },
@@ -4977,6 +5178,7 @@
      "b": "r196",
      "a_start": "10:10",
      "a_end": "07:55 the next day",
+     "a_end_next_day": true,
      "b_start": "18:10",
      "detail": "$1,100 No Limit Hold'em 1D $500K GTD starts 18:10 while $1,100 No Limit Hold'em 1C $500K GTD is still estimated to run until 07:55 the next day"
     },
@@ -4985,6 +5187,7 @@
      "b": "r190",
      "a_start": "12:00",
      "a_end": "an unknown time (no published level structure)",
+     "a_end_next_day": false,
      "b_start": "12:00",
      "detail": "Limit Omaha 8 Championship (2 Day) and No Limit Hold'em both start at 12:00"
     },
@@ -4993,6 +5196,7 @@
      "b": "r191",
      "a_start": "12:00",
      "a_end": "an unknown time (no published level structure)",
+     "a_end_next_day": false,
      "b_start": "12:00",
      "detail": "Limit Omaha 8 Championship (2 Day) and No Limit Hold'em Day 1B both start at 12:00"
     },
@@ -5001,6 +5205,7 @@
      "b": "r191",
      "a_start": "12:00",
      "a_end": "an unknown time (no published level structure)",
+     "a_end_next_day": false,
      "b_start": "12:00",
      "detail": "No Limit Hold'em and No Limit Hold'em Day 1B both start at 12:00"
     }
@@ -5221,6 +5426,7 @@
      "b": "r198",
      "a_start": "10:10",
      "a_end": "07:55 the next day",
+     "a_end_next_day": true,
      "b_start": "11:00",
      "detail": "NLH Mystery Bounty Day 1A starts 11:00 while $1,100 No Limit Hold'em 1E $500K GTD is still estimated to run until 07:55 the next day"
     },
@@ -5229,6 +5435,7 @@
      "b": "r199",
      "a_start": "10:10",
      "a_end": "07:55 the next day",
+     "a_end_next_day": true,
      "b_start": "11:00",
      "detail": "Seniors High Roller (3 Day) starts 11:00 while $1,100 No Limit Hold'em 1E $500K GTD is still estimated to run until 07:55 the next day"
     },
@@ -5237,6 +5444,7 @@
      "b": "r200",
      "a_start": "10:10",
      "a_end": "07:55 the next day",
+     "a_end_next_day": true,
      "b_start": "12:00",
      "detail": "Milestone Satellite to $1,600 Mystery Bounty starts 12:00 while $1,100 No Limit Hold'em 1E $500K GTD is still estimated to run until 07:55 the next day"
     },
@@ -5245,6 +5453,7 @@
      "b": "r203",
      "a_start": "10:10",
      "a_end": "07:55 the next day",
+     "a_end_next_day": true,
      "b_start": "13:00",
      "detail": "NLH 6-Max starts 13:00 while $1,100 No Limit Hold'em 1E $500K GTD is still estimated to run until 07:55 the next day"
     },
@@ -5253,6 +5462,7 @@
      "b": "r204",
      "a_start": "10:10",
      "a_end": "07:55 the next day",
+     "a_end_next_day": true,
      "b_start": "13:00",
      "detail": "PLO starts 13:00 while $1,100 No Limit Hold'em 1E $500K GTD is still estimated to run until 07:55 the next day"
     },
@@ -5261,6 +5471,7 @@
      "b": "r205",
      "a_start": "10:10",
      "a_end": "07:55 the next day",
+     "a_end_next_day": true,
      "b_start": "13:00",
      "detail": "TORSE Championship (2 Day) starts 13:00 while $1,100 No Limit Hold'em 1E $500K GTD is still estimated to run until 07:55 the next day"
     },
@@ -5269,6 +5480,7 @@
      "b": "r206",
      "a_start": "10:10",
      "a_end": "07:55 the next day",
+     "a_end_next_day": true,
      "b_start": "17:00",
      "detail": "Milestone Satellite to $1,600 Mystery Bounty starts 17:00 while $1,100 No Limit Hold'em 1E $500K GTD is still estimated to run until 07:55 the next day"
     },
@@ -5277,6 +5489,7 @@
      "b": "r207",
      "a_start": "10:10",
      "a_end": "07:55 the next day",
+     "a_end_next_day": true,
      "b_start": "17:10",
      "detail": "$200 NLH PokerAtlas Valuetown Bounty $20K GTD (1Day) - PokerAtlas PRO member $20 rake discount starts 17:10 while $1,100 No Limit Hold'em 1E $500K GTD is still estimated to run until 07:55 the next day"
     },
@@ -5285,6 +5498,7 @@
      "b": "r208",
      "a_start": "10:10",
      "a_end": "07:55 the next day",
+     "a_end_next_day": true,
      "b_start": "18:00",
      "detail": "NLH 6-Max Turbo starts 18:00 while $1,100 No Limit Hold'em 1E $500K GTD is still estimated to run until 07:55 the next day"
     },
@@ -5293,6 +5507,7 @@
      "b": "r209",
      "a_start": "10:10",
      "a_end": "07:55 the next day",
+     "a_end_next_day": true,
      "b_start": "19:00",
      "detail": "NLH Mystery Bounty Day 1B starts 19:00 while $1,100 No Limit Hold'em 1E $500K GTD is still estimated to run until 07:55 the next day"
     },
@@ -5301,6 +5516,7 @@
      "b": "r199",
      "a_start": "11:00",
      "a_end": "an unknown time (no published level structure)",
+     "a_end_next_day": false,
      "b_start": "11:00",
      "detail": "NLH Mystery Bounty Day 1A and Seniors High Roller (3 Day) both start at 11:00"
     },
@@ -5309,6 +5525,7 @@
      "b": "r204",
      "a_start": "13:00",
      "a_end": "an unknown time (no published level structure)",
+     "a_end_next_day": false,
      "b_start": "13:00",
      "detail": "NLH 6-Max and PLO both start at 13:00"
     },
@@ -5317,6 +5534,7 @@
      "b": "r205",
      "a_start": "13:00",
      "a_end": "an unknown time (no published level structure)",
+     "a_end_next_day": false,
      "b_start": "13:00",
      "detail": "NLH 6-Max and TORSE Championship (2 Day) both start at 13:00"
     },
@@ -5325,6 +5543,7 @@
      "b": "r205",
      "a_start": "13:00",
      "a_end": "an unknown time (no published level structure)",
+     "a_end_next_day": false,
      "b_start": "13:00",
      "detail": "PLO and TORSE Championship (2 Day) both start at 13:00"
     },
@@ -5333,6 +5552,7 @@
      "b": "r208",
      "a_start": "17:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "18:00",
      "detail": "NLH 6-Max Turbo starts 18:00 while $200 NLH PokerAtlas Valuetown Bounty $20K GTD (1Day) - PokerAtlas PRO member $20 rake discount is still estimated to run until 08:55 the next day"
     },
@@ -5341,6 +5561,7 @@
      "b": "r209",
      "a_start": "17:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "19:00",
      "detail": "NLH Mystery Bounty Day 1B starts 19:00 while $200 NLH PokerAtlas Valuetown Bounty $20K GTD (1Day) - PokerAtlas PRO member $20 rake discount is still estimated to run until 08:55 the next day"
     }
@@ -5495,13 +5716,14 @@
    ],
    "primary_id": "r218",
    "fallback_id": null,
-   "fallback_note": "No second single-entry event starts later on this date after the primary event is estimated to finish.",
+   "fallback_note": "The primary event is estimated to finish at 08:55, after midnight, so no later event on this calendar day can follow it. It is the only verified single-entry event on this date.",
    "conflicts": [
     {
      "a": "r212",
      "b": "r213",
      "a_start": "11:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "12:00",
      "detail": "No Limit Hold'em starts 12:00 while $600 No Limit Hold'em 1A $150K GTD - $20 Rake Discount for Entries Before 11:10 a.m. is still estimated to run until 08:55 the next day"
     },
@@ -5510,6 +5732,7 @@
      "b": "r215",
      "a_start": "11:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "13:00",
      "detail": "Mixed Triple Draw (A-5, 2-7, Badugi) starts 13:00 while $600 No Limit Hold'em 1A $150K GTD - $20 Rake Discount for Entries Before 11:10 a.m. is still estimated to run until 08:55 the next day"
     },
@@ -5518,6 +5741,7 @@
      "b": "r216",
      "a_start": "11:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "13:00",
      "detail": "NLH 8-Max starts 13:00 while $600 No Limit Hold'em 1A $150K GTD - $20 Rake Discount for Entries Before 11:10 a.m. is still estimated to run until 08:55 the next day"
     },
@@ -5526,6 +5750,7 @@
      "b": "r218",
      "a_start": "11:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "17:10",
      "detail": "$200 No Limit Hold'em Bounty $8K GTD (1Day) starts 17:10 while $600 No Limit Hold'em 1A $150K GTD - $20 Rake Discount for Entries Before 11:10 a.m. is still estimated to run until 08:55 the next day"
     },
@@ -5534,6 +5759,7 @@
      "b": "r219",
      "a_start": "11:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "18:00",
      "detail": "5-Card PLO Turbo starts 18:00 while $600 No Limit Hold'em 1A $150K GTD - $20 Rake Discount for Entries Before 11:10 a.m. is still estimated to run until 08:55 the next day"
     },
@@ -5542,6 +5768,7 @@
      "b": "r220",
      "a_start": "11:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "19:00",
      "detail": "NLH Mystery Bounty Day 1D starts 19:00 while $600 No Limit Hold'em 1A $150K GTD - $20 Rake Discount for Entries Before 11:10 a.m. is still estimated to run until 08:55 the next day"
     },
@@ -5550,6 +5777,7 @@
      "b": "r216",
      "a_start": "13:00",
      "a_end": "an unknown time (no published level structure)",
+     "a_end_next_day": false,
      "b_start": "13:00",
      "detail": "Mixed Triple Draw (A-5, 2-7, Badugi) and NLH 8-Max both start at 13:00"
     },
@@ -5558,6 +5786,7 @@
      "b": "r219",
      "a_start": "17:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "18:00",
      "detail": "5-Card PLO Turbo starts 18:00 while $200 No Limit Hold'em Bounty $8K GTD (1Day) is still estimated to run until 08:55 the next day"
     },
@@ -5566,6 +5795,7 @@
      "b": "r220",
      "a_start": "17:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "19:00",
      "detail": "NLH Mystery Bounty Day 1D starts 19:00 while $200 No Limit Hold'em Bounty $8K GTD (1Day) is still estimated to run until 08:55 the next day"
     }
@@ -5648,13 +5878,14 @@
    ],
    "primary_id": "r224",
    "fallback_id": null,
-   "fallback_note": "No second single-entry event starts later on this date after the primary event is estimated to finish.",
+   "fallback_note": "The primary event is estimated to finish at 08:55, after midnight, so no later event on this calendar day can follow it. It is the only verified single-entry event on this date.",
    "conflicts": [
     {
      "a": "r221",
      "b": "r222",
      "a_start": "11:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "12:00",
      "detail": "No Limit Hold'em starts 12:00 while $600 No Limit Hold'em 1B $150K GTD is still estimated to run until 08:55 the next day"
     },
@@ -5663,6 +5894,7 @@
      "b": "r224",
      "a_start": "11:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "17:10",
      "detail": "$200 No Limit Hold'em Bounty $8K GTD (1Day) starts 17:10 while $600 No Limit Hold'em 1B $150K GTD is still estimated to run until 08:55 the next day"
     },
@@ -5671,6 +5903,7 @@
      "b": "r225",
      "a_start": "11:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "20:00",
      "detail": "NLH Turbo starts 20:00 while $600 No Limit Hold'em 1B $150K GTD is still estimated to run until 08:55 the next day"
     },
@@ -5679,6 +5912,7 @@
      "b": "r225",
      "a_start": "17:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "20:00",
      "detail": "NLH Turbo starts 20:00 while $200 No Limit Hold'em Bounty $8K GTD (1Day) is still estimated to run until 08:55 the next day"
     }
@@ -5727,13 +5961,14 @@
    ],
    "primary_id": "r227",
    "fallback_id": null,
-   "fallback_note": "No second single-entry event starts later on this date after the primary event is estimated to finish.",
+   "fallback_note": "The primary event is estimated to finish at 08:55, after midnight, so no later event on this calendar day can follow it. It is the only verified single-entry event on this date.",
    "conflicts": [
     {
      "a": "r226",
      "b": "r227",
      "a_start": "11:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "17:10",
      "detail": "$200 No Limit Hold'em Bounty $8K GTD (1Day) starts 17:10 while $600 No Limit Hold'em 1C $150K GTD is still estimated to run until 08:55 the next day"
     }
@@ -5779,13 +6014,14 @@
    ],
    "primary_id": "r229",
    "fallback_id": null,
-   "fallback_note": "No second single-entry event starts later on this date after the primary event is estimated to finish.",
+   "fallback_note": "The primary event is estimated to finish at 02:55, after midnight, so no later event on this calendar day can follow it. 1 other single-entry event(s) on this date start earlier or overlap it; they are listed above, not proposed as a sequence.",
    "conflicts": [
     {
      "a": "r229",
      "b": "r230",
      "a_start": "11:10",
      "a_end": "02:55 the next day",
+     "a_end_next_day": true,
      "b_start": "17:10",
      "detail": "$200 No Limit Hold'em Bounty $8K GTD (1Day) starts 17:10 while $600 No Limit Hold'em $30K GTD (1Day) is still estimated to run until 02:55 the next day"
     }
@@ -5831,13 +6067,14 @@
    ],
    "primary_id": "r231",
    "fallback_id": null,
-   "fallback_note": "No second single-entry event starts later on this date after the primary event is estimated to finish.",
+   "fallback_note": "The primary event is estimated to finish at 02:55, after midnight, so no later event on this calendar day can follow it. 1 other single-entry event(s) on this date start earlier or overlap it; they are listed above, not proposed as a sequence.",
    "conflicts": [
     {
      "a": "r231",
      "b": "r232",
      "a_start": "11:10",
      "a_end": "02:55 the next day",
+     "a_end_next_day": true,
      "b_start": "17:10",
      "detail": "$200 No Limit Hold'em Bounty $8K GTD (1Day) starts 17:10 while $400 No Limit Hold'em $15K GTD (1Day) is still estimated to run until 02:55 the next day"
     }
@@ -5883,13 +6120,14 @@
    ],
    "primary_id": "r233",
    "fallback_id": null,
-   "fallback_note": "No second single-entry event starts later on this date after the primary event is estimated to finish.",
+   "fallback_note": "The primary event is estimated to finish at 02:55, after midnight, so no later event on this calendar day can follow it. 1 other single-entry event(s) on this date start earlier or overlap it; they are listed above, not proposed as a sequence.",
    "conflicts": [
     {
      "a": "r233",
      "b": "r234",
      "a_start": "11:10",
      "a_end": "02:55 the next day",
+     "a_end_next_day": true,
      "b_start": "17:10",
      "detail": "$200 No Limit Hold'em Bounty $8K GTD (1Day) starts 17:10 while $400 No Limit Hold'em $15K GTD (1Day) is still estimated to run until 02:55 the next day"
     }
@@ -5957,13 +6195,14 @@
    ],
    "primary_id": "r235",
    "fallback_id": null,
-   "fallback_note": "No second single-entry event starts later on this date after the primary event is estimated to finish.",
+   "fallback_note": "The primary event is estimated to finish at 02:55, after midnight, so no later event on this calendar day can follow it. 2 other single-entry event(s) on this date start earlier or overlap it; they are listed above, not proposed as a sequence.",
    "conflicts": [
     {
      "a": "r235",
      "b": "r236",
      "a_start": "11:10",
      "a_end": "02:55 the next day",
+     "a_end_next_day": true,
      "b_start": "15:10",
      "detail": "$260 NLH Milestone Satellite (1Day) - Awards 1 in 5 (20%) Direct Entry into Event # 08 starts 15:10 while $600 No Limit Hold'em Bounty $40K GTD (1Day) - $200 bounties to start & $500 bounties in the money is still estimated to run until 02:55 the next day"
     },
@@ -5972,6 +6211,7 @@
      "b": "r237",
      "a_start": "11:10",
      "a_end": "02:55 the next day",
+     "a_end_next_day": true,
      "b_start": "18:10",
      "detail": "$260 NLH Milestone Satellite (1Day) - Awards 1 in 5 (20%) Direct Entry into Event # 08 starts 18:10 while $600 No Limit Hold'em Bounty $40K GTD (1Day) - $200 bounties to start & $500 bounties in the money is still estimated to run until 02:55 the next day"
     },
@@ -5980,6 +6220,7 @@
      "b": "r237",
      "a_start": "15:10",
      "a_end": "02:15 the next day",
+     "a_end_next_day": true,
      "b_start": "18:10",
      "detail": "$260 NLH Milestone Satellite (1Day) - Awards 1 in 5 (20%) Direct Entry into Event # 08 starts 18:10 while $260 NLH Milestone Satellite (1Day) - Awards 1 in 5 (20%) Direct Entry into Event # 08 is still estimated to run until 02:15 the next day"
     }
@@ -6047,13 +6288,14 @@
    ],
    "primary_id": "r239",
    "fallback_id": null,
-   "fallback_note": "No second single-entry event starts later on this date after the primary event is estimated to finish.",
+   "fallback_note": "The primary event is estimated to finish at 02:15, after midnight, so no later event on this calendar day can follow it. 1 other single-entry event(s) on this date start earlier or overlap it; they are listed above, not proposed as a sequence.",
    "conflicts": [
     {
      "a": "r238",
      "b": "r239",
      "a_start": "11:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "15:10",
      "detail": "$260 NLH Milestone Satellite (1Day) - Awards 1 in 5 (20%) Direct Entry into Event # 08 starts 15:10 while $1,100 No Limit Hold'em 1A $300K GTD - Ante Up Championship is still estimated to run until 08:55 the next day"
     },
@@ -6062,6 +6304,7 @@
      "b": "r240",
      "a_start": "11:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "18:10",
      "detail": "$260 NLH Milestone Satellite (1Day) - Awards 1 in 5 (20%) Direct Entry into Event # 08 starts 18:10 while $1,100 No Limit Hold'em 1A $300K GTD - Ante Up Championship is still estimated to run until 08:55 the next day"
     },
@@ -6070,6 +6313,7 @@
      "b": "r240",
      "a_start": "15:10",
      "a_end": "02:15 the next day",
+     "a_end_next_day": true,
      "b_start": "18:10",
      "detail": "$260 NLH Milestone Satellite (1Day) - Awards 1 in 5 (20%) Direct Entry into Event # 08 starts 18:10 while $260 NLH Milestone Satellite (1Day) - Awards 1 in 5 (20%) Direct Entry into Event # 08 is still estimated to run until 02:15 the next day"
     }
@@ -6137,13 +6381,14 @@
    ],
    "primary_id": "r242",
    "fallback_id": null,
-   "fallback_note": "No second single-entry event starts later on this date after the primary event is estimated to finish.",
+   "fallback_note": "The primary event is estimated to finish at 02:15, after midnight, so no later event on this calendar day can follow it. 1 other single-entry event(s) on this date start earlier or overlap it; they are listed above, not proposed as a sequence.",
    "conflicts": [
     {
      "a": "r241",
      "b": "r242",
      "a_start": "11:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "15:10",
      "detail": "$260 NLH Milestone Satellite (1Day) - Awards 1 in 5 (20%) Direct Entry into Event # 08 starts 15:10 while $1,100 No Limit Hold'em 1B $300K GTD - Ante Up Championship is still estimated to run until 08:55 the next day"
     },
@@ -6152,6 +6397,7 @@
      "b": "r243",
      "a_start": "11:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "18:10",
      "detail": "$260 NLH Milestone Satellite (1Day) - Awards 1 in 5 (20%) Direct Entry into Event # 08 starts 18:10 while $1,100 No Limit Hold'em 1B $300K GTD - Ante Up Championship is still estimated to run until 08:55 the next day"
     },
@@ -6160,6 +6406,7 @@
      "b": "r243",
      "a_start": "15:10",
      "a_end": "02:15 the next day",
+     "a_end_next_day": true,
      "b_start": "18:10",
      "detail": "$260 NLH Milestone Satellite (1Day) - Awards 1 in 5 (20%) Direct Entry into Event # 08 starts 18:10 while $260 NLH Milestone Satellite (1Day) - Awards 1 in 5 (20%) Direct Entry into Event # 08 is still estimated to run until 02:15 the next day"
     }
@@ -6207,13 +6454,14 @@
    ],
    "primary_id": "r245",
    "fallback_id": null,
-   "fallback_note": "No second single-entry event starts later on this date after the primary event is estimated to finish.",
+   "fallback_note": "The primary event is estimated to finish at 08:55, after midnight, so no later event on this calendar day can follow it. It is the only verified single-entry event on this date.",
    "conflicts": [
     {
      "a": "r244",
      "b": "r245",
      "a_start": "11:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "17:10",
      "detail": "$200 No Limit Hold'em Bounty $8K GTD (1Day) starts 17:10 while $1,100 No Limit Hold'em 1C $300K GTD - Ante Up Championship is still estimated to run until 08:55 the next day"
     }
@@ -6280,13 +6528,14 @@
    ],
    "primary_id": "r247",
    "fallback_id": null,
-   "fallback_note": "No second single-entry event starts later on this date after the primary event is estimated to finish.",
+   "fallback_note": "The primary event is estimated to finish at 02:55, after midnight, so no later event on this calendar day can follow it. 2 other single-entry event(s) on this date start earlier or overlap it; they are listed above, not proposed as a sequence.",
    "conflicts": [
     {
      "a": "r247",
      "b": "r248",
      "a_start": "11:10",
      "a_end": "02:55 the next day",
+     "a_end_next_day": true,
      "b_start": "15:10",
      "detail": "$200 NLH Milestone Satellite (1Day) - Awards Direct Entry into Event # 20 starts 15:10 while $600 No Limit Hold'em $50K GTD (1Day) is still estimated to run until 02:55 the next day"
     },
@@ -6295,6 +6544,7 @@
      "b": "r249",
      "a_start": "11:10",
      "a_end": "02:55 the next day",
+     "a_end_next_day": true,
      "b_start": "18:10",
      "detail": "$200 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry into Event # 20 starts 18:10 while $600 No Limit Hold'em $50K GTD (1Day) is still estimated to run until 02:55 the next day"
     },
@@ -6303,6 +6553,7 @@
      "b": "r249",
      "a_start": "15:10",
      "a_end": "02:15 the next day",
+     "a_end_next_day": true,
      "b_start": "18:10",
      "detail": "$200 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry into Event # 20 starts 18:10 while $200 NLH Milestone Satellite (1Day) - Awards Direct Entry into Event # 20 is still estimated to run until 02:15 the next day"
     }
@@ -6369,13 +6620,14 @@
    ],
    "primary_id": "r251",
    "fallback_id": null,
-   "fallback_note": "No second single-entry event starts later on this date after the primary event is estimated to finish.",
+   "fallback_note": "The primary event is estimated to finish at 02:55, after midnight, so no later event on this calendar day can follow it. 2 other single-entry event(s) on this date start earlier or overlap it; they are listed above, not proposed as a sequence.",
    "conflicts": [
     {
      "a": "r251",
      "b": "r252",
      "a_start": "11:10",
      "a_end": "02:55 the next day",
+     "a_end_next_day": true,
      "b_start": "15:10",
      "detail": "$200 NLH Milestone Satellite (1Day) - Awards Direct Entry into Event # 20 starts 15:10 while $400 No Limit Hold'em $15K GTD (1Day) is still estimated to run until 02:55 the next day"
     },
@@ -6384,6 +6636,7 @@
      "b": "r253",
      "a_start": "11:10",
      "a_end": "02:55 the next day",
+     "a_end_next_day": true,
      "b_start": "18:10",
      "detail": "$200 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry into Event # 20 starts 18:10 while $400 No Limit Hold'em $15K GTD (1Day) is still estimated to run until 02:55 the next day"
     },
@@ -6392,6 +6645,7 @@
      "b": "r253",
      "a_start": "15:10",
      "a_end": "02:15 the next day",
+     "a_end_next_day": true,
      "b_start": "18:10",
      "detail": "$200 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry into Event # 20 starts 18:10 while $200 NLH Milestone Satellite (1Day) - Awards Direct Entry into Event # 20 is still estimated to run until 02:15 the next day"
     }
@@ -6459,13 +6713,14 @@
    ],
    "primary_id": "r255",
    "fallback_id": null,
-   "fallback_note": "No second single-entry event starts later on this date after the primary event is estimated to finish.",
+   "fallback_note": "The primary event is estimated to finish at 02:15, after midnight, so no later event on this calendar day can follow it. 1 other single-entry event(s) on this date start earlier or overlap it; they are listed above, not proposed as a sequence.",
    "conflicts": [
     {
      "a": "r254",
      "b": "r255",
      "a_start": "11:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "15:10",
      "detail": "$200 NLH Milestone Satellite (1Day) - Awards Direct Entry into Event # 20 starts 15:10 while $1,600 No Limit Hold'em MSPT 1A $400K GTD - $40 Reduced Rake until the start of Level 4 is still estimated to run until 08:55 the next day"
     },
@@ -6474,6 +6729,7 @@
      "b": "r256",
      "a_start": "11:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "17:10",
      "detail": "$200 No Limit Hold'em Bounty $8K GTD (1Day) starts 17:10 while $1,600 No Limit Hold'em MSPT 1A $400K GTD - $40 Reduced Rake until the start of Level 4 is still estimated to run until 08:55 the next day"
     },
@@ -6482,6 +6738,7 @@
      "b": "r256",
      "a_start": "15:10",
      "a_end": "02:15 the next day",
+     "a_end_next_day": true,
      "b_start": "17:10",
      "detail": "$200 No Limit Hold'em Bounty $8K GTD (1Day) starts 17:10 while $200 NLH Milestone Satellite (1Day) - Awards Direct Entry into Event # 20 is still estimated to run until 02:15 the next day"
     }
@@ -6569,13 +6826,14 @@
    ],
    "primary_id": "r257",
    "fallback_id": null,
-   "fallback_note": "No second single-entry event starts later on this date after the primary event is estimated to finish.",
+   "fallback_note": "No second single-entry event starts after the primary event is estimated to finish (21:15).",
    "conflicts": [
     {
      "a": "r257",
      "b": "r258",
      "a_start": "10:10",
      "a_end": "21:15",
+     "a_end_next_day": false,
      "b_start": "11:10",
      "detail": "$1,600 No Limit Hold'em MSPT 1B $400K GTD starts 11:10 while $200 NLH Milestone Satellite (1Day) - Awards Direct Entry into Event # 20 is still estimated to run until 21:15"
     },
@@ -6584,6 +6842,7 @@
      "b": "r259",
      "a_start": "10:10",
      "a_end": "21:15",
+     "a_end_next_day": false,
      "b_start": "15:10",
      "detail": "$200 NLH Milestone Satellite (1Day) - Awards Direct Entry into Event # 20 starts 15:10 while $200 NLH Milestone Satellite (1Day) - Awards Direct Entry into Event # 20 is still estimated to run until 21:15"
     },
@@ -6592,6 +6851,7 @@
      "b": "r260",
      "a_start": "10:10",
      "a_end": "21:15",
+     "a_end_next_day": false,
      "b_start": "17:10",
      "detail": "$200 NLH PokerAtlas Valuetown Bounty $20K GTD (1Day) - PokerAtlas PRO member $20 rake discount starts 17:10 while $200 NLH Milestone Satellite (1Day) - Awards Direct Entry into Event # 20 is still estimated to run until 21:15"
     },
@@ -6600,6 +6860,7 @@
      "b": "r259",
      "a_start": "11:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "15:10",
      "detail": "$200 NLH Milestone Satellite (1Day) - Awards Direct Entry into Event # 20 starts 15:10 while $1,600 No Limit Hold'em MSPT 1B $400K GTD is still estimated to run until 08:55 the next day"
     },
@@ -6608,6 +6869,7 @@
      "b": "r260",
      "a_start": "11:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "17:10",
      "detail": "$200 NLH PokerAtlas Valuetown Bounty $20K GTD (1Day) - PokerAtlas PRO member $20 rake discount starts 17:10 while $1,600 No Limit Hold'em MSPT 1B $400K GTD is still estimated to run until 08:55 the next day"
     },
@@ -6616,6 +6878,7 @@
      "b": "r260",
      "a_start": "15:10",
      "a_end": "02:15 the next day",
+     "a_end_next_day": true,
      "b_start": "17:10",
      "detail": "$200 NLH PokerAtlas Valuetown Bounty $20K GTD (1Day) - PokerAtlas PRO member $20 rake discount starts 17:10 while $200 NLH Milestone Satellite (1Day) - Awards Direct Entry into Event # 20 is still estimated to run until 02:15 the next day"
     }
@@ -6664,13 +6927,14 @@
    ],
    "primary_id": "r262",
    "fallback_id": null,
-   "fallback_note": "No second single-entry event starts later on this date after the primary event is estimated to finish.",
+   "fallback_note": "The primary event is estimated to finish at 08:55, after midnight, so no later event on this calendar day can follow it. It is the only verified single-entry event on this date.",
    "conflicts": [
     {
      "a": "r261",
      "b": "r262",
      "a_start": "11:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "17:10",
      "detail": "$200 No Limit Hold'em Bounty $8K GTD (1Day) starts 17:10 while $1,600 No Limit Hold'em MSPT 1C $400K GTD is still estimated to run until 08:55 the next day"
     }
@@ -6727,6 +6991,7 @@
      "b": "r265",
      "a_start": "11:10",
      "a_end": "03:55 the next day",
+     "a_end_next_day": true,
      "b_start": "17:10",
      "detail": "$250 No Limit Hold'em 1B $75K GTD (1Day) - Day 1 Payouts with 5% advancing to Day 2 - $10 Reduced Rake for Entry before 5:10 PM starts 17:10 while $250 No Limit Hold'em 1A $75K GTD (1Day) - Day 1 Payouts with 5% advancing to Day 2 - $10 Reduced Rake for Entry before 11:10 AM is still estimated to run until 03:55 the next day"
     }
@@ -6783,6 +7048,7 @@
      "b": "r267",
      "a_start": "11:10",
      "a_end": "03:55 the next day",
+     "a_end_next_day": true,
      "b_start": "17:10",
      "detail": "$250 No Limit Hold'em 1D $75K GTD (1Day) - Day 1 Payouts with 5% advancing to Day 2 starts 17:10 while $250 No Limit Hold'em 1C $75K GTD (1Day) - Day 1 Payouts with 5% advancing to Day 2 is still estimated to run until 03:55 the next day"
     }
@@ -6828,13 +7094,14 @@
    ],
    "primary_id": "r268",
    "fallback_id": null,
-   "fallback_note": "No second single-entry event starts later on this date after the primary event is estimated to finish.",
+   "fallback_note": "The primary event is estimated to finish at 02:55, after midnight, so no later event on this calendar day can follow it. It is the only verified single-entry event on this date.",
    "conflicts": [
     {
      "a": "r268",
      "b": "r270",
      "a_start": "11:10",
      "a_end": "02:55 the next day",
+     "a_end_next_day": true,
      "b_start": "17:10",
      "detail": "$200 No Limit Hold'em Bounty $8K GTD (1Day) - Show Your CES Badge - $10 Rake Discount starts 17:10 while $400 No Limit Hold'em $15K GTD (1Day) is still estimated to run until 02:55 the next day"
     }
@@ -6889,6 +7156,7 @@
      "b": "r272",
      "a_start": "11:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "17:10",
      "detail": "$300 No Limit Hold'em 1B $100K GTD (1Day) - Show Your CES Badge - $10 Rake Discount starts 17:10 while $300 No Limit Hold'em 1A $100K GTD (1Day) is still estimated to run until 08:55 the next day"
     }
@@ -6943,6 +7211,7 @@
      "b": "r274",
      "a_start": "11:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "17:10",
      "detail": "$300 No Limit Hold'em 1D $100K GTD (1Day) - Show Your CES Badge - $10 Rake Discount starts 17:10 while $300 No Limit Hold'em 1C $100K GTD (1Day) is still estimated to run until 08:55 the next day"
     }
@@ -6997,6 +7266,7 @@
      "b": "r276",
      "a_start": "11:10",
      "a_end": "08:55 the next day",
+     "a_end_next_day": true,
      "b_start": "17:10",
      "detail": "$300 No Limit Hold'em 1F $100K GTD (1Day) - Show Your CES Badge - $10 Rake Discount starts 17:10 while $300 No Limit Hold'em 1E $100K GTD (1Day) is still estimated to run until 08:55 the next day"
     }
@@ -7044,13 +7314,14 @@
    ],
    "primary_id": "r277",
    "fallback_id": null,
-   "fallback_note": "No second single-entry event starts later on this date after the primary event is estimated to finish.",
+   "fallback_note": "The primary event is estimated to finish at 01:55, after midnight, so no later event on this calendar day can follow it. 1 other single-entry event(s) on this date start earlier or overlap it; they are listed above, not proposed as a sequence.",
    "conflicts": [
     {
      "a": "r277",
      "b": "r279",
      "a_start": "10:10",
      "a_end": "01:55 the next day",
+     "a_end_next_day": true,
      "b_start": "17:10",
      "detail": "$200 No Limit Hold'em Bounty $8K GTD (1Day) starts 17:10 while $400 No Limit Hold'em Seniors $20K GTD (1Day) - must be 50+ years of age is still estimated to run until 01:55 the next day"
     }
@@ -7800,5 +8071,5 @@
  ],
  "earliest_listed_start": "09:10",
  "overlap_pairs": 271,
- "note": "Estimated end times are calculated from the published level structure (levels x level length plus the published breaks). They are an estimate, not an official finish time. An end time that crosses midnight is marked as the next day rather than read as a time before its own start, and a day can hold a primary single-entry event and a conditional fallback only when the fallback starts after the primary is estimated to finish; no impossible sequence is proposed."
+ "note": "Estimated end times are calculated from the published level structure (levels x level length plus the published breaks). They are an estimate, not an official finish time. A day can hold a primary single-entry event and a conditional fallback; no impossible sequence is proposed."
 }

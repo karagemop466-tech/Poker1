@@ -25,6 +25,15 @@ re-checked on 2026-11-17.
   flights with one entry plus one re-entry each and 3 World Championship flights with "Four (4)
   Entries maximum"). A further 25 rows are continuation rows (Day 2, Day 3, final table) that never
   sell a new entry.
+- **The "play all day, as many events as possible" goal and the single-entry rule pull against each
+  other, and the data settles it: you get one single-entry event per day.** On the 45 dates with a
+  verified single-entry event, **not one date allows two of them back to back.** Every Venetian
+  one-day event is estimated at 8h45–21h05 from its own published levels: the 10:10 AM starters are
+  estimated to end at 01:55, 07:15, 19:25 or 21:15 the next day, and every 11:10 AM starter at 02:55
+  the next day, so no later same-date event can follow any of them. A vacation built on
+  single-entry events therefore yields **one entry per day**, and the day's remaining hours are the
+  post-bust window, not a second tournament. The multi-event days people picture require the re-entry
+  and multi-flight events that the brief puts in the separate section.
 - **Only 38 rows are still unverified on the entry rule** — all Wynn Signature Series, because Wynn's
   own structures PDF is still a "COMING SOON" placeholder. **No Wynn World Championship row is
   unverified any more**: the official WPT structures PDF prints 69 sheets, and every one of the 113
@@ -225,7 +234,7 @@ is applied to every routed time, and rows that fail it stay visible and flagged.
   fallback comparison treated the stored finish time as a clock string, so a primary printed 11:10 AM
   and estimated to finish at 02:55 (the next day) looked already finished by a 5:10 PM start. On 26
   dates two single-entry events are offered; on every one of them the earlier event is estimated to run
-  11 to 21 hours, so a second same-day entry is not playable. Estimated end times come from the
+  at least 8h45 (and up to 21h05), so a second same-day entry is not playable. Estimated end times come from the
   published level structure and are labelled as estimates, never as official finish times, and an
   estimate that crosses midnight is now labelled "the next day".
 - **Overlaps:** 271 row-pairs across 51 dates are flagged, which is every pair whose starts cannot be
@@ -235,6 +244,10 @@ is applied to every routed time, and rows that fail it stay visible and flagged.
   seats run out), and to days where two series both print a card. Each flagged pair is published with
   the two event names, both start times and the estimated finish, so the reader sees why it cannot be
   played rather than being told an impossible sequence is fine.
+- **What that means for the trip:** the brief's "play all day, as many events as possible" goal and the
+  single-entry rule pull against each other, and the data settles it — a single-entry vacation yields
+  **one entry per day**, and the rest of the day is the post-bust window. Playing more than once a day
+  requires the re-entry and multi-flight events kept in the separate section.
 - **Wynn registration opens at 8 AM for the noon events.** The official Wynn daily tournament terms
   and conditions state: *"Registration for each Event will open four (4) hours prior to the scheduled
   start of play."* The daily events start at 12 p.m., so registration opens at **8 a.m.** That is the

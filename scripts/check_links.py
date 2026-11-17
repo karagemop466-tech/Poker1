@@ -933,9 +933,39 @@ for directory in ("pages", "data"):
             line = text.count("\n", 0, match.start()) + 1
             problems.append(f"{rel}:{line}: unresolved merge-conflict marker {match.group(0)!r}")
 
+# --- Markdown documents are authored for a reader at the repo root, then rendered *inside*
+# /pages/*.html. A root-relative-looking link such as `pages/calculator.html` therefore used to
+# resolve to `/pages/pages/calculator.html` and 404 on the live site (16 such links were shipped).
+# The renderer now rewrites repo-relative links through mdHref(); this asserts that the helper is
+# present and that every Markdown link target actually exists once rewritten.
+MD_LINK = re.compile(r"\]\(([^)\s]+)\)")
+md_checked = 0
+app_js_path = os.path.join(ROOT, "assets", "app.js")
+if os.path.isfile(app_js_path):
+    app_js = open(app_js_path, encoding="utf-8").read()
+    if "function mdHref(" not in app_js:
+        problems.append("assets/app.js: mdHref() is missing, so Markdown links break inside /pages/")
+    elif "mdHref(url.replace" not in app_js:
+        problems.append("assets/app.js: inline() does not pass Markdown links through mdHref()")
+for rel_md in REQUIRED_SITE_DOCS + ("COORDINATION.md",):
+    path = os.path.join(ROOT, rel_md)
+    if not os.path.isfile(path):
+        continue
+    text = open(path, encoding="utf-8").read()
+    for target in MD_LINK.findall(text):
+        if re.match(r"^(?:[a-z][a-z0-9+.-]*:|//|#)", target, re.I):
+            continue
+        clean = target.split("#", 1)[0]
+        if not clean:
+            continue
+        # Authored from the repo root: the file must exist there.
+        if not os.path.exists(os.path.join(ROOT, unquote(clean))):
+            problems.append(f"{rel_md}: relative link target does not exist: {target}")
+        md_checked += 1
+
 if problems:
     print("\n".join(problems))
     sys.exit(1)
 print(f"check_links: OK ({len(checked_for_markers)} files free of conflict markers, {len(pages)} pages, {len(tournament_rows)} tournament rows, "
-      f"{len(hotel_rows)} hotels, {len(rate_entries)} dated rates, {len(schedule_days)} schedule days; "
-      f"source, rules, schedule, hotel-rate/cost, provenance and page-link checks passed)")
+      f"{len(hotel_rows)} hotels, {len(rate_entries)} dated rates, {len(schedule_days)} schedule days, "
+      f"{md_checked} markdown links; source, rules, schedule, hotel-rate/cost, provenance and page-link checks passed)")
