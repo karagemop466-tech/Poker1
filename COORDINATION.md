@@ -223,6 +223,22 @@ The repository contains a static dashboard (`index.html`, `pages/`, `assets/`), 
 - PR #23 (arena/d8a7181d-poker1 → main): https://github.com/karagemop466-tech/Poker1/pull/23 — **MERGED** (merge commit `e5b40ba`) into `main` at 2026-11-16T20:01:50Z after the `validate` check passed (`build_site.py` zero diff, `check_links` OK). Pages workflow run `43945495418` completed; the Pages API reports status `built` at https://karagemop466-tech.github.io/Poker1/. The deployed `data/daily.json` was re-read from `main` through the GitHub API and carries both new notes (registration opens four hours before start; the daily-suspension wording conflict).
 - PR #23 content: branch histories were unrelated, so it joined `main` with `--allow-unrelated-histories`. `main`'s dataset (316 rows, 80 SE) was kept over this branch's (224 rows, 50 SE). The PR adds only the Wynn registration-opening time, the daily-suspension source conflict, and the coordination record.
 
+## Session `dc86bcae` (this session) — claim, branch `arena/dc86bcae-poker1`
+
+Claimed **before implementation** on 2026-11-17. This session's branch is `arena/dc86bcae-poker1`, based on
+`main` at `bfc8951a01fb5859e511427ca2528771db0aabf0`. No other session has an unexpired claim on the files
+below; the board above records only completed/merged sessions (`baba1a15`, `f0143c13`, `f5896c06`, `40ca34e5`,
+`c44e63df`, `673f9643`, `d8a7181d`).
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Close the hotel-cost gaps that block "true cost per night": verify each property's resort fee, room tax, parking and cancellation deadline from that property's own reservation terms page; leave blank and flag anything an official page does not print | In progress | `data/hotels.json`, `scripts/build_data.py`, `research/hotels.md` | `dc86bcae` |
+| Dated rate log: add per-date official booking deep links for every property and log each quote with arrival/departure, occupancy, nightly average, resort fee, tax, parking, cancellation deadline and retrieval timestamp | In progress | `data/rates.json`, `scripts/build_data.py` | `dc86bcae` |
+| Walking-route check: verify each hotel's and venue's official street address, then fill hotel→venue walking distance/time from a map-routing measurement so the ≤30-minute rule and filter have real numbers; label the measurement source and keep it distinct from official venue claims | In progress | `data/walking.json`, `data/venues.json`, `assets/app.js`, `scripts/build_data.py` | `dc86bcae` |
+| Display the per-row `last_checked` / `verified_on` date on the tables and surface the monitor's per-row "source changed" result in the row itself | In progress | `assets/app.js`, `scripts/build_site.py` | `dc86bcae` |
+| Trip calculator: confirm entries × buy-in + nights × true hotel cost (rate + resort fee + tax + parking) and refuse to total unverified inputs | In progress | `assets/app.js`, `pages/calculator.html` | `dc86bcae` |
+| Refresh Executive Summary / Questions / Suggestions / Flagged / README with the new findings; final validation; PR to `main`, merge, Pages deploy confirmation | Unclaimed (this session, last) | `EXECUTIVE_SUMMARY.md`, `QUESTIONS.md`, `SUGGESTIONS.md`, `FLAGGED.md`, `README.md`, `COORDINATION.md` | `dc86bcae` |
+
 ## Log
 - 2026-11-16: session `40ca34e5` integrated onto `main` (which had advanced with session `baba1a15`'s
   full integration). `main`'s dataset, pages, styles, scripts and workflows were adopted unchanged; this
