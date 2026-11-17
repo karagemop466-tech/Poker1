@@ -410,3 +410,27 @@ Claimed in commit `a698b81` before implementation.
 | Review the existing planner against the requested feature list, rebuild generated pages, run source/link validation and the browser smoke test; document any verification limitations without altering factual rows | **Done** — all existing requested feature areas are present; local generators/checker and 21-page smoke test pass after dependency installation | `research/session-2026-11-17-review.md`, `COORDINATION.md` | `11c7cbe6` |
 
 Verification details and caveats are recorded in `research/session-2026-11-17-review.md`. No official operator sources were re-fetched in this pass and no facts were newly verified. The initial smoke run in this clean checkout lacked installed `jsdom`; after `npm ci --ignore-scripts --no-audit --no-fund`, all 21 pages rendered. No generated data or pages changed.
+
+## Session 3bd2f25b — final integration verification (branch `arena/3bd2f25b-poker1`)
+
+Claimed before implementation work. Base: `main` at `44fcc08`. The branch is fixed for this session.
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Final integration verification: rebuild the data, rebuild the site, run the link/rule/schedule/hotel-rate checks, render every page headlessly, and confirm GitHub Pages is built and live | **Done** | `scripts/build_data.py`, `scripts/build_site.py`, `scripts/check_links.py`, `scripts/smoke_test.js`, `.github/workflows/pages.yml`, `COORDINATION.md` | `3bd2f25b` |
+
+### Verification performed (2026-11-17)
+
+- `python3 scripts/build_data.py` → 317 tournament rows across 70 dates (2026-11-16 to 2027-01-24): SE 80 (60 cash, 20 milestone satellites), MULTI 60, RE 46, UNV 129, CONT 2; 56 flagged rows. Every row carries its official source URL and the excerpt supporting each rule field.
+- `python3 scripts/build_site.py` → 21 pages, zero diff against the committed files.
+- `python3 scripts/check_links.py` → OK: JSON schemas, local links, approved official source hosts, rule objects, schedule contract, dated rate log, provenance, and page links/fragments all pass.
+- `node scripts/smoke_test.js` → 21/21 pages render in a headless DOM with no page error.
+- GitHub Pages: status `built`, source branch `main`, path `/`, live at https://karagemop466-tech.github.io/Poker1/ ; the live landing page was fetched and shows all counts, links and subpages.
+
+### Scope note
+
+No tournament or hotel factual data was edited in this session. All user-requested features are present and verified: trip-cost calculator (entries × buy-in + nights × true hotel cost, bound to the dated rate log), dated rate log with five logged quotes, single-entry-only toggle filter, date filter, global search box, one page per venue (Venetian, Wynn, ARIA, Bellagio, Caesars), walking table with the 30-minute rule applied, scheduled source re-check (change monitoring), executive summary, questions, suggestions, flagged-for-review and review documents. Flags F1–F52 and blanks U1–U10 remain published on the Flagged for Review page with their source links and do not block publication.
+
+### Pull request / merge
+
+- PR #43 created from `arena/3bd2f25b-poker1` to `main` (https://github.com/karagemop466-tech/Poker1/pull/43); merged without waiting for review; PR link and merge result recorded below once the merge completes.
