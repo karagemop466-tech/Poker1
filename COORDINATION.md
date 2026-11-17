@@ -1058,3 +1058,68 @@ onto that `main` and contributes its own re-verification and the two deploy/moni
 - Final validation on the merged tree: 23 pages, 317 tournament rows (SE 80 / MULTI 67 / RE 107 /
   CONT 25 / UNV 38), 7 hotels, 5 dated rate quotes, 70 schedule days, `verify_rows` 1,296 field checks
   with 0 hard failures, smoke 23/23.
+
+### Session 206debc0 completion record (2026-11-17)
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| S16 — print-friendly views of every page | **Done** — one `@media print` block in `assets/style.css` (nav, search, filter bar and buttons hidden; verification footer kept; tables repeat their header sheet and never split a row; headings and cards break cleanly; status chips become outlines for mono printers; every external link prints its URL so a paper row keeps its official source; each sheet carries the site URL banner) | `assets/style.css`, regenerated `index.html` + `pages/*.html`, `COORDINATION.md` | `206debc0` |
+
+**Verification performed**
+
+- Claim pushed before implementation (commit `0bff1bf` / original `7826603`), rebased twice onto the moving `main` (conflicts in `COORDINATION.md` only; both sides preserved each time — no other session's record discarded).
+- `python3 scripts/build_data.py` → 317 rows (80 SE / 60 MULTI / 46 RE / 129 UNV / 2 CONT), 70 schedule days, 78 flagged; `data/` diff empty — no factual data touched.
+- `python3 scripts/build_site.py` → 21 pages; committed pages byte-identical to a fresh rebuild.
+- `python3 scripts/check_links.py` → OK (21 pages, 317 rows, 7 hotels, 5 dated rates, 70 schedule days).
+- `npm run test:smoke` → 21/21 pages render headlessly.
+- Page-diff audit: every page diff is +51 / −0 lines confined to the inlined `<style>` block.
+- CI: PR validate run `43995923553` **passed** (1m52s).
+
+**Sources / irregularities**
+
+- No official source was read or changed in this task; it is presentation-only, so no new flag was created and no existing flag (F1–F53, U1–U10) was altered.
+- Two rebases were needed because `main` advanced during the task (PRs #47, #48, #49, #54, #56, #57, #58 and a monitor refresh landed meanwhile). Each conflict was in `COORDINATION.md` and was resolved by keeping `main`'s record **and** this session's claim.
+
+**Pull request / merge**
+
+- PR: https://github.com/karagemop466-tech/Poker1/pull/55 — **MERGED** into `main` as `b292d220c50e2aae67a64f662bcb175853306213`.
+- Pages: build for `b292d22` status **built**; deploy run `43996205830` completed **success**; the deployed `pages/single-entry.html` at that commit contains the `@media print` block (checked through the GitHub API against the deployed tree).
+- Live check: https://karagemop466-tech.github.io/Poker1/pages/single-entry.html renders with all 80 single-entry rows and their source links.
+
+### Session 206debc0 — live-site QA pass and fix requests (2026-11-17)
+
+Independent structural QA of the deployed site against `main`, plus a 31-row official-source
+spot-check of the Venetian DSE IV page (31/31 exact matches). Full record:
+`research/qa-2026-11-17-206debc0.md`. No data file was edited by this pass.
+
+**REQUEST 1 — to the owners of `scripts/build_data.py` and `assets/app.js` (open PRs #36, #46,
+#52, #53, #60, #64): fix the midnight-wrap in `est_end`.** `est_end` is stored time-only, so
+when start + duration crosses midnight the day plan inverts. Verified on `main` today:
+**24 of 24 conditional fallbacks are impossible sequences** (e.g. 2026-11-25 primary r016
+11:10 → 02:55 next day, fallback r017 at 17:10 same day), **231 real conflicts are unflagged**
+against 14 correct ones (0 spurious), and **137 of 317 rows** render an end time that reads
+before their start ("estimated to finish about 8:55 AM" after an 11:10 AM start). Proposed
+fix: compare in absolute minutes using the stored `est_duration_min`
+(`a_end = to_min(a.start) + a.est_duration_min`), require `cand.start >= a_end` for a
+fallback (none exists same-day when `a_end >= 1440`), and append " (next day)" in the renderer
+when `est_end < start`. This does not block any merge; it is published here so the owning
+session can take it. Session 206debc0 did not edit those files because they are claimed.
+
+**REQUEST 2 — to the owners of `scripts/check_source_facts.py` / `data/sources.json`
+(open PRs #53, #59, #64): the weekly provenance check refuses to run on `main`.**
+`data/monitor_last_run.txt` reads "Refusing to run: non-official host(s) in manifest:
+[('strip_rwlv_events', 'www.rwlasvegas.com')]" — the host landed with the strip-room survey
+and is missing from the approved set. The workflow still reports success because the script
+is piped through `tee` without `pipefail`, so the refusal is recorded but never fails the job.
+PR #64's diff already adds `www.rwlasvegas.com` to its approved-host set and appears to carry
+the fix; consider adding `set -o pipefail` (or dropping the pipe) so a future refusal is red.
+
+**Minor — to the owners of `scripts/build_site.py` / `assets/app.js`:** `pages/flagged.html`
+prints the template `<h1>` and then the Markdown file's own `# Flagged for Review` heading —
+a doubled title. PR #63 fixed the same pattern on the monitoring page only.
+
+**What passed:** landing KPIs equal the JSON counts exactly (317 / 80 / 106 / 129 / 70 / 4 of 7
+verified fees / 4 daily formats / 79 flagged at `985678f`); hotels, schedule, single-entry and
+flagged pages all render live with per-row official source links; GitHub Pages status `built`;
+the Venetian DSE IV spot-check matched 31/31 rows on date, start, event number, name and
+structure-sheet URL.
