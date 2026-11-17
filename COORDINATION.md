@@ -1197,3 +1197,36 @@ bug. Measured on `main` at `5de6d8d` before this claim (`data/schedule.json` vs 
 
 No tournament, hotel, rate, walking or entry-rule fact is changed by this task. It is arithmetic over
 values already stored, so no new source is read and no flag is created or altered.
+
+## Session 65397e8b — branch `arena/65397e8b-poker1` (this session)
+
+Claimed and pushed before any implementation work. Scope: final full verification of the shipped site,
+one confirmed bug fix, and publication to GitHub Pages. No other session had an open claim on
+`assets/app.js` at claim time.
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Re-run the complete build/verify pipeline on the checked-out tree and confirm every gate is green | **Done** | `scripts/build_data.py`, `scripts/build_site.py`, `scripts/check_links.py`, `scripts/verify_rows.py`, `scripts/smoke_test.js` | `65397e8b` |
+| Fix the daily weekday map so Tuesday/Wednesday show the $200 NLH daily (they printed "No daily format published" because the renderer treated the stored `days` string as an array) | **Done** | `assets/app.js` (new `dayRuns()` helper), regenerated `index.html` + `pages/*.html` | `65397e8b` |
+| Open PR → `main`, merge, confirm GitHub Pages deploys, record result | **Done** | PR #71, merged as `6bbd2e95327be53b2b4bb8d9d52895161e9c9788` at 2026-11-17T22:15:18Z; Pages `status: built`, live at https://karagemop466-tech.github.io/Poker1/ | `65397e8b` |
+
+### Verification performed in this session
+
+- `python3 scripts/build_data.py` → 317 rows (SE 80 / MULTI 67 / RE 107 / CONT 25 / UNV 38), 79 flagged, 70 schedule days; zero diff vs committed data.
+- `python3 scripts/build_site.py` → 23 pages; committed pages byte-identical to a fresh rebuild.
+- `python3 scripts/check_links.py` → OK (56 files free of conflict markers, 23 pages, 317 rows, 7 hotels, 5 dated rates, 70 schedule days; source/rules/schedule/hotel-rate/cost/provenance/page-link checks passed).
+- `python3 scripts/verify_rows.py` → 324 verified rows, 1,296 field checks, 0 hard failures (1 documented review item: r225 WPT start time).
+- `npm run test:smoke` → 23/23 pages render in a headless DOM.
+- Fix verified directly against `data/daily.json`: all seven weekdays now list correct formats; Tuesday/Wednesday show the 12:00 $200 NLH + 18:00 $160 nightly (previously "No daily format published").
+- Official Venetian DSE IV schedule page re-fetched and spot-checked row-for-row against the data: https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html
+
+### Irregularities
+
+None introduced by this change. No tournament, hotel, rate, walking or entry-rule fact was changed. Pre-existing flags (F1–F60 and the U-series) remain published on the Flagged for Review page with source links and do not block publication. The schedule overlap/midnight-wrap defect logged as a request by session `206debc0` was independently fixed and merged by session `a8efe220` (PR #72, `39e36b0`) and is now on `main`.
+
+### Pull request / deployment
+
+- PR: https://github.com/karagemop466-tech/Poker1/pull/71 — "Fix daily weekday map: Tuesday/Wednesday now show the $200 NLH daily", from `arena/65397e8b-poker1` to `main`.
+- CI `validate` run 44186796874: all steps success (dataset rebuild, page match, link validation, value verification, official-source check, headless render).
+- **Merged** as merge commit `6bbd2e95327be53b2b4bb8d9d52895161e9c9788` at 2026-11-17T22:15:18Z.
+- GitHub Pages: deployment triggered for `6bbd2e9`; Pages API reports `status: built`, source branch `main`, path `/`, live at https://karagemop466-tech.github.io/Poker1/ . The built site carries the weekday-map fix and the full verified dataset (317 rows, 7 hotels, 5 dated rates, 70 schedule days, 79 flagged rows).
