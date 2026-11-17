@@ -80,6 +80,11 @@ jobs:
   # the site itself kept building fine. This job therefore asks GitHub which build type the site
   # actually uses: with `workflow` it publishes the artifact exactly as before, and with `legacy` it
   # confirms that the branch build for this commit reached status `built` instead of failing.
+  # The repository's Pages site is configured with `source: main:/` and the legacy branch build, so
+  # `actions/deploy-pages` can never find an artifact for this workflow and failed on every run while
+  # the site itself kept building fine. This job therefore asks GitHub which build type the site
+  # actually uses: with `workflow` it publishes the artifact exactly as before, and with `legacy` it
+  # confirms that the branch build for this commit reached status `built` instead of failing.
   deploy:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     environment:
