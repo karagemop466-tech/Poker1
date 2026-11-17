@@ -776,7 +776,7 @@
           "is involved. The 30-minute rule is applied to every routed time: rows over it stay in the table, " +
           "flagged, so nothing is hidden.</p>";
         var wcols = [
-          { id: "hotel", label: "Hotel", key: "hotel" },
+          { id: "hotel", label: "Hotel", key: "hotel_name", html: function (r) { return esc(r.hotel_name || r.hotel); } },
           { id: "venue", label: "Venue", key: "venue" },
           { id: "minutes", label: "Minutes", key: "minutes", num: true, html: function (r) { return r.minutes == null ? '<span class="muted">internal</span>' : r.minutes + (r.within_30_min === false ? ' <span class="chip bad">over 30</span>' : ' <span class="chip ok">within 30</span>'); } },
           { id: "metres", label: "Metres", key: "metres", num: true },
@@ -991,7 +991,7 @@
       if (wsec && wk.length) {
         wsec.innerHTML = "<h2>Walking records</h2>";
         table(wsec, wk, [
-          { id: "hotel", label: "Hotel", key: "hotel" },
+          { id: "hotel", label: "Hotel", key: "hotel_name", html: function (r) { return esc(r.hotel_name || r.hotel); } },
           { id: "from", label: "From", key: "from", sort: null },
           { id: "minutes", label: "Minutes", key: "minutes", num: true, html: function (r) { return r.minutes == null ? '<span class="muted">unverified</span>' : r.minutes; } },
           { id: "note", label: "Note", key: "note", sort: null, html: function (r) { return "<span class='small'>" + esc(r.note) + "</span>"; } },
@@ -1051,7 +1051,7 @@
           });
         var hitW = walking.filter(function (w) { return JSON.stringify(w).toLowerCase().indexOf(q) >= 0; })
           .map(function (w) {
-            return '<div class="result"><div class="title">' + esc(w.hotel) + " → " + esc(w.venue) + "</div><div class='meta'>walking record · <a href='" + BASE + "pages/hotels.html'>hotels</a></div></div>";
+            return '<div class="result"><div class="title">' + esc(w.hotel_name || w.hotel) + " → " + esc(w.venue) + "</div><div class='meta'>walking record · <a href='" + BASE + "pages/hotels.html'>hotels</a></div></div>";
           });
         var hitR = rates.filter(function (r) { return JSON.stringify(r).toLowerCase().indexOf(q) >= 0; })
           .map(function (r) {
