@@ -12,8 +12,23 @@ permissions:
   pages: write
   id-token: write
 
+# One group per stream, so parallel sessions' pull-request validations stop cancelling
+# each other. Before this change a single global group ("pages") with cancel-in-progress
+# made every new PR cancel the previous validation, and let any PR validation cancel an
+# in-flight deploy of main (seen 2026-11-17: PRs #38/#39/#41/#47 all had their first
+# validate run cancelled this way).
+# - pushes to main (which deploy): one serialized group; a newer main push cancels an
+#   older deploy, so the site always reflects the latest merged state.
+# - pull_request: one group per PR; a new push to the same PR supersedes its older run,
+#   other PRs are never affected.
+# - workflow_dispatch: a unique group per run, so manual runs are never cancelled.
 concurrency:
-  group: pages
+  group: >-
+    ${{
+      github.event_name == 'push' && 'pages-deploy'
+      || github.event_name == 'pull_request' && format('pages-validate-pr{0}', github.event.number)
+      || format('pages-manual-{0}', github.run_id)
+    }}
   cancel-in-progress: true
 
 jobs:
