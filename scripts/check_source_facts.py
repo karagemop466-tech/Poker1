@@ -65,6 +65,11 @@ OFFICIAL_HOSTS = (
     "aria.mgmresorts.com",
     "www.caesars.com",
     "caesars.com",
+    # Session 0d069ce0: official property domains behind pages/other-rooms.html.
+    "mgmgrand.mgmresorts.com",
+    "mandalaybay.mgmresorts.com",
+    "orleans.boydgaming.com",
+    "southpointcasino.com",
 )
 
 

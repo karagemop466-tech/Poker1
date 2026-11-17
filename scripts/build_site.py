@@ -81,6 +81,7 @@ PAGES = {
   <a class="card tile" href="pages/calculator.html"><h3>Trip cost calculator</h3><p>Entries × buy-in + nights × true hotel cost + parking, from dated official-engine quotes. Nothing is assumed.</p></a>
   <a class="card tile" href="pages/strip-rooms.html"><h3>Strip rooms</h3><p>Official schedules for the Strip poker rooms the venue pages do not cover, with closures that are reported but not confirmed.</p></a>
   <a class="card tile" href="pages/venues.html"><h3>Venues</h3><p>Each poker room, the hotels attached to it and the events played there.</p></a>
+  <a class="card tile" href="pages/other-rooms.html"><h3>Other rooms</h3><p>Every other Strip and near-Strip poker room, checked against its own site: what it publishes, and what it does not.</p></a>
   <a class="card tile" href="pages/search.html"><h3>Search</h3><p>One box across every row, hotel, venue, document and rate on the site.</p></a>
   <a class="card tile" href="pages/monitoring.html"><h3>Monitoring</h3><p>Source health, changed rows and every printed source flag.</p></a>
   <a class="card tile" href="pages/questions.html"><h3>Questions</h3><p>Open decisions and information gaps, with how to close each.</p></a>

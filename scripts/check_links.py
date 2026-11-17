@@ -36,12 +36,17 @@ OFFICIAL_SOURCE_HOSTS = {
     "aria.mgmresorts.com",
     "bellagio.mgmresorts.com",
     "www.caesars.com",
-    # Strip-room survey (data/strip_rooms.json): operator pages, and the MGM Resorts CMS asset host that
-    # serves the MGM Grand schedule and structure PDFs linked from the official poker page.
+    # Session 0d069ce0: the official property domains behind pages/other-rooms.html. Each is the
+    # operator's own site for the property. The contentstack CDN that hosts the MGM PDFs is
+    # deliberately not added, matching the existing F40 treatment of the Bellagio flyers: those
+    # PDFs are cited through the official page that links them, never as a source host.
     "mgmgrand.mgmresorts.com",
     "mandalaybay.mgmresorts.com",
+    "orleans.boydgaming.com",
+    "southpointcasino.com",
+    # Session 88793bf4 (Strip-room survey): the Resorts World operator page. The MGM PDFs stay
+    # un-approved (F40); see FLAGGED.md S9.
     "www.rwlasvegas.com",
-    "assets.contentstack.io",
 }
 TOURNAMENT_STATUSES = {"SE", "MULTI", "RE", "REBUY", "CONT", "UNV"}
 TOURNAMENT_KINDS = {"entry", "continuation"}
@@ -50,7 +55,10 @@ DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 TIME_RE = re.compile(r"^(?:[01]\d|2[0-3]):[0-5]\d$")
 KNOWN_PAGES = {"index", "singleEntry", "separate", "unverified", "daily", "hotels", "calculator",
                "schedule", "venues", "search", "monitoring", "summary", "questions", "suggestions",
-               "flagged", "review", "strips"}
+               "flagged", "review", "strips",
+               # Session 0d069ce0: pages/other-rooms.html. Registered here because the page-link
+               # check rejects any data-page outside this set. One line, no other change.
+               "otherRooms"}
 
 
 def load_json(rel):

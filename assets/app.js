@@ -17,6 +17,7 @@
     ["pages/calculator.html", "Calculator"],
     ["pages/venues.html", "Venues"],
     ["pages/strip-rooms.html", "Strip rooms"],
+    ["pages/other-rooms.html", "Other rooms"],
     ["pages/search.html", "Search"],
     ["pages/monitoring.html", "Monitoring"],
     ["pages/summary.html", "Summary"],
@@ -1101,6 +1102,31 @@
         { id: "link", label: "Report", key: "url", sort: null, html: function (r) { return '<a href="' + esc(r.url) + '" target="_blank" rel="noopener">Read the report</a>'; } }
       ], { sortKey: "room", sortDir: 1 });
     }).catch(showErr);
+  };
+
+  // pages/other-rooms.html is generated statically by scripts/build_other_rooms.py, so the
+  // tables are already in the HTML and there is nothing to render at run time. The renderer
+  // exists because the validator requires one renderer per data-page, and it uses the
+  // dataset to stamp the page with the counts and the verification date, and to say so on
+  // the page if the dataset cannot be read (the tables stay: they were built from that file).
+  PAGES.otherRooms = function () {
+    getJSON("data/other_rooms.json").then(function (data) {
+      var main = document.getElementById("content");
+      if (!main || !data || !data.counts) return;
+      var stamp = document.createElement("p");
+      stamp.className = "small";
+      stamp.textContent = "Dataset: " + data.counts.events + " recurring events across " +
+        data.counts.rooms_surveyed + " rooms surveyed, verified " + data.verified_on + ".";
+      main.parentNode.insertBefore(stamp, main.nextSibling);
+    }).catch(function () {
+      var main = document.getElementById("content");
+      if (!main) return;
+      var note = document.createElement("p");
+      note.className = "small";
+      note.textContent = "data/other_rooms.json could not be read; the tables below are the " +
+        "copy generated with the site.";
+      main.parentNode.insertBefore(note, main.nextSibling);
+    });
   };
 
   PAGES.summary = markdownPage("EXECUTIVE_SUMMARY.md");

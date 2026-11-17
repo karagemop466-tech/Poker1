@@ -1,5 +1,5 @@
 {
- "note": "Every source URL monitored by scripts/monitor_sources.py. All hosts are official operator domains (venetianlasvegas.com, wynnlasvegas.com, cdn.wynnresorts.com, mgmresorts.com property domains, caesars.com). Nothing from a third-party site is fetched.",
+ "note": "Every source URL monitored by scripts/monitor_sources.py. All hosts are official operator domains (venetianlasvegas.com, wynnlasvegas.com, cdn.wynnresorts.com, mgmresorts.com property domains, caesars.com, boydgaming.com property domains, southpointcasino.com). Nothing from a third-party site is fetched.",
  "sources": [
   {
    "id": "v_dse_nov_page",
@@ -521,47 +521,61 @@
    "kind": "schedule",
    "venue": "Other"
   },
-    {
-      "id": "strip_mgm_poker",
-      "label": "MGM Grand official poker page (daily tournament times and fee note)",
-      "url": "https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html",
-      "kind": "schedule",
-      "venue": "MGM Grand"
-    },
-    {
-      "id": "strip_mgm_schedule",
-      "label": "MGM Grand official weekly tournament schedule (PDF)",
-      "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt5f25277b8918da08/mgm-grand-casino-poker-tournament_schedule.pdf",
-      "kind": "schedule",
-      "venue": "MGM Grand"
-    },
-    {
-      "id": "strip_mgm_structure",
-      "label": "MGM Grand $120 NLH structure and rules (PDF)",
-      "url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf",
-      "kind": "structure",
-      "venue": "MGM Grand"
-    },
-    {
-      "id": "strip_mandalay_poker",
-      "label": "Mandalay Bay official poker page (no tournament schedule printed)",
-      "url": "https://mandalaybay.mgmresorts.com/en/casino/poker-tables.html",
-      "kind": "schedule",
-      "venue": "Mandalay Bay"
-    },
-    {
-      "id": "strip_rwlv_events",
-      "label": "Resorts World official casino events page (closure check: no poker event listed)",
-      "url": "https://www.rwlasvegas.com/gaming/casino-events/",
-      "kind": "schedule",
-      "venue": "Resorts World"
-    },
-    {
-      "id": "strip_ph_property",
-      "label": "Planet Hollywood official property page (closure check)",
-      "url": "https://www.caesars.com/planet-hollywood",
-      "kind": "schedule",
-      "venue": "Planet Hollywood"
-    }
-  ]
+  {
+   "id": "mgm_poker_page",
+   "label": "MGM Grand — official poker page (links the weekly schedule and the $120 structure sheet)",
+   "url": "https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html",
+   "kind": "schedule",
+   "venue": "MGM Grand"
+  },
+  {
+   "id": "mb_poker_page",
+   "label": "Mandalay Bay — official poker page",
+   "url": "https://mandalaybay.mgmresorts.com/en/casino/poker-tables.html",
+   "kind": "schedule",
+   "venue": "Mandalay Bay"
+  },
+  {
+   "id": "orl_poker_page",
+   "label": "The Orleans — official poker room page (links the 2026 daily schedule PDF)",
+   "url": "https://orleans.boydgaming.com/play/poker-room",
+   "kind": "schedule",
+   "venue": "Orleans"
+  },
+  {
+   "id": "orl_daily_pdf",
+   "label": "The Orleans — 2026 daily tournament schedule and structures (official PDF)",
+   "url": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0",
+   "kind": "structure",
+   "venue": "Orleans"
+  },
+  {
+   "id": "sp_poker_page",
+   "label": "South Point — official poker room page (daily times and buy-ins)",
+   "url": "https://southpointcasino.com/casino/poker-room",
+   "kind": "schedule",
+   "venue": "South Point"
+  },
+  {
+   "id": "sp_sched_page",
+   "label": "South Point — official daily tournament schedule page (images only on 2026-11-17)",
+   "url": "https://southpointcasino.com/casino/poker-room/daily-tournament-schedule",
+   "kind": "structure",
+   "venue": "South Point"
+  },
+  {
+   "id": "strip_rwlv_events",
+   "label": "Resorts World official casino events page (closure check: no poker event listed)",
+   "url": "https://www.rwlasvegas.com/gaming/casino-events/",
+   "kind": "schedule",
+   "venue": "Resorts World"
+  },
+  {
+   "id": "strip_ph_property",
+   "label": "Planet Hollywood official property page (closure check)",
+   "url": "https://www.caesars.com/planet-hollywood",
+   "kind": "schedule",
+   "venue": "Planet Hollywood"
+  }
+ ]
 }
