@@ -15,9 +15,14 @@ name: Monitor official sources
 
 on:
   schedule:
-    # Daily at 07:17 UTC, before the first dealer's-shift postings matter to a reader.
+    # Daily at 15:17 UTC = 7:17 a.m. in Las Vegas (PST, UTC-8, which is the whole
+    # Nov-Jan trip window; it is 8:17 a.m. local while PDT is in force). The brief asks
+    # for each room's official schedule to be pulled each morning, and a check that runs
+    # at 23:17 the previous evening answers yesterday's question. The old 07:17 UTC slot
+    # is kept as a second run so a page that changes overnight is still caught the same day.
     # (An earlier revision of this file carried a `name:` key inside `schedule:`,
     # which the workflow schema does not accept - that is why the job never fired.)
+    - cron: "17 15 * * *"
     - cron: "17 7 * * *"
   workflow_dispatch:
     inputs:

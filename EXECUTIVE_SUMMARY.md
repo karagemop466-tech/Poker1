@@ -34,12 +34,20 @@ re-checked on 2026-11-17.
   69 sheets ("Unlimited re-entry"), one entry plus one re-entry per flight on the $1,100 Prime
   Championship, and up to four entries on the $10,400 World Championship. Only The Venetian publishes
   single-entry events in this dataset.
-- **Hotels are the strongest per-property record yet, with one hard limit.** The $55 resort fee is
-  verified for **six** properties — The Venetian, The Palazzo, Wynn, Encore, Bellagio and ARIA —
-  together with parking, check-in and cancellation terms from each property's own official page, and
-  13.38% room tax verified for The Venetian and The Palazzo. For Bellagio and ARIA the tax percentage
-  is stored as a labelled **estimate** and never used to total a stay; Caesars Palace publishes no
-  property-specific resort fee, so that cell stays blank. **Five dated quotes are on file**, all from
+- **Hotels: the room tax is now verified for all seven properties, from the taxing authority.** The
+  $55 resort fee is verified for **six** properties — The Venetian, The Palazzo, Wynn, Encore,
+  Bellagio and ARIA — together with parking, check-in and cancellation terms from each property's own
+  official page. The **13.38% room tax is now `verified` on all seven rows**, including Wynn, Encore,
+  Bellagio, ARIA and Caesars Palace, because Clark County's own licensed-establishment table prints
+  each property's licence number, DBA name, address, status and rate (`1000389.RES-001`
+  Venetian/Palazzo, `2000013.RES-001` Wynn/Encore, `1003760.RES-001` Bellagio, `2000035.RES-001`
+  Aria, `1136233.RES-001` Caesars Palace — each "Resort Hotel (PGC)", 13.38%). That table is a
+  snapshot as of April 2021, which every row now says, and the rate itself is fixed by Clark County
+  Code 4.08.010 — Appendix III sets a Resort Hotel in the Stadium District and Primary Gaming
+  Corridor at 5.5 + 2 + 1 + 1 + 3 + .88 = 13.38%. Bellagio and ARIA move off the old "estimate"
+  label; Wynn, Encore and Caesars move off blank. Caesars Palace still publishes no property-specific
+  resort fee, so that one cell stays blank. A tax record says nothing about a nightly rate or a
+  resort fee, so nothing else was filled in from it (F77). **Five dated quotes are on file**, all from
   the Venetian's official booking engine: $804.15 (Nov 26–29), $475.35 (Nov 18–20), $338.48 (Dec 13–20), $911.86 (Jan 1–6) and $320.02 (Jan 10–15) true cost per night. Every quote stores the per-night rates, resort fee, tax total, checkout
   total, cancellation terms and the date it was read, so a later quote is compared against these instead
   of replacing them.
@@ -47,11 +55,13 @@ re-checked on 2026-11-17.
   returns the stored tax total to the cent, and (room + fee) ÷ nights returns the Average Rate the engine
   itself printed on the page (709.25, 298.54, 804.25, 282.25, 419.25). Two independent identities agreeing
   is what keeps the log honest.
-- **Wynn cannot be priced the same way yet.** Its booking engine renders the nightly grid and the tax
-  line client-side and returns only fee and policy text to a text fetch, so no Wynn quote could be
-  captured. Its room tax stays blank rather than borrowing the Venetian's 13.38%, and the like-for-like
-  Wynn-versus-Venetian comparison still cannot be made. That is the last missing piece of the hotel
-  picture.
+- **Wynn's *rate* still cannot be captured; its tax can, and now is.** Wynn's booking engine renders
+  the nightly grid and the tax line client-side and returns only fee and policy text to a text fetch,
+  so no Wynn quote could be captured and no true cost per night can be published for it. What changed
+  is the tax: instead of borrowing the Venetian's percentage, the county's own licence record for
+  "Wynn Las Vegas / Encore at Wynn Las Vegas" is cited, so 13.38% is verified rather than inferred.
+  The like-for-like Wynn-versus-Venetian *stay* comparison still cannot be made, because it needs a
+  dated Wynn checkout total, and that remains the last missing piece of the hotel picture (F77).
 - **Walking times are now routed, not blank.** Twelve hotel-to-poker-room pairs were measured on the
   OpenStreetMap foot network between geocoded coordinates, with the destination being the resort that
   actually contains the poker room (The Palazzo for the Venetian, Encore for Wynn), the lookup and query
@@ -197,17 +207,23 @@ the first night's deposit when cancelled at least 72 hours before arrival ([Bell
 "FREE 48-Hour Cancellation" on best-rate bookings ([FAQ](https://www.caesars.com/caesars-palace/faqs)).
 Each text is stored verbatim in `data/hotels.json` and `data/rates.json`.
 
-**Wynn's room tax stays blank on purpose.** No Wynn page prints the percentage, and its engine does not
-expose the breakdown to a text fetch, so there is no honest way to state it. Applying the Venetian's
-13.38% to Wynn would be exactly the kind of inference this dataset forbids.
+**The room tax now comes from the taxing authority, not from one hotel's page.** No Wynn page prints
+the percentage and its engine does not expose the breakdown to a text fetch; Bellagio and ARIA print
+the tax rule but no number; Caesars prints neither. Rather than leave those blank or borrow the
+Venetian's figure — both of which this dataset forbids — every row now cites Clark County's
+licensed-establishment record for that property: `1000389.RES-001` Venetian Resort Hotel Casino /
+Palazzo Resort Hotel Casino (3325 Las Vegas Blvd S), `2000013.RES-001` Wynn Las Vegas / Encore at
+Wynn Las Vegas (3131 Las Vegas Blvd S), `1003760.RES-001` Bellagio (3600 Las Vegas Blvd S),
+`2000035.RES-001` Aria Resort & Casino (3730 Las Vegas Blvd S) and `1136233.RES-001` Caesars Palace
+(3570 Las Vegas Blvd S), each "Licensed", 13.38%, "Resort Hotel (PGC)". Appendix III gives the
+components (5.5 + 2 + 1 + 1 + 3 + .88) and states the rates effective 3-1-17. The establishment
+table is a snapshot as of April 2021 and every note says so (F77).
 
-**The Bellagio and ARIA resort fees are now verified at $55 + tax**, each from the property's own
-official terms page, together with parking (self-park $20, valet $40) and the 72-hour cancellation
-policy. What stays blank is the room-tax **percentage**: both properties print the tax rule but no
-number, so 13.38% is stored for them as a labelled estimate and never used to total a stay. Caesars
-Palace publishes no property-specific resort fee or tax at all — the corporate "$45-$50" range does
-not name the property — so those cells stay blank rather than borrowed from another property's terms.
-Every attempted source is listed in `FLAGGED.md`.
+**The Bellagio and ARIA resort fees are verified at $55 + tax**, each from the property's own official
+terms page, together with parking (self-park $20, valet $40) and the 72-hour cancellation policy.
+Caesars Palace publishes no property-specific resort fee at all — the corporate "$45-$50" range does
+not name the property — so that one cell stays blank rather than borrowed from another property's
+terms. Every attempted source is listed in `FLAGGED.md`.
 
 **Walking times are routed, not guessed.** All twelve pairs were measured on the OpenStreetMap foot
 network between geocoded coordinates, rounded up to the whole minute, and every row links both the
@@ -219,14 +235,18 @@ is applied to every routed time, and rows that fail it stay visible and flagged.
 
 - **Verified options:** 45 of the 70 dates carry at least one verified single-entry event, and 41 of
   them carry a cash one. The first cash single-entry event is Nov 18 (Event 2, $300 NLH, 11:10 AM).
-- **Primary and fallback:** each day names one verified single-entry event as the primary, and 24 days
-  also name a conditional fallback that starts after the primary is estimated to finish. Estimated end
-  times come from the published level structure and are labelled as estimates, never as official finish
-  times.
-- **Overlaps:** 14 row-pairs on two days are flagged. Dec 12 (six pairs) and Jan 2 (three pairs, and
-  eight counting both directions) all trace back to a milestone satellite on the same day whose
-  estimated end is an upper bound, because a satellite stops when the seats run out. Each of those
-  days still gets a single primary plus a conditional fallback; no impossible sequence is proposed.
+- **Primary and fallback, after the arithmetic was fixed:** a finish that ran past midnight used to
+  be stored as a bare clock time, so 137 of 317 rows printed a finish earlier than their own start,
+  **all 24 conditional fallbacks were impossible sequences**, and only 14 of the real overlaps were
+  flagged. The day plan now compares in minutes from midnight and prints "(next day)" on those rows
+  (F73). Rebuilt: **245 overlapping pairs are flagged, 0 days propose an impossible sequence, and 26
+  days name a conditional fallback** — each one labelled conditional, with the printed registration
+  deadline that decides whether a player who busts out of the primary can still enter it. Under the
+  full published structure, no day's primary can finish before a later single-entry event on the same
+  date starts, so no day offers a guaranteed two-event sequence.
+- **402 same-day pairs cannot be checked at all**, because every WPT and Wynn Signature Series sheet
+  prints a level length but no level count ("30 minutes per level until a winner is declared"). Those
+  are published as "cannot be checked" rather than treated as playable (F74).
 - **Wynn registration opens at 8 AM for the noon events.** The official Wynn daily tournament terms
   and conditions state: *"Registration for each Event will open four (4) hours prior to the scheduled
   start of play."* The daily events start at 12 p.m., so registration opens at **8 a.m.** That is the

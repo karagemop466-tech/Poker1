@@ -1924,7 +1924,7 @@ HOTELS = [
 # ---------------- dated rate log ----------------
 def rate_entry(prop, room, offer, arrival, departure, nightly, fee, taxes, total, source, hotel_id,
                retrieved="2026-11-17", logged="2026-11-17", occupancy="2 adults",
-               cancel=None, extra=None):
+               cancel=None, extra=None, retrieved_at=None):
     """One dated rate-log row. True cost per night is the engine's own checkout total divided by nights."""
     nights = len(nightly)
     # The engine's printed "Average Rate" is (room charges + resort fee) / nights; store that same convention
@@ -1947,7 +1947,15 @@ def rate_entry(prop, room, offer, arrival, departure, nightly, fee, taxes, total
                   "reproduces the engine's own printed Average Rate: (room charges + resort fee) / nights, before "
                   "tax. The per-night room figures exclude the resort fee and tax, which are shown separately.",
         "source": source, "retrieved_on": retrieved, "logged_on_date": logged,
+        # The brief asks for a rate timestamp. The engines print no time stamp on the
+        # quote itself, so what can be published is the date the engine was read and,
+        # where the fetch log recorded it, the time - stated as such rather than guessed.
+        "timestamp_basis": "The booking engine prints no time stamp on the quote. "
+                           "retrieved_on is the date the engine was read; retrieved_at_utc, where "
+                           "present, is the moment the fetch was made, from that session's log.",
     }
+    if retrieved_at:
+        entry["retrieved_at_utc"] = retrieved_at
     if cancel:
         entry["cancellation_note"] = cancel
     if extra:
@@ -1994,6 +2002,8 @@ RATES = [
             "Book Direct: Up to 25% Off (offer shown on the official booking page)",
             "2026-11-18", "2026-11-20", [204.25, 524.25], 55.00, 112.19, 950.69,
             SRC["venetian_quote_1118"], hotel_id="venetian", retrieved="2026-11-17", logged="2026-11-17",
+            retrieved_at="2026-11-17T00:35Z (approximate: the time the fetch was made, from that "
+                         "session's log - the engine itself prints no time stamp)",
             cancel="Official hotel terms: prepaid offers are non-cancellable and non-refundable; no fixed "
                    "free-cancellation deadline is printed for a general rate.",
             extra={"engine_quote": "Average Rate $419.25; Taxes $112.19; Total $950.69 for 2 nights",
