@@ -123,10 +123,10 @@ PAGES = {
 <p class="lead">Fee, tax, true cost and routed walking time for every property. True cost per night is the official booking engine's own checkout total divided by the nights, so it exists only where a dated quote was captured.</p>
 <div class="card callout" id="method"></div>
 <div id="content"></div>
-<p class="small">Walking time to each venue is not published on any official source, so it is blank.</p>
+<p class="small">No property publishes a walking time, so these are routed on the OSM foot network, not quoted from an official source (F49). Minutes are rounded up and the 30-minute rule is applied.</p>
 <div id="walking"></div>
 <div id="rates"></div>
-<p class="small"><a href="calculator.html">Price a stay with the rate calculator →</a></p>
+<p class="small"><a href="calculator.html">Price a trip with the trip cost calculator →</a></p>
 """),
     "pages/calculator.html": ("Rate calculator", "calculator", """
 <h1>Hotel rate and cost calculator</h1>

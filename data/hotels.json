@@ -334,5 +334,5 @@
    "walk_to_wynn_within_30": false
   }
  ],
- "method": "True nightly cost = (verified room rate + verified resort fee) x (1 + verified room tax). It is only calculated when all three are verified for the same property. The dated rate log Only quoted when the property appears in the dated rate log; the true cost per night is the official booking engine's own checkout total divided by the nights, so nothing is reconstructed from an assumed rate. data/rates.json keeps every quote separately with its timestamp, room type, occupancy and cancellation terms."
+ "method": "True cost per night is the official booking engine's own checkout total (room charges + resort fee + taxes) divided by the number of nights in that quote. It is filled in only when the property has a dated quote in the rate log, so nothing is reconstructed from an assumed rate: the printed figures are (room + fee) x (1 + verified room tax), and that identity is re-checked for every entry in data/rates.json. data/rates.json keeps every quote separately with its date, room type, occupancy, cancellation terms and source URL."
 }
