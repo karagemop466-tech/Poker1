@@ -152,34 +152,29 @@ jobs:
           fi
           echo "The site is published by the legacy branch build; waiting for the build of $GITHUB_SHA."
           for attempt in $(seq 1 30); do
-            body=$(curl -sS -H "Authorization: Bearer $GH_TOKEN" \
+            state=$(curl -sS -H "Authorization: Bearer $GH_TOKEN" \
               -H "Accept: application/vnd.github+json" \
-              "$GITHUB_API_URL/repos/$GITHUB_REPOSITORY/pages/builds?per_page=20")
-            state=$(printf '%s' "$body" | python3 - "$GITHUB_SHA" <<'PY'
-          import json, sys
-          sha = sys.argv[1]
-          builds = json.load(sys.stdin)
-          for b in builds:
-              if b.get("commit") == sha:
-                  err = (b.get("error") or {}).get("message")
-                  print("%s\t%s" % (b.get("status"), err or ""))
-                  break
-          else:
-              print("pending\t")
-          PY
-          )
-            status=${state%%	*}
-            detail=${state#*	}
+              "$GITHUB_API_URL/repos/$GITHUB_REPOSITORY/pages/builds?per_page=20" \
+              | python3 scripts/check_pages_build.py "$GITHUB_SHA")
+            status=${state%%|*}
+            detail=${state#*|}
             echo "attempt $attempt: $status ${detail}"
-            if [ "$status" = "built" ]; then
-              echo "Pages build for $GITHUB_SHA is built. Site: $url"
-              exit 0
-            fi
-            if [ "$status" = "errored" ]; then
-              echo "Pages build for $GITHUB_SHA failed: ${detail}" >&2
-              exit 1
-            fi
+            case "$status" in
+              built)
+                echo "Pages build for $GITHUB_SHA is built. Site: $url"
+                exit 0 ;;
+              errored)
+                echo "Pages build for $GITHUB_SHA errored: ${detail}" >&2
+                exit 1 ;;
+              superseded)
+                # The branch build for this commit was replaced by a newer commit's build before it
+                # finished. That is normal when main moves quickly, and the site then publishes the
+                # newer commit, so a superseded build is not a failure of this one.
+                echo "Pages build for $GITHUB_SHA was superseded by a newer commit: ${detail}"
+                echo "The live site publishes the newer commit, which is expected on a fast-moving main."
+                exit 0 ;;
+            esac
             sleep 10
           done
-          echo "Pages did not report a built state for $GITHUB_SHA within 5 minutes." >&2
+          echo "Pages did not report a built, errored or superseded state for $GITHUB_SHA within 5 minutes." >&2
           exit 1

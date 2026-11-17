@@ -808,3 +808,20 @@ onto that `main` and contributes its own re-verification and the two deploy/moni
 - **F56** the Pages `deploy` job failed on every push because the site uses the legacy branch build and `actions/deploy-pages` never found an artifact. The workflow now handles both build types; changing the setting itself needs repository admin rights, which this session's token does not have.
 - **Concurrency defect: already fixed by another session.** `.github/workflows/pages.yml` used `concurrency: group: pages, cancel-in-progress: true`, so a push on any branch cancelled every other branch's pull-request validation (observed: runs `43992247095`, `43994108474`, `43994224943`). Session `f2ad3bce` fixed it on `main` in commit `e3e7431` with per-stream groups before this branch merged; this session kept that fix and dropped its own duplicate change rather than replacing it.
 - No tournament or hotel fact was changed in this session. The walking rows gained Google and Apple Maps cross-check links (SUGGESTIONS P6), built only from coordinates already recorded.
+
+### Session c4774e5a — merge and deploy result
+
+- [PR #44](https://github.com/karagemop466-tech/Poker1/pull/44) merged into `main` at
+  `b0a0a27c7b03ca3bfbde9b0e14c149c33280e5a1` on 2026-11-17T01:36:08Z. The pull-request `validate` job passed on the
+  exact head commit (`589810e`, run `43996557515`).
+- The merge-triggered Pages `deploy` job failed on `b0a0a27` and the failure was real: the legacy branch build for
+  that commit was recorded `errored` while the site kept publishing. Reading the Actions run showed the build was
+  **cancelled** by the newer commit `b3e34dd` (the scheduled snapshot refresh, ten seconds later), whose build
+  succeeded. The confirmation step now reports that case as `superseded` instead of failing (F57, with the helper in
+  `scripts/check_pages_build.py`), and still fails on a genuine error.
+- Live site re-checked after the merge: https://karagemop466-tech.github.io/Poker1/pages/monitoring.html now shows
+  the scheduled provenance result (74 / 80 documents fetched, 0 printed values changed) beside the row-level check
+  (90 / 94 sources reachable, 0 rows changed), and the hotels page shows the routed walking times with their new
+  Google and Apple Maps cross-checks. A crawl of the extracted site tree found no broken local link or asset.
+- One rendering defect found on the live page and fixed: "Rows carrying a source flag" was printed twice, once by
+  the page shell and once by the renderer.
