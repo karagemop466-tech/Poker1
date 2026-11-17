@@ -578,7 +578,7 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
         kpi(c.UNV, "unverified (entry rule)") +
         kpi(Object.keys(dates).length, "dates covered") +
         kpi(verifiedFees + " of " + hotels.length, "hotels with a verified resort fee") +
-        kpi(daily.length, "recurring daily formats") +
+        kpi(daily.length, "recurring formats published by the three rooms with a schedule") +
         kpi(flagged, "rows carrying a source flag");
     }).catch(showErr);
   };
@@ -672,22 +672,36 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
         var todays = daily.filter(function (x) { return x.days.indexOf(d.slice(0, 3)) >= 0 || x.days.indexOf(d) >= 0; });
         return '<div class="slot"><div class="d">' + d + "</div>" + (todays.length
           ? todays.map(function (x) {
-              return '<div class="t">' + timeFmt(x.start) + "</div><div class='small'>" + esc(x.name) +
+              return '<div class="t">' + timeFmt(x.start) + "</div><div class='small'>" +
+                "<span class='chip info'>" + esc(x.venue || "") + "</span><br>" + esc(x.name) +
                 "<br>" + money(x.buy_in_usd) + " · GTD " + money(x.guarantee_usd) + "</div>";
             }).join("<hr>")
-          : "<div class='small muted'>No daily format published for this weekday.</div>") + "</div>";
+          : "<div class='small muted'>No daily format published for this weekday by any of the three rooms with a "
+            + "published schedule.</div>") + "</div>";
       }).join("") + "</div>";
       main.innerHTML = "<h2>Weekly format map</h2>" + calendar + "<h2>Published formats</h2>";
       var cols = [
-        { id: "name", label: "Format", key: "name", html: function (r) { return "<strong>" + esc(r.name) + "</strong><br><span class='small'>" + esc(r.days) + "</span>"; } },
+        { id: "venue", label: "Room", key: "venue", html: function (r) {
+            return "<strong>" + esc(r.venue || "") + "</strong><br><a href='" + BASE + "pages/venue-" +
+              esc(r.venue_id || "") + ".html' class='small'>venue page</a>"; } },
+        { id: "name", label: "Format", key: "name", html: function (r) {
+            return "<strong>" + esc(r.name) + "</strong><br><span class='small'>" + esc(r.days) +
+              (r.single_entry ? "</span><br><span class='small'>" + esc(r.single_entry) + "</span>" : "") +
+              (r.flag ? "<br><span class='chip warn'>flag</span> <span class='small'>" + esc(r.flag) + "</span>" : "") +
+              "<br><span class='small muted'>read " + esc(r.verified_on || "") + "</span>"; } },
         { id: "start", label: "Start", key: "start", html: function (r) { return timeFmt(r.start); } },
         { id: "buy", label: "Buy-in", key: "buy_in_usd", num: true, html: function (r) { return money(r.buy_in_usd); } },
         { id: "gtd", label: "Guarantee", key: "guarantee_usd", num: true, html: function (r) { return money(r.guarantee_usd); } },
         { id: "status", label: "Entry rule", key: "status", html: function (r) { return statusChip(r.status); } },
-        { id: "late", label: "Registration closes", key: "late", html: function (r) { return timeFmt(r.late); } },
+        { id: "late", label: "Registration closes", key: "late", html: function (r) {
+            return timeFmt(r.late) + (r.late ? "" : "<span class='small muted'>no clock time printed</span>") +
+              (r.late_note ? "<br><span class='small'>" + esc(r.late_note) + "</span>" : ""); } },
         { id: "levels", label: "Levels × minutes", key: "levels", num: true, html: function (r) { return r.levels + " × " + r.lmin + " min"; } },
         { id: "fee", label: "Fee split", key: "fee", sort: null, html: function (r) { return "<span class='small'>" + esc(r.fee) + "</span>"; } },
-        { id: "ex", label: "Rule excerpt", key: "ex", sort: null, html: function (r) { return "<span class='small'>" + esc(r.ex) + "<br>" + esc(r.stack || "") + "</span>"; } }
+        { id: "ex", label: "Rule excerpt", key: "ex", sort: null, html: function (r) { return "<span class='small'>" + esc(r.ex) + "<br>" + esc(r.stack || "") + "</span>"; } },
+        { id: "src", label: "Source document", key: "source_url", sort: null, html: function (r) {
+            return "<span class='small'><a href='" + esc(r.source_url) + "' target='_blank' rel='noopener'>" +
+              esc(r.source_label || "official source") + "</a></span>"; } }
       ];
       table(main, daily, cols, { sortKey: "start", sortDir: 1 });
       var susp = rows.filter(function (r) { return r.venue === "Wynn Las Vegas"; });

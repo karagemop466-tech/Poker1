@@ -29,14 +29,24 @@ REQUIRED_SITE_DOCS = (
     "README.md",
 )
 # Exact hosts, not substring matches: data rows must point to official venue / operator sources.
-OFFICIAL_SOURCE_HOSTS = {
+OPERATOR_SOURCE_HOSTS = {
     "www.venetianlasvegas.com",
     "www.wynnlasvegas.com",
     "cdn.wynnresorts.com",
     "aria.mgmresorts.com",
     "bellagio.mgmresorts.com",
     "www.caesars.com",
+    # MGM Resorts' own digital-asset host. Accepted because the only documents served
+    # from it in this dataset are the three Bellagio poker structure PDFs linked directly
+    # from bellagio.mgmresorts.com/en/casino/poker.html; the link is published by the
+    # property, not chosen by us.
+    "assets.contentstack.io",
 }
+# Government records: the taxing authority that sets the room tax. Accepted only for the
+# address / rate-class rows of the licensed-establishment table, and always labelled as a
+# county record rather than a statement by the property.
+GOVERNMENT_SOURCE_HOSTS = {"www.clarkcountynv.gov"}
+OFFICIAL_SOURCE_HOSTS = OPERATOR_SOURCE_HOSTS | GOVERNMENT_SOURCE_HOSTS
 TOURNAMENT_STATUSES = {"SE", "MULTI", "RE", "REBUY", "CONT", "UNV"}
 TOURNAMENT_KINDS = {"entry", "continuation"}
 RULE_FIELDS = ("single_entry", "re_entry", "add_on", "fee")
@@ -422,7 +432,20 @@ for index, row in enumerate(daily_rows, 1):
     check_time(row.get("start"), f"{where} {identity} start", required=True)
     for field in ("buy_in_usd", "guarantee_usd", "levels", "lmin"):
         check_number(row.get(field), f"{where} {identity} {field}")
-    check_time(row.get("late"), f"{where} {identity} late", required=True)
+    if row.get("late_printed") is False:
+        # A source may state a level-based close with no clock time. The row then publishes a
+        # null clock and must quote the printed sentence instead of converting it to a time.
+        if row.get("late") is not None:
+            problems.append(f"{where} {identity}: late_printed is false, so late must stay null")
+        if not str(row.get("late_note") or "").strip():
+            problems.append(f"{where} {identity}: late_printed is false without a late_note quoting the source")
+    else:
+        check_time(row.get("late"), f"{where} {identity} late", required=True)
+    for field in ("venue", "source_url", "source_label"):
+        if not str(row.get(field) or "").strip():
+            problems.append(f"{where} {identity}: {field} must be set - a daily format needs its room and its document")
+    check_official_https_url(row.get("source_url"), f"{where} {identity} source_url")
+    check_date(row.get("verified_on"), f"{where} {identity} verified_on", required=True)
 
 venue_names = set()
 for index, row in enumerate(venue_rows, 1):

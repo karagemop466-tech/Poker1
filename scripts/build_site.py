@@ -75,7 +75,7 @@ PAGES = {
   <a class="card tile" href="pages/single-entry.html"><h3>Single entry (verified)</h3><p>Every event whose structure sheet confirms one entry only, with filters for date, venue, buy-in and labels.</p></a>
   <a class="card tile" href="pages/separate-section.html"><h3>Separate section</h3><p>Possible multiple entries and re-entry events. Kept out of the ranking.</p></a>
   <a class="card tile" href="pages/unverified.html"><h3>Unverified</h3><p>Official rows whose entry rule is not yet confirmed.</p></a>
-  <a class="card tile" href="pages/daily.html"><h3>Daily feed</h3><p>Wynn's recurring daily tournaments: format, guarantee, fee split and cut-offs.</p></a>
+  <a class="card tile" href="pages/daily.html"><h3>Daily feed</h3><p>Recurring formats each Strip room publishes: Wynn daily, Bellagio weekly, Caesars Palace daily - format, guarantee, fee split and cut-offs, with the document behind each.</p></a>
   <a class="card tile" href="pages/schedule.html"><h3>Schedule</h3><p>Day-by-day verified single-entry options, with a date picker.</p></a>
   <a class="card tile" href="pages/hotels.html"><h3>Hotels</h3><p>Resort fees, room-rate status, walking records and the dated rate log.</p></a>
   <a class="card tile" href="pages/calculator.html"><h3>Trip cost calculator</h3><p>Entries × buy-in + nights × true hotel cost + parking, from dated official-engine quotes. Nothing is assumed.</p></a>
@@ -112,8 +112,8 @@ PAGES = {
 <div id="content"></div>
 """),
     "pages/daily.html": ("Daily feed", "daily", """
-<h1>Wynn daily tournament feed</h1>
-<p class="lead">The recurring formats Wynn publishes for every day, read from the official daily structures.</p>
+<h1>Strip poker room daily feed</h1>
+<p class="lead">Recurring formats the rooms publish for every day of the week - Wynn's dailies, Bellagio's Friday/Saturday/Sunday events and Caesars Palace's four daily tournaments - each read from the property's own schedule document, with the printed clause quoted and the read date on the row. None of the Bellagio or Caesars formats is single entry, so none is ranked.</p>
 <div class="card callout" id="note"></div>
 <div id="content"></div>
 <p class="small" id="series-note"></p>

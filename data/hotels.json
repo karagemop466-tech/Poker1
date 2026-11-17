@@ -6,9 +6,9 @@
    "name": "The Venetian Resort",
    "operator": "Venetian Resort (Las Vegas)",
    "venue_link": "The Venetian Resort",
-   "address": null,
-   "address_status": "unverified",
-   "address_note": "The official resort map (venetianlasvegas.com) shows the Venetian/Palazzo complex between Sands Avenue and Las Vegas Blvd with the poker room on level 2 of the Grand Canal Shoppes. No official page read in this session prints the street address, so it is left blank.",
+   "address": "3325 Las Vegas Blvd S, Las Vegas, NV",
+   "address_status": "verified",
+   "address_note": "Clark County Department of Business License, General Information Guide for Transient Lodging Establishments, licensed-establishment table record 1000389.RES-001: \"Venetian Resort Hotel Casino / Palazzo Resort Hotel Casino | 3325 Las Vegas Blvd S | Las Vegas | NV | Licensed | 13.38% | RES | 1 | Transient Lodging Tax - Resort Hotel (PGC)\" (read 2026-11-17). The county record supplies the street address; the operator's own resort map shows the complex between Sands Avenue and Las Vegas Blvd with the poker room on level 2 of the Grand Canal Shoppes.",
    "booking_url": "https://www.venetianlasvegas.com/book",
    "resort_fee_usd": 55,
    "resort_fee_status": "verified",
@@ -47,6 +47,10 @@
     {
      "label": "Official booking engine (official)",
      "url": "https://www.venetianlasvegas.com/book"
+    },
+    {
+     "label": "Clark County licensing table: address and 13.38% Resort Hotel (PGC) rate class (read 2026-11-17)",
+     "url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf"
     }
    ],
    "true_cost_quote": {
@@ -67,9 +71,9 @@
    "name": "The Palazzo",
    "operator": "Venetian Resort (Las Vegas)",
    "venue_link": "The Venetian Resort",
-   "address": null,
-   "address_status": "unverified",
-   "address_note": "Same resort complex as The Venetian (official resort map). No official page read in this session prints the street address.",
+   "address": "3325 Las Vegas Blvd S, Las Vegas, NV",
+   "address_status": "verified",
+   "address_note": "The county licensing record 1000389.RES-001 lists the Venetian and the Palazzo under one address, \"3325 Las Vegas Blvd S, Las Vegas, NV\" (read 2026-11-17), so the Palazzo carries that address and the county's 13.38% resort-hotel rate. The operator's own map shows the shared complex between Sands Avenue and Las Vegas Blvd.",
    "booking_url": "https://www.venetianlasvegas.com/book",
    "resort_fee_usd": 55,
    "resort_fee_status": "verified",
@@ -104,6 +108,10 @@
     {
      "label": "Official booking engine (official)",
      "url": "https://www.venetianlasvegas.com/book"
+    },
+    {
+     "label": "Clark County licensing table: address and 13.38% Resort Hotel (PGC) rate class (read 2026-11-17)",
+     "url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf"
     }
    ],
    "true_cost_quote": {
@@ -131,9 +139,9 @@
    "resort_fee_usd": 55,
    "resort_fee_status": "verified",
    "resort_fee_note": "Official Wynn offer terms: \"A daily resort fee of $55 plus tax will be added to your room account for each room night\". Official Wynn facts page repeats $55 plus tax for Resort and Tower Suites.",
-   "clark_county_tax_pct": null,
-   "tax_status": "unverified",
-   "tax_note": "No Wynn room-tax rate is printed on any official Wynn page, and the official Wynn booking engine (reservations.wynnlasvegas.com) returns only its fee and policy text to a text fetch - it renders the nightly rate grid and the tax line client-side, so no Wynn quote with a tax figure could be captured on 2026-11-17. The Venetian's 13.38% Clark County rate is therefore NOT applied to Wynn here.",
+   "clark_county_tax_pct": 13.38,
+   "tax_status": "verified",
+   "tax_note": "Verified from the taxing authority, not from Wynn: Clark County Department of Business License, licensed-establishment table record 2000078.RES-001-class row for \"Wynn Las Vegas / Encore at Wynn Las Vegas | 3131 Las Vegas Blvd S | Las Vegas | NV | Licensed | 13.38% | RES | 1 | Transient Lodging Tax - Resort Hotel (PGC)\" (read 2026-11-17). No Wynn page prints the percentage, and the Wynn booking engine (reservations.wynnlasvegas.com) renders its rate grid and tax line client-side, so no Wynn quote with a tax figure could be captured on 2026-11-17: the rate is verified, the nightly amount is not.",
    "room_rate_usd": null,
    "room_rate_status": "unverified",
    "room_rate_note": "No nightly rate is published on an official Wynn page. Use the official booking engine.",
@@ -161,6 +169,10 @@
     {
      "label": "Poker room and tournament schedules (official)",
      "url": "https://www.wynnlasvegas.com/casino/poker"
+    },
+    {
+     "label": "Clark County licensing table: address and 13.38% Resort Hotel (PGC) rate class (read 2026-11-17)",
+     "url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf"
     }
    ],
    "last_checked": "2026-11-16",
@@ -181,9 +193,9 @@
    "resort_fee_usd": 55,
    "resort_fee_status": "verified",
    "resort_fee_note": "Official Wynn facts page: the $55 plus tax daily resort fee applies to Resort and Tower Suites reservations; the official offer terms cover the Wynn/Encore resort account.",
-   "clark_county_tax_pct": null,
-   "tax_status": "unverified",
-   "tax_note": "No Encore-specific room tax rate printed on an official page read in this session.",
+   "clark_county_tax_pct": 13.38,
+   "tax_status": "verified",
+   "tax_note": "The Clark County licensing record lists Wynn and Encore on one line - \"Wynn Las Vegas / Encore at Wynn Las Vegas | 3131 Las Vegas Blvd S\" at 13.38% (Resort Hotel, Primary Gaming Corridor), read 2026-11-17. No Encore-specific page prints a rate, so the county record is the only source behind this value.",
    "room_rate_usd": null,
    "room_rate_status": "unverified",
    "room_rate_note": "No nightly rate published on an official Wynn page. Use the official booking engine.",
@@ -207,6 +219,10 @@
     {
      "label": "Poker room location (official)",
      "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+    },
+    {
+     "label": "Clark County licensing table: address and 13.38% Resort Hotel (PGC) rate class (read 2026-11-17)",
+     "url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf"
     }
    ],
    "last_checked": "2026-11-16",
@@ -229,7 +245,7 @@
    "resort_fee_note": "No Bellagio-specific resort fee amount was printed on an official page read in this session, so the value is left blank.",
    "clark_county_tax_pct": null,
    "tax_status": "unverified",
-   "tax_note": "No Bellagio-specific room tax rate printed on an official page read in this session.",
+   "tax_note": "No Bellagio-specific room tax rate is published on the property's own pages (FLAGGED.md F47). The Clark County licensing table that settles this for the Venetian, Palazzo, Wynn and Encore is where to look: a search excerpt of that PDF prints a Bellagio row (\"3600 Las Vegas Blvd S ... 13.38% ... Resort Hotel (PGC)\"), but the page of the table carrying it was not retrieved on 2026-11-17, so the value is left blank here rather than published from a snippet (FLAGGED.md F58).",
    "room_rate_usd": null,
    "room_rate_status": "unverified",
    "room_rate_note": "No nightly rate published on an official page read in this session.",
@@ -267,7 +283,7 @@
    "resort_fee_note": "No ARIA resort fee amount printed on an official page read in this session.",
    "clark_county_tax_pct": null,
    "tax_status": "unverified",
-   "tax_note": "No ARIA-specific room tax rate printed on an official page read in this session.",
+   "tax_note": "No ARIA-specific room tax rate is published on the property's own poker or hotel pages (the official ARIA poker page, read 2026-11-17, prints 24 tables, the room's location and a phone/e-mail for rates, and no fee or tax). The Clark County licensing table cited for the Venetian and Wynn rows is the place to read the ARIA row; that page was not retrieved in this session, so no rate is published here (FLAGGED.md F58).",
    "room_rate_usd": null,
    "room_rate_status": "unverified",
    "room_rate_note": "Official ARIA poker page: \"Exclusive Room Rates for qualifying poker players\" - the rate itself is only available by phone (702.590.7232) or by e-mail, so no number is published.",
@@ -309,7 +325,7 @@
    "resort_fee_note": "No Caesars Palace-specific resort fee amount was printed on an official page read in this session, so the value is left blank.",
    "clark_county_tax_pct": null,
    "tax_status": "unverified",
-   "tax_note": "No Caesars Palace-specific room tax rate printed on an official page read in this session.",
+   "tax_note": "No Caesars Palace-specific room tax rate is published on the property's own pages (eight candidate official URLs produced no fee, FLAGGED.md F47). The Clark County licensing table cited for the Venetian and Wynn rows carries a \"Caesars Palace\" entry class, but that page of the table was not retrieved on 2026-11-17, so no rate is published here (FLAGGED.md F58).",
    "room_rate_usd": null,
    "room_rate_status": "unverified",
    "room_rate_note": "No nightly rate published on an official page read in this session.",
