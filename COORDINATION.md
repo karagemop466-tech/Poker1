@@ -6,7 +6,23 @@ Claimed before implementation. No other open claim covers this scope: open PRs #
 
 | Task | Status | File scope | Owner |
 |---|---|---|---|
-| Strip-wide poker-room survey: official schedules, structures and closures for every Strip room not yet covered (MGM Grand, Mandalay Bay, Horseshoe, Resorts World, Planet Hollywood); add an official-source-only strip page with a flag for every reported-but-unconfirmed item | **In progress** | `data/strip_rooms.json` (new), `research/strip-room-survey-2026-11-17.md` (new), `pages/strip-rooms.html` (generated), `scripts/build_site.py`, `assets/app.js` (one renderer), `scripts/check_links.py` (allow-list and page id), `scripts/monitor_sources.py` (monitor the new URLs), `data/sources.json`, `FLAGGED.md` (appended S-series only), `EXECUTIVE_SUMMARY.md` (appended section), `COORDINATION.md` | `88793bf4` |
+| Strip-wide poker-room survey: official schedules, structures and closures for every Strip room not yet covered (MGM Grand, Mandalay Bay, Horseshoe, Resorts World, Planet Hollywood); add an official-source-only strip page with a flag for every reported-but-unconfirmed item | **Done** (see the verification record below) | `data/strip_rooms.json` (new), `research/strip-room-survey-2026-11-17.md` (new), `pages/strip-rooms.html` (generated), `scripts/build_site.py`, `assets/app.js` (one renderer), `scripts/check_links.py` (allow-list and page id), `scripts/monitor_sources.py` (monitor the new URLs), `data/sources.json`, `FLAGGED.md` (appended S-series only), `EXECUTIVE_SUMMARY.md` (appended section), `COORDINATION.md` | `88793bf4` |
+
+### Session 88793bf4 — completion record
+
+**Sources read on 2026-11-17 (official operator pages, PDFs and article):** [MGM Grand poker page](https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html); [MGM Grand weekly schedule PDF](https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt5f25277b8918da08/mgm-grand-casino-poker-tournament_schedule.pdf); [MGM Grand $120 NLH structure PDF](https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/bltb2a45da7e8ee5621/mgm-grand-casino-poker-120_nlh.pdf); [Mandalay Bay poker page](https://mandalaybay.mgmresorts.com/en/casino/poker-tables.html); [Caesars poker article (Caesars Palace and Horseshoe)](https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip); [Resorts World casino events](https://www.rwlasvegas.com/gaming/casino-events/) and [gaming page](https://www.rwlasvegas.com/gaming/); [Planet Hollywood property page](https://www.caesars.com/planet-hollywood).
+
+**Press reports used only as closure leads (not confirmed on official pages):** [Casino.org, Resorts World closure, 13 Mar 2026](https://www.casino.org/vitalvegas/resorts-world-confirms-closure-of-poker-room/); [Las Vegas Review-Journal, Planet Hollywood closure, 28 Jan 2026](https://www.reviewjournal.com/business/casinos-gaming/inside-gaming-strip-casino-to-close-poker-room-3612434/).
+
+**Verification performed:** `python3 scripts/build_data.py` → no change to `data/tournaments.json` (317 rows); `python3 scripts/build_site.py` → 22 pages; `python3 scripts/check_links.py` → OK (22 pages; the new Strip-room checks pass: official hosts, times, numbers, dates, flag ids); `npm run test:smoke` → 22/22 pages render; a DOM check of `pages/strip-rooms.html` rendered 5 room rows, 5 format rows and 2 reported-change rows with no error.
+
+**Result:** MGM Grand (new): official weekly schedule and structure read. Its $120 formats include an optional $11 gratuity that buys 10,000 extra chips, so they are in the separate section; the Saturday $150 event has no published structure (unverified). Horseshoe (new): six daily start times from the official Caesars article, with no buy-in printed. Mandalay Bay (new): no tournament schedule on the official page. Resorts World and Planet Hollywood: reported closed, not confirmed on an official page. No dated rows were added; no ranking changed.
+
+**Irregularities (FLAGGED.md section E, S1–S10):** MGM poker page times (11:00 / 7:00 / 11:00) differ from the MGM PDF (11:10 / 7:10 / 11:10) (S1); the MGM PDFs print no date and carry an "August" title (S2); the $11 optional gratuity buys 10,000 chips (S3); Mandalay Bay publishes no schedule (S4); Horseshoe prints no buy-in (S5); the Saturday $150 event has no structure (S6); Resorts World and Planet Hollywood closures are press-reported only (S7, S8); MGM PDFs are on the MGM content-asset host, which is added to the approved list (S9); the Strip resorts not surveyed are listed (S10).
+
+**Monitoring:** the six new official URLs are in `data/sources.json`, and `scripts/monitor_sources.py` now monitors the Strip-room sources. The scheduled monitor will check them from GitHub Actions.
+
+**Not touched:** WPT join and hotel fee records (PR #36), row-verification fixes (PR #38), planner review (PR #39), and PR #24.
 
 ## Session 54ae4633 (current branch `arena/54ae4633-poker1`)
 
