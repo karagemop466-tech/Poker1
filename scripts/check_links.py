@@ -981,6 +981,47 @@ for rel_md in REQUIRED_SITE_DOCS + ("COORDINATION.md",):
         if not os.path.exists(os.path.join(ROOT, unquote(clean))):
             problems.append(f"{rel_md}: relative link target does not exist: {target}")
         md_checked += 1
+# --- Markdown tables that a blank line has split into a broken fragment. F56 recorded a row of four
+# cells in a three-column table separated from the rows above by a blank line, which renders as its own
+# broken table; this session did the same to a new row while adding it. A row whose cell count differs
+# from the header is caught by the renderer's own shape, but a *detached* row is not, so it is checked
+# here: no row may be separated from the table it belongs to by a blank line.
+MD_DOCS = ["README.md", "EXECUTIVE_SUMMARY.md", "QUESTIONS.md", "SUGGESTIONS.md", "FLAGGED.md", "REVIEW.md"]
+for rel in MD_DOCS:
+    path = os.path.join(ROOT, rel)
+    if not os.path.isfile(path):
+        continue
+    with open(path, encoding="utf-8") as stream:
+        lines = stream.read().split("\n")
+    for index, line in enumerate(lines):
+        if not line.startswith("|"):
+            continue
+        if index == 0 or lines[index - 1].strip() != "":
+            continue
+        # A row directly after a blank line starts a new table, so it must be a header followed by a
+        # separator. Anything else is a row that fell out of the table above it.
+        following = lines[index + 1] if index + 1 < len(lines) else ""
+        if not re.match(r"^\|[\s:|-]+\|?$", following):
+            problems.append(f"{rel}:{index + 1}: a table row is separated from its table by a blank "
+                            f"line, so it renders as a broken fragment: {line[:70]!r}")
+    # Cell counts must match the header of the table each row belongs to. A row with four cells in a
+    # three-column table renders as a broken grid, which is how F56's duplicate was published.
+    in_table, header_cols = False, None
+    for index, line in enumerate(lines):
+        if line.startswith("|"):
+            s = line.strip().strip("|")
+            cols = len(re.split(r"(?<!\\)\|", s))
+            if not in_table:
+                in_table, header_cols = True, cols
+            elif re.match(r"^\|[\s:|-]+\|?$", line):
+                continue
+            elif cols != header_cols:
+                problems.append(f"{rel}:{index + 1}: row has {cols} cells but its table header has "
+                                f"{header_cols}, so it cannot render as a grid: {line[:70]!r}")
+        elif line.strip() == "":
+            continue
+        else:
+            in_table, header_cols = False, None
 
 if problems:
     print("\n".join(problems))

@@ -116,3 +116,48 @@ field size and finish time, which no official source publishes in advance.
   of them touches this defect. They are not reviewed or merged here.
 - No source was re-read this session, so no `last_checked` value was advanced and no flag was created or
   altered apart from the F58→F61 renumbering and the new F62.
+
+## 6. Follow-up: four Flagged-page tables could not render as grids (F63)
+
+Found by reading the **deployed** Flagged page back after PR #72 merged, rather than by reading the
+Markdown. The new F62 row printed under a `| --- | --- | --- |` separator instead of inside the table
+above it, because the row had been inserted after a blank line.
+
+Auditing `FLAGGED.md` then found three more rows in the same state, and one worse: **F39** carried three
+cells in a four-column table, because its source link and its resolution had been merged into a single
+cell at some earlier point. The full audit of the file's eight tables:
+
+| Table | Header | Rows found ragged |
+|---|---|---|
+| A | `# \| Irregularity \| Source \| Effect on the data` | none |
+| B | `# \| Irregularity \| Handling` | F59 |
+| C | `# \| What was re-checked \| Result` | F48, F58 (and F63 when first added) |
+| D | `# \| Irregularity or finding \| Source \| Handling` | **F39** |
+| E | `# \| Point \| Detail` | none |
+| F | `# \| Item \| Why it is blank` | none |
+| G, H | 4-column | none |
+
+**Two root causes, both fixed.**
+
+1. **Blank lines.** Three rows sat one blank line below their table, which Markdown renders as a separate
+   one-row table. Reattached.
+2. **The Markdown renderer split on every pipe.** `assets/app.js` used `.split("|")`, so F59's quoted
+   official text — `"Monday, January 4, 2027 \| 11:10 AM \| 20 \| ..."`, correctly escaped in the source —
+   rendered as six cells in a three-column table. The renderer now splits on `(?<!\\)\|` and removes the
+   escape afterwards, so an escaped pipe inside a cell works as the Markdown author intended.
+
+**No content was removed or rewritten.** The three detached rows were reattached; F39's merged cell was
+split back into its source and its resolution, both taken verbatim from the text already present.
+
+**Two new rules in `scripts/check_links.py`, both proven to fire:**
+
+| Rule | Verified by |
+|---|---|
+| A table row separated from its table by a blank line | Re-inserting a detached row: the check named the inserted row *and* the row it displaced |
+| A row whose cell count differs from its table header | Caught F39 immediately; also caught a 7-cell row when F63's own first draft was written |
+
+**Verification after the fix:** the Flagged page was rendered in a headless DOM and every `<table>` was
+inspected — **7 tables, 0 ragged**, every row's cell count equal to its header. F39, F48, F58, F59, F61,
+F62 and F63 all present in the rendered output, and F59's quoted date line renders as one cell.
+`check_links.py` OK, `verify_rows.py` 1,296 checks / 0 hard failures, pair check 0 unexplained, smoke
+23/23, and the page build is byte-identical on a second run.

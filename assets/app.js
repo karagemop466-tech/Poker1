@@ -183,7 +183,14 @@
       if (/^\|/.test(line)) {
         var rows = [];
         while (i < lines.length && /^\|/.test(lines[i])) { rows.push(lines[i]); i++; }
-        var cells = function (r) { return r.replace(/^\||\|\s*$/g, "").split("|").map(function (c) { return c.trim(); }); };
+        // Split on unescaped pipes only. A cell may contain a literal "|" written as "\|" (a time
+        // table such as "January 4, 2027 | 11:10 AM | 20 | ..."), and splitting on those made a
+        // three-column row render with six cells. The escape is removed after the split.
+        var cells = function (r) {
+          return r.replace(/^\||\|\s*$/g, "").split(/(?<!\\)\|/).map(function (c) {
+            return c.replace(/\\\|/g, "|").trim();
+          });
+        };
         var head = cells(rows[0]);
         var body = rows.slice(2).map(cells);
         var html = '<div class="table-wrap"><table><thead><tr>' + head.map(function (c) { return "<th>" + inline(c) + "</th>"; }).join("") + "</tr></thead><tbody>";
