@@ -223,7 +223,23 @@ The repository contains a static dashboard (`index.html`, `pages/`, `assets/`), 
 - PR #23 (arena/d8a7181d-poker1 → main): https://github.com/karagemop466-tech/Poker1/pull/23 — **MERGED** (merge commit `e5b40ba`) into `main` at 2026-11-16T20:01:50Z after the `validate` check passed (`build_site.py` zero diff, `check_links` OK). Pages workflow run `43945495418` completed; the Pages API reports status `built` at https://karagemop466-tech.github.io/Poker1/. The deployed `data/daily.json` was re-read from `main` through the GitHub API and carries both new notes (registration opens four hours before start; the daily-suspension wording conflict).
 - PR #23 content: branch histories were unrelated, so it joined `main` with `--allow-unrelated-histories`. `main`'s dataset (316 rows, 80 SE) was kept over this branch's (224 rows, 50 SE). The PR adds only the Wynn registration-opening time, the daily-suspension source conflict, and the coordination record.
 
+## Session 3f878ff5 (this session, 2026-11-17) — branch `arena/3f878ff5-poker1`
+
+Claimed before implementation (this commit, pushed before any data or page change). Base: `main` at `bfc8951` (PR #28 merged).
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Re-read official hotel fee / Clark County tax / parking / cancellation terms for Palazzo, Bellagio, ARIA and Caesars Palace; fill a field only when the official page states it | in progress | `scripts/build_data.py` (HOTELS block), `data/hotels.json`, `data/rates.json` | `3f878ff5` |
+| Attempt live official booking-engine rate capture for the trip window (Venetian/Palazzo, Wynn/Encore, Bellagio, ARIA, Caesars); log only numeric checkout totals with a timestamp, otherwise record the blocker | in progress | `scripts/build_data.py` (RATES block), `data/rates.json`, `research/hotels.md` | `3f878ff5` |
+| Re-read official poker pages of Bellagio, ARIA and Caesars for any scheduled tournament; record the result on their venue pages (no row is invented) | in progress | `scripts/build_data.py` (VENUES block), `data/venues.json`, `pages/venue-*.html` | `3f878ff5` |
+| Re-check Venetian DeepStack page and Wynn poker page / WPT schedule PDF / Wynn daily poster on 2026-11-17; record what was re-read | in progress | `data/monitoring.json`, `research/verification-2026-11-17.md` | `3f878ff5` |
+| Refresh decision documents for 2026-11-17 (summary, questions, flagged, review, README) and log the open competing PR #24 | in progress | `EXECUTIVE_SUMMARY.md`, `QUESTIONS.md`, `FLAGGED.md`, `REVIEW.md`, `README.md`, `COORDINATION.md` | `3f878ff5` |
+| Integration: validate, PR to `main`, merge, confirm Pages deploy | not started | all of the above | `3f878ff5` |
+
+Open conflict noted, not touched: PR #24 (`arena/bad329a9-poker1`, opened 2026-11-16) edits nearly every data file and reports 54 single-entry rows against `main`'s 80. It is not merged and is left for review.
+
 ## Log
+- 2026-11-17: session `3f878ff5` claimed the scope above on branch `arena/3f878ff5-poker1` (base `main` `bfc8951`).
 - 2026-11-16: session `40ca34e5` integrated onto `main` (which had advanced with session `baba1a15`'s
   full integration). `main`'s dataset, pages, styles, scripts and workflows were adopted unchanged; this
   session's branch was rebased on top of `main` and force-pushed with `--force-with-lease` so no other
