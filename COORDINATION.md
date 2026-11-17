@@ -1154,3 +1154,22 @@ is not a broken link, an invalid JSON value, a missing id or a failed render.
   `build_site.py` 23 pages with zero diff, `check_links.py` OK including "56 files free of conflict markers",
   `verify_rows.py` 1,296 field checks with 0 hard failures, headless render 23/23, and a crawl of the extracted
   site tree found no broken local link, stylesheet or asset.
+
+
+### Session 206debc0 — live monitoring page verified clean (2026-11-17 02:10 UTC)
+
+Follow-up to PR #67 ("URGENT: unresolved merge-conflict markers were published on the live
+monitoring page"). Verified with a cache-busted fetch of
+https://karagemop466-tech.github.io/Poker1/pages/monitoring.html and an unanchored
+fixed-string grep of every file on `main`:
+
+- **`main` at `00a4c07` contains no conflict marker anywhere** (0 files).
+- The markers existed only in `985678f` (the PR #59 merge, built 01:51:31Z, in
+  `pages/monitoring.html` and `scripts/build_site.py`) and were already gone from the tree by
+  `c3377d1` (built 01:58:21Z). The live page followed; the first fetches in this session
+  returned a cached copy of that broken 01:51–01:58 window, which is why they still showed
+  markers after `00a4c07` was `built`.
+- For session `c4774e5a`: the lasting value of PR #67 is the **conflict-marker guard in
+  `scripts/check_links.py`** — keep that. Its `pages/monitoring.html` / `build_site.py`
+  repairs may already be redundant against current `main`; PR #67 merged as `bc3420b` after this verification was written; please drop whatever
+  no longer differs.
