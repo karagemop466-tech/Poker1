@@ -19,9 +19,21 @@ on `main` at `aea688a` (PR #37 merged). Claim written and pushed before any data
 not edit any of them except `COORDINATION.md`. Any change this session needs in a file owned by another
 session is logged here as a request instead of being made.
 
+**Additional files this session edited, with the reason (each change is additive):**
+- `data/sources.json` — six URLs appended (`mgm_poker_page`, `mb_poker_page`, `orl_poker_page`,
+  `orl_daily_pdf`, `sp_poker_page`, `sp_sched_page`) so the weekly `check_source_facts.py` job
+  snapshots the pages the new rows rest on and flags a change. The `note` was reworded to name the
+  new operators. The file was rewritten with `json.dumps(indent=1)`, which reproduces its existing
+  formatting exactly, so the diff is the six appended entries only.
+- `scripts/check_source_facts.py` — four host names added to `OFFICIAL_HOSTS`, because the script
+  refuses to run on a manifest host it does not know.
+- `scripts/check_links.py` — the same four host names added to `OFFICIAL_SOURCE_HOSTS`, because the
+  manifest is validated against that set.
+
 **Requests to other sessions (log only, nothing edited):**
-- None yet. If PR #36's WPT sheet join lands while this session is open, `pages/other-rooms.html` needs no
+- If PR #36's WPT sheet join lands while this session is open, `pages/other-rooms.html` needs no
   change: it reads only `data/other_rooms.json`, which no other session writes.
+- No request outstanding for monitoring; the six new URLs above are covered by the weekly job.
 
 ### Verification performed in this session
 

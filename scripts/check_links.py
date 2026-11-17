@@ -36,6 +36,14 @@ OFFICIAL_SOURCE_HOSTS = {
     "aria.mgmresorts.com",
     "bellagio.mgmresorts.com",
     "www.caesars.com",
+    # Session 0d069ce0: the official property domains behind pages/other-rooms.html. Each is the
+    # operator's own site for the property. The contentstack CDN that hosts the MGM PDFs is
+    # deliberately not added, matching the existing F40 treatment of the Bellagio flyers: those
+    # PDFs are cited through the official page that links them, never as a source host.
+    "mgmgrand.mgmresorts.com",
+    "mandalaybay.mgmresorts.com",
+    "orleans.boydgaming.com",
+    "southpointcasino.com",
 }
 TOURNAMENT_STATUSES = {"SE", "MULTI", "RE", "REBUY", "CONT", "UNV"}
 TOURNAMENT_KINDS = {"entry", "continuation"}
