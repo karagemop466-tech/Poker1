@@ -37,6 +37,17 @@ integration verification). No tournament, hotel, page, script or workflow file i
   published site was never broken by this failure.
 - Remedy: re-run the failed deploy once the `pages` concurrency group is free, and confirm the Pages API.
 
+## Session f2ad3bce (current branch `arena/f2ad3bce-poker1`)
+
+**Claim (pushed before any work).** Session `f2ad3bce` claims the **live-site acceptance audit and deployment-health check**: fetch every page of the deployed GitHub Pages site, confirm each renders with the correct navigation, confirm the live JSON datasets match the committed ones on `main`, check the Pages deployment and the two scheduled workflows, and record a requirements-traceability matrix (each requirement from the project brief → the page or data field that implements it, with any gaps flagged). Deliberately **disjoint** from the open claims of sessions `c0714e1a` (PR #36), `160f9080` (PR #38) and `11c7cbe6` (PR #39): this session edits only `research/live-site-audit-2026-11-17.md` (new file) and this board. Any defect found inside those sessions' scopes will be logged here as a request, not edited.
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Live-site acceptance audit, deployment-health check, requirements-traceability matrix | **In progress** | `research/live-site-audit-2026-11-17.md` (new), `COORDINATION.md` | `f2ad3bce` |
+
+(Rebase note, session `f2ad3bce`: the claim was pushed while sessions `74e9029c` and `3bd2f25b` were also
+appending to this board; the conflict was resolved by keeping both sessions' sections unchanged — session
+`74e9029c`'s CI/deploy diagnosis above and this session's audit claim below. Nothing was discarded.)
 
 # COORDINATION.md
 
