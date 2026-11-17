@@ -11,16 +11,47 @@ primary event and a conditional fallback, not an impossible sequence" and the sc
 
 | Task | Status | File scope | Owner |
 |---|---|---|---|
-| Fix the `est_end` midnight-wrap in the day plan: compare fallbacks and overlaps in absolute minutes using the stored `est_duration_min`, and stop proposing a fallback that starts on the same day as a primary that runs past midnight. Store an `est_end_next_day` flag so the renderer can print "(next day)". | **In progress** | `scripts/build_data.py` (`build_schedule`), `data/schedule.json` (generated) | `9aad3bd2` |
-| Render the "(next day)" marker for a wrapped `est_end` on the schedule page so a finish time that reads before its start is never shown as a same-day time. | **In progress** | `assets/app.js` (schedule renderer), regenerated `pages/schedule.html` | `9aad3bd2` |
-| REQUEST 2 (session 206debc0): add `www.rwlasvegas.com` to the approved official-host set in `check_source_facts.py` and add `set -o pipefail` to the source-facts workflow so a refusal to run is a red job, not a silent success. | **In progress** | `scripts/check_source_facts.py`, `.github/workflows/source-facts.yml` | `9aad3bd2` |
-| Remove the doubled `<h1>` on the five markdown-backed pages (summary, questions, suggestions, flagged, review): the template prints a static `<h1>` and the Markdown file prints its own `#` heading. Keep one heading. | **In progress** | `scripts/build_site.py`, regenerated `pages/summary.html`, `pages/questions.html`, `pages/suggestions.html`, `pages/flagged.html`, `pages/review.html` | `9aad3bd2` |
-| Final integration: re-run every generator and check, re-verify the combined data line by line, confirm no broken links, publish to GitHub Pages, open and merge the PR to `main`, record the PR link and merge result here. | **Pending** | all files above + `COORDINATION.md` | `9aad3bd2` |
+| Fix the `est_end` midnight-wrap in the day plan: compare fallbacks and overlaps in absolute minutes using the stored `est_duration_min`, and stop proposing a fallback that starts on the same day as a primary that runs past midnight. Store an `est_end_next_day` flag so the renderer can print "(next day)". | **Done** — `build_schedule` now computes `a_end = to_min(a.start) + a.est_duration_min` and treats `a_end >= 1440` as a next-day finish. A primary that ends the next day gets no same-day fallback; every later event that day is flagged as an overlap. | `scripts/build_data.py` (`build_schedule`), `data/schedule.json` (generated) | `9aad3bd2` |
+| Render the "(next day)" marker for a wrapped `est_end` on the schedule page so a finish time that reads before its start is never shown as a same-day time. | **Done** — the schedule renderer prints "(next day)" when `est_end_next_day` is set; conflict details say "until HH:MM the next day". | `assets/app.js` (schedule renderer), regenerated `pages/schedule.html` | `9aad3bd2` |
+| REQUEST 2 (session 206debc0): add `www.rwlasvegas.com` to the approved official-host set in `check_source_facts.py` and add `set -o pipefail` to the source-facts workflow so a refusal to run is a red job, not a silent success. | **Done** — both `www.rwlasvegas.com` and `rwlasvegas.com` added to `OFFICIAL_HOSTS`; `assert_official(manifest["sources"])` now passes (no refusal); the workflow step runs `set -o pipefail; … | tee`. | `scripts/check_source_facts.py`, `.github/workflows/source-facts.yml` | `9aad3bd2` |
+| Remove the doubled `<h1>` on the five markdown-backed pages (summary, questions, suggestions, flagged, review): the template prints a static `<h1>` and the Markdown file prints its own `#` heading. Keep one heading. | **Done** — `markdownPage` strips a leading `# Title` line from the document; the template `<h1>` is the single heading. Verified in a headless DOM: each of the five pages renders exactly one `<h1>`. | `assets/app.js` (`markdownPage`), regenerated `pages/summary.html`, `pages/questions.html`, `pages/suggestions.html`, `pages/flagged.html`, `pages/review.html` | `9aad3bd2` |
+| Requirement 4 ("Add a 'last checked' date to each row"): the tournament rows carry `last_checked` but the tournament tables did not render it. Add a "Last checked" column to every tournament table. | **Done** — `tournamentColumns` now renders a "Last checked" column from `row.last_checked` (all 317 rows carry 2026-11-17). | `assets/app.js` (`tournamentColumns`), regenerated all tournament pages | `9aad3bd2` |
+| Requirement 2 ("each with its source excerpt and retrieval date"): `ruleCell` showed the excerpt and source but not the retrieval date. Add the rule `retrieved_on` to the rule cell. | **Done** — each rule field now prints "retrieved <date>" next to its source link. | `assets/app.js` (`ruleCell`), regenerated all tournament pages | `9aad3bd2` |
+| Final integration: re-run every generator and check, re-verify the combined data line by line, confirm no broken links, publish to GitHub Pages, open and merge the PR to `main`, record the PR link and merge result here. | **In progress** | all files above + `COORDINATION.md` | `9aad3bd2` |
 
 **Files deliberately NOT edited by this session:** the tournament, hotel, rate, walking and structure-rule
 facts in `data/*.json` are unchanged by this session except the regenerated `data/schedule.json` (the
-midnight-wrap fix only changes the derived day-plan fields, not any official value). No official source
-is re-read or altered; every fact already in the dataset keeps its source and retrieval date.
+midnight-wrap fix only changes the derived day-plan fields — primary/fallback selection, overlap flags and
+the `est_end_next_day` marker — not any official value). No official source is re-read or altered; every fact
+already in the dataset keeps its source and retrieval date.
+
+### Session 9aad3bd2 — verification performed and results
+
+- `python3 scripts/build_data.py` → 317 rows (80 SE / 67 MULTI / 107 RE / 25 CONT / 38 UNV), 70 schedule
+  days, 79 flagged rows. `data/schedule.json` regenerated with the midnight-wrap fix.
+- **Midnight-wrap fix measured.** Before: 121 rows had `est_end` earlier than their start, 24 of 24
+  conditional fallbacks were impossible sequences, 14 overlaps flagged. After: 121 events carry
+  `est_end_next_day`, **0** impossible fallbacks remain, **245** overlaps are flagged, and the 40 days whose
+  primary runs past midnight correctly report "no same-day fallback" instead of a false fallback. The
+  estimate is derived from the published level structure (e.g. the $300 NLH 1A $75K GTD: 30 levels × 40 min
+  + 7 × 15-min breaks = 1305 min = 21.75 h, start 11:10 → 08:55 next day) — an estimate, labelled as such, not
+  an official finish time.
+- `python3 scripts/build_site.py` → 23 pages, no diff beyond the regenerated content.
+- `python3 scripts/check_links.py` → OK (56 files free of conflict markers, 23 pages, 317 rows, 7 hotels,
+  5 dated rates, 70 schedule days; source, rules, schedule, hotel-rate/cost, provenance and page-link checks).
+- `python3 scripts/verify_rows.py` → 324 verified rows, 1,296 field checks, 0 hard failures, 1 documented
+  review item (`r225` start 20:00 — interpretation, not a data error).
+- `node scripts/smoke_test.js` → 23/23 pages render headlessly.
+- Headless-DOM render checks: schedule page shows 171 "(next day)" markers and 52 overlap-flagged blocks;
+  the five markdown pages each render exactly one `<h1>`; the single-entry page renders 80 rows with the new
+  "Last checked" column and 327 rule "retrieved" dates.
+- `assert_official(manifest["sources"])` in `check_source_facts.py` → PASS (the rwlasvegas refusal is gone).
+
+**No new irregularity was introduced.** The fixes correct presentation and derived-schedule correctness only;
+they do not change any value read from an official source. The one open review item (`r225`) is unchanged and
+is already published on the Flagged for Review page.
+
+## Session 212b84be — FINAL INTEGRATION SESSION (branch `arena/212b84be-poker1`, base `aea688a` = `main` at PR #37)
 
 ## Session 212b84be — FINAL INTEGRATION SESSION (branch `arena/212b84be-poker1`, base `aea688a` = `main` at PR #37)
 ## Session 8a12503e — branch `arena/8a12503e-poker1` (base `aea688a`, `main` after PR #37)

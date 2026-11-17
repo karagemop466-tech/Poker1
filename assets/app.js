@@ -105,7 +105,8 @@
       parts.push("<strong>" + esc(k.replace(/_/g, " ")) + ":</strong> " + esc(f.value) +
         '<br><span class="small">' + esc(f.excerpt) + "</span>" +
         '<br><span class="small">' + esc(f.source.label) + " &middot; " +
-        '<a href="' + esc(f.source.url) + '" target="_blank" rel="noopener">' + esc(f.source.url) + "</a></span>");
+        '<a href="' + esc(f.source.url) + '" target="_blank" rel="noopener">' + esc(f.source.url) + "</a>" +
+        (f.retrieved_on ? " &middot; retrieved " + esc(f.retrieved_on) : "") + "</span>");
     });
     return "<span class='small'>" + parts.join("<hr>") + "</span>";
   }
@@ -484,7 +485,8 @@
       { id: "buy", label: "Buy-in", key: "buy_in_usd", num: true, html: function (r) { return money(r.buy_in_usd); } },
       { id: "gtd", label: "Guarantee", key: "guarantee_usd", num: true, html: function (r) { return money(r.guarantee_usd); } },
       { id: "mult", label: "Guarantee ÷ buy-in", key: "gtd_multiple", num: true, html: function (r) { return mult(r.gtd_multiple); } },
-      { id: "status", label: "Entry rule", key: "entry_status", html: function (r) { return statusChip(r.entry_status); } }
+      { id: "status", label: "Entry rule", key: "entry_status", html: function (r) { return statusChip(r.entry_status); } },
+      { id: "checked", label: "Last checked", key: "last_checked", html: function (r) { return "<span class='small'>" + esc(r.last_checked) + "</span>"; } }
     ];
     if (withRules) {
       cols.push({ id: "rule", label: "Entry rule (official)", key: "entry_rule", sort: null, html: function (r) { return "<span class='small'>" + esc(r.entry_rule) + "</span>"; } });
@@ -1150,6 +1152,9 @@
   function markdownPage(file) {
     return function () {
       getText(file).then(function (t) {
+        // The page template already prints the page <h1>. Drop a leading "# Title" line from
+        // the document so a markdown-backed page does not show its title twice.
+        t = t.replace(/^\s*#\s+[^\r\n]*\r?\n/, "");
         document.getElementById("content").innerHTML = '<div class="md">' + renderMarkdown(t) + "</div>";
       }).catch(showErr);
     };

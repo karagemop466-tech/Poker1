@@ -36,8 +36,9 @@ jobs:
 
       - name: Re-check every official source
         # Output is also written into the repo so it can be reviewed without
-        # downloading the Actions log.
-        run: python3 scripts/check_source_facts.py 2>&1 | tee data/monitor_last_run.txt
+        # downloading the Actions log. set -o pipefail makes the job fail when the
+        # script exits non-zero even though its output is piped through tee.
+        run: set -o pipefail; python3 scripts/check_source_facts.py 2>&1 | tee data/monitor_last_run.txt
 
       - name: Summarise
         run: |
