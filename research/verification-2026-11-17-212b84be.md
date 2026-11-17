@@ -22,7 +22,7 @@ Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge)") but neve
 verifier now accepts a sum only when it equals the two printed components and both components appear in
 the official text. Base rule from session 160f9080; component acceptance added here.
 
-## 2. Ambiguous structure-sheet keys found and fixed (flag F57)
+## 2. Ambiguous structure-sheet keys found and fixed (flag F60)
 
 Two WPT sheets print the same date/start/buy-in key:
 

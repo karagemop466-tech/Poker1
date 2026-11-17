@@ -980,6 +980,7 @@ the value. Blank means unverified, never estimated.</p>
         if (s === "conditional") return '<span class="chip warn">Conditional</span>';
         return '<span class="chip warn">Unverified</span>';
       };
+      var notPub = '<span class="muted">not published on an official source</span>';
       var cols = [
         { id: "name", label: "Hotel", key: "name", html: function (r) { return "<strong>" + esc(r.name) + "</strong><br><span class='small'>" + esc(r.address_note) + "</span>"; } },
         { id: "fee", label: "Resort fee / night", key: "resort_fee_usd", num: true, html: function (r) { return chip(r.resort_fee_status) + "<br>" + money(r.resort_fee_usd) + "<br><span class='small'>" + esc(r.resort_fee_note) + "</span>"; } },
@@ -989,11 +990,60 @@ the value. Blank means unverified, never estimated.</p>
         { id: "cancel", label: "Cancellation / check-in", key: "cancellation_note", sort: null, html: function (r) { return "<span class='small'>" + esc(r.cancellation_note) + "<br><br>" + esc(r.check_in_out) + "</span>"; } },
         { id: "checked", label: "Last checked", key: "last_checked" },
         { id: "true", label: "True cost / night", key: "true_cost_per_night_usd", num: true, html: function (r) { return r.true_cost_per_night_usd == null ? '<span class="muted">blank (rate unverified)</span>' : money(r.true_cost_per_night_usd); } },
-        { id: "walkv", label: "Walk to Venetian poker room", key: "walk_to_venetian_min", num: true, html: function (r) { return walkCell(r.walk_to_venetian_min, r.walk_to_venetian_status, r.walk_to_venetian_within_30); } },
+        { id: "park", label: "Parking / night", key: "parking_usd_per_day", num: true,
+          html: function (r) {
+            if (r.parking_usd_per_day == null && r.parking_valet_usd == null) return notPub;
+            return "<span class='small'>self" + (r.parking_usd_per_day == null ? " not published" : " " + money(r.parking_usd_per_day)) +
+              (r.parking_valet_usd == null ? "" : "<br>valet " + money(r.parking_valet_usd)) + "</span>" +
+              (r.parking_poker_note ? "<br><span class='chip ok'>poker room guests park free</span>" : "") +
+              "<br><span class='small'>" + esc(r.parking_note) + "</span>";
+          } },
+        { id: "extra", label: "Other mandatory charges", key: "incidentals_usd_per_night", num: true,
+          html: function (r) {
+            var bits = [];
+            if (r.incidentals_usd_per_night != null) bits.push("incidental deposit " + money(r.incidentals_usd_per_night) + " / night");
+            if (r.extra_guest_usd_per_night != null) bits.push("each guest beyond two " + money(r.extra_guest_usd_per_night) + " / night");
+            if (r.early_checkout_fee_usd != null) bits.push("early check-out " + money(r.early_checkout_fee_usd) + " plus tax");
+            if (!bits.length) return notPub;
+            return "<span class='small'>" + bits.join("<br>") + "</span>" +
+              (r.incidentals_note ? "<br><span class='small'>" + esc(r.incidentals_note) + "</span>" : "");
+          } },
+        { id: "cancel", label: "Cancellation and deposit", key: "cancellation_note", sort: null,
+          html: function (r) { return "<span class='small'>" + esc(r.cancellation_note || "no official cancellation term read") + "</span>"; } },
+        { id: "walkv", label: "Walk to Venetian poker room", key: "walk_to_venetian_min", num: true,
+          html: function (r) { return walkCell(r.walk_to_venetian_min, r.walk_to_venetian_status, r.walk_to_venetian_within_30); },
+          text: function (r) { return r.walk_to_venetian_min == null ? "not published" : String(r.walk_to_venetian_min); } },
         { id: "walkw", label: "Walk to Wynn poker room", key: "walk_to_wynn_min", num: true, html: function (r) { return walkCell(r.walk_to_wynn_min, "verified", r.walk_to_wynn_within_30); } },
+        { id: "checked", label: "Last checked", key: "last_checked", html: function (r) {
+            return esc(r.last_checked) + (r.recheck && r.recheck.on && r.recheck.on !== r.last_checked
+              ? "<br><span class='small'>fees re-read " + esc(r.recheck.on) + "</span>" : ""); } },
         { id: "src", label: "Sources", key: "sources", sort: null, html: function (r) { return "<span class='small'>" + srcLinks(r.sources) + "</span>"; } }
       ];
-      table(main, rows, cols, { sortKey: "name", sortDir: 1 });
+
+      /* filter bar: the ≤30-minute walking rule and a text box across every column */
+      var bar = document.createElement("div");
+      bar.className = "toolbar";
+      var q = document.createElement("input");
+      q.type = "search"; q.id = "hotel-q"; q.placeholder = "Filter hotels: fee, tax, parking, walk, resort…";
+      q.style.minWidth = "280px";
+      var walk30 = document.createElement("input");
+      walk30.type = "checkbox"; walk30.id = "hotel-walk30";
+      var lbl = document.createElement("label");
+      lbl.htmlFor = "hotel-walk30";
+      lbl.appendChild(walk30);
+      lbl.appendChild(document.createTextNode(" ≤30 min walk to a poker room"));
+      var count = document.createElement("span");
+      count.className = "small"; count.id = "hotel-count";
+      bar.appendChild(q); bar.appendChild(lbl); bar.appendChild(count);
+      main.appendChild(bar);
+      var handle = table(main, rows, cols, {
+        sortKey: "true", sortDir: 1, filterInput: q, countEl: count,
+        predicate: function (r) {
+          if (!walk30.checked) return true;
+          return r.walk_to_venetian_within_30 === true || r.walk_to_wynn_within_30 === true;
+        }
+      });
+      walk30.addEventListener("change", handle.redraw);
 
       var w = document.getElementById("walking");
       if (w) {
@@ -1388,7 +1438,7 @@ the value. Blank means unverified, never estimated.</p>
       main.innerHTML = html;
       var tsec = document.getElementById("flagged");
       if (tsec) {
-        tsec.innerHTML = "<h2>Rows carrying a source flag</h2>" +
+        tsec.innerHTML =
           "<p class='small'>A flag records a printed irregularity in an official source - a typo, a conflict between two " +
           "official pages, or a source that cannot be reconciled. Every flag keeps its own source text.</p>";
         table(tsec, flagged, [

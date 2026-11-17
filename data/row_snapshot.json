@@ -3156,7 +3156,7 @@
    "guarantee_usd": null,
    "entry_status": "MULTI",
    "buy_in": "house fee $180 of the $1,600 buy-in; prize pool $1420",
-   "flags": 0
+   "flags": 1
   },
   "r264": {
    "date": "2027-01-04",
