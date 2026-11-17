@@ -1,3 +1,71 @@
+## Session 8a12503e — branch `arena/8a12503e-poker1` (base `aea688a`, `main` after PR #37)
+
+Claimed and pushed before any data, script or page change. Four pull requests were already open when this
+section was written (#36 `c0714e1a`, #38 `160f9080`, #39 `11c7cbe6`, #40 `bb9a3717`), so the scope below is
+chosen to be disjoint from all of them. `main` is confirmed to be the branch base: `git rev-list --left-right
+--count origin/main...HEAD` = `0 0`.
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Make the scheduled official-URL re-check answer "did a published value move?" and mark the rows that cite it | **Done** — `monitor_sources.py` now reads each page body, hashes the *published facts* (money, percentages, dates, times, entry-rule words) against a new `data/source_baseline.json`, and writes every row citing a changed page into `data/changes.json` as a `changed` entry with the reason and the source link, which the Monitoring page already renders. Cosmetic re-renders are counted separately and mark no row. Reachability now names its evidence (`kpi_basis`) and separates operator domains from the OpenStreetMap routing endpoints, so a host with no route can no longer overwrite a good result with "0 reachable". Nine official URLs cited by the data (including the Signature Series structures PDF behind 38 rows) were missing from the monitored manifest and were added. `monitor.yml` runs `--content`, commits the baseline only on an explicit `accept_baseline` dispatch, and opens an issue only when a row is marked. | `scripts/monitor_sources.py`, `scripts/report_monitoring.py`, `data/source_baseline.json`, `data/row_snapshot.json`, `data/monitoring.json`, `data/changes.json`, `data/sources.json`, `.github/workflows/monitor.yml`, `scripts/verify_against_snapshots.py`, `scripts/build_data.py` (F55 flag + hotel fields), `assets/app.js` | `8a12503e` |
+| Independent line-by-line re-check of the published rows for the trip window against the official pages read today (Venetian DSE IV + NYE schedules, Wynn Signature Series poster, hotel fee/tax/parking/cancellation pages); record every match and every discrepancy with links | **Done** — 94 DSE IV rows and 38 Signature Series rows match the official text one-for-one on the (date, start) pair; 48 of 49 NYE rows match, the exception being `r263`, where the event page prints 11:10 AM and structure sheet #8 prints 11:00 AM (published as **F55**, value kept at the earlier official time, conflict carried on the row). New verified hotel values added: valet $40 at Venetian/Palazzo/Wynn/Encore, Venetian incidentals $150 per night, additional guest $50 per night, early check-out $100 plus tax, and **complimentary self-parking for Wynn Poker Room guests**. Four official URLs tried for Bellagio/ARIA/Caesars parking returned 404 or a redirect and that is now recorded on the rows. | `research/verification-2026-11-17-8a12503e.md` (new), `scripts/build_data.py`, `data/hotels.json`, `data/tournaments.json`, `FLAGGED.md`, `QUESTIONS.md`, `SUGGESTIONS.md` | `8a12503e` |
+| Make the hotels table carry the whole cost picture and the 30-minute rule as a control | **Done** — Parking / night, Other mandatory charges, Cancellation and deposit and Last checked columns; a "≤30 min walk to a poker room" checkbox and a text filter above the table; default sort cheapest true cost first | `assets/app.js`, `scripts/build_site.py`, `pages/hotels.html` | `8a12503e` |
+
+### Files deliberately NOT edited by this session (open PRs own them)
+
+| File | Owner / PR | What this session needs from it |
+|---|---|---|
+| `assets/app.js`, `scripts/build_site.py`, `pages/*.html` | PR #40 (duplicate `PAGES.calculator` renderer on `main` at lines 700 and 886 — the second definition wins, so the entries x buy-in + nights x true-hotel-cost calculator is the one being replaced) | this session will re-test the calculator after #40 merges rather than touch the same file |
+| `scripts/build_data.py`, `data/tournaments.json`, `data/hotels.json`, `data/rates.json` | PR #36, PR #38 | the ≤30-min-walk filter and the per-date booking deep links requested by the brief are logged here as a request, not applied. **Correction, recorded rather than hidden:** this line is no longer true of the last two files. To publish values that had been read from official pages on 2026-11-17 but were still sitting as prose or as unevidenced blanks, this session edited `scripts/build_data.py` (two flag texts, a `HOTEL_RECHECK` table, hotel fee fields) and therefore regenerated `data/hotels.json`, and its flag changed one published note in `data/tournaments.json` (8 lines, the `r263` row only). `data/rates.json` was **not** edited. The edit to `build_data.py` and `data/tournaments.json` overlaps open PR #36, which also owns both files: expect a conflict at merge and take #36's WPT rows, this session's `r263` note and flags. Nothing was overwritten from #36 - `git diff` for this session's changes in those files is 8 lines of `data/tournaments.json` plus the generator. |
+| `EXECUTIVE_SUMMARY.md`, `FLAGGED.md`, `QUESTIONS.md`, `REVIEW.md` | PR #36, #38, #39 | this session appends only its own verification record and the PR/merge line |
+
+### Requests logged for the owning sessions (per the coordination rule: log, do not edit)
+
+1. **To PR #40 / site owner:** the hotels table has no "≤30 min walk" control although `data/walking.json`
+   carries `within_30_min` for all 14 records and the brief asks for that filter. Two walking records exceed
+   30 minutes and currently read only as a red chip in a long table.
+2. **To the `build_data.py` owner:** `data/hotels.json` rows carry `parking_usd_per_day` and `cancellation_note`,
+   but the dated rate entries in `data/rates.json` carry no `parking_usd` and no `cancellation_deadline` field,
+   so the like-for-like comparison the brief asks for (checkout total, nightly average, resort fee, tax,
+   parking, cancellation deadline, rate timestamp) is missing two columns per quote.
+3. **Any session:** `data/row_snapshot.json` had been left one rebuild behind (`monitoring.json` recorded
+   `rows_total: 316` against a 317-row dataset, because the snapshot was written by hand rather than by the
+   build). It is regenerated by `python3 scripts/monitor_sources.py --update-snapshot`, which this session
+   now runs; the CI validator (`check_links.py`) fails if a published row is ever missing from the snapshot.
+   *Correction to this section's earlier wording:* the snapshot file itself held 317 rows, so the monitor was
+   not in fact reporting a phantom added row; the stale number was only in the monitoring summary. Fixed here
+   rather than published.
+4. **To the `FLAGGED.md` owner:** the "Irregularities re-checked on 2026-11-17" table carried a row that did not
+   fit it - four cells in a three-column table, separated from the rows above by a blank line so it rendered as
+   its own broken table, and numbered **F53**, duplicating the LIPS row in the table above. This session reshaped
+   it to three cells, moved it back inside the table and renumbered it **F56** with the reason stated under the
+   table; no text was removed. As a consequence `research/verification-2026-11-17.md` line 233 ("Two
+   nightly-average conventions. See F53.") points at the LIPS row now - it should read F56. That file belongs to
+   another session, so the pointer is logged here for its owner rather than edited. PR #58 is fixing the same
+   class of pointer (F72/F73 to F71) on the other-rooms page.
+5. **To whoever owns the monitor step:** `python3 scripts/monitor_sources.py --print` used to rewrite
+   `data/monitoring.json` and `data/changes.json`, so the PR validation job could overwrite the scheduled run's
+   real numbers with a no-route host's, and left a dirty tree. `--print` now only prints; publishing needs
+   `--write-report`, which `.github/workflows/monitor.yml` passes. Resolved while rebasing onto `main` after the
+   other-rooms session's monitor run had already written a report there: this session kept that real result
+   (90 of 94 sources answered) instead of replacing it with its own unreachable numbers.
+
+
+### Rebase and conflict record, 2026-11-17 (session `8a12503e`)
+
+`main` moved four times while this work was in flight; the branch was rebased each time and the
+PR was validated against the newest `main`.
+
+| Conflict | With | How it was resolved |
+|---|---|---|
+| `scripts/monitor_sources.py` | session `0d069ce0` (PR #55/#58 line) also rewrote this file: a dataset-wide URL sweep including the new `strip_rooms.json`, and a `network_unavailable` blackout flag that `assets/app.js` renders | **Both kept.** This session's content-facts baseline, `kpi_basis`, routing-vs-operator split, `--write-report` and `--update-snapshot` are combined with their broader URL sweep and their `network_unavailable` key. Neither session's behaviour was dropped; the monitor reaches 91 official URLs plus 23 routing endpoints. |
+| `data/sources.json` | both sessions appended entries at the same point | Union by `id`, main's entries first: 82 + this session's 9 = 91. **Disclosed, not hidden:** an earlier automated union left one bad resolution, so commit `eae1bbf` in this branch's history contains a `data/sources.json` with conflict markers in it. It is an intermediate commit only - the tip is clean, verified by `json.loads` and by `check_links.py`, and the PR's diff against `main` is correct. The repository merges PRs with merge commits, so no history rewrite was attempted. |
+| `SUGGESTIONS.md` | main marked P6 built | Kept main's built P6 and this session's new P7-P9; this session's now-redundant P6 text was dropped. |
+
+`data/monitoring.json` was deliberately **not** regenerated on this branch: the version on `main`
+records a real run that reached 90 of 94 sources, and this sandbox has no route to the operator
+hosts, so a local run would have replaced a good result with an unreachable one. The scheduled
+Actions run will refresh it with the merged 91-URL manifest and the new fields.
 
 # COORDINATION.md
 

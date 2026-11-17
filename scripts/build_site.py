@@ -122,7 +122,10 @@ PAGES = {
 """),
     "pages/hotels.html": ("Hotels", "hotels", """
 <h1>Hotels near the Strip</h1>
-<p class="lead">Fee, tax, true cost and routed walking time for every property. True cost per night is the official booking engine's own checkout total divided by the nights, so it exists only where a dated quote was captured.</p>
+<p class="lead">Fee, tax, parking, other mandatory charges, cancellation terms, true cost and routed walking time
+for every property. True cost per night is the official booking engine's own checkout total divided by the nights,
+so it exists only where a dated quote was captured. Sort by true cost, filter to the hotels within a 30-minute walk
+of a poker room, or search any column.</p>
 <div class="card callout" id="method"></div>
 <div id="content"></div>
 <p class="small">No property publishes a walking time, so these are routed on the OSM foot network, not quoted from an official source (F49). Minutes are rounded up and the 30-minute rule is applied.</p>
@@ -156,7 +159,14 @@ PAGES = {
 """),
     "pages/monitoring.html": ("Monitoring", "monitoring", """
 <h1>Source monitoring</h1>
+<<<<<<< HEAD
 <p class="lead">Two different checks, kept apart on purpose: the <strong>scheduled provenance check</strong> re-fetches every official document from GitHub Actions and reports whether the values printed on it moved, and the <strong>row-level check</strong> records which URLs answered and which dataset rows changed since the last snapshot. A run that reaches nothing is labelled a network blackout rather than a source outage.</p>
+=======
+<p class="lead">Which official sources answered on the last check, whether each page still prints the values
+its rows were captured from, which rows changed since the last snapshot, and every printed source flag. A row
+whose official source changed is listed under "Changed rows" with the source link and the date of the check
+that found it.</p>
+>>>>>>> 8b1b2e6 (verify: pair-level schedule check, four new verified hotel cost fields, hotels-table cost columns and a 30-minute walk filter)
 <div id="content"></div>
 <h2>Rows carrying a source flag</h2>
 <div id="flagged"></div>

@@ -22437,8 +22437,10 @@
    "starting_chips": null,
    "est_end": "08:45",
    "est_duration_min": 1305,
-   "note": "Continuation of the event above - no new entry. Official event page row.",
-   "flags": [],
+   "note": "Continuation of the event above - no new entry. The stored time comes from structure sheet #8 clause 3; the official event page prints 11:10 AM for this row, which is recorded as a flag on the row.",
+   "flags": [
+    "Two official sources disagree on this start time. The New Year's Eve event page prints \"Monday, January 4, 2027 | 11:10 AM | 20 | $1,600 No Limit Hold'em MSPT Day 2 Restart\" (re-read live on 2026-11-17), while structure sheet #8 clause 3 prints \"Day 2 will resume at 11:00 AM combining all remaining players from 1A, 1B, and 1C\". The row is stored at the earlier 11:00 AM so that a player planning around it cannot be late for either reading; confirm with the poker room before travelling. The sheet's own \"Late Registration: 9 levels + Break (~ 5:55 PM)\" is measured from the 11:10 AM Day 1 flights, not from this restart, so it does not settle the question."
+   ],
    "sources": [
     {
      "label": "Official event page",
