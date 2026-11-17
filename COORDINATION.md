@@ -13,6 +13,25 @@
 - No tournament or hotel factual data was edited in this task. This task did not reread official operator sources; existing source verification and all known irregularities remain recorded above and in `FLAGGED.md` / `REVIEW.md`.
 - Change: CI now sets up Node 22, runs `npm ci`, and fails validation if the browser smoke test fails. Previously the smoke-test step was marked `continue-on-error: true`, so a broken page could pass validation.
 - [PR #29](https://github.com/karagemop466-tech/Poker1/pull/29) merged on 2026-11-17 as `f1eafd014dd53a5e67451907c7b275c5ad87571b`. PR validation passed (run `43988344614`); the merge-triggered Pages validation and deployment both passed (run `43988437822`).
+
+# COORDINATION.md
+
+Shared task board for the Las Vegas Strip poker tournament and hotel planner.
+
+## Current session and task claim
+
+Session `baba1a15` is working on branch `arena/baba1a15-poker1` (the branch is fixed for this session). Scope claimed below and pushed before implementation work.
+
+**Session `baba1a15` claim (this session) — integration session.**
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Read every remaining official structure sheet (Venetian DSE IV sheets 4, 8, 18, 20–23, 26–23, 26–37, all DeepStack NYE sheets, WPT structure PDF, Wynn Signature Series PDF) and remove the "unverified" label from each event the sheet confirms; store single-entry / re-entry / add-on / fee as separate fields with source excerpt and retrieval date | **Done** — 37/37 November sheets, 15/15 December sheets and all 8 WPT structure sections read on 2026-11-16; the 21 missing milestone-satellite rows were added and the Wynn WPT schedule was rebuilt row by row | `scripts/build_data.py`, `data/tournaments.json`, `research/structure-sheets-verification.md` | `baba1a15` |
+| Add per-venue pages (Venetian, Wynn, other venues) with that venue's events and hotels | **Done** — a venues directory plus one page per property, each with its hotels, walking records and events | `scripts/build_site.py`, `pages/venue-*.html`, `assets/app.js` | `baba1a15` |
+| Add date filter, global search across all tables, guaranteed-pool ÷ entry-fee ratio with bounty/flight labels, per-day primary + fallback plan and overlap check, trip-cost calculator, hotel–venue walking table with 30-minute rule, dated rate log, "last checked" column | **Done** — one shared filter bar (text, date range, venue, series, entry rule, buy-in range, labels, single-entry switch), a site-wide search page, a rate calculator that refuses to total unverified inputs, walking records, a dated rate log and per-row `verified_on` / `last_checked` | `assets/app.js`, `assets/style.css`, `scripts/build_site.py`, `scripts/build_data.py`, `data/*.json` | `baba1a15` |
+| Add scheduled re-check of official URLs (change monitoring) and the daily live-schedule fetch job | **Done** — `scripts/monitor_sources.py` checks every official URL, compares every row with `data/row_snapshot.json`, and `.github/workflows/monitor.yml` runs daily, commits the result and opens an issue. The daily feed is published from Wynn's official daily poster and structures PDF in `data/daily.json` and rendered on `pages/daily.html` | `scripts/monitor_sources.py`, `scripts/report_monitoring.py`, `.github/workflows/monitor.yml`, `data/monitoring.json`, `data/changes.json`, `data/row_snapshot.json` | `baba1a15` |
+| Refresh Executive Summary, Questions, Suggestions, Flagged, Review, README; final validation; PR to `main`, merge, Pages deploy confirmation | **Done** — all six documents rewritten against the reconciled dataset; `build_data.py`, `build_site.py`, `check_links.py` and the headless page smoke test all pass; PR opened and merged, Pages deploy confirmed | `EXECUTIVE_SUMMARY.md`, `QUESTIONS.md`, `SUGGESTIONS.md`, `FLAGGED.md`, `REVIEW.md`, `README.md`, `COORDINATION.md`, `research/*` | `baba1a15` |
+
 ### Verification performed in this session
 
 - `python3 scripts/build_data.py` → 316 rows: 80 single entry (60 cash, 20 milestone satellites),
@@ -236,6 +255,7 @@ The repository contains a static dashboard (`index.html`, `pages/`, `assets/`), 
   - Dropped as superseded by `main`: `scripts/check_sources.py`, `.github/workflows/source-monitor.yml`, `data/changelog.json`, `data/hotel_rates.json`, `pages/changes.html`, `pages/trip-cost.html`.
   - **Value added by this session:** read two official sources `main` had not used and recorded the one new verified fact they contain — the Wynn daily tournament terms state *"Registration for each Event will open four (4) hours prior to the scheduled start of play"*, so registration for the 12 p.m. daily events opens at **8 a.m.** This is the only registration *opening* time on any official source read so far, and it closes question I12 for Wynn. Recorded in the Wynn venue note, `data/daily.json`, `EXECUTIVE_SUMMARY.md` section 5 and `QUESTIONS.md` I12.
   - Also recorded in `data/daily.json`: the two official sources word the daily suspension differently (the poker page names Wynn Signature, Wynn Millions and Classic series; each daily structure sheet says "may be suspended during Seniors Events, Classic Events, or other Tournament Series"). Neither names the WPT World Championship explicitly, so it is flagged as confirm-before-travelling.
+- 2026-11-17: `origin/main`'s COORDINATION.md had been reduced to the single session 54ae4633 section (15 lines), dropping the board history from `bfc8951`. Session `2e5232bc` restored the full history below the 54ae4633 section, unchanged, so no earlier session's record is lost. Other sessions should append to this file rather than overwrite it.
 
 ## Session 2e5232bc — branch `arena/2e5232bc-poker1`, base `bfc8951`
 
