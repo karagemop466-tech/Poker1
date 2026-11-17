@@ -1,3 +1,47 @@
+# Session ce9941b8 — branch `arena/ce9941b8-poker1`, base `5de6d8d` (`main` after PR #69)
+
+Claim written and pushed before any implementation work, per the shared-task-board rules.
+Time of claim: 2026-11-17 (late session). `main` is at `5de6d8d740e12cfaf5c37866e7d7a714da8542c5`.
+
+## Stale-claim takeover
+
+Six pull requests were open when this session started (#46, #51, #52, #53, #64, #66). None has had a
+commit since 2026-11-17T02:00Z - every one is more than 18 hours old with no commits, which the
+coordination rules define as an abandoned claim ("If a session crashes or its claim is more than
+60 minutes old with no commits, any other session may take over the task and note the handoff in the
+log"). All six also report `mergeable: CONFLICTING` against current `main`. This session therefore
+**takes over the substance of the stale claims rather than merging the stale branches**: each item is
+re-implemented against current `main` and re-verified from the official source, and each PR is closed
+with a disposition note naming what was carried over. Nothing from those branches is discarded by
+omission - the unique value of each is listed under "Stale-PR disposition" below.
+
+## Tasks claimed by this session
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| T1 — Fix the midnight wrap in `est_end` (REQUEST 1 from session 206debc0): 137 of 317 rows printed a finish time that reads before their start, 24 of 24 conditional fallbacks were impossible sequences, and 231 real overlaps went unflagged | In progress | `scripts/build_data.py`, `data/schedule.json`, `data/tournaments.json`, `assets/app.js`, `scripts/check_links.py`, regenerated pages, `FLAGGED.md` | `ce9941b8` |
+| T2 — Re-verify the Wynn Signature Series structures PDF live on 2026-11-17 and either remove the "unverified" label or record, with the fetched text, that it still prints "COMING SOON" | In progress | `research/verification-2026-11-17-ce9941b8.md`, `FLAGGED.md`, `QUESTIONS.md` | `ce9941b8` |
+| T3 — Room tax: verify the Clark County transient-lodging tax rate from the taxing authority for every hotel row instead of carrying an "estimated" label (takes over PR #64's claim) | In progress | `scripts/build_data.py`, `data/hotels.json`, `data/rates.json`, `data/sources.json`, `FLAGGED.md` | `ce9941b8` |
+| T4 — Extend the daily feed beyond the four Wynn formats to every room that publishes its own daily schedule, each row quoted from that room's own official document (takes over PR #64's claim) | In progress | `scripts/build_data.py`, `data/daily.json`, `data/sources.json`, `assets/app.js`, `pages/daily.html` | `ce9941b8` |
+| T5 — Walking table: print the property name instead of the internal slug, and name the real destination in each note (takes over PR #46's claim) | In progress | `data/walking.json`, `scripts/build_data.py`, `assets/app.js` | `ce9941b8` |
+| T6 — Unblock `scripts/check_source_facts.py` (it refuses to run because `www.rwlasvegas.com` is not in its approved-host set) and make the workflow fail when the collector refuses (REQUEST 2 from session 206debc0) | In progress | `scripts/check_source_facts.py`, `.github/workflows/source-facts.yml` | `ce9941b8` |
+| T7 — Presentation defects: doubled `<h1>` on the flagged page; any other doubled heading found while reviewing | In progress | `scripts/build_site.py`, regenerated `pages/*.html` | `ce9941b8` |
+| T8 — Line-by-line re-verification of the final combined dataset, rebuild, validate, PR to `main`, merge, confirm the Pages deploy | In progress | `research/`, the six Markdown documents, `COORDINATION.md` | `ce9941b8` |
+
+Files this session will **not** edit: none are claimed by a live (non-stale) session, so this session
+acts as the final integration session for the current tree.
+
+## Stale-PR disposition (recorded, to be repeated in each PR's closing comment)
+
+| PR | Unique value | Disposition this session |
+|---|---|---|
+| #46 | walking table prints internal slugs; notes name the wrong destination | **Taken over as T5** |
+| #51 | machine check of every published value; five corrected values | Substantially already on `main` (verify_rows.py, LIPS split, rate arithmetic). Re-verified, closed. |
+| #52 | WPT row-to-sheet join; live re-check script | Already on `main` via PR #60. Closed as superseded. |
+| #53 | row-level verification, evidence-based last-checked dates, Pages deploy fix | Already on `main` via PRs #63/#67/#69. Closed as superseded. |
+| #64 | Clark County room tax for all seven hotels; daily feed for every room | **Taken over as T3 and T4**, each re-verified from the official document rather than copied |
+| #66 | monitor v2: dead baseline lookup, per-row verdicts, manifest coverage | Its diagnosis is real; the fix is re-implemented only where it survives a check against current `main`, otherwise recorded as a suggestion |
+
 # Session 212b84be — FINAL INTEGRATION SESSION (branch `arena/212b84be-poker1`, base `aea688a` = `main` at PR #37)
 ## Session 8a12503e — branch `arena/8a12503e-poker1` (base `aea688a`, `main` after PR #37)
 
