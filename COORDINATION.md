@@ -1424,7 +1424,7 @@ deconflicted per the shared-task-board rules (never start a task another session
 | T3 — provenance check refuses to run on `main` (REQUEST 2: missing `www.rwlasvegas.com`, `tee` without `pipefail`) | **Released** — PR #73 claims `check_source_facts.py` and `source-facts.yml`. (The `www.rwlasvegas.com` half landed here anyway with PR #66's F101 fix; the `pipefail` half is still theirs.) | `2157d288` |
 | T4 — doubled `<h1>` on `pages/flagged.html` | **Released** — PR #73 claims `build_site.py` + rendered-page checks. Logged for them as a request if their pass misses it. | `2157d288` |
 | T1 — integration of the stale PRs #64/#66 (+ #51/#52/#53/#46 evaluation) | in progress — #64, #66, #53, #46 merged in full (see the four merge commits); #52 integrated (verify_live.py + F119–F122) and closed superseded; #51 closed superseded, claim preserved | `81c6f6bc` |
-| T5 — verification pass + record | in progress | `81c6f6bc` |
+| T5 — verification pass + record | done — `research/verification-2026-11-17-81c6f6bc.md`; new finding F123 + question E3 (two extractions of the WPT sign PDF disagree on six tokens; nothing silently flipped) | `81c6f6bc` |
 
 Branches `arena/d94b191b-poker1` (PR #51), `arena/ca6d75b1-poker1` (PR #52),
 `arena/d57243e7-poker1` (PR #53) and `arena/bb9a3717-poker1` (PR #46) are >60 minutes stale with no

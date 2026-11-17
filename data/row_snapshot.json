@@ -540,7 +540,7 @@
    "guarantee_usd": null,
    "entry_status": "RE",
    "buy_in": "Entry Fee: $600 Buy-in = $510 (Tournament Prize Pool) + $65 (Tournament Fee) + $25 (Poker Staff Service Charge)",
-   "flags": 1
+   "flags": 2
   },
   "r046": {
    "date": "2026-12-01",
@@ -1500,7 +1500,7 @@
    "guarantee_usd": null,
    "entry_status": "RE",
    "buy_in": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge)",
-   "flags": 1
+   "flags": 2
   },
   "r126": {
    "date": "2026-12-12",
@@ -1536,7 +1536,7 @@
    "guarantee_usd": null,
    "entry_status": "RE",
    "buy_in": "Entry Fee: $200 Buy-in = $165 (Tournament Prize Pool) + $20 (Tournament Fee) + $15 (Poker Staff Service Charge)",
-   "flags": 1
+   "flags": 2
   },
   "r129": {
    "date": "2026-12-12",
@@ -1560,7 +1560,7 @@
    "guarantee_usd": null,
    "entry_status": "RE",
    "buy_in": "Entry Fee: $1,100 Buy-in = $975 (Tournament Prize Pool) + $85 (Tournament Fee) + $40 (Poker Staff Service Charge)",
-   "flags": 1
+   "flags": 2
   },
   "r131": {
    "date": "2026-12-12",
@@ -1596,7 +1596,7 @@
    "guarantee_usd": 250000,
    "entry_status": "RE",
    "buy_in": "*Discounted Ladies Entry Fee: $1,100 Buy-in = $965 (Tournament Prize Pool) + $90 (Tournament Fee) + $45 (Poker Staff Service Charge)",
-   "flags": 4
+   "flags": 5
   },
   "r134": {
    "date": "2026-12-13",
@@ -1848,7 +1848,7 @@
    "guarantee_usd": 50000,
    "entry_status": "RE",
    "buy_in": "Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge)",
-   "flags": 2
+   "flags": 3
   },
   "r155": {
    "date": "2026-12-15",
@@ -1980,7 +1980,7 @@
    "guarantee_usd": 100000,
    "entry_status": "RE",
    "buy_in": "Entry Fee: $1,600 Buy-in = $940 (Tournament Prize Pool) + $500 (Bounty Prize Pool) + $115 (Tournament Fee) + $45 (Poker Staff Service Charge)",
-   "flags": 1
+   "flags": 2
   },
   "r166": {
    "date": "2026-12-16",
@@ -2076,7 +2076,7 @@
    "guarantee_usd": null,
    "entry_status": "RE",
    "buy_in": "Entry Fee: $3,000 Buy-in = $2,730 (Tournament Prize Pool) + $200 (Tournament Fee) + $70 (Poker Staff Service Charge)",
-   "flags": 3
+   "flags": 4
   },
   "r174": {
    "date": "2026-12-16",
@@ -2700,7 +2700,7 @@
    "guarantee_usd": 50000,
    "entry_status": "RE",
    "buy_in": "Entry Fee: $600 Buy-in = $515 (Tournament Prize Pool) + $60 (Tournament Fee) + $25 (Poker Staff Service Charge)",
-   "flags": 1
+   "flags": 2
   },
   "r226": {
    "date": "2026-12-22",
