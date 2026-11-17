@@ -402,7 +402,14 @@ ROOMS = [
                          "but publishes no tournament schedule, buy-in or structure.",
         "sources": [src("Official Planet Hollywood casino page", PH_PAGE)],
         "events": [],
-        "findings": [],
+        "findings": [
+            {"text": "Another session (88793bf4, PR #45) records a press report that this poker "
+                     "room closed (Las Vegas Review-Journal, 28 January 2026). The official page "
+                     "read here on 2026-11-17 still advertises it. A press report is not an "
+                     "official source, so nothing is changed on the strength of it; the conflict "
+                     "is flagged as F74 for a human to check with the property.",
+             "source": src("Official Planet Hollywood casino page", PH_PAGE)},
+        ],
     },
     {
         "id": "mandalay-bay",
@@ -664,6 +671,18 @@ FLAGS = [
      "Walking cells for these rooms are blank and flagged. Producing them is logged as a "
      "request for the integration session in COORDINATION.md; none is estimated here.",
      MB_PAGE),
+    ("F74", "Planet Hollywood: the official page still advertises a live poker room, while a "
+     "press report says it closed",
+     "The official Planet Hollywood casino page, read on 2026-11-17, prints \"23 Live Poker "
+     "Tables\" and \"new live action poker room\". Session 88793bf4's PR #45 records a press "
+     "report that the room closed (Las Vegas Review-Journal, 28 January 2026) and the same for "
+     "Resorts World (Casino.org, 13 March 2026). Neither closure is confirmed on an official "
+     "source, and this page does not treat a press report as a value.",
+     "Planet Hollywood is recorded exactly as the official page prints it: a poker room with 23 "
+     "tables and no tournament schedule. The conflict is flagged here instead of being resolved, "
+     "because closing a room is not something this site can confirm from an operator page. Check "
+     "with the property before planning around it.",
+     PH_PAGE),
 ]
 
 STATUS_CHIPS = {
@@ -955,7 +974,7 @@ the value. Blank means unverified, never estimated.</p>
         "and Wynn series.</p>", "\n".join(ev_rows),
         "<h2 id=\"fees\">3. Registration and fee splits</h2>", "\n".join(fee_rows),
         "<h2 id=\"gaps\">4. Findings from rooms with no readable schedule</h2>", "\n".join(findings),
-        "<h2 id=\"flags\">5. Irregularities and blank values (F60-F72)</h2>", "\n".join(flag_rows),
+        "<h2 id=\"flags\">5. Irregularities and blank values (F60-F74)</h2>", "\n".join(flag_rows),
         "<h2 id=\"windows\">6. What these windows cost, like for like</h2>",
         "<p class=\"small\">Built from the dated official rate log and the per-day schedule. "
         "Every figure below is a published value; nothing is forecast.</p>", windows_section(),

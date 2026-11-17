@@ -82,6 +82,52 @@ URL (Hard Rock Las Vegas). Full list with what each printed: `research/other-roo
 - **F71** the MGM poker hub links Luxor and Excalibur to pages that list no poker room.
 - **F72** no walking record exists for these rooms; walking cells are blank and flagged.
 
+### Pull request and deploy record
+
+- [PR #56](https://github.com/karagemop466-tech/Poker1/pull/56) (`arena/0d069ce0-poker1` → `main`)
+  — **merged** at `7b53d9b` on 2026-11-17T01:28:48Z. The `validate` job passed in
+  [run 43995605119](https://github.com/karagemop466-tech/Poker1/actions/runs/43995605119)
+  (job 133746760320, 1m54s): dataset rebuild, page rebuild, `check_links.py`, the official-source
+  check and the headless render of all 22 pages.
+- [PR #58](https://github.com/karagemop466-tech/Poker1/pull/58) — **merged** at 2026-11-17T01:35:13Z.
+  Corrected two flag cross-references on the new page (F72/F73 → F71) and regenerated the page
+  against `main`'s shared assets. `validate` passed in run 43996423073.
+- Two rebases onto `main` were needed (`b886aa6`, then `b292d22`); both applied cleanly and no
+  other session's work was dropped.
+- GitHub Pages: `pages build and deployment` run 43996844250 completed `success`; the Pages API
+  reports `built` for commit `b3e34dd`. Live page checked after deploy:
+  https://karagemop466-tech.github.io/Poker1/pages/other-rooms.html renders all seven sections, and
+  https://karagemop466-tech.github.io/Poker1/data/other_rooms.json serves the dataset.
+- A transient `errored` Pages build was observed for commit `b0a0a27` while several sessions were
+  merging within the same minute; the next deployment succeeded and the site is `built`.
+
+### Overlap with session 88793bf4 (PR #45) — cross-check, not a conflict
+
+PR #45, opened 2026-11-17T01:14:39Z, surveys MGM Grand, Mandalay Bay and Horseshoe. Session
+`0d069ce0` had claimed the wider survey first (claim commit pushed before implementation) and
+merged first at `7b53d9b`. The two sessions read the same three MGM URLs independently and reached
+the same two conclusions, which is a useful cross-check:
+
+| Finding | Session 0d069ce0 | Session 88793bf4 | Agreement |
+|---|---|---|---|
+| MGM page times vs PDF times | F60 (11:00/7:00/11:00 vs 11:10/7:10/11:10) | S1 | same |
+| MGM PDF prints no date; schedule titled "August" | F61 | S2 | same |
+| $11 gratuity buys 10,000 extra chips, so out of the single-entry list | F62 | separate section | same |
+
+Differences the integration session should reconcile, keeping both:
+
+| Point | 0d069ce0 (this session) | 88793bf4 |
+|---|---|---|
+| Coverage | 14 rooms, including the Orleans (13 structure sheets read), South Point, Paris, Luxor, Excalibur, SAHARA, Resorts World, Fontainebleau, The STRAT, Mirage | 5 rooms, plus press-reported closures |
+| Press reports of closures | Recorded as a lead only, never as a value (F74) | Recorded as "reported, not confirmed" rows |
+| The contentstack asset host | **Not** added to the approved host list, matching the existing F40 treatment of the Bellagio flyers; the PDFs are cited through the official page that links them | Added to the approved list |
+| Monitoring | Six URLs appended to `data/sources.json`, so the weekly `check_source_facts.py` job snapshots them | Six URLs in `data/sources.json` **and** wired into `scripts/monitor_sources.py`, so the **daily** job covers them too |
+
+**Logged request:** the daily monitor (`scripts/monitor_sources.py`) currently builds its URL set
+from the tournament, hotel and walking rows, so the other-rooms URLs are only checked weekly.
+Wiring them into the daily job as session 88793bf4 did would close that gap. That file is not
+edited here because it belongs to the monitoring scope another session holds.
+
 ### Open request logged for the integration session
 
 - **Walking rows for MGM Grand, the Orleans and South Point.** The site's walking table covers twelve
