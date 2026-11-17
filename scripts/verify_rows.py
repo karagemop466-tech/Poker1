@@ -55,6 +55,24 @@ def money_tokens(text):
     return toks
 
 
+def money_pairs(text):
+    """Every pair of dollar amounts printed on adjacent lines of the official text.
+
+    The Wynn structure sheets print the fee split as
+        $1,100 Buy-in = $970 (Tournament Prize Pool) + $90 (Tournament Fee) + $40 (Poker
+        Staff Service Charge)
+    so the tournament fee and the staff charge are often on the same line but sometimes
+    split across two. Returning every adjacent pair lets a check confirm that the
+    published total is a sum the sheet itself prints.
+    """
+    amounts = [int(re.sub(r"[^0-9]", "", m)) for m in
+               re.findall(r"\$\s?(\d[\d,]*)\s*\(", text or "")]
+    pairs = set()
+    for i in range(len(amounts) - 1):
+        pairs.add((amounts[i], amounts[i + 1]))
+    return pairs
+
+
 def time_tokens(text):
     """Every time-of-day in the text normalised to HHMM."""
     out = set()
@@ -174,7 +192,13 @@ def main():
             checks.append(("guarantee_usd", g in mt, f"${g}", "fail"))
         hf = money(r.get("house_fee_usd"))
         if hf:
-            checks.append(("house_fee_usd", hf in mt, f"${hf}", "fail"))
+            # A house fee is published as a single number, but the official sheets print it
+            # split into a tournament fee and a poker staff service charge (Wynn) or into a
+            # rake plus staff fee (Venetian). The published total is accepted when the sheet
+            # prints either the total itself or a pair of components that add up to it, so
+            # the check is on the arithmetic the sheet prints, not on the digits of a sum.
+            ok = hf in mt or any(a + b == int(hf) for a, b in money_pairs(text))
+            checks.append(("house_fee_usd", ok, f"${hf}", "fail"))
         rt = row_time(r.get("start"))
         if rt and text:
             # A time that cannot be found in the archived text is a review item, not
