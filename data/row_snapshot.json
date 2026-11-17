@@ -3148,7 +3148,7 @@
   },
   "r263": {
    "date": "2027-01-04",
-   "start": "11:00",
+   "start": "11:10",
    "name": "$1,600 No Limit Hold'em MSPT Day 2 Restart",
    "venue": "The Venetian Resort",
    "series": "Venetian DeepStack Extravaganza NYE",
@@ -3305,7 +3305,7 @@
   "r276": {
    "date": "2027-01-09",
    "start": "17:10",
-   "name": "$300 No Limit Hold'em 1F $100K GTD (1Day) - Show Your CES Badge - $10 Rake Discount",
+   "name": "$300 No Limit Hold'em 1F $100K GTD (1Day)",
    "venue": "The Venetian Resort",
    "series": "Venetian DeepStack Extravaganza NYE",
    "buy_in_usd": 300,

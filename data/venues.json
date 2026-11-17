@@ -5,9 +5,9 @@
    "id": "venetian",
    "name": "The Venetian Resort",
    "poker_room": "The Palazzo, level 2, Grand Canal Shoppes",
-   "address": null,
-   "address_status": "unverified",
-   "note": "Official poker page: 50 tables, open 24 hours, complimentary self-parking for players who play three hours or more. The street address is not printed on the official pages read in this session.",
+   "address": "3325 Las Vegas Blvd S, Las Vegas, NV",
+   "address_status": "verified",
+   "note": "Official poker page (re-read 2026-11-17): the room is at The Palazzo, level 2 of the Grand Canal Shoppes; \"50 tables spread across 14,000 square feet ... the largest room on the Las Vegas Strip\"; open 24 hours daily; complimentary self-parking for guests who play three hours or more. The page's Current Series card still advertises the WPT Fall Festival of Oct 28 - Nov 15, 2026 (a stale promo on 2026-11-17, flagged F110). Street address from the Clark County licensing record 1000389.RES-001.",
    "hotel_ids": [
     "venetian",
     "palazzo"
@@ -15,7 +15,10 @@
    "official_links": [
     "https://www.venetianlasvegas.com/resort/casino/poker.html",
     "https://www.venetianlasvegas.com/content/dam/vlvweb/resort/map.pdf",
-    "https://www.venetianlasvegas.com/book"
+    "https://www.venetianlasvegas.com/book",
+    "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf",
+    "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
    ]
   },
   {
@@ -58,13 +61,16 @@
    "poker_room": "Bellagio poker room, northside of the casino next to the Sportsbook (official poker page)",
    "address": null,
    "address_status": "unverified",
-   "note": "Official Bellagio poker page (read 2026-11-17) links three weekly tournament flyers. None prints a calendar date, so no dated row is listed. Friday $600 NLH, 11:00 a.m.: $510 prize pool, $50 house fee, $40 optional staff gratuity; rule 3 says players \"may buy-in and re-enter through the end of level 8\", so it is a re-entry event and not single entry. Saturday, 11:00 a.m.: the flyer heading says a $1,100 buy-in, the page label and file name say $1,000, and rule 7 refers to a \"$600 Buy-in\"; flight rules say each flight plays until the money. Its entry rule is not confirmed. Sunday $400 H.O.R.S.E., 11:00 a.m.: $340 prize pool, $35 house fee, $25 optional gratuity; rule 5 says \"buy-in and re-enter through the end of level 8\", so it is not single entry. The page notice \"Tournament play will resume on Saturday, July 26\" does not match the calendar: July 26, 2026 is a Sunday. The flyers are hosted on a CMS domain that is not on the approved list, so they are cited through the official page.",
+   "note": "Official Bellagio poker page (read 2026-11-17) links three weekly tournament flyers. None prints a calendar date, so no dated row is listed. Friday $600 NLH, 11:00 a.m.: $510 prize pool, $50 house fee, $40 optional staff gratuity; rule 3 says players \"may buy-in and re-enter through the end of level 8\", so it is a re-entry event and not single entry. Saturday, 11:00 a.m.: the flyer heading says a $1,100 buy-in, the page label and file name say $1,000, and rule 7 refers to a \"$600 Buy-in\"; flight rules say each flight plays until the money. Its entry rule is not confirmed. Sunday $400 H.O.R.S.E., 11:00 a.m.: $340 prize pool, $35 house fee, $25 optional gratuity; rule 5 says \"buy-in and re-enter through the end of level 8\", so it is not single entry. The page notice \"Tournament play will resume on Saturday, July 26\" does not match the calendar: July 26, 2026 is a Sunday. On 2026-11-17 all three structure PDFs were read in full, so each format is published as an undated weekly row in the daily feed with its printed clauses quoted: Friday $600 (re-entry through level 8; $510/$50/$40 split), Saturday (four flights 1A-1D, a combined Day 2, \"at least $50,000\" combined prize pool, and three conflicting printed buy-ins of $1,100 / $1,000 / $600, so no entry fee is published) and Sunday $400 H.O.R.S.E. (re-entry through level 8; $340/$35/$25 split; payout about 12.5% of the field). None of the three is single entry, so none is ranked. The flyers are MGM's own asset host, linked from this page.",
    "hotel_ids": [
     "bellagio"
    ],
    "official_links": [
     "https://bellagio.mgmresorts.com/en/casino/poker.html",
-    "https://bellagio.mgmresorts.com/en.html"
+    "https://bellagio.mgmresorts.com/en.html",
+    "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf",
+    "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf",
+    "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf"
    ]
   },
   {
@@ -73,13 +79,15 @@
    "poker_room": "The Poker Room at Caesars Palace, Appian Way promenade (16 tables per official article)",
    "address": "3570 Las Vegas Blvd South, Las Vegas, NV 89109",
    "address_status": "verified",
-   "note": "Official Caesars article dated 2026-07-17 (read 2026-11-17) says the room is open 24/7 and runs four no-limit hold'em tournaments a day at 10 a.m., 2 p.m., 6 p.m. and 9 p.m. with a $100 buy-in, 20,000 starting chips and a $1,000 guarantee, plus a $50 add-on at the first break for 15,000 chips. Because of that add-on the format is not single entry and belongs in the separate section; no rank is given. The article is editorial, not a structure sheet, so no row is created. The same article lists six daily games at Horseshoe Las Vegas (9 a.m., 11 a.m., 2 p.m., 5 p.m., 8 p.m., 11 p.m.), which are not in this dataset.",
+   "note": "Caesars Palace publishes its own daily tournament schedule: the official casino page carries a \"View Schedule\" link to the 2026 Daily No-Limit Texas Hold'em schedule PDF, read in full on 2026-11-17. It prints four starts (10 a.m. $100, 2 p.m. $160, 6 p.m. $100, 9 p.m. $160), each with a $1,000 guarantee, 20,000 starting chips, 20-minute levels and an optional $50 add-on at the first break; registration closes at the start of level seven and sign-ups open one hour before the scheduled start. Rule 3: \"Participants may only register themselves, but may re-enter, by paying the entry fee, upon elimination within the first break of play\" - so every Caesars daily is a re-entry plus add-on format and none is single entry. The room is \"open 24/7 with both live-action cash games and daily tournaments\" (official casino page). The four formats are published as undated rows in the daily feed, not as dated schedule rows, because the flyer prints no dates.",
    "hotel_ids": [
     "caesars"
    ],
    "official_links": [
     "https://www.caesars.com/caesars-palace",
-    "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip"
+    "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+    "https://www.caesars.com/caesars-palace/casino/poker",
+    "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf"
    ]
   }
  ]

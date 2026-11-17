@@ -29,7 +29,7 @@ REQUIRED_SITE_DOCS = (
     "README.md",
 )
 # Exact hosts, not substring matches: data rows must point to official venue / operator sources.
-OFFICIAL_SOURCE_HOSTS = {
+OPERATOR_SOURCE_HOSTS = {
     "www.venetianlasvegas.com",
     "www.wynnlasvegas.com",
     "cdn.wynnresorts.com",
@@ -39,10 +39,16 @@ OFFICIAL_SOURCE_HOSTS = {
     # MGM Resorts' shared corporate pages (parking, portfolio-wide fee text).
     # Property pages stay on each property's own subdomain.
     "www.mgmresorts.com",
+    # MGM Resorts' own digital-asset host. Accepted because the only documents served
+    # from it in this dataset are the three Bellagio poker structure PDFs linked directly
+    # from bellagio.mgmresorts.com/en/casino/poker.html; the link is published by the
+    # property, not chosen by us (session c7a324a6; approved in both checkers per the
+    # request logged for session 0d069ce0).
+    "assets.contentstack.io",
     # Session 0d069ce0: the official property domains behind pages/other-rooms.html. Each is the
-    # operator's own site for the property. The contentstack CDN that hosts the MGM PDFs is
-    # deliberately not added, matching the existing F40 treatment of the Bellagio flyers: those
-    # PDFs are cited through the official page that links them, never as a source host.
+    # operator's own site for the property. The Bellagio flyers on the contentstack CDN are
+    # cited through the official page that links them (F40), while the three structure PDFs
+    # the official poker page links directly are approved as sources above.
     "mgmgrand.mgmresorts.com",
     "mandalaybay.mgmresorts.com",
     "orleans.boydgaming.com",
@@ -51,6 +57,11 @@ OFFICIAL_SOURCE_HOSTS = {
     # un-approved (F40); see FLAGGED.md S9.
     "www.rwlasvegas.com",
 }
+# Government records: the taxing authority that sets the room tax. Accepted only for the
+# address / rate-class rows of the licensed-establishment table, and always labelled as a
+# county record rather than a statement by the property.
+GOVERNMENT_SOURCE_HOSTS = {"www.clarkcountynv.gov"}
+OFFICIAL_SOURCE_HOSTS = OPERATOR_SOURCE_HOSTS | GOVERNMENT_SOURCE_HOSTS
 TOURNAMENT_STATUSES = {"SE", "MULTI", "RE", "REBUY", "CONT", "UNV"}
 TOURNAMENT_KINDS = {"entry", "continuation"}
 RULE_FIELDS = ("single_entry", "re_entry", "add_on", "fee")
@@ -474,7 +485,20 @@ for index, row in enumerate(daily_rows, 1):
     check_time(row.get("start"), f"{where} {identity} start", required=True)
     for field in ("buy_in_usd", "guarantee_usd", "levels", "lmin"):
         check_number(row.get(field), f"{where} {identity} {field}")
-    check_time(row.get("late"), f"{where} {identity} late", required=True)
+    if row.get("late_printed") is False:
+        # A source may state a level-based close with no clock time. The row then publishes a
+        # null clock and must quote the printed sentence instead of converting it to a time.
+        if row.get("late") is not None:
+            problems.append(f"{where} {identity}: late_printed is false, so late must stay null")
+        if not str(row.get("late_note") or "").strip():
+            problems.append(f"{where} {identity}: late_printed is false without a late_note quoting the source")
+    else:
+        check_time(row.get("late"), f"{where} {identity} late", required=True)
+    for field in ("venue", "source_url", "source_label"):
+        if not str(row.get(field) or "").strip():
+            problems.append(f"{where} {identity}: {field} must be set - a daily format needs its room and its document")
+    check_official_https_url(row.get("source_url"), f"{where} {identity} source_url")
+    check_date(row.get("verified_on"), f"{where} {identity} verified_on", required=True)
 
 venue_names = set()
 for index, row in enumerate(venue_rows, 1):
