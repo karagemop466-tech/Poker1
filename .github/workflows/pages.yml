@@ -23,6 +23,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install smoke-test dependencies
+        run: npm ci
+
       - name: Rebuild the dataset from the verified sources
         run: |
           python3 scripts/build_data.py
@@ -46,10 +55,7 @@ jobs:
           } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Render every page in a headless DOM
-        continue-on-error: true
-        run: |
-          npm install --no-save --no-audit --no-fund jsdom
-          node scripts/smoke_test.js | tee -a "$GITHUB_STEP_SUMMARY"
+        run: npm run test:smoke | tee -a "$GITHUB_STEP_SUMMARY"
 
   deploy:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
