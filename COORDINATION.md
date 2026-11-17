@@ -1273,6 +1273,7 @@ bug. Measured on `main` at `5de6d8d` before this claim (`data/schedule.json` vs 
 No tournament, hotel, rate, walking or entry-rule fact is changed by this task. It is arithmetic over
 values already stored, so no new source is read and no flag is created or altered.
 
+
 ## Session 65397e8b — branch `arena/65397e8b-poker1` (this session)
 
 Claimed and pushed before any implementation work. Scope: final full verification of the shipped site,
@@ -1305,3 +1306,59 @@ None introduced by this change. No tournament, hotel, rate, walking or entry-rul
 - CI `validate` run 44186796874: all steps success (dataset rebuild, page match, link validation, value verification, official-source check, headless render).
 - **Merged** as merge commit `6bbd2e95327be53b2b4bb8d9d52895161e9c9788` at 2026-11-17T22:15:18Z.
 - GitHub Pages: deployment triggered for `6bbd2e9`; Pages API reports `status: built`, source branch `main`, path `/`, live at https://karagemop466-tech.github.io/Poker1/ . The built site carries the weekday-map fix and the full verified dataset (317 rows, 7 hotels, 5 dated rates, 70 schedule days, 79 flagged rows).
+
+---
+
+### Session a8efe220 — completion record
+
+**Status: Done.** Claimed at `0abd32c`, fixed in `aecf003`, merged.
+
+| Item | Result |
+|---|---|
+| Task | Fix the midnight-wrap in the schedule overlap arithmetic, label every crossing finish, count each real conflict once, and gate all of it in CI |
+| PR | [#72](https://github.com/karagemop466-tech/Poker1/pull/72) — **MERGED** into `main` as `39e36b0b063515623c6d58fdc09421de249d2224` at 2026-11-17T22:14:32Z |
+| CI | PR `validate` job **pass** (run `44187044080`, 5m48s) on the exact head commit `aecf003`. The deploy job correctly skipped on a pull request. |
+| Pages | Build for the merge commit `39e36b0` = **built** (2026-11-17T22:14:33Z). `main` has since advanced to `6bbd2e9` (parallel session PR #71), also **built**. |
+| Live check | `https://karagemop466-tech.github.io/Poker1/data/schedule.json` serves `overlap_pairs: 271`, `est_end_next_day` on every crossing row, and the corrected conflict details. Confirmed after the deploy; the sandbox has no direct route to `github.io`, so the deployed file was read back through the page fetcher. |
+| Main-tree re-check | Fresh shallow clone of `origin/main` at `6bbd2e9`: 271 overlap pairs, 0 fallbacks, 121 next-day marks, 70 days; `check_links.py` OK; `build_data.py` produces no diff. The fix is intact on the current tip, not just on the merge commit. |
+
+**What was found and fixed.** `est_end` is a wall-clock `HH:MM` that wraps at midnight, and
+`build_schedule` compared those strings. On `main` at `5de6d8d`: **24 of 24 conditional fallbacks
+started before their primary finished**, **231 of 245 real overlaps were unflagged** (14 flagged, 0
+spurious) and **137 of 317 rows printed a finish earlier than their own start**. All comparisons are now
+in absolute minutes (`start + est_duration_min`); a fallback is proposed only when it genuinely starts
+later the same date; each real pair is reported once; a crossing finish is labelled "the next day"; and
+`check_links.py` fails the build on any of those four conditions being violated. Each of the four new
+rules was proven to fire by deliberately corrupting `data/schedule.json` and watching the check fail.
+
+**The honest result, published rather than hidden.** After the fix **no date carries a conditional
+fallback**. On each of the 26 dates offering two single-entry events the earlier one is estimated to run
+11–21 hours, so no same-day second entry is playable. The estimate is an upper bound from the published
+level structure. The fact that would change this — a typical field size and finish time — is not
+published in advance by any official source, so it is written up as **Q-F1/F2/F3** in `QUESTIONS.md`
+rather than guessed at.
+
+**Verification performed.** `build_data.py` 317 rows / 70 days / 79 flagged (unchanged);
+`build_site.py` 23 pages, byte-identical on a second run; `check_links.py` OK (56 files free of conflict
+markers); `verify_rows.py` 1,296 field checks with **0 hard failures** (unchanged); `verify_against_snapshots.py`
+**0 unexplained mismatches** (unchanged); `npm run test:smoke` 23/23. A jsdom render of
+`pages/schedule.html` shows **121** next-day finish phrases, **51** day cards with an overlap chip and
+**3** same-start conflict phrases — the strings actually rendered, not just the JSON.
+
+**Sources.** None read this session: this is arithmetic over values already verified against the official
+documents, so no `last_checked` date was advanced and no factual value was changed. The relevant official
+sources remain the Venetian structure sheets and the WPT structures PDF cited on each row.
+
+**Irregularities flagged (published on the Flagged for Review page, do not block).**
+
+- **F62** — the defect itself, with the before/after counts.
+- **F61** — a genuine duplicate flag id: **F58** had been assigned by two parallel sessions (the
+  nightly-average convention and the conflict-marker publication). The conflict-marker row was renumbered
+  to F61 here; the nightly-average row keeps F58 and every pointer to it still resolves.
+- **Q-F1/F2/F3** — the field-size and duration gap the fix exposes, and the two decisions that follow
+  from it (whether to adopt a labelled duration assumption, and whether a cross-midnight finish should
+  block the next date's plan).
+
+**Note on the six older open PRs.** #46, #51, #52, #53, #64 and #66 were all `CONFLICTING` against `main`
+throughout this session and none touches this defect; none was reviewed or merged here. They remain for
+their own sessions.
