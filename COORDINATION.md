@@ -853,6 +853,26 @@ by `main`, and is not edited here).
 | Add the trip-cost calculator (entries × buy-in + nights × true hotel cost) bound to the verified rate log | **Done** | `assets/app.js`, `pages/calculator.html`, `scripts/build_site.py` | `bb9a3717` |
 | Refresh Executive Summary, Questions, Suggestions, Flagged, Review, README; validate; PR → `main`; merge; confirm Pages deploy | **Done** | the six Markdown documents, `COORDINATION.md` | `bb9a3717` |
 
+**Second follow-up.** [PR #40](https://github.com/karagemop466-tech/Poker1/pull/40) merged at
+`44fcc08a64075bc57462b3bd70c8ecf1511059e5`: the PR #35 merge had left **duplicate** `PAGES.calculator`
+and `PAGES.hotels` renderers in `assets/app.js`, and the later definition silently won, so the deployed
+calculator was the old per-night form while the nav said "Trip cost calculator". Duplicate renderers are
+valid JavaScript, so every check stayed green — only reading the live page caught it. `check_links.py`
+now rejects duplicate/missing renderers.
+
+**Third follow-up.** [PR #41](https://github.com/karagemop466-tech/Poker1/pull/41) merged at
+`54241852c90b93ae48c38bce1e9258ae629462d4`: the rate log mixed two nightly-average conventions. All five
+entries now use the engine's printed Average Rate, (room + fee) ÷ nights, with the room-only figure stored
+beside it (F53). Every entry now reproduces the engine's own number (709.25 / 298.54 / 804.25 / 282.25 /
+419.25), and `check_links.py` re-derives `average == room_only + fee` and `checkout == room + fee + tax`
+on every build.
+
+**Deploy note.** The GitHub-provided `pages build and deployment` run for `e9ca3d6` reports a failed
+`deploy` step, but the repository's own `Deploy static site to GitHub Pages` run for the same commit
+succeeded, the Pages API reports `built` for `e9ca3d6`, and the live calculator page was read back and
+shows the corrected figures and the new column. That dynamic job is the known flaky one, not a build error
+in this repository.
+
 **Follow-up.** [PR #37](https://github.com/karagemop466-tech/Poker1/pull/37) merged at
 `aea688a3981d32d84b43d3c2328278709018cbd0`, fixing three copy defects found by reading the live page
 (a truncated method sentence on the hotels page, a stale "walking time is not published, so it is blank"
