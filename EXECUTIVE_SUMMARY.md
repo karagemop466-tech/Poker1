@@ -9,6 +9,26 @@ Every official tournament page and structure PDF listed below was re-fetched and
 PDF (136 rows). The result is that **all 317 rows in the current dataset match their official sources**, with known source irregularities listed in `FLAGGED.md` (including the NYE page printing the Dec 26, 2026 date as 2025). Hotel fees, taxes, rates and walking times were also
 re-checked on 2026-11-17.
 
+PDF (136 rows). Hotel fees, taxes, rates and walking times were re-checked the same day.
+
+**Row-level verification, not a page-level claim.** On 2026-11-17 this project stopped checking only
+"did the page change?" and started checking "does every published value still say what the official
+document says?". `scripts/verify_live_rows.py` compares each of the 317 rows field by field — date, start
+time, event number, event name, buy-in and structure-sheet link — with the official document that prints
+it, and the Pages build now fails if any row is contradicted. Current result: **317 of 317 rows checked,
+0 contradicted, 3 warnings** (the three December 26 rows the official page misprints with the year 2025).
+
+That check was not academic. It caught two wrong start times that the page-level monitor had reported as
+"0 published values changed", because the pages contained both times and only the rows had the wrong one:
+
+| Row | Published | Official document | Now |
+|---|---|---|---|
+| Jan 4, 2027 · $1,600 MSPT Day 2 Restart | 11:00 | 11:10 (event page) | **11:10** |
+| Dec 21, 2026 · $600 NLH Turbo | 8 p.m. | the schedule prints no "8 p.m." anywhere; its last block ends at 6 p.m., and the structure sheet says 6 p.m. | **6 p.m.** |
+
+The second one also retires a long-standing flag: F4 called this a "time conflict between two official
+sources". It was not — it was a transcription error in this dataset. The flag now says so.
+
 ## Bottom line
 
 - **317 official rows are now published across 70 dates**, from Nov 16, 2026 to Jan 24, 2027. Every row
@@ -84,6 +104,12 @@ re-checked on 2026-11-17.
   unsourced buy-in, house fee, prize pool or starting stack; the only unsourced money values in the dataset
   were the 17 Signature Series guarantees, already blanked and published as F54. The record is
   `research/verification-2026-11-17-c7a324a6.md`.
+- **"Last checked" is evidence, not a label.** Every table row now prints the date on which the official
+  document behind it was actually fetched — the date comes from the scheduled GitHub Actions fetch log
+  (`data/change_log.json`), not from a date typed into the generator. A row whose document was never
+  fetched prints "not recorded" instead of borrowing a date. On 2026-11-17 that fetch covered
+  **78 official sources: 72 fetched with text, 10 pages whose bytes changed, 0 published values changed,
+  5 errors** — every error an MGM Resorts page (Bellagio, ARIA) that times out for a non-browser client.
 - **Trip cost calculator.** The calculator now prices a whole trip: entries × buy-in + nights × true
   hotel cost + parking + other spend, using only logged quotes, and it shows what the selected stay
   window actually holds (verified single-entry events, days covered, cheapest buy-in, best

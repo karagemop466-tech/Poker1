@@ -718,6 +718,27 @@
    "kind": "hotel",
    "venue": "Other",
    "note": "A county government record, not an operator page. Used only for the Venetian/Palazzo and Wynn/Encore address and rate-class rows read on 2026-11-17."
+  },
+  {
+   "id": "h_bellagio_poker",
+   "label": "Bellagio poker room page (flyers for the daily events)",
+   "url": "https://bellagio.mgmresorts.com/en/casino/poker.html",
+   "kind": "hotel",
+   "venue": "Bellagio"
+  },
+  {
+   "id": "h_caesars_article",
+   "label": "Caesars Palace poker tournament article (add-on wording)",
+   "url": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+   "kind": "hotel",
+   "venue": "Caesars Palace"
+  },
+  {
+   "id": "v_deepstack_series",
+   "label": "Venetian DeepStack Extravaganza series index",
+   "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html",
+   "kind": "schedule",
+   "venue": "Venetian"
   }
  ]
 }

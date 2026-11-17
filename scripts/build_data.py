@@ -18,6 +18,46 @@ os.makedirs(DATA, exist_ok=True)
 VERIFIED_ON = "2026-11-17"
 LAST_CHECKED = "2026-11-17"
 
+
+def load_source_check_dates():
+    """The date each official document was actually fetched, from the source log.
+
+    ``data/change_log.json`` is written by ``scripts/check_source_facts.py`` in GitHub
+    Actions, where the operator domains are reachable. For every source id it records
+    ``last_checked_utc`` and the URL. This turns "last checked" into evidence rather
+    than a hand-typed date: a row's date is the latest fetch of the document that
+    prints it. When the log is missing or a source was never fetched, the value is
+    None, which the UI prints as "not recorded" instead of inventing a date.
+    """
+    path = os.path.join(DATA, "change_log.json")
+    if not os.path.isfile(path):
+        return {}, {}
+    try:
+        with open(path, encoding="utf-8") as f:
+            log = json.load(f)
+    except (ValueError, OSError):
+        return {}, {}
+    by_id, by_url = {}, {}
+    for src in log.get("sources") or []:
+        stamp = (src.get("last_checked_utc") or "")[:10]
+        if not stamp:
+            continue
+        by_id[src.get("id")] = stamp
+        if src.get("url"):
+            by_url[src["url"]] = max(stamp, by_url.get(src["url"], ""))
+    return by_id, by_url
+
+
+SOURCE_CHECKED_BY_ID, SOURCE_CHECKED_BY_URL = load_source_check_dates()
+LAST_CHECKED = (max(SOURCE_CHECKED_BY_URL.values())
+                if SOURCE_CHECKED_BY_URL else "2026-11-16")
+
+
+def checked_for(urls, fallback=LAST_CHECKED):
+    """Latest date on which any of the documents behind a row was fetched."""
+    stamps = [SOURCE_CHECKED_BY_URL[u] for u in urls if u in SOURCE_CHECKED_BY_URL]
+    return max(stamps) if stamps else fallback
+
 VEN = "The Venetian Resort"
 WYN = "Wynn Las Vegas"
 
@@ -636,10 +676,12 @@ WPT = [
  ("2026-12-21","12:00","No Limit Hold'em",1100,100000,None,30000,"30","entry",None,[]),
  ("2026-12-21","13:00","NLH Mystery Bounty Day 2",None,None,None,None,None,"continuation",None,
   ["Continuation row. The schedule PDF prints no buy-in, guarantee, chips or levels for this row."]),
- ("2026-12-21","20:00","NLH Turbo",600,50000,None,30000,"20","entry","TURBO600",
-  ["Time conflict between two official sources: the schedule PDF prints this turbo at 8 p.m. on December 21, while "
-   "the $600 NLH Turbo structure sheet lists \"Monday, December 21, 2026 at 6 p.m.\" The schedule time is kept and "
-   "the conflict is flagged."]),
+ ("2026-12-21","18:00","NLH Turbo",600,50000,None,30000,"20","entry","TURBO600",
+  ["Corrected 2026-11-17. This row was published as 8 p.m. and flagged as a conflict with the $600 NLH Turbo "
+   "structure sheet, which prints \"Monday, December 21, 2026 at 6 p.m.\". Re-reading the schedule PDF's final "
+   "block, the last time values are 1 p.m. and 6 p.m.; the string \"8 p.m.\" occurs nowhere on the schedule. The "
+   "8 p.m. figure was a transcription error, not a source conflict, so the row now prints 6 p.m. and the schedule "
+   "and structure sheet agree (FLAGGED F4, corrected)."]),
 ]
 
 # Wynn structure sheets read in the official structures PDF (read in full on 2026-11-16).
@@ -1191,7 +1233,8 @@ def build_venetian(rows, series_key, series, page_key, sheet_key, sched_key, str
             "est_end": est_end, "est_duration_min": est_min,
             "note": note,
             "flags": flags,
-            "sources": srcs, "verified_on": VERIFIED_ON, "last_checked": LAST_CHECKED,
+            "sources": srcs, "verified_on": VERIFIED_ON,
+            "last_checked": checked_for([s["url"] for s in srcs]),
         }
         if sheet.get("seats"):
             row["satellite"] = {
@@ -1366,7 +1409,8 @@ def build_wynn():
                      "schedule PDF. " + ("Entry rule, fee split and starting stack from %s of the official "
                      "structures PDF." % sid if sheet_row else "No structure sheet is published for this row.")),
             "flags": flags,
-            "sources": srcs, "verified_on": VERIFIED_ON, "last_checked": LAST_CHECKED,
+            "sources": srcs, "verified_on": VERIFIED_ON,
+            "last_checked": checked_for([s["url"] for s in srcs]),
         }
         # The fee percentage is computed against the entry the structure sheet
         # actually prices (``house_fee_basis_usd``), which is the row's buy-in on
@@ -1426,7 +1470,8 @@ def build_wynn():
             "flags": flags,
             "sources": [{"label": "Official schedule PDF", "url": SRC["wss_sched"]},
                         {"label": "Official structures PDF (placeholder: COMING SOON)", "url": SRC["wss_struct"]}],
-            "verified_on": VERIFIED_ON, "last_checked": LAST_CHECKED,
+            "verified_on": VERIFIED_ON,
+            "last_checked": checked_for([s["url"] for s in srcs]),
         })
     return out
 
@@ -2146,7 +2191,7 @@ def main():
             h["true_cost_quote"] = {"arrival": quote["arrival"], "departure": quote["departure"],
                                     "nights": quote["nights"], "room": quote["room"],
                                     "checkout_total_usd": quote["checkout_total_usd"]}
-        h["last_checked"] = LAST_CHECKED
+        h["last_checked"] = checked_for([s["url"] for s in (h.get("sources") or [])])
         # What was actually opened again on 2026-11-17, per property - so a reader can tell a
         # re-read from a carry-over. Fields not listed here were not re-read on that date.
         h["recheck"] = HOTEL_RECHECK.get(h["id"])

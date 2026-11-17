@@ -240,6 +240,78 @@ python3 scripts/check_links.py    # OK: schemas, local links, official hosts, ru
 node scripts/smoke_test.js        # 21/21 pages render in a headless DOM with no page error
 ```
 
+## 10. Session `d57243e7` — row-level verification, 2026-11-17
+
+### 10.1 What was done
+
+The previous sessions verified at the level of a *page*: fetch the official document, confirm it still
+says the same set of values. That is necessary but not sufficient, and this session proved it by
+constructing the counter-example: a page can keep containing both "11:00 AM" and "11:10 AM" while the
+published row silently holds the wrong one.
+
+`scripts/verify_live_rows.py` closes that gap. For every row it locates the official document that prints
+the row and compares date, start time, event number, event name, buy-in and structure-sheet link.
+
+| Check | Result (2026-11-17) |
+|---|---|
+| Rows compared | 317 of 317 (0 skipped) |
+| Contradictions | 0 after two corrections |
+| Warnings | 3 — the December 26 rows the official page year-stamps 2025 (F117) |
+| Documents compared field by field | Venetian DeepStack IV page (94 rows), Venetian NYE page (49), Wynn Signature Series PDF (38) |
+| Document compared as a printed (time, buy-in) multiset | WPT World Championship schedule PDF (136), because it prints its columns separately (F118) |
+
+### 10.2 The two errors it found
+
+| Row | Was published | Official document says | Corrected to |
+|---|---|---|---|
+| Jan 4, 2027 · $1,600 No Limit Hold'em MSPT Day 2 Restart (r263) | 11:00 | 11:10 (NYE event page) | **11:10** |
+| Dec 21, 2026 · $600 NLH Turbo | 8 p.m. | the schedule prints no "8 p.m." anywhere (0 occurrences of "8 p.m.", 20 of "7 p.m.", final block ending 1 p.m. and 6 p.m.); the structure sheet prints 6 p.m. | **18:00** |
+
+Both were corrected in `scripts/build_data.py`, the only place a row is produced, and the correction is
+recorded in the row's own flag text and in `FLAGGED.md` (F4 rewritten, F115 and F116 added).
+
+### 10.3 Independent confirmation that the archived documents are current
+
+The sandbox running this session cannot reach the operator domains from bash (TLS is blocked), so the
+official documents were obtained two other ways: through the agent's page reader, and through this
+repository's own `check_source_facts.py` job, dispatched on the session branch from GitHub Actions where
+the network is open. After normalising both to (printed date, time, event number, name, structure-sheet
+link) the two independent fetches are **identical — 94 of 94 rows and 49 of 49 rows**. Two different
+fetch paths, same official table, so the verification above is against today's pages, not last week's.
+
+The GitHub Actions run recorded: **78 sources, 72 fetched with text, 10 pages whose raw bytes changed,
+0 published values changed, 5 errors**. Every error is an MGM Resorts host (Bellagio, ARIA) timing out for
+a non-browser client; those rows were already blank and stay blank.
+
+### 10.4 What changed on the site
+
+- **"Last checked" is now a visible column** on the tournament, hotel and rate-log tables, and its value
+  comes from `data/change_log.json` — the date the scheduled job actually fetched that document — with a
+  "not recorded" fallback. Previously the field existed in the JSON but was never displayed and was a
+  fixed string.
+- **A 30-minute walking filter** on the hotels page (Venetian room / Wynn room / either). It reports how
+  many properties it removes instead of deleting them: 7 → 4 for the Wynn poker room.
+- **`scripts/ui_test.js`** — 14 behavioural assertions in a headless DOM (last-checked column, search,
+  date range, buy-in ceiling, walking filter, cross-dataset search, schedule primary/fallback), gated in CI
+  alongside the existing render smoke test.
+
+### 10.5 Verification performed
+
+```
+python3 scripts/build_data.py              # 317 rows; 70 days; 56 flagged rows; 7 hotels; 5 dated rates
+python3 scripts/build_site.py              # 21 pages
+python3 scripts/check_links.py             # OK: schemas, links, hosts, rule objects, schedule, rates, pages
+python3 scripts/verify_live_rows.py        # 317 checked, 0 skipped, 0 contradicted, 3 warnings
+npm run test:smoke                         # 21/21 pages render
+npm run test:ui                            # 14/14 behavioural assertions pass
+python3 scripts/monitor_sources.py --print # 78 sources via GitHub Actions: 72 fetched, 0 values changed
+```
+
+### 10.6 Still open after this session
+
+Everything in 9.5 stays open. This session closed I14 (the December 21 time) and I19 (whether a single
+row can drift unnoticed — it could, and now it cannot).
+
 ### 9.5 Still open after this session
 
 - Wynn/Encore nightly rates and Wynn's room-tax rate (its engine hides the breakdown).

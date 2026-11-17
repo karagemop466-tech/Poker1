@@ -60,8 +60,14 @@ jobs:
       - name: Validate JSON schemas, local links, and source links
         run: python3 scripts/check_links.py
 
+      # Two independent row-level checks, because they answer different questions.
+      #   verify_rows.py     - value-by-value against the archived official text
+      #   verify_live_rows.py - row-by-row against the document that prints the row
       - name: Verify every published value against the archived official documents
         run: python3 scripts/verify_rows.py
+
+      - name: Verify every published row against the official document that prints it
+        run: python3 scripts/verify_live_rows.py | tee -a "$GITHUB_STEP_SUMMARY"
 
       - name: Check every official source and summarise the changed rows
         run: |
@@ -75,11 +81,9 @@ jobs:
       - name: Render every page in a headless DOM
         run: npm run test:smoke | tee -a "$GITHUB_STEP_SUMMARY"
 
-  # The repository's Pages site is configured with `source: main:/` and the legacy branch build, so
-  # `actions/deploy-pages` can never find an artifact for this workflow and failed on every run while
-  # the site itself kept building fine. This job therefore asks GitHub which build type the site
-  # actually uses: with `workflow` it publishes the artifact exactly as before, and with `legacy` it
-  # confirms that the branch build for this commit reached status `built` instead of failing.
+      - name: Assert the tables, filters, search and 30-minute walking rule work
+        run: npm run test:ui | tee -a "$GITHUB_STEP_SUMMARY"
+
   # The repository's Pages site is configured with `source: main:/` and the legacy branch build, so
   # `actions/deploy-pages` can never find an artifact for this workflow and failed on every run while
   # the site itself kept building fine. This job therefore asks GitHub which build type the site

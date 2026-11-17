@@ -6,7 +6,9 @@
     "node": ">=20"
   },
   "scripts": {
-    "test:smoke": "node scripts/smoke_test.js"
+    "test:smoke": "node scripts/smoke_test.js",
+    "test:ui": "node scripts/ui_test.js",
+    "test": "npm run test:smoke && npm run test:ui"
   },
   "devDependencies": {
     "jsdom": "^26.1.0"
