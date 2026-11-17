@@ -410,3 +410,13 @@ Claimed in commit `a698b81` before implementation.
 | Review the existing planner against the requested feature list, rebuild generated pages, run source/link validation and the browser smoke test; document any verification limitations without altering factual rows | **Done** — all existing requested feature areas are present; local generators/checker and 21-page smoke test pass after dependency installation | `research/session-2026-11-17-review.md`, `COORDINATION.md` | `11c7cbe6` |
 
 Verification details and caveats are recorded in `research/session-2026-11-17-review.md`. No official operator sources were re-fetched in this pass and no facts were newly verified. The initial smoke run in this clean checkout lacked installed `jsdom`; after `npm ci --ignore-scripts --no-audit --no-fund`, all 21 pages rendered. No generated data or pages changed.
+
+## Session a34a5278 — current branch `arena/a34a5278-poker1` (integration follow-up)
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Integration audit of source freshness and monitoring: fix baseline-hash comparison; map changed official-source content to the affected event rows and keep the review flag visible; surface each row's last-checked date; schedule the official content fetch daily; correct misleading generated freshness/walking notes and add regression checks | **In progress** — scoped after rebasing this branch onto `5424185`; implementation not yet started | `.github/workflows/source-facts.yml`, `scripts/check_source_facts.py`, `scripts/build_data.py`, `scripts/check_links.py`, `scripts/smoke_test.js`, `assets/app.js`, `data/*.json`, `pages/*.html`, `README.md`, `QUESTIONS.md`, `SUGGESTIONS.md`, `REVIEW.md`, `COORDINATION.md` | `a34a5278` |
+
+### Rebase conflict log
+
+During the required `git pull --rebase origin main`, `main` advanced from `5424185` to `e9ca3d6` and appended session `11c7cbe6`'s repository-review record in this same file. The rebase conflict was resolved by preserving that complete record and appending this session's claim; no other session's work was discarded.
