@@ -2109,3 +2109,11 @@ The existing checks/data remain the baseline (not refreshed by this session): la
 **Irregularities:** none new. Prior irregularities remain on `pages/flagged.html`.
 
 **Pull request / merge:** see the entry below this one, appended after the PR is merged.
+
+### Session c0a11e95 · merge record
+
+| Item | Result |
+|---|---|
+| Pull request | [#101](https://github.com/karagemop466-tech/Poker1/pull/101), `arena/c0a11e95-poker1` → `main`, docs only |
+| Merged | `gh pr merge 101 --merge` exit 0 (merge commit on `main`: 3f3f6bb Merge pull request #101 from karagemop466-tech/arena/c0a11e95-poker1) |
+| Pages | No generated output changed by this PR, so the existing Pages deployment for `main` is unaffected. |
