@@ -140,3 +140,45 @@ is quietly fixed.
 | F76 | **Defect in this repository, now fixed.** `build_schedule()` compared a fallback's start with `to_min(primary.est_end)`. `est_end` is stored as a time of day, so a primary running past midnight had its end read as an earlier time than its own start: the test passed for exactly the pairs it should have rejected. Published on `main` at `5de6d8d`: **24 of 24 conditional fallbacks were impossible sequences**, **121 of 274 scheduled rows printed a finish before their start**, and **14 pairs were flagged against 170 that the published ceilings actually support**. `EXECUTIVE_SUMMARY.md` repeated the claim "no impossible sequence is proposed" while all 24 were impossible. | `scripts/build_data.py` (`build_schedule`), reproduced by recomputing `data/schedule.json` from `data/tournaments.json` | Fixed in this session: comparisons use minutes from the start day's midnight; a structure spanning more than one playing day is refused as a same-day bound; satellites are treated as maxima (their own clause 10 concludes them when seats are awarded); a fallback is published only when the primary's table ends before the second event's entry closes. Now 0 fallbacks are published, because no date supports one. Note for reviewers: counting a multi-day flight's
 whole-event table as a first-day finish (the rule on `main` before this change) yields 271 pairs; the 101 extra
 pairs rest on a table its own clause 3 cannot bound, so they are refused rather than asserted. Guards added: `scripts/check_schedule.py` (re-derives the plan independently) and a render-level check in `scripts/smoke_test.js` that fails if any rendered line shows a finish before its start without a next-day marker. |
+
+## G. Session 2157d288 (2026-11-17): publication defects and what the live refresh showed
+
+This session found **no new irregularity in an official source**, because it could not reach the
+operator domains from its sandbox (`curl` to `venetianlasvegas.com` and `wynnlasvegas.com` fails at
+TLS; the monitor's own HTTP check returned unreachable for all 93 URLs). What it did find were
+**defects in how the site presented already-verified data**, and those are listed here because they
+were published to readers before they were fixed.
+
+> Counts in this section reflect the state on 2026-11-17 when it was written. The overlap-pair
+> count (P2: 271 pairs) was later corrected to 170 pairs across 40 dates by the duration-basis fix
+> (see F76 above); the defect and its fix are unchanged.
+
+| # | Defect (what a reader saw) | Root cause | Now |
+|---|---|---|---|
+| P1 | Every one of the 24 "conditional fallback" events on the schedule page was an **impossible sequence** — a fallback starting at 5:10 PM after a primary estimated to finish at 2:55 AM the next day. | `est_end` is stored as a wall-clock `HH:MM`, so a finish past midnight compares as *earlier* than the start it follows. | Comparisons are in absolute minutes (`start + est_duration_min`). A fallback is proposed only when it starts after the primary's absolute finish and the primary finishes the same day. **0 fallbacks are now proposed**, and each day states why none is possible. |
+| P2 | **231 real overlaps were unflagged**; only 14 of 271 were shown. | Same clock-string comparison. | 271 pairs flagged across 51 dates, each with both start times and the estimated finish. |
+| P3 | **137 rows printed a finish time that read before their own start** (e.g. "11:10 AM start, estimated to finish about 8:55 AM"). | The renderer formatted `est_end` with no wrap handling. | A finish that crosses midnight is labelled "the next day"; 121 schedule events carry the flag. A new **Estimated finish** column shows it on every tournament table. |
+| P4 | **16 links 404'd** on the live site. `EXECUTIVE_SUMMARY.md`, `SUGGESTIONS.md` and `FLAGGED.md` link to `pages/*.html`, and those documents are rendered *inside* `/pages/`, so the links resolved to `/pages/pages/*.html`. | The Markdown renderer passed relative hrefs through unchanged. | `mdHref()` rewrites repo-relative targets against the page's own base. A rendered-DOM crawl now resolves 529 local references before deploy and fails on any broken one. |
+| P5 | `pages/flagged.html` printed two `<h1>` headings. | The page template added a heading on top of the Markdown document's own `# Flagged for Review`. | The template heading is removed; the page has one. |
+| P6 | The weekly provenance check **had silently stopped checking anything** — it exited with "Refusing to run: non-official host(s) in manifest" while the job reported success. | `www.rwlasvegas.com` was cited by the strip-room survey but missing from the script's allowlist, and the workflow piped output through `tee` without `pipefail`. | The host is allowed (it is already an approved operator host elsewhere) and `pipefail` is set, so a refusal is a red job. **Verified live:** the next scheduled run fetched all 91 sources instead of refusing. |
+
+### What the first successful live refresh proved
+
+The unblocked `source-facts` run fetched every source on a network-enabled runner and reported 14
+pages whose text differed from the stored snapshot. Checked field by field against the pre-refresh
+snapshots, **no published value moved**: money amounts, start times and dates are identical on
+`v_dse_nov_page`, `v_dse_dec_page`, `v_dse_series_page` and `w_poker_page`, and the $55 resort fee,
+13.38% Clark County tax and $20/$25/$40 parking figures are still printed on the hotel-terms pages.
+The diffs are navigation and menu ordering only. That is the intended behaviour of the monitor's
+`sources_raw_changed` versus `sources_facts_changed` split: a page may re-render without any fact
+changing, and only a fact change marks a row.
+
+### Still open (carried forward, not resolved here)
+
+- The six MGM-family sources timed out during the live refresh (`h_bellagio`, `h_aria`,
+  `bellagio_poker`, `mgm_poker_page`, `mb_poker_page`, `h_aria_poker`). Recorded as errors, not as
+  "no value published". Their fee and tax cells stay blank.
+- `data/monitor_last_run.txt` now holds the successful run's output; the old refusal line is gone.
+- Everything previously flagged in sections A–E stands unchanged. In particular F40/S9 (whether to
+  approve the MGM `assets.contentstack.io` PDF host) and S10 (which Strip resorts remain unsurveyed)
+  are **reviewer decisions**, not defects.
