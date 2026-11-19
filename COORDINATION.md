@@ -1,3 +1,23 @@
+# Session cd330ba8 — independent evidence audit and integration claim
+
+**Claimed 2026-11-19 05:30 UTC.** Branch `arena/cd330ba8-poker1` is fixed by Arena; no
+other branch will be created, renamed, checked out, or pushed. This file already exists on
+`main` at base `a1361aa`, before this session's work. The three open PRs #79, #81, #82 and
+remaining old “in progress” lines have had no commits since 2026-11-17 (>60 minutes); later
+completion records in this board supersede the old lines. This claim does not take over or
+merge those other sessions' PRs. If another active claim is discovered, request a handoff here.
+
+| Task | Status | Owner | File scope |
+|---|---|---|---|
+| Audit official evidence and correct unsupported single-entry confirmations and dependent trip recommendations; require affirmative evidence before marking confirmed. Preserve verified event facts and publish the limitations. | **In progress** | `cd330ba8` | `scripts/build_data.py`, `scripts/build_site.py`, `scripts/check_links.py`, `scripts/verify_rows.py`, `scripts/check_schedule.py`, new focused tests under `scripts/`, `assets/app.js`, generated `data/*.json`, generated `index.html` and `pages/*.html`, `README.md`, `EXECUTIVE_SUMMARY.md`, `FLAGGED.md`, `QUESTIONS.md`, `SUGGESTIONS.md`, `REVIEW.md`, new `research/verification-2026-11-19-cd330ba8.md`, `COORDINATION.md` |
+| Final integration: test the generator, validation, page rendering and links, document source evidence and irregularities, open/merge a PR, and confirm Pages deployment. | **In progress** | `cd330ba8` | Same scope; `.github/workflows/pages.yml` only if a regression gate is needed |
+
+Initial observation (to verify and correct): [Venetian structure sheet #16](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_16.pdf)
+contains no express one-entry limit, no-rebuy rule, or no-add-on rule; omission is not the
+written confirmation required by the brief. A document being read is not proof of a prohibition.
+
+---
+
 # Session ab7e4d46 — branch `arena/ab7e4d46-poker1` (base `a1361aa` = `main` at PR #85)
 
 Session `ab7e4d46` works on branch `arena/ab7e4d46-poker1` (fixed for this session), based on `main` at
