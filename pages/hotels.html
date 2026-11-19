@@ -767,6 +767,31 @@ of a poker room, or search any column.</p>
     });
   }
 
+  function applySourceChanges(rows, changes) {
+    var byId = Object.create(null);
+    ((changes && changes.changed) || []).forEach(function (change) {
+      // Only the provenance monitor's confirmed printed-value changes carry
+      // source_url. A raw/cosmetic source fetch or a dataset snapshot diff must
+      // never be presented as an official page change.
+      if (!change || !change.source_url || (change.kind && change.kind !== "tournament")) return;
+      byId[change.id] = change;
+    });
+    rows.forEach(function (row) {
+      row._source_change = byId[row.id] || null;
+      row._source_change_as_of = changes && changes.checked_at || "not recorded";
+    });
+    return rows;
+  }
+
+  function sourceChangeCell(row) {
+    var change = row._source_change;
+    if (!change) return "";
+    var when = change.source_changed_at || row._source_change_as_of || "not recorded";
+    return "<br><span class='chip warn'>Source changed — re-check</span>" +
+      "<br><span class='small'>Monitor record: " + esc(when) + " · " +
+      '<a href="' + esc(change.source_url) + '" target="_blank" rel="noopener">changed official source</a></span>';
+  }
+
   function tournamentColumns(withRules) {
     var cols = [
       { id: "date", label: "Date", key: "date", sort: function (r) { return r.date + r.start; }, html: function (r) { return dateFmt(r.date); } },
@@ -780,7 +805,7 @@ of a poker room, or search any column.</p>
       { id: "name", label: "Event", key: "name", html: function (r) {
           return "<strong>" + esc(r.name) + "</strong><br><span class='small'>" + esc(r.series) +
             (r.event_no ? " · Event " + esc(r.event_no) : "") + " · " + esc(r.venue) +
-            (r.prize_text ? "<br>Prize: " + esc(r.prize_text) : "") + "</span>" + flagsHtml(r);
+            (r.prize_text ? "<br>Prize: " + esc(r.prize_text) : "") + "</span>" + flagsHtml(r) + sourceChangeCell(r);
         } },
       { id: "buy", label: "Buy-in", key: "buy_in_usd", num: true, html: function (r) { return money(r.buy_in_usd); } },
       { id: "gtd", label: "Guarantee", key: "guarantee_usd", num: true, html: function (r) { return money(r.guarantee_usd); } },
@@ -800,9 +825,9 @@ of a poker room, or search any column.</p>
   }
 
   PAGES.singleEntry = function () {
-    Promise.all([getJSON("data/tournaments.json"), getJSON("data/schedule.json")]).then(function (res) {
+    Promise.all([getJSON("data/tournaments.json"), getJSON("data/schedule.json"), getJSONSafe("data/changes.json")]).then(function (res) {
       var d = res[0];
-      var rows = res[0].rows.filter(function (r) { return r.entry_status === "SE" || r.entry_status === "CAND"; });
+      var rows = applySourceChanges(res[0].rows.filter(function (r) { return r.entry_status === "SE" || r.entry_status === "CAND"; }), res[2]);
       var sched = res[1];
       var main = document.getElementById("content");
       var count = document.getElementById("count");
@@ -889,8 +914,9 @@ of a poker room, or search any column.</p>
   };
 
   PAGES.separate = function () {
-    getJSON("data/tournaments.json").then(function (d) {
-      var rows = d.rows.filter(function (r) { return r.entry_status === "MULTI" || r.entry_status === "RE"; });
+    Promise.all([getJSON("data/tournaments.json"), getJSONSafe("data/changes.json")]).then(function (res) {
+      var d = res[0];
+      var rows = applySourceChanges(d.rows.filter(function (r) { return r.entry_status === "MULTI" || r.entry_status === "RE"; }), res[1]);
       var main = document.getElementById("content");
       var count = document.getElementById("count");
       var filters = tournamentFilters(document.getElementById("filters"), rows);
@@ -902,8 +928,9 @@ of a poker room, or search any column.</p>
   };
 
   PAGES.unverified = function () {
-    getJSON("data/tournaments.json").then(function (d) {
-      var rows = d.rows.filter(function (r) { return r.entry_status === "UNV"; });
+    Promise.all([getJSON("data/tournaments.json"), getJSONSafe("data/changes.json")]).then(function (res) {
+      var d = res[0];
+      var rows = applySourceChanges(d.rows.filter(function (r) { return r.entry_status === "UNV"; }), res[1]);
       var main = document.getElementById("content");
       var count = document.getElementById("count");
       var filters = tournamentFilters(document.getElementById("filters"), rows);
@@ -1461,8 +1488,8 @@ of a poker room, or search any column.</p>
   };
 
   PAGES.venue = function (venueId) {
-    Promise.all([getJSON("data/venues.json"), getJSON("data/tournaments.json"), getJSON("data/hotels.json"), getJSON("data/walking.json")]).then(function (res) {
-      var venues = res[0].rows, rows = res[1].rows, hotels = res[2].rows, walking = res[3].rows;
+    Promise.all([getJSON("data/venues.json"), getJSON("data/tournaments.json"), getJSON("data/hotels.json"), getJSON("data/walking.json"), getJSONSafe("data/changes.json")]).then(function (res) {
+      var venues = res[0].rows, rows = applySourceChanges(res[1].rows, res[4]), hotels = res[2].rows, walking = res[3].rows;
       var v = venues.filter(function (x) { return x.id === venueId; })[0];
       var main = document.getElementById("content");
       if (!v) { main.innerHTML = '<div class="card callout">Unknown venue.</div>'; return; }

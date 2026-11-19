@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // PRESERVED TOOL (PR #53, session d57243e7; ported by session df94b75e).
 // UI enforcement test written in parallel with scripts/smoke_test.js.
-// NOT wired into CI; npm run test:smoke covers page rendering. Kept as a manual tool.
+// Wired into `npm test` as the behavioural UI regression gate; the smoke test separately checks page rendering.
 //
 /**
  * Behavioural checks for the shared UI, run in a headless DOM.
@@ -36,15 +36,24 @@ function check(name, condition, detail) {
   results.push({ name, ok: Boolean(condition), detail: detail == null ? "" : String(detail) });
 }
 
-function load(page) {
+function load(page, fixtures = {}) {
   const file = path.join(ROOT, page);
   const base = ORIGIN + page;
   const dom = new JSDOM(fs.readFileSync(file, "utf8"), { runScripts: "dangerously", url: base });
   const w = dom.window;
-  // Serve this repository's files for the page's relative fetches.
+  // Serve this repository's files for the page's relative fetches, with optional
+  // deterministic overrides for monitor-state regression cases.
   w.fetch = (target) => {
     const rel = new URL(nodeUrl.resolve(base, String(target))).pathname.replace(/^\/Poker1\//, "");
     const p = path.join(ROOT, rel);
+    if (Object.prototype.hasOwnProperty.call(fixtures, rel)) {
+      const body = JSON.stringify(fixtures[rel]);
+      return Promise.resolve({
+        ok: true, status: 200,
+        text: () => Promise.resolve(body),
+        json: () => Promise.resolve(JSON.parse(body)),
+      });
+    }
     if (!fs.existsSync(p)) return Promise.reject(new Error("404 " + rel));
     const body = fs.readFileSync(p, "utf8");
     return Promise.resolve({
@@ -96,6 +105,58 @@ const bodyRows = (w, scope) => w.document.querySelectorAll(scope + " tbody tr").
     check("every displayed row shows a check date", cells.length > 0 && cells.every(okCell),
           cells.slice(0, 3).join(", "));
   }
+
+  /* ---------------- source-change marker, without a live fetch ---------------- */
+  const changedSource = "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html";
+  const changedPage = load("pages/single-entry.html", {
+    "data/changes.json": {
+      checked_at: "2026-11-19",
+      changed: [{
+        id: "r007", kind: "tournament", name: "$200 NLH RaceDay Stack (1Day) - Race to finish before the Race",
+        date: "2026-11-19", source_url: changedSource, source_changed_at: "2026-11-19T06:06:15Z",
+        reason: "official source page printed different values on its last re-check"
+      }, {
+        id: "r008", kind: "tournament", name: "$200 NLH RaceDay Stack (1Day) - Race to finish before the Race",
+        date: "2026-11-20", diff: { buy_in_usd: [200, 250] }, reason: "dataset value differs from its previous snapshot"
+      }]
+    }
+  });
+  await wait(1200);
+  const changedToggle = changedPage.document.getElementById("single-only");
+  if (changedToggle) {
+    changedToggle.checked = false;
+    changedToggle.dispatchEvent(new changedPage.Event("change", { bubbles: true }));
+    await wait(300);
+  }
+  const changedTr = Array.from(changedPage.document.querySelectorAll("#content tbody tr"))
+    .find((tr) => tr.textContent.includes("RaceDay Stack"));
+  const changedText = changedTr ? changedTr.textContent : "";
+  const changedLink = changedTr && Array.from(changedTr.querySelectorAll("a"))
+    .find((a) => a.textContent.includes("changed official source"));
+  check("confirmed source change is marked on its tournament row", !!changedTr && changedText.includes("Source changed — re-check"), changedText);
+  check("row marker exposes the monitor timestamp and official source link", !!changedTr && changedText.includes("2026-11-19T06:06:15Z") && !!changedLink && changedLink.href === changedSource,
+        changedLink ? changedLink.href : "missing timestamp or source link");
+  const diffOnlyTr = Array.from(changedPage.document.querySelectorAll("#content tbody tr"))
+    .find((tr) => tr.textContent.includes("Nov 20, 2026"));
+  check("snapshot-only row differences do not claim an official source change", !!diffOnlyTr && !diffOnlyTr.textContent.includes("Source changed — re-check"),
+        diffOnlyTr ? diffOnlyTr.textContent : "Nov 20 row not rendered");
+
+  async function markerCheck(page, selector, rowId, label) {
+    const monitorFixture = {
+      checked_at: "2026-11-19",
+      changed: [{ id: rowId, kind: "tournament", name: "fixture", source_url: changedSource,
+        source_changed_at: "2026-11-19T06:06:15Z" }]
+    };
+    const win = load(page, { "data/changes.json": monitorFixture });
+    await wait(1200);
+    const marked = Array.from(win.document.querySelectorAll(selector + " tbody tr"))
+      .find((tr) => tr.textContent.includes("Source changed — re-check"));
+    check(label + " table surfaces a confirmed changed source", !!marked,
+          marked ? marked.textContent : "no marked event row");
+  }
+  await markerCheck("pages/separate-section.html", "#content", "r001", "separate-section");
+  await markerCheck("pages/unverified.html", "#content", "r280", "unverified");
+  await markerCheck("pages/venue-venetian.html", "#events", "r007", "venue event");
 
   type(w, w.document.getElementById("q"), "Milestone", "input");
   await wait(300);
