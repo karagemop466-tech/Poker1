@@ -46,6 +46,20 @@ jobs:
         # that checked nothing. A refusal must be red.
         run: set -o pipefail; python3 scripts/check_source_facts.py 2>&1 | tee data/monitor_last_run.txt
 
+      - name: Confirm the run actually ran
+        # `set -o pipefail` above makes the job red when the script exits non-zero. This is
+        # the second half: a refusal written into the log must be red even if a future
+        # refactor changes the exit code, because the snapshots this job archives are the
+        # evidence every quote check on the site is re-derived from.
+        run: |
+          set -euo pipefail
+          if grep -q '^Refusing to run' data/monitor_last_run.txt; then
+            grep -m1 '^Refusing to run' data/monitor_last_run.txt >&2
+            echo "The provenance run refused; no official snapshot was refreshed." >&2
+            exit 1
+          fi
+          echo "Provenance run completed; $(grep -c . data/monitor_last_run.txt) log line(s) archived."
+
       - name: Summarise
         run: |
           python3 - <<'PY'

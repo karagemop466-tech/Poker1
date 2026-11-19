@@ -40,23 +40,37 @@ a baseline is only re-accepted through `monitor_sources.py --accept-baseline` af
 run — never offline. The 2026-11-17 research file keeps its then-readings; a changed quote is
 recorded as a new dated reading, never as a silent edit.
 
-## 3. Stamping rule applied (strict)
+## 3. Stamping rule applied (strict; unified with session 0f038248's merged `REREAD` semantics)
 
-`last_checked = 2026-11-19` only where **every** source cited by the row was re-read in full that
-day. `verified_on` and every rule-clause `retrieved_on` keep 2026-11-17 (they date the original
-clause capture; the clauses were re-confirmed but not re-captured).
+A row's `last_checked` **and** its rule excerpts' `retrieved_on` advance to 2026-11-19 only when the
+row's own cited document was re-read in full that day (this is the semantics `0f038248` merged in PR
+#124 via the `REREAD` dict; this session's stamps were reconciled onto the same mechanism rather than
+keeping a second one). `verified_on` keeps 2026-11-17 everywhere.
 
 | Set | Rows | Stamped |
 |---|---|---|
 | Wynn Signature Series (schedule + structures PDFs re-read) | 38 | 2026-11-19 |
-| WPT World Championship (schedule + structures PDFs re-read) | 136 | 2026-11-19 |
-| Venetian Nov rows on sheets #1/#5/#10/#29 (listing + own sheet re-read) | 18 | 2026-11-19 |
-| `r012` (sheet #30 re-read in full today) | 1 | 2026-11-19 |
-| All other Venetian rows (listing re-read 94/94 + 49/49; sheets fact-hash checked by the monitor, not fully re-read) | 124 | stays 2026-11-17, each with a dated `recheck` record on the row |
+| WPT World Championship (schedule + structures PDFs re-read by this session) | 136 | 2026-11-19 |
+| Venetian Nov rows citing sheets #1/#5/#8/#10/#29/#30 | 21 | 2026-11-19 |
+| All other Venetian rows (listing re-read 94/94 + 49/49; sheets fact-hash checked by the monitor, not fully re-read) | 122 | stays 2026-11-17, each with a dated `recheck` record on the row |
 
-Totals: 193 rows at 2026-11-19, 124 at 2026-11-17. The rebuild changed date stamps, added the
-per-row `recheck` records and the P3 field — no published value changed (verified by field-diff
-against the previous `data/tournaments.json`).
+Sheet provenance for the 21 Venetian rows: sheets #5/#8/#10 were re-read live by session `0f038248`
+(their per-sheet evidence is the `REREAD` dict entries; 7 rows were already stamped on `main`), and
+sheets #1/#29/#30 were re-read live by this session (#30 as the r012 source-change re-check). The
+122 unstamped rows carry `recheck.on = 2026-11-19` describing exactly what was (and was not) re-read.
+
+Totals: 195 rows at 2026-11-19, 122 at 2026-11-17. The rebuild changed date stamps and appended the
+per-sheet re-read evidence to the notes of the newly stamped rows — no published value changed
+(verified by field-diff against `origin/main`'s `data/tournaments.json`: only `last_checked`, rule
+`retrieved_on`, `recheck`, `flight_pricing`, label additions, the re-read-evidence note appends, and
+the derived `spend_advantage` embedded dates moved).
+
+**Merged with `main` (PRs #123/#124, sessions `0fa351db`/`0f038248`) at integration:** `0f038248`'s
+per-row `spend_advantage` reading (their P3 build: `further-entry-priced` / `rebuy-or-reentry-printed`
+/ `later-flight-printed` / `no-further-entry-clause` / `no-structure-sheet` / `continuation`, all
+re-derived by `check_links.py` on every build) coexists with this session's `flight_pricing` flag; the
+two cover the same 43 clause-8 rows from complementary angles. Their F85/WSS placeholder notes, P14
+facts-capture union and P12 monitor guard are untouched by this session.
 
 ## 4. Hotel re-checks (P9, `data/hotels.json` `recheck`)
 

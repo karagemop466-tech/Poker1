@@ -1,8 +1,7 @@
 # Las Vegas Strip Poker Plan
 
 A decision dashboard for single-entry poker tournaments on the Las Vegas Strip and walkable hotels.
-Snapshot date: **2026-11-17** (every official tournament page, structure PDF, hotel-policy page and
-booking-engine quote was re-fetched on that date; see `REVIEW.md` §9 and `research/verification-2026-11-17.md`).
+Field-by-field dataset verification date: **2026-11-17**; this is not a claim that every source was freshly re-read then or since. The scheduled monitor last ran **2026-11-19 16:45 UTC**: 99 of 109 official sources answered, and four source fact signatures changed, marking four rows for re-check. A monitor fetch is not a manual re-verification; changed rows remain flagged until their values are checked against the official page. See [Monitoring](pages/monitoring.html), [Flagged for Review](pages/flagged.html), `REVIEW.md` §9 and `research/verification-2026-11-17.md`.
 
 Live site: https://karagemop466-tech.github.io/Poker1/
 
@@ -56,6 +55,15 @@ Live site: https://karagemop466-tech.github.io/Poker1/
   links the geocoding lookup and the routing query, quotes the official statement that fixes where the
   poker room is, and marks walks inside one resort as `internal` instead of timing them. The 30-minute
   rule is applied and the three hotels that fail it stay listed and flagged.
+- **Spend advantage, per row.** `scripts/spend_advantage.py` derives, from the clause excerpt already stored on a row,
+  whether the official document prices or permits a way to buy more chances: a priced later buy-in, re-entries sold
+  during the event, another flight unless chips were bagged, no such clause printed, no sheet on file, or a
+  continuation row. It is a reading of the document's own words, never an operator statement: it cannot promote a row
+  to single entry, `scripts/check_links.py` re-derives all 317 records from the stored excerpts on every build, and a
+  row whose sheet prices a further entry is refused the SE status.
+- **Facts are compared like-for-like.** The monitor's published-facts signature is the union of a PDF's reading-order
+  and layout renders - a merged table cell is the one thing the reading-order render cannot see - and each baseline
+  entry records the extractor that produced it, so a change of algorithm is never reported as a change of value.
 - Every table row links to an official source, and every rule field keeps the clause text it came from.
 
 ## Rebuild and check

@@ -45,12 +45,16 @@ The monitor baseline for that page still holds the old facts and will keep marki
 through `monitor_sources.py --accept-baseline` after a real fetched run (CI) — deliberate; marks are CI
 output and are never hand-edited.
 
-**Stamping applied (strict rule):** 193 rows at `2026-11-19` (38 WSS + 136 WPT + 19 Venetian: the 18
-rows on sheets #1/#5/#10/#29 plus r012 on sheet #30); 124 rows keep `2026-11-17` and each carries a
-dated per-row `recheck` record (listing re-read 94/94 + 49/49 today; sheets fact-hash checked by the
-monitor, not fully re-read). `verified_on` and every rule-clause `retrieved_on` keep 2026-11-17. A
-field-diff against the previous `data/tournaments.json` confirms only `last_checked`, `recheck`,
-`flight_pricing` and label additions changed — no published value moved.
+**Stamping applied (strict rule, unified with `0f038248`'s merged `REREAD` semantics):** a row's
+`last_checked` and its rule excerpts' `retrieved_on` advance to `2026-11-19` only when that row's own
+cited document was re-read live in full that day — 195 rows total: 38 WSS + 136 WPT (schedule +
+structures PDFs, this session) + 21 Venetian rows citing sheets #1/#5/#8/#10/#29/#30 (sheets #5/#8/#10
+were re-read by session `0f038248` with their per-sheet evidence in `REREAD`; sheets #1/#29/#30 by this
+session — #30 as the r012 source-change re-check). The other 122 rows keep `2026-11-17` and each
+carries a dated per-row `recheck` record (listing re-read 94/94 + 49/49 today; sheets fact-hash checked
+by the monitor, not fully re-read). `verified_on` keeps 2026-11-17. A field-diff against the previous
+`data/tournaments.json` confirms only `last_checked`, rule `retrieved_on`, `recheck`, `flight_pricing`
+and label additions changed — no published value moved.
 
 **P3 built:** 43 MULTI rows / 12 multi-flight events carry `flight_pricing` (the clause-08 excerpt
 "Any player who bags chips for Day 2 may not play a subsequent flight.", the uniform flight price, an
@@ -67,6 +71,13 @@ caesars re-read (the disclaimer change above; its parking-page claims stay dated
 explicitly); bellagio/aria unchanged (2026-11-17). Hotel `last_checked` stays 2026-11-17 — no live rate
 is ever re-quoted by hand; only the booking engine produces a quote.
 
+**Merged with `main` (PRs #123/#124, sessions `0fa351db`/`0f038248`) without discarding either
+side:** `0f038248`'s per-row `spend_advantage` reading (their P3 build) coexists with this session's
+`flight_pricing` flag (the two cover the same 43 clause-8 rows from different angles); their `REREAD`
+dict drives all Venetian stamps (extended with this session's sheets #1/#29/#30); their WSS/F85
+placeholder notes, P14 facts capture and P12 monitor guard are untouched. Generated `data/` + `pages/`
+regenerated from the merged scripts.
+
 **Gates (all green):** build_data (317 rows: 80 CAND / 53 MULTI / 107 RE / 43 CONT / 34 UNV), check_links
 OK (new flight_pricing + recheck validators), verify_rows 335 rows / 1386 checks / 0 hard failures /
 1 review (r225, re-confirmed live: 8 p.m. schedule PDF vs 6 p.m. structures PDF, published conflict),
@@ -74,23 +85,84 @@ verify_against_snapshots OK (r263 MSPT conflict recorded on the row), check_sche
 overlap pairs), build_site 31 pages, `npm test` 5/5 (1662 rendered local references, 0 broken),
 9 × `test_*.py` OK.
 
-**PR #113 disposition:** stale (board-record-only for PR #106, CONFLICTING, >60 min with no commits;
-takeover rule). Its record is preserved verbatim in the table below and the PR is closed with a
-disposition comment — no content discarded.
-
-#### Session 98241f2f — pull request and merge record (2026-11-19) — preserved from PR #113
-
-| Item | Result |
-|---|---|
-| Pull request | [#106](https://github.com/karagemop466-tech/Poker1/pull/106) "Session 98241f2f: live re-read of Venetian DSE IV listing (research only, 94/94 matched)", `arena/98241f2f-poker1` → `main` |
-| Merged | 2026-11-19T11:23:56Z as merge commit `7a9218d8633669340aaca876bcb3bf8a969d4c9b` (merged via `gh pr merge 106 --merge`, not auto-merge) |
-| Conflicts handled | `COORDINATION.md` conflicted twice because main moved while CI ran (PRs #102, #104, #111). Each time the branch merged `origin/main`, kept all of main's records, and re-appended only this session's sections. No other session's text was removed or altered. |
-| CI `validate` on head `e7bfee9` (before the last merge) | Run 44513622208: success, every step ✓. (Rebuild with no diff; check_links; source re-check; row/date pairing.) |
-| GitHub Pages | Live homepage re-fetched 2026-11-19 after the merge and serving the current build (`https://karagemop466-tech.github.io/Poker1/`). The Actions API returned HTTP 403 rate-limit, so the `built` status for `7a9218d` could not be read through the API; this is recorded as unconfirmed by API, confirmed by the live page. |
-| Data changes | None. No value, source, `last_checked` or retrieval date was changed in `data/`. |
+**PR #113 disposition — completed (verified, nothing discarded).** The stale board-record-only PR
+(98241f2f's PR #106 merge record) was taken over per the 60-minute rule; at takeover time this session
+preserved its content (commit `8e7372b`) before integration. Session `0f038248` then completed the
+disposition on `main` the same day: the record was adopted onto `main` (their session block below) and
+PR #113 was **closed at 2026-11-19T22:31:35Z with a disposition comment** (verified via `gh pr view
+113`). Nothing was lost either way; the adopted copy on `main` is authoritative.
 
 
 ---
+
+# Session 0f038248 — branch `arena/0f038248-poker1` (base `f5ecde0` = current `main`)
+
+Session `0f038248` works on branch `arena/0f038248-poker1` (fixed for this session). Base `f5ecde0`
+(`git rev-list --left-right --count origin/main...HEAD` = `0 0`), tree clean, `build_data.py` and
+`build_site.py` regenerate byte-identical output at the base. Claim written and pushed before any data,
+script or page change.
+
+**Board state read at claim time.** One open pull request: **#113** (`arena/98241f2f-poker1`, "record
+PR #106 merge result (COORDINATION.md only)", `mergeable: CONFLICTING`, last updated 2026-11-19T11:25:48Z
+— more than 10 hours, well past the 60-minute staleness window). Its whole diff is `COORDINATION.md`, and
+its record (PR #106 merge) is already on `main`; it is dispositioned in task 5 below rather than left
+conflicting and unexplained. The earlier `in progress` lines of sessions `f3a84f9b`, `cd330ba8`, `ce9941b8`,
+`9aad3bd2`, `206debc0`, `a8efe220`, `06ac8c98`, `eb3bb028` and `be98ede8` are superseded by their own merge
+records on `main` (PRs #96, #102, #106, #112, #117 and the work before them); no unmerged active claim was
+found, so no other session's file is edited.
+
+Dataset at the base: 317 tournament rows — `RE` 107, `CAND` 80, `MULTI` 53, `CONT` 43, `UNV` 34 (0 `SE`);
+`last_checked` 2026-11-17 on 279 rows and 2026-11-19 on the 38 Wynn Signature Series rows;
+`data/monitoring.json` `checked_at: 2026-11-19T16:45:28Z` from the real Actions fetch (109 sources,
+99 ok, 4 rows marked source-changed).
+
+| # | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| 1 | Dated live re-read (2026-11-19) of the official sources that gate every remaining decision: the Wynn Signature Series structures PDF + schedule PDF + Wynn poker page (the 34 `UNV` rows), the Venetian DSE IV November listing + the structure sheets behind the `CAND`/`MULTI` entry-rule clauses + the Venetian poker page. Record match/diff per field with links; advance `last_checked` only on documents actually re-read today; remove an "unverified" label only where a newly read official document prints the confirmation - nothing inferred. | **done** | 0f038248 | new `research/verification-2026-11-19-0f038248.md`, `scripts/build_data.py` (re-read dates/excerpts only), generated `data/*.json`, regenerated `pages/*.html` + `index.html`, `FLAGGED.md`, `QUESTIONS.md`, `COORDINATION.md` |
+| 2 | P3 (open proposal): publish the spend-advantage reading per row. The request separates events by whether a player can gain an advantage by spending more money, but the site currently encodes that only implicitly in `entry_status`. Derive a descriptive `spend_advantage` value for every row from the clause excerpt already stored on it (priced subsequent buy-in / rebuy or add-on printed / bag-a-flight penalty only / sheet silent), print it with the excerpt and retrieval date it came from, add a "no spend-based advantage printed" filter to the tournament tables, and keep the `SE` promotion gate untouched. New validator rule: the derived value must be consistent with its excerpt, or the build fails. | **done** | 0f038248 | `scripts/build_data.py`, `assets/app.js`, `assets/style.css` (filter chip), `scripts/check_links.py`, new `scripts/spend_advantage.py` + `scripts/test_spend_advantage.py`, generated `data/*.json`, regenerated `index.html` + `pages/*.html`, `README.md`, `SUGGESTIONS.md` (P3 line), `EXECUTIVE_SUMMARY.md`, `COORDINATION.md` |
+| 3 | P14 (open proposal): the scheduled monitor builds its facts signature from a line-only text render, which F83 proved silently drops merged PDF table cells - a published guarantee moved and `facts_changed` stayed false. Give the capture a table/layout render next to the line render and build the facts signature from the union of both, so a merged-cell change cannot pass invisibly; re-baseline deliberately in the same commit with a dated note. | **done** | 0f038248 | `scripts/check_source_facts.py`, `scripts/monitor_sources.py`, new `scripts/test_facts_capture.py`, `data/source_baseline.json` (re-baselined by the script, documented), `COORDINATION.md` |
+| 4 | P12 remainder (open option): make the monitor workflow fail loudly when `data/monitor_last_run.txt` starts with "Refusing to run" instead of leaving the refusal to a reader, and alert on a run where every source is unreachable. | **done** | 0f038248 | `.github/workflows/monitor.yml`, `COORDINATION.md` |
+| 5 | Stale-PR disposition for #113 (`98241f2f`, COORDINATION.md only, conflicting, >10 h): verify line by line that its recorded content is on `main`, then close it with a disposition comment - no silent discard. | **done** | 0f038248 | `COORDINATION.md`, PR #113 comment |
+| 6 | Final integration: rebuild, run every gate (python + npm, incl. the new tests), confirm no broken link, open a PR to `main`, merge after a green `validate`, confirm the Pages deploy, record PR link + merge + deploy here and on the Flagged page. | **done** | 0f038248 | all of the above + `COORDINATION.md` |
+
+Rules this session follows: no official value changes except from a document actually re-read and quoted;
+anything that cannot be confirmed stays blank and flagged; `last_checked` advances only on sources re-read;
+shared outputs are integrated here because no other session is active on them.
+
+---
+
+# Session 0f038248 — completion record (2026-11-19T22:21Z)
+
+All six claimed tasks are done on branch `arena/0f038248-poker1`; none of them changed an official value
+without a document re-read in this session.
+
+| # | Task | Result |
+|---|---|---|
+| 1 | Dated live re-read of the gating official sources | **done.** Six documents fetched on 2026-11-19: the [Wynn Signature Series structures PDF](https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf) (still `LAS VEGAS / POKER / COMING SOON`), the [Wynn poker page](https://www.wynnlasvegas.com/casino/poker), Venetian structure sheets [#5](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf) / [#8](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf) / [#10](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf) and the [Venetian poker page](https://www.venetianlasvegas.com/resort/casino/poker.html). Every compared field matched, so **0 values changed, 0 "unverified" labels removed** (the 34 Signature Series rows stay `UNV` because the only document that could confirm them is still a placeholder), and the 7 rows citing a re-read sheet advance `last_checked`/`retrieved_on` to 2026-11-19 with a note quoting what the sheet still prints. Field-by-field comparison: `research/verification-2026-11-19-0f038248.md`. |
+| 2 | P3 spend-advantage reading | **done.** `scripts/spend_advantage.py` derives one of six values per row from the excerpt stored on that row (3 priced later buy-in / 114 further entries during the event / 43 later flight unless chips bagged / 80 no clause printed / 34 no sheet on file / 43 continuation). Printed as a "Spend advantage" column on every tournament table with the excerpt, source and read date; a "Sheet prints no further-entry or add-on clause" filter; the separate section now states which kind of clause excludes each of its 160 rows; `data/tournaments.json` carries the record. `check_links.py` re-derives all 317 and fails on drift, and refuses SE to any row whose document prices a further entry. Tests: `scripts/test_spend_advantage.py` (17), `scripts/check_spend_filter.js` (in `npm test`). |
+| 3 | P14 facts capture | **done.** `pdf_renders()` gives the reading-order render (unchanged bytes for every snapshot and quote check) plus a layout render archived as `data/snapshots/<id>.layout.txt`; the facts signature is the union, and every log/baseline entry records `facts_algo`. Comparisons only run like-for-like: a pre-union baseline is measured against this run's line-only hash (no 109-source false alarm, monitor keeps marking real changes), a union baseline against the union (merged-cell changes now visible). `--accept-baseline` stores both hashes; `data/source_baseline.json` is not rewritten silently - the dated re-accept path is the existing dispatch input. Test: `scripts/test_facts_capture.py` (11) proves recovery against the two archived captures of the real Wynn schedule PDF (the `$150,000` lines F83 lost) and proves an extractor change is not reported as a value change. |
+| 4 | P12 remainder | **done.** `scripts/check_monitor_run.py` exits non-zero on a `Refusing to run` provenance log, on a run that reached 0 official sources with a fallback fetch older than 7 days (or no dated fallback), and on a stale report; warns on fallback-inherited verdicts, <50% reachable, a legacy baseline and mass provenance errors. Wired as a red step in `monitor.yml` (reason in the step summary) with a refusal guard in `source-facts.yml`. Test: `scripts/test_check_monitor_run.py` (15). |
+| 5 | PR #113 disposition | **done.** Its only unlanded content was session `98241f2f`'s merge-record section; verified PR #106's title/merge commit/merge time against `gh pr view 106` (merge `7a9218d`, 2026-11-19T11:23:56Z) and its research files present on `main`, adopted the section verbatim onto `main` above with a dated follow-up that closes its one open item (Pages status), then closed #113 with a disposition comment. Nothing discarded. |
+| 6 | Final integration | **done.** Rebased onto `main` after session `0fa351db` merged PR #120 mid-session (their `check_single_entry_render.js` and my `check_spend_filter.js` both kept in the `npm test` chain; their app.js wording and my column coexist). Full gate set on the combined tree: deterministic `build_data.py`/`build_site.py` (no diff), `check_links.py` OK (31 pages, 317 rows), `verify_rows.py` OK with the two documented review items (r225, r263), `verify_against_snapshots.py` OK, `check_schedule.py` OK (70 days, 170 overlap pairs, 0 impossible fallbacks), `python3 -m unittest discover -s scripts` **110 tests OK**, `npm test` **31/31 pages, 1,664 rendered links, 0 broken**, calculator, badges and spend-filter fixtures pass. PR and Pages record below. |
+
+**Irregularities found here, published for review (none blocks the site):** F85 - the Signature Series
+structures placeholder was independently re-read twice on 2026-11-19 (sessions `f3a84f9b` and `0f038248`)
+and still prints nothing, so those 34 rows cannot be confirmed from any official source; F86 - the 80 rows
+the new column calls `no-further-entry-clause` are classified from an *absence* of wording, which is
+evidence about the sheet rather than a promise from the room, so the strict shortlist stays empty.
+The main board text of session `f3a84f9b` also attributes "P8 per-row source-change marks" to PR #106;
+`gh pr view 106` shows #106 is `98241f2f`'s research PR, so that attribution is wrong on `main` - left
+in place as written history, corrected here rather than by editing another session's record.
+
+**Files touched by this session:** `scripts/spend_advantage.py`, `scripts/build_data.py`,
+`scripts/check_links.py`, `scripts/check_source_facts.py`, `scripts/monitor_sources.py`,
+`scripts/check_monitor_run.py`, `scripts/test_spend_advantage.py`, `scripts/test_facts_capture.py`,
+`scripts/test_check_monitor_run.py`, `scripts/check_spend_filter.js`, `assets/app.js`, `package.json`,
+two workflow files, generated `data/*.json` + `index.html` + `pages/*.html`, `README.md`,
+`SUGGESTIONS.md`, `QUESTIONS.md`, `FLAGGED.md`, `EXECUTIVE_SUMMARY.md`,
+`research/verification-2026-11-19-0f038248.md`, `COORDINATION.md`. No other session's unmerged file was
+edited, and no committed work of another session was removed.
+
 
 # Session f3a84f9b — branch `arena/f3a84f9b-poker1` (base `3f3f6bb` = `main` after PR #101)
 
@@ -2412,6 +2484,29 @@ Changes to `data/*.json`, `pages/*.html`, `assets/`, `scripts/` and `FLAGGED.md`
 **Not done in this session (honest limits):** the other 36 November sheets and the 15 December (NYE) sheets were not re-read live. The sandbox bash network cannot reach the official hosts, so only the page-fetch tool could read them. Google/Apple walking checks, live hotel rate lookups and a Strip-wide search are out of scope for this claim and were not attempted.
 
 **Files changed:** `research/live-reread-98241f2f/` (new: README, TSV listing, two read-only checkers) and `COORDINATION.md` only.
+
+### Session 98241f2f — pull request and merge record (2026-11-19)
+
+_Adopted onto `main` by the integration session `0f038248` from PR #113 (`arena/98241f2f-poker1`, opened
+2026-11-19T11:25Z, `CONFLICTING` against a main that had moved, >10 h without commits). The record is
+session `98241f2f`'s own text, unchanged below; the PR is closed with a disposition comment rather than
+left open and unexplained. Nothing else in the PR was outstanding: its only other content is the
+completion record immediately above, already on `main`, and `research/live-reread-98241f2f/` files._
+
+| Item | Result |
+|---|---|
+| Pull request | [#106](https://github.com/karagemop466-tech/Poker1/pull/106) "Session 98241f2f: live re-read of Venetian DSE IV listing (research only, 94/94 matched)", `arena/98241f2f-poker1` → `main` |
+| Merged | 2026-11-19T11:23:56Z as merge commit `7a9218d8633669340aaca876bcb3bf8a969d4c9b` (merged via `gh pr merge 106 --merge`, not auto-merge) |
+| Conflicts handled | `COORDINATION.md` conflicted twice because main moved while CI ran (PRs #102, #104, #111). Each time the branch merged `origin/main`, kept all of main's records, and re-appended only this session's sections. No other session's text was removed or altered. |
+| CI `validate` on head `e7bfee9` (before the last merge) | Run 44513622208: success, every step ✓. (Rebuild with no diff; check_links; source re-check; row/date pairing.) |
+| GitHub Pages | Live homepage re-fetched 2026-11-19 after the merge and serving the current build (`https://karagemop466-tech.github.io/Poker1/`). The Actions API returned HTTP 403 rate-limit, so the `built` status for `7a9218d` could not be read through the API; this is recorded as unconfirmed by API, confirmed by the live page. |
+| Data changes | None. No value, source, `last_checked` or retrieval date was changed in `data/`. |
+
+**Follow-up from session `0f038248` (2026-11-19T22:20Z):** the Pages status `7a9218d` could not read is no
+longer outstanding for the branch tip - `gh api repos/.../pages` reports `status: built` with
+`source: main:/` (legacy branch build, `html_url` the live site), which is the mechanism that publishes the
+merge result; and the five wording-only name differences plus the "sheet silent on entry rules" finding are
+untouched by anything merged since, so `0 SE` still stands. PR #113's remaining file was this section only.
 ## Session 97fc7805 · 2026-11-19 · payout transparency (S18 / P4), branch `arena/97fc7805-poker1`
 
 Session `97fc7805` works on branch `arena/97fc7805-poker1` (fixed for this session), based on `main` at
@@ -2470,3 +2565,21 @@ links with 0 broken, schedule arithmetic OK). GitHub Pages: the build of `08f088
 **built** (workflow run 44528192205), so `pages/payouts.html` is live on the published site.
 Claim **S18/P4 complete**: data layer (`f0d2a74`), page + validator + app.js + docs (`1d2a4e6`,
 rebased as `6d634e0`).
+
+## Session 0fa351db · 2026-11-19 · candidate itinerary wording and filter regression
+
+Branch `arena/0fa351db-poker1`, based on `main` at `f5ecde040b29e402aea7b739eabd28727b1c7859` (Arena-fixed branch; no other branch will be created or used). Read the current coordination board and checked the repository status before claiming. The relevant prior site/UI tasks on `assets/app.js` are recorded complete; no current active owner claims this scope.
+
+| Task | Status | Owner | File scope |
+|---|---|---|---|
+| Correct the single-entry page's itinerary copy so its candidate-only primary events are never described as verified freezeouts or playable commitments; add a rendered regression test covering the strict-confirmed toggle and selected-date filtering. Correct the README's stale all-sources-re-fetched date without promoting monitor availability into source verification. | **done 2026-11-19** | 0fa351db | `assets/app.js`, `scripts/check_single_entry_render.js` (new), `package.json`, `README.md`, generated `index.html` and `pages/*.html`, `COORDINATION.md` |
+
+### Completion record · 2026-11-19
+
+- Corrected the trip-plan header and explanatory text: scheduled primary events are labeled candidate vs. written-confirmed from their stored entry status; candidate rows now explicitly say policy unconfirmed and are not presented as a playable or booking-ready plan. Current snapshot: **0 written-confirmed rows, 80 candidates**. Corrected diary finish rendering to pass the full schedule record to the formatter, preserving estimated clock times and next-day indication.
+- Added `scripts/check_single_entry_render.js` to `npm test`. It renders the page without network calls; checks candidate warnings, SE-only strict filtering, candidate exposure when cleared, one-day date filtering, and finish estimates.
+- Updated README provenance: 2026-11-17 remains the field-by-field dataset verification date. It now accurately distinguishes that from the monitor run on 2026-11-19 16:45 UTC (99/109 answered; four fact signatures and four rows flagged). The monitor result is [GitHub Actions run 44568281882](https://github.com/karagemop466-tech/Poker1/actions/runs/44568281882). A monitor fetch is not described as manual source confirmation.
+- Source scope/limitations: no tournament, hotel, rate, rule, or `last_checked` value was edited. This session did not re-read operator sites; it used the committed row status and schedule records and preserved their official source links. A local `check_source_facts.py` attempt returned 0 fetched sources and 96 network errors (operator domains are unreachable from this environment); its incidental log-file change was reverted and no failure output was treated as evidence. The monitor source-change flags remain for manual official-page re-checks.
+- Verification: `npm test` passed (31/31 rendered pages, 1,662 internal links, calculator, monitoring badges, and the new candidate/date filter regression); all nine `scripts/test_*.py` test modules passed; `check_links.py`, `verify_rows.py` (335 rows, 1,386 fields, 0 hard failures; one documented interpretation item), `verify_against_snapshots.py` (0 unexplained mismatches), and `check_schedule.py` (70 days, 170 overlap pairs) passed. `git diff --check` passed.
+- Irregularities retained, not suppressed: monitor reports four changed source facts/rows and unreachable/error sources; existing WPT r225 20:00 start remains a documented interpretation review item; Venetian NYE r263 11:00 vs printed 11:10 conflict and three 2025→2026 date differences remain flagged. No unsupported value was adjusted.
+- **Integration result:** [PR #120](https://github.com/karagemop466-tech/Poker1/pull/120) merged 2026-11-19 22:11:19 UTC as `c0c65f95d8bbf284a3abac41ce5b80d720a88b10`. Validate passed in [run 44624766550](https://github.com/karagemop466-tech/Poker1/actions/runs/44624766550). GitHub Pages deployment [run 44626177086](https://github.com/karagemop466-tech/Poker1/actions/runs/44626177086) succeeded and confirmed the branch build is live. Workflow emitted a non-blocking warning that the pinned checkout/setup-node actions target deprecated Node.js 20; the runner forced Node.js 24.
