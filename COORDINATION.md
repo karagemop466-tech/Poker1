@@ -2109,3 +2109,13 @@ The existing checks/data remain the baseline (not refreshed by this session): la
 **Irregularities:** none new. Prior irregularities remain on `pages/flagged.html`.
 
 **Pull request / merge:** see the entry below this one, appended after the PR is merged.
+
+## Session 98241f2f · 2026-11-19 · live re-read of the Venetian DeepStack IV event listing, branch `arena/98241f2f-poker1`
+
+Base: `main` at `3f3f6bb` (PR #101 merged). Branch and tree clean before this claim. Open PRs at claim time: #102 (`eb3bb028`, final integration), #98 (`13eafa44`, integration), #96 (draft, `cd330ba8`). This session does not touch their files.
+
+| Task | Status | Owner | File scope |
+|---|---|---|---|
+| Re-read the official Venetian DeepStack Extravaganza IV event listing (`dse-nov-2026.html`, all 4 chunks) live from this session and compare every listed event (date, start time, event number, name, structure-sheet link) with the matching rows in `data/tournaments.json`. Log every match and every mismatch. No row value is edited. | in progress | 98241f2f | `research/live-reread-98241f2f/` (new files only), `COORDINATION.md` |
+
+Changes to `data/*.json`, `pages/*.html`, `assets/`, `scripts/` and `FLAGGED.md` are **not** made in this session. Any mismatch is logged for the integration owner.
