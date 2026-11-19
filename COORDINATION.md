@@ -1699,3 +1699,5 @@ during any of it. `data/schedule.json` is the file that changed, and it is gener
 | Distinguish upcoming verified tournament dates from historical rows without changing official data | In progress | be98ede8 | `assets/app.js`, generated `index.html` and `pages/*.html`, `scripts/check_upcoming.js`, `package.json`, `FLAGGED.md`, `COORDINATION.md` |
 
 Branch `arena/be98ede8-poker1` is fixed by Arena. Existing open integration PRs own their data and workflow changes; this session does not take over those tasks. This is one session, not a parallel branch launch; the existing board on main remains the shared board.
+
+Integration follow-up claim: `scripts/check_schedule_render.js`, `scripts/smoke_test.js`, `scripts/build_site.py`. The inherited schedule render test expects obsolete prose after PR #85, while the current plan stores per-date explanations. Replace that assertion with a comparison against the schedule fixture; leave the generated schedule and other agents' pending changes untouched.
