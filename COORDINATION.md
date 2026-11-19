@@ -57,6 +57,34 @@ written confirmation required by the brief. A document being read is not proof o
 
 ---
 
+## Session 336fb2af · 2026-11-19 · independent live re-read of Venetian November rows and single-entry evidence, branch `arena/336fb2af-poker1`
+
+| Task | Status | Owner | File scope |
+|---|---|---|---|
+| Re-read the live Venetian DeepStack IV November schedule page and the structure sheet #5 from the official site, compare every stored row for 16–28 Nov (date, start, event number, name, structure link), and grep all archived November/December structure sheets for written single-entry, re-entry, rebuy or add-on wording. Log results; change no data. | done | 336fb2af | `COORDINATION.md` only |
+
+Claimed before any edit. Files owned by open PRs #102 (`arena/eb3bb028-poker1`) and #103 (`arena/1c61c2b8-poker1`), and the P8 per-row marker, are not touched here. Live official reads in this session were made with the page-fetch tool, not from the sandbox shell, which cannot reach `venetianlasvegas.com`.
+
+### Session 336fb2af — results (2026-11-19)
+
+**Sources read live (official, via the page-fetch tool, 2026-11-19):**
+- Venetian DeepStack Extravaganza IV, November page, all four chunks: https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html
+- Structure sheet #5 (events 02/12): https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf
+- Structure sheet #29 (event 06): https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_29.pdf
+- Structure sheet #1 (bounty series, events 09/11/13/15/21/22/23/25/60/61/62/64): https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf
+
+**Schedule comparison (`data/tournaments.json`, 94 Venetian rows dated 2026-11-16 to 2026-12-23):** every row's date, start time, event number, and structure-sheet link matches the live page. Checked by reading both sources side by side, not by a script, because the fetch output cannot be piped into the sandbox. Cosmetic only: the live page prints "No LImit" in several event names; the stored names are correct. No value differs.
+
+**Single-entry evidence:** the live sheets #5, #29 and #1 contain no single-entry, re-entry, rebuy, or add-on clause. The ten clauses name fees, age, the prize-pool split and the 12.5% payout only. The archived sheets (`data/snapshots/v_nov_struct_*.txt`, `v_dec_struct_*.txt`) were searched for single, re-entry, rebuy, add-on, freeze and flight wording. The only hits are the Day 2 clause (clause 8: "Any player who bags chips for Day 2 may not play a subsequent flight") and two December flight clauses, and those are multi-flight rules, not freezeout evidence. The series pages carry no general single-entry rule. **Result: 0 of 94 Venetian rows meet the affirmative written single-entry bar. The `SE` count stays at 0.**
+
+**Changes made:** none to data, pages, or sources. `last_checked` was not advanced; the 2026-11-19 re-read above is recorded here for the data owner to apply through `build_data.py`, which is outside this session's claimed scope.
+
+**Irregularities:** none that change a value. Cosmetic typos on the official page ("No LImit") noted above.
+
+**Not done by this session:** a Google or Apple Maps walking check, a same-stay hotel quote, and a Wynn re-read. These need the owners of their scopes. Pull request and merge record: appended below after the PR is merged.
+
+---
+
 # Session ab7e4d46 — branch `arena/ab7e4d46-poker1` (base `a1361aa` = `main` at PR #85)
 
 Session `ab7e4d46` works on branch `arena/ab7e4d46-poker1` (fixed for this session), based on `main` at
