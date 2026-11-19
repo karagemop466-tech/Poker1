@@ -1,10 +1,10 @@
-# Las Vegas poker trip: executive summary
+# Executive Summary: Las Vegas Strip Poker Plan
 
-**Do not book a nonrefundable trip around a freezeout yet.** The current dated tournament inventory has no event backed by written confirmation of a maximum of one entry, no rebuys and no add-ons. The previous list treated 80 Venetian event rows with silent structure sheets as confirmation; those 80 rows are candidates under review, not verified freezeouts. This does not establish that the events permit extra entries or that no freezeout exists in Las Vegas.
+## Booking decision · November 19, 2026
 
 **Hold nonrefundable bookings.** None of the 80 rows classified as single entry in the archived series table has a written no-add-on rule in its structured evidence: all 80 say “not mentioned.” Those rows now have a separate candidate status. The strict shortlist is empty; the day plan is conditional. This does not mean those events allow add-ons.
 
-## How to decide
+**One upcoming candidate, not a recommendation:** The [Venetian schedule](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html) lists event 12 on Thursday, November 26 at 11:10 AM. Its [official structure sheet](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf), read in full on November 19, confirms a $300 total entry ($58 withheld), $10,000 guarantee, 40,000 starting chips, 30-minute levels, registration through approximately 4:55 PM and payouts to 12.5% of the field. The guarantee is 33.3 times one entry fee; that is not a return forecast. None of its ten clauses specifies one entry per person or expressly prohibits rebuys and add-ons. Obtain a written event-specific ruling before promoting it. Do not schedule the 5:10 PM bounty as a second entry on the assumption the first event finishes by then.
 
 **Hotel comparison:** For November 26–29, two adults, the November 16 [Palazzo booking-engine observation](https://www.venetianlasvegas.com/book) was $2,412.44 at checkout ($804.15/night including resort fee and tax). One $300 tournament entry plus that stay would be $2,712.44 before parking and other spending. Do not multiply the rounded nightly average to reconstruct checkout. This is a historical quote, not today's availability. The log contains no competing property for that same stay. Capture a second refundable checkout for those dates and occupancy, including its cancellation deadline and parking, before naming a best hotel. An interior route does not establish a timed walk from the guest room.
 

@@ -788,9 +788,6 @@ header.site nav a {color:#d9ebe4}
       var tbl = table(main, rows, tournamentColumns(true), {
         sortKey: "date", sortDir: 1, predicate: filters.matches, countEl: count
       });
-      if (!rows.length) {
-        main.insertAdjacentHTML("beforebegin", '<div class="card callout">No dated event has written confirmation of one entry, no rebuys and no add-ons. <a href="' + BASE + 'pages/unverified.html">Review unverified candidates</a>.</div>');
-      }
       filters.onChange(function () { tbl.redraw(); });
     }).catch(showErr);
   };

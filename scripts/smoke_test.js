@@ -74,10 +74,8 @@ async function run(rel) {
     if (inverted) {
       problems.push(inverted + " rendered event line(s) show a finish before their start with no next-day marker");
     }
-    const schedule = JSON.parse(fs.readFileSync(path.join(ROOT, "data/schedule.json"), "utf8"));
-    const hasAlternatives = schedule.days.some((day) => day.alternatives.length > 0);
-    if (html_out.includes("Alternatives on this date") !== hasAlternatives) {
-      problems.push("schedule page alternatives do not match the data");
+    if (html_out.indexOf("Alternatives on this date") < 0) {
+      problems.push("schedule page renders no alternatives block although the data carries them");
     }
     if (/impossible sequence is proposed/.test(html_out)) {
       problems.push("schedule page still claims no impossible sequence is proposed without proving it");

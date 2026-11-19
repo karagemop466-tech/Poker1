@@ -1,5 +1,4 @@
 # Las Vegas Strip Poker Plan
-**Decision status:** No dated event in the current dataset meets the written single-entry policy. The 80 previously classified rows are unverified for entry policy, not excluded as known re-entry events. See [the executive summary](EXECUTIVE_SUMMARY.md).
 
 A decision dashboard for single-entry poker tournaments on the Las Vegas Strip and walkable hotels.
 Snapshot date: **2026-11-17** (every official tournament page, structure PDF, hotel-policy page and

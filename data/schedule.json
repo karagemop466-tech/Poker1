@@ -129,7 +129,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf"
     }
    ],
-   "primary_id": null,
+   "primary_id": "r005",
    "fallback_id": null,
    "fallback_kind": null,
    "fallback_note": "This is the only sheet-reviewed candidate on this date, so the day is planned around it alone.",
@@ -162,7 +162,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf"
     }
    ],
-   "primary_id": null,
+   "primary_id": "r007",
    "fallback_id": null,
    "fallback_kind": null,
    "fallback_note": "This is the only sheet-reviewed candidate on this date, so the day is planned around it alone.",
@@ -195,7 +195,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf"
     }
    ],
-   "primary_id": null,
+   "primary_id": "r008",
    "fallback_id": null,
    "fallback_kind": null,
    "fallback_note": "This is the only sheet-reviewed candidate on this date, so the day is planned around it alone.",
@@ -228,7 +228,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf"
     }
    ],
-   "primary_id": null,
+   "primary_id": "r009",
    "fallback_id": null,
    "fallback_kind": null,
    "fallback_note": "This is the only sheet-reviewed candidate on this date, so the day is planned around it alone.",
@@ -259,7 +259,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_29.pdf"
     }
    ],
-   "primary_id": null,
+   "primary_id": "r010",
    "fallback_id": null,
    "fallback_kind": null,
    "fallback_note": "This is the only sheet-reviewed candidate on this date, so the day is planned around it alone.",
@@ -313,7 +313,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_30.pdf"
     }
    ],
-   "primary_id": null,
+   "primary_id": "r012",
    "fallback_id": null,
    "fallback_kind": null,
    "fallback_note": "This is the only sheet-reviewed candidate on this date, so the day is planned around it alone.",
@@ -366,7 +366,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
     }
    ],
-   "primary_id": null,
+   "primary_id": "r014",
    "fallback_id": null,
    "fallback_kind": null,
    "fallback_note": "This is the only sheet-reviewed candidate on this date, so the day is planned around it alone.",
@@ -417,7 +417,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
     }
    ],
-   "primary_id": null,
+   "primary_id": "r016",
    "fallback_id": null,
    "fallback_kind": null,
    "fallback_note": "No other candidate on this date can still be entered by the time the primary's own table ends at 02:55 (+1 day) - the day is planned around the primary alone.",
@@ -436,7 +436,18 @@
    ],
    "conflicts_unplannable": 1,
    "conflicts_join_in_progress": 0,
-   "alternatives": []
+   "alternatives": [
+    {
+     "id": "r017",
+     "start": "17:10",
+     "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+     "buy_in_usd": 200,
+     "guarantee_usd": 8000,
+     "entry_closes": "21:40",
+     "late_reg_published": true,
+     "note": "The primary's own table can run as late as 02:55 (+1 day); reaching this event means being out of the primary and seated before its entry closes at 21:40 - a question of when you are eliminated, which no source publishes."
+    }
+   ]
   },
   {
    "date": "2026-11-26",
@@ -480,7 +491,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
     }
    ],
-   "primary_id": null,
+   "primary_id": "r018",
    "fallback_id": null,
    "fallback_kind": null,
    "fallback_note": "No other candidate on this date can still be entered by the time the primary's own table ends at 02:55 (+1 day) - the day is planned around the primary alone.",
@@ -499,7 +510,18 @@
    ],
    "conflicts_unplannable": 1,
    "conflicts_join_in_progress": 0,
-   "alternatives": []
+   "alternatives": [
+    {
+     "id": "r019",
+     "start": "17:10",
+     "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+     "buy_in_usd": 200,
+     "guarantee_usd": 8000,
+     "entry_closes": "21:40",
+     "late_reg_published": true,
+     "note": "The primary's own table can run as late as 02:55 (+1 day); reaching this event means being out of the primary and seated before its entry closes at 21:40 - a question of when you are eliminated, which no source publishes."
+    }
+   ]
   },
   {
    "date": "2026-11-27",
@@ -619,7 +641,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
     }
    ],
-   "primary_id": null,
+   "primary_id": "r021",
    "fallback_id": null,
    "fallback_kind": null,
    "fallback_note": "No other candidate on this date can still be entered by the time the primary's own table ends at 02:55 (+1 day) - the day is planned around the primary alone.",
@@ -671,7 +693,18 @@
    ],
    "conflicts_unplannable": 4,
    "conflicts_join_in_progress": 0,
-   "alternatives": []
+   "alternatives": [
+    {
+     "id": "r025",
+     "start": "17:10",
+     "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+     "buy_in_usd": 200,
+     "guarantee_usd": 8000,
+     "entry_closes": "21:40",
+     "late_reg_published": true,
+     "note": "The primary's own table can run as late as 02:55 (+1 day); reaching this event means being out of the primary and seated before its entry closes at 21:40 - a question of when you are eliminated, which no source publishes."
+    }
+   ]
   },
   {
    "date": "2026-11-28",
@@ -797,7 +830,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf"
     }
    ],
-   "primary_id": null,
+   "primary_id": "r027",
    "fallback_id": null,
    "fallback_kind": null,
    "fallback_note": "No other candidate on this date can still be entered by the time the primary's own table ends at 02:55 (+1 day) - the day is planned around the primary alone.",
@@ -871,7 +904,18 @@
    ],
    "conflicts_unplannable": 6,
    "conflicts_join_in_progress": 0,
-   "alternatives": []
+   "alternatives": [
+    {
+     "id": "r029",
+     "start": "12:10",
+     "name": "$400 Pot Limit Omaha Bounty $15K GTD (1Day)",
+     "buy_in_usd": 400,
+     "guarantee_usd": 15000,
+     "entry_closes": "16:40",
+     "late_reg_published": true,
+     "note": "The primary's own table can run as late as 02:55 (+1 day); reaching this event means being out of the primary and seated before its entry closes at 16:40 - a question of when you are eliminated, which no source publishes."
+    }
+   ]
   },
   {
    "date": "2026-11-29",
@@ -978,7 +1022,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     }
    ],
-   "primary_id": null,
+   "primary_id": "r034",
    "fallback_id": null,
    "fallback_kind": null,
    "fallback_note": "No other candidate on this date can still be entered by the time the primary's own table ends at 03:55 (+1 day) - the day is planned around the primary alone.",
@@ -1019,7 +1063,18 @@
    ],
    "conflicts_unplannable": 3,
    "conflicts_join_in_progress": 0,
-   "alternatives": []
+   "alternatives": [
+    {
+     "id": "r035",
+     "start": "17:10",
+     "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+     "buy_in_usd": 200,
+     "guarantee_usd": 8000,
+     "entry_closes": "21:40",
+     "late_reg_published": true,
+     "note": "The primary's own table can run as late as 03:55 (+1 day); reaching this event means being out of the primary and seated before its entry closes at 21:40 - a question of when you are eliminated, which no source publishes."
+    }
+   ]
   },
   {
    "date": "2026-11-30",
@@ -1123,7 +1178,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
     }
    ],
-   "primary_id": null,
+   "primary_id": "r042",
    "fallback_id": null,
    "fallback_kind": null,
    "fallback_note": "This is the only sheet-reviewed candidate on this date, so the day is planned around it alone.",
@@ -1252,7 +1307,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
     }
    ],
-   "primary_id": null,
+   "primary_id": "r048",
    "fallback_id": null,
    "fallback_kind": null,
    "fallback_note": "This is the only sheet-reviewed candidate on this date, so the day is planned around it alone.",
@@ -1345,7 +1400,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     }
    ],
-   "primary_id": null,
+   "primary_id": "r049",
    "fallback_id": null,
    "fallback_kind": null,
    "fallback_note": "No other candidate on this date can still be entered by the time the primary's own table ends at 01:55 (+1 day) - the day is planned around the primary alone.",
@@ -1397,7 +1452,18 @@
    ],
    "conflicts_unplannable": 4,
    "conflicts_join_in_progress": 0,
-   "alternatives": []
+   "alternatives": [
+    {
+     "id": "r052",
+     "start": "17:10",
+     "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+     "buy_in_usd": 200,
+     "guarantee_usd": 8000,
+     "entry_closes": "21:40",
+     "late_reg_published": true,
+     "note": "The primary's own table can run as late as 01:55 (+1 day); reaching this event means being out of the primary and seated before its entry closes at 21:40 - a question of when you are eliminated, which no source publishes."
+    }
+   ]
   },
   {
    "date": "2026-12-03",
@@ -1503,7 +1569,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     }
    ],
-   "primary_id": null,
+   "primary_id": "r056",
    "fallback_id": null,
    "fallback_kind": null,
    "fallback_note": "This is the only sheet-reviewed candidate on this date, so the day is planned around it alone.",
@@ -1908,7 +1974,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     }
    ],
-   "primary_id": null,
+   "primary_id": "r073",
    "fallback_id": null,
    "fallback_kind": null,
    "fallback_note": "No other candidate on this date can still be entered by the time the primary's own table ends at 02:55 (+1 day) - the day is planned around the primary alone.",
@@ -2015,7 +2081,18 @@
    ],
    "conflicts_unplannable": 9,
    "conflicts_join_in_progress": 0,
-   "alternatives": []
+   "alternatives": [
+    {
+     "id": "r076",
+     "start": "17:10",
+     "name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)",
+     "buy_in_usd": 300,
+     "guarantee_usd": 15000,
+     "entry_closes": "21:40",
+     "late_reg_published": true,
+     "note": "The primary's own table can run as late as 02:55 (+1 day); reaching this event means being out of the primary and seated before its entry closes at 21:40 - a question of when you are eliminated, which no source publishes."
+    }
+   ]
   },
   {
    "date": "2026-12-07",
@@ -2160,7 +2237,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     }
    ],
-   "primary_id": null,
+   "primary_id": "r082",
    "fallback_id": null,
    "fallback_kind": null,
    "fallback_note": "No other candidate on this date can still be entered by the time the primary's own table ends at 02:55 (+1 day) - the day is planned around the primary alone.",
@@ -2245,7 +2322,18 @@
    ],
    "conflicts_unplannable": 7,
    "conflicts_join_in_progress": 0,
-   "alternatives": []
+   "alternatives": [
+    {
+     "id": "r085",
+     "start": "17:10",
+     "name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)",
+     "buy_in_usd": 300,
+     "guarantee_usd": 15000,
+     "entry_closes": "21:40",
+     "late_reg_published": true,
+     "note": "The primary's own table can run as late as 02:55 (+1 day); reaching this event means being out of the primary and seated before its entry closes at 21:40 - a question of when you are eliminated, which no source publishes."
+    }
+   ]
   },
   {
    "date": "2026-12-08",
@@ -2374,7 +2462,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     }
    ],
-   "primary_id": null,
+   "primary_id": "r088",
    "fallback_id": null,
    "fallback_kind": null,
    "fallback_note": "No other candidate on this date can still be entered by the time the primary's own table ends at 01:55 (+1 day) - the day is planned around the primary alone.",
@@ -2492,7 +2580,28 @@
    ],
    "conflicts_unplannable": 10,
    "conflicts_join_in_progress": 0,
-   "alternatives": []
+   "alternatives": [
+    {
+     "id": "r090",
+     "start": "16:10",
+     "name": "$100 NLH LIPS Ladies Milestone Satellite (1Day) - Awards Direct Entry to Event # 39",
+     "buy_in_usd": 100,
+     "guarantee_usd": null,
+     "entry_closes": "18:25",
+     "late_reg_published": true,
+     "note": "The primary's own table can run as late as 01:55 (+1 day); reaching this event means being out of the primary and seated before its entry closes at 18:25 - a question of when you are eliminated, which no source publishes."
+    },
+    {
+     "id": "r091",
+     "start": "17:10",
+     "name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)",
+     "buy_in_usd": 300,
+     "guarantee_usd": 15000,
+     "entry_closes": "21:40",
+     "late_reg_published": true,
+     "note": "The primary's own table can run as late as 01:55 (+1 day); reaching this event means being out of the primary and seated before its entry closes at 21:40 - a question of when you are eliminated, which no source publishes."
+    }
+   ]
   },
   {
    "date": "2026-12-09",
@@ -2697,7 +2806,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     }
    ],
-   "primary_id": null,
+   "primary_id": "r094",
    "fallback_id": null,
    "fallback_kind": null,
    "fallback_note": "No other candidate on this date can still be entered by the time the primary's own table ends at 01:55 (+1 day) - the day is planned around the primary alone.",
@@ -2947,7 +3056,38 @@
    ],
    "conflicts_unplannable": 22,
    "conflicts_join_in_progress": 0,
-   "alternatives": []
+   "alternatives": [
+    {
+     "id": "r096",
+     "start": "11:10",
+     "name": "$800 No Limit Hold'em Bounty $75K GTD (1Day) - $200 bounties to start & $500 bounties in the money",
+     "buy_in_usd": 800,
+     "guarantee_usd": 75000,
+     "entry_closes": "16:55",
+     "late_reg_published": true,
+     "note": "The primary's own table can run as late as 01:55 (+1 day); reaching this event means being out of the primary and seated before its entry closes at 16:55 - a question of when you are eliminated, which no source publishes."
+    },
+    {
+     "id": "r101",
+     "start": "16:10",
+     "name": "$100 NLH LIPS Ladies Milestone Satellite (1Day) - Awards Direct Entry to Event # 39",
+     "buy_in_usd": 100,
+     "guarantee_usd": null,
+     "entry_closes": "18:25",
+     "late_reg_published": true,
+     "note": "The primary's own table can run as late as 01:55 (+1 day); reaching this event means being out of the primary and seated before its entry closes at 18:25 - a question of when you are eliminated, which no source publishes."
+    },
+    {
+     "id": "r102",
+     "start": "17:10",
+     "name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)",
+     "buy_in_usd": 300,
+     "guarantee_usd": 15000,
+     "entry_closes": "21:40",
+     "late_reg_published": true,
+     "note": "The primary's own table can run as late as 01:55 (+1 day); reaching this event means being out of the primary and seated before its entry closes at 21:40 - a question of when you are eliminated, which no source publishes."
+    }
+   ]
   },
   {
    "date": "2026-12-10",
@@ -3081,10 +3221,10 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     }
    ],
-   "primary_id": null,
+   "primary_id": "r106",
    "fallback_id": null,
    "fallback_kind": null,
-   "fallback_note": "No verified single-entry event on this date.",
+   "fallback_note": "The primary event's table spans more than one playing day - its sheet says the flight plays until about 12.5% of the field remains and that Day 2 resumes at a printed clock - so the official sources give this day no ceiling to plan against.",
    "conflicts": [
     {
      "a": "r108",
@@ -3155,7 +3295,38 @@
    ],
    "conflicts_unplannable": 6,
    "conflicts_join_in_progress": 0,
-   "alternatives": []
+   "alternatives": [
+    {
+     "id": "r108",
+     "start": "12:10",
+     "name": "$600 Pot Limit Omaha Bounty $25K GTD (1Day)",
+     "buy_in_usd": 600,
+     "guarantee_usd": 25000,
+     "entry_closes": "16:40",
+     "late_reg_published": true,
+     "note": "The primary event has no same-day ceiling to plan against, so it is not known whether this one can be reached - choose it instead of the primary, not as well."
+    },
+    {
+     "id": "r109",
+     "start": "16:10",
+     "name": "$260 NLH Milestone Satellite (1Day) - Awards Direct Entry to Event # 47",
+     "buy_in_usd": 260,
+     "guarantee_usd": null,
+     "entry_closes": "18:25",
+     "late_reg_published": true,
+     "note": "The primary event has no same-day ceiling to plan against, so it is not known whether this one can be reached - choose it instead of the primary, not as well."
+    },
+    {
+     "id": "r110",
+     "start": "17:10",
+     "name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)",
+     "buy_in_usd": 300,
+     "guarantee_usd": 15000,
+     "entry_closes": "21:40",
+     "late_reg_published": true,
+     "note": "The primary event has no same-day ceiling to plan against, so it is not known whether this one can be reached - choose it instead of the primary, not as well."
+    }
+   ]
   },
   {
    "date": "2026-12-11",
@@ -3269,7 +3440,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_25.pdf"
     }
    ],
-   "primary_id": null,
+   "primary_id": "r114",
    "fallback_id": null,
    "fallback_kind": null,
    "fallback_note": "No other candidate on this date can still be entered by the time the primary's own table ends at 02:55 (+1 day) - the day is planned around the primary alone.",
@@ -3332,7 +3503,28 @@
    ],
    "conflicts_unplannable": 5,
    "conflicts_join_in_progress": 0,
-   "alternatives": []
+   "alternatives": [
+    {
+     "id": "r116",
+     "start": "16:10",
+     "name": "$260 NLH Milestone Satellite (1Day) - Awards Direct Entry to Event # 47",
+     "buy_in_usd": 260,
+     "guarantee_usd": null,
+     "entry_closes": "18:25",
+     "late_reg_published": true,
+     "note": "The primary's own table can run as late as 02:55 (+1 day); reaching this event means being out of the primary and seated before its entry closes at 18:25 - a question of when you are eliminated, which no source publishes."
+    },
+    {
+     "id": "r119",
+     "start": "20:10",
+     "name": "$260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47",
+     "buy_in_usd": 260,
+     "guarantee_usd": null,
+     "entry_closes": "21:40",
+     "late_reg_published": true,
+     "note": "The primary's own table can run as late as 02:55 (+1 day); reaching this event means being out of the primary and seated before its entry closes at 21:40 - a question of when you are eliminated, which no source publishes."
+    }
+   ]
   },
   {
    "date": "2026-12-12",
@@ -3541,10 +3733,10 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     }
    ],
-   "primary_id": null,
+   "primary_id": "r120",
    "fallback_id": null,
    "fallback_kind": null,
-   "fallback_note": "No verified single-entry event on this date.",
+   "fallback_note": "The primary event is a satellite, which its own sheet concludes as soon as the remaining seats are awarded; nothing prints when that happens, so no second event can be promised after it.",
    "conflicts": [
     {
      "a": "r120",
@@ -3670,7 +3862,18 @@
    ],
    "conflicts_unplannable": 10,
    "conflicts_join_in_progress": 1,
-   "alternatives": []
+   "alternatives": [
+    {
+     "id": "r123",
+     "start": "12:10",
+     "name": "$260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47",
+     "buy_in_usd": 260,
+     "guarantee_usd": null,
+     "entry_closes": "13:40",
+     "late_reg_published": true,
+     "note": "The primary's own table can run as late as 17:55; reaching this event means being out of the primary and seated before its entry closes at 13:40 - a question of when you are eliminated, which no source publishes."
+    }
+   ]
   },
   {
    "date": "2026-12-13",
@@ -3856,7 +4059,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     }
    ],
-   "primary_id": null,
+   "primary_id": "r141",
    "fallback_id": null,
    "fallback_kind": null,
    "fallback_note": "This is the only sheet-reviewed candidate on this date, so the day is planned around it alone.",
@@ -4158,7 +4361,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     }
    ],
-   "primary_id": null,
+   "primary_id": "r151",
    "fallback_id": null,
    "fallback_kind": null,
    "fallback_note": "This is the only sheet-reviewed candidate on this date, so the day is planned around it alone.",
@@ -4412,7 +4615,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     }
    ],
-   "primary_id": null,
+   "primary_id": "r159",
    "fallback_id": null,
    "fallback_kind": null,
    "fallback_note": "No other candidate on this date can still be entered by the time the primary's own table ends at 02:55 (+1 day) - the day is planned around the primary alone.",
@@ -4508,7 +4711,18 @@
    ],
    "conflicts_unplannable": 8,
    "conflicts_join_in_progress": 0,
-   "alternatives": []
+   "alternatives": [
+    {
+     "id": "r163",
+     "start": "17:10",
+     "name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)",
+     "buy_in_usd": 300,
+     "guarantee_usd": 15000,
+     "entry_closes": "21:40",
+     "late_reg_published": true,
+     "note": "The primary's own table can run as late as 02:55 (+1 day); reaching this event means being out of the primary and seated before its entry closes at 21:40 - a question of when you are eliminated, which no source publishes."
+    }
+   ]
   },
   {
    "date": "2026-12-16",
@@ -4688,7 +4902,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     }
    ],
-   "primary_id": null,
+   "primary_id": "r167",
    "fallback_id": null,
    "fallback_kind": null,
    "fallback_note": "No other candidate on this date can still be entered by the time the primary's own table ends at 02:55 (+1 day) - the day is planned around the primary alone.",
@@ -4828,7 +5042,18 @@
    ],
    "conflicts_unplannable": 12,
    "conflicts_join_in_progress": 0,
-   "alternatives": []
+   "alternatives": [
+    {
+     "id": "r172",
+     "start": "17:10",
+     "name": "$300 No Limit Hold'em Bounty $15K GTD (1Day)",
+     "buy_in_usd": 300,
+     "guarantee_usd": 15000,
+     "entry_closes": "21:40",
+     "late_reg_published": true,
+     "note": "The primary's own table can run as late as 02:55 (+1 day); reaching this event means being out of the primary and seated before its entry closes at 21:40 - a question of when you are eliminated, which no source publishes."
+    }
+   ]
   },
   {
    "date": "2026-12-17",
@@ -5013,7 +5238,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     }
    ],
-   "primary_id": null,
+   "primary_id": "r182",
    "fallback_id": null,
    "fallback_kind": null,
    "fallback_note": "This is the only sheet-reviewed candidate on this date, so the day is planned around it alone.",
@@ -5769,7 +5994,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     }
    ],
-   "primary_id": null,
+   "primary_id": "r218",
    "fallback_id": null,
    "fallback_kind": null,
    "fallback_note": "This is the only sheet-reviewed candidate on this date, so the day is planned around it alone.",
@@ -5895,7 +6120,7 @@
      "source": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
     }
    ],
-   "primary_id": null,
+   "primary_id": "r224",
    "fallback_id": null,
    "fallback_kind": null,
    "fallback_note": "This is the only sheet-reviewed candidate on this date, so the day is planned around it alone.",
@@ -5961,7 +6186,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
     }
    ],
-   "primary_id": null,
+   "primary_id": "r227",
    "fallback_id": null,
    "fallback_kind": null,
    "fallback_note": "This is the only sheet-reviewed candidate on this date, so the day is planned around it alone.",
@@ -6012,7 +6237,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf"
     }
    ],
-   "primary_id": null,
+   "primary_id": "r229",
    "fallback_id": null,
    "fallback_kind": null,
    "fallback_note": "No other candidate on this date can still be entered by the time the primary's own table ends at 02:55 (+1 day) - the day is planned around the primary alone.",
@@ -6031,7 +6256,18 @@
    ],
    "conflicts_unplannable": 1,
    "conflicts_join_in_progress": 0,
-   "alternatives": []
+   "alternatives": [
+    {
+     "id": "r230",
+     "start": "17:10",
+     "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+     "buy_in_usd": 200,
+     "guarantee_usd": 8000,
+     "entry_closes": "21:40",
+     "late_reg_published": true,
+     "note": "The primary's own table can run as late as 02:55 (+1 day); reaching this event means being out of the primary and seated before its entry closes at 21:40 - a question of when you are eliminated, which no source publishes."
+    }
+   ]
   },
   {
    "date": "2026-12-24",
@@ -6075,7 +6311,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_2.pdf"
     }
    ],
-   "primary_id": null,
+   "primary_id": "r231",
    "fallback_id": null,
    "fallback_kind": null,
    "fallback_note": "No other candidate on this date can still be entered by the time the primary's own table ends at 02:55 (+1 day) - the day is planned around the primary alone.",
@@ -6094,7 +6330,18 @@
    ],
    "conflicts_unplannable": 1,
    "conflicts_join_in_progress": 0,
-   "alternatives": []
+   "alternatives": [
+    {
+     "id": "r232",
+     "start": "17:10",
+     "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+     "buy_in_usd": 200,
+     "guarantee_usd": 8000,
+     "entry_closes": "21:40",
+     "late_reg_published": true,
+     "note": "The primary's own table can run as late as 02:55 (+1 day); reaching this event means being out of the primary and seated before its entry closes at 21:40 - a question of when you are eliminated, which no source publishes."
+    }
+   ]
   },
   {
    "date": "2026-12-25",
@@ -6138,7 +6385,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_2.pdf"
     }
    ],
-   "primary_id": null,
+   "primary_id": "r233",
    "fallback_id": null,
    "fallback_kind": null,
    "fallback_note": "No other candidate on this date can still be entered by the time the primary's own table ends at 02:55 (+1 day) - the day is planned around the primary alone.",
@@ -6157,7 +6404,18 @@
    ],
    "conflicts_unplannable": 1,
    "conflicts_join_in_progress": 0,
-   "alternatives": []
+   "alternatives": [
+    {
+     "id": "r234",
+     "start": "17:10",
+     "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+     "buy_in_usd": 200,
+     "guarantee_usd": 8000,
+     "entry_closes": "21:40",
+     "late_reg_published": true,
+     "note": "The primary's own table can run as late as 02:55 (+1 day); reaching this event means being out of the primary and seated before its entry closes at 21:40 - a question of when you are eliminated, which no source publishes."
+    }
+   ]
   },
   {
    "date": "2026-12-26",
@@ -6225,7 +6483,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_4.pdf"
     }
    ],
-   "primary_id": null,
+   "primary_id": "r235",
    "fallback_id": null,
    "fallback_kind": null,
    "fallback_note": "No other candidate on this date can still be entered by the time the primary's own table ends at 02:55 (+1 day) - the day is planned around the primary alone.",
@@ -6266,7 +6524,28 @@
    ],
    "conflicts_unplannable": 3,
    "conflicts_join_in_progress": 0,
-   "alternatives": []
+   "alternatives": [
+    {
+     "id": "r236",
+     "start": "15:10",
+     "name": "$260 NLH Milestone Satellite (1Day) - Awards 1 in 5 (20%) Direct Entry into Event # 08",
+     "buy_in_usd": 260,
+     "guarantee_usd": null,
+     "entry_closes": "17:25",
+     "late_reg_published": true,
+     "note": "The primary's own table can run as late as 02:55 (+1 day); reaching this event means being out of the primary and seated before its entry closes at 17:25 - a question of when you are eliminated, which no source publishes."
+    },
+    {
+     "id": "r237",
+     "start": "18:10",
+     "name": "$260 NLH Milestone Satellite (1Day) - Awards 1 in 5 (20%) Direct Entry into Event # 08",
+     "buy_in_usd": 260,
+     "guarantee_usd": null,
+     "entry_closes": "20:25",
+     "late_reg_published": true,
+     "note": "The primary's own table can run as late as 02:55 (+1 day); reaching this event means being out of the primary and seated before its entry closes at 20:25 - a question of when you are eliminated, which no source publishes."
+    }
+   ]
   },
   {
    "date": "2026-12-27",
@@ -6334,10 +6613,10 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_4.pdf"
     }
    ],
-   "primary_id": null,
+   "primary_id": "r239",
    "fallback_id": null,
    "fallback_kind": null,
-   "fallback_note": "No verified single-entry event on this date.",
+   "fallback_note": "The primary event is a satellite, which its own sheet concludes as soon as the remaining seats are awarded; nothing prints when that happens, so no second event can be promised after it.",
    "conflicts": [
     {
      "a": "r239",
@@ -6353,7 +6632,18 @@
    ],
    "conflicts_unplannable": 1,
    "conflicts_join_in_progress": 0,
-   "alternatives": []
+   "alternatives": [
+    {
+     "id": "r240",
+     "start": "18:10",
+     "name": "$260 NLH Milestone Satellite (1Day) - Awards 1 in 5 (20%) Direct Entry into Event # 08",
+     "buy_in_usd": 260,
+     "guarantee_usd": null,
+     "entry_closes": "20:25",
+     "late_reg_published": true,
+     "note": "The primary's own table can run as late as 02:15 (+1 day); reaching this event means being out of the primary and seated before its entry closes at 20:25 - a question of when you are eliminated, which no source publishes."
+    }
+   ]
   },
   {
    "date": "2026-12-28",
@@ -6421,10 +6711,10 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_4.pdf"
     }
    ],
-   "primary_id": null,
+   "primary_id": "r242",
    "fallback_id": null,
    "fallback_kind": null,
-   "fallback_note": "No verified single-entry event on this date.",
+   "fallback_note": "The primary event is a satellite, which its own sheet concludes as soon as the remaining seats are awarded; nothing prints when that happens, so no second event can be promised after it.",
    "conflicts": [
     {
      "a": "r242",
@@ -6440,7 +6730,18 @@
    ],
    "conflicts_unplannable": 1,
    "conflicts_join_in_progress": 0,
-   "alternatives": []
+   "alternatives": [
+    {
+     "id": "r243",
+     "start": "18:10",
+     "name": "$260 NLH Milestone Satellite (1Day) - Awards 1 in 5 (20%) Direct Entry into Event # 08",
+     "buy_in_usd": 260,
+     "guarantee_usd": null,
+     "entry_closes": "20:25",
+     "late_reg_published": true,
+     "note": "The primary's own table can run as late as 02:15 (+1 day); reaching this event means being out of the primary and seated before its entry closes at 20:25 - a question of when you are eliminated, which no source publishes."
+    }
+   ]
   },
   {
    "date": "2026-12-29",
@@ -6486,7 +6787,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_2.pdf"
     }
    ],
-   "primary_id": null,
+   "primary_id": "r245",
    "fallback_id": null,
    "fallback_kind": null,
    "fallback_note": "This is the only sheet-reviewed candidate on this date, so the day is planned around it alone.",
@@ -6560,7 +6861,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_7.pdf"
     }
    ],
-   "primary_id": null,
+   "primary_id": "r247",
    "fallback_id": null,
    "fallback_kind": null,
    "fallback_note": "No other candidate on this date can still be entered by the time the primary's own table ends at 02:55 (+1 day) - the day is planned around the primary alone.",
@@ -6601,7 +6902,28 @@
    ],
    "conflicts_unplannable": 3,
    "conflicts_join_in_progress": 0,
-   "alternatives": []
+   "alternatives": [
+    {
+     "id": "r248",
+     "start": "15:10",
+     "name": "$200 NLH Milestone Satellite (1Day) - Awards Direct Entry into Event # 20",
+     "buy_in_usd": 200,
+     "guarantee_usd": null,
+     "entry_closes": "17:25",
+     "late_reg_published": true,
+     "note": "The primary's own table can run as late as 02:55 (+1 day); reaching this event means being out of the primary and seated before its entry closes at 17:25 - a question of when you are eliminated, which no source publishes."
+    },
+    {
+     "id": "r249",
+     "start": "18:10",
+     "name": "$200 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry into Event # 20",
+     "buy_in_usd": 200,
+     "guarantee_usd": null,
+     "entry_closes": "19:55",
+     "late_reg_published": true,
+     "note": "The primary's own table can run as late as 02:55 (+1 day); reaching this event means being out of the primary and seated before its entry closes at 19:55 - a question of when you are eliminated, which no source publishes."
+    }
+   ]
   },
   {
    "date": "2026-12-31",
@@ -6668,7 +6990,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_7.pdf"
     }
    ],
-   "primary_id": null,
+   "primary_id": "r251",
    "fallback_id": null,
    "fallback_kind": null,
    "fallback_note": "No other candidate on this date can still be entered by the time the primary's own table ends at 02:55 (+1 day) - the day is planned around the primary alone.",
@@ -6709,7 +7031,28 @@
    ],
    "conflicts_unplannable": 3,
    "conflicts_join_in_progress": 0,
-   "alternatives": []
+   "alternatives": [
+    {
+     "id": "r252",
+     "start": "15:10",
+     "name": "$200 NLH Milestone Satellite (1Day) - Awards Direct Entry into Event # 20",
+     "buy_in_usd": 200,
+     "guarantee_usd": null,
+     "entry_closes": "17:25",
+     "late_reg_published": true,
+     "note": "The primary's own table can run as late as 02:55 (+1 day); reaching this event means being out of the primary and seated before its entry closes at 17:25 - a question of when you are eliminated, which no source publishes."
+    },
+    {
+     "id": "r253",
+     "start": "18:10",
+     "name": "$200 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry into Event # 20",
+     "buy_in_usd": 200,
+     "guarantee_usd": null,
+     "entry_closes": "19:55",
+     "late_reg_published": true,
+     "note": "The primary's own table can run as late as 02:55 (+1 day); reaching this event means being out of the primary and seated before its entry closes at 19:55 - a question of when you are eliminated, which no source publishes."
+    }
+   ]
   },
   {
    "date": "2027-01-01",
@@ -6777,10 +7120,10 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_2.pdf"
     }
    ],
-   "primary_id": null,
+   "primary_id": "r255",
    "fallback_id": null,
    "fallback_kind": null,
-   "fallback_note": "No verified single-entry event on this date.",
+   "fallback_note": "The primary event is a satellite, which its own sheet concludes as soon as the remaining seats are awarded; nothing prints when that happens, so no second event can be promised after it.",
    "conflicts": [
     {
      "a": "r255",
@@ -6796,7 +7139,18 @@
    ],
    "conflicts_unplannable": 1,
    "conflicts_join_in_progress": 0,
-   "alternatives": []
+   "alternatives": [
+    {
+     "id": "r256",
+     "start": "17:10",
+     "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+     "buy_in_usd": 200,
+     "guarantee_usd": 8000,
+     "entry_closes": "21:40",
+     "late_reg_published": true,
+     "note": "The primary's own table can run as late as 02:15 (+1 day); reaching this event means being out of the primary and seated before its entry closes at 21:40 - a question of when you are eliminated, which no source publishes."
+    }
+   ]
   },
   {
    "date": "2027-01-02",
@@ -6886,10 +7240,10 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_9.pdf"
     }
    ],
-   "primary_id": null,
+   "primary_id": "r257",
    "fallback_id": null,
    "fallback_kind": null,
-   "fallback_note": "No verified single-entry event on this date.",
+   "fallback_note": "The primary event is a satellite, which its own sheet concludes as soon as the remaining seats are awarded; nothing prints when that happens, so no second event can be promised after it.",
    "conflicts": [
     {
      "a": "r257",
@@ -6938,7 +7292,18 @@
    ],
    "conflicts_unplannable": 3,
    "conflicts_join_in_progress": 1,
-   "alternatives": []
+   "alternatives": [
+    {
+     "id": "r259",
+     "start": "15:10",
+     "name": "$200 NLH Milestone Satellite (1Day) - Awards Direct Entry into Event # 20",
+     "buy_in_usd": 200,
+     "guarantee_usd": null,
+     "entry_closes": "17:25",
+     "late_reg_published": true,
+     "note": "The primary's own table can run as late as 21:15; reaching this event means being out of the primary and seated before its entry closes at 17:25 - a question of when you are eliminated, which no source publishes."
+    }
+   ]
   },
   {
    "date": "2027-01-03",
@@ -6985,7 +7350,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_2.pdf"
     }
    ],
-   "primary_id": null,
+   "primary_id": "r262",
    "fallback_id": null,
    "fallback_kind": null,
    "fallback_note": "This is the only sheet-reviewed candidate on this date, so the day is planned around it alone.",
@@ -7170,7 +7535,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_2.pdf"
     }
    ],
-   "primary_id": null,
+   "primary_id": "r268",
    "fallback_id": null,
    "fallback_kind": null,
    "fallback_note": "This is the only sheet-reviewed candidate on this date, so the day is planned around it alone.",
@@ -7430,7 +7795,7 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_2.pdf"
     }
    ],
-   "primary_id": null,
+   "primary_id": "r277",
    "fallback_id": null,
    "fallback_kind": null,
    "fallback_note": "No other candidate on this date can still be entered by the time the primary's own table ends at 01:55 (+1 day) - the day is planned around the primary alone.",
@@ -7449,7 +7814,18 @@
    ],
    "conflicts_unplannable": 1,
    "conflicts_join_in_progress": 0,
-   "alternatives": []
+   "alternatives": [
+    {
+     "id": "r279",
+     "start": "17:10",
+     "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
+     "buy_in_usd": 200,
+     "guarantee_usd": 8000,
+     "entry_closes": "21:40",
+     "late_reg_published": true,
+     "note": "The primary's own table can run as late as 01:55 (+1 day); reaching this event means being out of the primary and seated before its entry closes at 21:40 - a question of when you are eliminated, which no source publishes."
+    }
+   ]
   },
   {
    "date": "2027-01-11",

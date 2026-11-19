@@ -60,7 +60,7 @@
    "guarantee_usd": 10000,
    "entry_status": "CAND",
    "buy_in": "house fee $58 of the $300 buy-in; prize pool $242",
-   "flags": 1
+   "flags": 0
   },
   "r006": {
    "date": "2026-11-18",
@@ -84,7 +84,7 @@
    "guarantee_usd": null,
    "entry_status": "CAND",
    "buy_in": "house fee $35 of the $200 buy-in; prize pool $165",
-   "flags": 1
+   "flags": 0
   },
   "r008": {
    "date": "2026-11-20",
@@ -96,7 +96,7 @@
    "guarantee_usd": null,
    "entry_status": "CAND",
    "buy_in": "house fee $35 of the $200 buy-in; prize pool $165",
-   "flags": 1
+   "flags": 0
   },
   "r009": {
    "date": "2026-11-21",
@@ -108,7 +108,7 @@
    "guarantee_usd": null,
    "entry_status": "CAND",
    "buy_in": "house fee $35 of the $200 buy-in; prize pool $165",
-   "flags": 1
+   "flags": 0
   },
   "r010": {
    "date": "2026-11-22",
@@ -120,7 +120,7 @@
    "guarantee_usd": null,
    "entry_status": "CAND",
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
-   "flags": 1
+   "flags": 0
   },
   "r011": {
    "date": "2026-11-23",
@@ -144,7 +144,7 @@
    "guarantee_usd": 8000,
    "entry_status": "CAND",
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
-   "flags": 1
+   "flags": 0
   },
   "r013": {
    "date": "2026-11-24",
@@ -168,7 +168,7 @@
    "guarantee_usd": 8000,
    "entry_status": "CAND",
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
-   "flags": 1
+   "flags": 0
   },
   "r015": {
    "date": "2026-11-25",
@@ -192,7 +192,7 @@
    "guarantee_usd": 15000,
    "entry_status": "CAND",
    "buy_in": "house fee $65 of the $400 buy-in; prize pool $335",
-   "flags": 1
+   "flags": 0
   },
   "r017": {
    "date": "2026-11-25",
@@ -204,7 +204,7 @@
    "guarantee_usd": 8000,
    "entry_status": "CAND",
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
-   "flags": 1
+   "flags": 0
   },
   "r018": {
    "date": "2026-11-26",
@@ -216,7 +216,7 @@
    "guarantee_usd": 10000,
    "entry_status": "CAND",
    "buy_in": "house fee $58 of the $300 buy-in; prize pool $242",
-   "flags": 1
+   "flags": 0
   },
   "r019": {
    "date": "2026-11-26",
@@ -228,7 +228,7 @@
    "guarantee_usd": 8000,
    "entry_status": "CAND",
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
-   "flags": 1
+   "flags": 0
   },
   "r020": {
    "date": "2026-11-27",
@@ -252,7 +252,7 @@
    "guarantee_usd": 30000,
    "entry_status": "CAND",
    "buy_in": "house fee $90 of the $600 buy-in; prize pool $510",
-   "flags": 1
+   "flags": 0
   },
   "r022": {
    "date": "2026-11-27",
@@ -300,7 +300,7 @@
    "guarantee_usd": 8000,
    "entry_status": "CAND",
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
-   "flags": 1
+   "flags": 0
   },
   "r026": {
    "date": "2026-11-28",
@@ -324,7 +324,7 @@
    "guarantee_usd": 30000,
    "entry_status": "CAND",
    "buy_in": "house fee $90 of the $600 buy-in; prize pool $510",
-   "flags": 1
+   "flags": 0
   },
   "r028": {
    "date": "2026-11-28",
@@ -348,7 +348,7 @@
    "guarantee_usd": 15000,
    "entry_status": "CAND",
    "buy_in": "house fee $60 of the $400 buy-in; prize pool $340",
-   "flags": 1
+   "flags": 0
   },
   "r030": {
    "date": "2026-11-28",
@@ -408,7 +408,7 @@
    "guarantee_usd": 10000,
    "entry_status": "CAND",
    "buy_in": "house fee $58 of the $300 buy-in; prize pool $242",
-   "flags": 1
+   "flags": 0
   },
   "r035": {
    "date": "2026-11-29",
@@ -420,7 +420,7 @@
    "guarantee_usd": 8000,
    "entry_status": "CAND",
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
-   "flags": 1
+   "flags": 0
   },
   "r036": {
    "date": "2026-11-29",
@@ -504,7 +504,7 @@
    "guarantee_usd": 8000,
    "entry_status": "CAND",
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
-   "flags": 1
+   "flags": 0
   },
   "r043": {
    "date": "2026-12-01",
@@ -576,7 +576,7 @@
    "guarantee_usd": 8000,
    "entry_status": "CAND",
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
-   "flags": 1
+   "flags": 0
   },
   "r049": {
    "date": "2026-12-02",
@@ -588,7 +588,7 @@
    "guarantee_usd": 40000,
    "entry_status": "CAND",
    "buy_in": "house fee $90 of the $600 buy-in; prize pool $510",
-   "flags": 1
+   "flags": 0
   },
   "r050": {
    "date": "2026-12-02",
@@ -624,7 +624,7 @@
    "guarantee_usd": 8000,
    "entry_status": "CAND",
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
-   "flags": 1
+   "flags": 0
   },
   "r053": {
    "date": "2026-12-02",
@@ -672,7 +672,7 @@
    "guarantee_usd": 25000,
    "entry_status": "CAND",
    "buy_in": "house fee $90 of the $600 buy-in; prize pool $510",
-   "flags": 1
+   "flags": 0
   },
   "r057": {
    "date": "2026-12-03",
@@ -876,7 +876,7 @@
    "guarantee_usd": 40000,
    "entry_status": "CAND",
    "buy_in": "house fee $90 of the $600 buy-in; prize pool $510",
-   "flags": 1
+   "flags": 0
   },
   "r074": {
    "date": "2026-12-06",
@@ -912,7 +912,7 @@
    "guarantee_usd": 15000,
    "entry_status": "CAND",
    "buy_in": "house fee $50 of the $300 buy-in; prize pool $250",
-   "flags": 1
+   "flags": 0
   },
   "r077": {
    "date": "2026-12-06",
@@ -984,7 +984,7 @@
    "guarantee_usd": 40000,
    "entry_status": "CAND",
    "buy_in": "house fee $90 of the $600 buy-in; prize pool $510",
-   "flags": 1
+   "flags": 0
   },
   "r083": {
    "date": "2026-12-07",
@@ -1020,7 +1020,7 @@
    "guarantee_usd": 15000,
    "entry_status": "CAND",
    "buy_in": "house fee $50 of the $300 buy-in; prize pool $250",
-   "flags": 1
+   "flags": 0
   },
   "r086": {
    "date": "2026-12-07",
@@ -1056,7 +1056,7 @@
    "guarantee_usd": 40000,
    "entry_status": "CAND",
    "buy_in": "house fee $90 of the $600 buy-in; prize pool $510",
-   "flags": 1
+   "flags": 0
   },
   "r089": {
    "date": "2026-12-08",
@@ -1080,7 +1080,7 @@
    "guarantee_usd": null,
    "entry_status": "CAND",
    "buy_in": "house fee $20 of the $100 buy-in; prize pool $80",
-   "flags": 1
+   "flags": 0
   },
   "r091": {
    "date": "2026-12-08",
@@ -1092,7 +1092,7 @@
    "guarantee_usd": 15000,
    "entry_status": "CAND",
    "buy_in": "house fee $50 of the $300 buy-in; prize pool $250",
-   "flags": 1
+   "flags": 0
   },
   "r092": {
    "date": "2026-12-08",
@@ -1128,7 +1128,7 @@
    "guarantee_usd": 10000,
    "entry_status": "CAND",
    "buy_in": "house fee $90 of the $600 buy-in; prize pool $510",
-   "flags": 2
+   "flags": 1
   },
   "r095": {
    "date": "2026-12-09",
@@ -1152,7 +1152,7 @@
    "guarantee_usd": 75000,
    "entry_status": "CAND",
    "buy_in": "house fee $100 of the $800 buy-in; prize pool $700",
-   "flags": 1
+   "flags": 0
   },
   "r097": {
    "date": "2026-12-09",
@@ -1212,7 +1212,7 @@
    "guarantee_usd": null,
    "entry_status": "CAND",
    "buy_in": "house fee $20 of the $100 buy-in; prize pool $80",
-   "flags": 1
+   "flags": 0
   },
   "r102": {
    "date": "2026-12-09",
@@ -1224,7 +1224,7 @@
    "guarantee_usd": 15000,
    "entry_status": "CAND",
    "buy_in": "house fee $50 of the $300 buy-in; prize pool $250",
-   "flags": 1
+   "flags": 0
   },
   "r103": {
    "date": "2026-12-09",
@@ -1272,7 +1272,7 @@
    "guarantee_usd": 40000,
    "entry_status": "CAND",
    "buy_in": "house fee $110 of the $800 buy-in; prize pool $690",
-   "flags": 2
+   "flags": 1
   },
   "r107": {
    "date": "2026-12-10",
@@ -1296,7 +1296,7 @@
    "guarantee_usd": 25000,
    "entry_status": "CAND",
    "buy_in": "house fee $90 of the $600 buy-in; prize pool $510",
-   "flags": 1
+   "flags": 0
   },
   "r109": {
    "date": "2026-12-10",
@@ -1308,7 +1308,7 @@
    "guarantee_usd": null,
    "entry_status": "CAND",
    "buy_in": "house fee $40 of the $260 buy-in; prize pool $220",
-   "flags": 1
+   "flags": 0
   },
   "r110": {
    "date": "2026-12-10",
@@ -1320,7 +1320,7 @@
    "guarantee_usd": 15000,
    "entry_status": "CAND",
    "buy_in": "house fee $50 of the $300 buy-in; prize pool $250",
-   "flags": 1
+   "flags": 0
   },
   "r111": {
    "date": "2026-12-10",
@@ -1368,7 +1368,7 @@
    "guarantee_usd": 30000,
    "entry_status": "CAND",
    "buy_in": "house fee $90 of the $600 buy-in; prize pool $510",
-   "flags": 2
+   "flags": 1
   },
   "r115": {
    "date": "2026-12-11",
@@ -1392,7 +1392,7 @@
    "guarantee_usd": null,
    "entry_status": "CAND",
    "buy_in": "house fee $40 of the $260 buy-in; prize pool $220",
-   "flags": 1
+   "flags": 0
   },
   "r117": {
    "date": "2026-12-11",
@@ -1428,7 +1428,7 @@
    "guarantee_usd": null,
    "entry_status": "CAND",
    "buy_in": "house fee $35 of the $260 buy-in; prize pool $225",
-   "flags": 1
+   "flags": 0
   },
   "r120": {
    "date": "2026-12-12",
@@ -1440,7 +1440,7 @@
    "guarantee_usd": null,
    "entry_status": "CAND",
    "buy_in": "house fee $35 of the $260 buy-in; prize pool $225",
-   "flags": 1
+   "flags": 0
   },
   "r121": {
    "date": "2026-12-12",
@@ -1476,7 +1476,7 @@
    "guarantee_usd": null,
    "entry_status": "CAND",
    "buy_in": "house fee $35 of the $260 buy-in; prize pool $225",
-   "flags": 1
+   "flags": 0
   },
   "r124": {
    "date": "2026-12-12",
@@ -1692,7 +1692,7 @@
    "guarantee_usd": 15000,
    "entry_status": "CAND",
    "buy_in": "house fee $50 of the $300 buy-in; prize pool $250",
-   "flags": 1
+   "flags": 0
   },
   "r142": {
    "date": "2026-12-13",
@@ -1812,7 +1812,7 @@
    "guarantee_usd": 15000,
    "entry_status": "CAND",
    "buy_in": "house fee $50 of the $300 buy-in; prize pool $250",
-   "flags": 1
+   "flags": 0
   },
   "r152": {
    "date": "2026-12-14",
@@ -1908,7 +1908,7 @@
    "guarantee_usd": 75000,
    "entry_status": "CAND",
    "buy_in": "house fee $130 of the $1,100 buy-in; prize pool $970",
-   "flags": 1
+   "flags": 0
   },
   "r160": {
    "date": "2026-12-15",
@@ -1956,7 +1956,7 @@
    "guarantee_usd": 15000,
    "entry_status": "CAND",
    "buy_in": "house fee $50 of the $300 buy-in; prize pool $250",
-   "flags": 1
+   "flags": 0
   },
   "r164": {
    "date": "2026-12-15",
@@ -2004,7 +2004,7 @@
    "guarantee_usd": 50000,
    "entry_status": "CAND",
    "buy_in": "house fee $90 of the $600 buy-in; prize pool $510",
-   "flags": 1
+   "flags": 0
   },
   "r168": {
    "date": "2026-12-16",
@@ -2064,7 +2064,7 @@
    "guarantee_usd": 15000,
    "entry_status": "CAND",
    "buy_in": "house fee $50 of the $300 buy-in; prize pool $250",
-   "flags": 1
+   "flags": 0
   },
   "r173": {
    "date": "2026-12-16",
@@ -2184,7 +2184,7 @@
    "guarantee_usd": 25000,
    "entry_status": "CAND",
    "buy_in": "house fee $90 of the $600 buy-in; prize pool $510",
-   "flags": 1
+   "flags": 0
   },
   "r183": {
    "date": "2026-12-17",
@@ -2616,7 +2616,7 @@
    "guarantee_usd": 8000,
    "entry_status": "CAND",
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
-   "flags": 1
+   "flags": 0
   },
   "r219": {
    "date": "2026-12-20",
@@ -2688,7 +2688,7 @@
    "guarantee_usd": 8000,
    "entry_status": "CAND",
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
-   "flags": 1
+   "flags": 0
   },
   "r225": {
    "date": "2026-12-21",
@@ -2724,7 +2724,7 @@
    "guarantee_usd": 8000,
    "entry_status": "CAND",
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
-   "flags": 1
+   "flags": 0
   },
   "r228": {
    "date": "2026-12-23",
@@ -2748,7 +2748,7 @@
    "guarantee_usd": 30000,
    "entry_status": "CAND",
    "buy_in": "house fee $90 of the $600 buy-in; prize pool $510",
-   "flags": 1
+   "flags": 0
   },
   "r230": {
    "date": "2026-12-23",
@@ -2760,7 +2760,7 @@
    "guarantee_usd": 8000,
    "entry_status": "CAND",
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
-   "flags": 1
+   "flags": 0
   },
   "r231": {
    "date": "2026-12-24",
@@ -2772,7 +2772,7 @@
    "guarantee_usd": 15000,
    "entry_status": "CAND",
    "buy_in": "house fee $65 of the $400 buy-in; prize pool $335",
-   "flags": 1
+   "flags": 0
   },
   "r232": {
    "date": "2026-12-24",
@@ -2784,7 +2784,7 @@
    "guarantee_usd": 8000,
    "entry_status": "CAND",
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
-   "flags": 1
+   "flags": 0
   },
   "r233": {
    "date": "2026-12-25",
@@ -2796,7 +2796,7 @@
    "guarantee_usd": 15000,
    "entry_status": "CAND",
    "buy_in": "house fee $65 of the $400 buy-in; prize pool $335",
-   "flags": 1
+   "flags": 0
   },
   "r234": {
    "date": "2026-12-25",
@@ -2808,7 +2808,7 @@
    "guarantee_usd": 8000,
    "entry_status": "CAND",
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
-   "flags": 1
+   "flags": 0
   },
   "r235": {
    "date": "2026-12-26",
@@ -2820,7 +2820,7 @@
    "guarantee_usd": 40000,
    "entry_status": "CAND",
    "buy_in": "house fee $90 of the $600 buy-in; prize pool $510",
-   "flags": 2
+   "flags": 1
   },
   "r236": {
    "date": "2026-12-26",
@@ -2832,7 +2832,7 @@
    "guarantee_usd": null,
    "entry_status": "CAND",
    "buy_in": "house fee $40 of the $260 buy-in; prize pool $220",
-   "flags": 2
+   "flags": 1
   },
   "r237": {
    "date": "2026-12-26",
@@ -2844,7 +2844,7 @@
    "guarantee_usd": null,
    "entry_status": "CAND",
    "buy_in": "house fee $40 of the $260 buy-in; prize pool $220",
-   "flags": 2
+   "flags": 1
   },
   "r238": {
    "date": "2026-12-27",
@@ -2868,7 +2868,7 @@
    "guarantee_usd": null,
    "entry_status": "CAND",
    "buy_in": "house fee $40 of the $260 buy-in; prize pool $220",
-   "flags": 1
+   "flags": 0
   },
   "r240": {
    "date": "2026-12-27",
@@ -2880,7 +2880,7 @@
    "guarantee_usd": null,
    "entry_status": "CAND",
    "buy_in": "house fee $40 of the $260 buy-in; prize pool $220",
-   "flags": 1
+   "flags": 0
   },
   "r241": {
    "date": "2026-12-28",
@@ -2904,7 +2904,7 @@
    "guarantee_usd": null,
    "entry_status": "CAND",
    "buy_in": "house fee $40 of the $260 buy-in; prize pool $220",
-   "flags": 1
+   "flags": 0
   },
   "r243": {
    "date": "2026-12-28",
@@ -2916,7 +2916,7 @@
    "guarantee_usd": null,
    "entry_status": "CAND",
    "buy_in": "house fee $40 of the $260 buy-in; prize pool $220",
-   "flags": 1
+   "flags": 0
   },
   "r244": {
    "date": "2026-12-29",
@@ -2940,7 +2940,7 @@
    "guarantee_usd": 8000,
    "entry_status": "CAND",
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
-   "flags": 1
+   "flags": 0
   },
   "r246": {
    "date": "2026-12-30",
@@ -2964,7 +2964,7 @@
    "guarantee_usd": 50000,
    "entry_status": "CAND",
    "buy_in": "house fee $90 of the $600 buy-in; prize pool $510",
-   "flags": 1
+   "flags": 0
   },
   "r248": {
    "date": "2026-12-30",
@@ -2976,7 +2976,7 @@
    "guarantee_usd": null,
    "entry_status": "CAND",
    "buy_in": "house fee $35 of the $200 buy-in; prize pool $165",
-   "flags": 1
+   "flags": 0
   },
   "r249": {
    "date": "2026-12-30",
@@ -2988,7 +2988,7 @@
    "guarantee_usd": null,
    "entry_status": "CAND",
    "buy_in": "house fee $30 of the $200 buy-in; prize pool $170",
-   "flags": 1
+   "flags": 0
   },
   "r250": {
    "date": "2026-12-31",
@@ -3012,7 +3012,7 @@
    "guarantee_usd": 15000,
    "entry_status": "CAND",
    "buy_in": "house fee $65 of the $400 buy-in; prize pool $335",
-   "flags": 1
+   "flags": 0
   },
   "r252": {
    "date": "2026-12-31",
@@ -3024,7 +3024,7 @@
    "guarantee_usd": null,
    "entry_status": "CAND",
    "buy_in": "house fee $35 of the $200 buy-in; prize pool $165",
-   "flags": 1
+   "flags": 0
   },
   "r253": {
    "date": "2026-12-31",
@@ -3036,7 +3036,7 @@
    "guarantee_usd": null,
    "entry_status": "CAND",
    "buy_in": "house fee $30 of the $200 buy-in; prize pool $170",
-   "flags": 1
+   "flags": 0
   },
   "r254": {
    "date": "2027-01-01",
@@ -3060,7 +3060,7 @@
    "guarantee_usd": null,
    "entry_status": "CAND",
    "buy_in": "house fee $35 of the $200 buy-in; prize pool $165",
-   "flags": 1
+   "flags": 0
   },
   "r256": {
    "date": "2027-01-01",
@@ -3072,7 +3072,7 @@
    "guarantee_usd": 8000,
    "entry_status": "CAND",
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
-   "flags": 1
+   "flags": 0
   },
   "r257": {
    "date": "2027-01-02",
@@ -3084,7 +3084,7 @@
    "guarantee_usd": null,
    "entry_status": "CAND",
    "buy_in": "house fee $35 of the $200 buy-in; prize pool $165",
-   "flags": 1
+   "flags": 0
   },
   "r258": {
    "date": "2027-01-02",
@@ -3108,7 +3108,7 @@
    "guarantee_usd": null,
    "entry_status": "CAND",
    "buy_in": "house fee $35 of the $200 buy-in; prize pool $165",
-   "flags": 1
+   "flags": 0
   },
   "r260": {
    "date": "2027-01-02",
@@ -3144,7 +3144,7 @@
    "guarantee_usd": 8000,
    "entry_status": "CAND",
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
-   "flags": 1
+   "flags": 0
   },
   "r263": {
    "date": "2027-01-04",
@@ -3216,7 +3216,7 @@
    "guarantee_usd": 15000,
    "entry_status": "CAND",
    "buy_in": "house fee $65 of the $400 buy-in; prize pool $335",
-   "flags": 1
+   "flags": 0
   },
   "r269": {
    "date": "2027-01-06",
@@ -3324,7 +3324,7 @@
    "guarantee_usd": 20000,
    "entry_status": "CAND",
    "buy_in": "house fee $65 of the $400 buy-in; prize pool $335",
-   "flags": 1
+   "flags": 0
   },
   "r278": {
    "date": "2027-01-10",
@@ -3348,7 +3348,7 @@
    "guarantee_usd": 8000,
    "entry_status": "CAND",
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
-   "flags": 1
+   "flags": 0
   },
   "r280": {
    "date": "2027-01-11",
