@@ -144,7 +144,7 @@
    "guarantee_usd": 8000,
    "entry_status": "CAND",
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
-   "flags": 0
+   "flags": 1
   },
   "r013": {
    "date": "2026-11-24",

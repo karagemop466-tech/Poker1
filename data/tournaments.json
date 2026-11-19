@@ -89,7 +89,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r002",
@@ -179,7 +179,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r003",
@@ -269,7 +269,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r004",
@@ -359,7 +359,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r005",
@@ -446,7 +446,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r006",
@@ -537,7 +537,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r007",
@@ -626,7 +626,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r008",
@@ -715,7 +715,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r009",
@@ -804,7 +804,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r010",
@@ -891,7 +891,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r011",
@@ -981,7 +981,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r012",
@@ -1055,7 +1055,9 @@
    "est_end_abs_min": 1975,
    "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #30 on 2026-11-16.",
-   "flags": [],
+   "flags": [
+    "The official structure sheet was re-published after this row was first read: a hand re-read on 2026-11-19 compared the live sheet with the 2026-11-16 and 2026-11-19 archives line by line. Clause 9 (bounty mechanics) now adds that the eliminated player's bounty is split equally between a cash payout to the eliminating player and an increase to that player's own bounty, with the cash rounded down to the nearest whole dollar when the bounty does not divide evenly; several clauses also re-wrapped to different line lengths. None of the row's published values changed (date, start, buy-in, guarantee, fee split, registration close, payout percentage and entry-rule findings are identical), and the re-read found no re-entry, rebuy or add-on wording. Source: structure sheet #30, re-read live 2026-11-19."
+   ],
    "sources": [
     {
      "label": "Official event page",
@@ -1071,7 +1073,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r013",
@@ -1161,7 +1163,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r014",
@@ -1250,7 +1252,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r015",
@@ -1341,7 +1343,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r016",
@@ -1428,7 +1430,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r017",
@@ -1517,7 +1519,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r018",
@@ -1604,7 +1606,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r019",
@@ -1693,7 +1695,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r020",
@@ -1883,7 +1885,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r022",
@@ -2277,7 +2279,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r026",
@@ -2469,7 +2471,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r028",
@@ -2660,7 +2662,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r030",
@@ -2854,7 +2856,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r032",
@@ -3047,7 +3049,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r034",
@@ -3137,7 +3139,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r035",
@@ -3226,7 +3228,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r036",
@@ -3524,7 +3526,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r039",
@@ -3921,7 +3923,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r043",
@@ -4114,7 +4116,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r045",
@@ -4508,7 +4510,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r049",
@@ -4597,7 +4599,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r050",
@@ -4688,7 +4690,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r051",
@@ -4880,7 +4882,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r053",
@@ -5178,7 +5180,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r056",
@@ -5267,7 +5269,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r057",
@@ -5462,7 +5464,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r059",
@@ -5756,7 +5758,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r062",
@@ -6052,7 +6054,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r065",
@@ -6451,7 +6453,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r069",
@@ -6542,7 +6544,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r070",
@@ -6940,7 +6942,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r074",
@@ -7031,7 +7033,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r075",
@@ -7221,7 +7223,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r077",
@@ -7821,7 +7823,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r083",
@@ -8118,7 +8120,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r086",
@@ -8411,7 +8413,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r089",
@@ -8605,7 +8607,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "satellite": {
     "seats_awarded": 2,
     "target_event": "Event #39 ($800 No Limit Hold'em LIPS Ladies)",
@@ -8700,7 +8702,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r092",
@@ -8996,7 +8998,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r095",
@@ -9184,7 +9186,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r097",
@@ -9681,7 +9683,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "satellite": {
     "seats_awarded": 2,
     "target_event": "Event #39 ($800 No Limit Hold'em LIPS Ladies)",
@@ -9776,7 +9778,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r103",
@@ -10166,7 +10168,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r107",
@@ -10360,7 +10362,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r109",
@@ -10450,7 +10452,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "satellite": {
     "seats_awarded": 2,
     "target_event": "Event #47 ($2,200 No Limit Hold'em PokerAtlas Championship Title Event)",
@@ -10545,7 +10547,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r111",
@@ -10732,7 +10734,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r113",
@@ -10917,7 +10919,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r115",
@@ -11111,7 +11113,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "satellite": {
     "seats_awarded": 2,
     "target_event": "Event #47 ($2,200 No Limit Hold'em PokerAtlas Championship Title Event)",
@@ -11304,7 +11306,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r119",
@@ -11395,7 +11397,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "satellite": {
     "seats_awarded": 2,
     "target_event": "Event #47 ($2,200 No Limit Hold'em PokerAtlas Championship Title Event)",
@@ -11492,7 +11494,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "satellite": {
     "seats_awarded": 2,
     "target_event": "Event #47 ($2,200 No Limit Hold'em PokerAtlas Championship Title Event)",
@@ -11688,7 +11690,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r123",
@@ -11779,7 +11781,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "satellite": {
     "seats_awarded": 2,
     "target_event": "Event #47 ($2,200 No Limit Hold'em PokerAtlas Championship Title Event)",
@@ -12365,7 +12367,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r130",
@@ -12660,7 +12662,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r133",
@@ -13367,7 +13369,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r140",
@@ -13537,7 +13539,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r142",
@@ -13729,7 +13731,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r144",
@@ -13821,7 +13823,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r145",
@@ -14498,7 +14500,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r152",
@@ -14895,7 +14897,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r156",
@@ -15271,7 +15273,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r160",
@@ -15640,7 +15642,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r164",
@@ -16036,7 +16038,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r168",
@@ -16510,7 +16512,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r173",
@@ -16911,7 +16913,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r177",
@@ -17461,7 +17463,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r183",
@@ -17754,7 +17756,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r186",
@@ -18047,7 +18049,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r189",
@@ -18820,7 +18822,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r197",
@@ -18911,7 +18913,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r198",
@@ -19870,7 +19872,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r208",
@@ -20166,7 +20168,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r211",
@@ -20360,7 +20362,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r213",
@@ -20912,7 +20914,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r219",
@@ -21207,7 +21209,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r222",
@@ -21477,7 +21479,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r225",
@@ -21674,7 +21676,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r227",
@@ -21763,7 +21765,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r228",
@@ -21855,7 +21857,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r229",
@@ -21942,7 +21944,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r230",
@@ -22031,7 +22033,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r231",
