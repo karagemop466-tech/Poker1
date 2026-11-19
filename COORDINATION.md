@@ -1707,7 +1707,7 @@ Build-blocker claim: scripts/check_schedule_render.js and .github/workflows/page
 Done: decision audit in research/readiness-2026-11-19.md, executive summary and Flagged for Review. Re-read the Venetian November schedule and sheet 5 directly (links in report); other rows checked against archives, not redated. No second like-for-like hotel quote. Local schedule validation defect independently fixed in #87; ceded gate and workflow edits to #87/#88 rather than duplicating them.
 ## Session be98ede8 — 2026-11-19
 
-| Task | Status | Owner | File scope |
+| Task | Status | Owner | Scope |
 |---|---|---|---|
 | Distinguish upcoming verified tournament dates from historical rows without changing official data | In progress | be98ede8 | `assets/app.js`, generated `index.html` and `pages/*.html`, `scripts/check_upcoming.js`, `package.json`, `FLAGGED.md`, `COORDINATION.md` |
 
