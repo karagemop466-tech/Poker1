@@ -196,6 +196,17 @@ whether each event is really single entry, and whether the sentence a row quotes
 document it cites. Built by <code>scripts/audit_entry_labels.py</code> from <code>data/entry_evidence_audit.json</code>.</p>
 <div id="content"></div>
 """),
+    # Session dd06081b: the requirement-by-requirement audit page.
+    "pages/requirements.html": ("Requirement coverage", "requirements", """
+<h1>Requirement coverage audit</h1>
+<p class="lead">Every line of the brief, examined one at a time and marked done, partial or blocked, with
+the file that implements it, the page where it can be seen and the official source behind any value.
+A requirement is never marked done because something similar exists: it is marked done when a reader
+can check it on this site, and blocked when no official source answers it.
+<strong>Blocked</strong> always names the question that would close it, and <strong>partial</strong>
+always names the limit.</p>
+<div id="content"></div>
+"""),
 }
 
 for _file, _title, _vid in VENUE_PAGES:

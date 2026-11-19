@@ -29,6 +29,8 @@ REQUIRED_SITE_DOCS = (
     "FLAGGED.md",
     "REVIEW.md",
     "README.md",
+    # Session dd06081b: the requirement-by-requirement audit, rendered at pages/requirements.html.
+    "REQUIREMENTS.md",
 )
 # Exact hosts, not substring matches: data rows must point to official venue / operator sources.
 OPERATOR_SOURCE_HOSTS = {
@@ -82,7 +84,10 @@ KNOWN_PAGES = {"index", "singleEntry", "separate", "unverified", "daily", "hotel
                # check rejects any data-page outside this set. One line, no other change.
                "payouts",
                # Session d8a1f37f: pages/evidence-audit.html.
-               "evidenceAudit"}
+               "evidenceAudit",
+               # Session dd06081b: pages/requirements.html, the requirement-by-requirement
+               # audit page. One line, no other change.
+               "requirements"}
 
 
 def load_json(rel):
@@ -1225,7 +1230,7 @@ MARKER = re.compile(r"^(?:<{7}|={7}|>{7})(?:\s|$)", re.MULTILINE)
 checked_for_markers = []
 for rel in ["index.html", "assets/app.js", "assets/style.css", "scripts/build_site.py", "scripts/build_data.py",
             "scripts/check_links.py", "README.md", "EXECUTIVE_SUMMARY.md", "QUESTIONS.md", "SUGGESTIONS.md",
-            "FLAGGED.md", "REVIEW.md", "COORDINATION.md"]:
+            "FLAGGED.md", "REVIEW.md", "REQUIREMENTS.md", "COORDINATION.md"]:
     path = os.path.join(ROOT, rel)
     if os.path.isfile(path):
         checked_for_markers.append(rel)
@@ -1282,7 +1287,8 @@ for rel_md in REQUIRED_SITE_DOCS + ("COORDINATION.md",):
 # broken table; this session did the same to a new row while adding it. A row whose cell count differs
 # from the header is caught by the renderer's own shape, but a *detached* row is not, so it is checked
 # here: no row may be separated from the table it belongs to by a blank line.
-MD_DOCS = ["README.md", "EXECUTIVE_SUMMARY.md", "QUESTIONS.md", "SUGGESTIONS.md", "FLAGGED.md", "REVIEW.md"]
+MD_DOCS = ["README.md", "EXECUTIVE_SUMMARY.md", "QUESTIONS.md", "SUGGESTIONS.md", "FLAGGED.md", "REVIEW.md",
+           "REQUIREMENTS.md"]
 for rel in MD_DOCS:
     path = os.path.join(ROOT, rel)
     if not os.path.isfile(path):
