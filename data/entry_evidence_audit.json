@@ -3,7 +3,7 @@
  "scope": {
   "tournament_rows": 317,
   "rows_with_rule_fields": 317,
-  "quotes_checked": 944,
+  "quotes_checked": 980,
   "documents_read": 59,
   "daily_rows": 11,
   "affirmative_single_entry_documents": 0,
@@ -21,74 +21,7 @@
  "findings": {
   "quote_not_found": [],
   "document_conflict": [],
-  "silence_claim_contradicted": [
-   {
-    "row_id": "r232",
-    "field": "single_entry",
-    "snapshot": "data/snapshots/v_dec_struct_02.txt",
-    "claim": "no re-entry, rebuy, add-on or multi-flight clause appears anywhere",
-    "document_prints": "subsequent re-entry",
-    "evidence_line": {
-     "line": 68,
-     "text": "subsequent re-entry"
-    }
-   },
-   {
-    "row_id": "r234",
-    "field": "single_entry",
-    "snapshot": "data/snapshots/v_dec_struct_02.txt",
-    "claim": "no re-entry, rebuy, add-on or multi-flight clause appears anywhere",
-    "document_prints": "subsequent re-entry",
-    "evidence_line": {
-     "line": 68,
-     "text": "subsequent re-entry"
-    }
-   },
-   {
-    "row_id": "r245",
-    "field": "single_entry",
-    "snapshot": "data/snapshots/v_dec_struct_02.txt",
-    "claim": "no re-entry, rebuy, add-on or multi-flight clause appears anywhere",
-    "document_prints": "subsequent re-entry",
-    "evidence_line": {
-     "line": 68,
-     "text": "subsequent re-entry"
-    }
-   },
-   {
-    "row_id": "r256",
-    "field": "single_entry",
-    "snapshot": "data/snapshots/v_dec_struct_02.txt",
-    "claim": "no re-entry, rebuy, add-on or multi-flight clause appears anywhere",
-    "document_prints": "subsequent re-entry",
-    "evidence_line": {
-     "line": 68,
-     "text": "subsequent re-entry"
-    }
-   },
-   {
-    "row_id": "r262",
-    "field": "single_entry",
-    "snapshot": "data/snapshots/v_dec_struct_02.txt",
-    "claim": "no re-entry, rebuy, add-on or multi-flight clause appears anywhere",
-    "document_prints": "subsequent re-entry",
-    "evidence_line": {
-     "line": 68,
-     "text": "subsequent re-entry"
-    }
-   },
-   {
-    "row_id": "r279",
-    "field": "single_entry",
-    "snapshot": "data/snapshots/v_dec_struct_02.txt",
-    "claim": "no re-entry, rebuy, add-on or multi-flight clause appears anywhere",
-    "document_prints": "subsequent re-entry",
-    "evidence_line": {
-     "line": 68,
-     "text": "subsequent re-entry"
-    }
-   }
-  ],
+  "silence_claim_contradicted": [],
   "daily_clause_provenance": [
    {
     "kind": "clause_provenance",
@@ -481,7 +414,7 @@
  "counts": {
   "quote_not_found": 0,
   "document_conflict": 0,
-  "silence_claim_contradicted": 6,
+  "silence_claim_contradicted": 0,
   "daily_clause_provenance": 5,
   "monitor_integrity": 10
  }

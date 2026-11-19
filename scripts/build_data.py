@@ -94,6 +94,16 @@ EX_FLIGHT = ("Clause 08: \"Any player who bags chips for Day 2 may not play a su
              "Later entry after busting is not addressed; exclude from the strict shortlist.")
 EX_FLIGHT_EXPLICIT = ("Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight. "
                       "Players who cash on Day 1 but bust before making Day 2 may play another flight.\"")
+# The NYE $200 Bounty sheet (dse_dec_2026-structure_2.pdf, sheet 01) prints a CES-badge
+# discount that "can be applied to the initial entry or any subsequent re-entry". A
+# "subsequent re-entry" is a further entry, so the event is not single entry. The event
+# scope is printed on the sheet's own heading: "Event #29 - $10 Rake Discount for showing
+# your CES Badge", and the clause itself repeats "For Event #29 only".
+EX_DISCOUNT_REENTRY = (
+    "Clause 06: \"The $20 discount can be applied to the initial entry or any subsequent "
+    "re-entry.\" A further entry is contemplated for this event, so it is not single entry. "
+    "The sheet scopes the sentence to Event #29 itself (\"For Event #29 only\"); the other "
+    "bounty events on the same sheet print no re-entry sentence either way.")
 EX_SUBSEQUENT_BUYIN = ("Clause 07: \"All subsequent buy in's after the initial buy in will be $200.\" "
                        "Later buy-ins are allowed, so the event is not single entry.")
 
@@ -1339,6 +1349,18 @@ def build_venetian(rows, series_key, series, page_key, sheet_key, sched_key, str
         continuation = "Restart" in name or "Final Table" in name
         status = sheet["status"]
         ex = sheet.get("ex", EX_SE)
+        # A sheet that prints a further-entry sentence cannot be classified as a
+        # silent candidate: the sentence is evidence AGAINST single entry. This is
+        # the rule the 2026-11-19 audit found was applied to Event #29 only: the
+        # same sheet was read as "re-entry allowed" on that row and as "no such
+        # clause appears anywhere" on the six other bounty events that cite it.
+        if status == "CAND" and (published or {}).get("re_entry_excerpt") \
+                and re.search(r"subsequent re-?entry", (published.get("re_entry_excerpt") or ""), re.I):
+            if not re.search(r"\bfor\s+event\s*#?\s*\d+\b.{0,60}?\bonly\b",
+                             (published.get("re_entry_excerpt") or ""), re.I) \
+                    or no == 29:
+                status = "RE"
+                ex = EX_DISCOUNT_REENTRY
         override = DEC_EVENT_OVERRIDE.get((series_key, no)) if series_key == "dec" else None
         if override:
             status = override["status"]

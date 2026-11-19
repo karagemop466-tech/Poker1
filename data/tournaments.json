@@ -22137,20 +22137,21 @@
    "lips_fee_usd": null,
    "prize_pool_usd": 160,
    "gtd_multiple": 40.0,
-   "entry_status": "CAND",
+   "entry_status": "RE",
    "rules": {
     "single_entry": {
-     "value": "not stated",
-     "excerpt": "No re-entry, rebuy, add-on or multi-flight clause appears anywhere on this structure sheet (every numbered clause was read on 2026-11-16).",
+     "value": "not single entry",
+     "excerpt": "Clause 06: \"The $20 discount can be applied to the initial entry or any subsequent re-entry.\" A further entry is contemplated for this event, so it is not single entry. The sheet scopes the sentence to Event #29 itself (\"For Event #29 only\"); the other bounty events on the same sheet print no re-entry sentence either way.",
      "source": {
       "label": "Structure sheet #2",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_2.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-17",
+     "clause": "06"
     },
     "re_entry": {
-     "value": "not mentioned",
-     "excerpt": "No re-entry, rebuy, add-on or multi-flight clause appears anywhere on this structure sheet (every numbered clause was read on 2026-11-16).",
+     "value": "allowed",
+     "excerpt": "Clause 06: \"The $20 discount can be applied to the initial entry or any subsequent re-entry.\" A further entry is contemplated for this event, so it is not single entry. The sheet scopes the sentence to Event #29 itself (\"For Event #29 only\"); the other bounty events on the same sheet print no re-entry sentence either way.",
      "source": {
       "label": "Structure sheet #2",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_2.pdf"
@@ -22159,7 +22160,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "No re-entry, rebuy, add-on or multi-flight clause appears anywhere on this structure sheet (every numbered clause was read on 2026-11-16).",
+     "excerpt": "Clause 06: \"The $20 discount can be applied to the initial entry or any subsequent re-entry.\" A further entry is contemplated for this event, so it is not single entry. The sheet scopes the sentence to Event #29 itself (\"For Event #29 only\"); the other bounty events on the same sheet print no re-entry sentence either way.",
      "source": {
       "label": "Structure sheet #2",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_2.pdf"
@@ -22177,7 +22178,7 @@
      "clause": "06"
     }
    },
-   "entry_rule": "Unverified freezeout: sheet reviewed; no written maximum entry, rebuy or add-on policy.",
+   "entry_rule": "Re-entry confirmed: structure sheet states re-entry terms.",
    "labels": [
     "bounty"
    ],
@@ -22313,20 +22314,21 @@
    "lips_fee_usd": null,
    "prize_pool_usd": 160,
    "gtd_multiple": 40.0,
-   "entry_status": "CAND",
+   "entry_status": "RE",
    "rules": {
     "single_entry": {
-     "value": "not stated",
-     "excerpt": "No re-entry, rebuy, add-on or multi-flight clause appears anywhere on this structure sheet (every numbered clause was read on 2026-11-16).",
+     "value": "not single entry",
+     "excerpt": "Clause 06: \"The $20 discount can be applied to the initial entry or any subsequent re-entry.\" A further entry is contemplated for this event, so it is not single entry. The sheet scopes the sentence to Event #29 itself (\"For Event #29 only\"); the other bounty events on the same sheet print no re-entry sentence either way.",
      "source": {
       "label": "Structure sheet #2",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_2.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-17",
+     "clause": "06"
     },
     "re_entry": {
-     "value": "not mentioned",
-     "excerpt": "No re-entry, rebuy, add-on or multi-flight clause appears anywhere on this structure sheet (every numbered clause was read on 2026-11-16).",
+     "value": "allowed",
+     "excerpt": "Clause 06: \"The $20 discount can be applied to the initial entry or any subsequent re-entry.\" A further entry is contemplated for this event, so it is not single entry. The sheet scopes the sentence to Event #29 itself (\"For Event #29 only\"); the other bounty events on the same sheet print no re-entry sentence either way.",
      "source": {
       "label": "Structure sheet #2",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_2.pdf"
@@ -22335,7 +22337,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "No re-entry, rebuy, add-on or multi-flight clause appears anywhere on this structure sheet (every numbered clause was read on 2026-11-16).",
+     "excerpt": "Clause 06: \"The $20 discount can be applied to the initial entry or any subsequent re-entry.\" A further entry is contemplated for this event, so it is not single entry. The sheet scopes the sentence to Event #29 itself (\"For Event #29 only\"); the other bounty events on the same sheet print no re-entry sentence either way.",
      "source": {
       "label": "Structure sheet #2",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_2.pdf"
@@ -22353,7 +22355,7 @@
      "clause": "06"
     }
    },
-   "entry_rule": "Unverified freezeout: sheet reviewed; no written maximum entry, rebuy or add-on policy.",
+   "entry_rule": "Re-entry confirmed: structure sheet states re-entry terms.",
    "labels": [
     "bounty"
    ],
@@ -23343,20 +23345,21 @@
    "lips_fee_usd": null,
    "prize_pool_usd": 160,
    "gtd_multiple": 40.0,
-   "entry_status": "CAND",
+   "entry_status": "RE",
    "rules": {
     "single_entry": {
-     "value": "not stated",
-     "excerpt": "No re-entry, rebuy, add-on or multi-flight clause appears anywhere on this structure sheet (every numbered clause was read on 2026-11-16).",
+     "value": "not single entry",
+     "excerpt": "Clause 06: \"The $20 discount can be applied to the initial entry or any subsequent re-entry.\" A further entry is contemplated for this event, so it is not single entry. The sheet scopes the sentence to Event #29 itself (\"For Event #29 only\"); the other bounty events on the same sheet print no re-entry sentence either way.",
      "source": {
       "label": "Structure sheet #2",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_2.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-17",
+     "clause": "06"
     },
     "re_entry": {
-     "value": "not mentioned",
-     "excerpt": "No re-entry, rebuy, add-on or multi-flight clause appears anywhere on this structure sheet (every numbered clause was read on 2026-11-16).",
+     "value": "allowed",
+     "excerpt": "Clause 06: \"The $20 discount can be applied to the initial entry or any subsequent re-entry.\" A further entry is contemplated for this event, so it is not single entry. The sheet scopes the sentence to Event #29 itself (\"For Event #29 only\"); the other bounty events on the same sheet print no re-entry sentence either way.",
      "source": {
       "label": "Structure sheet #2",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_2.pdf"
@@ -23365,7 +23368,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "No re-entry, rebuy, add-on or multi-flight clause appears anywhere on this structure sheet (every numbered clause was read on 2026-11-16).",
+     "excerpt": "Clause 06: \"The $20 discount can be applied to the initial entry or any subsequent re-entry.\" A further entry is contemplated for this event, so it is not single entry. The sheet scopes the sentence to Event #29 itself (\"For Event #29 only\"); the other bounty events on the same sheet print no re-entry sentence either way.",
      "source": {
       "label": "Structure sheet #2",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_2.pdf"
@@ -23383,7 +23386,7 @@
      "clause": "06"
     }
    },
-   "entry_rule": "Unverified freezeout: sheet reviewed; no written maximum entry, rebuy or add-on policy.",
+   "entry_rule": "Re-entry confirmed: structure sheet states re-entry terms.",
    "labels": [
     "bounty"
    ],
@@ -24361,20 +24364,21 @@
    "lips_fee_usd": null,
    "prize_pool_usd": 160,
    "gtd_multiple": 40.0,
-   "entry_status": "CAND",
+   "entry_status": "RE",
    "rules": {
     "single_entry": {
-     "value": "not stated",
-     "excerpt": "No re-entry, rebuy, add-on or multi-flight clause appears anywhere on this structure sheet (every numbered clause was read on 2026-11-16).",
+     "value": "not single entry",
+     "excerpt": "Clause 06: \"The $20 discount can be applied to the initial entry or any subsequent re-entry.\" A further entry is contemplated for this event, so it is not single entry. The sheet scopes the sentence to Event #29 itself (\"For Event #29 only\"); the other bounty events on the same sheet print no re-entry sentence either way.",
      "source": {
       "label": "Structure sheet #2",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_2.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-17",
+     "clause": "06"
     },
     "re_entry": {
-     "value": "not mentioned",
-     "excerpt": "No re-entry, rebuy, add-on or multi-flight clause appears anywhere on this structure sheet (every numbered clause was read on 2026-11-16).",
+     "value": "allowed",
+     "excerpt": "Clause 06: \"The $20 discount can be applied to the initial entry or any subsequent re-entry.\" A further entry is contemplated for this event, so it is not single entry. The sheet scopes the sentence to Event #29 itself (\"For Event #29 only\"); the other bounty events on the same sheet print no re-entry sentence either way.",
      "source": {
       "label": "Structure sheet #2",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_2.pdf"
@@ -24383,7 +24387,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "No re-entry, rebuy, add-on or multi-flight clause appears anywhere on this structure sheet (every numbered clause was read on 2026-11-16).",
+     "excerpt": "Clause 06: \"The $20 discount can be applied to the initial entry or any subsequent re-entry.\" A further entry is contemplated for this event, so it is not single entry. The sheet scopes the sentence to Event #29 itself (\"For Event #29 only\"); the other bounty events on the same sheet print no re-entry sentence either way.",
      "source": {
       "label": "Structure sheet #2",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_2.pdf"
@@ -24401,7 +24405,7 @@
      "clause": "06"
     }
    },
-   "entry_rule": "Unverified freezeout: sheet reviewed; no written maximum entry, rebuy or add-on policy.",
+   "entry_rule": "Re-entry confirmed: structure sheet states re-entry terms.",
    "labels": [
     "bounty"
    ],
@@ -24915,20 +24919,21 @@
    "lips_fee_usd": null,
    "prize_pool_usd": 160,
    "gtd_multiple": 40.0,
-   "entry_status": "CAND",
+   "entry_status": "RE",
    "rules": {
     "single_entry": {
-     "value": "not stated",
-     "excerpt": "No re-entry, rebuy, add-on or multi-flight clause appears anywhere on this structure sheet (every numbered clause was read on 2026-11-16).",
+     "value": "not single entry",
+     "excerpt": "Clause 06: \"The $20 discount can be applied to the initial entry or any subsequent re-entry.\" A further entry is contemplated for this event, so it is not single entry. The sheet scopes the sentence to Event #29 itself (\"For Event #29 only\"); the other bounty events on the same sheet print no re-entry sentence either way.",
      "source": {
       "label": "Structure sheet #2",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_2.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-17",
+     "clause": "06"
     },
     "re_entry": {
-     "value": "not mentioned",
-     "excerpt": "No re-entry, rebuy, add-on or multi-flight clause appears anywhere on this structure sheet (every numbered clause was read on 2026-11-16).",
+     "value": "allowed",
+     "excerpt": "Clause 06: \"The $20 discount can be applied to the initial entry or any subsequent re-entry.\" A further entry is contemplated for this event, so it is not single entry. The sheet scopes the sentence to Event #29 itself (\"For Event #29 only\"); the other bounty events on the same sheet print no re-entry sentence either way.",
      "source": {
       "label": "Structure sheet #2",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_2.pdf"
@@ -24937,7 +24942,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "No re-entry, rebuy, add-on or multi-flight clause appears anywhere on this structure sheet (every numbered clause was read on 2026-11-16).",
+     "excerpt": "Clause 06: \"The $20 discount can be applied to the initial entry or any subsequent re-entry.\" A further entry is contemplated for this event, so it is not single entry. The sheet scopes the sentence to Event #29 itself (\"For Event #29 only\"); the other bounty events on the same sheet print no re-entry sentence either way.",
      "source": {
       "label": "Structure sheet #2",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_2.pdf"
@@ -24955,7 +24960,7 @@
      "clause": "06"
     }
    },
-   "entry_rule": "Unverified freezeout: sheet reviewed; no written maximum entry, rebuy or add-on policy.",
+   "entry_rule": "Re-entry confirmed: structure sheet states re-entry terms.",
    "labels": [
     "bounty"
    ],
@@ -26455,20 +26460,21 @@
    "lips_fee_usd": null,
    "prize_pool_usd": 160,
    "gtd_multiple": 40.0,
-   "entry_status": "CAND",
+   "entry_status": "RE",
    "rules": {
     "single_entry": {
-     "value": "not stated",
-     "excerpt": "No re-entry, rebuy, add-on or multi-flight clause appears anywhere on this structure sheet (every numbered clause was read on 2026-11-16).",
+     "value": "not single entry",
+     "excerpt": "Clause 06: \"The $20 discount can be applied to the initial entry or any subsequent re-entry.\" A further entry is contemplated for this event, so it is not single entry. The sheet scopes the sentence to Event #29 itself (\"For Event #29 only\"); the other bounty events on the same sheet print no re-entry sentence either way.",
      "source": {
       "label": "Structure sheet #2",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_2.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-17",
+     "clause": "06"
     },
     "re_entry": {
-     "value": "not mentioned",
-     "excerpt": "No re-entry, rebuy, add-on or multi-flight clause appears anywhere on this structure sheet (every numbered clause was read on 2026-11-16).",
+     "value": "allowed",
+     "excerpt": "Clause 06: \"The $20 discount can be applied to the initial entry or any subsequent re-entry.\" A further entry is contemplated for this event, so it is not single entry. The sheet scopes the sentence to Event #29 itself (\"For Event #29 only\"); the other bounty events on the same sheet print no re-entry sentence either way.",
      "source": {
       "label": "Structure sheet #2",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_2.pdf"
@@ -26477,7 +26483,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "No re-entry, rebuy, add-on or multi-flight clause appears anywhere on this structure sheet (every numbered clause was read on 2026-11-16).",
+     "excerpt": "Clause 06: \"The $20 discount can be applied to the initial entry or any subsequent re-entry.\" A further entry is contemplated for this event, so it is not single entry. The sheet scopes the sentence to Event #29 itself (\"For Event #29 only\"); the other bounty events on the same sheet print no re-entry sentence either way.",
      "source": {
       "label": "Structure sheet #2",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_2.pdf"
@@ -26495,7 +26501,7 @@
      "clause": "06"
     }
    },
-   "entry_rule": "Unverified freezeout: sheet reviewed; no written maximum entry, rebuy or add-on policy.",
+   "entry_rule": "Re-entry confirmed: structure sheet states re-entry terms.",
    "labels": [
     "bounty"
    ],
