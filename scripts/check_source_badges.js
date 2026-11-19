@@ -81,23 +81,31 @@ const wait = (ms) => new Promise((r) => setTimeout(r, ms));
   "the mark survives the re-render after sorting");
   w1.close();
 
-  /* ---- scenario 2: the real changes.json on file (no marks) ---- */
+  /* ---- scenario 2: the real changes.json on file - the invariant is the JOIN, not emptiness
+     (hardened twice on 2026-11-19: sessions f3a84f9b and 336fb2af independently reached the same
+     fix after the monitor landed its first real row changes, which made the old "assert 0 chips"
+     check a false alarm). ---- */
   const w2 = load("pages/venue-venetian.html", {});
   await wait(600);
   const real = JSON.parse(fs.readFileSync(path.join(ROOT, "data/changes.json"), "utf8"));
-  const chips2 = Array.from(w2.document.querySelectorAll("#events td"))
-    .filter((td) => /source changed - re-check/.test(text(td)));
   // The expected count comes from the files on disk, not from a fixed zero: the monitor
   // legitimately lists changed Venetian rows (2026-11-19 refresh), and each must be marked.
   const changedIds = new Set((real.changed || []).map((c) => c.id));
   const dataRows = JSON.parse(fs.readFileSync(path.join(ROOT, "data/tournaments.json"), "utf8")).rows;
   const expectedMarks = dataRows.filter((r) => /Venetian/.test(r.venue) && changedIds.has(r.id)).length;
+  const chips2 = Array.from(w2.document.querySelectorAll("#events td"))
+    .filter((td) => /source changed - re-check/.test(text(td)));
   assert.equal(chips2.length, expectedMarks,
     "the Venetian marks equal the changed Venetian rows listed in changes.json (" + expectedMarks + ")");
-  if (real.checked_at) {
+  if (expectedMarks > 0) {
+    assert.ok(chips2.every((td) => /as of /.test(text(td)) && td.querySelector("a[href]")),
+      "every real-change chip names its re-check date and links its source");
+  }
+  const asOf = String(real.checked_at || "").slice(0, 10);
+  if (asOf) {
     const dated = Array.from(w2.document.querySelectorAll("#events td"))
-      .filter((td) => (text(td).match(new RegExp("no source change as of " + real.checked_at)) || []).length > 0);
-    assert.ok(dated.length >= 1, "the published state names the real check date " + real.checked_at);
+      .filter((td) => (text(td).match(new RegExp("no source change as of " + asOf)) || []).length > 0);
+    assert.ok(dated.length >= 1, "the published state names the real check date " + asOf);
   }
   w2.close();
   console.log("check_source_badges: OK");
