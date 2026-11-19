@@ -2109,3 +2109,11 @@ The existing checks/data remain the baseline (not refreshed by this session): la
 **Irregularities:** none new. Prior irregularities remain on `pages/flagged.html`.
 
 **Pull request / merge:** see the entry below this one, appended after the PR is merged.
+
+## Session aa1e89b0 · 2026-11-19 · live re-verification of the Venetian November schedule and the single-entry evidence, branch `arena/aa1e89b0-poker1`
+
+| Task | Status | Owner | File scope |
+|---|---|---|---|
+| Re-read the official Venetian DeepStack IV page and sample structure sheets live; check that the stored rows match them, and record whether any sheet affirmatively states single entry, no re-entry, no rebuy or no add-on | in progress | aa1e89b0 | `research/verification-2026-11-19-aa1e89b0.md`, `COORDINATION.md` only |
+
+Base: `main` at `3f3f6bb` (PR #101). Branch was clean before this entry. No row, rate or generated page is changed by this session; the claim is pushed before the research note is written. Other open PRs (#96, #98, #102) are other sessions' work and are not touched.
