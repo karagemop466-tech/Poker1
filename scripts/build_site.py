@@ -92,9 +92,9 @@ PAGES = {
 <div class="card callout" style="margin-top:18px">Flags do not block publication. Every flagged item lists its source and is kept on the Flagged for Review page.</div>
 """),
     "pages/single-entry.html": ("Single entry", "singleEntry", """
-<h1>Single-entry tournaments (verified)</h1>
-<p class="lead">Each row has its structure sheet read, with no re-entry, rebuy, add-on, or flight clause. Guarantee ÷ buy-in is the default sort. Use the filters to narrow by date, venue, series, buy-in or label.</p>
-<div class="card callout">How the single-entry label is decided: the event's own official structure sheet was read clause by clause and contains <strong>no re-entry, rebuy, add-on or multi-flight clause</strong>. No Venetian sheet prints an affirmative "single entry" sentence, so this is single entry <strong>by absence of contrary terms</strong>, not a written maximum-entry promise — each row prints the exact basis with its sheet link. Anything with printed re-entry, limited-entry or flight language is in the separate section, not here.</div>
+<h1>Single-entry tournament candidates</h1>
+<p class="lead">Each row has its structure sheet read, with no re-entry, rebuy, add-on, or flight clause. Guarantee ÷ buy-in is the default sort: it describes the listed guarantee relative to the entry cost, not expected winnings. The list defaults to today and later in Las Vegas; turn off that filter to see past dates. Today’s rows can include events that have already started.</p>
+<div class="card callout">How the single-entry label is decided: the event's own official structure sheet was read clause by clause and contains <strong>no re-entry, rebuy, add-on or multi-flight clause</strong>. No Venetian sheet prints an affirmative "single entry" sentence, so these are <strong>candidates based on the absence of contrary terms</strong>, not events with a verified written maximum-entry promise — each row prints the exact basis with its sheet link. Anything with printed re-entry, limited-entry or flight language is in the separate section, not here.</div>
 """ + FILTERS + """
 <div class="toolbar"><span class="small">""" + COUNT + """</span></div>
 <div id="content"></div>

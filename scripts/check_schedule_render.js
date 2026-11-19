@@ -36,13 +36,19 @@ function sleep(ms) { return new Promise((r) => setTimeout(r, ms)); }
   const problems = [];
   const nextDay = (text.match(/\(next day\)/g) || []).length;
   if (nextDay < 1) problems.push("no `(next day)` label rendered, so a wrapped end time is still shown as a bare clock time");
-  if (/after midnight, so no later event/.test(text) === false)
-    problems.push("no after-midnight fallback note rendered");
-  if (/\b02:55 AM\b/.test(text) === false)
-    problems.push("expected wrapped end time 02:55 AM not rendered at all");
-  // A bare wrapped time must never appear without the qualifier.
-  const bare = text.match(/\d{1,2}:\d{2} (?:AM|PM)(?! \(next day\))/g) || [];
-  console.log("schedule render: `(next day)` labels =", nextDay, "| total clock times =", bare.length);
+  const { days } = JSON.parse(fs.readFileSync(path.join(ROOT, "data/schedule.json"), "utf8"));
+  for (const day of days) {
+    const card = dom.window.document.getElementById("day-" + day.date);
+    if (!card || (day.fallback_note && !card.textContent.includes(day.fallback_note))) {
+      problems.push(day.date + ": missing schedule card or fallback explanation");
+    }
+    const rendered = card?.querySelectorAll("li .chip.info");
+    const fallbacks = [...(rendered || [])].filter((chip) => chip.textContent.startsWith("Conditional fallback"));
+    if (fallbacks.length !== Number(Boolean(day.fallback_id))) {
+      problems.push(day.date + ": rendered fallback count differs from the schedule");
+    }
+  }
+  console.log("schedule render: `(next day)` labels =", nextDay, "| days =", days.length);
   if (problems.length) {
     console.error("FAIL\n  " + problems.join("\n  "));
     process.exit(1);
