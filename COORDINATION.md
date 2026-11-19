@@ -91,6 +91,8 @@ from main (its booking-hold decision supersedes our ranked table, which predated
 mode with zero rows. `scripts/ui_test.js` now asserts that default and clears the toggle to inspect the 80 candidates.
 Re-verified after the second merge: all 12 gates in this record pass; `build_data`/`build_site` are idempotent.
 
+**Integration pull request:** https://github.com/karagemop466-tech/Poker1/pull/95 (`arena/ab7e4d46-poker1` → `main`). Merge result and Pages deploy are recorded below once the pull request is merged.
+
 **Open items carried to review (not blocking, see Flagged for Review):** F78/F79 of PR #79 (WPT Fall Festival card,
 calendar-view quote); Q-J5 (Bellagio single-entry reading); the six MGM-family timeouts; no live re-fetch from this sandbox.
 
