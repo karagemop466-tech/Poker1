@@ -2189,3 +2189,36 @@ No tournament, hotel, rate, walking or entry-rule fact was changed in this sessi
 - CI `validate`: success (run 44511464875 — dataset rebuild no diff, pages match committed, check_links OK, verify_rows 335 rows / 1,369 checks / 0 hard failures, smoke 30/30, schedule arithmetic OK, rendered links 693/0).
 - GitHub Pages: `pages` API `status: built` for merge commit `82aa4857` (deploy run 1383792609, 2026-11-19T11:14:35Z); live at https://karagemop466-tech.github.io/Poker1/ .
 - No data changes in this session; all published values remain sourced to official documents; blanks and flags (F1–F76+) remain published on the Flagged for Review page and do not block publication.
+
+## Session 98241f2f · 2026-11-19 · live re-read of the Venetian DeepStack IV event listing, branch `arena/98241f2f-poker1`
+
+Base: `main` at `3f3f6bb` (PR #101 merged). Branch and tree clean before this claim. Open PRs at claim time: #102 (`eb3bb028`, final integration), #98 (`13eafa44`, integration), #96 (draft, `cd330ba8`). This session does not touch their files.
+
+| Task | Status | Owner | File scope |
+|---|---|---|---|
+| Re-read the official Venetian DeepStack Extravaganza IV event listing (`dse-nov-2026.html`, all 4 chunks) live from this session and compare every listed event (date, start time, event number, name, structure-sheet link) with the matching rows in `data/tournaments.json`. Log every match and every mismatch. No row value is edited. | done (2026-11-19) | 98241f2f | `research/live-reread-98241f2f/` (new files only), `COORDINATION.md` |
+
+Changes to `data/*.json`, `pages/*.html`, `assets/`, `scripts/` and `FLAGGED.md` are **not** made in this session. Any mismatch is logged for the integration owner.
+
+### Session 98241f2f — completion record (2026-11-19)
+
+**Sources read live (official, fetched from this session with the page-fetch tool):**
+- Event listing, all 4 chunks: https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html — 94 entries, 16 Nov – 23 Dec 2026.
+- Poker room page: https://www.venetianlasvegas.com/resort/casino/poker.html — no entry or re-entry policy stated.
+- Structure sheet 1: https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf — re-read in full; matches archived `v_nov_struct_01.txt` on every compared field.
+- Structure sheet 10: https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf — re-read in full; matches archived `v_nov_struct_10.txt` on every compared field.
+
+**Verification (all re-runnable, read-only):**
+- `research/live-reread-98241f2f/compare_venetian_dse_iv.py`: key = (date, start, event number, structure file). **94 / 94 matched**, 0 missing, 0 extra.
+- `research/live-reread-98241f2f/check_values_venetian_dse_iv.py`: buy-in, guarantee and restart/continuation kind. **94 / 94 rows, 0 mismatches.**
+- `python3 scripts/build_data.py` and `build_site.py`: deterministic, no diff. `python3 scripts/check_links.py`: OK.
+
+**Result:** no value, source or `last_checked` changed. Single-entry evidence is still absent from every page and sheet re-read, so the 0-SE classification stands.
+
+**Irregularities (for review; none changes a published value):**
+1. Five wording-only name differences between the official listing and `data/tournaments.json`: events 8, 18, 20, 52 and 57 (listed in `research/live-reread-98241f2f/README.md`).
+2. A transcription note: in chunk 1 the listing is cut mid-row at 28 November. The date is taken from the cut text "Saturday, November 28, 202", which belongs to that same row.
+
+**Not done in this session (honest limits):** the other 36 November sheets and the 15 December (NYE) sheets were not re-read live. The sandbox bash network cannot reach the official hosts, so only the page-fetch tool could read them. Google/Apple walking checks, live hotel rate lookups and a Strip-wide search are out of scope for this claim and were not attempted.
+
+**Files changed:** `research/live-reread-98241f2f/` (new: README, TSV listing, two read-only checkers) and `COORDINATION.md` only.
