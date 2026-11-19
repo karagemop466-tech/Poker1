@@ -1,3 +1,30 @@
+# Session cebd4457 — branch `arena/cebd4457-poker1` (base `f5ecde0` = `main` after PR #118)
+
+Session `cebd4457` works on branch `arena/cebd4457-poker1` (fixed for this session), based on `main` at
+`f5ecde040b29e402aea7b739eabd28727b1c7859` (PR #118 merged). `git rev-list --left-right --count
+origin/main...HEAD` = `0 0`; clean tree at claim time. Claim written and pushed before any data,
+script or page change.
+
+**Board state read at claim time.** One open PR: **#113** (`arena/98241f2f-poker1`, board-record only
+(COORDINATION.md +11 lines), CONFLICTING, last commit 2026-11-19T11:25:48Z — more than 60 minutes stale).
+Its content (record of PR #106's merge result) is preserved by this session per the takeover rule; the PR
+will be closed with a disposition comment, no work discarded. No other session holds an open claim.
+
+| # | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| 1 | Claim + board read (this section, pushed first). | **done** | cebd4457 | `COORDINATION.md` |
+| 2 | Apply the pending 2026-11-19 live re-reads to the data layer: sessions `336fb2af` and `98241f2f` both re-read the official Venetian DSE IV November page live on 2026-11-19 (94/94 rows matched each, independently) and recorded the result "for the data owner to apply through `build_data.py`". Independently re-read the official sources live from this session (page-fetch tool), confirm row-by-row, and advance `last_checked` to 2026-11-19 **only** on rows whose official source was actually re-read and matched. No value changes. | in progress | cebd4457 | `scripts/build_data.py`, generated `data/*.json`, generated `pages/*.html`, `research/verification-2026-11-19-cebd4457.md`, `COORDINATION.md` |
+| 3 | Stale-PR disposition for #113 (98241f2f, board-record only): adopt its record content into this board, close the PR with a disposition comment. | in progress | cebd4457 | `COORDINATION.md`, PR #113 comment |
+| 4 | SUGGESTIONS P3 (open, low): publish an **"effectively single entry" descriptive flag** on multi-flight rows whose structure sheet prices every flight at the same amount and imposes no penalty on a player who re-enters a later flight — a flag beside the existing classification, never a reclassification: the ranking and `SE` bar are unchanged, and the flag always carries the sheet clause that supports it plus the explicit note that the sheet is silent on a whole-event freezeout rule. | in progress | cebd4457 | `scripts/build_data.py`, generated `data/*.json`, `scripts/check_links.py` (flag-evidence check), `scripts/build_site.py`/`assets/app.js` (chip + tooltip), generated pages, `SUGGESTIONS.md` (P3 status), `COORDINATION.md` |
+| 5 | Final integration for this session: rebuild data + pages deterministically, run the full gate set (python + npm), run the unit tests, write the dated verification record, open PR to `main`, merge after green `validate`, confirm Pages deploy, record PR link + merge + deploy here. | in progress | cebd4457 | all of the above + `COORDINATION.md` |
+
+No official value is changed except where this session (or a merged session's recorded re-read, adopted
+with its evidence) actually re-read the source; anything that cannot be confirmed stays blank and flagged.
+`last_checked` advances only on sources actually re-read. Files of still-active sessions are not edited:
+none found beyond stale PR #113 above.
+
+---
+
 # Session f3a84f9b — branch `arena/f3a84f9b-poker1` (base `3f3f6bb` = `main` after PR #101)
 
 Session `f3a84f9b` works on branch `arena/f3a84f9b-poker1` (fixed for this session), based on `main` at
