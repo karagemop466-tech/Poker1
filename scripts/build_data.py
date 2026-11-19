@@ -70,7 +70,7 @@ SRC = {
     # "Caesars Palace Poker Room ... daily tournaments" / "View Schedule". It prints the
     # whole daily schedule with buy-ins, add-on, chips, level length, guarantee, the fee
     # split and the registration rule, so the daily feed no longer has to rest on an
-    # editorial article (which now returns 404 - F78).
+    # editorial article (which now returns 404 - F84).
     "caesars_daily_flyer": ("https://www.caesars.com/content/dam/empire/clv/casino/poker/"
                             "tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf"),
     "caesars_casino": "https://www.caesars.com/caesars-palace/casino",
@@ -85,6 +85,14 @@ SRC = {
     "clark_county_tle_guide": ("https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:"
                                "689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/"
                                "genl-info-guide-for-tles-july-2021.pdf"),
+    # Session 957764d3 (2026-11-19): a SECOND official Clark County document that prints the
+    # same licensed-establishment table - "Transient Lodging Licenses by Category as of 07-2021".
+    # It was found by reading the county's own published list and it prints the same licence
+    # numbers, addresses, status, 13.38% rate and category for all seven hotels this site
+    # publishes, so the hotel rows now cite two county records instead of one (F89).
+    "clark_county_tle_licenses": ("https://www.clarkcountynv.gov/assets/documents/business/"
+                                  "doing_business_with_clark_county/"
+                                  "transient-lodging-licenses-by-category-as-of-07-2021.pdf"),
 }
 
 # ---------- rule excerpt strings reused by the Venetian structure sheets ----------
@@ -1098,7 +1106,7 @@ BELLAGIO_DAILY = [
       fee="Rule 7: \"Of the $600 Buy-in, $510 goes to the Prize Pool, $50 is Admin Fees and $40 is "
           "optional staff gratuity.\" Rule 9: the $40 gratuity \"will grant players an extra 20,000 "
           "chips\". The $600 figures are what the flyer prints even though its heading reads "
-          "\"NLH $1100 BUY-IN\" and the file is named $1,000 (F79).",
+          "\"NLH $1100 BUY-IN\" and the file is named $1,000 (F32, F85).",
       ex="Rule 3: \"Registration will be open until the start of Level 10. (Approximately 5:15pm for "
          "Flights 1A, 1B, 4:15pm for 1C and 9:30pm for Flight D).\" Rule 6: \"Each Flight would play "
          "until the money (12.5%). Must bag chips to make Day 2 and be in the money.\"",
@@ -1114,7 +1122,7 @@ BELLAGIO_DAILY = [
              "\"at least $50,000\" applies to the Combined Prize Pool across flights, not to one "
              "flight. Rule 4 also names a Combined Final Day 2 of 9/13/26, a date before this row was "
              "published on 2026-11-17, so the flyer is not current. Buy-in, guarantee and entry rule "
-             "are not confirmed (F79)."],
+             "are not confirmed (F32, F85)."],
       source="https://bellagio.mgmresorts.com/en/casino/poker.html",
       page="https://bellagio.mgmresorts.com/en/casino/poker.html",
       document_url="https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf",
@@ -2004,6 +2012,28 @@ CC_TAX_RATE = 13.38
 CC_TAX_AS_OF = "the licensed-establishment table as of April 2021"
 CC_TAX_LABEL = ("Clark County Department of Business License, General Information Guide for "
                 "Transient Lodging Establishments (official)")
+# The county publishes the same licensed-establishment table in a second official document.
+CC_TAX_LABEL_2 = ("Clark County Department of Business License, Transient Lodging Licenses by "
+                  "Category as of 07-2021 (official)")
+# Session 957764d3, 2026-11-19: the Venetian/Palazzo row is the one cell in the county table
+# that different PDF text extractors read differently, so the row says so (F89). The value
+# published is the one three independent extractions agree on.
+CC_READ_NOTE = {
+    "venetian": ("Reading note (F89): this is the one row of the county table that different PDF "
+                 "text extractors do not read identically - three of them print the licence as "
+                 "\"1003089.RES-001\" and the DBA name truncated as \"Palazzo Resort Hotel Casin\", "
+                 "one prints \"1000389.RES-001\" and the full name. The value published here is the "
+                 "one three extractions agree on, the DBA is quoted exactly as printed (truncated), "
+                 "and the county's second list of the same table is cited alongside it so a reader "
+                 "can check both."),
+    "palazzo": ("Reading note (F89): this is the one row of the county table that different PDF "
+                "text extractors do not read identically - three of them print the licence as "
+                "\"1003089.RES-001\" and the DBA name truncated as \"Palazzo Resort Hotel Casin\", "
+                "one prints \"1000389.RES-001\" and the full name. The value published here is the "
+                "one three extractions agree on, the DBA is quoted exactly as printed (truncated), "
+                "and the county's second list of the same table is cited alongside it so a reader "
+                "can check both."),
+}
 
 
 def cc_tax_note(hotel_id, extra=None):
@@ -2016,10 +2046,15 @@ def cc_tax_note(hotel_id, extra=None):
             "Hotel in the Stadium District and Primary Gaming Corridor at 13.38%% "
             "(5.5 + 2 + 1 + 1 + 3 + .88), rates effective 3-1-17."
             % (rec["licence"], rec["dba"], rec["address"], rec["licensed_as"], CC_TAX_AS_OF))
+    note += (" The same licensed-establishment table is printed by the county's second official "
+             "document, \"Transient Lodging Licenses by Category as of 07-2021\", which lists this "
+             "property with the same licence number, address, status and rate.")
     if rec.get("dba_note"):
         note += " (DBA name: " + rec["dba_note"] + ")"
     if extra:
         note += " " + extra
+    if hotel_id in CC_READ_NOTE:
+        note += " " + CC_READ_NOTE[hotel_id]
     return note
 
 
@@ -2703,8 +2738,15 @@ def main():
         h = dict(h)
         # The room tax on every row now cites the taxing authority, so that source is
         # listed on the row next to the operator's own pages.
-        h["sources"] = list(h.get("sources") or []) + [
-            {"label": CC_TAX_LABEL, "url": SRC["clark_county_tle_guide"]}]
+        # Cite each county document once: the row may already carry the guide.
+        srcs = list(h.get("sources") or [])
+        have = {x.get("url") for x in srcs if isinstance(x, dict)}
+        for label, url in ((CC_TAX_LABEL, SRC["clark_county_tle_guide"]),
+                           (CC_TAX_LABEL_2, SRC["clark_county_tle_licenses"])):
+            if url not in have:
+                srcs.append({"label": label, "url": url})
+                have.add(url)
+        h["sources"] = srcs
         h["tax_licence"] = CLARK_COUNTY_TAX[h["id"]]["licence"]
         h["tax_licensed_as"] = CLARK_COUNTY_TAX[h["id"]]["licensed_as"]
         h["tax_source_url"] = SRC["clark_county_tle_guide"]

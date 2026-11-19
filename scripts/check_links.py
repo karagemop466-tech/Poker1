@@ -1080,6 +1080,38 @@ for rel in MD_DOCS:
         else:
             in_table, header_cols = False, None
 
+# --- Flag ids and section letters must be unique. F90 recorded five ids (F77-F81) used twice in
+# FLAGGED.md by two parallel sessions, and two sections both lettered "G": a reader following "F79"
+# could not tell which finding it meant, and the data cited both meanings. This check fails the
+# build when any id in a "table row" cell appears twice, or when two sections share a letter.
+def _flag_ids_and_sections(rel):
+    path = os.path.join(ROOT, rel)
+    if not os.path.isfile(path):
+        return [], []
+    with open(path, encoding="utf-8") as stream:
+        text = stream.read()
+    ids = re.findall(r"^\| ([A-Z]{1,2}\d{1,3}) \|", text, flags=re.MULTILINE)
+    letters = re.findall(r"^## ([A-Z])\.", text, flags=re.MULTILINE)
+    return ids, letters
+
+
+for rel in ("FLAGGED.md",):
+    ids, letters = _flag_ids_and_sections(rel)
+    seen = {}
+    for identity in ids:
+        seen.setdefault(identity, 0)
+        seen[identity] += 1
+    for identity, count in sorted(seen.items()):
+        if count > 1:
+            problems.append(f"{rel}: flag id {identity!r} is used {count} times; every id must be unique")
+    seen_letters = {}
+    for letter in letters:
+        seen_letters[letter] = seen_letters.get(letter, 0) + 1
+    for letter, count in sorted(seen_letters.items()):
+        if count > 1:
+            problems.append(f"{rel}: section letter {letter!r} is used {count} times; every section "
+                            f"must have its own letter")
+
 if problems:
     print("\n".join(problems))
     sys.exit(1)

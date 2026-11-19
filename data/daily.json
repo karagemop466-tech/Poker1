@@ -164,7 +164,7 @@
     "re-entry",
     "advantage-for-money"
    ],
-   "fee": "Rule 7: \"Of the $600 Buy-in, $510 goes to the Prize Pool, $50 is Admin Fees and $40 is optional staff gratuity.\" Rule 9: the $40 gratuity \"will grant players an extra 20,000 chips\". The $600 figures are what the flyer prints even though its heading reads \"NLH $1100 BUY-IN\" and the file is named $1,000 (F79).",
+   "fee": "Rule 7: \"Of the $600 Buy-in, $510 goes to the Prize Pool, $50 is Admin Fees and $40 is optional staff gratuity.\" Rule 9: the $40 gratuity \"will grant players an extra 20,000 chips\". The $600 figures are what the flyer prints even though its heading reads \"NLH $1100 BUY-IN\" and the file is named $1,000 (F32, F85).",
    "ex": "Rule 3: \"Registration will be open until the start of Level 10. (Approximately 5:15pm for Flights 1A, 1B, 4:15pm for 1C and 9:30pm for Flight D).\" Rule 6: \"Each Flight would play until the money (12.5%). Must bag chips to make Day 2 and be in the money.\"",
    "late": null,
    "late_reg_level": 10,
@@ -173,7 +173,7 @@
    "lmin": 30,
    "stack": "Rule 1: \"Players start with 40,000 in tournament chips (20,000 + 20,000 optional).\"",
    "flags": [
-    "The flyer contradicts itself on the buy-in: the heading reads \"NLH $1100 BUY-IN\", the page that links it labels the file $1,000, and rule 7 prices a $600 buy-in - and rule 8's \"at least $50,000\" applies to the Combined Prize Pool across flights, not to one flight. Rule 4 also names a Combined Final Day 2 of 9/13/26, a date before this row was published on 2026-11-17, so the flyer is not current. Buy-in, guarantee and entry rule are not confirmed (F79)."
+    "The flyer contradicts itself on the buy-in: the heading reads \"NLH $1100 BUY-IN\", the page that links it labels the file $1,000, and rule 7 prices a $600 buy-in - and rule 8's \"at least $50,000\" applies to the Combined Prize Pool across flights, not to one flight. Rule 4 also names a Combined Final Day 2 of 9/13/26, a date before this row was published on 2026-11-17, so the flyer is not current. Buy-in, guarantee and entry rule are not confirmed (F32, F85)."
    ],
    "source": "https://bellagio.mgmresorts.com/en/casino/poker.html",
    "page": "https://bellagio.mgmresorts.com/en/casino/poker.html",

@@ -521,7 +521,7 @@
    "kind": "schedule",
    "venue": "Other",
    "active": false,
-   "note": "Returned HTTP 404 when re-read on 2026-11-17 (session ce9941b8). The text quoted from it in FLAGGED.md F35 and S5 is preserved in data/snapshots/caesars_poker_article.txt with its retrieval date, but it can no longer be re-verified from a live official page. Superseded for the daily schedule by caesars_daily_flyer, an official Caesars Palace tournament flyer (F78)."
+   "note": "Returned HTTP 404 when re-read on 2026-11-17 (session ce9941b8). The text quoted from it in FLAGGED.md F35 and S5 is preserved in data/snapshots/caesars_poker_article.txt with its retrieval date, but it can no longer be re-verified from a live official page. Superseded for the daily schedule by caesars_daily_flyer, an official Caesars Palace tournament flyer (F84)."
   },
   {
    "id": "mgm_poker_page",
@@ -649,6 +649,14 @@
    "kind": "tax",
    "authority": "Clark County, Nevada (taxing authority)",
    "note": "Not an operator page. This is the county that levies the room tax: Appendix III prints the combined rate by establishment category and district, and the licensed-establishment table prints each property's licence number, DBA name, address, status and rate. The establishment table is a snapshot (as of April 2021); the rate for a Resort Hotel in the Stadium District and Primary Gaming Corridor is fixed at 13.38% by Clark County Code 4.08.010 (F77)."
+  },
+  {
+   "id": "cc_tle_licenses",
+   "label": "Clark County Department of Business License — Transient Lodging Licenses by Category as of 07-2021 (the same licensed-establishment table, published as its own list)",
+   "url": "https://www.clarkcountynv.gov/assets/documents/business/doing_business_with_clark_county/transient-lodging-licenses-by-category-as-of-07-2021.pdf",
+   "kind": "tax",
+   "authority": "Clark County, Nevada (taxing authority)",
+   "note": "Not an operator page. A second official county document that prints the same licensed-establishment table as the July 2021 General Information Guide: each property's licence number, DBA name, address, status, transient lodging tax rate (13.38% for a Resort Hotel in the PGC) and category. Read 2026-11-19; the seven hotel rows cite it next to the guide. One cell is read differently by different PDF text extractors (F89): three extractors print the Venetian/Palazzo row as 1003089.RES-001 with the DBA truncated at \"Casin\", one prints 1000389.RES-001 with the full name."
   },
   {
    "id": "caesars_casino",
