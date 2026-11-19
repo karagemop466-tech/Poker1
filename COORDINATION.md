@@ -2114,6 +2114,14 @@ The existing checks/data remain the baseline (not refreshed by this session): la
 
 | Task | Status | Owner | File scope |
 |---|---|---|---|
-| Re-read the official Venetian DeepStack IV page and sample structure sheets live; check that the stored rows match them, and record whether any sheet affirmatively states single entry, no re-entry, no rebuy or no add-on | in progress | aa1e89b0 | `research/verification-2026-11-19-aa1e89b0.md`, `COORDINATION.md` only |
+| Re-read the official Venetian DeepStack IV page and sample structure sheets live; check that the stored rows match them, and record whether any sheet affirmatively states single entry, no re-entry, no rebuy or no add-on | done | aa1e89b0 | `research/verification-2026-11-19-aa1e89b0.md`, `COORDINATION.md` only |
 
 Base: `main` at `3f3f6bb` (PR #101). Branch was clean before this entry. No row, rate or generated page is changed by this session; the claim is pushed before the research note is written. Other open PRs (#96, #98, #102) are other sessions' work and are not touched.
+
+**Result (2026-11-19).** Findings are in `research/verification-2026-11-19-aa1e89b0.md`. Sources read live: [official Venetian DeepStack IV page](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html) (chunks 0–2, covering events 1–58, 16 Nov – 19 Dec) and structure sheets [#1](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf), [#3](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf), [#5](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf), [#18](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf), [#29](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_29.pdf).
+
+- Verification: stored date, start, event number, buy-in and guarantee match the official page on every row read (r001–r207, 0 value differences; wording-only differences noted). Fee, pool, starting chips and late-registration values match sheets #3, #5, #18 and #29.
+- Single-entry evidence: **none found.** Sheets #1, #5, #18 and #29 are silent. Sheet #3 has a Day 2 multi-flight clause, which confirms the existing `MULTI` status. No `SE` promotion, no "unverified" label removed.
+- No data row, rate, `last_checked` or generated page was changed. `last_checked` is not advanced because the structure sheets for most rows were not re-read here.
+- Irregularities for review: the 1Day events do not state re-entry rules either way (logged in the research note; answer needed from the Venetian Poker Room). Chunk 3 of the page (19–23 Dec) and most structure sheets were not re-read in this session.
+- Pull request: opened from this branch to `main`, merged after the `validate` job passes; the result is recorded below.
