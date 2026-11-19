@@ -2047,6 +2047,8 @@ Verified: deterministic data and HTML rebuild; all 30 pages rendered; 692 render
 
 **Suggested integration:** in the tournament row renderer, join changed records from `data/changes.json` by tournament ID and display a conspicuous “Source changed — re-check” status with the monitor timestamp and official `source_url`. Keep unchanged state explicitly dated to `changes.json.checked_at`; do not advance `last_checked` or imply a new source read. Add a headless fixture covering the marked row and verify every event table variant. SUGGESTIONS P8 should be closed only once this lands.
 
+**Source-status clarification (from the 2026-11-19 main snapshot):** `data/change_log.json` was generated at `2026-11-19T06:06:15Z`; its 98-source provenance run reports 90 fetched with text, 0 published-value changes, and 6 fetch errors (2 inactive sources account for the remaining records). This is separate from the row-level `data/changes.json` / `data/monitoring.json`, which still say `checked_at: 2026-11-17` and do not list per-row changes. Thus the row-level badges requested above must show their own as-of date and cannot be treated as the later source-facts audit. Current open requirements and flagged data remain on the Monitoring and Flagged for Review pages.
+
 The existing checks/data remain the baseline (not refreshed by this session): last recorded real official-source check is 2026-11-17. Current open requirements and flagged data remain on the Monitoring and Flagged for Review pages.
 
 ## Session 190659b3 · 2026-11-19 · final integration, PR and Pages deploy
