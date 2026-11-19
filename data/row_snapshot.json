@@ -3593,7 +3593,7 @@
   "r300": {
    "date": "2027-01-19",
    "start": "13:00",
-   "name": "Mixed Game (TORSE)",
+   "name": "TORSE",
    "venue": "Wynn Las Vegas",
    "series": "Wynn Signature Series",
    "buy_in_usd": 400,
@@ -3677,7 +3677,7 @@
   "r307": {
    "date": "2027-01-21",
    "start": "13:00",
-   "name": "Mixed Game (TOE)",
+   "name": "TOE",
    "venue": "Wynn Las Vegas",
    "series": "Wynn Signature Series",
    "buy_in_usd": 400,
@@ -3761,7 +3761,7 @@
   "r314": {
    "date": "2027-01-24",
    "start": "12:00",
-   "name": "Seniors No Limit Hold'em 50+",
+   "name": "Seniors NLH 50+",
    "venue": "Wynn Las Vegas",
    "series": "Wynn Signature Series",
    "buy_in_usd": 400,
