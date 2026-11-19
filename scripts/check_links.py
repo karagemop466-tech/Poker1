@@ -53,6 +53,12 @@ OPERATOR_SOURCE_HOSTS = {
     "southpointcasino.com",
     # Session 88793bf4 (Strip-room survey): the Resorts World operator page.
     "www.rwlasvegas.com",
+    # Session 13eafa44 (integration of PR #82): the taxing authority. Clark County levies the
+    # transient lodging (room) tax the hotel rows publish; its licensing guide (Appendix III and
+    # the licensed-establishment table) is cited by every hotel row (F77). It is an official
+    # government source, not a third party. The operator hosts remain the only casino sources.
+    "clarkcountynv.gov",
+    "www.clarkcountynv.gov",
 }
 
 # The taxing authority, kept as its own set so a government record can never be

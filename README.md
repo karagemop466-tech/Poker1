@@ -13,7 +13,9 @@ Live site: https://karagemop466-tech.github.io/Poker1/
   - `single-entry.html` - every event whose structure sheet confirms one entry only.
   - `separate-section.html` - possible multiple entries and re-entry events, kept out of the ranking.
   - `unverified.html` - official rows whose entry rule is not published in a structure sheet.
-  - `daily.html` - morning official schedule excerpts plus the recurring Wynn daily formats, with fee splits and registration cut-offs.
+  - `daily.html` - morning official schedule excerpts plus the recurring daily formats published by
+    Wynn (four), Bellagio (three weekly) and Caesars Palace (four daily), with fee splits, registration
+    cut-offs and per-row source documents.
   - `schedule.html` - day-by-day plan with one primary event per date, a conditional fallback only where
     the primary's own table cannot run past the second event's entry deadline, the alternatives that can
     replace the primary (never add to it), and every overlap the published ceilings actually support.

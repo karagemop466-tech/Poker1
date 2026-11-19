@@ -134,7 +134,7 @@
     "re-entry",
     "advantage-for-money"
    ],
-   "fee": "Rule 5: \"The $600 Buy-In is allocated as follows: $510 to Prize Pool; $50 House Fee; $40 Voluntary Staff Gratuity.\" Rule 7: \"The voluntary staff gratuity will grant players an extra 15,000 chips.\"",
+   "fee": "Rule 5: \"The $600 Buy-In is allocated as follows: $510 to Prize Pool; $50 House Fee; $40 Voluntary Staff Gratuity.\" Rule 7: \"The voluntary staff gratuity will grant players an extra 15,000 chips.\" The $40 gratuity is optional (paid to staff, not kept by the house).",
    "ex": "Rule 3: \"Players may buy-in and re-enter through the end of level 8 (Including Break). Tournament Surrender is allowed on Level 8 break.\"",
    "late": null,
    "late_reg_level": 8,
@@ -142,11 +142,12 @@
    "levels": 28,
    "lmin": 30,
    "stack": "Rule 1: \"Players will start with 30,000 tournament chips, including the optional Staff Gratuity. (15,000 + 15,000)\"",
-   "venue": "Bellagio",
+   "source": "https://bellagio.mgmresorts.com/en/casino/poker.html",
    "page": "https://bellagio.mgmresorts.com/en/casino/poker.html",
    "document_url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf",
-   "source": "https://bellagio.mgmresorts.com/en/casino/poker.html",
-   "retrieved_on": "2026-11-17"
+   "document_note": "Flyer printed \"NLH $600 BUY-IN\"; it prints no guarantee.",
+   "retrieved_on": "2026-11-17",
+   "venue": "Bellagio"
   },
   {
    "id": "bellagio-sat",
@@ -163,7 +164,7 @@
     "re-entry",
     "advantage-for-money"
    ],
-   "fee": "Rule 7: \"Of the $600 Buy-in, $510 goes to the Prize Pool, $50 is Admin Fees and $40 is optional staff gratuity.\" Rule 9: the $40 gratuity \"will grant players an extra 20,000 chips\". The $600 figures are what the flyer prints even though its heading reads \"NLH $1100 BUY-IN\" and the file is named $1,000 (F32).",
+   "fee": "Rule 7: \"Of the $600 Buy-in, $510 goes to the Prize Pool, $50 is Admin Fees and $40 is optional staff gratuity.\" Rule 9: the $40 gratuity \"will grant players an extra 20,000 chips\". The $600 figures are what the flyer prints even though its heading reads \"NLH $1100 BUY-IN\" and the file is named $1,000 (F79).",
    "ex": "Rule 3: \"Registration will be open until the start of Level 10. (Approximately 5:15pm for Flights 1A, 1B, 4:15pm for 1C and 9:30pm for Flight D).\" Rule 6: \"Each Flight would play until the money (12.5%). Must bag chips to make Day 2 and be in the money.\"",
    "late": null,
    "late_reg_level": 10,
@@ -172,13 +173,14 @@
    "lmin": 30,
    "stack": "Rule 1: \"Players start with 40,000 in tournament chips (20,000 + 20,000 optional).\"",
    "flags": [
-    "F32: the flyer contradicts itself on the buy-in - the heading reads \"NLH $1100 BUY-IN\", the file and page label read $1,000, and rule 7 prices a $600 buy-in. Rule 4 also names a Combined Final Day 2 of 9/13/26, a date before this page was read on 2026-11-17, so the flyer is not current. Buy-in, guarantee and entry rule are not confirmed."
+    "The flyer contradicts itself on the buy-in: the heading reads \"NLH $1100 BUY-IN\", the page that links it labels the file $1,000, and rule 7 prices a $600 buy-in - and rule 8's \"at least $50,000\" applies to the Combined Prize Pool across flights, not to one flight. Rule 4 also names a Combined Final Day 2 of 9/13/26, a date before this row was published on 2026-11-17, so the flyer is not current. Buy-in, guarantee and entry rule are not confirmed (F79)."
    ],
-   "venue": "Bellagio",
+   "source": "https://bellagio.mgmresorts.com/en/casino/poker.html",
    "page": "https://bellagio.mgmresorts.com/en/casino/poker.html",
    "document_url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf",
-   "source": "https://bellagio.mgmresorts.com/en/casino/poker.html",
-   "retrieved_on": "2026-11-17"
+   "document_note": "Flyer heading \"NLH $1100 BUY-IN\"; file name $1,000; rule 7 prices $600.",
+   "retrieved_on": "2026-11-17",
+   "venue": "Bellagio"
   },
   {
    "id": "bellagio-sun",
@@ -203,11 +205,12 @@
    "lmin": 30,
    "stack": "Rule 3: \"Players will start with 30,000 tournament chips, including the optional Staff Gratuity. (15,000 + 15,000)\"",
    "note_extra": "Rule 4: \"Each level will last thirty (30) minutes ... ***When 3 players remain in event, levels will be reduced to 20 Minutes.\"",
-   "venue": "Bellagio",
+   "source": "https://bellagio.mgmresorts.com/en/casino/poker.html",
    "page": "https://bellagio.mgmresorts.com/en/casino/poker.html",
    "document_url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf",
-   "source": "https://bellagio.mgmresorts.com/en/casino/poker.html",
-   "retrieved_on": "2026-11-17"
+   "document_note": "Flyer printed \"$400 H.O.R.S.E. TOURNAMENT, Sundays | 11:00 a.m.\"; it prints no guarantee.",
+   "retrieved_on": "2026-11-17",
+   "venue": "Bellagio"
   },
   {
    "id": "caesars-1000",
@@ -227,14 +230,16 @@
    "ex": "Sign-up 3: \"Participants may only register themselves, but may re-enter, by paying the entry fee, upon elimination within the first break of play.\" Schedule note: \"All Tournaments feature a $50 add-on for 15,000 tournament chips that can only be taken at the first break.\"",
    "late": null,
    "late_reg_level": 7,
-   "late_reg_text": "The flyer closes registration \"at the start of level seven\" and prints no clock time. Levels are 20 minutes with a 10-minute break every six levels, so that is about 2 h 10 m after the 10:00 a.m. start - derived from the printed structure, not printed as a time.",
+   "late_reg_text": "Sign-up 2 closes registration \"at the start of level seven\" and prints no clock time; levels are 20 minutes with a 10-minute break every six levels, so that is about 2 h 10 m after the 10:00 a.m. start - derived from the printed structure, not printed as a time.",
    "levels": 15,
    "lmin": 20,
    "stack": "Schedule table: \"Starting Chips 20,000\"; the $50 add-on buys 15,000 more.",
-   "venue": "Caesars Palace",
    "source": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
    "page": "https://www.caesars.com/caesars-palace/casino",
-   "retrieved_on": "2026-11-17"
+   "document_url": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+   "document_note": "Flyer \"Daily No-Limit Texas Hold'em Tournament Schedule\", Version 6.19.2026.",
+   "retrieved_on": "2026-11-17",
+   "venue": "Caesars Palace"
   },
   {
    "id": "caesars-1400",
@@ -258,10 +263,12 @@
    "levels": 15,
    "lmin": 20,
    "stack": "Schedule table: \"Starting Chips 20,000\"; the $50 add-on buys 15,000 more.",
-   "venue": "Caesars Palace",
    "source": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
    "page": "https://www.caesars.com/caesars-palace/casino",
-   "retrieved_on": "2026-11-17"
+   "document_url": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+   "document_note": "Flyer \"Daily No-Limit Texas Hold'em Tournament Schedule\", Version 6.19.2026.",
+   "retrieved_on": "2026-11-17",
+   "venue": "Caesars Palace"
   },
   {
    "id": "caesars-1800",
@@ -285,10 +292,12 @@
    "levels": 15,
    "lmin": 20,
    "stack": "Schedule table: \"Starting Chips 20,000\"; the $50 add-on buys 15,000 more.",
-   "venue": "Caesars Palace",
    "source": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
    "page": "https://www.caesars.com/caesars-palace/casino",
-   "retrieved_on": "2026-11-17"
+   "document_url": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+   "document_note": "Flyer \"Daily No-Limit Texas Hold'em Tournament Schedule\", Version 6.19.2026.",
+   "retrieved_on": "2026-11-17",
+   "venue": "Caesars Palace"
   },
   {
    "id": "caesars-2100",
@@ -312,10 +321,12 @@
    "levels": 15,
    "lmin": 20,
    "stack": "Schedule table: \"Starting Chips 20,000\"; the $50 add-on buys 15,000 more.",
-   "venue": "Caesars Palace",
    "source": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
    "page": "https://www.caesars.com/caesars-palace/casino",
-   "retrieved_on": "2026-11-17"
+   "document_url": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+   "document_note": "Flyer \"Daily No-Limit Texas Hold'em Tournament Schedule\", Version 6.19.2026.",
+   "retrieved_on": "2026-11-17",
+   "venue": "Caesars Palace"
   }
  ],
  "note": "Recurring daily tournaments published by Wynn Las Vegas. The official poker page states: \"The Daily Tournament schedule will be suspended during each Wynn Signature, Wynn Millions, and Classic tournament series.\" The official daily terms and conditions state: \"Registration for each Event will open four (4) hours prior to the scheduled start of play\", so registration for the 12 p.m. daily events opens at 8 a.m. Note the suspension wording differs between the two official sources: the poker page names Wynn Signature, Wynn Millions and Classic series, while each daily structure sheet says the event \"may be suspended during Seniors Events, Classic Events, or other Tournament Series\". Neither names the WPT World Championship explicitly, so confirm before travelling. Read 2026-11-16.\n\nBellagio publishes three weekly flyers: Friday $600 NLH, Saturday $1,000 NLH and Sunday $400 H.O.R.S.E., all at 11:00 a.m. Every one of them allows buy-in and re-entry through the end of level 8 (Saturday: registration until the start of level 10), and every one sells a larger starting stack for a \"voluntary staff gratuity\", so none is single entry and none is ranked. Caesars Palace publishes one daily flyer with four no-limit hold'em events a day - 10 a.m. and 6 p.m. at $100, 2 p.m. and 9 p.m. at $160 - each with a $50 add-on for 15,000 chips and re-entry on elimination within the first break, so none is single entry either. Recurring formats carry no calendar date on the official source, so none is turned into a dated row or ranked. Read 2026-11-17.",

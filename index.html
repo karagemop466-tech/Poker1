@@ -134,6 +134,9 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
 .status-dot.warn { background: var(--warn); }
 .status-dot.bad { background: var(--bad); }
 .calendar { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+.diary { list-style: none; padding: 0; display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+.diary .card { margin: 0; }
+.diary .card h3 { margin-top: 0; }
 .calendar .slot { border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; background: #fff; }
 .calendar .slot .d { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
 .calendar .slot .t { font-size: 18px; font-weight: 700; margin: 2px 0; }
@@ -942,6 +945,7 @@ header.site nav a {color:#d9ebe4}
         var order = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
         var idx = order.indexOf(dayFull);
         if (idx < 0) return false;
+        if (String(daysStr) === "Daily") return true;
         var parts = String(daysStr).split("-");
         if (parts.length === 1) return parts[0] === dayFull;
         var a = order.indexOf(parts[0]), b = order.indexOf(parts[1]);
@@ -978,7 +982,8 @@ header.site nav a {color:#d9ebe4}
         { id: "src", label: "Source document", key: "source", sort: null, html: function (r) {
             var out = '<a href="' + esc(r.source) + '" target="_blank" rel="noopener">official document</a>';
             if (r.page) out += '<br><a href="' + esc(r.page) + '" target="_blank" rel="noopener">official poker page</a>';
-            if (r.document_url) out += '<br><span class="small">' + esc(r.document_url) + "</span>";
+            if (r.document_url && r.document_url !== r.source) out += '<br><span class="small">document: ' + esc(r.document_url) + "</span>";
+            if (r.retrieved_on) out += '<br><span class="small muted">retrieved ' + esc(r.retrieved_on) + "</span>";
             return '<span class="small">' + out + "</span>";
           } }
       ];
@@ -1081,12 +1086,27 @@ header.site nav a {color:#d9ebe4}
             ? '<div class="small" style="margin-top:6px"><strong>Alternatives on this date</strong>' +
               ' - each of these is played <em>instead of</em> the primary, never as well:<ul>' + alts + "</ul></div>"
             : "";
+          /* A finish that crosses midnight ends the playing day. State it as a fact about the
+             day, so the reader is never left to infer it from a bare clock time (see the
+             schedule page intro), and never sees a pair of same-date events proposed as one
+             sequence. */
+          var prim = day.primary_id
+            ? day.events.filter(function (o) { return o.id === day.primary_id; })[0] || null
+            : null;
+          var wraps = prim && (prim.est_end_next_day === true ||
+            (prim.est_duration_min != null && toMinJS(prim.start) + (+prim.est_duration_min) >= 1440));
+          var midnight = wraps
+            ? '<div class="small"><span class="chip info">past midnight</span> ' +
+              'The published structure has this day’s event running after midnight, so no later event can be ' +
+              'played on this date; the day plan does not propose one. The finish shown is an estimate from the ' +
+              'printed level table, never an official finish time.</div>'
+            : "";
           var fallback = day.fallback_note
             ? '<div class="small muted">' + esc(day.fallback_note) + "</div>" : "";
           var second = day.second_entry_note
             ? '<div class="small muted">' + esc(day.second_entry_note) + "</div>" : "";
           return '<div class="card day" id="day-' + day.date + '"><h3>' + dateFmt(day.date) + "</h3><ul>" + list +
-            "</ul>" + conflicts + altBox + fallback + "</div>";
+            "</ul>" + conflicts + midnight + altBox + fallback + "</div>";
         }).join("");
       }
       render();
@@ -1136,17 +1156,14 @@ header.site nav a {color:#d9ebe4}
             var url = r.booking_url;
             var a = dFrom.value, b = dTo.value;
             if (a && b && BOOKING[r.id]) {
-              url = BOOKING[r.id].replace("%s", a).replace("%s", b);
-              return '<a href="' + esc(url) + '" target="_blank" rel="noopener">open these dates on the '
-                + "official engine</a><br><span class='small'>The date parameters are the pattern the "
-                + "official engine served for the logged quote in the rate log.</span>";
+              var n = 0;
+              url = BOOKING[r.id].replace(/%s/g, function () { return ++n === 1 ? a : b; });
+              return '<a href="' + esc(url) + '" target="_blank" rel="noopener">open these dates on the official engine</a><br><span class="small">The date parameters are the pattern the official engine itself served for the logged quote in the rate log.</span>';
             }
-            return '<a href="' + esc(url) + '" target="_blank" rel="noopener">official booking page</a>'
-              + '<br><span class="small">' + (a && b
-                ? "This property's engine has no date-parameter pattern that an official page read "
-                  + "here confirms, so no dates are added to the link."
-                : "Pick arrival and departure dates above to build the dated link where the official "
-                  + "engine supports it.") + "</span>";
+            return '<a href="' + esc(url) + '" target="_blank" rel="noopener">official booking page</a>' +
+              '<br><span class="small">' + (a && b
+                ? "This property's engine has no date-parameter pattern that an official page read here confirms, so no dates are added to the link."
+                : "Pick arrival and departure dates above to build the dated link where the official engine supports it.") + "</span>";
           } },
         { id: "checked", label: "Last checked", key: "last_checked" },
         { id: "true", label: "True cost / night", key: "true_cost_per_night_usd", num: true, html: function (r) { return r.true_cost_per_night_usd == null ? '<span class="muted">blank (rate unverified)</span>' : money(r.true_cost_per_night_usd); } },
@@ -1179,6 +1196,33 @@ header.site nav a {color:#d9ebe4}
               ? "<br><span class='small'>fees re-read " + esc(r.recheck.on) + "</span>" : ""); } },
         { id: "src", label: "Sources", key: "sources", sort: null, html: function (r) { return "<span class='small'>" + srcLinks(r.sources) + "</span>"; } }
       ];
+
+      /* Official booking links for the dates you pick. Only the Venetian/Palazzo engine has a
+         date-parameter pattern that was actually read on an official page and is recorded in the
+         rate log, so only it carries the dates; the others link their own booking page with no
+         invented parameters. Nothing is priced here - a rate is only published when the engine
+         printed a checkout total, and every such quote is in the dated rate log below. */
+      var BOOKING = {
+        venetian: "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date=%s&children[]=0&departure_date=%s&view=calendar",
+        palazzo: "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date=%s&children[]=0&departure_date=%s&view=calendar"
+      };
+      var dates = document.createElement("div");
+      dates.className = "toolbar";
+      var dFrom = document.createElement("input");
+      dFrom.type = "date"; dFrom.id = "stay-from";
+      var dTo = document.createElement("input");
+      dTo.type = "date"; dTo.id = "stay-to";
+      var bookNote = document.createElement("span");
+      bookNote.className = "small";
+      [["Arrival", dFrom], ["Departure", dTo]].forEach(function (pair) {
+        var l = document.createElement("label");
+        l.textContent = pair[0];
+        l.style.marginRight = "4px";
+        dates.appendChild(l);
+        dates.appendChild(pair[1]);
+      });
+      dates.appendChild(bookNote);
+      main.appendChild(dates);
 
       /* filter bar: the ≤30-minute walking rule and a text box across every column */
       /* Official booking links for the dates you pick. Only the Venetian/Palazzo engine
