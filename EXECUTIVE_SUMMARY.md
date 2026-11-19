@@ -22,7 +22,7 @@ A seven-night stay at that historical total plus one hypothetical $400 entry wou
 
 ## Coverage and review order
 
-317 series rows: **80 reviewed candidates**, **174 possible multiple-entry or re-entry rows**, **25 continuations**, and **38 rows without a confirmed entry policy**. The conditional day model spans 70 dates and flags 170 pairs based on starts, registration and published structures. Those are planning conflicts, not verified finish times.
+317 series rows: **80 reviewed candidates**, **160 possible multiple-entry or re-entry rows**, **43 continuations**, and **34 entry rows without a confirmed entry policy**. The conditional day model spans 70 dates and flags 170 pairs based on starts, registration and published structures. Those are planning conflicts, not verified finish times.
 
 1. Review the [strict shortlist](pages/single-entry.html) before the [conditional schedule](pages/schedule.html).
 2. Compare the [dated hotel quotes and route evidence](pages/hotels.html), then use the [trip calculator](pages/calculator.html). Do not add tax or resort fees twice.

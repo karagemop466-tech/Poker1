@@ -253,6 +253,10 @@ for index, row in enumerate(tournament_rows, 1):
     entry_rule = str(row.get("entry_rule", "")).lower()
     sources = row.get("sources") if isinstance(row.get("sources"), list) else []
     check_rule_objects(where, identity, row.get("rules"))
+    if row.get("kind") == "continuation" and status != "CONT":
+        problems.append(f"{where} {identity}: a continuation is not an entry opportunity")
+    if row.get("venue") == "The Venetian Resort" and row.get("kind") == "entry" and row.get("late_reg_close") and row["late_reg_close"] < row["start"]:
+        problems.append(f"{where} {identity}: verify the same-day registration close against this flight")
     if status in ("SE", "CAND"):
         if not any("structure" in str(source.get("label", "")).lower()
                    for source in sources if isinstance(source, dict)):
