@@ -2070,3 +2070,11 @@ The existing checks/data remain the baseline (not refreshed by this session): la
 | GitHub Pages | `built` for `main` after merge commit eb6df261 (legacy branch build, `https://karagemop466-tech.github.io/Poker1/`); homepage re-fetched and serving |
 | Data changes | None — no row value, source, or retrieval timestamp was changed; `build_data.py`/`build_site.py` deterministic |
 | Flagged irregularities | F1–F76+ remain published on `pages/flagged.html` with official-source links; evidence gaps (no written whole-event freezeout, no same-stay live checkout quote, no timed walking times) are "needs review", not blockers; no nonrefundable decision supported |
+
+## Session 1c61c2b8 — 2026-11-19 · row-level source-change visibility
+
+| Task | Status | Owner | File scope |
+|---|---|---|---|
+| Surface only confirmed official-source value changes beside affected tournament rows on single-entry, separate-section, unverified, and venue event tables; show monitor as-of date and link the changed official URL. Add a deterministic headless regression fixture. | In progress | 1c61c2b8 | `assets/app.js`, `scripts/ui_test.js`, `COORDINATION.md` |
+
+Read the shared coordination board and current main baseline before claiming. Existing `data/changes.json` is empty as of 2026-11-17; `data/change_log.json` separately lists raw page churn and has no confirmed printed-value changes. This task will not label cosmetic fetch changes as event changes, advance `last_checked`, or change/claim source values. The sandbox's outbound domain allowlist excludes poker operators, so live official-source re-fetch is unavailable here; only existing dated monitor output plus a synthetic UI fixture will be used. No tournament data, generated pages, or other active scopes are edited.
