@@ -1,0 +1,2460 @@
+{
+ "note": "Payout clauses quoted verbatim from the official-document snapshots in data/snapshots/ by scripts/extract_payouts.py. Each clause stores the snapshot line range it came from; scripts/check_links.py re-derives every clause from those lines on each build and fails on a mismatch. An empty clauses list means the document was read and printed no clause matching the extraction patterns - it is never a guessed value.",
+ "documents": [
+  {
+   "id": "v_dec_struct_01",
+   "kind": "venetian-structure-sheet",
+   "snapshot": "data/snapshots/v_dec_struct_01.txt",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_1.pdf",
+   "clauses": [
+    {
+     "kind": "prize-pool-composition",
+     "line": 63,
+     "line_count": 2,
+     "text": "The prize pool consists of $335 of every $400 Buy In."
+    },
+    {
+     "kind": "percent-of-field",
+     "line": 65,
+     "line_count": 1,
+     "text": "This event pays 12.5% of the field"
+    }
+   ]
+  },
+  {
+   "id": "v_dec_struct_02",
+   "kind": "venetian-structure-sheet",
+   "snapshot": "data/snapshots/v_dec_struct_02.txt",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_2.pdf",
+   "clauses": [
+    {
+     "kind": "guarantee-composition",
+     "line": 48,
+     "line_count": 1,
+     "text": "Guarantee: $8,000 (prize pool + total bounties)"
+    },
+    {
+     "kind": "prize-pool-composition",
+     "line": 62,
+     "line_count": 1,
+     "text": "The prize pool consists of $160 of every $200 Buy In."
+    },
+    {
+     "kind": "percent-of-field",
+     "line": 69,
+     "line_count": 1,
+     "text": "This event pays 12.5% of the field"
+    },
+    {
+     "kind": "bounty-rule",
+     "line": 72,
+     "line_count": 2,
+     "text": "Players receive $50 bounty for each player they eliminate from the tournament."
+    },
+    {
+     "kind": "guarantee-composition",
+     "line": 76,
+     "line_count": 3,
+     "text": "A Prize Pool of $8,000 is guaranteed by the Venetian Poker Room which consists of the actual prize pool plus the total amount of $50 bounties that are awarded."
+    }
+   ]
+  },
+  {
+   "id": "v_dec_struct_03",
+   "kind": "venetian-structure-sheet",
+   "snapshot": "data/snapshots/v_dec_struct_03.txt",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_3.pdf",
+   "clauses": [
+    {
+     "kind": "guarantee-composition",
+     "line": 48,
+     "line_count": 1,
+     "text": "Guarantee: $40,000 (prize pool + total bounties)"
+    },
+    {
+     "kind": "prize-pool-composition",
+     "line": 62,
+     "line_count": 1,
+     "text": "The prize pool consists of $510 of every $600 Buy In."
+    },
+    {
+     "kind": "bounty-rule",
+     "line": 63,
+     "line_count": 2,
+     "text": "Players receive $200 Bounty for each player they eliminate from the tournament."
+    },
+    {
+     "kind": "bounty-payout",
+     "line": 64,
+     "line_count": 3,
+     "text": "Once we reach the money (posted payouts) – players receive a $500 Bounty for each player they eliminate from the tournament."
+    },
+    {
+     "kind": "percent-of-field",
+     "line": 71,
+     "line_count": 1,
+     "text": "This event pays 12.5% of the field"
+    }
+   ]
+  },
+  {
+   "id": "v_dec_struct_04",
+   "kind": "venetian-structure-sheet",
+   "snapshot": "data/snapshots/v_dec_struct_04.txt",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_4.pdf",
+   "clauses": [
+    {
+     "kind": "seat-prize",
+     "line": 54,
+     "line_count": 2,
+     "text": "Winners will be awarded direct entry to Event #08 and any odd money payouts may choose to be paid in casino chips or cash."
+    },
+    {
+     "kind": "prize-pool-composition",
+     "line": 60,
+     "line_count": 2,
+     "text": "The prize pool consists of $220 of every $260 Buy In."
+    },
+    {
+     "kind": "seat-prize",
+     "line": 63,
+     "line_count": 2,
+     "text": "All tournament prizes are direct entry into our $1,100 No Limit Hold’em Ante Up Championship Event #08, with any odd monies awarded as one additional payout."
+    },
+    {
+     "kind": "milestone-seat",
+     "line": 65,
+     "line_count": 4,
+     "text": "A Player who accumulates 200,000 in tournament chips (“The Milestone”) or more will instantly receive direct entry into the $1,100 No Limit Hold’em Ante Up Championship Event #08. Upon verification by poker room management, the player who achieved The Milestone will cease play & have their chips removed from play."
+    },
+    {
+     "kind": "seat-prize",
+     "line": 69,
+     "line_count": 5,
+     "text": "The tournament will conclude when the number of players remaining is equal to the remaining number of $1,100 No Limit Hold’em Ante Up Championship Event #08 direct entry seats to be awarded, less the number of Milestone $1,100 No Limit Hold’em Ante Up Championship Event #08 direct entry seats already awarded previously."
+    }
+   ]
+  },
+  {
+   "id": "v_dec_struct_05",
+   "kind": "venetian-structure-sheet",
+   "snapshot": "data/snapshots/v_dec_struct_05.txt",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_5.pdf",
+   "clauses": [
+    {
+     "kind": "seat-prize",
+     "line": 54,
+     "line_count": 2,
+     "text": "Winners will be awarded direct entry to Event #20 and any odd money payouts may choose to be paid in casino chips or cash."
+    },
+    {
+     "kind": "prize-pool-composition",
+     "line": 60,
+     "line_count": 2,
+     "text": "The prize pool consists of $165 of every $200 Buy In."
+    },
+    {
+     "kind": "seat-prize",
+     "line": 63,
+     "line_count": 2,
+     "text": "All tournament prizes are direct entry into our $1,600 No Limit Hold’em MSPT Event #20, with any odd monies awarded as one additional payout."
+    },
+    {
+     "kind": "milestone-seat",
+     "line": 65,
+     "line_count": 4,
+     "text": "A Player who accumulates 200,000 in tournament chips (“The Milestone”) or more will instantly receive direct entry into the $1,600 No Limit Hold’em MSPT Event #20. Upon verification by poker room management, the player who achieved The Milestone will cease play & have their chips removed from play."
+    },
+    {
+     "kind": "seat-prize",
+     "line": 69,
+     "line_count": 4,
+     "text": "The tournament will conclude when the number of players remaining is equal to the remaining number of $1,600 No Limit Hold’em MSPT Event #20 direct entry seats to be awarded, less the number of Milestone $1,600 No Limit Hold’em MSPT Event #20 direct entry seats already awarded previously."
+    }
+   ]
+  },
+  {
+   "id": "v_dec_struct_06",
+   "kind": "venetian-structure-sheet",
+   "snapshot": "data/snapshots/v_dec_struct_06.txt",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_6.pdf",
+   "clauses": [
+    {
+     "kind": "in-the-money",
+     "line": 56,
+     "line_count": 2,
+     "text": "Each starting flight will play until we are down to approximately 12.5% of the field remaining."
+    },
+    {
+     "kind": "in-the-money",
+     "line": 57,
+     "line_count": 3,
+     "text": "Day 2 will resume at 11:00 AM combining all remaining players from 1A, 1B, and 1C, with all players being considered in the money & will continue until seven (7) players remain."
+    },
+    {
+     "kind": "prize-pool-composition",
+     "line": 68,
+     "line_count": 2,
+     "text": "The prize pool consists of $960 of every $1,100 Buy In."
+    }
+   ]
+  },
+  {
+   "id": "v_dec_struct_07",
+   "kind": "venetian-structure-sheet",
+   "snapshot": "data/snapshots/v_dec_struct_07.txt",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_7.pdf",
+   "clauses": [
+    {
+     "kind": "seat-prize",
+     "line": 52,
+     "line_count": 2,
+     "text": "Winners will be awarded direct entry to Event #20 and any odd money payouts may choose to be paid in casino chips or cash."
+    },
+    {
+     "kind": "prize-pool-composition",
+     "line": 58,
+     "line_count": 2,
+     "text": "The prize pool consists of $170 of every $200 Buy In."
+    },
+    {
+     "kind": "seat-prize",
+     "line": 61,
+     "line_count": 2,
+     "text": "All tournament prizes are direct entry into our $1,600 No Limit Hold’em MSPT Event #20 & any odd monies awarded as one additional payout."
+    },
+    {
+     "kind": "milestone-seat",
+     "line": 63,
+     "line_count": 4,
+     "text": "A Player who accumulates 200,000 in tournament chips (“The Milestone”) or more will instantly receive direct entry into the $1,600 No Limit Hold’em MSPT Event #20. Upon verification by poker room management, the player who achieved The Milestone will cease play and have their chips removed from play."
+    },
+    {
+     "kind": "seat-prize",
+     "line": 67,
+     "line_count": 4,
+     "text": "The tournament will conclude when the number of players remaining is equal to the remaining number of $1,600 No Limit Hold’em MSPT Event #20 direct entry seats to be awarded, less the number of Milestone $1,600 No Limit Hold’em MSPT Event #20 direct entry seats already awarded previously."
+    }
+   ]
+  },
+  {
+   "id": "v_dec_struct_08",
+   "kind": "venetian-structure-sheet",
+   "snapshot": "data/snapshots/v_dec_struct_08.txt",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_8.pdf",
+   "clauses": [
+    {
+     "kind": "in-the-money",
+     "line": 62,
+     "line_count": 2,
+     "text": "Each starting flight will play until we are down to approximately 11% of the field remaining."
+    },
+    {
+     "kind": "in-the-money",
+     "line": 63,
+     "line_count": 3,
+     "text": "Day 2 will resume at 11:00 AM combining all remaining players from 1A, 1B, and 1C, with all players being considered in the money & will continue until a winner has been declared."
+    },
+    {
+     "kind": "prize-pool-composition",
+     "line": 73,
+     "line_count": 2,
+     "text": "The prize pool consists of $1,420 of every $1,600 Buy In."
+    }
+   ]
+  },
+  {
+   "id": "v_dec_struct_09",
+   "kind": "venetian-structure-sheet",
+   "snapshot": "data/snapshots/v_dec_struct_09.txt",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_9.pdf",
+   "clauses": [
+    {
+     "kind": "guarantee-composition",
+     "line": 49,
+     "line_count": 1,
+     "text": "Guarantee: $20,000 (prize pool + total bounties)"
+    },
+    {
+     "kind": "prize-pool-composition",
+     "line": 62,
+     "line_count": 1,
+     "text": "The prize pool consists of $160 of every $200 Buy In."
+    },
+    {
+     "kind": "percent-of-field",
+     "line": 70,
+     "line_count": 1,
+     "text": "This event pays 12.5% of the field"
+    },
+    {
+     "kind": "bounty-rule",
+     "line": 73,
+     "line_count": 2,
+     "text": "Players receive $50 bounty for each player they eliminate from the tournament."
+    },
+    {
+     "kind": "guarantee-composition",
+     "line": 77,
+     "line_count": 3,
+     "text": "A Prize Pool of $20,000 is guaranteed by the Venetian Poker Room which consists of the actual prize pool plus the total amount of $50 bounties that are awarded."
+    }
+   ]
+  },
+  {
+   "id": "v_dec_struct_10",
+   "kind": "venetian-structure-sheet",
+   "snapshot": "data/snapshots/v_dec_struct_10.txt",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_10.pdf",
+   "clauses": [
+    {
+     "kind": "prize-pool-composition",
+     "line": 65,
+     "line_count": 1,
+     "text": "The prize pool consists of $335 of every $400 Buy In."
+    },
+    {
+     "kind": "percent-of-field",
+     "line": 66,
+     "line_count": 1,
+     "text": "This event pays 15% of the field"
+    }
+   ]
+  },
+  {
+   "id": "v_dec_struct_11",
+   "kind": "venetian-structure-sheet",
+   "snapshot": "data/snapshots/v_dec_struct_11.txt",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_11.pdf",
+   "clauses": [
+    {
+     "kind": "prize-pool-composition",
+     "line": 64,
+     "line_count": 2,
+     "text": "The prize pool consists of $335 of every $400 Buy In."
+    },
+    {
+     "kind": "percent-of-field",
+     "line": 66,
+     "line_count": 1,
+     "text": "This event pays 12.5% of the field"
+    }
+   ]
+  },
+  {
+   "id": "v_dec_struct_12",
+   "kind": "venetian-structure-sheet",
+   "snapshot": "data/snapshots/v_dec_struct_12.txt",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_12.pdf",
+   "clauses": [
+    {
+     "kind": "prize-pool-composition",
+     "line": 64,
+     "line_count": 2,
+     "text": "The prize pool consists of $510 of every $600 Buy In."
+    },
+    {
+     "kind": "percent-of-field",
+     "line": 66,
+     "line_count": 1,
+     "text": "This event pays 12.5% of the field"
+    }
+   ]
+  },
+  {
+   "id": "v_dec_struct_13",
+   "kind": "venetian-structure-sheet",
+   "snapshot": "data/snapshots/v_dec_struct_13.txt",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_13.pdf",
+   "clauses": [
+    {
+     "kind": "in-the-money",
+     "line": 57,
+     "line_count": 2,
+     "text": "Each starting flight will play until we are down to approximately 12.5% of the field remaining."
+    },
+    {
+     "kind": "in-the-money",
+     "line": 58,
+     "line_count": 3,
+     "text": "Day 2 will resume at 12:00 PM combining all remaining players from 1A, 1B, 1C, 1D, 1E, and 1F, with all players being considered in the money & will continue until a winner has been declared."
+    },
+    {
+     "kind": "prize-pool-composition",
+     "line": 68,
+     "line_count": 2,
+     "text": "The prize pool consists of $240 of every $300 Buy In."
+    }
+   ]
+  },
+  {
+   "id": "v_dec_struct_14",
+   "kind": "venetian-structure-sheet",
+   "snapshot": "data/snapshots/v_dec_struct_14.txt",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_14.pdf",
+   "clauses": [
+    {
+     "kind": "in-the-money",
+     "line": 60,
+     "line_count": 2,
+     "text": "Each starting flight will play until we are down to approximately 12.5% of the field remaining."
+    },
+    {
+     "kind": "in-the-money",
+     "line": 61,
+     "line_count": 3,
+     "text": "Day 2 will resume at 12:00 PM combining all remaining players from 1A, 1B, 1C, 1D, 1E, and 1F, with all players being considered in the money & will continue until a winner has been declared."
+    },
+    {
+     "kind": "prize-pool-composition",
+     "line": 71,
+     "line_count": 2,
+     "text": "The prize pool consists of $240 of every $300 Buy In."
+    }
+   ]
+  },
+  {
+   "id": "v_dec_struct_15",
+   "kind": "venetian-structure-sheet",
+   "snapshot": "data/snapshots/v_dec_struct_15.txt",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_15.pdf",
+   "clauses": [
+    {
+     "kind": "day-1-payout",
+     "line": 5,
+     "line_count": 1,
+     "text": "Day 1 Payouts Start at 12.5% with 5% From Each Flight Advancing to Day 2"
+    },
+    {
+     "kind": "in-the-money",
+     "line": 64,
+     "line_count": 2,
+     "text": "Each starting flight will play until we are down to approximately 5% of the field remaining with approximately 12.5% of each Day 1 Field being in the money."
+    },
+    {
+     "kind": "prize-pool-composition",
+     "line": 75,
+     "line_count": 2,
+     "text": "The prize pool consists of $200 of every $250 Buy In."
+    }
+   ]
+  },
+  {
+   "id": "v_nov_struct_01",
+   "kind": "venetian-structure-sheet",
+   "snapshot": "data/snapshots/v_nov_struct_01.txt",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf",
+   "clauses": [
+    {
+     "kind": "guarantee-composition",
+     "line": 48,
+     "line_count": 1,
+     "text": "Guarantee: $8,000 (prize pool + total bounties)"
+    },
+    {
+     "kind": "prize-pool-composition",
+     "line": 62,
+     "line_count": 1,
+     "text": "The prize pool consists of $160 of every $200 Buy In."
+    },
+    {
+     "kind": "percent-of-field",
+     "line": 63,
+     "line_count": 1,
+     "text": "This event pays 12.5% of the field"
+    },
+    {
+     "kind": "bounty-rule",
+     "line": 66,
+     "line_count": 2,
+     "text": "Players receive $50 bounty for each player they eliminate from the tournament."
+    },
+    {
+     "kind": "guarantee-composition",
+     "line": 70,
+     "line_count": 3,
+     "text": "A Prize Pool of $8,000 is guaranteed by the Venetian Poker Room which consists of the actual prize pool plus the total amount of $50 bounties that are awarded."
+    }
+   ]
+  },
+  {
+   "id": "v_nov_struct_02",
+   "kind": "venetian-structure-sheet",
+   "snapshot": "data/snapshots/v_nov_struct_02.txt",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_2.pdf",
+   "clauses": [
+    {
+     "kind": "in-the-money",
+     "line": 57,
+     "line_count": 2,
+     "text": "Each starting flight will play until we are down to approximately 12.5% of the field remaining."
+    },
+    {
+     "kind": "in-the-money",
+     "line": 58,
+     "line_count": 3,
+     "text": "Day 2 will resume at 11:00 AM combining all remaining players from 1A and 1B with all players being considered in the money and will continue until a winner has been declared."
+    },
+    {
+     "kind": "prize-pool-composition",
+     "line": 68,
+     "line_count": 2,
+     "text": "The prize pool consists of $330 of every $400 Buy In."
+    }
+   ]
+  },
+  {
+   "id": "v_nov_struct_03",
+   "kind": "venetian-structure-sheet",
+   "snapshot": "data/snapshots/v_nov_struct_03.txt",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf",
+   "clauses": [
+    {
+     "kind": "in-the-money",
+     "line": 57,
+     "line_count": 2,
+     "text": "Each starting flight will play until we are down to approximately 12.5% of the field remaining."
+    },
+    {
+     "kind": "in-the-money",
+     "line": 58,
+     "line_count": 3,
+     "text": "Day 2 will resume at 11:00 AM combining all remaining players from 1A, 1B, and 1C with all players being considered in the money and will continue until a winner has been declared."
+    },
+    {
+     "kind": "prize-pool-composition",
+     "line": 68,
+     "line_count": 2,
+     "text": "The prize pool consists of $330 of every $400 Buy In."
+    }
+   ]
+  },
+  {
+   "id": "v_nov_struct_04",
+   "kind": "venetian-structure-sheet",
+   "snapshot": "data/snapshots/v_nov_struct_04.txt",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf",
+   "clauses": [
+    {
+     "kind": "in-the-money",
+     "line": 57,
+     "line_count": 2,
+     "text": "Each starting flight will play until we are down to approximately 12.5% of the field remaining."
+    },
+    {
+     "kind": "in-the-money",
+     "line": 58,
+     "line_count": 3,
+     "text": "Day 2 will resume at 11:00 AM combining all remaining players from 1A, 1B, and 1C with all players being considered in the money and will continue until a winner has been declared."
+    },
+    {
+     "kind": "prize-pool-composition",
+     "line": 68,
+     "line_count": 2,
+     "text": "The prize pool consists of $505 of every $600 Buy In."
+    }
+   ]
+  },
+  {
+   "id": "v_nov_struct_05",
+   "kind": "venetian-structure-sheet",
+   "snapshot": "data/snapshots/v_nov_struct_05.txt",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf",
+   "clauses": [
+    {
+     "kind": "prize-pool-composition",
+     "line": 64,
+     "line_count": 2,
+     "text": "The prize pool consists of $242 of every $300 Buy In."
+    },
+    {
+     "kind": "percent-of-field",
+     "line": 66,
+     "line_count": 1,
+     "text": "This event pays 12.5% of the field"
+    }
+   ]
+  },
+  {
+   "id": "v_nov_struct_06",
+   "kind": "venetian-structure-sheet",
+   "snapshot": "data/snapshots/v_nov_struct_06.txt",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_6.pdf",
+   "clauses": [
+    {
+     "kind": "prize-pool-composition",
+     "line": 64,
+     "line_count": 2,
+     "text": "The prize pool consists of $335 of every $400 Buy In."
+    },
+    {
+     "kind": "percent-of-field",
+     "line": 66,
+     "line_count": 1,
+     "text": "This event pays 12.5% of the field"
+    }
+   ]
+  },
+  {
+   "id": "v_nov_struct_07",
+   "kind": "venetian-structure-sheet",
+   "snapshot": "data/snapshots/v_nov_struct_07.txt",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_7.pdf",
+   "clauses": [
+    {
+     "kind": "prize-pool-composition",
+     "line": 65,
+     "line_count": 2,
+     "text": "The prize pool consists of $510 of every $600 Buy In."
+    },
+    {
+     "kind": "percent-of-field",
+     "line": 67,
+     "line_count": 1,
+     "text": "This event pays 12.5% of the field"
+    }
+   ]
+  },
+  {
+   "id": "v_nov_struct_08",
+   "kind": "venetian-structure-sheet",
+   "snapshot": "data/snapshots/v_nov_struct_08.txt",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf",
+   "clauses": [
+    {
+     "kind": "guarantee-composition",
+     "line": 49,
+     "line_count": 1,
+     "text": "Guarantee: $20,000 (prize pool + total bounties)"
+    },
+    {
+     "kind": "prize-pool-composition",
+     "line": 62,
+     "line_count": 1,
+     "text": "The prize pool consists of $160 of every $200 Buy In."
+    },
+    {
+     "kind": "percent-of-field",
+     "line": 70,
+     "line_count": 1,
+     "text": "This event pays 12.5% of the field"
+    },
+    {
+     "kind": "bounty-rule",
+     "line": 73,
+     "line_count": 2,
+     "text": "Players receive $50 bounty for each player they eliminate from the tournament."
+    },
+    {
+     "kind": "guarantee-composition",
+     "line": 77,
+     "line_count": 3,
+     "text": "A Prize Pool of $20,000 is guaranteed by the Venetian Poker Room which consists of the actual prize pool plus the total amount of $50 bounties that are awarded."
+    }
+   ]
+  },
+  {
+   "id": "v_nov_struct_09",
+   "kind": "venetian-structure-sheet",
+   "snapshot": "data/snapshots/v_nov_struct_09.txt",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf",
+   "clauses": [
+    {
+     "kind": "in-the-money",
+     "line": 54,
+     "line_count": 2,
+     "text": "Each starting flight will play until we are down to approximately 12.5% of the field remaining."
+    },
+    {
+     "kind": "in-the-money",
+     "line": 55,
+     "line_count": 3,
+     "text": "Day 2 will resume at 12:00 PM combining all remaining players from 1A, 1B, 1C, and 1D with all players being considered in the money & will continue until a winner has been declared."
+    },
+    {
+     "kind": "prize-pool-composition",
+     "line": 65,
+     "line_count": 2,
+     "text": "The prize pool consists of $240 of every $300 Buy In."
+    }
+   ]
+  },
+  {
+   "id": "v_nov_struct_10",
+   "kind": "venetian-structure-sheet",
+   "snapshot": "data/snapshots/v_nov_struct_10.txt",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf",
+   "clauses": [
+    {
+     "kind": "in-the-money",
+     "line": 57,
+     "line_count": 2,
+     "text": "Each starting flight will play until we are down to approximately 12.5% of the field remaining."
+    },
+    {
+     "kind": "in-the-money",
+     "line": 58,
+     "line_count": 3,
+     "text": "Day 2 will resume at 12:00 PM combining all remaining players from 1A, 1B, 1C, and 1D, with all players being considered in the money & will continue until a winner has been declared."
+    },
+    {
+     "kind": "prize-pool-composition",
+     "line": 68,
+     "line_count": 2,
+     "text": "The prize pool consists of $240 of every $300 Buy In."
+    }
+   ]
+  },
+  {
+   "id": "v_nov_struct_11",
+   "kind": "venetian-structure-sheet",
+   "snapshot": "data/snapshots/v_nov_struct_11.txt",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_11.pdf",
+   "clauses": [
+    {
+     "kind": "guarantee-composition",
+     "line": 48,
+     "line_count": 1,
+     "text": "Guarantee: $30,000 (prize pool + total bounties) Event #16"
+    },
+    {
+     "kind": "guarantee-composition",
+     "line": 49,
+     "line_count": 1,
+     "text": "Guarantee: $40,000 (prize pool + total bounties) Event #30"
+    },
+    {
+     "kind": "guarantee-composition",
+     "line": 50,
+     "line_count": 1,
+     "text": "Guarantee: $50,000 (prize pool + total bounties) Event #54"
+    },
+    {
+     "kind": "prize-pool-composition",
+     "line": 64,
+     "line_count": 1,
+     "text": "The prize pool consists of $510 of every $600 Buy In."
+    },
+    {
+     "kind": "bounty-rule",
+     "line": 65,
+     "line_count": 2,
+     "text": "Players receive $200 Bounty for each player they eliminate from the tournament."
+    },
+    {
+     "kind": "bounty-payout",
+     "line": 66,
+     "line_count": 3,
+     "text": "Once we reach the money (posted payouts) – players receive a $500 Bounty for each player they eliminate from the tournament."
+    },
+    {
+     "kind": "percent-of-field",
+     "line": 73,
+     "line_count": 1,
+     "text": "This event pays 12.5% of the field"
+    }
+   ]
+  },
+  {
+   "id": "v_nov_struct_12",
+   "kind": "venetian-structure-sheet",
+   "snapshot": "data/snapshots/v_nov_struct_12.txt",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf",
+   "clauses": [
+    {
+     "kind": "in-the-money",
+     "line": 57,
+     "line_count": 2,
+     "text": "Each starting flight will play until we are down to approximately 12.5% of the field remaining."
+    },
+    {
+     "kind": "in-the-money",
+     "line": 58,
+     "line_count": 3,
+     "text": "Day 2 will resume at 12:00 PM combining all remaining players from 1A, 1B, 1C, 1D, 1E, and 1F, with all players being considered in the money & will continue until a winner has been declared."
+    },
+    {
+     "kind": "prize-pool-composition",
+     "line": 68,
+     "line_count": 2,
+     "text": "The prize pool consists of $690 of every $800 Buy In."
+    }
+   ]
+  },
+  {
+   "id": "v_nov_struct_13",
+   "kind": "venetian-structure-sheet",
+   "snapshot": "data/snapshots/v_nov_struct_13.txt",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf",
+   "clauses": [
+    {
+     "kind": "in-the-money",
+     "line": 54,
+     "line_count": 2,
+     "text": "Each starting flight will play until we are down to approximately 12.5% of the field remaining."
+    },
+    {
+     "kind": "in-the-money",
+     "line": 55,
+     "line_count": 3,
+     "text": "Day 2 will resume at 12:00 PM combining all remaining players from 1A, 1B, 1C, 1D, 1E, and 1F with all players being considered in the money & will continue until a winner has been declared."
+    },
+    {
+     "kind": "prize-pool-composition",
+     "line": 65,
+     "line_count": 2,
+     "text": "The prize pool consists of $690 of every $800 Buy In."
+    }
+   ]
+  },
+  {
+   "id": "v_nov_struct_14",
+   "kind": "venetian-structure-sheet",
+   "snapshot": "data/snapshots/v_nov_struct_14.txt",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf",
+   "clauses": [
+    {
+     "kind": "in-the-money",
+     "line": 52,
+     "line_count": 2,
+     "text": "Each starting flight will play until we are down to approximately 12.5% of the field remaining."
+    },
+    {
+     "kind": "in-the-money",
+     "line": 53,
+     "line_count": 3,
+     "text": "Day 2 will resume at 12:00 PM combining all remaining players from 1A, 1B, 1C, 1D, 1E, and 1F with all players being considered in the money & will continue until a winner has been declared."
+    },
+    {
+     "kind": "prize-pool-composition",
+     "line": 63,
+     "line_count": 2,
+     "text": "The prize pool consists of $690 of every $800 Buy In."
+    }
+   ]
+  },
+  {
+   "id": "v_nov_struct_15",
+   "kind": "venetian-structure-sheet",
+   "snapshot": "data/snapshots/v_nov_struct_15.txt",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_15.pdf",
+   "clauses": [
+    {
+     "kind": "guarantee-composition",
+     "line": 48,
+     "line_count": 1,
+     "text": "Guarantee: $15,000 (prize pool + total bounties)"
+    },
+    {
+     "kind": "prize-pool-composition",
+     "line": 62,
+     "line_count": 1,
+     "text": "The prize pool consists of $250 of every $300 Buy In."
+    },
+    {
+     "kind": "percent-of-field",
+     "line": 63,
+     "line_count": 1,
+     "text": "This event pays 12.5% of the field"
+    },
+    {
+     "kind": "bounty-rule",
+     "line": 66,
+     "line_count": 2,
+     "text": "Players receive $100 bounty for each player they eliminate from the tournament."
+    },
+    {
+     "kind": "guarantee-composition",
+     "line": 70,
+     "line_count": 3,
+     "text": "A Prize Pool of $15,000 is guaranteed by the Venetian Poker Room which consists of the actual prize pool plus the total amount of $100 bounties that are awarded."
+    }
+   ]
+  },
+  {
+   "id": "v_nov_struct_16",
+   "kind": "venetian-structure-sheet",
+   "snapshot": "data/snapshots/v_nov_struct_16.txt",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_16.pdf",
+   "clauses": [
+    {
+     "kind": "guarantee-composition",
+     "line": 48,
+     "line_count": 1,
+     "text": "Guarantee: $75,000 (prize pool + total bounties)"
+    },
+    {
+     "kind": "prize-pool-composition",
+     "line": 62,
+     "line_count": 1,
+     "text": "The prize pool consists of $700 of every $800 Buy In."
+    },
+    {
+     "kind": "bounty-rule",
+     "line": 63,
+     "line_count": 2,
+     "text": "Players receive $200 Bounty for each player they eliminate from the tournament."
+    },
+    {
+     "kind": "bounty-payout",
+     "line": 64,
+     "line_count": 3,
+     "text": "Once we reach the money (posted payouts) – players receive a $500 Bounty for each player they eliminate from the tournament."
+    },
+    {
+     "kind": "percent-of-field",
+     "line": 71,
+     "line_count": 1,
+     "text": "This event pays 12.5% of the field"
+    }
+   ]
+  },
+  {
+   "id": "v_nov_struct_17",
+   "kind": "venetian-structure-sheet",
+   "snapshot": "data/snapshots/v_nov_struct_17.txt",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_17.pdf",
+   "clauses": [
+    {
+     "kind": "prize-pool-composition",
+     "line": 65,
+     "line_count": 1,
+     "text": "The prize pool consists of $510 of every $600 Buy In."
+    },
+    {
+     "kind": "percent-of-field",
+     "line": 66,
+     "line_count": 1,
+     "text": "This event pays 15% of the field"
+    }
+   ]
+  },
+  {
+   "id": "v_nov_struct_18",
+   "kind": "venetian-structure-sheet",
+   "snapshot": "data/snapshots/v_nov_struct_18.txt",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf",
+   "clauses": [
+    {
+     "kind": "prize-pool-composition",
+     "line": 61,
+     "line_count": 2,
+     "text": "The prize pool consists of $165 of every $200 Buy In."
+    },
+    {
+     "kind": "percent-of-field",
+     "line": 63,
+     "line_count": 1,
+     "text": "This event pays 12.5% of the field"
+    }
+   ]
+  },
+  {
+   "id": "v_nov_struct_19",
+   "kind": "venetian-structure-sheet",
+   "snapshot": "data/snapshots/v_nov_struct_19.txt",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_19.pdf",
+   "clauses": [
+    {
+     "kind": "seat-prize",
+     "line": 53,
+     "line_count": 2,
+     "text": "Winners will be awarded direct entry to Event #39 and any odd money payouts may choose to be paid in casino chips or cash."
+    },
+    {
+     "kind": "prize-pool-composition",
+     "line": 59,
+     "line_count": 2,
+     "text": "The prize pool consists of $80 of every $100 Buy In."
+    },
+    {
+     "kind": "seat-prize",
+     "line": 62,
+     "line_count": 2,
+     "text": "All tournament prizes are direct entry into our $800 No Limit Hold’em LIPS Ladies Event #39, with any odd monies awarded as one additional payout."
+    },
+    {
+     "kind": "milestone-seat",
+     "line": 64,
+     "line_count": 4,
+     "text": "A Player who accumulates 200,000 in tournament chips (“The Milestone”) or more will instantly receive direct entry into the $800 No Limit Hold’em LIPS ladies Event #39. Upon verification by poker room management, the player who achieved The Milestone will cease play and have their chips removed from play."
+    },
+    {
+     "kind": "seat-prize",
+     "line": 68,
+     "line_count": 4,
+     "text": "The tournament will conclude when the number of players remaining is equal to the remaining number of $800 No Limit Hold’em LIPS Ladies Event #39 direct entry seats to be awarded, less the number of Milestone $800 No Limit Hold’em LIPS Ladies Event #39 direct entry seats already awarded previously."
+    }
+   ]
+  },
+  {
+   "id": "v_nov_struct_20",
+   "kind": "venetian-structure-sheet",
+   "snapshot": "data/snapshots/v_nov_struct_20.txt",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_20.pdf",
+   "clauses": [
+    {
+     "kind": "in-the-money",
+     "line": 58,
+     "line_count": 2,
+     "text": "Each starting flight will play until we are down to approximately 15% of the field remaining."
+    },
+    {
+     "kind": "in-the-money",
+     "line": 59,
+     "line_count": 3,
+     "text": "Day 2 will resume at 10:00 AM combining all remaining players from 1A and 1B with all players being considered in the money and will continue until a winner has been declared."
+    },
+    {
+     "kind": "prize-pool-composition",
+     "line": 69,
+     "line_count": 2,
+     "text": "The prize pool consists of $960 of every $1,100 Buy In."
+    }
+   ]
+  },
+  {
+   "id": "v_nov_struct_21",
+   "kind": "venetian-structure-sheet",
+   "snapshot": "data/snapshots/v_nov_struct_21.txt",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf",
+   "clauses": [
+    {
+     "kind": "in-the-money",
+     "line": 57,
+     "line_count": 2,
+     "text": "Each starting flight will play until we are down to approximately 12.5% of the field remaining."
+    },
+    {
+     "kind": "in-the-money",
+     "line": 58,
+     "line_count": 3,
+     "text": "Day 2 will resume at 1:00 PM combining all remaining players from 1A and 1B with all players being considered in the money & will continue until seven (7) players remain."
+    },
+    {
+     "kind": "prize-pool-composition",
+     "line": 69,
+     "line_count": 2,
+     "text": "The prize pool consists of $1,975 of every $2,200 Buy In."
+    }
+   ]
+  },
+  {
+   "id": "v_nov_struct_22",
+   "kind": "venetian-structure-sheet",
+   "snapshot": "data/snapshots/v_nov_struct_22.txt",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_22.pdf",
+   "clauses": [
+    {
+     "kind": "prize-pool-composition",
+     "line": 21,
+     "line_count": 2,
+     "text": "The prize pool consists of $242 of every $300 Buy In."
+    },
+    {
+     "kind": "percent-of-field",
+     "line": 32,
+     "line_count": 1,
+     "text": "This event will play eight (8) handed and pay 12.5% of the field."
+    }
+   ]
+  },
+  {
+   "id": "v_nov_struct_23",
+   "kind": "venetian-structure-sheet",
+   "snapshot": "data/snapshots/v_nov_struct_23.txt",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_23.pdf",
+   "clauses": [
+    {
+     "kind": "prize-pool-composition",
+     "line": 21,
+     "line_count": 2,
+     "text": "The prize pool consists of $510 of every $600 Buy In."
+    },
+    {
+     "kind": "percent-of-field",
+     "line": 32,
+     "line_count": 1,
+     "text": "This event will play eight (8) handed and pay 12.5% of the field."
+    }
+   ]
+  },
+  {
+   "id": "v_nov_struct_24",
+   "kind": "venetian-structure-sheet",
+   "snapshot": "data/snapshots/v_nov_struct_24.txt",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_24.pdf",
+   "clauses": [
+    {
+     "kind": "seat-prize",
+     "line": 52,
+     "line_count": 2,
+     "text": "Winners will be awarded direct entry to Event #47 and any odd money payouts may choose to be paid in casino chips or cash."
+    },
+    {
+     "kind": "prize-pool-composition",
+     "line": 58,
+     "line_count": 2,
+     "text": "The prize pool consists of $220 of every $260 Buy In."
+    },
+    {
+     "kind": "seat-prize",
+     "line": 61,
+     "line_count": 3,
+     "text": "All tournament prizes are direct entry into our $2,200 No Limit Hold’em PokerAtlas Championship Title Event #47, with any odd monies awarded as one additional payout."
+    },
+    {
+     "kind": "milestone-seat",
+     "line": 64,
+     "line_count": 5,
+     "text": "A Player who accumulates 200,000 in tournament chips (“The Milestone”) or more will instantly receive direct entry into the $2,200 No Limit Hold’em PokerAtlas Championship Title Event #47. Upon verification by poker room management, the player who achieved The Milestone will cease play and have their chips removed from play."
+    },
+    {
+     "kind": "seat-prize",
+     "line": 69,
+     "line_count": 5,
+     "text": "The tournament will conclude when the number of players remaining is equal to the remaining number of $2,200 No Limit Hold’em PokerAtlas Championship Title Event #47 direct entry seats to be awarded, less the number of Milestone $2,200 No Limit Hold’em PokerAtlas Championship Title Event #47 direct entry seats already awarded previously."
+    }
+   ]
+  },
+  {
+   "id": "v_nov_struct_25",
+   "kind": "venetian-structure-sheet",
+   "snapshot": "data/snapshots/v_nov_struct_25.txt",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_25.pdf",
+   "clauses": [
+    {
+     "kind": "seat-prize",
+     "line": 54,
+     "line_count": 2,
+     "text": "Winners will be awarded direct entry to Event #47 and any odd money payouts may choose to be paid in casino chips or cash."
+    },
+    {
+     "kind": "prize-pool-composition",
+     "line": 60,
+     "line_count": 2,
+     "text": "The prize pool consists of $225 of every $260 Buy In."
+    },
+    {
+     "kind": "seat-prize",
+     "line": 63,
+     "line_count": 2,
+     "text": "All tournament prizes are direct entry into our $2,200 No Limit Hold’em PokerAtlas Championship Title Event #47 & any odd monies awarded as one additional payout."
+    },
+    {
+     "kind": "milestone-seat",
+     "line": 65,
+     "line_count": 5,
+     "text": "A Player who accumulates 200,000 in tournament chips (“The Milestone”) or more will instantly receive direct entry into the $2,200 No Limit Hold’em PokerAtlas Championship Title Event #47. Upon verification by poker room management, the player who achieved The Milestone will cease play and have their chips removed from play."
+    },
+    {
+     "kind": "seat-prize",
+     "line": 70,
+     "line_count": 5,
+     "text": "The tournament will conclude when the number of players remaining is equal to the remaining number of $2,200 No Limit Hold’em PokerAtlas Championship Title Event #47 direct entry seats to be awarded, less the number of Milestone $2,200 No Limit Hold’em PokerAtlas Championship Title Event #47 direct entry seats already awarded previously."
+    }
+   ]
+  },
+  {
+   "id": "v_nov_struct_26",
+   "kind": "venetian-structure-sheet",
+   "snapshot": "data/snapshots/v_nov_struct_26.txt",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_26.pdf",
+   "clauses": [
+    {
+     "kind": "guarantee-composition",
+     "line": 47,
+     "line_count": 1,
+     "text": "Guarantee: $15,000 (prize pool + total bounties)"
+    },
+    {
+     "kind": "prize-pool-composition",
+     "line": 61,
+     "line_count": 1,
+     "text": "The prize pool consists of $340 of every $400 Buy In."
+    },
+    {
+     "kind": "percent-of-field",
+     "line": 62,
+     "line_count": 2,
+     "text": "This event will play eight (8) handed and pay 12.5% of the field"
+    },
+    {
+     "kind": "guarantee-composition",
+     "line": 72,
+     "line_count": 1,
+     "text": "A total prize pool of $15,000 is guaranteed."
+    }
+   ]
+  },
+  {
+   "id": "v_nov_struct_27",
+   "kind": "venetian-structure-sheet",
+   "snapshot": "data/snapshots/v_nov_struct_27.txt",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_27.pdf",
+   "clauses": [
+    {
+     "kind": "guarantee-composition",
+     "line": 47,
+     "line_count": 1,
+     "text": "Guarantee: $25,000 (prize pool + total bounties)"
+    },
+    {
+     "kind": "prize-pool-composition",
+     "line": 61,
+     "line_count": 1,
+     "text": "The prize pool consists of $510 of every $600 Buy In."
+    },
+    {
+     "kind": "percent-of-field",
+     "line": 62,
+     "line_count": 2,
+     "text": "This event will play eight (8) handed and pay 12.5% of the field"
+    },
+    {
+     "kind": "guarantee-composition",
+     "line": 72,
+     "line_count": 1,
+     "text": "A total prize pool of $25,000 is guaranteed."
+    }
+   ]
+  },
+  {
+   "id": "v_nov_struct_28",
+   "kind": "venetian-structure-sheet",
+   "snapshot": "data/snapshots/v_nov_struct_28.txt",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_28.pdf",
+   "clauses": [
+    {
+     "kind": "percent-of-field",
+     "line": 65,
+     "line_count": 2,
+     "text": "This event will play eight (8) handed and pay 12.5% of the field"
+    }
+   ]
+  },
+  {
+   "id": "v_nov_struct_29",
+   "kind": "venetian-structure-sheet",
+   "snapshot": "data/snapshots/v_nov_struct_29.txt",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_29.pdf",
+   "clauses": [
+    {
+     "kind": "prize-pool-composition",
+     "line": 62,
+     "line_count": 2,
+     "text": "The prize pool consists of $160 of every $200 Buy In."
+    },
+    {
+     "kind": "percent-of-field",
+     "line": 64,
+     "line_count": 1,
+     "text": "This event pays 12.5% of the field"
+    }
+   ]
+  },
+  {
+   "id": "v_nov_struct_30",
+   "kind": "venetian-structure-sheet",
+   "snapshot": "data/snapshots/v_nov_struct_30.txt",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_30.pdf",
+   "clauses": [
+    {
+     "kind": "guarantee-composition",
+     "line": 49,
+     "line_count": 1,
+     "text": "Guarantee: $8,000 (prize pool + total bounties)"
+    },
+    {
+     "kind": "prize-pool-composition",
+     "line": 59,
+     "line_count": 2,
+     "text": "The prize pool consists of $160 of every $200 Buy In."
+    },
+    {
+     "kind": "percent-of-field",
+     "line": 61,
+     "line_count": 1,
+     "text": "This event pays 12.5% of the field"
+    },
+    {
+     "kind": "bounty-payout",
+     "line": 64,
+     "line_count": 4,
+     "text": "For each player they eliminate from the tournament, they will receive ½ of the other players bounty to keep as prize money and the other ½ of the bounty will be added to their bounty prize elimination amount."
+    },
+    {
+     "kind": "bounty-rule",
+     "line": 70,
+     "line_count": 3,
+     "text": "If the bounty cannot be divided equally into whole dollars, the cash payout will be rounded down to the nearest whole dollar, and the remaining amount will be added to the eliminating player’s bounty."
+    },
+    {
+     "kind": "guarantee-composition",
+     "line": 77,
+     "line_count": 3,
+     "text": "A Prize Pool of $8,000 is guaranteed by the Venetian Poker Room which consists of the actual prize pool plus the total amount of bounty prize money that is awarded."
+    }
+   ]
+  },
+  {
+   "id": "v_nov_struct_31",
+   "kind": "venetian-structure-sheet",
+   "snapshot": "data/snapshots/v_nov_struct_31.txt",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_31.pdf",
+   "clauses": [
+    {
+     "kind": "percent-of-field",
+     "line": 66,
+     "line_count": 1,
+     "text": "This event pays 12.5% of the field"
+    }
+   ]
+  },
+  {
+   "id": "v_nov_struct_32",
+   "kind": "venetian-structure-sheet",
+   "snapshot": "data/snapshots/v_nov_struct_32.txt",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_32.pdf",
+   "clauses": [
+    {
+     "kind": "in-the-money",
+     "line": 57,
+     "line_count": 1,
+     "text": "Day 1 will play until we are down to approximately 12.5% of the field remaining."
+    },
+    {
+     "kind": "in-the-money",
+     "line": 58,
+     "line_count": 3,
+     "text": "Day 2 will resume at 10:00 AM with all remaining players being considered in the money & will continue until seven (7) players remain for a produced and distributed streamed final table by PokerGO."
+    }
+   ]
+  },
+  {
+   "id": "v_nov_struct_33",
+   "kind": "venetian-structure-sheet",
+   "snapshot": "data/snapshots/v_nov_struct_33.txt",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_33.pdf",
+   "clauses": [
+    {
+     "kind": "guarantee-composition",
+     "line": 50,
+     "line_count": 1,
+     "text": "Guarantee: $30,000 (prize pool + total bounties)"
+    },
+    {
+     "kind": "bounty-rule",
+     "line": 67,
+     "line_count": 2,
+     "text": "Players receive $200 Bounty for each player they eliminate from the tournament."
+    },
+    {
+     "kind": "percent-of-field",
+     "line": 70,
+     "line_count": 1,
+     "text": "This event pays 12.5% of the field"
+    }
+   ]
+  },
+  {
+   "id": "v_nov_struct_34",
+   "kind": "venetian-structure-sheet",
+   "snapshot": "data/snapshots/v_nov_struct_34.txt",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_34.pdf",
+   "clauses": [
+    {
+     "kind": "guarantee-composition",
+     "line": 49,
+     "line_count": 1,
+     "text": "Guarantee: $75,000 (prize pool + total bounties)"
+    },
+    {
+     "kind": "prize-pool-composition",
+     "line": 63,
+     "line_count": 1,
+     "text": "The prize pool consists of $970 of every $1,100 Buy In."
+    },
+    {
+     "kind": "percent-of-field",
+     "line": 64,
+     "line_count": 1,
+     "text": "This event pays 12.5% of the field"
+    },
+    {
+     "kind": "bounty-payout",
+     "line": 67,
+     "line_count": 5,
+     "text": "For each player they eliminate from the tournament, they will receive ½ of the other players bounty to keep as prize money, and the other ½ of the bounty will then be calculated into their own bounty elimination prize amount."
+    },
+    {
+     "kind": "guarantee-composition",
+     "line": 76,
+     "line_count": 3,
+     "text": "A Prize Pool of $75,000 is guaranteed by the Venetian Poker Room which consists of the actual prize pool plus the total amount of bounty prize money that is awarded."
+    }
+   ]
+  },
+  {
+   "id": "v_nov_struct_35",
+   "kind": "venetian-structure-sheet",
+   "snapshot": "data/snapshots/v_nov_struct_35.txt",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf",
+   "clauses": [
+    {
+     "kind": "in-the-money",
+     "line": 61,
+     "line_count": 2,
+     "text": "Each starting flight will play until we are down to approximately 12.5% of the field remaining."
+    },
+    {
+     "kind": "in-the-money",
+     "line": 62,
+     "line_count": 3,
+     "text": "Day 2 will resume at 11:00 AM combining all remaining players from 1A, 1B, 1C, 1D, and 1E, with all players being considered in the money & will continue until a winner has been declared."
+    },
+    {
+     "kind": "prize-pool-composition",
+     "line": 72,
+     "line_count": 2,
+     "text": "The prize pool consists of $960 of every $1,100 Buy In."
+    }
+   ]
+  },
+  {
+   "id": "v_nov_struct_36",
+   "kind": "venetian-structure-sheet",
+   "snapshot": "data/snapshots/v_nov_struct_36.txt",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf",
+   "clauses": [
+    {
+     "kind": "in-the-money",
+     "line": 58,
+     "line_count": 2,
+     "text": "Each starting flight will play until we are down to approximately 12.5% of the field remaining."
+    },
+    {
+     "kind": "in-the-money",
+     "line": 59,
+     "line_count": 3,
+     "text": "Day 2 will resume at 11:00 AM combining all remaining players from 1A, 1B, 1C, 1D, and 1E with all players being considered in the money & will continue until a winner has been declared."
+    },
+    {
+     "kind": "prize-pool-composition",
+     "line": 69,
+     "line_count": 2,
+     "text": "The prize pool consists of $960 of every $1,100 Buy In."
+    }
+   ]
+  },
+  {
+   "id": "v_nov_struct_37",
+   "kind": "venetian-structure-sheet",
+   "snapshot": "data/snapshots/v_nov_struct_37.txt",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_37.pdf",
+   "clauses": [
+    {
+     "kind": "in-the-money",
+     "line": 54,
+     "line_count": 2,
+     "text": "Each starting flight will play until we are down to approximately 12.5% of the field remaining."
+    },
+    {
+     "kind": "in-the-money",
+     "line": 55,
+     "line_count": 3,
+     "text": "Day 2 will resume at 1:00 PM combining all remaining players from 1A and 1B with all players being considered in the money & will continue until seven (7) players remain."
+    },
+    {
+     "kind": "prize-pool-composition",
+     "line": 66,
+     "line_count": 2,
+     "text": "The prize pool consists of $1,975 of every $2,200 Buy In."
+    }
+   ]
+  },
+  {
+   "id": "wpt-block-01",
+   "kind": "wynn-wpt-structure-block",
+   "block": 1,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": [
+    {
+     "kind": "payout-section",
+     "heading": "Payouts",
+     "line": 235,
+     "line_count": 7,
+     "text": "Each Day 1 will play until 12.5% or less of the field remains. At the beginning of Day 2, the \nTournament clock will resume at the earliest finishing time at which play ended in any of the \nprevious starting flights. \n \nOnly players who advance to Day 2 will be considered “in the money”. The Tournament prize pool \nwill be calculated at the conclusion of the final starting flight based on the number of players who \nadvance to Day 2. ",
+     "raw": true
+    }
+   ]
+  },
+  {
+   "id": "wpt-block-02",
+   "kind": "wynn-wpt-structure-block",
+   "block": 2,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": []
+  },
+  {
+   "id": "wpt-block-03",
+   "kind": "wynn-wpt-structure-block",
+   "block": 3,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": []
+  },
+  {
+   "id": "wpt-block-04",
+   "kind": "wynn-wpt-structure-block",
+   "block": 4,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": []
+  },
+  {
+   "id": "wpt-block-05",
+   "kind": "wynn-wpt-structure-block",
+   "block": 5,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": [
+    {
+     "kind": "payout-section",
+     "heading": "Payouts",
+     "line": 591,
+     "line_count": 7,
+     "text": "Each Day 1 will play until 12.5% or less of the field remains. At the beginning of Day 2, the \nTournament clock will resume at the earliest finishing time at which play ended in any of the \nprevious starting flights. \n \nOnly players who advance to Day 2 will be considered “in the money”. The Tournament prize pool \nwill be calculated at the conclusion of the final starting flight based on the number of players who \nadvance to Day 2. ",
+     "raw": true
+    }
+   ]
+  },
+  {
+   "id": "wpt-block-06",
+   "kind": "wynn-wpt-structure-block",
+   "block": 6,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": []
+  },
+  {
+   "id": "wpt-block-07",
+   "kind": "wynn-wpt-structure-block",
+   "block": 7,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": []
+  },
+  {
+   "id": "wpt-block-08",
+   "kind": "wynn-wpt-structure-block",
+   "block": 8,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": []
+  },
+  {
+   "id": "wpt-block-09",
+   "kind": "wynn-wpt-structure-block",
+   "block": 9,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": [
+    {
+     "kind": "payout-section",
+     "heading": "Payouts",
+     "line": 909,
+     "line_count": 7,
+     "text": "Each Day 1 will play until 12.5% or less of the field remains. At the beginning of Day 2, the \nTournament clock will resume at the earliest finishing time at which play ended in any of the \nprevious starting flights. \n \nOnly players who advance to Day 2 will be considered “in the money”. The Tournament prize pool \nwill be calculated at the conclusion of the final starting flight based on the number of players who \nadvance to Day 2. ",
+     "raw": true
+    }
+   ]
+  },
+  {
+   "id": "wpt-block-10",
+   "kind": "wynn-wpt-structure-block",
+   "block": 10,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": []
+  },
+  {
+   "id": "wpt-block-11",
+   "kind": "wynn-wpt-structure-block",
+   "block": 11,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": [
+    {
+     "kind": "payout-section",
+     "heading": "Payouts",
+     "line": 1116,
+     "line_count": 8,
+     "text": "One in eight (1-in-8) entries will be in the money (approximately 12.5%).  \nThis Tournament must play until a winner is declared.  Any adjustment to the posted prize pool requires approval of \nthe tournament staff. Based on the remaining prize pool, tournament staff may dictate a minimum amount withheld \nwhich will be designated to the first-place winner, in such a manner that, regardless of the agreed upon adjustments \nmade to the prize pool, the first-place winner will be awarded the largest cash prize. \n \n$10,400 will be withheld from the prize pool and issued to first place in the form of an entry to the December 2027 \nWPT World Championship.  ",
+     "raw": true
+    }
+   ]
+  },
+  {
+   "id": "wpt-block-12",
+   "kind": "wynn-wpt-structure-block",
+   "block": 12,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": []
+  },
+  {
+   "id": "wpt-block-13",
+   "kind": "wynn-wpt-structure-block",
+   "block": 13,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": [
+    {
+     "kind": "payout-section",
+     "heading": "Payouts",
+     "line": 1288,
+     "line_count": 6,
+     "text": "Each Day 1 will play until 12.5% or less of the field remains. At the beginning of Day 2, the \nTournament clock will resume at the earliest finishing time at which play ended on Day 1. \n \nOnly players who advance to Day 2 will be considered “in the money”. The Tournament prize pool \nwill be calculated at the conclusion of Day 1 and will be based on the number of players who \nadvance to Day 2. ",
+     "raw": true
+    },
+    {
+     "kind": "bounty-rules-section",
+     "heading": "Mystery Bounty Rules",
+     "line": 1304,
+     "line_count": 30,
+     "text": "The Tournament will reward participants for eliminating another player (the “Bounty”). Each player \nwho eliminates a Bounty from the Tournament will receive a prize (as outlined below) from the \nBounty prize pool.  \n \nEach player who advances to Day 2 will be designated as a “Mystery” Bounty. \n \nAll Tournament and Bounty prizes are included in the Tournament guaranteed prize pool of \n$500,000 (the “Guarantee”). In the event that the number of paid entries does not generate at \nleast the Guaranteed prize pool, after the deduction of the Tournament fees and service charge, \n$325,000 of the Guarantee will be designated for the Tournament prize pool and $175,000 of the \nGuarantee will be designated for the Bounty prize pool. \n \nIn the event that multiple players eliminate a Bounty with the same winning hand, all players with a \nTournament chip count equal to or greater than the eliminated Bounty prior to the start of the hand \nwill equally split the corresponding Bounty prize.  \n  \nOn Day 2, a player eliminating a Bounty will receive a voucher for a “Mystery” Bounty prize. \n“Mystery” Bounty prizes may be redeemed by presenting the Mystery Bounty prize voucher to the \nTournament staff located at the designated redemption location, at which time the player will \nrandomly draw an envelope from the “Mystery Bounty” drawing drum to reveal their “Mystery” \nBounty prize. \n \nOnce received, Mystery Bounty prize vouchers are the sole responsibility of the player. Lost or \nstolen Mystery Bounty prize vouchers will not be replaced.  \n \n“Mystery” Bounty prize amounts will be determined based on actual Tournament Entry Fees \nreceived and displayed in the Tournament area prior to the beginning of the Tournament restart \non Day 2.      \n \n“Mystery” Bounty prizes will range in value from $1,000 to $100,000 and may include the following ",
+     "raw": true
+    },
+    {
+     "kind": "prize-table",
+     "heading": "prizes",
+     "line": 1336,
+     "line_count": 197,
+     "text": "Sample Prize Values for the “Mystery Bounty” Prizes  \n \n$100,000 \n$50,000 \n$25,000 \n$10,000 \n$5,000 \n$2,500 \n$1,000 \nThe Mystery Bounty Prize Values and number of prizes are based on a minimum total Tournament Prize pool of $500,000 and is subject to change \nbased upon the actual number of participants. \n \nThe “Mystery” Bounty prize pool and prize amounts may not be altered.  \n \nAll Tournament and “Mystery” Bounty prizes will be paid in Wynn Las Vegas live casino chips.  \n \n“Mystery” Bounty prizes may be redeemed at the designated redemption area anytime during play \non December 7, 2026, up until the Tournament has concluded. All eliminated players must \nredeem any earned “Mystery” bounty prizes prior to collecting their tournament payout. \n \n“Mystery” Bounty prizes that have not been claimed by “Mystery” Bounty winners within the \nallotted timeframe will be drawn for in alphabetical order by last name, by Tournament staff, and \nheld on account at the Encore at Wynn Las Vegas casino cage for thirty (30) days following the \nconclusion of the Tournament.  If a “Mystery” Bounty prize is not claimed after thirty (30) days, the \nunclaimed “Mystery” Bounty prize will be forfeited and not awarded to an alternate winner. \n \nIn the event that one or more of the “bonus” envelopes have not been drawn at the conclusion of \nDay 2, all remaining bonus “Mystery” Bounty prize envelopes will be awarded to the player who is \ndeclared the winner of the Tournament.  \n \nIn the event that the number of envelopes at the conclusion of the Tournament is incorrect, every \neffort will be made to determine which prize(s) is outstanding based on the prize list published at \nthe beginning of play on December 7, 2026. \n \n \n \n \n \n \n \n \n \n \n \n \n \n  \n \n \nHORSE (2 Day) \n$1,100 Entry Fee \nLEVEL TYPE ANTE \n \nSMALL BLIND/ \nBRING IN \n \nBIG BLIND/ \nCOMPLETION \n \nLIMITS \n1 \nLimit Games   300   500   500-1,000 \nStud Games 100   200   500   500-1,000 \n2 \nLimit Games   300   600   600-1,200 \nStud Games 100   200   600   600-1,200 \n3 \nLimit Games   400   800   800-1,600 \nStud Games 200   200   800   800-1,600 \n4 \nLimit Games   500   1000   1,000-2,000 \nStud Games 200   300   1000   1,000-2,000 \n5 \nLimit Games \n \n600 \n \n1200 \n \n1,200-2,400 \nStud Games 300 \n \n300 \n \n1200 \n \n1,200-2,400 \n6 \nLimit Games   800   1,500   1,500-3,000 \nStud Games 300   500   1,500   1,500-3,000 \n7 \nLimit Games \n \n800 \n \n1,500 \n \n1,500-3,000 \nStud Games 300 \n \n500 \n \n1,500 \n \n1,500-3,000 \n8 \nLimit Games   1000   2,000   2,000-4,000 \nStud Games 500   500   2,000   2,000-4,000 \n9 \nLimit Games \n \n1000 \n \n2,000 \n \n2,000-4,000 \nStud Games 500 \n \n500 \n \n2,000 \n \n2,000-4,000 \n10 \nLimit Games   1,500   2,500   2,500-5,000 \nStud Games 500   1000   2,500   2,500-5,000 \n11 \nLimit Games \n \n1,500 \n \n3,000 \n \n3,000-6,000 \nStud Games 1,000 \n \n1,000 \n \n3,000 \n \n3,000-6,000 \n12 \nLimit Games   2,000   4,000   4,000-8,000 \nStud Games 1,000   1,000   4,000   4,000-8,000 \n13 \nLimit Games \n \n2,500 \n \n5,000 \n \n5,000-10,000 \nStud Games 1,000 \n \n2,000 \n \n5,000 \n \n5,000-10,000 \n14 \nLimit Games   3,000   6,000   6,000-12,000 \nStud Games 1,500   2,000   6,000   6,000-12,000 \n15 \nLimit Games \n \n4,000 \n \n8,000 \n \n8,000-16,000 \nStud Games 2,000 \n \n2,000 \n \n8,000 \n \n8,000-16,000 \n16 \nLimit Games   5,000   10,000   10,000-20,000 \nStud Games 2,000   3,000   10,000   10,000-20,000 \n17 \nLimit Games \n \n6,000 \n \n12,000 \n \n12,000-24,000 \nStud Games 3,000 \n \n3,000 \n \n12,000 \n \n12,000-24,000 \n\n$1,100 HORSE (2 Day) ",
+     "raw": true
+    }
+   ]
+  },
+  {
+   "id": "wpt-block-14",
+   "kind": "wynn-wpt-structure-block",
+   "block": 14,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": []
+  },
+  {
+   "id": "wpt-block-15",
+   "kind": "wynn-wpt-structure-block",
+   "block": 15,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": [
+    {
+     "kind": "bounty-rules-section",
+     "heading": "Bounty Rules",
+     "line": 1654,
+     "line_count": 68,
+     "text": "The Tournament will reward participants for eliminating another player (the “Bounty”). Each player who \neliminates a Bounty from the Tournament will receive a prize (as outlined below) from the Bounty prize \npool.  \n \nAll Tournament and Bounty prizes are included as part of the guaranteed prize pool of $100,000 (the \n“Guarantee”). In the event that the number of Tournament entries do not generate at least the Guarantee \nthe Tournament prize pool will be equal to $100,000 less the total amount of entries multiplied by $500 for \nthe Bounty prize pool [$100,000 – (total entries x $500)].  \n \nPlayers are responsible for keeping their own Bounty chips visible and on the table at all times during their \nTournament play. A player who misplaces or loses their assigned Bounty chips will be required to replace \nthem at their own expense. Failure to follow this rule may result in a penalty, up to and including \ndisqualification and forfeiture of Tournament and Bounty chips. \n \nWhen a player is eliminated from the Tournament, the winner(s) of that hand will be awarded one (1) \nBounty chip of each eliminated player(s). \n \nBounty chips are only to be used for purposes of the Bounty prize pool in this Tournament and will only be \nexchanged for a live poker chip as outlined below. Bounty chips have no cash value and cannot otherwise \nbe exchanged or substituted. Each Bounty chip is assigned a value of $500. \n \nIn the event multiple players eliminate a Bounty with the same winning hand, all players with a Tournament \nchip count equal to or greater than the Bounty prior to the start of the hand will receive an equally split \nportion of the Bounty chip(s) of the eliminated player(s). \n \nRemoval of Bounty chips from the table or any attempt to manipulate or circumvent the Bounty chip \nexchange may result in penalty, up to and including disqualification. \n  \n \n  \n  \nNo Limit Hold’em \n$1,600 Entry Fee \n$1,000,000 Guarantee \nLevel   Small Blind   Big Blind   Ante   \n1  100  200  200  \n2  200  300  300  \n3  200  400  400  \n4  300  500  500  \n5  300  600  600  \n6  400  800  800  \n7  500  1,000  1,000  \n8  600  1,200  1,200  \n9  1,000  1,500  1,500  \n10  1,000  2,000  2,000  \n11  1,500  2,500  2,500  \n12  1,500  3,000  3,000  \n13  2,000  4,000  4,000  \n14  3,000  5,000  5,000  \n15  3,000  6,000  6,000  \n16  4,000  8,000  8,000  \n17  5,000  10,000  10,000  \n18  6,000  12,000  12,000  \n19  10,000  15,000  15,000  \n20  10,000  20,000  20,000  \n21  15,000  25,000  25,000  \n22  15,000  30,000  30,000  \n23  20,000  40,000  40,000  \n24  25,000  50,000  50,000  \n25  30,000  60,000  60,000  \n26  40,000  80,000  80,000  \n27  50,000  100,000  100,000  \n28  75,000  125,000  125,000  \n \n  \n\n$1,600 No Limit Hold’em \n$1,000,000 GUARANTEE ",
+     "raw": true
+    }
+   ]
+  },
+  {
+   "id": "wpt-block-16",
+   "kind": "wynn-wpt-structure-block",
+   "block": 16,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": []
+  },
+  {
+   "id": "wpt-block-17",
+   "kind": "wynn-wpt-structure-block",
+   "block": 17,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": [
+    {
+     "kind": "bounty-rules-section",
+     "heading": "Bounty Rules",
+     "line": 1829,
+     "line_count": 66,
+     "text": "The Tournament will reward participants for eliminating another player (the “Bounty”). Each player who \neliminates a Bounty from the Tournament will receive a prize (as outlined below) from the Bounty prize \npool.  \n \nAll Tournament and Bounty prizes are included as part of the guaranteed prize pool of $250,000 (the \n“Guarantee”). In the event that the number of Tournament entries do not generate at least the Guarantee \nthe Tournament prize pool will be equal to $250,000 less the total amount of entries multiplied by $1,000 \nfor the Bounty prize pool [$250,000 – (total entries x $1,000)].  \n \nPlayers are responsible for keeping their own Bounty chips visible and on the table at all times during their \nTournament play. A player who misplaces or loses their assigned Bounty chips will be required to replace \nthem at their own expense. Failure to follow this rule may result in a penalty, up to and including \ndisqualification and forfeiture of Tournament and Bounty chips. \n \nWhen a player is eliminated from the Tournament, the winner(s) of that hand will be awarded one (1) \nBounty chip of each eliminated player(s). \n \nBounty chips are only to be used for purposes of the Bounty prize pool in this Tournament and will only be \nexchanged for a live poker chip as outlined below. Bounty chips have no cash value and cannot otherwise \nbe exchanged or substituted. Each Bounty chip is assigned a value of $1,000. \n \nIn the event multiple players eliminate a Bounty with the same winning hand, all players with a Tournament \nchip count equal to or greater than the Bounty prior to the start of the hand will receive an equally split \nportion of the Bounty chip(s) of the eliminated player(s). \n \nRemoval of Bounty chips from the table or any attempt to manipulate or circumvent the Bounty chip \nexchange may result in penalty, up to and including disqualification. \n \n \n \nLimit Omaha 8 \n$800 Entry Fee  \nLevel   Small Blind   Big Blind   Limits   \n1  200  400  400-800  \n2  300  500  500-1,000  \n3  300  600  600-1,200  \n4  400  800  800-1,600  \n5  500  1,000  1,000-2,000  \n6  600  1,200  1,200-2,400  \n7  800  1,500  1,500-3,000  \n8  800  1,500  1,500-3,000  \n9  1,000  2,000  2,000-4,000  \n10  1,000  2,000  2,000-4,000  \n11  1,500  2,500  2,500-5,000  \n12  1,500  3,000  3,000-6,000  \n13  2,000  4,000  4,000-8,000  \n14  3,000  5,000  5,000-10,000  \n15  3,000  6,000  6,000-12,000  \n16  4,000  8,000  8,000-16,000  \n17  5,000  10,000  10,000-20,000  \n18  6,000  12,000  12,000-24,000  \n19  8,000  15,000  15,000-30,000  \n20  10,000  20,000  20,000-40,000  \n21  15,000  25,000  25,000-50,000  \n22  15,000  30,000  30,000-60,000  \n23  20,000  40,000  40,000-80,000  \n24  25,000  50,000  50,000-100,000  \n25  30,000  60,000  60,000-120,000  \n26  40,000  80,000  80,000-160,000  \n27  50,000  100,000  100,000-200,000  \n28  75,000  125,000  125,000-250,000  \n29  75,000  150,000  150,000-300,000  \n30  100,000  200,000  200,000-400,000  \n  \n\n$800 Limit Omaha 8 ",
+     "raw": true
+    }
+   ]
+  },
+  {
+   "id": "wpt-block-18",
+   "kind": "wynn-wpt-structure-block",
+   "block": 18,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": []
+  },
+  {
+   "id": "wpt-block-19",
+   "kind": "wynn-wpt-structure-block",
+   "block": 19,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": [
+    {
+     "kind": "payout-section",
+     "heading": "Payouts",
+     "line": 2008,
+     "line_count": 9,
+     "text": "One in eight (1-in-8) entries will be in the money (approximately 12.5%).  \n \n12.5%-10% = $500 payout \n10%-7.5% = $600 payout \n \nThis Tournament must play until a winner is declared.  Any adjustment to the posted prize pool requires approval of \nthe tournament staff.  Based on the remaining prize pool, tournament staff may dictate a minimum amount withheld \nwhich will be designated to the first-place winner, in such a manner that, regardless of the agreed upon adjustments \nmade to the prize pool, the first-place winner will be awarded the largest cash prize. ",
+     "raw": true
+    },
+    {
+     "kind": "bounty-rules-section",
+     "heading": "Mystery Bounty Rules",
+     "line": 2019,
+     "line_count": 65,
+     "text": "The Tournament will reward participants for eliminating another player (the “Bounty”). Each player who eliminates a \nBounty from the Tournament will receive a prize (as outlined below) from the Bounty prize pool.  \n \nEach player who advances to Day 3 will be designated as a “Mystery” Bounty. \n \nAll Tournament and Bounty prizes are included in the Tournament guaranteed prize pool of $3,000,000 (the \n“Guarantee”). In the event that the number of paid entries does not generate at least the Guaranteed prize pool, after \nthe deduction of the Tournament fees and service charge, $1,800,000 of the Guarantee will be designated for the \nTournament prize pool and $1,200,000 of the Guarantee will be designated for the Bounty prize pool. \n \nIn the event that multiple players eliminate a Bounty with the same winning hand, all players with a Tournament chip \ncount equal to or greater than the eliminated Bounty prior to the start of the hand will equally split the corresponding \nBounty prize.  \n  \nOn Day 3, a player eliminating a Bounty will receive a voucher for a “Mystery” Bounty prize. “Mystery” Bounty prizes \nmay be redeemed by presenting the Mystery Bounty prize voucher to the Tournament staff located at the designated \nredemption location, at which time the player will randomly draw an envelope from the “Mystery Bounty” drawing drum \nto reveal their “Mystery” Bounty prize. \n \nOnce received, Mystery Bounty prize vouchers are the sole responsibility of the player. Lost or stolen Mystery Bounty \nprize vouchers will not be replaced.  \n \n“Mystery” Bounty prize amounts will be based on $1,200,000 and displayed in the Tournament area prior to the \nbeginning of the Tournament restart on Day 3.      \n \n“Mystery” Bounty prizes will range in value from $1,000 to $100,000 and may include the following prizes: \n \nSample Prize Values for the “Mystery Bounty” Prizes  \n \n$100,000 \n$50,000 \n$25,000 \n$10,000 \nGold Briefcase \n$5,000 \n$2,500 \n$1,000 \nThe Mystery Bounty Prize Values and number of prizes are based on a minimum total Tournament Prize pool of \n$3,000,000 and is subject to change based upon the actual number of participants. \n \nThe “Mystery” Bounty prize pool and prize amounts may not be altered.  \n \nGold Briefcase: Forty (40) of the mystery bounty envelopes will contain a gold briefcase. Winners of a gold briefcase \nwill draw from a secondary drawing drum. The envelope that the player draws from the secondary drawing drum will \naward them the Gold Briefcase of the corresponding number. When the gold case is opened, the player will receive \nthe prize revealed. All players who earn a Gold Briefcase will be required to draw their case at the conclusion of the \ndinner break. No player will be allowed to select their briefcase prior to this time. Players will draw their Gold Briefcase \nin the order in which they were won. When play resumes after the dinner break, any earned Gold Briefcases must be \nredeemed immediately. \n \nAll Tournament and “Mystery” Bounty prizes will be paid in Wynn Las Vegas live casino chips.  \n \n“Mystery” Bounty prizes may be redeemed at the designated redemption area anytime during play on December 13 or \n14, 2026, up until the Tournament has concluded. All eliminated players must redeem any earned “Mystery” bounty \nprizes prior to collecting their tournament payout. \n \n“Mystery” Bounty prizes that have not been claimed by “Mystery” Bounty winners within the allotted timeframe will be \ndrawn for in alphabetical order by last name, by Tournament staff, and held on account at the Encore at Wynn Las \nVegas casino cage for thirty (30) days following the conclusion of the Tournament.  If a “Mystery” Bounty prize is not \nclaimed after thirty (30) days, the unclaimed “Mystery” Bounty prize will be forfeited and not awarded to an alternate \nwinner. \n \nIn the event that the number of envelopes at the conclusion of the Tournament is incorrect, every effort will be made \nto determine which prize(s) is outstanding based on the prize list published at the beginning of play on December 13, \n2026. ",
+     "raw": true
+    }
+   ]
+  },
+  {
+   "id": "wpt-block-20",
+   "kind": "wynn-wpt-structure-block",
+   "block": 20,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": []
+  },
+  {
+   "id": "wpt-block-21",
+   "kind": "wynn-wpt-structure-block",
+   "block": 21,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": []
+  },
+  {
+   "id": "wpt-block-22",
+   "kind": "wynn-wpt-structure-block",
+   "block": 22,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": [
+    {
+     "kind": "payout-section",
+     "heading": "Payouts",
+     "line": 2312,
+     "line_count": 8,
+     "text": "One in eight (1-in-8) entries will be in the money (approximately 12.5%).  \nThis Tournament must play until a winner is declared.  Any adjustment to the posted prize pool requires approval of \nthe tournament staff.  Based on the remaining prize pool, tournament staff may dictate a minimum amount withheld \nwhich will be designated to the first-place winner, in such a manner that, regardless of the agreed upon adjustments \nmade to the prize pool, the first-place winner will be awarded the largest cash prize. \n \n$10,400 will be withheld from the prize pool and issued to first place in the form of an entry to the December 2027 \nWPT World Championship. ",
+     "raw": true
+    },
+    {
+     "kind": "mystery-payout-section",
+     "heading": "Mystery Payouts",
+     "line": 2323,
+     "line_count": 25,
+     "text": "$1,000,000 in “Mystery Payouts” will be added to the prize pool from ClubWPT Gold (ClubWPT Gold is not available \nin Nevada). The $1,000,000 will begin distribution when the final one hundred (100) players remain. When one \nhundred (100) players remain, each player who is eliminated must immediately draw a “Mystery Payout” from the \ndrawing drum in the order that they were eliminated. If a player fails to draw their “Mystery Payout” before the next \nplayer is eliminated, a member of the Wynn Las Vegas Tournament staff will draw and open the envelope on the \nplayers behalf. \n \n“Mystery Payout” prizes that have not been claimed by “Mystery Payout” winners within the allotted timeframe will be \ndrawn for by Tournament staff and held on account at the Encore at Wynn Las Vegas casino cage for thirty (30) days \nfollowing the conclusion of the Tournament.  If a “Mystery Payout” prize is not claimed after thirty (30) days, the \nunclaimed “Mystery Payout” prize will be forfeited and not awarded to an alternate winner. \n \n The drawing drum will contain 99 envelopes with the prize distribution listed below. The winner of the tournament will \nnot receive a “Mystery Payout” envelope.  \n \n  Prize Values for the “Mystery Payout” Prizes  \n \n$100,000 X 2 \n$50,000 X 3 \n$25,000 X 5 \n$10,000 X 15 \n$7,500 X 35 \n$5,000 X 10 \n$2,500 X 25 \n$0 X 4 ",
+     "raw": true
+    }
+   ]
+  },
+  {
+   "id": "wpt-block-23",
+   "kind": "wynn-wpt-structure-block",
+   "block": 23,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": []
+  },
+  {
+   "id": "wpt-block-24",
+   "kind": "wynn-wpt-structure-block",
+   "block": 24,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": []
+  },
+  {
+   "id": "wpt-block-25",
+   "kind": "wynn-wpt-structure-block",
+   "block": 25,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": [
+    {
+     "kind": "payout-section",
+     "heading": "Payouts",
+     "line": 2726,
+     "line_count": 7,
+     "text": "Each Day 1 will play until 12.5% or less of the field remains. At the beginning of Day 2, the \nTournament clock will resume at the earliest finishing time at which play ended in any of the \nprevious starting flights. \n \nOnly players who advance to Day 2 will be considered “in the money”. The Tournament prize pool \nwill be calculated at the conclusion of the final starting flight based on the number of players who \nadvance to Day 2. ",
+     "raw": true
+    }
+   ]
+  },
+  {
+   "id": "wpt-block-26",
+   "kind": "wynn-wpt-structure-block",
+   "block": 26,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": [
+    {
+     "kind": "payout-section",
+     "heading": "Payouts",
+     "line": 2819,
+     "line_count": 7,
+     "text": "Each Day 1 will play until 12.5% or less of the field remains. At the beginning of Day 2, the \nTournament clock will resume at the earliest finishing time at which play ended in any of the \nprevious starting flights. \n \nOnly players who advance to Day 2 will be considered “in the money”. The Tournament prize pool \nwill be calculated at the conclusion of the final starting flight based on the number of players who \nadvance to Day 2. ",
+     "raw": true
+    }
+   ]
+  },
+  {
+   "id": "wpt-block-27",
+   "kind": "wynn-wpt-structure-block",
+   "block": 27,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": []
+  },
+  {
+   "id": "wpt-block-28",
+   "kind": "wynn-wpt-structure-block",
+   "block": 28,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": []
+  },
+  {
+   "id": "wpt-block-29",
+   "kind": "wynn-wpt-structure-block",
+   "block": 29,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": []
+  },
+  {
+   "id": "wpt-block-30",
+   "kind": "wynn-wpt-structure-block",
+   "block": 30,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": [
+    {
+     "kind": "bounty-rules-section",
+     "heading": "Progressive Bounty Rules",
+     "line": 3134,
+     "line_count": 84,
+     "text": "The Tournament will reward participants for eliminating another player (the “Bounty”). Each player \nwho eliminates a Bounty from the Tournament will receive a prize (as outlined below) from the \nBounty prize pool.  \n \nPlayers are responsible for keeping their own Bounty chips visible and on the table at all times \nduring their Tournament play. A player who misplaces or loses their assigned Bounty chips will be \nrequired to replace them at their own expense. Failure to follow this rule may result in penalty, up \nto and including disqualification and forfeiture of Tournament and Bounty chips. \n \nWhen a player is eliminated from the Tournament, the winner(s) of that hand will be awarded all \nBounty chips in possession of that eliminated player(s). \n \nBounty chips of multiple eliminated players will be combined prior to being divided among the \nwinner(s). \n \nBounty chips are only to be used for purposes of the Bounty prize pool in this Tournament and will \nonly be exchanged for a live poker chip as outlined below. Bounty chips have no cash value and \ncannot otherwise be exchanged or substituted. Each Bounty chip is assigned a value of $250. \n \nIf a single winner eliminates a player(s), the Bounty chips from the eliminated player(s) will be \ndivided in half by the dealer and one-half (1/2) of these Bounty chips will be exchanged, one-for-\none, for a live casino chip valued at $250.  The remaining half of the Bounty chips from the \neliminated player will be added to the winning player’s Bounty chip stack. If a player is eliminated \nwith an odd number of Bounty chips, the “odd” Bounty chip will be added to the winning player’s \nstack of Bounty chips. \n \nIn the event multiple players eliminate a Bounty with the same winning hand, all players with a \nTournament chip count equal to or greater than the Bounty prior to the start of the hand will \nreceive an equally split portion of the Bounty chips of the eliminated player(s) prior to the dealer \nsplitting and exchanging the Bounty chips as outlined above for each individual winner.  \n \nIf there are insufficient Bounty chips to supply each winner with an even amount, the “odd” Bounty \nchip(s) will be awarded beginning with the player in the worst position (the first player left of the \ndealer button). If there are insufficient Bounty chips to supply each winner with a single Bounty \nchip, the Bounty chips will be awarded, one at a time, beginning with the player in the worst \nposition (the player who acted first during the play of the hand). \n \nBounty chips will only be redeemed for live casino chips at the table by a Tournament supervisor \nimmediately after the Bounty is earned. Bounty chips will not be permitted to be redeemed at any \nother time.  \n \nRemoval of Bounty chips from the table or any attempt to manipulate or circumvent the Bounty \nchip exchange may result in penalty, up to and including disqualification.  \n \n \n \nNLH $500 Bounty Turbo \n$1,600 Entry Fee \n$100,000 Guarantee \nLevel   Small Blind   Big Blind   Ante   \n1  100  200  200  \n2  200  300  300  \n3  200  400  400  \n4  300  500  500  \n5  300  600  600  \n6  400  800  800  \n7  500  1,000  1,000  \n8  600  1,200  1,200  \n9  1,000  1,500  1,500  \n10  1,000  2,000  2,000  \n11  1,500  3,000  3,000  \n12  2,000  4,000  4,000  \n13  3,000  6,000  6,000  \n14  4,000  8,000  8,000  \n15  5,000  10,000  10,000  \n16  6,000  12,000  12,000  \n17  10,000  15,000  15,000  \n18  10,000  20,000  20,000  \n19  15,000  30,000  30,000  \n20  20,000  40,000  40,000  \n21  25,000  50,000  50,000  \n22  30,000  60,000  60,000  \n23  40,000  80,000  80,000  \n24  50,000  100,000  100,000  \n25  75,000  125,000  125,000  \n26  75,000  150,000  150,000  \n27  100,000  200,000  200,000  \n28  125,000  250,000  250,000  \n \n  \n\n \n$1,600 NLH $500 Bounty Turbo \n$100,000 GUARANTEE ",
+     "raw": true
+    }
+   ]
+  },
+  {
+   "id": "wpt-block-31",
+   "kind": "wynn-wpt-structure-block",
+   "block": 31,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": [
+    {
+     "kind": "bounty-rules-section",
+     "heading": "Bounty Rules",
+     "line": 3246,
+     "line_count": 68,
+     "text": "The Tournament will reward participants for eliminating another player (the “Bounty”). Each player who \neliminates a Bounty from the Tournament will receive a prize (as outlined below) from the Bounty prize \npool.  \n \nAll Tournament and Bounty prizes are included as part of the guaranteed prize pool of $100,000 (the \n“Guarantee”). In the event that the number of Tournament entries do not generate at least the Guarantee \nthe Tournament prize pool will be equal to $100,000 less the total amount of entries multiplied by $500 for \nthe Bounty prize pool [$100,000 – (total entries x $500)].  \n \nPlayers are responsible for keeping their own Bounty chips visible and on the table at all times during their \nTournament play. A player who misplaces or loses their assigned Bounty chips will be required to replace \nthem at their own expense. Failure to follow this rule may result in a penalty, up to and including \ndisqualification and forfeiture of Tournament and Bounty chips. \n \nWhen a player is eliminated from the Tournament, the winner(s) of that hand will be awarded one (1) \nBounty chip of each eliminated player(s). \n \nBounty chips are only to be used for purposes of the Bounty prize pool in this Tournament and will only be \nexchanged for a live poker chip as outlined below. Bounty chips have no cash value and cannot otherwise \nbe exchanged or substituted. Each Bounty chip is assigned a value of $500. \n \nIn the event multiple players eliminate a Bounty with the same winning hand, all players with a Tournament \nchip count equal to or greater than the Bounty prior to the start of the hand will receive an equally split \nportion of the Bounty chip(s) of the eliminated player(s). \n \nRemoval of Bounty chips from the table or any attempt to manipulate or circumvent the Bounty chip \nexchange may result in penalty, up to and including disqualification. \n  \n \n  \n  \nNo Limit Hold’em \n$1,100 Entry Fee \n$1,000,000 Guarantee \nLevel   Small Blind   Big Blind   Ante   \n1  100  200  200  \n2  200  300  300  \n3  200  400  400  \n4  300  500  500  \n5  300  600  600  \n6  400  800  800  \n7  500  1,000  1,000  \n8  600  1,200  1,200  \n9  1,000  1,500  1,500  \n10  1,000  2,000  2,000  \n11  1,500  2,500  2,500  \n12  1,500  3,000  3,000  \n13  2,000  4,000  4,000  \n14  3,000  5,000  5,000  \n15  3,000  6,000  6,000  \n16  4,000  8,000  8,000  \n17  5,000  10,000  10,000  \n18  6,000  12,000  12,000  \n19  10,000  15,000  15,000  \n20  10,000  20,000  20,000  \n21  15,000  25,000  25,000  \n22  15,000  30,000  30,000  \n23  20,000  40,000  40,000  \n24  25,000  50,000  50,000  \n25  30,000  60,000  60,000  \n26  40,000  80,000  80,000  \n27  50,000  100,000  100,000  \n28  75,000  125,000  125,000  \n \n  \n\n$1,100 No Limit Hold’em \n$1,000,000 GUARANTEE ",
+     "raw": true
+    }
+   ]
+  },
+  {
+   "id": "wpt-block-32",
+   "kind": "wynn-wpt-structure-block",
+   "block": 32,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": [
+    {
+     "kind": "payout-section",
+     "heading": "Payouts",
+     "line": 3351,
+     "line_count": 7,
+     "text": "Each Day 1 will play until 12.5% or less of the field remains. At the beginning of Day 2, the \nTournament clock will resume at the earliest finishing time at which play ended in any of the \nprevious starting flights. \n \nOnly players who advance to Day 2 will be considered “in the money”. The Tournament prize pool \nwill be calculated at the conclusion of the final starting flight based on the number of players who \nadvance to Day 2. ",
+     "raw": true
+    }
+   ]
+  },
+  {
+   "id": "wpt-block-33",
+   "kind": "wynn-wpt-structure-block",
+   "block": 33,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": []
+  },
+  {
+   "id": "wpt-block-34",
+   "kind": "wynn-wpt-structure-block",
+   "block": 34,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": []
+  },
+  {
+   "id": "wpt-block-35",
+   "kind": "wynn-wpt-structure-block",
+   "block": 35,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": []
+  },
+  {
+   "id": "wpt-block-36",
+   "kind": "wynn-wpt-structure-block",
+   "block": 36,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": []
+  },
+  {
+   "id": "wpt-block-37",
+   "kind": "wynn-wpt-structure-block",
+   "block": 37,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": []
+  },
+  {
+   "id": "wpt-block-38",
+   "kind": "wynn-wpt-structure-block",
+   "block": 38,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": [
+    {
+     "kind": "payout-section",
+     "heading": "Payouts",
+     "line": 3864,
+     "line_count": 6,
+     "text": "Each Day 1 will play until 12.5% or less of the field remains. At the beginning of Day 2, the Tournament \nclock will resume at the earliest finishing time at which play ended in any of the previous starting flights. \n \nOnly players who advance to Day 2 will be considered “in the money”. The Tournament prize pool will be \ncalculated at the conclusion of the final starting flight based on the number of players who advance to Day \n2. ",
+     "raw": true
+    }
+   ]
+  },
+  {
+   "id": "wpt-block-39",
+   "kind": "wynn-wpt-structure-block",
+   "block": 39,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": []
+  },
+  {
+   "id": "wpt-block-40",
+   "kind": "wynn-wpt-structure-block",
+   "block": 40,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": []
+  },
+  {
+   "id": "wpt-block-41",
+   "kind": "wynn-wpt-structure-block",
+   "block": 41,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": []
+  },
+  {
+   "id": "wpt-block-42",
+   "kind": "wynn-wpt-structure-block",
+   "block": 42,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": []
+  },
+  {
+   "id": "wpt-block-43",
+   "kind": "wynn-wpt-structure-block",
+   "block": 43,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": []
+  },
+  {
+   "id": "wpt-block-44",
+   "kind": "wynn-wpt-structure-block",
+   "block": 44,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": []
+  },
+  {
+   "id": "wpt-block-45",
+   "kind": "wynn-wpt-structure-block",
+   "block": 45,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": [
+    {
+     "kind": "payout-section",
+     "heading": "Payouts",
+     "line": 4383,
+     "line_count": 6,
+     "text": "Each Day 1 will play until 12.5% or less of the field remains. At the beginning of Day 2, the \nTournament clock will resume at the earliest finishing time at which play ended on Day 1. \n \nOnly players who advance to Day 2 will be considered “in the money”. The Tournament prize pool \nwill be calculated at the conclusion of Day 1 and will be based on the number of players who \nadvance to Day 2. ",
+     "raw": true
+    },
+    {
+     "kind": "bounty-rules-section",
+     "heading": "Mystery Bounty Rules",
+     "line": 4400,
+     "line_count": 30,
+     "text": "The Tournament will reward participants for eliminating another player (the “Bounty”). Each player \nwho eliminates a Bounty from the Tournament will receive a prize (as outlined below) from the \nBounty prize pool.  \n \nEach player who advances to Day 2 will be designated as a “Mystery” Bounty. \n \nAll Tournament and Bounty prizes are included in the Tournament guaranteed prize pool of \n$1,000,000 (the “Guarantee”). In the event that the number of paid entries does not generate at \nleast the Guaranteed prize pool, after the deduction of the Tournament fees and service charge, \n$650,000 of the Guarantee will be designated for the Tournament prize pool and $350,000 of the \nGuarantee will be designated for the Bounty prize pool. \n \nIn the event that multiple players eliminate a Bounty with the same winning hand, all players with a \nTournament chip count equal to or greater than the eliminated Bounty prior to the start of the hand \nwill equally split the corresponding Bounty prize.  \n  \nOn Day 2, a player eliminating a Bounty will receive a voucher for a “Mystery” Bounty prize. \n“Mystery” Bounty prizes may be redeemed by presenting the Mystery Bounty prize voucher to the \nTournament staff located at the designated redemption location, at which time the player will \nrandomly draw an envelope from the “Mystery Bounty” drawing drum to reveal their “Mystery” \nBounty prize. \n \nOnce received, Mystery Bounty prize vouchers are the sole responsibility of the player. Lost or \nstolen Mystery Bounty prize vouchers will not be replaced.  \n \n“Mystery” Bounty prize amounts will be determined based on actual Tournament Entry Fees \nreceived and displayed in the Tournament area prior to the beginning of the Tournament restart \non Day 2.      \n \n“Mystery” Bounty prizes will range in value from $500 to $100,000 and may include the following ",
+     "raw": true
+    },
+    {
+     "kind": "prize-table",
+     "heading": "prizes",
+     "line": 4432,
+     "line_count": 67,
+     "text": "Sample Prize Values for the “Mystery Bounty” Prizes  \n \n$100,000 \n$50,000 \n$25,000 \n$10,000 \n$5,000 \n$2,500 \n$1,000 \n$500 \nThe Mystery Bounty Prize Values and number of prizes are based on a minimum total Tournament Prize pool of $1,000,000 and is subject to change \nbased upon the actual number of participants. \n \nThe “Mystery” Bounty prize pool and prize amounts may not be altered.  \n \nAll Tournament and “Mystery” Bounty prizes will be paid in Wynn Las Vegas live casino chips.  \n \n“Mystery” Bounty prizes may be redeemed at the designated redemption area anytime during play \non December 21, 2026, up until the Tournament has concluded. All eliminated players must \nredeem any earned “Mystery” bounty prizes prior to collecting their tournament payout. \n \n“Mystery” Bounty prizes that have not been claimed by “Mystery” Bounty winners within the \nallotted timeframe will be drawn for in alphabetical order by last name, by Tournament staff, and \nheld on account at the Encore at Wynn Las Vegas casino cage for thirty (30) days following the \nconclusion of the Tournament.  If a “Mystery” Bounty prize is not claimed after thirty (30) days, the \nunclaimed “Mystery” Bounty prize will be forfeited and not awarded to an alternate winner. \n \nIn the event that one or more of the “bonus” envelopes have not been drawn at the conclusion of \nDay 2, all remaining bonus “Mystery” Bounty prize envelopes will be awarded to the player who is \ndeclared the winner of the Tournament.  \n \nIn the event that the number of envelopes at the conclusion of the Tournament is incorrect, every \neffort will be made to determine which prize(s) is outstanding based on the prize list published at \nthe beginning of play on December 21, 2026. \n  \n \n    PLO  $10,500 Entry Fee  \nLevel   Small Blind   Big Blind   Ante   \n1  500  1,000  1,000  \n2  1,000  1,500  1,500  \n3  1,000  2,000  2,000  \n4  1,500  2,500  2,500  \n5  1,500  3,000  3,000  \n6  2,000  4,000  4,000  \n7  3,000  5,000  5,000  \n8  3,000  6,000  6,000  \n9  4,000  8,000  8,000  \n10  5,000  10,000  10,000  \n11  10,000  15,000  15,000  \n12  10,000  20,000  20,000  \n13  15,000  25,000  25,000  \n14  15,000  30,000  30,000  \n15  20,000  40,000  40,000  \n16  25,000  50,000  50,000  \n17  30,000  60,000  60,000  \n18  40,000  80,000  80,000  \n19  50,000  100,000  100,000  \n20  75,000  125,000  125,000  \n21  75,000  150,000  150,000  \n22  100,000  200,000  200,000  \n23  125,000  250,000  250,000  \n24  150,000  300,000  300,000  \n25  200,000  400,000  400,000  \n        \n  \n\n$10,500 PLO  ",
+     "raw": true
+    }
+   ]
+  },
+  {
+   "id": "wpt-block-46",
+   "kind": "wynn-wpt-structure-block",
+   "block": 46,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": []
+  },
+  {
+   "id": "wpt-block-47",
+   "kind": "wynn-wpt-structure-block",
+   "block": 47,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": []
+  },
+  {
+   "id": "wpt-block-48",
+   "kind": "wynn-wpt-structure-block",
+   "block": 48,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": []
+  },
+  {
+   "id": "wpt-block-49",
+   "kind": "wynn-wpt-structure-block",
+   "block": 49,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": []
+  },
+  {
+   "id": "wpt-block-50",
+   "kind": "wynn-wpt-structure-block",
+   "block": 50,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": []
+  },
+  {
+   "id": "wpt-block-51",
+   "kind": "wynn-wpt-structure-block",
+   "block": 51,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": []
+  },
+  {
+   "id": "wpt-block-52",
+   "kind": "wynn-wpt-structure-block",
+   "block": 52,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": []
+  },
+  {
+   "id": "wpt-block-53",
+   "kind": "wynn-wpt-structure-block",
+   "block": 53,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": []
+  },
+  {
+   "id": "wpt-block-54",
+   "kind": "wynn-wpt-structure-block",
+   "block": 54,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": [
+    {
+     "kind": "payout-section",
+     "heading": "Payouts",
+     "line": 5200,
+     "line_count": 16,
+     "text": "The Tournament Prize will be two (2) $1,100 tournament buy-in tickets to be used towards any Wynn Poker \nTournament Entry and Fees, subject to tournament availability. Tournament buy-in tickets will expire at 11:59 p.m. on \nDecember 21, 2026. Each Tournament buy-in ticket can be used for one tournament buy-in valued at $1,100 or more.  \nAny unused portion of the Tournament buy-in ticket will not be refunded.  The Tournament buy-in tickets have no cash \nvalue and are non-transferrable. The total number of available Tournament Prizes will be based on the total number of \nEntry Fees received. One (1) Tournament Prize, valued at $2,200, will be generated for every 6.6 Entry Fees received \n(the “Tournament Prize Formula”).  \n \nA Player who accumulates 140,000 in tournament chips (“The Milestone”) or more will instantly be awarded one (1) \nTournament Prize. Upon verification from the tournament supervisor that the player has achieved the Milestone, the \nplayer will cease play and the total of his/her chips will be removed from play.  \n \nThe Tournament will conclude when the number of players remaining is equal to the number of $2,200 prizes \ngenerated based on the Tournament Prize Formula, less the amount of players who have previously won the prize by \nreaching the Milestone. Any Tournament prize pool residual funds, less than a full $2,200 prize, will be paid in Wynn \nLas Vegas casino chips to the last player eliminated prior to the conclusion of the Tournament. ",
+     "raw": true
+    }
+   ]
+  },
+  {
+   "id": "wpt-block-55",
+   "kind": "wynn-wpt-structure-block",
+   "block": 55,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": [
+    {
+     "kind": "payout-section",
+     "heading": "Payouts",
+     "line": 5304,
+     "line_count": 14,
+     "text": "The Tournament Prize will be one (1) direct entry seat into the $1,100 Prime Championship $5,000,000 GTD Poker Tournament to \nbe held on December 5-12, 2026. The total number of available Tournament Prizes will be based on the total number of Entry Fees \nreceived. One (1) Tournament Prize, valued at $1,100, will be generated for every 6.7 Entry Fees received (the “Tournament Prize \nFormula”). A minimum of 50 direct entry seats into the $1,100 Prime Championship $5,000,000 GTD Poker Tournament will be \nawarded.    \n \nA Player who accumulates 140,000 in tournament chips (“The Milestone”) or more will instantly be awarded one (1) Tournament \nPrize. Upon verification from the tournament supervisor that the player has achieved the Milestone, the player will cease play and \nthe total of his/her chips will be removed from play.  \n \nThe Tournament will conclude when the number of players remaining is equal to the number of $1,100 prizes generated based on \nthe Tournament Prize Formula, less the amount of players who have previously won the prize by reaching the Milestone. Any \nTournament prize pool residual funds, less than a full $1,100 prize, will be paid in Wynn Las Vegas casino chips to the last player \neliminated prior to the conclusion of the Tournament. ",
+     "raw": true
+    }
+   ]
+  },
+  {
+   "id": "wpt-block-56",
+   "kind": "wynn-wpt-structure-block",
+   "block": 56,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": [
+    {
+     "kind": "payout-section",
+     "heading": "Payouts",
+     "line": 5412,
+     "line_count": 13,
+     "text": "The Tournament Prize will be one (1) direct entry seat into the $1,100 WPT Prime Championship Poker Tournament to be held on \nDecember 5-12, 2026 and one (1) direct entry seat into the $10,400 WPT World Championship Poker Tournament to be held on \nDecember 13-20, 2026. The total number of available Tournament Prizes will be based on the total number of Entry Fees received. \nOne (1) Tournament Prize, valued at $11,500, will be generated for every 8 Entry Fees received (the “Tournament Prize Formula”).  \n \nA Player who accumulates 180,000 in tournament chips (“The Milestone”) or more will instantly be awarded one (1) Tournament \nPrize. Upon verification from the tournament supervisor that the player has achieved the Milestone, the player will cease play and \nthe total of his/her chips will be removed from play.  \n \nThe Tournament will conclude when the number of players remaining is equal to the number of $11,500 prizes generated based on \nthe Tournament Prize Formula, less the amount of players who have previously won the prize by reaching the Milestone. Any \nTournament prize pool residual funds, less than a full $11,500 prize, will be paid in Wynn Las Vegas casino chips to the last player \neliminated prior to the conclusion of the Tournament. ",
+     "raw": true
+    }
+   ]
+  },
+  {
+   "id": "wpt-block-57",
+   "kind": "wynn-wpt-structure-block",
+   "block": 57,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": [
+    {
+     "kind": "payout-section",
+     "heading": "Payouts",
+     "line": 5517,
+     "line_count": 13,
+     "text": "The Tournament Prize will be one (1) direct entry seat into the $10,400 WPT World Championship Poker Tournament to be held on \nDecember 13-20, 2026. The total number of available Tournament Prizes will be based on the total number of Entry Fees received. \nOne (1) Tournament Prize, valued at $10,400, will be generated for every 10.7 Entry Fees received (the “Tournament Prize \nFormula”).  \n \nA Player who accumulates 220,000 in tournament chips (“The Milestone”) or more will instantly be awarded one (1) Tournament \nPrize. Upon verification from the tournament supervisor that the player has achieved the Milestone, the player will cease play and \nthe total of his/her chips will be removed from play.  \n \nThe Tournament will conclude when the number of players remaining is equal to the number of $10,400 prizes generated based on \nthe Tournament Prize Formula, less the amount of players who have previously won the prize by reaching the Milestone. Any \nTournament prize pool residual funds, less than a full $10,400 prize, will be paid in Wynn Las Vegas casino chips to the last player \neliminated prior to the conclusion of the Tournament. ",
+     "raw": true
+    }
+   ]
+  },
+  {
+   "id": "wpt-block-58",
+   "kind": "wynn-wpt-structure-block",
+   "block": 58,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": [
+    {
+     "kind": "payout-section",
+     "heading": "Payouts",
+     "line": 5622,
+     "line_count": 13,
+     "text": "The Tournament Prize will be one (1) direct entry seat into the $10,400 WPT World Championship Poker Tournament to be held on \nDecember 13-20, 2026. The total number of available Tournament Prizes will be based on the total number of Entry Fees received. \nOne (1) Tournament Prize, valued at $10,400, will be generated for every 10.7 Entry Fees received (the “Tournament Prize \nFormula”).  \n \nA Player who accumulates 220,000 in tournament chips (“The Milestone”) or more will instantly be awarded one (1) Tournament \nPrize. Upon verification from the tournament supervisor that the player has achieved the Milestone, the player will cease play and \nthe total of his/her chips will be removed from play.  \n \nThe Tournament will conclude when the number of players remaining is equal to the number of $10,400 prizes generated based on \nthe Tournament Prize Formula, less the amount of players who have previously won the prize by reaching the Milestone. Any \nTournament prize pool residual funds, less than a full $10,400 prize, will be paid in Wynn Las Vegas casino chips to the last player \neliminated prior to the conclusion of the Tournament. ",
+     "raw": true
+    }
+   ]
+  },
+  {
+   "id": "wpt-block-59",
+   "kind": "wynn-wpt-structure-block",
+   "block": 59,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": [
+    {
+     "kind": "payout-section",
+     "heading": "Payouts",
+     "line": 5724,
+     "line_count": 16,
+     "text": "The Tournament Prize will be one (1) direct entry seat into the $1,100 Ladies Championship Poker Tournament to be held on \nDecember 13-14, 2026. The total number of available Tournament Prizes will be based on the total number of Entry Fees received. \nOne (1) Tournament Prize, valued at $1,100, will be generated for every 6.7 Entry Fees received (the “Tournament Prize \nFormula”).  \n \nMale prize winners will receive $1,100 in tournament credit to be used towards their $11,100 buy-in into the 2026 Ladies \nChampionship.  \n \nA Player who accumulates 140,000 in tournament chips (“The Milestone”) or more will instantly be awarded one (1) Tournament \nPrize. Upon verification from the tournament supervisor that the player has achieved the Milestone, the player will cease play and \nthe total of his/her chips will be removed from play.  \n \nThe Tournament will conclude when the number of players remaining is equal to the number of $1,100 prizes generated based on \nthe Tournament Prize Formula, less the amount of players who have previously won the prize by reaching the Milestone. Any \nTournament prize pool residual funds, less than a full $1,100 prize, will be paid in Wynn Las Vegas casino chips to the last player \neliminated prior to the conclusion of the Tournament. ",
+     "raw": true
+    }
+   ]
+  },
+  {
+   "id": "wpt-block-60",
+   "kind": "wynn-wpt-structure-block",
+   "block": 60,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": [
+    {
+     "kind": "payout-section",
+     "heading": "Payouts",
+     "line": 5830,
+     "line_count": 13,
+     "text": "The Tournament Prize will be one (1) direct entry seat into the $10,400 WPT World Championship Poker Tournament to be held on \nDecember 13-20, 2026. The total number of available Tournament Prizes will be based on the total number of Entry Fees received. \nOne (1) Tournament Prize, valued at $10,400, will be generated for every 10.7 Entry Fees received (the “Tournament Prize \nFormula”).  \n \nA Player who accumulates 220,000 in tournament chips (“The Milestone”) or more will instantly be awarded one (1) Tournament \nPrize. Upon verification from the tournament supervisor that the player has achieved the Milestone, the player will cease play and \nthe total of his/her chips will be removed from play.  \n \nThe Tournament will conclude when the number of players remaining is equal to the number of $10,400 prizes generated based on \nthe Tournament Prize Formula, less the amount of players who have previously won the prize by reaching the Milestone. Any \nTournament prize pool residual funds, less than a full $10,400 prize, will be paid in Wynn Las Vegas casino chips to the last player \neliminated prior to the conclusion of the Tournament. ",
+     "raw": true
+    }
+   ]
+  },
+  {
+   "id": "wpt-block-61",
+   "kind": "wynn-wpt-structure-block",
+   "block": 61,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": [
+    {
+     "kind": "payout-section",
+     "heading": "Payouts",
+     "line": 5933,
+     "line_count": 13,
+     "text": "The Tournament Prize will be one (1) direct entry seat into the $10,400 WPT World Championship Poker Tournament to be held on \nDecember 13-20, 2026. The total number of available Tournament Prizes will be based on the total number of Entry Fees received. \nOne (1) Tournament Prize, valued at $10,400, will be generated for every 10.7 Entry Fees received (the “Tournament Prize \nFormula”).  \n \nA Player who accumulates 220,000 in tournament chips (“The Milestone”) or more will instantly be awarded one (1) Tournament \nPrize. Upon verification from the tournament supervisor that the player has achieved the Milestone, the player will cease play and \nthe total of his/her chips will be removed from play.  \n \nThe Tournament will conclude when the number of players remaining is equal to the number of $10,400 prizes generated based on \nthe Tournament Prize Formula, less the amount of players who have previously won the prize by reaching the Milestone. Any \nTournament prize pool residual funds, less than a full $10,400 prize, will be paid in Wynn Las Vegas casino chips to the last player \neliminated prior to the conclusion of the Tournament. ",
+     "raw": true
+    }
+   ]
+  },
+  {
+   "id": "wpt-block-62",
+   "kind": "wynn-wpt-structure-block",
+   "block": 62,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": [
+    {
+     "kind": "payout-section",
+     "heading": "Payouts",
+     "line": 6037,
+     "line_count": 13,
+     "text": "The Tournament Prize will be one (1) direct entry seat into the $10,400 WPT World Championship Poker Tournament to be held on \nDecember 13-20, 2026. The total number of available Tournament Prizes will be based on the total number of Entry Fees received. \nOne (1) Tournament Prize, valued at $10,400, will be generated for every 10.7 Entry Fees received (the “Tournament Prize \nFormula”).  \n \nA Player who accumulates 220,000 in tournament chips (“The Milestone”) or more will instantly be awarded one (1) Tournament \nPrize. Upon verification from the tournament supervisor that the player has achieved the Milestone, the player will cease play and \nthe total of his/her chips will be removed from play.  \n \nThe Tournament will conclude when the number of players remaining is equal to the number of $10,400 prizes generated based on \nthe Tournament Prize Formula, less the amount of players who have previously won the prize by reaching the Milestone. Any \nTournament prize pool residual funds, less than a full $10,400 prize, will be paid in Wynn Las Vegas casino chips to the last player \neliminated prior to the conclusion of the Tournament. ",
+     "raw": true
+    }
+   ]
+  },
+  {
+   "id": "wpt-block-63",
+   "kind": "wynn-wpt-structure-block",
+   "block": 63,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": [
+    {
+     "kind": "payout-section",
+     "heading": "Payouts",
+     "line": 6140,
+     "line_count": 13,
+     "text": "The Tournament Prize will be one (1) direct entry seat into the $10,400 WPT World Championship Poker Tournament to be held on \nDecember 13-20, 2026. The total number of available Tournament Prizes will be based on the total number of Entry Fees received. \nOne (1) Tournament Prize, valued at $10,400, will be generated for every 10.7 Entry Fees received (the “Tournament Prize \nFormula”).  \n \nA Player who accumulates 220,000 in tournament chips (“The Milestone”) or more will instantly be awarded one (1) Tournament \nPrize. Upon verification from the tournament supervisor that the player has achieved the Milestone, the player will cease play and \nthe total of his/her chips will be removed from play.  \n \nThe Tournament will conclude when the number of players remaining is equal to the number of $10,400 prizes generated based on \nthe Tournament Prize Formula, less the amount of players who have previously won the prize by reaching the Milestone. Any \nTournament prize pool residual funds, less than a full $10,400 prize, will be paid in Wynn Las Vegas casino chips to the last player \neliminated prior to the conclusion of the Tournament. ",
+     "raw": true
+    }
+   ]
+  },
+  {
+   "id": "wpt-block-64",
+   "kind": "wynn-wpt-structure-block",
+   "block": 64,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": [
+    {
+     "kind": "payout-section",
+     "heading": "Payouts",
+     "line": 6243,
+     "line_count": 13,
+     "text": "The Tournament Prize will be one (1) direct entry seat into the $10,400 WPT World Championship Poker Tournament to be held on \nDecember 13-20, 2026. The total number of available Tournament Prizes will be based on the total number of Entry Fees received. \nOne (1) Tournament Prize, valued at $10,400, will be generated for every 10.7 Entry Fees received (the “Tournament Prize \nFormula”).  \n \nA Player who accumulates 220,000 in tournament chips (“The Milestone”) or more will instantly be awarded one (1) Tournament \nPrize. Upon verification from the tournament supervisor that the player has achieved the Milestone, the player will cease play and \nthe total of his/her chips will be removed from play.  \n \nThe Tournament will conclude when the number of players remaining is equal to the number of $10,400 prizes generated based on \nthe Tournament Prize Formula, less the amount of players who have previously won the prize by reaching the Milestone. Any \nTournament prize pool residual funds, less than a full $10,400 prize, will be paid in Wynn Las Vegas casino chips to the last player \neliminated prior to the conclusion of the Tournament. ",
+     "raw": true
+    }
+   ]
+  },
+  {
+   "id": "wpt-block-65",
+   "kind": "wynn-wpt-structure-block",
+   "block": 65,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": [
+    {
+     "kind": "payout-section",
+     "heading": "Payouts",
+     "line": 6346,
+     "line_count": 13,
+     "text": "The Tournament Prize will be one (1) direct entry seat into the $25,800 No Limit Hold’em Poker Tournament to be held on \nDecember 17-18, 2026. The total number of available Tournament Prizes will be based on the total number of Entry Fees received. \nOne (1) Tournament Prize, valued at $25,400, will be generated for every 9.4 Entry Fees received (the “Tournament Prize \nFormula”).  \n \nA Player who accumulates 200,000 in tournament chips (“The Milestone”) or more will instantly be awarded one (1) Tournament \nPrize. Upon verification from the tournament supervisor that the player has achieved the Milestone, the player will cease play and \nthe total of his/her chips will be removed from play.  \n \nThe Tournament will conclude when the number of players remaining is equal to the number of $25,400 prizes generated based on \nthe Tournament Prize Formula, less the amount of players who have previously won the prize by reaching the Milestone. Any \nTournament prize pool residual funds, less than a full $25,400 prize, will be paid in Wynn Las Vegas casino chips to the last player \neliminated prior to the conclusion of the Tournament. ",
+     "raw": true
+    }
+   ]
+  },
+  {
+   "id": "wpt-block-66",
+   "kind": "wynn-wpt-structure-block",
+   "block": 66,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": [
+    {
+     "kind": "payout-section",
+     "heading": "Payouts",
+     "line": 6449,
+     "line_count": 13,
+     "text": "The Tournament Prize will be one (1) direct entry seat into the $3,000 No Limit Hold’em Poker Tournament to be held on \nDecember 17-20, 2026. The total number of available Tournament Prizes will be based on the total number of Entry Fees received. \nOne (1) Tournament Prize, valued at $3,000, will be generated for every 8.9 Entry Fees received (the “Tournament Prize \nFormula”).  \n \nA Player who accumulates 200,000 in tournament chips (“The Milestone”) or more will instantly be awarded one (1) Tournament \nPrize. Upon verification from the tournament supervisor that the player has achieved the Milestone, the player will cease play and \nthe total of his/her chips will be removed from play.  \n \nThe Tournament will conclude when the number of players remaining is equal to the number of $3,000 prizes generated based on \nthe Tournament Prize Formula, less the amount of players who have previously won the prize by reaching the Milestone. Any \nTournament prize pool residual funds, less than a full $3,000 prize, will be paid in Wynn Las Vegas casino chips to the last player \neliminated prior to the conclusion of the Tournament. ",
+     "raw": true
+    }
+   ]
+  },
+  {
+   "id": "wpt-block-67",
+   "kind": "wynn-wpt-structure-block",
+   "block": 67,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": [
+    {
+     "kind": "payout-section",
+     "heading": "Payouts",
+     "line": 6550,
+     "line_count": 13,
+     "text": "The Tournament Prize will be one (1) direct entry seat into the $3,000 No Limit Hold’em Poker Tournament to be held on \nDecember 17-20, 2026. The total number of available Tournament Prizes will be based on the total number of Entry Fees received. \nOne (1) Tournament Prize, valued at $3,000, will be generated for every 8.9 Entry Fees received (the “Tournament Prize \nFormula”).  \n \nA Player who accumulates 200,000 in tournament chips (“The Milestone”) or more will instantly be awarded one (1) Tournament \nPrize. Upon verification from the tournament supervisor that the player has achieved the Milestone, the player will cease play and \nthe total of his/her chips will be removed from play.  \n \nThe Tournament will conclude when the number of players remaining is equal to the number of $3,000 prizes generated based on \nthe Tournament Prize Formula, less the amount of players who have previously won the prize by reaching the Milestone. Any \nTournament prize pool residual funds, less than a full $3,000 prize, will be paid in Wynn Las Vegas casino chips to the last player \neliminated prior to the conclusion of the Tournament. ",
+     "raw": true
+    }
+   ]
+  },
+  {
+   "id": "wpt-block-68",
+   "kind": "wynn-wpt-structure-block",
+   "block": 68,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": [
+    {
+     "kind": "payout-section",
+     "heading": "Payouts",
+     "line": 6647,
+     "line_count": 13,
+     "text": "The Tournament Prize will be one (1) direct entry seat into the $5,000 Seniors NLH $250,000 GTD Poker Tournament to be held \non December 19-21, 2026. The total number of available Tournament Prizes will be based on the total number of Entry Fees \nreceived. One (1) Tournament Prize, valued at $5,000, will be generated for every 9.8 Entry Fees received (the “Tournament Prize \nFormula”). A minimum of 5 direct entry seats into the $5,000 Seniors NLH $250,000 GTD Poker Tournament will be awarded.    \n \nA Player who accumulates 200,000 in tournament chips (“The Milestone”) or more will instantly be awarded one (1) Tournament \nPrize. Upon verification from the tournament supervisor that the player has achieved the Milestone, the player will cease play and \nthe total of his/her chips will be removed from play.  \n \nThe Tournament will conclude when the number of players remaining is equal to the number of $5,000 prizes generated based on \nthe Tournament Prize Formula, less the amount of players who have previously won the prize by reaching the Milestone. Any \nTournament prize pool residual funds, less than a full $5,000 prize, will be paid in Wynn Las Vegas casino chips to the last player \neliminated prior to the conclusion of the Tournament. ",
+     "raw": true
+    }
+   ]
+  },
+  {
+   "id": "wpt-block-69",
+   "kind": "wynn-wpt-structure-block",
+   "block": 69,
+   "snapshot": "data/snapshots/wpt_struct.txt",
+   "source_url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
+   "clauses": [
+    {
+     "kind": "payout-section",
+     "heading": "Payouts",
+     "line": 6749,
+     "line_count": 13,
+     "text": "The Tournament Prize will be one (1) direct entry seat into the $1,600 Mystery Bounty $1,000,000 GTD Poker Tournament to be \nheld on December 19-21, 2026. The total number of available Tournament Prizes will be based on the total number of Entry Fees \nreceived. One (1) Tournament Prize, valued at $1,600, will be generated for every 6.4 Entry Fees received (the “Tournament Prize \nFormula”).  \n \nA Player who accumulates 140,000 in tournament chips (“The Milestone”) or more will instantly be awarded one (1) Tournament \nPrize. Upon verification from the tournament supervisor that the player has achieved the Milestone, the player will cease play and \nthe total of his/her chips will be removed from play.  \n \nThe Tournament will conclude when the number of players remaining is equal to the number of $1,600 prizes generated based on \nthe Tournament Prize Formula, less the amount of players who have previously won the prize by reaching the Milestone. Any \nTournament prize pool residual funds, less than a full $1,600 prize, will be paid in Wynn Las Vegas casino chips to the last player \neliminated prior to the conclusion of the Tournament. ",
+     "raw": true
+    }
+   ]
+  },
+  {
+   "id": "b_fri_pdf",
+   "kind": "bellagio-structure-flyer",
+   "snapshot": "data/snapshots/b_fri_pdf.txt",
+   "source_url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf",
+   "clauses": [
+    {
+     "kind": "prize-pool-composition",
+     "line": 36,
+     "line_count": 1,
+     "text": "The $600 Buy-In is allocated as follows: $510 to Prize Pool; $50 House Fee; $40 Voluntary Staff Gratuity."
+    }
+   ]
+  },
+  {
+   "id": "b_sat_pdf",
+   "kind": "bellagio-structure-flyer",
+   "snapshot": "data/snapshots/b_sat_pdf.txt",
+   "source_url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf",
+   "clauses": [
+    {
+     "kind": "in-the-money",
+     "line": 37,
+     "line_count": 1,
+     "text": "Each Flight would play until the money (12.5%). Must bag chips to make Day 2 and be in the money."
+    },
+    {
+     "kind": "prize-pool-composition",
+     "line": 38,
+     "line_count": 1,
+     "text": "Of the $600 Buy-in, $510 goes to the Prize Pool, $50 is Admin Fees and $40 is optional staff gratuity."
+    },
+    {
+     "kind": "guarantee-composition",
+     "line": 39,
+     "line_count": 1,
+     "text": "Bellagio guarantees that the total Combined Prize Pool will be at least $50,000."
+    }
+   ]
+  },
+  {
+   "id": "b_sun_pdf",
+   "kind": "bellagio-structure-flyer",
+   "snapshot": "data/snapshots/b_sun_pdf.txt",
+   "source_url": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf",
+   "clauses": [
+    {
+     "kind": "prize-pool-composition",
+     "line": 1,
+     "line_count": 2,
+     "text": "The $400 Buy-In is allocated as follows: $340 to Prize Pool; $35 House Fee; $25 Voluntary Staff Gratuity."
+    },
+    {
+     "kind": "payout-structure",
+     "line": 23,
+     "line_count": 2,
+     "text": "Payout structure based on number of entries and will be approximately 12.5% of field."
+    }
+   ]
+  },
+  {
+   "id": "c_daily_flyer",
+   "kind": "caesars-daily-flyer",
+   "snapshot": "data/snapshots/c_daily_flyer.txt",
+   "source_url": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+   "clauses": [
+    {
+     "kind": "prize-pool-composition",
+     "line": 38,
+     "line_count": 1,
+     "text": "Of the $100 buy in, $70 goes to the prize pool and $30 is held by Caesars Palace as a maintenance fee."
+    },
+    {
+     "kind": "prize-pool-composition",
+     "line": 39,
+     "line_count": 1,
+     "text": "Of the $160 buy in, $115 goes to the prize pool and $45 is held by Caesars Palace as a maintenance fee."
+    },
+    {
+     "kind": "prize-pool-composition",
+     "line": 40,
+     "line_count": 1,
+     "text": "Of the $50 add-on, $45 goes to the prize pool and $5 is held by Caesars Palace as a maintenance fee."
+    },
+    {
+     "kind": "prize-table",
+     "heading": "Payouts",
+     "line": 88,
+     "line_count": 17,
+     "text": "Places\nPlayers 0-13 14-20 21-26 27-33 34-40 41-46 47-53 54-60 61-66 67-73 74-80 81-86 87-93 94-100\n1 60 48.7 42 37.2 34.71 32.82 31.5 30.21 29.13 28.32 27.5 26.75 26.19 25.58\n2 40 30.5 26.2 23.25 22.65 21.27 20.15 19.33 18.65 18.02 17.54 17.12 16.7 16.36\n3 20.8 18.4 16.75 14.77 13.8 12.89 12.36 11.94 11.48 11.2 10.95 10.66 10.48\n4 13.4 12.8 10.92 10.09 9.36 8.91 8.55 8.17 7.94 7.75 7.52 7.38\n5 10 9 8.22 7.6 7.15 6.79 6.46 6.23 6.04 5.84 5.71\n6 7.95 7.2 6.65 6.18 5.82 5.51 5.27 5.07 4.88 4.74\n7 6.6 6.1 5.61 5.23 4.94 4.68 4.48 4.3 4.15\n8 5.75 5.24 4.85 4.57 4.31 4.09 3.92 3.76\n9 5.01 4.6 4.33 4.05 3.83 3.66 3.5\n10 4.44 4.1 3.81 3.58 3.41 3.24\n11 ` 4.1 3.81 3.58 3.41 3.24\n12 3.66 3.38 3.2 3.03\n13 3.38 3.2 3.03\n14 3.11 2.9\n15 2.9",
+     "raw": true,
+     "note": "The flyer's text extraction prints the heading \"Payouts\" after the table (line 106); the table itself starts at line 88."
+    }
+   ]
+  }
+ ]
+}
