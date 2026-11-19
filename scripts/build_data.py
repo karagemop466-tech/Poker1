@@ -1984,10 +1984,10 @@ def build_schedule(rows):
 # DBA name, street address, status and rate. The establishment table is a snapshot ("as of
 # April 2021"); the rate for a Resort Hotel in the Stadium District and Primary Gaming Corridor is
 # fixed at 13.38% by Clark County Code 4.08.010, and the Venetian's own current terms (read
-# 2026-11-17) still print 13.38%, so the operator and the county agree. The DBA names and the
-# addresses are quoted from that table, not composed here. Session 13eafa44 corrected the
-# Venetian/Palazzo licence number quoted in the stale integration PRs (`1000389.RES-001` ->
-# `1003089.RES-001`, as printed).
+# 2026-11-17) still print 13.38%, so the operator and the county agree on the rate. The DBA
+# names and addresses are quoted from the guide extraction, not composed here. The Venetian /
+# Palazzo licence digits are disputed: the guide's archived extraction prints 1003089, while
+# the county's separate July 2021 list prints 1000389. See F89; tax class, rate and address agree.
 CLARK_COUNTY_TAX = {
     "venetian": {"licence": "1003089.RES-001",
                  "dba": "Venetian Resort Hotel Casino / Palazzo Resort Hotel Casin",
@@ -2012,27 +2012,29 @@ CC_TAX_RATE = 13.38
 CC_TAX_AS_OF = "the licensed-establishment table as of April 2021"
 CC_TAX_LABEL = ("Clark County Department of Business License, General Information Guide for "
                 "Transient Lodging Establishments (official)")
-# The county publishes the same licensed-establishment table in a second official document.
+# The county publishes a second copy of its July 2021 licensed-establishment table.
 CC_TAX_LABEL_2 = ("Clark County Department of Business License, Transient Lodging Licenses by "
                   "Category as of 07-2021 (official)")
-# Session 957764d3, 2026-11-19: the Venetian/Palazzo row is the one cell in the county table
-# that different PDF text extractors read differently, so the row says so (F89). The value
-# published is the one three independent extractions agree on.
+# Session 957764d3, 2026-11-19: the two official county PDFs disagree in text extraction on
+# the Venetian/Palazzo licence digits and DBA truncation. The archived guide extraction says
+# 1003089 and truncates "Casin"; the separate county list prints 1000389 and the full "Casino".
+# Neither is silently normalized; F89 carries the conflict. The guide extraction is the value
+# retained in the licence field, while the adjacent note makes the discrepancy explicit.
 CC_READ_NOTE = {
-    "venetian": ("Reading note (F89): this is the one row of the county table that different PDF "
-                 "text extractors do not read identically - three of them print the licence as "
-                 "\"1003089.RES-001\" and the DBA name truncated as \"Palazzo Resort Hotel Casin\", "
-                 "one prints \"1000389.RES-001\" and the full name. The value published here is the "
-                 "one three extractions agree on, the DBA is quoted exactly as printed (truncated), "
-                 "and the county's second list of the same table is cited alongside it so a reader "
-                 "can check both."),
-    "palazzo": ("Reading note (F89): this is the one row of the county table that different PDF "
-                "text extractors do not read identically - three of them print the licence as "
-                "\"1003089.RES-001\" and the DBA name truncated as \"Palazzo Resort Hotel Casin\", "
-                "one prints \"1000389.RES-001\" and the full name. The value published here is the "
-                "one three extractions agree on, the DBA is quoted exactly as printed (truncated), "
-                "and the county's second list of the same table is cited alongside it so a reader "
-                "can check both."),
+    "venetian": ("Reading note (F89): the Venetian/Palazzo licence digits differ between two "
+                 "official county PDFs. The archived extraction of the July 2021 General "
+                 "Information Guide reads \"1003089.RES-001\" and truncates the DBA at \"Casin\"; "
+                 "the county's separate Transient Lodging Licenses list reads \"1000389.RES-001\" "
+                 "and prints the full DBA name. Both records agree on 3325 Las Vegas Blvd S, "
+                 "Licensed status, 13.38% and RES-1/PGC. This row retains the guide extraction "
+                 "as its licence field but does not resolve the conflicting digits."),
+    "palazzo": ("Reading note (F89): the Venetian/Palazzo licence digits differ between two "
+                "official county PDFs. The archived extraction of the July 2021 General "
+                "Information Guide reads \"1003089.RES-001\" and truncates the DBA at \"Casin\"; "
+                "the county's separate Transient Lodging Licenses list reads \"1000389.RES-001\" "
+                "and prints the full DBA name. Both records agree on 3325 Las Vegas Blvd S, "
+                "Licensed status, 13.38% and RES-1/PGC. This row retains the guide extraction "
+                "as its licence field but does not resolve the conflicting digits."),
 }
 
 
@@ -2046,9 +2048,14 @@ def cc_tax_note(hotel_id, extra=None):
             "Hotel in the Stadium District and Primary Gaming Corridor at 13.38%% "
             "(5.5 + 2 + 1 + 1 + 3 + .88), rates effective 3-1-17."
             % (rec["licence"], rec["dba"], rec["address"], rec["licensed_as"], CC_TAX_AS_OF))
-    note += (" The same licensed-establishment table is printed by the county's second official "
-             "document, \"Transient Lodging Licenses by Category as of 07-2021\", which lists this "
-             "property with the same licence number, address, status and rate.")
+    if hotel_id in ("venetian", "palazzo"):
+        note += (" The county also published a second official copy of the July 2021 list. It agrees "
+                 "on address, licensed status, rate and category; see the row's reading note (F89) "
+                 "for the different Venetian/Palazzo licence digits in the two PDFs.")
+    else:
+        note += (" The county also published a second official copy of the July 2021 list, which "
+                 "prints the same licence number, address, licensed status, rate and category for "
+                 "this property.")
     if rec.get("dba_note"):
         note += " (DBA name: " + rec["dba_note"] + ")"
     if extra:

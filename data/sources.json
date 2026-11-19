@@ -656,7 +656,7 @@
    "url": "https://www.clarkcountynv.gov/assets/documents/business/doing_business_with_clark_county/transient-lodging-licenses-by-category-as-of-07-2021.pdf",
    "kind": "tax",
    "authority": "Clark County, Nevada (taxing authority)",
-   "note": "Not an operator page. A second official county document that prints the same licensed-establishment table as the July 2021 General Information Guide: each property's licence number, DBA name, address, status, transient lodging tax rate (13.38% for a Resort Hotel in the PGC) and category. Read 2026-11-19; the seven hotel rows cite it next to the guide. One cell is read differently by different PDF text extractors (F89): three extractors print the Venetian/Palazzo row as 1003089.RES-001 with the DBA truncated at \"Casin\", one prints 1000389.RES-001 with the full name."
+   "note": "Not an operator page. A second official county copy of the July 2021 licensed-establishment table. Read 2026-11-19; the seven hotel rows cite it next to the General Information Guide. The Venetian/Palazzo row differs between the two official PDFs in extracted licence digits and DBA: the archived guide extraction reads 1003089.RES-001 and truncates the DBA at \"Casin\", while this second list reads 1000389.RES-001 and prints the full DBA name (F89). Both agree on address 3325 Las Vegas Blvd S, Licensed status, 13.38% rate and RES-1/PGC category."
   },
   {
    "id": "caesars_casino",

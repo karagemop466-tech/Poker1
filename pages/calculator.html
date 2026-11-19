@@ -762,6 +762,105 @@ header.site nav a {color:#d9ebe4}
     });
   }
 
+  /* ---------- P8: the per-row source-change mark ----------
+     data/changes.json is written by the scheduled monitor (scripts/monitor_sources.py).
+     It marks the rows whose official source page printed different values on its last
+     re-check. The mark is joined to the row here so a reader on the single-entry,
+     separate-section, unverified and venue pages sees it next to the row it applies to,
+     instead of only on the monitoring page.
+
+     Two rules matter. The date shown is changes.json's own checked_at - the date of the
+     check that produced the mark - and a row's own last_checked is never advanced by
+     this: a source that changed has not been re-read, it has been *found* to have
+     changed. And a row that is not marked still says when it was last checked, so
+     "nothing changed" is a dated statement rather than silence. */
+  var sourceChanges = { checked_at: null, byId: {}, marked: 0, loaded: false };
+
+  function loadSourceChanges() {
+    return getJSON("data/changes.json").then(function (d) {
+      var byId = {};
+      (d && d.changed || []).forEach(function (c) {
+        // `changed` also contains edits to our own published snapshot. Only records
+        // emitted from a changed official source carry source_url; don't label an
+        // editorial/data correction as an official-source change.
+        if (!c || !c.id || !c.source_url || (c.kind && c.kind !== "tournament")) return;
+        if (!byId[c.id]) byId[c.id] = c;
+      });
+      sourceChanges = {
+        checked_at: (d && d.checked_at) || null,
+        byId: byId,
+        marked: Object.keys(byId).length,
+        facts_changed: (d && d.sources_facts_changed) || 0,
+        raw_changed: (d && d.sources_raw_changed) || 0,
+        loaded: true
+      };
+      return sourceChanges;
+    }).catch(function () {
+      // A missing or unreadable changes file must not blank the tables: the mark simply
+      // stays unknown, and the note says so rather than claiming "no change".
+      sourceChanges.loaded = false;
+      return sourceChanges;
+    });
+  }
+
+  function sourceChangeFor(id) {
+    return sourceChanges.byId && sourceChanges.byId[id] ? sourceChanges.byId[id] : null;
+  }
+
+  function sourceCheckCell(row) {
+    var c = sourceChangeFor(row.id);
+    if (c) {
+      var when = c.source_changed_at || sourceChanges.checked_at || "";
+      return '<span class="chip warn">Source changed &mdash; re-check</span>' +
+        '<br><span class="small">' + esc(c.reason || "the official source printed different values on its last check") +
+        (when ? " &middot; " + esc(when) : "") + "</span>" +
+        (c.source_url
+          ? '<br><span class="small"><a href="' + esc(c.source_url) + '" target="_blank" rel="noopener">Re-read the official source</a></span>'
+          : "");
+    }
+    if (!sourceChanges.loaded) {
+      return '<span class="small muted">source check not loaded</span>';
+    }
+    return '<span class="small muted">unchanged since the ' +
+      esc(sourceChanges.checked_at || "last recorded") + " source check</span>";
+  }
+
+  function sourceCheckNote() {
+    if (!sourceChanges.loaded) {
+      return '<p class="small muted">The source-change mark could not be loaded from ' +
+        "<code>data/changes.json</code>, so no row can be shown as checked.</p>";
+    }
+    var n = sourceChanges.marked;
+    return '<p class="small">Source check dated <strong>' + esc(sourceChanges.checked_at || "not recorded") +
+      "</strong>. " + (n
+        ? "<strong>" + n + "</strong> row" + (n === 1 ? "" : "s") +
+          " in the tournament data " + (n === 1 ? "is" : "are") + " marked <span class=\"chip warn\">Source changed</span>" +
+          ": the official page printed different values on that check, so the row needs re-reading before you rely on it."
+        : "No row was marked: no official source printed a different money amount, date, time or entry-rule word on that check.") +
+      " The date is the check date, not a new reading of the row.</p>";
+  }
+
+  function addSourceCheckNote(main) {
+    var p = document.createElement("p");
+    p.className = "small";
+    p.setAttribute("data-source-check-note", "1");
+    p.innerHTML = sourceCheckNote();
+    main.appendChild(p);
+    return p;
+  }
+
+  /* The same note, placed as a sibling just above an element - used where the element's
+     own content is replaced after the note is printed (the schedule page). */
+  function addSourceCheckNoteBefore(ref) {
+    var p = document.createElement("p");
+    p.className = "small";
+    p.setAttribute("data-source-check-note", "1");
+    p.innerHTML = sourceCheckNote();
+    if (ref && ref.parentNode) ref.parentNode.insertBefore(p, ref);
+    else if (ref) ref.appendChild(p);
+    return p;
+  }
+
   function tournamentColumns(withRules) {
     var cols = [
       { id: "date", label: "Date", key: "date", sort: function (r) { return r.date + r.start; }, html: function (r) { return dateFmt(r.date); } },
@@ -783,7 +882,8 @@ header.site nav a {color:#d9ebe4}
       { id: "format", label:"Format", key:"labels", html:function(r){return (r.labels || []).map(esc).join(" · ");}},
       { id: "mult", label: "Guarantee ÷ buy-in", key: "gtd_multiple", num: true, html: function (r) { return mult(r.gtd_multiple); } },
       { id: "status", label: "Entry rule", key: "entry_status", html: function (r) { return statusChip(r.entry_status); } },
-      { id: "checked", label: "Last checked", key: "last_checked", html: function (r) { return "<span class='small'>" + esc(r.last_checked) + "</span>"; } }
+      { id: "checked", label: "Last checked", key: "last_checked", html: function (r) { return "<span class='small'>" + esc(r.last_checked) + "</span>"; } },
+      { id: "sourcecheck", label: "Source check", key: "sourcecheck", sort: function (r) { return sourceChangeFor(r.id) ? 0 : 1; }, html: function (r) { return sourceCheckCell(r); } }
     ];
     if (withRules) {
       cols.push({ id: "rule", label: "Entry rule (official)", key: "entry_rule", sort: null, html: function (r) { return "<span class='small'>" + esc(r.entry_rule) + "</span>"; } });
@@ -795,7 +895,7 @@ header.site nav a {color:#d9ebe4}
   }
 
   PAGES.singleEntry = function () {
-    Promise.all([getJSON("data/tournaments.json"), getJSON("data/schedule.json")]).then(function (res) {
+    Promise.all([getJSON("data/tournaments.json"), getJSON("data/schedule.json"), loadSourceChanges()]).then(function (res) {
       var d = res[0];
       var rows = res[0].rows.filter(function (r) { return r.entry_status === "SE" || r.entry_status === "CAND"; });
       var sched = res[1];
@@ -876,6 +976,7 @@ header.site nav a {color:#d9ebe4}
       main.parentNode.insertBefore(diary, main);
 
       var filters = tournamentFilters(document.getElementById("filters"), rows, { strict:true, upcoming:true });
+      addSourceCheckNote(main);
       var tbl = table(main, rows, tournamentColumns(true), {
         sortKey: "date", sortDir: 1, predicate: filters.matches, countEl: count
       });
@@ -884,11 +985,13 @@ header.site nav a {color:#d9ebe4}
   };
 
   PAGES.separate = function () {
-    getJSON("data/tournaments.json").then(function (d) {
+    Promise.all([getJSON("data/tournaments.json"), loadSourceChanges()]).then(function (res) {
+      var d = res[0];
       var rows = d.rows.filter(function (r) { return r.entry_status === "MULTI" || r.entry_status === "RE"; });
       var main = document.getElementById("content");
       var count = document.getElementById("count");
       var filters = tournamentFilters(document.getElementById("filters"), rows);
+      addSourceCheckNote(main);
       var tbl = table(main, rows, tournamentColumns(true), {
         sortKey: "date", sortDir: 1, predicate: filters.matches, countEl: count
       });
@@ -897,11 +1000,13 @@ header.site nav a {color:#d9ebe4}
   };
 
   PAGES.unverified = function () {
-    getJSON("data/tournaments.json").then(function (d) {
+    Promise.all([getJSON("data/tournaments.json"), loadSourceChanges()]).then(function (res) {
+      var d = res[0];
       var rows = d.rows.filter(function (r) { return r.entry_status === "UNV"; });
       var main = document.getElementById("content");
       var count = document.getElementById("count");
       var filters = tournamentFilters(document.getElementById("filters"), rows);
+      addSourceCheckNote(main);
       var tbl = table(main, rows, tournamentColumns(true), {
         sortKey: "date", sortDir: 1, predicate: filters.matches, countEl: count
       });
@@ -992,7 +1097,7 @@ header.site nav a {color:#d9ebe4}
   };
 
   PAGES.schedule = function () {
-    Promise.all([getJSON("data/schedule.json"), getJSON("data/tournaments.json")]).then(function (res) {
+    Promise.all([getJSON("data/schedule.json"), getJSON("data/tournaments.json"), loadSourceChanges()]).then(function (res) {
       var sched = res[0], rows = res[1].rows;
       var main = document.getElementById("content");
       document.getElementById("note").textContent = sched.note;
@@ -1024,6 +1129,9 @@ header.site nav a {color:#d9ebe4}
       var count = document.createElement("span"); count.id = "count"; count.className = "small";
       picker.appendChild(sel); picker.appendChild(prev); picker.appendChild(next); picker.appendChild(count);
       main.parentNode.insertBefore(picker, main);
+      // The schedule page replaces #content on every render, so its note is printed as a
+      // sibling above the day cards instead of inside them.
+      addSourceCheckNoteBefore(main);
 
       function render() {
         main.innerHTML = sched.days.map(function (day) {
@@ -1043,6 +1151,7 @@ header.site nav a {color:#d9ebe4}
                     : " · table ends no later than " + endFmt(o) + " - no end time is printed, and it ends"
                       + " once the field is paid"));
             var marks = [];
+            if (sourceChangeFor(o.id)) marks.push('<span class="chip bad">Source changed &mdash; re-check</span>');
             if (day.primary_id === o.id) marks.push('<span class="chip warn">Conditional primary</span>');
             if (day.fallback_id === o.id) marks.push('<span class="chip info">Conditional fallback' +
               (day.fallback_kind === "join in progress" ? " - join in progress" : "") + "</span>");
@@ -1501,7 +1610,7 @@ header.site nav a {color:#d9ebe4}
   };
 
   PAGES.venue = function (venueId) {
-    Promise.all([getJSON("data/venues.json"), getJSON("data/tournaments.json"), getJSON("data/hotels.json"), getJSON("data/walking.json")]).then(function (res) {
+    Promise.all([getJSON("data/venues.json"), getJSON("data/tournaments.json"), getJSON("data/hotels.json"), getJSON("data/walking.json"), loadSourceChanges()]).then(function (res) {
       var venues = res[0].rows, rows = res[1].rows, hotels = res[2].rows, walking = res[3].rows;
       var v = venues.filter(function (x) { return x.id === venueId; })[0];
       var main = document.getElementById("content");
@@ -1542,6 +1651,7 @@ header.site nav a {color:#d9ebe4}
       var tsec = document.getElementById("events");
       if (tsec) {
         var filters = tournamentFilters(document.getElementById("filters"), vr);
+        addSourceCheckNote(tsec);
         var tbl = table(tsec, vr, tournamentColumns(true), {
           sortKey: "date", sortDir: 1, predicate: filters.matches, countEl: document.getElementById("count")
         });
@@ -1558,7 +1668,7 @@ header.site nav a {color:#d9ebe4}
     Promise.all([
       getJSON("data/tournaments.json"), getJSON("data/hotels.json"), getJSON("data/venues.json"),
       getJSON("data/daily.json"), getJSON("data/walking.json"), getJSON("data/rates.json"),
-      getJSONSafe("data/other_rooms.json")
+      getJSONSafe("data/other_rooms.json"), loadSourceChanges()
     ].concat(DOCS.map(function (d) { return getTextSafe(d[0]); }))).then(function (res) {
       var rows = res[0].rows, hotels = res[1].rows, venues = res[2].rows, daily = res[3].rows;
       var walking = res[4].rows, rates = res[5].entries;
@@ -1566,7 +1676,7 @@ header.site nav a {color:#d9ebe4}
          searched as its own block instead of being merged into the dated tournament rows. */
       var otherRooms = (res[6] && res[6].rooms) || [];
       var otherEvents = (res[6] && res[6].events) || [];
-      var docs = DOCS.map(function (d, i) { return { file: d[0], title: d[1], text: res[7 + i] || "" }; });
+      var docs = DOCS.map(function (d, i) { return { file: d[0], title: d[1], text: res[8 + i] || "" }; });
 
       function block(title, items) {
         if (!items.length) return "";
@@ -1579,7 +1689,9 @@ header.site nav a {color:#d9ebe4}
           .map(function (r) {
             return '<div class="result"><div class="title">' + esc(r.name) + "</div><div class='meta'>" +
               esc(r.date) + " " + esc(r.start) + " · " + esc(r.venue) + " · " + esc(r.entry_status) +
-              (r.buy_in_usd ? " · " + money(r.buy_in_usd) : "") + " · <a href='" + BASE + "pages/schedule.html'>schedule</a></div></div>";
+              (r.buy_in_usd ? " · " + money(r.buy_in_usd) : "") + " · <a href='" + BASE + "pages/schedule.html'>schedule</a>" +
+              (sourceChangeFor(r.id) ? " · <span class='chip warn'>Source changed &mdash; re-check</span>" : "") +
+              "</div></div>";
           });
         var hitH = hotels.filter(function (h) { return JSON.stringify(h).toLowerCase().indexOf(q) >= 0; })
           .map(function (h) {

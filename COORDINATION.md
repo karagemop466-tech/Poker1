@@ -2152,3 +2152,23 @@ Why takeover is allowed: all three are ~2 days old with no commits since 2026-11
 **Deliberately not ported:** the stale PRs' `assets/app.js` reverts of `main`'s `endFmt` next-day handling, `mdHref` rewriting and escaped-pipe table splitting (regressions); their `scripts/check_schedule.py`/`check_rendered_links.js` deletions (they folded main's guards into other files — main's guards stay); `#81`'s `FLAGGED.md` table restructure and its P1–P6 section (duplicates what `main` records in `FLAGGED.md` §F / `COORDINATION.md`); `#79`'s `verify_live.py`/`verify_live_rows.py`/`ui_test.js` manual tools (repo weight, no CI role — noted in the final record); `#82`'s 15:17-UTC monitor cron **is** ported (it is the morning re-check the brief asks for, kept alongside the existing 07:17 UTC run).
 
 **Verification plan:** regenerate `data/*.json`; run `build_site.py`; `check_links.py`; `check_source_facts.py` (refusal check); `verify_rows.py`; `npm run test` (smoke + schedule render + rendered links); independent recount from `data/*.json`; then merge to `main`, watch the Pages deploy, read the live site over HTTP, close #79/#81/#82 with references, and record everything here.
+
+### Session 957764d3 — completion verification (2026-11-19)
+
+**County-source correction, read directly before publication.** The second official county PDF was fetched through chunk 6, which prints the Venetian/Palazzo row as `1000389.RES-001 | Venetian Resort Hotel Casino / Palazzo Resort Hotel Casino | 3325 Las Vegas Blvd S | Licensed | 13.38% | RES | 1`. This directly contradicts the archived extraction of the July 2021 *General Information Guide*, which reads `1003089.RES-001` and truncates the DBA at `Casin`. Both official files agree on the property/address, licensed status, RES-1/PGC class and 13.38% rate; the licence digits are unresolved. F89 and F87 now state the conflict without calling `1000389` a typo; hotel rows retain the Guide extraction but disclose the separate list's reading. `scripts/build_data.py`, `data/sources.json`, generated hotel data, FLAGGED.md and the generated Flagged page were rebuilt accordingly.
+
+**P8 delivered.** The shared renderer independently loads `data/changes.json`. Official-source changes carrying `source_url` join to tournament rows and show the conspicuous “Source changed — re-check” mark, change reason, source timestamp and official-source link; the note dates the monitor report. Unmarked rows say “unchanged since the [checked_at] source check.” The renderer does not advance `last_checked`. Dataset-vs-snapshot edits in the same `changed` array are deliberately not mislabeled as source changes. Badges are present in the single-entry, separate-section, unverified and venue tournament tables, schedule cards and search results. The schedule check note is outside the rerendered day-card container. The search-page fixture also caught and fixed the shifted docs-array index introduced when the independent changes file was added.
+
+Headless fixture: `node scripts/check_source_change_badge.js` — all 16 assertions passed, including changed and unchanged rows, official link/reason/date, dataset-only non-marking, all five event-table views, schedule cards and search results.
+
+Final local gates after these changes:
+
+- `python3 scripts/build_data.py` and `python3 scripts/build_site.py` — passed; 317 tournament rows, 70 schedule days, 31 generated pages.
+- `python3 scripts/check_links.py` — passed; 65 files, 31 pages, 317 tournament rows, 7 hotels, 5 dated rates, 70 schedule days, 23 Markdown links.
+- `python3 scripts/verify_rows.py` — 335 rows, 1,369 checks, 0 hard failures; documented review item r225 retained.
+- `python3 scripts/check_schedule.py` — passed; 70 days, 274 entry rows, 170 overlap pairs.
+- `python3 scripts/verify_against_snapshots.py` — 0 unexplained mismatches; 94/94 DSE IV rows and 48/49 NYE rows matched (the one recorded restart conflict remains flagged); 38/38 Wynn rows.
+- `python3 -m unittest discover -s scripts -p 'test_*.py'` — 60 tests passed.
+- `npm test` — 31/31 pages rendered; schedule render passed (89 next-day labels, 70 days); 716 rendered local references, 0 broken; calculator and P8 fixture passed.
+
+At this checkpoint the integration and P8 work are verified locally. The remaining publication steps are the session PR, merge, and confirmation of the Pages deployment; those results will be appended below.
