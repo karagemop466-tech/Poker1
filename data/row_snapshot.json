@@ -1,7 +1,6 @@
 {
- "generated_on": "2026-11-19",
+ "generated_on": "2026-11-17",
  "row_count": 317,
- "note": "Fingerprints of data/tournaments.json at the last verified build. Regenerate with `python3 scripts/monitor_sources.py --update-snapshot` after scripts/build_data.py is re-run.",
  "rows": {
   "r001": {
    "date": "2026-11-16",
