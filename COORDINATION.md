@@ -80,6 +80,17 @@ each prints "Resort Hotel (PGC)" and 13.38%; snapshot `data/snapshots/cc_tle_gui
 table); Venetian/Wynn/Bellagio/ARIA/Caesars official poker and terms pages and structure PDFs as recorded in
 `data/sources.json`. The 2021 date of the county table is stated on each hotel row (F77).
 
+**Second merge — current `main` (session ab7e4d46).** `main` had moved to `5814bd2` (PRs #87, #89–#92 merged) while this
+integration was open. `origin/main` was merged into the branch (a merge, not a rebase: a rebase replayed merged PR commits and
+stopped with conflicts, so it was aborted and nothing was lost). Resolutions: `assets/app.js` single-entry init kept main's
+candidate/upcoming/strict filters with our trip diary; `scripts/build_site.py` presentation hunks (home page, feed heading, Flagged
+heading) taken from main, with our Bellagio/Caesars lead sentence restored; `scripts/check_links.py` kept our host block with main's
+`CAND` status; `scripts/check_schedule_render.js` main's check plus our bare-wrapped-time assertion; `EXECUTIVE_SUMMARY.md` taken
+from main (its booking-hold decision supersedes our ranked table, which predated the gate); FLAGGED and COORDINATION kept both sides.
+**Policy seen on main, kept:** the reviewed series has no written whole-event freezeout, so the single-entry page opens in strict
+mode with zero rows. `scripts/ui_test.js` now asserts that default and clears the toggle to inspect the 80 candidates.
+Re-verified after the second merge: all 12 gates in this record pass; `build_data`/`build_site` are idempotent.
+
 **Open items carried to review (not blocking, see Flagged for Review):** F78/F79 of PR #79 (WPT Fall Festival card,
 calendar-view quote); Q-J5 (Bellagio single-entry reading); the six MGM-family timeouts; no live re-fetch from this sandbox.
 
@@ -1969,3 +1980,43 @@ work and the three published requests below.
 - https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf (Caesars Palace daily schedule; archived)
 - https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html (archived `v_dse_dec_page.txt`)
 - WPT World Championship schedule PDF (archived `wpt_sched.txt`)
+
+## Session d6bc5df2 · 2026-11-19 · strict booking decision gate
+
+| Task | Status | Owner | File scope |
+|---|---|---|---|
+| Separate affirmative written freezeout evidence from historical sheet-silence candidates; verify upcoming decision and surface missing evidence, integrate and publish | in progress | d6bc5df2 | assets/app.js, scripts/build_site.py, derived index.html/pages, strict-policy test, README.md, executive summary and flagged addenda, COORDINATION.md |
+
+Read the shared main board at a1361aa and checked open PRs #79/#81/#82; no takeover of those sessions’ hotel-tax or room-format tasks. Using the assigned integration branch (fixed name); this claim is pushed before implementation.
+
+Scope clarification before changing generated facts: the source of the false confirmation is `scripts/build_data.py`, so this claim also covers the entry-status migration in that generator, `check_links.py`, `check_schedule.py`, `verify_rows.py`, `build_other_rooms.py` (window labels only), derived data, and a smoke-test assertion. No hotel/venue research ownership changes.
+### Session 44c94b4f — in progress
+Owns strict booking-readiness audit: research/readiness-2026-11-19.md, summary/flagged addenda and their generated pages; no edits to other sessions’ data collectors.
+Build-blocker claim: scripts/check_schedule_render.js and .github/workflows/pages.yml. Local npm test exposed a stale assertion on obsolete fallback prose; the workflow pipeline masked its exit code.
+Done: decision audit in research/readiness-2026-11-19.md, executive summary and Flagged for Review. Re-read the Venetian November schedule and sheet 5 directly (links in report); other rows checked against archives, not redated. No second like-for-like hotel quote. Local schedule validation defect independently fixed in #87; ceded gate and workflow edits to #87/#88 rather than duplicating them.
+## Session be98ede8 — 2026-11-19
+
+| Task | Status | Owner | File scope |
+|---|---|---|---|
+| Distinguish upcoming verified tournament dates from historical rows without changing official data | In progress | be98ede8 | `assets/app.js`, generated `index.html` and `pages/*.html`, `scripts/check_upcoming.js`, `package.json`, `FLAGGED.md`, `COORDINATION.md` |
+
+Branch `arena/be98ede8-poker1` is fixed by Arena. Existing open integration PRs own their data and workflow changes; this session does not take over those tasks. This is one session, not a parallel branch launch; the existing board on main remains the shared board.
+
+Integration follow-up claim: `scripts/check_schedule_render.js`, `scripts/smoke_test.js`, `scripts/build_site.py`. The inherited schedule render test expects obsolete prose after PR #85, while the current plan stores per-date explanations. Replace that assertion with a comparison against the schedule fixture; leave the generated schedule and other agents' pending changes untouched.
+
+**Implementation done; integration checks passed locally.** The landing count and default date filter use Las Vegas dates and preserve historical rows. The copy distinguishes schedule candidates from an affirmative written single-entry policy. No official facts or retrieval timestamps were rewritten. Snapshot validation: 324 rows, 1,296 field checks, zero hard failures, one documented Wynn time interpretation; date/time pairing produced zero unexplained mismatches. Schedule check: 70 days, 170 overlap pairs; smoke: 23 pages; rendered links: 530 local references, zero broken. The stale schedule render assertion is replaced by per-day fallback-note and badge checks. Government/operator/booking URLs are not reachable from this sandbox; GitHub's scheduled monitoring is a separate network-enabled check, not proof of booked rates or available seats.
+
+Integration PR: [#87](https://github.com/karagemop466-tech/Poker1/pull/87). Deployment and merge status are recorded on the PR and [repository Actions](https://github.com/karagemop466-tech/Poker1/actions); the public endpoint is [GitHub Pages](https://karagemop466-tech.github.io/Poker1/). A successful build of an earlier commit is not confirmation of this PR's deployment.
+
+Integration conflict with PR #87: retained both claims, its Vegas-local upcoming toggle, render gate and historical toggle test; combined defaults with the stricter freezeout filter and regenerated HTML. PR #88 overlaps the calculator independently; coordinate at integration rather than overwriting its tests.
+44c94b4f reconciliation: retained both appended board entries and both flagged findings from #87.
+**Post-merge confirmation (2026-11-19):** [PR #87](https://github.com/karagemop466-tech/Poker1/pull/87) merged as `d383f48d86070efe9b946d983135c6bda45a5c2a`. The GitHub Pages build API reports `built` for that exact commit, and [Pages deployment run 44465791063](https://github.com/karagemop466-tech/Poker1/actions/runs/44465791063) concluded successfully. The separate main-branch validation run is [44465791728](https://github.com/karagemop466-tech/Poker1/actions/runs/44465791728).
+
+Retained PR #90’s deploy receipt when it arrived during integration. Aborted an unnecessary flattening rebase rather than replay main’s already merged #87 commits; pulled against the integrated main tip before push.
+
+Additional unclaimed scope: morning schedule evidence feed (`scripts/schedule_feed.py`, `.github/workflows/schedule-feed.yml`, `data/schedule_feed.json`, daily page) and executive decision presentation. This feed does not edit any reviewed tournament or rate.
+
+#91 integrated without changing that session’s Nov 26 evidence. Combined append-only claim logs. Final integration scope includes home styles, decision docs, structure parser’s sheet-silence label, and deterministic derived files.
+
+PR [#89](https://github.com/karagemop466-tech/Poker1/pull/89) · integrated #91's booking example; preserved the parallel #88 calculator implementation and its numerical regression test (2109c99), adding same-room/offer matching and dated official lookup links. Additional room profiles are generated from the existing official-source survey, not guessed hotel pairings. No external tariff was applied to an unquoted property.
+44c94b4f publication: [PR #91](https://github.com/karagemop466-tech/Poker1/pull/91) merged as `432fbded`; [Pages deployment](https://github.com/karagemop466-tech/Poker1/actions/runs/44466009192) succeeded for that commit. 23 pages rendered; 530 local references checked, zero broken.

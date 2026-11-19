@@ -181,3 +181,18 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
   .grid { gap: 8px; }
   .md pre, .md code { white-space: pre-wrap; word-break: break-word; }
 }
+
+/* Briefing dashboard */
+body { --accent:#126551; --bg:#f4f6f2; --ink:#182d2a; --line:#d5dfd9; }
+header.site { background:#123c35; padding-inline:max(20px, calc((100% - 1160px)/2)); }
+header.site nav a {color:#d9ebe4}
+.briefing {border-top:4px solid #24745b; padding:clamp(20px,4vw,44px); background:#e4efe6; border-radius:5px;}
+.briefing h1 {font:600 clamp(2.1rem,5vw,3.4rem)/1.1 Georgia,serif; letter-spacing:-.035em; margin:10px 0;}
+.briefing p:not(.eyebrow) {max-width:620px; font-size:1.08rem;}
+.eyebrow {font-size:.72rem;letter-spacing:.12em;color:#326e5b;font-weight:750;margin:0}
+.home-search label {display:block;font-size:.85rem;font-weight:650;margin-bottom:4px}
+.home-search div {display:flex;max-width:560px;gap:6px}.home-search input {min-width:0;flex:1;padding:10px 12px;border:1px solid #a2b3a7;border-radius:5px;font:inherit}.home-search button {background:#12513f;color:white;border:0;border-radius:5px;padding:0 20px;font:inherit;cursor:pointer}
+.decision,.desk {display:flex;gap:12px 20px;align-items:center;flex-wrap:wrap;padding:16px 18px;border:1px solid var(--line);border-radius:5px;background:#fff;}
+.decision {margin-top:14px;background:#fffbef;border-color:#ded4b6}.decision strong{color:#7d531d}.decision span{flex:1 1 350px}.decision a,.path a,.desk a {font-weight:600; color:#12513f}
+#kpis .card {margin:0;border-radius:6px}.kpi .num {font-variant-numeric:tabular-nums;color:#185641}
+.path-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:14px}.path {padding:22px;background:#fff;border:1px solid var(--line);border-radius:6px}.path h3{margin:10px 0 4px;font-size:1.25rem}.path p{color:#51615c}.path a{display:block;margin-top:6px}.desk a {text-underline-offset:3px}

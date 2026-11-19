@@ -1,0 +1,31 @@
+name: Morning poker schedule feed
+on:
+  schedule:
+    - cron: '17 14 * * *' # 06:17 PST / 07:17 PDT
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['scripts/schedule_feed.py', '.github/workflows/schedule-feed.yml']
+permissions:
+  contents: write
+concurrency: morning-schedule-feed
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install pypdf
+      - run: python scripts/schedule_feed.py
+      - name: Publish evidence without changing reviewed events
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/schedule_feed.json
+          git diff --cached --quiet && exit 0
+          git commit -m 'Refresh dated morning schedule excerpts'
+          git pull --rebase origin main
+          git push origin HEAD:main

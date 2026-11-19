@@ -81,6 +81,25 @@ async function run(rel) {
       problems.push("schedule page still claims no impossible sequence is proposed without proving it");
     }
   }
+  if (page === "singleEntry") {
+    const source = JSON.parse(fs.readFileSync(path.join(ROOT, "data/tournaments.json"), "utf8"));
+    const candidates = source.rows.filter((r) => ["CAND", "SE"].includes(r.entry_status));
+    const today = new Intl.DateTimeFormat("sv-SE", { timeZone: "America/Los_Angeles" }).format();
+    const expected = candidates.filter((r) => r.date >= today).length;
+    const toggle = doc.getElementById("future-only");
+    const count = () => primary.querySelectorAll("tbody tr").length;
+    const strict = doc.getElementById("single-only");
+    if (!strict.checked || count() !== candidates.filter(r => r.entry_status === "SE" && r.date >= today).length) problems.push("non-confirmed freezeout in shortlist");
+    strict.click();
+    if (!toggle?.checked || count() !== expected) problems.push("incorrect Las Vegas upcoming default");
+    if (toggle) {
+      toggle.checked = false;
+      toggle.dispatchEvent(new window.Event("change"));
+      if (count() !== candidates.length) problems.push("historical rows not restored by the date toggle");
+      doc.querySelector("#filters button").click();
+      if (!toggle.checked || !strict.checked || count() !== candidates.filter(r => r.entry_status === "SE" && r.date >= today).length) problems.push("reset did not restore the upcoming default");
+    }
+  }
   const tablePages = ["singleEntry", "separate", "unverified", "hotels", "daily"];
 
   if (errors.length) problems.push("js error: " + errors.join(" | "));

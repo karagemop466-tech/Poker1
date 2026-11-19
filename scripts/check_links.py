@@ -65,7 +65,7 @@ GOVERNMENT_SOURCE_HOSTS = {
 }
 # One approved-operator set for the source check (name used by the link checker).
 OFFICIAL_SOURCE_HOSTS = OPERATOR_SOURCE_HOSTS
-TOURNAMENT_STATUSES = {"SE", "MULTI", "RE", "REBUY", "CONT", "UNV"}
+TOURNAMENT_STATUSES = {"CAND", "SE", "MULTI", "RE", "REBUY", "CONT", "UNV"}
 TOURNAMENT_KINDS = {"entry", "continuation"}
 RULE_FIELDS = ("single_entry", "re_entry", "add_on", "fee")
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
@@ -75,7 +75,7 @@ KNOWN_PAGES = {"index", "singleEntry", "separate", "unverified", "daily", "hotel
                "flagged", "review", "strips",
                # Session 0d069ce0: pages/other-rooms.html. Registered here because the page-link
                # check rejects any data-page outside this set. One line, no other change.
-               "otherRooms"}
+               "otherRooms", "roomProfile"}
 
 
 def load_json(rel):
@@ -267,13 +267,14 @@ for index, row in enumerate(tournament_rows, 1):
     entry_rule = str(row.get("entry_rule", "")).lower()
     sources = row.get("sources") if isinstance(row.get("sources"), list) else []
     check_rule_objects(where, identity, row.get("rules"))
-    if status == "SE":
+    if status in ("SE", "CAND"):
         if not any("structure" in str(source.get("label", "")).lower()
                    for source in sources if isinstance(source, dict)):
             problems.append(f"{where} {identity}: SE row must link its official structure sheet")
-        if not re.search(r"single[ -]entry", entry_rule):
+        if status == "SE" and not re.search(r"single[ -]entry", entry_rule):
             problems.append(f"{where} {identity}: SE entry_rule must explicitly state its verified classification")
-        if re.search(r"unverified|not confirmed|unclear|possible multiple", entry_rule):
+        if status == "SE" and (re.search(r"unverified|not confirmed|unclear|possible multiple", entry_rule) or
+                any(row["rules"].get(k, {}).get("value") != v for k, v in {"single_entry": "one per event", "re_entry": "prohibited", "rebuy": "prohibited", "add_on": "prohibited"}.items())):
             problems.append(f"{where} {identity}: SE entry_rule contains unresolved wording")
     elif status == "MULTI" and not re.search(r"multi|flight|multiple|limit|limited", entry_rule):
         problems.append(f"{where} {identity}: MULTI entry_rule must explain possible additional entries")
@@ -598,7 +599,7 @@ if isinstance(structure_rules, dict):
         if not isinstance(sheet, dict):
             problems.append(f"data/structure_rules.json: {sheet_id} is not an object")
             continue
-        if sheet.get("sheet_kind") not in {"SINGLE_ENTRY", "MULTI_FLIGHT", "RE_ENTRY"}:
+        if sheet.get("sheet_kind") not in {"NO_ENTRY_POLICY_FOUND", "MULTI_FLIGHT", "RE_ENTRY"}:
             problems.append(f"data/structure_rules.json: {sheet_id} has no rule verdict")
 if not isinstance(wpt_rules, list) or not wpt_rules:
     problems.append("data/wpt_rules.json: expected a non-empty list of WPT structure blocks")
@@ -668,7 +669,7 @@ if isinstance(schedule_data, dict):
             for field in ("start", "series", "name", "buy_in_usd", "guarantee_usd", "venue"):
                 if event.get(field) != row.get(field):
                     problems.append(f"{event_where}: {field} does not match tournament row {identity}")
-            if row.get("entry_status") == "SE":
+            if row.get("entry_status") in ("CAND", "SE"):
                 day_se.add(identity)
             row_sources = row.get("sources") if isinstance(row.get("sources"), list) else []
             valid_sources = {source.get("url") for source in row_sources if isinstance(source, dict)}

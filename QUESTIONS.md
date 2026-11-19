@@ -3,7 +3,11 @@
 For each question: what is known, what is missing, and how to close it. "Open" means no official source answers it yet.
 "Closed" means an official source now answers it and the answer is in the dataset.
 
-## A. Decisions only you can make
+## Current decisions · November 19
+
+The comparison scenario is Dec 13–20, two adults, private king suite, refundable, $350/night maximum inclusive of fees and tax. These are planning assumptions, not personal preferences. A later flight counts as another entry; seats and bounties are not equivalent to cash guarantees. No manual input is needed to see the current answer: hold. See the [executive summary](pages/summary.html) for the evidence and the tests that would change it.
+
+## A. Historical decision register (November 17)
 
 | # | Question | Why it matters | Status |
 |---|---|---|---|

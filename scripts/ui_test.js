@@ -70,6 +70,17 @@ const bodyRows = (w, scope) => w.document.querySelectorAll(scope + " tbody tr").
   /* ---------------- tournament table ---------------- */
   const w = load("pages/single-entry.html");
   await wait(1200);
+  // Default view is the strict one: only a written freezeout is shown, and the reviewed series has
+  // none, so the table is empty and the page says so. Candidates are shown by clearing the toggle.
+  const strictBox = w.document.getElementById("single-only");
+  const strictRows = bodyRows(w, "#content");
+  check("single-entry default view is the strict freezeout view", !!strictBox && strictBox.checked === true,
+        "toggle " + (strictBox ? (strictBox.checked ? "on" : "off") : "missing") + ", " + strictRows + " rows");
+  if (strictBox) {
+    strictBox.checked = false;
+    strictBox.dispatchEvent(new w.Event("change", { bubbles: true }));
+    await wait(400);
+  }
   const allRows = bodyRows(w, "#content");
   const heads = headText(w, "#content");
   check("single-entry table renders rows", allRows > 0, allRows + " rows");

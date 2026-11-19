@@ -36,16 +36,22 @@ function sleep(ms) { return new Promise((r) => setTimeout(r, ms)); }
   const problems = [];
   const nextDay = (text.match(/\(next day\)/g) || []).length;
   if (nextDay < 1) problems.push("no `(next day)` label rendered, so a wrapped end time is still shown as a bare clock time");
-  // The day plan publishes no fallback when no primary can finish before the next event's entry
-  // deadline; the page then states that outright. Accept that statement (current wording) or
-  // the older after-midnight note, so a day with no sequence is not reported as a missing render.
-  if (!/no day's primary is estimated to finish before/.test(text) && !/after midnight, so no later event/.test(text))
-    problems.push("no statement about fallbacks/sequences rendered");
-  if (/\b02:55 AM\b/.test(text) === false)
-    problems.push("expected wrapped end time 02:55 AM not rendered at all");
-  // A bare wrapped time must never appear without the qualifier.
+  const { days } = JSON.parse(fs.readFileSync(path.join(ROOT, "data/schedule.json"), "utf8"));
+  for (const day of days) {
+    const card = dom.window.document.getElementById("day-" + day.date);
+    if (!card || (day.fallback_note && !card.textContent.includes(day.fallback_note))) {
+      problems.push(day.date + ": missing schedule card or fallback explanation");
+    }
+    const rendered = card?.querySelectorAll("li .chip.info");
+    const fallbacks = [...(rendered || [])].filter((chip) => chip.textContent.startsWith("Conditional fallback"));
+    if (fallbacks.length !== Number(Boolean(day.fallback_id))) {
+      problems.push(day.date + ": rendered fallback count differs from the schedule");
+    }
+  }
+  // A wrapped end time must never appear as a bare clock time without its "(next day)" qualifier.
   const bare = text.match(/\d{1,2}:\d{2} (?:AM|PM)(?! \(next day\))/g) || [];
-  console.log("schedule render: `(next day)` labels =", nextDay, "| total clock times =", bare.length);
+  if (/\b02:55 AM\b/.test(text) === false) problems.push("expected wrapped end time 02:55 AM not rendered at all");
+  console.log("schedule render: `(next day)` labels =", nextDay, "| days =", days.length);
   if (problems.length) {
     console.error("FAIL\n  " + problems.join("\n  "));
     process.exit(1);
