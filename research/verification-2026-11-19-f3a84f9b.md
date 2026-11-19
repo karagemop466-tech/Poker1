@@ -49,3 +49,15 @@ Transient Lodging Tax - Resort Hotel (PGC)` and `1136233.RES-001 | Caesars Palac
 “Casin” and garbles the Caesars address to “35/0” — three defects in one line of the monitor’s line render,
 same failure class as F83. `main`’s published values match the live PDF and are unchanged; #98’s proposed
 “correction” to `1003089` is the archive defect and was not ported. Recorded as FLAGGED.md F84.
+
+## F11 — monitor workflow dispatch is blocked from the sandbox (task 5 record)
+
+`gh workflow run "Monitor official sources"` returns HTTP 403 "Resource not accessible by
+integration": the Actions dispatch API is not reachable with this sandbox's credentials, so a
+manual trigger from here is impossible. The monitor therefore runs on its schedule only:
+`07:17` and `15:17` UTC (`17 7 * * *`, `17 15 * * *` — the second is the 07:17 PST trip window
+added in this session). Tonight's 15:17 UTC run will diff against the re-baselined
+`data/row_snapshot.json`, which now carries the 17 restored guarantees, so a changed file shows
+as guarantee-level facts rather than a wholesale diff. `data/changes.json` at merge time remains
+the 2026-11-17T06:06Z generated run (`sources_facts_changed: 0`, 11 raw-change rewrites,
+`added/removed/changed` empty).
