@@ -51,7 +51,7 @@ OFFICIAL_SOURCE_HOSTS = {
     # un-approved (F40); see FLAGGED.md S9.
     "www.rwlasvegas.com",
 }
-TOURNAMENT_STATUSES = {"SE", "MULTI", "RE", "REBUY", "CONT", "UNV"}
+TOURNAMENT_STATUSES = {"CAND", "SE", "MULTI", "RE", "REBUY", "CONT", "UNV"}
 TOURNAMENT_KINDS = {"entry", "continuation"}
 RULE_FIELDS = ("single_entry", "re_entry", "add_on", "fee")
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
@@ -253,13 +253,14 @@ for index, row in enumerate(tournament_rows, 1):
     entry_rule = str(row.get("entry_rule", "")).lower()
     sources = row.get("sources") if isinstance(row.get("sources"), list) else []
     check_rule_objects(where, identity, row.get("rules"))
-    if status == "SE":
+    if status in ("SE", "CAND"):
         if not any("structure" in str(source.get("label", "")).lower()
                    for source in sources if isinstance(source, dict)):
             problems.append(f"{where} {identity}: SE row must link its official structure sheet")
-        if not re.search(r"single[ -]entry", entry_rule):
+        if status == "SE" and not re.search(r"single[ -]entry", entry_rule):
             problems.append(f"{where} {identity}: SE entry_rule must explicitly state its verified classification")
-        if re.search(r"unverified|not confirmed|unclear|possible multiple", entry_rule):
+        if status == "SE" and (re.search(r"unverified|not confirmed|unclear|possible multiple", entry_rule) or
+                any(row["rules"].get(k, {}).get("value") != v for k, v in {"single_entry": "one per event", "re_entry": "prohibited", "rebuy": "prohibited", "add_on": "prohibited"}.items())):
             problems.append(f"{where} {identity}: SE entry_rule contains unresolved wording")
     elif status == "MULTI" and not re.search(r"multi|flight|multiple|limit|limited", entry_rule):
         problems.append(f"{where} {identity}: MULTI entry_rule must explain possible additional entries")
@@ -622,7 +623,7 @@ if isinstance(schedule_data, dict):
             for field in ("start", "series", "name", "buy_in_usd", "guarantee_usd", "venue"):
                 if event.get(field) != row.get(field):
                     problems.append(f"{event_where}: {field} does not match tournament row {identity}")
-            if row.get("entry_status") == "SE":
+            if row.get("entry_status") in ("CAND", "SE"):
                 day_se.add(identity)
             row_sources = row.get("sources") if isinstance(row.get("sources"), list) else []
             valid_sources = {source.get("url") for source in row_sources if isinstance(source, dict)}

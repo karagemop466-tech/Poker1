@@ -67,16 +67,16 @@ def venue_page(title, venue_id):
 PAGES = {
     "index.html": ("Home", "index", """
 <h1>Las Vegas Strip Poker Plan</h1>
-<p class="lead">Single-entry tournaments and walkable hotels, every official source re-checked on 2026-11-17. Blank cells are unverified. No value is inferred.</p>
+<p class="lead">Booking decision: hold. No event in the current dataset has written confirmation of one entry across the whole event, no rebuys and no add-ons. Hotel quotes are dated observations, not live offers.</p>
 <div class="grid" id="kpis"></div>
 <h2>Start here</h2>
 <div class="grid">
   <a class="card tile" href="pages/summary.html"><h3>Executive summary</h3><p>Bottom line, ranked events, hotel status, and the 8 AM question.</p></a>
-  <a class="card tile" href="pages/single-entry.html"><h3>Single entry (verified)</h3><p>Every event whose official structure sheet, read clause by clause, contains no re-entry, rebuy, add-on or flight clause. The basis is printed on every row.</p></a>
+  <a class="card tile" href="pages/single-entry.html"><h3>Freezeout shortlist</h3><p>Every event whose official structure sheet, read clause by clause, contains no re-entry, rebuy, add-on or flight clause. The basis is printed on every row.</p></a>
   <a class="card tile" href="pages/separate-section.html"><h3>Separate section</h3><p>Possible multiple entries and re-entry events. Kept out of the ranking.</p></a>
   <a class="card tile" href="pages/unverified.html"><h3>Unverified</h3><p>Official rows whose entry rule is not yet confirmed.</p></a>
   <a class="card tile" href="pages/daily.html"><h3>Daily feed</h3><p>Wynn's recurring daily tournaments: format, guarantee, fee split and cut-offs.</p></a>
-  <a class="card tile" href="pages/schedule.html"><h3>Schedule</h3><p>Day-by-day verified single-entry options, with a date picker.</p></a>
+  <a class="card tile" href="pages/schedule.html"><h3>Schedule</h3><p>Day-by-day conditional candidates, with a date picker.</p></a>
   <a class="card tile" href="pages/hotels.html"><h3>Hotels</h3><p>Resort fees, room-rate status, walking records and the dated rate log.</p></a>
   <a class="card tile" href="pages/calculator.html"><h3>Trip cost calculator</h3><p>Entries × buy-in + nights × true hotel cost + parking, from dated official-engine quotes. Nothing is assumed.</p></a>
   <a class="card tile" href="pages/strip-rooms.html"><h3>Strip rooms</h3><p>Official schedules for the Strip poker rooms the venue pages do not cover, with closures that are reported but not confirmed.</p></a>
@@ -92,9 +92,9 @@ PAGES = {
 <div class="card callout" style="margin-top:18px">Flags do not block publication. Every flagged item lists its source and is kept on the Flagged for Review page.</div>
 """),
     "pages/single-entry.html": ("Single entry", "singleEntry", """
-<h1>Single-entry tournaments (verified)</h1>
-<p class="lead">Each row has its structure sheet read, with no re-entry, rebuy, add-on, or flight clause. Guarantee ÷ buy-in is the default sort. Use the filters to narrow by date, venue, series, buy-in or label.</p>
-<div class="card callout">How the single-entry label is decided: the event's own official structure sheet was read clause by clause and contains <strong>no re-entry, rebuy, add-on or multi-flight clause</strong>. No Venetian sheet prints an affirmative "single entry" sentence, so this is single entry <strong>by absence of contrary terms</strong>, not a written maximum-entry promise — each row prints the exact basis with its sheet link. Anything with printed re-entry, limited-entry or flight language is in the separate section, not here.</div>
+<h1>Freezeout shortlist</h1>
+<p class="lead">Only written whole-event rules qualify. There are no confirmed rows in this snapshot. Switch off “Written freezeout confirmed” to inspect candidates by date. A silent sheet is not a prohibition.</p>
+<div class="card callout">Guarantee ÷ total entry fee describes the advertised pool, not expected winnings. Bounty prizes and satellite seats are not comparable to ordinary cash payouts.</div>
 """ + FILTERS + """
 <div class="toolbar"><span class="small">""" + COUNT + """</span></div>
 <div id="content"></div>
@@ -141,7 +141,7 @@ of a poker room, or search any column.</p>
 """),
     "pages/schedule.html": ("Schedule", "schedule", """
 <h1>Day-by-day schedule</h1>
-<p class="lead">Verified single-entry options per day, earliest first, with one primary event and a conditional fallback only where a fallback can actually be played.</p>
+<p class="lead">Sheet-reviewed candidates per day, pending written freezeout confirmation, earliest first, with one primary event and a conditional fallback only where a fallback can actually be played.</p>
 <div class="card callout">One entry per day is the realistic shape of a single-entry trip. Every Venetian one-day event is estimated at 8h45&ndash;21h05 from its own published level structure, so 10:10 and 11:10 starts are still running after midnight and no later same-date event can follow them. Where that is the case the day says so instead of proposing a sequence that cannot happen. A finish time marked <strong>(next day)</strong> crossed midnight; the estimate is start + published levels, never an official finish time.</div>
 <div class="card callout" id="note"></div>
 <p class="small">Earliest start among the rows in this dataset: <strong id="earliest"></strong></p>

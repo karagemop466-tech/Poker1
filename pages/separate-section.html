@@ -278,6 +278,7 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
     return (+p[0]) * 60 + (+p[1] || 0);
   }
   function statusChip(s) {
+    if (s === "CAND") return '<span class="chip warn">Freezeout not confirmed</span>';
     if (s === "SE") return '<span class="chip ok">Single entry (verified)</span>';
     if (s === "MULTI") return '<span class="chip warn">Possible multiple entries</span>';
     if (s === "RE") return '<span class="chip bad">Re-entry offered</span>';
@@ -309,6 +310,14 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
     return '<div class="small" style="margin-top:4px">' + f.map(function (x) {
       return '<span class="chip warn" style="white-space:normal;display:block;margin-top:4px">' + esc(x) + "</span>";
     }).join("") + "</div>";
+  }
+  function datedBookingLink(r) {
+    if (r.source.startsWith("https://www.venetianlasvegas.com/") && r.occupancy === "2 adults") {
+      var url = new URL("https://www.venetianlasvegas.com/booking");
+      Object.entries({arrival_date:r.arrival, departure_date:r.departure, "adults[]":2, "children[]":0, view:"calendar"}).forEach(function(kv){url.searchParams.set(kv[0], kv[1]);});
+      return '<a href="' + esc(url.href) + '">Recheck these dates · 2 adults</a>';
+    }
+    return '<a href="' + esc(r.source) + '">Official booking engine</a>';
   }
   function ruleCell(row) {
     var parts = [];
@@ -520,6 +529,7 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
     var series = select("series", opts.series || [], "All series");
     var status = select("status", opts.statuses || [], "Any entry rule");
     var single = input("single-only", "checkbox", {});
+    single.checked = !!opts.strict;
     var reset = document.createElement("button");
     reset.type = "button"; reset.textContent = "Reset filters";
 
@@ -540,7 +550,7 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
     tog.className = "field toggle";
     var tl = document.createElement("label");
     tl.setAttribute("for", "single-only");
-    tl.textContent = "Single entry only";
+    tl.textContent = "Written freezeout confirmed";
     tog.appendChild(single); tog.appendChild(tl);
     row2.appendChild(tog);
     var actions = document.createElement("div");
@@ -632,7 +642,7 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
     if (labelBox) labelBox.querySelectorAll("input").forEach(function (c) { c.addEventListener("change", fire); });
     reset.addEventListener("click", function () {
       q.value = ""; from.value = ""; to.value = ""; buyMin.value = ""; buyMax.value = "";
-      venue.value = ""; series.value = ""; status.value = ""; single.checked = false;
+      venue.value = ""; series.value = ""; status.value = ""; single.checked = !!opts.strict;
       if (labelBox) labelBox.querySelectorAll("input").forEach(function (c) { c.checked = false; });
       fire();
     });
@@ -681,7 +691,8 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
       rows.forEach(function (r) { dates[r.date] = 1; });
       document.getElementById("kpis").innerHTML =
         kpi(rows.length, "official rows in this dataset") +
-        kpi(c.SE, "single entry, verified") +
+        kpi(c.SE, "written freezeouts confirmed") +
+        kpi(c.CAND || 0, "sheet reviewed; entry cap not stated") +
         kpi(c.MULTI + c.RE, "in the separate section") +
         kpi(c.UNV, "unverified (entry rule)") +
         kpi(Object.keys(dates).length, "dates covered") +
@@ -702,7 +713,7 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
     var labels = Array.from(new Set(rows.reduce(function (a, r) { return a.concat(r.labels || []); }, []))).sort();
     return Filters(host, {
       venues: venues, series: series, statuses: statuses, labels: labels,
-      showStatus: opts.showStatus !== false
+      strict: opts.strict, showStatus: opts.showStatus !== false
     });
   }
 
@@ -738,12 +749,12 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
 
   PAGES.singleEntry = function () {
     getJSON("data/tournaments.json").then(function (d) {
-      var rows = d.rows.filter(function (r) { return r.entry_status === "SE"; });
+      var rows = d.rows.filter(function (r) { return r.entry_status === "SE" || r.entry_status === "CAND"; });
       var main = document.getElementById("content");
       var count = document.getElementById("count");
-      var filters = tournamentFilters(document.getElementById("filters"), rows);
+      var filters = tournamentFilters(document.getElementById("filters"), rows, {strict:true});
       var tbl = table(main, rows, tournamentColumns(true), {
-        sortKey: "mult", sortDir: -1, predicate: filters.matches, countEl: count
+        sortKey: "date", sortDir: 1, predicate: filters.matches, countEl: count
       });
       filters.onChange(function () { tbl.redraw(); });
     }).catch(showErr);
@@ -853,7 +864,7 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
         main.innerHTML = sched.days.map(function (day) {
           var list = day.events.map(function (o) {
             var row = byId[o.id] || {};
-            var chip = o.entry_status === "SE" ? '<span class="chip ok">Single entry</span>' :
+            var chip = o.entry_status === "CAND" ? statusChip("CAND") : o.entry_status === "SE" ? '<span class="chip ok">Single entry</span>' :
               (o.entry_status === "CONT" ? '<span class="chip info">Continuation</span>' :
                 (o.entry_status === "MULTI" ? '<span class="chip warn">Possible multiple entries</span>' :
                   (o.entry_status === "RE" ? '<span class="chip bad">Re-entry</span>' : '<span class="chip warn">Unverified</span>')));
@@ -867,7 +878,7 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
                     : " · table ends no later than " + endFmt(o) + " - no end time is printed, and it ends"
                       + " once the field is paid"));
             var marks = [];
-            if (day.primary_id === o.id) marks.push('<span class="chip ok">Primary</span>');
+            if (day.primary_id === o.id) marks.push('<span class="chip warn">Conditional primary</span>');
             if (day.fallback_id === o.id) marks.push('<span class="chip info">Conditional fallback' +
               (day.fallback_kind === "join in progress" ? " - join in progress" : "") + "</span>");
             return "<li><strong>" + timeFmt(o.start) + "</strong> · " + esc(o.name) + " · " + money(o.buy_in_usd) +
@@ -1040,7 +1051,7 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
           { id: "taxes", label: "Taxes", key: "taxes_total_usd", num: true, html: function (r) { return money(r.taxes_total_usd); } },
           { id: "true", label: "True cost / night", key: "true_cost_per_night_usd", num: true, html: function (r) { return money(r.true_cost_per_night_usd); } },
           { id: "room", label: "Room", key: "room", sort: null, html: function (r) { return "<span class='small'>" + esc(r.room) + " · " + esc(r.occupancy) + "<br>" + esc(r.caveat) + "</span>"; } },
-          { id: "src", label: "Source", key: "source", sort: null, html: function (r) { return '<a href="' + esc(r.source) + '" target="_blank" rel="noopener">official booking engine</a>'; } }
+          { id: "src", label: "Source", key: "source", sort: null, html: function (r) { return datedBookingLink(r); } }
         ];
         table(rl, rates, rcols, { sortKey: "arrival", sortDir: -1 });
       }
@@ -1100,7 +1111,7 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
         var parking = (parkRate == null || !parkdays) ? 0 : parkRate * parkdays;
         var entryTotal = buyin == null ? null : entries * buyin;
         var hotelTotal = q.checkout_total_usd;
-        var total = hotelTotal + (entryTotal == null ? 0 : entryTotal) + parking + extra;
+        var total = (entries && entryTotal == null) || (parkdays && parkRate == null) ? null : hotelTotal + (entryTotal || 0) + parking + extra;
 
         var box = function (label, value, hint) {
           return '<div class="box"><div class="n">' + (value == null ? '<span class="muted">n/a</span>' : value) +
@@ -1111,12 +1122,13 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
           box("Hotel total (engine quote)", money2(hotelTotal), "room + resort fee + tax, as the engine totals it") +
           box("True hotel cost / night", money2(q.true_cost_per_night_usd), "checkout total ÷ nights") +
           box("Tournament entries", entryTotal == null ? null : money2(entryTotal), entries + " × " + (buyin == null ? "?" : money2(buyin))) +
-          box("Parking", money2(parking), parkdays ? parkdays + " day(s) × " + (parkRate == null ? "unverified" : money2(parkRate)) : "none entered") +
+          box("Parking", parkdays && parkRate == null ? null : money2(parking), parkdays ? parkdays + " day(s) × " + (parkRate == null ? "unverified" : money2(parkRate)) : "none entered") +
           box("Other spend", money2(extra), "as entered") +
-          box("Trip total", money2(total), "entries × buy-in + nights × true hotel cost + parking + other") +
-          box("Per night, all in", money2(total / q.nights), "trip total ÷ nights");
+          box("Trip total", total == null ? null : money2(total), "entries × buy-in + nights × true hotel cost + parking + other") +
+          box("Per night, all in", total == null ? null : money2(total / q.nights), "trip total ÷ nights");
 
         var msgs = [];
+        if (total == null) msgs.push("Total withheld: a required price is missing.");
         msgs.push("Rate timestamp: quote read from the official booking engine on " + q.retrieved_on + ".");
         if (q.cancellation_note) msgs.push("Cancellation: " + q.cancellation_note);
         if (hotel && hotel.parking_usd_per_day == null && parkdays) {
@@ -1128,13 +1140,13 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
 
         /* what the selected window holds, from the verified dataset */
         var win = document.getElementById("c-window");
-        var inWindow = rows.filter(function (r) { return r.date >= q.arrival && r.date <= q.departure; });
+        var inWindow = rows.filter(function (r) { return r.date >= q.arrival && r.date < q.departure; });
         var se = inWindow.filter(function (r) { return r.entry_status === "SE"; });
         var seCash = se.filter(function (r) { return r.kind === "entry" && !(r.labels || []).some(function (l) { return /satellite/i.test(l); }); });
         var days = {};
         se.forEach(function (r) { days[r.date] = 1; });
         var cheapest = seCash.slice().sort(function (a, b) { return (a.buy_in_usd || 0) - (b.buy_in_usd || 0); })[0];
-        var richest = seCash.slice().sort(function (a, b) { return (b.gtd_multiple || 0) - (a.gtd_multiple || 0); })[0];
+        var richest = seCash.slice().filter(function(r){ return r.buy_in_usd > 0 && r.guarantee_usd > 0; }).sort(function (a, b) { return (b.gtd_multiple || 0) - (a.gtd_multiple || 0); })[0];
         win.innerHTML =
           '<p class="small">' + esc(dateFmt(q.arrival)) + " to " + esc(dateFmt(q.departure)) + ": " +
           inWindow.length + " official tournament rows fall in this window, of which <strong>" + se.length +
@@ -1164,7 +1176,8 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
           { id: "stamp", label: "Rate timestamp", key: "retrieved_on", html: function (r) { return "<span class='small'>read " + esc(r.retrieved_on) + "<br>logged " + esc(r.logged_on) + "</span>"; } }
         ];
         cmp.innerHTML = "";
-        table(cmp, rates, cols, { sortKey: "true", sortDir: 1 });
+        cols.push({id:"source", label:"Source", sort:null, html:function(r){ return datedBookingLink(r); }});
+        table(cmp, rates.filter(function(r){ return r.arrival === q.arrival && r.departure === q.departure && r.occupancy === q.occupancy && r.room === q.room && r.offer === q.offer; }), cols, { sortKey: "true", sortDir: 1 });
       }
 
       quoteSel.addEventListener("change", calc);

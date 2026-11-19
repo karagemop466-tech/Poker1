@@ -58,7 +58,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 300,
    "guarantee_usd": 10000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $58 of the $300 buy-in; prize pool $242",
    "flags": 0
   },
@@ -82,7 +82,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 200,
    "guarantee_usd": null,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $35 of the $200 buy-in; prize pool $165",
    "flags": 0
   },
@@ -94,7 +94,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 200,
    "guarantee_usd": null,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $35 of the $200 buy-in; prize pool $165",
    "flags": 0
   },
@@ -106,7 +106,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 200,
    "guarantee_usd": null,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $35 of the $200 buy-in; prize pool $165",
    "flags": 0
   },
@@ -118,7 +118,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 200,
    "guarantee_usd": null,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
    "flags": 0
   },
@@ -142,7 +142,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 200,
    "guarantee_usd": 8000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
    "flags": 0
   },
@@ -166,7 +166,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 200,
    "guarantee_usd": 8000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
    "flags": 0
   },
@@ -190,7 +190,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 400,
    "guarantee_usd": 15000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $65 of the $400 buy-in; prize pool $335",
    "flags": 0
   },
@@ -202,7 +202,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 200,
    "guarantee_usd": 8000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
    "flags": 0
   },
@@ -214,7 +214,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 300,
    "guarantee_usd": 10000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $58 of the $300 buy-in; prize pool $242",
    "flags": 0
   },
@@ -226,7 +226,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 200,
    "guarantee_usd": 8000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
    "flags": 0
   },
@@ -250,7 +250,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 600,
    "guarantee_usd": 30000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $90 of the $600 buy-in; prize pool $510",
    "flags": 0
   },
@@ -298,7 +298,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 200,
    "guarantee_usd": 8000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
    "flags": 0
   },
@@ -322,7 +322,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 600,
    "guarantee_usd": 30000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $90 of the $600 buy-in; prize pool $510",
    "flags": 0
   },
@@ -346,7 +346,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 400,
    "guarantee_usd": 15000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $60 of the $400 buy-in; prize pool $340",
    "flags": 0
   },
@@ -406,7 +406,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 300,
    "guarantee_usd": 10000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $58 of the $300 buy-in; prize pool $242",
    "flags": 0
   },
@@ -418,7 +418,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 200,
    "guarantee_usd": 8000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
    "flags": 0
   },
@@ -502,7 +502,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 200,
    "guarantee_usd": 8000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
    "flags": 0
   },
@@ -574,7 +574,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 200,
    "guarantee_usd": 8000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
    "flags": 0
   },
@@ -586,7 +586,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 600,
    "guarantee_usd": 40000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $90 of the $600 buy-in; prize pool $510",
    "flags": 0
   },
@@ -622,7 +622,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 200,
    "guarantee_usd": 8000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
    "flags": 0
   },
@@ -670,7 +670,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 600,
    "guarantee_usd": 25000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $90 of the $600 buy-in; prize pool $510",
    "flags": 0
   },
@@ -874,7 +874,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 600,
    "guarantee_usd": 40000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $90 of the $600 buy-in; prize pool $510",
    "flags": 0
   },
@@ -910,7 +910,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 300,
    "guarantee_usd": 15000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $50 of the $300 buy-in; prize pool $250",
    "flags": 0
   },
@@ -982,7 +982,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 600,
    "guarantee_usd": 40000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $90 of the $600 buy-in; prize pool $510",
    "flags": 0
   },
@@ -1018,7 +1018,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 300,
    "guarantee_usd": 15000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $50 of the $300 buy-in; prize pool $250",
    "flags": 0
   },
@@ -1054,7 +1054,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 600,
    "guarantee_usd": 40000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $90 of the $600 buy-in; prize pool $510",
    "flags": 0
   },
@@ -1078,7 +1078,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 100,
    "guarantee_usd": null,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $20 of the $100 buy-in; prize pool $80",
    "flags": 0
   },
@@ -1090,7 +1090,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 300,
    "guarantee_usd": 15000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $50 of the $300 buy-in; prize pool $250",
    "flags": 0
   },
@@ -1126,7 +1126,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 600,
    "guarantee_usd": 10000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $90 of the $600 buy-in; prize pool $510",
    "flags": 1
   },
@@ -1150,7 +1150,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 800,
    "guarantee_usd": 75000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $100 of the $800 buy-in; prize pool $700",
    "flags": 0
   },
@@ -1210,7 +1210,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 100,
    "guarantee_usd": null,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $20 of the $100 buy-in; prize pool $80",
    "flags": 0
   },
@@ -1222,7 +1222,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 300,
    "guarantee_usd": 15000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $50 of the $300 buy-in; prize pool $250",
    "flags": 0
   },
@@ -1270,7 +1270,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 800,
    "guarantee_usd": 40000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $110 of the $800 buy-in; prize pool $690",
    "flags": 1
   },
@@ -1294,7 +1294,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 600,
    "guarantee_usd": 25000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $90 of the $600 buy-in; prize pool $510",
    "flags": 0
   },
@@ -1306,7 +1306,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 260,
    "guarantee_usd": null,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $40 of the $260 buy-in; prize pool $220",
    "flags": 0
   },
@@ -1318,7 +1318,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 300,
    "guarantee_usd": 15000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $50 of the $300 buy-in; prize pool $250",
    "flags": 0
   },
@@ -1366,7 +1366,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 600,
    "guarantee_usd": 30000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $90 of the $600 buy-in; prize pool $510",
    "flags": 1
   },
@@ -1390,7 +1390,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 260,
    "guarantee_usd": null,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $40 of the $260 buy-in; prize pool $220",
    "flags": 0
   },
@@ -1426,7 +1426,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 260,
    "guarantee_usd": null,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $35 of the $260 buy-in; prize pool $225",
    "flags": 0
   },
@@ -1438,7 +1438,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 260,
    "guarantee_usd": null,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $35 of the $260 buy-in; prize pool $225",
    "flags": 0
   },
@@ -1474,7 +1474,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 260,
    "guarantee_usd": null,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $35 of the $260 buy-in; prize pool $225",
    "flags": 0
   },
@@ -1690,7 +1690,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 300,
    "guarantee_usd": 15000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $50 of the $300 buy-in; prize pool $250",
    "flags": 0
   },
@@ -1810,7 +1810,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 300,
    "guarantee_usd": 15000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $50 of the $300 buy-in; prize pool $250",
    "flags": 0
   },
@@ -1906,7 +1906,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 1100,
    "guarantee_usd": 75000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $130 of the $1,100 buy-in; prize pool $970",
    "flags": 0
   },
@@ -1954,7 +1954,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 300,
    "guarantee_usd": 15000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $50 of the $300 buy-in; prize pool $250",
    "flags": 0
   },
@@ -2002,7 +2002,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 600,
    "guarantee_usd": 50000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $90 of the $600 buy-in; prize pool $510",
    "flags": 0
   },
@@ -2062,7 +2062,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 300,
    "guarantee_usd": 15000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $50 of the $300 buy-in; prize pool $250",
    "flags": 0
   },
@@ -2182,7 +2182,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 600,
    "guarantee_usd": 25000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $90 of the $600 buy-in; prize pool $510",
    "flags": 0
   },
@@ -2614,7 +2614,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 200,
    "guarantee_usd": 8000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
    "flags": 0
   },
@@ -2686,7 +2686,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 200,
    "guarantee_usd": 8000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
    "flags": 0
   },
@@ -2722,7 +2722,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 200,
    "guarantee_usd": 8000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
    "flags": 0
   },
@@ -2746,7 +2746,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 600,
    "guarantee_usd": 30000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $90 of the $600 buy-in; prize pool $510",
    "flags": 0
   },
@@ -2758,7 +2758,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 200,
    "guarantee_usd": 8000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
    "flags": 0
   },
@@ -2770,7 +2770,7 @@
    "series": "Venetian DeepStack Extravaganza NYE",
    "buy_in_usd": 400,
    "guarantee_usd": 15000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $65 of the $400 buy-in; prize pool $335",
    "flags": 0
   },
@@ -2782,7 +2782,7 @@
    "series": "Venetian DeepStack Extravaganza NYE",
    "buy_in_usd": 200,
    "guarantee_usd": 8000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
    "flags": 0
   },
@@ -2794,7 +2794,7 @@
    "series": "Venetian DeepStack Extravaganza NYE",
    "buy_in_usd": 400,
    "guarantee_usd": 15000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $65 of the $400 buy-in; prize pool $335",
    "flags": 0
   },
@@ -2806,7 +2806,7 @@
    "series": "Venetian DeepStack Extravaganza NYE",
    "buy_in_usd": 200,
    "guarantee_usd": 8000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
    "flags": 0
   },
@@ -2818,7 +2818,7 @@
    "series": "Venetian DeepStack Extravaganza NYE",
    "buy_in_usd": 600,
    "guarantee_usd": 40000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $90 of the $600 buy-in; prize pool $510",
    "flags": 1
   },
@@ -2830,7 +2830,7 @@
    "series": "Venetian DeepStack Extravaganza NYE",
    "buy_in_usd": 260,
    "guarantee_usd": null,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $40 of the $260 buy-in; prize pool $220",
    "flags": 1
   },
@@ -2842,7 +2842,7 @@
    "series": "Venetian DeepStack Extravaganza NYE",
    "buy_in_usd": 260,
    "guarantee_usd": null,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $40 of the $260 buy-in; prize pool $220",
    "flags": 1
   },
@@ -2866,7 +2866,7 @@
    "series": "Venetian DeepStack Extravaganza NYE",
    "buy_in_usd": 260,
    "guarantee_usd": null,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $40 of the $260 buy-in; prize pool $220",
    "flags": 0
   },
@@ -2878,7 +2878,7 @@
    "series": "Venetian DeepStack Extravaganza NYE",
    "buy_in_usd": 260,
    "guarantee_usd": null,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $40 of the $260 buy-in; prize pool $220",
    "flags": 0
   },
@@ -2902,7 +2902,7 @@
    "series": "Venetian DeepStack Extravaganza NYE",
    "buy_in_usd": 260,
    "guarantee_usd": null,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $40 of the $260 buy-in; prize pool $220",
    "flags": 0
   },
@@ -2914,7 +2914,7 @@
    "series": "Venetian DeepStack Extravaganza NYE",
    "buy_in_usd": 260,
    "guarantee_usd": null,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $40 of the $260 buy-in; prize pool $220",
    "flags": 0
   },
@@ -2938,7 +2938,7 @@
    "series": "Venetian DeepStack Extravaganza NYE",
    "buy_in_usd": 200,
    "guarantee_usd": 8000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
    "flags": 0
   },
@@ -2962,7 +2962,7 @@
    "series": "Venetian DeepStack Extravaganza NYE",
    "buy_in_usd": 600,
    "guarantee_usd": 50000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $90 of the $600 buy-in; prize pool $510",
    "flags": 0
   },
@@ -2974,7 +2974,7 @@
    "series": "Venetian DeepStack Extravaganza NYE",
    "buy_in_usd": 200,
    "guarantee_usd": null,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $35 of the $200 buy-in; prize pool $165",
    "flags": 0
   },
@@ -2986,7 +2986,7 @@
    "series": "Venetian DeepStack Extravaganza NYE",
    "buy_in_usd": 200,
    "guarantee_usd": null,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $30 of the $200 buy-in; prize pool $170",
    "flags": 0
   },
@@ -3010,7 +3010,7 @@
    "series": "Venetian DeepStack Extravaganza NYE",
    "buy_in_usd": 400,
    "guarantee_usd": 15000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $65 of the $400 buy-in; prize pool $335",
    "flags": 0
   },
@@ -3022,7 +3022,7 @@
    "series": "Venetian DeepStack Extravaganza NYE",
    "buy_in_usd": 200,
    "guarantee_usd": null,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $35 of the $200 buy-in; prize pool $165",
    "flags": 0
   },
@@ -3034,7 +3034,7 @@
    "series": "Venetian DeepStack Extravaganza NYE",
    "buy_in_usd": 200,
    "guarantee_usd": null,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $30 of the $200 buy-in; prize pool $170",
    "flags": 0
   },
@@ -3058,7 +3058,7 @@
    "series": "Venetian DeepStack Extravaganza NYE",
    "buy_in_usd": 200,
    "guarantee_usd": null,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $35 of the $200 buy-in; prize pool $165",
    "flags": 0
   },
@@ -3070,7 +3070,7 @@
    "series": "Venetian DeepStack Extravaganza NYE",
    "buy_in_usd": 200,
    "guarantee_usd": 8000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
    "flags": 0
   },
@@ -3082,7 +3082,7 @@
    "series": "Venetian DeepStack Extravaganza NYE",
    "buy_in_usd": 200,
    "guarantee_usd": null,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $35 of the $200 buy-in; prize pool $165",
    "flags": 0
   },
@@ -3106,7 +3106,7 @@
    "series": "Venetian DeepStack Extravaganza NYE",
    "buy_in_usd": 200,
    "guarantee_usd": null,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $35 of the $200 buy-in; prize pool $165",
    "flags": 0
   },
@@ -3142,7 +3142,7 @@
    "series": "Venetian DeepStack Extravaganza NYE",
    "buy_in_usd": 200,
    "guarantee_usd": 8000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
    "flags": 0
   },
@@ -3214,7 +3214,7 @@
    "series": "Venetian DeepStack Extravaganza NYE",
    "buy_in_usd": 400,
    "guarantee_usd": 15000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $65 of the $400 buy-in; prize pool $335",
    "flags": 0
   },
@@ -3322,7 +3322,7 @@
    "series": "Venetian DeepStack Extravaganza NYE",
    "buy_in_usd": 400,
    "guarantee_usd": 20000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $65 of the $400 buy-in; prize pool $335",
    "flags": 0
   },
@@ -3346,7 +3346,7 @@
    "series": "Venetian DeepStack Extravaganza NYE",
    "buy_in_usd": 200,
    "guarantee_usd": 8000,
-   "entry_status": "SE",
+   "entry_status": "CAND",
    "buy_in": "house fee $40 of the $200 buy-in; prize pool $160",
    "flags": 0
   },

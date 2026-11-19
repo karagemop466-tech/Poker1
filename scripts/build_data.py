@@ -74,7 +74,7 @@ EX_SUBSEQUENT_BUYIN = ("Clause 07: \"All subsequent buy in's after the initial b
 # read on 2026-11-16. events = event numbers the sheet covers.
 NOV_SHEETS = {
  1: dict(events=[9, 11, 13, 15, 21, 22, 23, 25, 60, 61, 62, 64], buy=200, fee=40, pool=160, start="17:10",
-         chips=25000, levels=28, lmin=30, late="9:40 PM", status="SE", labels=["bounty"]),
+         chips=25000, levels=28, lmin=30, late="9:40 PM", status="CAND", labels=["bounty"]),
  2: dict(events=[7], buy=400, fee=70, pool=330, start="11:10", chips=40000, levels=30, lmin=40, late="5:55 PM",
          status="MULTI", labels=["multi-flight"], ex=EX_FLIGHT),
  3: dict(events=[19], buy=400, fee=70, pool=330, start="11:10", levels=30, lmin=40, late="5:55 PM",
@@ -82,11 +82,11 @@ NOV_SHEETS = {
  4: dict(events=[59], buy=600, fee=95, pool=505, start="11:10", chips=20000, levels=30, lmin=40, late="5:55 PM",
          status="MULTI", labels=["multi-flight", "rake-discount"], ex=EX_FLIGHT),
  5: dict(events=[2, 12], buy=300, fee=58, pool=242, start="11:10", chips=20000, levels=28, lmin=30, late="4:55 PM",
-         status="SE", labels=[]),
- 6: dict(events=[10], buy=400, fee=65, pool=335, start="11:10", levels=28, lmin=30, late="4:55 PM",
-         status="SE", labels=[]),
+         status="CAND", labels=[]),
+ 6: dict(events=[10], buy=400, fee=65, pool=335, chips=40000, start="11:10", levels=28, lmin=30, late="4:55 PM",
+         status="CAND", labels=[]),
  7: dict(events=[14, 28, 63], buy=600, fee=90, pool=510, start="11:10", chips=20000, levels=28, lmin=30, late="4:55 PM",
-         status="SE", labels=[]),
+         status="CAND", labels=[]),
  8: dict(events=[18, 58], buy=200, fee=40, pool=160, start="17:10", levels=28, lmin=30, late="9:40 PM",
          status="MULTI", labels=["bounty", "pokeratlas-discount"], ex=EX_SUBSEQUENT_BUYIN),
  9: dict(events=[1], buy=300, fee=60, pool=240, start="17:10", levels=30, lmin=30, late="8:40 PM",
@@ -94,7 +94,7 @@ NOV_SHEETS = {
  10: dict(events=[1], buy=300, fee=60, pool=240, start="11:10", levels=30, lmin=40, late="3:40 PM",
           status="MULTI", labels=["multi-flight"], ex=EX_FLIGHT),
  11: dict(events=[16, 30, 54], buy=600, fee=90, pool=510, start="11:10", levels=28, lmin=30, late="4:55 PM",
-          status="SE", labels=["bounty"]),
+          status="CAND", labels=["bounty"]),
  12: dict(events=[26], buy=800, fee=110, pool=690, start="11:10", levels=30, lmin=40, late="3:40 PM",
           status="MULTI", labels=["multi-flight"], ex=EX_FLIGHT),
  13: dict(events=[26], buy=800, fee=110, pool=690, start="17:10", levels=30, lmin=30, late="8:40 PM",
@@ -102,16 +102,16 @@ NOV_SHEETS = {
  14: dict(events=[26], buy=800, fee=110, pool=690, start="17:10", levels=30, lmin=20, late="7:25 PM",
           status="MULTI", labels=["multi-flight", "turbo"], ex=EX_FLIGHT),
  15: dict(events=[29, 31, 34, 38, 42, 50, 51, 53, 55], buy=300, fee=50, pool=250, start="17:10",
-          levels=28, lmin=30, late="9:40 PM", status="SE", labels=["bounty"]),
+          levels=28, lmin=30, late="9:40 PM", status="CAND", labels=["bounty"]),
  16: dict(events=[36], buy=800, fee=100, pool=700, start="11:10", levels=28, lmin=30, late="4:55 PM",
-          status="SE", labels=["bounty"]),
+          status="CAND", labels=["bounty"]),
  17: dict(events=[24, 32], buy=600, fee=90, pool=510, start="10:10", levels=28, lmin=30, late="3:55 PM",
-          status="SE", labels=["seniors-50-plus"]),
+          status="CAND", labels=["seniors-50-plus"]),
  18: dict(events=[3, 4, 5], buy=200, fee=35, pool=165, start="10:10", chips=30000, levels=28, lmin=20,
           lmin2=15, lmin2_from=7, late="12:25 PM",
-          status="SE", labels=["raceday-stack"]),
+          status="CAND", labels=["raceday-stack"]),
  19: dict(events=[33, 37], buy=100, fee=20, pool=80, start="16:10", chips=20000, levels=28, lmin=20, late="6:25 PM",
-          status="SE", labels=["satellite", "milestone-satellite", "ladies"],
+          status="CAND", labels=["satellite", "milestone-satellite", "ladies"],
           seats=2, target="Event #39 ($800 No Limit Hold'em LIPS Ladies)",
           note="Milestone satellite: \"A Player who accumulates 200,000 in tournament chips (\"The Milestone\") or "
                "more will instantly receive direct entry into the $800 No Limit Hold'em LIPS ladies Event #39.\" "
@@ -121,17 +121,17 @@ NOV_SHEETS = {
  21: dict(events=[47], buy=2200, fee=225, pool=1975, start="10:10", levels=29, lmin=40, late="4:55 PM",
           status="MULTI", labels=["multi-flight", "title-event"], ex=EX_FLIGHT),
  22: dict(events=[20], buy=300, fee=58, pool=242, start="12:10", levels=28, lmin=30, late="4:40 PM",
-          status="SE", labels=["plo", "double-board"]),
+          status="CAND", labels=["plo", "double-board"]),
  23: dict(events=[57], buy=600, fee=90, pool=510, start="12:10", levels=28, lmin=30, late="4:40 PM",
-          status="SE", labels=["plo", "double-board"]),
+          status="CAND", labels=["plo", "double-board"]),
  24: dict(events=[41, 44], buy=260, fee=40, pool=220, start="16:10", chips=20000, levels=28, lmin=20, late="6:25 PM",
-          status="SE", labels=["satellite", "milestone-satellite"],
+          status="CAND", labels=["satellite", "milestone-satellite"],
           seats=2, target="Event #47 ($2,200 No Limit Hold'em PokerAtlas Championship Title Event)",
           note="Milestone satellite: \"A Player who accumulates 200,000 in tournament chips (\"The Milestone\") or "
                "more will instantly receive direct entry into the $2,200 No Limit Hold'em PokerAtlas Championship "
                "Title Event #47.\""),
  25: dict(events=[45, 46, 48], buy=260, fee=35, pool=225, start=None, chips=20000, levels=28, lmin=15, late=None,
-          status="SE", labels=["satellite", "milestone-satellite", "turbo"],
+          status="CAND", labels=["satellite", "milestone-satellite", "turbo"],
           seats=2, target="Event #47 ($2,200 No Limit Hold'em PokerAtlas Championship Title Event)",
           late_by_event={45: "9:40 PM", 46: "10:40 AM", 48: "1:40 PM"},
           note="Milestone satellite: \"A Player who accumulates 200,000 in tournament chips (\"The Milestone\") or "
@@ -139,23 +139,23 @@ NOV_SHEETS = {
                "Title Event #47.\" The sheet prints a start time per event number (45: 8:10 PM, 46: 9:10 AM, "
                "48: 12:10 PM) and \"Late Registration: 6 levels\"."),
  26: dict(events=[17], buy=400, fee=60, pool=340, start="12:10", levels=28, lmin=30, late="4:40 PM",
-          status="SE", labels=["plo", "bounty"]),
+          status="CAND", labels=["plo", "bounty"]),
  27: dict(events=[40], buy=600, fee=90, pool=510, start="12:10", levels=28, lmin=30, late="4:40 PM",
-          status="SE", labels=["plo", "bounty"]),
+          status="CAND", labels=["plo", "bounty"]),
  28: dict(events=[27], buy=600, fee=90, pool=510, start="12:10", levels=28, lmin=30, late="4:40 PM",
-          status="SE", labels=["big-o"]),
+          status="CAND", labels=["big-o"]),
  29: dict(events=[6], buy=200, fee=40, pool=160, start="11:10", levels=28, lmin=30, late="3:40 PM",
-          status="SE", labels=[]),
+          status="CAND", labels=[]),
  30: dict(events=[8], buy=200, fee=40, pool=160, start="17:10", levels=28, lmin=30, late="9:40 PM",
-          status="SE", labels=["bounty", "pko"]),
+          status="CAND", labels=["bounty", "pko"]),
  31: dict(events=[35], buy=600, fee=90, pool=510, start="10:10", levels=28, lmin=30, late="2:40 PM",
-          status="SE", labels=["tag-team", "lips"]),
+          status="CAND", labels=["tag-team", "lips"]),
  32: dict(events=[39], buy=800, fee=110, pool=690, start="10:10", levels=29, lmin=40, late="4:55 PM",
-          status="SE", labels=["ladies", "lips", "two-day"]),
+          status="CAND", labels=["ladies", "lips", "two-day"]),
  33: dict(events=[43], buy=600, fee=90, pool=510, start="11:10", levels=28, lmin=30, late="4:55 PM",
-          status="SE", labels=["bounty", "lips"]),
+          status="CAND", labels=["bounty", "lips"]),
  34: dict(events=[52], buy=1100, fee=130, pool=970, start="11:10", levels=28, lmin=30, late="4:55 PM",
-          status="SE", labels=["bounty", "pko"]),
+          status="CAND", labels=["bounty", "pko"]),
  35: dict(events=[56], buy=1100, fee=140, pool=960, start="10:10", levels=30, lmin=40, late="4:55 PM",
           status="MULTI", labels=["multi-flight", "rake-discount"], ex=EX_FLIGHT),
  36: dict(events=[56], buy=1100, fee=140, pool=960, start="18:10", levels=30, lmin=30, late="11:10 PM",
@@ -167,16 +167,16 @@ NOV_SHEETS = {
 # ---------- Venetian DeepStack Extravaganza NYE structure sheets (Dec 24, 2026 - Jan 10, 2027) ----------
 DEC_SHEETS = {
  1: dict(events=[1, 3, 17], buy=400, fee=65, pool=335, start="11:10", levels=28, lmin=30, late="3:40 PM",
-         status="SE", labels=[]),
+         status="CAND", labels=[]),
  2: dict(events=[2, 4, 13, 22, 26, 29, 32], buy=200, fee=40, pool=160, start="17:10", levels=28, lmin=30,
-         late="9:40 PM", status="SE", labels=["bounty"],
+         late="9:40 PM", status="CAND", labels=["bounty"],
          note="Clause 06 mentions re-entry for Event #29 only (\"The $20 discount can be applied to the initial "
               "entry or any subsequent re-entry\"). Event #29 is listed as re-entry; the other events on this "
               "sheet have no re-entry clause of their own. Flagged for confirmation."),
  3: dict(events=[5], buy=600, fee=90, pool=510, start="11:10", levels=28, lmin=30, late="4:55 PM",
-         status="SE", labels=["bounty"]),
+         status="CAND", labels=["bounty"]),
  4: dict(events=[6, 7, 9, 10, 11, 12], buy=260, fee=40, pool=220, start=None, levels=28, lmin=20, late=None,
-         status="SE", labels=["satellite", "milestone-satellite"],
+         status="CAND", labels=["satellite", "milestone-satellite"],
          seats=4, target="Event #08 ($1,100 No Limit Hold'em Ante Up Championship)",
          late_by_event={6: "5:25 PM", 7: "8:25 PM", 9: "5:25 PM", 10: "8:25 PM", 11: "5:25 PM", 12: "8:25 PM"},
          note="Milestone satellite to the Ante Up Championship. The sheet prints start times per event number "
@@ -184,7 +184,7 @@ DEC_SHEETS = {
               "(~5:25 PM or ~ 8:25 PM)\". The official event page describes the prize as \"1 in 5 (20%) Direct Entry "
               "into Event # 08\"."),
  5: dict(events=[15, 18, 21, 23, 24], buy=200, fee=35, pool=165, start=None, levels=28, lmin=20, late=None,
-         status="SE", labels=["satellite", "milestone-satellite"],
+         status="CAND", labels=["satellite", "milestone-satellite"],
          seats=2, target="Event #20 ($1,600 No Limit Hold'em MSPT)",
          late_by_event={15: "5:25 PM", 18: "5:25 PM", 21: "5:25 PM", 23: "12:25 PM", 24: "5:25 PM"},
          note="Milestone satellite to the MSPT. The sheet prints start times per event number (15, 18, 21 and 24 "
@@ -192,7 +192,7 @@ DEC_SHEETS = {
  6: dict(events=[8], buy=1100, fee=140, pool=960, start="11:10", levels=30, lmin=40, late="5:55 PM",
          status="MULTI", labels=["multi-flight"], ex=EX_FLIGHT),
  7: dict(events=[16, 19], buy=200, fee=30, pool=170, start="18:10", levels=28, lmin=15, late="7:55 PM",
-         status="SE", labels=["satellite", "milestone-satellite", "turbo"],
+         status="CAND", labels=["satellite", "milestone-satellite", "turbo"],
          seats=2, target="Event #20 ($1,600 No Limit Hold'em MSPT)",
          note="Milestone satellite (turbo) to the MSPT. \"Late Registration: 6 levels + Break (~7:55 PM)\". "
               "\"$30 of the $200 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $170 "
@@ -202,11 +202,11 @@ DEC_SHEETS = {
  9: dict(events=[25], buy=200, fee=40, pool=160, start="17:10", levels=28, lmin=30, late="9:40 PM",
          status="MULTI", labels=["bounty", "pokeratlas-discount"], ex=EX_SUBSEQUENT_BUYIN),
  10: dict(events=[31], buy=400, fee=65, pool=335, start="10:10", levels=28, lmin=30, late="3:55 PM",
-          status="SE", labels=["seniors-50-plus"]),
+          status="CAND", labels=["seniors-50-plus"]),
  11: dict(events=[28], buy=400, fee=65, pool=335, start="11:10", levels=28, lmin=30, late="4:55 PM",
-          status="SE", labels=[]),
+          status="CAND", labels=[]),
  12: dict(events=[14], buy=600, fee=90, pool=510, start="11:10", levels=28, lmin=30, late="4:55 PM",
-          status="SE", labels=[]),
+          status="CAND", labels=[]),
  13: dict(events=[30], buy=300, fee=60, pool=240, start="11:10", levels=30, lmin=40, late="3:40 PM",
           status="MULTI", labels=["multi-flight"], ex=EX_FLIGHT),
  14: dict(events=[30], buy=300, fee=60, pool=240, start="17:10", levels=30, lmin=30, late="8:40 PM",
@@ -927,7 +927,7 @@ def build_venetian(rows, series_key, series, page_key, sheet_key, sched_key, str
         labels = list(sheet.get("labels", []))
         if continuation:
             labels.append("continuation")
-        if continuation and status == "SE":
+        if continuation and status == "CAND":
             status = "CONT"
         buy = sheet["buy"]
         start_time = start
@@ -953,7 +953,7 @@ def build_venetian(rows, series_key, series, page_key, sheet_key, sched_key, str
                          sheet["pool"], format(buy, ",")))
         rules = {
             "single_entry": rule_field(
-                "confirmed" if status == "SE" else ("not single entry" if status in ("MULTI", "RE", "REBUY") else "unknown"),
+                "not stated" if status == "CAND" else ("not single entry" if status in ("MULTI", "RE", "REBUY") else "unknown"),
                 ex, "Structure sheet #%d" % sheet_no, struct_url,
                 clause="08" if "Clause 08" in ex else ("07" if "Clause 07" in ex else ("06" if "Clause 06" in ex else None))),
             "re_entry": rule_field(
@@ -1004,7 +1004,7 @@ def build_venetian(rows, series_key, series, page_key, sheet_key, sched_key, str
             "gtd_multiple": round(gtd / buy, 1) if gtd and buy else None,
             "entry_status": status, "rules": rules,
             "entry_rule": {
-                "SE": "Single entry confirmed: structure sheet read, no re-entry, rebuy, add-on or flight clause.",
+                "CAND": "Unverified freezeout: sheet reviewed; no written maximum entry, rebuy or add-on policy.",
                 "MULTI": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
                 "RE": "Re-entry confirmed: structure sheet states re-entry terms.",
                 "REBUY": "Rebuy / add-on confirmed: extra money buys more chances.",
@@ -1151,7 +1151,7 @@ def build_wynn():
         src_url = struct_url or SRC["wpt_sched"]
         rules = {
             "single_entry": rule_field(
-                "not single entry" if status in ("RE", "REBUY", "MULTI") else ("unknown" if status == "UNV" else "confirmed"),
+                "not single entry" if status in ("RE", "REBUY", "MULTI") else ("not applicable" if status == "CONT" else "unknown"),
                 ex, src_label, src_url),
             "re_entry": rule_field("allowed" if status in ("RE", "REBUY", "MULTI") else "unknown",
                                    ex, src_label, src_url),
@@ -1355,7 +1355,7 @@ def build_schedule(rows):
     plan = []
     for d in sorted(days):
         events = sorted(days[d], key=lambda e: (e["start"], e["name"]))
-        se = [e for e in events if e["entry_status"] == "SE"]
+        se = [e for e in events if e["entry_status"] == "CAND"]
         primary = se[0] if se else None
         p_end = seq_end(primary) if primary else None
         fallback = None
@@ -1430,7 +1430,7 @@ def build_schedule(rows):
                                  "entry_closes": close, "late_reg_published": bool(other.get("late_reg_close")),
                                  "note": why})
         if not primary:
-            note = "No verified single-entry event on this date."
+            note = "No sheet-reviewed candidate on this date."
         elif not fallback:
             if basis == "no_day_bound":
                 note = ("The primary event's table spans more than one playing day - its sheet says the"
@@ -1444,10 +1444,10 @@ def build_schedule(rows):
                         " remaining seats are awarded; nothing prints when that happens, so no second event"
                         " can be promised after it.")
             elif len(se) < 2:
-                note = ("This is the only verified single-entry event on this date, so the day is planned"
+                note = ("This is the only sheet-reviewed candidate on this date, so the day is planned"
                         " around it alone.")
             else:
-                note = ("No other single-entry event on this date can still be entered by the time the"
+                note = ("No other candidate on this date can still be entered by the time the"
                         " primary's own table ends at %s - the day is planned around the primary alone."
                         % clock_label(p_end))
         elif fallback_kind == "join in progress":
@@ -1508,7 +1508,7 @@ def build_schedule(rows):
                     "much earlier. Of the 93 rows the official page labels \"(1Day)\", 87 carry a table that runs past "
                     "midnight and 70 cannot fit inside a day at all (flag F75). A table spanning more than one playing day bounds its first day not at all, so "
                     "those rows carry no ceiling and their day is never paired. A day names one primary "
-                    "single-entry event and, only where the primary cannot run past the second event's entry "
+                    "candidate (subject to written rules) and, only where the primary cannot run past the second event's entry "
                     "deadline, a conditional fallback labelled from the start or as a join in progress. Everything "
                     "else on that date is listed as an alternative to the primary, never as an addition to it."}
 
