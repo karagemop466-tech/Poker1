@@ -36,3 +36,16 @@ the official document and the time it was read.
 conflict lines) · `check_schedule.py` · `check_source_facts.py --offline` ·
 `python3 -m unittest discover -s scripts` (9 modules) · `npm test` (smoke 30/30, schedule
 render, rendered links, calculator, source badges).
+
+
+## F10 — Clark County TLE guide re-read (licence-table provenance check, 2026-11-19 ~11:4xZ)
+
+Re-read https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf
+(licensed-establishment table, T–V range) to settle the `1000389` vs `1003089` divergence flagged by
+`research/verification-2026-11-19-cd330ba8.md`. The live PDF prints `1000389.RES-001 | Venetian Resort
+Hotel Casino / Palazzo Resort Hotel Casino | 3325 Las Vegas Blvd S | Licensed | 13.38% | RES | 1 |
+Transient Lodging Tax - Resort Hotel (PGC)` and `1136233.RES-001 | Caesars Palace | 3570 Las Vegas Blvd S`.
+`data/snapshots/cc_tle_guide.txt` line 1088 misprints the licence as `1003089`, truncates the DBA to
+“Casin” and garbles the Caesars address to “35/0” — three defects in one line of the monitor’s line render,
+same failure class as F83. `main`’s published values match the live PDF and are unchanged; #98’s proposed
+“correction” to `1003089` is the archive defect and was not ported. Recorded as FLAGGED.md F84.
