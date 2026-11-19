@@ -34,7 +34,9 @@
      "label": "Foot-routing query for this pair",
      "url": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-115.1693352,36.1217073%3B-115.168271,36.1241843?overview=false"
     }
-   ]
+   ],
+   "hotel_name": "The Venetian Resort",
+   "destination": "The Palazzo (poker room, level 2 Grand Canal Shoppes)"
   },
   {
    "hotel": "venetian",
@@ -68,7 +70,9 @@
      "label": "Foot-routing query for this pair",
      "url": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-115.1693352,36.1217073%3B-115.165362,36.1289345?overview=false"
     }
-   ]
+   ],
+   "hotel_name": "The Venetian Resort",
+   "destination": "Encore at Wynn Las Vegas (poker room)"
   },
   {
    "hotel": "palazzo",
@@ -102,7 +106,9 @@
      "label": "Foot-routing query for this pair",
      "url": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-115.168271,36.1241843%3B-115.168271,36.1241843?overview=false"
     }
-   ]
+   ],
+   "hotel_name": "The Palazzo",
+   "destination": "The Palazzo (poker room, level 2 Grand Canal Shoppes)"
   },
   {
    "hotel": "palazzo",
@@ -136,7 +142,9 @@
      "label": "Foot-routing query for this pair",
      "url": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-115.168271,36.1241843%3B-115.165362,36.1289345?overview=false"
     }
-   ]
+   ],
+   "hotel_name": "The Palazzo",
+   "destination": "Encore at Wynn Las Vegas (poker room)"
   },
   {
    "hotel": "wynn",
@@ -170,7 +178,9 @@
      "label": "Foot-routing query for this pair",
      "url": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-115.1654043,36.1266219%3B-115.168271,36.1241843?overview=false"
     }
-   ]
+   ],
+   "hotel_name": "Wynn Las Vegas",
+   "destination": "The Palazzo (poker room, level 2 Grand Canal Shoppes)"
   },
   {
    "hotel": "wynn",
@@ -204,7 +214,9 @@
      "label": "Foot-routing query for this pair",
      "url": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-115.1654043,36.1266219%3B-115.165362,36.1289345?overview=false"
     }
-   ]
+   ],
+   "hotel_name": "Wynn Las Vegas",
+   "destination": "Encore at Wynn Las Vegas (poker room)"
   },
   {
    "hotel": "encore",
@@ -238,7 +250,9 @@
      "label": "Foot-routing query for this pair",
      "url": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-115.165362,36.1289345%3B-115.168271,36.1241843?overview=false"
     }
-   ]
+   ],
+   "hotel_name": "Encore at Wynn Las Vegas",
+   "destination": "The Palazzo (poker room, level 2 Grand Canal Shoppes)"
   },
   {
    "hotel": "encore",
@@ -272,7 +286,9 @@
      "label": "Foot-routing query for this pair",
      "url": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-115.165362,36.1289345%3B-115.165362,36.1289345?overview=false"
     }
-   ]
+   ],
+   "hotel_name": "Encore at Wynn Las Vegas",
+   "destination": "Encore at Wynn Las Vegas (poker room)"
   },
   {
    "hotel": "bellagio",
@@ -306,7 +322,9 @@
      "label": "Foot-routing query for this pair",
      "url": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-115.1770065,36.1131149%3B-115.168271,36.1241843?overview=false"
     }
-   ]
+   ],
+   "hotel_name": "Bellagio",
+   "destination": "The Palazzo (poker room, level 2 Grand Canal Shoppes)"
   },
   {
    "hotel": "bellagio",
@@ -340,7 +358,9 @@
      "label": "Foot-routing query for this pair",
      "url": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-115.1770065,36.1131149%3B-115.165362,36.1289345?overview=false"
     }
-   ]
+   ],
+   "hotel_name": "Bellagio",
+   "destination": "Encore at Wynn Las Vegas (poker room)"
   },
   {
    "hotel": "aria",
@@ -374,7 +394,9 @@
      "label": "Foot-routing query for this pair",
      "url": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-115.1779977,36.1070287%3B-115.168271,36.1241843?overview=false"
     }
-   ]
+   ],
+   "hotel_name": "ARIA Resort & Casino",
+   "destination": "The Palazzo (poker room, level 2 Grand Canal Shoppes)"
   },
   {
    "hotel": "aria",
@@ -408,7 +430,9 @@
      "label": "Foot-routing query for this pair",
      "url": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-115.1779977,36.1070287%3B-115.165362,36.1289345?overview=false"
     }
-   ]
+   ],
+   "hotel_name": "ARIA Resort & Casino",
+   "destination": "Encore at Wynn Las Vegas (poker room)"
   },
   {
    "hotel": "caesars",
@@ -442,7 +466,9 @@
      "label": "Foot-routing query for this pair",
      "url": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-115.1767568,36.1166277%3B-115.168271,36.1241843?overview=false"
     }
-   ]
+   ],
+   "hotel_name": "Caesars Palace",
+   "destination": "The Palazzo (poker room, level 2 Grand Canal Shoppes)"
   },
   {
    "hotel": "caesars",
@@ -476,7 +502,9 @@
      "label": "Foot-routing query for this pair",
      "url": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-115.1767568,36.1166277%3B-115.165362,36.1289345?overview=false"
     }
-   ]
+   ],
+   "hotel_name": "Caesars Palace",
+   "destination": "Encore at Wynn Las Vegas (poker room)"
   }
  ],
  "note": "Walking time is only filled in when an official source publishes it. No official source publishes walking times between these hotels and poker rooms, so the times are blank and a route link is given instead. The 30-minute rule is applied to a value only once one is verified."

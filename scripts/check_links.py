@@ -50,6 +50,12 @@ OFFICIAL_SOURCE_HOSTS = {
     # Session 88793bf4 (Strip-room survey): the Resorts World operator page. The MGM PDFs stay
     # un-approved (F40); see FLAGGED.md S9.
     "www.rwlasvegas.com",
+    # Session 13eafa44 (integration of PR #82): the taxing authority. Clark County levies the
+    # transient lodging (room) tax the hotel rows publish; its licensing guide (Appendix III and
+    # the licensed-establishment table) is cited by every hotel row (F77). It is an official
+    # government source, not a third party. The operator hosts remain the only casino sources.
+    "clarkcountynv.gov",
+    "www.clarkcountynv.gov",
 }
 TOURNAMENT_STATUSES = {"CAND", "SE", "MULTI", "RE", "REBUY", "CONT", "UNV"}
 TOURNAMENT_KINDS = {"entry", "continuation"}
@@ -479,7 +485,20 @@ for index, row in enumerate(daily_rows, 1):
     check_time(row.get("start"), f"{where} {identity} start", required=True)
     for field in ("buy_in_usd", "guarantee_usd", "levels", "lmin"):
         check_number(row.get(field), f"{where} {identity} {field}")
-    check_time(row.get("late"), f"{where} {identity} late", required=True)
+    # A printed clock time for when registration closes, or the printed level at which it
+    # closes with its quoted text - never neither. Bellagio and Caesars flyers print only a
+    # level (end of level 8 / start of level 7), so no clock time exists to demand.
+    if row.get("late"):
+        check_time(row.get("late"), f"{where} {identity} late", required=True)
+    else:
+        for field in ("late_reg_level", "late_reg_text"):
+            value = row.get(field)
+            if value in (None, ""):
+                problems.append(f"{where} {identity}: registration cut-off is blank - set `late` or both `late_reg_level` and `late_reg_text`")
+        if row.get("late_reg_text") and not isinstance(row["late_reg_text"], str):
+            problems.append(f"{where} {identity}: late_reg_text must be text")
+        if row.get("late_reg_level") is not None and not is_number(row["late_reg_level"]):
+            problems.append(f"{where} {identity}: late_reg_level must be a number")
 
 venue_names = set()
 for index, row in enumerate(venue_rows, 1):

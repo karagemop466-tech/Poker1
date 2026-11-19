@@ -1233,7 +1233,7 @@
     {
      "id": "r045",
      "start": "12:00",
-     "name": "Limit Omaha 8/5/stud 8",
+     "name": "Limit Omaha 8/Stud 8",
      "series": "WPT World Championship (Wynn)",
      "venue": "Wynn Las Vegas",
      "buy_in_usd": 600,
@@ -3633,7 +3633,7 @@
     {
      "id": "r125",
      "start": "14:00",
-     "name": "Milestone Satellite to $10,400 World Championship 1A/8",
+     "name": "Milestone Satellite to $10,400 World Championship 1A/B",
      "series": "WPT World Championship (Wynn)",
      "venue": "Wynn Las Vegas",
      "buy_in_usd": 1100,
@@ -3653,7 +3653,7 @@
     {
      "id": "r128",
      "start": "16:00",
-     "name": "Milestone Satellite to $10,400 Ladies NLH Championship",
+     "name": "Milestone Satellite to $1,100 Ladies NLH Championship",
      "series": "WPT World Championship (Wynn)",
      "venue": "Wynn Las Vegas",
      "buy_in_usd": 200,
@@ -3695,7 +3695,7 @@
     {
      "id": "r130",
      "start": "19:00",
-     "name": "Milestone Satellite to $10,400 World Championship 1A/8",
+     "name": "Milestone Satellite to $10,400 World Championship 1A/B",
      "series": "WPT World Championship (Wynn)",
      "venue": "Wynn Las Vegas",
      "buy_in_usd": 1100,
@@ -3791,7 +3791,7 @@
      "b_start": "14:00",
      "kind": "unplannable",
      "gap_min": -235,
-     "detail": "Milestone Satellite to $10,400 World Championship 1A/8 starts 14:00 and its entry closes 14:00, while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47's own table can run as late as 17:55 and no source prints an earlier end - so nothing published supports planning both on one day"
+     "detail": "Milestone Satellite to $10,400 World Championship 1A/B starts 14:00 and its entry closes 14:00, while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47's own table can run as late as 17:55 and no source prints an earlier end - so nothing published supports planning both on one day"
     },
     {
      "a": "r120",
@@ -3802,7 +3802,7 @@
      "b_start": "16:00",
      "kind": "unplannable",
      "gap_min": -115,
-     "detail": "Milestone Satellite to $10,400 Ladies NLH Championship starts 16:00 and its entry closes 16:00, while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47's own table can run as late as 17:55 and no source prints an earlier end - so nothing published supports planning both on one day"
+     "detail": "Milestone Satellite to $1,100 Ladies NLH Championship starts 16:00 and its entry closes 16:00, while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47's own table can run as late as 17:55 and no source prints an earlier end - so nothing published supports planning both on one day"
     },
     {
      "a": "r123",
@@ -3824,7 +3824,7 @@
      "b_start": "14:00",
      "kind": "unplannable",
      "gap_min": -415,
-     "detail": "Milestone Satellite to $10,400 World Championship 1A/8 starts 14:00 and its entry closes 14:00, while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47's own table can run as late as 20:55 and no source prints an earlier end - so nothing published supports planning both on one day"
+     "detail": "Milestone Satellite to $10,400 World Championship 1A/B starts 14:00 and its entry closes 14:00, while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47's own table can run as late as 20:55 and no source prints an earlier end - so nothing published supports planning both on one day"
     },
     {
      "a": "r123",
@@ -3835,7 +3835,7 @@
      "b_start": "16:00",
      "kind": "unplannable",
      "gap_min": -295,
-     "detail": "Milestone Satellite to $10,400 Ladies NLH Championship starts 16:00 and its entry closes 16:00, while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47's own table can run as late as 20:55 and no source prints an earlier end - so nothing published supports planning both on one day"
+     "detail": "Milestone Satellite to $1,100 Ladies NLH Championship starts 16:00 and its entry closes 16:00, while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47's own table can run as late as 20:55 and no source prints an earlier end - so nothing published supports planning both on one day"
     },
     {
      "a": "r123",
@@ -3857,7 +3857,7 @@
      "b_start": "19:00",
      "kind": "unplannable",
      "gap_min": -115,
-     "detail": "Milestone Satellite to $10,400 World Championship 1A/8 starts 19:00 and its entry closes 19:00, while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47's own table can run as late as 20:55 and no source prints an earlier end - so nothing published supports planning both on one day"
+     "detail": "Milestone Satellite to $10,400 World Championship 1A/B starts 19:00 and its entry closes 19:00, while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47's own table can run as late as 20:55 and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
    "conflicts_unplannable": 10,
@@ -3902,7 +3902,7 @@
     {
      "id": "r133",
      "start": "11:00",
-     "name": "Ladies NIH Championship (2 Day)",
+     "name": "Ladies NLH Championship (2 Day)",
      "series": "WPT World Championship (Wynn)",
      "venue": "Wynn Las Vegas",
      "buy_in_usd": 1100,
@@ -4073,7 +4073,7 @@
      "b_start": "11:00",
      "kind": "unplannable",
      "gap_min": 0,
-     "detail": "Ladies NIH Championship (2 Day) and No Limit Hold'em Day 1A both start at 11:00 - one table cannot seat a player twice, so no published schedule can put both on one day"
+     "detail": "Ladies NLH Championship (2 Day) and No Limit Hold'em Day 1A both start at 11:00 - one table cannot seat a player twice, so no published schedule can put both on one day"
     },
     {
      "a": "r133",
@@ -4084,7 +4084,7 @@
      "b_start": "11:00",
      "kind": "unplannable",
      "gap_min": 0,
-     "detail": "Ladies NIH Championship (2 Day) and TORSE (2 Day) both start at 11:00 - one table cannot seat a player twice, so no published schedule can put both on one day"
+     "detail": "Ladies NLH Championship (2 Day) and TORSE (2 Day) both start at 11:00 - one table cannot seat a player twice, so no published schedule can put both on one day"
     },
     {
      "a": "r133",
@@ -4095,7 +4095,7 @@
      "b_start": "11:00",
      "kind": "unplannable",
      "gap_min": 0,
-     "detail": "Ladies NIH Championship (2 Day) and WPT World Championship Day 1A $1,000,000 Added both start at 11:00 - one table cannot seat a player twice, so no published schedule can put both on one day"
+     "detail": "Ladies NLH Championship (2 Day) and WPT World Championship Day 1A $1,000,000 Added both start at 11:00 - one table cannot seat a player twice, so no published schedule can put both on one day"
     },
     {
      "a": "r134",
@@ -4343,7 +4343,7 @@
     {
      "id": "r154",
      "start": "21:00",
-     "name": "NIH Turbo",
+     "name": "NLH Turbo",
      "series": "WPT World Championship (Wynn)",
      "venue": "Wynn Las Vegas",
      "buy_in_usd": 600,
@@ -4441,7 +4441,7 @@
      "b_start": "21:00",
      "kind": "unplannable",
      "gap_min": -715,
-     "detail": "NIH Turbo starts 21:00 and its entry closes 21:00, while $300 No Limit Hold'em Bounty $15K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
+     "detail": "NLH Turbo starts 21:00 and its entry closes 21:00, while $300 No Limit Hold'em Bounty $15K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
    "conflicts_unplannable": 7,
@@ -4596,7 +4596,7 @@
     {
      "id": "r165",
      "start": "19:00",
-     "name": "NIH $500 Bounty Turbo",
+     "name": "NLH $500 Bounty Turbo",
      "series": "WPT World Championship (Wynn)",
      "venue": "Wynn Las Vegas",
      "buy_in_usd": 1600,
@@ -4684,7 +4684,7 @@
      "b_start": "19:00",
      "kind": "unplannable",
      "gap_min": -475,
-     "detail": "NIH $500 Bounty Turbo starts 19:00 and its entry closes 19:00, while $1,100 No Limit Hold'em Progressive Knock-Out Bounty $75K GTD (1Day)'s own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
+     "detail": "NLH $500 Bounty Turbo starts 19:00 and its entry closes 19:00, while $1,100 No Limit Hold'em Progressive Knock-Out Bounty $75K GTD (1Day)'s own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     },
     {
      "a": "r163",
@@ -4706,7 +4706,7 @@
      "b_start": "19:00",
      "kind": "unplannable",
      "gap_min": -835,
-     "detail": "NIH $500 Bounty Turbo starts 19:00 and its entry closes 19:00, while $300 No Limit Hold'em Bounty $15K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
+     "detail": "NLH $500 Bounty Turbo starts 19:00 and its entry closes 19:00, while $300 No Limit Hold'em Bounty $15K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
    "conflicts_unplannable": 8,
@@ -4844,7 +4844,7 @@
     {
      "id": "r173",
      "start": "18:00",
-     "name": "Milestone Satellite to $25K NIH High Roller",
+     "name": "Milestone Satellite to $25K NLH High Roller",
      "series": "WPT World Championship (Wynn)",
      "venue": "Wynn Las Vegas",
      "buy_in_usd": 3000,
@@ -4960,7 +4960,7 @@
      "b_start": "18:00",
      "kind": "unplannable",
      "gap_min": -535,
-     "detail": "Milestone Satellite to $25K NIH High Roller starts 18:00 and its entry closes 18:00, while $600 No Limit Hold'em Bounty $50K GTD (1Day) - $200 bounties to start & $500 bounties in the money's own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
+     "detail": "Milestone Satellite to $25K NLH High Roller starts 18:00 and its entry closes 18:00, while $600 No Limit Hold'em Bounty $50K GTD (1Day) - $200 bounties to start & $500 bounties in the money's own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     },
     {
      "a": "r167",
@@ -5004,7 +5004,7 @@
      "b_start": "18:00",
      "kind": "unplannable",
      "gap_min": -895,
-     "detail": "Milestone Satellite to $25K NIH High Roller starts 18:00 and its entry closes 18:00, while $300 No Limit Hold'em Bounty $15K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
+     "detail": "Milestone Satellite to $25K NLH High Roller starts 18:00 and its entry closes 18:00, while $300 No Limit Hold'em Bounty $15K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     },
     {
      "a": "r172",
@@ -5037,7 +5037,7 @@
      "b_start": "18:00",
      "kind": "unplannable",
      "gap_min": 0,
-     "detail": "Milestone Satellite to $25K NIH High Roller and Milestone Satellite to $3,000 NLH both start at 18:00 - one table cannot seat a player twice, so no published schedule can put both on one day"
+     "detail": "Milestone Satellite to $25K NLH High Roller and Milestone Satellite to $3,000 NLH both start at 18:00 - one table cannot seat a player twice, so no published schedule can put both on one day"
     }
    ],
    "conflicts_unplannable": 12,
@@ -7712,7 +7712,7 @@
     {
      "id": "r276",
      "start": "17:10",
-     "name": "$300 No Limit Hold'em 1F $100K GTD (1Day) - Show Your CES Badge - $10 Rake Discount",
+     "name": "$300 No Limit Hold'em 1F $100K GTD (1Day)",
      "series": "Venetian DeepStack Extravaganza NYE",
      "venue": "The Venetian Resort",
      "buy_in_usd": 300,
@@ -7744,7 +7744,7 @@
      "b_start": "17:10",
      "kind": "unplannable",
      "gap_min": -735,
-     "detail": "$300 No Limit Hold'em 1F $100K GTD (1Day) - Show Your CES Badge - $10 Rake Discount starts 17:10 and its entry closes 20:40, while $300 No Limit Hold'em 1E $100K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
+     "detail": "$300 No Limit Hold'em 1F $100K GTD (1Day) starts 17:10 and its entry closes 20:40, while $300 No Limit Hold'em 1E $100K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
    "conflicts_unplannable": 1,

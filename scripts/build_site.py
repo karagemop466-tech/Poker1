@@ -109,8 +109,8 @@ PAGES = {
 <h1>Morning schedule feed</h1>
 <p class="lead">Official Strip and nearby room schedules are requested each morning before 8 AM Las Vegas time. Excerpts preserve the source wording; they are not confirmed entries. On a failed request, the last readable capture retains its original date.</p>
 <label>Search schedule excerpts <input type="search" id="feed-q" placeholder="Room, time or format"></label>
-<div id="feed"></div><h2>Wynn recurring formats</h2>
-<p class="lead">The recurring formats Wynn publishes for every day, read from the official daily structures.</p>
+<div id="feed"></div><h2>Recurring formats</h2>
+<p class="lead">The recurring formats Wynn, Bellagio and Caesars Palace publish for every day or week, read from their official posters, structures and flyers.</p>
 <div class="card callout" id="note"></div>
 <div id="content"></div>
 <p class="small" id="series-note"></p>

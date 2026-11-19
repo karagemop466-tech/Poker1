@@ -15,7 +15,7 @@
    "resort_fee_note": "Official hotel terms: \"The Venetian Resort has a standard Las Vegas Resort Fee of $55 plus applicable tax per night, payable upon check-in.\"",
    "clark_county_tax_pct": 13.38,
    "tax_status": "verified",
-   "tax_note": "Official hotel terms: \"Daily rates do not include the applicable Clark County Room Tax of 13.38%.\"",
+   "tax_note": "Taxing authority: licence 1003089.RES-001, \"Venetian Resort Hotel Casino / Palazzo Resort Hotel Casin\", 3325 Las Vegas Blvd S, Las Vegas NV, status Licensed, transient lodging tax rate 13.38%, category Resort Hotel (PGC) (Clark County Department of Business License, General Information Guide for Transient Lodging Establishments, Appendix III and the licensed-establishment table; the licensed-establishment table as of April 2021). Appendix III sets the combined rate for a Resort Hotel in the Stadium District and Primary Gaming Corridor at 13.38% (5.5 + 2 + 1 + 1 + 3 + .88), rates effective 3-1-17. (DBA name: printed truncated in the source column; quoted as printed) The operator's own current terms (read 2026-11-17) independently print the same 13.38%, and the combined rate is fixed by Clark County Code 4.08.010. The county licence covers the Venetian and the Palazzo as one establishment, which is why the same licence number appears on both rows.",
    "room_rate_usd": null,
    "room_rate_status": "conditional",
    "room_rate_note": "Official poker suite page: suite rates \"will start as low as $119 and $209 and can be higher\", conditional on qualifying poker play (6 hours of live cash play or a $300+ tournament buy-in per night) and on availability; book by calling 866.255.8936 with code EPOKR25. The page does not say which rate applies to which tower or date. Logged official booking-engine quote on 2026-11-17 for Nov 18-20 (2 adults): room charges $204.25 and $524.25 a night, $55.00 resort fee each night, taxes $112.19, total $950.69 (see data/rates.json). It is not copied into room_rate_usd because the rate changes by night.",
@@ -53,8 +53,14 @@
     {
      "label": "Official booking engine (official)",
      "url": "https://www.venetianlasvegas.com/book"
+    },
+    {
+     "label": "Clark County Department of Business License, General Information Guide for Transient Lodging Establishments (official)",
+     "url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf"
     }
    ],
+   "tax_licence": "1003089.RES-001",
+   "tax_source_url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf",
    "true_cost_quote": {
     "arrival": "2027-01-01",
     "departure": "2027-01-06",
@@ -87,7 +93,7 @@
    "resort_fee_note": "Official poker suite page: \"There is a $55 resort fee per night stayed\" for a suite booked at The Venetian or The Palazzo.",
    "clark_county_tax_pct": 13.38,
    "tax_status": "verified",
-   "tax_note": "The official Venetian Resort hotel terms cover \"The Venetian Resort\" (the Venetian and The Palazzo are one licensed resort) and state \"Daily rates do not include the applicable Clark County Room Tax of 13.38%\". Re-read 2026-11-17.",
+   "tax_note": "Taxing authority: licence 1003089.RES-001, \"Venetian Resort Hotel Casino / Palazzo Resort Hotel Casin\", 3325 Las Vegas Blvd S, Las Vegas NV, status Licensed, transient lodging tax rate 13.38%, category Resort Hotel (PGC) (Clark County Department of Business License, General Information Guide for Transient Lodging Establishments, Appendix III and the licensed-establishment table; the licensed-establishment table as of April 2021). Appendix III sets the combined rate for a Resort Hotel in the Stadium District and Primary Gaming Corridor at 13.38% (5.5 + 2 + 1 + 1 + 3 + .88), rates effective 3-1-17. (DBA name: printed truncated in the source column; quoted as printed) The operator's own current terms (read 2026-11-17) independently print the same 13.38%, and the combined rate is fixed by Clark County Code 4.08.010. The county licence covers the Venetian and the Palazzo as one establishment, which is why the same licence number appears on both rows.",
    "room_rate_usd": null,
    "room_rate_status": "conditional",
    "room_rate_note": "Official poker suite page covers \"The Venetian or The Palazzo\" suites starting \"as low as $119 and $209\", conditional on qualifying poker play and availability.",
@@ -121,8 +127,14 @@
     {
      "label": "Official booking engine (official)",
      "url": "https://www.venetianlasvegas.com/book"
+    },
+    {
+     "label": "Clark County Department of Business License, General Information Guide for Transient Lodging Establishments (official)",
+     "url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf"
     }
    ],
+   "tax_licence": "1003089.RES-001",
+   "tax_source_url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf",
    "true_cost_quote": {
     "arrival": "2027-01-10",
     "departure": "2027-01-15",
@@ -153,9 +165,9 @@
    "resort_fee_usd": 55,
    "resort_fee_status": "verified",
    "resort_fee_note": "Official Wynn offer terms: \"A daily resort fee of $55 plus tax will be added to your room account for each room night\". Official Wynn facts page repeats $55 plus tax for Resort and Tower Suites.",
-   "clark_county_tax_pct": null,
-   "tax_status": "unverified",
-   "tax_note": "No Wynn room-tax rate is printed on any official Wynn page, and the official Wynn booking engine (reservations.wynnlasvegas.com) returns only its fee and policy text to a text fetch - it renders the nightly rate grid and the tax line client-side, so no Wynn quote with a tax figure could be captured on 2026-11-17. The Venetian's 13.38% Clark County rate is therefore NOT applied to Wynn here.",
+   "clark_county_tax_pct": 13.38,
+   "tax_status": "verified",
+   "tax_note": "Taxing authority: licence 2000013.RES-001, \"Wynn Las Vegas / Encore at Wynn Las Vegas\", 3131 Las Vegas Blvd S, Las Vegas NV, status Licensed, transient lodging tax rate 13.38%, category Resort Hotel (PGC) (Clark County Department of Business License, General Information Guide for Transient Lodging Establishments, Appendix III and the licensed-establishment table; the licensed-establishment table as of April 2021). Appendix III sets the combined rate for a Resort Hotel in the Stadium District and Primary Gaming Corridor at 13.38% (5.5 + 2 + 1 + 1 + 3 + .88), rates effective 3-1-17. No Wynn page prints the tax percentage; the county licence is what fixes the rate at 13.38% for a Resort Hotel in the PGC. The licence covers Wynn Las Vegas and Encore as one establishment, which is why the same licence number appears on both rows.",
    "room_rate_usd": null,
    "room_rate_status": "unverified",
    "room_rate_note": "No nightly rate is published on an official Wynn page. Use the official booking engine.",
@@ -185,8 +197,14 @@
     {
      "label": "Poker room and tournament schedules (official)",
      "url": "https://www.wynnlasvegas.com/casino/poker"
+    },
+    {
+     "label": "Clark County Department of Business License, General Information Guide for Transient Lodging Establishments (official)",
+     "url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf"
     }
    ],
+   "tax_licence": "2000013.RES-001",
+   "tax_source_url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf",
    "last_checked": "2026-11-17",
    "recheck": {
     "on": "2026-11-17",
@@ -210,9 +228,9 @@
    "resort_fee_usd": 55,
    "resort_fee_status": "verified",
    "resort_fee_note": "Official Wynn facts page: the $55 plus tax daily resort fee applies to Resort and Tower Suites reservations; the official offer terms cover the Wynn/Encore resort account.",
-   "clark_county_tax_pct": null,
-   "tax_status": "unverified",
-   "tax_note": "No Encore-specific room tax rate printed on an official page read in this session.",
+   "clark_county_tax_pct": 13.38,
+   "tax_status": "verified",
+   "tax_note": "Taxing authority: licence 2000013.RES-001, \"Wynn Las Vegas / Encore at Wynn Las Vegas\", 3131 Las Vegas Blvd S, Las Vegas NV, status Licensed, transient lodging tax rate 13.38%, category Resort Hotel (PGC) (Clark County Department of Business License, General Information Guide for Transient Lodging Establishments, Appendix III and the licensed-establishment table; the licensed-establishment table as of April 2021). Appendix III sets the combined rate for a Resort Hotel in the Stadium District and Primary Gaming Corridor at 13.38% (5.5 + 2 + 1 + 1 + 3 + .88), rates effective 3-1-17. No Encore page prints the tax percentage; the county licence is what fixes the rate at 13.38% for a Resort Hotel in the PGC. The licence covers Wynn Las Vegas and Encore as one establishment, which is why the same licence number appears on both rows.",
    "room_rate_usd": null,
    "room_rate_status": "unverified",
    "room_rate_note": "No nightly rate published on an official Wynn page. Use the official booking engine.",
@@ -238,8 +256,14 @@
     {
      "label": "Poker room location (official)",
      "url": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf"
+    },
+    {
+     "label": "Clark County Department of Business License, General Information Guide for Transient Lodging Establishments (official)",
+     "url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf"
     }
    ],
+   "tax_licence": "2000013.RES-001",
+   "tax_source_url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf",
    "last_checked": "2026-11-17",
    "recheck": {
     "on": "2026-11-17",
@@ -264,8 +288,8 @@
    "resort_fee_status": "verified",
    "resort_fee_note": "Official Bellagio Hotel Reservation Terms and Conditions: \"Daily Resort Fee. A daily resort fee of $55.00 plus applicable tax will be applied to all reservations.\" The same page lists what the fee covers and states the fee is waived for MGM Rewards Gold+ members on eligible reservations. Read 2026-11-17.",
    "clark_county_tax_pct": 13.38,
-   "tax_status": "estimated",
-   "tax_note": "Estimate only, never used for a true cost. The Bellagio terms print the tax rule but not a percentage: \"Lodging taxes apply to the basic room rate, any resort fee, additional per occupant charges, upgrades, as well as any other charges as required by applicable law.\" A published MGM offer for a Bellagio/ARIA stay prints \"Nightly rates do not include 13.38% room tax\", but that page is a Cosmopolitan offer, not Bellagio's own terms, so 13.38% is shown only as the county rate used for an estimate and no true cost is calculated from it.",
+   "tax_status": "verified",
+   "tax_note": "Taxing authority: licence 1003760.RES-001, \"Bellagio\", 3600 Las Vegas Blvd S, Las Vegas NV, status Licensed, transient lodging tax rate 13.38%, category Resort Hotel (PGC) (Clark County Department of Business License, General Information Guide for Transient Lodging Establishments, Appendix III and the licensed-establishment table; the licensed-establishment table as of April 2021). Appendix III sets the combined rate for a Resort Hotel in the Stadium District and Primary Gaming Corridor at 13.38% (5.5 + 2 + 1 + 1 + 3 + .88), rates effective 3-1-17. The operator's own reservation terms print the lodging-tax rule but no percentage; the county licence fixes the percentage at 13.38%.",
    "room_rate_usd": null,
    "room_rate_status": "unverified",
    "room_rate_note": "No nightly rate published on an official page read in this session.",
@@ -293,8 +317,14 @@
     {
      "label": "Bellagio official home page (official)",
      "url": "https://bellagio.mgmresorts.com/en.html"
+    },
+    {
+     "label": "Clark County Department of Business License, General Information Guide for Transient Lodging Establishments (official)",
+     "url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf"
     }
    ],
+   "tax_licence": "1003760.RES-001",
+   "tax_source_url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf",
    "last_checked": "2026-11-17",
    "recheck": {
     "on": "2026-11-17",
@@ -319,8 +349,8 @@
    "resort_fee_status": "verified",
    "resort_fee_note": "Official ARIA Hotel Reservation Terms and Conditions: \"Daily Resort Fee. A daily resort fee of $55.00 plus applicable tax will be applied to all reservations.\" Waived for MGM Rewards Gold+ members on eligible reservations. Read 2026-11-17.",
    "clark_county_tax_pct": 13.38,
-   "tax_status": "estimated",
-   "tax_note": "Estimate only, never used for a true cost. The ARIA terms print the tax rule but not a percentage: \"Estimated taxes are based on current tax rates which are subject to change ... Lodging taxes apply to the basic room rate, any resort fee, additional per occupant charges and upgrades.\" No ARIA-specific percentage is verified, so no true cost is calculated for this property.",
+   "tax_status": "verified",
+   "tax_note": "Taxing authority: licence 2000035.RES-001, \"Aria Resort & Casino\", 3730 Las Vegas Blvd S, Las Vegas NV, status Licensed, transient lodging tax rate 13.38%, category Resort Hotel (PGC) (Clark County Department of Business License, General Information Guide for Transient Lodging Establishments, Appendix III and the licensed-establishment table; the licensed-establishment table as of April 2021). Appendix III sets the combined rate for a Resort Hotel in the Stadium District and Primary Gaming Corridor at 13.38% (5.5 + 2 + 1 + 1 + 3 + .88), rates effective 3-1-17. The operator's own reservation terms print the lodging-tax rule but no percentage; the county licence fixes the percentage at 13.38%.",
    "room_rate_usd": null,
    "room_rate_status": "unverified",
    "room_rate_note": "Official ARIA poker page: \"Exclusive Room Rates for qualifying poker players\" - the rate itself is only available by phone (702.590.7232) or by e-mail, so no number is published.",
@@ -348,8 +378,14 @@
     {
      "label": "ARIA poker room and player rates (official)",
      "url": "https://aria.mgmresorts.com/en/casino/poker.html"
+    },
+    {
+     "label": "Clark County Department of Business License, General Information Guide for Transient Lodging Establishments (official)",
+     "url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf"
     }
    ],
+   "tax_licence": "2000035.RES-001",
+   "tax_source_url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf",
    "last_checked": "2026-11-17",
    "recheck": {
     "on": "2026-11-17",
@@ -373,9 +409,9 @@
    "resort_fee_usd": null,
    "resort_fee_status": "unverified",
    "resort_fee_note": "Read on 2026-11-17: the Caesars Palace property pages and the Caesars Palace FAQ do not print a resort-fee amount for this property. The Caesars corporate disclaimer states only that \"Room reservations are subject to a daily resort fee between $45-$50 plus applicable tax\" across the Caesars portfolio, which does not name Caesars Palace, so it is not used as this property's fee.",
-   "clark_county_tax_pct": null,
-   "tax_status": "unverified",
-   "tax_note": "No Caesars Palace-specific room tax rate printed on an official page read in this session.",
+   "clark_county_tax_pct": 13.38,
+   "tax_status": "verified",
+   "tax_note": "Taxing authority: licence 1136233.RES-001, \"Caesars Palace\", 3570 Las Vegas Blvd S, Las Vegas NV, status Licensed, transient lodging tax rate 13.38%, category Resort Hotel (PGC) (Clark County Department of Business License, General Information Guide for Transient Lodging Establishments, Appendix III and the licensed-establishment table; the licensed-establishment table as of April 2021). Appendix III sets the combined rate for a Resort Hotel in the Stadium District and Primary Gaming Corridor at 13.38% (5.5 + 2 + 1 + 1 + 3 + .88), rates effective 3-1-17. No Caesars Palace page prints the tax percentage; the county licence fixes the rate at 13.38% for a Resort Hotel in the PGC.",
    "room_rate_usd": null,
    "room_rate_status": "unverified",
    "room_rate_note": "No nightly rate published on an official page read in this session.",
@@ -399,8 +435,14 @@
     {
      "label": "Caesars Palace official page incl. address (official)",
      "url": "https://www.caesars.com/caesars-palace"
+    },
+    {
+     "label": "Clark County Department of Business License, General Information Guide for Transient Lodging Establishments (official)",
+     "url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf"
     }
    ],
+   "tax_licence": "1136233.RES-001",
+   "tax_source_url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf",
    "last_checked": "2026-11-17",
    "recheck": {
     "on": "2026-11-17",
