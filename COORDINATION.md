@@ -2070,3 +2070,42 @@ The existing checks/data remain the baseline (not refreshed by this session): la
 | GitHub Pages | `built` for `main` after merge commit eb6df261 (legacy branch build, `https://karagemop466-tech.github.io/Poker1/`); homepage re-fetched and serving |
 | Data changes | None — no row value, source, or retrieval timestamp was changed; `build_data.py`/`build_site.py` deterministic |
 | Flagged irregularities | F1–F76+ remain published on `pages/flagged.html` with official-source links; evidence gaps (no written whole-event freezeout, no same-stay live checkout quote, no timed walking times) are "needs review", not blockers; no nonrefundable decision supported |
+
+## Session c0a11e95 · 2026-11-19 · status audit against the request, branch `arena/c0a11e95-poker1`
+
+| Task | Status | Owner | File scope |
+|---|---|---|---|
+| Audit the current `main` against the full request, run every local validator, and publish a requirement-by-requirement status with blockers. No shared output edited. | done | c0a11e95 | `COORDINATION.md` only |
+| Per-row P8 marker (show `changes.json` "source changed" inside tournament tables) | **not claimed** — owned by open integration PR #98 (`arena/13eafa44-poker1`, touches `assets/app.js`, `scripts/build_site.py`, `data/*`). Left for that integration. | — | — |
+
+**Base:** `main` at the tip after PR #100. Branch and tree were clean before this entry.
+
+**Validators run on this tree (all passed):** `build_data.py` and `build_site.py` rebuild with no diff; `check_links.py`; `check_schedule.py`; `verify_rows.py`; `npm test` (smoke, schedule render, rendered links, calculator).
+
+**Network limit (important):** this sandbox allows only github.com, codeload, api.github.com, registry.npmjs.org, pypi.org and files.pythonhosted.org. `venetianlasvegas.com` and `wynnlasvegas.com` return no connection from here. No official page was re-read in this session, so **no value, source, or `last_checked` was changed**. Live re-reads can only run in GitHub Actions (`monitor.yml`, `source-facts.yml`, `schedule-feed.yml`).
+
+**Status of the request, read from `data/*.json` (317 rows):**
+
+| Request item | Where it stands |
+|---|---|
+| Per-row `last_checked` | Present on all 317 rows. |
+| Rates as a dated log | Present: `data/rates.json` holds dated quotes with checkout total, nightly average, resort fee, tax total and cancellation terms. |
+| Search box, date filter, single-entry filter, ≤30-min walk filter | Present in `assets/app.js` and built pages. |
+| Calculator (entries × buy-in + nights × true hotel cost) | Present (`pages/calculator.html`, `check_calculator.js`). |
+| Overlap check | Present (`pages/schedule.html`, 170 overlap pairs). |
+| Venue pages (Venetian, Wynn, others) | Present (`pages/venue-*.html`, `room-*.html`). |
+| "Unverified" label removed from confirmed events | **Nothing to remove.** Current `entry_status` counts: RE 107, CAND 80, MULTI 53, CONT 43, UNV 34, **SE 0**. No row meets the affirmative written single-entry bar, so no event is confirmed. |
+| Changed-source marker in tables (P8) | Open. Only on Monitoring, not in tables. Owned by PR #98. |
+| Live hotel rate lookup, live scraper, walking-route check against Google/Apple Maps | Blocked here (no network to official or map hosts). The OSM walking times on record are routed, not Google/Apple. |
+| Written maximum-entry / no-rebuy / no-add-on rules for events | Missing for every row. This is the blocker for the single-entry shortlist. |
+
+**Open questions for the owner (answerable only from official sources, not from this sandbox):**
+1. Does any Venetian or Wynn structure sheet state, in writing, that the event is a freezeout with no re-entry or add-on? Current evidence: none.
+2. Which same-stay checkout quote is needed to compare hotels like-for-like, with fees and tax? Current rate log has five quotes.
+3. Which hotel fee and tax figures are verified for properties other than the Venetian? The site still lists resort fees and tax as unverified there.
+
+**Recommended next step (not started here):** have the integration owner of PR #98 merge its work, then run one GitHub Actions re-read of the Venetian and Wynn pages before any booking decision.
+
+**Irregularities:** none new. Prior irregularities remain on `pages/flagged.html`.
+
+**Pull request / merge:** see the entry below this one, appended after the PR is merged.
