@@ -454,8 +454,53 @@ header.site nav a {color:#d9ebe4}
   }
 
   /* ---------- generic sortable, filterable table ---------- */
+  /* ---------- per-row source-change marks (SUGGESTIONS P8) ----------
+     The scheduled monitor writes the rows whose official source printed a
+     different value into data/changes.json. The Monitoring page showed that
+     list, but a reader ranking events on the tournament tables never saw it.
+     Every tournament/hotel table now stamps each row with the monitor's
+     verdict: a red "source changed - re-check" chip when the row's own
+     official page moved, and an explicit "no source change as of <date>"
+     line naming the date of the last real re-check, so "nothing flagged"
+     is never mistaken for "checked today". The as-of date is always the
+     one in data/changes.json - the renderer cannot invent a fresher one. */
+  var SRC = { loading: false, ready: false, map: {}, at: "" };
+  var SRC_TABLES = [];
+  function srcWatch(draw) { if (SRC_TABLES.indexOf(draw) < 0) SRC_TABLES.push(draw); }
+  function srcLoad() {
+    if (SRC.loading || SRC.ready) return;
+    SRC.loading = true;
+    getJSONSafe("data/changes.json").then(function (d) {
+      if (d) {
+        SRC.at = d.checked_at || "";
+        SRC.map = {};
+        (d.changed || []).forEach(function (e) { if (e && e.id) SRC.map[e.id] = e; });
+      }
+      SRC.ready = true;
+      SRC.loading = false;
+      var pending = SRC_TABLES.slice();
+      SRC_TABLES = [];
+      pending.forEach(function (fn) { try { fn(); } catch (e) { /* a redraw never breaks the page */ } });
+    });
+  }
+  function srcBadge(r) {
+    if (!r || !r.id) return "";
+    var e = SRC.map[r.id];
+    if (e) {
+      var when = String(e.source_changed_at || e.date || SRC.at || "");
+      var url = e.source_url;
+      return "<span class='chip bad'>source changed - re-check</span>" +
+        (when ? "<br><span class='small'>as of " + esc(when.slice(0, 10)) + "</span>" : "") +
+        (url ? "<br><span class='small'><a href='" + esc(url) + "' target='_blank' rel='noopener'>official page</a></span>" : "");
+    }
+    if (!SRC.ready) { return ""; }
+    if (!SRC.at) return "";  /* no monitoring run on file - say nothing rather than a false date */
+    return "<br><span class='small muted'>no source change as of " + esc(SRC.at) + "</span>";
+  }
+
   function table(container, rows, cols, opts) {
     opts = opts || {};
+    srcLoad();
     var state = { key: opts.sortKey || null, dir: opts.sortDir || -1 };
     var wrap = document.createElement("div");
     wrap.className = "table-wrap";
@@ -498,6 +543,7 @@ header.site nav a {color:#d9ebe4}
         }).join("") + "</tr>";
       }).join("") + "</tbody>";
       t.innerHTML = head + body;
+      if (!SRC.ready) srcWatch(draw);
       var count = opts.countEl;
       if (count) count.textContent = list.length + " of " + rows.length + " rows";
       if (opts.onDraw) opts.onDraw(list);
@@ -788,7 +834,7 @@ header.site nav a {color:#d9ebe4}
       { id: "format", label:"Format", key:"labels", html:function(r){return (r.labels || []).map(esc).join(" · ");}},
       { id: "mult", label: "Guarantee ÷ buy-in", key: "gtd_multiple", num: true, html: function (r) { return mult(r.gtd_multiple); } },
       { id: "status", label: "Entry rule", key: "entry_status", html: function (r) { return statusChip(r.entry_status); } },
-      { id: "checked", label: "Last checked", key: "last_checked", html: function (r) { return "<span class='small'>" + esc(r.last_checked) + "</span>"; } }
+      { id: "checked", label: "Last checked", key: "last_checked", html: function (r) { return "<span class='small'>" + esc(r.last_checked) + "</span>" + srcBadge(r); } }
     ];
     if (withRules) {
       cols.push({ id: "rule", label: "Entry rule (official)", key: "entry_rule", sort: null, html: function (r) { return "<span class='small'>" + esc(r.entry_rule) + "</span>"; } });
@@ -1146,7 +1192,7 @@ header.site nav a {color:#d9ebe4}
                 : "Pick arrival and departure dates above to build the dated link where the official "
                   + "engine supports it.") + "</span>";
           } },
-        { id: "checked", label: "Last checked", key: "last_checked" },
+        { id: "checked", label: "Last checked", key: "last_checked", html: function (r) { return "<span class='small'>" + esc(r.last_checked) + "</span>" + srcBadge(r); } },
         { id: "true", label: "True cost / night", key: "true_cost_per_night_usd", num: true, html: function (r) { return r.true_cost_per_night_usd == null ? '<span class="muted">blank (rate unverified)</span>' : money(r.true_cost_per_night_usd); } },
         { id: "park", label: "Parking / night", key: "parking_usd_per_day", num: true,
           html: function (r) {
@@ -1174,7 +1220,7 @@ header.site nav a {color:#d9ebe4}
         { id: "walkw", label: "Walk to Wynn poker room", key: "walk_to_wynn_min", num: true, html: function (r) { return walkCell(r.walk_to_wynn_min, "verified", r.walk_to_wynn_within_30); } },
         { id: "checked", label: "Last checked", key: "last_checked", html: function (r) {
             return esc(r.last_checked) + (r.recheck && r.recheck.on && r.recheck.on !== r.last_checked
-              ? "<br><span class='small'>fees re-read " + esc(r.recheck.on) + "</span>" : ""); } },
+              ? "<br><span class='small'>fees re-read " + esc(r.recheck.on) + "</span>" : "") + srcBadge(r); } },
         { id: "src", label: "Sources", key: "sources", sort: null, html: function (r) { return "<span class='small'>" + srcLinks(r.sources) + "</span>"; } }
       ];
 
@@ -1820,6 +1866,19 @@ header.site nav a {color:#d9ebe4}
 
   document.addEventListener("DOMContentLoaded", function () {
     renderNav();
+    /* The footer date is the dataset's own verification date, not a constant the
+       shipped with a build: read it from data/tournaments.json so a refreshed
+       dataset moves the footer automatically and a stale constant can never claim
+       a fresher check than the data supports. */
+    getJSONSafe("data/tournaments.json").then(function (d) {
+      if (!d || !d.verified_on || d.verified_on === checkedOn) return;
+      checkedOn = d.verified_on;
+      var f = document.getElementById("site-footer");
+      if (f) f.innerHTML = "Data verified against official sources on " + checkedOn +
+        ". Blank cells are unverified, and no value is inferred. " +
+        '<a href="' + BASE + 'pages/flagged.html">Flagged for review</a> · ' +
+        '<a href="' + BASE + 'pages/monitoring.html">Monitoring</a>.';
+    });
     var page = document.body.getAttribute("data-page");
     if (!page) return;
     if (page.indexOf("venue:") === 0) PAGES.venue(page.slice("venue:".length));
