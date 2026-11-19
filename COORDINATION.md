@@ -1691,3 +1691,11 @@ operator hosts are unreachable (F55), so `monitor_sources.py` is exercised in CI
 `data/row_verification.json` are byte-identical to what this task found on `main` - no official value moved
 during any of it. `data/schedule.json` is the file that changed, and it is generated: edit
 `scripts/build_data.py`, never the JSON.
+
+## Session d6bc5df2 · 2026-11-19 · strict booking decision gate
+
+| Task | Status | Owner | File scope |
+|---|---|---|---|
+| Separate affirmative written freezeout evidence from historical sheet-silence candidates; verify upcoming decision and surface missing evidence, integrate and publish | in progress | d6bc5df2 | assets/app.js, scripts/build_site.py, derived index.html/pages, strict-policy test, README.md, executive summary and flagged addenda, COORDINATION.md |
+
+Read the shared main board at a1361aa and checked open PRs #79/#81/#82; no takeover of those sessions’ hotel-tax or room-format tasks. Using the assigned integration branch (fixed name); this claim is pushed before implementation.
