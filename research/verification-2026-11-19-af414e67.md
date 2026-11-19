@@ -185,3 +185,14 @@ is fact-by-fact (money, times, dates, rule sentences) against the snapshot text.
 No published value was changed, no `last_checked` date was advanced by this record alone (row-level
 advancement happens only in the integration phase, for rows whose source this pass actually re-read
 and whose values are regenerated with it), and every finding above carries its official link.
+
+## Post-merge addendum (same session, after syncing `origin/main` at `8c71387`)
+
+- **Item 7 (WSS guarantees) is resolved on `main` by an independent session.** Session `f3a84f9b`
+  found the same fact from the same live PDF and published it as **F83** (their id), and PR #112
+  restored the 17 multi-day flight guarantees in `data/tournaments.json`
+  (150,000 x6, 250,000 x4, 100,000 x3, 300,000 x4; `verify_rows.py` and `build_data.py` cite F83).
+  This session's duplicate F82 row was therefore dropped during the merge and the finding above
+  stands as an independent cross-confirmation: two sessions, one live PDF, same four values.
+- **Numbering after the merge:** the DSS-coverage gap is now **F85** and the WPT extraction
+  discrepancy is now **F86** in `FLAGGED.md` (main had already taken F83/F84 for other findings).
