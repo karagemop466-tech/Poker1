@@ -18,6 +18,44 @@
  },
  "method": "Every double-quoted span in a rule excerpt is compared with the archived plain-text snapshot of the official document the rule cites. Whitespace, PDF line breaks, curly quotes and thousands separators are normalised; nothing else is. A row's label is then compared with what its own document prints: a further-entry sentence cannot support a single-entry label, and a 'no such clause appears anywhere' claim is re-tested with a keyword sweep of the same snapshot.",
  "affirmative_single_entry_documents": [],
+ "fixed_on_audit_day": [
+  {
+   "finding": "six rows claimed no further-entry clause appeared anywhere",
+   "rows": [
+    "r232",
+    "r234",
+    "r245",
+    "r256",
+    "r262",
+    "r279"
+   ],
+   "document": "data/snapshots/v_dec_struct_02.txt (dse_dec_2026-structure_2.pdf)",
+   "sentence_the_sheet_prints": "The $20 discount can be applied to the initial entry or any subsequent re-entry",
+   "resolution": "reclassified from CAND to RE: the sheet prints a further-entry sentence, so the event is not single entry; the excerpt now quotes that sentence instead of claiming silence",
+   "verified_live_on": "2026-11-19"
+  },
+  {
+   "finding": "three fee quotes could not be found in their own PDF, and one cited the wrong clause number",
+   "rows": "every Venetian row whose fee rule quotes a template",
+   "document": "dse_nov_2026-structure_28.pdf, _21.pdf; dse_dec_2026-structure_8.pdf",
+   "sentence_the_sheet_prints": "#28 prints 'Prize pool consists of ...' and its fee clause is 05; #21/#08 print comma-formatted '$1,975' and '$1,420'",
+   "resolution": "the fee excerpt is now lifted from the sheet's own sentences, with the sheet's own clause number, instead of painting figures over a fixed template",
+   "verified_live_on": "2026-11-19"
+  },
+  {
+   "finding": "the change monitor marked four rows as 'source printed different values' while the same records show it extracted no facts at all",
+   "rows": [
+    "r012",
+    "rooms03",
+    "formats05",
+    "caesars"
+   ],
+   "document": "data/monitoring.json",
+   "sentence_the_sheet_prints": "facts_sha256 equals the SHA-256 of the empty string for those sources, and six distinct Caesars URLs returned one identical body",
+   "resolution": "published as a monitor-integrity finding here rather than as a row change; the badge is labelled a re-check request, not evidence that a value moved",
+   "verified_live_on": "2026-11-19"
+  }
+ ],
  "findings": {
   "quote_not_found": [],
   "document_conflict": [],

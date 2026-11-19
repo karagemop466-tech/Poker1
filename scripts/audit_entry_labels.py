@@ -53,6 +53,10 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "data")
 SNAP = os.path.join(DATA, "snapshots")
 OUT = os.path.join(DATA, "entry_evidence_audit.json")
+# The page reads a trimmed copy: the audit's own record plus the handful of
+# fields the renderer prints. Kept separate so the audit file stays the single
+# source of truth and the page cannot show anything the audit did not record.
+PAGE_OUT = os.path.join(DATA, "evidence_audit_page.json")
 
 AUDITED_ON = "2026-11-19"
 
@@ -510,6 +514,43 @@ def main():
             "keyword sweep of the same snapshot."
         ),
         "affirmative_single_entry_documents": affirmative_docs,
+        # Findings this audit produced that have since been FIXED in the data.
+        # Kept here so the page shows what the check caught, not only what it
+        # currently still catches - a clean page must not read as "nothing was
+        # ever wrong".
+        "fixed_on_audit_day": [
+            {
+                "finding": "six rows claimed no further-entry clause appeared anywhere",
+                "rows": ["r232", "r234", "r245", "r256", "r262", "r279"],
+                "document": "data/snapshots/v_dec_struct_02.txt (dse_dec_2026-structure_2.pdf)",
+                "sentence_the_sheet_prints": "The $20 discount can be applied to the initial entry or any subsequent re-entry",
+                "resolution": ("reclassified from CAND to RE: the sheet prints a further-entry sentence, so the "
+                               "event is not single entry; the excerpt now quotes that sentence instead of "
+                               "claiming silence"),
+                "verified_live_on": "2026-11-19",
+            },
+            {
+                "finding": "three fee quotes could not be found in their own PDF, and one cited the wrong clause number",
+                "rows": "every Venetian row whose fee rule quotes a template",
+                "document": "dse_nov_2026-structure_28.pdf, _21.pdf; dse_dec_2026-structure_8.pdf",
+                "sentence_the_sheet_prints": ("#28 prints 'Prize pool consists of ...' and its fee clause is 05; "
+                                              "#21/#08 print comma-formatted '$1,975' and '$1,420'"),
+                "resolution": ("the fee excerpt is now lifted from the sheet's own sentences, with the sheet's own "
+                               "clause number, instead of painting figures over a fixed template"),
+                "verified_live_on": "2026-11-19",
+            },
+            {
+                "finding": "the change monitor marked four rows as 'source printed different values' while the "
+                           "same records show it extracted no facts at all",
+                "rows": ["r012", "rooms03", "formats05", "caesars"],
+                "document": "data/monitoring.json",
+                "sentence_the_sheet_prints": ("facts_sha256 equals the SHA-256 of the empty string for those "
+                                              "sources, and six distinct Caesars URLs returned one identical body"),
+                "resolution": ("published as a monitor-integrity finding here rather than as a row change; the "
+                               "badge is labelled a re-check request, not evidence that a value moved"),
+                "verified_live_on": "2026-11-19",
+            },
+        ],
         "findings": findings,
         "counts": {k: len(v) for k, v in findings.items()},
     }
@@ -524,6 +565,9 @@ def main():
         return 0
     with open(OUT, "w", encoding="utf-8") as f:
         f.write(payload)
+    with open(PAGE_OUT, "w", encoding="utf-8") as f:
+        json.dump({"generated_on": AUDITED_ON, "audit": audit}, f, indent=1, ensure_ascii=False)
+        f.write("\n")
 
     print("entry-label evidence audit (%s)" % AUDITED_ON)
     print("  rows                 %d" % len(rows))
