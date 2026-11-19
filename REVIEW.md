@@ -199,6 +199,7 @@ levels, 16:55 late close for an 11:10 start, 40,000 chips, $10K guarantee, "$58 
 | Twelve walking records routed on the OpenStreetMap foot network to the resort that actually contains each poker room (The Palazzo, Encore), with the geocoding lookup and routing query linked on each row, interior walks marked `internal`, minutes rounded **up**, and the 30-minute rule applied and flagged | `data/walking.json` | The brief asks for walking verification with a ≤30-minute filter. |
 | Trip-cost calculator: entries × buy-in + nights × true hotel cost + parking + other, plus what the stay window holds and a like-for-like quote comparison | `assets/app.js`, `pages/calculator.html` | Directly implements "estimated cost of a trip". |
 | Palazzo room tax verified 13.38%; Wynn room tax left **blank**; validator now accepts a quote-backed true cost and a routed walk over 30 minutes | `scripts/build_data.py`, `scripts/check_links.py`, `data/hotels.json` | Correctness: no value may be borrowed from another property. |
+| *Superseded in a later session (F77):* the room tax is now verified 13.38% for **all seven** hotels from Clark County's licensed-establishment table (`1000389.RES-001`, `2000013.RES-001`, `1003760.RES-001`, `2000035.RES-001`, `1136233.RES-001` — each "Resort Hotel (PGC)", 13.38%, from Appendix III 5.5+2+1+1+3+.88). Wynn/Encore, Bellagio, ARIA and Caesars move off blank/estimate onto a government record. Nothing else — rate, fee, total — was filled in from it. | `scripts/build_data.py`, `scripts/check_links.py`, `scripts/check_source_facts.py`, `scripts/monitor_sources.py`, `data/hotels.json`, `data/sources.json` | The percentage is a matter of public record, so it can be verified without any property volunteering it; the snapshot date (April 2021) is printed on every row. |
 | Documents refreshed with the new figures and the new gaps | `EXECUTIVE_SUMMARY.md`, `FLAGGED.md`, `QUESTIONS.md`, `SUGGESTIONS.md`, `README.md`, `COORDINATION.md` | Keep the published decision support in step with the data. |
 
 ### 9.3 Mistakes caught in this session before publication
@@ -214,7 +215,10 @@ Being explicit, because these are the kind of errors that would otherwise ship a
    The drafted Wynn figures did not, which is exactly why the arithmetic check is now written into the
    verification log.
 3. **Wynn's room tax is now blank**, not "conditional". Deriving a percentage from a number I could not
-   reproduce would have laundered an inference into the data.
+   reproduce would have laundered an inference into the data. *(Superseded later, F77: the percentage
+   stopped being something only a hotel page could supply. Clark County publishes it per licensed
+   establishment, so Wynn/Encore and the three other properties now carry a verified 13.38% with the
+   licence number and the snapshot date on the row. The gap that remains is a **rate**, not a tax.)*
 4. **Walking minutes are rounded up, not to nearest.** The first pass used nearest-minute rounding, which
    can publish a walk one minute shorter than the route. The generator now rounds up, and the raw router
    seconds are quoted in the log so the rule is auditable.
@@ -248,3 +252,61 @@ node scripts/smoke_test.js        # 21/21 pages render in a headless DOM with no
 - Entry rules for 129 rows: 38 Signature Series (placeholder PDF) and 91 WPT rows without a sheet.
 - Whether a busted multi-flight player counts as a second entry (D1) — a policy question only the poker
   room can settle.
+
+---
+
+## 10. Session `ce9941b8` — line-by-line re-verification, 2026-11-17
+
+### 10.1 What was re-read from the official sources, and what it changed
+
+| Source | Read again | Result |
+|---|---|---|
+| Clark County *General Information Guide for Transient Lodging Establishments* (July 2021), Appendix III and Schedule of License Fees | 2026-11-17 | Resort Hotel in the Stadium District and Primary Gaming Corridor = 5.5 + 2 + 1 + 1 + 3 + .88 = **13.38%**, and the establishment table prints it for all seven hotels by licence number. Filled the four blanks; **F77** records the snapshot date. |
+| Wynn Signature Series structures PDF (both versioned CDN URLs) | 2026-11-17 | Still "LAS VEGAS POKER COMING SOON". **F76**; 38 rows stay unverified. |
+| Bellagio poker room page and its three official daily flyers (Fri $600 NLH, Sat $1,000 NLH, Sun $400 H.O.R.S.E.) | 2026-11-17 | Three daily rows added with quoted fees, stacks and registration clauses. |
+| Caesars Palace casino page and its linked **2026 daily NLH flyer** | 2026-11-17 | Four daily rows (10 AM $100, 2 PM $160, 6 PM $100, 9 PM $160) with the fee splits and payout table. |
+| Caesars Palace "Poker Tournaments in Las Vegas" article | 3 fetches, 2026-11-17 | Served the article twice and Caesars' own not-found page once. **F78** says exactly that; the daily feed no longer rests on it. |
+
+### 10.2 Mistakes caught in this session
+
+1. **Every finish that ran past midnight was wrong by a day — and it broke the schedule.** `estimate_end()`
+   returned a bare clock time, so 137 of 317 rows printed a finish earlier than their own start, and the
+   day planner compared two time-of-day strings. The consequence was not cosmetic: **every one of the 24
+   published conditional fallbacks was an impossible sequence**, and 231 real overlaps went unflagged
+   (only 14 were reported). The fix stores minutes from midnight plus a `days_after` count, prints
+   "(next day)" on those rows, and validates all three against `start + est_duration_min`. Rebuilt:
+   **245 overlapping pairs flagged, 26 conditional fallbacks, 0 impossible sequences, 0 unmarked wraps
+   (F73).** Under the published structures **no day's primary can finish before another single-entry
+   event on that date starts**, so no day offers a guaranteed two-event sequence — which is the
+   arithmetic answer to "8 AM until late", not a data gap.
+2. **402 same-day pairs are genuinely uncheckable** because the WPT and Signature Series sheets print a
+   level length with no level count. They are published as "cannot be checked", never as playable **(F74)**.
+3. **The provenance collector was silently refusing to run.** One host in the manifest was missing from
+   its allow-list, and `monitor.yml` piped the run through `tee` without `pipefail`, so the non-zero exit
+   was swallowed and the log kept reporting success. Both fixed; `check_source_facts.py --offline` now
+   exits 0 so the offline path stays green **(F75)**.
+4. **Every document page printed its title twice**, as an `<h1>` in the page body and again in the
+   header. The smoke test now fails on more than one `<h1>`; the guard was proven by reverting it.
+5. **The Caesars article was called dead on the evidence of one fetch.** The automated collector then
+   served the same URL with HTTP 200 and the full article. **F78** now records all three observations
+   instead of the most convenient one.
+
+### 10.3 Added in this session
+
+- **A trip diary** on the single-entry page: for each of the 45 days the page now names the primary and
+  the conditional fallback, with start time, buy-in, guarantee, **printed registration deadline**, the
+  estimated finish and a sentence saying why the pair is conditional.
+- **A rate timestamp with its basis stated.** The engines print no time stamp on a quote, so each rate
+  entry says so and, where the fetch log recorded one, prints it as a fetch time rather than a quote time.
+- **Official booking links that take the dates you pick**, for the properties whose engine was actually
+  read on an official page; the others link their own booking page with no invented parameters.
+- **The morning re-check now runs at 7:17 a.m. Las Vegas time** (15:17 UTC), which is what the brief asks
+  for; 07:17 UTC — 11:17 p.m. the previous evening in Las Vegas — is kept as a second run.
+
+### 10.4 Still open after this session
+
+- **Wynn, Encore, Bellagio, ARIA and Caesars Palace nightly rates.** Their engines render the grid and
+  the tax line client-side, so no dated quote can be captured. The tax is now verified; the rate is not.
+- **Caesars Palace resort fee** — no property-specific figure on any page read.
+- **Entry rules for 129 rows**: 38 Signature Series (placeholder PDF) and 91 WPT rows with no sheet.
+- **The Venetian free-cancellation deadline** for a general rate.

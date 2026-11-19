@@ -23,6 +23,52 @@ No official value is changed except by adopting a merged session's already-verif
 link; anything that cannot be confirmed stays blank and is flagged. `last_checked` is advanced only for
 rows whose source was actually re-read.
 
+# Session ce9941b8 — branch `arena/ce9941b8-poker1`, base `5de6d8d` (`main` after PR #69)
+
+Claim written and pushed before any implementation work, per the shared-task-board rules.
+Time of claim: 2026-11-17 (late session). `main` is at `5de6d8d740e12cfaf5c37866e7d7a714da8542c5`.
+
+## Stale-claim takeover
+
+Six pull requests were open when this session started (#46, #51, #52, #53, #64, #66). None has had a
+commit since 2026-11-17T02:00Z - every one is more than 18 hours old with no commits, which the
+coordination rules define as an abandoned claim ("If a session crashes or its claim is more than
+60 minutes old with no commits, any other session may take over the task and note the handoff in the
+log"). All six also report `mergeable: CONFLICTING` against current `main`. This session therefore
+**takes over the substance of the stale claims rather than merging the stale branches**: each item is
+re-implemented against current `main` and re-verified from the official source, and each PR is closed
+with a disposition note naming what was carried over. Nothing from those branches is discarded by
+omission - the unique value of each is listed under "Stale-PR disposition" below.
+
+## Tasks claimed by this session
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| T1 — Fix the midnight wrap in `est_end` (REQUEST 1 from session 206debc0): 137 of 317 rows printed a finish time that reads before their start, 24 of 24 conditional fallbacks were impossible sequences, and 231 real overlaps went unflagged | In progress | `scripts/build_data.py`, `data/schedule.json`, `data/tournaments.json`, `assets/app.js`, `scripts/check_links.py`, regenerated pages, `FLAGGED.md` | `ce9941b8` |
+| T2 — Re-verify the Wynn Signature Series structures PDF live on 2026-11-17 and either remove the "unverified" label or record, with the fetched text, that it still prints "COMING SOON" | In progress | `research/verification-2026-11-17-ce9941b8.md`, `FLAGGED.md`, `QUESTIONS.md` | `ce9941b8` |
+| T3 — Room tax: verify the Clark County transient-lodging tax rate from the taxing authority for every hotel row instead of carrying an "estimated" label (takes over PR #64's claim) | In progress | `scripts/build_data.py`, `data/hotels.json`, `data/rates.json`, `data/sources.json`, `FLAGGED.md` | `ce9941b8` |
+| T4 — Extend the daily feed beyond the four Wynn formats to every room that publishes its own daily schedule, each row quoted from that room's own official document (takes over PR #64's claim) | In progress | `scripts/build_data.py`, `data/daily.json`, `data/sources.json`, `assets/app.js`, `pages/daily.html` | `ce9941b8` |
+| T5 — Walking table: print the property name instead of the internal slug, and name the real destination in each note (takes over PR #46's claim) | In progress | `data/walking.json`, `scripts/build_data.py`, `assets/app.js` | `ce9941b8` |
+| T6 — Unblock `scripts/check_source_facts.py` (it refuses to run because `www.rwlasvegas.com` is not in its approved-host set) and make the workflow fail when the collector refuses (REQUEST 2 from session 206debc0) | In progress | `scripts/check_source_facts.py`, `.github/workflows/source-facts.yml` | `ce9941b8` |
+| T7 — Presentation defects: doubled `<h1>` on the flagged page; any other doubled heading found while reviewing | In progress | `scripts/build_site.py`, regenerated `pages/*.html` | `ce9941b8` |
+| T8 — Line-by-line re-verification of the final combined dataset, rebuild, validate, PR to `main`, merge, confirm the Pages deploy | In progress | `research/`, the six Markdown documents, `COORDINATION.md` | `ce9941b8` |
+
+Files this session will **not** edit: none are claimed by a live (non-stale) session, so this session
+acts as the final integration session for the current tree.
+
+## Stale-PR disposition (recorded, to be repeated in each PR's closing comment)
+
+| PR | Unique value | Disposition this session |
+|---|---|---|
+| #46 | walking table prints internal slugs; notes name the wrong destination | **Taken over as T5** |
+| #51 | machine check of every published value; five corrected values | Substantially already on `main` (verify_rows.py, LIPS split, rate arithmetic). Re-verified, closed. |
+| #52 | WPT row-to-sheet join; live re-check script | Already on `main` via PR #60. Closed as superseded. |
+| #53 | row-level verification, evidence-based last-checked dates, Pages deploy fix | Already on `main` via PRs #63/#67/#69. Closed as superseded. |
+| #64 | Clark County room tax for all seven hotels; daily feed for every room | **Taken over as T3 and T4**, each re-verified from the official document rather than copied |
+| #66 | monitor v2: dead baseline lookup, per-row verdicts, manifest coverage | Its diagnosis is real; the fix is re-implemented only where it survives a check against current `main`, otherwise recorded as a suggestion |
+
+# Session 212b84be — FINAL INTEGRATION SESSION (branch `arena/212b84be-poker1`, base `aea688a` = `main` at PR #37)
+
 # Session 9aad3bd2 — branch `arena/9aad3bd2-poker1` (base `5de6d8d` = `main` at PR #69)
 
 Session `9aad3bd2` works on branch `arena/9aad3bd2-poker1` (the branch is fixed for this session), based
@@ -1742,3 +1788,56 @@ during any of it. `data/schedule.json` is the file that changed, and it is gener
   merged implementation as the base and re-applying only what this branch adds, then re-running every
   check. `COORDINATION.md` conflicts were resolved by keeping **both** records, since it is an
   append-only log. Nothing from another session was dropped.
+
+
+---
+
+## Session `ce9941b8` — FINAL INTEGRATION (branch `arena/ce9941b8-poker1`)
+
+**Scope change during the session.** The claim was T1–T8 plus the stale-PR takeover. While it ran, four
+other sessions landed PRs #71–#77 on `main` — including #72 and #77, which fixed the same
+midnight-wrap defect as this session's T1, from a different direction. `main` was therefore merged in
+(`45b3741`) rather than worked around.
+
+**What this session uniquely contributes** — none of it was on `main`:
+
+| Item | Detail |
+|---|---|
+| **Room tax verified for all seven hotels (F77)** | Clark County *General Information Guide for Transient Lodging Establishments*, Appendix III (5.5+2+1+1+3+.88 = 13.38%) plus the licensed-establishment table, which prints each property's own licence: `1000389.RES-001` Venetian/Palazzo, `2000013.RES-001` Wynn/Encore, `1003760.RES-001` Bellagio, `2000035.RES-001` Aria, `1136233.RES-001` Caesars Palace — each "Resort Hotel (PGC)", 13.38%. Wynn/Encore/Caesars move off blank, Bellagio/ARIA off "estimate". Snapshot date (April 2021) printed on every row; no rate or fee was filled from it. |
+| **Bellagio + Caesars Palace daily formats (F78, F79)** | `data/daily.json` 4 → 11 rows, each with `room`, `venue`, `source`, `page`, `retrieved_on` and, for Bellagio, `document_url`. Quoted from the rooms' own flyers, not from an editorial article. |
+| **Sequence vs. conditional second entry** | `main`'s validator rejects any `fallback_id` the arithmetic does not support. Rather than weaken that guard, the build now separates a **sequence** (`fallback_id`, 0 dates qualify) from a **conditional second entry** (`second_entry_id`, 26 dates), each printed with the registration deadline that decides it. |
+| **Same-start overlap rule** | Two events printed with the same start time overlap by definition, whether or not a finish can be estimated. Adopted from `main` into the merged build. |
+| **Trip diary** | One card per playable date on the single-entry page: primary, later event, registration deadline, estimated finish, and the sentence saying which of the two it is. |
+| **Dated official booking links** | Hotels page takes arrival/departure and builds the link for properties whose engine was actually read; the others link their own booking page with no invented parameters. |
+| **Rate timestamp, with its basis** | The engines print no time stamp on a quote; each rate row says so and prints a fetch time only where the fetch log recorded one. |
+| **Las Vegas morning re-check** | `monitor.yml` now runs 15:17 UTC (7:17 a.m. PST) as well as 07:17 UTC. |
+
+**Conflict resolution, recorded as required.** Every conflict kept both sides. `COORDINATION.md` kept
+`9aad3bd2`'s section and this one, in full. `QUESTIONS.md` kept both independently written section F
+rows — theirs renumbered to section G — with a note that both sessions fixed the same bug and reached
+different conclusions about fallbacks, so Q-F3 and Q-G2 must be read together. `build_data.py` keeps
+both `finish_abs`/`finish_label` (this session) and `end_minutes` (`main`), and emits both
+`est_end_days_after`/`est_end_label` and `est_end_next_day`, because the merged validator and renderer
+each require one.
+
+**Verification.** `build_data.py` 317 rows / 70 days / 79 flagged; `build_site.py` 23 pages;
+`check_links.py` OK (56 files free of conflict markers, 317 rows, 7 hotels, 5 dated rates, 70 schedule
+days; source, rules, schedule, hotel-rate/cost, provenance and page-link checks passed);
+`verify_rows.py` 324 rows, 1,296 field checks, **0 hard failures**; `check_source_facts.py --offline`
+exits 0; `npm run test:smoke` **23/23**. Measured from the built data, not asserted: **271** overlapping
+pairs across **51** dates, **376** pairs published as "cannot be checked", **45** dates with a verified
+single-entry primary, **26** conditional second entries, **0** sequences, **121** rows whose finish is
+marked "(next day)".
+
+**Sources read this session.** Clark County TLE guide (Appendix III + licensed-establishment table);
+Wynn Signature Series structures PDF (still "COMING SOON"); Bellagio poker room page and its three
+official daily flyers; Caesars Palace casino page and its linked 2026 daily NLH flyer; the Caesars
+poker article (three fetches, disagreeing).
+
+**Irregularities (published on the Flagged for Review page; none blocks the merge).** F73 midnight
+wrap, F74 376 uncheckable pairs, F75 collector host refusal, F76 WSS placeholder, F77 county tax
+snapshot date, F78 Caesars article answers intermittently, F79 Bellagio Saturday flyer is stale and
+self-contradictory.
+
+**Open PRs left alone deliberately.** #73, #78, #79 and #80 were all updated within minutes of this
+session's integration, so none met the >60-minute takeover rule. They belong to their own sessions.

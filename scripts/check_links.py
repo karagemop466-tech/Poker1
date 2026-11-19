@@ -51,6 +51,15 @@ OFFICIAL_SOURCE_HOSTS = {
     # un-approved (F40); see FLAGGED.md S9.
     "www.rwlasvegas.com",
 }
+
+# The taxing authority, kept as its own set so a government record can never be
+# mistaken for an operator page. Clark County levies the transient lodging (room)
+# tax that every hotel row publishes; its licensed-establishment table is the only
+# source that prints a rate for the properties whose own pages do not (F77).
+GOVERNMENT_SOURCE_HOSTS = {
+    "www.clarkcountynv.gov",
+    "clarkcountynv.gov",
+}
 TOURNAMENT_STATUSES = {"SE", "MULTI", "RE", "REBUY", "CONT", "UNV"}
 TOURNAMENT_KINDS = {"entry", "continuation"}
 RULE_FIELDS = ("single_entry", "re_entry", "add_on", "fee")
@@ -118,7 +127,7 @@ def check_official_https_url(url, where):
     if parsed.scheme != "https" or not parsed.hostname:
         problems.append(f"{where} must use an https URL: {url}")
         return False
-    if parsed.hostname.lower() not in OFFICIAL_SOURCE_HOSTS:
+    if parsed.hostname.lower() not in OFFICIAL_SOURCE_HOSTS | GOVERNMENT_SOURCE_HOSTS:
         problems.append(f"{where} has a non-approved source host: {parsed.hostname}")
         return False
     return True
@@ -304,6 +313,25 @@ for index, row in enumerate(tournament_rows, 1):
         check_time(est_end, f"{where} {identity} est_end", required=True)
     if is_number(row.get("est_duration_min")) and row["est_duration_min"] <= 0:
         problems.append(f"{where} {identity}: est_duration_min must be positive")
+    # A finish that runs past midnight must say so, or the day plan compares it
+    # as a clock time in the small hours of the same morning and every later
+    # event on that date looks playable (this defect was live on the site once).
+    duration = row.get("est_duration_min")
+    if est_end is not None and is_number(duration) and row.get("start"):
+        start_min = int(row["start"][:2]) * 60 + int(row["start"][3:5])
+        absolute = start_min + duration
+        expected_abs = absolute
+        expected_days = absolute // (24 * 60)
+        expected_clock = "%02d:%02d" % ((absolute % (24 * 60)) // 60, (absolute % (24 * 60)) % 60)
+        if est_end != expected_clock:
+            problems.append(f"{where} {identity}: est_end should be {expected_clock} "
+                            f"(start + est_duration_min)")
+        if row.get("est_end_abs_min") != expected_abs:
+            problems.append(f"{where} {identity}: est_end_abs_min should be {expected_abs}")
+        if row.get("est_end_days_after") != expected_days:
+            problems.append(f"{where} {identity}: est_end_days_after should be {expected_days}")
+    elif est_end is None and row.get("est_end_abs_min") is not None:
+        problems.append(f"{where} {identity}: est_end_abs_min without an est_end")
 
 # Hotels: property-specific costs are only stated when every input is verified.
 hotel_by_id = {}
@@ -474,7 +502,20 @@ for index, row in enumerate(daily_rows, 1):
     check_time(row.get("start"), f"{where} {identity} start", required=True)
     for field in ("buy_in_usd", "guarantee_usd", "levels", "lmin"):
         check_number(row.get(field), f"{where} {identity} {field}")
-    check_time(row.get("late"), f"{where} {identity} late", required=True)
+    # Registration closes at a clock time on the Wynn sheets, but at a *level* on the
+    # Bellagio and Caesars flyers. Inventing a clock time for those would be an inference,
+    # so the level and the printed clause are stored instead and the time stays blank.
+    if row.get("late") is None:
+        if not is_number(row.get("late_reg_level")) or not str(row.get("late_reg_text") or "").strip():
+            problems.append(f"{where} {identity}: late is blank, so late_reg_level and the printed "
+                            f"late_reg_text are required")
+    else:
+        check_time(row.get("late"), f"{where} {identity} late", required=True)
+    if not isinstance(row.get("room"), str) or not row["room"].strip():
+        problems.append(f"{where} {identity}: room must be non-empty text")
+    source_url = row.get("source")
+    if not check_official_https_url(source_url, f"{where} {identity} source"):
+        problems.append(f"{where} {identity}: source must be an approved official document")
 
 venue_names = set()
 for index, row in enumerate(venue_rows, 1):

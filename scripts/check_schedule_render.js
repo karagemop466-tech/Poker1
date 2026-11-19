@@ -36,8 +36,11 @@ function sleep(ms) { return new Promise((r) => setTimeout(r, ms)); }
   const problems = [];
   const nextDay = (text.match(/\(next day\)/g) || []).length;
   if (nextDay < 1) problems.push("no `(next day)` label rendered, so a wrapped end time is still shown as a bare clock time");
-  if (/after midnight, so no later event/.test(text) === false)
-    problems.push("no after-midnight fallback note rendered");
+  // The day plan publishes no fallback when no primary can finish before the next event's entry
+  // deadline; the page then states that outright. Accept that statement (current wording) or
+  // the older after-midnight note, so a day with no sequence is not reported as a missing render.
+  if (!/no day's primary is estimated to finish before/.test(text) && !/after midnight, so no later event/.test(text))
+    problems.push("no statement about fallbacks/sequences rendered");
   if (/\b02:55 AM\b/.test(text) === false)
     problems.push("expected wrapped end time 02:55 AM not rendered at all");
   // A bare wrapped time must never appear without the qualifier.

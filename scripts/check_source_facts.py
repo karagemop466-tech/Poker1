@@ -53,8 +53,17 @@ BASELINE = os.path.join(DATA, "baseline_hashes.json")
 USER_AGENT = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
               "(KHTML, like Gecko) Chrome/124.0 Safari/537.36")
 
+# The taxing authority. Clark County levies the transient lodging (room) tax that
+# the hotel rows publish; it is kept apart from the operator domains so a county
+# record is never reported as a casino's own page.
+GOVERNMENT_HOSTS = (
+    "clarkcountynv.gov",
+    "www.clarkcountynv.gov",
+)
+
 # Only these hosts are treated as official operators of the data.  Any URL in the
-# manifest must be on this list, otherwise this script refuses to run.
+# manifest must be on this list or on GOVERNMENT_HOSTS, otherwise this script
+# refuses to run.
 OFFICIAL_HOSTS = (
     "venetianlasvegas.com",
     "www.venetianlasvegas.com",
@@ -77,6 +86,7 @@ OFFICIAL_HOSTS = (
     # recorded in monitor_last_run.txt while the job still reported success.
     "www.rwlasvegas.com",
     "rwlasvegas.com",
+
 )
 
 
@@ -94,7 +104,7 @@ def assert_official(sources):
     bad = []
     for s in sources:
         host = urlparse(s["url"]).netloc
-        if host not in OFFICIAL_HOSTS:
+        if host not in OFFICIAL_HOSTS and host not in GOVERNMENT_HOSTS:
             bad.append((s["id"], host))
     if bad:
         raise SystemExit("Refusing to run: non-official host(s) in manifest: %s" % bad)

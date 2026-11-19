@@ -111,10 +111,15 @@ def urls_of(obj):
 
 
 def is_official(url):
-    """True for the operator domains whose pages publish the prices and rules."""
+    """True for the operator domains whose pages publish the prices and rules.
+
+    The taxing authority counts as well: Clark County's room-tax records are cited
+    by the hotel rows, and bucketing them with the routing endpoints would report
+    a tax record as a walking query.
+    """
     from urllib.parse import urlparse
     host = (urlparse(url).netloc or "").lower()
-    return host in csf.OFFICIAL_HOSTS
+    return host in csf.OFFICIAL_HOSTS or host in csf.GOVERNMENT_HOSTS
 
 
 def collect_dataset():

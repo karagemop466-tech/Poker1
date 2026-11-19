@@ -4,8 +4,10 @@
  "rows": [
   {
    "hotel": "venetian",
+   "hotel_name": "The Venetian Resort",
    "venue": "The Venetian Resort",
-   "from": "venetian (Venetian Hotel Las Vegas, OSM relation/7770314)",
+   "destination": "The Palazzo (poker room, level 2 Grand Canal Shoppes)",
+   "from": "The Venetian Resort (Venetian Hotel Las Vegas, OSM relation/7770314)",
    "to": "The Palazzo (poker room, level 2 Grand Canal Shoppes)",
    "metres": 0,
    "minutes": null,
@@ -27,7 +29,7 @@
    ],
    "sources": [
     {
-     "label": "Nominatim lookup for the venetian coordinate",
+     "label": "Nominatim lookup for the The Venetian Resort coordinate",
      "url": "https://nominatim.openstreetmap.org/search?q=Venetian+Hotel+Las+Vegas&format=json&limit=1"
     },
     {
@@ -38,14 +40,16 @@
   },
   {
    "hotel": "venetian",
+   "hotel_name": "The Venetian Resort",
    "venue": "Wynn Las Vegas",
-   "from": "venetian (Venetian Hotel Las Vegas, OSM relation/7770314)",
+   "destination": "Encore at Wynn Las Vegas (poker room)",
+   "from": "The Venetian Resort (Venetian Hotel Las Vegas, OSM relation/7770314)",
    "to": "Encore at Wynn Las Vegas (poker room)",
    "metres": 1146.8,
    "minutes": 16,
    "status": "verified",
    "within_30_min": true,
-   "note": "OpenStreetMap foot router: 919 seconds (1147 m) between the geocoded venetian coordinate and the Wynn Las Vegas poker-room coordinate, rounded up to 16 minutes. This is a published routing source, not the hotel or the poker room itself, so the 30-minute rule is applied to the routed time.",
+   "note": "OpenStreetMap foot router: 919 seconds (1147 m) from The Venetian Resort to Encore at Wynn Las Vegas (poker room) - the building the Wynn Las Vegas poker room is in - rounded up to 16 minutes. This is a published routing source, not the hotel or the poker room itself, so the 30-minute rule is applied to the routed time.",
    "official_fact": null,
    "route_link": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-115.1693352,36.1217073%3B-115.165362,36.1289345?overview=false",
    "retrieved_on": "2026-11-17",
@@ -61,7 +65,7 @@
    ],
    "sources": [
     {
-     "label": "Nominatim lookup for the venetian coordinate",
+     "label": "Nominatim lookup for the The Venetian Resort coordinate",
      "url": "https://nominatim.openstreetmap.org/search?q=Venetian+Hotel+Las+Vegas&format=json&limit=1"
     },
     {
@@ -72,8 +76,10 @@
   },
   {
    "hotel": "palazzo",
+   "hotel_name": "The Palazzo",
    "venue": "The Venetian Resort",
-   "from": "palazzo (The Palazzo Las Vegas, OSM way/180584269)",
+   "destination": "The Palazzo (poker room, level 2 Grand Canal Shoppes)",
+   "from": "The Palazzo (The Palazzo Las Vegas, OSM way/180584269)",
    "to": "The Palazzo (poker room, level 2 Grand Canal Shoppes)",
    "metres": 0,
    "minutes": null,
@@ -95,7 +101,7 @@
    ],
    "sources": [
     {
-     "label": "Nominatim lookup for the palazzo coordinate",
+     "label": "Nominatim lookup for the The Palazzo coordinate",
      "url": "https://nominatim.openstreetmap.org/search?q=The+Palazzo+Las+Vegas&format=json&limit=1"
     },
     {
@@ -106,14 +112,16 @@
   },
   {
    "hotel": "palazzo",
+   "hotel_name": "The Palazzo",
    "venue": "Wynn Las Vegas",
-   "from": "palazzo (The Palazzo Las Vegas, OSM way/180584269)",
+   "destination": "Encore at Wynn Las Vegas (poker room)",
+   "from": "The Palazzo (The Palazzo Las Vegas, OSM way/180584269)",
    "to": "Encore at Wynn Las Vegas (poker room)",
    "metres": 996.2,
    "minutes": 14,
    "status": "verified",
    "within_30_min": true,
-   "note": "OpenStreetMap foot router: 799 seconds (996 m) between the geocoded palazzo coordinate and the Wynn Las Vegas poker-room coordinate, rounded up to 14 minutes. This is a published routing source, not the hotel or the poker room itself, so the 30-minute rule is applied to the routed time.",
+   "note": "OpenStreetMap foot router: 799 seconds (996 m) from The Palazzo to Encore at Wynn Las Vegas (poker room) - the building the Wynn Las Vegas poker room is in - rounded up to 14 minutes. This is a published routing source, not the hotel or the poker room itself, so the 30-minute rule is applied to the routed time.",
    "official_fact": null,
    "route_link": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-115.168271,36.1241843%3B-115.165362,36.1289345?overview=false",
    "retrieved_on": "2026-11-17",
@@ -129,7 +137,7 @@
    ],
    "sources": [
     {
-     "label": "Nominatim lookup for the palazzo coordinate",
+     "label": "Nominatim lookup for the The Palazzo coordinate",
      "url": "https://nominatim.openstreetmap.org/search?q=The+Palazzo+Las+Vegas&format=json&limit=1"
     },
     {
@@ -140,14 +148,16 @@
   },
   {
    "hotel": "wynn",
+   "hotel_name": "Wynn Las Vegas",
    "venue": "The Venetian Resort",
-   "from": "wynn (Wynn Las Vegas, OSM way/205501268)",
+   "destination": "The Palazzo (poker room, level 2 Grand Canal Shoppes)",
+   "from": "Wynn Las Vegas (Wynn Las Vegas, OSM way/205501268)",
    "to": "The Palazzo (poker room, level 2 Grand Canal Shoppes)",
    "metres": 1115.2,
    "minutes": 15,
    "status": "verified",
    "within_30_min": true,
-   "note": "OpenStreetMap foot router: 894 seconds (1115 m) between the geocoded wynn coordinate and the The Venetian Resort poker-room coordinate, rounded up to 15 minutes. This is a published routing source, not the hotel or the poker room itself, so the 30-minute rule is applied to the routed time.",
+   "note": "OpenStreetMap foot router: 894 seconds (1115 m) from Wynn Las Vegas to The Palazzo (poker room, level 2 Grand Canal Shoppes) - the building the The Venetian Resort poker room is in - rounded up to 15 minutes. This is a published routing source, not the hotel or the poker room itself, so the 30-minute rule is applied to the routed time.",
    "official_fact": null,
    "route_link": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-115.1654043,36.1266219%3B-115.168271,36.1241843?overview=false",
    "retrieved_on": "2026-11-17",
@@ -163,7 +173,7 @@
    ],
    "sources": [
     {
-     "label": "Nominatim lookup for the wynn coordinate",
+     "label": "Nominatim lookup for the Wynn Las Vegas coordinate",
      "url": "https://nominatim.openstreetmap.org/search?q=Wynn+Las+Vegas&format=json&limit=1"
     },
     {
@@ -174,8 +184,10 @@
   },
   {
    "hotel": "wynn",
+   "hotel_name": "Wynn Las Vegas",
    "venue": "Wynn Las Vegas",
-   "from": "wynn (Wynn Las Vegas, OSM way/205501268)",
+   "destination": "Encore at Wynn Las Vegas (poker room)",
+   "from": "Wynn Las Vegas (Wynn Las Vegas, OSM way/205501268)",
    "to": "Encore at Wynn Las Vegas (poker room)",
    "metres": 0,
    "minutes": null,
@@ -197,7 +209,7 @@
    ],
    "sources": [
     {
-     "label": "Nominatim lookup for the wynn coordinate",
+     "label": "Nominatim lookup for the Wynn Las Vegas coordinate",
      "url": "https://nominatim.openstreetmap.org/search?q=Wynn+Las+Vegas&format=json&limit=1"
     },
     {
@@ -208,14 +220,16 @@
   },
   {
    "hotel": "encore",
+   "hotel_name": "Encore at Wynn Las Vegas",
    "venue": "The Venetian Resort",
-   "from": "encore (Encore at Wynn Las Vegas, OSM node/367054910)",
+   "destination": "The Palazzo (poker room, level 2 Grand Canal Shoppes)",
+   "from": "Encore at Wynn Las Vegas (Encore at Wynn Las Vegas, OSM node/367054910)",
    "to": "The Palazzo (poker room, level 2 Grand Canal Shoppes)",
    "metres": 996.2,
    "minutes": 14,
    "status": "verified",
    "within_30_min": true,
-   "note": "OpenStreetMap foot router: 799 seconds (996 m) between the geocoded encore coordinate and the The Venetian Resort poker-room coordinate, rounded up to 14 minutes. This is a published routing source, not the hotel or the poker room itself, so the 30-minute rule is applied to the routed time.",
+   "note": "OpenStreetMap foot router: 799 seconds (996 m) from Encore at Wynn Las Vegas to The Palazzo (poker room, level 2 Grand Canal Shoppes) - the building the The Venetian Resort poker room is in - rounded up to 14 minutes. This is a published routing source, not the hotel or the poker room itself, so the 30-minute rule is applied to the routed time.",
    "official_fact": null,
    "route_link": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-115.165362,36.1289345%3B-115.168271,36.1241843?overview=false",
    "retrieved_on": "2026-11-17",
@@ -231,7 +245,7 @@
    ],
    "sources": [
     {
-     "label": "Nominatim lookup for the encore coordinate",
+     "label": "Nominatim lookup for the Encore at Wynn Las Vegas coordinate",
      "url": "https://nominatim.openstreetmap.org/search?q=Encore+at+Wynn+Las+Vegas&format=json&limit=1"
     },
     {
@@ -242,8 +256,10 @@
   },
   {
    "hotel": "encore",
+   "hotel_name": "Encore at Wynn Las Vegas",
    "venue": "Wynn Las Vegas",
-   "from": "encore (Encore at Wynn Las Vegas, OSM node/367054910)",
+   "destination": "Encore at Wynn Las Vegas (poker room)",
+   "from": "Encore at Wynn Las Vegas (Encore at Wynn Las Vegas, OSM node/367054910)",
    "to": "Encore at Wynn Las Vegas (poker room)",
    "metres": 0,
    "minutes": null,
@@ -265,7 +281,7 @@
    ],
    "sources": [
     {
-     "label": "Nominatim lookup for the encore coordinate",
+     "label": "Nominatim lookup for the Encore at Wynn Las Vegas coordinate",
      "url": "https://nominatim.openstreetmap.org/search?q=Encore+at+Wynn+Las+Vegas&format=json&limit=1"
     },
     {
@@ -276,14 +292,16 @@
   },
   {
    "hotel": "bellagio",
+   "hotel_name": "Bellagio",
    "venue": "The Venetian Resort",
-   "from": "bellagio (Bellagio Las Vegas, OSM way/25723909)",
+   "destination": "The Palazzo (poker room, level 2 Grand Canal Shoppes)",
+   "from": "Bellagio (Bellagio Las Vegas, OSM way/25723909)",
    "to": "The Palazzo (poker room, level 2 Grand Canal Shoppes)",
    "metres": 1606.4,
    "minutes": 22,
    "status": "verified",
    "within_30_min": true,
-   "note": "OpenStreetMap foot router: 1285 seconds (1606 m) between the geocoded bellagio coordinate and the The Venetian Resort poker-room coordinate, rounded up to 22 minutes. This is a published routing source, not the hotel or the poker room itself, so the 30-minute rule is applied to the routed time.",
+   "note": "OpenStreetMap foot router: 1285 seconds (1606 m) from Bellagio to The Palazzo (poker room, level 2 Grand Canal Shoppes) - the building the The Venetian Resort poker room is in - rounded up to 22 minutes. This is a published routing source, not the hotel or the poker room itself, so the 30-minute rule is applied to the routed time.",
    "official_fact": null,
    "route_link": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-115.1770065,36.1131149%3B-115.168271,36.1241843?overview=false",
    "retrieved_on": "2026-11-17",
@@ -299,7 +317,7 @@
    ],
    "sources": [
     {
-     "label": "Nominatim lookup for the bellagio coordinate",
+     "label": "Nominatim lookup for the Bellagio coordinate",
      "url": "https://nominatim.openstreetmap.org/search?q=Bellagio+Las+Vegas&format=json&limit=1"
     },
     {
@@ -310,14 +328,16 @@
   },
   {
    "hotel": "bellagio",
+   "hotel_name": "Bellagio",
    "venue": "Wynn Las Vegas",
-   "from": "bellagio (Bellagio Las Vegas, OSM way/25723909)",
+   "destination": "Encore at Wynn Las Vegas (poker room)",
+   "from": "Bellagio (Bellagio Las Vegas, OSM way/25723909)",
    "to": "Encore at Wynn Las Vegas (poker room)",
    "metres": 2304.0,
    "minutes": 31,
    "status": "verified",
    "within_30_min": false,
-   "note": "OpenStreetMap foot router: 1845 seconds (2304 m) between the geocoded bellagio coordinate and the Wynn Las Vegas poker-room coordinate, rounded up to 31 minutes. This is a published routing source, not the hotel or the poker room itself, so the 30-minute rule is applied to the routed time.",
+   "note": "OpenStreetMap foot router: 1845 seconds (2304 m) from Bellagio to Encore at Wynn Las Vegas (poker room) - the building the Wynn Las Vegas poker room is in - rounded up to 31 minutes. This is a published routing source, not the hotel or the poker room itself, so the 30-minute rule is applied to the routed time.",
    "official_fact": null,
    "route_link": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-115.1770065,36.1131149%3B-115.165362,36.1289345?overview=false",
    "retrieved_on": "2026-11-17",
@@ -333,7 +353,7 @@
    ],
    "sources": [
     {
-     "label": "Nominatim lookup for the bellagio coordinate",
+     "label": "Nominatim lookup for the Bellagio coordinate",
      "url": "https://nominatim.openstreetmap.org/search?q=Bellagio+Las+Vegas&format=json&limit=1"
     },
     {
@@ -344,14 +364,16 @@
   },
   {
    "hotel": "aria",
+   "hotel_name": "ARIA Resort & Casino",
    "venue": "The Venetian Resort",
-   "from": "aria (ARIA Resort & Casino Las Vegas, OSM way/52175576)",
+   "destination": "The Palazzo (poker room, level 2 Grand Canal Shoppes)",
+   "from": "ARIA Resort & Casino (ARIA Resort & Casino Las Vegas, OSM way/52175576)",
    "to": "The Palazzo (poker room, level 2 Grand Canal Shoppes)",
    "metres": 2510.6,
    "minutes": 34,
    "status": "verified",
    "within_30_min": false,
-   "note": "OpenStreetMap foot router: 2012 seconds (2511 m) between the geocoded aria coordinate and the The Venetian Resort poker-room coordinate, rounded up to 34 minutes. This is a published routing source, not the hotel or the poker room itself, so the 30-minute rule is applied to the routed time.",
+   "note": "OpenStreetMap foot router: 2012 seconds (2511 m) from ARIA Resort & Casino to The Palazzo (poker room, level 2 Grand Canal Shoppes) - the building the The Venetian Resort poker room is in - rounded up to 34 minutes. This is a published routing source, not the hotel or the poker room itself, so the 30-minute rule is applied to the routed time.",
    "official_fact": null,
    "route_link": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-115.1779977,36.1070287%3B-115.168271,36.1241843?overview=false",
    "retrieved_on": "2026-11-17",
@@ -367,7 +389,7 @@
    ],
    "sources": [
     {
-     "label": "Nominatim lookup for the aria coordinate",
+     "label": "Nominatim lookup for the ARIA Resort & Casino coordinate",
      "url": "https://nominatim.openstreetmap.org/search?q=ARIA+Resort+&+Casino+Las+Vegas&format=json&limit=1"
     },
     {
@@ -378,14 +400,16 @@
   },
   {
    "hotel": "aria",
+   "hotel_name": "ARIA Resort & Casino",
    "venue": "Wynn Las Vegas",
-   "from": "aria (ARIA Resort & Casino Las Vegas, OSM way/52175576)",
+   "destination": "Encore at Wynn Las Vegas (poker room)",
+   "from": "ARIA Resort & Casino (ARIA Resort & Casino Las Vegas, OSM way/52175576)",
    "to": "Encore at Wynn Las Vegas (poker room)",
    "metres": 3208.3,
    "minutes": 43,
    "status": "verified",
    "within_30_min": false,
-   "note": "OpenStreetMap foot router: 2572 seconds (3208 m) between the geocoded aria coordinate and the Wynn Las Vegas poker-room coordinate, rounded up to 43 minutes. This is a published routing source, not the hotel or the poker room itself, so the 30-minute rule is applied to the routed time.",
+   "note": "OpenStreetMap foot router: 2572 seconds (3208 m) from ARIA Resort & Casino to Encore at Wynn Las Vegas (poker room) - the building the Wynn Las Vegas poker room is in - rounded up to 43 minutes. This is a published routing source, not the hotel or the poker room itself, so the 30-minute rule is applied to the routed time.",
    "official_fact": null,
    "route_link": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-115.1779977,36.1070287%3B-115.165362,36.1289345?overview=false",
    "retrieved_on": "2026-11-17",
@@ -401,7 +425,7 @@
    ],
    "sources": [
     {
-     "label": "Nominatim lookup for the aria coordinate",
+     "label": "Nominatim lookup for the ARIA Resort & Casino coordinate",
      "url": "https://nominatim.openstreetmap.org/search?q=ARIA+Resort+&+Casino+Las+Vegas&format=json&limit=1"
     },
     {
@@ -412,14 +436,16 @@
   },
   {
    "hotel": "caesars",
+   "hotel_name": "Caesars Palace",
    "venue": "The Venetian Resort",
-   "from": "caesars (Caesars Palace Las Vegas, OSM way/115672893)",
+   "destination": "The Palazzo (poker room, level 2 Grand Canal Shoppes)",
+   "from": "Caesars Palace (Caesars Palace Las Vegas, OSM way/115672893)",
    "to": "The Palazzo (poker room, level 2 Grand Canal Shoppes)",
    "metres": 1684.9,
    "minutes": 23,
    "status": "verified",
    "within_30_min": true,
-   "note": "OpenStreetMap foot router: 1348 seconds (1685 m) between the geocoded caesars coordinate and the The Venetian Resort poker-room coordinate, rounded up to 23 minutes. This is a published routing source, not the hotel or the poker room itself, so the 30-minute rule is applied to the routed time.",
+   "note": "OpenStreetMap foot router: 1348 seconds (1685 m) from Caesars Palace to The Palazzo (poker room, level 2 Grand Canal Shoppes) - the building the The Venetian Resort poker room is in - rounded up to 23 minutes. This is a published routing source, not the hotel or the poker room itself, so the 30-minute rule is applied to the routed time.",
    "official_fact": null,
    "route_link": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-115.1767568,36.1166277%3B-115.168271,36.1241843?overview=false",
    "retrieved_on": "2026-11-17",
@@ -435,7 +461,7 @@
    ],
    "sources": [
     {
-     "label": "Nominatim lookup for the caesars coordinate",
+     "label": "Nominatim lookup for the Caesars Palace coordinate",
      "url": "https://nominatim.openstreetmap.org/search?q=Caesars+Palace+Las+Vegas&format=json&limit=1"
     },
     {
@@ -446,14 +472,16 @@
   },
   {
    "hotel": "caesars",
+   "hotel_name": "Caesars Palace",
    "venue": "Wynn Las Vegas",
-   "from": "caesars (Caesars Palace Las Vegas, OSM way/115672893)",
+   "destination": "Encore at Wynn Las Vegas (poker room)",
+   "from": "Caesars Palace (Caesars Palace Las Vegas, OSM way/115672893)",
    "to": "Encore at Wynn Las Vegas (poker room)",
    "metres": 2382.5,
    "minutes": 32,
    "status": "verified",
    "within_30_min": false,
-   "note": "OpenStreetMap foot router: 1908 seconds (2382 m) between the geocoded caesars coordinate and the Wynn Las Vegas poker-room coordinate, rounded up to 32 minutes. This is a published routing source, not the hotel or the poker room itself, so the 30-minute rule is applied to the routed time.",
+   "note": "OpenStreetMap foot router: 1908 seconds (2382 m) from Caesars Palace to Encore at Wynn Las Vegas (poker room) - the building the Wynn Las Vegas poker room is in - rounded up to 32 minutes. This is a published routing source, not the hotel or the poker room itself, so the 30-minute rule is applied to the routed time.",
    "official_fact": null,
    "route_link": "https://routing.openstreetmap.de/routed-foot/route/v1/foot/-115.1767568,36.1166277%3B-115.165362,36.1289345?overview=false",
    "retrieved_on": "2026-11-17",
@@ -469,7 +497,7 @@
    ],
    "sources": [
     {
-     "label": "Nominatim lookup for the caesars coordinate",
+     "label": "Nominatim lookup for the Caesars Palace coordinate",
      "url": "https://nominatim.openstreetmap.org/search?q=Caesars+Palace+Las+Vegas&format=json&limit=1"
     },
     {

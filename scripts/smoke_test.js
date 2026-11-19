@@ -92,6 +92,12 @@ async function run(rel) {
   if (page.indexOf("venue:") === 0 && doc.querySelectorAll("table").length === 0) {
     problems.push("no table rendered");
   }
+  // A page must not print its title twice: the template prints one <h1> and the
+  // rendered Markdown or data used to print another one underneath it.
+  const h1s = [...doc.querySelectorAll("h1")].map((n) => n.textContent.trim());
+  if (h1s.length > 1) {
+    problems.push("renders " + h1s.length + " h1 headings: " + h1s.join(" | "));
+  }
   dom.window.close();
   return problems;
 }
