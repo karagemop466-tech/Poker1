@@ -110,7 +110,7 @@ PAGES = {
 <p class="lead">Official Strip and nearby room schedules are requested each morning before 8 AM Las Vegas time. Excerpts preserve the source wording; they are not confirmed entries. On a failed request, the last readable capture retains its original date.</p>
 <label>Search schedule excerpts <input type="search" id="feed-q" placeholder="Room, time or format"></label>
 <div id="feed"></div><h2>Wynn recurring formats</h2>
-<p class="lead">The recurring formats Wynn publishes for every day, read from the official daily structures.</p>
+<p class="lead">Recurring formats the Strip rooms publish: Wynn's dailies, Bellagio's Friday, Saturday and Sunday events, and Caesars Palace's daily tournaments, each read from the room's own official document. The Wynn formats are listed below the schedule feed.</p>
 <div class="card callout" id="note"></div>
 <div id="content"></div>
 <p class="small" id="series-note"></p>
@@ -139,6 +139,7 @@ of a poker room, or search any column.</p>
 <div class="card callout">One entry per day is the realistic shape of a single-entry trip. Every Venetian one-day event is estimated at 8h45&ndash;21h05 from its own published level structure, so 10:10 and 11:10 starts are still running after midnight and no later same-date event can follow them. Where that is the case the day says so instead of proposing a sequence that cannot happen. A finish time marked <strong>(next day)</strong> crossed midnight; the estimate is start + published levels, never an official finish time.</div>
 <div class="card callout" id="note"></div>
 <p class="small">Earliest start among the rows in this dataset: <strong id="earliest"></strong></p>
+<p class="small" id="overlap-kpi"></p>
 <div id="content"></div>
 """),
     "pages/venues.html": ("Venues", "venues", """

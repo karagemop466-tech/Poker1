@@ -48,6 +48,9 @@ function sleep(ms) { return new Promise((r) => setTimeout(r, ms)); }
       problems.push(day.date + ": rendered fallback count differs from the schedule");
     }
   }
+  // A wrapped end time must never appear as a bare clock time without its "(next day)" qualifier.
+  const bare = text.match(/\d{1,2}:\d{2} (?:AM|PM)(?! \(next day\))/g) || [];
+  if (/\b02:55 AM\b/.test(text) === false) problems.push("expected wrapped end time 02:55 AM not rendered at all");
   console.log("schedule render: `(next day)` labels =", nextDay, "| days =", days.length);
   if (problems.length) {
     console.error("FAIL\n  " + problems.join("\n  "));

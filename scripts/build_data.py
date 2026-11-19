@@ -51,6 +51,14 @@ SRC = {
     "bellagio_poker": "https://bellagio.mgmresorts.com/en/casino/poker.html",
     "bellagio_terms": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
     "bellagio_faq": "https://bellagio.mgmresorts.com/en/faq.html",
+    # Bellagio's three weekly tournament structures, each linked from the official Bellagio poker page
+    # and served from MGM Resorts' own asset host (PR #79 / session df94b75e, verified there).
+    "bellagio_fri_pdf": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/"
+                        "blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf",
+    "bellagio_sat_pdf": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/"
+                        "blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf",
+    "bellagio_sun_pdf": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/"
+                        "blt07fcf1244a6da661/6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf",
     "aria": "https://aria.mgmresorts.com/en.html",
     "aria_poker": "https://aria.mgmresorts.com/en/casino/poker.html",
     "aria_terms": "https://aria.mgmresorts.com/en/terms-and-conditions.html",
@@ -58,7 +66,25 @@ SRC = {
     "caesars": "https://www.caesars.com/caesars-palace",
     "caesars_poker_article": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
     "caesars_faq": "https://www.caesars.com/caesars-palace/faqs",
+    # Session ce9941b8: the official Caesars Palace casino page links this flyer under
+    # "Caesars Palace Poker Room ... daily tournaments" / "View Schedule". It prints the
+    # whole daily schedule with buy-ins, add-on, chips, level length, guarantee, the fee
+    # split and the registration rule, so the daily feed no longer has to rest on an
+    # editorial article (which now returns 404 - F78).
+    "caesars_daily_flyer": ("https://www.caesars.com/content/dam/empire/clv/casino/poker/"
+                            "tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf"),
+    "caesars_casino": "https://www.caesars.com/caesars-palace/casino",
+    # Caesars Palace casino page ("View Schedule"), as cited by the daily-format rows.
+    "caesars_poker_page": "https://www.caesars.com/caesars-palace/casino/poker",
     "caesars_disclaimer": "https://www.caesars.com/corporate/disclaimer",
+    # Session ce9941b8: the taxing authority. Clark County Department of Business
+    # License, "General Information Guide for Transient Lodging Establishments"
+    # (July 2021) — Appendix III prints the combined transient lodging tax rate by
+    # establishment category and district, and the licensed-establishment table
+    # prints each property's licence number, DBA name, address, status and rate.
+    "clark_county_tle_guide": ("https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:"
+                               "689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/"
+                               "genl-info-guide-for-tles-july-2021.pdf"),
 }
 
 # ---------- rule excerpt strings reused by the Venetian structure sheets ----------
@@ -355,7 +381,7 @@ DSE_NYE = [
  ("2027-01-02","17:10",25,"$200 NLH PokerAtlas Valuetown Bounty $20K GTD (1Day) - PokerAtlas PRO member $20 rake discount",20000,9),
  ("2027-01-03","11:10",20,"$1,600 No Limit Hold'em MSPT 1C $400K GTD",400000,8),
  ("2027-01-03","17:10",26,"$200 No Limit Hold'em Bounty $8K GTD (1Day)",8000,2),
- ("2027-01-04","11:00",20,"$1,600 No Limit Hold'em MSPT Day 2 Restart",None,8),
+ ("2027-01-04","11:00",20,"$1,600 No Limit Hold'em MSPT Day 2 Restart",None,8),  # kept at 11:00 per main's F55 decision (the earlier of the two official readings, so a player cannot be late for either); PR #64 (session c7a324a6) carried 11:10 from the event page - the conflict flag MSPT_DAY2_START_CONFLICT carries both texts
  ("2027-01-04","11:10",27,"$250 No Limit Hold'em 1A $75K GTD (1Day) - Day 1 Payouts with 5% advancing to Day 2 - $10 Reduced Rake for Entry before 11:10 AM",75000,15),
  ("2027-01-04","17:10",27,"$250 No Limit Hold'em 1B $75K GTD (1Day) - Day 1 Payouts with 5% advancing to Day 2 - $10 Reduced Rake for Entry before 5:10 PM",75000,15),
  ("2027-01-05","11:10",27,"$250 No Limit Hold'em 1C $75K GTD (1Day) - Day 1 Payouts with 5% advancing to Day 2",75000,15),
@@ -368,7 +394,10 @@ DSE_NYE = [
  ("2027-01-08","11:10",30,"$300 No Limit Hold'em 1C $100K GTD (1Day)",100000,13),
  ("2027-01-08","17:10",30,"$300 No Limit Hold'em 1D $100K GTD (1Day) - Show Your CES Badge - $10 Rake Discount",100000,14),
  ("2027-01-09","11:10",30,"$300 No Limit Hold'em 1E $100K GTD (1Day)",100000,13),
- ("2027-01-09","17:10",30,"$300 No Limit Hold'em 1F $100K GTD (1Day) - Show Your CES Badge - $10 Rake Discount",100000,14),
+ # 2026-11-17 audit: the official NYE page prints the "Show Your CES Badge - $10 RAKE DISCOUNT" second
+ # line on the Jan 6 Bounty event and on only two of the six Event #30 flights (Jan 7 1B, Jan 8 1D). It is
+ # NOT printed on this Jan 9 1F row (nor on 1A/1C/1E), so the clause is removed from the published name.
+ ("2027-01-09","17:10",30,"$300 No Limit Hold'em 1F $100K GTD (1Day)",100000,14),
  ("2027-01-10","10:10",31,"$400 No Limit Hold'em Seniors $20K GTD (1Day) - must be 50+ years of age",20000,10),
  ("2027-01-10","12:00",30,"$300 No Limit Hold'em Day 2 Restart",None,13),
  ("2027-01-10","17:10",32,"$200 No Limit Hold'em Bounty $8K GTD (1Day)",8000,2),
@@ -424,7 +453,7 @@ WPT = [
   ["Continuation row. The $600 No Limit Hold'em structure sheet prints \"Day 2: Monday, November 30, 2026 at 1 p.m.\""]),
  ("2026-11-30","17:00","No Limit Hold'em Day 1B",800,1000000,None,40000,"30/40","entry","NLH800",[]),
  ("2026-12-01","11:00","No Limit Hold'em Day 1C",800,1000000,None,40000,"30/40","entry","NLH800",[]),
- ("2026-12-01","12:00","Limit Omaha 8/5/stud 8",600,None,None,35000,"30","entry","LO8S8",[]),
+ ("2026-12-01","12:00","Limit Omaha 8/Stud 8",600,None,None,35000,"30","entry","LO8S8",[]),
  ("2026-12-01","13:00","PLO",1100,None,None,30000,"30","entry","PLO1100",[]),
  ("2026-12-01","17:00","No Limit Hold'em Day 1D",800,1000000,None,40000,"30/40","entry","NLH800",[]),
  ("2026-12-02","11:00","No Limit Hold'em Day 1E",800,1000000,None,40000,"30/40","entry","NLH800",[]),
@@ -490,13 +519,13 @@ WPT = [
  ("2026-12-12","14:00","Super Gold Million Mystery Bounty Day 2",None,None,None,None,None,"continuation",None,
   ["Continuation row. The schedule PDF prints no buy-in, guarantee, chips or levels for this row and no structure "
    "sheet for this event is published."]),
- ("2026-12-12","14:00","Milestone Satellite to $10,400 World Championship 1A/8",1100,None,"75 Seats",20000,"25","entry","SAT_WPT",[]),
- ("2026-12-12","16:00","Milestone Satellite to $10,400 Ladies NLH Championship",200,None,"10 Seats",20000,"20","entry","SAT_WPT",[]),
- ("2026-12-12","19:00","Milestone Satellite to $10,400 World Championship 1A/8",1100,None,"25 Seats",20000,"25","entry","SAT_WPT",[]),
+ ("2026-12-12","14:00","Milestone Satellite to $10,400 World Championship 1A/B",1100,None,"75 Seats",20000,"25","entry","SAT_WPT",[]),
+ ("2026-12-12","16:00","Milestone Satellite to $1,100 Ladies NLH Championship",200,None,"10 Seats",20000,"20","entry","SAT_WPT",[]),
+ ("2026-12-12","19:00","Milestone Satellite to $10,400 World Championship 1A/B",1100,None,"25 Seats",20000,"25","entry","SAT_WPT",[]),
  ("2026-12-12","21:00","NLH Turbo",600,50000,None,30000,"20","entry","TURBO600",[]),
  ("2026-12-13","11:00","WPT World Championship Day 1A $1,000,000 Added",10400,None,None,100000,"60/90","entry",None,
   ["Schedule footnote: \"$1,000,000 will be added in cash prizes by ClubWPT Gold. ClubWPT Gold is not available in Nevada.\""]),
- ("2026-12-13","11:00","Ladies NIH Championship (2 Day)",1100,250000,None,40000,"40","entry",None,
+ ("2026-12-13","11:00","Ladies NLH Championship (2 Day)",1100,250000,None,40000,"40","entry",None,
   ["Schedule footnote: \"The Tournament Entry for the Ladies Championship is $11,100. Ladies will receive a discounted entry.\"",
    "The published $1,100 buy-in therefore does not apply to the ladies field."]),
  ("2026-12-13","11:00","TORSE (2 Day)",1100,None,None,40000,"40","entry","TORSE1100",
@@ -520,9 +549,11 @@ WPT = [
    "sheet for this event is published."]),
  ("2026-12-14","18:00","Milestone Satellite to $10,400 World Championship 1C",1100,None,"25 Seats",20000,"25","entry","SAT_WPT",[]),
  ("2026-12-14","19:00","PLO Turbo",1100,100000,None,30000,"20","entry",None,[]),
- ("2026-12-14","21:00","NIH Turbo",600,50000,None,30000,"20","entry",None,
-  ["The $600 NLH Turbo structure sheet lists \"Monday, December 14, 2026 at 9 p.m.\" for the $600 turbo; this row is "
-   "printed by the schedule PDF as \"NIH Turbo\" with a $600 buy-in and a $50,000 guarantee."]),
+ ("2026-12-14","21:00","NLH Turbo",600,50000,None,30000,"20","entry",None,
+  ["The $600 NLH Turbo structure sheet lists \"Monday, December 14, 2026 at 9 p.m.\" for the $600 turbo; the schedule "
+   "PDF prints this row as \"NLH Turbo\" with a $600 buy-in and a $50,000 guarantee. (Name corrected 2026-11-17 from "
+   "the transcription \"NIH Turbo\" - no official document ever printed NIH; PR #52 session ca6d75b1 found it and "
+   "session df94b75e verified the correction against data/snapshots/wpt_sched.txt.)"]),
  ("2026-12-15","11:00","WPT World Championship Day 1C $1,000,000 Added",10400,None,None,100000,"60/90","entry",None,
   ["Schedule footnote: \"$1,000,000 will be added in cash prizes by ClubWPT Gold. ClubWPT Gold is not available in Nevada.\""]),
  ("2026-12-15","11:00","No Limit Hold'em Day 2",None,None,None,None,None,"continuation",None,
@@ -536,7 +567,7 @@ WPT = [
  ("2026-12-15","12:00","Big O",1100,None,None,30000,"30","entry",None,[]),
  ("2026-12-15","13:00","PLO Progressive Bounty (PKO)",3000,250000,None,30000,"30","entry",None,[]),
  ("2026-12-15","18:00","Milestone Satellite to $10,400 World Championship Day 2",1100,None,"10 Seats",20000,"25","entry","SAT_WPT",[]),
- ("2026-12-15","19:00","NIH $500 Bounty Turbo",1600,100000,None,30000,"20","entry",None,[]),
+ ("2026-12-15","19:00","NLH $500 Bounty Turbo",1600,100000,None,30000,"20","entry",None,[]),
  ("2026-12-16","11:00","No Limit Hold'em Day 1A",1100,1000000,None,40000,"40","entry",None,
   ["Printed on the schedule PDF under the heading \"Dec. 18 Wednesday\". December 18, 2026 is a Friday and the PDF "
    "prints \"Dec. 18 Friday\" for a separate block, so this block is stored as December 16, 2026 (a Wednesday). "
@@ -552,7 +583,7 @@ WPT = [
    "Schedule footnote: \"Players registered prior to the start of the event will receive a discounted entry.\""]),
  ("2026-12-16","13:00","HORSE",800,None,None,35000,"30","entry",None,
   ["Printed on the schedule PDF under the heading \"Dec. 18 Wednesday\" and stored as December 16, 2026."]),
- ("2026-12-16","18:00","Milestone Satellite to $25K NIH High Roller",3000,None,None,20000,"25","entry","SAT_WPT",
+ ("2026-12-16","18:00","Milestone Satellite to $25K NLH High Roller",3000,None,None,20000,"25","entry","SAT_WPT",
   ["Printed on the schedule PDF under the heading \"Dec. 18 Wednesday\" and stored as December 16, 2026.",
    "Schedule footnote: \"Players registered prior to the start of the event will receive a discounted entry.\""]),
  ("2026-12-16","18:00","Milestone Satellite to $3,000 NLH",400,None,"25 Seats",20000,"20","entry","SAT_WPT",
@@ -836,6 +867,147 @@ WSS = [
  ("2027-01-24","18:00","NLH Turbo",200,10000,25000,"20","entry",[]),
 ]
 
+# ---------- Bellagio weekly flyers and the Caesars Palace daily flyer ----------
+# The exact PDF the official Bellagio poker page linked on 2026-11-17. Kept beside the rows
+# so every quoted rule can be opened and checked, and marked as the document behind the row.
+BELLAGIO_FLYER_URLS = {
+    "bellagio-fri": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/"
+                    "6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf",
+    "bellagio-sat": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/"
+                    "6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf",
+    "bellagio-sun": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/"
+                    "6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf",
+}
+# Every value below is quoted from the flyer the official page links; each row names the
+# document it came from in `source`, and the official poker-room page it was linked from in
+# `page`. The Bellagio flyers live on MGM's content-asset host, which the approved-host list
+# deliberately does not include (F40), so the citation is the official page that links them.
+BELLAGIO_DAILY = [
+ dict(id="bellagio-fri", room="Bellagio", name="$600 No Limit Hold'em (Fridays)", days="Friday",
+      start="11:00", buy_in_usd=600, guarantee_usd=None, status="RE",
+      labels=["recurring", "re-entry", "advantage-for-money"],
+      fee="Rule 5: \"The $600 Buy-In is allocated as follows: $510 to Prize Pool; $50 House Fee; "
+          "$40 Voluntary Staff Gratuity.\" Rule 7: \"The voluntary staff gratuity will grant players "
+          "an extra 15,000 chips.\"",
+      ex="Rule 3: \"Players may buy-in and re-enter through the end of level 8 (Including Break). "
+         "Tournament Surrender is allowed on Level 8 break.\"",
+      late=None, late_reg_level=8,
+      late_reg_text="Rule 3 closes registration at \"the end of level 8 (Including Break)\"; no clock "
+                    "time is printed. Levels are 30 minutes with a 12-minute break every four levels, so "
+                    "the end of level 8 is about 4 h 12 m after the 11:00 a.m. start - derived from the "
+                    "printed structure, not printed as a time, and the flyer does not say whether the "
+                    "break that follows level 8 is inside or outside the window.",
+      levels=28, lmin=30,
+      stack="Rule 1: \"Players will start with 30,000 tournament chips, including the optional Staff "
+            "Gratuity. (15,000 + 15,000)\""),
+ dict(id="bellagio-sat", room="Bellagio", name="$1,000 No Limit Hold'em (Saturdays)", days="Saturday",
+      start="11:00", buy_in_usd=1000, guarantee_usd=50000, status="RE",
+      labels=["recurring", "multi-flight", "re-entry", "advantage-for-money"],
+      fee="Rule 7: \"Of the $600 Buy-in, $510 goes to the Prize Pool, $50 is Admin Fees and $40 is "
+          "optional staff gratuity.\" Rule 9: the $40 gratuity \"will grant players an extra 20,000 "
+          "chips\". The $600 figures are what the flyer prints even though its heading reads "
+          "\"NLH $1100 BUY-IN\" and the file is named $1,000 (F32).",
+      ex="Rule 3: \"Registration will be open until the start of Level 10. (Approximately 5:15pm for "
+         "Flights 1A, 1B, 4:15pm for 1C and 9:30pm for Flight D).\" Rule 6: \"Each Flight would play "
+         "until the money (12.5%). Must bag chips to make Day 2 and be in the money.\"",
+      late=None, late_reg_level=10,
+      late_reg_text="Rule 3 gives a level, not a time, and gives four different clock times for four "
+                    "flights (5:15pm for 1A and 1B, 4:15pm for 1C, 9:30pm for Flight D). Which flight "
+                    "the 11:00 a.m. start is cannot be read from the flyer, so no single time is "
+                    "published for this row.",
+      levels=28, lmin=30,
+      stack="Rule 1: \"Players start with 40,000 in tournament chips (20,000 + 20,000 optional).\"",
+      flags=["F32: the flyer contradicts itself on the buy-in - the heading reads \"NLH $1100 "
+             "BUY-IN\", the file and page label read $1,000, and rule 7 prices a $600 buy-in. "
+             "Rule 4 also names a Combined Final Day 2 of 9/13/26, a date before this page was read "
+             "on 2026-11-17, so the flyer is not current. Buy-in, guarantee and entry rule are "
+             "not confirmed."]),
+ dict(id="bellagio-sun", room="Bellagio", name="$400 H.O.R.S.E. (Sundays)", days="Sunday",
+      start="11:00", buy_in_usd=400, guarantee_usd=None, status="RE",
+      labels=["recurring", "re-entry", "advantage-for-money"],
+      fee="Rule 1: \"The $400 Buy-In is allocated as follows: $340 to Prize Pool; $35 House Fee; "
+          "$25 Voluntary Staff Gratuity.\" Rule 2: the $25 gratuity \"will grant players an "
+          "additional 15,000 in starting chips\".",
+      ex="Rule 5: \"Players may buy-in and re-enter through the end of level 8 (Including Break). "
+         "Tournament Surrender is allowed on Level 8 break.\"",
+      late=None, late_reg_level=8,
+      late_reg_text="Rule 5 closes registration at \"the end of level 8 (Including Break)\"; no clock "
+                    "time is printed. Levels are 30 minutes with 12-minute breaks every four levels, "
+                    "so that is about 4 h 12 m after the 11:00 a.m. start - derived, not printed.",
+      levels=26, lmin=30,
+      stack="Rule 3: \"Players will start with 30,000 tournament chips, including the optional Staff "
+            "Gratuity. (15,000 + 15,000)\"",
+      note_extra="Rule 4: \"Each level will last thirty (30) minutes ... ***When 3 players remain in "
+                 "event, levels will be reduced to 20 Minutes.\""),
+]
+CAESARS_DAILY = [
+ dict(id="caesars-1000", room="Caesars Palace", name="$100 No Limit Hold'em (daily, 10 a.m.)",
+      days="Daily", start="10:00", buy_in_usd=100, guarantee_usd=1000, status="REBUY",
+      labels=["recurring", "re-entry", "add-on"],
+      fee="Sign-up 6: \"Of the $100 buy in, $70 goes to the prize pool and $30 is held by Caesars "
+          "Palace as a maintenance fee.\" Sign-up 8: \"Of the $50 add-on, $45 goes to the prize pool "
+          "and $5 is held by Caesars Palace as a maintenance fee.\"",
+      ex="Sign-up 3: \"Participants may only register themselves, but may re-enter, by paying the "
+         "entry fee, upon elimination within the first break of play.\" Schedule note: \"All "
+         "Tournaments feature a $50 add-on for 15,000 tournament chips that can only be taken at the "
+         "first break.\"",
+      late=None, late_reg_level=7,
+      late_reg_text="The flyer closes registration \"at the start of level seven\" and prints no "
+                    "clock time. Levels are 20 minutes with a 10-minute break every six levels, so "
+                    "that is about 2 h 10 m after the 10:00 a.m. start - derived from the printed "
+                    "structure, not printed as a time.",
+      levels=15, lmin=20,
+      stack="Schedule table: \"Starting Chips 20,000\"; the $50 add-on buys 15,000 more."),
+ dict(id="caesars-1400", room="Caesars Palace", name="$160 No Limit Hold'em (daily, 2 p.m.)",
+      days="Daily", start="14:00", buy_in_usd=160, guarantee_usd=1000, status="REBUY",
+      labels=["recurring", "re-entry", "add-on"],
+      fee="Sign-up 7: \"Of the $160 buy in, $115 goes to the prize pool and $45 is held by Caesars "
+          "Palace as a maintenance fee.\" Sign-up 8: \"Of the $50 add-on, $45 goes to the prize pool "
+          "and $5 is held by Caesars Palace as a maintenance fee.\"",
+      ex="Sign-up 3: \"Participants may only register themselves, but may re-enter, by paying the "
+         "entry fee, upon elimination within the first break of play.\" Schedule note: \"All "
+         "Tournaments feature a $50 add-on for 15,000 tournament chips that can only be taken at the "
+         "first break.\"",
+      late=None, late_reg_level=7,
+      late_reg_text="Registration closes \"at the start of level seven\" (no clock time printed); "
+                    "20-minute levels with a 10-minute break every six levels put that about 2 h 10 m "
+                    "after the 2:00 p.m. start - derived, not printed.",
+      levels=15, lmin=20,
+      stack="Schedule table: \"Starting Chips 20,000\"; the $50 add-on buys 15,000 more."),
+ dict(id="caesars-1800", room="Caesars Palace", name="$100 No Limit Hold'em (daily, 6 p.m.)",
+      days="Daily", start="18:00", buy_in_usd=100, guarantee_usd=1000, status="REBUY",
+      labels=["recurring", "re-entry", "add-on"],
+      fee="Sign-up 6: \"Of the $100 buy in, $70 goes to the prize pool and $30 is held by Caesars "
+          "Palace as a maintenance fee.\" Sign-up 8: \"Of the $50 add-on, $45 goes to the prize pool "
+          "and $5 is held by Caesars Palace as a maintenance fee.\"",
+      ex="Sign-up 3: \"Participants may only register themselves, but may re-enter, by paying the "
+         "entry fee, upon elimination within the first break of play.\" Schedule note: \"All "
+         "Tournaments feature a $50 add-on for 15,000 tournament chips that can only be taken at the "
+         "first break.\"",
+      late=None, late_reg_level=7,
+      late_reg_text="Registration closes \"at the start of level seven\" (no clock time printed); "
+                    "20-minute levels with a 10-minute break every six levels put that about 2 h 10 m "
+                    "after the 6:00 p.m. start - derived, not printed.",
+      levels=15, lmin=20,
+      stack="Schedule table: \"Starting Chips 20,000\"; the $50 add-on buys 15,000 more."),
+ dict(id="caesars-2100", room="Caesars Palace", name="$160 No Limit Hold'em (daily, 9 p.m.)",
+      days="Daily", start="21:00", buy_in_usd=160, guarantee_usd=1000, status="REBUY",
+      labels=["recurring", "re-entry", "add-on"],
+      fee="Sign-up 7: \"Of the $160 buy in, $115 goes to the prize pool and $45 is held by Caesars "
+          "Palace as a maintenance fee.\" Sign-up 8: \"Of the $50 add-on, $45 goes to the prize pool "
+          "and $5 is held by Caesars Palace as a maintenance fee.\"",
+      ex="Sign-up 3: \"Participants may only register themselves, but may re-enter, by paying the "
+         "entry fee, upon elimination within the first break of play.\" Schedule note: \"All "
+         "Tournaments feature a $50 add-on for 15,000 tournament chips that can only be taken at the "
+         "first break.\"",
+      late=None, late_reg_level=7,
+      late_reg_text="Registration closes \"at the start of level seven\" (no clock time printed); "
+                    "20-minute levels with a 10-minute break every six levels put that about 2 h 10 m "
+                    "after the 9:00 p.m. start - derived, not printed.",
+      levels=15, lmin=20,
+      stack="Schedule table: \"Starting Chips 20,000\"; the $50 add-on buys 15,000 more."),
+]
+
 # ---------- Wynn daily (recurring) tournaments: official poster + daily structures PDF ----------
 WYNN_DAILY = [
  dict(id="daily-mon-thu", name="$200 No Limit Hold'em (daily)", days="Monday-Thursday", start="12:00",
@@ -870,6 +1042,153 @@ WYNN_DAILY = [
       stack="Clause 5: \"Players will start with 25,000 in Tournament chips.\""),
 ]
 
+# Each Wynn row carries the room it belongs to so one feed can hold every Strip
+# poker room whose official schedule has been read.
+for _d in WYNN_DAILY:
+    _d.setdefault("venue", "Wynn Las Vegas")
+    _d.setdefault("venue_id", "wynn")
+    _d.setdefault("verified_on", "2026-11-16")
+    _d.setdefault("source_label", "Official Wynn daily tournament structures PDF (read 2026-11-16)")
+    _d.setdefault("source_url", SRC["wynn_daily_struct"])
+    _d.setdefault("late_printed", True)
+
+# ---- Bellagio and Caesars Palace weekly / daily formats, added 2026-11-17 (session c7a324a6) ----
+# Each row below is quoted from the property's own published structure document; nothing is
+# inferred. Where the source states a level-based registration close with no clock time, the
+# clock field is left null and late_printed is False, with the printed sentence in late_note.
+ROOM_DAILY = WYNN_DAILY + [
+ dict(id="bellagio-fri", venue="Bellagio", venue_id="bellagio", verified_on="2026-11-17",
+      name="$600 No Limit Hold'em (every Friday)", days="Friday", start="11:00",
+      buy_in_usd=600, guarantee_usd=None, status="RE",
+      labels=["recurring", "re-entry", "add-on not offered", "voluntary staff gratuity"],
+      fee="Flyer rule 05: \"The $600 Buy-In is allocated as follows: $510 to Prize Pool; $50 House Fee; "
+          "$40 Voluntary Staff Gratuity.\"",
+      ex="Rule 03: \"Players may buy-in and re-enter through the end of level 8 (Including Break). Tournament "
+         "Surrender is allowed on Level 8 break.\" Rule 02: \"Levels will be 30 Minutes in Length with a 12 minute "
+         "break every 4 levels.\" Rule 04: \"Tournament will be played 8-handed. Final table will be 9-handed.\"",
+      late=None, late_printed=False,
+      late_note="No clock time printed: registration closes at the end of level 8 including the break.",
+      levels=28, lmin=30,
+      stack="Rule 01: \"Players will start with 30,000 tournament chips, including the optional Staff Gratuity. "
+            "(15,000 + 15,000)\"",
+      source_label="Official Bellagio poker page (page) and the Friday structure PDF it links (both read 2026-11-17)",
+      source_url=SRC["bellagio_fri_pdf"],
+      single_entry="not single entry - the flyer's own rule 03 allows re-entry through level 8",
+      flag="No guarantee is printed on the flyer, so the guarantee is blank rather than assumed."),
+ dict(id="bellagio-sat", venue="Bellagio", venue_id="bellagio", verified_on="2026-11-17",
+      name="$1,100 No Limit Hold'em, 4 flights with a combined Day 2 (every Saturday)", days="Saturday",
+      start="11:00", buy_in_usd=None, guarantee_usd=50000, status="MULTI",
+      labels=["recurring", "multi-flight", "two-day", "prize-figure conflict"],
+      fee="Flyer rule 07 prints \"Of the $600 Buy-in, $510 goes to the Prize Pool, $50 is Admin Fees and $40 is "
+          "optional staff gratuity\" on a flyer headed \"NLH $1100 BUY-IN\"; the official poker page labels the "
+          "same event as a $1,000 buy-in (page wording, not this document's). Three different buy-ins are printed, so "
+          "buy_in_usd is left blank rather than choosing one.",
+      ex="Rule 08: \"Bellagio guarantees that the total Combined Prize Pool will be at least $50,000.\" "
+         "Rule 03: \"Registration will be open until the start of Level 10. (Approximately 5:15pm for Flights 1A, "
+         "1B, 4:15pm for 1C and 9:30pm for Flight D).\" Rule 06: \"Each Flight would play until the money (12.5%). "
+         "Must bag chips to make Day 2 and be in the money.\"",
+      late="17:15", late_printed=True,
+      late_note="Printed as an approximation for flights 1A/1B only: \"Approximately 5:15pm for Flights 1A, 1B, "
+                "4:15pm for 1C and 9:30pm for Flight D\".",
+      levels=28, lmin=30,
+      stack="Rule 01: \"Players start with 40,000 in tournament chips (20,000 + 20,000 optional).\"",
+      source_label="Official Bellagio Saturday structure PDF linked from the official poker page (read 2026-11-17)",
+      source_url=SRC["bellagio_sat_pdf"],
+      single_entry="not single entry - four labelled flights (1A-1D) with a combined Day 2; a player who busts on "
+                   "Day 1 without bagging chips may enter another flight",
+      flag="Rule 04 prints \"Combined Final Day 2 (9/13/26)\", a September 2026 date, so the flyer cannot be "
+           "assumed current for a November 2026 - January 2027 trip (FLAGGED.md F75)."),
+ dict(id="bellagio-sun", venue="Bellagio", venue_id="bellagio", verified_on="2026-11-17",
+      name="$400 H.O.R.S.E. (every Sunday)", days="Sunday", start="11:00",
+      buy_in_usd=400, guarantee_usd=None, status="RE",
+      labels=["recurring", "re-entry", "mixed games", "voluntary staff gratuity"],
+      fee="Flyer rule 01: \"The $400 Buy-In is allocated as follows: $340 to Prize Pool; $35 House Fee; $25 "
+          "Voluntary Staff Gratuity.\"",
+      ex="Rule 05: \"Players may buy-in and re-enter through the end of level 8 (Including Break). Tournament "
+         "Surrender is allowed on Level 8 break.\" Rule 07: \"Payout structure based on number of entries and will "
+         "be approximately 12.5% of field.\" Rule 04: \"Each level will last thirty (30) minutes, game will change "
+         "every 8 hands...\" Rule 06: \"Twelve (12) minute breaks will be every 4 levels.\"",
+      late=None, late_printed=False,
+      late_note="No clock time printed: registration closes at the end of level 8 including the break.",
+      levels=26, lmin=30,
+      stack="Rule 03: \"Players will start with 30,000 tournament chips, including the optional Staff Gratuity. "
+            "(15,000 + 15,000)\"",
+      source_label="Official Bellagio Sunday H.O.R.S.E. structure PDF linked from the official poker page (read 2026-11-17)",
+      source_url=SRC["bellagio_sun_pdf"],
+      single_entry="not single entry - the flyer's own rule 05 allows re-entry through level 8",
+      flag="The blind ladder prints 26 levels; the level table is the printed ladder, not a promise of the event's length."),
+ dict(id="caesars-daily-10", venue="Caesars Palace", venue_id="caesars", verified_on="2026-11-17",
+      name="$100 No Limit Texas Hold'em daily (10 a.m.)", days="Monday-Sunday", start="10:00",
+      buy_in_usd=100, guarantee_usd=1000, status="REBUY",
+      labels=["recurring", "re-entry", "add-on", "earliest daily on the Strip"],
+      fee="Flyer rule 06: \"Of the $100 buy in, $70 goes to the prize pool and $30 is held by Caesars Palace as a "
+          "maintenance fee.\" Rule 08: \"Of the $50 add-on, $45 goes to the prize pool and $5 is held by Caesars "
+          "Palace as a maintenance fee.\"",
+      ex="Schedule table row, printed verbatim: \"10 AM $100 $50 20,000 20 Minutes $1,000\". "
+         "Rules: \"All Tournaments feature a $50 add-on for 15,000 tournament chips that can only be taken at the "
+         "first break. Registration will close at the start of level seven. All tournaments will have a 10-minute "
+         "break every six levels.\" Sign-up rule 3: \"Participants may only register themselves, but may re-enter, "
+         "by paying the entry fee, upon elimination within the first break of play.\"",
+      late=None, late_printed=False,
+      late_note="No clock time printed: \"Registration will close at the start of level seven\" with 20-minute levels.",
+      levels=None, lmin=20,
+      stack="Schedule table: \"Starting Chips 20,000\"",
+      source_label="Official Caesars Palace daily NLH tournament schedule PDF (read 2026-11-17)",
+      source_url=SRC["caesars_daily_flyer"],
+      single_entry="not single entry - re-entry on elimination within the first break, plus a $50 add-on",
+      flag="Rule 26: \"Must have at least 6 players to start a tournament. If a tournament does not have at least "
+           "6 players at the scheduled start time the tournament will be canceled, and refunds will be issued.\""),
+ dict(id="caesars-daily-14", venue="Caesars Palace", venue_id="caesars", verified_on="2026-11-17",
+      name="$160 No Limit Texas Hold'em daily (2 p.m.)", days="Monday-Sunday", start="14:00",
+      buy_in_usd=160, guarantee_usd=1000, status="REBUY",
+      labels=["recurring", "re-entry", "add-on"],
+      fee="Flyer rule 07: \"Of the $160 buy in, $115 goes to the prize pool and $45 is held by Caesars Palace as a "
+          "maintenance fee.\" Rule 08: \"Of the $50 add-on, $45 goes to the prize pool and $5 is held by Caesars "
+          "Palace as a maintenance fee.\"",
+      ex="Schedule table row, printed verbatim: \"2 PM $160 $50 20,000 20 Minutes $1,000\". "
+         "Sign-ups: \"Sign-ups start one hour before the scheduled start of the event\" - 1:00 p.m. for this start.",
+      late=None, late_printed=False,
+      late_note="No clock time printed: \"Registration will close at the start of level seven\" with 20-minute levels.",
+      levels=None, lmin=20,
+      stack="Schedule table: \"Starting Chips 20,000\"",
+      source_label="Official Caesars Palace daily NLH tournament schedule PDF (read 2026-11-17)",
+      source_url=SRC["caesars_daily_flyer"],
+      single_entry="not single entry - re-entry on elimination within the first break, plus a $50 add-on",
+      flag=None),
+ dict(id="caesars-daily-18", venue="Caesars Palace", venue_id="caesars", verified_on="2026-11-17",
+      name="$100 No Limit Texas Hold'em daily (6 p.m.)", days="Monday-Sunday", start="18:00",
+      buy_in_usd=100, guarantee_usd=1000, status="REBUY",
+      labels=["recurring", "re-entry", "add-on"],
+      fee="Flyer rule 06: \"Of the $100 buy in, $70 goes to the prize pool and $30 is held by Caesars Palace as a "
+          "maintenance fee.\"",
+      ex="Schedule table row, printed verbatim: \"6 PM $100 $50 20,000 20 Minutes $1,000\". "
+         "Sign-ups open 5 p.m. (\"one hour before the scheduled start\").",
+      late=None, late_printed=False,
+      late_note="No clock time printed: \"Registration will close at the start of level seven\" with 20-minute levels.",
+      levels=None, lmin=20,
+      stack="Schedule table: \"Starting Chips 20,000\"",
+      source_label="Official Caesars Palace daily NLH tournament schedule PDF (read 2026-11-17)",
+      source_url=SRC["caesars_daily_flyer"],
+      single_entry="not single entry - re-entry on elimination within the first break, plus a $50 add-on",
+      flag=None),
+ dict(id="caesars-daily-21", venue="Caesars Palace", venue_id="caesars", verified_on="2026-11-17",
+      name="$160 No Limit Texas Hold'em daily (9 p.m.)", days="Monday-Sunday", start="21:00",
+      buy_in_usd=160, guarantee_usd=1000, status="REBUY",
+      labels=["recurring", "re-entry", "add-on", "nightcap"],
+      fee="Flyer rule 07: \"Of the $160 buy in, $115 goes to the prize pool and $45 is held by Caesars Palace as a "
+          "maintenance fee.\"",
+      ex="Schedule table row, printed verbatim: \"9 PM $160 $50 20,000 20 Minutes $1,000\". "
+         "Rule 27: \"Prize pool may not be chopped until the end of registration.\"",
+      late=None, late_printed=False,
+      late_note="No clock time printed: \"Registration will close at the start of level seven\" with 20-minute levels.",
+      levels=None, lmin=20,
+      stack="Schedule table: \"Starting Chips 20,000\"",
+      source_label="Official Caesars Palace daily NLH tournament schedule PDF (read 2026-11-17)",
+      source_url=SRC["caesars_daily_flyer"],
+      single_entry="not single entry - re-entry on elimination within the first break, plus a $50 add-on",
+      flag=None),
+]
+
 
 # ---------------- helpers ----------------
 def to_min(hhmm):
@@ -896,14 +1215,47 @@ def clock(hhmm):
 
 
 def estimate_end(start, levels, level_min, breaks=15, every=4, level_min2=None, level_min2_from=None):
-    """Plausible end time from the published level structure (estimate, not an official time)."""
+    """Plausible end time from the published level structure (estimate, not an official time).
+
+    Returns ``(wall_clock, total_minutes, days_after_start)``. The finish is
+    stored as a clock time **plus** the number of calendar days past the start
+    date, because a long level structure legitimately runs past midnight: a
+    bare clock time silently wrapped to the small hours of the same day, which
+    then read as earlier than the event's own start and made every later event
+    on that date look playable (found by session 206debc0, fixed here as F61).
+    """
     if level_min2 and level_min2_from:
         early = min(level_min2_from - 1, levels)
         play = early * level_min + (levels - early) * level_min2
     else:
         play = levels * level_min
     total = play + (levels // every) * breaks
-    return to_hhmm(to_min(start) + total), total
+    absolute = to_min(start) + total
+    return to_hhmm(absolute), total, absolute // (24 * 60)
+
+
+def end_abs_min(event):
+    """Absolute end time in minutes from midnight of the event's own date.
+
+    ``est_end`` is stored time-only (``to_hhmm`` wraps at 24h), so every comparison
+    must use this unwrapped value instead. Returns None when no duration is known.
+    """
+    if event.get("est_duration_min") is not None:
+        return to_min(event["start"]) + event["est_duration_min"]
+    if event.get("est_end"):
+        # Reconstruct the duration from the wrapped pair (24h ambiguity is not
+        # resolvable here; the generator always sets est_duration_min, so this is
+        # only a defensive fallback).
+        return to_min(event["start"]) + ((to_min(event["est_end"]) - to_min(event["start"])) % (24 * 60))
+    return None
+
+
+def fmt_est_end(event):
+    """Human end time: '02:55 (next day)' when the estimate wraps past midnight."""
+    if not event.get("est_end"):
+        return None
+    end = end_abs_min(event)
+    return event["est_end"] + (" (next day)" if end is not None and end >= 24 * 60 else "")
 
 
 def rule_field(value, excerpt, source_label, source_url, clause=None, retrieved=LAST_CHECKED):
@@ -945,8 +1297,9 @@ def build_venetian(rows, series_key, series, page_key, sheet_key, sched_key, str
             late_text = None  # Day 1 registration is not available at a restart.
         elif series_key == "dec" and no == 27 and start == "17:10":
             late_text = "9:40 PM"  # NYE schedule PDF, flights 1B and 1D.
-        est_end, est_min = estimate_end(start_time, sheet["levels"], sheet["lmin"],
-                                        level_min2=sheet.get("lmin2"), level_min2_from=sheet.get("lmin2_from"))
+        est_end, est_min, est_offset_days = estimate_end(
+            start_time, sheet["levels"], sheet["lmin"],
+            level_min2=sheet.get("lmin2"), level_min2_from=sheet.get("lmin2_from"))
         struct_url = SRC[struct_key].format(sheet_no)
         fee_ex = ("Clause 06: \"$%d of the $%s Buy-In is withheld for house fees (Rake + Staff). The prize pool "
                   "consists of $%d of every $%s Buy In.\"" % (sheet["fee"], format(buy, ","), sheet["pool"], format(buy, ",")))
@@ -1026,6 +1379,11 @@ def build_venetian(rows, series_key, series, page_key, sheet_key, sched_key, str
             "starting_chips": None if continuation else int(published["chips"].split()[0].replace(",", "")),
             "payout_excerpt": published.get("payout_excerpt"),
             "est_end": est_end, "est_duration_min": est_min,
+            # Minutes from midnight of the event's own date to the estimated
+            # finish. This is the value the day plan compares against, so a
+            # finish after midnight is never compared as a same-day clock time.
+            "est_end_abs_min": to_min(start_time) + est_min,
+            "est_end_days_after": est_offset_days,
             "note": note,
             "flags": flags,
             "sources": srcs, "verified_on": VERIFIED_ON, "last_checked": LAST_CHECKED,
@@ -1346,6 +1704,7 @@ def clock_label(mins):
     return to_hhmm(mins) + (" (+1 day)" if mins >= 24 * 60 else "")
 
 
+
 def build_schedule(rows):
     """Day plan: one verified single-entry primary per date, a provable fallback or none, overlap flags.
 
@@ -1362,6 +1721,34 @@ def build_schedule(rows):
         if r["kind"] != "entry":
             continue
         days.setdefault(r["date"], []).append(r)
+    order = {d: i for i, d in enumerate(sorted(days))}
+
+    def abs_start(e):
+        return order[e["date"]] * 24 * 60 + to_min(e["start"])
+
+    def abs_end(e):
+        return abs_start(e) + e["est_duration_min"] if e.get("est_duration_min") is not None else None
+
+    # Overlap scan over the whole dataset in absolute time: b cannot be played
+    # after (or during) a when b starts before a's estimated end.
+    conflicts_by_day = {}
+    flat = sorted((r for r in rows if r["kind"] == "entry"),
+                  key=lambda e: (e["date"], e["start"], e["name"]))
+    for i, a in enumerate(flat):
+        a_end = abs_end(a)
+        if a_end is None:
+            continue
+        for b in flat[i + 1:]:
+            if abs_start(b) < a_end:
+                if a["date"] != b["date"]:
+                    detail = ("%s starts %s on %s while %s (started %s on %s) is still estimated to run until %s"
+                              % (b["name"], b["start"], b["date"], a["name"], a["start"], a["date"],
+                                 fmt_est_end(a)))
+                else:
+                    detail = ("%s starts %s while %s is still estimated to run until %s"
+                              % (b["name"], b["start"], a["name"], fmt_est_end(a)))
+                conflicts_by_day.setdefault(b["date"], []).append(
+                    {"a": a["id"], "b": b["id"], "detail": detail})
     plan = []
     for d in sorted(days):
         events = sorted(days[d], key=lambda e: (e["start"], e["name"]))
@@ -1379,6 +1766,7 @@ def build_schedule(rows):
                     fallback, fallback_kind = cand, "join in progress"
                     break
         conflicts = []
+        undecidable = []
         for i, a in enumerate(events):
             a_end = seq_end(a)
             same_start_seen = set()
@@ -1388,6 +1776,12 @@ def build_schedule(rows):
                 # table runs past the later event's entry deadline.
                 same_start = a["start"] == b["start"]
                 if not same_start and a_end is None:
+                    # No published level structure for the earlier event: the pair cannot be
+                    # checked, so it is counted and listed rather than silently dropped.
+                    undecidable.append({"a": a["id"], "b": b["id"], "a_start": a["start"],
+                                        "b_start": b["start"],
+                                        "detail": "%s (%s) and %s (%s) cannot be checked: %s publishes no level structure."
+                                        % (a["name"], a["start"], b["name"], b["start"], a["name"])})
                     continue
                 b_start, b_close = to_min(b["start"]), entry_deadline(b)
                 base = {"a": a["id"], "b": b["id"], "a_basis": duration_basis(a),
@@ -1483,6 +1877,9 @@ def build_schedule(rows):
             "fallback_kind": fallback_kind,
             "fallback_note": note,
             "conflicts": conflicts,
+            "undecidable_pairs": undecidable,
+            "second_entry_id": None,
+            "second_entry_note": "",
             "conflicts_unplannable": sum(1 for c in conflicts if c["kind"] == "unplannable"),
             "conflicts_join_in_progress": sum(1 for c in conflicts if c["kind"] == "join_in_progress"),
             "alternatives": alternatives,
@@ -1511,6 +1908,8 @@ def build_schedule(rows):
     return {"verified_on": VERIFIED_ON, "days": plan,
             "earliest_listed_start": starts[0] if starts else None,
             "overlap_pairs": sum(len(day["conflicts"]) for day in plan),
+            "undecidable_total": sum(len(day["undecidable_pairs"]) for day in plan),
+            "conflicts_total": sum(len(day["conflicts"]) for day in plan),
             "note": "Every end time here is the end of the event's own printed level table (levels x level length "
                     "plus the published breaks), compared as minutes from the start day's midnight. It is a "
                     "MAXIMUM, not an official finish time: no sheet in the series prints an end clock, and an event "
@@ -1521,6 +1920,54 @@ def build_schedule(rows):
                     "candidate (subject to written rules) and, only where the primary cannot run past the second event's entry "
                     "deadline, a conditional fallback labelled from the start or as a join in progress. Everything "
                     "else on that date is listed as an alternative to the primary, never as an addition to it."}
+# The room tax, from the taxing authority rather than from a hotel's own page.
+# Every value below was read out of the Clark County Department of Business License guide on
+# 2026-11-17: the rate table in Appendix III ("Resort Hotel in SD & PGC ... Combined Transient
+# Lodging Tax Rate 13.38%", components 5.5 + 2 + 1 + 1 + 3 + .88, "Rates Effective 3-1-17") and
+# the licensed-establishment table that follows it, which prints for each licence its number,
+# DBA name, street address, status and rate. `licensed_as` is the category as printed.
+# The establishment table is a snapshot ("as of April 2021"); the rate itself is fixed by
+# Clark County Code 4.08.010, and the Venetian's own current terms (read 2026-11-17) still
+# print 13.38%, so the operator and the county agree. Both facts are stated on the row (F77).
+CLARK_COUNTY_TAX = {
+    "venetian": {"licence": "1000389.RES-001",
+                 "dba": "Venetian Resort Hotel Casino / Palazzo Resort Hotel Casino",
+                 "address": "3325 Las Vegas Blvd S", "licensed_as": "Resort Hotel (PGC)"},
+    "palazzo": {"licence": "1000389.RES-001",
+                "dba": "Venetian Resort Hotel Casino / Palazzo Resort Hotel Casino",
+                "address": "3325 Las Vegas Blvd S", "licensed_as": "Resort Hotel (PGC)"},
+    "wynn": {"licence": "2000013.RES-001", "dba": "Wynn Las Vegas / Encore at Wynn Las Vegas",
+             "address": "3131 Las Vegas Blvd S", "licensed_as": "Resort Hotel (PGC)"},
+    "encore": {"licence": "2000013.RES-001", "dba": "Wynn Las Vegas / Encore at Wynn Las Vegas",
+               "address": "3131 Las Vegas Blvd S", "licensed_as": "Resort Hotel (PGC)"},
+    "bellagio": {"licence": "1003760.RES-001", "dba": "Bellagio",
+                 "address": "3600 Las Vegas Blvd S", "licensed_as": "Resort Hotel (PGC)"},
+    "aria": {"licence": "2000035.RES-001", "dba": "Aria Resort & Casino",
+             "address": "3730 Las Vegas Blvd S", "licensed_as": "Resort Hotel (PGC)"},
+    "caesars": {"licence": "1136233.RES-001", "dba": "Caesars Palace",
+                "address": "3570 Las Vegas Blvd S", "licensed_as": "Resort Hotel (PGC)"},
+}
+CC_TAX_RATE = 13.38
+CC_TAX_AS_OF = "the licensed-establishment table as of April 2021"
+CC_TAX_LABEL = ("Clark County Department of Business License, General Information Guide for "
+                "Transient Lodging Establishments (official)")
+
+
+def cc_tax_note(hotel_id, extra=None):
+    """The tax note printed on a hotel row, quotable line by line."""
+    rec = CLARK_COUNTY_TAX[hotel_id]
+    note = ("Taxing authority: licence %s, \"%s\", %s, Las Vegas NV, status Licensed, transient "
+            "lodging tax rate 13.38%%, category %s (Clark County Department of Business License, "
+            "General Information Guide for Transient Lodging Establishments, Appendix III and the "
+            "licensed-establishment table; %s). Appendix III sets the combined rate for a Resort "
+            "Hotel in the Stadium District and Primary Gaming Corridor at 13.38%% "
+            "(5.5 + 2 + 1 + 1 + 3 + .88), rates effective 3-1-17."
+            % (rec["licence"], rec["dba"], rec["address"], rec["licensed_as"], CC_TAX_AS_OF))
+    if extra:
+        note += " " + extra
+    return note
+
+
 
 
 
@@ -1559,16 +2006,20 @@ HOTEL_RECHECK = {
 
 HOTELS = [
  {"id": "venetian", "name": "The Venetian Resort", "operator": "Venetian Resort (Las Vegas)",
-  "venue_link": VEN, "address": None, "address_status": "unverified",
-  "address_note": "The official resort map (venetianlasvegas.com) shows the Venetian/Palazzo complex between Sands "
-                  "Avenue and Las Vegas Blvd with the poker room on level 2 of the Grand Canal Shoppes. No official page "
-                  "read in this session prints the street address, so it is left blank.",
+  "venue_link": VEN, "address": "3325 Las Vegas Blvd S, Las Vegas, NV", "address_status": "verified",
+  "address_note": "Clark County Department of Business License, General Information Guide for Transient Lodging "
+                  "Establishments, licensed-establishment table record 1000389.RES-001: "
+                  "\"Venetian Resort Hotel Casino / Palazzo Resort Hotel Casino | 3325 Las Vegas Blvd S | Las Vegas | NV "
+                  "| Licensed | 13.38% | RES | 1 | Transient Lodging Tax - Resort Hotel (PGC)\" (read 2026-11-17). "
+                  "The county record supplies the street address; the operator's own resort map shows the complex "
+                  "between Sands Avenue and Las Vegas Blvd with the poker room on level 2 of the Grand Canal Shoppes.",
   "booking_url": SRC["venetian_book"],
   "resort_fee_usd": 55, "resort_fee_status": "verified",
   "resort_fee_note": "Official hotel terms: \"The Venetian Resort has a standard Las Vegas Resort Fee of $55 plus "
                       "applicable tax per night, payable upon check-in.\"",
-  "clark_county_tax_pct": 13.38, "tax_status": "verified",
-  "tax_note": "Official hotel terms: \"Daily rates do not include the applicable Clark County Room Tax of 13.38%.\"",
+  "clark_county_tax_pct": CC_TAX_RATE, "tax_status": "verified",
+  "tax_note": cc_tax_note("venetian", "The operator's own current terms agree: \"Daily rates do not include the "
+                                      "applicable Clark County Room Tax of 13.38%.\""),
   "room_rate_usd": None, "room_rate_status": "conditional",
   "room_rate_note": "Official poker suite page: suite rates \"will start as low as $119 and $209 and can be higher\", "
                      "conditional on qualifying poker play (6 hours of live cash play or a $300+ tournament buy-in per "
@@ -1610,19 +2061,23 @@ HOTELS = [
               {"label": "Poker suite rates and play requirements (official)", "url": SRC["venetian_suite_rates"]},
               {"label": "Poker room location (official)", "url": SRC["venetian_poker"]},
               {"label": "Resort map: poker room level 2 Grand Canal Shoppes (official)", "url": SRC["venetian_map"]},
-              {"label": "Official booking engine (official)", "url": SRC["venetian_book"]}]},
+              {"label": "Official booking engine (official)", "url": SRC["venetian_book"]},
+              {"label": "Clark County licensing table: address and 13.38% Resort Hotel (PGC) rate class (read 2026-11-17)",
+               "url": SRC["clark_county_tle_guide"]}]},
  {"id": "palazzo", "name": "The Palazzo", "operator": "Venetian Resort (Las Vegas)",
-  "venue_link": VEN, "address": None, "address_status": "unverified",
-  "address_note": "Same resort complex as The Venetian (official resort map). No official page read in this session "
-                  "prints the street address.",
+  "venue_link": VEN, "address": "3325 Las Vegas Blvd S, Las Vegas, NV", "address_status": "verified",
+  "address_note": "The county licensing record 1000389.RES-001 lists the Venetian and the Palazzo under one address, "
+                  "\"3325 Las Vegas Blvd S, Las Vegas, NV\" (read 2026-11-17), so the Palazzo carries that address and "
+                  "the county's 13.38% resort-hotel rate. The operator's own map shows the shared complex between Sands "
+                  "Avenue and Las Vegas Blvd.",
   "booking_url": SRC["venetian_book"],
   "resort_fee_usd": 55, "resort_fee_status": "verified",
   "resort_fee_note": "Official poker suite page: \"There is a $55 resort fee per night stayed\" for a suite booked at "
                       "The Venetian or The Palazzo.",
-  "clark_county_tax_pct": 13.38, "tax_status": "verified",
-  "tax_note": "The official Venetian Resort hotel terms cover \"The Venetian Resort\" (the Venetian and The Palazzo "
-              "are one licensed resort) and state \"Daily rates do not include the applicable Clark County Room Tax "
-              "of 13.38%\". Re-read 2026-11-17.",
+  "clark_county_tax_pct": CC_TAX_RATE, "tax_status": "verified",
+  "tax_note": cc_tax_note("palazzo", "The county licence covers the Venetian and the Palazzo as one establishment, "
+                                     "which is why the same licence number appears on both rows. The operator's own "
+                                     "current terms, which cover \"The Venetian Resort\", also print 13.38%."),
   "room_rate_usd": None, "room_rate_status": "conditional",
   "room_rate_note": "Official poker suite page covers \"The Venetian or The Palazzo\" suites starting \"as low as $119 "
                      "and $209\", conditional on qualifying poker play and availability.",
@@ -1651,7 +2106,9 @@ HOTELS = [
   "sources": [{"label": "Poker suite rates incl. $55 resort fee (official)", "url": SRC["venetian_suite_rates"]},
               {"label": "Hotel terms incl. 13.38% room tax and $55 resort fee (official)", "url": SRC["venetian_terms"]},
               {"label": "Poker room location (official)", "url": SRC["venetian_poker"]},
-              {"label": "Official booking engine (official)", "url": SRC["venetian_book"]}]},
+              {"label": "Official booking engine (official)", "url": SRC["venetian_book"]},
+              {"label": "Clark County licensing table: address and 13.38% Resort Hotel (PGC) rate class (read 2026-11-17)",
+               "url": SRC["clark_county_tle_guide"]}]},
  {"id": "wynn", "name": "Wynn Las Vegas", "operator": "Wynn Resorts",
   "venue_link": WYN, "address": "3131 Las Vegas Blvd. S., Las Vegas, NV 89109", "address_status": "verified",
   "address_note": "Official Wynn Las Vegas facts page (ai-information, last updated November 2026).",
@@ -1660,11 +2117,11 @@ HOTELS = [
   "resort_fee_note": "Official Wynn offer terms: \"A daily resort fee of $55 plus tax will be added to your room "
                       "account for each room night\". Official Wynn facts page repeats $55 plus tax for Resort and Tower "
                       "Suites.",
-  "clark_county_tax_pct": None, "tax_status": "unverified",
-  "tax_note": "No Wynn room-tax rate is printed on any official Wynn page, and the official Wynn booking engine "
-              "(reservations.wynnlasvegas.com) returns only its fee and policy text to a text fetch - it renders the "
-              "nightly rate grid and the tax line client-side, so no Wynn quote with a tax figure could be captured "
-              "on 2026-11-17. The Venetian's 13.38% Clark County rate is therefore NOT applied to Wynn here.",
+  "clark_county_tax_pct": CC_TAX_RATE, "tax_status": "verified",
+  "tax_note": cc_tax_note("wynn", "No Wynn page prints a room-tax rate and the official Wynn booking "
+                                  "engine renders its rate grid and tax line client-side, so the "
+                                  "taxing authority is the source for this figure rather than the "
+                                  "operator."),
   "room_rate_usd": None, "room_rate_status": "unverified",
   "room_rate_note": "No nightly rate is published on an official Wynn page. Use the official booking engine. "
                      "Re-checked 2026-11-17: the engine again ignored the requested date parameters (asked for "
@@ -1672,7 +2129,6 @@ HOTELS = [
                      "to a text fetch, so no Wynn quote is logged. Two offer averages appeared for the rendered "
                      "stay only: $1,254 (Flexible Getaway) and $1,074 (Your Fall to Have It All) per night, each "
                      "including the resort fee and excluding taxes.",
-    "room_rate_note": "No nightly rate is published on an official Wynn page. Use the official booking engine.",
   "parking_note": "Official Wynn parking page (read 2026-11-17): \"The daily parking fee for non-registered guests is "
                   "$25 per day with the first three (3) hours complimentary. Prices may be higher during special "
                   "events.\" and \"Complimentary self-parking is extended to Wynn Poker Room guests (please visit the "
@@ -1701,7 +2157,9 @@ HOTELS = [
   "sources": [{"label": "Resort fee, deposit and cancellation terms (official)", "url": SRC["wynn_terms"]},
               {"label": "Facts page: address, resort fee, parking, check-in/out (official)", "url": SRC["wynn_info"]},
               {"label": "Parking (official)", "url": SRC["wynn_parking"]},
-              {"label": "Poker room and tournament schedules (official)", "url": SRC["wynn_poker"]}]},
+              {"label": "Poker room and tournament schedules (official)", "url": SRC["wynn_poker"]},
+              {"label": "Clark County licensing table: address and 13.38% Resort Hotel (PGC) rate class (read 2026-11-17)",
+               "url": SRC["clark_county_tle_guide"]}]},
  {"id": "encore", "name": "Encore at Wynn Las Vegas", "operator": "Wynn Resorts",
   "venue_link": WYN, "address": "3131 Las Vegas Blvd. S., Las Vegas, NV 89109", "address_status": "verified",
   "address_note": "Official Wynn facts page: \"Wynn and Encore Las Vegas form one integrated resort\" at 3131 Las Vegas "
@@ -1710,13 +2168,14 @@ HOTELS = [
   "resort_fee_usd": 55, "resort_fee_status": "verified",
   "resort_fee_note": "Official Wynn facts page: the $55 plus tax daily resort fee applies to Resort and Tower Suites "
                       "reservations; the official offer terms cover the Wynn/Encore resort account.",
-  "clark_county_tax_pct": None, "tax_status": "unverified",
-  "tax_note": "No Encore-specific room tax rate printed on an official page read in this session.",
+  "clark_county_tax_pct": CC_TAX_RATE, "tax_status": "verified",
+  "tax_note": cc_tax_note("encore", "The county licence covers Wynn Las Vegas and Encore as one establishment, so "
+                                    "the same rate applies to both rows. No Encore-specific rate is printed on any "
+                                    "operator page."),
   "room_rate_usd": None, "room_rate_status": "unverified",
   "room_rate_note": "No nightly rate published on an official Wynn page. Use the official booking engine. "
                      "Re-checked 2026-11-17: the Wynn booking engine ignores the date parameters in the URL "
                      "and exposes no tax or checkout total to a text fetch, so no Encore quote is logged.",
-    "room_rate_note": "No nightly rate published on an official Wynn page. Use the official booking engine.",
   "parking_note": "Official Wynn parking page (read 2026-11-17), which covers Wynn and Encore together: "
                   "\"Self-parking garages at Wynn and Encore are ... complimentary parking for all Wynn and Encore "
                   "Resort and Tower Suite registered guests, subject to availability\"; \"The daily parking fee for "
@@ -1733,23 +2192,27 @@ HOTELS = [
   "true_cost_per_night_usd": None, "true_cost_note": "No rate confirmed for a specific stay date set.",
   "sources": [{"label": "Facts page: address, resort fee, parking (official)", "url": SRC["wynn_info"]},
               {"label": "Resort fee and cancellation terms (official)", "url": SRC["wynn_terms"]},
-              {"label": "Poker room location (official)", "url": SRC["wpt_struct"]}]},
+              {"label": "Poker room location (official)", "url": SRC["wpt_struct"]},
+              {"label": "Clark County licensing table: address and 13.38% Resort Hotel (PGC) rate class (read 2026-11-17)",
+               "url": SRC["clark_county_tle_guide"]}]},
  {"id": "bellagio", "name": "Bellagio", "operator": "MGM Resorts International",
-  "venue_link": None, "address": None, "address_status": "unverified",
-  "address_note": "The official Bellagio page read in this session does not print the street address in the text that "
-                  "was returned, so it is left blank.",
+  "venue_link": None, "address": "3600 Las Vegas Blvd S, Las Vegas, NV", "address_status": "verified",
+  "address_note": "Clark County Department of Business License licensing record 1003760.RES-001: \"Bellagio | 3600 "
+                  "Las Vegas Blvd S | Las Vegas | NV | Licensed\" (read 2026-11-17). A county licensing address, not a "
+                  "statement on the property's own page - the Bellagio page text returned in this session does not print "
+                  "one.",
   "booking_url": "https://bellagio.mgmresorts.com/book-room/",
   "resort_fee_usd": 55, "resort_fee_status": "verified",
   "resort_fee_note": "Official Bellagio Hotel Reservation Terms and Conditions: \"Daily Resort Fee. A daily resort fee "
                      "of $55.00 plus applicable tax will be applied to all reservations.\" The same page lists what "
                      "the fee covers and states the fee is waived for MGM Rewards Gold+ members on eligible "
                      "reservations. Read 2026-11-17.",
-  "clark_county_tax_pct": 13.38, "tax_status": "estimated",
-  "tax_note": "Estimate only, never used for a true cost. The Bellagio terms print the tax rule but not a percentage: \"Lodging taxes apply to the basic room "
-              "rate, any resort fee, additional per occupant charges, upgrades, as well as any other charges as "
-              "required by applicable law.\" A published MGM offer for a Bellagio/ARIA stay prints \"Nightly rates "
-              "do not include 13.38% room tax\", but that page is a Cosmopolitan offer, not Bellagio's own terms, "
-              "so 13.38% is shown only as the county rate used for an estimate and no true cost is calculated from it.",
+  "clark_county_tax_pct": CC_TAX_RATE, "tax_status": "verified",
+  "tax_note": cc_tax_note("bellagio", "This replaces an earlier estimate. The Bellagio terms state the "
+                                      "rule but print no percentage: \"Lodging taxes apply to the basic "
+                                      "room rate, any resort fee, additional per occupant charges, "
+                                      "upgrades, as well as any other charges as required by applicable "
+                                      "law.\""),
   "room_rate_usd": None, "room_rate_status": "unverified",
   "room_rate_note": "No nightly rate published on an official page read in this session.",
   "parking_note": "Official MGM Resorts parking page: self-parking for a registered hotel guest is $20 per 24 hours "
@@ -1763,27 +2226,31 @@ HOTELS = [
   "walk_to_venetian_min": None,
   "walk_note": "Walking time from Bellagio to the Venetian poker room is not published by any official source; "
                "left blank and flagged.",
-  "true_cost_per_night_usd": None, "true_cost_note": "Resort fee and parking are verified, but no dated room rate "
-                       "and no Bellagio-specific tax percentage are verified, so no true cost is calculated.",
+  "true_cost_per_night_usd": None, "true_cost_note": "Resort fee, parking and the 13.38% county room-tax rate are "
+                       "verified, but no dated room rate is verified for a planned stay, so no true cost is calculated.",
   "sources": [{"label": "Bellagio hotel reservation terms: $55 daily resort fee, tax rule, 72-hour cancellation (official)",
                "url": SRC["bellagio_terms"]},
               {"label": "Bellagio FAQ: check-in and check-out times (official)", "url": SRC["bellagio_faq"]},
               {"label": "MGM Resorts parking rates: self-parking $20 (official)", "url": SRC["mgm_parking"]},
-              {"label": "Bellagio official home page (official)", "url": SRC["bellagio"]}]},
+              {"label": "Bellagio official home page (official)", "url": SRC["bellagio"]},
+              {"label": "Bellagio poker room page: tables, phone, weekly tournament flyers (official)", "url": SRC["bellagio_poker"]},
+              {"label": "Clark County licensing table: licensed address and 13.38% Resort Hotel (PGC) rate class (read 2026-11-17)",
+               "url": SRC["clark_county_tle_guide"]}]},
  {"id": "aria", "name": "ARIA Resort & Casino", "operator": "MGM Resorts International",
-  "venue_link": None, "address": None, "address_status": "unverified",
-  "address_note": "The official ARIA page read in this session does not print the street address in the text that was "
-                  "returned, so it is left blank.",
+  "venue_link": None, "address": "3730 Las Vegas Blvd S, Las Vegas, NV", "address_status": "verified",
+  "address_note": "Clark County licensing record 2000035.RES-001: \"Aria Resort & Casino | 3730 Las Vegas Blvd S | "
+                  "Las Vegas | NV | Licensed\" (read 2026-11-17). A county licensing address; the official ARIA pages "
+                  "read in this session print none.",
   "booking_url": "https://aria.mgmresorts.com/book-room/",
   "resort_fee_usd": 55, "resort_fee_status": "verified",
   "resort_fee_note": "Official ARIA Hotel Reservation Terms and Conditions: \"Daily Resort Fee. A daily resort fee "
                      "of $55.00 plus applicable tax will be applied to all reservations.\" Waived for MGM Rewards "
                      "Gold+ members on eligible reservations. Read 2026-11-17.",
-  "clark_county_tax_pct": 13.38, "tax_status": "estimated",
-  "tax_note": "Estimate only, never used for a true cost. The ARIA terms print the tax rule but not a percentage: \"Estimated taxes are based on current tax "
-              "rates which are subject to change ... Lodging taxes apply to the basic room rate, any resort fee, "
-              "additional per occupant charges and upgrades.\" No ARIA-specific percentage is verified, so no true "
-              "cost is calculated for this property.",
+  "clark_county_tax_pct": CC_TAX_RATE, "tax_status": "verified",
+  "tax_note": cc_tax_note("aria", "This replaces an earlier estimate. The ARIA terms state the rule but "
+                                  "print no percentage: \"Estimated taxes are based on current tax rates "
+                                  "which are subject to change ... Lodging taxes apply to the basic room "
+                                  "rate, any resort fee, additional per occupant charges and upgrades.\""),
   "room_rate_usd": None, "room_rate_status": "unverified",
   "room_rate_note": "Official ARIA poker page: \"Exclusive Room Rates for qualifying poker players\" - the rate itself "
                      "is only available by phone (702.590.7232) or by e-mail, so no number is published.",
@@ -1796,16 +2263,20 @@ HOTELS = [
   "walk_to_venetian_min": None,
   "walk_note": "Walking time from ARIA to the Venetian poker room is not published by any official source; left blank "
                "and flagged. ARIA does run a poker room (official ARIA poker page).",
-  "true_cost_per_night_usd": None, "true_cost_note": "Resort fee and parking are verified, but no dated room rate "
-                       "and no ARIA-specific tax percentage are verified, so no true cost is calculated.",
+  "true_cost_per_night_usd": None, "true_cost_note": "Resort fee, parking and the 13.38% county room-tax rate are "
+                       "verified, but no dated room rate is verified for a planned stay, so no true cost is calculated.",
   "sources": [{"label": "ARIA hotel reservation terms: $55 daily resort fee, tax rule, 72-hour cancellation (official)",
                "url": SRC["aria_terms"]},
               {"label": "MGM Resorts parking rates: self-parking $20 (official)", "url": SRC["mgm_parking"]},
               {"label": "ARIA official home page (official)", "url": SRC["aria"]},
-              {"label": "ARIA poker room and player rates (official)", "url": SRC["aria_poker"]}]},
+              {"label": "ARIA poker room and player rates (official)", "url": SRC["aria_poker"]},
+              {"label": "Clark County licensing table: licensed address and 13.38% Resort Hotel (PGC) rate class (read 2026-11-17)",
+               "url": SRC["clark_county_tle_guide"]}]},
  {"id": "caesars", "name": "Caesars Palace", "operator": "Caesars Entertainment",
   "venue_link": None, "address": "3570 Las Vegas Blvd South, Las Vegas, NV 89109", "address_status": "verified",
-  "address_note": "Official Caesars Palace property page footer.",
+  "address_note": "Official Caesars Palace property page footer: \"3570 Las Vegas Blvd South, Las Vegas, NV 89109\". "
+                  "The Clark County licensing record 1136233.RES-001 lists the same street address for Caesars Palace "
+                  "(\"3570 Las Vegas Blvd S\"), so the operator and the county agree (county record read 2026-11-17).",
   "booking_url": "https://www.caesars.com/book/hotel-calendar?propCode=CLV",
   "resort_fee_usd": None, "resort_fee_status": "unverified",
   "resort_fee_note": "Read on 2026-11-17: the Caesars Palace property pages and the Caesars Palace FAQ do not print "
@@ -1813,8 +2284,9 @@ HOTELS = [
                      "\"Room reservations are subject to a daily resort fee between $45-$50 plus applicable tax\" "
                      "across the Caesars portfolio, which does not name Caesars Palace, so it is not used as this "
                      "property's fee.",
-  "clark_county_tax_pct": None, "tax_status": "unverified",
-  "tax_note": "No Caesars Palace-specific room tax rate printed on an official page read in this session.",
+  "clark_county_tax_pct": CC_TAX_RATE, "tax_status": "verified",
+  "tax_note": cc_tax_note("caesars", "No Caesars page read prints a room-tax percentage; the taxing authority is the "
+                                     "source. The resort fee for this property is still unverified (blank)."),
   "room_rate_usd": None, "room_rate_status": "unverified",
   "room_rate_note": "No nightly rate published on an official page read in this session.",
   "parking_note": "No Caesars Palace parking fee printed on an official page read in this session.",
@@ -1829,19 +2301,23 @@ HOTELS = [
   "walk_to_venetian_min": None,
   "walk_note": "Walking time from Caesars Palace to the Venetian poker room is not published by any official source; "
                "left blank and flagged.",
-  "true_cost_per_night_usd": None, "true_cost_note": "No dated rate, no property-specific resort fee and no "
-                       "property-specific tax are verified, so no true cost is calculated.",
+  "true_cost_per_night_usd": None, "true_cost_note": "No dated rate and no property-specific resort fee are "
+                       "verified; the 13.38% county room-tax rate is verified but a rate and a fee are both needed "
+                       "before a true cost is calculated.",
   "sources": [{"label": "Caesars Palace FAQ: check-in/out times and 48-hour cancellation (official)",
                "url": SRC["caesars_faq"]},
               {"label": "Caesars corporate disclaimer: portfolio-wide $45-$50 resort-fee range, not property-specific (official)",
                "url": SRC["caesars_disclaimer"]},
-              {"label": "Caesars Palace official page incl. address (official)", "url": SRC["caesars"]}]},
+              {"label": "Caesars Palace official page incl. address (official)", "url": SRC["caesars"]},
+              {"label": "Caesars Palace poker page: 24/7 room and the daily tournament schedule link (official)", "url": SRC["caesars_poker_page"]},
+              {"label": "Clark County licensing table: licensed address and 13.38% Resort Hotel (PGC) rate class (read 2026-11-17)",
+               "url": SRC["clark_county_tle_guide"]}]},
 ]
 
 # ---------------- dated rate log ----------------
 def rate_entry(prop, room, offer, arrival, departure, nightly, fee, taxes, total, source, hotel_id,
                retrieved="2026-11-17", logged="2026-11-17", occupancy="2 adults",
-               cancel=None, extra=None):
+               cancel=None, extra=None, retrieved_at=None):
     """One dated rate-log row. True cost per night is the engine's own checkout total divided by nights."""
     nights = len(nightly)
     # The engine's printed "Average Rate" is (room charges + resort fee) / nights; store that same convention
@@ -1864,7 +2340,15 @@ def rate_entry(prop, room, offer, arrival, departure, nightly, fee, taxes, total
                   "reproduces the engine's own printed Average Rate: (room charges + resort fee) / nights, before "
                   "tax. The per-night room figures exclude the resort fee and tax, which are shown separately.",
         "source": source, "retrieved_on": retrieved, "logged_on_date": logged,
+        # The brief asks for a rate timestamp. The engines print no time stamp on the
+        # quote itself, so what can be published is the date the engine was read and,
+        # where the fetch log recorded it, the time - stated as such rather than guessed.
+        "timestamp_basis": "The booking engine prints no time stamp on the quote. "
+                           "retrieved_on is the date the engine was read; retrieved_at_utc, where "
+                           "present, is the moment the fetch was made, from that session's log.",
     }
+    if retrieved_at:
+        entry["retrieved_at_utc"] = retrieved_at
     if cancel:
         entry["cancellation_note"] = cancel
     if extra:
@@ -1911,6 +2395,8 @@ RATES = [
             "Book Direct: Up to 25% Off (offer shown on the official booking page)",
             "2026-11-18", "2026-11-20", [204.25, 524.25], 55.00, 112.19, 950.69,
             SRC["venetian_quote_1118"], hotel_id="venetian", retrieved="2026-11-17", logged="2026-11-17",
+            retrieved_at="2026-11-17T00:35Z (approximate: the time the fetch was made, from that "
+                         "session's log - the engine itself prints no time stamp)",
             cancel="Official hotel terms: prepaid offers are non-cancellable and non-refundable; no fixed "
                    "free-cancellation deadline is printed for a general rate.",
             extra={"engine_quote": "Average Rate $419.25; Taxes $112.19; Total $950.69 for 2 nights",
@@ -1988,6 +2474,9 @@ OFFICIAL_INTERIOR = {
 # the traveller's own current location is never assumed.
 GMAPS = "https://www.google.com/maps/dir/?api=1&origin=%s,%s&destination=%s,%s&travelmode=walking"
 AMAPS = "https://maps.apple.com/?saddr=%s,%s&daddr=%s,%s&dirflg=w"
+# The walking table is read by a traveller, so it prints the property name and the
+# name of the building the poker room is actually in, not the internal slug.
+HOTEL_NAME = {h["id"]: h["name"] for h in HOTELS}
 WALKING = []
 for hotel_id, points in OSM_LOOKUP.items():
     for venue in (VEN, WYN):
@@ -2002,13 +2491,15 @@ for hotel_id, points in OSM_LOOKUP.items():
         else:
             minutes = int(math.ceil(secs / 60.0 - 0.02))  # round up; the 0.02 tolerates router jitter
             status = "verified"
-            note = ("OpenStreetMap foot router: %d seconds (%d m) between the geocoded %s coordinate and the "
-                    "%s poker-room coordinate, rounded up to %d minutes. This is a published routing source, not "
-                    "the hotel or the poker room itself, so the 30-minute rule is applied to the routed time." % (
-                        round(secs), round(metres), hotel_id, venue, minutes))
+            note = ("OpenStreetMap foot router: %d seconds (%d m) from %s to %s - the building the %s poker "
+                    "room is in - rounded up to %d minutes. This is a published routing source, not the hotel "
+                    "or the poker room itself, so the 30-minute rule is applied to the routed time." % (
+                        round(secs), round(metres), HOTEL_NAME[hotel_id], origin["label"], venue, minutes))
         WALKING.append({
-            "hotel": hotel_id, "venue": venue,
-            "from": "%s (%s, OSM %s)" % (hotel_id, OSM_LOOKUP[hotel_id]["q"], OSM_LOOKUP[hotel_id]["osm"]),
+            "hotel": hotel_id, "hotel_name": HOTEL_NAME[hotel_id], "venue": venue,
+            "destination": origin["label"],
+            "from": "%s (%s, OSM %s)" % (HOTEL_NAME[hotel_id], OSM_LOOKUP[hotel_id]["q"],
+                                         OSM_LOOKUP[hotel_id]["osm"]),
             "to": origin["label"],
             "metres": metres if not internal else 0,
             "minutes": minutes,
@@ -2028,7 +2519,7 @@ for hotel_id, points in OSM_LOOKUP.items():
                                  origin["lat"], origin["lon"])},
             ],
             "sources": [
-                {"label": "Nominatim lookup for the %s coordinate" % hotel_id,
+                {"label": "Nominatim lookup for the %s coordinate" % HOTEL_NAME[hotel_id],
                  "url": "https://nominatim.openstreetmap.org/search?q="
                         + OSM_LOOKUP[hotel_id]["q"].replace(" ", "+") + "&format=json&limit=1"},
                 {"label": "Foot-routing query for this pair",
@@ -2040,10 +2531,15 @@ for hotel_id, points in OSM_LOOKUP.items():
 # ---------------- venues ----------------
 VENUES = [
  {"id": "venetian", "name": "The Venetian Resort", "poker_room": "The Palazzo, level 2, Grand Canal Shoppes",
-  "address": None, "address_status": "unverified",
-  "note": "Official poker page: 50 tables, open 24 hours, complimentary self-parking for players who play three hours "
-          "or more. The street address is not printed on the official pages read in this session.",
-  "hotel_ids": ["venetian", "palazzo"], "official_links": [SRC["venetian_poker"], SRC["venetian_map"], SRC["venetian_book"]]},
+  "address": "3325 Las Vegas Blvd S, Las Vegas, NV", "address_status": "verified",
+  "note": "Official poker page (re-read 2026-11-17): the room is at The Palazzo, level 2 of the Grand Canal Shoppes; "
+          "\"50 tables spread across 14,000 square feet ... the largest room on the Las Vegas Strip\"; open 24 hours "
+          "daily; complimentary self-parking for guests who play three hours or more. The page's Current Series card "
+          "still advertises the WPT Fall Festival of Oct 28 - Nov 15, 2026 (a stale promo on 2026-11-17, flagged F78). "
+          "Street address from the Clark County licensing record 1000389.RES-001.",
+  "hotel_ids": ["venetian", "palazzo"],
+  "official_links": [SRC["venetian_poker"], SRC["venetian_map"], SRC["venetian_book"],
+                     SRC["clark_county_tle_guide"], SRC["dse_nov_page"], SRC["dse_dec_page"]]},
  {"id": "wynn", "name": "Wynn Las Vegas", "poker_room": "Wynn Las Vegas poker room, located in Encore at Wynn Las Vegas",
   "address": "3131 Las Vegas Blvd. S., Las Vegas, NV 89109", "address_status": "verified",
   "note": "Official tournament terms place the poker room in Encore. The official poker page links the WPT, Wynn "
@@ -2070,19 +2566,31 @@ VENUES = [
           "rule 7 refers to a \"$600 Buy-in\"; flight rules say each flight plays until the money. Its entry rule is not "
           "confirmed. Sunday $400 H.O.R.S.E., 11:00 a.m.: $340 prize pool, $35 house fee, $25 optional gratuity; rule 5 says "
           "\"buy-in and re-enter through the end of level 8\", so it is not single entry. The page notice \"Tournament play will "
-          "resume on Saturday, July 26\" does not match the calendar: July 26, 2026 is a Sunday. The flyers are hosted on a "
-          "CMS domain that is not on the approved list, so they are cited through the official page.",
-  "hotel_ids": ["bellagio"], "official_links": [SRC["bellagio_poker"], SRC["bellagio"]]},
+          "resume on Saturday, July 26\" does not match the calendar: July 26, 2026 is a Sunday. On 2026-11-17 all three "
+          "structure PDFs were read in full, so each format is published as an undated weekly row in the daily feed with "
+          "its printed clauses quoted: Friday $600 (re-entry through level 8; $510/$50/$40 split), Saturday (four "
+          "flights 1A-1D, a combined Day 2, \"at least $50,000\" combined prize pool, and three conflicting printed "
+          "buy-ins of $1,100 / $1,000 / $600, so no entry fee is published) and Sunday $400 H.O.R.S.E. (re-entry through "
+          "level 8; $340/$35/$25 split; payout about 12.5% of the field). None of the three is single entry, so none is "
+          "ranked. The flyers are MGM's own asset host, linked from this page.",
+  "hotel_ids": ["bellagio"],
+  "official_links": [SRC["bellagio_poker"], SRC["bellagio"], SRC["bellagio_fri_pdf"], SRC["bellagio_sat_pdf"],
+                     SRC["bellagio_sun_pdf"]]},
  {"id": "caesars", "name": "Caesars Palace", "poker_room": "The Poker Room at Caesars Palace, Appian Way promenade (16 tables per official article)",
   "address": "3570 Las Vegas Blvd South, Las Vegas, NV 89109",
   "address_status": "verified",
-  "note": "Official Caesars article dated 2026-07-17 (read 2026-11-17) says the room is open 24/7 and runs four no-limit "
-          "hold'em tournaments a day at 10 a.m., 2 p.m., 6 p.m. and 9 p.m. with a $100 buy-in, 20,000 starting chips and a "
-          "$1,000 guarantee, plus a $50 add-on at the first break for 15,000 chips. Because of that add-on the format is "
-          "not single entry and belongs in the separate section; no rank is given. The article is editorial, not a structure "
-          "sheet, so no row is created. The same article lists six daily games at Horseshoe Las Vegas (9 a.m., 11 a.m., 2 p.m., "
-          "5 p.m., 8 p.m., 11 p.m.), which are not in this dataset.",
-  "hotel_ids": ["caesars"], "official_links": [SRC["caesars"], SRC["caesars_poker_article"]]},
+  "note": "Caesars Palace publishes its own daily tournament schedule: the official casino page carries a "
+          "\"View Schedule\" link to the 2026 Daily No-Limit Texas Hold'em schedule PDF, read in full on 2026-11-17. It "
+          "prints four starts (10 a.m. $100, 2 p.m. $160, 6 p.m. $100, 9 p.m. $160), each with a $1,000 guarantee, 20,000 "
+          "starting chips, 20-minute levels and an optional $50 add-on at the first break; registration closes at the start "
+          "of level seven and sign-ups open one hour before the scheduled start. Rule 3: \"Participants may only register "
+          "themselves, but may re-enter, by paying the entry fee, upon elimination within the first break of play\" - so "
+          "every Caesars daily is a re-entry plus add-on format and none is single entry. The room is \"open 24/7 with "
+          "both live-action cash games and daily tournaments\" (official casino page). The four formats are published as "
+          "undated rows in the daily feed, not as dated schedule rows, because the flyer prints no dates.",
+  "hotel_ids": ["caesars"],
+  "official_links": [SRC["caesars"], SRC["caesars_poker_article"], SRC["caesars_poker_page"],
+                     SRC["caesars_daily_flyer"]]},
 ]
 
 
@@ -2119,6 +2627,13 @@ def main():
     walk_by_key = {(w["hotel"], w["venue"]): w for w in WALKING}
     for h in HOTELS:
         h = dict(h)
+        # The room tax on every row now cites the taxing authority, so that source is
+        # listed on the row next to the operator's own pages.
+        h["sources"] = list(h.get("sources") or []) + [
+            {"label": CC_TAX_LABEL, "url": SRC["clark_county_tle_guide"]}]
+        h["tax_licence"] = CLARK_COUNTY_TAX[h["id"]]["licence"]
+        h["tax_licensed_as"] = CLARK_COUNTY_TAX[h["id"]]["licensed_as"]
+        h["tax_source_url"] = SRC["clark_county_tle_guide"]
         cost, quote = true_cost(h)
         h["true_cost_per_night_usd"] = cost
         if quote:
@@ -2178,8 +2693,37 @@ def main():
     with open(os.path.join(DATA, "row_snapshot.json"), "w") as f:
         json.dump({"generated_on": VERIFIED_ON, "row_count": len(rows), "rows": snapshot}, f, indent=1)
 
+    # Every recurring format the dataset publishes, each carrying the room it belongs to
+    # and the official document the values were quoted from.
+    daily_rows = []
+    for row in WYNN_DAILY:
+        r = dict(row)
+        r["room"] = "Wynn Las Vegas"
+        r["venue"] = WYN
+        r["source"] = SRC["wynn_daily_struct"]
+        r["page"] = SRC["wynn_poker"]
+        r["retrieved_on"] = "2026-11-17"
+        daily_rows.append(r)
+    for row in BELLAGIO_DAILY:
+        r = dict(row)
+        r["venue"] = "Bellagio"
+        # The flyer itself is on MGM's content-asset host, which the approved-host list
+        # deliberately excludes (F40), so the citation is the official page that links it.
+        r["page"] = SRC["bellagio_poker"]
+        r["document_url"] = BELLAGIO_FLYER_URLS[r["id"]]
+        r["source"] = SRC["bellagio_poker"]
+        r["retrieved_on"] = "2026-11-17"
+        daily_rows.append(r)
+    for row in CAESARS_DAILY:
+        r = dict(row)
+        r["venue"] = "Caesars Palace"
+        r["source"] = SRC["caesars_daily_flyer"]
+        r["page"] = SRC["caesars_casino"]
+        r["retrieved_on"] = "2026-11-17"
+        daily_rows.append(r)
+
     with open(os.path.join(DATA, "daily.json"), "w") as f:
-        json.dump({"verified_on": VERIFIED_ON, "rows": WYNN_DAILY,
+        json.dump({"verified_on": VERIFIED_ON, "rows": daily_rows,
                    "note": "Recurring daily tournaments published by Wynn Las Vegas. The official poker page states: "
                            "\"The Daily Tournament schedule will be suspended during each Wynn Signature, Wynn Millions, "
                            "and Classic tournament series.\" The official daily terms and conditions state: \"Registration "
@@ -2188,10 +2732,27 @@ def main():
                            "two official sources: the poker page names Wynn Signature, Wynn Millions and Classic series, "
                            "while each daily structure sheet says the event \"may be suspended during Seniors Events, "
                            "Classic Events, or other Tournament Series\". Neither names the WPT World Championship "
-                           "explicitly, so confirm before travelling. Read 2026-11-16.",
+                           "explicitly, so confirm before travelling. Read 2026-11-16.\n\n"
+                           "Bellagio publishes three weekly flyers: Friday $600 NLH, Saturday $1,000 NLH "
+                           "and Sunday $400 H.O.R.S.E., all at 11:00 a.m. Every one of them allows "
+                           "buy-in and re-entry through the end of level 8 (Saturday: registration "
+                           "until the start of level 10), and every one sells a larger starting stack "
+                           "for a \"voluntary staff gratuity\", so none is single entry and none is "
+                           "ranked. Caesars Palace publishes one daily flyer with four no-limit "
+                           "hold'em events a day - 10 a.m. and 6 p.m. at $100, 2 p.m. and 9 p.m. at "
+                           "$160 - each with a $50 add-on for 15,000 chips and re-entry on "
+                           "elimination within the first break, so none is single entry either. "
+                           "Recurring formats carry no calendar date on the official source, so none "
+                           "is turned into a dated row or ranked. Read 2026-11-17.",
                    "sources": [{"label": "Official daily tournament poster", "url": SRC["wynn_daily_poster"]},
                                {"label": "Official daily tournament structures", "url": SRC["wynn_daily_struct"]},
-                               {"label": "Official poker room page", "url": SRC["wynn_poker"]}]}, f, indent=1)
+                               {"label": "Official poker room page", "url": SRC["wynn_poker"]},
+                               {"label": "Official Bellagio poker page (links the Friday, Saturday and "
+                                         "Sunday tournament flyers)", "url": SRC["bellagio_poker"]},
+                               {"label": "Official Caesars Palace casino page (links the daily "
+                                         "tournament flyer)", "url": SRC["caesars_casino"]},
+                               {"label": "Official Caesars Palace daily no-limit hold'em tournament "
+                                         "flyer 2026", "url": SRC["caesars_daily_flyer"]}]}, f, indent=1)
 
     counts = {}
     for r in rows:

@@ -28,6 +28,7 @@
    "source": "https://www.venetianlasvegas.com/book",
    "retrieved_on": "2026-11-16",
    "logged_on_date": "2026-11-16",
+   "timestamp_basis": "The booking engine prints no time stamp on the quote. retrieved_on is the date the engine was read; retrieved_at_utc, where present, is the moment the fetch was made, from that session's log.",
    "cancellation_note": "Prepaid offers are non-cancellable and non-refundable; the official hotel terms print no fixed free-cancellation deadline for a general (non-prepaid) rate."
   },
   {
@@ -61,6 +62,7 @@
    "source": "https://www.venetianlasvegas.com/book",
    "retrieved_on": "2026-11-17",
    "logged_on_date": "2026-11-17",
+   "timestamp_basis": "The booking engine prints no time stamp on the quote. retrieved_on is the date the engine was read; retrieved_at_utc, where present, is the moment the fetch was made, from that session's log.",
    "cancellation_note": "Official hotel terms: check-in 3:00-11:59 p.m., check-out 11:00 a.m.; prepaid offers are non-cancellable. No fixed free-cancellation deadline is printed for a general rate.",
    "trip_window": "Venetian DeepStack Extravaganza IV finale (Dec 13-23)",
    "engine_quote": "Average Rate $298.54; Taxes $279.63; Total $2,369.38 for 7 nights"
@@ -94,6 +96,7 @@
    "source": "https://www.venetianlasvegas.com/book",
    "retrieved_on": "2026-11-17",
    "logged_on_date": "2026-11-17",
+   "timestamp_basis": "The booking engine prints no time stamp on the quote. retrieved_on is the date the engine was read; retrieved_at_utc, where present, is the moment the fetch was made, from that session's log.",
    "cancellation_note": "Official hotel terms: prepaid offers are non-cancellable and non-refundable; no fixed free-cancellation deadline is printed for a general rate.",
    "trip_window": "Venetian DeepStack Extravaganza NYE / MSPT $400K (Jan 1-10)",
    "engine_quote": "Average Rate $804.25; Taxes $538.05; Total $4,559.30 for 5 nights"
@@ -127,6 +130,7 @@
    "source": "https://www.venetianlasvegas.com/book",
    "retrieved_on": "2026-11-17",
    "logged_on_date": "2026-11-17",
+   "timestamp_basis": "The booking engine prints no time stamp on the quote. retrieved_on is the date the engine was read; retrieved_at_utc, where present, is the moment the fetch was made, from that session's log.",
    "cancellation_note": "Official hotel terms: prepaid offers are non-cancellable and non-refundable; no fixed free-cancellation deadline is printed for a general rate.",
    "trip_window": "Venetian NYE finale (Jan 10) and Wynn Signature Series opening (Jan 11)",
    "engine_quote": "Average Rate $282.25; Taxes $188.83; Total $1,600.08 for 5 nights"
@@ -157,6 +161,8 @@
    "source": "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date=2026-11-18&children[]=0&departure_date=2026-11-20&view=calendar",
    "retrieved_on": "2026-11-17",
    "logged_on_date": "2026-11-17",
+   "timestamp_basis": "The booking engine prints no time stamp on the quote. retrieved_on is the date the engine was read; retrieved_at_utc, where present, is the moment the fetch was made, from that session's log.",
+   "retrieved_at_utc": "2026-11-17T00:35Z (approximate: the time the fetch was made, from that session's log - the engine itself prints no time stamp)",
    "cancellation_note": "Official hotel terms: prepaid offers are non-cancellable and non-refundable; no fixed free-cancellation deadline is printed for a general rate.",
    "engine_quote": "Average Rate $419.25; Taxes $112.19; Total $950.69 for 2 nights",
    "note": "Read by the parallel session on 2026-11-17. Arithmetic checked in this build: 204.25 + 524.25 + 2 x 55 = 838.50, and 13.38% of 838.50 = 112.19."

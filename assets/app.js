@@ -575,10 +575,86 @@
   }
 
   PAGES.singleEntry = function () {
-    getJSON("data/tournaments.json").then(function (d) {
-      var rows = d.rows.filter(function (r) { return r.entry_status === "SE" || r.entry_status === "CAND"; });
+    Promise.all([getJSON("data/tournaments.json"), getJSON("data/schedule.json")]).then(function (res) {
+      var d = res[0];
+      var rows = res[0].rows.filter(function (r) { return r.entry_status === "SE" || r.entry_status === "CAND"; });
+      var sched = res[1];
       var main = document.getElementById("content");
       var count = document.getElementById("count");
+
+      /* ---- Trip diary -------------------------------------------------------
+         One row per day that actually holds a verified single-entry event: the
+         event chosen as that day's primary, the conditional fallback behind it,
+         and - the thing that decides whether the fallback is real - the last
+         moment registration closes as the official sheet prints it. Nothing here
+         is a forecast: a finish is an estimate and is labelled as one, and where
+         two events cannot be compared at all, this says so instead of pairing
+         them up. */
+      var byId = {};
+      res[0].rows.forEach(function (r) { byId[r.id] = r; });
+      var days = sched.days.filter(function (d) { return d.primary_id; });
+
+      function regLine(o) {
+        if (!o) return "";
+        var parts = [];
+        if (o.late_reg_close) parts.push("registration closes " + esc(o.late_reg_close));
+        var row = byId[o.id] || {};
+        if (row.late_reg_text) parts.push('"' + esc(row.late_reg_text) + '"');
+        return parts.length ? " · " + parts.join(" · ") : "";
+      }
+
+      function dayLine(o, isPrimary, isSequence) {
+        if (!o) return "";
+        var finish = o.est_end_label || o.est_end;
+        var lead = isPrimary ? "Play"
+          : (isSequence ? "Then play" : "Only if you bust out or finish early");
+        return "<li><strong>" + lead + "</strong> · " +
+          timeFmt(o.start) + " · " + esc(o.name) + " · " + money(o.buy_in_usd) +
+          (o.guarantee_usd ? " · GTD " + money(o.guarantee_usd) : (o.prize_text ? " · " + esc(o.prize_text) : "")) +
+          regLine(o) +
+          (finish ? " · estimated finish about " + endFmt(finish) : " · no finish estimate published") +
+          ' · <a href="' + esc(o.source) + '" target="_blank" rel="noopener">source</a></li>';
+      }
+
+      var diary = document.createElement("div");
+      diary.id = "trip-diary";
+      diary.innerHTML =
+        '<h2>Trip diary &mdash; one line per playable day</h2>' +
+        '<p class="small">' + days.length + ' of the ' + sched.days.length +
+        ' dates in this dataset hold at least one verified single-entry event. Each line names the ' +
+        "event chosen as that day's primary and, where one is printed, the later single-entry event on " +
+        "the same date &mdash; labelled either a sequence that can be planned or a chance that depends " +
+        "on being eliminated in time. " +
+        "<strong>Under the published level structures, no day's primary is estimated to finish before " +
+        "another single-entry event on that date starts</strong>, so " +
+        sched.days.filter(function (d) { return d.fallback_id; }).length +
+        " of these dates offer a true two-event sequence. The " +
+        sched.days.filter(function (d) { return d.second_entry_id; }).length +
+        " dates marked <em>second entry</em> are different: a second single-entry event is printed on " +
+        "the same date, but the primary may still be running when it starts, so entering it is a " +
+        "chance that depends on being eliminated in time, not a plan. Each line prints the " +
+        "registration deadline that decides it. Finish times are <em>estimates</em> computed from the " +
+        "printed structure, never official finish times, and " + sched.undecidable_total +
+        " same-day pairs cannot be checked at all because the sheet prints a level length with no " +
+        "level count.</p>";
+      var list = document.createElement("ul");
+      list.className = "diary";
+      list.innerHTML = days.map(function (d) {
+        var prim = d.events.filter(function (o) { return o.id === d.primary_id; })[0];
+        var fb = d.events.filter(function (o) {
+          return o.id === (d.fallback_id || d.second_entry_id);
+        })[0];
+        var fbIsSequence = !!d.fallback_id;
+        return '<li class="card"><h3>' + dateFmt(d.date) + "</h3><ul>" +
+          dayLine(prim, true) + dayLine(fb, false, fbIsSequence) + "</ul>" +
+          (fbIsSequence
+            ? (d.fallback_note ? '<p class="small muted">' + esc(d.fallback_note) + "</p>" : "")
+            : (d.second_entry_note ? '<p class="small muted">' + esc(d.second_entry_note) + "</p>" : "")) +
+          "</li>";
+      }).join("");
+      diary.appendChild(list);
+      main.parentNode.insertBefore(diary, main);
+
       var filters = tournamentFilters(document.getElementById("filters"), rows, { strict:true, upcoming:true });
       var tbl = table(main, rows, tournamentColumns(true), {
         sortKey: "date", sortDir: 1, predicate: filters.matches, countEl: count
@@ -649,22 +725,35 @@
         var todays = daily.filter(function (x) { return dayRuns(x.days, d); });
         return '<div class="slot"><div class="d">' + d + "</div>" + (todays.length
           ? todays.map(function (x) {
-              return '<div class="t">' + timeFmt(x.start) + "</div><div class='small'>" + esc(x.name) +
+              return '<div class="t">' + timeFmt(x.start) + "</div><div class='small'><strong>" +
+                esc(x.room || "") + "</strong><br>" + esc(x.name) +
                 "<br>" + money(x.buy_in_usd) + " · GTD " + money(x.guarantee_usd) + "</div>";
             }).join("<hr>")
           : "<div class='small muted'>No daily format published for this weekday.</div>") + "</div>";
       }).join("") + "</div>";
       main.innerHTML = "<h2>Weekly format map</h2>" + calendar + "<h2>Published formats</h2>";
+      function regCell(r) {
+        if (r.late) return timeFmt(r.late) + '<br><span class="small muted">printed on the sheet</span>';
+        return '<span class="muted">no clock time printed</span><br><span class="small">' +
+          "closes at level " + esc(r.late_reg_level) + "<br>" + esc(r.late_reg_text || "") + "</span>";
+      }
       var cols = [
-        { id: "name", label: "Format", key: "name", html: function (r) { return "<strong>" + esc(r.name) + "</strong><br><span class='small'>" + esc(r.days) + "</span>"; } },
+        { id: "room", label: "Room", key: "room", html: function (r) { return "<strong>" + esc(r.room || "") + "</strong>"; } },
+        { id: "name", label: "Format", key: "name", html: function (r) { return "<strong>" + esc(r.name) + "</strong><br><span class='small'>" + esc(r.days) + "</span>" + (r.note_extra ? "<br><span class='small'>" + esc(r.note_extra) + "</span>" : ""); } },
         { id: "start", label: "Start", key: "start", html: function (r) { return timeFmt(r.start); } },
         { id: "buy", label: "Buy-in", key: "buy_in_usd", num: true, html: function (r) { return money(r.buy_in_usd); } },
         { id: "gtd", label: "Guarantee", key: "guarantee_usd", num: true, html: function (r) { return money(r.guarantee_usd); } },
         { id: "status", label: "Entry rule", key: "status", html: function (r) { return statusChip(r.status); } },
-        { id: "late", label: "Registration closes", key: "late", html: function (r) { return timeFmt(r.late); } },
+        { id: "late", label: "Registration closes", key: "late", html: regCell },
         { id: "levels", label: "Levels × minutes", key: "levels", num: true, html: function (r) { return r.levels + " × " + r.lmin + " min"; } },
         { id: "fee", label: "Fee split", key: "fee", sort: null, html: function (r) { return "<span class='small'>" + esc(r.fee) + "</span>"; } },
-        { id: "ex", label: "Rule excerpt", key: "ex", sort: null, html: function (r) { return "<span class='small'>" + esc(r.ex) + "<br>" + esc(r.stack || "") + "</span>"; } }
+        { id: "ex", label: "Rule excerpt", key: "ex", sort: null, html: function (r) { return "<span class='small'>" + esc(r.ex) + "<br>" + esc(r.stack || "") + (r.flags ? "<br><span class='chip warn'>" + esc(r.flags[0]) + "</span>" : "") + "</span>"; } },
+        { id: "src", label: "Source document", key: "source", sort: null, html: function (r) {
+            var out = '<a href="' + esc(r.source) + '" target="_blank" rel="noopener">official document</a>';
+            if (r.page) out += '<br><a href="' + esc(r.page) + '" target="_blank" rel="noopener">official poker page</a>';
+            if (r.document_url) out += '<br><span class="small">' + esc(r.document_url) + "</span>";
+            return '<span class="small">' + out + "</span>";
+          } }
       ];
       cols.push({id:"checked",label:"Last checked",html:function(){return esc(res[0].verified_on);}}, {id:"source",label:"Sources",html:function(){return srcLinks(res[0].sources);}});
       table(main, daily, cols, { sortKey: "start", sortDir: 1 });
@@ -673,7 +762,8 @@
       if (note) {
         note.innerHTML = "<strong>Series dates that can suspend the daily schedule:</strong> " +
           esc(susp.length) + " Wynn rows are published between 2026-11-27 and 2027-01-24 " +
-          "(WPT World Championship and Wynn Signature Series). Check the " +
+          "(WPT World Championship and Wynn Signature Series), which is when Wynn says its daily "
+          + "schedule is suspended. Check the " +
           '<a href="' + BASE + 'pages/schedule.html">schedule</a> before planning around a daily format.';
       }
     }).catch(showErr);
@@ -685,6 +775,18 @@
       var main = document.getElementById("content");
       document.getElementById("note").textContent = sched.note;
       document.getElementById("earliest").textContent = timeFmt(sched.earliest_listed_start);
+      var kpi = document.getElementById("overlap-kpi");
+      if (kpi) {
+        var seqDays = sched.days.filter(function (d) { return d.fallback_id; }).length;
+        var chanceDays = sched.days.filter(function (d) { return d.second_entry_id; }).length;
+        kpi.textContent = sched.conflicts_total + " overlapping pair(s) flagged across the " +
+          sched.days.length + " dates, and " + sched.undecidable_total +
+          " pair(s) that cannot be checked because an event publishes no level structure. " +
+          seqDays + " date(s) offer two events that can genuinely be played in sequence; " +
+          chanceDays + " further date(s) print a second single-entry event that the primary may " +
+          "still be running when it starts, so those are shown as a conditional second entry, " +
+          "never as a sequence.";
+      }
 
       var byId = {};
       rows.forEach(function (r) { byId[r.id] = r; });
@@ -754,6 +856,8 @@
             : "";
           var fallback = day.fallback_note
             ? '<div class="small muted">' + esc(day.fallback_note) + "</div>" : "";
+          var second = day.second_entry_note
+            ? '<div class="small muted">' + esc(day.second_entry_note) + "</div>" : "";
           return '<div class="card day" id="day-' + day.date + '"><h3>' + dateFmt(day.date) + "</h3><ul>" + list +
             "</ul>" + conflicts + altBox + fallback + "</div>";
         }).join("");
@@ -800,6 +904,23 @@
         { id: "tax", label: "Room tax", key: "clark_county_tax_pct", num: true, html: function (r) { return (r.clark_county_tax_pct == null ? '<span class="muted">Unverified</span>' : r.clark_county_tax_pct + "%") + " " + chip(r.tax_status) + "<br><span class='small'>" + esc(r.tax_note) + "</span>"; } },
         { id: "parking", label: "Parking / day", key: "parking_usd_per_day", num: true, html: function (r) { return money(r.parking_usd_per_day) + "<br><span class='small'>" + esc(r.parking_note) + "</span>"; } },
         { id: "cancel", label: "Cancellation / check-in", key: "cancellation_note", sort: null, html: function (r) { return "<span class='small'>" + esc(r.cancellation_note) + "<br><br>" + esc(r.check_in_out) + "</span>"; } },
+        { id: "book", label: "Official booking link", key: "booking_url", sort: null,
+          html: function (r) {
+            var url = r.booking_url;
+            var a = dFrom.value, b = dTo.value;
+            if (a && b && BOOKING[r.id]) {
+              url = BOOKING[r.id].replace("%s", a).replace("%s", b);
+              return '<a href="' + esc(url) + '" target="_blank" rel="noopener">open these dates on the '
+                + "official engine</a><br><span class='small'>The date parameters are the pattern the "
+                + "official engine served for the logged quote in the rate log.</span>";
+            }
+            return '<a href="' + esc(url) + '" target="_blank" rel="noopener">official booking page</a>'
+              + '<br><span class="small">' + (a && b
+                ? "This property's engine has no date-parameter pattern that an official page read "
+                  + "here confirms, so no dates are added to the link."
+                : "Pick arrival and departure dates above to build the dated link where the official "
+                  + "engine supports it.") + "</span>";
+          } },
         { id: "checked", label: "Last checked", key: "last_checked" },
         { id: "true", label: "True cost / night", key: "true_cost_per_night_usd", num: true, html: function (r) { return r.true_cost_per_night_usd == null ? '<span class="muted">blank (rate unverified)</span>' : money(r.true_cost_per_night_usd); } },
         { id: "park", label: "Parking / night", key: "parking_usd_per_day", num: true,
@@ -833,6 +954,32 @@
       ];
 
       /* filter bar: the ≤30-minute walking rule and a text box across every column */
+      /* Official booking links for the dates you pick. Only the Venetian/Palazzo engine
+         has a date-parameter pattern that was actually read on an official page and is
+         recorded in the source manifest, so only that one carries the dates; the others
+         link their own booking page with no invented parameters. */
+      var BOOKING = {
+        venetian: "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date=%s&children[]=0&departure_date=%s&view=calendar",
+        palazzo: "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date=%s&children[]=0&departure_date=%s&view=calendar"
+      };
+      var dates = document.createElement("div");
+      dates.className = "toolbar";
+      var dFrom = document.createElement("input");
+      dFrom.type = "date"; dFrom.id = "stay-from";
+      var dTo = document.createElement("input");
+      dTo.type = "date"; dTo.id = "stay-to";
+      var bookNote = document.createElement("span");
+      bookNote.className = "small";
+      [["Arrival", dFrom], ["Departure", dTo]].forEach(function (pair) {
+        var l = document.createElement("label");
+        l.textContent = pair[0];
+        l.style.marginRight = "4px";
+        dates.appendChild(l);
+        dates.appendChild(pair[1]);
+      });
+      dates.appendChild(bookNote);
+      main.appendChild(dates);
+
       var bar = document.createElement("div");
       bar.className = "toolbar";
       var q = document.createElement("input");
@@ -856,6 +1003,22 @@
         }
       });
       walk30.addEventListener("change", handle.redraw);
+      function refreshBooking() {
+        if (dFrom.value && dTo.value) {
+          bookNote.textContent = "Showing official booking links for " + dateFmt(dFrom.value) +
+            " to " + dateFmt(dTo.value) + ". Nothing is priced here: a rate is only published on "
+            + "this site when the engine printed a checkout total, and every such quote is in the "
+            + "dated rate log below with the date it was read.";
+        } else {
+          bookNote.textContent = "Pick arrival and departure dates to open each property's own "
+            + "booking engine on those dates. Rates are never estimated here - the true cost per "
+            + "night is only ever the engine's own checkout total divided by the nights.";
+        }
+        handle.redraw();
+      }
+      dFrom.addEventListener("change", refreshBooking);
+      dTo.addEventListener("change", refreshBooking);
+      refreshBooking();
 
       var w = document.getElementById("walking");
       if (w) {
@@ -867,8 +1030,9 @@
           "is involved. The 30-minute rule is applied to every routed time: rows over it stay in the table, " +
           "flagged, so nothing is hidden.</p>";
         var wcols = [
-          { id: "hotel", label: "Hotel", key: "hotel" },
-          { id: "venue", label: "Venue", key: "venue" },
+          { id: "hotel", label: "Hotel", key: "hotel_name", html: function (r) { return "<strong>" + esc(r.hotel_name || r.hotel) + "</strong>"; } },
+          { id: "venue", label: "Poker room", key: "venue", html: function (r) {
+              return esc(r.venue) + (r.destination ? '<br><span class="small">' + esc(r.destination) + "</span>" : ""); } },
           { id: "minutes", label: "Minutes", key: "minutes", num: true, html: function (r) { return r.minutes == null ? '<span class="muted">internal</span>' : r.minutes + (r.within_30_min === false ? ' <span class="chip bad">over 30</span>' : ' <span class="chip ok">within 30</span>'); } },
           { id: "metres", label: "Metres", key: "metres", num: true },
           { id: "status", label: "Status", key: "status" },
@@ -1103,7 +1267,7 @@
       if (wsec && wk.length) {
         wsec.innerHTML = "<h2>Walking records</h2>";
         table(wsec, wk, [
-          { id: "hotel", label: "Hotel", key: "hotel" },
+          { id: "hotel", label: "Hotel", key: "hotel_name", html: function (r) { return "<strong>" + esc(r.hotel_name || r.hotel) + "</strong>"; } },
           { id: "from", label: "From", key: "from", sort: null },
           { id: "minutes", label: "Minutes", key: "minutes", num: true, html: function (r) { return r.minutes == null ? '<span class="muted">unverified</span>' : r.minutes; } },
           { id: "note", label: "Note", key: "note", sort: null, html: function (r) { return "<span class='small'>" + esc(r.note) + "</span>"; } },
@@ -1169,7 +1333,7 @@
           });
         var hitW = walking.filter(function (w) { return JSON.stringify(w).toLowerCase().indexOf(q) >= 0; })
           .map(function (w) {
-            return '<div class="result"><div class="title">' + esc(w.hotel) + " → " + esc(w.venue) + "</div><div class='meta'>walking record · <a href='" + BASE + "pages/hotels.html'>hotels</a></div></div>";
+            return '<div class="result"><div class="title">' + esc(w.hotel_name || w.hotel) + " → " + esc(w.venue) + " poker room</div><div class='meta'>walking · " + esc(w.destination || "") + " · <a href='" + BASE + "pages/hotels.html'>hotels</a></div></div>";
           });
         var hitR = rates.filter(function (r) { return JSON.stringify(r).toLowerCase().indexOf(q) >= 0; })
           .map(function (r) {
@@ -1326,8 +1490,10 @@
     return function () {
       getText(file).then(function (t) {
         // The page template already prints the page <h1>. Drop a leading "# Title" line from
-        // the document so a markdown-backed page does not show its title twice.
-        t = t.replace(/^\s*#\s+[^\r\n]*\r?\n/, "");
+        // the document so a markdown-backed page does not show its title twice. The looser
+        // pattern matters: a document whose heading has no space after the "#" was still
+        // rendering two stacked titles, and the smoke test now fails on more than one <h1>.
+        t = t.replace(/^\s*#[^\r\n]*\r?\n+/, "");
         document.getElementById("content").innerHTML = '<div class="md">' + renderMarkdown(t) + "</div>";
       }).catch(showErr);
     };
