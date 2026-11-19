@@ -75,7 +75,10 @@ KNOWN_PAGES = {"index", "singleEntry", "separate", "unverified", "daily", "hotel
                "flagged", "review", "strips",
                # Session 0d069ce0: pages/other-rooms.html. Registered here because the page-link
                # check rejects any data-page outside this set. One line, no other change.
-               "otherRooms", "roomProfile"}
+               "otherRooms", "roomProfile",
+               # Session 97fc7805: pages/payouts.html. Registered here because the page-link
+               # check rejects any data-page outside this set. One line, no other change.
+               "payouts"}
 
 
 def load_json(rel):
@@ -898,6 +901,169 @@ for rel in pages:
                 anchor_parser.feed(re.sub(r"<script\b[^>]*>[\s\S]*?</script\s*>", "", target_page, flags=re.IGNORECASE))
                 if unquote(parsed.fragment) not in anchor_parser.ids:
                     problems.append(f"{rel}: broken fragment link {href}")
+
+
+# --- Payout clauses (session 97fc7805 / S18): a published quote must re-derive
+# from the exact snapshot lines it claims, the archived sheets must all be
+# covered, and pages/payouts.html must agree with the data about every row.
+# scripts/extract_payouts.py writes the quotes; nothing here trusts it.
+import payout_rows as payout_map  # noqa: E402  scripts/ is sys.path[0] when run as a script
+
+payout_doc = load_json("data/payouts.json")
+payout_docs = []
+if isinstance(payout_doc, dict) and isinstance(payout_doc.get("documents"), list):
+    payout_docs = payout_doc["documents"]
+else:
+    problems.append("data/payouts.json: expected an object with a documents list")
+
+payout_ids = set()
+for index, doc in enumerate(payout_docs, 1):
+    where = f"data/payouts.json document {index}"
+    if not isinstance(doc, dict):
+        problems.append(f"{where}: must be an object")
+        continue
+    doc_id = doc.get("id")
+    if not isinstance(doc_id, str) or not doc_id:
+        problems.append(f"{where}: missing non-empty id")
+        continue
+    if doc_id in payout_ids:
+        problems.append(f"data/payouts.json: duplicate document id {doc_id!r}")
+        continue
+    payout_ids.add(doc_id)
+    if doc.get("kind") not in payout_map.DOCUMENT_KINDS:
+        problems.append(f"{where} {doc_id}: unsupported kind {doc.get('kind')!r}")
+    snapshot = doc.get("snapshot")
+    snap_lines = None
+    if not isinstance(snapshot, str) or not snapshot.startswith("data/snapshots/"):
+        problems.append(f"{where} {doc_id}: snapshot must be a data/snapshots/ path")
+    else:
+        snap_path = os.path.join(ROOT, snapshot)
+        if not os.path.isfile(snap_path):
+            problems.append(f"{where} {doc_id}: snapshot file missing: {snapshot}")
+        else:
+            with open(snap_path, encoding="utf-8") as stream:
+                snap_lines = stream.read().split("\n")
+    check_official_https_url(doc.get("source_url"), f"{where} {doc_id} source_url")
+    clauses = doc.get("clauses")
+    if not isinstance(clauses, list):
+        problems.append(f"{where} {doc_id}: clauses must be a list")
+        continue
+    for c_index, clause in enumerate(clauses, 1):
+        cwhere = f"{where} {doc_id} clause {c_index}"
+        if not isinstance(clause, dict):
+            problems.append(f"{cwhere}: must be an object")
+            continue
+        if clause.get("kind") not in payout_map.CLAUSE_KINDS:
+            problems.append(f"{cwhere}: unsupported kind {clause.get('kind')!r}")
+        line = clause.get("line")
+        count = clause.get("line_count")
+        text = clause.get("text")
+        if not isinstance(line, int) or isinstance(line, bool) or line < 1:
+            problems.append(f"{cwhere}: line must be a positive integer")
+            continue
+        if not isinstance(count, int) or isinstance(count, bool) or count < 1:
+            problems.append(f"{cwhere}: line_count must be a positive integer")
+            continue
+        if not isinstance(text, str) or not text.strip():
+            problems.append(f"{cwhere}: text must be non-empty")
+            continue
+        if snap_lines is None:
+            continue
+        source_slice = snap_lines[line - 1:line - 1 + count]
+        if len(source_slice) != count:
+            problems.append(f"{cwhere}: line range {line}+{count} runs past the snapshot")
+            continue
+        if clause.get("raw"):
+            if "\n".join(source_slice) != text:
+                problems.append(
+                    f"{cwhere}: raw quote does not match snapshot lines "
+                    f"{line}-{line + count - 1}")
+        else:
+            if payout_map.normalise(text) not in payout_map.normalise("\n".join(source_slice)):
+                problems.append(
+                    f"{cwhere}: quote not found in snapshot lines "
+                    f"{line}-{line + count - 1}")
+
+# Every archived sheet-style snapshot must be covered by exactly one document,
+# and the WPT structures PDF by one document per structure block.
+_snapshot_dir = os.path.join(ROOT, "data", "snapshots")
+expected_payout_docs = set()
+for _name in sorted(os.listdir(_snapshot_dir)):
+    if not _name.endswith(".txt"):
+        continue
+    if re.match(r"v_(nov|dec)_struct_\d+\.txt$", _name) or _name in (
+            "b_fri_pdf.txt", "b_sat_pdf.txt", "b_sun_pdf.txt", "c_daily_flyer.txt"):
+        expected_payout_docs.add(_name[:-4])
+for _doc_id in sorted(expected_payout_docs - payout_ids):
+    problems.append(f"data/payouts.json: no document for archived snapshot {_doc_id}")
+_wpt_blocks_doc = load_json("data/wpt_struct_blocks.json")
+expected_wpt_ids = set()
+if isinstance(_wpt_blocks_doc, list):
+    for _block in _wpt_blocks_doc:
+        if isinstance(_block, dict) and isinstance(_block.get("block"), int):
+            expected_wpt_ids.add("wpt-block-%02d" % _block["block"])
+for _doc_id in sorted(expected_wpt_ids - payout_ids):
+    problems.append(f"data/payouts.json: no document for WPT {_doc_id}")
+_known_ids = expected_payout_docs | expected_wpt_ids
+for _doc_id in sorted(payout_ids - _known_ids):
+    problems.append(f"data/payouts.json: unexpected document id {_doc_id!r}")
+
+# The structure matcher's rows point at blocks; each block needs its document.
+_matched_doc = load_json("data/wpt_row_sheets.json")
+if isinstance(_matched_doc, dict):
+    for _row_id, _info in (_matched_doc.get("matched") or {}).items():
+        _block = _info.get("block") if isinstance(_info, dict) else None
+        if isinstance(_block, int) and ("wpt-block-%02d" % _block) not in payout_ids:
+            problems.append(
+                f"data/payouts.json: no document for structure block {_block} "
+                f"(matched row {_row_id})")
+
+# --- the published page must agree with the data, row for row, and every row
+# must carry an official https link (the standing row-level source rule).
+payout_page_path = os.path.join(ROOT, "pages", "payouts.html")
+if not os.path.isfile(payout_page_path):
+    problems.append("pages/payouts.html: missing; run scripts/build_site.py")
+else:
+    with open(payout_page_path, encoding="utf-8") as stream:
+        payout_page = stream.read()
+    payout_page_rows = list(re.finditer(
+        r'<tr data-row="([^"]+)" data-status="([^"]+)">(.*?)</tr>',
+        payout_page, flags=re.DOTALL))
+    page_status_by_id = {}
+    for match in payout_page_rows:
+        row_id, status, body = match.group(1), match.group(2), match.group(3)
+        if row_id in page_status_by_id:
+            problems.append(f"pages/payouts.html: row {row_id} published twice")
+        page_status_by_id[row_id] = status
+        if status not in payout_map.STATUSES:
+            problems.append(f"pages/payouts.html: row {row_id}: unknown status {status!r}")
+        if 'href="https://' not in body:
+            problems.append(f"pages/payouts.html: row {row_id}: no official https source link")
+        if status in ("published", "composition-only", "sheet-silent") and \
+                "data/snapshots/" not in body:
+            problems.append(
+                f"pages/payouts.html: row {row_id}: status {status!r} needs its "
+                f"snapshot line evidence")
+    _payout_bundle = payout_map.load_bundle(ROOT)
+    expected_status_by_id = {}
+    for _row in tournament_rows:
+        if isinstance(_row, dict) and _row.get("id"):
+            expected_status_by_id[_row["id"]] = payout_map.classify_tournament_row(
+                _row, _payout_bundle)["status"]
+    for _row in daily_rows:
+        if isinstance(_row, dict) and _row.get("id"):
+            expected_status_by_id[_row["id"]] = payout_map.classify_daily_row(
+                _row, _payout_bundle)["status"]
+    for _row_id, _status in sorted(expected_status_by_id.items()):
+        if _row_id not in page_status_by_id:
+            problems.append(
+                f"pages/payouts.html: row {_row_id} is missing (expected {_status})")
+        elif page_status_by_id[_row_id] != _status:
+            problems.append(
+                f"pages/payouts.html: row {_row_id}: published status "
+                f"{page_status_by_id[_row_id]!r} != data status {_status!r}")
+    for _row_id in sorted(set(page_status_by_id) - set(expected_status_by_id)):
+        problems.append(f"pages/payouts.html: unknown row {_row_id!r}")
 
 
 # --- Strip-room survey (data/strip_rooms.json): official-only fields, dated, sourced, flagged when unconfirmed.

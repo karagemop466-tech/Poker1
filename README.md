@@ -19,6 +19,11 @@ Live site: https://karagemop466-tech.github.io/Poker1/
     replace the primary (never add to it), and every overlap the published ceilings actually support.
     Finish times are compared in absolute minutes, not clock strings, and a finish crossing midnight is
     labelled "the next day"; `scripts/check_links.py` fails the build if either rule is broken.
+  - `payouts.html` - every row's payout rule quoted line by line from the archived official
+    structure documents, with the snapshot lines behind each quote. A document that prints no
+    payout rule says so explicitly (composition only, sheet prints no rule, placeholder sheet,
+    not mapped, no sheet, source not captured); nothing is inferred. `scripts/check_links.py`
+    re-derives every quote from its recorded snapshot lines on each build and fails on a mismatch.
   - `hotels.html` - resort fees, room-rate status, walking records and the dated rate log.
   - `calculator.html` - trip cost = entries x buy-in + nights x true hotel cost + parking + other, from
     dated official-engine quotes, with what the chosen stay window holds.

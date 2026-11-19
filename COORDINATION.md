@@ -2348,3 +2348,22 @@ registry.npmjs.org / pypi.org / files.pythonhosted.org. No official operator pag
 here, so no row value, source or `last_checked` is changed; all payout text comes from the
 official-document snapshots already in `data/snapshots/` (fetched by the scheduled GitHub Actions
 monitors), each excerpt re-checked against its snapshot by the new validator.
+
+**Takeover recorded (2026-11-19 ~12:40Z):** session `957764d3`'s claim (PR #110) passed the
+board's staleness rule — last commit 11:15:40Z, >80 minutes with no commits at 12:37Z — and its
+deliverables had landed on main by other routes (P8 per-row source-change marks via PR #106 with
+`scripts/check_source_badges.js`, PR #96 merged as `6feacad`, PR #98 dispositioned and closed).
+PR #110 was closed as superseded; its remaining delta was an older duplicate P8 plus files main
+had since rewritten. The freed file scope (`assets/app.js`, `scripts/build_site.py`,
+`scripts/check_links.py`, `README.md`, `SUGGESTIONS.md`, `pages/*.html`) is taken over by session
+`97fc7805` for the S18 payout-transparency page. No other session's unmerged work was discarded.
+
+**Build status (2026-11-19 ~12:40Z):** `scripts/extract_payouts.py` + `data/payouts.json`
+committed earlier as `f0d2a74` (125 documents, 224 clauses, every clause round-trips against its
+snapshot lines). The page layer is built and validated locally: `scripts/payout_rows.py` (shared
+row-to-document mapping), `pages/payouts.html` (317 tournament rows + 11 daily formats + the
+Caesars flyer's printed matrix), the `check_links.py` payout block (quote round-trip, snapshot
+coverage, page-vs-data status agreement, official-link-per-row), README/SUGGESTIONS updates, and
+the app.js renderer + NAV line. Local suite: check_links OK (31 pages), verify_rows OK,
+verify_against_snapshots OK, check_schedule OK, npm test 31/31 pages and 1,662 rendered links
+with 0 broken. Commit + PR follow on this branch.

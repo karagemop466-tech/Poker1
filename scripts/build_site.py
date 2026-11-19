@@ -80,12 +80,12 @@ PAGES = {
 <article class="path"><span class="eyebrow">01 &nbsp; / &nbsp; TOURNAMENTS</span><h3>Check the entry rules</h3><p>Separate a written freezeout from a silent sheet or an event selling more chips.</p><a href="pages/single-entry.html">Freezeout shortlist →</a><a href="pages/separate-section.html">Multiple-entry events</a><a href="pages/unverified.html">Missing rules</a></article>
 <article class="path"><span class="eyebrow">02 &nbsp; / &nbsp; SCHEDULE</span><h3>Build a realistic day</h3><p>Compare registration deadlines and conflicts. An alternative replaces the primary; it is not another seat.</p><a href="pages/schedule.html">Day-by-day schedule →</a><a href="pages/daily.html">Morning feed</a><a href="pages/venues.html">Browse venues</a></article>
 <article class="path"><span class="eyebrow">03 &nbsp; / &nbsp; LODGING</span><h3>Price the whole trip</h3><p>Use exact dates, occupancy, taxes and mandatory fees. Check the walking route before comparing prices.</p><a href="pages/calculator.html">Trip cost calculator →</a><a href="pages/hotels.html">Hotels and dated rates</a><a href="pages/other-rooms.html">Nearby rooms</a></article></div>
-<h2>Decision desk</h2><div class="desk"><a href="pages/questions.html">Open questions</a><a href="pages/suggestions.html">Suggestions</a><a href="pages/monitoring.html">Change monitor</a><a href="pages/flagged.html">Flagged for review</a><a href="pages/strip-rooms.html">Strip survey</a><a href="pages/review.html">Source audit</a></div>
+<h2>Decision desk</h2><div class="desk"><a href="pages/questions.html">Open questions</a><a href="pages/suggestions.html">Suggestions</a><a href="pages/payouts.html">Payout rules</a><a href="pages/monitoring.html">Change monitor</a><a href="pages/flagged.html">Flagged for review</a><a href="pages/strip-rooms.html">Strip survey</a><a href="pages/review.html">Source audit</a></div>
 """),
     "pages/single-entry.html": ("Single entry", "singleEntry", """
 <h1>Freezeout shortlist</h1>
 <p class="lead">Only written whole-event rules qualify. There are no confirmed rows in this snapshot. Switch off “Written freezeout confirmed” to inspect candidates by date. Today and later uses Las Vegas dates and includes today’s earlier starts; clear it to inspect past events. A silent sheet is not a prohibition.</p>
-<div class="card callout">Guarantee ÷ total entry fee describes the advertised pool, not expected winnings. Bounty prizes and satellite seats are not comparable to ordinary cash payouts.</div>
+<div class="card callout">Guarantee ÷ total entry fee describes the advertised pool, not expected winnings. Bounty prizes and satellite seats are not comparable to ordinary cash payouts. <a href="payouts.html">Every sheet's printed payout rule, line by line →</a></div>
 """ + FILTERS + """
 <div class="toolbar"><span class="small">""" + COUNT + """</span></div>
 <div id="content"></div>
@@ -207,6 +207,303 @@ for room in survey["rooms"]:
     PAGES["pages/" + rel] = (name, "roomProfile", f'<h1>{name}</h1><div id="content" data-room="{slug}"></div>')
 vt, vp, vb = PAGES["pages/venues.html"]
 PAGES["pages/venues.html"] = (vt, vp, vb + '<h2>Additional room profiles</h2><div class="desk">' + ' '.join(room_links) + '</div>')
+
+# --- Payout rules page (session 97fc7805 / S18 / P4) -----------------------
+# Fully static: every quote was extracted from the archived official snapshot
+# by scripts/extract_payouts.py, and scripts/check_links.py re-derives each
+# quote from its recorded snapshot lines on every build, so a quote that does
+# not appear in its snapshot fails the build instead of reaching the page.
+import payout_rows  # noqa: E402  scripts/ is sys.path[0] when run as a script
+
+payout_bundle = payout_rows.load_bundle(ROOT)
+
+with open(os.path.join(ROOT, "data", "tournaments.json"), encoding="utf-8") as _stream:
+    _payout_tournament_rows = json.load(_stream)["rows"]
+with open(os.path.join(ROOT, "data", "daily.json"), encoding="utf-8") as _stream:
+    _payout_daily_rows = json.load(_stream)["rows"]
+
+# Rows whose official source moved since the last scheduled re-check carry the
+# same badge the tournament tables print (data/changes.json).
+try:
+    with open(os.path.join(ROOT, "data", "changes.json"), encoding="utf-8") as _stream:
+        _payout_changed_ids = {entry.get("id")
+                               for entry in json.load(_stream).get("changed", [])}
+except (OSError, ValueError):  # noqa: PERF203 - badge is optional, page is not
+    _payout_changed_ids = set()
+
+
+def _payout_chip(status):
+    return '<span class="chip %s">%s</span>' % (
+        payout_rows.CHIP_CLASS[status], escape(payout_rows.STATUS_TEXT[status]))
+
+
+def _snapshot_rel(doc):
+    return os.path.relpath(os.path.join(ROOT, doc["snapshot"]),
+                           os.path.join(ROOT, "pages"))
+
+
+def _line_span(clause):
+    if clause["line_count"] == 1:
+        return "line %d" % clause["line"]
+    return "lines %d-%d" % (clause["line"], clause["line"] + clause["line_count"] - 1)
+
+
+def _quote_html(clause, doc):
+    text = escape(clause["text"]).replace("\n", "<br>")
+    return ('<div class="small" style="margin:4px 0">“%s” '
+            '<a href="%s">%s snapshot · %s</a></div>') % (
+        text, escape(_snapshot_rel(doc)), escape(doc["id"]), escape(_line_span(clause)))
+
+
+def _money(value):
+    if value in (None, ""):
+        return ""
+    if float(value) == int(value):
+        return "$" + format(int(value), ",d")
+    return "$" + format(value, ",.2f")
+
+
+def _mult(value):
+    if value in (None, ""):
+        return ""
+    text = format(value, ",.1f").rstrip("0").rstrip(".")
+    return text + "x"
+
+
+def _first_source_link(row):
+    sources = row.get("sources") or []
+    if not sources:
+        return ""
+    source = sources[0]
+    return '<a class="small" href="%s">%s</a>' % (
+        escape(str(source.get("url", ""))), escape(str(source.get("label", ""))[:90]))
+
+
+def _cited_structure_link(row):
+    for source in row.get("sources") or []:
+        if "structure" in str(source.get("label", "")).lower():
+            return '<a class="small" href="%s">structure PDF cited by the row</a>' % escape(
+                str(source.get("url", "")))
+    return ""
+
+
+def _payout_tr(row):
+    state = payout_rows.classify_tournament_row(row, payout_bundle)
+    status = state["status"]
+    badge = ('<br><span class="chip bad">source changed - re-check</span>'
+             if row.get("id") in _payout_changed_ids else "")
+    event = escape(row["name"]) + badge + "<br>" + _first_source_link(row)
+
+    rule_cell = _payout_chip(status)
+    for clause in state["rules"]:
+        rule_cell += _quote_html(clause, state["doc"])
+    comp_cell = ""
+    for clause in state["composition"]:
+        comp_cell += _quote_html(clause, state["doc"])
+    if not comp_cell:
+        comp_cell = '<span class="small">—</span>'
+
+    doc = state["doc"]
+    if doc:
+        spans = [_line_span(clause)
+                 for clause in state["rules"] + state["composition"]]
+        sheet = ('<a href="%s">Official structure document</a><br>'
+                 '<a class="small" href="%s">archived snapshot · %s</a>') % (
+            escape(doc["source_url"]), escape(_snapshot_rel(doc)),
+            escape(", ".join(dict.fromkeys(spans))))
+    elif status == "sheet-placeholder":
+        sheet = (_cited_structure_link(row) +
+                 '<br><span class="small">The official structures PDF on file '
+                 'prints only a COMING SOON placeholder, so no payout rule can '
+                 'be quoted from it.</span>')
+    elif status == "sheet-unmapped":
+        sheet = (_cited_structure_link(row) +
+                 '<br><span class="small">The row cites the structures PDF, but '
+                 'its printed title did not map to exactly one structure block. '
+                 'Not guessed.</span>')
+    else:
+        sheet = ('<span class="small">No structure sheet is linked on this row, '
+                 'so no payout rule is published for it. The official row source '
+                 'is linked under the event name.</span>')
+
+    labels = " · ".join(escape(str(label)) for label in (row.get("labels") or []))
+    return ('<tr data-row="%s" data-status="%s">'
+            '<td>%s</td>'
+            '<td>%s</td>'
+            '<td>%s</td>'
+            '<td>%s</td>'
+            '<td>%s</td>'
+            '<td>%s</td>'
+            '<td>%s</td>'
+            '<td>%s</td>'
+            '<td>%s</td>'
+            '<td>%s</td>'
+            '<td>%s</td>'
+            '<td><span class="small">%s</span></td>'
+            '</tr>') % (
+        escape(str(row.get("id", ""))), escape(status),
+        escape(row.get("date", "")),
+        escape(row.get("start", "")),
+        event,
+        escape(row.get("venue", "")),
+        _money(row.get("buy_in_usd")),
+        _money(row.get("guarantee_usd")),
+        _mult(row.get("gtd_multiple")),
+        labels or "—",
+        rule_cell,
+        comp_cell,
+        sheet,
+        escape(str(row.get("last_checked", ""))),
+    )
+
+
+def _daily_payout_tr(row):
+    state = payout_rows.classify_daily_row(row, payout_bundle)
+    status = state["status"]
+    rule_cell = _payout_chip(status)
+    for clause in state["rules"]:
+        rule_cell += _quote_html(clause, state["doc"])
+    for clause in state["composition"]:
+        rule_cell += ('<div class="small" style="margin:4px 0"><em>Composition:</em> “%s” '
+                      '<a href="%s">%s snapshot · %s</a></div>') % (
+            escape(clause["text"]).replace("\n", "<br>"),
+            escape(_snapshot_rel(state["doc"])), escape(state["doc"]["id"]),
+            escape(_line_span(clause)))
+
+    source_url = row.get("source_url") or row.get("source") or ""
+    source_label = row.get("source_label") or "Official source document"
+    source_cell = '<a href="%s">%s</a>' % (
+        escape(source_url), escape(source_label))
+    doc = state["doc"]
+    if doc:
+        spans = dict.fromkeys(_line_span(clause)
+                              for clause in state["rules"] + state["composition"])
+        source_cell += ('<br><a class="small" href="%s">archived snapshot · %s</a>') % (
+            escape(_snapshot_rel(doc)), escape(", ".join(spans)))
+
+    labels = " · ".join(escape(str(label)) for label in (row.get("labels") or []))
+    return ('<tr data-row="%s" data-status="%s">'
+            '<td>%s</td><td>%s</td><td>%s<br><span class="small">%s · starts %s</span></td>'
+            '<td>%s</td><td>%s</td><td>%s</td><td>%s</td><td><span class="small">%s</span></td>'
+            '</tr>') % (
+        escape(str(row.get("id", ""))), escape(status),
+        escape(row.get("days", "")),
+        escape(row.get("venue", "")),
+        escape(row.get("name", "")), labels or "—", escape(str(row.get("start", ""))),
+        _money(row.get("buy_in_usd")),
+        _money(row.get("guarantee_usd")),
+        rule_cell,
+        source_cell,
+        escape(str(row.get("retrieved_on", ""))),
+    )
+
+
+def _payout_counts(rows, classifier):
+    counts = {}
+    for row in rows:
+        status = classifier(row, payout_bundle)["status"]
+        counts[status] = counts.get(status, 0) + 1
+    return counts
+
+
+def _payout_legend(counts):
+    parts = []
+    for status in sorted(counts, key=lambda s: -counts[s]):
+        parts.append("%d %s" % (counts[status], payout_rows.STATUS_TEXT[status].lower()))
+    return '<div class="toolbar"><span class="small">' + " · ".join(parts) + "</span></div>"
+
+
+def _caesars_matrix_html():
+    doc = payout_bundle["docs_by_id"]["c_daily_flyer"]
+    matrix = next(clause for clause in doc["clauses"] if clause["kind"] == "prize-table")
+    return """
+<h2>Caesars Palace daily flyer: printed payout matrix</h2>
+<div class="card">
+<p class="small">Reproduced verbatim from the archived capture of the room's own
+daily flyer. The text extraction prints the heading &ldquo;Payouts&rdquo; after the
+table; the table itself starts at line %d. Percentages are the flyer's own
+place-by-field-size ladder &mdash; this page does not convert them into dollar
+amounts. <a href="%s">Official flyer</a> · <a href="%s">archived snapshot · %s</a></p>
+<pre style="white-space:pre-wrap;font-size:12.5px;margin:8px 0">%s</pre>
+</div>""" % (
+        matrix["line"],
+        escape(doc["source_url"]),
+        escape(_snapshot_rel(doc)),
+        escape(_line_span(matrix)),
+        escape(matrix["text"]),
+    )
+
+
+def _payout_body():
+    tournament_sorted = sorted(
+        _payout_tournament_rows,
+        key=lambda r: (r.get("date", ""), r.get("start", ""),
+                       r.get("event_no") if isinstance(r.get("event_no"), int) else -1,
+                       r.get("name", "")))
+    daily_sorted = sorted(_payout_daily_rows,
+                          key=lambda r: (r.get("venue", ""), r.get("start", ""), r.get("id", "")))
+    tournament_counts = _payout_counts(_payout_tournament_rows,
+                                       payout_rows.classify_tournament_row)
+    daily_counts = _payout_counts(_payout_daily_rows,
+                                  payout_rows.classify_daily_row)
+    return """
+<h1>Payout rules</h1>
+<p class="lead">What each official structure document actually prints about who
+gets paid, quoted line by line with the source document and the archived
+snapshot behind every sentence. A sheet that prints no payout rule says so;
+nothing on this page is inferred, and a blank means the document was silent,
+not that a value was assumed.</p>
+<div class="card callout">Guarantee ÷ total entry fee is descriptive of the
+advertised pool, not a forecast of winnings. Bounty prizes and satellite seats
+are not comparable to ordinary cash payouts, and a payout percentage of the
+field is not a dollar ladder. <a href="single-entry.html">Freezeout shortlist →</a></div>
+<div class="card callout">Every quote below was collected by
+<code>scripts/extract_payouts.py</code> from the official-document snapshots in
+<code>data/snapshots/</code>, each carrying the exact lines it came from.
+<code>scripts/check_links.py</code> re-derives every quote from those lines on
+each build and fails the build on a mismatch, so a quote that is not on the
+document cannot be published.</div>
+<div id="content">
+<h2>Tournament rows (%d)</h2>
+%s
+<div class="table-wrap"><table class="data">
+<thead><tr><th>Date</th><th>Start</th><th>Event</th><th>Venue</th><th>Buy-in</th>
+<th>Guarantee</th><th>Guarantee ÷ buy-in</th><th>Labels</th><th>Payout rule</th>
+<th>Prize-pool composition</th><th>Structure sheet</th><th>Last checked</th></tr></thead>
+<tbody>
+%s
+</tbody></table></div>
+<h2>Daily recurring formats (%d)</h2>
+<p class="small">The room's own recurring documents. Composition shows where the
+money goes before any payout rule; the flyer's printed matrix is reproduced
+below the table.</p>
+%s
+<div class="table-wrap"><table class="data">
+<thead><tr><th>Days</th><th>Room</th><th>Format</th><th>Buy-in</th><th>Guarantee</th>
+<th>Payout rule and composition</th><th>Official source</th><th>Retrieved</th></tr></thead>
+<tbody>
+%s
+</tbody></table></div>
+%s
+<p class="small">Extraction basis: the sentence patterns in
+<code>scripts/extract_payouts.py</code>, the section headings of the Wynn WPT
+structures PDF, and the Caesars flyer's printed matrix. Documents were last
+captured by the scheduled monitors on the dates shown per row; re-checks run
+through <a href="monitoring.html">Source monitoring</a>.</p>
+</div>
+""" % (
+        sum(tournament_counts.values()),
+        _payout_legend(tournament_counts),
+        "\n".join(_payout_tr(row) for row in tournament_sorted),
+        sum(daily_counts.values()),
+        _payout_legend(daily_counts),
+        "\n".join(_daily_payout_tr(row) for row in daily_sorted),
+        _caesars_matrix_html(),
+    )
+
+
+PAGES["pages/payouts.html"] = ("Payout rules", "payouts", _payout_body())
+
 
 def write(rel, title, page, body):
     path = os.path.join(ROOT, rel)
