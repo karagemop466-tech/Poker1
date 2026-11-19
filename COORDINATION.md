@@ -2109,3 +2109,15 @@ The existing checks/data remain the baseline (not refreshed by this session): la
 **Irregularities:** none new. Prior irregularities remain on `pages/flagged.html`.
 
 **Pull request / merge:** see the entry below this one, appended after the PR is merged.
+
+## Session e10acaea — claim (2026-11-19)
+
+This session is working on the fixed branch `arena/e10acaea-poker1`, based on `main` at `4ec6e8fb`.
+The coordination history identifies SUGGESTIONS P8 as outstanding and explicitly defers it to an active
+owner; no newer owner or implementation appears in this board.
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Surface each monitored `sources_changed` mark on the corresponding tournament table row, with the change-check timestamp and official source link; accurately show the `data/changes.json` as-of date and do not advance event `last_checked` values. Add a regression test for all event-table variants and update P8's status after verification. | **In progress** | `assets/app.js`, `scripts/` (focused regression test only), generated event-table `pages/` if required, `SUGGESTIONS.md`, `COORDINATION.md` | `e10acaea` |
+
+Claim commit must be pushed before implementation. No tournament or hotel facts are being changed by this task.
