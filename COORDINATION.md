@@ -1738,6 +1738,14 @@ PR [#89](https://github.com/karagemop466-tech/Poker1/pull/89) · integrated #91'
 
 Verified: deterministic data and HTML rebuild; all 30 pages rendered; 692 rendered local links and zero broken; calculator edge cases passed. After the feed ran, rechecked [NYE PDF](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf) and [Wynn placeholder](https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf). Follow-up corrects 1B/1D registration deadlines, links the NYE PDF rather than November’s, and keeps every restart out of entry tables. Final snapshot checks: 324 rows, 1,282 checks, zero hard failures, r225 retained for review; 170 schedule conflicts. The evidence gaps (no strict freezeout, same-stay rate/cancellation and exact walking-time gaps) are **needs review** on Flagged for Review, not blockers for the site. No nonrefundable decision was made.
 
+### Session 0d8855ce — final reconciliation (2026-11-19)
+
+| Task | Status | Owner | Scope |
+|---|---|---|---|
+| Make calculator, rendered-link and independent overlap validation blocking for Pages | Done, pending publication | 0d8855ce | `.github/workflows/pages.yml`, `package.json`, `COORDINATION.md` |
+
+[PR #88](https://github.com/karagemop466-tech/Poker1/pull/88) originally changed the calculator and strict classifications. GitHub's first validation passed, but a concurrent merge made its head conflict. During rebase, PRs #89/#94 on main already contained the reviewed-candidate migration, live schedule evidence, calculator fixes and their verification. Kept their combined site and data byte-for-byte rather than reapplying superseded changes. Retained this session's blocking CI gates. The official [Venetian schedule](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html) and [structure sheet #5](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf) were reviewed; the sheet does not affirm one entry, no rebuys and no add-ons. No fresh rate was assumed. The PR timeline records the integration result; [Pages runs](https://github.com/karagemop466-tech/Poker1/actions/workflows/pages.yml) record validation and publication for each merge commit.
+
 ## Session 190659b3 · 2026-11-19 · final integration, PR and Pages deploy
 
 | Task | Status | Owner | File scope |

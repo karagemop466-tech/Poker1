@@ -71,6 +71,7 @@ jobs:
 
       - name: Check every official source and summarise the changed rows
         run: |
+          set -o pipefail
           python3 scripts/monitor_sources.py --print | tee monitor.txt
           {
             echo "### Source check"
@@ -78,19 +79,11 @@ jobs:
             cat monitor.txt
           } >> "$GITHUB_STEP_SUMMARY"
 
-      - name: Render every page in a headless DOM
-        run: npm run test:smoke | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: Test all rendered pages, links, schedule and calculator
+        run: npm test
 
-      - name: Assert the day plan renders a feasible sequence
-        # The midnight wrap in `est_end` is the defect that made all 24 conditional
-        # fallbacks impossible and hid 231 real conflicts; this renders the schedule
-        # page and fails if a wrapped finish loses its "(next day)" qualifier.
-        run: node scripts/check_schedule_render.js | tee -a "$GITHUB_STEP_SUMMARY"
-
-      - name: Resolve every link the renderer builds at run time
-        # Static link checking cannot see hrefs the JavaScript constructs; 16
-        # Markdown-derived links 404'd this way on the live site.
-        run: node scripts/check_rendered_links.js | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: Verify schedule arithmetic
+        run: python3 scripts/check_schedule.py
 
   # The repository's Pages site is configured with `source: main:/` and the legacy branch build, so
   # `actions/deploy-pages` can never find an artifact for this workflow and failed on every run while
