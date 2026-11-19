@@ -1769,6 +1769,22 @@ header.site nav a {color:#d9ebe4}
           kpi(flagged.length, "rows carrying a source flag") +
           "</div>";
         html += "<p class='small'>Last check: " + esc(mon.checked_at) + ". " + esc(mon.note) + "</p>";
+        /* What a "changed" verdict is actually compared against. The facts signature is the
+           union of the reading-order and layout renders of a document; a baseline written
+           before that still holds the older, line-only signature, and this run says which
+           of the two it measured against rather than letting the count imply the stronger
+           check. (F83: the line render cannot see a merged table cell.) */
+        if (mon.facts_algo) {
+          html += "<p class='small'><strong>Facts signature: " + esc(mon.facts_algo) + ".</strong> " +
+            (mon.sources_facts_legacy_baseline
+              ? esc(mon.sources_facts_legacy_baseline) + " of " + esc(mon.sources_total) +
+                " sources are still measured against a baseline written by the reading-order " +
+                "extractor, so a value only a layout render can see cannot move their verdict yet; " +
+                "the monitor re-accepts a baseline by hand, after the flagged rows have been read."
+              : "every source with a baseline is measured against a baseline written by the same " +
+                "extractor, so a difference means a published value moved, not a parser changed.") +
+            "</p>";
+        }
         if (mon.network_unavailable) {
           html += "<div class='card callout'><strong>This result is a network blackout, not a source outage.</strong> " +
             "The machine that produced the row-level check below reached none of the official hosts at all. " +
