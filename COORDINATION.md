@@ -57,6 +57,14 @@ written confirmation required by the brief. A document being read is not proof o
 
 ---
 
+### Session 336fb2af — merge record (2026-11-19)
+
+- Pull request: [#105](https://github.com/karagemop466-tech/Poker1/pull/105), `arena/336fb2af-poker1` → `main`, log-only change (`COORDINATION.md`).
+- Merged as `4c7d7a0fe5efef30458238c75e7a468ecfbfb7b9` at 2026-11-19T11:41:23Z (merge commit, after CI `validate` success on head `311740f`).
+- Live site checked by page fetch after the merge: https://karagemop466-tech.github.io/Poker1/ serves the current homepage (0 written freezeouts confirmed; 79 candidates; 317 rows).
+- Pages build status: the GitHub API was rate-limited during this session, so the Pages `built` status for the merge commit was not read through the API. The live page content above is the evidence used.
+- Process note: the board entry was moved to the top of `COORDINATION.md` after three rebases conflicted on appended lines. No other session's text was removed.
+
 ## Session 336fb2af · 2026-11-19 · independent live re-read of Venetian November rows and single-entry evidence, branch `arena/336fb2af-poker1`
 
 | Task | Status | Owner | File scope |
