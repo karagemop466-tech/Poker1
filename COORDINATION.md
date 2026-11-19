@@ -2376,3 +2376,12 @@ links with 0 broken, schedule arithmetic OK). GitHub Pages: the build of `08f088
 **built** (workflow run 44528192205), so `pages/payouts.html` is live on the published site.
 Claim **S18/P4 complete**: data layer (`f0d2a74`), page + validator + app.js + docs (`1d2a4e6`,
 rebased as `6d634e0`).
+
+## Session 0fa351db · 2026-11-19 · candidate itinerary wording and filter regression
+
+Branch `arena/0fa351db-poker1`, based on `main` at `f5ecde040b29e402aea7b739eabd28727b1c7859` (Arena-fixed branch; no other branch will be created or used). Read the current coordination board and checked the repository status before claiming. The relevant prior site/UI tasks on `assets/app.js` are recorded complete; no current active owner claims this scope.
+
+| Task | Status | Owner | File scope |
+|---|---|---|---|
+| Correct the single-entry page's itinerary copy so its candidate-only primary events are never described as verified freezeouts or playable commitments; add a rendered regression test covering the strict-confirmed toggle and selected-date filtering. Correct the README's stale all-sources-re-fetched date without promoting monitor availability into source verification. | in progress | 0fa351db | `assets/app.js`, `scripts/check_single_entry_render.js` (new), `package.json`, `README.md`, `COORDINATION.md` |
+
