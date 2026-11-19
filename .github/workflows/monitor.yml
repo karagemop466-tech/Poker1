@@ -27,14 +27,15 @@ on:
         default: "no"
         type: choice
         options: [no, yes]
-  # The sandbox integration cannot call the dispatch API (HTTP 403), so the first
-  # real run is triggered by this narrow push filter: it fires when a change to
-  # this workflow file itself lands on main, which is exactly once when the change
-  # adding this trigger is merged. The scheduled checks take over afterwards.
+  # Run when the monitor implementation changes on main, in addition to the
+  # scheduled checks. A validation run on a feature branch uses --print only and
+  # never publishes a report.
   push:
     branches: [main]
     paths:
       - ".github/workflows/monitor.yml"
+      - "scripts/monitor_sources.py"
+      - "scripts/check_source_facts.py"
 
 permissions:
   contents: write
@@ -66,7 +67,7 @@ jobs:
       - name: Install the PDF text extractor
         # The structure sheets are PDFs; without an extractor the monitor would
         # report them as "no text" instead of comparing what they print.
-        run: python -m pip install --quiet pypdf
+        run: python -m pip install --quiet "pypdf==5.9.0"
 
       - name: Check every official source, including its content
         id: check
@@ -78,6 +79,7 @@ jobs:
           python3 scripts/monitor_sources.py $args | tee monitor.txt
           echo "facts_changed=$(python3 -c "import json;print(json.load(open('data/monitoring.json'))['sources_facts_changed'])")" >> "$GITHUB_OUTPUT"
           echo "rows_marked=$(python3 -c "import json;print(json.load(open('data/monitoring.json'))['rows_source_changed'])")" >> "$GITHUB_OUTPUT"
+          echo "rows_layout_review=$(python3 -c "import json;print(json.load(open('data/monitoring.json')).get('rows_layout_review',0))")" >> "$GITHUB_OUTPUT"
 
       - name: Summarise the result
         run: |
@@ -123,7 +125,7 @@ jobs:
           fi
 
       - name: Open an issue when a row needs re-reading
-        if: steps.check.outputs.rows_marked != '0' || steps.check.outputs.facts_changed != '0'
+        if: steps.check.outputs.rows_marked != '0' || steps.check.outputs.facts_changed != '0' || steps.check.outputs.rows_layout_review != '0'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -138,6 +140,7 @@ jobs:
           print(f"- pages re-rendered without a value change: {mon['sources_raw_changed'] - mon['sources_facts_changed']}")
           print(f"- pages whose published values changed: {mon['sources_facts_changed']}")
           print(f"- rows marked for re-reading: {mon['rows_source_changed']}")
+          print(f"- rows needing PDF layout comparison review: {mon.get('rows_layout_review', 0)}")
           print()
           print("### Marked rows")
           print()
@@ -152,6 +155,14 @@ jobs:
               print(f"- added **{row['name']}** ({row['date']}, `{row['id']}`)")
           for row in ch["removed"]:
               print(f"- removed **{row['name']}** ({row.get('date')}, `{row['id']}`)")
+          if ch.get("layout_review"):
+              print()
+              print("### PDF layout comparison review (not a source-change claim)")
+              print()
+              for row in ch["layout_review"]:
+                  print(f"- **{row.get('name')}** (`{row['id']}`, {row.get('status')})")
+                  print(f"  - {row.get('reason', '')}")
+                  print(f"  - source: {row.get('source_url')}")
           PY
           echo "---" >> report.md
           echo "" >> report.md
@@ -166,7 +177,7 @@ jobs:
           fi
 
       - name: Comment on the run when nothing moved
-        if: steps.check.outputs.rows_marked == '0' && steps.check.outputs.facts_changed == '0'
+        if: steps.check.outputs.rows_marked == '0' && steps.check.outputs.facts_changed == '0' && steps.check.outputs.rows_layout_review == '0'
         run: |
           {
             echo "### No differences detected in comparable content"

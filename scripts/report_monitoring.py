@@ -26,7 +26,7 @@ def load(name):
 
 def main():
     mon = load("monitoring.json")
-    ch = load("changes.json") or {"changed": [], "added": [], "removed": []}
+    ch = load("changes.json") or {"changed": [], "added": [], "removed": [], "layout_review": []}
     if not mon:
         print("No monitoring result is stored yet.")
         return 0
@@ -50,6 +50,11 @@ def main():
           f"{mon.get('sources_raw_changed', 0) - mon.get('sources_facts_changed', 0)}")
     print(f"- pages whose published values changed: {mon.get('sources_facts_changed', 0)}")
     print(f"- rows marked for re-reading: {mon.get('rows_source_changed', 0)}")
+    layout_review = ch.get("layout_review", [])
+    print(f"- rows needing a PDF layout comparison check: {len(layout_review)}")
+    for row in layout_review[:40]:
+        print(f"  - layout review ({row.get('status', 'pending')}): {row.get('id')} {row.get('name')} "
+              f"({row.get('source_url')})")
     print(f"- dataset rows differing from the last verified snapshot - "
           f"changed: {len(ch['changed']) - mon.get('rows_source_changed', 0)}, "
           f"added: {len(ch['added'])}, removed: {len(ch['removed'])}")

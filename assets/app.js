@@ -236,11 +236,12 @@
      list, but a reader ranking events on the tournament tables never saw it.
      Every tournament/hotel table now stamps each row with the monitor's
      verdict: a red "source changed - re-check" chip when the row's own
-     official page moved, and an explicit "no source change as of <date>"
-     line naming the date of the last real re-check, so "nothing flagged"
+     official page moved, a separate warning when a PDF layout baseline is
+     still being established, and an explicit "no source change as of <date>"
+     line only when no higher-priority mark applies, so "nothing flagged"
      is never mistaken for "checked today". The as-of date is always the
      one in data/changes.json - the renderer cannot invent a fresher one. */
-  var SRC = { loading: false, ready: false, map: {}, at: "" };
+  var SRC = { loading: false, ready: false, map: {}, pending: {}, at: "" };
   var SRC_TABLES = [];
   function srcWatch(draw) { if (SRC_TABLES.indexOf(draw) < 0) SRC_TABLES.push(draw); }
   function srcLoad() {
@@ -250,7 +251,9 @@
       if (d) {
         SRC.at = d.checked_at || "";
         SRC.map = {};
+        SRC.pending = {};
         (d.changed || []).forEach(function (e) { if (e && e.id) SRC.map[e.id] = e; });
+        (d.layout_review || []).forEach(function (e) { if (e && e.id && !SRC.map[e.id]) SRC.pending[e.id] = e; });
       }
       SRC.ready = true;
       SRC.loading = false;
@@ -268,6 +271,15 @@
       return "<span class='chip bad'>source changed - re-check</span>" +
         (when ? "<br><span class='small'>as of " + esc(when.slice(0, 10)) + "</span>" : "") +
         (url ? "<br><span class='small'><a href='" + esc(url) + "' target='_blank' rel='noopener'>official page</a></span>" : "");
+    }
+    var pending = SRC.pending[r.id];
+    if (pending) {
+      var pendingDate = String(pending.checked_at || SRC.at || "");
+      var layoutUnavailable = pending.status === "layout-unavailable" || pending.status === "unavailable" || pending.status === "partial";
+      var layoutLabel = layoutUnavailable ? "PDF layout check unavailable" : "PDF layout baseline pending";
+      return "<span class='chip warn'>" + layoutLabel + "</span>" +
+        (pendingDate ? "<br><span class='small'>as of " + esc(pendingDate.slice(0, 10)) + "</span>" : "") +
+        (pending.source_url ? "<br><span class='small'><a href='" + esc(pending.source_url) + "' target='_blank' rel='noopener'>official page</a></span>" : "");
     }
     if (!SRC.ready) { return ""; }
     if (!SRC.at) return "";  /* no monitoring run on file - say nothing rather than a false date */
@@ -745,7 +757,7 @@
     feedRequest.then(function(feed){
       table(document.getElementById("feed"), feed.rooms, [
         {id:"source",label:"Official schedule",key:"label",html:function(r){return srcLinks([{url:r.source,label:r.label}]);}},
-        {id:"status",label:"Latest attempt",key:"status",html:function(r){return esc(r.status) + (r.changed ? " · changed since prior capture" : "") + "<br>" + esc(r.attempted_at || "archive seed");}},
+        {id:"status",label:"Latest attempt",key:"status",html:function(r){var layoutNote=r.layout_baseline_pending?" · PDF layout baseline pending":((r.layout_status==="unavailable"||r.layout_status==="partial"||r.layout_status==="no-readable-schedule-excerpts")?" · PDF layout needs review":"");return esc(r.status) + (r.changed ? " · changed since prior comparable capture" : "") + layoutNote + "<br>" + esc(r.attempted_at || "archive seed");}},
         {id:"read",label:"Last readable capture",key:"read_at"},
         {id:"text",label:"Published excerpts (not classified)",sort:null,html:function(r){return r.excerpts.length ? "<details><summary>"+r.excerpts.length+" excerpts</summary><ul>"+r.excerpts.map(function(x){return "<li>"+esc(x)+"</li>";}).join("")+"</ul></details>" : "Unverified";}}
       ], {filterInput:document.getElementById("feed-q")});
@@ -1448,6 +1460,7 @@
           kpi(mon.rows_changed, "rows changed since the last snapshot") +
           kpi(mon.rows_added + " / " + mon.rows_removed, "rows added / removed") +
           kpi(flagged.length, "rows carrying a source flag") +
+          (mon.rows_layout_review != null ? kpi(mon.rows_layout_review, "rows with PDF layout review") : "") +
           "</div>";
         html += "<p class='small'>Last check: " + esc(mon.checked_at) + ". " + esc(mon.note) + "</p>";
         if (mon.network_unavailable) {
@@ -1462,6 +1475,11 @@
           var inactive = prov.sources.filter(function (s) { return s.error && /inactive/i.test(String(s.error)); });
           var errored = prov.sources.filter(function (s) { return s.error && !/inactive/i.test(String(s.error)); });
           var factsMoved = prov.sources.filter(function (s) { return s.facts_changed; });
+          function layoutIncomplete(s) {
+            return s.layout_baseline_pending || s.layout_status === "unavailable" || s.layout_status === "partial" ||
+              s.layout_error || s.plain_error || (/\.pdf(?:\?|$)/i.test(String(s.url || "")) && !s.layout_status);
+          }
+          var layoutReview = prov.sources.filter(layoutIncomplete);
           html += "<h2>Scheduled provenance check</h2>" +
             "<p class='small'>Generated " + esc(prov.generated_utc) + " by the <em>Check official source facts</em> " +
             "workflow, which fetches every official document from GitHub Actions. A raw page change is common " +
@@ -1471,15 +1489,18 @@
             kpi(factsMoved.length, "documents whose printed values changed") +
             kpi(inactive.length, "documents marked inactive") +
             kpi(errored.length, "documents that timed out or errored") +
+            kpi(layoutReview.length, "PDF layout comparisons pending or unavailable") +
             "</div>";
-          var problems = prov.sources.filter(function (s) { return s.error || s.facts_changed; });
+          var problems = prov.sources.filter(function (s) { return s.error || s.facts_changed || layoutIncomplete(s); });
           if (problems.length) {
             html += "<div class='card'><table class='data'><thead><tr><th>Official document</th>" +
-              "<th>HTTP</th><th>Printed values changed</th><th>Note</th></tr></thead><tbody>";
+              "<th>HTTP</th><th>Printed values changed</th><th>PDF layout check</th><th>Note</th></tr></thead><tbody>";
             problems.forEach(function (s) {
+              var layoutLabel = layoutIncomplete(s) ? (s.layout_status || "baseline pending (older plain-only capture)") : "—";
               html += "<tr><td><a href='" + esc(s.url) + "' target='_blank' rel='noopener'>" + esc(s.label || s.url) + "</a></td>" +
                 "<td>" + (s.http_status == null ? "—" : esc(s.http_status)) + "</td>" +
-                "<td>" + (s.facts_changed ? "yes" : "no") + "</td><td class='small'>" + esc(s.error || "") + "</td></tr>";
+                "<td>" + (s.facts_changed ? "yes" : "no") + "</td><td>" + esc(layoutLabel) + "</td>" +
+                "<td class='small'>" + esc(s.error || s.layout_error || s.plain_error || "") + "</td></tr>";
             });
             html += "</tbody></table></div>";
           } else {
@@ -1508,6 +1529,21 @@
               "</div>" + (detail ? "<div class='meta'>" + detail + "</div>" : "") + "</div>";
           }).join("");
         }
+        var layoutRows = ch.layout_review;
+        html += "<h2>PDF layout comparison coverage</h2>";
+        if (layoutRows && layoutRows.length) {
+          html += layoutRows.map(function (r) {
+            return '<div class="result"><span class="chip warn">' + esc(r.status || "review") +
+              '</span> <div class="title">' + esc(r.name || r.id) + "</div><div class='meta'>" + esc(r.id) +
+              " · " + esc(r.date || "no event date") + " · " + esc(r.checked_at || ch.checked_at) + " · " +
+              esc(r.reason || "") + "</div>" + (r.source_url ? "<a href='" + esc(r.source_url) +
+              "' target='_blank' rel='noopener'>official source</a>" : "") + "</div>";
+          }).join("");
+        } else if (layoutRows) {
+          html += "<div class='card callout'>No position-aware PDF comparison is pending as of " + esc(ch.checked_at) + ".</div>";
+        } else {
+          html += "<div class='card callout'>This monitoring snapshot predates the PDF layout-review field; use the scheduled provenance check above for current layout coverage.</div>";
+        }
       }
       main.innerHTML = html;
       var tsec = document.getElementById("flagged");
@@ -1531,6 +1567,10 @@
               var cls = r.s.status === "ok" ? "ok" : (r.s.status === "http-error" ? "bad" : "warn");
               return '<span class="status-dot ' + cls + '"></span>' + esc(r.s.status) +
                 (r.s.http_status ? " (" + r.s.http_status + ")" : "") + (r.s.error ? "<br><span class='small'>" + esc(r.s.error) + "</span>" : "");
+            } },
+          { id: "content", label: "Content / layout check", key: "s", sort: null, html: function (r) {
+              var verdict = r.s.content_status || "unknown";
+              return esc(verdict) + (r.s.layout_status ? "<br><span class='small'>PDF layout: " + esc(r.s.layout_status) + "</span>" : "");
             } },
           { id: "url", label: "Official URL", key: "url", sort: null, html: function (r) { return '<a href="' + esc(r.url) + '" target="_blank" rel="noopener">' + esc(r.url) + "</a>"; } }
         ], { sortKey: "status", sortDir: 1 });

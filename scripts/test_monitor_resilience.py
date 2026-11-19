@@ -90,28 +90,30 @@ class CheckUrlGuardTests(unittest.TestCase):
         self.assertIn("IncompleteRead", rec["error"])
 
     def test_extractor_exception_is_contained(self):
-        orig_open, orig_text = ms.urlopen, ms.csf.to_text
+        orig_open, orig_variants = ms.urlopen, ms.csf.to_text_variants
         ms.urlopen = lambda req, timeout=None: _Resp()
 
         def explode(url, data):
             raise RuntimeError("decoder blew up")
-        ms.csf.to_text = explode
+        ms.csf.to_text_variants = explode
         try:
             rec = ms.check_url("https://operator.example/page.html", True)
         finally:
-            ms.urlopen, ms.csf.to_text = orig_open, orig_text
+            ms.urlopen, ms.csf.to_text_variants = orig_open, orig_variants
         self.assertEqual(rec["status"], "http-error")
         self.assertTrue(rec.get("unexpected"))
         self.assertIn("decoder blew up", rec["error"])
 
     def test_clean_fetch_still_hashes(self):
-        orig_open, orig_text = ms.urlopen, ms.csf.to_text
+        orig_open, orig_variants = ms.urlopen, ms.csf.to_text_variants
         ms.urlopen = lambda req, timeout=None: _Resp(b"<html>Guarantee $10,000 at 11:10 AM</html>")
-        ms.csf.to_text = lambda url, data: "Guarantee $10,000 at 11:10 AM"
+        ms.csf.to_text_variants = lambda url, data: {"plain": "Guarantee $10,000 at 11:10 AM",
+                                                     "layout": "", "is_pdf": False,
+                                                     "layout_error": None}
         try:
             rec = ms.check_url("https://operator.example/page.html", True)
         finally:
-            ms.urlopen, ms.csf.to_text = orig_open, orig_text
+            ms.urlopen, ms.csf.to_text_variants = orig_open, orig_variants
         self.assertEqual(rec["status"], "ok")
         self.assertIsNotNone(rec["sha256"])
         self.assertFalse(rec.get("unexpected"))

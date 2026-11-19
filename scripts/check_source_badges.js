@@ -108,5 +108,48 @@ const wait = (ms) => new Promise((r) => setTimeout(r, ms));
     assert.ok(dated.length >= 1, "the published state names the real check date " + asOf);
   }
   w2.close();
+
+  /* ---- scenario 3: a PDF layout-baseline warning must not be called a source change
+     or a clean "no source change" state. ---- */
+  const layoutRow = rows.find((r) => /Wynn/.test(r.venue || "") &&
+    (r.sources || []).some((s) => /\.pdf(?:\?|$)/i.test(s.url || "")));
+  assert.ok(layoutRow, "fixture needs a Wynn row citing an official PDF");
+  const layoutSource = layoutRow.sources.find((s) => /\.pdf(?:\?|$)/i.test(s.url || "")).url;
+  const pendingFixture = JSON.stringify({
+    checked_at: "2026-11-19", sources_facts_changed: 0, sources_raw_changed: 0,
+    added: [], removed: [], changed: [],
+    layout_review: [{ id: layoutRow.id, kind: "tournament", name: layoutRow.name, date: layoutRow.date,
+      status: "layout-baseline-pending", checked_at: "2026-11-19T16:45:00Z",
+      reason: "position-aware PDF facts have no comparison baseline yet", source_url: layoutSource }]
+  });
+  const w3 = load("pages/venue-wynn.html", { "data/changes.json": pendingFixture });
+  await wait(600);
+  const pendingCells = Array.from(w3.document.querySelectorAll("#events td"))
+    .filter((td) => /PDF layout baseline pending/.test(text(td)));
+  assert.equal(pendingCells.length, 1, "only the row with a pending layout comparison is marked");
+  assert.ok(pendingCells[0].querySelector("a[href=\"" + layoutSource + "\"]"),
+    "the pending notice links to the row's official PDF");
+  assert.doesNotMatch(text(pendingCells[0]), /source changed - re-check|no source change as of/,
+    "pending coverage is not misreported as either changed or confirmed unchanged");
+  w3.close();
+
+  /* ---- scenario 4: extraction failures are distinguished from a missing baseline. ---- */
+  const unavailableFixture = JSON.stringify({
+    checked_at: "2026-11-19", sources_facts_changed: 0, sources_raw_changed: 0,
+    added: [], removed: [], changed: [],
+    layout_review: [{ id: layoutRow.id, kind: "tournament", name: layoutRow.name, date: layoutRow.date,
+      status: "layout-unavailable", checked_at: "2026-11-19T16:45:00Z",
+      reason: "position-aware PDF extraction is incomplete", source_url: layoutSource }]
+  });
+  const w4 = load("pages/venue-wynn.html", { "data/changes.json": unavailableFixture });
+  await wait(600);
+  const unavailableCells = Array.from(w4.document.querySelectorAll("#events td"))
+    .filter((td) => /PDF layout check unavailable/.test(text(td)));
+  assert.equal(unavailableCells.length, 1, "an extraction failure is shown on its affected row");
+  assert.ok(unavailableCells[0].querySelector("a[href=\"" + layoutSource + "\"]"),
+    "the unavailable notice links to the row's official PDF");
+  assert.doesNotMatch(text(unavailableCells[0]), /source changed - re-check|no source change as of/,
+    "unavailable coverage is not called changed or unchanged");
+  w4.close();
   console.log("check_source_badges: OK");
 })().catch((err) => { console.error(err); process.exitCode = 1; });

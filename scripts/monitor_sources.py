@@ -79,6 +79,99 @@ def sha(value):
     return hashlib.sha256(value).hexdigest()
 
 
+def seed_layout_baseline(log, baseline):
+    """Add first position-aware signatures without moving existing plain baselines.
+
+    This is a one-time comparison migration. It does not claim that a source's
+    values were re-verified or replace its original plain-facts baseline; it only
+    gives future runs a dated layout-render starting point. Existing layout
+    baselines are never overwritten.
+    """
+    baseline = json.loads(json.dumps(baseline or {}))
+    baseline.setdefault("sources", {})
+    seeded = []
+    for src in (log or {}).get("sources", []):
+        url = src.get("url")
+        layout = src.get("facts_signature_layout")
+        entry = (baseline.get("sources") or {}).get(url) if url else None
+        layout_status = src.get("layout_status")
+        layout_capture_valid = (layout_status in ("baseline-pending", "comparable") or
+                                (layout_status == "partial" and not src.get("layout_error")))
+        if (not url or src.get("http_status") != 200 or src.get("error") or
+                not isinstance(layout, list) or not src.get("layout_extracted_chars") or
+                not layout_capture_valid or
+                ("facts_signature_layout_available" in src and
+                 not src.get("facts_signature_layout_available"))):
+            continue
+        if isinstance(entry, dict) and entry.get("layout_facts_sha256"):
+            continue
+        checked_at = src.get("last_checked_utc")
+        if not isinstance(entry, dict):
+            plain = src.get("facts_signature_plain")
+            if not isinstance(plain, list):
+                plain = src.get("facts_signature") if isinstance(src.get("facts_signature"), list) else []
+            plain_available = bool(src.get("facts_signature_plain_available",
+                                           src.get("facts_signature_plain") is not None or
+                                           src.get("facts_signature") is not None)) and not src.get("plain_error")
+            union = src.get("facts_signature") if isinstance(src.get("facts_signature"), list) else []
+            plain_hash = sha("\n".join(plain)) if plain_available else None
+            entry = {"sha256": None, "provenance_sha256": src.get("sha256"),
+                     "facts_sha256": plain_hash, "plain_facts_sha256": plain_hash,
+                     "facts_union_sha256": sha("\n".join(union)) if union else None,
+                     "facts_count": src.get("facts_checked", len(union)),
+                     "checked_at_utc": checked_at, "source_id": src.get("id"),
+                     "baseline_note": "New source comparison baseline seeded from an actual successful provenance fetch; "
+                                      "the raw provenance hash is not compared to the monitor's text hash, and this is not a row-value verification."}
+            baseline["sources"][url] = entry
+        entry["layout_facts_sha256"] = sha("\n".join(layout))
+        entry["layout_facts_count"] = len(layout)
+        entry["layout_checked_at_utc"] = checked_at
+        entry["layout_extraction_mode"] = "pypdf-layout-v1"
+        entry["layout_baseline_note"] = (
+            "First position-aware capture after the dual-render monitor was deployed; "
+            "this is a change-comparison baseline, not a row-value verification."
+        )
+        seeded.append(src.get("id") or url)
+    if seeded:
+        baseline["layout_baseline_version"] = "pypdf-layout-v1"
+    return baseline, seeded
+
+
+def content_verdict(record, baseline_entry):
+    """Return a source content status without mixing extractor migration with change."""
+    baseline_entry = baseline_entry or {}
+    if record.get("truncated"):
+        return "not-comparable", False
+
+    is_pdf = bool(record.get("is_pdf"))
+    layout_status = record.get("layout_status")
+    plain_base = baseline_entry.get("plain_facts_sha256") or baseline_entry.get("facts_sha256")
+    if "plain_facts_sha256" in record:
+        plain_hash = record.get("plain_facts_sha256")
+    else:
+        plain_hash = record.get("facts_sha256")
+    layout_base = baseline_entry.get("layout_facts_sha256")
+    plain_changed = bool(not record.get("plain_error") and plain_base and plain_hash and
+                         plain_base != plain_hash)
+    layout_hash = record.get("layout_facts_sha256")
+    layout_complete = bool(is_pdf and layout_hash and not record.get("layout_error"))
+    layout_changed = bool(layout_base and layout_complete and layout_base != layout_hash)
+    layout_pending = bool(is_pdf and layout_complete and not layout_base)
+    if plain_changed or layout_changed:
+        return "facts-changed", layout_pending
+    if is_pdf and (layout_status in ("unavailable", "partial") or record.get("layout_error") or record.get("plain_error")):
+        return "layout-unavailable", False
+    if layout_pending:
+        return "layout-baseline-pending", True
+    if not baseline_entry:
+        return "first-seen", False
+    if baseline_entry.get("sha256") and baseline_entry["sha256"] != record.get("sha256"):
+        return "cosmetic-changed", False
+    if not plain_base:
+        return "no-baseline-facts", False
+    return "unchanged", False
+
+
 def fingerprint(row):
     """The published values of a row, in the shape the snapshot file stores.
 
@@ -193,7 +286,11 @@ def collect_dataset():
 def check_url(url, want_body):
     started = time.time()
     record = {"status": "unreachable", "http_status": None, "elapsed_ms": None,
-              "error": None, "bytes": None, "sha256": None, "facts_sha256": None, "facts_count": None}
+              "error": None, "bytes": None, "sha256": None, "facts_sha256": None,
+              "plain_facts_sha256": None, "layout_facts_sha256": None,
+              "facts_union_sha256": None, "facts_count": None,
+              "layout_facts_count": None, "layout_baseline_pending": False,
+              "layout_status": "not-applicable", "plain_error": None, "layout_error": None}
     try:
         return _check_url_once(url, want_body, started, record)
     except HTTPError as e:
@@ -235,12 +332,37 @@ def _check_url_once(url, want_body, started, record):
     record["elapsed_ms"] = int((time.time() - started) * 1000)
     if want_body and 200 <= code < 400:
         record["truncated"] = len(body) >= BODY_CAP
-        text = csf.to_text(url, body)
-        facts = csf.facts_signature(text)
+        variants = csf.to_text_variants(url, body)
+        plain_text, layout_text = variants["plain"], variants["layout"]
         record["bytes"] = len(body)
-        record["sha256"] = sha(text)
-        record["facts_sha256"] = sha("\n".join(facts))
-        record["facts_count"] = len(facts)
+        record["sha256"] = sha(plain_text)
+        record["is_pdf"] = variants["is_pdf"]
+        record["plain_error"] = variants.get("plain_error")
+        record["layout_error"] = variants.get("layout_error")
+        if record["truncated"] and record["is_pdf"]:
+            record["plain_error"] = record["plain_error"] or "PDF response exceeded the monitor body cap"
+            record["layout_error"] = record["layout_error"] or "truncated PDF cannot be compared as a complete layout capture"
+        plain_available = bool(plain_text.strip() and not record["plain_error"])
+        layout_available = bool(layout_text.strip() and not record["layout_error"])
+        plain_facts = csf.facts_signature(plain_text) if plain_available else []
+        layout_facts = csf.facts_signature(layout_text) if layout_available else []
+        union_facts = csf.union_facts_signature(plain_text if plain_available else "",
+                                                layout_text if layout_available else "")
+        # Keep the legacy facts_sha256 as the line/plain signature. Old source
+        # baselines use it; layout and union hashes are additive and versioned.
+        record["facts_sha256"] = sha("\n".join(plain_facts)) if plain_available else None
+        record["plain_facts_sha256"] = record["facts_sha256"]
+        record["layout_facts_sha256"] = sha("\n".join(layout_facts)) if layout_available else None
+        record["facts_union_sha256"] = sha("\n".join(union_facts))
+        record["facts_count"] = len(union_facts)
+        record["layout_facts_count"] = len(layout_facts) if layout_available else None
+        record["facts_signature_mode"] = ("plain+layout-v1" if plain_available and layout_available else
+                                           "layout-v1" if layout_available else
+                                           "plain-v1" if plain_available else None)
+        record["layout_status"] = ("partial" if (record["plain_error"] or record["layout_error"]) and
+                                    (plain_text.strip() or layout_text.strip()) else
+                                    "captured" if layout_available else
+                                    "unavailable" if variants["is_pdf"] else "not-applicable")
     return record
 
 
@@ -264,8 +386,48 @@ def provenance_findings():
             "raw_changed": bool(src.get("changed")),
             "facts_changed": bool(src.get("facts_changed")),
             "facts_checked": src.get("facts_checked"),
+            "layout_baseline_pending": bool(src.get("layout_baseline_pending")),
+            "layout_status": src.get("layout_status"),
+            "plain_error": src.get("plain_error"),
+            "layout_error": src.get("layout_error"),
         }
     return out, log.get("generated_utc")
+
+
+def build_layout_review(checked, doc_refs):
+    """Map incomplete/pending PDF comparisons to each published row they support."""
+    review, seen = [], set()
+    for url, record in checked.items():
+        content_status = record.get("content_status")
+        pending_layout = bool(record.get("layout_baseline_pending")) or content_status == "layout-baseline-pending"
+        unavailable_layout = (content_status == "layout-unavailable" or
+                              record.get("layout_status") in ("unavailable", "partial") or
+                              record.get("layout_error") or record.get("plain_error"))
+        if not (pending_layout or unavailable_layout):
+            continue
+        status = "layout-baseline-pending" if pending_layout and not unavailable_layout else "layout-unavailable"
+        for ref in doc_refs.get(url, []):
+            key = (ref["kind"], ref["id"], url)
+            if key in seen:
+                continue
+            seen.add(key)
+            if status == "layout-baseline-pending":
+                reason = "position-aware PDF facts have no comparison baseline yet"
+            elif record.get("layout_error"):
+                reason = "position-aware PDF extraction is incomplete; compare the archived source manually"
+            elif record.get("plain_error"):
+                reason = "plain PDF extraction is incomplete; layout output is not used as row-value proof"
+            else:
+                reason = "position-aware PDF comparison is unavailable; plain text remains a separate check"
+            review.append({
+                "id": ref["id"], "kind": ref["kind"], "name": ref.get("label"),
+                "date": ref.get("date"), "source_url": url,
+                "status": status,
+                "checked_at": (record.get("provenance_checked_at") or
+                               time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())),
+                "reason": reason,
+            })
+    return review
 
 
 def main():
@@ -284,7 +446,25 @@ def main():
     ap.add_argument("--seed-baseline", action="store_true",
                     help="build the comparison baseline from data/change_log.json's stored facts "
                          "signatures (the last real fetch) instead of a new HTTP round-trip")
+    ap.add_argument("--seed-layout-baseline", action="store_true",
+                    help="add missing PDF layout comparison hashes from the last provenance fetch, "
+                         "without replacing plain-facts baselines")
     args = ap.parse_args()
+
+    if args.seed_layout_baseline:
+        log = load("change_log.json")
+        baseline = load("source_baseline.json")
+        if not isinstance(log, dict) or not isinstance(baseline, dict):
+            print("monitor: both data/change_log.json and data/source_baseline.json are required", file=sys.stderr)
+            return 1
+        updated, seeded = seed_layout_baseline(log, baseline)
+        if seeded:
+            updated["generated_at_utc"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+            with open(BASELINE, "w", encoding="utf-8") as f:
+                json.dump(updated, f, indent=1)
+                f.write("\n")
+        print("monitor: seeded %d missing PDF layout baselines; existing plain hashes preserved" % len(seeded))
+        return 0
 
     if args.seed_baseline:
         log = load("change_log.json")
@@ -305,10 +485,21 @@ def main():
             if not url:
                 continue
             facts = src.get("facts_signature") or []
+            plain = src.get("facts_signature_plain")
+            if plain is None:
+                plain = facts
+            layout = src.get("facts_signature_layout") or []
             seeded["sources"][url] = {
                 "sha256": None,
-                "facts_sha256": sha("\n".join(facts)) if facts else None,
+                "facts_sha256": sha("\n".join(plain)) if plain else None,
+                "plain_facts_sha256": sha("\n".join(plain)) if plain else None,
+                "layout_facts_sha256": sha("\n".join(layout)) if layout else None,
+                "facts_union_sha256": sha("\n".join(facts)) if facts else None,
                 "facts_count": len(facts),
+                "layout_facts_count": len(layout) if layout else None,
+                "facts_signature_mode": src.get("facts_signature_mode", "plain-v1"),
+                "layout_checked_at_utc": src.get("last_checked_utc") if layout else None,
+                "layout_extraction_mode": "pypdf-layout-v1" if layout else None,
                 "checked_at_utc": src.get("last_checked_utc"),
                 "source_id": src.get("id"),
             }
@@ -355,7 +546,11 @@ def main():
         except Exception as e:  # noqa: BLE001 - the run must finish for the other sources' sake
             checked[url] = {"status": "http-error", "http_status": None, "elapsed_ms": None,
                             "error": "check crashed and was contained: %s: %s" % (type(e).__name__, e),
-                            "bytes": None, "sha256": None, "facts_sha256": None, "facts_count": None,
+                            "bytes": None, "sha256": None, "facts_sha256": None,
+                            "plain_facts_sha256": None, "layout_facts_sha256": None,
+                            "facts_union_sha256": None, "facts_count": None,
+                            "layout_facts_count": None, "layout_baseline_pending": False,
+                            "layout_status": "unavailable", "plain_error": str(e), "layout_error": str(e),
                             "unexpected": True}
         if args.as_print:
             print("  %-12s %s" % (checked[url]["status"], url))
@@ -364,29 +559,34 @@ def main():
     prov, prov_at = provenance_findings()
     for url, record in checked.items():
         p = prov.get(url)
+        live_fields = {key: record.get(key) for key in
+                       ("layout_status", "layout_baseline_pending", "plain_error", "layout_error")}
         if p:
             record.update(p)
+            # A content-mode fetch taken now is newer than the provenance archive;
+            # retain its extraction status while keeping the provenance fields.
+            if args.content and record["status"] == "ok" and record.get("sha256"):
+                record.update(live_fields)
         base = (baseline.get("sources") or {}).get(url)
         # Decide the content verdict. A fetch taken now beats the provenance job's
         # last run; with no network the provenance job is the newest real fetch.
         record["content_status"] = "unknown"
         if args.content and record["status"] == "ok" and record.get("sha256"):
-            if not base:
-                record["content_status"] = "first-seen"
-            elif record.get("truncated"):
-                # Comparing a prefix against a full capture would look like a change.
-                record["content_status"] = "not-comparable"
-            elif base.get("facts_sha256") and base["facts_sha256"] != record["facts_sha256"]:
-                record["content_status"] = "facts-changed"
-            elif base.get("sha256") and base["sha256"] != record["sha256"]:
-                record["content_status"] = "cosmetic-changed"
-            elif not base.get("facts_sha256"):
-                record["content_status"] = "no-baseline-facts"
-            else:
-                record["content_status"] = "unchanged"
+            record["content_status"], record["layout_baseline_pending"] = content_verdict(record, base)
+            record["facts_changed"] = record["content_status"] == "facts-changed"
         elif p:
             if p["facts_changed"]:
                 record["content_status"] = "facts-changed"
+                record["facts_changed"] = True
+            elif p.get("layout_status") in ("unavailable", "partial") or p.get("layout_error") or p.get("plain_error"):
+                record["layout_status"] = p.get("layout_status") or "unavailable"
+                record["layout_error"] = p.get("layout_error")
+                record["plain_error"] = p.get("plain_error")
+                record["content_status"] = "layout-unavailable"
+            elif p.get("layout_baseline_pending"):
+                record["layout_baseline_pending"] = True
+                record["layout_status"] = "baseline-pending"
+                record["content_status"] = "layout-baseline-pending"
             elif p["raw_changed"]:
                 record["content_status"] = "cosmetic-changed"
             elif p["provenance_error"]:
@@ -420,7 +620,7 @@ def main():
 
     # Row-value diffing against the last verified snapshot.
     snapshot = load("row_snapshot.json") or {"rows": {}}
-    changes = {"added": [], "removed": [], "changed": []}
+    changes = {"added": [], "removed": [], "changed": [], "layout_review": []}
     current = {r["id"]: fingerprint(r) for r in rows}
     old = snapshot.get("rows", {})
     for rid, fp in current.items():
@@ -438,6 +638,9 @@ def main():
             changes["removed"].append({"id": rid, "name": fp.get("name"), "date": fp.get("date"),
                                        "kind": "tournament", "reason": "row no longer published by the dataset"})
     changes["changed"].extend(marked)
+
+    layout_review = build_layout_review(checked, doc_refs)
+    changes["layout_review"] = layout_review
 
     checked_at = time.strftime("%Y-%m-%d", time.gmtime())
     # Only operator domains count as "official sources": the OpenStreetMap geocoder
@@ -488,7 +691,12 @@ def main():
             "last provenance fetch (data/change_log.json)" if prov else "not checked"),
         "sources_raw_changed": raw_changed,
         "sources_facts_changed": facts_changed,
+        "sources_layout_review": sum(1 for v in official.values()
+                                     if v.get("layout_baseline_pending") or
+                                     v.get("content_status") in ("layout-baseline-pending", "layout-unavailable") or
+                                     v.get("layout_status") in ("unavailable", "partial")),
         "rows_source_changed": len(marked),
+        "rows_layout_review": len(layout_review),
         "rows_total": len(current),
         "rows_changed": len(changes["changed"]),
         "rows_added": len(changes["added"]),
@@ -505,7 +713,9 @@ def main():
                 "this host; 'provenance_*' and 'content_status' come from the most recent real fetch. "
                 "'facts-changed' means a money amount, date, time or entry-rule word printed on that "
                 "page differs from the last verified capture, and every row citing it is listed in "
-                "data/changes.json. A page that merely re-renders (cosmetic-changed) is recorded but "
+                "data/changes.json. PDFs are checked with both plain and position-aware text; a first "
+                "layout capture or unavailable layout is listed under data/changes.json layout_review "
+                "and is not mislabeled as unchanged. A page that merely re-renders (cosmetic-changed) is recorded but "
                 "marks no row. 'unreachable' means the host did not answer from the machine that ran the "
                 "check; it does not by itself mean the page changed."
                 + ("" if not blackout else
@@ -536,10 +746,20 @@ def main():
                             "A row whose source hash differs here is marked in data/changes.json.",
                     "sources": {}}
         for url, record in checked.items():
-            if record.get("sha256"):
+            baseline_eligible = (record.get("sha256") and not record.get("truncated") and
+                                 not record.get("plain_error") and
+                                 (not record.get("is_pdf") or not record.get("layout_error")))
+            if baseline_eligible:
                 new_base["sources"][url] = {"sha256": record["sha256"],
                                            "facts_sha256": record["facts_sha256"],
+                                           "plain_facts_sha256": record.get("plain_facts_sha256"),
+                                           "layout_facts_sha256": record.get("layout_facts_sha256"),
+                                           "facts_union_sha256": record.get("facts_union_sha256"),
                                            "facts_count": record["facts_count"],
+                                           "layout_facts_count": record.get("layout_facts_count"),
+                                           "facts_signature_mode": record.get("facts_signature_mode"),
+                                           "layout_checked_at_utc": result["checked_at_utc"] if record.get("layout_facts_sha256") else None,
+                                           "layout_extraction_mode": "pypdf-layout-v1" if record.get("layout_facts_sha256") else None,
                                            "checked_at_utc": result["checked_at_utc"]}
             elif (baseline.get("sources") or {}).get(url):
                 new_base["sources"][url] = baseline["sources"][url]
@@ -551,6 +771,7 @@ def main():
     print("monitor: official sources %d/%d reachable (basis: %s)" % (ok, len(official), kpi_basis))
     print("monitor: %d official page(s) re-rendered without a value change, %d with a changed published value, "
           "%d row(s) marked for re-reading" % (raw_changed - facts_changed, facts_changed, len(marked)))
+    print("monitor: %d row(s) need a PDF layout baseline or extraction review" % len(layout_review))
     print("monitor: dataset rows - %d changed, %d added, %d removed against the last verified snapshot"
           % (len(changes["changed"]) - len(marked), len(changes["added"]), len(changes["removed"])))
     print("monitor: routing sources %d/%d reachable" % (

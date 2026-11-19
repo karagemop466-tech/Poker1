@@ -1,8 +1,10 @@
 # Las Vegas Strip Poker Plan
 
 A decision dashboard for single-entry poker tournaments on the Las Vegas Strip and walkable hotels.
-Snapshot date: **2026-11-17** (every official tournament page, structure PDF, hotel-policy page and
-booking-engine quote was re-fetched on that date; see `REVIEW.md` §9 and `research/verification-2026-11-17.md`).
+Repository snapshot: **2026-11-19**. The full-series evidence pass was 2026-11-17; selective
+official schedule, structure, hotel and source-monitor re-reads continued on 2026-11-19. The latest
+row-level monitor is timestamped `2026-11-19T16:45:28Z` in `data/monitoring.json`; that does **not**
+mean every row was re-read at that time. Each row's own `last_checked` and source links are authoritative.
 
 Live site: https://karagemop466-tech.github.io/Poker1/
 
@@ -79,8 +81,13 @@ rule field keeps its excerpt, source and retrieval date, that the day schedule m
 dated rate log is internally consistent, and that the generated pages have no broken link or fragment.
 Automated checks do not replace reading the official source documents.
 
-The monitoring workflow (`.github/workflows/monitor.yml`) runs daily, checks every official URL,
+The monitoring workflow (`.github/workflows/monitor.yml`) runs twice daily, checks every official URL,
 records the result in `data/monitoring.json`, compares every row with `data/row_snapshot.json` and
-posts the result as an issue so a reviewer can re-read any structure sheet that moved.
+posts the result as an issue so a reviewer can re-read any structure sheet that moved. The weekly
+provenance job keeps both the original line-rendered PDF snapshot and a pypdf position-aware layout
+snapshot. Those renders are compared separately: a first layout capture is marked pending, not
+misreported as a source change, and does not alter any published event value. Until the first live
+migration run is committed, the Monitoring page shows PDFs as pending; afterward, affected table rows
+carry a warning whenever their layout baseline is pending or unavailable.
 
 Coordination and open items: `COORDINATION.md`.
