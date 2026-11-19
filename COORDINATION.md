@@ -1694,3 +1694,4 @@ during any of it. `data/schedule.json` is the file that changed, and it is gener
 
 ### Session 44c94b4f — in progress
 Owns strict booking-readiness audit: research/readiness-2026-11-19.md, summary/flagged addenda and their generated pages; no edits to other sessions’ data collectors.
+Build-blocker claim: scripts/check_schedule_render.js and .github/workflows/pages.yml. Local npm test exposed a stale assertion on obsolete fallback prose; the workflow pipeline masked its exit code.
