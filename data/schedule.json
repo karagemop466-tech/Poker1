@@ -11760,7 +11760,7 @@
     {
      "id": "r300",
      "start": "13:00",
-     "name": "Mixed Game (TORSE)",
+     "name": "TORSE",
      "series": "Wynn Signature Series",
      "venue": "Wynn Las Vegas",
      "buy_in_usd": 400,
@@ -11809,7 +11809,7 @@
      "b": "r300",
      "a_start": "11:00",
      "b_start": "13:00",
-     "detail": "No Limit Hold'em Day 1B (11:00) and Mixed Game (TORSE) (13:00) cannot be checked: No Limit Hold'em Day 1B publishes no level structure."
+     "detail": "No Limit Hold'em Day 1B (11:00) and TORSE (13:00) cannot be checked: No Limit Hold'em Day 1B publishes no level structure."
     },
     {
      "a": "r299",
@@ -11823,7 +11823,7 @@
      "b": "r301",
      "a_start": "13:00",
      "b_start": "18:00",
-     "detail": "Mixed Game (TORSE) (13:00) and NLH Turbo (18:00) cannot be checked: Mixed Game (TORSE) publishes no level structure."
+     "detail": "TORSE (13:00) and NLH Turbo (18:00) cannot be checked: TORSE publishes no level structure."
     }
    ],
    "second_entry_id": null,
@@ -11956,7 +11956,7 @@
     {
      "id": "r307",
      "start": "13:00",
-     "name": "Mixed Game (TOE)",
+     "name": "TOE",
      "series": "Wynn Signature Series",
      "venue": "Wynn Las Vegas",
      "buy_in_usd": 400,
@@ -12006,7 +12006,7 @@
      "b": "r307",
      "a_start": "11:00",
      "b_start": "13:00",
-     "detail": "No Limit Hold'em Day 1A (11:00) and Mixed Game (TOE) (13:00) cannot be checked: No Limit Hold'em Day 1A publishes no level structure."
+     "detail": "No Limit Hold'em Day 1A (11:00) and TOE (13:00) cannot be checked: No Limit Hold'em Day 1A publishes no level structure."
     },
     {
      "a": "r305",
@@ -12020,7 +12020,7 @@
      "b": "r308",
      "a_start": "13:00",
      "b_start": "18:00",
-     "detail": "Mixed Game (TOE) (13:00) and Milestone Satellite to $800 NLH (18:00) cannot be checked: Mixed Game (TOE) publishes no level structure."
+     "detail": "TOE (13:00) and Milestone Satellite to $800 NLH (18:00) cannot be checked: TOE publishes no level structure."
     }
    ],
    "second_entry_id": null,
@@ -12198,7 +12198,7 @@
     {
      "id": "r314",
      "start": "12:00",
-     "name": "Seniors No Limit Hold'em 50+",
+     "name": "Seniors NLH 50+",
      "series": "Wynn Signature Series",
      "venue": "Wynn Las Vegas",
      "buy_in_usd": 400,
@@ -12267,14 +12267,14 @@
      "b": "r316",
      "a_start": "12:00",
      "b_start": "13:00",
-     "detail": "Seniors No Limit Hold'em 50+ (12:00) and PLO Double Board Bomb Pot (13:00) cannot be checked: Seniors No Limit Hold'em 50+ publishes no level structure."
+     "detail": "Seniors NLH 50+ (12:00) and PLO Double Board Bomb Pot (13:00) cannot be checked: Seniors NLH 50+ publishes no level structure."
     },
     {
      "a": "r314",
      "b": "r317",
      "a_start": "12:00",
      "b_start": "18:00",
-     "detail": "Seniors No Limit Hold'em 50+ (12:00) and NLH Turbo (18:00) cannot be checked: Seniors No Limit Hold'em 50+ publishes no level structure."
+     "detail": "Seniors NLH 50+ (12:00) and NLH Turbo (18:00) cannot be checked: Seniors NLH 50+ publishes no level structure."
     },
     {
      "a": "r316",

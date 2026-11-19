@@ -73,7 +73,7 @@
     "room": "Venetian Newly Remodeled Luxury King",
     "checkout_total_usd": 4559.3
    },
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
@@ -152,7 +152,7 @@
     "room": "Palazzo Luxury Two Queen",
     "checkout_total_usd": 1600.08
    },
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
@@ -220,7 +220,7 @@
    "tax_licence": "2000013.RES-001",
    "tax_licensed_as": "Resort Hotel (PGC)",
    "tax_source_url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.wynnlasvegas.com/about-us/parking",
@@ -284,7 +284,7 @@
    "tax_licence": "2000013.RES-001",
    "tax_licensed_as": "Resort Hotel (PGC)",
    "tax_source_url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.wynnlasvegas.com/about-us/parking",
@@ -442,7 +442,7 @@
    "booking_url": "https://www.caesars.com/book/hotel-calendar?propCode=CLV",
    "resort_fee_usd": null,
    "resort_fee_status": "unverified",
-   "resort_fee_note": "Read on 2026-11-17: the Caesars Palace property pages and the Caesars Palace FAQ do not print a resort-fee amount for this property. The Caesars corporate disclaimer states only a portfolio-wide range that does not name Caesars Palace, so it is not used as this property's fee. The disclaimer's printed range changed between reads: \"a daily resort fee between $45-$50 plus applicable tax\" on 2026-11-17 (research/verification-2026-11-17-structure-sheets.md) and \"a daily resort fee between $45-$60 plus applicable tax\" when the page was re-read live on 2026-11-19 (session cebd4457; the daily source monitor also flagged this page's facts as changed on 2026-11-19 in data/changes.json). The current quote is the 2026-11-19 reading; both readings are dated so the movement is visible. The property's own fee stays blank either way.",
+   "resort_fee_note": "Read 2026-11-19 (live re-read of the cited pages, sessions a3822303 and cebd4457): the Caesars Palace property pages and the Caesars Palace FAQ do not print a resort-fee amount for this property. The Caesars corporate disclaimer states only that \"Room reservations are subject to a daily resort fee between $45-$60 plus applicable tax\" across the Caesars portfolio, which does not name Caesars Palace, so it is not used as this property's fee. Correction (F87): the 2026-11-17 note quoted the range as $45-$50; no archived capture of the page prints that - data/snapshots/h_caesars.txt (2026-11-16), the 2026-11-17 baseline facts (captured 2026-11-17T00:43:10Z, hash-equal to the current paragraph) and the 2026-11-19 live re-read all read $45-$60, so both readings stay dated in research/verification-2026-11-19-a3822303.md section D without claiming the page moved. The daily monitor marked this source on 2026-11-19 (data/changes.json); its diff carries only the retrieval-timestamp list, not a value. The property's own fee stays blank either way.",
    "clark_county_tax_pct": 13.38,
    "tax_status": "verified",
    "tax_note": "Taxing authority: licence 1136233.RES-001, \"Caesars Palace\", 3570 Las Vegas Blvd S, Las Vegas NV, status Licensed, transient lodging tax rate 13.38%, category Resort Hotel (PGC) (Clark County Department of Business License, General Information Guide for Transient Lodging Establishments, Appendix III and the licensed-establishment table; the licensed-establishment table as of April 2021). Appendix III sets the combined rate for a Resort Hotel in the Stadium District and Primary Gaming Corridor at 13.38% (5.5 + 2 + 1 + 1 + 3 + .88), rates effective 3-1-17. No Caesars page read prints a room-tax percentage; the taxing authority is the source. The resort fee for this property is still unverified (blank).",
@@ -463,7 +463,7 @@
      "url": "https://www.caesars.com/caesars-palace/faqs"
     },
     {
-     "label": "Caesars corporate disclaimer: portfolio-wide $45-$60 resort-fee range (re-read 2026-11-19; printed $45-$50 when read 2026-11-17), not property-specific (official)",
+     "label": "Caesars corporate disclaimer: portfolio-wide $45-$60 resort-fee range (re-read 2026-11-19; F87 corrects the earlier $45-$50 research quote), not property-specific (official)",
      "url": "https://www.caesars.com/corporate/disclaimer"
     },
     {
@@ -486,11 +486,11 @@
    "tax_licence": "1136233.RES-001",
    "tax_licensed_as": "Resort Hotel (PGC)",
    "tax_source_url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.caesars.com/corporate/disclaimer",
-    "what": "The corporate disclaimer was re-read live on 2026-11-19 (session cebd4457) after the daily source monitor marked this page's published facts as changed: the Hotel Disclaimer now prints \"a daily resort fee between $45-$60 plus applicable tax\" where the 2026-11-17 read recorded \"$45-$50\". The range is portfolio-wide and names no property, so the Caesars Palace fee stays blank. The parking-page claims recorded on 2026-11-17 (parking URL redirects to Things To Do; \"FREE 48-Hour Cancellation*\" headline) were not re-read on 2026-11-19."
+    "what": "The corporate disclaimer was re-read live on 2026-11-19 (sessions a3822303 and cebd4457; the daily source monitor also marked this source on its 2026-11-19 run) and still prints only the portfolio range \"Room reservations are subject to a daily resort fee between $45-$60 plus applicable tax\" - no Caesars Palace-specific amount, so the fee stays blank. Correction (F87): the published note and the 2026-11-17 research quote said $45-$50; no capture of the page ever printed that - data/snapshots/h_caesars.txt (2026-11-16), the 2026-11-17 baseline facts (hash-equal to the current paragraph) and the 2026-11-19 live re-read all read $45-$60, so the earlier reading was a transcription in research/verification-2026-11-17-structure-sheets.md, not the page's text; the monitor's mark diffs only this source's retrieval timestamps. The parking-page claims recorded on 2026-11-17 (parking URL redirects to Things To Do; \"FREE 48-Hour Cancellation\" headline) were not re-read on 2026-11-19."
    },
    "walk_to_venetian_status": "verified",
    "walk_to_venetian_within_30": true,

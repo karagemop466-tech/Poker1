@@ -207,7 +207,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -446,7 +446,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -774,7 +774,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -883,7 +883,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -992,7 +992,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -1205,7 +1205,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -1310,7 +1310,9 @@
    "est_end_abs_min": 1975,
    "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #30 on 2026-11-16. Re-read 2026-11-19: structure sheet #30 was fetched again and compared field by field - the buy-in, guarantee, fee split, prize pool, starting stack, level count and length, late-registration deadline and payout clause all match what is published here, and re-read in full as the r012 source-change re-check (session cebd4457) and identical to the archived snapshot on every published value: Event 08's $200 PKO at 5:10 PM, 25,000 chips, late registration 8 levels plus break (~9:40 PM), $8,000 guarantee including bounties, and clause 06's $40 house fee / $160 prize-pool split.",
-   "flags": [],
+   "flags": [
+    "The official structure sheet was re-published after this row was first read: a hand re-read on 2026-11-19 compared the live sheet with the 2026-11-16 and 2026-11-19 archives line by line. Clause 9 (bounty mechanics) now adds that the eliminated player's bounty is split equally between a cash payout to the eliminating player and an increase to that player's own bounty, with the cash rounded down to the nearest whole dollar when the bounty does not divide evenly; several clauses also re-wrapped to different line lengths. None of the row's published values changed (date, start, buy-in, guarantee, fee split, registration close, payout percentage and entry-rule findings are identical), and the re-read found no re-entry, rebuy or add-on wording. Source: structure sheet #30, re-read live 2026-11-19."
+   ],
    "sources": [
     {
      "label": "Official event page",
@@ -1432,7 +1434,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -1658,7 +1660,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -1765,7 +1767,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -2300,7 +2302,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -2981,7 +2983,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -3207,7 +3209,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -3660,7 +3662,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -3781,7 +3783,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -4234,7 +4236,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -4931,7 +4933,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -5505,7 +5507,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -5616,7 +5618,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -6187,7 +6189,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -6307,7 +6309,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -6538,7 +6540,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -6894,7 +6896,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -7252,7 +7254,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -7728,7 +7730,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -7851,7 +7853,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -8325,7 +8327,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -8436,7 +8438,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -8661,7 +8663,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -9356,7 +9358,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -9703,7 +9705,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -10046,7 +10048,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -10275,7 +10277,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -10390,7 +10392,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -10736,7 +10738,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -10959,7 +10961,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -11536,7 +11538,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -11651,7 +11653,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -12106,7 +12108,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -12335,7 +12337,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -12445,7 +12447,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -12560,7 +12562,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -12782,7 +12784,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -13002,7 +13004,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -13231,7 +13233,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -13459,7 +13461,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -13570,7 +13572,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -13687,7 +13689,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -13919,7 +13921,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -14041,7 +14043,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -14723,7 +14725,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -15080,7 +15082,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -15908,7 +15910,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -16113,7 +16115,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -16341,7 +16343,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -16464,7 +16466,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -17251,7 +17253,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -17713,7 +17715,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -18154,7 +18156,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -18588,7 +18590,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -19049,7 +19051,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -19603,7 +19605,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -20070,7 +20072,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -20726,7 +20728,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -21070,7 +21072,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -21425,7 +21427,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -22335,7 +22337,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -22458,7 +22460,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -23924,7 +23926,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -24154,7 +24156,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -25153,7 +25155,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -25712,7 +25714,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -25939,7 +25941,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -26046,7 +26048,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "recheck": {
     "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
@@ -33805,7 +33807,7 @@
    "start": "13:00",
    "kind": "entry",
    "event_no": null,
-   "name": "Mixed Game (TORSE)",
+   "name": "TORSE",
    "buy_in_usd": 400,
    "guarantee_usd": null,
    "prize_text": null,
@@ -34484,7 +34486,7 @@
    "start": "13:00",
    "kind": "entry",
    "event_no": null,
-   "name": "Mixed Game (TOE)",
+   "name": "TOE",
    "buy_in_usd": 400,
    "guarantee_usd": null,
    "prize_text": null,
@@ -35168,7 +35170,7 @@
    "start": "12:00",
    "kind": "entry",
    "event_no": null,
-   "name": "Seniors No Limit Hold'em 50+",
+   "name": "Seniors NLH 50+",
    "buy_in_usd": 400,
    "guarantee_usd": 30000,
    "prize_text": null,

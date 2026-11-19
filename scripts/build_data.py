@@ -477,6 +477,24 @@ LIPS_FEE_FLAG = ("The structure sheet withholds two separate amounts from the bu
                  "Series (LIPS). house_fee_usd stores the pure house fee only; the LIPS flat fee is stored "
                  "separately in lips_fee_usd. The prize pool is the buy-in less both withholdings.")
 
+# The official structure sheet #30 was re-published between 2026-11-16 and 2026-11-19. A hand
+# re-read of the live sheet on 2026-11-19 (session a3822303) against the archived captures shows
+# the change exactly: clause 9 (bounty mechanics) was expanded - the eliminated player's bounty
+# is now split between a cash payout and an increase to the eliminator's bounty, with an explicit
+# whole-dollar rounding rule - and several clauses re-wrapped to different line lengths. Every
+# published value on the row (start time, buy-in, guarantee, fee split, registration close,
+# payout percentage, entry rules) is unchanged. Recorded as a flag, not as a value change.
+STRUCT30_CLAUSE9_REWORDED = (
+    "The official structure sheet was re-published after this row was first read: a hand re-read "
+    "on 2026-11-19 compared the live sheet with the 2026-11-16 and 2026-11-19 archives line by "
+    "line. Clause 9 (bounty mechanics) now adds that the eliminated player's bounty is split "
+    "equally between a cash payout to the eliminating player and an increase to that player's own "
+    "bounty, with the cash rounded down to the nearest whole dollar when the bounty does not "
+    "divide evenly; several clauses also re-wrapped to different line lengths. None of the "
+    "row's published values changed (date, start, buy-in, guarantee, fee split, registration "
+    "close, payout percentage and entry-rule findings are identical), and the re-read found no "
+    "re-entry, rebuy or add-on wording. Source: structure sheet #30, re-read live 2026-11-19.")
+
 # ---------- Wynn WPT World Championship schedule rows (official schedule PDF, read 2026-11-16) ----------
 # date, time, name, buy-in, guarantee (None = no dollar guarantee), guarantee text,
 # published chips, published levels, kind, structure key, flags
@@ -897,7 +915,7 @@ WSS = [
  ("2027-01-18","13:00","PLO",400,None,30000,"30","entry",[]),
  ("2027-01-18","18:00","NLH Turbo",200,10000,25000,"20","entry",[]),
  ("2027-01-19","11:00","No Limit Hold'em Day 1B",400,100000,40000,"40","entry",[WSS_GTD_REREAD]),
- ("2027-01-19","13:00","Mixed Game (TORSE)",400,None,35000,"30","entry",[]),
+ ("2027-01-19","13:00","TORSE",400,None,35000,"30","entry",[]),
  ("2027-01-19","18:00","NLH Turbo",200,10000,25000,"20","entry",[]),
  ("2027-01-20","11:00","No Limit Hold'em Day 1C",400,100000,40000,"40","entry",[WSS_GTD_REREAD]),
  ("2027-01-20","13:00","Mixed Triple Draw (A-5, 2-7, Badugi)",400,None,35000,"30","entry",[]),
@@ -905,7 +923,7 @@ WSS = [
  ("2027-01-21","11:00","No Limit Hold'em Day 1A",800,300000,40000,"40","entry",[WSS_GTD_REREAD]),
  ("2027-01-21","12:00","No Limit Hold'em Day 2",None,None,None,None,"continuation",
   ["Continuation row. The official schedule PDF prints no buy-in, guarantee, chips or levels for this row."]),
- ("2027-01-21","13:00","Mixed Game (TOE)",400,None,35000,"30","entry",[]),
+ ("2027-01-21","13:00","TOE",400,None,35000,"30","entry",[]),
  ("2027-01-21","18:00","Milestone Satellite to $800 NLH",160,None,20000,"20","entry",
   ["Prize printed as \"10 Seats\". Schedule footnote: \"Winners will receive direct entry to the corresponding "
    "event(s) for which it was held. See structure sheet for details.\""]),
@@ -916,7 +934,7 @@ WSS = [
    "event(s) for which it was held. See structure sheet for details.\""]),
  ("2027-01-23","11:00","No Limit Hold'em Day 1C",800,300000,40000,"40","entry",[WSS_GTD_REREAD]),
  ("2027-01-23","18:00","No Limit Hold'em Day 1D",800,300000,40000,"20/40","entry",[WSS_GTD_REREAD]),
- ("2027-01-24","12:00","Seniors No Limit Hold'em 50+",400,30000,30000,"30","entry",[]),
+ ("2027-01-24","12:00","Seniors NLH 50+",400,30000,30000,"30","entry",[]),
  ("2027-01-24","13:00","No Limit Hold'em Day 2",None,None,None,None,"continuation",
   ["Continuation row. The official schedule PDF prints no buy-in, guarantee, chips or levels for this row."]),
  ("2027-01-24","13:00","PLO Double Board Bomb Pot",400,None,30000,"30","entry",[]),
@@ -1416,6 +1434,12 @@ def fee_clause_quote(published, buy, fee, pool):
     if not fee_sentence:
         return None, None, None
     return clause_no, fee_sentence, pool_sentence
+# Day the DeepStack Extravaganza IV event listing was re-read live, field by field, against
+# every published row (sessions 98241f2f, 336fb2af and aa1e89b0 recorded 94/94 and 16-28 Nov
+# matches in COORDINATION.md; session a3822303 re-read structure sheets #5 and #30 live the
+# same day). It stamps last_checked for that series only; verified_on keeps the original
+# sheet-reading date, and the NYE series was not re-read on 2026-11-19 so it keeps LAST_CHECKED.
+DSE_REREAD_ON = "2026-11-19"
 
 
 def build_venetian(rows, series_key, series, page_key, sheet_key, sched_key, struct_key):
@@ -1514,6 +1538,8 @@ def build_venetian(rows, series_key, series, page_key, sheet_key, sched_key, str
             flags.append(DATE_TYPO_TUESDAY)
         if lips_fee:
             flags.append(LIPS_FEE_FLAG)
+        if series_key == "nov" and sheet_no == 30:
+            flags.append(STRUCT30_CLAUSE9_REWORDED)
         # Re-read 2026-11-17: the event page prints 11:10 AM for this restart, the structure
         # sheet says Day 2 resumes at 11:00 AM. The conflict is published, not resolved.
         start_conflict = date == "2027-01-04" and no == 20 and continuation
@@ -1569,9 +1595,12 @@ def build_venetian(rows, series_key, series, page_key, sheet_key, sched_key, str
             "est_end_days_after": est_offset_days,
             "note": note,
             "flags": flags,
-            # Advances to the re-read date only for rows whose own structure sheet
-            # was opened again on that date (see REREAD above).
-            "sources": srcs, "verified_on": VERIFIED_ON, "last_checked": retrieved,
+            "sources": srcs, "verified_on": VERIFIED_ON,
+            # 2026-11-19, from either re-read that happened that day: the whole
+            # series listing page was re-read (DSE_REREAD_ON, every nov row), or this
+            # row's own structure sheet was fetched again (REREAD -> retrieved).
+            # NYE rows that were re-read under neither keep LAST_CHECKED.
+            "last_checked": DSE_REREAD_ON if series_key == "nov" else retrieved,
         }
         # Session cebd4457: a dated recheck record for rows whose sheet was NOT
         # re-read in full on 2026-11-19 (the listing page was, row by row).
@@ -2206,13 +2235,19 @@ HOTEL_RECHECK = {
              "what": "Official parking URL re-tried: the property returns its 'Oops! We can\'t find that page' "
                      "error, so there is no ARIA parking or fee value to publish."},
     "caesars": {"on": "2026-11-19", "url": "https://www.caesars.com/corporate/disclaimer",
-                "what": "The corporate disclaimer was re-read live on 2026-11-19 (session cebd4457) after the "
-                        "daily source monitor marked this page's published facts as changed: the Hotel Disclaimer "
-                        "now prints \"a daily resort fee between $45-$60 plus applicable tax\" where the "
-                        "2026-11-17 read recorded \"$45-$50\". The range is portfolio-wide and names no "
-                        "property, so the Caesars Palace fee stays blank. The parking-page claims recorded on "
-                        "2026-11-17 (parking URL redirects to Things To Do; \"FREE 48-Hour Cancellation*\" "
-                        "headline) were not re-read on 2026-11-19."},
+                "what": "The corporate disclaimer was re-read live on 2026-11-19 (sessions a3822303 "
+                        "and cebd4457; the daily source monitor also marked this source on its 2026-11-19 "
+                        "run) and still prints only the portfolio range \"Room reservations are subject to "
+                        "a daily resort fee between $45-$60 plus applicable tax\" - no Caesars "
+                        "Palace-specific amount, so the fee stays blank. Correction (F87): the published "
+                        "note and the 2026-11-17 research quote said $45-$50; no capture of the page ever "
+                        "printed that - data/snapshots/h_caesars.txt (2026-11-16), the 2026-11-17 baseline "
+                        "facts (hash-equal to the current paragraph) and the 2026-11-19 live re-read all "
+                        "read $45-$60, so the earlier reading was a transcription in "
+                        "research/verification-2026-11-17-structure-sheets.md, not the page's text; the "
+                        "monitor's mark diffs only this source's retrieval timestamps. The parking-page "
+                        "claims recorded on 2026-11-17 (parking URL redirects to Things To Do; \"FREE "
+                        "48-Hour Cancellation\" headline) were not re-read on 2026-11-19."},
 }
 
 HOTELS = [
@@ -2490,15 +2525,20 @@ HOTELS = [
                   "(\"3570 Las Vegas Blvd S\"), so the operator and the county agree (county record read 2026-11-17).",
   "booking_url": "https://www.caesars.com/book/hotel-calendar?propCode=CLV",
   "resort_fee_usd": None, "resort_fee_status": "unverified",
-  "resort_fee_note": "Read on 2026-11-17: the Caesars Palace property pages and the Caesars Palace FAQ do not print "
-                     "a resort-fee amount for this property. The Caesars corporate disclaimer states only a "
-                     "portfolio-wide range that does not name Caesars Palace, so it is not used as this property's "
-                     "fee. The disclaimer's printed range changed between reads: \"a daily resort fee between "
-                     "$45-$50 plus applicable tax\" on 2026-11-17 (research/verification-2026-11-17-structure-sheets.md) "
-                     "and \"a daily resort fee between $45-$60 plus applicable tax\" when the page was re-read live on "
-                     "2026-11-19 (session cebd4457; the daily source monitor also flagged this page's facts as changed "
-                     "on 2026-11-19 in data/changes.json). The current quote is the 2026-11-19 reading; both readings "
-                     "are dated so the movement is visible. The property's own fee stays blank either way.",
+  "resort_fee_note": "Read 2026-11-19 (live re-read of the cited pages, sessions a3822303 and "
+                     "cebd4457): the Caesars Palace property pages and the Caesars Palace FAQ do not "
+                     "print a resort-fee amount for this property. The Caesars corporate disclaimer "
+                     "states only that \"Room reservations are subject to a daily resort fee between "
+                     "$45-$60 plus applicable tax\" across the Caesars portfolio, which does not name "
+                     "Caesars Palace, so it is not used as this property's fee. Correction (F87): the "
+                     "2026-11-17 note quoted the range as $45-$50; no archived capture of the page "
+                     "prints that - data/snapshots/h_caesars.txt (2026-11-16), the 2026-11-17 baseline "
+                     "facts (captured 2026-11-17T00:43:10Z, hash-equal to the current paragraph) and the "
+                     "2026-11-19 live re-read all read $45-$60, so both readings stay dated in "
+                     "research/verification-2026-11-19-a3822303.md section D without claiming the page "
+                     "moved. The daily monitor marked this source on 2026-11-19 (data/changes.json); "
+                     "its diff carries only the retrieval-timestamp list, not a value. The property's "
+                     "own fee stays blank either way.",
   "clark_county_tax_pct": CC_TAX_RATE, "tax_status": "verified",
   "tax_note": cc_tax_note("caesars", "No Caesars page read prints a room-tax percentage; the taxing authority is the "
                                      "source. The resort fee for this property is still unverified (blank)."),
@@ -2521,8 +2561,7 @@ HOTELS = [
                        "before a true cost is calculated.",
   "sources": [{"label": "Caesars Palace FAQ: check-in/out times and 48-hour cancellation (official)",
                "url": SRC["caesars_faq"]},
-              {"label": "Caesars corporate disclaimer: portfolio-wide $45-$60 resort-fee range (re-read 2026-11-19; "
-                        "printed $45-$50 when read 2026-11-17), not property-specific (official)",
+              {"label": "Caesars corporate disclaimer: portfolio-wide $45-$60 resort-fee range (re-read 2026-11-19; F87 corrects the earlier $45-$50 research quote), not property-specific (official)",
                "url": SRC["caesars_disclaimer"]},
               {"label": "Caesars Palace official page incl. address (official)", "url": SRC["caesars"]},
               {"label": "Caesars Palace poker page: 24/7 room and the daily tournament schedule link (official)", "url": SRC["caesars_poker_page"]},
@@ -2870,10 +2909,12 @@ def main():
             h["true_cost_quote"] = {"arrival": quote["arrival"], "departure": quote["departure"],
                                     "nights": quote["nights"], "room": quote["room"],
                                     "checkout_total_usd": quote["checkout_total_usd"]}
-        h["last_checked"] = LAST_CHECKED
-        # What was actually opened again on 2026-11-17, per property - so a reader can tell a
-        # re-read from a carry-over. Fields not listed here were not re-read on that date.
-        h["recheck"] = HOTEL_RECHECK.get(h["id"])
+        # What was actually opened again on the date in the property's own recheck entry -
+        # so a reader can tell a re-read from a carry-over. Fields not listed there were not
+        # re-read on that date. last_checked follows the recheck date when one exists.
+        rc = HOTEL_RECHECK.get(h["id"])
+        h["last_checked"] = rc["on"] if rc else LAST_CHECKED
+        h["recheck"] = rc
         w = walk_by_key.get((h["id"], VEN))
         h["walk_to_venetian_min"] = w["minutes"] if w else None
         h["walk_to_venetian_status"] = w["status"] if w else "unverified"
