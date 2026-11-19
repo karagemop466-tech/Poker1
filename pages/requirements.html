@@ -929,17 +929,20 @@ always names the limit.</p>
       var main = document.getElementById("content");
       var count = document.getElementById("count");
 
-      /* ---- Trip diary -------------------------------------------------------
-         One row per day that actually holds a verified single-entry event: the
-         event chosen as that day's primary, the conditional fallback behind it,
-         and - the thing that decides whether the fallback is real - the last
-         moment registration closes as the official sheet prints it. Nothing here
-         is a forecast: a finish is an estimate and is labelled as one, and where
-         two events cannot be compared at all, this says so instead of pairing
-         them up. */
+      /* ---- Candidate day plan -----------------------------------------------
+         The schedule can contain candidate rows whose published sheet does not
+         affirm a one-entry/no-rebuy/no-add-on policy. Never describe those as
+         verified freezeouts or as a booking-ready itinerary. */
       var byId = {};
       res[0].rows.forEach(function (r) { byId[r.id] = r; });
       var days = sched.days.filter(function (d) { return d.primary_id; });
+      var confirmedRows = res[0].rows.filter(function (r) { return r.entry_status === "SE"; }).length;
+      var candidatePrimaries = days.filter(function (d) {
+        return byId[d.primary_id] && byId[d.primary_id].entry_status === "CAND";
+      }).length;
+      var confirmedPrimaries = days.filter(function (d) {
+        return byId[d.primary_id] && byId[d.primary_id].entry_status === "SE";
+      }).length;
 
       function regLine(o) {
         if (!o) return "";
@@ -952,38 +955,42 @@ always names the limit.</p>
 
       function dayLine(o, isPrimary, isSequence) {
         if (!o) return "";
-        var finish = o.est_end_label || o.est_end;
-        var lead = isPrimary ? "Play"
-          : (isSequence ? "Then play" : "Only if you bust out or finish early");
+        var finish = o.est_end_label || o.est_end || o.end;
+        var entryStatus = byId[o.id] && byId[o.id].entry_status;
+        var lead = entryStatus === "CAND"
+          ? (isPrimary ? "Candidate primary · policy unconfirmed" : "Candidate option · policy unconfirmed")
+          : (isPrimary ? "Play" : (isSequence ? "Then play" : "Only if you bust out or finish early"));
         return "<li><strong>" + lead + "</strong> · " +
           timeFmt(o.start) + " · " + esc(o.name) + " · " + money(o.buy_in_usd) +
           (o.guarantee_usd ? " · GTD " + money(o.guarantee_usd) : (o.prize_text ? " · " + esc(o.prize_text) : "")) +
           regLine(o) +
-          (finish ? " · estimated finish about " + endFmt(finish) : " · no finish estimate published") +
+          (finish ? " · estimated finish about " + endFmt(o) : " · no finish estimate published") +
           ' · <a href="' + esc(o.source) + '" target="_blank" rel="noopener">source</a></li>';
       }
 
       var diary = document.createElement("div");
       diary.id = "trip-diary";
       diary.innerHTML =
-        '<h2>Trip diary &mdash; one line per playable day</h2>' +
-        '<p class="small">' + days.length + ' of the ' + sched.days.length +
-        ' dates in this dataset hold at least one verified single-entry event. Each line names the ' +
-        "event chosen as that day's primary and, where one is printed, the later single-entry event on " +
-        "the same date &mdash; labelled either a sequence that can be planned or a chance that depends " +
-        "on being eliminated in time. " +
-        "<strong>Under the published level structures, no day's primary is estimated to finish before " +
-        "another single-entry event on that date starts</strong>, so " +
+        '<h2>Candidate day plan &mdash; not booking-ready</h2>' +
+        '<p class="small">' + days.length + ' dates in this dataset have a proposed primary event: ' +
+        confirmedPrimaries + ' are marked as written-confirmed freezeouts and ' + candidatePrimaries +
+        ' are candidates without full written single-entry/no-rebuy/no-add-on confirmation. Across the ' +
+        'tournament table, ' + confirmedRows + ' rows currently meet the written-confirmation filter. ' +
+        '<strong>Candidate rows are not verified freezeouts; do not treat this plan as confirmation ' +
+        'that you may enter once or as a booking recommendation.</strong> Each line names a proposed ' +
+        "primary and, where printed, a later candidate event on the same date. " +
+        "Under the published level structures, no primary is estimated to finish before another " +
+        "candidate event on that date starts, so " +
         sched.days.filter(function (d) { return d.fallback_id; }).length +
-        " of these dates offer a true two-event sequence. The " +
+        " dates offer a two-event sequence based on the currently classified rows. The " +
         sched.days.filter(function (d) { return d.second_entry_id; }).length +
-        " dates marked <em>second entry</em> are different: a second single-entry event is printed on " +
-        "the same date, but the primary may still be running when it starts, so entering it is a " +
-        "chance that depends on being eliminated in time, not a plan. Each line prints the " +
-        "registration deadline that decides it. Finish times are <em>estimates</em> computed from the " +
-        "printed structure, never official finish times, and " + sched.undecidable_total +
-        " same-day pairs cannot be checked at all because the sheet prints a level length with no " +
-        "level count.</p>";
+        " dates marked <em>second entry</em> have a later candidate whose start may overlap the " +
+        "primary. Registration cutoffs and finish times are copied or estimated from the printed " +
+        "structure; estimates are not official finish times. " + sched.undecidable_total +
+        " same-day pairs cannot be checked because their sheets print a level length without a " +
+        "level count. Clear the " +
+        '“Written freezeout confirmed” filter to inspect candidates; obtain written event-specific ' +
+        'rules before relying on any candidate.</p>';
       var list = document.createElement("ul");
       list.className = "diary";
       list.innerHTML = days.map(function (d) {
