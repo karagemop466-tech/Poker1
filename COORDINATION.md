@@ -1691,3 +1691,11 @@ operator hosts are unreachable (F55), so `monitor_sources.py` is exercised in CI
 `data/row_verification.json` are byte-identical to what this task found on `main` - no official value moved
 during any of it. `data/schedule.json` is the file that changed, and it is generated: edit
 `scripts/build_data.py`, never the JSON.
+
+### Session 711251e8 — claim (2026-11-19)
+
+| Task | Status | Owner | File scope |
+|---|---|---|---|
+| Audit the single-entry confirmation claim against the requirement for explicit written no-re-entry/no-rebuy/no-add-on rules; prevent unsupported classifications and document any limitations. | in progress | 711251e8 | `scripts/build_data.py`, associated tests, generated `data/`, `assets/app.js`, generated pages and relevant decision documents, `COORDINATION.md` |
+
+This branch is fixed by the session environment; no separate session branch can be created. The board is shared via this branch's PR, not directly written to main.
