@@ -1728,3 +1728,5 @@ Retained PR #90’s deploy receipt when it arrived during integration. Aborted a
 Additional unclaimed scope: morning schedule evidence feed (`scripts/schedule_feed.py`, `.github/workflows/schedule-feed.yml`, `data/schedule_feed.json`, daily page) and executive decision presentation. This feed does not edit any reviewed tournament or rate.
 
 #91 integrated without changing that session’s Nov 26 evidence. Combined append-only claim logs. Final integration scope includes home styles, decision docs, structure parser’s sheet-silence label, and deterministic derived files.
+
+PR [#89](https://github.com/karagemop466-tech/Poker1/pull/89) · integrated #91's booking example; preserved the parallel #88 calculator implementation and its numerical regression test (2109c99), adding same-room/offer matching and dated official lookup links. Additional room profiles are generated from the existing official-source survey, not guessed hotel pairings. No external tariff was applied to an unquoted property.

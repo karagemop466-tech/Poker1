@@ -92,7 +92,7 @@ def main():
         rules = re.findall(r"(?m)^\s*(\d{1,2})\.\s+\S", text)
         rec["rule_count"] = len({int(x) for x in rules})
         rec["sheet_kind"] = ("RE_ENTRY" if rec["re_entry_excerpt"] else
-                             "MULTI_FLIGHT" if rec["multi_flight_excerpt"] else "SINGLE_ENTRY")
+                             "MULTI_FLIGHT" if rec["multi_flight_excerpt"] else "NO_ENTRY_POLICY_FOUND")
         out[sid] = rec
 
     with open(OUT, "w", encoding="utf-8") as f:

@@ -177,6 +177,21 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
   .md pre, .md code { white-space: pre-wrap; word-break: break-word; }
 }
 
+/* Briefing dashboard */
+body { --accent:#126551; --bg:#f4f6f2; --ink:#182d2a; --line:#d5dfd9; }
+header.site { background:#123c35; padding-inline:max(20px, calc((100% - 1160px)/2)); }
+header.site nav a {color:#d9ebe4}
+.briefing {border-top:4px solid #24745b; padding:clamp(20px,4vw,44px); background:#e4efe6; border-radius:5px;}
+.briefing h1 {font:600 clamp(2.1rem,5vw,3.4rem)/1.1 Georgia,serif; letter-spacing:-.035em; margin:10px 0;}
+.briefing p:not(.eyebrow) {max-width:620px; font-size:1.08rem;}
+.eyebrow {font-size:.72rem;letter-spacing:.12em;color:#326e5b;font-weight:750;margin:0}
+.home-search label {display:block;font-size:.85rem;font-weight:650;margin-bottom:4px}
+.home-search div {display:flex;max-width:560px;gap:6px}.home-search input {min-width:0;flex:1;padding:10px 12px;border:1px solid #a2b3a7;border-radius:5px;font:inherit}.home-search button {background:#12513f;color:white;border:0;border-radius:5px;padding:0 20px;font:inherit;cursor:pointer}
+.decision,.desk {display:flex;gap:12px 20px;align-items:center;flex-wrap:wrap;padding:16px 18px;border:1px solid var(--line);border-radius:5px;background:#fff;}
+.decision {margin-top:14px;background:#fffbef;border-color:#ded4b6}.decision strong{color:#7d531d}.decision span{flex:1 1 350px}.decision a,.path a,.desk a {font-weight:600; color:#12513f}
+#kpis .card {margin:0;border-radius:6px}.kpi .num {font-variant-numeric:tabular-nums;color:#185641}
+.path-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:14px}.path {padding:22px;background:#fff;border:1px solid var(--line);border-radius:6px}.path h3{margin:10px 0 4px;font-size:1.25rem}.path p{color:#51615c}.path a{display:block;margin-top:6px}.desk a {text-underline-offset:3px}
+
 </style>
 </head>
 <body data-page="strips">
@@ -708,16 +723,10 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
       var today = vegasDate();
       var upcoming = rows.filter(function (r) { return r.entry_status === "CAND" && r.date >= today; }).length;
       document.getElementById("kpis").innerHTML =
-        kpi(upcoming, "single-entry candidates today or later (Las Vegas dates)") +
-        kpi(rows.length, "official rows in this dataset") +
         kpi(c.SE, "written freezeouts confirmed") +
-        kpi(c.CAND || 0, "sheet reviewed; entry cap not stated") +
-        kpi(c.MULTI + c.RE, "in the separate section") +
-        kpi(c.UNV, "unverified (entry rule)") +
-        kpi(Object.keys(dates).length, "dates covered") +
-        kpi(verifiedFees + " of " + hotels.length, "hotels with a verified resort fee") +
-        kpi(daily.length, "recurring daily formats") +
-        kpi(flagged, "rows carrying a source flag");
+        kpi(upcoming, "upcoming candidates · Las Vegas dates") +
+        kpi(rows.length, "series rows reviewed") +
+        kpi(hotels.length, "hotels in the comparison");
     }).catch(showErr);
   };
   function kpi(n, label) {
@@ -1106,15 +1115,15 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
         '<div class="form-grid">' +
         '<div><label for="c-quote">Verified stay quote (dated rate log)</label><select id="c-quote"></select></div>' +
         '<div><label for="c-entries">Tournament entries</label><input type="number" id="c-entries" min="0" step="1" value="1"></div>' +
-        '<div><label for="c-buyin">Buy-in each (USD)</label><input type="number" id="c-buyin" min="0" step="10" value="300"></div>' +
+        '<div><label for="c-buyin">Assumed entry fee each (USD)</label><input type="number" id="c-buyin" min="0" step="0.01" value="300"></div>' +
         '<div><label for="c-parkdays">Parking days at the hotel</label><input type="number" id="c-parkdays" min="0" step="1" value="0"></div>' +
-        '<div><label for="c-extra">Other spend for the trip (USD)</label><input type="number" id="c-extra" min="0" step="10" value="0"></div>' +
+        '<div><label for="c-extra">Other spend for the trip (USD)</label><input type="number" id="c-extra" min="0" step="0.01" value="0"></div>' +
         '</div>' +
         '<div class="calc-out" id="c-out"></div>' +
         '<p class="small" id="c-note"></p>' +
         '</div>' +
         '<div class="card"><h2>What is in the selected window</h2><div id="c-window"></div></div>' +
-        '<div class="card"><h2>Like-for-like comparison of the logged quotes</h2><div id="c-compare"></div></div>';
+        '<div class="card"><h2>Logged quotes for the same dates and occupancy</h2><div id="c-compare"></div></div>';
 
       var quoteSel = document.getElementById("c-quote");
       quoteSel.innerHTML = rates.map(function (r, i) {
@@ -1130,7 +1139,7 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
         parkdays: document.getElementById("c-parkdays"),
         extra: document.getElementById("c-extra")
       };
-      function num(v) { var n = parseFloat(v); return isNaN(n) ? null : n; }
+      function num(input) { return input.validity.valid && Number.isFinite(input.valueAsNumber) ? input.valueAsNumber : null; }
       function money2(v) { return "$" + Number(v).toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
 
       function calc() {
@@ -1139,15 +1148,15 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
         var note = document.getElementById("c-note");
         if (!q) { out.innerHTML = ""; note.textContent = "No dated quote is logged yet."; return; }
         var hotel = hotels.filter(function (h) { return h.id === q.hotel_id; })[0] || null;
-        var entries = num(els.entries.value) || 0;
-        var buyin = num(els.buyin.value);
-        var parkdays = num(els.parkdays.value) || 0;
-        var extra = num(els.extra.value) || 0;
+        var entries = num(els.entries);
+        var buyin = num(els.buyin);
+        var parkdays = num(els.parkdays);
+        var extra = num(els.extra);
         var parkRate = hotel ? hotel.parking_usd_per_day : null;
-        var parking = (parkRate == null || !parkdays) ? 0 : parkRate * parkdays;
-        var entryTotal = buyin == null ? null : entries * buyin;
+        var parking = parkdays === 0 ? 0 : (parkRate == null || parkdays == null ? null : parkRate * parkdays);
+        var entryTotal = entries === 0 ? 0 : (buyin == null || entries == null ? null : entries * buyin);
         var hotelTotal = q.checkout_total_usd;
-        var total = (entries && entryTotal == null) || (parkdays && parkRate == null) ? null : hotelTotal + (entryTotal || 0) + parking + extra;
+        var total = [hotelTotal, entryTotal, parking, extra].includes(null) ? null : hotelTotal + entryTotal + parking + extra;
 
         var box = function (label, value, hint) {
           return '<div class="box"><div class="n">' + (value == null ? '<span class="muted">n/a</span>' : value) +
@@ -1157,44 +1166,43 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
           box("Nights", String(q.nights), esc(q.room)) +
           box("Hotel total (engine quote)", money2(hotelTotal), "room + resort fee + tax, as the engine totals it") +
           box("True hotel cost / night", money2(q.true_cost_per_night_usd), "checkout total ÷ nights") +
-          box("Tournament entries", entryTotal == null ? null : money2(entryTotal), entries + " × " + (buyin == null ? "?" : money2(buyin))) +
-          box("Parking", parkdays && parkRate == null ? null : money2(parking), parkdays ? parkdays + " day(s) × " + (parkRate == null ? "unverified" : money2(parkRate)) : "none entered") +
-          box("Other spend", money2(extra), "as entered") +
+          box("Tournament entries", entryTotal == null ? null : money2(entryTotal), (entries == null ? "?" : entries) + " × " + (buyin == null ? "?" : money2(buyin))) +
+          box("Parking", parking == null ? null : money2(parking), parkdays ? parkdays + " day(s) × " + (parkRate == null ? "unverified" : money2(parkRate)) : "none entered") +
+          box("Other spend", extra == null ? null : money2(extra), "as entered") +
           box("Trip total", total == null ? null : money2(total), "entries × buy-in + nights × true hotel cost + parking + other") +
           box("Per night, all in", total == null ? null : money2(total / q.nights), "trip total ÷ nights");
 
         var msgs = [];
-        if (total == null) msgs.push("Total withheld: a required price is missing.");
         msgs.push("Rate timestamp: quote read from the official booking engine on " + q.retrieved_on + ".");
         if (q.cancellation_note) msgs.push("Cancellation: " + q.cancellation_note);
-        if (hotel && hotel.parking_usd_per_day == null && parkdays) {
-          msgs.push("Parking is left out because this property's daily parking fee is not on an official source read so far.");
+        if (parkRate == null && parkdays) {
+          msgs.push("The trip total is unavailable because the parking price is unverified.");
         }
+        if ([entries, buyin, parkdays, extra].includes(null)) msgs.push("Enter nonnegative amounts and whole counts. A buy-in is not needed for zero entries.");
         msgs.push("The hotel line moves with availability; re-check the booking engine before paying. " +
                   "Nothing here is a forecast of winnings.");
         note.textContent = msgs.join(" ");
 
         /* what the selected window holds, from the verified dataset */
         var win = document.getElementById("c-window");
+        // Departure-day events may be playable, but the stay does not cover that night.
         var inWindow = rows.filter(function (r) { return r.date >= q.arrival && r.date < q.departure; });
-        var se = inWindow.filter(function (r) { return r.entry_status === "SE"; });
-        var seCash = se.filter(function (r) { return r.kind === "entry" && !(r.labels || []).some(function (l) { return /satellite/i.test(l); }); });
-        var days = {};
-        se.forEach(function (r) { days[r.date] = 1; });
-        var cheapest = seCash.slice().sort(function (a, b) { return (a.buy_in_usd || 0) - (b.buy_in_usd || 0); })[0];
-        var richest = seCash.slice().filter(function(r){ return r.buy_in_usd > 0 && r.guarantee_usd > 0; }).sort(function (a, b) { return (b.gtd_multiple || 0) - (a.gtd_multiple || 0); })[0];
+        var se = inWindow.filter(function (r) { return r.entry_status === "SE" && r.kind === "entry"; });
+        var comparable = se.filter(function (r) {
+          return r.buy_in_usd > 0 && r.guarantee_usd > 0 && r.rules && r.rules.fee && r.rules.fee.excerpt &&
+            !(r.labels || []).some(function (l) { return /satellite|bounty|flight/i.test(l); });
+        });
+        var richest = comparable.slice().sort(function (a, b) {
+          return b.guarantee_usd / b.buy_in_usd - a.guarantee_usd / a.buy_in_usd;
+        })[0];
         win.innerHTML =
-          '<p class="small">' + esc(dateFmt(q.arrival)) + " to " + esc(dateFmt(q.departure)) + ": " +
-          inWindow.length + " official tournament rows fall in this window, of which <strong>" + se.length +
-          "</strong> are verified single entry (" + seCash.length + " cash events, " + (se.length - seCash.length) +
-          " satellite/other), across " + Object.keys(days).length + " days with at least one verified single-entry event.</p>" +
-          (se.length ? '<p class="small">' + entries + " entr" + (entries === 1 ? "y" : "ies") + " fits " +
-            (entries <= se.length ? "inside the " + se.length + " verified single-entry options in the window."
-                                 : "only partly: the window holds " + se.length + " verified single-entry options.") + "</p>" : "") +
-          (cheapest ? '<p class="small">Cheapest verified single-entry cash event in the window: ' + esc(cheapest.name) +
-            " on " + esc(dateFmt(cheapest.date)) + " at " + esc(timeFmt(cheapest.start)) + " for " + money(cheapest.buy_in_usd) + ".</p>" : "") +
-          (richest ? '<p class="small">Largest guaranteed pool ÷ buy-in in the window: ' + esc(richest.name) +
-            " on " + esc(dateFmt(richest.date)) + " (" + mult(richest.gtd_multiple) + "). Descriptive ratio only, not a forecast.</p>" : "") +
+          '<p class="small">' + esc(dateFmt(q.arrival)) + " to " + esc(dateFmt(q.departure)) + " (checkout day excluded): " +
+          se.length + " verified single-entry options on " + new Set(se.map(function (r) { return r.date; })).size +
+          " dates. This is an option count, not a playable sequence; transfers, arrival time and overlaps still matter.</p>" +
+          (richest ? '<p class="small">Largest guaranteed pool ÷ total entry fee among comparable single-entry events: ' + esc(richest.name) +
+            " on " + esc(dateFmt(richest.date)) + " (" + mult(richest.guarantee_usd / richest.buy_in_usd) +
+            "). Descriptive ratio only, not a forecast. " + srcLinks(richest.sources) + "</p>" :
+            '<p class="small">No comparable single-entry event with a confirmed fee and cash guarantee in this window. Satellites, bounties and flights are not ranked here.</p>') +
           '<p class="small"><a href="' + BASE + 'pages/schedule.html">Open the day-by-day schedule</a> for the day plan: one primary per date, what can replace it, and what cannot be paired.</p>';
 
         /* like-for-like comparison */
@@ -1209,16 +1217,37 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
           { id: "total", label: "Checkout total", key: "checkout_total_usd", num: true, html: function (r) { return money2(r.checkout_total_usd); } },
           { id: "true", label: "True cost / night", key: "true_cost_per_night_usd", num: true, html: function (r) { return "<strong>" + money2(r.true_cost_per_night_usd) + "</strong>"; } },
           { id: "cancel", label: "Cancellation", key: "cancellation_note", sort: null, html: function (r) { return "<span class='small'>" + esc(r.cancellation_note || "not stated in the quote") + "</span>"; } },
-          { id: "stamp", label: "Rate timestamp", key: "retrieved_on", html: function (r) { return "<span class='small'>read " + esc(r.retrieved_on) + "<br>logged " + esc(r.logged_on) + "</span>"; } }
+          { id: "stamp", label: "Rate timestamp", key: "retrieved_on", html: function (r) { return "<span class='small'>read " + esc(r.retrieved_on) + "<br>logged " + esc(r.logged_on) + "</span>"; } },
+          { id: "source", label: "Official source", sort: null, html: function (r) { return srcLinks([{ url: r.source, label: "Booking engine" }]) + "<br>" + datedBookingLink(r); } }
         ];
-        cmp.innerHTML = "";
-        cols.push({id:"source", label:"Source", sort:null, html:function(r){ return datedBookingLink(r); }});
-        table(cmp, rates.filter(function(r){ return r.arrival === q.arrival && r.departure === q.departure && r.occupancy === q.occupancy && r.room === q.room && r.offer === q.offer; }), cols, { sortKey: "true", sortDir: 1 });
+        var matching = rates.filter(function (r) {
+          return r.arrival === q.arrival && r.departure === q.departure && r.occupancy === q.occupancy && r.room === q.room && r.offer === q.offer;
+        });
+        cmp.innerHTML = '<p class="small">' + (matching.length < 2 ? "No second matching quote. " : "") +
+          'These are dated observations, not current offers. Only the selected room and offer are shown; reconfirm cancellation terms.</p>';
+        table(cmp, matching, cols, { sortKey: "true", sortDir: 1 });
       }
 
       quoteSel.addEventListener("change", calc);
       ["entries", "buyin", "parkdays", "extra"].forEach(function (k) { els[k].addEventListener("input", calc); });
       calc();
+    }).catch(showErr);
+  };
+
+  PAGES.roomProfile = function () {
+    var main = document.getElementById("content");
+    getJSON("data/other_rooms.json").then(function(d){
+      var r = d.rooms.find(function(room){return room.id === main.dataset.room;});
+      main.innerHTML = '<p class="lead">'+esc(r.schedule_note)+'</p><p>'+srcLinks(r.sources)+'</p><h2>Published formats</h2>';
+      var events = d.events.filter(function(e){return e.room_id === r.id;});
+      if (events.length) table(main, events, [
+        {id:"format",label:"Event",key:"name"},{id:"days",label:"Days",html:function(e){return esc(e.weekdays.join(", "));}},
+        {id:"start",label:"Start",key:"start"},{id:"buy",label:"Entry fee",html:function(e){return money(e.buy_in_usd);}},
+        {id:"gtd",label:"Guarantee",html:function(e){return money(e.guarantee_usd);}},
+        {id:"rules",label:"Rules",key:"status_note"},{id:"read",label:"Last checked",key:"last_checked"},
+        {id:"source",label:"Sources",html:function(e){return srcLinks(e.sources);}}
+      ]); else main.insertAdjacentHTML("beforeend", "<p>No dated entry or verified recurring format in this room’s dataset.</p>");
+      main.insertAdjacentHTML("beforeend", '<h2>Hotels</h2><p>No comparable checkout and verified walk to this room are on file. <a href="hotels.html">Review the hotel log</a>.</p>');
     }).catch(showErr);
   };
 
@@ -1299,6 +1328,7 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
   PAGES.search = function () {
     var results = document.getElementById("results");
     var input = document.getElementById("q");
+    input.value = new URLSearchParams(location.search).get("q") || "";
     var summary = document.getElementById("summary");
     Promise.all([
       getJSON("data/tournaments.json"), getJSON("data/hotels.json"), getJSON("data/venues.json"),

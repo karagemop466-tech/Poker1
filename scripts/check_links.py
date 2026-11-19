@@ -61,7 +61,7 @@ KNOWN_PAGES = {"index", "singleEntry", "separate", "unverified", "daily", "hotel
                "flagged", "review", "strips",
                # Session 0d069ce0: pages/other-rooms.html. Registered here because the page-link
                # check rejects any data-page outside this set. One line, no other change.
-               "otherRooms"}
+               "otherRooms", "roomProfile"}
 
 
 def load_json(rel):
@@ -553,7 +553,7 @@ if isinstance(structure_rules, dict):
         if not isinstance(sheet, dict):
             problems.append(f"data/structure_rules.json: {sheet_id} is not an object")
             continue
-        if sheet.get("sheet_kind") not in {"SINGLE_ENTRY", "MULTI_FLIGHT", "RE_ENTRY"}:
+        if sheet.get("sheet_kind") not in {"NO_ENTRY_POLICY_FOUND", "MULTI_FLIGHT", "RE_ENTRY"}:
             problems.append(f"data/structure_rules.json: {sheet_id} has no rule verdict")
 if not isinstance(wpt_rules, list) or not wpt_rules:
     problems.append("data/wpt_rules.json: expected a non-empty list of WPT structure blocks")

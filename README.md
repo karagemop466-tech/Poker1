@@ -1,6 +1,6 @@
 # Las Vegas Strip Poker Plan
 
-A source-verified plan for single-entry poker tournaments on the Las Vegas Strip and walkable hotels.
+A decision dashboard for single-entry poker tournaments on the Las Vegas Strip and walkable hotels.
 Snapshot date: **2026-11-17** (every official tournament page, structure PDF, hotel-policy page and
 booking-engine quote was re-fetched on that date; see `REVIEW.md` §9 and `research/verification-2026-11-17.md`).
 
@@ -13,7 +13,7 @@ Live site: https://karagemop466-tech.github.io/Poker1/
   - `single-entry.html` - every event whose structure sheet confirms one entry only.
   - `separate-section.html` - possible multiple entries and re-entry events, kept out of the ranking.
   - `unverified.html` - official rows whose entry rule is not published in a structure sheet.
-  - `daily.html` - the recurring Wynn daily formats, with fee splits and registration cut-offs.
+  - `daily.html` - morning official schedule excerpts plus the recurring Wynn daily formats, with fee splits and registration cut-offs.
   - `schedule.html` - day-by-day plan with one primary event per date, a conditional fallback only where
     the primary's own table cannot run past the second event's entry deadline, the alternatives that can
     replace the primary (never add to it), and every overlap the published ceilings actually support.
@@ -36,13 +36,7 @@ Live site: https://karagemop466-tech.github.io/Poker1/
 
 ## Rules used
 
-- **Audit status.** Every official structure sheet used by this dataset was read in full on 2026-11-16:
-  37 of 37 for the Venetian DeepStack Extravaganza IV, 15 of 15 for the Venetian New Year's Eve series,
-  and all eight sections of the Wynn WPT structures PDF. "Single entry" means the complete sheet was
-  read and it contains no clause permitting a further entry. That is not a printed "one entry only"
-  statement, so the classification rests on the absence of any permitting clause in a sheet read end to
-  end. It has not been confirmed by the poker room, and session 673f9643's caution on this point is
-  carried forward here rather than dropped.
+- **Booking gate (November 19):** `SE` is reserved for affirmative whole-event one-entry, no-rebuy and no-add-on evidence. All 80 sheet-silent Venetian leads are `CAND`; none is a verified freezeout. The schedule is a conditional candidate comparison, not a bookable itinerary.
 - Possible multi-entry events are shown separately. The structure sheet clause only says a player who
   bags Day 2 chips may not play a subsequent flight.
 - Milestone satellites are marked separately: their prize is a seat, not cash.

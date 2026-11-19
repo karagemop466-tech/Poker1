@@ -133,8 +133,8 @@ def entry_expected(series, url, status, event_no=None):
         if sk == "v_dec_struct_02" and status == "CAND" and event_no != 29:
             return True, "sheet verdict %s (re-entry clause is event-scoped to #29, F13)" % kind
         if status == "CAND":
-            return kind == "SINGLE_ENTRY", f"sheet verdict {kind}"
-        return kind != "SINGLE_ENTRY", f"sheet verdict {kind}"
+            return kind == "NO_ENTRY_POLICY_FOUND", f"sheet verdict {kind}"
+        return kind != "NO_ENTRY_POLICY_FOUND", f"sheet verdict {kind}"
     if "WPT_World_Championship_Structures" in (url or ""):
         reg = None
         for blk in load("wpt_rules.json"):
