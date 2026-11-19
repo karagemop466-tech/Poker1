@@ -1745,3 +1745,13 @@ Verified: deterministic data and HTML rebuild; all 30 pages rendered; 692 render
 | Make calculator, rendered-link and independent overlap validation blocking for Pages | Done, pending publication | 0d8855ce | `.github/workflows/pages.yml`, `package.json`, `COORDINATION.md` |
 
 [PR #88](https://github.com/karagemop466-tech/Poker1/pull/88) originally changed the calculator and strict classifications. GitHub's first validation passed, but a concurrent merge made its head conflict. During rebase, PRs #89/#94 on main already contained the reviewed-candidate migration, live schedule evidence, calculator fixes and their verification. Kept their combined site and data byte-for-byte rather than reapplying superseded changes. Retained this session's blocking CI gates. The official [Venetian schedule](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html) and [structure sheet #5](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf) were reviewed; the sheet does not affirm one entry, no rebuys and no add-ons. No fresh rate was assumed. The PR timeline records the integration result; [Pages runs](https://github.com/karagemop466-tech/Poker1/actions/workflows/pages.yml) record validation and publication for each merge commit.
+
+---
+
+## Session 87ee0da9 — claim (2026-11-19), Arena-fixed branch `arena/87ee0da9-poker1`
+
+| Task | Status | Owner | File scope |
+|---|---|---|---|
+| Independent decision-readiness audit: map the current published dashboard against the requested requirements, re-read the key upcoming Venetian event/structure and hotel booking sources, verify the local build/checks, and log specific evidence gaps for the final integrator without changing shared data or UI | **In progress** | `87ee0da9` | New `research/decision-readiness-2026-11-19-87ee0da9.md`; append-only `COORDINATION.md` |
+
+Scope is intentionally disjoint from the active final-integration PR #95, row-monitor handoff PR #93, and regression-gate PR #88: do not edit `data/`, `assets/app.js`, generated pages, the site index/navigation, workflows, or shared decision documents. This is a single-session audit; the branch name is fixed by Arena and no other branch/worktree is created. Claim recorded before audit work; the post-claim push is the current branch only.
