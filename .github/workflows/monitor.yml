@@ -79,6 +79,23 @@ jobs:
           echo "facts_changed=$(python3 -c "import json;print(json.load(open('data/monitoring.json'))['sources_facts_changed'])")" >> "$GITHUB_OUTPUT"
           echo "rows_marked=$(python3 -c "import json;print(json.load(open('data/monitoring.json'))['rows_source_changed'])")" >> "$GITHUB_OUTPUT"
 
+      - name: Fail when the run produced no evidence
+        # The remaining half of P12: a run that checked nothing used to leave the job green.
+        # Two conditions are turned red here - the weekly provenance job having refused to
+        # run (so no snapshot behind any row was refreshed), and a run that reached no
+        # operator host while the fallback fetch it leans on is more than a week old. A
+        # weaker state - verdicts inherited from yesterday's real fetch, or a comparison
+        # still made against a pre-union baseline - is reported as a warning line instead
+        # of failing a run that did exactly what it should on a host with no route.
+        run: |
+          set -euo pipefail
+          python3 scripts/check_monitor_run.py | tee monitor_check.txt
+          {
+            echo "### Monitor health"
+            echo
+            cat monitor_check.txt
+          } >> "$GITHUB_STEP_SUMMARY"
+
       - name: Summarise the result
         run: |
           python3 scripts/report_monitoring.py > report.md

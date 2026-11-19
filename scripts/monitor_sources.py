@@ -79,6 +79,29 @@ def sha(value):
     return hashlib.sha256(value).hexdigest()
 
 
+def facts_basis(base):
+    """Which extractor built the baseline's signature - printed, so a reader can see
+    what a "changed" verdict was actually compared against."""
+    return ("union of the reading-order and layout renders" if csf.facts_comparable(base)
+            else "reading-order render only (the baseline predates %s)" % csf.FACTS_ALGO)
+
+
+def compare_facts(base, record):
+    """This run's hash that the baseline's hash is comparable with.
+
+    A baseline written before the union extractor holds a line-only signature, so it is
+    measured against this run's line-only hash; a baseline written by the union
+    extractor is measured against the union hash. Either way both sides answer the same
+    question, which is what lets a difference mean "a published value moved" rather
+    than "the parser changed". Rows are marked from the union whenever the baseline can
+    carry it, which is the point of the upgrade (F83): a value that only the layout
+    render can see now moves the signature.
+    """
+    if csf.facts_comparable(base):
+        return record.get("facts_sha256")
+    return record.get("facts_sha256_line") or record.get("facts_sha256")
+
+
 def fingerprint(row):
     """The published values of a row, in the shape the snapshot file stores.
 
@@ -235,12 +258,29 @@ def _check_url_once(url, want_body, started, record):
     record["elapsed_ms"] = int((time.time() - started) * 1000)
     if want_body and 200 <= code < 400:
         record["truncated"] = len(body) >= BODY_CAP
+        # Both renders of a PDF feed the facts signature. The reading-order render alone
+        # loses the contents of merged table cells - the defect behind F83, where four
+        # whole-event guarantees printed on the Wynn Signature Series schedule never
+        # reached a signature, so a change to one of them could not be seen at all.
+        # ``to_text`` stays the primary extractor: an exception from it is contained by
+        # check_url's guard and recorded, exactly as before this second render existed.
+        # ``layout_text`` is best-effort and never raises - a PDF that cannot be read in
+        # layout mode falls back to the one render that worked.
         text = csf.to_text(url, body)
-        facts = csf.facts_signature(text)
+        layout = csf.layout_text(url, body)
+        facts = csf.facts_union(text, layout)
+        record["facts_algo"] = csf.FACTS_ALGO
+        if csf.is_pdf(url, body) and not layout:
+            record["facts_layout_error"] = "layout render produced no text; facts use the reading-order render"
         record["bytes"] = len(body)
         record["sha256"] = sha(text)
         record["facts_sha256"] = sha("\n".join(facts))
         record["facts_count"] = len(facts)
+        # The same body scored with the older, reading-order-only definition. A baseline
+        # written before the union extractor is compared against this, so the switch of
+        # algorithm cannot read as 109 sources having changed - and cannot read as
+        # nothing being comparable either.
+        record["facts_sha256_line"] = sha("\n".join(csf.facts_signature(text)))
     return record
 
 
@@ -309,6 +349,10 @@ def main():
                 "sha256": None,
                 "facts_sha256": sha("\n".join(facts)) if facts else None,
                 "facts_count": len(facts),
+                # Which extractor produced that signature. The monitor refuses to compare
+                # across algorithms, so a signature carried over from an older run must
+                # say so rather than silently answer a different question.
+                "facts_algo": src.get("facts_algo"),
                 "checked_at_utc": src.get("last_checked_utc"),
                 "source_id": src.get("id"),
             }
@@ -376,8 +420,13 @@ def main():
             elif record.get("truncated"):
                 # Comparing a prefix against a full capture would look like a change.
                 record["content_status"] = "not-comparable"
-            elif base.get("facts_sha256") and base["facts_sha256"] != record["facts_sha256"]:
+            elif base.get("facts_sha256") and record.get("facts_sha256") and \
+                    base["facts_sha256"] != compare_facts(base, record):
+                # ``compare_facts`` picks the hash built by the same extractor the
+                # baseline was, so a value moving marks rows and a change of extractor
+                # does not.
                 record["content_status"] = "facts-changed"
+                record["facts_basis"] = facts_basis(base)
             elif base.get("sha256") and base["sha256"] != record["sha256"]:
                 record["content_status"] = "cosmetic-changed"
             elif not base.get("facts_sha256"):
@@ -488,6 +537,15 @@ def main():
             "last provenance fetch (data/change_log.json)" if prov else "not checked"),
         "sources_raw_changed": raw_changed,
         "sources_facts_changed": facts_changed,
+        # How much of the comparison still runs on the older, reading-order-only signature.
+        # A value that only the layout render can see (a merged table cell - F83) cannot move
+        # those sources' verdict until the baseline is re-accepted, so the count is published
+        # instead of being assumed, and scripts/check_monitor_run.py turns it into a warning.
+        "sources_facts_legacy_baseline": sum(
+            1 for u in official
+            if (baseline.get("sources") or {}).get(u, {}).get("facts_sha256")
+            and not csf.facts_comparable((baseline.get("sources") or {}).get(u))),
+        "facts_algo": csf.FACTS_ALGO,
         "rows_source_changed": len(marked),
         "rows_total": len(current),
         "rows_changed": len(changes["changed"]),
@@ -539,6 +597,10 @@ def main():
             if record.get("sha256"):
                 new_base["sources"][url] = {"sha256": record["sha256"],
                                            "facts_sha256": record["facts_sha256"],
+                                           # Kept alongside so a baseline accepted today stays
+                                           # comparable with a run that predates the union extractor.
+                                           "facts_sha256_line": record.get("facts_sha256_line"),
+                                           "facts_algo": record.get("facts_algo") or csf.FACTS_ALGO,
                                            "facts_count": record["facts_count"],
                                            "checked_at_utc": result["checked_at_utc"]}
             elif (baseline.get("sources") or {}).get(url):

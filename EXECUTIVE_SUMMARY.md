@@ -20,6 +20,20 @@
 
 A seven-night stay at that historical total plus one hypothetical $400 entry would be **$2,769.38 before parking and extras**. That is a sensitivity calculation, not an itinerary. Zero confirmed tournaments means there is no evidence-backed reason to buy that stay for this poker trip. A lower price on different dates or in a different room is not a competing offer.
 
+## Re-read of 2026-11-19 and what it changed
+
+Three Venetian structure sheets (#5, #8, #10) and the Wynn Signature Series structures PDF were opened again today,
+field by field, alongside both poker-room pages. **No published value moved**: every compared buy-in, guarantee, fee
+split, prize pool, starting stack, level table, registration deadline and payout clause matched, so the seven rows
+citing those sheets now carry `last_checked: 2026-11-19` and a note naming what the re-read found, and the 34
+Signature Series rows stay unverified because their only possible source is still the document that renders
+`LAS VEGAS / POKER / COMING SOON`. Evidence log: `research/verification-2026-11-19-0f038248.md`.
+
+Every table now also carries a **Spend advantage** column, derived from the clause text on the row: 3 rows print a
+priced later buy-in, 114 sell further entries during the event, 43 permit another flight unless chips were bagged,
+80 have a sheet that was read and print no such clause, 34 have no sheet on file and 43 are continuations. That is
+the trip rule made explicit - and the 80 remain candidates, not confirmed freezeouts.
+
 ## Coverage and review order
 
 317 series rows: **80 reviewed candidates**, **160 possible multiple-entry or re-entry rows**, **43 continuations**, and **34 entry rows without a confirmed entry policy**. The conditional day model spans 70 dates and flags 170 pairs based on starts, registration and published structures. Those are planning conflicts, not verified finish times.
