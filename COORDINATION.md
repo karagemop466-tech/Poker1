@@ -1699,3 +1699,5 @@ during any of it. `data/schedule.json` is the file that changed, and it is gener
 | Separate affirmative written freezeout evidence from historical sheet-silence candidates; verify upcoming decision and surface missing evidence, integrate and publish | in progress | d6bc5df2 | assets/app.js, scripts/build_site.py, derived index.html/pages, strict-policy test, README.md, executive summary and flagged addenda, COORDINATION.md |
 
 Read the shared main board at a1361aa and checked open PRs #79/#81/#82; no takeover of those sessions’ hotel-tax or room-format tasks. Using the assigned integration branch (fixed name); this claim is pushed before implementation.
+
+Scope clarification before changing generated facts: the source of the false confirmation is `scripts/build_data.py`, so this claim also covers the entry-status migration in that generator, `check_links.py`, `check_schedule.py`, `verify_rows.py`, `build_other_rooms.py` (window labels only), derived data, and a smoke-test assertion. No hotel/venue research ownership changes.
