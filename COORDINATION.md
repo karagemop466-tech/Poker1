@@ -2124,7 +2124,21 @@ Read the shared coordination board and current main baseline before claiming. Ex
 
 Merged the updated `origin/main` coordination records after main advanced through PRs #101, #108 and #109. The append-only board sections conflicted at EOF; both records are retained. A pre-push `git pull --rebase` also tried to replay the already-merged PR #101 audit and conflicted; it was aborted rather than flattening or discarding that main work, then the changes were preserved by merging `origin/main`. PR #98 was inspected during reconciliation: its current diff touches `assets/app.js` for its integration work but contains no `data/changes.json` tournament-row badge (`gh pr diff 98` search for `Source changed`, `sourceChange`, and `changes.json` returned no matches). The P8 audit's attribution to #98 was therefore superseded by this implementation; no PR #98 work or data was discarded.
 
-## Session 5f66d8fa · 2026-11-19 · final verification and publish to GitHub Pages
+## Session aa1e89b0 · 2026-11-19 · live re-verification of the Venetian November schedule and the single-entry evidence, branch `arena/aa1e89b0-poker1`
+
+| Task | Status | Owner | File scope |
+|---|---|---|---|
+| Re-read the official Venetian DeepStack IV page and sample structure sheets live; check that the stored rows match them, and record whether any sheet affirmatively states single entry, no re-entry, no rebuy or no add-on | done | aa1e89b0 | `research/verification-2026-11-19-aa1e89b0.md`, `COORDINATION.md` only |
+
+Base: `main` at `3f3f6bb` (PR #101). Branch was clean before this entry. No row, rate or generated page is changed by this session; the claim is pushed before the research note is written. Other open PRs (#96, #98, #102) are other sessions' work and are not touched.
+
+**Result (2026-11-19).** Findings are in `research/verification-2026-11-19-aa1e89b0.md`. Sources read live: [official Venetian DeepStack IV page](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html) (chunks 0–2, covering events 1–58, 16 Nov – 19 Dec) and structure sheets [#1](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf), [#3](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf), [#5](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf), [#18](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf), [#29](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_29.pdf).
+
+- Verification: stored date, start, event number, buy-in and guarantee match the official page on every row read (r001–r207, 0 value differences; wording-only differences noted). Fee, pool, starting chips and late-registration values match sheets #3, #5, #18 and #29.
+- Single-entry evidence: **none found.** Sheets #1, #5, #18 and #29 are silent. Sheet #3 has a Day 2 multi-flight clause, which confirms the existing `MULTI` status. No `SE` promotion, no "unverified" label removed.
+- No data row, rate, `last_checked` or generated page was changed. `last_checked` is not advanced because the structure sheets for most rows were not re-read here.
+- Irregularities for review: the 1Day events do not state re-entry rules either way (logged in the research note; answer needed from the Venetian Poker Room). Chunk 3 of the page (19–23 Dec) and most structure sheets were not re-read in this session.
+- Pull request: opened from this branch to `main`, merged after the `validate` job passes; the result is recorded below.## Session 5f66d8fa · 2026-11-19 · final verification and publish to GitHub Pages
 
 | Task | Status | Owner | File scope |
 |---|---|---|---|
@@ -2196,3 +2210,8 @@ No tournament, hotel, rate, walking or entry-rule fact was changed in this sessi
 ### Session 1c61c2b8 · third main reconciliation
 
 Merged the latest `origin/main` after PRs #102 and #111. The conflict again was the append-only `COORDINATION.md` tail; both records were retained. No data or UI files conflicted.
+
+
+### Session 1c61c2b8 · fourth main reconciliation
+
+Merged the latest `origin/main` after PR #104 (live-source re-read, docs only). The append-only coordination sections conflicted at EOF; both were retained. No UI or generated-page conflict occurred.
