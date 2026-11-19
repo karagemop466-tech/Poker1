@@ -81,17 +81,29 @@ const wait = (ms) => new Promise((r) => setTimeout(r, ms));
   "the mark survives the re-render after sorting");
   w1.close();
 
-  /* ---- scenario 2: the real changes.json on file (no marks) ---- */
+  /* ---- scenario 2: the real changes.json on file - the invariant is the JOIN, not emptiness.
+     (2026-11-19 hardening: the nightly monitor had begun landing real row changes, which made the
+     old "assert 0 chips" check a false alarm. The test now demands chips iff joined tournament ids,
+     so it passes on a quiet file and on a loud one.) ---- */
   const w2 = load("pages/venue-venetian.html", {});
   await wait(600);
   const real = JSON.parse(fs.readFileSync(path.join(ROOT, "data/changes.json"), "utf8"));
+  const realRows = JSON.parse(fs.readFileSync(path.join(ROOT, "data/tournaments.json"), "utf8")).rows;
+  const venetian = new Set(realRows.filter((r) => /Venetian/.test(r.venue)).map((r) => r.id));
+  const expected = ((real.changed || []).filter((c) => c && venetian.has(c.id))).length;
   const chips2 = Array.from(w2.document.querySelectorAll("#events td"))
     .filter((td) => /source changed - re-check/.test(text(td)));
-  assert.equal(chips2.length, 0, "nothing is marked while changes.json lists no changed row");
-  if (real.checked_at) {
+  assert.equal(chips2.length, expected,
+    "chips on the venue table equal the changed ids joined from the real changes.json (" + expected + ")");
+  if (expected > 0) {
+    assert.ok(chips2.every((td) => /as of /.test(text(td)) && td.querySelector("a[href]")),
+      "every real-change chip names its re-check date and links its source");
+  }
+  const asOf = String(real.checked_at || "").slice(0, 10);
+  if (asOf) {
     const dated = Array.from(w2.document.querySelectorAll("#events td"))
-      .filter((td) => (text(td).match(new RegExp("no source change as of " + real.checked_at)) || []).length > 0);
-    assert.ok(dated.length >= 1, "the published state names the real check date " + real.checked_at);
+      .filter((td) => (text(td).match(new RegExp("no source change as of " + asOf)) || []).length > 0);
+    assert.ok(dated.length >= 1, "the published state names the real check date " + asOf);
   }
   w2.close();
   console.log("check_source_badges: OK");

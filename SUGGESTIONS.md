@@ -68,3 +68,4 @@ These are *not* implemented. Each one closes a specific gap in a decision you st
 ## Your choice
 
 Reply with the numbers you want from the "Still open" list. Nothing on that list changes until you choose.
+- **P8 follow-up (2026-11-19):** `scripts/check_source_badges.js` scenario 2 now asserts the join invariant (chips on the venue table = changed tournament ids in `data/changes.json`) instead of zero chips, so the badge regression test survives the monitor landing its first real row changes; chips must each name a re-check date and link their source.
