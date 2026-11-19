@@ -2163,3 +2163,36 @@ Merged the updated `origin/main` coordination records after main advanced throug
 ### Session 1c61c2b8 · second main reconciliation
 
 Merged the newer `origin/main` after PRs #108/#109 advanced it. Their changes are coordination/deployment records only; both append-only records are retained. The merge conflict was limited to `COORDINATION.md` at EOF and was resolved by concatenating both session records; no session entries were dropped.
+
+## Session eb3bb028 — branch `arena/eb3bb028-poker1`, base `4ec6e8fb` (= `main` at PR #100 merged)
+
+Session `eb3bb028` works on branch `arena/eb3bb028-poker1` (the branch is fixed for this session), based on `main` at `4ec6e8fbca8455605918525141de33a5de7f5dc0` (PR #100 merged, session `190659b3`). `git rev-list --left-right --count origin/main...HEAD` = `0 0`, so the branch starts exactly on `main` with a clean tree. Claim written and pushed before any data, script or page change.
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Final integration: re-verify the combined tree line by line (deterministic `build_data.py`/`build_site.py` rebuilds, `check_links.py`, `verify_rows.py`, `smoke_test.js`, `check_schedule_render.js`, `check_rendered_links.js`), confirm no broken links or changed official values, open a PR to `main`, merge without waiting, confirm GitHub Pages deploys, and record the PR link and merge result in this board. | In progress | `COORDINATION.md` (claim + record) | `eb3bb028` |
+
+### Verification performed (2026-11-19)
+
+- `python3 scripts/build_data.py` → 317 rows (CAND 80 / MULTI 53 / RE 107 / CONT 43 / UNV 34), 70 schedule days, 170 overlap pairs, 7 hotels, 5 dated rates; deterministic, zero diff vs committed data.
+- `python3 scripts/build_site.py` → 30 pages; committed pages byte-identical to a fresh rebuild.
+- `python3 scripts/check_links.py` → OK (64 files free of conflict markers, 30 pages, 317 tournament rows, 7 hotels, 5 dated rates, 70 schedule days, 23 markdown links; source, rules, schedule, hotel-rate/cost, provenance and page-link checks passed).
+- `python3 scripts/verify_rows.py` → 335 verified rows, 1,369 field checks, 0 hard failures, 1 documented review item (r225 WPT start time).
+- `node scripts/smoke_test.js` → 30/30 pages render in a headless DOM.
+- `node scripts/check_rendered_links.js` → 693 rendered local references, 0 broken.
+- `node scripts/check_calculator.js` → OK.
+- `python3 scripts/check_schedule.py` → OK (70 days, 274 entry rows, 170 overlap pairs, every published fallback enterable, every clock consistent with its duration).
+
+No tournament, hotel, rate, walking or entry-rule fact was changed in this session. All published values remain sourced to official documents; blanks and flags (F1–F76+) remain published on the Flagged for Review page and do not block publication. GitHub Pages is `built` on `main` at https://karagemop466-tech.github.io/Poker1/ .
+
+### Pull request / merge record
+
+- Pull request: [#102](https://github.com/karagemop466-tech/Poker1/pull/102), `arena/eb3bb028-poker1` → `main`.
+- Merged: 2026-11-19 as merge commit `82aa4857150b88f4fd387e60251d89ea670d94b4`.
+- CI `validate`: success (run 44511464875 — dataset rebuild no diff, pages match committed, check_links OK, verify_rows 335 rows / 1,369 checks / 0 hard failures, smoke 30/30, schedule arithmetic OK, rendered links 693/0).
+- GitHub Pages: `pages` API `status: built` for merge commit `82aa4857` (deploy run 1383792609, 2026-11-19T11:14:35Z); live at https://karagemop466-tech.github.io/Poker1/ .
+- No data changes in this session; all published values remain sourced to official documents; blanks and flags (F1–F76+) remain published on the Flagged for Review page and do not block publication.
+
+### Session 1c61c2b8 · third main reconciliation
+
+Merged the latest `origin/main` after PRs #102 and #111. The conflict again was the append-only `COORDINATION.md` tail; both records were retained. No data or UI files conflicted.
