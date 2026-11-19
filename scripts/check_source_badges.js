@@ -81,21 +81,23 @@ const wait = (ms) => new Promise((r) => setTimeout(r, ms));
   "the mark survives the re-render after sorting");
   w1.close();
 
-  /* ---- scenario 2: the real changes.json on file - the invariant is the JOIN, not emptiness.
-     (2026-11-19 hardening: the nightly monitor had begun landing real row changes, which made the
-     old "assert 0 chips" check a false alarm. The test now demands chips iff joined tournament ids,
-     so it passes on a quiet file and on a loud one.) ---- */
+  /* ---- scenario 2: the real changes.json on file - the invariant is the JOIN, not emptiness
+     (hardened twice on 2026-11-19: sessions f3a84f9b and 336fb2af independently reached the same
+     fix after the monitor landed its first real row changes, which made the old "assert 0 chips"
+     check a false alarm). ---- */
   const w2 = load("pages/venue-venetian.html", {});
   await wait(600);
   const real = JSON.parse(fs.readFileSync(path.join(ROOT, "data/changes.json"), "utf8"));
-  const realRows = JSON.parse(fs.readFileSync(path.join(ROOT, "data/tournaments.json"), "utf8")).rows;
-  const venetian = new Set(realRows.filter((r) => /Venetian/.test(r.venue)).map((r) => r.id));
-  const expected = ((real.changed || []).filter((c) => c && venetian.has(c.id))).length;
+  // The expected count comes from the files on disk, not from a fixed zero: the monitor
+  // legitimately lists changed Venetian rows (2026-11-19 refresh), and each must be marked.
+  const changedIds = new Set((real.changed || []).map((c) => c.id));
+  const dataRows = JSON.parse(fs.readFileSync(path.join(ROOT, "data/tournaments.json"), "utf8")).rows;
+  const expectedMarks = dataRows.filter((r) => /Venetian/.test(r.venue) && changedIds.has(r.id)).length;
   const chips2 = Array.from(w2.document.querySelectorAll("#events td"))
     .filter((td) => /source changed - re-check/.test(text(td)));
-  assert.equal(chips2.length, expected,
-    "chips on the venue table equal the changed ids joined from the real changes.json (" + expected + ")");
-  if (expected > 0) {
+  assert.equal(chips2.length, expectedMarks,
+    "the Venetian marks equal the changed Venetian rows listed in changes.json (" + expectedMarks + ")");
+  if (expectedMarks > 0) {
     assert.ok(chips2.every((td) => /as of /.test(text(td)) && td.querySelector("a[href]")),
       "every real-change chip names its re-check date and links its source");
   }
