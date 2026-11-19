@@ -4,6 +4,31 @@ Published so you can review each item. Flags do not block the merge. Every flag 
 official source it came from, and every flagged row carries the flag in `data/tournaments.json` so the
 row itself says what is odd about it.
 
+## Decision-critical limitation — single-entry confirmation (F77)
+
+The 80 rows currently labelled `SE` were classified by the earlier review because the sheets
+contained no contrary clause, **not** because an official source explicitly states a maximum of
+one entry and prohibits re-entry, rebuys and add-ons. That does not meet the requested written
+confirmation standard. Their “verified” labels, ranking, filter and derived day plans must not be
+used as proof of eligibility. Obtain a written rule or written confirmation for each applicable
+format from [The Venetian poker room](https://www.venetianlasvegas.com/resort/casino/poker.html)
+and attach the precise excerpt and retrieval date before treating any event as confirmed. This is
+an audit finding based on the repository's own description; the official source was not re-fetched
+in this session. Reclassification and all derived outputs still need a coordinated follow-up.
+
+The most recent data snapshot is dated 2026-11-17; prices, schedules and availability can change.
+No exact vacation dates, occupancy or budget are established, so the existing quotes are examples,
+not a like-for-like recommendation for an unspecified stay.
+
+## Validation irregularity (F78)
+
+On 2026-11-19, `npm test` failed because `scripts/check_schedule_render.js` expects the
+text “after midnight, so no later event”, which the current schedule does not render. The
+Pages workflow pipes that command through `tee` without `pipefail`, so a successful workflow
+does not establish that this check passed. This test/workflow issue is unresolved and must be
+investigated before treating the build as fully verified. The schedule data checker did pass;
+that does not establish that every displayed day plan satisfies the requested entry policy.
+
 ## A. Irregularities in the official sources
 
 | # | Irregularity | Source | Effect on the data |

@@ -1699,3 +1699,28 @@ during any of it. `data/schedule.json` is the file that changed, and it is gener
 | Audit the single-entry confirmation claim against the requirement for explicit written no-re-entry/no-rebuy/no-add-on rules; prevent unsupported classifications and document any limitations. | in progress | 711251e8 | `scripts/build_data.py`, associated tests, generated `data/`, `assets/app.js`, generated pages and relevant decision documents, `COORDINATION.md` |
 
 This branch is fixed by the session environment; no separate session branch can be created. The board is shared via this branch's PR, not directly written to main.
+
+#### Session 711251e8 — needs review / handoff (2026-11-19)
+
+The single-entry audit is **needs review**, not done. The prior data model labels 80 Venetian rows
+`SE` based on an absence of clauses (see README "Rules used"), not affirmative written limits on
+entries, rebuys and add-ons. This conflicts with the user's requirement; F77 records the issue with
+the [official Venetian poker room](https://www.venetianlasvegas.com/resort/casino/poker.html) link.
+A warning was added to the shared page template and generated pages. The underlying labels, filter,
+rankings and derived schedule are **not corrected**, so the warning is a mitigation, not completion.
+Next integration must reclassify unsupported rows as unverified and update derived outputs, tests,
+and historical claims, then confirm each rule against official written evidence.
+
+Official hosts are not reachable from this sandbox (curl to the Venetian poker page failed at TLS);
+no official source was re-fetched and no retrieval date was advanced. Exact trip dates, occupancy,
+and budget remain unspecified; old hotel quotes cannot be represented as current like-for-like
+quotes. The existing live site, not this branch, was reported built by the Pages API at the start.
+
+Checks: `check_links.py`, `verify_rows.py` (1 documented review item), `verify_against_snapshots.py`,
+`check_schedule.py`, smoke test (23/23) and `check_rendered_links.js` (530 links) passed against the
+existing snapshots. `npm test` **failed** in `check_schedule_render.js`: expected after-midnight note
+not rendered. The Pages workflow pipes the test through `tee` without pipefail, hiding its exit
+status; F78 records this unresolved problem. This is an existing defect; request the integration
+owner fix the assertion or underlying rendering as appropriate, and make the workflow propagate
+failure. Rebuild produced no data diff. No PR/merge or deploy is claimed: the implementation and
+validation are incomplete and the user instructed not to merge a broken site.

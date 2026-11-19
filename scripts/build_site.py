@@ -26,6 +26,7 @@ TEMPLATE = """<!doctype html>
 <body data-page="{page}">
 <div id="site-header"></div>
 <main>
+<div class="card callout" role="note"><strong>Decision warning:</strong> The existing “verified single entry” labels are based on the absence of contrary clauses, not written confirmation of one entry and no rebuy or add-on. Treat those events, rankings and day plans as unverified until the poker room confirms the rules. Hotel quotes and schedules are dated snapshots, not live prices or availability. Recheck before booking. <a href="https://www.venetianlasvegas.com/resort/casino/poker.html">Official Venetian poker room</a>.</div>
 {body}
 </main>
 <footer id="site-footer"></footer>
