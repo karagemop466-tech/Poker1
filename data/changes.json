@@ -12,11 +12,11 @@
    "date": null,
    "reason": "official source page printed different values on its last re-check",
    "source_url": "https://www.caesars.com/corporate/disclaimer",
-   "source_changed_at": "2026-11-19T11:33:02Z",
+   "source_changed_at": "2026-11-19T22:34:40Z",
    "diff": {
     "official source verified against": [
      "2026-11-17T00:43:10Z",
-     "2026-11-19T11:33:02Z (https://www.caesars.com/corporate/disclaimer)"
+     "2026-11-19T22:34:40Z (https://www.caesars.com/corporate/disclaimer)"
     ]
    }
   },
@@ -27,11 +27,11 @@
    "date": null,
    "reason": "official source page printed different values on its last re-check",
    "source_url": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
-   "source_changed_at": "2026-11-19T22:40:14Z",
+   "source_changed_at": "2026-11-19T22:48:50Z",
    "diff": {
     "official source verified against": [
      "2026-11-17T00:44:11Z",
-     "2026-11-19T22:40:14Z (https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip)"
+     "2026-11-19T22:48:50Z (https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip)"
     ]
    }
   },
@@ -42,11 +42,11 @@
    "date": null,
    "reason": "official source page printed different values on its last re-check",
    "source_url": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
-   "source_changed_at": "2026-11-19T22:40:14Z",
+   "source_changed_at": "2026-11-19T22:48:50Z",
    "diff": {
     "official source verified against": [
      "2026-11-17T00:44:11Z",
-     "2026-11-19T22:40:14Z (https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip)"
+     "2026-11-19T22:48:50Z (https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip)"
     ]
    }
   },
@@ -57,11 +57,11 @@
    "date": "2026-11-23",
    "reason": "official source page printed different values on its last re-check",
    "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_30.pdf",
-   "source_changed_at": "2026-11-19T11:30:51Z",
+   "source_changed_at": "2026-11-19T22:32:17Z",
    "diff": {
     "official source verified against": [
      "2026-11-17T00:40:58Z",
-     "2026-11-19T11:30:51Z (https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_30.pdf)"
+     "2026-11-19T22:32:17Z (https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_30.pdf)"
     ]
    }
   }
