@@ -2367,3 +2367,12 @@ coverage, page-vs-data status agreement, official-link-per-row), README/SUGGESTI
 the app.js renderer + NAV line. Local suite: check_links OK (31 pages), verify_rows OK,
 verify_against_snapshots OK, check_schedule OK, npm test 31/31 pages and 1,662 rendered links
 with 0 broken. Commit + PR follow on this branch.
+
+**PR #117 merged (2026-11-19T12:54:02Z):** https://github.com/karagemop466-tech/Poker1/pull/117 —
+merge commit `08f0884701d216adc26a5722961df2e18a1dc509`. CI `validate`: **pass** (run 44526822006,
+8m13s — dataset rebuild no diff, pages match committed, check_links OK with the new payout block,
+verify_rows OK, verify_against_snapshots OK, monitor OK, npm test 31/31 pages and 1,662 rendered
+links with 0 broken, schedule arithmetic OK). GitHub Pages: the build of `08f08847` reports status
+**built** (workflow run 44528192205), so `pages/payouts.html` is live on the published site.
+Claim **S18/P4 complete**: data layer (`f0d2a74`), page + validator + app.js + docs (`1d2a4e6`,
+rebased as `6d634e0`).
