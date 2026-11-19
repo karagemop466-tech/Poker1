@@ -81,13 +81,21 @@ CONTRADICTION = re.compile(
     r"|\bsubsequent\s+re[ -]?entr(?:y|ies)\b"
     r"|\bnot\s+(?:a\s+)?(?:single[ -]entry|freeze[ -]?out)\s+(?:event|tournament|format)\b"
     r"|\b(?:one|1)\s+entry\s+per\s+(?:player|person)\s+(?:per|each)\s+flight\b"
+    r"|\b(?:players?|participants?|entrants?)\s+(?:may|can|will)\s+re[ -]?(?:enter|buy)\b"
+    r"|\b(?:re[ -]?entr(?:y|ies)|re[ -]?buys?|add[ -]?ons?)\s+(?:may|can|will)\s+(?:be\s+)?(?:allowed|permitted|purchased)\b"
+    r"|\b(?:multiple|additional|unlimited)\s+(?:entries|buy[ -]?ins?)\b"
     r"|\bno\s+(?:re[ -]?entr(?:y|ies)|re[ -]?buys?|add[ -]?ons?)\s+(?:after|before|until|unless|except)\b"
     r"|\b(?:optional|voluntary)\s+.{0,100}\b(?:chips|stack)\b", re.I | re.S)
 
 
 def scoped_event_numbers(quote):
     """Read event numbers, not unrelated dates or amounts later in a heading."""
-    multiple = re.search(r"\bevent\s+numbers?\s*:\s*((?:(?:\d{1,3}|,|/|&|\band\b|\s)+))", quote, re.I)
+    # Limit the list to the heading line: a numbered rule on the next line is
+    # not an event number. Require a separator between consecutive numbers.
+    multiple = re.search(
+        r"\bevent[ \t]+numbers?[ \t]*:[ \t]*(\d{1,3}"
+        r"(?:[ \t]*(?:(?:,|/|&)[ \t]*(?:and[ \t]+)?|and[ \t]+)\d{1,3})*)\b",
+        quote, re.I)
     if multiple:
         return {int(n) for n in re.findall(r"\b\d{1,3}\b", multiple.group(1))}
     single = re.search(r"\bevent\s*(?:no\.?|#)?\s*(\d{1,3})\b", quote, re.I)

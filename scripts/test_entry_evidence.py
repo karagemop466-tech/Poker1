@@ -134,10 +134,20 @@ class EvidenceGateTests(unittest.TestCase):
                 self.row["event_scope"]["excerpt"] = wrong_heading
                 self.assert_rejected()
 
+    def test_scope_does_not_treat_next_numbered_rule_as_an_event(self):
+        heading = "Event Numbers: 02, 12\n1. TDA rules apply"
+        self.archives[URL] += "\n" + heading
+        self.row["event_scope"]["excerpt"] = heading
+        self.row["event_no"] = 1
+        self.assert_rejected()
+
     def test_conflicting_clause_elsewhere_in_same_document_fails_closed(self):
         for contradiction in ("This is not a single-entry tournament.",
                               "No re-entry after level 8.",
                               "One entry per player per flight.",
+                              "Players may re-enter.",
+                              "Re-entry will be permitted.",
+                              "Multiple entries are available.",
                               "An optional purchase provides additional chips."):
             with self.subTest(clause=contradiction):
                 self.archives[URL] = DOC + "\n" + contradiction
