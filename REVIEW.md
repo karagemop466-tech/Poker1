@@ -310,3 +310,21 @@ node scripts/smoke_test.js        # 21/21 pages render in a headless DOM with no
 - **Caesars Palace resort fee** — no property-specific figure on any page read.
 - **Entry rules for 129 rows**: 38 Signature Series (placeholder PDF) and 91 WPT rows with no sheet.
 - **The Venetian free-cancellation deadline** for a general rate.
+
+## 11. Session dd06081b · 2026-11-19 · repo review of the requirement coverage
+
+Baseline re-verified before any change (all green, no diff): `build_data.py`/`build_site.py`
+byte-identical, `check_links.py` OK, `verify_rows.py` 335 rows / 1,386 field checks / 0 hard failures,
+`verify_against_snapshots.py` 0 unexplained mismatches, `check_schedule.py` OK, 67 Python tests, and
+`npm test` 31/31 pages with 1,662 rendered links. The complete live re-read of every cited official page,
+with links and quoted text, is `research/requirements-audit-dd06081b/README.md`.
+
+| # | Area | Finding | Handling |
+|---|---|---|---|
+| D1 | Requirement coverage | The brief's lines were never audited as a set: a reader had no single place saying which requirement is **done**, which is **partial** and which is **blocked**, and why. | `REQUIREMENTS.md` (published at `pages/requirements.html`) audits them one row at a time with the implementing file, the page and the official source, and lists the six things a static site cannot close at all. |
+| D2 | Date filter | The filter bar had a free-text from/to pair only. Nothing answered "what is on this weekend", and nothing listed the dates the dataset actually holds, so a reader could type a date with no events and read the empty table as "no tournaments". | Presets (today, tomorrow, this weekend, next 7/30 days, ticked days) plus a per-date chip list, both driving one predicate; `scripts/check_date_filter.js` asserts each preset against a set recomputed from the data. |
+| D3 | Trip cost | The calculator's entry side was a typed buy-in, so the "cost of a trip" figure depended on a number the reader invented rather than on an event the site publishes. | Default mode prices one entry per night from the published day plan, with a night-by-night table and a source link per line; `scripts/check_calculator.js` recomputes the total from `data/tournaments.json`. The typed box remains, labelled and disabled while the plan is in force. |
+| D4 | A whole series missing | The Venetian DeepStack Showdown (Jan 11 – Feb 14, 2027) is officially published and **absent from this dataset** (F89). | Published as a flag with the two official links, QUESTIONS I18 and SUGGESTIONS P18. Not added here, deliberately: the verifier's sheet-pattern map does not know `dss_jan_2027`, so rows added without that work would be published values no gate could check. |
+| D5 | Duplicated workflow comment | The `deploy` job's explanatory comment in `.github/workflows/pages.yml` was pasted twice by an earlier session (lines were identical; no behavioural defect). | Deleted one copy. The `deploy` logic itself is unchanged and is correct for this repository: `gh api repos/…/pages` reports `build_type: legacy`, which is the branch that the job's `legacy` path verifies. |
+| D6 | Monitor mark without a value change | `data/monitoring.json` marks sheet #30 and `data/changes.json` marks row `r012` as "facts-changed", although the sheet prints every published value unchanged and its own provenance record says `facts_changed: false` with an empty diff. Measured cause: exactly 2 of 98 stored line-render signatures disagree with `data/source_baseline.json`, and the other 96 reproduce their baseline hashes exactly. | Published as F87 with the two hashes and the #5 control; not re-seeded here, because re-baselining inside a documentation session would hide the next real change (SUGGESTIONS P19). |
+| D7 | Wynn structures URL drift | Wynn's poker page now links a different version id for the Signature Series structures file than the one every Signature Series row cites (F88). | Recorded, both versions read (both are "COMING SOON"), no value changed. |

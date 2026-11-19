@@ -60,6 +60,27 @@ priced later buy-in, 114 sell further entries during the event, 43 permit anothe
 80 have a sheet that was read and print no such clause, 34 have no sheet on file and 43 are continuations. That is
 the trip rule made explicit - and the 80 remain candidates, not confirmed freezeouts.
 
+## What changed on November 19 (session dd06081b)
+
+* **The date filter and the trip calculator now answer the two questions the brief asks most often.**
+  Every tournament table filters by day (today, tomorrow, this weekend, next 7/30 days, or a tick list of
+  the dates this dataset actually holds), and the [calculator](pages/calculator.html) prices the entry
+  side from the day plan itself — one round per night at the printed buy-in of that date's published
+  primary — with a night-by-night table and a source link per line. The typed entries × buy-in box is
+  still there, labelled as the manual alternative.
+* **A live re-read of every cited official page on November 19 changed no published value.** Event 12's
+  sheet still prints $300 / $10,000 / 40,000 chips / ten clauses with no entry-count limit; Event 10's
+  still prints $400 / $15,000 / $65 withheld; the Wynn Signature Series schedule matched all 38 rows on
+  every field; the Signature Series *structures* file is still "COMING SOON" in both versions Wynn
+  publishes. Details and links: `research/requirements-audit-dd06081b/README.md`.
+* **Three irregularities are published for review (F87–F89).** The one that matters to a decision is
+  **F89**: the Venetian runs a **DeepStack Showdown from January 11 to February 14, 2027** (59 events,
+  $2.2M guaranteed, each row with its own structure sheet) that **this site does not carry**. So for that
+  window the tournament tables are incomplete and the Wynn Signature Series is not the only series
+  running. It is listed as the top open proposal from this session (P18) because it is gathering, not waiting on anyone.
+* **`REQUIREMENTS.md`** now audits the brief line by line — done / partial / blocked, with the file, the
+  page and the official source — and states the six things a static site cannot close at all.
+
 ## Coverage and review order
 
 317 series rows: **74 reviewed candidates**, **166 possible multiple-entry or re-entry rows**, **43 continuations**, and **34 entry rows without a confirmed entry policy**. The conditional day model spans 70 dates and flags 170 pairs based on starts, registration and published structures. Those are planning conflicts, not verified finish times.
