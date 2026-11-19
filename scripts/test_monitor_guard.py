@@ -23,6 +23,11 @@ class MonitorGuardTests(unittest.TestCase):
             self.assertEqual(expected_hour, dt.astimezone(ZoneInfo("America/Los_Angeles")).hour)
         self.assertIn("cron: '17 14 * * *'", (ROOT / ".github/workflows/schedule-feed.yml").read_text())
 
+    def test_snapshot_push_trigger_is_main_only(self):
+        text = SOURCE_FACTS.read_text()
+        push_trigger = text.split("  push:\n", 1)[1].split("permissions:", 1)[0]
+        self.assertIn("branches: [main]", push_trigger)
+
     def test_piped_monitor_failure_is_not_hidden(self):
         text = MONITOR.read_text()
         section = text.split("- name: Check every official source", 1)[1].split("- name:", 1)[0]
