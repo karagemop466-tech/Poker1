@@ -25,6 +25,8 @@ Scope: independently re-read selected operator sources and compare the generated
 
 A UTC cron must be translated to Las Vegas local time, including daylight saving. The independent monitor patch schedules the content check for 07:17 PST / 08:17 PDT, preserves nonzero pipeline and Git publication failures, and avoids claiming inaccessible or unreadable sources were verified unchanged. Tests exercise failure propagation with stubbed Git rather than pushing anything.
 
+A source-facts push trigger ran on this feature branch before it was restricted to `main`. The [91-source run](https://github.com/karagemop466-tech/Poker1/actions/runs/44467482380) ended at 05:53 UTC with six errors and reported four changed fact signatures. GitHub returned HTTP 403 when this session attempted to cancel it. During rebase, the main branch's separately fetched 98-source log from 05:45 UTC was retained intact rather than combining two different runs into a synthetic report; the overlapping archived text snapshots matched. Neither run implies that the six timed-out sources were successfully checked.
+
 ## Coordination
 
 The updated `main` and active PRs #88 and #94 appeared after this session's initial claim; the relevant authors were asked for a handoff. This report and independent tests do not overwrite their generator, renderer or source corrections. Earlier files in `research/` are retained as historical observations, not republished as current evidence.
