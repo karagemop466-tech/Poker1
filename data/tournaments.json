@@ -22,7 +22,7 @@
    "rules": {
     "single_entry": {
      "value": "not single entry",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #10",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf"
@@ -32,7 +32,7 @@
     },
     "re_entry": {
      "value": "possible for later flights",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #10",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf"
@@ -41,7 +41,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #10",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf"
@@ -66,7 +66,8 @@
    "late_reg_close": "15:40",
    "levels": 30,
    "level_minutes": 40,
-   "starting_chips": null,
+   "starting_chips": 30000,
+   "payout_excerpt": null,
    "est_end": "08:55",
    "est_duration_min": 1305,
    "note": "Read from the official event page and structure sheet #10 on 2026-11-16.",
@@ -109,7 +110,7 @@
    "rules": {
     "single_entry": {
      "value": "not single entry",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #9",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf"
@@ -119,7 +120,7 @@
     },
     "re_entry": {
      "value": "possible for later flights",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #9",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf"
@@ -128,7 +129,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #9",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf"
@@ -153,7 +154,8 @@
    "late_reg_close": "20:40",
    "levels": 30,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 30000,
+   "payout_excerpt": null,
    "est_end": "09:55",
    "est_duration_min": 1005,
    "note": "Read from the official event page and structure sheet #9 on 2026-11-16.",
@@ -196,7 +198,7 @@
    "rules": {
     "single_entry": {
      "value": "not single entry",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #10",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf"
@@ -206,7 +208,7 @@
     },
     "re_entry": {
      "value": "possible for later flights",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #10",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf"
@@ -215,7 +217,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #10",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf"
@@ -240,7 +242,8 @@
    "late_reg_close": "15:40",
    "levels": 30,
    "level_minutes": 40,
-   "starting_chips": null,
+   "starting_chips": 30000,
+   "payout_excerpt": null,
    "est_end": "08:55",
    "est_duration_min": 1305,
    "note": "Read from the official event page and structure sheet #10 on 2026-11-16.",
@@ -283,7 +286,7 @@
    "rules": {
     "single_entry": {
      "value": "not single entry",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #9",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf"
@@ -293,7 +296,7 @@
     },
     "re_entry": {
      "value": "possible for later flights",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #9",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf"
@@ -302,7 +305,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #9",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf"
@@ -327,7 +330,8 @@
    "late_reg_close": "20:40",
    "levels": 30,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 30000,
+   "payout_excerpt": null,
    "est_end": "09:55",
    "est_duration_min": 1005,
    "note": "Read from the official event page and structure sheet #9 on 2026-11-16.",
@@ -411,7 +415,8 @@
    "late_reg_close": "16:55",
    "levels": 28,
    "level_minutes": 30,
-   "starting_chips": 20000,
+   "starting_chips": 40000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "02:55",
    "est_duration_min": 945,
    "note": "Read from the official event page and structure sheet #5 on 2026-11-16.",
@@ -454,7 +459,7 @@
    "rules": {
     "single_entry": {
      "value": "not single entry",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #10",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf"
@@ -464,7 +469,7 @@
     },
     "re_entry": {
      "value": "possible for later flights",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #10",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf"
@@ -473,7 +478,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #10",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf"
@@ -500,6 +505,7 @@
    "levels": 30,
    "level_minutes": 40,
    "starting_chips": null,
+   "payout_excerpt": null,
    "est_end": "09:45",
    "est_duration_min": 1305,
    "note": "Continuation of the event above - no new entry. Official event page row.",
@@ -586,6 +592,7 @@
    "levels": 28,
    "level_minutes": 20,
    "starting_chips": 30000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "19:25",
    "est_duration_min": 555,
    "note": "Read from the official event page and structure sheet #18 on 2026-11-16.",
@@ -672,6 +679,7 @@
    "levels": 28,
    "level_minutes": 20,
    "starting_chips": 30000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "19:25",
    "est_duration_min": 555,
    "note": "Read from the official event page and structure sheet #18 on 2026-11-16.",
@@ -758,6 +766,7 @@
    "levels": 28,
    "level_minutes": 20,
    "starting_chips": 30000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "19:25",
    "est_duration_min": 555,
    "note": "Read from the official event page and structure sheet #18 on 2026-11-16.",
@@ -841,7 +850,8 @@
    "late_reg_close": "15:40",
    "levels": 28,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 30000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "02:55",
    "est_duration_min": 945,
    "note": "Read from the official event page and structure sheet #29 on 2026-11-16.",
@@ -884,7 +894,7 @@
    "rules": {
     "single_entry": {
      "value": "not single entry",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #2",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_2.pdf"
@@ -894,7 +904,7 @@
     },
     "re_entry": {
      "value": "possible for later flights",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #2",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_2.pdf"
@@ -903,7 +913,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #2",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_2.pdf"
@@ -929,6 +939,7 @@
    "levels": 30,
    "level_minutes": 40,
    "starting_chips": 40000,
+   "payout_excerpt": null,
    "est_end": "08:55",
    "est_duration_min": 1305,
    "note": "Read from the official event page and structure sheet #2 on 2026-11-16.",
@@ -1015,7 +1026,8 @@
    "late_reg_close": "21:40",
    "levels": 28,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 25000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
    "note": "Read from the official event page and structure sheet #30 on 2026-11-16.",
@@ -1058,7 +1070,7 @@
    "rules": {
     "single_entry": {
      "value": "not single entry",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #2",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_2.pdf"
@@ -1068,7 +1080,7 @@
     },
     "re_entry": {
      "value": "possible for later flights",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #2",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_2.pdf"
@@ -1077,7 +1089,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #2",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_2.pdf"
@@ -1103,6 +1115,7 @@
    "levels": 30,
    "level_minutes": 40,
    "starting_chips": 40000,
+   "payout_excerpt": null,
    "est_end": "08:55",
    "est_duration_min": 1305,
    "note": "Read from the official event page and structure sheet #2 on 2026-11-16.",
@@ -1189,6 +1202,7 @@
    "levels": 28,
    "level_minutes": 30,
    "starting_chips": 25000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
    "note": "Read from the official event page and structure sheet #1 on 2026-11-16.",
@@ -1231,7 +1245,7 @@
    "rules": {
     "single_entry": {
      "value": "not single entry",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #2",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_2.pdf"
@@ -1241,7 +1255,7 @@
     },
     "re_entry": {
      "value": "possible for later flights",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #2",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_2.pdf"
@@ -1250,7 +1264,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #2",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_2.pdf"
@@ -1276,7 +1290,8 @@
    "late_reg_close": "17:55",
    "levels": 30,
    "level_minutes": 40,
-   "starting_chips": 40000,
+   "starting_chips": null,
+   "payout_excerpt": null,
    "est_end": "08:45",
    "est_duration_min": 1305,
    "note": "Continuation of the event above - no new entry. Official event page row.",
@@ -1361,6 +1376,7 @@
    "levels": 28,
    "level_minutes": 30,
    "starting_chips": 40000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "02:55",
    "est_duration_min": 945,
    "note": "Read from the official event page and structure sheet #6 on 2026-11-16.",
@@ -1447,6 +1463,7 @@
    "levels": 28,
    "level_minutes": 30,
    "starting_chips": 25000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
    "note": "Read from the official event page and structure sheet #1 on 2026-11-16.",
@@ -1530,7 +1547,8 @@
    "late_reg_close": "16:55",
    "levels": 28,
    "level_minutes": 30,
-   "starting_chips": 20000,
+   "starting_chips": 40000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "02:55",
    "est_duration_min": 945,
    "note": "Read from the official event page and structure sheet #5 on 2026-11-16.",
@@ -1617,6 +1635,7 @@
    "levels": 28,
    "level_minutes": 30,
    "starting_chips": 25000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
    "note": "Read from the official event page and structure sheet #1 on 2026-11-16.",
@@ -1803,7 +1822,8 @@
    "late_reg_close": "16:55",
    "levels": 28,
    "level_minutes": 30,
-   "starting_chips": 20000,
+   "starting_chips": 40000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "02:55",
    "est_duration_min": 945,
    "note": "Read from the official event page and structure sheet #7 on 2026-11-16.",
@@ -2195,6 +2215,7 @@
    "levels": 28,
    "level_minutes": 30,
    "starting_chips": 25000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
    "note": "Read from the official event page and structure sheet #1 on 2026-11-16.",
@@ -2383,7 +2404,8 @@
    "late_reg_close": "16:55",
    "levels": 28,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 40000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "02:55",
    "est_duration_min": 945,
    "note": "Read from the official event page and structure sheet #11 on 2026-11-16.",
@@ -2571,7 +2593,8 @@
    "late_reg_close": "16:40",
    "levels": 28,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 30000,
+   "payout_excerpt": "pay 12.5% of the field",
    "est_end": "03:55",
    "est_duration_min": 945,
    "note": "Read from the official event page and structure sheet #26 on 2026-11-16.",
@@ -2762,7 +2785,8 @@
    "late_reg_close": "21:40",
    "levels": 28,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 25000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
    "note": "Read from the official event page and structure sheet #8 on 2026-11-16.",
@@ -2908,7 +2932,7 @@
    "rules": {
     "single_entry": {
      "value": "not single entry",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #3",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf"
@@ -2918,7 +2942,7 @@
     },
     "re_entry": {
      "value": "possible for later flights",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #3",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf"
@@ -2927,7 +2951,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #3",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf"
@@ -2952,7 +2976,8 @@
    "late_reg_close": "17:55",
    "levels": 30,
    "level_minutes": 40,
-   "starting_chips": null,
+   "starting_chips": 40000,
+   "payout_excerpt": null,
    "est_end": "08:55",
    "est_duration_min": 1305,
    "note": "Read from the official event page and structure sheet #3 on 2026-11-16.",
@@ -3039,7 +3064,8 @@
    "late_reg_close": "16:40",
    "levels": 28,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 30000,
+   "payout_excerpt": "pay 12.5% of the field",
    "est_end": "03:55",
    "est_duration_min": 945,
    "note": "Read from the official event page and structure sheet #22 on 2026-11-16.",
@@ -3126,6 +3152,7 @@
    "levels": 28,
    "level_minutes": 30,
    "starting_chips": 25000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
    "note": "Read from the official event page and structure sheet #1 on 2026-11-16.",
@@ -3376,7 +3403,7 @@
    "rules": {
     "single_entry": {
      "value": "not single entry",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #3",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf"
@@ -3386,7 +3413,7 @@
     },
     "re_entry": {
      "value": "possible for later flights",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #3",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf"
@@ -3395,7 +3422,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #3",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf"
@@ -3420,7 +3447,8 @@
    "late_reg_close": "17:55",
    "levels": 30,
    "level_minutes": 40,
-   "starting_chips": null,
+   "starting_chips": 40000,
+   "payout_excerpt": null,
    "est_end": "08:55",
    "est_duration_min": 1305,
    "note": "Read from the official event page and structure sheet #3 on 2026-11-16.",
@@ -3815,6 +3843,7 @@
    "levels": 28,
    "level_minutes": 30,
    "starting_chips": 25000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
    "note": "Read from the official event page and structure sheet #1 on 2026-11-16.",
@@ -3960,7 +3989,7 @@
    "rules": {
     "single_entry": {
      "value": "not single entry",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #3",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf"
@@ -3970,7 +3999,7 @@
     },
     "re_entry": {
      "value": "possible for later flights",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #3",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf"
@@ -3979,7 +4008,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #3",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf"
@@ -4004,7 +4033,8 @@
    "late_reg_close": "17:55",
    "levels": 30,
    "level_minutes": 40,
-   "starting_chips": null,
+   "starting_chips": 40000,
+   "payout_excerpt": null,
    "est_end": "08:55",
    "est_duration_min": 1305,
    "note": "Read from the official event page and structure sheet #3 on 2026-11-16.",
@@ -4396,6 +4426,7 @@
    "levels": 28,
    "level_minutes": 30,
    "starting_chips": 25000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
    "note": "Read from the official event page and structure sheet #1 on 2026-11-16.",
@@ -4481,7 +4512,8 @@
    "late_reg_close": "15:55",
    "levels": 28,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 40000,
+   "payout_excerpt": "pays 15% of the field",
    "est_end": "01:55",
    "est_duration_min": 945,
    "note": "Read from the official event page and structure sheet #17 on 2026-11-16.",
@@ -4524,7 +4556,7 @@
    "rules": {
     "single_entry": {
      "value": "not single entry",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #3",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf"
@@ -4534,7 +4566,7 @@
     },
     "re_entry": {
      "value": "possible for later flights",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #3",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf"
@@ -4543,7 +4575,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #3",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf"
@@ -4570,6 +4602,7 @@
    "levels": 30,
    "level_minutes": 40,
    "starting_chips": null,
+   "payout_excerpt": null,
    "est_end": "08:45",
    "est_duration_min": 1305,
    "note": "Continuation of the event above - no new entry. Official event page row.",
@@ -4759,6 +4792,7 @@
    "levels": 28,
    "level_minutes": 30,
    "starting_chips": 25000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
    "note": "Read from the official event page and structure sheet #1 on 2026-11-16.",
@@ -5009,7 +5043,7 @@
    "rules": {
     "single_entry": {
      "value": "not single entry",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #12",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf"
@@ -5019,7 +5053,7 @@
     },
     "re_entry": {
      "value": "possible for later flights",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #12",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf"
@@ -5028,7 +5062,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #12",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf"
@@ -5053,7 +5087,8 @@
    "late_reg_close": "15:40",
    "levels": 30,
    "level_minutes": 40,
-   "starting_chips": null,
+   "starting_chips": 40000,
+   "payout_excerpt": null,
    "est_end": "08:55",
    "est_duration_min": 1305,
    "note": "Read from the official event page and structure sheet #12 on 2026-11-16.",
@@ -5139,7 +5174,8 @@
    "late_reg_close": "16:40",
    "levels": 28,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 30000,
+   "payout_excerpt": "pay 12.5% of the field",
    "est_end": "03:55",
    "est_duration_min": 945,
    "note": "Read from the official event page and structure sheet #28 on 2026-11-16.",
@@ -5287,7 +5323,7 @@
    "rules": {
     "single_entry": {
      "value": "not single entry",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #13",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf"
@@ -5297,7 +5333,7 @@
     },
     "re_entry": {
      "value": "possible for later flights",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #13",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf"
@@ -5306,7 +5342,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #13",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf"
@@ -5331,7 +5367,8 @@
    "late_reg_close": "20:40",
    "levels": 30,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 40000,
+   "payout_excerpt": null,
    "est_end": "09:55",
    "est_duration_min": 1005,
    "note": "Read from the official event page and structure sheet #13 on 2026-11-16.",
@@ -5578,7 +5615,7 @@
    "rules": {
     "single_entry": {
      "value": "not single entry",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #12",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf"
@@ -5588,7 +5625,7 @@
     },
     "re_entry": {
      "value": "possible for later flights",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #12",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf"
@@ -5597,7 +5634,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #12",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf"
@@ -5622,7 +5659,8 @@
    "late_reg_close": "15:40",
    "levels": 30,
    "level_minutes": 40,
-   "starting_chips": null,
+   "starting_chips": 40000,
+   "payout_excerpt": null,
    "est_end": "08:55",
    "est_duration_min": 1305,
    "note": "Read from the official event page and structure sheet #12 on 2026-11-16.",
@@ -5871,7 +5909,7 @@
    "rules": {
     "single_entry": {
      "value": "not single entry",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #13",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf"
@@ -5881,7 +5919,7 @@
     },
     "re_entry": {
      "value": "possible for later flights",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #13",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf"
@@ -5890,7 +5928,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #13",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf"
@@ -5915,7 +5953,8 @@
    "late_reg_close": "20:40",
    "levels": 30,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 40000,
+   "payout_excerpt": null,
    "est_end": "09:55",
    "est_duration_min": 1005,
    "note": "Read from the official event page and structure sheet #13 on 2026-11-16.",
@@ -6267,7 +6306,7 @@
    "rules": {
     "single_entry": {
      "value": "not single entry",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #12",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf"
@@ -6277,7 +6316,7 @@
     },
     "re_entry": {
      "value": "possible for later flights",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #12",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf"
@@ -6286,7 +6325,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #12",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf"
@@ -6311,7 +6350,8 @@
    "late_reg_close": "15:40",
    "levels": 30,
    "level_minutes": 40,
-   "starting_chips": null,
+   "starting_chips": 40000,
+   "payout_excerpt": null,
    "est_end": "08:55",
    "est_duration_min": 1305,
    "note": "Read from the official event page and structure sheet #12 on 2026-11-16.",
@@ -6354,7 +6394,7 @@
    "rules": {
     "single_entry": {
      "value": "not single entry",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #14",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf"
@@ -6364,7 +6404,7 @@
     },
     "re_entry": {
      "value": "possible for later flights",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #14",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf"
@@ -6373,7 +6413,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #14",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf"
@@ -6399,7 +6439,8 @@
    "late_reg_close": "19:25",
    "levels": 30,
    "level_minutes": 20,
-   "starting_chips": null,
+   "starting_chips": 40000,
+   "payout_excerpt": null,
    "est_end": "04:55",
    "est_duration_min": 705,
    "note": "Read from the official event page and structure sheet #14 on 2026-11-16.",
@@ -6794,7 +6835,8 @@
    "late_reg_close": "16:55",
    "levels": 28,
    "level_minutes": 30,
-   "starting_chips": 20000,
+   "starting_chips": 40000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "02:55",
    "est_duration_min": 945,
    "note": "Read from the official event page and structure sheet #7 on 2026-11-16.",
@@ -6837,7 +6879,7 @@
    "rules": {
     "single_entry": {
      "value": "not single entry",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #12",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf"
@@ -6847,7 +6889,7 @@
     },
     "re_entry": {
      "value": "possible for later flights",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #12",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf"
@@ -6856,7 +6898,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #12",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf"
@@ -6883,6 +6925,7 @@
    "levels": 30,
    "level_minutes": 40,
    "starting_chips": null,
+   "payout_excerpt": null,
    "est_end": "09:45",
    "est_duration_min": 1305,
    "note": "Continuation of the event above - no new entry. Official event page row.",
@@ -7069,7 +7112,8 @@
    "late_reg_close": "21:40",
    "levels": 28,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 25000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
    "note": "Read from the official event page and structure sheet #15 on 2026-11-16.",
@@ -7666,7 +7710,8 @@
    "late_reg_close": "16:55",
    "levels": 28,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 40000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "02:55",
    "est_duration_min": 945,
    "note": "Read from the official event page and structure sheet #11 on 2026-11-16.",
@@ -7960,7 +8005,8 @@
    "late_reg_close": "21:40",
    "levels": 28,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 25000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
    "note": "Read from the official event page and structure sheet #15 on 2026-11-16.",
@@ -8250,7 +8296,8 @@
    "late_reg_close": "15:55",
    "levels": 28,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 40000,
+   "payout_excerpt": "pays 15% of the field",
    "est_end": "01:55",
    "est_duration_min": 945,
    "note": "Read from the official event page and structure sheet #17 on 2026-11-16.",
@@ -8442,6 +8489,7 @@
    "levels": 28,
    "level_minutes": 20,
    "starting_chips": 20000,
+   "payout_excerpt": null,
    "est_end": "03:15",
    "est_duration_min": 665,
    "note": "Milestone satellite: \"A Player who accumulates 200,000 in tournament chips (\"The Milestone\") or more will instantly receive direct entry into the $800 No Limit Hold'em LIPS ladies Event #39.\" Open to female players who must be 21+ and hold a Venetian Rewards card.",
@@ -8533,7 +8581,8 @@
    "late_reg_close": "21:40",
    "levels": 28,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 25000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
    "note": "Read from the official event page and structure sheet #15 on 2026-11-16.",
@@ -8824,7 +8873,8 @@
    "late_reg_close": "14:40",
    "levels": 28,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 40000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "01:55",
    "est_duration_min": 945,
    "note": "Read from the official event page and structure sheet #31 on 2026-11-16.",
@@ -9011,7 +9061,8 @@
    "late_reg_close": "16:55",
    "levels": 28,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 40000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "02:55",
    "est_duration_min": 945,
    "note": "Read from the official event page and structure sheet #16 on 2026-11-16.",
@@ -9506,6 +9557,7 @@
    "levels": 28,
    "level_minutes": 20,
    "starting_chips": 20000,
+   "payout_excerpt": null,
    "est_end": "03:15",
    "est_duration_min": 665,
    "note": "Milestone satellite: \"A Player who accumulates 200,000 in tournament chips (\"The Milestone\") or more will instantly receive direct entry into the $800 No Limit Hold'em LIPS ladies Event #39.\" Open to female players who must be 21+ and hold a Venetian Rewards card.",
@@ -9597,7 +9649,8 @@
    "late_reg_close": "21:40",
    "levels": 28,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 25000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
    "note": "Read from the official event page and structure sheet #15 on 2026-11-16.",
@@ -9982,7 +10035,8 @@
    "late_reg_close": "16:55",
    "levels": 29,
    "level_minutes": 40,
-   "starting_chips": null,
+   "starting_chips": 40000,
+   "payout_excerpt": null,
    "est_end": "07:15",
    "est_duration_min": 1265,
    "note": "Read from the official event page and structure sheet #32 on 2026-11-16.",
@@ -10175,7 +10229,8 @@
    "late_reg_close": "16:40",
    "levels": 28,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 30000,
+   "payout_excerpt": "pay 12.5% of the field",
    "est_end": "03:55",
    "est_duration_min": 945,
    "note": "Read from the official event page and structure sheet #27 on 2026-11-16.",
@@ -10263,6 +10318,7 @@
    "levels": 28,
    "level_minutes": 20,
    "starting_chips": 20000,
+   "payout_excerpt": null,
    "est_end": "03:15",
    "est_duration_min": 665,
    "note": "Milestone satellite: \"A Player who accumulates 200,000 in tournament chips (\"The Milestone\") or more will instantly receive direct entry into the $2,200 No Limit Hold'em PokerAtlas Championship Title Event #47.\"",
@@ -10354,7 +10410,8 @@
    "late_reg_close": "21:40",
    "levels": 28,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 25000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
    "note": "Read from the official event page and structure sheet #15 on 2026-11-16.",
@@ -10537,6 +10594,7 @@
    "levels": 29,
    "level_minutes": 40,
    "starting_chips": null,
+   "payout_excerpt": null,
    "est_end": "07:05",
    "est_duration_min": 1265,
    "note": "Continuation of the event above - no new entry. Official event page row.",
@@ -10718,7 +10776,8 @@
    "late_reg_close": "16:55",
    "levels": 28,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 40000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "02:55",
    "est_duration_min": 945,
    "note": "Read from the official event page and structure sheet #33 on 2026-11-16.",
@@ -10912,6 +10971,7 @@
    "levels": 28,
    "level_minutes": 20,
    "starting_chips": 20000,
+   "payout_excerpt": null,
    "est_end": "03:15",
    "est_duration_min": 665,
    "note": "Milestone satellite: \"A Player who accumulates 200,000 in tournament chips (\"The Milestone\") or more will instantly receive direct entry into the $2,200 No Limit Hold'em PokerAtlas Championship Title Event #47.\"",
@@ -11100,6 +11160,7 @@
    "levels": 29,
    "level_minutes": 40,
    "starting_chips": null,
+   "payout_excerpt": null,
    "est_end": "16:05",
    "est_duration_min": 1265,
    "note": "Continuation of the event above - no new entry. Official event page row.",
@@ -11190,6 +11251,7 @@
    "levels": 28,
    "level_minutes": 15,
    "starting_chips": 20000,
+   "payout_excerpt": null,
    "est_end": "04:55",
    "est_duration_min": 525,
    "note": "Milestone satellite: \"A Player who accumulates 200,000 in tournament chips (\"The Milestone\") or more will instantly receive direct entry into the $2,200 No Limit Hold'em PokerAtlas Championship Title Event #47.\" The sheet prints a start time per event number (45: 8:10 PM, 46: 9:10 AM, 48: 12:10 PM) and \"Late Registration: 6 levels\".",
@@ -11284,6 +11346,7 @@
    "levels": 28,
    "level_minutes": 15,
    "starting_chips": 20000,
+   "payout_excerpt": null,
    "est_end": "17:55",
    "est_duration_min": 525,
    "note": "Milestone satellite: \"A Player who accumulates 200,000 in tournament chips (\"The Milestone\") or more will instantly receive direct entry into the $2,200 No Limit Hold'em PokerAtlas Championship Title Event #47.\" The sheet prints a start time per event number (45: 8:10 PM, 46: 9:10 AM, 48: 12:10 PM) and \"Late Registration: 6 levels\".",
@@ -11431,7 +11494,7 @@
    "rules": {
     "single_entry": {
      "value": "not single entry",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #21",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf"
@@ -11441,7 +11504,7 @@
     },
     "re_entry": {
      "value": "possible for later flights",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #21",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf"
@@ -11450,7 +11513,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #21",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf"
@@ -11476,7 +11539,8 @@
    "late_reg_close": "16:55",
    "levels": 29,
    "level_minutes": 40,
-   "starting_chips": null,
+   "starting_chips": 40000,
+   "payout_excerpt": null,
    "est_end": "07:15",
    "est_duration_min": 1265,
    "note": "Read from the official event page and structure sheet #21 on 2026-11-16.",
@@ -11565,6 +11629,7 @@
    "levels": 28,
    "level_minutes": 15,
    "starting_chips": 20000,
+   "payout_excerpt": null,
    "est_end": "20:55",
    "est_duration_min": 525,
    "note": "Milestone satellite: \"A Player who accumulates 200,000 in tournament chips (\"The Milestone\") or more will instantly receive direct entry into the $2,200 No Limit Hold'em PokerAtlas Championship Title Event #47.\" The sheet prints a start time per event number (45: 8:10 PM, 46: 9:10 AM, 48: 12:10 PM) and \"Late Registration: 6 levels\".",
@@ -12102,7 +12167,7 @@
    "rules": {
     "single_entry": {
      "value": "not single entry",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #37",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_37.pdf"
@@ -12112,7 +12177,7 @@
     },
     "re_entry": {
      "value": "possible for later flights",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #37",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_37.pdf"
@@ -12121,7 +12186,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #37",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_37.pdf"
@@ -12147,7 +12212,8 @@
    "late_reg_close": "23:10",
    "levels": 30,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 40000,
+   "payout_excerpt": null,
    "est_end": "10:55",
    "est_duration_min": 1005,
    "note": "Read from the official event page and structure sheet #37 on 2026-11-16.",
@@ -12394,7 +12460,7 @@
    "rules": {
     "single_entry": {
      "value": "not single entry",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #20",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_20.pdf"
@@ -12404,7 +12470,7 @@
     },
     "re_entry": {
      "value": "possible for later flights",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #20",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_20.pdf"
@@ -12413,7 +12479,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #20",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_20.pdf"
@@ -12439,7 +12505,8 @@
    "late_reg_close": "16:55",
    "levels": 29,
    "level_minutes": 40,
-   "starting_chips": null,
+   "starting_chips": 40000,
+   "payout_excerpt": null,
    "est_end": "07:15",
    "est_duration_min": 1265,
    "note": "Read from the official event page and structure sheet #20 on 2026-11-16.",
@@ -13097,7 +13164,7 @@
    "rules": {
     "single_entry": {
      "value": "not single entry",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #21",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf"
@@ -13107,7 +13174,7 @@
     },
     "re_entry": {
      "value": "possible for later flights",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #21",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf"
@@ -13116,7 +13183,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #21",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf"
@@ -13144,6 +13211,7 @@
    "levels": 29,
    "level_minutes": 40,
    "starting_chips": null,
+   "payout_excerpt": null,
    "est_end": "10:05",
    "est_duration_min": 1265,
    "note": "Continuation of the event above - no new entry. Official event page row.",
@@ -13310,7 +13378,8 @@
    "late_reg_close": "21:40",
    "levels": 28,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 25000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
    "note": "Read from the official event page and structure sheet #15 on 2026-11-16.",
@@ -13454,7 +13523,7 @@
    "rules": {
     "single_entry": {
      "value": "not single entry",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #20",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_20.pdf"
@@ -13464,7 +13533,7 @@
     },
     "re_entry": {
      "value": "possible for later flights",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #20",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_20.pdf"
@@ -13473,7 +13542,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #20",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_20.pdf"
@@ -13499,7 +13568,8 @@
    "late_reg_close": "16:55",
    "levels": 29,
    "level_minutes": 40,
-   "starting_chips": null,
+   "starting_chips": 40000,
+   "payout_excerpt": null,
    "est_end": "07:15",
    "est_duration_min": 1265,
    "note": "Read from the official event page and structure sheet #20 on 2026-11-16.",
@@ -13542,7 +13612,7 @@
    "rules": {
     "single_entry": {
      "value": "not single entry",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #21",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf"
@@ -13552,7 +13622,7 @@
     },
     "re_entry": {
      "value": "possible for later flights",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #21",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf"
@@ -13561,7 +13631,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #21",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf"
@@ -13589,6 +13659,7 @@
    "levels": 29,
    "level_minutes": 40,
    "starting_chips": null,
+   "payout_excerpt": null,
    "est_end": "08:05",
    "est_duration_min": 1265,
    "note": "Continuation of the event above - no new entry. Official event page row.",
@@ -14262,7 +14333,8 @@
    "late_reg_close": "21:40",
    "levels": 28,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 25000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
    "note": "Read from the official event page and structure sheet #15 on 2026-11-16.",
@@ -14610,7 +14682,7 @@
    "rules": {
     "single_entry": {
      "value": "not single entry",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #20",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_20.pdf"
@@ -14620,7 +14692,7 @@
     },
     "re_entry": {
      "value": "possible for later flights",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #20",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_20.pdf"
@@ -14629,7 +14701,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #20",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_20.pdf"
@@ -14657,6 +14729,7 @@
    "levels": 29,
    "level_minutes": 40,
    "starting_chips": null,
+   "payout_excerpt": null,
    "est_end": "07:05",
    "est_duration_min": 1265,
    "note": "Continuation of the event above - no new entry. Official event page row.",
@@ -15029,7 +15102,8 @@
    "late_reg_close": "16:55",
    "levels": 28,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 40000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "02:55",
    "est_duration_min": 945,
    "note": "Read from the official event page and structure sheet #34 on 2026-11-16.",
@@ -15395,7 +15469,8 @@
    "late_reg_close": "21:40",
    "levels": 28,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 25000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
    "note": "Read from the official event page and structure sheet #15 on 2026-11-16.",
@@ -15788,7 +15863,8 @@
    "late_reg_close": "16:55",
    "levels": 28,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 40000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "02:55",
    "est_duration_min": 945,
    "note": "Read from the official event page and structure sheet #11 on 2026-11-16.",
@@ -16259,7 +16335,8 @@
    "late_reg_close": "21:40",
    "levels": 28,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 25000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
    "note": "Read from the official event page and structure sheet #15 on 2026-11-16.",
@@ -16612,7 +16689,7 @@
    "rules": {
     "single_entry": {
      "value": "not single entry",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #35",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf"
@@ -16622,7 +16699,7 @@
     },
     "re_entry": {
      "value": "possible for later flights",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #35",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf"
@@ -16631,7 +16708,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #35",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf"
@@ -16657,7 +16734,8 @@
    "late_reg_close": "16:55",
    "levels": 30,
    "level_minutes": 40,
-   "starting_chips": null,
+   "starting_chips": 40000,
+   "payout_excerpt": null,
    "est_end": "07:55",
    "est_duration_min": 1305,
    "note": "Read from the official event page and structure sheet #35 on 2026-11-16.",
@@ -17204,7 +17282,8 @@
    "late_reg_close": "16:40",
    "levels": 28,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 30000,
+   "payout_excerpt": "pay 12.5% of the field",
    "est_end": "03:55",
    "est_duration_min": 945,
    "note": "Read from the official event page and structure sheet #23 on 2026-11-16.",
@@ -17449,7 +17528,7 @@
    "rules": {
     "single_entry": {
      "value": "not single entry",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #36",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf"
@@ -17459,7 +17538,7 @@
     },
     "re_entry": {
      "value": "possible for later flights",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #36",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf"
@@ -17468,7 +17547,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #36",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf"
@@ -17494,7 +17573,8 @@
    "late_reg_close": "23:10",
    "levels": 30,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 40000,
+   "payout_excerpt": null,
    "est_end": "10:55",
    "est_duration_min": 1005,
    "note": "Read from the official event page and structure sheet #36 on 2026-11-16.",
@@ -17739,7 +17819,7 @@
    "rules": {
     "single_entry": {
      "value": "not single entry",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #35",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf"
@@ -17749,7 +17829,7 @@
     },
     "re_entry": {
      "value": "possible for later flights",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #35",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf"
@@ -17758,7 +17838,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #35",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf"
@@ -17784,7 +17864,8 @@
    "late_reg_close": "16:55",
    "levels": 30,
    "level_minutes": 40,
-   "starting_chips": null,
+   "starting_chips": 40000,
+   "payout_excerpt": null,
    "est_end": "07:55",
    "est_duration_min": 1305,
    "note": "Read from the official event page and structure sheet #35 on 2026-11-16.",
@@ -18509,7 +18590,7 @@
    "rules": {
     "single_entry": {
      "value": "not single entry",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #36",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf"
@@ -18519,7 +18600,7 @@
     },
     "re_entry": {
      "value": "possible for later flights",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #36",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf"
@@ -18528,7 +18609,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #36",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf"
@@ -18554,7 +18635,8 @@
    "late_reg_close": "23:10",
    "levels": 30,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 40000,
+   "payout_excerpt": null,
    "est_end": "10:55",
    "est_duration_min": 1005,
    "note": "Read from the official event page and structure sheet #36 on 2026-11-16.",
@@ -18597,7 +18679,7 @@
    "rules": {
     "single_entry": {
      "value": "not single entry",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #35",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf"
@@ -18607,7 +18689,7 @@
     },
     "re_entry": {
      "value": "possible for later flights",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #35",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf"
@@ -18616,7 +18698,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #35",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf"
@@ -18642,7 +18724,8 @@
    "late_reg_close": "16:55",
    "levels": 30,
    "level_minutes": 40,
-   "starting_chips": null,
+   "starting_chips": 40000,
+   "payout_excerpt": null,
    "est_end": "07:55",
    "est_duration_min": 1305,
    "note": "Read from the official event page and structure sheet #35 on 2026-11-16.",
@@ -19598,7 +19681,8 @@
    "late_reg_close": "21:40",
    "levels": 28,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 25000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
    "note": "Read from the official event page and structure sheet #8 on 2026-11-16.",
@@ -19845,7 +19929,7 @@
    "rules": {
     "single_entry": {
      "value": "not single entry",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #35",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf"
@@ -19855,7 +19939,7 @@
     },
     "re_entry": {
      "value": "possible for later flights",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #35",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf"
@@ -19864,7 +19948,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #35",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf"
@@ -19892,6 +19976,7 @@
    "levels": 30,
    "level_minutes": 40,
    "starting_chips": null,
+   "payout_excerpt": null,
    "est_end": "08:45",
    "est_duration_min": 1305,
    "note": "Continuation of the event above - no new entry. Official event page row.",
@@ -20037,7 +20122,7 @@
    "rules": {
     "single_entry": {
      "value": "not single entry",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #4",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf"
@@ -20047,7 +20132,7 @@
     },
     "re_entry": {
      "value": "possible for later flights",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #4",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf"
@@ -20056,7 +20141,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #4",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf"
@@ -20082,7 +20167,8 @@
    "late_reg_close": "17:55",
    "levels": 30,
    "level_minutes": 40,
-   "starting_chips": 20000,
+   "starting_chips": 40000,
+   "payout_excerpt": null,
    "est_end": "08:55",
    "est_duration_min": 1305,
    "note": "Read from the official event page and structure sheet #4 on 2026-11-16.",
@@ -20632,6 +20718,7 @@
    "levels": 28,
    "level_minutes": 30,
    "starting_chips": 25000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
    "note": "Read from the official event page and structure sheet #1 on 2026-11-16.",
@@ -20878,7 +20965,7 @@
    "rules": {
     "single_entry": {
      "value": "not single entry",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #4",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf"
@@ -20888,7 +20975,7 @@
     },
     "re_entry": {
      "value": "possible for later flights",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #4",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf"
@@ -20897,7 +20984,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #4",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf"
@@ -20923,7 +21010,8 @@
    "late_reg_close": "17:55",
    "levels": 30,
    "level_minutes": 40,
-   "starting_chips": 20000,
+   "starting_chips": 40000,
+   "payout_excerpt": null,
    "est_end": "08:55",
    "est_duration_min": 1305,
    "note": "Read from the official event page and structure sheet #4 on 2026-11-16.",
@@ -21191,6 +21279,7 @@
    "levels": 28,
    "level_minutes": 30,
    "starting_chips": 25000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
    "note": "Read from the official event page and structure sheet #1 on 2026-11-16.",
@@ -21339,7 +21428,7 @@
    "rules": {
     "single_entry": {
      "value": "not single entry",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #4",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf"
@@ -21349,7 +21438,7 @@
     },
     "re_entry": {
      "value": "possible for later flights",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #4",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf"
@@ -21358,7 +21447,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #4",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf"
@@ -21384,7 +21473,8 @@
    "late_reg_close": "17:55",
    "levels": 30,
    "level_minutes": 40,
-   "starting_chips": 20000,
+   "starting_chips": 40000,
+   "payout_excerpt": null,
    "est_end": "08:55",
    "est_duration_min": 1305,
    "note": "Read from the official event page and structure sheet #4 on 2026-11-16.",
@@ -21471,6 +21561,7 @@
    "levels": 28,
    "level_minutes": 30,
    "starting_chips": 25000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
    "note": "Read from the official event page and structure sheet #1 on 2026-11-16.",
@@ -21513,7 +21604,7 @@
    "rules": {
     "single_entry": {
      "value": "not single entry",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #4",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf"
@@ -21523,7 +21614,7 @@
     },
     "re_entry": {
      "value": "possible for later flights",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #4",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf"
@@ -21532,7 +21623,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #4",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf"
@@ -21559,7 +21650,8 @@
    "late_reg_close": "17:55",
    "levels": 30,
    "level_minutes": 40,
-   "starting_chips": 20000,
+   "starting_chips": null,
+   "payout_excerpt": null,
    "est_end": "08:45",
    "est_duration_min": 1305,
    "note": "Continuation of the event above - no new entry. Official event page row.",
@@ -21643,7 +21735,8 @@
    "late_reg_close": "16:55",
    "levels": 28,
    "level_minutes": 30,
-   "starting_chips": 20000,
+   "starting_chips": 40000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "02:55",
    "est_duration_min": 945,
    "note": "Read from the official event page and structure sheet #7 on 2026-11-16.",
@@ -21730,6 +21823,7 @@
    "levels": 28,
    "level_minutes": 30,
    "starting_chips": 25000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
    "note": "Read from the official event page and structure sheet #1 on 2026-11-16.",
@@ -21813,7 +21907,8 @@
    "late_reg_close": "15:40",
    "levels": 28,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 30000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "02:55",
    "est_duration_min": 945,
    "note": "Read from the official event page and structure sheet #1 on 2026-11-16.",
@@ -21822,10 +21917,6 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
-    },
-    {
-     "label": "Official schedule PDF",
-     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #1",
@@ -21899,7 +21990,8 @@
    "late_reg_close": "21:40",
    "levels": 28,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 25000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
    "note": "Clause 06 mentions re-entry for Event #29 only (\"The $20 discount can be applied to the initial entry or any subsequent re-entry\"). Event #29 is listed as re-entry; the other events on this sheet have no re-entry clause of their own. Flagged for confirmation.",
@@ -21908,10 +22000,6 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
-    },
-    {
-     "label": "Official schedule PDF",
-     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #2",
@@ -21983,7 +22071,8 @@
    "late_reg_close": "15:40",
    "levels": 28,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 30000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "02:55",
    "est_duration_min": 945,
    "note": "Read from the official event page and structure sheet #1 on 2026-11-16.",
@@ -21992,10 +22081,6 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
-    },
-    {
-     "label": "Official schedule PDF",
-     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #1",
@@ -22069,7 +22154,8 @@
    "late_reg_close": "21:40",
    "levels": 28,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 25000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
    "note": "Clause 06 mentions re-entry for Event #29 only (\"The $20 discount can be applied to the initial entry or any subsequent re-entry\"). Event #29 is listed as re-entry; the other events on this sheet have no re-entry clause of their own. Flagged for confirmation.",
@@ -22078,10 +22164,6 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
-    },
-    {
-     "label": "Official schedule PDF",
-     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #2",
@@ -22155,7 +22237,8 @@
    "late_reg_close": "16:55",
    "levels": 28,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 40000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "02:55",
    "est_duration_min": 945,
    "note": "Read from the official event page and structure sheet #3 on 2026-11-16.",
@@ -22166,10 +22249,6 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
-    },
-    {
-     "label": "Official schedule PDF",
-     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #3",
@@ -22244,7 +22323,8 @@
    "late_reg_close": "17:25",
    "levels": 28,
    "level_minutes": 20,
-   "starting_chips": null,
+   "starting_chips": 20000,
+   "payout_excerpt": null,
    "est_end": "02:15",
    "est_duration_min": 665,
    "note": "Milestone satellite to the Ante Up Championship. The sheet prints start times per event number (06, 09 and 11 at 3:10 PM; 07, 10 and 12 at 6:10 PM) and \"Late Registration: 6 levels + Break (~5:25 PM or ~ 8:25 PM)\". The official event page describes the prize as \"1 in 5 (20%) Direct Entry into Event # 08\".",
@@ -22255,10 +22335,6 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
-    },
-    {
-     "label": "Official schedule PDF",
-     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #4",
@@ -22339,7 +22415,8 @@
    "late_reg_close": "20:25",
    "levels": 28,
    "level_minutes": 20,
-   "starting_chips": null,
+   "starting_chips": 20000,
+   "payout_excerpt": null,
    "est_end": "05:15",
    "est_duration_min": 665,
    "note": "Milestone satellite to the Ante Up Championship. The sheet prints start times per event number (06, 09 and 11 at 3:10 PM; 07, 10 and 12 at 6:10 PM) and \"Late Registration: 6 levels + Break (~5:25 PM or ~ 8:25 PM)\". The official event page describes the prize as \"1 in 5 (20%) Direct Entry into Event # 08\".",
@@ -22350,10 +22427,6 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
-    },
-    {
-     "label": "Official schedule PDF",
-     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #4",
@@ -22390,7 +22463,7 @@
    "rules": {
     "single_entry": {
      "value": "not single entry",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #6",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_6.pdf"
@@ -22400,7 +22473,7 @@
     },
     "re_entry": {
      "value": "possible for later flights",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #6",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_6.pdf"
@@ -22409,7 +22482,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #6",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_6.pdf"
@@ -22434,7 +22507,8 @@
    "late_reg_close": "17:55",
    "levels": 30,
    "level_minutes": 40,
-   "starting_chips": null,
+   "starting_chips": 40000,
+   "payout_excerpt": null,
    "est_end": "08:55",
    "est_duration_min": 1305,
    "note": "Read from the official event page and structure sheet #6 on 2026-11-16.",
@@ -22443,10 +22517,6 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
-    },
-    {
-     "label": "Official schedule PDF",
-     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #6",
@@ -22521,7 +22591,8 @@
    "late_reg_close": "17:25",
    "levels": 28,
    "level_minutes": 20,
-   "starting_chips": null,
+   "starting_chips": 20000,
+   "payout_excerpt": null,
    "est_end": "02:15",
    "est_duration_min": 665,
    "note": "Milestone satellite to the Ante Up Championship. The sheet prints start times per event number (06, 09 and 11 at 3:10 PM; 07, 10 and 12 at 6:10 PM) and \"Late Registration: 6 levels + Break (~5:25 PM or ~ 8:25 PM)\". The official event page describes the prize as \"1 in 5 (20%) Direct Entry into Event # 08\".",
@@ -22530,10 +22601,6 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
-    },
-    {
-     "label": "Official schedule PDF",
-     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #4",
@@ -22614,7 +22681,8 @@
    "late_reg_close": "20:25",
    "levels": 28,
    "level_minutes": 20,
-   "starting_chips": null,
+   "starting_chips": 20000,
+   "payout_excerpt": null,
    "est_end": "05:15",
    "est_duration_min": 665,
    "note": "Milestone satellite to the Ante Up Championship. The sheet prints start times per event number (06, 09 and 11 at 3:10 PM; 07, 10 and 12 at 6:10 PM) and \"Late Registration: 6 levels + Break (~5:25 PM or ~ 8:25 PM)\". The official event page describes the prize as \"1 in 5 (20%) Direct Entry into Event # 08\".",
@@ -22623,10 +22691,6 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
-    },
-    {
-     "label": "Official schedule PDF",
-     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #4",
@@ -22663,7 +22727,7 @@
    "rules": {
     "single_entry": {
      "value": "not single entry",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #6",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_6.pdf"
@@ -22673,7 +22737,7 @@
     },
     "re_entry": {
      "value": "possible for later flights",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #6",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_6.pdf"
@@ -22682,7 +22746,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #6",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_6.pdf"
@@ -22707,7 +22771,8 @@
    "late_reg_close": "17:55",
    "levels": 30,
    "level_minutes": 40,
-   "starting_chips": null,
+   "starting_chips": 40000,
+   "payout_excerpt": null,
    "est_end": "08:55",
    "est_duration_min": 1305,
    "note": "Read from the official event page and structure sheet #6 on 2026-11-16.",
@@ -22716,10 +22781,6 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
-    },
-    {
-     "label": "Official schedule PDF",
-     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #6",
@@ -22794,7 +22855,8 @@
    "late_reg_close": "17:25",
    "levels": 28,
    "level_minutes": 20,
-   "starting_chips": null,
+   "starting_chips": 20000,
+   "payout_excerpt": null,
    "est_end": "02:15",
    "est_duration_min": 665,
    "note": "Milestone satellite to the Ante Up Championship. The sheet prints start times per event number (06, 09 and 11 at 3:10 PM; 07, 10 and 12 at 6:10 PM) and \"Late Registration: 6 levels + Break (~5:25 PM or ~ 8:25 PM)\". The official event page describes the prize as \"1 in 5 (20%) Direct Entry into Event # 08\".",
@@ -22803,10 +22865,6 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
-    },
-    {
-     "label": "Official schedule PDF",
-     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #4",
@@ -22887,7 +22945,8 @@
    "late_reg_close": "20:25",
    "levels": 28,
    "level_minutes": 20,
-   "starting_chips": null,
+   "starting_chips": 20000,
+   "payout_excerpt": null,
    "est_end": "05:15",
    "est_duration_min": 665,
    "note": "Milestone satellite to the Ante Up Championship. The sheet prints start times per event number (06, 09 and 11 at 3:10 PM; 07, 10 and 12 at 6:10 PM) and \"Late Registration: 6 levels + Break (~5:25 PM or ~ 8:25 PM)\". The official event page describes the prize as \"1 in 5 (20%) Direct Entry into Event # 08\".",
@@ -22896,10 +22955,6 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
-    },
-    {
-     "label": "Official schedule PDF",
-     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #4",
@@ -22936,7 +22991,7 @@
    "rules": {
     "single_entry": {
      "value": "not single entry",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #6",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_6.pdf"
@@ -22946,7 +23001,7 @@
     },
     "re_entry": {
      "value": "possible for later flights",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #6",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_6.pdf"
@@ -22955,7 +23010,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #6",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_6.pdf"
@@ -22980,7 +23035,8 @@
    "late_reg_close": "17:55",
    "levels": 30,
    "level_minutes": 40,
-   "starting_chips": null,
+   "starting_chips": 40000,
+   "payout_excerpt": null,
    "est_end": "08:55",
    "est_duration_min": 1305,
    "note": "Read from the official event page and structure sheet #6 on 2026-11-16.",
@@ -22989,10 +23045,6 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
-    },
-    {
-     "label": "Official schedule PDF",
-     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #6",
@@ -23066,7 +23118,8 @@
    "late_reg_close": "21:40",
    "levels": 28,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 25000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
    "note": "Clause 06 mentions re-entry for Event #29 only (\"The $20 discount can be applied to the initial entry or any subsequent re-entry\"). Event #29 is listed as re-entry; the other events on this sheet have no re-entry clause of their own. Flagged for confirmation.",
@@ -23075,10 +23128,6 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
-    },
-    {
-     "label": "Official schedule PDF",
-     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #2",
@@ -23109,7 +23158,7 @@
    "rules": {
     "single_entry": {
      "value": "not single entry",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #6",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_6.pdf"
@@ -23119,7 +23168,7 @@
     },
     "re_entry": {
      "value": "possible for later flights",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #6",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_6.pdf"
@@ -23128,7 +23177,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #6",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_6.pdf"
@@ -23155,6 +23204,7 @@
    "levels": 30,
    "level_minutes": 40,
    "starting_chips": null,
+   "payout_excerpt": null,
    "est_end": "08:45",
    "est_duration_min": 1305,
    "note": "Continuation of the event above - no new entry. Official event page row.",
@@ -23163,10 +23213,6 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
-    },
-    {
-     "label": "Official schedule PDF",
-     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #6",
@@ -23238,7 +23284,8 @@
    "late_reg_close": "16:55",
    "levels": 28,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 40000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "02:55",
    "est_duration_min": 945,
    "note": "Read from the official event page and structure sheet #12 on 2026-11-16.",
@@ -23247,10 +23294,6 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
-    },
-    {
-     "label": "Official schedule PDF",
-     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #12",
@@ -23325,7 +23368,8 @@
    "late_reg_close": "17:25",
    "levels": 28,
    "level_minutes": 20,
-   "starting_chips": null,
+   "starting_chips": 20000,
+   "payout_excerpt": null,
    "est_end": "02:15",
    "est_duration_min": 665,
    "note": "Milestone satellite to the MSPT. The sheet prints start times per event number (15, 18, 21 and 24 at 3:10 PM; 23 at 10:10 AM) and \"Late Registration: 6 levels + Break (~5:25 PM or 12:25 PM)\".",
@@ -23334,10 +23378,6 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
-    },
-    {
-     "label": "Official schedule PDF",
-     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #5",
@@ -23419,7 +23459,8 @@
    "late_reg_close": "19:55",
    "levels": 28,
    "level_minutes": 15,
-   "starting_chips": null,
+   "starting_chips": 20000,
+   "payout_excerpt": null,
    "est_end": "02:55",
    "est_duration_min": 525,
    "note": "Milestone satellite (turbo) to the MSPT. \"Late Registration: 6 levels + Break (~7:55 PM)\". \"$30 of the $200 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $170 of every $200 Buy In.\"",
@@ -23428,10 +23469,6 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
-    },
-    {
-     "label": "Official schedule PDF",
-     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #7",
@@ -23468,7 +23505,7 @@
    "rules": {
     "single_entry": {
      "value": "not single entry",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #6",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_6.pdf"
@@ -23478,7 +23515,7 @@
     },
     "re_entry": {
      "value": "possible for later flights",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #6",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_6.pdf"
@@ -23487,7 +23524,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #6",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_6.pdf"
@@ -23514,6 +23551,7 @@
    "levels": 30,
    "level_minutes": 40,
    "starting_chips": null,
+   "payout_excerpt": null,
    "est_end": "07:45",
    "est_duration_min": 1305,
    "note": "Continuation of the event above - no new entry. Official event page row.",
@@ -23522,10 +23560,6 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
-    },
-    {
-     "label": "Official schedule PDF",
-     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #6",
@@ -23597,7 +23631,8 @@
    "late_reg_close": "15:40",
    "levels": 28,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 30000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "02:55",
    "est_duration_min": 945,
    "note": "Read from the official event page and structure sheet #1 on 2026-11-16.",
@@ -23606,10 +23641,6 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
-    },
-    {
-     "label": "Official schedule PDF",
-     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #1",
@@ -23684,7 +23715,8 @@
    "late_reg_close": "17:25",
    "levels": 28,
    "level_minutes": 20,
-   "starting_chips": null,
+   "starting_chips": 20000,
+   "payout_excerpt": null,
    "est_end": "02:15",
    "est_duration_min": 665,
    "note": "Milestone satellite to the MSPT. The sheet prints start times per event number (15, 18, 21 and 24 at 3:10 PM; 23 at 10:10 AM) and \"Late Registration: 6 levels + Break (~5:25 PM or 12:25 PM)\".",
@@ -23693,10 +23725,6 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
-    },
-    {
-     "label": "Official schedule PDF",
-     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #5",
@@ -23778,7 +23806,8 @@
    "late_reg_close": "19:55",
    "levels": 28,
    "level_minutes": 15,
-   "starting_chips": null,
+   "starting_chips": 20000,
+   "payout_excerpt": null,
    "est_end": "02:55",
    "est_duration_min": 525,
    "note": "Milestone satellite (turbo) to the MSPT. \"Late Registration: 6 levels + Break (~7:55 PM)\". \"$30 of the $200 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $170 of every $200 Buy In.\"",
@@ -23787,10 +23816,6 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
-    },
-    {
-     "label": "Official schedule PDF",
-     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #7",
@@ -23827,7 +23852,7 @@
    "rules": {
     "single_entry": {
      "value": "not single entry",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #8",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_8.pdf"
@@ -23837,7 +23862,7 @@
     },
     "re_entry": {
      "value": "possible for later flights",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #8",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_8.pdf"
@@ -23846,7 +23871,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #8",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_8.pdf"
@@ -23872,7 +23897,8 @@
    "late_reg_close": "17:55",
    "levels": 30,
    "level_minutes": 40,
-   "starting_chips": null,
+   "starting_chips": 40000,
+   "payout_excerpt": null,
    "est_end": "08:55",
    "est_duration_min": 1305,
    "note": "Read from the official event page and structure sheet #8 on 2026-11-16.",
@@ -23881,10 +23907,6 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
-    },
-    {
-     "label": "Official schedule PDF",
-     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #8",
@@ -23959,7 +23981,8 @@
    "late_reg_close": "17:25",
    "levels": 28,
    "level_minutes": 20,
-   "starting_chips": null,
+   "starting_chips": 20000,
+   "payout_excerpt": null,
    "est_end": "02:15",
    "est_duration_min": 665,
    "note": "Milestone satellite to the MSPT. The sheet prints start times per event number (15, 18, 21 and 24 at 3:10 PM; 23 at 10:10 AM) and \"Late Registration: 6 levels + Break (~5:25 PM or 12:25 PM)\".",
@@ -23968,10 +23991,6 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
-    },
-    {
-     "label": "Official schedule PDF",
-     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #5",
@@ -24051,7 +24070,8 @@
    "late_reg_close": "21:40",
    "levels": 28,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 25000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
    "note": "Clause 06 mentions re-entry for Event #29 only (\"The $20 discount can be applied to the initial entry or any subsequent re-entry\"). Event #29 is listed as re-entry; the other events on this sheet have no re-entry clause of their own. Flagged for confirmation.",
@@ -24060,10 +24080,6 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
-    },
-    {
-     "label": "Official schedule PDF",
-     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #2",
@@ -24138,7 +24154,8 @@
    "late_reg_close": "12:25",
    "levels": 28,
    "level_minutes": 20,
-   "starting_chips": null,
+   "starting_chips": 20000,
+   "payout_excerpt": null,
    "est_end": "21:15",
    "est_duration_min": 665,
    "note": "Milestone satellite to the MSPT. The sheet prints start times per event number (15, 18, 21 and 24 at 3:10 PM; 23 at 10:10 AM) and \"Late Registration: 6 levels + Break (~5:25 PM or 12:25 PM)\".",
@@ -24147,10 +24164,6 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
-    },
-    {
-     "label": "Official schedule PDF",
-     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #5",
@@ -24187,7 +24200,7 @@
    "rules": {
     "single_entry": {
      "value": "not single entry",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #8",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_8.pdf"
@@ -24197,7 +24210,7 @@
     },
     "re_entry": {
      "value": "possible for later flights",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #8",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_8.pdf"
@@ -24206,7 +24219,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #8",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_8.pdf"
@@ -24232,7 +24245,8 @@
    "late_reg_close": "17:55",
    "levels": 30,
    "level_minutes": 40,
-   "starting_chips": null,
+   "starting_chips": 40000,
+   "payout_excerpt": null,
    "est_end": "08:55",
    "est_duration_min": 1305,
    "note": "Read from the official event page and structure sheet #8 on 2026-11-16.",
@@ -24241,10 +24255,6 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
-    },
-    {
-     "label": "Official schedule PDF",
-     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #8",
@@ -24319,7 +24329,8 @@
    "late_reg_close": "17:25",
    "levels": 28,
    "level_minutes": 20,
-   "starting_chips": null,
+   "starting_chips": 20000,
+   "payout_excerpt": null,
    "est_end": "02:15",
    "est_duration_min": 665,
    "note": "Milestone satellite to the MSPT. The sheet prints start times per event number (15, 18, 21 and 24 at 3:10 PM; 23 at 10:10 AM) and \"Late Registration: 6 levels + Break (~5:25 PM or 12:25 PM)\".",
@@ -24328,10 +24339,6 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
-    },
-    {
-     "label": "Official schedule PDF",
-     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #5",
@@ -24413,7 +24420,8 @@
    "late_reg_close": "21:40",
    "levels": 28,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 25000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
    "note": "Read from the official event page and structure sheet #9 on 2026-11-16.",
@@ -24422,10 +24430,6 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
-    },
-    {
-     "label": "Official schedule PDF",
-     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #9",
@@ -24456,7 +24460,7 @@
    "rules": {
     "single_entry": {
      "value": "not single entry",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #8",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_8.pdf"
@@ -24466,7 +24470,7 @@
     },
     "re_entry": {
      "value": "possible for later flights",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #8",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_8.pdf"
@@ -24475,7 +24479,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #8",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_8.pdf"
@@ -24501,7 +24505,8 @@
    "late_reg_close": "17:55",
    "levels": 30,
    "level_minutes": 40,
-   "starting_chips": null,
+   "starting_chips": 40000,
+   "payout_excerpt": null,
    "est_end": "08:55",
    "est_duration_min": 1305,
    "note": "Read from the official event page and structure sheet #8 on 2026-11-16.",
@@ -24510,10 +24515,6 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
-    },
-    {
-     "label": "Official schedule PDF",
-     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #8",
@@ -24587,7 +24588,8 @@
    "late_reg_close": "21:40",
    "levels": 28,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 25000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
    "note": "Clause 06 mentions re-entry for Event #29 only (\"The $20 discount can be applied to the initial entry or any subsequent re-entry\"). Event #29 is listed as re-entry; the other events on this sheet have no re-entry clause of their own. Flagged for confirmation.",
@@ -24596,10 +24598,6 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
-    },
-    {
-     "label": "Official schedule PDF",
-     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #2",
@@ -24630,7 +24628,7 @@
    "rules": {
     "single_entry": {
      "value": "not single entry",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #8",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_8.pdf"
@@ -24640,7 +24638,7 @@
     },
     "re_entry": {
      "value": "possible for later flights",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #8",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_8.pdf"
@@ -24649,7 +24647,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #8",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_8.pdf"
@@ -24677,6 +24675,7 @@
    "levels": 30,
    "level_minutes": 40,
    "starting_chips": null,
+   "payout_excerpt": null,
    "est_end": "08:45",
    "est_duration_min": 1305,
    "note": "Continuation of the event above - no new entry. The stored time comes from structure sheet #8 clause 3; the official event page prints 11:10 AM for this row, which is recorded as a flag on the row.",
@@ -24687,10 +24686,6 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
-    },
-    {
-     "label": "Official schedule PDF",
-     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #8",
@@ -24766,7 +24761,8 @@
    "late_reg_close": "15:40",
    "levels": 30,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 40000,
+   "payout_excerpt": null,
    "est_end": "03:55",
    "est_duration_min": 1005,
    "note": "Read from the official event page and structure sheet #15 on 2026-11-16.",
@@ -24775,10 +24771,6 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
-    },
-    {
-     "label": "Official schedule PDF",
-     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #15",
@@ -24854,7 +24846,8 @@
    "late_reg_close": "15:40",
    "levels": 30,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 40000,
+   "payout_excerpt": null,
    "est_end": "09:55",
    "est_duration_min": 1005,
    "note": "Read from the official event page and structure sheet #15 on 2026-11-16.",
@@ -24863,10 +24856,6 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
-    },
-    {
-     "label": "Official schedule PDF",
-     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #15",
@@ -24942,7 +24931,8 @@
    "late_reg_close": "15:40",
    "levels": 30,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 40000,
+   "payout_excerpt": null,
    "est_end": "03:55",
    "est_duration_min": 1005,
    "note": "Read from the official event page and structure sheet #15 on 2026-11-16.",
@@ -24953,10 +24943,6 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
-    },
-    {
-     "label": "Official schedule PDF",
-     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #15",
@@ -25032,7 +25018,8 @@
    "late_reg_close": "15:40",
    "levels": 30,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 40000,
+   "payout_excerpt": null,
    "est_end": "09:55",
    "est_duration_min": 1005,
    "note": "Read from the official event page and structure sheet #15 on 2026-11-16.",
@@ -25043,10 +25030,6 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
-    },
-    {
-     "label": "Official schedule PDF",
-     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #15",
@@ -25118,7 +25101,8 @@
    "late_reg_close": "16:55",
    "levels": 28,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 40000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "02:55",
    "est_duration_min": 945,
    "note": "Read from the official event page and structure sheet #11 on 2026-11-16.",
@@ -25127,10 +25111,6 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
-    },
-    {
-     "label": "Official schedule PDF",
-     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #11",
@@ -25208,6 +25188,7 @@
    "levels": 30,
    "level_minutes": 30,
    "starting_chips": null,
+   "payout_excerpt": null,
    "est_end": "04:45",
    "est_duration_min": 1005,
    "note": "Continuation of the event above - no new entry. Official event page row.",
@@ -25216,10 +25197,6 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
-    },
-    {
-     "label": "Official schedule PDF",
-     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #15",
@@ -25294,7 +25271,8 @@
    "late_reg_close": "21:40",
    "levels": 28,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 25000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
    "note": "Clause 06 mentions re-entry for Event #29 only (\"The $20 discount can be applied to the initial entry or any subsequent re-entry\"). Event #29 is listed as re-entry; the other events on this sheet have no re-entry clause of their own. Flagged for confirmation.",
@@ -25303,10 +25281,6 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
-    },
-    {
-     "label": "Official schedule PDF",
-     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #2",
@@ -25337,7 +25311,7 @@
    "rules": {
     "single_entry": {
      "value": "not single entry",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #13",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_13.pdf"
@@ -25347,7 +25321,7 @@
     },
     "re_entry": {
      "value": "possible for later flights",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #13",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_13.pdf"
@@ -25356,7 +25330,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #13",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_13.pdf"
@@ -25381,7 +25355,8 @@
    "late_reg_close": "15:40",
    "levels": 30,
    "level_minutes": 40,
-   "starting_chips": null,
+   "starting_chips": 30000,
+   "payout_excerpt": null,
    "est_end": "08:55",
    "est_duration_min": 1305,
    "note": "Read from the official event page and structure sheet #13 on 2026-11-16.",
@@ -25390,10 +25365,6 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
-    },
-    {
-     "label": "Official schedule PDF",
-     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #13",
@@ -25424,7 +25395,7 @@
    "rules": {
     "single_entry": {
      "value": "not single entry",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #14",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_14.pdf"
@@ -25434,7 +25405,7 @@
     },
     "re_entry": {
      "value": "possible for later flights",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #14",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_14.pdf"
@@ -25443,7 +25414,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #14",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_14.pdf"
@@ -25468,7 +25439,8 @@
    "late_reg_close": "20:40",
    "levels": 30,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 30000,
+   "payout_excerpt": null,
    "est_end": "09:55",
    "est_duration_min": 1005,
    "note": "Read from the official event page and structure sheet #14 on 2026-11-16.",
@@ -25477,10 +25449,6 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
-    },
-    {
-     "label": "Official schedule PDF",
-     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #14",
@@ -25511,7 +25479,7 @@
    "rules": {
     "single_entry": {
      "value": "not single entry",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #13",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_13.pdf"
@@ -25521,7 +25489,7 @@
     },
     "re_entry": {
      "value": "possible for later flights",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #13",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_13.pdf"
@@ -25530,7 +25498,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #13",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_13.pdf"
@@ -25555,7 +25523,8 @@
    "late_reg_close": "15:40",
    "levels": 30,
    "level_minutes": 40,
-   "starting_chips": null,
+   "starting_chips": 30000,
+   "payout_excerpt": null,
    "est_end": "08:55",
    "est_duration_min": 1305,
    "note": "Read from the official event page and structure sheet #13 on 2026-11-16.",
@@ -25564,10 +25533,6 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
-    },
-    {
-     "label": "Official schedule PDF",
-     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #13",
@@ -25598,7 +25563,7 @@
    "rules": {
     "single_entry": {
      "value": "not single entry",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #14",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_14.pdf"
@@ -25608,7 +25573,7 @@
     },
     "re_entry": {
      "value": "possible for later flights",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #14",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_14.pdf"
@@ -25617,7 +25582,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #14",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_14.pdf"
@@ -25642,7 +25607,8 @@
    "late_reg_close": "20:40",
    "levels": 30,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 30000,
+   "payout_excerpt": null,
    "est_end": "09:55",
    "est_duration_min": 1005,
    "note": "Read from the official event page and structure sheet #14 on 2026-11-16.",
@@ -25651,10 +25617,6 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
-    },
-    {
-     "label": "Official schedule PDF",
-     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #14",
@@ -25685,7 +25647,7 @@
    "rules": {
     "single_entry": {
      "value": "not single entry",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #13",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_13.pdf"
@@ -25695,7 +25657,7 @@
     },
     "re_entry": {
      "value": "possible for later flights",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #13",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_13.pdf"
@@ -25704,7 +25666,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #13",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_13.pdf"
@@ -25729,7 +25691,8 @@
    "late_reg_close": "15:40",
    "levels": 30,
    "level_minutes": 40,
-   "starting_chips": null,
+   "starting_chips": 30000,
+   "payout_excerpt": null,
    "est_end": "08:55",
    "est_duration_min": 1305,
    "note": "Read from the official event page and structure sheet #13 on 2026-11-16.",
@@ -25738,10 +25701,6 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
-    },
-    {
-     "label": "Official schedule PDF",
-     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #13",
@@ -25772,7 +25731,7 @@
    "rules": {
     "single_entry": {
      "value": "not single entry",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #14",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_14.pdf"
@@ -25782,7 +25741,7 @@
     },
     "re_entry": {
      "value": "possible for later flights",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #14",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_14.pdf"
@@ -25791,7 +25750,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #14",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_14.pdf"
@@ -25816,7 +25775,8 @@
    "late_reg_close": "20:40",
    "levels": 30,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 30000,
+   "payout_excerpt": null,
    "est_end": "09:55",
    "est_duration_min": 1005,
    "note": "Read from the official event page and structure sheet #14 on 2026-11-16.",
@@ -25825,10 +25785,6 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
-    },
-    {
-     "label": "Official schedule PDF",
-     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #14",
@@ -25902,7 +25858,8 @@
    "late_reg_close": "15:55",
    "levels": 28,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 40000,
+   "payout_excerpt": "pays 15% of the field",
    "est_end": "01:55",
    "est_duration_min": 945,
    "note": "Read from the official event page and structure sheet #10 on 2026-11-16.",
@@ -25911,10 +25868,6 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
-    },
-    {
-     "label": "Official schedule PDF",
-     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #10",
@@ -25945,7 +25898,7 @@
    "rules": {
     "single_entry": {
      "value": "not single entry",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #13",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_13.pdf"
@@ -25955,7 +25908,7 @@
     },
     "re_entry": {
      "value": "possible for later flights",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #13",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_13.pdf"
@@ -25964,7 +25917,7 @@
     },
     "add_on": {
      "value": "not mentioned",
-     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" A player who busts out can still enter a later flight, so the event is not single entry.",
+     "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #13",
       "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_13.pdf"
@@ -25991,6 +25944,7 @@
    "levels": 30,
    "level_minutes": 40,
    "starting_chips": null,
+   "payout_excerpt": null,
    "est_end": "09:45",
    "est_duration_min": 1305,
    "note": "Continuation of the event above - no new entry. Official event page row.",
@@ -25999,10 +25953,6 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
-    },
-    {
-     "label": "Official schedule PDF",
-     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #13",
@@ -26076,7 +26026,8 @@
    "late_reg_close": "21:40",
    "levels": 28,
    "level_minutes": 30,
-   "starting_chips": null,
+   "starting_chips": 25000,
+   "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
    "note": "Clause 06 mentions re-entry for Event #29 only (\"The $20 discount can be applied to the initial entry or any subsequent re-entry\"). Event #29 is listed as re-entry; the other events on this sheet have no re-entry clause of their own. Flagged for confirmation.",
@@ -26085,10 +26036,6 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
-    },
-    {
-     "label": "Official schedule PDF",
-     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #2",

@@ -64,7 +64,7 @@ SRC = {
 EX_SE = ("No re-entry, rebuy, add-on or multi-flight clause appears anywhere on this structure sheet "
          "(every numbered clause was read on 2026-11-16).")
 EX_FLIGHT = ("Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" "
-             "A player who busts out can still enter a later flight, so the event is not single entry.")
+             "Later entry after busting is not addressed; exclude from the strict shortlist.")
 EX_FLIGHT_EXPLICIT = ("Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight. "
                       "Players who cash on Day 1 but bust before making Day 2 may play another flight.\"")
 EX_SUBSEQUENT_BUYIN = ("Clause 07: \"All subsequent buy in's after the initial buy in will be $200.\" "
@@ -915,7 +915,10 @@ def rule_field(value, excerpt, source_label, source_url, clause=None, retrieved=
 
 def build_venetian(rows, series_key, series, page_key, sheet_key, sched_key, struct_key):
     out = []
+    with open(os.path.join(DATA, "structure_rules.json"), encoding="utf8") as f:
+        printed = json.load(f)
     for (date, start, no, name, gtd, sheet_no) in rows:
+        published = printed[f"v_{series_key}_struct_{sheet_no:02d}"]
         sheet = sheet_key[sheet_no]
         continuation = "Restart" in name or "Final Table" in name
         status = sheet["status"]
@@ -967,8 +970,9 @@ def build_venetian(rows, series_key, series, page_key, sheet_key, sched_key, str
                 fee_ex, "Structure sheet #%d" % sheet_no, struct_url, clause="06"),
         }
         srcs = [{"label": "Official event page", "url": SRC[page_key]},
-                {"label": "Official schedule PDF", "url": SRC[sched_key]},
                 {"label": "Structure sheet #%d" % sheet_no, "url": struct_url}]
+        if sched_key:
+            srcs.insert(1, {"label": "Official schedule PDF", "url": SRC[sched_key]})
         flags = []
         if date == "2026-12-26":
             flags.append(DATE_TYPO_DEC26)
@@ -1014,7 +1018,8 @@ def build_venetian(rows, series_key, series, page_key, sheet_key, sched_key, str
             "labels": labels,
             "late_reg_close": clock(late_text) if late_text else None,
             "levels": sheet["levels"], "level_minutes": sheet["lmin"],
-            "starting_chips": sheet.get("chips"),
+            "starting_chips": None if continuation else int(published["chips"].split()[0].replace(",", "")),
+            "payout_excerpt": published.get("payout_excerpt"),
             "est_end": est_end, "est_duration_min": est_min,
             "note": note,
             "flags": flags,
@@ -2093,7 +2098,7 @@ def main():
     rows += build_venetian(DSE_NOV, "nov", "Venetian DeepStack Extravaganza IV", "dse_nov_page",
                            NOV_SHEETS, "dse_nov_sched", "dse_nov_struct")
     rows += build_venetian(DSE_NYE, "dec", "Venetian DeepStack Extravaganza NYE", "dse_dec_page",
-                           DEC_SHEETS, "dse_nov_sched", "dse_dec_struct")
+                           DEC_SHEETS, None, "dse_dec_struct")
     rows += build_wynn()
     rows.sort(key=lambda x: (x["date"], x["start"], x["name"]))
     for i, row in enumerate(rows, 1):

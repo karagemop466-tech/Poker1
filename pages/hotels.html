@@ -763,6 +763,8 @@ of a poker room, or search any column.</p>
         } },
       { id: "buy", label: "Buy-in", key: "buy_in_usd", num: true, html: function (r) { return money(r.buy_in_usd); } },
       { id: "gtd", label: "Guarantee", key: "guarantee_usd", num: true, html: function (r) { return money(r.guarantee_usd); } },
+      { id: "structure", label:"Structure", key:"starting_chips", html:function(r){return [r.starting_chips && r.starting_chips.toLocaleString("en-US")+" chips", r.level_minutes && r.level_minutes+" min levels", r.late_reg_close && "Late reg: "+timeFmt(r.late_reg_close), r.payout_excerpt].filter(Boolean).map(esc).join("<br>");}},
+      { id: "format", label:"Format", key:"labels", html:function(r){return (r.labels || []).map(esc).join(" · ");}},
       { id: "mult", label: "Guarantee ÷ buy-in", key: "gtd_multiple", num: true, html: function (r) { return mult(r.gtd_multiple); } },
       { id: "status", label: "Entry rule", key: "entry_status", html: function (r) { return statusChip(r.entry_status); } },
       { id: "checked", label: "Last checked", key: "last_checked", html: function (r) { return "<span class='small'>" + esc(r.last_checked) + "</span>"; } }
@@ -816,6 +818,19 @@ of a poker room, or search any column.</p>
   };
 
   PAGES.daily = function () {
+    // Bot commits do not always trigger a branch-mode Pages rebuild. On the live
+    // project site read the same public main-branch JSON, falling back to its dated copy.
+    var feedRequest = location.hostname === "karagemop466-tech.github.io"
+      ? fetch("https://api.github.com/repos/karagemop466-tech/Poker1/contents/data/schedule_feed.json?ref=main", {headers:{Accept:"application/vnd.github.raw+json"}}).then(function(r){if(!r.ok) throw Error(r.status);return r.json();}).catch(function(){return getJSON("data/schedule_feed.json");})
+      : getJSON("data/schedule_feed.json");
+    feedRequest.then(function(feed){
+      table(document.getElementById("feed"), feed.rooms, [
+        {id:"source",label:"Official schedule",key:"label",html:function(r){return srcLinks([{url:r.source,label:r.label}]);}},
+        {id:"status",label:"Latest attempt",key:"status",html:function(r){return esc(r.status) + (r.changed ? " · changed since prior capture" : "") + "<br>" + esc(r.attempted_at || "archive seed");}},
+        {id:"read",label:"Last readable capture",key:"read_at"},
+        {id:"text",label:"Published excerpts (not classified)",sort:null,html:function(r){return r.excerpts.length ? "<details><summary>"+r.excerpts.length+" excerpts</summary><ul>"+r.excerpts.map(function(x){return "<li>"+esc(x)+"</li>";}).join("")+"</ul></details>" : "Unverified";}}
+      ], {filterInput:document.getElementById("feed-q")});
+    }).catch(showErr);
     Promise.all([getJSON("data/daily.json"), getJSON("data/tournaments.json")]).then(function (res) {
       var daily = res[0].rows, rows = res[1].rows;
       var main = document.getElementById("content");
@@ -855,6 +870,7 @@ of a poker room, or search any column.</p>
         { id: "fee", label: "Fee split", key: "fee", sort: null, html: function (r) { return "<span class='small'>" + esc(r.fee) + "</span>"; } },
         { id: "ex", label: "Rule excerpt", key: "ex", sort: null, html: function (r) { return "<span class='small'>" + esc(r.ex) + "<br>" + esc(r.stack || "") + "</span>"; } }
       ];
+      cols.push({id:"checked",label:"Last checked",html:function(){return esc(res[0].verified_on);}}, {id:"source",label:"Sources",html:function(){return srcLinks(res[0].sources);}});
       table(main, daily, cols, { sortKey: "start", sortDir: 1 });
       var susp = rows.filter(function (r) { return r.venue === "Wynn Las Vegas"; });
       var note = document.getElementById("series-note");
