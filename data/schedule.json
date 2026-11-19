@@ -9557,7 +9557,7 @@
      "buy_in_usd": 200,
      "guarantee_usd": 8000,
      "prize_text": null,
-     "entry_status": "CAND",
+     "entry_status": "RE",
      "labels": [
       "bounty"
      ],
@@ -9572,7 +9572,7 @@
    "primary_id": "r231",
    "fallback_id": null,
    "fallback_kind": null,
-   "fallback_note": "No other candidate on this date can still be entered by the time the primary's own table ends at 02:55 (+1 day) - the day is planned around the primary alone.",
+   "fallback_note": "This is the only sheet-reviewed candidate on this date, so the day is planned around it alone.",
    "conflicts": [
     {
      "a": "r231",
@@ -9591,18 +9591,7 @@
    "second_entry_note": "",
    "conflicts_unplannable": 1,
    "conflicts_join_in_progress": 0,
-   "alternatives": [
-    {
-     "id": "r232",
-     "start": "17:10",
-     "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
-     "buy_in_usd": 200,
-     "guarantee_usd": 8000,
-     "entry_closes": "21:40",
-     "late_reg_published": true,
-     "note": "The primary's own table can run as late as 02:55 (+1 day); reaching this event means being out of the primary and seated before its entry closes at 21:40 - a question of when you are eliminated, which no source publishes."
-    }
-   ]
+   "alternatives": []
   },
   {
    "date": "2026-12-25",
@@ -9634,7 +9623,7 @@
      "buy_in_usd": 200,
      "guarantee_usd": 8000,
      "prize_text": null,
-     "entry_status": "CAND",
+     "entry_status": "RE",
      "labels": [
       "bounty"
      ],
@@ -9649,7 +9638,7 @@
    "primary_id": "r233",
    "fallback_id": null,
    "fallback_kind": null,
-   "fallback_note": "No other candidate on this date can still be entered by the time the primary's own table ends at 02:55 (+1 day) - the day is planned around the primary alone.",
+   "fallback_note": "This is the only sheet-reviewed candidate on this date, so the day is planned around it alone.",
    "conflicts": [
     {
      "a": "r233",
@@ -9668,18 +9657,7 @@
    "second_entry_note": "",
    "conflicts_unplannable": 1,
    "conflicts_join_in_progress": 0,
-   "alternatives": [
-    {
-     "id": "r234",
-     "start": "17:10",
-     "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
-     "buy_in_usd": 200,
-     "guarantee_usd": 8000,
-     "entry_closes": "21:40",
-     "late_reg_published": true,
-     "note": "The primary's own table can run as late as 02:55 (+1 day); reaching this event means being out of the primary and seated before its entry closes at 21:40 - a question of when you are eliminated, which no source publishes."
-    }
-   ]
+   "alternatives": []
   },
   {
    "date": "2026-12-26",
@@ -10081,7 +10059,7 @@
      "buy_in_usd": 200,
      "guarantee_usd": 8000,
      "prize_text": null,
-     "entry_status": "CAND",
+     "entry_status": "RE",
      "labels": [
       "bounty"
      ],
@@ -10093,10 +10071,10 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_2.pdf"
     }
    ],
-   "primary_id": "r245",
+   "primary_id": null,
    "fallback_id": null,
    "fallback_kind": null,
-   "fallback_note": "This is the only sheet-reviewed candidate on this date, so the day is planned around it alone.",
+   "fallback_note": "No sheet-reviewed candidate on this date.",
    "conflicts": [],
    "undecidable_pairs": [
     {
@@ -10432,7 +10410,7 @@
      "buy_in_usd": 200,
      "guarantee_usd": 8000,
      "prize_text": null,
-     "entry_status": "CAND",
+     "entry_status": "RE",
      "labels": [
       "bounty"
      ],
@@ -10481,18 +10459,7 @@
    "second_entry_note": "",
    "conflicts_unplannable": 1,
    "conflicts_join_in_progress": 0,
-   "alternatives": [
-    {
-     "id": "r256",
-     "start": "17:10",
-     "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
-     "buy_in_usd": 200,
-     "guarantee_usd": 8000,
-     "entry_closes": "21:40",
-     "late_reg_published": true,
-     "note": "The primary's own table can run as late as 02:15 (+1 day); reaching this event means being out of the primary and seated before its entry closes at 21:40 - a question of when you are eliminated, which no source publishes."
-    }
-   ]
+   "alternatives": []
   },
   {
    "date": "2027-01-02",
@@ -10700,7 +10667,7 @@
      "buy_in_usd": 200,
      "guarantee_usd": 8000,
      "prize_text": null,
-     "entry_status": "CAND",
+     "entry_status": "RE",
      "labels": [
       "bounty"
      ],
@@ -10712,10 +10679,10 @@
      "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_2.pdf"
     }
    ],
-   "primary_id": "r262",
+   "primary_id": null,
    "fallback_id": null,
    "fallback_kind": null,
-   "fallback_note": "This is the only sheet-reviewed candidate on this date, so the day is planned around it alone.",
+   "fallback_note": "No sheet-reviewed candidate on this date.",
    "conflicts": [],
    "undecidable_pairs": [
     {
@@ -11184,7 +11151,7 @@
      "buy_in_usd": 200,
      "guarantee_usd": 8000,
      "prize_text": null,
-     "entry_status": "CAND",
+     "entry_status": "RE",
      "labels": [
       "bounty"
      ],
@@ -11199,7 +11166,7 @@
    "primary_id": "r277",
    "fallback_id": null,
    "fallback_kind": null,
-   "fallback_note": "No other candidate on this date can still be entered by the time the primary's own table ends at 01:55 (+1 day) - the day is planned around the primary alone.",
+   "fallback_note": "This is the only sheet-reviewed candidate on this date, so the day is planned around it alone.",
    "conflicts": [
     {
      "a": "r277",
@@ -11218,18 +11185,7 @@
    "second_entry_note": "",
    "conflicts_unplannable": 1,
    "conflicts_join_in_progress": 0,
-   "alternatives": [
-    {
-     "id": "r279",
-     "start": "17:10",
-     "name": "$200 No Limit Hold'em Bounty $8K GTD (1Day)",
-     "buy_in_usd": 200,
-     "guarantee_usd": 8000,
-     "entry_closes": "21:40",
-     "late_reg_published": true,
-     "note": "The primary's own table can run as late as 01:55 (+1 day); reaching this event means being out of the primary and seated before its entry closes at 21:40 - a question of when you are eliminated, which no source publishes."
-    }
-   ]
+   "alternatives": []
   },
   {
    "date": "2027-01-11",

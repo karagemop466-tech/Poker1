@@ -128,6 +128,16 @@ EX_FLIGHT = ("Clause 08: \"Any player who bags chips for Day 2 may not play a su
              "Later entry after busting is not addressed; exclude from the strict shortlist.")
 EX_FLIGHT_EXPLICIT = ("Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight. "
                       "Players who cash on Day 1 but bust before making Day 2 may play another flight.\"")
+# The NYE $200 Bounty sheet (dse_dec_2026-structure_2.pdf, sheet 01) prints a CES-badge
+# discount that "can be applied to the initial entry or any subsequent re-entry". A
+# "subsequent re-entry" is a further entry, so the event is not single entry. The event
+# scope is printed on the sheet's own heading: "Event #29 - $10 Rake Discount for showing
+# your CES Badge", and the clause itself repeats "For Event #29 only".
+EX_DISCOUNT_REENTRY = (
+    "Clause 06: \"The $20 discount can be applied to the initial entry or any subsequent "
+    "re-entry.\" A further entry is contemplated for this event, so it is not single entry. "
+    "The sheet scopes the sentence to Event #29 itself (\"For Event #29 only\"); the other "
+    "bounty events on the same sheet print no re-entry sentence either way.")
 EX_SUBSEQUENT_BUYIN = ("Clause 07: \"All subsequent buy in's after the initial buy in will be $200.\" "
                        "Later buy-ins are allowed, so the event is not single entry.")
 
@@ -1353,6 +1363,60 @@ def mark_flight_pricing(rows):
                 r["labels"].append("effectively single entry")
     return rows
 
+def fee_clause_quote(published, buy, fee, pool):
+    """Quote the house-fee clause in the sheet's OWN words.
+
+    The old form painted the fee figure over one fixed sentence. That is
+    faithful only for sheets that print that sentence; sheet #28 prints
+    "... Buy-In for house fees ... Prize pool consists of ..." and #21/#37/#08
+    print comma-formatted "$1,975"/"$1,420", so those quotes could not be found
+    in the PDF at all. Here every quoted span is lifted from the snapshot text,
+    so a quote is the document's words by construction: the fee sentence and,
+    as its own quoted sentence, the prize-pool sentence that makes the fee's
+    basis checkable.
+
+    The clause is numbered 06 on most sheets but 07 on the sheets that print a
+    separate tax clause, so the number is read off the document rather than
+    assumed.
+    """
+    snap_rel = ((published or {}).get("snapshot") or "")
+    snap = os.path.join(ROOT, snap_rel) if snap_rel else None
+    if not snap or not os.path.exists(snap):
+        return None, None, None
+    with open(snap, encoding="utf8") as f:
+        text = f.read()
+    flat = re.sub(r"-\s*\n\s*", "-", text)
+    flat = re.sub(r"\s+", " ", flat)
+    anchor = re.search(r"\$[\d,]+ of the \$[\d,]+ Buy-?In", flat, re.I)
+    if not anchor:
+        return None, None, None
+    # Walk back to the numbered clause this sentence belongs to.
+    before = flat[:anchor.start()]
+    heads = list(re.finditer(r"(?<![\d.])(0?\d{1,2})\.\s+(?=[A-Z$])", before))
+    if not heads:
+        return None, None, None
+    clause_no = int(heads[-1].group(1))
+    start_at = heads[-1].end()
+    nxt = re.search(r"(?<![\d.])0?\d{1,2}\.\s+(?=[A-Z$])", flat[anchor.end():])
+    clause = flat[start_at:anchor.end() + (nxt.start() if nxt else 0)].strip()
+
+    def sentences(block):
+        return [x.strip() for x in re.split(r"(?<=\.)\s+(?=[A-Z$])", block) if x.strip()]
+
+    parts = sentences(clause)
+    fee_sentence = pool_sentence = None
+    for i, sent in enumerate(parts):
+        if re.search(r"\$[\d,]+ of the \$[\d,]+ Buy-?In", sent, re.I):
+            fee_sentence = re.split(r"\s(?=On Day 1[A-F]\b)", sent)[0].strip()
+            for nxt_s in parts[i + 1:]:
+                if re.search(r"(?:consists of|fee for Vegas Connected|Prize pool consists)", nxt_s, re.I):
+                    pool_sentence = nxt_s
+                    break
+            break
+    if not fee_sentence:
+        return None, None, None
+    return clause_no, fee_sentence, pool_sentence
+
 
 def build_venetian(rows, series_key, series, page_key, sheet_key, sched_key, struct_key):
     out = []
@@ -1368,6 +1432,18 @@ def build_venetian(rows, series_key, series, page_key, sheet_key, sched_key, str
         continuation = "Restart" in name or "Final Table" in name
         status = sheet["status"]
         ex = sheet.get("ex", EX_SE)
+        # A sheet that prints a further-entry sentence cannot be classified as a
+        # silent candidate: the sentence is evidence AGAINST single entry. This is
+        # the rule the 2026-11-19 audit found was applied to Event #29 only: the
+        # same sheet was read as "re-entry allowed" on that row and as "no such
+        # clause appears anywhere" on the six other bounty events that cite it.
+        if status == "CAND" and (published or {}).get("re_entry_excerpt") \
+                and re.search(r"subsequent re-?entry", (published.get("re_entry_excerpt") or ""), re.I):
+            if not re.search(r"\bfor\s+event\s*#?\s*\d+\b.{0,60}?\bonly\b",
+                             (published.get("re_entry_excerpt") or ""), re.I) \
+                    or no == 29:
+                status = "RE"
+                ex = EX_DISCOUNT_REENTRY
         override = DEC_EVENT_OVERRIDE.get((series_key, no)) if series_key == "dec" else None
         if override:
             status = override["status"]
@@ -1393,8 +1469,15 @@ def build_venetian(rows, series_key, series, page_key, sheet_key, sched_key, str
             start_time, sheet["levels"], sheet["lmin"],
             level_min2=sheet.get("lmin2"), level_min2_from=sheet.get("lmin2_from"))
         struct_url = SRC[struct_key].format(sheet_no)
-        fee_ex = ("Clause 06: \"$%d of the $%s Buy-In is withheld for house fees (Rake + Staff). The prize pool "
-                  "consists of $%d of every $%s Buy In.\"" % (sheet["fee"], format(buy, ","), sheet["pool"], format(buy, ",")))
+        _clause_no, _fee_sentence, _pool_sentence = fee_clause_quote(published, buy, sheet["fee"], sheet["pool"])
+        if _fee_sentence:
+            fee_ex = "Clause %02d: \"%s\"" % (_clause_no, _fee_sentence)
+            if _pool_sentence:
+                fee_ex += " \"%s\"" % _pool_sentence
+        else:
+            fee_ex = ("Clause 06: \"$%d of the $%s Buy-In is withheld for house fees (Rake + Staff). The prize pool "
+                      "consists of $%d of every $%s Buy In.\" [templated: the sheet prints the fee figure but no "
+                      "single sentence was located]" % (sheet["fee"], format(buy, ","), sheet["pool"], format(buy, ",")))
         lips_fee = 10 if sheet_no in (31, 33) else (20 if sheet_no == 32 else 0)
         house_fee_value = sheet["fee"] - lips_fee
         if sheet_no in (31, 32, 33):

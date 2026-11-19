@@ -2,7 +2,33 @@
 
 ## Booking decision · November 19, 2026
 
-**Hold nonrefundable bookings.** None of the 80 rows classified as single entry in the archived series table has a written no-add-on rule in its structured evidence: all 80 say “not mentioned.” Those rows now have a separate candidate status. The strict shortlist is empty; the day plan is conditional. This does not mean those events allow add-ons.
+**Hold nonrefundable bookings.** None of the **74** rows now classified as single-entry candidates has a
+written no-add-on rule in its structured evidence: every one says "not mentioned." The strict shortlist
+is empty; the day plan is conditional. This does not mean those events allow add-ons.
+
+**An independent audit now checks this claim on every build.** [`scripts/audit_entry_labels.py`](scripts/audit_entry_labels.py)
+re-derives all **980** quoted spans in the dataset from the archived official document each row cites, and
+prints the result on the [Evidence audit](pages/evidence-audit.html) page. Its headline finding is the
+one that decides the trip: across **59** official documents, **not one prints a sentence that closes an
+event to a second entry** — no "single entry only", no "no re-entry", no "no rebuy", no "no add-on". The
+decision to hold is therefore not caution about missing paperwork; it is the measured state of the
+published evidence.
+
+The same audit found and fixed three defects in this dataset on 2026-11-19, all of which had passed every
+earlier check because they were defects of *wording against its own source*, not of arithmetic:
+
+1. **Six rows claimed a clause was absent while their own sheet printed it.** r232, r234, r245, r256,
+   r262 and r279 said "no re-entry, rebuy, add-on or multi-flight clause appears anywhere on this
+   structure sheet" while citing a sheet whose clause 6 reads *"The $20 discount can be applied to the
+   initial entry or any subsequent re-entry."* They are now correctly **re-entry** rows. The candidate
+   count therefore fell from 80 to 74, and the separate multi-entry/re-entry section grew by six.
+2. **Three fee quotes could not be found in their own PDF**, and one cited the wrong clause number,
+   because the excerpt was a template that painted figures over fixed wording. Every such quote is now
+   lifted from the sheet's own sentence.
+3. **The change monitor's "source changed" mark was comparing an empty hash.** Four rows were marked as
+   if a published value had moved when the fetcher had extracted no money, date, time or entry-rule word
+   from those pages at all; six distinct Caesars URLs returned one identical 5,871-byte body. That badge
+   is now labelled a re-request to read the page, not evidence of a change.
 
 **One upcoming candidate, not a recommendation:** The [Venetian schedule](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html) lists event 12 on Thursday, November 26 at 11:10 AM. Its [official structure sheet](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf), read in full on November 19, confirms a $300 total entry ($58 withheld), $10,000 guarantee, 40,000 starting chips, 30-minute levels, registration through approximately 4:55 PM and payouts to 12.5% of the field. The guarantee is 33.3 times one entry fee; that is not a return forecast. None of its ten clauses specifies one entry per person or expressly prohibits rebuys and add-ons. Obtain a written event-specific ruling before promoting it. Do not schedule the 5:10 PM bounty as a second entry on the assumption the first event finishes by then.
 
@@ -36,7 +62,7 @@ the trip rule made explicit - and the 80 remain candidates, not confirmed freeze
 
 ## Coverage and review order
 
-317 series rows: **80 reviewed candidates**, **160 possible multiple-entry or re-entry rows**, **43 continuations**, and **34 entry rows without a confirmed entry policy**. The conditional day model spans 70 dates and flags 170 pairs based on starts, registration and published structures. Those are planning conflicts, not verified finish times.
+317 series rows: **74 reviewed candidates**, **166 possible multiple-entry or re-entry rows**, **43 continuations**, and **34 entry rows without a confirmed entry policy**. The conditional day model spans 70 dates and flags 170 pairs based on starts, registration and published structures. Those are planning conflicts, not verified finish times.
 
 1. Review the [strict shortlist](pages/single-entry.html) before the [conditional schedule](pages/schedule.html).
 2. Compare the [dated hotel quotes and route evidence](pages/hotels.html), then use the [trip calculator](pages/calculator.html). Do not add tax or resort fees twice.
