@@ -2116,8 +2116,8 @@ The existing checks/data remain the baseline (not refreshed by this session): la
 |---|---|---|---|
 | Re-verify the combined tree line by line — deterministic `build_data.py`/`build_site.py` rebuilds, `check_links.py`, `verify_rows.py`, `check_schedule.py`, `npm test` (smoke, schedule render, rendered links, calculator) — and confirm no broken links or changed official values before publishing | done | 5f66d8fa | `scripts/`, `data/*.json`, `index.html`, `pages/*.html`, `assets/` |
 | Confirm GitHub Pages is built and serving, and record the live URL | done | 5f66d8fa | `COORDINATION.md` |
-| Open a pull request from `arena/5f66d8fa-poker1` to `main` with the change summary, sources and flagged irregularities; merge after the `validate` job is green; confirm GitHub Pages deploys (`built` for the merge commit) | in progress — PR opened, merge pending | 5f66d8fa | `arena/5f66d8fa-poker1` → `main` |
-| Record the PR link, merge commit and Pages deploy result in this board | pending merge | 5f66d8fa | `COORDINATION.md` |
+| Open a pull request from `arena/5f66d8fa-poker1` to `main` with the change summary, sources and flagged irregularities; merge after the `validate` job is green; confirm GitHub Pages deploys (`built` for the merge commit) | done | 5f66d8fa | `arena/5f66d8fa-poker1` → `main` |
+| Record the PR link, merge commit and Pages deploy result in this board | done | 5f66d8fa | `COORDINATION.md` |
 
 ### Session 5f66d8fa · verification record (2026-11-19)
 
@@ -2144,4 +2144,4 @@ The existing checks/data remain the baseline (not refreshed by this session): la
 - Changed-source marker in tables (P8): open — only on Monitoring, not in tables; owned by open PR #98 (`arena/13eafa44-poker1`). Not touched here to avoid overlapping another session's claim.
 - Live hotel rate lookup, live scraper, walking-route check against Google/Apple Maps: blocked by the network restriction; OSM walking times on record are routed, not Google/Apple.
 
-**Pull request / merge:** PR opened from `arena/5f66d8fa-poker1` → `main` (link recorded below once opened); merge pending; Pages deploy to be confirmed after merge; PR link and merge result to be recorded here once merged.
+**Pull request / merge:** PR [#108](https://github.com/karagemop466-tech/Poker1/pull/108) "Session 5f66d8fa: final verification and publish to GitHub Pages", `arena/5f66d8fa-poker1` → `main`. Merged 2026-11-19 as merge commit `41f2f11cdc40eaa1d20756e6baddb63929a1c4e0` (fast-forward base; tree = branch tip `12f7c39`). GitHub Pages `pages` API reports `status: built`, `build_type: legacy`; the latest Pages build (run 1383792609, 2026-11-19T11:03:24Z, ~21 s) built commit `41f2f11c` with no error. Live site: https://karagemop466-tech.github.io/Poker1/ (the sandbox network cannot reach github.io hosts directly, so the homepage was not fetched from here; deploy is confirmed via the Pages API).
