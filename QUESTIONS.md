@@ -1,4 +1,5 @@
 # Questions and Information Gaps
+**Current policy (2026-11-19):** The 80 formerly labeled single-entry rows are unverified for entry policy. Historical counts and prior answers below are not booking recommendations. Silence in a structure sheet does not meet the written one-entry, no-rebuy, no-add-on requirement. See [the current executive summary](EXECUTIVE_SUMMARY.md) and [Venetian sheet #5](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf).
 
 For each question: what is known, what is missing, and how to close it. "Open" means no official source answers it yet.
 "Closed" means an official source now answers it and the answer is in the dataset.

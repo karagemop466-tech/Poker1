@@ -979,6 +979,8 @@ def build_venetian(rows, series_key, series, page_key, sheet_key, sched_key, str
         if sched_key:
             srcs.insert(1, {"label": "Official schedule PDF", "url": SRC[sched_key]})
         flags = []
+        if policy_unverified:
+            flags.append("Unverified entry policy: the sheet does not state maximum entries or explicitly prohibit rebuys and add-ons.")
         if date == "2026-12-26":
             flags.append(DATE_TYPO_DEC26)
         if date == "2027-01-05":
@@ -1018,7 +1020,7 @@ def build_venetian(rows, series_key, series, page_key, sheet_key, sched_key, str
                 "RE": "Re-entry confirmed: structure sheet states re-entry terms.",
                 "REBUY": "Rebuy / add-on confirmed: extra money buys more chances.",
                 "CONT": "Continuation row (Day 2 / final table). No new entry is possible.",
-                "UNV": "Entry rule not confirmed from an official structure sheet.",
+                "UNV": "Entry policy unverified: no written maximum of one entry and no explicit no-rebuy/no-add-on rule.",
             }.get(status, ""),
             "labels": labels,
             "late_reg_close": clock(late_text) if late_text else None,
