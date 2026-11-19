@@ -2109,3 +2109,20 @@ The existing checks/data remain the baseline (not refreshed by this session): la
 **Irregularities:** none new. Prior irregularities remain on `pages/flagged.html`.
 
 **Pull request / merge:** see the entry below this one, appended after the PR is merged.
+
+---
+
+## Session af414e67 · 2026-11-19 · live official-source re-verification + final integration, branch `arena/af414e67-poker1`
+
+Claim written and pushed before any data, script or page change, per the shared-task-board rules.
+Base: `main` at `3f3f6bb` (PR #101 merged); `git rev-list --left-right --count origin/main...HEAD` = `0 0`.
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Live line-by-line re-verification of the official sources the dataset cites, fetched today (2026-11-19) with the agent page-fetch tool — this session's fetcher reaches operator domains that bash cannot. Compare each published value against the archived snapshot and the live page; record every match and every discrepancy with links; change no published value; publish any new irregularity under a fresh flag id | In progress | `research/verification-2026-11-19-af414e67.md` (new), `FLAGGED.md` (append only, fresh ids), `COORDINATION.md` | af414e67 |
+| Final integration: after the live sessions' PRs (#102 `arena/eb3bb028-poker1`, #103 `arena/1c61c2b8-poker1`) are merged or closed by their own sessions, take over or disposition the stale open PRs (#96 draft, #98 `CONFLICTING`, both last touched ~06:0x UTC, >60 minutes with no commits under the takeover rule), integrate the combined tree, re-verify line by line, confirm the site builds with no broken links, open the PR to `main`, merge without waiting, confirm the GitHub Pages deploy, and record the PR link and merge result here | In progress | whole tree as needed after integration + `COORDINATION.md` | af414e67 |
+
+Files this session will NOT edit before the integration phase: none are claimed by a live session except
+`assets/app.js` / `scripts/ui_test.js` / `package.json` (PR #103) and `COORDINATION.md` records of other
+sessions (append-only, both sides kept). PR #98's scope is stale and conflicting; it will be dispositioned
+under the 60-minute takeover rule during integration, never silently dropped.
