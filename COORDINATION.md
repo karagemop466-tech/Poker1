@@ -2071,6 +2071,16 @@ The existing checks/data remain the baseline (not refreshed by this session): la
 | Data changes | None — no row value, source, or retrieval timestamp was changed; `build_data.py`/`build_site.py` deterministic |
 | Flagged irregularities | F1–F76+ remain published on `pages/flagged.html` with official-source links; evidence gaps (no written whole-event freezeout, no same-stay live checkout quote, no timed walking times) are "needs review", not blockers; no nonrefundable decision supported |
 
+## Session f63fc90d · 2026-11-19 · row-level source-change markers
+
+**Claim on the fixed current branch:** `arena/f63fc90d-poker1`, based on `main` at `3f3f6bb7a87380b4cc14265135664cae408bebd4` (PR #101 merged). This session takes over **only** P8 (surface source-changed rows in tournament views) from the stale PR #98 claim: GitHub reports PR #98's last commit at 2026-11-19T06:00:23Z, with no newer commits as of this claim at 10:57 UTC, exceeding the board's 60-minute handoff threshold. The rest of PR #98's integration scope is not claimed.
+
+| Task | Status | Owner | File scope |
+|---|---|---|---|
+| Join `data/changes.json` source-change records to each tournament row; show an explicit re-check marker and dated official source link on event tables and other event listings; add a synthetic headless regression test; update P8 status. Do not alter tournament facts or `last_checked`. | In progress | `f63fc90d` | `assets/app.js`, `assets/style.css`, `scripts/check_source_change_badges.js`, `package.json`, generated `index.html` and `pages/*.html`, `SUGGESTIONS.md`, `COORDINATION.md` |
+
+No official-source value or retrieval date will be changed by this UI task. The source-change state is read from the existing monitor output and is not treated as a new source re-check. This branch is the active integration workspace; no other branch is being created or switched to.
+
 ## Session c0a11e95 · 2026-11-19 · status audit against the request, branch `arena/c0a11e95-poker1`
 
 | Task | Status | Owner | File scope |
