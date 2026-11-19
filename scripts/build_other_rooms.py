@@ -776,7 +776,7 @@ def windows_section():
 
     se_by_date = OrderedDict()
     for day in schedule.get("days", []):
-        se = [e for e in day.get("events", []) if e.get("entry_status") == "SE"]
+        se = [e for e in day.get("events", []) if e.get("entry_status") == "CAND"]
         se_by_date[day["date"]] = se
 
     rows = []
@@ -793,7 +793,7 @@ def windows_section():
             "true_cost": entry.get("true_cost_per_night_usd"),
             "checkout": entry.get("checkout_total_usd"),
             "se_events": len(events),
-            "se_days": len(nights),
+            "se_days": sum(bool(se_by_date[d]) for d in nights),
             "se_names": sorted({e.get("name", "") for e in events}),
             "source": entry.get("source"),
             "retrieved": entry.get("retrieved_on") or entry.get("logged_on"),
@@ -803,7 +803,7 @@ def windows_section():
 
     out = ['<table><thead><tr><th>Stay window (dated official quote)</th><th>Nights</th>'
            '<th>True cost / night</th><th>Checkout total</th><th>Days in the window holding a '
-           'verified single-entry event</th><th>Verified single-entry entries</th>'
+           'sheet-reviewed candidate event</th><th>Sheet-reviewed candidate entries</th>'
            '<th>Source</th></tr></thead><tbody>']
     for row in sorted(rows, key=lambda r: r["arrival"]):
         out.append(
@@ -822,18 +822,18 @@ def windows_section():
     names = ", ".join(best_event["se_names"]) if best_event["se_names"] else "none"
     out.append("<div class=\"card callout\"><strong>What the dated quotes say.</strong> Of the "
                "stay windows that carry an official quote, <strong>%s &rarr; %s</strong> holds "
-               "the most verified single-entry entries (%s) at %s per night. %s"
+               "the most sheet-reviewed candidate entries (%s) at %s per night. %s"
                "<br><br><strong>This is a comparison of published values, not a recommendation of "
                "dates.</strong> The trip dates and the nightly budget are still your decision "
                "(QUESTIONS.md D3 and D4); this table only prices the windows that were actually "
                "quoted, so the choice can be made like-for-like.</div>"
                % (esc(best_event["arrival"]), esc(best_event["departure"]),
                   esc(best_event["se_events"]), money(best_event["true_cost"]),
-                  ("The cheapest quoted window that holds any verified single-entry event is "
+                  ("The cheapest quoted window that holds any sheet-reviewed candidate event is "
                    "<strong>%s &rarr; %s</strong> at %s per night."
                     % (esc(best_cost["arrival"]), esc(best_cost["departure"]),
                        money(best_cost["true_cost"]))) if best_cost else ""))
-    out.append("<p class=\"small\">Verified single-entry events counted in the busiest window: %s.</p>"
+    out.append("<p class=\"small\">Sheet-reviewed candidate events counted in the busiest window: %s.</p>"
                % esc(names))
     return "\n".join(out)
 

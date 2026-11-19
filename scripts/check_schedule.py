@@ -129,7 +129,7 @@ def main():
                                 f" should be {row_basis!r}")
 
         # 5 - the primary must be the day's earliest verified single-entry event.
-        se = sorted([e for e in events.values() if e.get("entry_status") == "SE"],
+        se = sorted([e for e in events.values() if e.get("entry_status") == "CAND"],
                     key=lambda e: (e["start"], e["name"]))
         expected_primary = se[0]["id"] if se else None
         if day.get("primary_id") != expected_primary:
@@ -197,7 +197,7 @@ def main():
             if ev is None:
                 problems.append(f"{date}: alternative {a.get('id')} is not an event of this day")
                 continue
-            if ev.get("entry_status") != "SE":
+            if ev.get("entry_status") != "CAND":
                 problems.append(f"{date}: alternative {a.get('id')} is not a verified single-entry event")
             if a.get("note") and not str(a.get("note")).strip():
                 problems.append(f"{date}: alternative {a.get('id')} carries no explanation")

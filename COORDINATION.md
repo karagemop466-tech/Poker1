@@ -1692,6 +1692,15 @@ operator hosts are unreachable (F55), so `monitor_sources.py` is exercised in CI
 during any of it. `data/schedule.json` is the file that changed, and it is generated: edit
 `scripts/build_data.py`, never the JSON.
 
+## Session d6bc5df2 · 2026-11-19 · strict booking decision gate
+
+| Task | Status | Owner | File scope |
+|---|---|---|---|
+| Separate affirmative written freezeout evidence from historical sheet-silence candidates; verify upcoming decision and surface missing evidence, integrate and publish | in progress | d6bc5df2 | assets/app.js, scripts/build_site.py, derived index.html/pages, strict-policy test, README.md, executive summary and flagged addenda, COORDINATION.md |
+
+Read the shared main board at a1361aa and checked open PRs #79/#81/#82; no takeover of those sessions’ hotel-tax or room-format tasks. Using the assigned integration branch (fixed name); this claim is pushed before implementation.
+
+Scope clarification before changing generated facts: the source of the false confirmation is `scripts/build_data.py`, so this claim also covers the entry-status migration in that generator, `check_links.py`, `check_schedule.py`, `verify_rows.py`, `build_other_rooms.py` (window labels only), derived data, and a smoke-test assertion. No hotel/venue research ownership changes.
 ### Session 44c94b4f — in progress
 Owns strict booking-readiness audit: research/readiness-2026-11-19.md, summary/flagged addenda and their generated pages; no edits to other sessions’ data collectors.
 Build-blocker claim: scripts/check_schedule_render.js and .github/workflows/pages.yml. Local npm test exposed a stale assertion on obsolete fallback prose; the workflow pipeline masked its exit code.
@@ -1710,7 +1719,15 @@ Integration follow-up claim: `scripts/check_schedule_render.js`, `scripts/smoke_
 
 Integration PR: [#87](https://github.com/karagemop466-tech/Poker1/pull/87). Deployment and merge status are recorded on the PR and [repository Actions](https://github.com/karagemop466-tech/Poker1/actions); the public endpoint is [GitHub Pages](https://karagemop466-tech.github.io/Poker1/). A successful build of an earlier commit is not confirmation of this PR's deployment.
 
+Integration conflict with PR #87: retained both claims, its Vegas-local upcoming toggle, render gate and historical toggle test; combined defaults with the stricter freezeout filter and regenerated HTML. PR #88 overlaps the calculator independently; coordinate at integration rather than overwriting its tests.
 44c94b4f reconciliation: retained both appended board entries and both flagged findings from #87.
 **Post-merge confirmation (2026-11-19):** [PR #87](https://github.com/karagemop466-tech/Poker1/pull/87) merged as `d383f48d86070efe9b946d983135c6bda45a5c2a`. The GitHub Pages build API reports `built` for that exact commit, and [Pages deployment run 44465791063](https://github.com/karagemop466-tech/Poker1/actions/runs/44465791063) concluded successfully. The separate main-branch validation run is [44465791728](https://github.com/karagemop466-tech/Poker1/actions/runs/44465791728).
 
+Retained PR #90’s deploy receipt when it arrived during integration. Aborted an unnecessary flattening rebase rather than replay main’s already merged #87 commits; pulled against the integrated main tip before push.
+
+Additional unclaimed scope: morning schedule evidence feed (`scripts/schedule_feed.py`, `.github/workflows/schedule-feed.yml`, `data/schedule_feed.json`, daily page) and executive decision presentation. This feed does not edit any reviewed tournament or rate.
+
+#91 integrated without changing that session’s Nov 26 evidence. Combined append-only claim logs. Final integration scope includes home styles, decision docs, structure parser’s sheet-silence label, and deterministic derived files.
+
+PR [#89](https://github.com/karagemop466-tech/Poker1/pull/89) · integrated #91's booking example; preserved the parallel #88 calculator implementation and its numerical regression test (2109c99), adding same-room/offer matching and dated official lookup links. Additional room profiles are generated from the existing official-source survey, not guessed hotel pairings. No external tariff was applied to an unquoted property.
 44c94b4f publication: [PR #91](https://github.com/karagemop466-tech/Poker1/pull/91) merged as `432fbded`; [Pages deployment](https://github.com/karagemop466-tech/Poker1/actions/runs/44466009192) succeeded for that commit. 23 pages rendered; 530 local references checked, zero broken.

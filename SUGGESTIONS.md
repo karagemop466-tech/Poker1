@@ -3,7 +3,13 @@
 The list is split into what has been built and what is still open. Everything under "Built" is live on
 the site; everything under "Still open" is a proposal that has **not** been implemented.
 
-## 1. Built in this session
+## Next decision · proposals, not changes already approved
+
+1. **First priority: written rules.** Capture an operator-issued event-specific one-entry, no-rebuy, no-add-on ruling and retain its date. Only then promote a candidate. This changes the decision more than collecting more prices.
+2. **Then price the exact stay.** Capture two refundable checkout screens for identical dates, occupancy and comparable room/bed quality. Store exact expiry time and time zone; reject general cancellation-policy prose as a substitute.
+3. **Only then optimize travel.** Compare pedestrian routes from the actual guest entrance to the room, including indoor legs and closures. Do not promote a Maps directions link into a measured time.
+
+## 1. Historical implementation register
 
 | # | Suggestion | What was built | Where |
 |---|---|---|---|

@@ -4,6 +4,11 @@ Published so you can review each item. Flags do not block the merge. Every flag 
 official source it came from, and every flagged row carries the flag in `data/tournaments.json` so the
 row itself says what is odd about it.
 
+## Booking blockers · November 19
+
+- **Written freezeout policy:** a sheet with no re-entry clause is not a written prohibition on buying more chips. The 80 candidates no longer appear under “confirmed.” For a concrete case see [event 10 rules](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_6.pdf). Its published starting stack is 40,000. All 52 Venetian sheets’ recorded starting stacks have been reconciled to their printed headers; earlier candidate rankings and stack values are superseded.
+- **No live checkout price:** the [Dec 13–20 two-adult official booking lookup](https://www.venetianlasvegas.com/booking?arrival_date=2026-12-13&departure_date=2026-12-20&adults%5B%5D=2&children%5B%5D=0&view=calendar) showed a loading page without an itemized price. No new quote or exact cancellation deadline was recorded. Maps links are for cross-checking, not a claim that Google or Apple measured the route.
+
 ## A. Irregularities in the official sources
 
 | # | Irregularity | Source | Effect on the data |

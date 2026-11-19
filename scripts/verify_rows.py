@@ -128,13 +128,13 @@ def entry_expected(series, url, status, event_no=None):
         rule = load("structure_rules.json").get(sk, {})
         kind = (rule.get("sheet_kind") or "").upper()
         # F13: NYE structure sheet 2 mentions re-entry only for Event #29 (a CES-badge
-        # discount clause). Other events on that sheet are legitimately single entry, so a
+        # discount clause). Other events on that sheet are sheet-silent candidates, so a
         # SE row on that sheet whose event is not the re-entry event is not a mismatch.
-        if sk == "v_dec_struct_02" and status == "SE" and event_no != 29:
+        if sk == "v_dec_struct_02" and status == "CAND" and event_no != 29:
             return True, "sheet verdict %s (re-entry clause is event-scoped to #29, F13)" % kind
-        if status == "SE":
-            return kind == "SINGLE_ENTRY", f"sheet verdict {kind}"
-        return kind != "SINGLE_ENTRY", f"sheet verdict {kind}"
+        if status == "CAND":
+            return kind == "NO_ENTRY_POLICY_FOUND", f"sheet verdict {kind}"
+        return kind != "NO_ENTRY_POLICY_FOUND", f"sheet verdict {kind}"
     if "WPT_World_Championship_Structures" in (url or ""):
         reg = None
         for blk in load("wpt_rules.json"):
@@ -144,7 +144,7 @@ def entry_expected(series, url, status, event_no=None):
         has_re = reg is not None
         if status in ("RE", "REBUY"):
             return has_re, "WPT registration wording"
-        if status == "SE":
+        if status == "CAND":
             return not has_re, "WPT registration wording"
     return None, None
 
@@ -223,7 +223,7 @@ def main():
             checks.append(("start", rt in tt, r.get("start"), "review"))
 
         status = r.get("entry_status")
-        if status in ("SE", "RE", "REBUY", "MULTI"):
+        if status in ("CAND", "RE", "REBUY", "MULTI"):
             exp, basis = entry_expected(r["series"], src_url, status, r.get("event_no"))
             if exp is not None:
                 # Entry-rule wording often needs interpretation (event-scoped clauses),

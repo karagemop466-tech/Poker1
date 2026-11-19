@@ -6,6 +6,8 @@ external CDN and no build step beyond this script. Data is read at run time
 from data/*.json and the Markdown files in the repo root.
 """
 import os
+import json
+from html import escape
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ASSETS = os.path.join(ROOT, "assets")
@@ -66,35 +68,24 @@ def venue_page(title, venue_id):
 
 PAGES = {
     "index.html": ("Home", "index", """
-<h1>Las Vegas Strip Poker Plan</h1>
-<p class="lead">Single-entry tournaments and walkable hotels, every official source re-checked on 2026-11-17. Blank cells are unverified. No value is inferred.</p>
-<div class="grid" id="kpis"></div>
-<h2>Start here</h2>
-<div class="grid">
-  <a class="card tile" href="pages/summary.html"><h3>Executive summary</h3><p>Bottom line, ranked events, hotel status, and the 8 AM question.</p></a>
-  <a class="card tile" href="pages/single-entry.html"><h3>Single entry (verified)</h3><p>Every event whose official structure sheet, read clause by clause, contains no re-entry, rebuy, add-on or flight clause. The basis is printed on every row.</p></a>
-  <a class="card tile" href="pages/separate-section.html"><h3>Separate section</h3><p>Possible multiple entries and re-entry events. Kept out of the ranking.</p></a>
-  <a class="card tile" href="pages/unverified.html"><h3>Unverified</h3><p>Official rows whose entry rule is not yet confirmed.</p></a>
-  <a class="card tile" href="pages/daily.html"><h3>Daily feed</h3><p>Wynn's recurring daily tournaments: format, guarantee, fee split and cut-offs.</p></a>
-  <a class="card tile" href="pages/schedule.html"><h3>Schedule</h3><p>Day-by-day verified single-entry options, with a date picker.</p></a>
-  <a class="card tile" href="pages/hotels.html"><h3>Hotels</h3><p>Resort fees, room-rate status, walking records and the dated rate log.</p></a>
-  <a class="card tile" href="pages/calculator.html"><h3>Trip cost calculator</h3><p>Entries × buy-in + nights × true hotel cost + parking, from dated official-engine quotes. Nothing is assumed.</p></a>
-  <a class="card tile" href="pages/strip-rooms.html"><h3>Strip rooms</h3><p>Official schedules for the Strip poker rooms the venue pages do not cover, with closures that are reported but not confirmed.</p></a>
-  <a class="card tile" href="pages/venues.html"><h3>Venues</h3><p>Each poker room, the hotels attached to it and the events played there.</p></a>
-  <a class="card tile" href="pages/other-rooms.html"><h3>Other rooms</h3><p>Every other Strip and near-Strip poker room, checked against its own site: what it publishes, and what it does not.</p></a>
-  <a class="card tile" href="pages/search.html"><h3>Search</h3><p>One box across every row, hotel, venue, document and rate on the site.</p></a>
-  <a class="card tile" href="pages/monitoring.html"><h3>Monitoring</h3><p>Source health, changed rows and every printed source flag.</p></a>
-  <a class="card tile" href="pages/questions.html"><h3>Questions</h3><p>Open decisions and information gaps, with how to close each.</p></a>
-  <a class="card tile" href="pages/suggestions.html"><h3>Suggestions</h3><p>Site improvements for your review.</p></a>
-  <a class="card tile" href="pages/flagged.html"><h3>Flagged for review</h3><p>Source irregularities and blank values, with links.</p></a>
-  <a class="card tile" href="pages/review.html"><h3>Repo review and sources</h3><p>Line-by-line review, corrections made, and the source log.</p></a>
-</div>
-<div class="card callout" style="margin-top:18px">Flags do not block publication. Every flagged item lists its source and is kept on the Flagged for Review page.</div>
+<section class="briefing" aria-labelledby="brief-title">
+<p class="eyebrow">LAS VEGAS &nbsp;/&nbsp; TRIP BRIEFING</p>
+<h1 id="brief-title">The Strip poker planner</h1>
+<p>Compare tournament rules, hotel checkout totals and walking routes before committing to a stay.</p>
+<form class="home-search" action="pages/search.html"><label for="site-search">Search the research</label><div><input type="search" id="site-search" name="q" placeholder="Tournament, hotel, venue or rule…"><button>Search</button></div></form>
+</section>
+<div class="decision"><strong>Booking decision: hold</strong><span>No event in the reviewed series has a written whole-event freezeout policy. Hotel prices are dated quotes, not live offers.</span><a href="pages/summary.html">Read the brief →</a></div>
+<h2>At a glance</h2><div class="grid" id="kpis"></div>
+<h2>Plan your stay</h2><div class="path-grid">
+<article class="path"><span class="eyebrow">01 &nbsp; / &nbsp; TOURNAMENTS</span><h3>Check the entry rules</h3><p>Separate a written freezeout from a silent sheet or an event selling more chips.</p><a href="pages/single-entry.html">Freezeout shortlist →</a><a href="pages/separate-section.html">Multiple-entry events</a><a href="pages/unverified.html">Missing rules</a></article>
+<article class="path"><span class="eyebrow">02 &nbsp; / &nbsp; SCHEDULE</span><h3>Build a realistic day</h3><p>Compare registration deadlines and conflicts. An alternative replaces the primary; it is not another seat.</p><a href="pages/schedule.html">Day-by-day schedule →</a><a href="pages/daily.html">Morning feed</a><a href="pages/venues.html">Browse venues</a></article>
+<article class="path"><span class="eyebrow">03 &nbsp; / &nbsp; LODGING</span><h3>Price the whole trip</h3><p>Use exact dates, occupancy, taxes and mandatory fees. Check the walking route before comparing prices.</p><a href="pages/calculator.html">Trip cost calculator →</a><a href="pages/hotels.html">Hotels and dated rates</a><a href="pages/other-rooms.html">Nearby rooms</a></article></div>
+<h2>Decision desk</h2><div class="desk"><a href="pages/questions.html">Open questions</a><a href="pages/suggestions.html">Suggestions</a><a href="pages/monitoring.html">Change monitor</a><a href="pages/flagged.html">Flagged for review</a><a href="pages/strip-rooms.html">Strip survey</a><a href="pages/review.html">Source audit</a></div>
 """),
     "pages/single-entry.html": ("Single entry", "singleEntry", """
-<h1>Single-entry tournament candidates</h1>
-<p class="lead">Each row has its structure sheet read, with no re-entry, rebuy, add-on, or flight clause. Guarantee ÷ buy-in is the default sort: it describes the listed guarantee relative to the entry cost, not expected winnings. The list defaults to today and later in Las Vegas; turn off that filter to see past dates. Today’s rows can include events that have already started.</p>
-<div class="card callout">How the single-entry label is decided: the event's own official structure sheet was read clause by clause and contains <strong>no re-entry, rebuy, add-on or multi-flight clause</strong>. No Venetian sheet prints an affirmative "single entry" sentence, so these are <strong>candidates based on the absence of contrary terms</strong>, not events with a verified written maximum-entry promise — each row prints the exact basis with its sheet link. Anything with printed re-entry, limited-entry or flight language is in the separate section, not here.</div>
+<h1>Freezeout shortlist</h1>
+<p class="lead">Only written whole-event rules qualify. There are no confirmed rows in this snapshot. Switch off “Written freezeout confirmed” to inspect candidates by date. Today and later uses Las Vegas dates and includes today’s earlier starts; clear it to inspect past events. A silent sheet is not a prohibition.</p>
+<div class="card callout">Guarantee ÷ total entry fee describes the advertised pool, not expected winnings. Bounty prizes and satellite seats are not comparable to ordinary cash payouts.</div>
 """ + FILTERS + """
 <div class="toolbar"><span class="small">""" + COUNT + """</span></div>
 <div id="content"></div>
@@ -115,7 +106,10 @@ PAGES = {
 <div id="content"></div>
 """),
     "pages/daily.html": ("Daily feed", "daily", """
-<h1>Wynn daily tournament feed</h1>
+<h1>Morning schedule feed</h1>
+<p class="lead">Official Strip and nearby room schedules are requested each morning before 8 AM Las Vegas time. Excerpts preserve the source wording; they are not confirmed entries. On a failed request, the last readable capture retains its original date.</p>
+<label>Search schedule excerpts <input type="search" id="feed-q" placeholder="Room, time or format"></label>
+<div id="feed"></div><h2>Wynn recurring formats</h2>
 <p class="lead">The recurring formats Wynn publishes for every day, read from the official daily structures.</p>
 <div class="card callout" id="note"></div>
 <div id="content"></div>
@@ -141,7 +135,7 @@ of a poker room, or search any column.</p>
 """),
     "pages/schedule.html": ("Schedule", "schedule", """
 <h1>Day-by-day schedule</h1>
-<p class="lead">Verified single-entry options per day, earliest first, with one primary event and a conditional fallback only where a fallback can actually be played.</p>
+<p class="lead">Sheet-reviewed candidates per day, pending written freezeout confirmation, earliest first, with one primary event and a conditional fallback only where a fallback can actually be played.</p>
 <div class="card callout">One entry per day is the realistic shape of a single-entry trip. Every Venetian one-day event is estimated at 8h45&ndash;21h05 from its own published level structure, so 10:10 and 11:10 starts are still running after midnight and no later same-date event can follow them. Where that is the case the day says so instead of proposing a sequence that cannot happen. A finish time marked <strong>(next day)</strong> crossed midnight; the estimate is start + published levels, never an official finish time.</div>
 <div class="card callout" id="note"></div>
 <p class="small">Earliest start among the rows in this dataset: <strong id="earliest"></strong></p>
@@ -181,6 +175,7 @@ of a poker room, or search any column.</p>
 <div id="content"></div>
 """),
     "pages/flagged.html": ("Flagged for review", "flagged", """
+<h1>Flagged for Review</h1>
 <div id="content"></div>
 """),
     "pages/strip-rooms.html": ("Strip rooms", "strips", """
@@ -196,6 +191,21 @@ of a poker room, or search any column.</p>
 for _file, _title, _vid in VENUE_PAGES:
     PAGES["pages/" + _file] = venue_page(_title, _vid)
 
+
+# Only properties with a published poker-room record get a room page. No
+# lodging is attached on the strength of a similar name or an assumed walk.
+with open(os.path.join(ROOT, "data/other_rooms.json"), encoding="utf-8") as source:
+    survey = json.load(source)
+room_links = []
+for room in survey["rooms"]:
+    if room["poker_room_status"] != "confirmed" and room["id"] != "resorts-world":
+        continue
+    slug, name = room["id"], escape(room["name"])
+    rel = "room-" + slug + ".html"
+    room_links.append(f'<a href="{rel}">{name}</a>')
+    PAGES["pages/" + rel] = (name, "roomProfile", f'<h1>{name}</h1><div id="content" data-room="{slug}"></div>')
+vt, vp, vb = PAGES["pages/venues.html"]
+PAGES["pages/venues.html"] = (vt, vp, vb + '<h2>Additional room profiles</h2><div class="desk">' + ' '.join(room_links) + '</div>')
 
 def write(rel, title, page, body):
     path = os.path.join(ROOT, rel)

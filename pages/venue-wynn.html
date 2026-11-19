@@ -177,6 +177,21 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
   .md pre, .md code { white-space: pre-wrap; word-break: break-word; }
 }
 
+/* Briefing dashboard */
+body { --accent:#126551; --bg:#f4f6f2; --ink:#182d2a; --line:#d5dfd9; }
+header.site { background:#123c35; padding-inline:max(20px, calc((100% - 1160px)/2)); }
+header.site nav a {color:#d9ebe4}
+.briefing {border-top:4px solid #24745b; padding:clamp(20px,4vw,44px); background:#e4efe6; border-radius:5px;}
+.briefing h1 {font:600 clamp(2.1rem,5vw,3.4rem)/1.1 Georgia,serif; letter-spacing:-.035em; margin:10px 0;}
+.briefing p:not(.eyebrow) {max-width:620px; font-size:1.08rem;}
+.eyebrow {font-size:.72rem;letter-spacing:.12em;color:#326e5b;font-weight:750;margin:0}
+.home-search label {display:block;font-size:.85rem;font-weight:650;margin-bottom:4px}
+.home-search div {display:flex;max-width:560px;gap:6px}.home-search input {min-width:0;flex:1;padding:10px 12px;border:1px solid #a2b3a7;border-radius:5px;font:inherit}.home-search button {background:#12513f;color:white;border:0;border-radius:5px;padding:0 20px;font:inherit;cursor:pointer}
+.decision,.desk {display:flex;gap:12px 20px;align-items:center;flex-wrap:wrap;padding:16px 18px;border:1px solid var(--line);border-radius:5px;background:#fff;}
+.decision {margin-top:14px;background:#fffbef;border-color:#ded4b6}.decision strong{color:#7d531d}.decision span{flex:1 1 350px}.decision a,.path a,.desk a {font-weight:600; color:#12513f}
+#kpis .card {margin:0;border-radius:6px}.kpi .num {font-variant-numeric:tabular-nums;color:#185641}
+.path-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:14px}.path {padding:22px;background:#fff;border:1px solid var(--line);border-radius:6px}.path h3{margin:10px 0 4px;font-size:1.25rem}.path p{color:#51615c}.path a{display:block;margin-top:6px}.desk a {text-underline-offset:3px}
+
 </style>
 </head>
 <body data-page="venue:wynn">
@@ -283,6 +298,7 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
     return (+p[0]) * 60 + (+p[1] || 0);
   }
   function statusChip(s) {
+    if (s === "CAND") return '<span class="chip warn">Freezeout not confirmed</span>';
     if (s === "SE") return '<span class="chip ok">Single entry (verified)</span>';
     if (s === "MULTI") return '<span class="chip warn">Possible multiple entries</span>';
     if (s === "RE") return '<span class="chip bad">Re-entry offered</span>';
@@ -314,6 +330,14 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
     return '<div class="small" style="margin-top:4px">' + f.map(function (x) {
       return '<span class="chip warn" style="white-space:normal;display:block;margin-top:4px">' + esc(x) + "</span>";
     }).join("") + "</div>";
+  }
+  function datedBookingLink(r) {
+    if (r.source.startsWith("https://www.venetianlasvegas.com/") && r.occupancy === "2 adults") {
+      var url = new URL("https://www.venetianlasvegas.com/booking");
+      Object.entries({arrival_date:r.arrival, departure_date:r.departure, "adults[]":2, "children[]":0, view:"calendar"}).forEach(function(kv){url.searchParams.set(kv[0], kv[1]);});
+      return '<a href="' + esc(url.href) + '">Recheck these dates · 2 adults</a>';
+    }
+    return '<a href="' + esc(r.source) + '">Official booking engine</a>';
   }
   function ruleCell(row) {
     var parts = [];
@@ -533,6 +557,7 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
     var series = select("series", opts.series || [], "All series");
     var status = select("status", opts.statuses || [], "Any entry rule");
     var single = input("single-only", "checkbox", {});
+    single.checked = !!opts.strict;
     var today = vegasDate();
     var future = input("future-only", "checkbox", {});
     future.checked = !!opts.upcoming;
@@ -556,7 +581,7 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
     tog.className = "field toggle";
     var tl = document.createElement("label");
     tl.setAttribute("for", "single-only");
-    tl.textContent = "Single entry only";
+    tl.textContent = "Written freezeout confirmed";
     tog.appendChild(single); tog.appendChild(tl);
     row2.appendChild(tog);
     if (opts.upcoming) {
@@ -656,7 +681,8 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
     if (labelBox) labelBox.querySelectorAll("input").forEach(function (c) { c.addEventListener("change", fire); });
     reset.addEventListener("click", function () {
       q.value = ""; from.value = ""; to.value = ""; buyMin.value = ""; buyMax.value = "";
-      venue.value = ""; series.value = ""; status.value = ""; single.checked = false; future.checked = !!opts.upcoming;
+      venue.value = ""; series.value = ""; status.value = ""; single.checked = !!opts.strict;
+      future.checked = !!opts.upcoming;
       if (labelBox) labelBox.querySelectorAll("input").forEach(function (c) { c.checked = false; });
       fire();
     });
@@ -704,17 +730,12 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
       var dates = {};
       rows.forEach(function (r) { dates[r.date] = 1; });
       var today = vegasDate();
-      var upcoming = rows.filter(function (r) { return r.entry_status === "SE" && r.date >= today; }).length;
+      var upcoming = rows.filter(function (r) { return r.entry_status === "CAND" && r.date >= today; }).length;
       document.getElementById("kpis").innerHTML =
-        kpi(upcoming, "single-entry candidates today or later (Las Vegas dates)") +
-        kpi(rows.length, "official rows in this dataset") +
-        kpi(c.SE, "single entry, verified") +
-        kpi(c.MULTI + c.RE, "in the separate section") +
-        kpi(c.UNV, "unverified (entry rule)") +
-        kpi(Object.keys(dates).length, "dates covered") +
-        kpi(verifiedFees + " of " + hotels.length, "hotels with a verified resort fee") +
-        kpi(daily.length, "recurring daily formats") +
-        kpi(flagged, "rows carrying a source flag");
+        kpi(c.SE, "written freezeouts confirmed") +
+        kpi(upcoming, "upcoming candidates · Las Vegas dates") +
+        kpi(rows.length, "series rows reviewed") +
+        kpi(hotels.length, "hotels in the comparison");
     }).catch(showErr);
   };
   function kpi(n, label) {
@@ -729,6 +750,7 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
     var labels = Array.from(new Set(rows.reduce(function (a, r) { return a.concat(r.labels || []); }, []))).sort();
     return Filters(host, {
       venues: venues, series: series, statuses: statuses, labels: labels,
+      strict: opts.strict,
       showStatus: opts.showStatus !== false, upcoming: opts.upcoming
     });
   }
@@ -750,6 +772,8 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
         } },
       { id: "buy", label: "Buy-in", key: "buy_in_usd", num: true, html: function (r) { return money(r.buy_in_usd); } },
       { id: "gtd", label: "Guarantee", key: "guarantee_usd", num: true, html: function (r) { return money(r.guarantee_usd); } },
+      { id: "structure", label:"Structure", key:"starting_chips", html:function(r){return [r.starting_chips && r.starting_chips.toLocaleString("en-US")+" chips", r.level_minutes && r.level_minutes+" min levels", r.late_reg_close && "Late reg: "+timeFmt(r.late_reg_close), r.payout_excerpt].filter(Boolean).map(esc).join("<br>");}},
+      { id: "format", label:"Format", key:"labels", html:function(r){return (r.labels || []).map(esc).join(" · ");}},
       { id: "mult", label: "Guarantee ÷ buy-in", key: "gtd_multiple", num: true, html: function (r) { return mult(r.gtd_multiple); } },
       { id: "status", label: "Entry rule", key: "entry_status", html: function (r) { return statusChip(r.entry_status); } },
       { id: "checked", label: "Last checked", key: "last_checked", html: function (r) { return "<span class='small'>" + esc(r.last_checked) + "</span>"; } }
@@ -765,12 +789,12 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
 
   PAGES.singleEntry = function () {
     getJSON("data/tournaments.json").then(function (d) {
-      var rows = d.rows.filter(function (r) { return r.entry_status === "SE"; });
+      var rows = d.rows.filter(function (r) { return r.entry_status === "SE" || r.entry_status === "CAND"; });
       var main = document.getElementById("content");
       var count = document.getElementById("count");
-      var filters = tournamentFilters(document.getElementById("filters"), rows, { upcoming: true });
+      var filters = tournamentFilters(document.getElementById("filters"), rows, { strict:true, upcoming:true });
       var tbl = table(main, rows, tournamentColumns(true), {
-        sortKey: "mult", sortDir: -1, predicate: filters.matches, countEl: count
+        sortKey: "date", sortDir: 1, predicate: filters.matches, countEl: count
       });
       filters.onChange(function () { tbl.redraw(); });
     }).catch(showErr);
@@ -803,6 +827,19 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
   };
 
   PAGES.daily = function () {
+    // Bot commits do not always trigger a branch-mode Pages rebuild. On the live
+    // project site read the same public main-branch JSON, falling back to its dated copy.
+    var feedRequest = location.hostname === "karagemop466-tech.github.io"
+      ? fetch("https://api.github.com/repos/karagemop466-tech/Poker1/contents/data/schedule_feed.json?ref=main", {headers:{Accept:"application/vnd.github.raw+json"}}).then(function(r){if(!r.ok) throw Error(r.status);return r.json();}).catch(function(){return getJSON("data/schedule_feed.json");})
+      : getJSON("data/schedule_feed.json");
+    feedRequest.then(function(feed){
+      table(document.getElementById("feed"), feed.rooms, [
+        {id:"source",label:"Official schedule",key:"label",html:function(r){return srcLinks([{url:r.source,label:r.label}]);}},
+        {id:"status",label:"Latest attempt",key:"status",html:function(r){return esc(r.status) + (r.changed ? " · changed since prior capture" : "") + "<br>" + esc(r.attempted_at || "archive seed");}},
+        {id:"read",label:"Last readable capture",key:"read_at"},
+        {id:"text",label:"Published excerpts (not classified)",sort:null,html:function(r){return r.excerpts.length ? "<details><summary>"+r.excerpts.length+" excerpts</summary><ul>"+r.excerpts.map(function(x){return "<li>"+esc(x)+"</li>";}).join("")+"</ul></details>" : "Unverified";}}
+      ], {filterInput:document.getElementById("feed-q")});
+    }).catch(showErr);
     Promise.all([getJSON("data/daily.json"), getJSON("data/tournaments.json")]).then(function (res) {
       var daily = res[0].rows, rows = res[1].rows;
       var main = document.getElementById("content");
@@ -842,6 +879,7 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
         { id: "fee", label: "Fee split", key: "fee", sort: null, html: function (r) { return "<span class='small'>" + esc(r.fee) + "</span>"; } },
         { id: "ex", label: "Rule excerpt", key: "ex", sort: null, html: function (r) { return "<span class='small'>" + esc(r.ex) + "<br>" + esc(r.stack || "") + "</span>"; } }
       ];
+      cols.push({id:"checked",label:"Last checked",html:function(){return esc(res[0].verified_on);}}, {id:"source",label:"Sources",html:function(){return srcLinks(res[0].sources);}});
       table(main, daily, cols, { sortKey: "start", sortDir: 1 });
       var susp = rows.filter(function (r) { return r.venue === "Wynn Las Vegas"; });
       var note = document.getElementById("series-note");
@@ -880,7 +918,7 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
         main.innerHTML = sched.days.map(function (day) {
           var list = day.events.map(function (o) {
             var row = byId[o.id] || {};
-            var chip = o.entry_status === "SE" ? '<span class="chip ok">Single entry</span>' :
+            var chip = o.entry_status === "CAND" ? statusChip("CAND") : o.entry_status === "SE" ? '<span class="chip ok">Single entry</span>' :
               (o.entry_status === "CONT" ? '<span class="chip info">Continuation</span>' :
                 (o.entry_status === "MULTI" ? '<span class="chip warn">Possible multiple entries</span>' :
                   (o.entry_status === "RE" ? '<span class="chip bad">Re-entry</span>' : '<span class="chip warn">Unverified</span>')));
@@ -894,7 +932,7 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
                     : " · table ends no later than " + endFmt(o) + " - no end time is printed, and it ends"
                       + " once the field is paid"));
             var marks = [];
-            if (day.primary_id === o.id) marks.push('<span class="chip ok">Primary</span>');
+            if (day.primary_id === o.id) marks.push('<span class="chip warn">Conditional primary</span>');
             if (day.fallback_id === o.id) marks.push('<span class="chip info">Conditional fallback' +
               (day.fallback_kind === "join in progress" ? " - join in progress" : "") + "</span>");
             return "<li><strong>" + timeFmt(o.start) + "</strong> · " + esc(o.name) + " · " + money(o.buy_in_usd) +
@@ -1018,7 +1056,7 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
       var lbl = document.createElement("label");
       lbl.htmlFor = "hotel-walk30";
       lbl.appendChild(walk30);
-      lbl.appendChild(document.createTextNode(" ≤30 min walk to a poker room"));
+      lbl.appendChild(document.createTextNode(" ≤30 min walk to the Venetian poker room"));
       var count = document.createElement("span");
       count.className = "small"; count.id = "hotel-count";
       bar.appendChild(q); bar.appendChild(lbl); bar.appendChild(count);
@@ -1027,7 +1065,7 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
         sortKey: "true", sortDir: 1, filterInput: q, countEl: count,
         predicate: function (r) {
           if (!walk30.checked) return true;
-          return r.walk_to_venetian_within_30 === true || r.walk_to_wynn_within_30 === true;
+          return r.walk_to_venetian_within_30 === true;
         }
       });
       walk30.addEventListener("change", handle.redraw);
@@ -1067,7 +1105,7 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
           { id: "taxes", label: "Taxes", key: "taxes_total_usd", num: true, html: function (r) { return money(r.taxes_total_usd); } },
           { id: "true", label: "True cost / night", key: "true_cost_per_night_usd", num: true, html: function (r) { return money(r.true_cost_per_night_usd); } },
           { id: "room", label: "Room", key: "room", sort: null, html: function (r) { return "<span class='small'>" + esc(r.room) + " · " + esc(r.occupancy) + "<br>" + esc(r.caveat) + "</span>"; } },
-          { id: "src", label: "Source", key: "source", sort: null, html: function (r) { return '<a href="' + esc(r.source) + '" target="_blank" rel="noopener">official booking engine</a>'; } }
+          { id: "src", label: "Source", key: "source", sort: null, html: function (r) { return datedBookingLink(r); } }
         ];
         table(rl, rates, rcols, { sortKey: "arrival", sortDir: -1 });
       }
@@ -1086,15 +1124,15 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
         '<div class="form-grid">' +
         '<div><label for="c-quote">Verified stay quote (dated rate log)</label><select id="c-quote"></select></div>' +
         '<div><label for="c-entries">Tournament entries</label><input type="number" id="c-entries" min="0" step="1" value="1"></div>' +
-        '<div><label for="c-buyin">Buy-in each (USD)</label><input type="number" id="c-buyin" min="0" step="10" value="300"></div>' +
+        '<div><label for="c-buyin">Assumed entry fee each (USD)</label><input type="number" id="c-buyin" min="0" step="0.01" value="300"></div>' +
         '<div><label for="c-parkdays">Parking days at the hotel</label><input type="number" id="c-parkdays" min="0" step="1" value="0"></div>' +
-        '<div><label for="c-extra">Other spend for the trip (USD)</label><input type="number" id="c-extra" min="0" step="10" value="0"></div>' +
+        '<div><label for="c-extra">Other spend for the trip (USD)</label><input type="number" id="c-extra" min="0" step="0.01" value="0"></div>' +
         '</div>' +
         '<div class="calc-out" id="c-out"></div>' +
         '<p class="small" id="c-note"></p>' +
         '</div>' +
         '<div class="card"><h2>What is in the selected window</h2><div id="c-window"></div></div>' +
-        '<div class="card"><h2>Like-for-like comparison of the logged quotes</h2><div id="c-compare"></div></div>';
+        '<div class="card"><h2>Logged quotes for the same dates and occupancy</h2><div id="c-compare"></div></div>';
 
       var quoteSel = document.getElementById("c-quote");
       quoteSel.innerHTML = rates.map(function (r, i) {
@@ -1110,7 +1148,7 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
         parkdays: document.getElementById("c-parkdays"),
         extra: document.getElementById("c-extra")
       };
-      function num(v) { var n = parseFloat(v); return isNaN(n) ? null : n; }
+      function num(input) { return input.validity.valid && Number.isFinite(input.valueAsNumber) ? input.valueAsNumber : null; }
       function money2(v) { return "$" + Number(v).toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
 
       function calc() {
@@ -1119,15 +1157,15 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
         var note = document.getElementById("c-note");
         if (!q) { out.innerHTML = ""; note.textContent = "No dated quote is logged yet."; return; }
         var hotel = hotels.filter(function (h) { return h.id === q.hotel_id; })[0] || null;
-        var entries = num(els.entries.value) || 0;
-        var buyin = num(els.buyin.value);
-        var parkdays = num(els.parkdays.value) || 0;
-        var extra = num(els.extra.value) || 0;
+        var entries = num(els.entries);
+        var buyin = num(els.buyin);
+        var parkdays = num(els.parkdays);
+        var extra = num(els.extra);
         var parkRate = hotel ? hotel.parking_usd_per_day : null;
-        var parking = (parkRate == null || !parkdays) ? 0 : parkRate * parkdays;
-        var entryTotal = buyin == null ? null : entries * buyin;
+        var parking = parkdays === 0 ? 0 : (parkRate == null || parkdays == null ? null : parkRate * parkdays);
+        var entryTotal = entries === 0 ? 0 : (buyin == null || entries == null ? null : entries * buyin);
         var hotelTotal = q.checkout_total_usd;
-        var total = hotelTotal + (entryTotal == null ? 0 : entryTotal) + parking + extra;
+        var total = [hotelTotal, entryTotal, parking, extra].includes(null) ? null : hotelTotal + entryTotal + parking + extra;
 
         var box = function (label, value, hint) {
           return '<div class="box"><div class="n">' + (value == null ? '<span class="muted">n/a</span>' : value) +
@@ -1137,43 +1175,43 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
           box("Nights", String(q.nights), esc(q.room)) +
           box("Hotel total (engine quote)", money2(hotelTotal), "room + resort fee + tax, as the engine totals it") +
           box("True hotel cost / night", money2(q.true_cost_per_night_usd), "checkout total ÷ nights") +
-          box("Tournament entries", entryTotal == null ? null : money2(entryTotal), entries + " × " + (buyin == null ? "?" : money2(buyin))) +
-          box("Parking", money2(parking), parkdays ? parkdays + " day(s) × " + (parkRate == null ? "unverified" : money2(parkRate)) : "none entered") +
-          box("Other spend", money2(extra), "as entered") +
-          box("Trip total", money2(total), "entries × buy-in + nights × true hotel cost + parking + other") +
-          box("Per night, all in", money2(total / q.nights), "trip total ÷ nights");
+          box("Tournament entries", entryTotal == null ? null : money2(entryTotal), (entries == null ? "?" : entries) + " × " + (buyin == null ? "?" : money2(buyin))) +
+          box("Parking", parking == null ? null : money2(parking), parkdays ? parkdays + " day(s) × " + (parkRate == null ? "unverified" : money2(parkRate)) : "none entered") +
+          box("Other spend", extra == null ? null : money2(extra), "as entered") +
+          box("Trip total", total == null ? null : money2(total), "entries × buy-in + nights × true hotel cost + parking + other") +
+          box("Per night, all in", total == null ? null : money2(total / q.nights), "trip total ÷ nights");
 
         var msgs = [];
         msgs.push("Rate timestamp: quote read from the official booking engine on " + q.retrieved_on + ".");
         if (q.cancellation_note) msgs.push("Cancellation: " + q.cancellation_note);
-        if (hotel && hotel.parking_usd_per_day == null && parkdays) {
-          msgs.push("Parking is left out because this property's daily parking fee is not on an official source read so far.");
+        if (parkRate == null && parkdays) {
+          msgs.push("The trip total is unavailable because the parking price is unverified.");
         }
+        if ([entries, buyin, parkdays, extra].includes(null)) msgs.push("Enter nonnegative amounts and whole counts. A buy-in is not needed for zero entries.");
         msgs.push("The hotel line moves with availability; re-check the booking engine before paying. " +
                   "Nothing here is a forecast of winnings.");
         note.textContent = msgs.join(" ");
 
         /* what the selected window holds, from the verified dataset */
         var win = document.getElementById("c-window");
-        var inWindow = rows.filter(function (r) { return r.date >= q.arrival && r.date <= q.departure; });
-        var se = inWindow.filter(function (r) { return r.entry_status === "SE"; });
-        var seCash = se.filter(function (r) { return r.kind === "entry" && !(r.labels || []).some(function (l) { return /satellite/i.test(l); }); });
-        var days = {};
-        se.forEach(function (r) { days[r.date] = 1; });
-        var cheapest = seCash.slice().sort(function (a, b) { return (a.buy_in_usd || 0) - (b.buy_in_usd || 0); })[0];
-        var richest = seCash.slice().sort(function (a, b) { return (b.gtd_multiple || 0) - (a.gtd_multiple || 0); })[0];
+        // Departure-day events may be playable, but the stay does not cover that night.
+        var inWindow = rows.filter(function (r) { return r.date >= q.arrival && r.date < q.departure; });
+        var se = inWindow.filter(function (r) { return r.entry_status === "SE" && r.kind === "entry"; });
+        var comparable = se.filter(function (r) {
+          return r.buy_in_usd > 0 && r.guarantee_usd > 0 && r.rules && r.rules.fee && r.rules.fee.excerpt &&
+            !(r.labels || []).some(function (l) { return /satellite|bounty|flight/i.test(l); });
+        });
+        var richest = comparable.slice().sort(function (a, b) {
+          return b.guarantee_usd / b.buy_in_usd - a.guarantee_usd / a.buy_in_usd;
+        })[0];
         win.innerHTML =
-          '<p class="small">' + esc(dateFmt(q.arrival)) + " to " + esc(dateFmt(q.departure)) + ": " +
-          inWindow.length + " official tournament rows fall in this window, of which <strong>" + se.length +
-          "</strong> are verified single entry (" + seCash.length + " cash events, " + (se.length - seCash.length) +
-          " satellite/other), across " + Object.keys(days).length + " days with at least one verified single-entry event.</p>" +
-          (se.length ? '<p class="small">' + entries + " entr" + (entries === 1 ? "y" : "ies") + " fits " +
-            (entries <= se.length ? "inside the " + se.length + " verified single-entry options in the window."
-                                 : "only partly: the window holds " + se.length + " verified single-entry options.") + "</p>" : "") +
-          (cheapest ? '<p class="small">Cheapest verified single-entry cash event in the window: ' + esc(cheapest.name) +
-            " on " + esc(dateFmt(cheapest.date)) + " at " + esc(timeFmt(cheapest.start)) + " for " + money(cheapest.buy_in_usd) + ".</p>" : "") +
-          (richest ? '<p class="small">Largest guaranteed pool ÷ buy-in in the window: ' + esc(richest.name) +
-            " on " + esc(dateFmt(richest.date)) + " (" + mult(richest.gtd_multiple) + "). Descriptive ratio only, not a forecast.</p>" : "") +
+          '<p class="small">' + esc(dateFmt(q.arrival)) + " to " + esc(dateFmt(q.departure)) + " (checkout day excluded): " +
+          se.length + " verified single-entry options on " + new Set(se.map(function (r) { return r.date; })).size +
+          " dates. This is an option count, not a playable sequence; transfers, arrival time and overlaps still matter.</p>" +
+          (richest ? '<p class="small">Largest guaranteed pool ÷ total entry fee among comparable single-entry events: ' + esc(richest.name) +
+            " on " + esc(dateFmt(richest.date)) + " (" + mult(richest.guarantee_usd / richest.buy_in_usd) +
+            "). Descriptive ratio only, not a forecast. " + srcLinks(richest.sources) + "</p>" :
+            '<p class="small">No comparable single-entry event with a confirmed fee and cash guarantee in this window. Satellites, bounties and flights are not ranked here.</p>') +
           '<p class="small"><a href="' + BASE + 'pages/schedule.html">Open the day-by-day schedule</a> for the day plan: one primary per date, what can replace it, and what cannot be paired.</p>';
 
         /* like-for-like comparison */
@@ -1188,15 +1226,37 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
           { id: "total", label: "Checkout total", key: "checkout_total_usd", num: true, html: function (r) { return money2(r.checkout_total_usd); } },
           { id: "true", label: "True cost / night", key: "true_cost_per_night_usd", num: true, html: function (r) { return "<strong>" + money2(r.true_cost_per_night_usd) + "</strong>"; } },
           { id: "cancel", label: "Cancellation", key: "cancellation_note", sort: null, html: function (r) { return "<span class='small'>" + esc(r.cancellation_note || "not stated in the quote") + "</span>"; } },
-          { id: "stamp", label: "Rate timestamp", key: "retrieved_on", html: function (r) { return "<span class='small'>read " + esc(r.retrieved_on) + "<br>logged " + esc(r.logged_on) + "</span>"; } }
+          { id: "stamp", label: "Rate timestamp", key: "retrieved_on", html: function (r) { return "<span class='small'>read " + esc(r.retrieved_on) + "<br>logged " + esc(r.logged_on) + "</span>"; } },
+          { id: "source", label: "Official source", sort: null, html: function (r) { return srcLinks([{ url: r.source, label: "Booking engine" }]) + "<br>" + datedBookingLink(r); } }
         ];
-        cmp.innerHTML = "";
-        table(cmp, rates, cols, { sortKey: "true", sortDir: 1 });
+        var matching = rates.filter(function (r) {
+          return r.arrival === q.arrival && r.departure === q.departure && r.occupancy === q.occupancy && r.room === q.room && r.offer === q.offer;
+        });
+        cmp.innerHTML = '<p class="small">' + (matching.length < 2 ? "No second matching quote. " : "") +
+          'These are dated observations, not current offers. Only the selected room and offer are shown; reconfirm cancellation terms.</p>';
+        table(cmp, matching, cols, { sortKey: "true", sortDir: 1 });
       }
 
       quoteSel.addEventListener("change", calc);
       ["entries", "buyin", "parkdays", "extra"].forEach(function (k) { els[k].addEventListener("input", calc); });
       calc();
+    }).catch(showErr);
+  };
+
+  PAGES.roomProfile = function () {
+    var main = document.getElementById("content");
+    getJSON("data/other_rooms.json").then(function(d){
+      var r = d.rooms.find(function(room){return room.id === main.dataset.room;});
+      main.innerHTML = '<p class="lead">'+esc(r.schedule_note)+'</p><p>'+srcLinks(r.sources)+'</p><h2>Published formats</h2>';
+      var events = d.events.filter(function(e){return e.room_id === r.id;});
+      if (events.length) table(main, events, [
+        {id:"format",label:"Event",key:"name"},{id:"days",label:"Days",html:function(e){return esc(e.weekdays.join(", "));}},
+        {id:"start",label:"Start",key:"start"},{id:"buy",label:"Entry fee",html:function(e){return money(e.buy_in_usd);}},
+        {id:"gtd",label:"Guarantee",html:function(e){return money(e.guarantee_usd);}},
+        {id:"rules",label:"Rules",key:"status_note"},{id:"read",label:"Last checked",key:"last_checked"},
+        {id:"source",label:"Sources",html:function(e){return srcLinks(e.sources);}}
+      ]); else main.insertAdjacentHTML("beforeend", "<p>No dated entry or verified recurring format in this room’s dataset.</p>");
+      main.insertAdjacentHTML("beforeend", '<h2>Hotels</h2><p>No comparable checkout and verified walk to this room are on file. <a href="hotels.html">Review the hotel log</a>.</p>');
     }).catch(showErr);
   };
 
@@ -1277,6 +1337,7 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
   PAGES.search = function () {
     var results = document.getElementById("results");
     var input = document.getElementById("q");
+    input.value = new URLSearchParams(location.search).get("q") || "";
     var summary = document.getElementById("summary");
     Promise.all([
       getJSON("data/tournaments.json"), getJSON("data/hotels.json"), getJSON("data/venues.json"),
