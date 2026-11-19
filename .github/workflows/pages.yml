@@ -63,6 +63,16 @@ jobs:
       - name: Validate JSON schemas, local links, and source links
         run: python3 scripts/check_links.py
 
+      - name: Audit every entry label against the sentence its own document prints
+        # S14/S15 counterpart for the one value that decides the ranking: the entry
+        # status. Re-derives every quoted span from the archived snapshot of the
+        # document the row cites, re-tests every 'no such clause appears anywhere'
+        # claim, and checks the change monitor's own verdicts for internal
+        # consistency. Fails if the committed audit is stale.
+        run: |
+          python3 scripts/audit_entry_labels.py
+          git diff --exit-code -- data/entry_evidence_audit.json data/evidence_audit_page.json
+
       - name: Verify every published value against the archived official documents
         run: python3 scripts/verify_rows.py
 

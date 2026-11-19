@@ -80,7 +80,7 @@ PAGES = {
 <article class="path"><span class="eyebrow">01 &nbsp; / &nbsp; TOURNAMENTS</span><h3>Check the entry rules</h3><p>Separate a written freezeout from a silent sheet or an event selling more chips.</p><a href="pages/single-entry.html">Freezeout shortlist →</a><a href="pages/separate-section.html">Multiple-entry events</a><a href="pages/unverified.html">Missing rules</a></article>
 <article class="path"><span class="eyebrow">02 &nbsp; / &nbsp; SCHEDULE</span><h3>Build a realistic day</h3><p>Compare registration deadlines and conflicts. An alternative replaces the primary; it is not another seat.</p><a href="pages/schedule.html">Day-by-day schedule →</a><a href="pages/daily.html">Morning feed</a><a href="pages/venues.html">Browse venues</a></article>
 <article class="path"><span class="eyebrow">03 &nbsp; / &nbsp; LODGING</span><h3>Price the whole trip</h3><p>Use exact dates, occupancy, taxes and mandatory fees. Check the walking route before comparing prices.</p><a href="pages/calculator.html">Trip cost calculator →</a><a href="pages/hotels.html">Hotels and dated rates</a><a href="pages/other-rooms.html">Nearby rooms</a></article></div>
-<h2>Decision desk</h2><div class="desk"><a href="pages/questions.html">Open questions</a><a href="pages/suggestions.html">Suggestions</a><a href="pages/payouts.html">Payout rules</a><a href="pages/monitoring.html">Change monitor</a><a href="pages/flagged.html">Flagged for review</a><a href="pages/strip-rooms.html">Strip survey</a><a href="pages/review.html">Source audit</a></div>
+<h2>Decision desk</h2><div class="desk"><a href="pages/questions.html">Open questions</a><a href="pages/suggestions.html">Suggestions</a><a href="pages/payouts.html">Payout rules</a><a href="pages/monitoring.html">Change monitor</a><a href="pages/flagged.html">Flagged for review</a><a href="pages/evidence-audit.html">Evidence audit</a><a href="pages/strip-rooms.html">Strip survey</a><a href="pages/review.html">Source audit</a></div>
 """),
     "pages/single-entry.html": ("Single entry", "singleEntry", """
 <h1>Freezeout shortlist</h1>
@@ -185,6 +185,15 @@ of a poker room, or search any column.</p>
 """),
     "pages/review.html": ("Repo review and sources", "review", """
 <h1>Repo review and sources</h1>
+<div id="content"></div>
+"""),
+    # Session d8a1f37f: the independent evidence audit. Every figure on this page is
+    # produced by scripts/audit_entry_labels.py; the page only lays out its record.
+    "pages/evidence-audit.html": ("Evidence audit", "evidenceAudit", """
+<h1>Evidence audit</h1>
+<p class="lead">An independent check of the single most consequential value in the dataset:
+whether each event is really single entry, and whether the sentence a row quotes is really on the
+document it cites. Built by <code>scripts/audit_entry_labels.py</code> from <code>data/entry_evidence_audit.json</code>.</p>
 <div id="content"></div>
 """),
 }

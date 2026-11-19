@@ -638,6 +638,7 @@ through <a href="monitoring.html">Source monitoring</a>.</p>
     ["pages/other-rooms.html", "Other rooms"],
     ["pages/search.html", "Search"],
     ["pages/monitoring.html", "Monitoring"],
+    ["pages/evidence-audit.html", "Evidence audit"],
     ["pages/summary.html", "Summary"],
     ["pages/questions.html", "Questions"],
     ["pages/suggestions.html", "Suggestions"],
@@ -2368,6 +2369,181 @@ through <a href="monitoring.html">Source monitoring</a>.</p>
   PAGES.summary = markdownPage("EXECUTIVE_SUMMARY.md");
   PAGES.questions = markdownPage("QUESTIONS.md");
   PAGES.suggestions = markdownPage("SUGGESTIONS.md");
+  /* Evidence audit: the independent check of every published entry label.
+     data/entry_evidence_audit.json is written by scripts/audit_entry_labels.py.
+     Nothing here is recomputed for display; every finding is printed as the
+     auditor recorded it, with the snapshot that proves it. */
+  PAGES.evidenceAudit = function () {
+    getJSON("data/evidence_audit_page.json").then(function (page) {
+      var main = document.getElementById("content");
+      var a = page.audit;
+      var scope = a.scope || {};
+      var f = a.findings || {};
+      function texts(x) {
+        return (x || []).join("  |  ");
+      }
+      function tableIntoRaw(host, cols, items) {
+        var target = document.getElementById(host);
+        if (!target) return;
+        if (!items || !items.length) {
+          target.innerHTML = "<div class='card callout ok'><p>No finding recorded for this check.</p></div>";
+          return;
+        }
+        table(target, items, cols, {});
+      }
+      var html = "<div class='grid'>" +
+        kpi(scope.quotes_checked, "quoted spans re-checked against their archived document") +
+        kpi(scope.rows_with_rule_fields + " / " + scope.tournament_rows, "rows carrying a rule field") +
+        kpi(scope.affirmative_single_entry_documents,
+            "documents that affirmatively close an event to a second entry") +
+        kpi((f.silence_claim_contradicted || []).length,
+            "excerpts claiming a clause is absent while their sheet prints one") +
+        kpi((f.quote_not_found || []).length, "quotes not findable in the document they cite") +
+        kpi((f.monitor_integrity || []).length, "change-monitor integrity findings") +
+        "</div>" +
+        "<div class='card'><p class='small'><strong>Method.</strong> " + esc(a.method) +
+        " A value that cannot be confirmed from an official source stays blank, is listed on the " +
+        "<a href='flagged.html'>Flagged for Review</a> page, and is never inferred.</p></div>";
+
+      var aff = a.affirmative_single_entry_documents || [];
+      html += "<h2>1. Documents that affirmatively close an event to a second entry</h2>";
+      if (!aff.length) {
+        html += "<div class='card callout'><p><strong>None.</strong> Across <strong>" +
+          esc(scope.documents_read) + "</strong> archived official documents, not one prints a sentence " +
+          "that closes an event to a second entry (no re-entry, no rebuy, no add-on, single entry only). " +
+          "That is why the strict single-entry list is empty and why the booking decision is " +
+          "<strong>hold</strong>: silence on a structure sheet is not a policy. No row can be promoted to " +
+          "'written freezeout' until an operator issues that sentence in writing, for the whole event, " +
+          "with a date.</p></div>";
+      } else {
+        html += "<div id='t-aff'></div>";
+      }
+
+      html += "<h2>2. A label contradicted by the row's own document <span class='chip'>" +
+        (f.document_conflict || []).length + "</span></h2><p class='small'>No row is labelled single " +
+        "entry while citing a document whose text sells a further entry, and no document supports " +
+        "contradictory labels on different rows.</p><div id='t-conflict'></div>";
+
+      html += "<h2>3. A 'no such clause anywhere' claim that the same sheet contradicts <span class='chip'>" +
+        (f.silence_claim_contradicted || []).length + "</span></h2><p class='small'>The claim is re-tested " +
+        "with a keyword sweep of the very snapshot the excerpt cites, and the line that contradicts it is printed.</p>" +
+        "<div id='t-silence'></div>";
+
+      html += "<h2>4. Quotes that do not appear in the document they cite <span class='chip'>" +
+        (f.quote_not_found || []).length + "</span></h2><p class='small'>Whitespace, PDF line breaks, " +
+        "hyphenated wraps, curly quotes and thousands separators are normalised before a quote is called " +
+        "unfindable; nothing else is.</p><div id='t-quote'></div>";
+
+      var prov = (f.daily_clause_provenance || []).filter(function (x) { return x.kind === "clause_provenance"; });
+      html += "<h2>5. Where each daily-fee clause is actually printed <span class='chip'>" + prov.length +
+        "</span></h2><p class='small'>A multi-event document numbers its general terms 1..N and then " +
+        "restarts the numbering inside each event block, so a bare 'Clause 4' is ambiguous on its face. " +
+        "Each quote is resolved to the block whose text contains the quoted words, and every other block " +
+        "that prints the same clause number is printed beside it.</p><div id='t-clause'></div>";
+
+      html += "<h2>6. Change-monitor integrity <span class='chip'>" +
+        (f.monitor_integrity || []).length + "</span></h2><p class='small'>A 'source changed' badge is only " +
+        "evidence if the check that produced it could have seen a value. These are the cases where the " +
+        "monitor's own numbers say it could not, or where two official URLs returned one identical page.</p>" +
+        "<div id='t-monitor'></div>";
+
+      var ms = scope.monitor || {};
+      if (ms.checked_at_utc) {
+        html += "<h2>7. What the last monitor run actually saw</h2><div class='card'><p class='small'>" +
+          "Check taken <strong>" + esc(ms.checked_at_utc) + "</strong> over <strong>" + esc(ms.sources) +
+          "</strong> URLs: " + esc(ms.raw_changed) + " raw body change(s), " + esc(ms.facts_changed) +
+          " published-fact change(s), " + esc(ms.zero_fact_pages) +
+          " page(s) that yielded no money, date, time or entry-rule word at all, and " +
+          esc(ms.content_status_facts_changed) + " source(s) whose recorded status reads " +
+          "<code>facts-changed</code>. A page with no extractable facts can prove neither that a value " +
+          "moved nor that it did not, so the 'source changed' badge on a tournament table is a request to " +
+          "re-read that page, not evidence that a published value changed.</p></div>";
+      }
+      var fixedRows = a.fixed_on_audit_day || [];
+      html += "<h2>8. What this audit caught and had fixed on 2026-11-19 <span class='chip'>" +
+        fixedRows.length + "</span></h2><p class='small'>A clean audit is only meaningful if you can see " +
+        "what it used to catch. These findings were produced by this check and corrected in the data the " +
+        "same day; the sentences above are the ones the official documents print.</p><div id='t-fixed'></div>";
+
+      main.innerHTML = html;
+
+      function col(id, label, fn) {
+        return { id: id, label: label, key: id, html: function (r) { return esc(fn(r)); } };
+      }
+      function blankOk(fn) {
+        return function (r) {
+          var v = fn(r);
+          return (v == null || v === "") ? '<span class="muted">blank</span>' : esc(v);
+        };
+      }
+      function simple(id, label, fn) {
+        return { id: id, label: label, key: id, html: blankOk(fn) };
+      }
+      if (aff.length) {
+        tableIntoRaw("t-aff", [
+          simple("snapshot", "Document", function (x) { return x.snapshot; }),
+          simple("sentences", "Sentences", function (x) { return (x.sentences || []).join("; "); })
+        ], aff);
+      }
+      tableIntoRaw("t-conflict", [
+        simple("snapshot", "Document", function (x) { return x.snapshot; }),
+        simple("issue", "Issue", function (x) { return x.issue; }),
+        simple("rows", "Rows", function (x) { return (x.rows || []).join(", "); }),
+        simple("phrases", "Phrases printed", function (x) { return (x.phrases || []).join("; "); })
+      ], f.document_conflict);
+      tableIntoRaw("t-silence", [
+        simple("row_id", "Row", function (x) { return x.row_id; }),
+        simple("claim", "Claim", function (x) { return x.claim; }),
+        simple("document_prints", "The document prints", function (x) { return x.document_prints; }),
+        simple("line", "Evidence line", function (x) {
+          return x.evidence_line ? ("L" + x.evidence_line.line + ": " + x.evidence_line.text) : "";
+        }),
+        simple("snapshot", "Document", function (x) { return x.snapshot; })
+      ], f.silence_claim_contradicted);
+      tableIntoRaw("t-quote", [
+        simple("row_id", "Row", function (x) { return x.row_id; }),
+        simple("field", "Field", function (x) { return x.field; }),
+        simple("quote", "Quote", function (x) { return x.quote; }),
+        simple("missing_fragment", "Fragment not found", function (x) { return x.missing_fragment; }),
+        simple("snapshot", "Document", function (x) { return x.snapshot; })
+      ], f.quote_not_found);
+      tableIntoRaw("t-clause", [
+        simple("daily_id", "Daily row", function (x) { return x.daily_id; }),
+        simple("days", "Days", function (x) { return x.days; }),
+        simple("clause", "Clause", function (x) { return x.clause; }),
+        simple("resolved_to_block", "Resolves to", function (x) { return x.resolved_to_block || "not resolved"; }),
+        simple("others", "Other blocks printing this clause number", function (x) {
+          var others = (x.blocks_printing_clause_number || [])
+            .filter(function (r) { return r.block !== x.resolved_to_block; })
+            .map(function (r) { return r.block + ": " + r.text; });
+          return others.length ? others.join("  |  ") : "none";
+        })
+      ], prov);
+      tableIntoRaw("t-monitor", [
+        simple("kind", "Kind", function (x) { return x.kind; }),
+        { id: "source", label: "Source", key: "source", html: blankOk(function (x) {
+          var one = x.source_url;
+          var many = x.sources || [];
+          var url = one || many[0] || "";
+          var extra = many.length > 1 ? (" (+" + (many.length - 1) + " more)") : "";
+          if (!url) return "";
+          return url + extra;
+        }) },
+        simple("issue", "What it means", function (x) { return x.issue; })
+      ], f.monitor_integrity);
+      var fixed = a.fixed_on_audit_day || [];
+      tableIntoRaw("t-fixed", [
+        simple("finding", "What the audit caught", function (x) { return x.finding; }),
+        simple("rows", "Rows affected", function (x) {
+          return Array.isArray(x.rows) ? x.rows.join(", ") : String(x.rows || "");
+        }),
+        simple("document", "Official document", function (x) { return x.document; }),
+        simple("sentence", "What the document prints", function (x) { return x.sentence_the_sheet_prints; }),
+        simple("resolution", "Resolution", function (x) { return x.resolution; })
+      ], fixed);
+    }).catch(showErr);
+  };
+
   PAGES.flagged = markdownPage("FLAGGED.md");
   PAGES.review = markdownPage("REVIEW.md");
 
