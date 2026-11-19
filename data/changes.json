@@ -1,8 +1,69 @@
 {
- "checked_at": "2026-11-17",
- "sources_facts_changed": 0,
- "sources_raw_changed": 11,
+ "checked_at": "2026-11-19",
+ "sources_facts_changed": 4,
+ "sources_raw_changed": 4,
  "added": [],
  "removed": [],
- "changed": []
+ "changed": [
+  {
+   "id": "caesars",
+   "kind": "hotel",
+   "name": "Caesars Palace",
+   "date": null,
+   "reason": "official source page printed different values on its last re-check",
+   "source_url": "https://www.caesars.com/corporate/disclaimer",
+   "source_changed_at": "2026-11-19T06:02:06Z",
+   "diff": {
+    "official source verified against": [
+     "2026-11-17T00:43:10Z",
+     "2026-11-19T06:02:06Z (https://www.caesars.com/corporate/disclaimer)"
+    ]
+   }
+  },
+  {
+   "id": "rooms03",
+   "kind": "strip-room",
+   "name": "Horseshoe Las Vegas",
+   "date": null,
+   "reason": "official source page printed different values on its last re-check",
+   "source_url": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+   "source_changed_at": "2026-11-19T11:38:05Z",
+   "diff": {
+    "official source verified against": [
+     "2026-11-17T00:44:11Z",
+     "2026-11-19T11:38:05Z (https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip)"
+    ]
+   }
+  },
+  {
+   "id": "formats05",
+   "kind": "strip-room",
+   "name": "Daily No Limit Hold'em (six sessions; buy-ins not printed)",
+   "date": null,
+   "reason": "official source page printed different values on its last re-check",
+   "source_url": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+   "source_changed_at": "2026-11-19T11:38:05Z",
+   "diff": {
+    "official source verified against": [
+     "2026-11-17T00:44:11Z",
+     "2026-11-19T11:38:05Z (https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip)"
+    ]
+   }
+  },
+  {
+   "id": "r012",
+   "kind": "tournament",
+   "name": "$200 No Limit Hold'em Progressive Knock-Out Bounty $8K GTD (1Day)",
+   "date": "2026-11-23",
+   "reason": "official source page printed different values on its last re-check",
+   "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_30.pdf",
+   "source_changed_at": "2026-11-19T05:59:56Z",
+   "diff": {
+    "official source verified against": [
+     "2026-11-17T00:40:58Z",
+     "2026-11-19T05:59:56Z (https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_30.pdf)"
+    ]
+   }
+  }
+ ]
 }

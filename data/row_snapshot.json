@@ -3357,7 +3357,7 @@
    "venue": "Wynn Las Vegas",
    "series": "Wynn Signature Series",
    "buy_in_usd": 400,
-   "guarantee_usd": null,
+   "guarantee_usd": 150000,
    "entry_status": "UNV",
    "buy_in": "not published",
    "flags": 1
@@ -3369,7 +3369,7 @@
    "venue": "Wynn Las Vegas",
    "series": "Wynn Signature Series",
    "buy_in_usd": 400,
-   "guarantee_usd": null,
+   "guarantee_usd": 150000,
    "entry_status": "UNV",
    "buy_in": "not published",
    "flags": 1
@@ -3381,7 +3381,7 @@
    "venue": "Wynn Las Vegas",
    "series": "Wynn Signature Series",
    "buy_in_usd": 400,
-   "guarantee_usd": null,
+   "guarantee_usd": 150000,
    "entry_status": "UNV",
    "buy_in": "not published",
    "flags": 1
@@ -3393,7 +3393,7 @@
    "venue": "Wynn Las Vegas",
    "series": "Wynn Signature Series",
    "buy_in_usd": 400,
-   "guarantee_usd": null,
+   "guarantee_usd": 150000,
    "entry_status": "UNV",
    "buy_in": "not published",
    "flags": 1
@@ -3405,7 +3405,7 @@
    "venue": "Wynn Las Vegas",
    "series": "Wynn Signature Series",
    "buy_in_usd": 400,
-   "guarantee_usd": null,
+   "guarantee_usd": 150000,
    "entry_status": "UNV",
    "buy_in": "not published",
    "flags": 1
@@ -3417,7 +3417,7 @@
    "venue": "Wynn Las Vegas",
    "series": "Wynn Signature Series",
    "buy_in_usd": 400,
-   "guarantee_usd": null,
+   "guarantee_usd": 150000,
    "entry_status": "UNV",
    "buy_in": "not published",
    "flags": 1
@@ -3429,7 +3429,7 @@
    "venue": "Wynn Las Vegas",
    "series": "Wynn Signature Series",
    "buy_in_usd": 600,
-   "guarantee_usd": null,
+   "guarantee_usd": 250000,
    "entry_status": "UNV",
    "buy_in": "not published",
    "flags": 1
@@ -3465,7 +3465,7 @@
    "venue": "Wynn Las Vegas",
    "series": "Wynn Signature Series",
    "buy_in_usd": 600,
-   "guarantee_usd": null,
+   "guarantee_usd": 250000,
    "entry_status": "UNV",
    "buy_in": "not published",
    "flags": 1
@@ -3489,7 +3489,7 @@
    "venue": "Wynn Las Vegas",
    "series": "Wynn Signature Series",
    "buy_in_usd": 600,
-   "guarantee_usd": null,
+   "guarantee_usd": 250000,
    "entry_status": "UNV",
    "buy_in": "not published",
    "flags": 1
@@ -3501,7 +3501,7 @@
    "venue": "Wynn Las Vegas",
    "series": "Wynn Signature Series",
    "buy_in_usd": 600,
-   "guarantee_usd": null,
+   "guarantee_usd": 250000,
    "entry_status": "UNV",
    "buy_in": "not published",
    "flags": 1
@@ -3549,7 +3549,7 @@
    "venue": "Wynn Las Vegas",
    "series": "Wynn Signature Series",
    "buy_in_usd": 400,
-   "guarantee_usd": null,
+   "guarantee_usd": 100000,
    "entry_status": "UNV",
    "buy_in": "not published",
    "flags": 1
@@ -3585,7 +3585,7 @@
    "venue": "Wynn Las Vegas",
    "series": "Wynn Signature Series",
    "buy_in_usd": 400,
-   "guarantee_usd": null,
+   "guarantee_usd": 100000,
    "entry_status": "UNV",
    "buy_in": "not published",
    "flags": 1
@@ -3621,7 +3621,7 @@
    "venue": "Wynn Las Vegas",
    "series": "Wynn Signature Series",
    "buy_in_usd": 400,
-   "guarantee_usd": null,
+   "guarantee_usd": 100000,
    "entry_status": "UNV",
    "buy_in": "not published",
    "flags": 1
@@ -3657,7 +3657,7 @@
    "venue": "Wynn Las Vegas",
    "series": "Wynn Signature Series",
    "buy_in_usd": 800,
-   "guarantee_usd": null,
+   "guarantee_usd": 300000,
    "entry_status": "UNV",
    "buy_in": "not published",
    "flags": 1
@@ -3705,7 +3705,7 @@
    "venue": "Wynn Las Vegas",
    "series": "Wynn Signature Series",
    "buy_in_usd": 800,
-   "guarantee_usd": null,
+   "guarantee_usd": 300000,
    "entry_status": "UNV",
    "buy_in": "not published",
    "flags": 1
@@ -3741,7 +3741,7 @@
    "venue": "Wynn Las Vegas",
    "series": "Wynn Signature Series",
    "buy_in_usd": 800,
-   "guarantee_usd": null,
+   "guarantee_usd": 300000,
    "entry_status": "UNV",
    "buy_in": "not published",
    "flags": 1
@@ -3753,7 +3753,7 @@
    "venue": "Wynn Las Vegas",
    "series": "Wynn Signature Series",
    "buy_in_usd": 800,
-   "guarantee_usd": null,
+   "guarantee_usd": 300000,
    "entry_status": "UNV",
    "buy_in": "not published",
    "flags": 1

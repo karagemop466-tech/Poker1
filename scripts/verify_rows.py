@@ -114,6 +114,12 @@ def corpus_for(series, url):
         files += ["wpt_struct.txt", "wpt_sched.txt"]
     elif series == "Wynn Signature Series":
         files += ["wss_sched.txt", "wss_struct.txt"]
+        # The 2026-11-19 table-structure re-read of the same official file (bytes unchanged
+        # per the 2026-11-19 provenance fetch) recovers the merged GUARANTEE cells that the
+        # line-only pypdf dump drops; the 17 Day-1 flight guarantees are verified against it.
+        # See FLAGGED.md F83.
+        if (SNAP / "wss_sched_reread_20261119.txt").exists():
+            files.append("wss_sched_reread_20261119.txt")
     out = []
     for f in files:
         if (SNAP / f).exists():

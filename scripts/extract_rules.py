@@ -9,8 +9,9 @@ byte-for-byte extractions of the official PDFs) and prints, per sheet:
     and every line that mentions re-entry, re-buy, add-on, bounty, flight or
     multiple entries.
 
-It writes data/structure_rules.json. It does not classify anything - the status
-of each event is decided by reading the excerpt this script prints.
+It writes data/structure_rules.json. Sheet-kind labels are evidence clues, not
+event eligibility decisions; a human must check event scope and all other terms.
+Silence is never proof that re-entry, rebuys or add-ons are prohibited.
 """
 import json
 import os
@@ -41,6 +42,37 @@ SS = re.compile(r"SS#\s*(\d+)\s+Effective Date\s*([\d./]+)")
 
 def clean(s):
     return re.sub(r"\s+", " ", s).strip()
+
+
+def entry_evidence(text):
+    """Extract numbered clauses and conservative event/flight scope clues.
+
+    The word "re-entry" can occur in a promotion valid for one specific event
+    or flight. Its presence alone does not apply that rule to every event on the
+    sheet, and a bagged-player restriction is not affirmative proof that every
+    other player may buy another entry.
+    """
+    joined = re.sub(r"\s+", " ", text)
+    clauses = re.findall(r"(?ms)^\s*\d{1,2}\.\s+(.*?)(?=^\s*\d{1,2}\.\s+|\Z)", text)
+    re_rx = re.compile(r"subsequent re-?entry|subsequent buy in.{0,60}after the initial buy in", re.I)
+    clause = next((clean(c) for c in clauses if re_rx.search(c)), None)
+    flight = re.search(r"(.{0,60})(Each starting flight will play until|Any player who bags chips for Day 2 may not play a subsequent flight)(.{0,400})", joined, re.I)
+    addon = re.search(r"(.{0,120})(add-?on)(.{0,160})", joined, re.I)
+    rebuy = re.search(r"(.{0,120})(re-?buy)(.{0,160})", joined, re.I)
+    scope = re.search(r"\bfor\s+event\s*#?\s*(\d+)\b(.{0,100}?)\bonly\b", clause or "", re.I)
+    event_scope = [int(scope.group(1))] if scope else []
+    flights = re.findall(r"\b1[A-Z]\b", scope.group(2), re.I) if scope else []
+    kind = ("EVENT_SPECIFIC_RE_ENTRY" if scope else "RE_ENTRY" if clause else
+            "MULTI_FLIGHT" if flight else "NO_ENTRY_POLICY_FOUND")
+    return {
+        "re_entry_excerpt": clause,
+        "re_entry_event_scope": event_scope,
+        "re_entry_flight_scope": [v.upper() for v in flights],
+        "multi_flight_excerpt": clean(flight.group(0)) if flight else None,
+        "add_on_excerpt": clean(addon.group(0)) if addon else None,
+        "re_buy_excerpt": clean(rebuy.group(0)) if rebuy else None,
+        "sheet_kind": kind,
+    }
 
 
 def main():
@@ -79,20 +111,10 @@ def main():
                 hits.append({"line": i + 1, "text": clean(l)})
         rec["keyword_lines"] = hits
 
-        # Entry-rule verdict, taken only from text printed on the sheet.
-        re_entry = re.search(r"(.{0,200})(subsequent re-?entry|subsequent buy in.{0,60}after the initial buy in)(.{0,120})", joined, re.I)
-        flight = re.search(r"(.{0,60})(Each starting flight will play until|Any player who bags chips for Day 2 may not play a subsequent flight)(.{0,400})", joined, re.I)
-        addon = re.search(r"(.{0,120})(add-?on)(.{0,160})", joined, re.I)
-        rebuy = re.search(r"(.{0,120})(re-?buy)(.{0,160})", joined, re.I)
-        rec["re_entry_excerpt"] = clean(re_entry.group(0)) if re_entry else None
-        rec["multi_flight_excerpt"] = clean(flight.group(0)) if flight else None
-        rec["add_on_excerpt"] = clean(addon.group(0)) if addon else None
-        rec["re_buy_excerpt"] = clean(rebuy.group(0)) if rebuy else None
-        # How many numbered rules the sheet prints (evidence of the full rule set read).
+        # An event-scoped clause stays scoped; missing language stays unknown.
+        rec.update(entry_evidence(text))
         rules = re.findall(r"(?m)^\s*(\d{1,2})\.\s+\S", text)
         rec["rule_count"] = len({int(x) for x in rules})
-        rec["sheet_kind"] = ("RE_ENTRY" if rec["re_entry_excerpt"] else
-                             "MULTI_FLIGHT" if rec["multi_flight_excerpt"] else "NO_ENTRY_POLICY_FOUND")
         out[sid] = rec
 
     with open(OUT, "w", encoding="utf-8") as f:

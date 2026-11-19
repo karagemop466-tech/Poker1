@@ -26537,12 +26537,12 @@
    "event_no": null,
    "name": "No Limit Hold'em Day 1A",
    "buy_in_usd": 400,
-   "guarantee_usd": null,
+   "guarantee_usd": 150000,
    "prize_text": null,
    "house_fee_usd": null,
    "house_fee_pct": null,
    "prize_pool_usd": null,
-   "gtd_multiple": null,
+   "gtd_multiple": 375.0,
    "entry_status": "UNV",
    "rules": {
     "single_entry": {
@@ -26593,9 +26593,9 @@
    "levels_published": "30/40",
    "est_end": null,
    "est_duration_min": null,
-   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF.",
+   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF, re-read 2026-11-19 (table-structure capture of the same file; see data/snapshots/wss_sched_reread_20261119.txt).",
    "flags": [
-    "Guarantee left blank: the official Wynn Signature Series schedule PDF prints a buy-in, starting chips and levels for this event but no guarantee amount, and the structures PDF is a \"COMING SOON\" placeholder. No official value was available, so no guarantee is published for this row."
+    "Guarantee read from the event's own row of the official schedule PDF (table-structure re-read 2026-11-19; the line-only extraction used for the 2026-11-16 capture dropped the merged guarantee cell, see data/snapshots/wss_sched_reread_20261119.txt and FLAGGED.md F83)."
    ],
    "sources": [
     {
@@ -26608,7 +26608,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r281",
@@ -26620,12 +26620,12 @@
    "event_no": null,
    "name": "No Limit Hold'em Day 1B",
    "buy_in_usd": 400,
-   "guarantee_usd": null,
+   "guarantee_usd": 150000,
    "prize_text": null,
    "house_fee_usd": null,
    "house_fee_pct": null,
    "prize_pool_usd": null,
-   "gtd_multiple": null,
+   "gtd_multiple": 375.0,
    "entry_status": "UNV",
    "rules": {
     "single_entry": {
@@ -26676,9 +26676,9 @@
    "levels_published": "30/40",
    "est_end": null,
    "est_duration_min": null,
-   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF.",
+   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF, re-read 2026-11-19 (table-structure capture of the same file; see data/snapshots/wss_sched_reread_20261119.txt).",
    "flags": [
-    "Guarantee left blank: the official Wynn Signature Series schedule PDF prints a buy-in, starting chips and levels for this event but no guarantee amount, and the structures PDF is a \"COMING SOON\" placeholder. No official value was available, so no guarantee is published for this row."
+    "Guarantee read from the event's own row of the official schedule PDF (table-structure re-read 2026-11-19; the line-only extraction used for the 2026-11-16 capture dropped the merged guarantee cell, see data/snapshots/wss_sched_reread_20261119.txt and FLAGGED.md F83)."
    ],
    "sources": [
     {
@@ -26691,7 +26691,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r282",
@@ -26703,12 +26703,12 @@
    "event_no": null,
    "name": "No Limit Hold'em Day 1C",
    "buy_in_usd": 400,
-   "guarantee_usd": null,
+   "guarantee_usd": 150000,
    "prize_text": null,
    "house_fee_usd": null,
    "house_fee_pct": null,
    "prize_pool_usd": null,
-   "gtd_multiple": null,
+   "gtd_multiple": 375.0,
    "entry_status": "UNV",
    "rules": {
     "single_entry": {
@@ -26759,9 +26759,9 @@
    "levels_published": "30/40",
    "est_end": null,
    "est_duration_min": null,
-   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF.",
+   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF, re-read 2026-11-19 (table-structure capture of the same file; see data/snapshots/wss_sched_reread_20261119.txt).",
    "flags": [
-    "Guarantee left blank: the official Wynn Signature Series schedule PDF prints a buy-in, starting chips and levels for this event but no guarantee amount, and the structures PDF is a \"COMING SOON\" placeholder. No official value was available, so no guarantee is published for this row."
+    "Guarantee read from the event's own row of the official schedule PDF (table-structure re-read 2026-11-19; the line-only extraction used for the 2026-11-16 capture dropped the merged guarantee cell, see data/snapshots/wss_sched_reread_20261119.txt and FLAGGED.md F83)."
    ],
    "sources": [
     {
@@ -26774,7 +26774,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r283",
@@ -26786,12 +26786,12 @@
    "event_no": null,
    "name": "No Limit Hold'em Day 1D",
    "buy_in_usd": 400,
-   "guarantee_usd": null,
+   "guarantee_usd": 150000,
    "prize_text": null,
    "house_fee_usd": null,
    "house_fee_pct": null,
    "prize_pool_usd": null,
-   "gtd_multiple": null,
+   "gtd_multiple": 375.0,
    "entry_status": "UNV",
    "rules": {
     "single_entry": {
@@ -26842,9 +26842,9 @@
    "levels_published": "30/40",
    "est_end": null,
    "est_duration_min": null,
-   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF.",
+   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF, re-read 2026-11-19 (table-structure capture of the same file; see data/snapshots/wss_sched_reread_20261119.txt).",
    "flags": [
-    "Guarantee left blank: the official Wynn Signature Series schedule PDF prints a buy-in, starting chips and levels for this event but no guarantee amount, and the structures PDF is a \"COMING SOON\" placeholder. No official value was available, so no guarantee is published for this row."
+    "Guarantee read from the event's own row of the official schedule PDF (table-structure re-read 2026-11-19; the line-only extraction used for the 2026-11-16 capture dropped the merged guarantee cell, see data/snapshots/wss_sched_reread_20261119.txt and FLAGGED.md F83)."
    ],
    "sources": [
     {
@@ -26857,7 +26857,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r284",
@@ -26869,12 +26869,12 @@
    "event_no": null,
    "name": "No Limit Hold'em Day 1E",
    "buy_in_usd": 400,
-   "guarantee_usd": null,
+   "guarantee_usd": 150000,
    "prize_text": null,
    "house_fee_usd": null,
    "house_fee_pct": null,
    "prize_pool_usd": null,
-   "gtd_multiple": null,
+   "gtd_multiple": 375.0,
    "entry_status": "UNV",
    "rules": {
     "single_entry": {
@@ -26925,9 +26925,9 @@
    "levels_published": "30/40",
    "est_end": null,
    "est_duration_min": null,
-   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF.",
+   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF, re-read 2026-11-19 (table-structure capture of the same file; see data/snapshots/wss_sched_reread_20261119.txt).",
    "flags": [
-    "Guarantee left blank: the official Wynn Signature Series schedule PDF prints a buy-in, starting chips and levels for this event but no guarantee amount, and the structures PDF is a \"COMING SOON\" placeholder. No official value was available, so no guarantee is published for this row."
+    "Guarantee read from the event's own row of the official schedule PDF (table-structure re-read 2026-11-19; the line-only extraction used for the 2026-11-16 capture dropped the merged guarantee cell, see data/snapshots/wss_sched_reread_20261119.txt and FLAGGED.md F83)."
    ],
    "sources": [
     {
@@ -26940,7 +26940,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r285",
@@ -26952,12 +26952,12 @@
    "event_no": null,
    "name": "No Limit Hold'em Day 1F",
    "buy_in_usd": 400,
-   "guarantee_usd": null,
+   "guarantee_usd": 150000,
    "prize_text": null,
    "house_fee_usd": null,
    "house_fee_pct": null,
    "prize_pool_usd": null,
-   "gtd_multiple": null,
+   "gtd_multiple": 375.0,
    "entry_status": "UNV",
    "rules": {
     "single_entry": {
@@ -27008,9 +27008,9 @@
    "levels_published": "30/40",
    "est_end": null,
    "est_duration_min": null,
-   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF.",
+   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF, re-read 2026-11-19 (table-structure capture of the same file; see data/snapshots/wss_sched_reread_20261119.txt).",
    "flags": [
-    "Guarantee left blank: the official Wynn Signature Series schedule PDF prints a buy-in, starting chips and levels for this event but no guarantee amount, and the structures PDF is a \"COMING SOON\" placeholder. No official value was available, so no guarantee is published for this row."
+    "Guarantee read from the event's own row of the official schedule PDF (table-structure re-read 2026-11-19; the line-only extraction used for the 2026-11-16 capture dropped the merged guarantee cell, see data/snapshots/wss_sched_reread_20261119.txt and FLAGGED.md F83)."
    ],
    "sources": [
     {
@@ -27023,7 +27023,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r286",
@@ -27035,12 +27035,12 @@
    "event_no": null,
    "name": "No Limit Hold'em Day 1A",
    "buy_in_usd": 600,
-   "guarantee_usd": null,
+   "guarantee_usd": 250000,
    "prize_text": null,
    "house_fee_usd": null,
    "house_fee_pct": null,
    "prize_pool_usd": null,
-   "gtd_multiple": null,
+   "gtd_multiple": 416.7,
    "entry_status": "UNV",
    "rules": {
     "single_entry": {
@@ -27091,9 +27091,9 @@
    "levels_published": "40",
    "est_end": null,
    "est_duration_min": null,
-   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF.",
+   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF, re-read 2026-11-19 (table-structure capture of the same file; see data/snapshots/wss_sched_reread_20261119.txt).",
    "flags": [
-    "Guarantee left blank: the official Wynn Signature Series schedule PDF prints a buy-in, starting chips and levels for this event but no guarantee amount, and the structures PDF is a \"COMING SOON\" placeholder. No official value was available, so no guarantee is published for this row."
+    "Guarantee read from the event's own row of the official schedule PDF (table-structure re-read 2026-11-19; the line-only extraction used for the 2026-11-16 capture dropped the merged guarantee cell, see data/snapshots/wss_sched_reread_20261119.txt and FLAGGED.md F83)."
    ],
    "sources": [
     {
@@ -27106,7 +27106,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r287",
@@ -27175,7 +27175,7 @@
    "levels_published": null,
    "est_end": null,
    "est_duration_min": null,
-   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF.",
+   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF, re-read 2026-11-19 (table-structure capture of the same file; see data/snapshots/wss_sched_reread_20261119.txt).",
    "flags": [
     "Continuation row. The official schedule PDF prints no buy-in, guarantee, chips or levels for this row."
    ],
@@ -27190,7 +27190,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r288",
@@ -27259,7 +27259,7 @@
    "levels_published": "20",
    "est_end": null,
    "est_duration_min": null,
-   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF.",
+   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF, re-read 2026-11-19 (table-structure capture of the same file; see data/snapshots/wss_sched_reread_20261119.txt).",
    "flags": [
     "Prize printed as \"10 Seats\". Schedule footnote: \"Winners will receive direct entry to the corresponding event(s) for which it was held. See structure sheet for details.\""
    ],
@@ -27274,7 +27274,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r289",
@@ -27286,12 +27286,12 @@
    "event_no": null,
    "name": "No Limit Hold'em Day 1B",
    "buy_in_usd": 600,
-   "guarantee_usd": null,
+   "guarantee_usd": 250000,
    "prize_text": null,
    "house_fee_usd": null,
    "house_fee_pct": null,
    "prize_pool_usd": null,
-   "gtd_multiple": null,
+   "gtd_multiple": 416.7,
    "entry_status": "UNV",
    "rules": {
     "single_entry": {
@@ -27342,9 +27342,9 @@
    "levels_published": "40",
    "est_end": null,
    "est_duration_min": null,
-   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF.",
+   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF, re-read 2026-11-19 (table-structure capture of the same file; see data/snapshots/wss_sched_reread_20261119.txt).",
    "flags": [
-    "Guarantee left blank: the official Wynn Signature Series schedule PDF prints a buy-in, starting chips and levels for this event but no guarantee amount, and the structures PDF is a \"COMING SOON\" placeholder. No official value was available, so no guarantee is published for this row."
+    "Guarantee read from the event's own row of the official schedule PDF (table-structure re-read 2026-11-19; the line-only extraction used for the 2026-11-16 capture dropped the merged guarantee cell, see data/snapshots/wss_sched_reread_20261119.txt and FLAGGED.md F83)."
    ],
    "sources": [
     {
@@ -27357,7 +27357,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r290",
@@ -27425,7 +27425,7 @@
    "levels_published": "20",
    "est_end": null,
    "est_duration_min": null,
-   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF.",
+   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF, re-read 2026-11-19 (table-structure capture of the same file; see data/snapshots/wss_sched_reread_20261119.txt).",
    "flags": [],
    "sources": [
     {
@@ -27438,7 +27438,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r291",
@@ -27450,12 +27450,12 @@
    "event_no": null,
    "name": "No Limit Hold'em Day 1C",
    "buy_in_usd": 600,
-   "guarantee_usd": null,
+   "guarantee_usd": 250000,
    "prize_text": null,
    "house_fee_usd": null,
    "house_fee_pct": null,
    "prize_pool_usd": null,
-   "gtd_multiple": null,
+   "gtd_multiple": 416.7,
    "entry_status": "UNV",
    "rules": {
     "single_entry": {
@@ -27506,9 +27506,9 @@
    "levels_published": "40",
    "est_end": null,
    "est_duration_min": null,
-   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF.",
+   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF, re-read 2026-11-19 (table-structure capture of the same file; see data/snapshots/wss_sched_reread_20261119.txt).",
    "flags": [
-    "Guarantee left blank: the official Wynn Signature Series schedule PDF prints a buy-in, starting chips and levels for this event but no guarantee amount, and the structures PDF is a \"COMING SOON\" placeholder. No official value was available, so no guarantee is published for this row."
+    "Guarantee read from the event's own row of the official schedule PDF (table-structure re-read 2026-11-19; the line-only extraction used for the 2026-11-16 capture dropped the merged guarantee cell, see data/snapshots/wss_sched_reread_20261119.txt and FLAGGED.md F83)."
    ],
    "sources": [
     {
@@ -27521,7 +27521,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r292",
@@ -27533,12 +27533,12 @@
    "event_no": null,
    "name": "No Limit Hold'em Day 1D",
    "buy_in_usd": 600,
-   "guarantee_usd": null,
+   "guarantee_usd": 250000,
    "prize_text": null,
    "house_fee_usd": null,
    "house_fee_pct": null,
    "prize_pool_usd": null,
-   "gtd_multiple": null,
+   "gtd_multiple": 416.7,
    "entry_status": "UNV",
    "rules": {
     "single_entry": {
@@ -27589,9 +27589,9 @@
    "levels_published": "20/40",
    "est_end": null,
    "est_duration_min": null,
-   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF.",
+   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF, re-read 2026-11-19 (table-structure capture of the same file; see data/snapshots/wss_sched_reread_20261119.txt).",
    "flags": [
-    "Guarantee left blank: the official Wynn Signature Series schedule PDF prints a buy-in, starting chips and levels for this event but no guarantee amount, and the structures PDF is a \"COMING SOON\" placeholder. No official value was available, so no guarantee is published for this row."
+    "Guarantee read from the event's own row of the official schedule PDF (table-structure re-read 2026-11-19; the line-only extraction used for the 2026-11-16 capture dropped the merged guarantee cell, see data/snapshots/wss_sched_reread_20261119.txt and FLAGGED.md F83)."
    ],
    "sources": [
     {
@@ -27604,7 +27604,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r293",
@@ -27672,7 +27672,7 @@
    "levels_published": "30",
    "est_end": null,
    "est_duration_min": null,
-   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF.",
+   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF, re-read 2026-11-19 (table-structure capture of the same file; see data/snapshots/wss_sched_reread_20261119.txt).",
    "flags": [],
    "sources": [
     {
@@ -27685,7 +27685,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r294",
@@ -27754,7 +27754,7 @@
    "levels_published": null,
    "est_end": null,
    "est_duration_min": null,
-   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF.",
+   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF, re-read 2026-11-19 (table-structure capture of the same file; see data/snapshots/wss_sched_reread_20261119.txt).",
    "flags": [
     "Continuation row. The official schedule PDF prints no buy-in, guarantee, chips or levels for this row."
    ],
@@ -27769,7 +27769,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r295",
@@ -27837,7 +27837,7 @@
    "levels_published": "20",
    "est_end": null,
    "est_duration_min": null,
-   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF.",
+   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF, re-read 2026-11-19 (table-structure capture of the same file; see data/snapshots/wss_sched_reread_20261119.txt).",
    "flags": [],
    "sources": [
     {
@@ -27850,7 +27850,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r296",
@@ -27862,12 +27862,12 @@
    "event_no": null,
    "name": "No Limit Hold'em Day 1A",
    "buy_in_usd": 400,
-   "guarantee_usd": null,
+   "guarantee_usd": 100000,
    "prize_text": null,
    "house_fee_usd": null,
    "house_fee_pct": null,
    "prize_pool_usd": null,
-   "gtd_multiple": null,
+   "gtd_multiple": 250.0,
    "entry_status": "UNV",
    "rules": {
     "single_entry": {
@@ -27918,9 +27918,9 @@
    "levels_published": "40",
    "est_end": null,
    "est_duration_min": null,
-   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF.",
+   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF, re-read 2026-11-19 (table-structure capture of the same file; see data/snapshots/wss_sched_reread_20261119.txt).",
    "flags": [
-    "Guarantee left blank: the official Wynn Signature Series schedule PDF prints a buy-in, starting chips and levels for this event but no guarantee amount, and the structures PDF is a \"COMING SOON\" placeholder. No official value was available, so no guarantee is published for this row."
+    "Guarantee read from the event's own row of the official schedule PDF (table-structure re-read 2026-11-19; the line-only extraction used for the 2026-11-16 capture dropped the merged guarantee cell, see data/snapshots/wss_sched_reread_20261119.txt and FLAGGED.md F83)."
    ],
    "sources": [
     {
@@ -27933,7 +27933,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r297",
@@ -28001,7 +28001,7 @@
    "levels_published": "30",
    "est_end": null,
    "est_duration_min": null,
-   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF.",
+   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF, re-read 2026-11-19 (table-structure capture of the same file; see data/snapshots/wss_sched_reread_20261119.txt).",
    "flags": [],
    "sources": [
     {
@@ -28014,7 +28014,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r298",
@@ -28082,7 +28082,7 @@
    "levels_published": "20",
    "est_end": null,
    "est_duration_min": null,
-   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF.",
+   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF, re-read 2026-11-19 (table-structure capture of the same file; see data/snapshots/wss_sched_reread_20261119.txt).",
    "flags": [],
    "sources": [
     {
@@ -28095,7 +28095,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r299",
@@ -28107,12 +28107,12 @@
    "event_no": null,
    "name": "No Limit Hold'em Day 1B",
    "buy_in_usd": 400,
-   "guarantee_usd": null,
+   "guarantee_usd": 100000,
    "prize_text": null,
    "house_fee_usd": null,
    "house_fee_pct": null,
    "prize_pool_usd": null,
-   "gtd_multiple": null,
+   "gtd_multiple": 250.0,
    "entry_status": "UNV",
    "rules": {
     "single_entry": {
@@ -28163,9 +28163,9 @@
    "levels_published": "40",
    "est_end": null,
    "est_duration_min": null,
-   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF.",
+   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF, re-read 2026-11-19 (table-structure capture of the same file; see data/snapshots/wss_sched_reread_20261119.txt).",
    "flags": [
-    "Guarantee left blank: the official Wynn Signature Series schedule PDF prints a buy-in, starting chips and levels for this event but no guarantee amount, and the structures PDF is a \"COMING SOON\" placeholder. No official value was available, so no guarantee is published for this row."
+    "Guarantee read from the event's own row of the official schedule PDF (table-structure re-read 2026-11-19; the line-only extraction used for the 2026-11-16 capture dropped the merged guarantee cell, see data/snapshots/wss_sched_reread_20261119.txt and FLAGGED.md F83)."
    ],
    "sources": [
     {
@@ -28178,7 +28178,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r300",
@@ -28246,7 +28246,7 @@
    "levels_published": "30",
    "est_end": null,
    "est_duration_min": null,
-   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF.",
+   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF, re-read 2026-11-19 (table-structure capture of the same file; see data/snapshots/wss_sched_reread_20261119.txt).",
    "flags": [],
    "sources": [
     {
@@ -28259,7 +28259,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r301",
@@ -28327,7 +28327,7 @@
    "levels_published": "20",
    "est_end": null,
    "est_duration_min": null,
-   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF.",
+   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF, re-read 2026-11-19 (table-structure capture of the same file; see data/snapshots/wss_sched_reread_20261119.txt).",
    "flags": [],
    "sources": [
     {
@@ -28340,7 +28340,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r302",
@@ -28352,12 +28352,12 @@
    "event_no": null,
    "name": "No Limit Hold'em Day 1C",
    "buy_in_usd": 400,
-   "guarantee_usd": null,
+   "guarantee_usd": 100000,
    "prize_text": null,
    "house_fee_usd": null,
    "house_fee_pct": null,
    "prize_pool_usd": null,
-   "gtd_multiple": null,
+   "gtd_multiple": 250.0,
    "entry_status": "UNV",
    "rules": {
     "single_entry": {
@@ -28408,9 +28408,9 @@
    "levels_published": "40",
    "est_end": null,
    "est_duration_min": null,
-   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF.",
+   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF, re-read 2026-11-19 (table-structure capture of the same file; see data/snapshots/wss_sched_reread_20261119.txt).",
    "flags": [
-    "Guarantee left blank: the official Wynn Signature Series schedule PDF prints a buy-in, starting chips and levels for this event but no guarantee amount, and the structures PDF is a \"COMING SOON\" placeholder. No official value was available, so no guarantee is published for this row."
+    "Guarantee read from the event's own row of the official schedule PDF (table-structure re-read 2026-11-19; the line-only extraction used for the 2026-11-16 capture dropped the merged guarantee cell, see data/snapshots/wss_sched_reread_20261119.txt and FLAGGED.md F83)."
    ],
    "sources": [
     {
@@ -28423,7 +28423,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r303",
@@ -28491,7 +28491,7 @@
    "levels_published": "30",
    "est_end": null,
    "est_duration_min": null,
-   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF.",
+   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF, re-read 2026-11-19 (table-structure capture of the same file; see data/snapshots/wss_sched_reread_20261119.txt).",
    "flags": [],
    "sources": [
     {
@@ -28504,7 +28504,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r304",
@@ -28572,7 +28572,7 @@
    "levels_published": "20",
    "est_end": null,
    "est_duration_min": null,
-   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF.",
+   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF, re-read 2026-11-19 (table-structure capture of the same file; see data/snapshots/wss_sched_reread_20261119.txt).",
    "flags": [],
    "sources": [
     {
@@ -28585,7 +28585,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r305",
@@ -28597,12 +28597,12 @@
    "event_no": null,
    "name": "No Limit Hold'em Day 1A",
    "buy_in_usd": 800,
-   "guarantee_usd": null,
+   "guarantee_usd": 300000,
    "prize_text": null,
    "house_fee_usd": null,
    "house_fee_pct": null,
    "prize_pool_usd": null,
-   "gtd_multiple": null,
+   "gtd_multiple": 375.0,
    "entry_status": "UNV",
    "rules": {
     "single_entry": {
@@ -28653,9 +28653,9 @@
    "levels_published": "40",
    "est_end": null,
    "est_duration_min": null,
-   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF.",
+   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF, re-read 2026-11-19 (table-structure capture of the same file; see data/snapshots/wss_sched_reread_20261119.txt).",
    "flags": [
-    "Guarantee left blank: the official Wynn Signature Series schedule PDF prints a buy-in, starting chips and levels for this event but no guarantee amount, and the structures PDF is a \"COMING SOON\" placeholder. No official value was available, so no guarantee is published for this row."
+    "Guarantee read from the event's own row of the official schedule PDF (table-structure re-read 2026-11-19; the line-only extraction used for the 2026-11-16 capture dropped the merged guarantee cell, see data/snapshots/wss_sched_reread_20261119.txt and FLAGGED.md F83)."
    ],
    "sources": [
     {
@@ -28668,7 +28668,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r306",
@@ -28737,7 +28737,7 @@
    "levels_published": null,
    "est_end": null,
    "est_duration_min": null,
-   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF.",
+   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF, re-read 2026-11-19 (table-structure capture of the same file; see data/snapshots/wss_sched_reread_20261119.txt).",
    "flags": [
     "Continuation row. The official schedule PDF prints no buy-in, guarantee, chips or levels for this row."
    ],
@@ -28752,7 +28752,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r307",
@@ -28820,7 +28820,7 @@
    "levels_published": "30",
    "est_end": null,
    "est_duration_min": null,
-   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF.",
+   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF, re-read 2026-11-19 (table-structure capture of the same file; see data/snapshots/wss_sched_reread_20261119.txt).",
    "flags": [],
    "sources": [
     {
@@ -28833,7 +28833,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r308",
@@ -28902,7 +28902,7 @@
    "levels_published": "20",
    "est_end": null,
    "est_duration_min": null,
-   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF.",
+   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF, re-read 2026-11-19 (table-structure capture of the same file; see data/snapshots/wss_sched_reread_20261119.txt).",
    "flags": [
     "Prize printed as \"10 Seats\". Schedule footnote: \"Winners will receive direct entry to the corresponding event(s) for which it was held. See structure sheet for details.\""
    ],
@@ -28917,7 +28917,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r309",
@@ -28929,12 +28929,12 @@
    "event_no": null,
    "name": "No Limit Hold'em Day 1B",
    "buy_in_usd": 800,
-   "guarantee_usd": null,
+   "guarantee_usd": 300000,
    "prize_text": null,
    "house_fee_usd": null,
    "house_fee_pct": null,
    "prize_pool_usd": null,
-   "gtd_multiple": null,
+   "gtd_multiple": 375.0,
    "entry_status": "UNV",
    "rules": {
     "single_entry": {
@@ -28985,9 +28985,9 @@
    "levels_published": "40",
    "est_end": null,
    "est_duration_min": null,
-   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF.",
+   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF, re-read 2026-11-19 (table-structure capture of the same file; see data/snapshots/wss_sched_reread_20261119.txt).",
    "flags": [
-    "Guarantee left blank: the official Wynn Signature Series schedule PDF prints a buy-in, starting chips and levels for this event but no guarantee amount, and the structures PDF is a \"COMING SOON\" placeholder. No official value was available, so no guarantee is published for this row."
+    "Guarantee read from the event's own row of the official schedule PDF (table-structure re-read 2026-11-19; the line-only extraction used for the 2026-11-16 capture dropped the merged guarantee cell, see data/snapshots/wss_sched_reread_20261119.txt and FLAGGED.md F83)."
    ],
    "sources": [
     {
@@ -29000,7 +29000,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r310",
@@ -29068,7 +29068,7 @@
    "levels_published": "30",
    "est_end": null,
    "est_duration_min": null,
-   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF.",
+   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF, re-read 2026-11-19 (table-structure capture of the same file; see data/snapshots/wss_sched_reread_20261119.txt).",
    "flags": [],
    "sources": [
     {
@@ -29081,7 +29081,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r311",
@@ -29150,7 +29150,7 @@
    "levels_published": "20",
    "est_end": null,
    "est_duration_min": null,
-   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF.",
+   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF, re-read 2026-11-19 (table-structure capture of the same file; see data/snapshots/wss_sched_reread_20261119.txt).",
    "flags": [
     "Prize printed as \"10 Seats\". Schedule footnote: \"Winners will receive direct entry to the corresponding event(s) for which it was held. See structure sheet for details.\""
    ],
@@ -29165,7 +29165,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r312",
@@ -29177,12 +29177,12 @@
    "event_no": null,
    "name": "No Limit Hold'em Day 1C",
    "buy_in_usd": 800,
-   "guarantee_usd": null,
+   "guarantee_usd": 300000,
    "prize_text": null,
    "house_fee_usd": null,
    "house_fee_pct": null,
    "prize_pool_usd": null,
-   "gtd_multiple": null,
+   "gtd_multiple": 375.0,
    "entry_status": "UNV",
    "rules": {
     "single_entry": {
@@ -29233,9 +29233,9 @@
    "levels_published": "40",
    "est_end": null,
    "est_duration_min": null,
-   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF.",
+   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF, re-read 2026-11-19 (table-structure capture of the same file; see data/snapshots/wss_sched_reread_20261119.txt).",
    "flags": [
-    "Guarantee left blank: the official Wynn Signature Series schedule PDF prints a buy-in, starting chips and levels for this event but no guarantee amount, and the structures PDF is a \"COMING SOON\" placeholder. No official value was available, so no guarantee is published for this row."
+    "Guarantee read from the event's own row of the official schedule PDF (table-structure re-read 2026-11-19; the line-only extraction used for the 2026-11-16 capture dropped the merged guarantee cell, see data/snapshots/wss_sched_reread_20261119.txt and FLAGGED.md F83)."
    ],
    "sources": [
     {
@@ -29248,7 +29248,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r313",
@@ -29260,12 +29260,12 @@
    "event_no": null,
    "name": "No Limit Hold'em Day 1D",
    "buy_in_usd": 800,
-   "guarantee_usd": null,
+   "guarantee_usd": 300000,
    "prize_text": null,
    "house_fee_usd": null,
    "house_fee_pct": null,
    "prize_pool_usd": null,
-   "gtd_multiple": null,
+   "gtd_multiple": 375.0,
    "entry_status": "UNV",
    "rules": {
     "single_entry": {
@@ -29316,9 +29316,9 @@
    "levels_published": "20/40",
    "est_end": null,
    "est_duration_min": null,
-   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF.",
+   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF, re-read 2026-11-19 (table-structure capture of the same file; see data/snapshots/wss_sched_reread_20261119.txt).",
    "flags": [
-    "Guarantee left blank: the official Wynn Signature Series schedule PDF prints a buy-in, starting chips and levels for this event but no guarantee amount, and the structures PDF is a \"COMING SOON\" placeholder. No official value was available, so no guarantee is published for this row."
+    "Guarantee read from the event's own row of the official schedule PDF (table-structure re-read 2026-11-19; the line-only extraction used for the 2026-11-16 capture dropped the merged guarantee cell, see data/snapshots/wss_sched_reread_20261119.txt and FLAGGED.md F83)."
    ],
    "sources": [
     {
@@ -29331,7 +29331,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r314",
@@ -29399,7 +29399,7 @@
    "levels_published": "30",
    "est_end": null,
    "est_duration_min": null,
-   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF.",
+   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF, re-read 2026-11-19 (table-structure capture of the same file; see data/snapshots/wss_sched_reread_20261119.txt).",
    "flags": [],
    "sources": [
     {
@@ -29412,7 +29412,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r315",
@@ -29481,7 +29481,7 @@
    "levels_published": null,
    "est_end": null,
    "est_duration_min": null,
-   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF.",
+   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF, re-read 2026-11-19 (table-structure capture of the same file; see data/snapshots/wss_sched_reread_20261119.txt).",
    "flags": [
     "Continuation row. The official schedule PDF prints no buy-in, guarantee, chips or levels for this row."
    ],
@@ -29496,7 +29496,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r316",
@@ -29564,7 +29564,7 @@
    "levels_published": "30",
    "est_end": null,
    "est_duration_min": null,
-   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF.",
+   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF, re-read 2026-11-19 (table-structure capture of the same file; see data/snapshots/wss_sched_reread_20261119.txt).",
    "flags": [],
    "sources": [
     {
@@ -29577,7 +29577,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r317",
@@ -29645,7 +29645,7 @@
    "levels_published": "20",
    "est_end": null,
    "est_duration_min": null,
-   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF.",
+   "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series schedule PDF, re-read 2026-11-19 (table-structure capture of the same file; see data/snapshots/wss_sched_reread_20261119.txt).",
    "flags": [],
    "sources": [
     {
@@ -29658,7 +29658,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   }
  ],
  "sources": {
