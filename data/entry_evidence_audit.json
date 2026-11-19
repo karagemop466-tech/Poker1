@@ -3,7 +3,7 @@
  "scope": {
   "tournament_rows": 317,
   "rows_with_rule_fields": 317,
-  "quotes_checked": 806,
+  "quotes_checked": 944,
   "documents_read": 59,
   "daily_rows": 11,
   "affirmative_single_entry_documents": 0,
@@ -19,15 +19,7 @@
  "method": "Every double-quoted span in a rule excerpt is compared with the archived plain-text snapshot of the official document the rule cites. Whitespace, PDF line breaks, curly quotes and thousands separators are normalised; nothing else is. A row's label is then compared with what its own document prints: a further-entry sentence cannot support a single-entry label, and a 'no such clause appears anywhere' claim is re-tested with a keyword sweep of the same snapshot.",
  "affirmative_single_entry_documents": [],
  "findings": {
-  "quote_not_found": [
-   {
-    "row_id": "r056",
-    "field": "fee",
-    "snapshot": "data/snapshots/v_nov_struct_28.txt",
-    "quote": "$90 of the $600 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $510 of every $600 Buy In.",
-    "missing_fragment": "$90 of the $600 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $510 of every $600 Buy In."
-   }
-  ],
+  "quote_not_found": [],
   "document_conflict": [],
   "silence_claim_contradicted": [
    {
@@ -487,7 +479,7 @@
   ]
  },
  "counts": {
-  "quote_not_found": 1,
+  "quote_not_found": 0,
   "document_conflict": 0,
   "silence_claim_contradicted": 6,
   "daily_clause_provenance": 5,
