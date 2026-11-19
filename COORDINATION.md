@@ -13,15 +13,75 @@ with no broken links, and publishes to GitHub Pages:
 
 | Task | Status | File scope | Owner |
 |---|---|---|---|
-| Merge PR #82 (`arena/ce9941b8-poker1`, 14 ahead / 26 behind): county-verified 13.38% room tax at all seven hotels (F77), Bellagio + Caesars Palace daily formats from their own official flyers (F78/F79), per-day trip diary on the single-entry page, dated official booking links, rate timestamps, Las Vegas morning re-check (15:17 UTC), walking-table property-name fix, daily weekday-map fix, Q-D4/Q-E5 answers. | **In progress** | `scripts/build_data.py`, `scripts/build_site.py`, `scripts/check_links.py`, `scripts/check_source_facts.py`, `scripts/monitor_sources.py`, `assets/app.js`, `assets/style.css`, `data/*.json`, `index.html`, `pages/*.html`, `*.md`, `.github/workflows/*.yml` | `ab7e4d46` |
-| Merge PR #79 (`arena/df94b75e-poker1`, 11 ahead / 18 behind): county tax at all seven hotels, midnight-wrap fix, source-facts unblock, doubled-title guard, stale-PR takeover. Reconcile with PR #82 (both claim the county tax) — keep one verified version, never discard either session's work. | **In progress** | same as above | `ab7e4d46` |
-| Merge PR #81 (`arena/2157d288-poker1`, 1 ahead / 18 behind): publish the session's defects and the live-refresh verification on Flagged for Review (`FLAGGED.md` + `COORDINATION.md` only). | **In progress** | `FLAGGED.md`, `COORDINATION.md` | `ab7e4d46` |
-| Re-verify the combined data line by line (`build_data.py`, `build_site.py`, `check_links.py`, `verify_rows.py`, `check_schedule.py`, headless smoke test), confirm no broken links, open PR to `main`, merge without waiting, confirm Pages deploys, record PR link + merge result here. | **In progress** | all files above + `COORDINATION.md` | `ab7e4d46` |
+| Merge PR #82 (`arena/ce9941b8-poker1`, 14 ahead / 26 behind): county-verified 13.38% room tax at all seven hotels (F77), Bellagio + Caesars Palace daily formats from their own official flyers (F78/F79), per-day trip diary on the single-entry page, dated official booking links, rate timestamps, Las Vegas morning re-check (15:17 UTC), walking-table property-name fix, daily weekday-map fix, Q-D4/Q-E5 answers. | **Done** (see integration record below) | `scripts/build_data.py`, `scripts/build_site.py`, `scripts/check_links.py`, `scripts/check_source_facts.py`, `scripts/monitor_sources.py`, `assets/app.js`, `assets/style.css`, `data/*.json`, `index.html`, `pages/*.html`, `*.md`, `.github/workflows/*.yml` | `ab7e4d46` |
+| Merge PR #79 (`arena/df94b75e-poker1`, 11 ahead / 18 behind): county tax at all seven hotels, midnight-wrap fix, source-facts unblock, doubled-title guard, stale-PR takeover. Reconcile with PR #82 (both claim the county tax) — keep one verified version, never discard either session's work. | **Done** (see integration record below) | same as above | `ab7e4d46` |
+| Merge PR #81 (`arena/2157d288-poker1`, 1 ahead / 18 behind): publish the session's defects and the live-refresh verification on Flagged for Review (`FLAGGED.md` + `COORDINATION.md` only). | **Done** (see integration record below) | `FLAGGED.md`, `COORDINATION.md` | `ab7e4d46` |
+| Re-verify the combined data line by line (`build_data.py`, `build_site.py`, `check_links.py`, `verify_rows.py`, `check_schedule.py`, headless smoke test), confirm no broken links, open PR to `main`, merge without waiting, confirm Pages deploys, record PR link + merge result here. | **Done** (see integration record below) | all files above + `COORDINATION.md` | `ab7e4d46` |
 
 **Files deliberately NOT edited until the merge:** none — this session owns the integration scope above.
 No official value is changed except by adopting a merged session's already-verified value with its source
 link; anything that cannot be confirmed stays blank and is flagged. `last_checked` is advanced only for
 rows whose source was actually re-read.
+
+
+### Integration record — session ab7e4d46 (final integration, 2026-11-19)
+
+**Merged into `arena/ab7e4d46-poker1` (in this order), each with its base commit:**
+
+1. **PR #81** (`arena/2157d288-poker1`, base `01f59a9`) — docs only. Conflict in `FLAGGED.md`: its section F
+   collided with main's section F, so it is published as **section G** (publication defects P1–P6 and the
+   live-refresh record). Commit `9fd620c`.
+2. **PR #82** (`arena/ce9941b8-poker1`, base `3761d4a`) — county room tax from the Clark County licence table,
+   Bellagio/Caesars daily formats, trip diary, dated booking links, snapshots. Schedule arithmetic was taken
+   from main (the F76 midnight-wrap fix, which main already had). Its finding IDs F73–F79 collided with main's
+   F73–F76 and were published as **H73–H79**; its Q-G1–3 were published as **Q-I1–I6** and its duplicated
+   rows dropped. Gap closed: main's schedule builder counted no undecidable pairs, so
+   `undecidable_pairs`/`undecidable_total` and an empty `second_entry_id` were added so the renderer's fields
+   resolve. Commit `c78c014`, merge `a7b2ffe`'s predecessor.
+3. **PR #79** (`arena/df94b75e-poker1`, base `01f59a9`) — overlapped PR #82 almost entirely (same county tax,
+   same midnight fix, same allow-list). Kept main+PR #82 for overlapping implementation. Carried over its unique
+   items: Bellagio fri/sat/sun and Caesars page source keys and manifest entries (`data/sources.json`);
+   the daily verifier now reads `document_url` (Bellagio PDFs) before `source`; its findings **F77–F81** kept
+   their IDs (cited by data and scripts), its **F75/F76 renumbered J75/J76**; its **Q-F4/Q-F5 renumbered Q-J4/Q-J5**;
+   its COORDINATION records appended; verification tooling (`verify_live.py`, `verify_live_rows.py`,
+   `ui_test.js`) kept as manual tools. Its eight WPT transcription corrections (`2427f6e`) were already on
+   main's `build_data.py`, confirmed by reading the rows.
+
+**Irregularities found while merging, and how each was resolved (none were silently dropped):**
+
+- `check_links.py` referenced an undefined `OFFICIAL_SOURCE_HOSTS` after the host-list merge; defined as the
+  operator set (the government set stays separate).
+- `build_data.py` referenced `bellagio_fri/sat/sun_pdf` and `caesars_poker_page`, which the merged SRC dict
+  lacked; added with their full URLs from PR #79.
+- The daily verifier could not find the Caesars flyer snapshot: the manifest ID `caesars_daily_flyer` did not match
+  the archived file `c_daily_flyer.txt`. Renamed the manifest ID to `c_daily_flyer`. No row references the old ID.
+- `verify_rows.py` read `source_url`, but the daily rows carry `document_url`/`source`; 7 hard failures before,
+  **0 after** (1,383 checks).
+- `scripts/check_schedule_render.js` asserted a fallback note that main had already removed (main also fails it,
+  so this predates the merge). Assertion updated to the current statement; it now passes.
+- `scripts/ui_test.js` had a shebang on line 5 (syntax error) and asserted a `Nov 17` date format and a
+  `#walk-filter` select that the shipped UI does not use. Shebang moved to line 1; assertions updated to the shipped
+  ISO date and the `#hotel-walk30` checkbox. 14/14 pass.
+- `FLAGGED.md` after the PR #79 merge had PR #79's rows auto-merged into main's tables, breaking the grids
+  (`check_links` error). Rebuilt from the verified base; PR #79's findings carried as section I.
+
+**Verification performed on the merged tree (every command exit 0):** `build_data.py` (data regenerates byte-identical),
+`build_site.py` (pages regenerate byte-identical), `check_links.py` (no broken links; 56 files, 23 pages, 317 rows,
+7 hotels, 70 schedule days, 20 markdown links), `verify_rows.py` (335 rows, 1,383 checks, 0 hard failures,
+1 review item r225 documented), `check_schedule.py` (70 days, 274 entry rows, 170 overlap pairs), `verify_against_snapshots.py`,
+`smoke_test.js` (23/23 pages render), `smoke_pages.js`, `check_rendered_links.js` (530 local references, 0 broken),
+`check_schedule_render.js`, `ui_test.js` (14/14). `check_source_facts.py` needs live access to operator
+domains: it runs in CI (the sandbox cannot reach them), so no live re-fetch was made in this session.
+
+**Sources (official) relied on in the combined data:** Clark County Department of Business License "General
+Information Guide for Transient Lodging Establishments" (licence table: Venetian/Palazzo `1000389.RES-001`,
+Wynn/Encore `2000013.RES-001`, Bellagio `1003760.RES-001`, ARIA `2000035.RES-001`, Caesars Palace `1136233.RES-001`;
+each prints "Resort Hotel (PGC)" and 13.38%; snapshot `data/snapshots/cc_tle_guide.txt`, a 2021 snapshot of the
+table); Venetian/Wynn/Bellagio/ARIA/Caesars official poker and terms pages and structure PDFs as recorded in
+`data/sources.json`. The 2021 date of the county table is stated on each hotel row (F77).
+
+**Open items carried to review (not blocking, see Flagged for Review):** F78/F79 of PR #79 (WPT Fall Festival card,
+calendar-view quote); Q-J5 (Bellagio single-entry reading); the six MGM-family timeouts; no live re-fetch from this sandbox.
 
 # Session ce9941b8 — branch `arena/ce9941b8-poker1`, base `5de6d8d` (`main` after PR #69)
 
