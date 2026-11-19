@@ -237,6 +237,47 @@ Carried from PR #79. F75 and F76 of that session are renumbered J75 and J76 beca
 | F85 | **The Signature Series entry rules still cannot be confirmed from any official document, and a second independent re-read on the same day proved it again.** Session `f3a84f9b` re-read the Wynn Signature Series structures PDF at 10:56 Z and found a placeholder; this session fetched the same URL again later on 2026-11-19 and the entire document renders as `LAS VEGAS / POKER / COMING SOON` under the page title "Poker Tournament - Details Coming Soon". The 34 Signature Series entry rows (Jan 11-24, 2027) therefore keep `entry_status: UNV` and stay out of every ranking, even though their buy-in and guarantee are published on the schedule PDF. | Official document: [Wynn Signature Series Structures PDF](https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf), re-read 2026-11-19 by this session; the [Wynn poker page](https://www.wynnlasvegas.com/casino/poker) links the same versioned URL it linked on 2026-11-17, and its series block still reads "January 11-24. 2027". Field comparison recorded in `research/verification-2026-11-19-0f038248.md`. | No label removed, no value inferred. Two things must happen before these rows can be compared with the Venetian candidates: Wynn publishes the structures, and the room answers the written-rules question in `QUESTIONS.md` (P9c asks when the sheets will be published). The nightly monitor flags the URL the moment the placeholder stops being one. |
 | F86 | **The new "Spend advantage" column is a reading of official wording, not an official statement, and for 80 rows the wording it reads is an absence.** `scripts/spend_advantage.py` classifies each row from the clause excerpt already stored on it: 3 rows print a priced later buy-in, 114 print further entries sold during the event, 43 print a bag-a-flight restriction, and 80 are classified `no-further-entry-clause` because their structure sheet was read in full and prints none of those clauses. The first three are direct quotations of what the document sells. The 80 describe what the document does not say, which is evidence about the sheet, not a promise from the room - and a reader who filters on "Sheet prints no further-entry or add-on clause" is selecting on that absence. | The three sheet-silent rows this session re-read confirm the absence directly: [structure sheet #5](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf) (ten numbered clauses, none about entries), [#8](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_8.pdf) (thirteen clauses, clause 07 pricing later buy-ins at $200), [#10](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf) (thirteen clauses, clause 08 barring a player who bags chips). The [Venetian poker page](https://www.venetianlasvegas.com/resort/casino/poker.html) publishes no entry, rebuy or add-on policy either. | Published rather than hidden, and constrained: the column never moves an `entry_status`, the strict shortlist still requires written whole-event evidence (0 rows qualify), `scripts/check_links.py` re-derives all 317 records from the stored excerpts on every build and refuses an SE row whose own document prices a further entry, and `scripts/test_spend_advantage.py` + `scripts/check_spend_filter.js` pin the behaviour. Review this if you want the criterion changed - e.g. to treat "another flight unless you bagged chips" as acceptable for your play, which would move 43 rows rather than argue about the 80. |
 
+## L. Found on 2026-11-19 (session d8a1f37f: the entry-label evidence audit)
+
+These were found by `scripts/audit_entry_labels.py`, which re-derives every quoted span in the dataset
+from the archived official document its row cites. Findings that changed a published value are recorded
+in [L1–L3](#k1k3--fixed-in-this-session); the monitor defects in L4 and L5 remain **open** and are
+published here, not fixed silently.
+
+### L1–L3 · Fixed in this session
+
+| # | What was wrong | The document's own words | Resolution |
+|---|---|---|---|
+| L1 | Six rows (r232, r234, r245, r256, r262, r279) said *"No re-entry, rebuy, add-on or multi-flight clause appears anywhere on this structure sheet"* while citing a sheet that prints one. | [Sheet 01, clause 6](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_2.pdf): *"The $20 discount can be applied to the initial entry or any **subsequent re-entry**."* | Reclassified `CAND` → `RE`; the excerpt now quotes the sentence. Candidate count 80 → 74. |
+| L2 | Three fee quotes could not be found in their own PDF, and sheet #28's fee was cited as clause 06 when it is clause 05. | [#28](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_28.pdf): *"... Buy-In for house fees (Rake + Staff). **Prize pool consists of** $510 of every $600 Buy In."* [#21](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf): *"$1,975 of every $2,200 Buy In"* (comma-printed). | The fee excerpt is now lifted from the sheet's own sentence, with the sheet's own clause number. |
+| L3 | Four rows carried a "source changed - re-check" mark derived from an empty facts hash: the fetcher had extracted no money, date, time or entry-rule word, so a non-empty baseline read as a change. | `data/monitoring.json`: `facts_sha256 = e3b0c442…b855` (the SHA-256 of the empty string) for those sources, with `sources_facts_changed = 0`. | Published here as a monitor defect (L4) instead of a row change. |
+
+### L4 · Open · A page that yields no facts can never be flagged, and can be falsely flagged
+
+31 monitored URLs returned a facts hash equal to the SHA-256 of the empty string on the 2026-11-19 check,
+including the Wynn Signature Series structures PDF (the document that gates 38 rows), the Caesars daily
+flyer, the Caesars Palace casino pages and the Venetian resort map. Two consequences:
+
+- **Never flagged:** the placeholder document that gates I4 yields zero facts, so a monitor that compares
+  facts alone will never notice Wynn publishing the real sheets. Only a raw-body or size change reveals it.
+- **Falsely flagged:** where the *baseline* recorded a non-empty hash and the re-check extracts nothing,
+  the empty hash differs and the row is marked as changed even though no published value was read.
+
+**How to review:** open `data/monitoring.json`, filter `facts_sha256` to
+`e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`, and compare each URL with
+`data/source_baseline.json`. Any URL in both lists has the defect.
+
+### L5 · Open · Distinct official URLs returning one identical body
+
+| URLs sharing one body | Body | What it means |
+|---|---|---|
+| 6 Caesars URLs ([corporate disclaimer](https://www.caesars.com/corporate/disclaimer), [Horseshoe casino](https://www.caesars.com/horseshoe-las-vegas/casino), [Paris casino](https://www.caesars.com/paris-las-vegas/casino), [Planet Hollywood](https://www.caesars.com/planet-hollywood), [Planet Hollywood casino](https://www.caesars.com/planet-hollywood/casino), [poker tournaments article](https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip)) | 5,871 bytes, `0f680e9c…` | At most one of these is the page it names; the rest are a consent wall or shared shell. Any row value that claims to come from one of them needs a human re-read. |
+| [Caesars Palace casino](https://www.caesars.com/caesars-palace/casino) and [casino/poker](https://www.caesars.com/caesars-palace/casino/poker) | 99,256 bytes, `c62c6be6…` | Same issue, different shell. |
+| Two Wynn Signature Series structures URLs (`v1753296112` and `v1762299460`) | 169,399 bytes, `ad6f3a56…` | Both serve the same placeholder - consistent with I4, not a defect in itself, but it confirms the placeholder is the only content. |
+
+**A published value is never changed on the strength of a page in this table.** Every value must be
+re-read by a human from the official URL before it is edited.
+
 ## Booking hold · November 19, 2026
 
 The single-entry filter includes rows classified from sheet silence. It does not establish that extra purchases are prohibited. In the [event 12 sheet](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf), clauses 1–10 state the fee and payout but no maximum entries, rebuy ban or add-on ban. Keep this candidate out of a strict booking decision until written terms address all three. The [official schedule](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html) establishes when the event starts, not when it will finish.

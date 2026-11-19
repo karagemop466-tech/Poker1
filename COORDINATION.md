@@ -2486,3 +2486,77 @@ Branch `arena/0fa351db-poker1`, based on `main` at `f5ecde040b29e402aea7b739eabd
 - Verification: `npm test` passed (31/31 rendered pages, 1,662 internal links, calculator, monitoring badges, and the new candidate/date filter regression); all nine `scripts/test_*.py` test modules passed; `check_links.py`, `verify_rows.py` (335 rows, 1,386 fields, 0 hard failures; one documented interpretation item), `verify_against_snapshots.py` (0 unexplained mismatches), and `check_schedule.py` (70 days, 170 overlap pairs) passed. `git diff --check` passed.
 - Irregularities retained, not suppressed: monitor reports four changed source facts/rows and unreachable/error sources; existing WPT r225 20:00 start remains a documented interpretation review item; Venetian NYE r263 11:00 vs printed 11:10 conflict and three 2025→2026 date differences remain flagged. No unsupported value was adjusted.
 - **Integration result:** [PR #120](https://github.com/karagemop466-tech/Poker1/pull/120) merged 2026-11-19 22:11:19 UTC as `c0c65f95d8bbf284a3abac41ce5b80d720a88b10`. Validate passed in [run 44624766550](https://github.com/karagemop466-tech/Poker1/actions/runs/44624766550). GitHub Pages deployment [run 44626177086](https://github.com/karagemop466-tech/Poker1/actions/runs/44626177086) succeeded and confirmed the branch build is live. Workflow emitted a non-blocking warning that the pinned checkout/setup-node actions target deprecated Node.js 20; the runner forced Node.js 24.
+
+
+# Session d8a1f37f — branch `arena/d8a1f37f-poker1` (base `f5ecde0` = `main`)
+
+Session `d8a1f37f` works on branch `arena/d8a1f37f-poker1` (fixed by Arena), based on `main` at
+`f5ecde0` ("chore: refresh source monitoring result"). `git rev-list --left-right --count
+origin/main...HEAD` = `0 0`; working tree clean. This claim is written and pushed **before** any
+data, script or page change.
+
+**Board state read at claim time (2026-11-19 21:57 UTC).** Open pull requests: **#113**
+(`arena/98241f2f-poker1`, "record PR #106 merge result", COORDINATION.md only, last commit
+2026-11-19T11:25:48Z — 10 h 31 m without commits, beyond the 60-minute stale-claim window; its
+*content* is already on `main` in the session-98241f2f record, so it adds nothing but a duplicate
+block). All other "in progress" lines on this board belong to sessions whose PRs are merged
+(#112, #117, #118) or closed. No live claim conflicts with this scope.
+
+**Network note.** Unlike the sandbox bash network (GitHub/PyPI only), this session's page-fetch
+tool **can** read the operator domains live. Every re-read below was done with that tool and is
+quoted with its fetch date; the archived snapshots in `data/snapshots/` remain the validator's
+evidence base.
+
+| # | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| 1 | **Entry-label evidence audit (`UNV` / `CAND` / `RE`).** Re-derive every row's entry rule from the archived official documents with a new re-runnable auditor: an `SE` row needs an affirmative whole-event one-entry/no-re-entry/no-add-on quote; a row labelled `UNV` must have a document that genuinely publishes nothing; a row labelled `RE` must quote its re-entry clause. Publish the per-row verdict and any mislabel as a review item. | **done 2026-11-19** (980 quotes re-derived, 0 unfindable after the fixes; 6 silence claims contradicted and corrected; 10 tests; CI step added) | d8a1f37f | new `scripts/audit_entry_labels.py`, new `data/entry_evidence_audit.json`, `COORDINATION.md` |
+| 2 | **Live dated re-read of the documents gating the two open evidence gaps** (Wynn Signature Series Structures PDF — I4; Wynn daily structures where the sheet prints "Re-entry is NOT allowed"), plus a verdict on the monitor's 4 "facts changed" marks dated 2026-11-19. Record matches/differences with quotes and links; change a published value only where the official document now prints it. | **done 2026-11-19** (7 documents re-read live, all matching their snapshots; Wynn Signature Series still `COMING SOON` on its third dated read, so 38 rows stay `UNV`; the 4 monitor marks are an empty-hash artefact, published as K4/K5) | d8a1f37f | new `research/verification-2026-11-19-d8a1f37f.md`, `QUESTIONS.md` (I4 + the monitor flags), `data/snapshots/` (new captures only), `data/*.json` only where a source now prints the value, `COORDINATION.md` |
+| 3 | Publish the audit: a compact "Evidence audit" block on the Flagged for Review page and the verdict in the executive summary/README where it changes the decision; every mislabel or blank stays visible with its source link. | **done 2026-11-19** (dedicated `pages/evidence-audit.html` + nav + decision-desk link, rather than a block inside the Markdown review page, so every finding keeps its own table and source column) | d8a1f37f | `scripts/build_site.py` (review page block), `FLAGGED.md`/`README.md` if the wording must change, generated `index.html` + `pages/*.html`, `COORDINATION.md` |
+| 4 | Final integration: rebuild (`build_data.py`, `build_site.py`) to a no-diff state, run every gate (python + npm), open a PR to `main`, merge after the `validate` job is green, confirm the Pages deploy, and record the PR/merge/deploy here. | in progress | d8a1f37f | all of the above + `COORDINATION.md` |
+
+No published tournament, hotel, rate, walking or entry-rule value is changed unless an official
+document read on the date of the change prints it; every such change records its quote, source URL
+and retrieval date. Blanks and flags stay published on the Flagged for Review page and do not block
+publication. Files outside this scope are not edited; PR #113 is not modified.
+
+### Session d8a1f37f — completion record (2026-11-19)
+
+**What was built.** `scripts/audit_entry_labels.py` (new, ~600 lines) re-derives every double-quoted
+span in `data/tournaments.json` from the archived snapshot of the document each rule cites; re-tests
+every "no re-entry, rebuy, add-on or multi-flight clause appears anywhere" claim with a keyword sweep
+of that same snapshot; attributes every daily-fee clause to the printed block whose text contains the
+quoted words; and checks `data/monitoring.json` for internal consistency. It writes
+`data/entry_evidence_audit.json` (the record) and `data/evidence_audit_page.json` (the page copy), and
+`scripts/test_audit_entry_labels.py` pins its reading rules with 10 tests. The PR job now runs it and
+fails on a stale audit.
+
+**What it found (all with the official sentence quoted).**
+
+1. Six rows (r232, r234, r245, r256, r262, r279) carried *"No re-entry, rebuy, add-on or multi-flight
+   clause appears anywhere on this structure sheet"* while citing `dse_dec_2026-structure_2.pdf`, whose
+   clause 6 prints *"The $20 discount can be applied to the initial entry or any subsequent re-entry."*
+   The same sheet was already read correctly as `RE` on r270. Fixed: `CAND` → `RE`, excerpt replaced
+   with the printed sentence. Candidates **80 → 74**; multi/re-entry section **166**.
+2. The fee excerpt was a template that painted figures over one fixed sentence. Sheet #28 prints
+   *"Prize pool consists of …"* (and numbers its fee clause 05, not 06); sheets #21/#37/#08 print
+   comma-formatted `$1,975`/`$1,420`. Three quotes were unfindable in their own PDF. Fixed: the excerpt
+   is now lifted from the sheet's own sentences and its own clause number.
+3. The change monitor's four "facts changed" marks are an artefact: those sources hash the empty string
+   (`e3b0c442…b855`), so four rows were marked as if a value moved when nothing was extracted. Six
+   distinct Caesars URLs also returned one identical 5,871-byte body. Published as **K4/K5 on the
+   Flagged page and M1–M3 in QUESTIONS**; not silently rewritten.
+
+**Verification run in this session (all re-runnable).** `build_data.py`/`build_site.py` no-diff ·
+`check_links.py` OK (32 pages) · `verify_rows.py` 335 rows / 1,386 checks / 0 hard failures ·
+`verify_against_snapshots.py` 0 unexplained · `check_schedule.py` OK · `unittest` 77/77 · `npm test`
+32/32 pages, 1,720 rendered links, 0 broken, `check_single_entry_render` OK (0 written-confirmed,
+74 candidates). Live fetches: Venetian DSE IV listing, poker page, sheets #30, #21, #02, #08, the Wynn
+poker page and the Wynn Signature Series Structures PDF (still `COMING SOON`).
+
+**Merge.** `main` moved twice while this session ran (PRs #120 and a schedule-feed refresh). Merged
+`origin/main` in; the only conflict was `COORDINATION.md` and both sides' records were kept verbatim.
+`assets/app.js` merged cleanly and both renderers (`evidenceAudit` and 0fa351db's single-entry
+candidate copy) coexist; the merged page copy reports 74 candidates.
+
+**Irregularities retained and visible.** K4/K5 above; r225 (WPT 20:00) review item; NYE r263 11:00 vs
+11:10 source conflict. None blocks publication.

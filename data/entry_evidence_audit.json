@@ -1,0 +1,459 @@
+{
+ "audited_on": "2026-11-19",
+ "scope": {
+  "tournament_rows": 317,
+  "rows_with_rule_fields": 317,
+  "quotes_checked": 980,
+  "documents_read": 59,
+  "daily_rows": 11,
+  "affirmative_single_entry_documents": 0,
+  "monitor": {
+   "checked_at_utc": "2026-11-19T16:45:28Z",
+   "sources": 138,
+   "raw_changed": 22,
+   "facts_changed": 0,
+   "zero_fact_pages": 31,
+   "content_status_facts_changed": 4
+  }
+ },
+ "method": "Every double-quoted span in a rule excerpt is compared with the archived plain-text snapshot of the official document the rule cites. Whitespace, PDF line breaks, curly quotes and thousands separators are normalised; nothing else is. A row's label is then compared with what its own document prints: a further-entry sentence cannot support a single-entry label, and a 'no such clause appears anywhere' claim is re-tested with a keyword sweep of the same snapshot.",
+ "affirmative_single_entry_documents": [],
+ "fixed_on_audit_day": [
+  {
+   "finding": "six rows claimed no further-entry clause appeared anywhere",
+   "rows": [
+    "r232",
+    "r234",
+    "r245",
+    "r256",
+    "r262",
+    "r279"
+   ],
+   "document": "data/snapshots/v_dec_struct_02.txt (dse_dec_2026-structure_2.pdf)",
+   "sentence_the_sheet_prints": "The $20 discount can be applied to the initial entry or any subsequent re-entry",
+   "resolution": "reclassified from CAND to RE: the sheet prints a further-entry sentence, so the event is not single entry; the excerpt now quotes that sentence instead of claiming silence",
+   "verified_live_on": "2026-11-19"
+  },
+  {
+   "finding": "three fee quotes could not be found in their own PDF, and one cited the wrong clause number",
+   "rows": "every Venetian row whose fee rule quotes a template",
+   "document": "dse_nov_2026-structure_28.pdf, _21.pdf; dse_dec_2026-structure_8.pdf",
+   "sentence_the_sheet_prints": "#28 prints 'Prize pool consists of ...' and its fee clause is 05; #21/#08 print comma-formatted '$1,975' and '$1,420'",
+   "resolution": "the fee excerpt is now lifted from the sheet's own sentences, with the sheet's own clause number, instead of painting figures over a fixed template",
+   "verified_live_on": "2026-11-19"
+  },
+  {
+   "finding": "the change monitor marked four rows as 'source printed different values' while the same records show it extracted no facts at all",
+   "rows": [
+    "r012",
+    "rooms03",
+    "formats05",
+    "caesars"
+   ],
+   "document": "data/monitoring.json",
+   "sentence_the_sheet_prints": "facts_sha256 equals the SHA-256 of the empty string for those sources, and six distinct Caesars URLs returned one identical body",
+   "resolution": "published as a monitor-integrity finding here rather than as a row change; the badge is labelled a re-check request, not evidence that a value moved",
+   "verified_live_on": "2026-11-19"
+  }
+ ],
+ "findings": {
+  "quote_not_found": [],
+  "document_conflict": [],
+  "silence_claim_contradicted": [],
+  "daily_clause_provenance": [
+   {
+    "kind": "clause_provenance",
+    "daily_id": "daily-mon-thu",
+    "days": "Monday-Thursday",
+    "snapshot": "data/snapshots/w_daily_struct.txt",
+    "clause": "Clause 3",
+    "clause_text": "registration for each event will open four (4) hours prior to the scheduled start of play. players will register in the wynn las vegas poker room, located in encore at wynn las vegas.",
+    "blocks_printing_clause_number": [
+     {
+      "block": "General tournament terms (printed before the first event block)",
+      "lines": [
+       1,
+       168
+      ],
+      "text": "registration for each event will open four (4) hours prior to the scheduled start of play. players will register in the wynn las vegas poker room, located in encore at wynn las vegas."
+     },
+     {
+      "block": "$200 NLH",
+      "lines": [
+       169,
+       240
+      ],
+      "text": "the tournament entry fee, as well as the re-entry fee, is $200 (the \"entry fee\"), and must be paid with cash or wynn las vegas live casino chips; no other forms of payment will be accepted. the $200 e"
+     },
+     {
+      "block": "$240 NLH Rebuy & Add-on",
+      "lines": [
+       241,
+       315
+      ],
+      "text": "the tournament entry fee is $240 (the \"entry fee\"), of which $35 will be withheld for the tournament fee and $15 as a service charge for poker staff. $190 of each entry fee and rebuy will fund the tou"
+     },
+     {
+      "block": "$200 NLH",
+      "lines": [
+       316,
+       392
+      ],
+      "text": "registration, re-entries, and one (1) add-on per entry will be available until the start of level 11 (approximately 5:30 p.m.)."
+     },
+     {
+      "block": "$160 NLH",
+      "lines": [
+       393,
+       428
+      ],
+      "text": "the tournament entry fee, as well as the re-entry fee, is $160 (the \"entry fee\"), and must be paid with cash or wynn las vegas live casino chips; no other forms of payment will be accepted. the $160 e"
+     }
+    ],
+    "resolved_to_block": "$200 NLH",
+    "resolved_to_lines": [
+     [
+      169,
+      240
+     ]
+    ],
+    "resolves_to_one_block": true,
+    "unambiguous": false
+   },
+   {
+    "kind": "clause_provenance",
+    "daily_id": "daily-fri",
+    "days": "Friday",
+    "snapshot": "data/snapshots/w_daily_struct.txt",
+    "clause": "Clause 4",
+    "clause_text": "the tournament entry fee (the \"entry fee\") must be paid with cash or wynn las vegas live casino chips; no other forms of payment will be accepted.",
+    "blocks_printing_clause_number": [
+     {
+      "block": "General tournament terms (printed before the first event block)",
+      "lines": [
+       1,
+       168
+      ],
+      "text": "the tournament entry fee (the \"entry fee\") must be paid with cash or wynn las vegas live casino chips; no other forms of payment will be accepted."
+     },
+     {
+      "block": "$200 NLH",
+      "lines": [
+       169,
+       240
+      ],
+      "text": "registration and re-entries will be available until the start of level 9 (approximately 4:30 p.m.)."
+     },
+     {
+      "block": "$240 NLH Rebuy & Add-on",
+      "lines": [
+       241,
+       315
+      ],
+      "text": "registration, rebuys and add-ons will be available until the start of level 9 (approximately 4:30 p.m.). re-entry is not allowed. all rebuys must be done immediately from the player's original seat."
+     },
+     {
+      "block": "$200 NLH",
+      "lines": [
+       316,
+       392
+      ],
+      "text": "players will start with 25,000 in tournament chips. one (1) $100 add-on for 25,000 tournament chips is available any time until the end of registration. players must have at least one (1) tournament c"
+     },
+     {
+      "block": "$160 NLH",
+      "lines": [
+       393,
+       428
+      ],
+      "text": "registration, re-entries, and one (1) add-on per entry will be available until the start of level 9 (approximately 9:00 p.m.)."
+     }
+    ],
+    "resolved_to_block": "$240 NLH Rebuy & Add-on",
+    "resolved_to_lines": [
+     [
+      241,
+      315
+     ]
+    ],
+    "resolves_to_one_block": true,
+    "unambiguous": false
+   },
+   {
+    "kind": "clause_provenance",
+    "daily_id": "daily-fri",
+    "days": "Friday",
+    "snapshot": "data/snapshots/w_daily_struct.txt",
+    "clause": "Clause 5",
+    "clause_text": "all events will use tournament chips for play. tournament chips have no cash value, may not be used for any other purpose, and must be returned to wynn las vegas at the end of each event.",
+    "blocks_printing_clause_number": [
+     {
+      "block": "General tournament terms (printed before the first event block)",
+      "lines": [
+       1,
+       168
+      ],
+      "text": "all events will use tournament chips for play. tournament chips have no cash value, may not be used for any other purpose, and must be returned to wynn las vegas at the end of each event."
+     },
+     {
+      "block": "$200 NLH",
+      "lines": [
+       169,
+       240
+      ],
+      "text": "players will start with 25,000 in tournament chips."
+     },
+     {
+      "block": "$240 NLH Rebuy & Add-on",
+      "lines": [
+       241,
+       315
+      ],
+      "text": "players will start with 25,000 in tournament chips. unlimited $200 rebuys for 25,000 tournament chips are available any time a player is at 15,000 chips or less. one (1) $100 add-on for 15,000 tournam"
+     },
+     {
+      "block": "$200 NLH",
+      "lines": [
+       316,
+       392
+      ],
+      "text": "all levels play 30 minutes per level, with a 15-minute break after every 4 levels."
+     },
+     {
+      "block": "$160 NLH",
+      "lines": [
+       393,
+       428
+      ],
+      "text": "players will start with 25,000 in tournament chips. one (1) $100 add-on for 25,000 tournament chips is available any time until the end of registration. players must have at least one (1) tournament c"
+     }
+    ],
+    "resolved_to_block": "$240 NLH Rebuy & Add-on",
+    "resolved_to_lines": [
+     [
+      241,
+      315
+     ]
+    ],
+    "resolves_to_one_block": true,
+    "unambiguous": false
+   },
+   {
+    "kind": "clause_provenance",
+    "daily_id": "daily-weekend",
+    "days": "Saturday-Sunday",
+    "snapshot": "data/snapshots/w_daily_struct.txt",
+    "clause": "Clause 3",
+    "clause_text": "registration for each event will open four (4) hours prior to the scheduled start of play. players will register in the wynn las vegas poker room, located in encore at wynn las vegas.",
+    "blocks_printing_clause_number": [
+     {
+      "block": "General tournament terms (printed before the first event block)",
+      "lines": [
+       1,
+       168
+      ],
+      "text": "registration for each event will open four (4) hours prior to the scheduled start of play. players will register in the wynn las vegas poker room, located in encore at wynn las vegas."
+     },
+     {
+      "block": "$200 NLH",
+      "lines": [
+       169,
+       240
+      ],
+      "text": "the tournament entry fee, as well as the re-entry fee, is $200 (the \"entry fee\"), and must be paid with cash or wynn las vegas live casino chips; no other forms of payment will be accepted. the $200 e"
+     },
+     {
+      "block": "$240 NLH Rebuy & Add-on",
+      "lines": [
+       241,
+       315
+      ],
+      "text": "the tournament entry fee is $240 (the \"entry fee\"), of which $35 will be withheld for the tournament fee and $15 as a service charge for poker staff. $190 of each entry fee and rebuy will fund the tou"
+     },
+     {
+      "block": "$200 NLH",
+      "lines": [
+       316,
+       392
+      ],
+      "text": "registration, re-entries, and one (1) add-on per entry will be available until the start of level 11 (approximately 5:30 p.m.)."
+     },
+     {
+      "block": "$160 NLH",
+      "lines": [
+       393,
+       428
+      ],
+      "text": "the tournament entry fee, as well as the re-entry fee, is $160 (the \"entry fee\"), and must be paid with cash or wynn las vegas live casino chips; no other forms of payment will be accepted. the $160 e"
+     }
+    ],
+    "resolved_to_block": "$200 NLH",
+    "resolved_to_lines": [
+     [
+      316,
+      392
+     ]
+    ],
+    "resolves_to_one_block": true,
+    "unambiguous": false
+   },
+   {
+    "kind": "clause_provenance",
+    "daily_id": "daily-nightly",
+    "days": "Monday-Sunday",
+    "snapshot": "data/snapshots/w_daily_struct.txt",
+    "clause": "Clause 3",
+    "clause_text": "registration for each event will open four (4) hours prior to the scheduled start of play. players will register in the wynn las vegas poker room, located in encore at wynn las vegas.",
+    "blocks_printing_clause_number": [
+     {
+      "block": "General tournament terms (printed before the first event block)",
+      "lines": [
+       1,
+       168
+      ],
+      "text": "registration for each event will open four (4) hours prior to the scheduled start of play. players will register in the wynn las vegas poker room, located in encore at wynn las vegas."
+     },
+     {
+      "block": "$200 NLH",
+      "lines": [
+       169,
+       240
+      ],
+      "text": "the tournament entry fee, as well as the re-entry fee, is $200 (the \"entry fee\"), and must be paid with cash or wynn las vegas live casino chips; no other forms of payment will be accepted. the $200 e"
+     },
+     {
+      "block": "$240 NLH Rebuy & Add-on",
+      "lines": [
+       241,
+       315
+      ],
+      "text": "the tournament entry fee is $240 (the \"entry fee\"), of which $35 will be withheld for the tournament fee and $15 as a service charge for poker staff. $190 of each entry fee and rebuy will fund the tou"
+     },
+     {
+      "block": "$200 NLH",
+      "lines": [
+       316,
+       392
+      ],
+      "text": "registration, re-entries, and one (1) add-on per entry will be available until the start of level 11 (approximately 5:30 p.m.)."
+     },
+     {
+      "block": "$160 NLH",
+      "lines": [
+       393,
+       428
+      ],
+      "text": "the tournament entry fee, as well as the re-entry fee, is $160 (the \"entry fee\"), and must be paid with cash or wynn las vegas live casino chips; no other forms of payment will be accepted. the $160 e"
+     }
+    ],
+    "resolved_to_block": "$160 NLH",
+    "resolved_to_lines": [
+     [
+      393,
+      428
+     ]
+    ],
+    "resolves_to_one_block": true,
+    "unambiguous": false
+   }
+  ],
+  "monitor_integrity": [
+   {
+    "kind": "false_facts_change",
+    "source_url": "https://www.caesars.com/corporate/disclaimer",
+    "http_status": 200,
+    "bytes": 5871,
+    "issue": "the re-check extracted no money, date, time or entry-rule word from this page, so its facts hash is the empty-string hash; a non-empty baseline hash therefore reads as 'facts changed' when nothing published has been shown to move",
+    "affected_rows": 1
+   },
+   {
+    "kind": "false_facts_change",
+    "source_url": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+    "http_status": 200,
+    "bytes": 5871,
+    "issue": "the re-check extracted no money, date, time or entry-rule word from this page, so its facts hash is the empty-string hash; a non-empty baseline hash therefore reads as 'facts changed' when nothing published has been shown to move",
+    "affected_rows": 2
+   },
+   {
+    "kind": "identical_bodies",
+    "body_sha256": "ad6f3a560e6a59c3bc67c7e1ad6695cec64d3cae83c7d3e3706cfb39167cf6a8",
+    "sources": [
+     "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf",
+     "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+    ],
+    "issue": "these distinct official URLs returned a byte-identical response in the same check, so at least one of them is serving a placeholder, a consent wall or a shared shell instead of the page it names"
+   },
+   {
+    "kind": "identical_bodies",
+    "body_sha256": "c62c6be6880af3e63d56d57fa07ac2c72ce44a33e37cc4d14e0c8d0f9299f374",
+    "sources": [
+     "https://www.caesars.com/caesars-palace/casino",
+     "https://www.caesars.com/caesars-palace/casino/poker"
+    ],
+    "issue": "these distinct official URLs returned a byte-identical response in the same check, so at least one of them is serving a placeholder, a consent wall or a shared shell instead of the page it names"
+   },
+   {
+    "kind": "identical_bodies",
+    "body_sha256": "0f680e9c2d00e03a9aa3c15df7b761eca694c83525fd669f837c0372a6b04522",
+    "sources": [
+     "https://www.caesars.com/corporate/disclaimer",
+     "https://www.caesars.com/horseshoe-las-vegas/casino",
+     "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+     "https://www.caesars.com/paris-las-vegas/casino",
+     "https://www.caesars.com/planet-hollywood",
+     "https://www.caesars.com/planet-hollywood/casino"
+    ],
+    "issue": "these distinct official URLs returned a byte-identical response in the same check, so at least one of them is serving a placeholder, a consent wall or a shared shell instead of the page it names"
+   },
+   {
+    "kind": "identical_bodies",
+    "body_sha256": "8472efc4be804466bec1a497d7643b13e1e6fe5176cbf757601bc623a38482fc",
+    "sources": [
+     "https://www.venetianlasvegas.com/book",
+     "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date=2026-11-18&children[]=0&departure_date=2026-11-20&view=calendar",
+     "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date=2026-12-01&children[]=0&departure_date=2026-12-08&view=calendar"
+    ],
+    "issue": "these distinct official URLs returned a byte-identical response in the same check, so at least one of them is serving a placeholder, a consent wall or a shared shell instead of the page it names"
+   },
+   {
+    "kind": "verdict_disagreement",
+    "source_url": "https://www.caesars.com/corporate/disclaimer",
+    "content_status": "facts-changed",
+    "facts_changed": false,
+    "raw_changed": true,
+    "issue": "content_status reports facts-changed while the facts_changed flag is false; the two verdicts on the Monitoring page contradict each other for the same source"
+   },
+   {
+    "kind": "verdict_disagreement",
+    "source_url": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
+    "content_status": "facts-changed",
+    "facts_changed": false,
+    "raw_changed": false,
+    "issue": "content_status reports facts-changed while the facts_changed flag is false; the two verdicts on the Monitoring page contradict each other for the same source"
+   },
+   {
+    "kind": "verdict_disagreement",
+    "source_url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_30.pdf",
+    "content_status": "facts-changed",
+    "facts_changed": false,
+    "raw_changed": false,
+    "issue": "content_status reports facts-changed while the facts_changed flag is false; the two verdicts on the Monitoring page contradict each other for the same source"
+   },
+   {
+    "kind": "verdict_disagreement",
+    "source_url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html",
+    "content_status": "facts-changed",
+    "facts_changed": false,
+    "raw_changed": true,
+    "issue": "content_status reports facts-changed while the facts_changed flag is false; the two verdicts on the Monitoring page contradict each other for the same source"
+   }
+  ]
+ },
+ "counts": {
+  "quote_not_found": 0,
+  "document_conflict": 0,
+  "silence_claim_contradicted": 0,
+  "daily_clause_provenance": 5,
+  "monitor_integrity": 10
+ }
+}

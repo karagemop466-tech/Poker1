@@ -80,7 +80,9 @@ KNOWN_PAGES = {"index", "singleEntry", "separate", "unverified", "daily", "hotel
                "otherRooms", "roomProfile",
                # Session 97fc7805: pages/payouts.html. Registered here because the page-link
                # check rejects any data-page outside this set. One line, no other change.
-               "payouts"}
+               "payouts",
+               # Session d8a1f37f: pages/evidence-audit.html.
+               "evidenceAudit"}
 
 
 def load_json(rel):
