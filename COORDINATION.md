@@ -1,3 +1,28 @@
+# Session ab7e4d46 — branch `arena/ab7e4d46-poker1` (base `a1361aa` = `main` at PR #85)
+
+Session `ab7e4d46` works on branch `arena/ab7e4d46-poker1` (fixed for this session), based on `main` at
+`a1361aacc009e5589826d269e03daf565fc82117` (PR #85 merged). `git rev-list --left-right --count
+origin/main...HEAD` = `0 0`, branch starts exactly on `main` with a clean tree. Claim written and pushed
+before any data, script or page change.
+
+`main` at `a1361aa` is live and green (Pages build for `a1361aa` = built 2026-11-17T23:16:46Z; 317 rows:
+80 SE / 67 MULTI / 107 RE / 25 CONT / 38 UNV; 70 schedule days; 170 overlap pairs; 7 hotels; 5 dated rates).
+Three integration PRs are still open with unique work not on `main`, and this session is the final
+integration session that merges them, re-verifies the combined data line by line, confirms the site builds
+with no broken links, and publishes to GitHub Pages:
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Merge PR #82 (`arena/ce9941b8-poker1`, 14 ahead / 26 behind): county-verified 13.38% room tax at all seven hotels (F77), Bellagio + Caesars Palace daily formats from their own official flyers (F78/F79), per-day trip diary on the single-entry page, dated official booking links, rate timestamps, Las Vegas morning re-check (15:17 UTC), walking-table property-name fix, daily weekday-map fix, Q-D4/Q-E5 answers. | **In progress** | `scripts/build_data.py`, `scripts/build_site.py`, `scripts/check_links.py`, `scripts/check_source_facts.py`, `scripts/monitor_sources.py`, `assets/app.js`, `assets/style.css`, `data/*.json`, `index.html`, `pages/*.html`, `*.md`, `.github/workflows/*.yml` | `ab7e4d46` |
+| Merge PR #79 (`arena/df94b75e-poker1`, 11 ahead / 18 behind): county tax at all seven hotels, midnight-wrap fix, source-facts unblock, doubled-title guard, stale-PR takeover. Reconcile with PR #82 (both claim the county tax) — keep one verified version, never discard either session's work. | **In progress** | same as above | `ab7e4d46` |
+| Merge PR #81 (`arena/2157d288-poker1`, 1 ahead / 18 behind): publish the session's defects and the live-refresh verification on Flagged for Review (`FLAGGED.md` + `COORDINATION.md` only). | **In progress** | `FLAGGED.md`, `COORDINATION.md` | `ab7e4d46` |
+| Re-verify the combined data line by line (`build_data.py`, `build_site.py`, `check_links.py`, `verify_rows.py`, `check_schedule.py`, headless smoke test), confirm no broken links, open PR to `main`, merge without waiting, confirm Pages deploys, record PR link + merge result here. | **In progress** | all files above + `COORDINATION.md` | `ab7e4d46` |
+
+**Files deliberately NOT edited until the merge:** none — this session owns the integration scope above.
+No official value is changed except by adopting a merged session's already-verified value with its source
+link; anything that cannot be confirmed stays blank and is flagged. `last_checked` is advanced only for
+rows whose source was actually re-read.
+
 # Session 9aad3bd2 — branch `arena/9aad3bd2-poker1` (base `5de6d8d` = `main` at PR #69)
 
 Session `9aad3bd2` works on branch `arena/9aad3bd2-poker1` (the branch is fixed for this session), based
