@@ -15,9 +15,14 @@ name: Monitor official sources
 
 on:
   schedule:
-    # Daily at 07:17 UTC, before the first dealer's-shift postings matter to a reader.
+    # Daily at 15:17 UTC = 7:17 a.m. in Las Vegas (PST, UTC-8, which is the whole
+    # Nov-Jan trip window; it is 8:17 a.m. local while PDT is in force). The brief asks
+    # for each room's official schedule to be pulled each morning, and a check that runs
+    # at 23:17 the previous evening answers yesterday's question. The old 07:17 UTC slot
+    # is kept as a second run so a page that changes overnight is still caught the same day.
     # (An earlier revision of this file carried a `name:` key inside `schedule:`,
     # which the workflow schema does not accept - that is why the job never fired.)
+    - cron: "17 15 * * *"
     - cron: "17 7 * * *"
   workflow_dispatch:
     inputs:
@@ -42,11 +47,18 @@ permissions:
 
 concurrency:
   group: source-monitor
-  cancel-in-progress: true
+  # PR #66 (session 1ebc7e08): not cancelled mid-flight — this job commits and pushes. A
+  # dispatch started while the scheduled run is between its commit and its push would kill
+  # the run that already made the commit, and the result would be stranded in a disposable
+  # runner instead of on the branch.
+  cancel-in-progress: false
 
 jobs:
   monitor:
     runs-on: ubuntu-latest
+    # A page that hangs used to hold the job (and the source-monitor group) open; the fetches
+    # themselves cap at 30 s per URL inside the script (PR #66, session 1ebc7e08).
+    timeout-minutes: 30
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -64,6 +76,9 @@ jobs:
       - name: Check every official source, including its content
         id: check
         run: |
+          # pipefail: without it a script that refuses to run is hidden behind
+          # `tee`'s zero exit status and the job reports success (F75).
+          set -o pipefail
           args="--print --content --write-report"
           if [ "${{ inputs.accept_baseline }}" = "yes" ]; then args="$args --accept-baseline"; fi
           python3 scripts/monitor_sources.py $args | tee monitor.txt
@@ -91,8 +106,17 @@ jobs:
             echo "No change in the monitoring result."
           else
             git commit -m "chore: refresh source monitoring result"
-            git pull --rebase origin "$GITHUB_REF_NAME" || git rebase --abort
-            git push origin "HEAD:$GITHUB_REF_NAME"
+            # The branch can move while pages are being fetched, and a rejected push used to
+            # lose the day's result outright. Retry with a backoff, giving up cleanly
+            # (PR #66, session 1ebc7e08).
+            for attempt in 1 2 3; do
+              if git pull --rebase origin "$GITHUB_REF_NAME" && git push origin "HEAD:$GITHUB_REF_NAME"; then
+                break
+              fi
+              echo "push attempt $attempt rejected, retrying in $((attempt * 15))s"
+              git rebase --abort 2>/dev/null || true
+              [ "$attempt" = 3 ] || sleep $((attempt * 15))
+            done
           fi
 
       - name: Open an issue when a row needs re-reading

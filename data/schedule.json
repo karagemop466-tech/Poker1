@@ -50,6 +50,17 @@
    "fallback_kind": null,
    "fallback_note": "No sheet-reviewed candidate on this date.",
    "conflicts": [],
+   "undecidable_pairs": [
+    {
+     "a": "r001",
+     "b": "r002",
+     "a_start": "11:10",
+     "b_start": "17:10",
+     "detail": "$300 No Limit Hold'em 1A $75K GTD (11:10) and $300 No Limit Hold'em 1B $75K GTD (17:10) cannot be checked: $300 No Limit Hold'em 1A $75K GTD publishes no level structure."
+    }
+   ],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 0,
    "conflicts_join_in_progress": 0,
    "alternatives": []
@@ -103,6 +114,17 @@
    "fallback_kind": null,
    "fallback_note": "No sheet-reviewed candidate on this date.",
    "conflicts": [],
+   "undecidable_pairs": [
+    {
+     "a": "r003",
+     "b": "r004",
+     "a_start": "11:10",
+     "b_start": "17:10",
+     "detail": "$300 No Limit Hold'em 1C $75K GTD (11:10) and $300 No Limit Hold'em 1D $75K GTD (17:10) cannot be checked: $300 No Limit Hold'em 1C $75K GTD publishes no level structure."
+    }
+   ],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 0,
    "conflicts_join_in_progress": 0,
    "alternatives": []
@@ -134,6 +156,9 @@
    "fallback_kind": null,
    "fallback_note": "This is the only sheet-reviewed candidate on this date, so the day is planned around it alone.",
    "conflicts": [],
+   "undecidable_pairs": [],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 0,
    "conflicts_join_in_progress": 0,
    "alternatives": []
@@ -167,6 +192,9 @@
    "fallback_kind": null,
    "fallback_note": "This is the only sheet-reviewed candidate on this date, so the day is planned around it alone.",
    "conflicts": [],
+   "undecidable_pairs": [],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 0,
    "conflicts_join_in_progress": 0,
    "alternatives": []
@@ -200,6 +228,9 @@
    "fallback_kind": null,
    "fallback_note": "This is the only sheet-reviewed candidate on this date, so the day is planned around it alone.",
    "conflicts": [],
+   "undecidable_pairs": [],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 0,
    "conflicts_join_in_progress": 0,
    "alternatives": []
@@ -233,6 +264,9 @@
    "fallback_kind": null,
    "fallback_note": "This is the only sheet-reviewed candidate on this date, so the day is planned around it alone.",
    "conflicts": [],
+   "undecidable_pairs": [],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 0,
    "conflicts_join_in_progress": 0,
    "alternatives": []
@@ -264,6 +298,9 @@
    "fallback_kind": null,
    "fallback_note": "This is the only sheet-reviewed candidate on this date, so the day is planned around it alone.",
    "conflicts": [],
+   "undecidable_pairs": [],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 0,
    "conflicts_join_in_progress": 0,
    "alternatives": []
@@ -318,6 +355,17 @@
    "fallback_kind": null,
    "fallback_note": "This is the only sheet-reviewed candidate on this date, so the day is planned around it alone.",
    "conflicts": [],
+   "undecidable_pairs": [
+    {
+     "a": "r011",
+     "b": "r012",
+     "a_start": "11:10",
+     "b_start": "17:10",
+     "detail": "$400 No Limit Hold'em 1A $75K GTD (11:10) and $200 No Limit Hold'em Progressive Knock-Out Bounty $8K GTD (1Day) (17:10) cannot be checked: $400 No Limit Hold'em 1A $75K GTD publishes no level structure."
+    }
+   ],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 0,
    "conflicts_join_in_progress": 0,
    "alternatives": []
@@ -371,6 +419,17 @@
    "fallback_kind": null,
    "fallback_note": "This is the only sheet-reviewed candidate on this date, so the day is planned around it alone.",
    "conflicts": [],
+   "undecidable_pairs": [
+    {
+     "a": "r013",
+     "b": "r014",
+     "a_start": "11:10",
+     "b_start": "17:10",
+     "detail": "$400 No Limit Hold'em 1B $75K GTD (11:10) and $200 No Limit Hold'em Bounty $8K GTD (1Day) (17:10) cannot be checked: $400 No Limit Hold'em 1B $75K GTD publishes no level structure."
+    }
+   ],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 0,
    "conflicts_join_in_progress": 0,
    "alternatives": []
@@ -434,6 +493,9 @@
      "detail": "$200 No Limit Hold'em Bounty $8K GTD (1Day) starts 17:10 and its entry closes 21:40, while $400 No Limit Hold'em $15K GTD (1Day)'s own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
+   "undecidable_pairs": [],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 1,
    "conflicts_join_in_progress": 0,
    "alternatives": [
@@ -508,6 +570,9 @@
      "detail": "$200 No Limit Hold'em Bounty $8K GTD (1Day) starts 17:10 and its entry closes 21:40, while $300 No Limit Hold'em $10K GTD (1Day)'s own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
+   "undecidable_pairs": [],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 1,
    "conflicts_join_in_progress": 0,
    "alternatives": [
@@ -691,6 +756,87 @@
      "detail": "$200 No Limit Hold'em Bounty $8K GTD (1Day) starts 17:10 and its entry closes 21:40, while $600 No Limit Hold'em $30K GTD (1Day)'s own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
+   "undecidable_pairs": [
+    {
+     "a": "r020",
+     "b": "r021",
+     "a_start": "11:00",
+     "b_start": "11:10",
+     "detail": "No Limit Hold'em Day 1A (11:00) and $600 No Limit Hold'em $30K GTD (1Day) (11:10) cannot be checked: No Limit Hold'em Day 1A publishes no level structure."
+    },
+    {
+     "a": "r020",
+     "b": "r022",
+     "a_start": "11:00",
+     "b_start": "12:00",
+     "detail": "No Limit Hold'em Day 1A (11:00) and TORSE (12:00) cannot be checked: No Limit Hold'em Day 1A publishes no level structure."
+    },
+    {
+     "a": "r020",
+     "b": "r023",
+     "a_start": "11:00",
+     "b_start": "13:00",
+     "detail": "No Limit Hold'em Day 1A (11:00) and PLO (13:00) cannot be checked: No Limit Hold'em Day 1A publishes no level structure."
+    },
+    {
+     "a": "r020",
+     "b": "r024",
+     "a_start": "11:00",
+     "b_start": "17:00",
+     "detail": "No Limit Hold'em Day 1A (11:00) and No Limit Hold'em Day 1B (17:00) cannot be checked: No Limit Hold'em Day 1A publishes no level structure."
+    },
+    {
+     "a": "r020",
+     "b": "r025",
+     "a_start": "11:00",
+     "b_start": "17:10",
+     "detail": "No Limit Hold'em Day 1A (11:00) and $200 No Limit Hold'em Bounty $8K GTD (1Day) (17:10) cannot be checked: No Limit Hold'em Day 1A publishes no level structure."
+    },
+    {
+     "a": "r022",
+     "b": "r023",
+     "a_start": "12:00",
+     "b_start": "13:00",
+     "detail": "TORSE (12:00) and PLO (13:00) cannot be checked: TORSE publishes no level structure."
+    },
+    {
+     "a": "r022",
+     "b": "r024",
+     "a_start": "12:00",
+     "b_start": "17:00",
+     "detail": "TORSE (12:00) and No Limit Hold'em Day 1B (17:00) cannot be checked: TORSE publishes no level structure."
+    },
+    {
+     "a": "r022",
+     "b": "r025",
+     "a_start": "12:00",
+     "b_start": "17:10",
+     "detail": "TORSE (12:00) and $200 No Limit Hold'em Bounty $8K GTD (1Day) (17:10) cannot be checked: TORSE publishes no level structure."
+    },
+    {
+     "a": "r023",
+     "b": "r024",
+     "a_start": "13:00",
+     "b_start": "17:00",
+     "detail": "PLO (13:00) and No Limit Hold'em Day 1B (17:00) cannot be checked: PLO publishes no level structure."
+    },
+    {
+     "a": "r023",
+     "b": "r025",
+     "a_start": "13:00",
+     "b_start": "17:10",
+     "detail": "PLO (13:00) and $200 No Limit Hold'em Bounty $8K GTD (1Day) (17:10) cannot be checked: PLO publishes no level structure."
+    },
+    {
+     "a": "r024",
+     "b": "r025",
+     "a_start": "17:00",
+     "b_start": "17:10",
+     "detail": "No Limit Hold'em Day 1B (17:00) and $200 No Limit Hold'em Bounty $8K GTD (1Day) (17:10) cannot be checked: No Limit Hold'em Day 1B publishes no level structure."
+    }
+   ],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 4,
    "conflicts_join_in_progress": 0,
    "alternatives": [
@@ -902,6 +1048,73 @@
      "detail": "$200 NLH PokerAtlas Valuetown Bounty $20K GTD (1Day) - PokerAtlas PRO member $20 rake discount starts 17:10 and its entry closes 21:40, while $400 Pot Limit Omaha Bounty $15K GTD (1Day)'s own table can run as late as 03:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
+   "undecidable_pairs": [
+    {
+     "a": "r026",
+     "b": "r027",
+     "a_start": "11:00",
+     "b_start": "11:10",
+     "detail": "No Limit Hold'em Day 1C (11:00) and $600 No Limit Hold'em Bounty $30K GTD (1Day) - $200 bounties to start & $500 bounties in the money (11:10) cannot be checked: No Limit Hold'em Day 1C publishes no level structure."
+    },
+    {
+     "a": "r026",
+     "b": "r028",
+     "a_start": "11:00",
+     "b_start": "12:00",
+     "detail": "No Limit Hold'em Day 1C (11:00) and Mixed Triple Draw (A-5, 2-7, Badugi) (12:00) cannot be checked: No Limit Hold'em Day 1C publishes no level structure."
+    },
+    {
+     "a": "r026",
+     "b": "r029",
+     "a_start": "11:00",
+     "b_start": "12:10",
+     "detail": "No Limit Hold'em Day 1C (11:00) and $400 Pot Limit Omaha Bounty $15K GTD (1Day) (12:10) cannot be checked: No Limit Hold'em Day 1C publishes no level structure."
+    },
+    {
+     "a": "r026",
+     "b": "r030",
+     "a_start": "11:00",
+     "b_start": "17:00",
+     "detail": "No Limit Hold'em Day 1C (11:00) and No Limit Hold'em Day 1D (17:00) cannot be checked: No Limit Hold'em Day 1C publishes no level structure."
+    },
+    {
+     "a": "r026",
+     "b": "r031",
+     "a_start": "11:00",
+     "b_start": "17:10",
+     "detail": "No Limit Hold'em Day 1C (11:00) and $200 NLH PokerAtlas Valuetown Bounty $20K GTD (1Day) - PokerAtlas PRO member $20 rake discount (17:10) cannot be checked: No Limit Hold'em Day 1C publishes no level structure."
+    },
+    {
+     "a": "r028",
+     "b": "r029",
+     "a_start": "12:00",
+     "b_start": "12:10",
+     "detail": "Mixed Triple Draw (A-5, 2-7, Badugi) (12:00) and $400 Pot Limit Omaha Bounty $15K GTD (1Day) (12:10) cannot be checked: Mixed Triple Draw (A-5, 2-7, Badugi) publishes no level structure."
+    },
+    {
+     "a": "r028",
+     "b": "r030",
+     "a_start": "12:00",
+     "b_start": "17:00",
+     "detail": "Mixed Triple Draw (A-5, 2-7, Badugi) (12:00) and No Limit Hold'em Day 1D (17:00) cannot be checked: Mixed Triple Draw (A-5, 2-7, Badugi) publishes no level structure."
+    },
+    {
+     "a": "r028",
+     "b": "r031",
+     "a_start": "12:00",
+     "b_start": "17:10",
+     "detail": "Mixed Triple Draw (A-5, 2-7, Badugi) (12:00) and $200 NLH PokerAtlas Valuetown Bounty $20K GTD (1Day) - PokerAtlas PRO member $20 rake discount (17:10) cannot be checked: Mixed Triple Draw (A-5, 2-7, Badugi) publishes no level structure."
+    },
+    {
+     "a": "r030",
+     "b": "r031",
+     "a_start": "17:00",
+     "b_start": "17:10",
+     "detail": "No Limit Hold'em Day 1D (17:00) and $200 NLH PokerAtlas Valuetown Bounty $20K GTD (1Day) - PokerAtlas PRO member $20 rake discount (17:10) cannot be checked: No Limit Hold'em Day 1D publishes no level structure."
+    }
+   ],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 6,
    "conflicts_join_in_progress": 0,
    "alternatives": [
@@ -1061,6 +1274,59 @@
      "detail": "No Limit Hold'em Day 1F starts 18:00 and its entry closes 18:00, while $200 No Limit Hold'em Bounty $8K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
+   "undecidable_pairs": [
+    {
+     "a": "r032",
+     "b": "r033",
+     "a_start": "11:00",
+     "b_start": "11:10",
+     "detail": "No Limit Hold'em Day 1E (11:00) and $400 No Limit Hold'em 1A $75K GTD (11:10) cannot be checked: No Limit Hold'em Day 1E publishes no level structure."
+    },
+    {
+     "a": "r032",
+     "b": "r034",
+     "a_start": "11:00",
+     "b_start": "12:10",
+     "detail": "No Limit Hold'em Day 1E (11:00) and $300 Pot Limit Omaha Double Board Bomb Pot $10K GTD (1Day) (12:10) cannot be checked: No Limit Hold'em Day 1E publishes no level structure."
+    },
+    {
+     "a": "r032",
+     "b": "r035",
+     "a_start": "11:00",
+     "b_start": "17:10",
+     "detail": "No Limit Hold'em Day 1E (11:00) and $200 No Limit Hold'em Bounty $8K GTD (1Day) (17:10) cannot be checked: No Limit Hold'em Day 1E publishes no level structure."
+    },
+    {
+     "a": "r032",
+     "b": "r036",
+     "a_start": "11:00",
+     "b_start": "18:00",
+     "detail": "No Limit Hold'em Day 1E (11:00) and No Limit Hold'em Day 1F (18:00) cannot be checked: No Limit Hold'em Day 1E publishes no level structure."
+    },
+    {
+     "a": "r033",
+     "b": "r034",
+     "a_start": "11:10",
+     "b_start": "12:10",
+     "detail": "$400 No Limit Hold'em 1A $75K GTD (11:10) and $300 Pot Limit Omaha Double Board Bomb Pot $10K GTD (1Day) (12:10) cannot be checked: $400 No Limit Hold'em 1A $75K GTD publishes no level structure."
+    },
+    {
+     "a": "r033",
+     "b": "r035",
+     "a_start": "11:10",
+     "b_start": "17:10",
+     "detail": "$400 No Limit Hold'em 1A $75K GTD (11:10) and $200 No Limit Hold'em Bounty $8K GTD (1Day) (17:10) cannot be checked: $400 No Limit Hold'em 1A $75K GTD publishes no level structure."
+    },
+    {
+     "a": "r033",
+     "b": "r036",
+     "a_start": "11:10",
+     "b_start": "18:00",
+     "detail": "$400 No Limit Hold'em 1A $75K GTD (11:10) and No Limit Hold'em Day 1F (18:00) cannot be checked: $400 No Limit Hold'em 1A $75K GTD publishes no level structure."
+    }
+   ],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 3,
    "conflicts_join_in_progress": 0,
    "alternatives": [
@@ -1183,6 +1449,80 @@
    "fallback_kind": null,
    "fallback_note": "This is the only sheet-reviewed candidate on this date, so the day is planned around it alone.",
    "conflicts": [],
+   "undecidable_pairs": [
+    {
+     "a": "r037",
+     "b": "r038",
+     "a_start": "11:00",
+     "b_start": "11:10",
+     "detail": "No Limit Hold'em Day 1A (11:00) and $400 No Limit Hold'em 1B $75K GTD (11:10) cannot be checked: No Limit Hold'em Day 1A publishes no level structure."
+    },
+    {
+     "a": "r037",
+     "b": "r039",
+     "a_start": "11:00",
+     "b_start": "12:00",
+     "detail": "No Limit Hold'em Day 1A (11:00) and Limit Omaha 8 (12:00) cannot be checked: No Limit Hold'em Day 1A publishes no level structure."
+    },
+    {
+     "a": "r037",
+     "b": "r041",
+     "a_start": "11:00",
+     "b_start": "17:00",
+     "detail": "No Limit Hold'em Day 1A (11:00) and No Limit Hold'em Day 1B (17:00) cannot be checked: No Limit Hold'em Day 1A publishes no level structure."
+    },
+    {
+     "a": "r037",
+     "b": "r042",
+     "a_start": "11:00",
+     "b_start": "17:10",
+     "detail": "No Limit Hold'em Day 1A (11:00) and $200 No Limit Hold'em Bounty $8K GTD (1Day) (17:10) cannot be checked: No Limit Hold'em Day 1A publishes no level structure."
+    },
+    {
+     "a": "r038",
+     "b": "r039",
+     "a_start": "11:10",
+     "b_start": "12:00",
+     "detail": "$400 No Limit Hold'em 1B $75K GTD (11:10) and Limit Omaha 8 (12:00) cannot be checked: $400 No Limit Hold'em 1B $75K GTD publishes no level structure."
+    },
+    {
+     "a": "r038",
+     "b": "r041",
+     "a_start": "11:10",
+     "b_start": "17:00",
+     "detail": "$400 No Limit Hold'em 1B $75K GTD (11:10) and No Limit Hold'em Day 1B (17:00) cannot be checked: $400 No Limit Hold'em 1B $75K GTD publishes no level structure."
+    },
+    {
+     "a": "r038",
+     "b": "r042",
+     "a_start": "11:10",
+     "b_start": "17:10",
+     "detail": "$400 No Limit Hold'em 1B $75K GTD (11:10) and $200 No Limit Hold'em Bounty $8K GTD (1Day) (17:10) cannot be checked: $400 No Limit Hold'em 1B $75K GTD publishes no level structure."
+    },
+    {
+     "a": "r039",
+     "b": "r041",
+     "a_start": "12:00",
+     "b_start": "17:00",
+     "detail": "Limit Omaha 8 (12:00) and No Limit Hold'em Day 1B (17:00) cannot be checked: Limit Omaha 8 publishes no level structure."
+    },
+    {
+     "a": "r039",
+     "b": "r042",
+     "a_start": "12:00",
+     "b_start": "17:10",
+     "detail": "Limit Omaha 8 (12:00) and $200 No Limit Hold'em Bounty $8K GTD (1Day) (17:10) cannot be checked: Limit Omaha 8 publishes no level structure."
+    },
+    {
+     "a": "r041",
+     "b": "r042",
+     "a_start": "17:00",
+     "b_start": "17:10",
+     "detail": "No Limit Hold'em Day 1B (17:00) and $200 No Limit Hold'em Bounty $8K GTD (1Day) (17:10) cannot be checked: No Limit Hold'em Day 1B publishes no level structure."
+    }
+   ],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 0,
    "conflicts_join_in_progress": 0,
    "alternatives": []
@@ -1233,7 +1573,7 @@
     {
      "id": "r045",
      "start": "12:00",
-     "name": "Limit Omaha 8/5/stud 8",
+     "name": "Limit Omaha 8/Stud 8",
      "series": "WPT World Championship (Wynn)",
      "venue": "Wynn Las Vegas",
      "buy_in_usd": 600,
@@ -1312,6 +1652,115 @@
    "fallback_kind": null,
    "fallback_note": "This is the only sheet-reviewed candidate on this date, so the day is planned around it alone.",
    "conflicts": [],
+   "undecidable_pairs": [
+    {
+     "a": "r043",
+     "b": "r044",
+     "a_start": "11:00",
+     "b_start": "11:10",
+     "detail": "No Limit Hold'em Day 1C (11:00) and $400 No Limit Hold'em 1C $75K GTD (11:10) cannot be checked: No Limit Hold'em Day 1C publishes no level structure."
+    },
+    {
+     "a": "r043",
+     "b": "r045",
+     "a_start": "11:00",
+     "b_start": "12:00",
+     "detail": "No Limit Hold'em Day 1C (11:00) and Limit Omaha 8/Stud 8 (12:00) cannot be checked: No Limit Hold'em Day 1C publishes no level structure."
+    },
+    {
+     "a": "r043",
+     "b": "r046",
+     "a_start": "11:00",
+     "b_start": "13:00",
+     "detail": "No Limit Hold'em Day 1C (11:00) and PLO (13:00) cannot be checked: No Limit Hold'em Day 1C publishes no level structure."
+    },
+    {
+     "a": "r043",
+     "b": "r047",
+     "a_start": "11:00",
+     "b_start": "17:00",
+     "detail": "No Limit Hold'em Day 1C (11:00) and No Limit Hold'em Day 1D (17:00) cannot be checked: No Limit Hold'em Day 1C publishes no level structure."
+    },
+    {
+     "a": "r043",
+     "b": "r048",
+     "a_start": "11:00",
+     "b_start": "17:10",
+     "detail": "No Limit Hold'em Day 1C (11:00) and $200 No Limit Hold'em Bounty $8K GTD (1Day) (17:10) cannot be checked: No Limit Hold'em Day 1C publishes no level structure."
+    },
+    {
+     "a": "r044",
+     "b": "r045",
+     "a_start": "11:10",
+     "b_start": "12:00",
+     "detail": "$400 No Limit Hold'em 1C $75K GTD (11:10) and Limit Omaha 8/Stud 8 (12:00) cannot be checked: $400 No Limit Hold'em 1C $75K GTD publishes no level structure."
+    },
+    {
+     "a": "r044",
+     "b": "r046",
+     "a_start": "11:10",
+     "b_start": "13:00",
+     "detail": "$400 No Limit Hold'em 1C $75K GTD (11:10) and PLO (13:00) cannot be checked: $400 No Limit Hold'em 1C $75K GTD publishes no level structure."
+    },
+    {
+     "a": "r044",
+     "b": "r047",
+     "a_start": "11:10",
+     "b_start": "17:00",
+     "detail": "$400 No Limit Hold'em 1C $75K GTD (11:10) and No Limit Hold'em Day 1D (17:00) cannot be checked: $400 No Limit Hold'em 1C $75K GTD publishes no level structure."
+    },
+    {
+     "a": "r044",
+     "b": "r048",
+     "a_start": "11:10",
+     "b_start": "17:10",
+     "detail": "$400 No Limit Hold'em 1C $75K GTD (11:10) and $200 No Limit Hold'em Bounty $8K GTD (1Day) (17:10) cannot be checked: $400 No Limit Hold'em 1C $75K GTD publishes no level structure."
+    },
+    {
+     "a": "r045",
+     "b": "r046",
+     "a_start": "12:00",
+     "b_start": "13:00",
+     "detail": "Limit Omaha 8/Stud 8 (12:00) and PLO (13:00) cannot be checked: Limit Omaha 8/Stud 8 publishes no level structure."
+    },
+    {
+     "a": "r045",
+     "b": "r047",
+     "a_start": "12:00",
+     "b_start": "17:00",
+     "detail": "Limit Omaha 8/Stud 8 (12:00) and No Limit Hold'em Day 1D (17:00) cannot be checked: Limit Omaha 8/Stud 8 publishes no level structure."
+    },
+    {
+     "a": "r045",
+     "b": "r048",
+     "a_start": "12:00",
+     "b_start": "17:10",
+     "detail": "Limit Omaha 8/Stud 8 (12:00) and $200 No Limit Hold'em Bounty $8K GTD (1Day) (17:10) cannot be checked: Limit Omaha 8/Stud 8 publishes no level structure."
+    },
+    {
+     "a": "r046",
+     "b": "r047",
+     "a_start": "13:00",
+     "b_start": "17:00",
+     "detail": "PLO (13:00) and No Limit Hold'em Day 1D (17:00) cannot be checked: PLO publishes no level structure."
+    },
+    {
+     "a": "r046",
+     "b": "r048",
+     "a_start": "13:00",
+     "b_start": "17:10",
+     "detail": "PLO (13:00) and $200 No Limit Hold'em Bounty $8K GTD (1Day) (17:10) cannot be checked: PLO publishes no level structure."
+    },
+    {
+     "a": "r047",
+     "b": "r048",
+     "a_start": "17:00",
+     "b_start": "17:10",
+     "detail": "No Limit Hold'em Day 1D (17:00) and $200 No Limit Hold'em Bounty $8K GTD (1Day) (17:10) cannot be checked: No Limit Hold'em Day 1D publishes no level structure."
+    }
+   ],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 0,
    "conflicts_join_in_progress": 0,
    "alternatives": []
@@ -1450,6 +1899,24 @@
      "detail": "No Limit Hold'em Day 1F starts 18:00 and its entry closes 18:00, while $200 No Limit Hold'em Bounty $8K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
+   "undecidable_pairs": [
+    {
+     "a": "r051",
+     "b": "r052",
+     "a_start": "11:00",
+     "b_start": "17:10",
+     "detail": "No Limit Hold'em Day 1E (11:00) and $200 No Limit Hold'em Bounty $8K GTD (1Day) (17:10) cannot be checked: No Limit Hold'em Day 1E publishes no level structure."
+    },
+    {
+     "a": "r051",
+     "b": "r053",
+     "a_start": "11:00",
+     "b_start": "18:00",
+     "detail": "No Limit Hold'em Day 1E (11:00) and No Limit Hold'em Day 1F (18:00) cannot be checked: No Limit Hold'em Day 1E publishes no level structure."
+    }
+   ],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 4,
    "conflicts_join_in_progress": 0,
    "alternatives": [
@@ -1597,6 +2064,66 @@
      "detail": "Double Play Milestone Satellite (2 X $1,100 Ticket) starts 19:00 and its entry closes 19:00, while $600 BIG O $25K GTD (1Day)'s own table can run as late as 03:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
+   "undecidable_pairs": [
+    {
+     "a": "r054",
+     "b": "r055",
+     "a_start": "11:00",
+     "b_start": "11:10",
+     "detail": "No Limit Hold'em Day 1A (11:00) and $800 No Limit Hold'em 1A $500K GTD (11:10) cannot be checked: No Limit Hold'em Day 1A publishes no level structure."
+    },
+    {
+     "a": "r054",
+     "b": "r056",
+     "a_start": "11:00",
+     "b_start": "12:10",
+     "detail": "No Limit Hold'em Day 1A (11:00) and $600 BIG O $25K GTD (1Day) (12:10) cannot be checked: No Limit Hold'em Day 1A publishes no level structure."
+    },
+    {
+     "a": "r054",
+     "b": "r058",
+     "a_start": "11:00",
+     "b_start": "17:10",
+     "detail": "No Limit Hold'em Day 1A (11:00) and $800 No Limit Hold'em 1B $500K GTD (17:10) cannot be checked: No Limit Hold'em Day 1A publishes no level structure."
+    },
+    {
+     "a": "r054",
+     "b": "r059",
+     "a_start": "11:00",
+     "b_start": "19:00",
+     "detail": "No Limit Hold'em Day 1A (11:00) and Double Play Milestone Satellite (2 X $1,100 Ticket) (19:00) cannot be checked: No Limit Hold'em Day 1A publishes no level structure."
+    },
+    {
+     "a": "r055",
+     "b": "r056",
+     "a_start": "11:10",
+     "b_start": "12:10",
+     "detail": "$800 No Limit Hold'em 1A $500K GTD (11:10) and $600 BIG O $25K GTD (1Day) (12:10) cannot be checked: $800 No Limit Hold'em 1A $500K GTD publishes no level structure."
+    },
+    {
+     "a": "r055",
+     "b": "r058",
+     "a_start": "11:10",
+     "b_start": "17:10",
+     "detail": "$800 No Limit Hold'em 1A $500K GTD (11:10) and $800 No Limit Hold'em 1B $500K GTD (17:10) cannot be checked: $800 No Limit Hold'em 1A $500K GTD publishes no level structure."
+    },
+    {
+     "a": "r055",
+     "b": "r059",
+     "a_start": "11:10",
+     "b_start": "19:00",
+     "detail": "$800 No Limit Hold'em 1A $500K GTD (11:10) and Double Play Milestone Satellite (2 X $1,100 Ticket) (19:00) cannot be checked: $800 No Limit Hold'em 1A $500K GTD publishes no level structure."
+    },
+    {
+     "a": "r058",
+     "b": "r059",
+     "a_start": "17:10",
+     "b_start": "19:00",
+     "detail": "$800 No Limit Hold'em 1B $500K GTD (17:10) and Double Play Milestone Satellite (2 X $1,100 Ticket) (19:00) cannot be checked: $800 No Limit Hold'em 1B $500K GTD publishes no level structure."
+    }
+   ],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 2,
    "conflicts_join_in_progress": 0,
    "alternatives": []
@@ -1708,6 +2235,80 @@
    "fallback_kind": null,
    "fallback_note": "No sheet-reviewed candidate on this date.",
    "conflicts": [],
+   "undecidable_pairs": [
+    {
+     "a": "r060",
+     "b": "r061",
+     "a_start": "11:00",
+     "b_start": "11:10",
+     "detail": "No Limit Hold'em Day 1B (11:00) and $800 No Limit Hold'em 1C $500K GTD (11:10) cannot be checked: No Limit Hold'em Day 1B publishes no level structure."
+    },
+    {
+     "a": "r060",
+     "b": "r062",
+     "a_start": "11:00",
+     "b_start": "12:00",
+     "detail": "No Limit Hold'em Day 1B (11:00) and HORSE (12:00) cannot be checked: No Limit Hold'em Day 1B publishes no level structure."
+    },
+    {
+     "a": "r060",
+     "b": "r064",
+     "a_start": "11:00",
+     "b_start": "17:10",
+     "detail": "No Limit Hold'em Day 1B (11:00) and $800 No Limit Hold'em 1D $500K GTD (17:10) cannot be checked: No Limit Hold'em Day 1B publishes no level structure."
+    },
+    {
+     "a": "r060",
+     "b": "r065",
+     "a_start": "11:00",
+     "b_start": "19:00",
+     "detail": "No Limit Hold'em Day 1B (11:00) and Double Play Milestone Satellite (2 X $1,100 Ticket) (19:00) cannot be checked: No Limit Hold'em Day 1B publishes no level structure."
+    },
+    {
+     "a": "r061",
+     "b": "r062",
+     "a_start": "11:10",
+     "b_start": "12:00",
+     "detail": "$800 No Limit Hold'em 1C $500K GTD (11:10) and HORSE (12:00) cannot be checked: $800 No Limit Hold'em 1C $500K GTD publishes no level structure."
+    },
+    {
+     "a": "r061",
+     "b": "r064",
+     "a_start": "11:10",
+     "b_start": "17:10",
+     "detail": "$800 No Limit Hold'em 1C $500K GTD (11:10) and $800 No Limit Hold'em 1D $500K GTD (17:10) cannot be checked: $800 No Limit Hold'em 1C $500K GTD publishes no level structure."
+    },
+    {
+     "a": "r061",
+     "b": "r065",
+     "a_start": "11:10",
+     "b_start": "19:00",
+     "detail": "$800 No Limit Hold'em 1C $500K GTD (11:10) and Double Play Milestone Satellite (2 X $1,100 Ticket) (19:00) cannot be checked: $800 No Limit Hold'em 1C $500K GTD publishes no level structure."
+    },
+    {
+     "a": "r062",
+     "b": "r064",
+     "a_start": "12:00",
+     "b_start": "17:10",
+     "detail": "HORSE (12:00) and $800 No Limit Hold'em 1D $500K GTD (17:10) cannot be checked: HORSE publishes no level structure."
+    },
+    {
+     "a": "r062",
+     "b": "r065",
+     "a_start": "12:00",
+     "b_start": "19:00",
+     "detail": "HORSE (12:00) and Double Play Milestone Satellite (2 X $1,100 Ticket) (19:00) cannot be checked: HORSE publishes no level structure."
+    },
+    {
+     "a": "r064",
+     "b": "r065",
+     "a_start": "17:10",
+     "b_start": "19:00",
+     "detail": "$800 No Limit Hold'em 1D $500K GTD (17:10) and Double Play Milestone Satellite (2 X $1,100 Ticket) (19:00) cannot be checked: $800 No Limit Hold'em 1D $500K GTD publishes no level structure."
+    }
+   ],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 0,
    "conflicts_join_in_progress": 0,
    "alternatives": []
@@ -1803,6 +2404,52 @@
    "fallback_kind": null,
    "fallback_note": "No sheet-reviewed candidate on this date.",
    "conflicts": [],
+   "undecidable_pairs": [
+    {
+     "a": "r067",
+     "b": "r068",
+     "a_start": "11:00",
+     "b_start": "11:10",
+     "detail": "WPT Prime Championship Day 1A (11:00) and $800 No Limit Hold'em 1E $500K GTD (11:10) cannot be checked: WPT Prime Championship Day 1A publishes no level structure."
+    },
+    {
+     "a": "r067",
+     "b": "r069",
+     "a_start": "11:00",
+     "b_start": "17:10",
+     "detail": "WPT Prime Championship Day 1A (11:00) and $800 No Limit Hold'em 1F (Turbo) $500K GTD (17:10) cannot be checked: WPT Prime Championship Day 1A publishes no level structure."
+    },
+    {
+     "a": "r067",
+     "b": "r070",
+     "a_start": "11:00",
+     "b_start": "21:00",
+     "detail": "WPT Prime Championship Day 1A (11:00) and NLH Turbo (21:00) cannot be checked: WPT Prime Championship Day 1A publishes no level structure."
+    },
+    {
+     "a": "r068",
+     "b": "r069",
+     "a_start": "11:10",
+     "b_start": "17:10",
+     "detail": "$800 No Limit Hold'em 1E $500K GTD (11:10) and $800 No Limit Hold'em 1F (Turbo) $500K GTD (17:10) cannot be checked: $800 No Limit Hold'em 1E $500K GTD publishes no level structure."
+    },
+    {
+     "a": "r068",
+     "b": "r070",
+     "a_start": "11:10",
+     "b_start": "21:00",
+     "detail": "$800 No Limit Hold'em 1E $500K GTD (11:10) and NLH Turbo (21:00) cannot be checked: $800 No Limit Hold'em 1E $500K GTD publishes no level structure."
+    },
+    {
+     "a": "r069",
+     "b": "r070",
+     "a_start": "17:10",
+     "b_start": "21:00",
+     "detail": "$800 No Limit Hold'em 1F (Turbo) $500K GTD (17:10) and NLH Turbo (21:00) cannot be checked: $800 No Limit Hold'em 1F (Turbo) $500K GTD publishes no level structure."
+    }
+   ],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 0,
    "conflicts_join_in_progress": 0,
    "alternatives": []
@@ -2079,6 +2726,143 @@
      "detail": "NLH Turbo starts 21:00 and its entry closes 21:00, while $300 No Limit Hold'em Bounty $15K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
+   "undecidable_pairs": [
+    {
+     "a": "r071",
+     "b": "r073",
+     "a_start": "11:00",
+     "b_start": "11:10",
+     "detail": "PLO Mystery Bounty Day 1A (11:00) and $600 No Limit Hold'em $40K GTD (1Day) (11:10) cannot be checked: PLO Mystery Bounty Day 1A publishes no level structure."
+    },
+    {
+     "a": "r071",
+     "b": "r075",
+     "a_start": "11:00",
+     "b_start": "12:00",
+     "detail": "PLO Mystery Bounty Day 1A (11:00) and Milestone Satellite to $1,100 Prime Championship (12:00) cannot be checked: PLO Mystery Bounty Day 1A publishes no level structure."
+    },
+    {
+     "a": "r071",
+     "b": "r076",
+     "a_start": "11:00",
+     "b_start": "17:10",
+     "detail": "PLO Mystery Bounty Day 1A (11:00) and $300 No Limit Hold'em Bounty $15K GTD (1Day) (17:10) cannot be checked: PLO Mystery Bounty Day 1A publishes no level structure."
+    },
+    {
+     "a": "r071",
+     "b": "r077",
+     "a_start": "11:00",
+     "b_start": "18:00",
+     "detail": "PLO Mystery Bounty Day 1A (11:00) and PLO Mystery Bounty Day 1B (18:00) cannot be checked: PLO Mystery Bounty Day 1A publishes no level structure."
+    },
+    {
+     "a": "r071",
+     "b": "r078",
+     "a_start": "11:00",
+     "b_start": "19:00",
+     "detail": "PLO Mystery Bounty Day 1A (11:00) and Double Play Milestone Satellite (2 X $1,100 Ticket) (19:00) cannot be checked: PLO Mystery Bounty Day 1A publishes no level structure."
+    },
+    {
+     "a": "r071",
+     "b": "r079",
+     "a_start": "11:00",
+     "b_start": "21:00",
+     "detail": "PLO Mystery Bounty Day 1A (11:00) and NLH Turbo (21:00) cannot be checked: PLO Mystery Bounty Day 1A publishes no level structure."
+    },
+    {
+     "a": "r072",
+     "b": "r073",
+     "a_start": "11:00",
+     "b_start": "11:10",
+     "detail": "WPT Prime Championship Day 1B (11:00) and $600 No Limit Hold'em $40K GTD (1Day) (11:10) cannot be checked: WPT Prime Championship Day 1B publishes no level structure."
+    },
+    {
+     "a": "r072",
+     "b": "r075",
+     "a_start": "11:00",
+     "b_start": "12:00",
+     "detail": "WPT Prime Championship Day 1B (11:00) and Milestone Satellite to $1,100 Prime Championship (12:00) cannot be checked: WPT Prime Championship Day 1B publishes no level structure."
+    },
+    {
+     "a": "r072",
+     "b": "r076",
+     "a_start": "11:00",
+     "b_start": "17:10",
+     "detail": "WPT Prime Championship Day 1B (11:00) and $300 No Limit Hold'em Bounty $15K GTD (1Day) (17:10) cannot be checked: WPT Prime Championship Day 1B publishes no level structure."
+    },
+    {
+     "a": "r072",
+     "b": "r077",
+     "a_start": "11:00",
+     "b_start": "18:00",
+     "detail": "WPT Prime Championship Day 1B (11:00) and PLO Mystery Bounty Day 1B (18:00) cannot be checked: WPT Prime Championship Day 1B publishes no level structure."
+    },
+    {
+     "a": "r072",
+     "b": "r078",
+     "a_start": "11:00",
+     "b_start": "19:00",
+     "detail": "WPT Prime Championship Day 1B (11:00) and Double Play Milestone Satellite (2 X $1,100 Ticket) (19:00) cannot be checked: WPT Prime Championship Day 1B publishes no level structure."
+    },
+    {
+     "a": "r072",
+     "b": "r079",
+     "a_start": "11:00",
+     "b_start": "21:00",
+     "detail": "WPT Prime Championship Day 1B (11:00) and NLH Turbo (21:00) cannot be checked: WPT Prime Championship Day 1B publishes no level structure."
+    },
+    {
+     "a": "r075",
+     "b": "r076",
+     "a_start": "12:00",
+     "b_start": "17:10",
+     "detail": "Milestone Satellite to $1,100 Prime Championship (12:00) and $300 No Limit Hold'em Bounty $15K GTD (1Day) (17:10) cannot be checked: Milestone Satellite to $1,100 Prime Championship publishes no level structure."
+    },
+    {
+     "a": "r075",
+     "b": "r077",
+     "a_start": "12:00",
+     "b_start": "18:00",
+     "detail": "Milestone Satellite to $1,100 Prime Championship (12:00) and PLO Mystery Bounty Day 1B (18:00) cannot be checked: Milestone Satellite to $1,100 Prime Championship publishes no level structure."
+    },
+    {
+     "a": "r075",
+     "b": "r078",
+     "a_start": "12:00",
+     "b_start": "19:00",
+     "detail": "Milestone Satellite to $1,100 Prime Championship (12:00) and Double Play Milestone Satellite (2 X $1,100 Ticket) (19:00) cannot be checked: Milestone Satellite to $1,100 Prime Championship publishes no level structure."
+    },
+    {
+     "a": "r075",
+     "b": "r079",
+     "a_start": "12:00",
+     "b_start": "21:00",
+     "detail": "Milestone Satellite to $1,100 Prime Championship (12:00) and NLH Turbo (21:00) cannot be checked: Milestone Satellite to $1,100 Prime Championship publishes no level structure."
+    },
+    {
+     "a": "r077",
+     "b": "r078",
+     "a_start": "18:00",
+     "b_start": "19:00",
+     "detail": "PLO Mystery Bounty Day 1B (18:00) and Double Play Milestone Satellite (2 X $1,100 Ticket) (19:00) cannot be checked: PLO Mystery Bounty Day 1B publishes no level structure."
+    },
+    {
+     "a": "r077",
+     "b": "r079",
+     "a_start": "18:00",
+     "b_start": "21:00",
+     "detail": "PLO Mystery Bounty Day 1B (18:00) and NLH Turbo (21:00) cannot be checked: PLO Mystery Bounty Day 1B publishes no level structure."
+    },
+    {
+     "a": "r078",
+     "b": "r079",
+     "a_start": "19:00",
+     "b_start": "21:00",
+     "detail": "Double Play Milestone Satellite (2 X $1,100 Ticket) (19:00) and NLH Turbo (21:00) cannot be checked: Double Play Milestone Satellite (2 X $1,100 Ticket) publishes no level structure."
+    }
+   ],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 9,
    "conflicts_join_in_progress": 0,
    "alternatives": [
@@ -2320,6 +3104,108 @@
      "detail": "NLH Turbo starts 21:00 and its entry closes 21:00, while $300 No Limit Hold'em Bounty $15K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
+   "undecidable_pairs": [
+    {
+     "a": "r080",
+     "b": "r082",
+     "a_start": "11:00",
+     "b_start": "11:10",
+     "detail": "HORSE (2 Day) (11:00) and $600 No Limit Hold'em Bounty $40K GTD (1Day) - $200 bounties to start & $500 bounties in the money (11:10) cannot be checked: HORSE (2 Day) publishes no level structure."
+    },
+    {
+     "a": "r080",
+     "b": "r084",
+     "a_start": "11:00",
+     "b_start": "13:00",
+     "detail": "HORSE (2 Day) (11:00) and PLO $500 Bounty (13:00) cannot be checked: HORSE (2 Day) publishes no level structure."
+    },
+    {
+     "a": "r080",
+     "b": "r085",
+     "a_start": "11:00",
+     "b_start": "17:10",
+     "detail": "HORSE (2 Day) (11:00) and $300 No Limit Hold'em Bounty $15K GTD (1Day) (17:10) cannot be checked: HORSE (2 Day) publishes no level structure."
+    },
+    {
+     "a": "r080",
+     "b": "r086",
+     "a_start": "11:00",
+     "b_start": "19:00",
+     "detail": "HORSE (2 Day) (11:00) and Milestone Satellite Package to Prime and World Championship (19:00) cannot be checked: HORSE (2 Day) publishes no level structure."
+    },
+    {
+     "a": "r080",
+     "b": "r087",
+     "a_start": "11:00",
+     "b_start": "21:00",
+     "detail": "HORSE (2 Day) (11:00) and NLH Turbo (21:00) cannot be checked: HORSE (2 Day) publishes no level structure."
+    },
+    {
+     "a": "r081",
+     "b": "r082",
+     "a_start": "11:00",
+     "b_start": "11:10",
+     "detail": "WPT Prime Championship Day 1C (11:00) and $600 No Limit Hold'em Bounty $40K GTD (1Day) - $200 bounties to start & $500 bounties in the money (11:10) cannot be checked: WPT Prime Championship Day 1C publishes no level structure."
+    },
+    {
+     "a": "r081",
+     "b": "r084",
+     "a_start": "11:00",
+     "b_start": "13:00",
+     "detail": "WPT Prime Championship Day 1C (11:00) and PLO $500 Bounty (13:00) cannot be checked: WPT Prime Championship Day 1C publishes no level structure."
+    },
+    {
+     "a": "r081",
+     "b": "r085",
+     "a_start": "11:00",
+     "b_start": "17:10",
+     "detail": "WPT Prime Championship Day 1C (11:00) and $300 No Limit Hold'em Bounty $15K GTD (1Day) (17:10) cannot be checked: WPT Prime Championship Day 1C publishes no level structure."
+    },
+    {
+     "a": "r081",
+     "b": "r086",
+     "a_start": "11:00",
+     "b_start": "19:00",
+     "detail": "WPT Prime Championship Day 1C (11:00) and Milestone Satellite Package to Prime and World Championship (19:00) cannot be checked: WPT Prime Championship Day 1C publishes no level structure."
+    },
+    {
+     "a": "r081",
+     "b": "r087",
+     "a_start": "11:00",
+     "b_start": "21:00",
+     "detail": "WPT Prime Championship Day 1C (11:00) and NLH Turbo (21:00) cannot be checked: WPT Prime Championship Day 1C publishes no level structure."
+    },
+    {
+     "a": "r084",
+     "b": "r085",
+     "a_start": "13:00",
+     "b_start": "17:10",
+     "detail": "PLO $500 Bounty (13:00) and $300 No Limit Hold'em Bounty $15K GTD (1Day) (17:10) cannot be checked: PLO $500 Bounty publishes no level structure."
+    },
+    {
+     "a": "r084",
+     "b": "r086",
+     "a_start": "13:00",
+     "b_start": "19:00",
+     "detail": "PLO $500 Bounty (13:00) and Milestone Satellite Package to Prime and World Championship (19:00) cannot be checked: PLO $500 Bounty publishes no level structure."
+    },
+    {
+     "a": "r084",
+     "b": "r087",
+     "a_start": "13:00",
+     "b_start": "21:00",
+     "detail": "PLO $500 Bounty (13:00) and NLH Turbo (21:00) cannot be checked: PLO $500 Bounty publishes no level structure."
+    },
+    {
+     "a": "r086",
+     "b": "r087",
+     "a_start": "19:00",
+     "b_start": "21:00",
+     "detail": "Milestone Satellite Package to Prime and World Championship (19:00) and NLH Turbo (21:00) cannot be checked: Milestone Satellite Package to Prime and World Championship publishes no level structure."
+    }
+   ],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 7,
    "conflicts_join_in_progress": 0,
    "alternatives": [
@@ -2578,6 +3464,45 @@
      "detail": "NLH Turbo starts 21:00 and its entry closes 21:00, while $300 No Limit Hold'em Bounty $15K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
+   "undecidable_pairs": [
+    {
+     "a": "r089",
+     "b": "r090",
+     "a_start": "11:00",
+     "b_start": "16:10",
+     "detail": "WPT Prime Championship Day 1D (11:00) and $100 NLH LIPS Ladies Milestone Satellite (1Day) - Awards Direct Entry to Event # 39 (16:10) cannot be checked: WPT Prime Championship Day 1D publishes no level structure."
+    },
+    {
+     "a": "r089",
+     "b": "r091",
+     "a_start": "11:00",
+     "b_start": "17:10",
+     "detail": "WPT Prime Championship Day 1D (11:00) and $300 No Limit Hold'em Bounty $15K GTD (1Day) (17:10) cannot be checked: WPT Prime Championship Day 1D publishes no level structure."
+    },
+    {
+     "a": "r089",
+     "b": "r092",
+     "a_start": "11:00",
+     "b_start": "19:00",
+     "detail": "WPT Prime Championship Day 1D (11:00) and Milestone Satellite to $10,400 World Championship (19:00) cannot be checked: WPT Prime Championship Day 1D publishes no level structure."
+    },
+    {
+     "a": "r089",
+     "b": "r093",
+     "a_start": "11:00",
+     "b_start": "21:00",
+     "detail": "WPT Prime Championship Day 1D (11:00) and NLH Turbo (21:00) cannot be checked: WPT Prime Championship Day 1D publishes no level structure."
+    },
+    {
+     "a": "r092",
+     "b": "r093",
+     "a_start": "19:00",
+     "b_start": "21:00",
+     "detail": "Milestone Satellite to $10,400 World Championship (19:00) and NLH Turbo (21:00) cannot be checked: Milestone Satellite to $10,400 World Championship publishes no level structure."
+    }
+   ],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 10,
    "conflicts_join_in_progress": 0,
    "alternatives": [
@@ -3054,6 +3979,171 @@
      "detail": "NLH Turbo starts 21:00 and its entry closes 21:00, while $300 No Limit Hold'em Bounty $15K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
+   "undecidable_pairs": [
+    {
+     "a": "r095",
+     "b": "r096",
+     "a_start": "11:00",
+     "b_start": "11:10",
+     "detail": "No Limit Hold'em (2 Day) (11:00) and $800 No Limit Hold'em Bounty $75K GTD (1Day) - $200 bounties to start & $500 bounties in the money (11:10) cannot be checked: No Limit Hold'em (2 Day) publishes no level structure."
+    },
+    {
+     "a": "r095",
+     "b": "r098",
+     "a_start": "11:00",
+     "b_start": "13:00",
+     "detail": "No Limit Hold'em (2 Day) (11:00) and Limit Omaha 8 (13:00) cannot be checked: No Limit Hold'em (2 Day) publishes no level structure."
+    },
+    {
+     "a": "r095",
+     "b": "r099",
+     "a_start": "11:00",
+     "b_start": "13:00",
+     "detail": "No Limit Hold'em (2 Day) (11:00) and PLO $1,000 Bounty (13:00) cannot be checked: No Limit Hold'em (2 Day) publishes no level structure."
+    },
+    {
+     "a": "r095",
+     "b": "r100",
+     "a_start": "11:00",
+     "b_start": "14:00",
+     "detail": "No Limit Hold'em (2 Day) (11:00) and Milestone Satellite to $10,400 World Championship (14:00) cannot be checked: No Limit Hold'em (2 Day) publishes no level structure."
+    },
+    {
+     "a": "r095",
+     "b": "r101",
+     "a_start": "11:00",
+     "b_start": "16:10",
+     "detail": "No Limit Hold'em (2 Day) (11:00) and $100 NLH LIPS Ladies Milestone Satellite (1Day) - Awards Direct Entry to Event # 39 (16:10) cannot be checked: No Limit Hold'em (2 Day) publishes no level structure."
+    },
+    {
+     "a": "r095",
+     "b": "r102",
+     "a_start": "11:00",
+     "b_start": "17:10",
+     "detail": "No Limit Hold'em (2 Day) (11:00) and $300 No Limit Hold'em Bounty $15K GTD (1Day) (17:10) cannot be checked: No Limit Hold'em (2 Day) publishes no level structure."
+    },
+    {
+     "a": "r095",
+     "b": "r103",
+     "a_start": "11:00",
+     "b_start": "19:00",
+     "detail": "No Limit Hold'em (2 Day) (11:00) and Milestone Satellite to $10,400 World Championship (19:00) cannot be checked: No Limit Hold'em (2 Day) publishes no level structure."
+    },
+    {
+     "a": "r095",
+     "b": "r104",
+     "a_start": "11:00",
+     "b_start": "21:00",
+     "detail": "No Limit Hold'em (2 Day) (11:00) and NLH Turbo (21:00) cannot be checked: No Limit Hold'em (2 Day) publishes no level structure."
+    },
+    {
+     "a": "r098",
+     "b": "r100",
+     "a_start": "13:00",
+     "b_start": "14:00",
+     "detail": "Limit Omaha 8 (13:00) and Milestone Satellite to $10,400 World Championship (14:00) cannot be checked: Limit Omaha 8 publishes no level structure."
+    },
+    {
+     "a": "r098",
+     "b": "r101",
+     "a_start": "13:00",
+     "b_start": "16:10",
+     "detail": "Limit Omaha 8 (13:00) and $100 NLH LIPS Ladies Milestone Satellite (1Day) - Awards Direct Entry to Event # 39 (16:10) cannot be checked: Limit Omaha 8 publishes no level structure."
+    },
+    {
+     "a": "r098",
+     "b": "r102",
+     "a_start": "13:00",
+     "b_start": "17:10",
+     "detail": "Limit Omaha 8 (13:00) and $300 No Limit Hold'em Bounty $15K GTD (1Day) (17:10) cannot be checked: Limit Omaha 8 publishes no level structure."
+    },
+    {
+     "a": "r098",
+     "b": "r103",
+     "a_start": "13:00",
+     "b_start": "19:00",
+     "detail": "Limit Omaha 8 (13:00) and Milestone Satellite to $10,400 World Championship (19:00) cannot be checked: Limit Omaha 8 publishes no level structure."
+    },
+    {
+     "a": "r098",
+     "b": "r104",
+     "a_start": "13:00",
+     "b_start": "21:00",
+     "detail": "Limit Omaha 8 (13:00) and NLH Turbo (21:00) cannot be checked: Limit Omaha 8 publishes no level structure."
+    },
+    {
+     "a": "r099",
+     "b": "r100",
+     "a_start": "13:00",
+     "b_start": "14:00",
+     "detail": "PLO $1,000 Bounty (13:00) and Milestone Satellite to $10,400 World Championship (14:00) cannot be checked: PLO $1,000 Bounty publishes no level structure."
+    },
+    {
+     "a": "r099",
+     "b": "r101",
+     "a_start": "13:00",
+     "b_start": "16:10",
+     "detail": "PLO $1,000 Bounty (13:00) and $100 NLH LIPS Ladies Milestone Satellite (1Day) - Awards Direct Entry to Event # 39 (16:10) cannot be checked: PLO $1,000 Bounty publishes no level structure."
+    },
+    {
+     "a": "r099",
+     "b": "r102",
+     "a_start": "13:00",
+     "b_start": "17:10",
+     "detail": "PLO $1,000 Bounty (13:00) and $300 No Limit Hold'em Bounty $15K GTD (1Day) (17:10) cannot be checked: PLO $1,000 Bounty publishes no level structure."
+    },
+    {
+     "a": "r099",
+     "b": "r103",
+     "a_start": "13:00",
+     "b_start": "19:00",
+     "detail": "PLO $1,000 Bounty (13:00) and Milestone Satellite to $10,400 World Championship (19:00) cannot be checked: PLO $1,000 Bounty publishes no level structure."
+    },
+    {
+     "a": "r099",
+     "b": "r104",
+     "a_start": "13:00",
+     "b_start": "21:00",
+     "detail": "PLO $1,000 Bounty (13:00) and NLH Turbo (21:00) cannot be checked: PLO $1,000 Bounty publishes no level structure."
+    },
+    {
+     "a": "r100",
+     "b": "r101",
+     "a_start": "14:00",
+     "b_start": "16:10",
+     "detail": "Milestone Satellite to $10,400 World Championship (14:00) and $100 NLH LIPS Ladies Milestone Satellite (1Day) - Awards Direct Entry to Event # 39 (16:10) cannot be checked: Milestone Satellite to $10,400 World Championship publishes no level structure."
+    },
+    {
+     "a": "r100",
+     "b": "r102",
+     "a_start": "14:00",
+     "b_start": "17:10",
+     "detail": "Milestone Satellite to $10,400 World Championship (14:00) and $300 No Limit Hold'em Bounty $15K GTD (1Day) (17:10) cannot be checked: Milestone Satellite to $10,400 World Championship publishes no level structure."
+    },
+    {
+     "a": "r100",
+     "b": "r103",
+     "a_start": "14:00",
+     "b_start": "19:00",
+     "detail": "Milestone Satellite to $10,400 World Championship (14:00) and Milestone Satellite to $10,400 World Championship (19:00) cannot be checked: Milestone Satellite to $10,400 World Championship publishes no level structure."
+    },
+    {
+     "a": "r100",
+     "b": "r104",
+     "a_start": "14:00",
+     "b_start": "21:00",
+     "detail": "Milestone Satellite to $10,400 World Championship (14:00) and NLH Turbo (21:00) cannot be checked: Milestone Satellite to $10,400 World Championship publishes no level structure."
+    },
+    {
+     "a": "r103",
+     "b": "r104",
+     "a_start": "19:00",
+     "b_start": "21:00",
+     "detail": "Milestone Satellite to $10,400 World Championship (19:00) and NLH Turbo (21:00) cannot be checked: Milestone Satellite to $10,400 World Championship publishes no level structure."
+    }
+   ],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 22,
    "conflicts_join_in_progress": 0,
    "alternatives": [
@@ -3293,6 +4383,73 @@
      "detail": "Super Gold Million Mystery Bounty Day 1B starts 18:00 and its entry closes 18:00, while $300 No Limit Hold'em Bounty $15K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
+   "undecidable_pairs": [
+    {
+     "a": "r105",
+     "b": "r106",
+     "a_start": "10:00",
+     "b_start": "10:10",
+     "detail": "Super Gold Million Mystery Bounty Day 1A (10:00) and $800 No Limit Hold'em LIPS Ladies $40K GTD (2Day) - Women in Poker main event (10:10) cannot be checked: Super Gold Million Mystery Bounty Day 1A publishes no level structure."
+    },
+    {
+     "a": "r105",
+     "b": "r108",
+     "a_start": "10:00",
+     "b_start": "12:10",
+     "detail": "Super Gold Million Mystery Bounty Day 1A (10:00) and $600 Pot Limit Omaha Bounty $25K GTD (1Day) (12:10) cannot be checked: Super Gold Million Mystery Bounty Day 1A publishes no level structure."
+    },
+    {
+     "a": "r105",
+     "b": "r109",
+     "a_start": "10:00",
+     "b_start": "16:10",
+     "detail": "Super Gold Million Mystery Bounty Day 1A (10:00) and $260 NLH Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 (16:10) cannot be checked: Super Gold Million Mystery Bounty Day 1A publishes no level structure."
+    },
+    {
+     "a": "r105",
+     "b": "r110",
+     "a_start": "10:00",
+     "b_start": "17:10",
+     "detail": "Super Gold Million Mystery Bounty Day 1A (10:00) and $300 No Limit Hold'em Bounty $15K GTD (1Day) (17:10) cannot be checked: Super Gold Million Mystery Bounty Day 1A publishes no level structure."
+    },
+    {
+     "a": "r105",
+     "b": "r111",
+     "a_start": "10:00",
+     "b_start": "18:00",
+     "detail": "Super Gold Million Mystery Bounty Day 1A (10:00) and Super Gold Million Mystery Bounty Day 1B (18:00) cannot be checked: Super Gold Million Mystery Bounty Day 1A publishes no level structure."
+    },
+    {
+     "a": "r106",
+     "b": "r108",
+     "a_start": "10:10",
+     "b_start": "12:10",
+     "detail": "$800 No Limit Hold'em LIPS Ladies $40K GTD (2Day) - Women in Poker main event (10:10) and $600 Pot Limit Omaha Bounty $25K GTD (1Day) (12:10) cannot be checked: $800 No Limit Hold'em LIPS Ladies $40K GTD (2Day) - Women in Poker main event publishes no level structure."
+    },
+    {
+     "a": "r106",
+     "b": "r109",
+     "a_start": "10:10",
+     "b_start": "16:10",
+     "detail": "$800 No Limit Hold'em LIPS Ladies $40K GTD (2Day) - Women in Poker main event (10:10) and $260 NLH Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 (16:10) cannot be checked: $800 No Limit Hold'em LIPS Ladies $40K GTD (2Day) - Women in Poker main event publishes no level structure."
+    },
+    {
+     "a": "r106",
+     "b": "r110",
+     "a_start": "10:10",
+     "b_start": "17:10",
+     "detail": "$800 No Limit Hold'em LIPS Ladies $40K GTD (2Day) - Women in Poker main event (10:10) and $300 No Limit Hold'em Bounty $15K GTD (1Day) (17:10) cannot be checked: $800 No Limit Hold'em LIPS Ladies $40K GTD (2Day) - Women in Poker main event publishes no level structure."
+    },
+    {
+     "a": "r106",
+     "b": "r111",
+     "a_start": "10:10",
+     "b_start": "18:00",
+     "detail": "$800 No Limit Hold'em LIPS Ladies $40K GTD (2Day) - Women in Poker main event (10:10) and Super Gold Million Mystery Bounty Day 1B (18:00) cannot be checked: $800 No Limit Hold'em LIPS Ladies $40K GTD (2Day) - Women in Poker main event publishes no level structure."
+    }
+   ],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 6,
    "conflicts_join_in_progress": 0,
    "alternatives": [
@@ -3501,6 +4658,45 @@
      "detail": "$260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 starts 20:10 and its entry closes 21:40, while $260 NLH Milestone Satellite (1Day) - Awards Direct Entry to Event # 47's own table can run as late as 03:15 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
+   "undecidable_pairs": [
+    {
+     "a": "r113",
+     "b": "r114",
+     "a_start": "10:00",
+     "b_start": "11:10",
+     "detail": "Super Gold Million Mystery Bounty Day 1C (10:00) and $600 No Limit Hold'em LIPS $30K GTD (1Day) - KINGS and QUEENS bounty, open to all players (11:10) cannot be checked: Super Gold Million Mystery Bounty Day 1C publishes no level structure."
+    },
+    {
+     "a": "r113",
+     "b": "r116",
+     "a_start": "10:00",
+     "b_start": "16:10",
+     "detail": "Super Gold Million Mystery Bounty Day 1C (10:00) and $260 NLH Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 (16:10) cannot be checked: Super Gold Million Mystery Bounty Day 1C publishes no level structure."
+    },
+    {
+     "a": "r113",
+     "b": "r117",
+     "a_start": "10:00",
+     "b_start": "18:00",
+     "detail": "Super Gold Million Mystery Bounty Day 1C (10:00) and Super Gold Million Mystery Bounty Day 1D (18:00) cannot be checked: Super Gold Million Mystery Bounty Day 1C publishes no level structure."
+    },
+    {
+     "a": "r113",
+     "b": "r119",
+     "a_start": "10:00",
+     "b_start": "20:10",
+     "detail": "Super Gold Million Mystery Bounty Day 1C (10:00) and $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 (20:10) cannot be checked: Super Gold Million Mystery Bounty Day 1C publishes no level structure."
+    },
+    {
+     "a": "r117",
+     "b": "r119",
+     "a_start": "18:00",
+     "b_start": "20:10",
+     "detail": "Super Gold Million Mystery Bounty Day 1D (18:00) and $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 (20:10) cannot be checked: Super Gold Million Mystery Bounty Day 1D publishes no level structure."
+    }
+   ],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 5,
    "conflicts_join_in_progress": 0,
    "alternatives": [
@@ -3633,7 +4829,7 @@
     {
      "id": "r125",
      "start": "14:00",
-     "name": "Milestone Satellite to $10,400 World Championship 1A/8",
+     "name": "Milestone Satellite to $10,400 World Championship 1A/B",
      "series": "WPT World Championship (Wynn)",
      "venue": "Wynn Las Vegas",
      "buy_in_usd": 1100,
@@ -3653,7 +4849,7 @@
     {
      "id": "r128",
      "start": "16:00",
-     "name": "Milestone Satellite to $10,400 Ladies NLH Championship",
+     "name": "Milestone Satellite to $1,100 Ladies NLH Championship",
      "series": "WPT World Championship (Wynn)",
      "venue": "Wynn Las Vegas",
      "buy_in_usd": 200,
@@ -3695,7 +4891,7 @@
     {
      "id": "r130",
      "start": "19:00",
-     "name": "Milestone Satellite to $10,400 World Championship 1A/8",
+     "name": "Milestone Satellite to $10,400 World Championship 1A/B",
      "series": "WPT World Championship (Wynn)",
      "venue": "Wynn Las Vegas",
      "buy_in_usd": 1100,
@@ -3791,7 +4987,7 @@
      "b_start": "14:00",
      "kind": "unplannable",
      "gap_min": -235,
-     "detail": "Milestone Satellite to $10,400 World Championship 1A/8 starts 14:00 and its entry closes 14:00, while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47's own table can run as late as 17:55 and no source prints an earlier end - so nothing published supports planning both on one day"
+     "detail": "Milestone Satellite to $10,400 World Championship 1A/B starts 14:00 and its entry closes 14:00, while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47's own table can run as late as 17:55 and no source prints an earlier end - so nothing published supports planning both on one day"
     },
     {
      "a": "r120",
@@ -3802,7 +4998,7 @@
      "b_start": "16:00",
      "kind": "unplannable",
      "gap_min": -115,
-     "detail": "Milestone Satellite to $10,400 Ladies NLH Championship starts 16:00 and its entry closes 16:00, while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47's own table can run as late as 17:55 and no source prints an earlier end - so nothing published supports planning both on one day"
+     "detail": "Milestone Satellite to $1,100 Ladies NLH Championship starts 16:00 and its entry closes 16:00, while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47's own table can run as late as 17:55 and no source prints an earlier end - so nothing published supports planning both on one day"
     },
     {
      "a": "r123",
@@ -3824,7 +5020,7 @@
      "b_start": "14:00",
      "kind": "unplannable",
      "gap_min": -415,
-     "detail": "Milestone Satellite to $10,400 World Championship 1A/8 starts 14:00 and its entry closes 14:00, while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47's own table can run as late as 20:55 and no source prints an earlier end - so nothing published supports planning both on one day"
+     "detail": "Milestone Satellite to $10,400 World Championship 1A/B starts 14:00 and its entry closes 14:00, while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47's own table can run as late as 20:55 and no source prints an earlier end - so nothing published supports planning both on one day"
     },
     {
      "a": "r123",
@@ -3835,7 +5031,7 @@
      "b_start": "16:00",
      "kind": "unplannable",
      "gap_min": -295,
-     "detail": "Milestone Satellite to $10,400 Ladies NLH Championship starts 16:00 and its entry closes 16:00, while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47's own table can run as late as 20:55 and no source prints an earlier end - so nothing published supports planning both on one day"
+     "detail": "Milestone Satellite to $1,100 Ladies NLH Championship starts 16:00 and its entry closes 16:00, while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47's own table can run as late as 20:55 and no source prints an earlier end - so nothing published supports planning both on one day"
     },
     {
      "a": "r123",
@@ -3857,9 +5053,223 @@
      "b_start": "19:00",
      "kind": "unplannable",
      "gap_min": -115,
-     "detail": "Milestone Satellite to $10,400 World Championship 1A/8 starts 19:00 and its entry closes 19:00, while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47's own table can run as late as 20:55 and no source prints an earlier end - so nothing published supports planning both on one day"
+     "detail": "Milestone Satellite to $10,400 World Championship 1A/B starts 19:00 and its entry closes 19:00, while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47's own table can run as late as 20:55 and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
+   "undecidable_pairs": [
+    {
+     "a": "r121",
+     "b": "r122",
+     "a_start": "10:00",
+     "b_start": "10:10",
+     "detail": "No Limit Hold'em (10:00) and $2,200 No Limit Hold'em 1A $1 Mill GTD - PokerAtlas Championship title event (10:10) cannot be checked: No Limit Hold'em publishes no level structure."
+    },
+    {
+     "a": "r121",
+     "b": "r123",
+     "a_start": "10:00",
+     "b_start": "12:10",
+     "detail": "No Limit Hold'em (10:00) and $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 (12:10) cannot be checked: No Limit Hold'em publishes no level structure."
+    },
+    {
+     "a": "r121",
+     "b": "r124",
+     "a_start": "10:00",
+     "b_start": "13:00",
+     "detail": "No Limit Hold'em (10:00) and PLO (13:00) cannot be checked: No Limit Hold'em publishes no level structure."
+    },
+    {
+     "a": "r121",
+     "b": "r125",
+     "a_start": "10:00",
+     "b_start": "14:00",
+     "detail": "No Limit Hold'em (10:00) and Milestone Satellite to $10,400 World Championship 1A/B (14:00) cannot be checked: No Limit Hold'em publishes no level structure."
+    },
+    {
+     "a": "r121",
+     "b": "r128",
+     "a_start": "10:00",
+     "b_start": "16:00",
+     "detail": "No Limit Hold'em (10:00) and Milestone Satellite to $1,100 Ladies NLH Championship (16:00) cannot be checked: No Limit Hold'em publishes no level structure."
+    },
+    {
+     "a": "r121",
+     "b": "r129",
+     "a_start": "10:00",
+     "b_start": "18:10",
+     "detail": "No Limit Hold'em (10:00) and $2,200 No Limit Hold'em 1B $1 Mill GTD - PokerAtlas Championship title event (18:10) cannot be checked: No Limit Hold'em publishes no level structure."
+    },
+    {
+     "a": "r121",
+     "b": "r130",
+     "a_start": "10:00",
+     "b_start": "19:00",
+     "detail": "No Limit Hold'em (10:00) and Milestone Satellite to $10,400 World Championship 1A/B (19:00) cannot be checked: No Limit Hold'em publishes no level structure."
+    },
+    {
+     "a": "r121",
+     "b": "r131",
+     "a_start": "10:00",
+     "b_start": "21:00",
+     "detail": "No Limit Hold'em (10:00) and NLH Turbo (21:00) cannot be checked: No Limit Hold'em publishes no level structure."
+    },
+    {
+     "a": "r122",
+     "b": "r123",
+     "a_start": "10:10",
+     "b_start": "12:10",
+     "detail": "$2,200 No Limit Hold'em 1A $1 Mill GTD - PokerAtlas Championship title event (10:10) and $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47 (12:10) cannot be checked: $2,200 No Limit Hold'em 1A $1 Mill GTD - PokerAtlas Championship title event publishes no level structure."
+    },
+    {
+     "a": "r122",
+     "b": "r124",
+     "a_start": "10:10",
+     "b_start": "13:00",
+     "detail": "$2,200 No Limit Hold'em 1A $1 Mill GTD - PokerAtlas Championship title event (10:10) and PLO (13:00) cannot be checked: $2,200 No Limit Hold'em 1A $1 Mill GTD - PokerAtlas Championship title event publishes no level structure."
+    },
+    {
+     "a": "r122",
+     "b": "r125",
+     "a_start": "10:10",
+     "b_start": "14:00",
+     "detail": "$2,200 No Limit Hold'em 1A $1 Mill GTD - PokerAtlas Championship title event (10:10) and Milestone Satellite to $10,400 World Championship 1A/B (14:00) cannot be checked: $2,200 No Limit Hold'em 1A $1 Mill GTD - PokerAtlas Championship title event publishes no level structure."
+    },
+    {
+     "a": "r122",
+     "b": "r128",
+     "a_start": "10:10",
+     "b_start": "16:00",
+     "detail": "$2,200 No Limit Hold'em 1A $1 Mill GTD - PokerAtlas Championship title event (10:10) and Milestone Satellite to $1,100 Ladies NLH Championship (16:00) cannot be checked: $2,200 No Limit Hold'em 1A $1 Mill GTD - PokerAtlas Championship title event publishes no level structure."
+    },
+    {
+     "a": "r122",
+     "b": "r129",
+     "a_start": "10:10",
+     "b_start": "18:10",
+     "detail": "$2,200 No Limit Hold'em 1A $1 Mill GTD - PokerAtlas Championship title event (10:10) and $2,200 No Limit Hold'em 1B $1 Mill GTD - PokerAtlas Championship title event (18:10) cannot be checked: $2,200 No Limit Hold'em 1A $1 Mill GTD - PokerAtlas Championship title event publishes no level structure."
+    },
+    {
+     "a": "r122",
+     "b": "r130",
+     "a_start": "10:10",
+     "b_start": "19:00",
+     "detail": "$2,200 No Limit Hold'em 1A $1 Mill GTD - PokerAtlas Championship title event (10:10) and Milestone Satellite to $10,400 World Championship 1A/B (19:00) cannot be checked: $2,200 No Limit Hold'em 1A $1 Mill GTD - PokerAtlas Championship title event publishes no level structure."
+    },
+    {
+     "a": "r122",
+     "b": "r131",
+     "a_start": "10:10",
+     "b_start": "21:00",
+     "detail": "$2,200 No Limit Hold'em 1A $1 Mill GTD - PokerAtlas Championship title event (10:10) and NLH Turbo (21:00) cannot be checked: $2,200 No Limit Hold'em 1A $1 Mill GTD - PokerAtlas Championship title event publishes no level structure."
+    },
+    {
+     "a": "r124",
+     "b": "r125",
+     "a_start": "13:00",
+     "b_start": "14:00",
+     "detail": "PLO (13:00) and Milestone Satellite to $10,400 World Championship 1A/B (14:00) cannot be checked: PLO publishes no level structure."
+    },
+    {
+     "a": "r124",
+     "b": "r128",
+     "a_start": "13:00",
+     "b_start": "16:00",
+     "detail": "PLO (13:00) and Milestone Satellite to $1,100 Ladies NLH Championship (16:00) cannot be checked: PLO publishes no level structure."
+    },
+    {
+     "a": "r124",
+     "b": "r129",
+     "a_start": "13:00",
+     "b_start": "18:10",
+     "detail": "PLO (13:00) and $2,200 No Limit Hold'em 1B $1 Mill GTD - PokerAtlas Championship title event (18:10) cannot be checked: PLO publishes no level structure."
+    },
+    {
+     "a": "r124",
+     "b": "r130",
+     "a_start": "13:00",
+     "b_start": "19:00",
+     "detail": "PLO (13:00) and Milestone Satellite to $10,400 World Championship 1A/B (19:00) cannot be checked: PLO publishes no level structure."
+    },
+    {
+     "a": "r124",
+     "b": "r131",
+     "a_start": "13:00",
+     "b_start": "21:00",
+     "detail": "PLO (13:00) and NLH Turbo (21:00) cannot be checked: PLO publishes no level structure."
+    },
+    {
+     "a": "r125",
+     "b": "r128",
+     "a_start": "14:00",
+     "b_start": "16:00",
+     "detail": "Milestone Satellite to $10,400 World Championship 1A/B (14:00) and Milestone Satellite to $1,100 Ladies NLH Championship (16:00) cannot be checked: Milestone Satellite to $10,400 World Championship 1A/B publishes no level structure."
+    },
+    {
+     "a": "r125",
+     "b": "r129",
+     "a_start": "14:00",
+     "b_start": "18:10",
+     "detail": "Milestone Satellite to $10,400 World Championship 1A/B (14:00) and $2,200 No Limit Hold'em 1B $1 Mill GTD - PokerAtlas Championship title event (18:10) cannot be checked: Milestone Satellite to $10,400 World Championship 1A/B publishes no level structure."
+    },
+    {
+     "a": "r125",
+     "b": "r130",
+     "a_start": "14:00",
+     "b_start": "19:00",
+     "detail": "Milestone Satellite to $10,400 World Championship 1A/B (14:00) and Milestone Satellite to $10,400 World Championship 1A/B (19:00) cannot be checked: Milestone Satellite to $10,400 World Championship 1A/B publishes no level structure."
+    },
+    {
+     "a": "r125",
+     "b": "r131",
+     "a_start": "14:00",
+     "b_start": "21:00",
+     "detail": "Milestone Satellite to $10,400 World Championship 1A/B (14:00) and NLH Turbo (21:00) cannot be checked: Milestone Satellite to $10,400 World Championship 1A/B publishes no level structure."
+    },
+    {
+     "a": "r128",
+     "b": "r129",
+     "a_start": "16:00",
+     "b_start": "18:10",
+     "detail": "Milestone Satellite to $1,100 Ladies NLH Championship (16:00) and $2,200 No Limit Hold'em 1B $1 Mill GTD - PokerAtlas Championship title event (18:10) cannot be checked: Milestone Satellite to $1,100 Ladies NLH Championship publishes no level structure."
+    },
+    {
+     "a": "r128",
+     "b": "r130",
+     "a_start": "16:00",
+     "b_start": "19:00",
+     "detail": "Milestone Satellite to $1,100 Ladies NLH Championship (16:00) and Milestone Satellite to $10,400 World Championship 1A/B (19:00) cannot be checked: Milestone Satellite to $1,100 Ladies NLH Championship publishes no level structure."
+    },
+    {
+     "a": "r128",
+     "b": "r131",
+     "a_start": "16:00",
+     "b_start": "21:00",
+     "detail": "Milestone Satellite to $1,100 Ladies NLH Championship (16:00) and NLH Turbo (21:00) cannot be checked: Milestone Satellite to $1,100 Ladies NLH Championship publishes no level structure."
+    },
+    {
+     "a": "r129",
+     "b": "r130",
+     "a_start": "18:10",
+     "b_start": "19:00",
+     "detail": "$2,200 No Limit Hold'em 1B $1 Mill GTD - PokerAtlas Championship title event (18:10) and Milestone Satellite to $10,400 World Championship 1A/B (19:00) cannot be checked: $2,200 No Limit Hold'em 1B $1 Mill GTD - PokerAtlas Championship title event publishes no level structure."
+    },
+    {
+     "a": "r129",
+     "b": "r131",
+     "a_start": "18:10",
+     "b_start": "21:00",
+     "detail": "$2,200 No Limit Hold'em 1B $1 Mill GTD - PokerAtlas Championship title event (18:10) and NLH Turbo (21:00) cannot be checked: $2,200 No Limit Hold'em 1B $1 Mill GTD - PokerAtlas Championship title event publishes no level structure."
+    },
+    {
+     "a": "r130",
+     "b": "r131",
+     "a_start": "19:00",
+     "b_start": "21:00",
+     "detail": "Milestone Satellite to $10,400 World Championship 1A/B (19:00) and NLH Turbo (21:00) cannot be checked: Milestone Satellite to $10,400 World Championship 1A/B publishes no level structure."
+    }
+   ],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 10,
    "conflicts_join_in_progress": 1,
    "alternatives": [
@@ -3902,7 +5312,7 @@
     {
      "id": "r133",
      "start": "11:00",
-     "name": "Ladies NIH Championship (2 Day)",
+     "name": "Ladies NLH Championship (2 Day)",
      "series": "WPT World Championship (Wynn)",
      "venue": "Wynn Las Vegas",
      "buy_in_usd": 1100,
@@ -4073,7 +5483,7 @@
      "b_start": "11:00",
      "kind": "unplannable",
      "gap_min": 0,
-     "detail": "Ladies NIH Championship (2 Day) and No Limit Hold'em Day 1A both start at 11:00 - one table cannot seat a player twice, so no published schedule can put both on one day"
+     "detail": "Ladies NLH Championship (2 Day) and No Limit Hold'em Day 1A both start at 11:00 - one table cannot seat a player twice, so no published schedule can put both on one day"
     },
     {
      "a": "r133",
@@ -4084,7 +5494,7 @@
      "b_start": "11:00",
      "kind": "unplannable",
      "gap_min": 0,
-     "detail": "Ladies NIH Championship (2 Day) and TORSE (2 Day) both start at 11:00 - one table cannot seat a player twice, so no published schedule can put both on one day"
+     "detail": "Ladies NLH Championship (2 Day) and TORSE (2 Day) both start at 11:00 - one table cannot seat a player twice, so no published schedule can put both on one day"
     },
     {
      "a": "r133",
@@ -4095,7 +5505,7 @@
      "b_start": "11:00",
      "kind": "unplannable",
      "gap_min": 0,
-     "detail": "Ladies NIH Championship (2 Day) and WPT World Championship Day 1A $1,000,000 Added both start at 11:00 - one table cannot seat a player twice, so no published schedule can put both on one day"
+     "detail": "Ladies NLH Championship (2 Day) and WPT World Championship Day 1A $1,000,000 Added both start at 11:00 - one table cannot seat a player twice, so no published schedule can put both on one day"
     },
     {
      "a": "r134",
@@ -4153,6 +5563,206 @@
      "detail": "Milestone Satellite to $10,400 World Championship 1B/C starts 18:00 and its entry closes 18:00, while $300 No Limit Hold'em Bounty $15K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
+   "undecidable_pairs": [
+    {
+     "a": "r132",
+     "b": "r133",
+     "a_start": "10:10",
+     "b_start": "11:00",
+     "detail": "$1,100 No Limit Hold'em Seniors 1A $300K GTD - must be 50+ years of age (10:10) and Ladies NLH Championship (2 Day) (11:00) cannot be checked: $1,100 No Limit Hold'em Seniors 1A $300K GTD - must be 50+ years of age publishes no level structure."
+    },
+    {
+     "a": "r132",
+     "b": "r134",
+     "a_start": "10:10",
+     "b_start": "11:00",
+     "detail": "$1,100 No Limit Hold'em Seniors 1A $300K GTD - must be 50+ years of age (10:10) and No Limit Hold'em Day 1A (11:00) cannot be checked: $1,100 No Limit Hold'em Seniors 1A $300K GTD - must be 50+ years of age publishes no level structure."
+    },
+    {
+     "a": "r132",
+     "b": "r135",
+     "a_start": "10:10",
+     "b_start": "11:00",
+     "detail": "$1,100 No Limit Hold'em Seniors 1A $300K GTD - must be 50+ years of age (10:10) and TORSE (2 Day) (11:00) cannot be checked: $1,100 No Limit Hold'em Seniors 1A $300K GTD - must be 50+ years of age publishes no level structure."
+    },
+    {
+     "a": "r132",
+     "b": "r136",
+     "a_start": "10:10",
+     "b_start": "11:00",
+     "detail": "$1,100 No Limit Hold'em Seniors 1A $300K GTD - must be 50+ years of age (10:10) and WPT World Championship Day 1A $1,000,000 Added (11:00) cannot be checked: $1,100 No Limit Hold'em Seniors 1A $300K GTD - must be 50+ years of age publishes no level structure."
+    },
+    {
+     "a": "r132",
+     "b": "r137",
+     "a_start": "10:10",
+     "b_start": "12:00",
+     "detail": "$1,100 No Limit Hold'em Seniors 1A $300K GTD - must be 50+ years of age (10:10) and Milestone Satellite to $10,400 World Championship 1B (12:00) cannot be checked: $1,100 No Limit Hold'em Seniors 1A $300K GTD - must be 50+ years of age publishes no level structure."
+    },
+    {
+     "a": "r132",
+     "b": "r138",
+     "a_start": "10:10",
+     "b_start": "12:00",
+     "detail": "$1,100 No Limit Hold'em Seniors 1A $300K GTD - must be 50+ years of age (10:10) and PLO Day 1A (12:00) cannot be checked: $1,100 No Limit Hold'em Seniors 1A $300K GTD - must be 50+ years of age publishes no level structure."
+    },
+    {
+     "a": "r132",
+     "b": "r141",
+     "a_start": "10:10",
+     "b_start": "17:10",
+     "detail": "$1,100 No Limit Hold'em Seniors 1A $300K GTD - must be 50+ years of age (10:10) and $300 No Limit Hold'em Bounty $15K GTD (1Day) (17:10) cannot be checked: $1,100 No Limit Hold'em Seniors 1A $300K GTD - must be 50+ years of age publishes no level structure."
+    },
+    {
+     "a": "r132",
+     "b": "r142",
+     "a_start": "10:10",
+     "b_start": "18:00",
+     "detail": "$1,100 No Limit Hold'em Seniors 1A $300K GTD - must be 50+ years of age (10:10) and Milestone Satellite to $10,400 World Championship 1B/C (18:00) cannot be checked: $1,100 No Limit Hold'em Seniors 1A $300K GTD - must be 50+ years of age publishes no level structure."
+    },
+    {
+     "a": "r133",
+     "b": "r137",
+     "a_start": "11:00",
+     "b_start": "12:00",
+     "detail": "Ladies NLH Championship (2 Day) (11:00) and Milestone Satellite to $10,400 World Championship 1B (12:00) cannot be checked: Ladies NLH Championship (2 Day) publishes no level structure."
+    },
+    {
+     "a": "r133",
+     "b": "r138",
+     "a_start": "11:00",
+     "b_start": "12:00",
+     "detail": "Ladies NLH Championship (2 Day) (11:00) and PLO Day 1A (12:00) cannot be checked: Ladies NLH Championship (2 Day) publishes no level structure."
+    },
+    {
+     "a": "r133",
+     "b": "r141",
+     "a_start": "11:00",
+     "b_start": "17:10",
+     "detail": "Ladies NLH Championship (2 Day) (11:00) and $300 No Limit Hold'em Bounty $15K GTD (1Day) (17:10) cannot be checked: Ladies NLH Championship (2 Day) publishes no level structure."
+    },
+    {
+     "a": "r133",
+     "b": "r142",
+     "a_start": "11:00",
+     "b_start": "18:00",
+     "detail": "Ladies NLH Championship (2 Day) (11:00) and Milestone Satellite to $10,400 World Championship 1B/C (18:00) cannot be checked: Ladies NLH Championship (2 Day) publishes no level structure."
+    },
+    {
+     "a": "r134",
+     "b": "r137",
+     "a_start": "11:00",
+     "b_start": "12:00",
+     "detail": "No Limit Hold'em Day 1A (11:00) and Milestone Satellite to $10,400 World Championship 1B (12:00) cannot be checked: No Limit Hold'em Day 1A publishes no level structure."
+    },
+    {
+     "a": "r134",
+     "b": "r138",
+     "a_start": "11:00",
+     "b_start": "12:00",
+     "detail": "No Limit Hold'em Day 1A (11:00) and PLO Day 1A (12:00) cannot be checked: No Limit Hold'em Day 1A publishes no level structure."
+    },
+    {
+     "a": "r134",
+     "b": "r141",
+     "a_start": "11:00",
+     "b_start": "17:10",
+     "detail": "No Limit Hold'em Day 1A (11:00) and $300 No Limit Hold'em Bounty $15K GTD (1Day) (17:10) cannot be checked: No Limit Hold'em Day 1A publishes no level structure."
+    },
+    {
+     "a": "r134",
+     "b": "r142",
+     "a_start": "11:00",
+     "b_start": "18:00",
+     "detail": "No Limit Hold'em Day 1A (11:00) and Milestone Satellite to $10,400 World Championship 1B/C (18:00) cannot be checked: No Limit Hold'em Day 1A publishes no level structure."
+    },
+    {
+     "a": "r135",
+     "b": "r137",
+     "a_start": "11:00",
+     "b_start": "12:00",
+     "detail": "TORSE (2 Day) (11:00) and Milestone Satellite to $10,400 World Championship 1B (12:00) cannot be checked: TORSE (2 Day) publishes no level structure."
+    },
+    {
+     "a": "r135",
+     "b": "r138",
+     "a_start": "11:00",
+     "b_start": "12:00",
+     "detail": "TORSE (2 Day) (11:00) and PLO Day 1A (12:00) cannot be checked: TORSE (2 Day) publishes no level structure."
+    },
+    {
+     "a": "r135",
+     "b": "r141",
+     "a_start": "11:00",
+     "b_start": "17:10",
+     "detail": "TORSE (2 Day) (11:00) and $300 No Limit Hold'em Bounty $15K GTD (1Day) (17:10) cannot be checked: TORSE (2 Day) publishes no level structure."
+    },
+    {
+     "a": "r135",
+     "b": "r142",
+     "a_start": "11:00",
+     "b_start": "18:00",
+     "detail": "TORSE (2 Day) (11:00) and Milestone Satellite to $10,400 World Championship 1B/C (18:00) cannot be checked: TORSE (2 Day) publishes no level structure."
+    },
+    {
+     "a": "r136",
+     "b": "r137",
+     "a_start": "11:00",
+     "b_start": "12:00",
+     "detail": "WPT World Championship Day 1A $1,000,000 Added (11:00) and Milestone Satellite to $10,400 World Championship 1B (12:00) cannot be checked: WPT World Championship Day 1A $1,000,000 Added publishes no level structure."
+    },
+    {
+     "a": "r136",
+     "b": "r138",
+     "a_start": "11:00",
+     "b_start": "12:00",
+     "detail": "WPT World Championship Day 1A $1,000,000 Added (11:00) and PLO Day 1A (12:00) cannot be checked: WPT World Championship Day 1A $1,000,000 Added publishes no level structure."
+    },
+    {
+     "a": "r136",
+     "b": "r141",
+     "a_start": "11:00",
+     "b_start": "17:10",
+     "detail": "WPT World Championship Day 1A $1,000,000 Added (11:00) and $300 No Limit Hold'em Bounty $15K GTD (1Day) (17:10) cannot be checked: WPT World Championship Day 1A $1,000,000 Added publishes no level structure."
+    },
+    {
+     "a": "r136",
+     "b": "r142",
+     "a_start": "11:00",
+     "b_start": "18:00",
+     "detail": "WPT World Championship Day 1A $1,000,000 Added (11:00) and Milestone Satellite to $10,400 World Championship 1B/C (18:00) cannot be checked: WPT World Championship Day 1A $1,000,000 Added publishes no level structure."
+    },
+    {
+     "a": "r137",
+     "b": "r141",
+     "a_start": "12:00",
+     "b_start": "17:10",
+     "detail": "Milestone Satellite to $10,400 World Championship 1B (12:00) and $300 No Limit Hold'em Bounty $15K GTD (1Day) (17:10) cannot be checked: Milestone Satellite to $10,400 World Championship 1B publishes no level structure."
+    },
+    {
+     "a": "r137",
+     "b": "r142",
+     "a_start": "12:00",
+     "b_start": "18:00",
+     "detail": "Milestone Satellite to $10,400 World Championship 1B (12:00) and Milestone Satellite to $10,400 World Championship 1B/C (18:00) cannot be checked: Milestone Satellite to $10,400 World Championship 1B publishes no level structure."
+    },
+    {
+     "a": "r138",
+     "b": "r141",
+     "a_start": "12:00",
+     "b_start": "17:10",
+     "detail": "PLO Day 1A (12:00) and $300 No Limit Hold'em Bounty $15K GTD (1Day) (17:10) cannot be checked: PLO Day 1A publishes no level structure."
+    },
+    {
+     "a": "r138",
+     "b": "r142",
+     "a_start": "12:00",
+     "b_start": "18:00",
+     "detail": "PLO Day 1A (12:00) and Milestone Satellite to $10,400 World Championship 1B/C (18:00) cannot be checked: PLO Day 1A publishes no level structure."
+    }
+   ],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 8,
    "conflicts_join_in_progress": 0,
    "alternatives": []
@@ -4343,7 +5953,7 @@
     {
      "id": "r154",
      "start": "21:00",
-     "name": "NIH Turbo",
+     "name": "NLH Turbo",
      "series": "WPT World Championship (Wynn)",
      "venue": "Wynn Las Vegas",
      "buy_in_usd": 600,
@@ -4441,9 +6051,279 @@
      "b_start": "21:00",
      "kind": "unplannable",
      "gap_min": -715,
-     "detail": "NIH Turbo starts 21:00 and its entry closes 21:00, while $300 No Limit Hold'em Bounty $15K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
+     "detail": "NLH Turbo starts 21:00 and its entry closes 21:00, while $300 No Limit Hold'em Bounty $15K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
+   "undecidable_pairs": [
+    {
+     "a": "r143",
+     "b": "r145",
+     "a_start": "10:10",
+     "b_start": "11:00",
+     "detail": "$1,100 No Limit Hold'em Seniors 1B $300K GTD - must be 50+ years of age (10:10) and No Limit Hold'em Day 1B (11:00) cannot be checked: $1,100 No Limit Hold'em Seniors 1B $300K GTD - must be 50+ years of age publishes no level structure."
+    },
+    {
+     "a": "r143",
+     "b": "r146",
+     "a_start": "10:10",
+     "b_start": "11:00",
+     "detail": "$1,100 No Limit Hold'em Seniors 1B $300K GTD - must be 50+ years of age (10:10) and WPT World Championship Day 1B $1,000,000 Added (11:00) cannot be checked: $1,100 No Limit Hold'em Seniors 1B $300K GTD - must be 50+ years of age publishes no level structure."
+    },
+    {
+     "a": "r143",
+     "b": "r147",
+     "a_start": "10:10",
+     "b_start": "12:00",
+     "detail": "$1,100 No Limit Hold'em Seniors 1B $300K GTD - must be 50+ years of age (10:10) and Milestone Satellite to $10,400 World Championship 1C (12:00) cannot be checked: $1,100 No Limit Hold'em Seniors 1B $300K GTD - must be 50+ years of age publishes no level structure."
+    },
+    {
+     "a": "r143",
+     "b": "r148",
+     "a_start": "10:10",
+     "b_start": "12:00",
+     "detail": "$1,100 No Limit Hold'em Seniors 1B $300K GTD - must be 50+ years of age (10:10) and Mixed Triple Draw (A-5, 2-7, Badugi) (2 Day) (12:00) cannot be checked: $1,100 No Limit Hold'em Seniors 1B $300K GTD - must be 50+ years of age publishes no level structure."
+    },
+    {
+     "a": "r143",
+     "b": "r149",
+     "a_start": "10:10",
+     "b_start": "12:00",
+     "detail": "$1,100 No Limit Hold'em Seniors 1B $300K GTD - must be 50+ years of age (10:10) and PLO Day 1B (12:00) cannot be checked: $1,100 No Limit Hold'em Seniors 1B $300K GTD - must be 50+ years of age publishes no level structure."
+    },
+    {
+     "a": "r143",
+     "b": "r151",
+     "a_start": "10:10",
+     "b_start": "17:10",
+     "detail": "$1,100 No Limit Hold'em Seniors 1B $300K GTD - must be 50+ years of age (10:10) and $300 No Limit Hold'em Bounty $15K GTD (1Day) (17:10) cannot be checked: $1,100 No Limit Hold'em Seniors 1B $300K GTD - must be 50+ years of age publishes no level structure."
+    },
+    {
+     "a": "r143",
+     "b": "r152",
+     "a_start": "10:10",
+     "b_start": "18:00",
+     "detail": "$1,100 No Limit Hold'em Seniors 1B $300K GTD - must be 50+ years of age (10:10) and Milestone Satellite to $10,400 World Championship 1C (18:00) cannot be checked: $1,100 No Limit Hold'em Seniors 1B $300K GTD - must be 50+ years of age publishes no level structure."
+    },
+    {
+     "a": "r143",
+     "b": "r153",
+     "a_start": "10:10",
+     "b_start": "19:00",
+     "detail": "$1,100 No Limit Hold'em Seniors 1B $300K GTD - must be 50+ years of age (10:10) and PLO Turbo (19:00) cannot be checked: $1,100 No Limit Hold'em Seniors 1B $300K GTD - must be 50+ years of age publishes no level structure."
+    },
+    {
+     "a": "r143",
+     "b": "r154",
+     "a_start": "10:10",
+     "b_start": "21:00",
+     "detail": "$1,100 No Limit Hold'em Seniors 1B $300K GTD - must be 50+ years of age (10:10) and NLH Turbo (21:00) cannot be checked: $1,100 No Limit Hold'em Seniors 1B $300K GTD - must be 50+ years of age publishes no level structure."
+    },
+    {
+     "a": "r145",
+     "b": "r147",
+     "a_start": "11:00",
+     "b_start": "12:00",
+     "detail": "No Limit Hold'em Day 1B (11:00) and Milestone Satellite to $10,400 World Championship 1C (12:00) cannot be checked: No Limit Hold'em Day 1B publishes no level structure."
+    },
+    {
+     "a": "r145",
+     "b": "r148",
+     "a_start": "11:00",
+     "b_start": "12:00",
+     "detail": "No Limit Hold'em Day 1B (11:00) and Mixed Triple Draw (A-5, 2-7, Badugi) (2 Day) (12:00) cannot be checked: No Limit Hold'em Day 1B publishes no level structure."
+    },
+    {
+     "a": "r145",
+     "b": "r149",
+     "a_start": "11:00",
+     "b_start": "12:00",
+     "detail": "No Limit Hold'em Day 1B (11:00) and PLO Day 1B (12:00) cannot be checked: No Limit Hold'em Day 1B publishes no level structure."
+    },
+    {
+     "a": "r145",
+     "b": "r151",
+     "a_start": "11:00",
+     "b_start": "17:10",
+     "detail": "No Limit Hold'em Day 1B (11:00) and $300 No Limit Hold'em Bounty $15K GTD (1Day) (17:10) cannot be checked: No Limit Hold'em Day 1B publishes no level structure."
+    },
+    {
+     "a": "r145",
+     "b": "r152",
+     "a_start": "11:00",
+     "b_start": "18:00",
+     "detail": "No Limit Hold'em Day 1B (11:00) and Milestone Satellite to $10,400 World Championship 1C (18:00) cannot be checked: No Limit Hold'em Day 1B publishes no level structure."
+    },
+    {
+     "a": "r145",
+     "b": "r153",
+     "a_start": "11:00",
+     "b_start": "19:00",
+     "detail": "No Limit Hold'em Day 1B (11:00) and PLO Turbo (19:00) cannot be checked: No Limit Hold'em Day 1B publishes no level structure."
+    },
+    {
+     "a": "r145",
+     "b": "r154",
+     "a_start": "11:00",
+     "b_start": "21:00",
+     "detail": "No Limit Hold'em Day 1B (11:00) and NLH Turbo (21:00) cannot be checked: No Limit Hold'em Day 1B publishes no level structure."
+    },
+    {
+     "a": "r146",
+     "b": "r147",
+     "a_start": "11:00",
+     "b_start": "12:00",
+     "detail": "WPT World Championship Day 1B $1,000,000 Added (11:00) and Milestone Satellite to $10,400 World Championship 1C (12:00) cannot be checked: WPT World Championship Day 1B $1,000,000 Added publishes no level structure."
+    },
+    {
+     "a": "r146",
+     "b": "r148",
+     "a_start": "11:00",
+     "b_start": "12:00",
+     "detail": "WPT World Championship Day 1B $1,000,000 Added (11:00) and Mixed Triple Draw (A-5, 2-7, Badugi) (2 Day) (12:00) cannot be checked: WPT World Championship Day 1B $1,000,000 Added publishes no level structure."
+    },
+    {
+     "a": "r146",
+     "b": "r149",
+     "a_start": "11:00",
+     "b_start": "12:00",
+     "detail": "WPT World Championship Day 1B $1,000,000 Added (11:00) and PLO Day 1B (12:00) cannot be checked: WPT World Championship Day 1B $1,000,000 Added publishes no level structure."
+    },
+    {
+     "a": "r146",
+     "b": "r151",
+     "a_start": "11:00",
+     "b_start": "17:10",
+     "detail": "WPT World Championship Day 1B $1,000,000 Added (11:00) and $300 No Limit Hold'em Bounty $15K GTD (1Day) (17:10) cannot be checked: WPT World Championship Day 1B $1,000,000 Added publishes no level structure."
+    },
+    {
+     "a": "r146",
+     "b": "r152",
+     "a_start": "11:00",
+     "b_start": "18:00",
+     "detail": "WPT World Championship Day 1B $1,000,000 Added (11:00) and Milestone Satellite to $10,400 World Championship 1C (18:00) cannot be checked: WPT World Championship Day 1B $1,000,000 Added publishes no level structure."
+    },
+    {
+     "a": "r146",
+     "b": "r153",
+     "a_start": "11:00",
+     "b_start": "19:00",
+     "detail": "WPT World Championship Day 1B $1,000,000 Added (11:00) and PLO Turbo (19:00) cannot be checked: WPT World Championship Day 1B $1,000,000 Added publishes no level structure."
+    },
+    {
+     "a": "r146",
+     "b": "r154",
+     "a_start": "11:00",
+     "b_start": "21:00",
+     "detail": "WPT World Championship Day 1B $1,000,000 Added (11:00) and NLH Turbo (21:00) cannot be checked: WPT World Championship Day 1B $1,000,000 Added publishes no level structure."
+    },
+    {
+     "a": "r147",
+     "b": "r151",
+     "a_start": "12:00",
+     "b_start": "17:10",
+     "detail": "Milestone Satellite to $10,400 World Championship 1C (12:00) and $300 No Limit Hold'em Bounty $15K GTD (1Day) (17:10) cannot be checked: Milestone Satellite to $10,400 World Championship 1C publishes no level structure."
+    },
+    {
+     "a": "r147",
+     "b": "r152",
+     "a_start": "12:00",
+     "b_start": "18:00",
+     "detail": "Milestone Satellite to $10,400 World Championship 1C (12:00) and Milestone Satellite to $10,400 World Championship 1C (18:00) cannot be checked: Milestone Satellite to $10,400 World Championship 1C publishes no level structure."
+    },
+    {
+     "a": "r147",
+     "b": "r153",
+     "a_start": "12:00",
+     "b_start": "19:00",
+     "detail": "Milestone Satellite to $10,400 World Championship 1C (12:00) and PLO Turbo (19:00) cannot be checked: Milestone Satellite to $10,400 World Championship 1C publishes no level structure."
+    },
+    {
+     "a": "r147",
+     "b": "r154",
+     "a_start": "12:00",
+     "b_start": "21:00",
+     "detail": "Milestone Satellite to $10,400 World Championship 1C (12:00) and NLH Turbo (21:00) cannot be checked: Milestone Satellite to $10,400 World Championship 1C publishes no level structure."
+    },
+    {
+     "a": "r148",
+     "b": "r151",
+     "a_start": "12:00",
+     "b_start": "17:10",
+     "detail": "Mixed Triple Draw (A-5, 2-7, Badugi) (2 Day) (12:00) and $300 No Limit Hold'em Bounty $15K GTD (1Day) (17:10) cannot be checked: Mixed Triple Draw (A-5, 2-7, Badugi) (2 Day) publishes no level structure."
+    },
+    {
+     "a": "r148",
+     "b": "r152",
+     "a_start": "12:00",
+     "b_start": "18:00",
+     "detail": "Mixed Triple Draw (A-5, 2-7, Badugi) (2 Day) (12:00) and Milestone Satellite to $10,400 World Championship 1C (18:00) cannot be checked: Mixed Triple Draw (A-5, 2-7, Badugi) (2 Day) publishes no level structure."
+    },
+    {
+     "a": "r148",
+     "b": "r153",
+     "a_start": "12:00",
+     "b_start": "19:00",
+     "detail": "Mixed Triple Draw (A-5, 2-7, Badugi) (2 Day) (12:00) and PLO Turbo (19:00) cannot be checked: Mixed Triple Draw (A-5, 2-7, Badugi) (2 Day) publishes no level structure."
+    },
+    {
+     "a": "r148",
+     "b": "r154",
+     "a_start": "12:00",
+     "b_start": "21:00",
+     "detail": "Mixed Triple Draw (A-5, 2-7, Badugi) (2 Day) (12:00) and NLH Turbo (21:00) cannot be checked: Mixed Triple Draw (A-5, 2-7, Badugi) (2 Day) publishes no level structure."
+    },
+    {
+     "a": "r149",
+     "b": "r151",
+     "a_start": "12:00",
+     "b_start": "17:10",
+     "detail": "PLO Day 1B (12:00) and $300 No Limit Hold'em Bounty $15K GTD (1Day) (17:10) cannot be checked: PLO Day 1B publishes no level structure."
+    },
+    {
+     "a": "r149",
+     "b": "r152",
+     "a_start": "12:00",
+     "b_start": "18:00",
+     "detail": "PLO Day 1B (12:00) and Milestone Satellite to $10,400 World Championship 1C (18:00) cannot be checked: PLO Day 1B publishes no level structure."
+    },
+    {
+     "a": "r149",
+     "b": "r153",
+     "a_start": "12:00",
+     "b_start": "19:00",
+     "detail": "PLO Day 1B (12:00) and PLO Turbo (19:00) cannot be checked: PLO Day 1B publishes no level structure."
+    },
+    {
+     "a": "r149",
+     "b": "r154",
+     "a_start": "12:00",
+     "b_start": "21:00",
+     "detail": "PLO Day 1B (12:00) and NLH Turbo (21:00) cannot be checked: PLO Day 1B publishes no level structure."
+    },
+    {
+     "a": "r152",
+     "b": "r153",
+     "a_start": "18:00",
+     "b_start": "19:00",
+     "detail": "Milestone Satellite to $10,400 World Championship 1C (18:00) and PLO Turbo (19:00) cannot be checked: Milestone Satellite to $10,400 World Championship 1C publishes no level structure."
+    },
+    {
+     "a": "r152",
+     "b": "r154",
+     "a_start": "18:00",
+     "b_start": "21:00",
+     "detail": "Milestone Satellite to $10,400 World Championship 1C (18:00) and NLH Turbo (21:00) cannot be checked: Milestone Satellite to $10,400 World Championship 1C publishes no level structure."
+    },
+    {
+     "a": "r153",
+     "b": "r154",
+     "a_start": "19:00",
+     "b_start": "21:00",
+     "detail": "PLO Turbo (19:00) and NLH Turbo (21:00) cannot be checked: PLO Turbo publishes no level structure."
+    }
+   ],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 7,
    "conflicts_join_in_progress": 0,
    "alternatives": []
@@ -4596,7 +6476,7 @@
     {
      "id": "r165",
      "start": "19:00",
-     "name": "NIH $500 Bounty Turbo",
+     "name": "NLH $500 Bounty Turbo",
      "series": "WPT World Championship (Wynn)",
      "venue": "Wynn Las Vegas",
      "buy_in_usd": 1600,
@@ -4684,7 +6564,7 @@
      "b_start": "19:00",
      "kind": "unplannable",
      "gap_min": -475,
-     "detail": "NIH $500 Bounty Turbo starts 19:00 and its entry closes 19:00, while $1,100 No Limit Hold'em Progressive Knock-Out Bounty $75K GTD (1Day)'s own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
+     "detail": "NLH $500 Bounty Turbo starts 19:00 and its entry closes 19:00, while $1,100 No Limit Hold'em Progressive Knock-Out Bounty $75K GTD (1Day)'s own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     },
     {
      "a": "r163",
@@ -4706,9 +6586,153 @@
      "b_start": "19:00",
      "kind": "unplannable",
      "gap_min": -835,
-     "detail": "NIH $500 Bounty Turbo starts 19:00 and its entry closes 19:00, while $300 No Limit Hold'em Bounty $15K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
+     "detail": "NLH $500 Bounty Turbo starts 19:00 and its entry closes 19:00, while $300 No Limit Hold'em Bounty $15K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
+   "undecidable_pairs": [
+    {
+     "a": "r156",
+     "b": "r159",
+     "a_start": "11:00",
+     "b_start": "11:10",
+     "detail": "Milestone Satellite to $10,400 World Championship 1C/Day 2 (11:00) and $1,100 No Limit Hold'em Progressive Knock-Out Bounty $75K GTD (1Day) (11:10) cannot be checked: Milestone Satellite to $10,400 World Championship 1C/Day 2 publishes no level structure."
+    },
+    {
+     "a": "r156",
+     "b": "r160",
+     "a_start": "11:00",
+     "b_start": "12:00",
+     "detail": "Milestone Satellite to $10,400 World Championship 1C/Day 2 (11:00) and Big O (12:00) cannot be checked: Milestone Satellite to $10,400 World Championship 1C/Day 2 publishes no level structure."
+    },
+    {
+     "a": "r156",
+     "b": "r162",
+     "a_start": "11:00",
+     "b_start": "13:00",
+     "detail": "Milestone Satellite to $10,400 World Championship 1C/Day 2 (11:00) and PLO Progressive Bounty (PKO) (13:00) cannot be checked: Milestone Satellite to $10,400 World Championship 1C/Day 2 publishes no level structure."
+    },
+    {
+     "a": "r156",
+     "b": "r163",
+     "a_start": "11:00",
+     "b_start": "17:10",
+     "detail": "Milestone Satellite to $10,400 World Championship 1C/Day 2 (11:00) and $300 No Limit Hold'em Bounty $15K GTD (1Day) (17:10) cannot be checked: Milestone Satellite to $10,400 World Championship 1C/Day 2 publishes no level structure."
+    },
+    {
+     "a": "r156",
+     "b": "r164",
+     "a_start": "11:00",
+     "b_start": "18:00",
+     "detail": "Milestone Satellite to $10,400 World Championship 1C/Day 2 (11:00) and Milestone Satellite to $10,400 World Championship Day 2 (18:00) cannot be checked: Milestone Satellite to $10,400 World Championship 1C/Day 2 publishes no level structure."
+    },
+    {
+     "a": "r156",
+     "b": "r165",
+     "a_start": "11:00",
+     "b_start": "19:00",
+     "detail": "Milestone Satellite to $10,400 World Championship 1C/Day 2 (11:00) and NLH $500 Bounty Turbo (19:00) cannot be checked: Milestone Satellite to $10,400 World Championship 1C/Day 2 publishes no level structure."
+    },
+    {
+     "a": "r158",
+     "b": "r159",
+     "a_start": "11:00",
+     "b_start": "11:10",
+     "detail": "WPT World Championship Day 1C $1,000,000 Added (11:00) and $1,100 No Limit Hold'em Progressive Knock-Out Bounty $75K GTD (1Day) (11:10) cannot be checked: WPT World Championship Day 1C $1,000,000 Added publishes no level structure."
+    },
+    {
+     "a": "r158",
+     "b": "r160",
+     "a_start": "11:00",
+     "b_start": "12:00",
+     "detail": "WPT World Championship Day 1C $1,000,000 Added (11:00) and Big O (12:00) cannot be checked: WPT World Championship Day 1C $1,000,000 Added publishes no level structure."
+    },
+    {
+     "a": "r158",
+     "b": "r162",
+     "a_start": "11:00",
+     "b_start": "13:00",
+     "detail": "WPT World Championship Day 1C $1,000,000 Added (11:00) and PLO Progressive Bounty (PKO) (13:00) cannot be checked: WPT World Championship Day 1C $1,000,000 Added publishes no level structure."
+    },
+    {
+     "a": "r158",
+     "b": "r163",
+     "a_start": "11:00",
+     "b_start": "17:10",
+     "detail": "WPT World Championship Day 1C $1,000,000 Added (11:00) and $300 No Limit Hold'em Bounty $15K GTD (1Day) (17:10) cannot be checked: WPT World Championship Day 1C $1,000,000 Added publishes no level structure."
+    },
+    {
+     "a": "r158",
+     "b": "r164",
+     "a_start": "11:00",
+     "b_start": "18:00",
+     "detail": "WPT World Championship Day 1C $1,000,000 Added (11:00) and Milestone Satellite to $10,400 World Championship Day 2 (18:00) cannot be checked: WPT World Championship Day 1C $1,000,000 Added publishes no level structure."
+    },
+    {
+     "a": "r158",
+     "b": "r165",
+     "a_start": "11:00",
+     "b_start": "19:00",
+     "detail": "WPT World Championship Day 1C $1,000,000 Added (11:00) and NLH $500 Bounty Turbo (19:00) cannot be checked: WPT World Championship Day 1C $1,000,000 Added publishes no level structure."
+    },
+    {
+     "a": "r160",
+     "b": "r162",
+     "a_start": "12:00",
+     "b_start": "13:00",
+     "detail": "Big O (12:00) and PLO Progressive Bounty (PKO) (13:00) cannot be checked: Big O publishes no level structure."
+    },
+    {
+     "a": "r160",
+     "b": "r163",
+     "a_start": "12:00",
+     "b_start": "17:10",
+     "detail": "Big O (12:00) and $300 No Limit Hold'em Bounty $15K GTD (1Day) (17:10) cannot be checked: Big O publishes no level structure."
+    },
+    {
+     "a": "r160",
+     "b": "r164",
+     "a_start": "12:00",
+     "b_start": "18:00",
+     "detail": "Big O (12:00) and Milestone Satellite to $10,400 World Championship Day 2 (18:00) cannot be checked: Big O publishes no level structure."
+    },
+    {
+     "a": "r160",
+     "b": "r165",
+     "a_start": "12:00",
+     "b_start": "19:00",
+     "detail": "Big O (12:00) and NLH $500 Bounty Turbo (19:00) cannot be checked: Big O publishes no level structure."
+    },
+    {
+     "a": "r162",
+     "b": "r163",
+     "a_start": "13:00",
+     "b_start": "17:10",
+     "detail": "PLO Progressive Bounty (PKO) (13:00) and $300 No Limit Hold'em Bounty $15K GTD (1Day) (17:10) cannot be checked: PLO Progressive Bounty (PKO) publishes no level structure."
+    },
+    {
+     "a": "r162",
+     "b": "r164",
+     "a_start": "13:00",
+     "b_start": "18:00",
+     "detail": "PLO Progressive Bounty (PKO) (13:00) and Milestone Satellite to $10,400 World Championship Day 2 (18:00) cannot be checked: PLO Progressive Bounty (PKO) publishes no level structure."
+    },
+    {
+     "a": "r162",
+     "b": "r165",
+     "a_start": "13:00",
+     "b_start": "19:00",
+     "detail": "PLO Progressive Bounty (PKO) (13:00) and NLH $500 Bounty Turbo (19:00) cannot be checked: PLO Progressive Bounty (PKO) publishes no level structure."
+    },
+    {
+     "a": "r164",
+     "b": "r165",
+     "a_start": "18:00",
+     "b_start": "19:00",
+     "detail": "Milestone Satellite to $10,400 World Championship Day 2 (18:00) and NLH $500 Bounty Turbo (19:00) cannot be checked: Milestone Satellite to $10,400 World Championship Day 2 publishes no level structure."
+    }
+   ],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 8,
    "conflicts_join_in_progress": 0,
    "alternatives": [
@@ -4844,7 +6868,7 @@
     {
      "id": "r173",
      "start": "18:00",
-     "name": "Milestone Satellite to $25K NIH High Roller",
+     "name": "Milestone Satellite to $25K NLH High Roller",
      "series": "WPT World Championship (Wynn)",
      "venue": "Wynn Las Vegas",
      "buy_in_usd": 3000,
@@ -4960,7 +6984,7 @@
      "b_start": "18:00",
      "kind": "unplannable",
      "gap_min": -535,
-     "detail": "Milestone Satellite to $25K NIH High Roller starts 18:00 and its entry closes 18:00, while $600 No Limit Hold'em Bounty $50K GTD (1Day) - $200 bounties to start & $500 bounties in the money's own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
+     "detail": "Milestone Satellite to $25K NLH High Roller starts 18:00 and its entry closes 18:00, while $600 No Limit Hold'em Bounty $50K GTD (1Day) - $200 bounties to start & $500 bounties in the money's own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     },
     {
      "a": "r167",
@@ -5004,7 +7028,7 @@
      "b_start": "18:00",
      "kind": "unplannable",
      "gap_min": -895,
-     "detail": "Milestone Satellite to $25K NIH High Roller starts 18:00 and its entry closes 18:00, while $300 No Limit Hold'em Bounty $15K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
+     "detail": "Milestone Satellite to $25K NLH High Roller starts 18:00 and its entry closes 18:00, while $300 No Limit Hold'em Bounty $15K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     },
     {
      "a": "r172",
@@ -5037,9 +7061,181 @@
      "b_start": "18:00",
      "kind": "unplannable",
      "gap_min": 0,
-     "detail": "Milestone Satellite to $25K NIH High Roller and Milestone Satellite to $3,000 NLH both start at 18:00 - one table cannot seat a player twice, so no published schedule can put both on one day"
+     "detail": "Milestone Satellite to $25K NLH High Roller and Milestone Satellite to $3,000 NLH both start at 18:00 - one table cannot seat a player twice, so no published schedule can put both on one day"
     }
    ],
+   "undecidable_pairs": [
+    {
+     "a": "r166",
+     "b": "r167",
+     "a_start": "11:00",
+     "b_start": "11:10",
+     "detail": "No Limit Hold'em Day 1A (11:00) and $600 No Limit Hold'em Bounty $50K GTD (1Day) - $200 bounties to start & $500 bounties in the money (11:10) cannot be checked: No Limit Hold'em Day 1A publishes no level structure."
+    },
+    {
+     "a": "r166",
+     "b": "r168",
+     "a_start": "11:00",
+     "b_start": "12:00",
+     "detail": "No Limit Hold'em Day 1A (11:00) and PLO Double Board Bomb Pot (12:00) cannot be checked: No Limit Hold'em Day 1A publishes no level structure."
+    },
+    {
+     "a": "r166",
+     "b": "r170",
+     "a_start": "11:00",
+     "b_start": "13:00",
+     "detail": "No Limit Hold'em Day 1A (11:00) and HORSE (13:00) cannot be checked: No Limit Hold'em Day 1A publishes no level structure."
+    },
+    {
+     "a": "r166",
+     "b": "r171",
+     "a_start": "11:00",
+     "b_start": "13:00",
+     "detail": "No Limit Hold'em Day 1A (11:00) and PLO 6-Max (13:00) cannot be checked: No Limit Hold'em Day 1A publishes no level structure."
+    },
+    {
+     "a": "r166",
+     "b": "r172",
+     "a_start": "11:00",
+     "b_start": "17:10",
+     "detail": "No Limit Hold'em Day 1A (11:00) and $300 No Limit Hold'em Bounty $15K GTD (1Day) (17:10) cannot be checked: No Limit Hold'em Day 1A publishes no level structure."
+    },
+    {
+     "a": "r166",
+     "b": "r173",
+     "a_start": "11:00",
+     "b_start": "18:00",
+     "detail": "No Limit Hold'em Day 1A (11:00) and Milestone Satellite to $25K NLH High Roller (18:00) cannot be checked: No Limit Hold'em Day 1A publishes no level structure."
+    },
+    {
+     "a": "r166",
+     "b": "r174",
+     "a_start": "11:00",
+     "b_start": "18:00",
+     "detail": "No Limit Hold'em Day 1A (11:00) and Milestone Satellite to $3,000 NLH (18:00) cannot be checked: No Limit Hold'em Day 1A publishes no level structure."
+    },
+    {
+     "a": "r166",
+     "b": "r175",
+     "a_start": "11:00",
+     "b_start": "19:00",
+     "detail": "No Limit Hold'em Day 1A (11:00) and No Limit Hold'em Day 1B (19:00) cannot be checked: No Limit Hold'em Day 1A publishes no level structure."
+    },
+    {
+     "a": "r168",
+     "b": "r170",
+     "a_start": "12:00",
+     "b_start": "13:00",
+     "detail": "PLO Double Board Bomb Pot (12:00) and HORSE (13:00) cannot be checked: PLO Double Board Bomb Pot publishes no level structure."
+    },
+    {
+     "a": "r168",
+     "b": "r171",
+     "a_start": "12:00",
+     "b_start": "13:00",
+     "detail": "PLO Double Board Bomb Pot (12:00) and PLO 6-Max (13:00) cannot be checked: PLO Double Board Bomb Pot publishes no level structure."
+    },
+    {
+     "a": "r168",
+     "b": "r172",
+     "a_start": "12:00",
+     "b_start": "17:10",
+     "detail": "PLO Double Board Bomb Pot (12:00) and $300 No Limit Hold'em Bounty $15K GTD (1Day) (17:10) cannot be checked: PLO Double Board Bomb Pot publishes no level structure."
+    },
+    {
+     "a": "r168",
+     "b": "r173",
+     "a_start": "12:00",
+     "b_start": "18:00",
+     "detail": "PLO Double Board Bomb Pot (12:00) and Milestone Satellite to $25K NLH High Roller (18:00) cannot be checked: PLO Double Board Bomb Pot publishes no level structure."
+    },
+    {
+     "a": "r168",
+     "b": "r174",
+     "a_start": "12:00",
+     "b_start": "18:00",
+     "detail": "PLO Double Board Bomb Pot (12:00) and Milestone Satellite to $3,000 NLH (18:00) cannot be checked: PLO Double Board Bomb Pot publishes no level structure."
+    },
+    {
+     "a": "r168",
+     "b": "r175",
+     "a_start": "12:00",
+     "b_start": "19:00",
+     "detail": "PLO Double Board Bomb Pot (12:00) and No Limit Hold'em Day 1B (19:00) cannot be checked: PLO Double Board Bomb Pot publishes no level structure."
+    },
+    {
+     "a": "r170",
+     "b": "r172",
+     "a_start": "13:00",
+     "b_start": "17:10",
+     "detail": "HORSE (13:00) and $300 No Limit Hold'em Bounty $15K GTD (1Day) (17:10) cannot be checked: HORSE publishes no level structure."
+    },
+    {
+     "a": "r170",
+     "b": "r173",
+     "a_start": "13:00",
+     "b_start": "18:00",
+     "detail": "HORSE (13:00) and Milestone Satellite to $25K NLH High Roller (18:00) cannot be checked: HORSE publishes no level structure."
+    },
+    {
+     "a": "r170",
+     "b": "r174",
+     "a_start": "13:00",
+     "b_start": "18:00",
+     "detail": "HORSE (13:00) and Milestone Satellite to $3,000 NLH (18:00) cannot be checked: HORSE publishes no level structure."
+    },
+    {
+     "a": "r170",
+     "b": "r175",
+     "a_start": "13:00",
+     "b_start": "19:00",
+     "detail": "HORSE (13:00) and No Limit Hold'em Day 1B (19:00) cannot be checked: HORSE publishes no level structure."
+    },
+    {
+     "a": "r171",
+     "b": "r172",
+     "a_start": "13:00",
+     "b_start": "17:10",
+     "detail": "PLO 6-Max (13:00) and $300 No Limit Hold'em Bounty $15K GTD (1Day) (17:10) cannot be checked: PLO 6-Max publishes no level structure."
+    },
+    {
+     "a": "r171",
+     "b": "r173",
+     "a_start": "13:00",
+     "b_start": "18:00",
+     "detail": "PLO 6-Max (13:00) and Milestone Satellite to $25K NLH High Roller (18:00) cannot be checked: PLO 6-Max publishes no level structure."
+    },
+    {
+     "a": "r171",
+     "b": "r174",
+     "a_start": "13:00",
+     "b_start": "18:00",
+     "detail": "PLO 6-Max (13:00) and Milestone Satellite to $3,000 NLH (18:00) cannot be checked: PLO 6-Max publishes no level structure."
+    },
+    {
+     "a": "r171",
+     "b": "r175",
+     "a_start": "13:00",
+     "b_start": "19:00",
+     "detail": "PLO 6-Max (13:00) and No Limit Hold'em Day 1B (19:00) cannot be checked: PLO 6-Max publishes no level structure."
+    },
+    {
+     "a": "r173",
+     "b": "r175",
+     "a_start": "18:00",
+     "b_start": "19:00",
+     "detail": "Milestone Satellite to $25K NLH High Roller (18:00) and No Limit Hold'em Day 1B (19:00) cannot be checked: Milestone Satellite to $25K NLH High Roller publishes no level structure."
+    },
+    {
+     "a": "r174",
+     "b": "r175",
+     "a_start": "18:00",
+     "b_start": "19:00",
+     "detail": "Milestone Satellite to $3,000 NLH (18:00) and No Limit Hold'em Day 1B (19:00) cannot be checked: Milestone Satellite to $3,000 NLH publishes no level structure."
+    }
+   ],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 12,
    "conflicts_join_in_progress": 0,
    "alternatives": [
@@ -5299,6 +7495,227 @@
      "detail": "Milestone Satellite to $3,000 NLH starts 19:00 and its entry closes 19:00, while $600 Pot Limit Omaha Double Board Bomb Pot $25K GTD (1Day)'s own table can run as late as 03:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
+   "undecidable_pairs": [
+    {
+     "a": "r176",
+     "b": "r177",
+     "a_start": "10:10",
+     "b_start": "11:00",
+     "detail": "$1,100 No Limit Hold'em 1A $500K GTD - $40 Rake Discount for Entries Before 10:10 a.m. (10:10) and Seniors NLH Championship (3 Day) (11:00) cannot be checked: $1,100 No Limit Hold'em 1A $500K GTD - $40 Rake Discount for Entries Before 10:10 a.m. publishes no level structure."
+    },
+    {
+     "a": "r176",
+     "b": "r178",
+     "a_start": "10:10",
+     "b_start": "11:00",
+     "detail": "$1,100 No Limit Hold'em 1A $500K GTD - $40 Rake Discount for Entries Before 10:10 a.m. (10:10) and Wynn Mixed Championship (2 Day) (11:00) cannot be checked: $1,100 No Limit Hold'em 1A $500K GTD - $40 Rake Discount for Entries Before 10:10 a.m. publishes no level structure."
+    },
+    {
+     "a": "r176",
+     "b": "r179",
+     "a_start": "10:10",
+     "b_start": "12:00",
+     "detail": "$1,100 No Limit Hold'em 1A $500K GTD - $40 Rake Discount for Entries Before 10:10 a.m. (10:10) and No Limit Hold'em Day 1A (12:00) cannot be checked: $1,100 No Limit Hold'em 1A $500K GTD - $40 Rake Discount for Entries Before 10:10 a.m. publishes no level structure."
+    },
+    {
+     "a": "r176",
+     "b": "r182",
+     "a_start": "10:10",
+     "b_start": "12:10",
+     "detail": "$1,100 No Limit Hold'em 1A $500K GTD - $40 Rake Discount for Entries Before 10:10 a.m. (10:10) and $600 Pot Limit Omaha Double Board Bomb Pot $25K GTD (1Day) (12:10) cannot be checked: $1,100 No Limit Hold'em 1A $500K GTD - $40 Rake Discount for Entries Before 10:10 a.m. publishes no level structure."
+    },
+    {
+     "a": "r176",
+     "b": "r183",
+     "a_start": "10:10",
+     "b_start": "13:00",
+     "detail": "$1,100 No Limit Hold'em 1A $500K GTD - $40 Rake Discount for Entries Before 10:10 a.m. (10:10) and NLH High Roller (2 Day) (13:00) cannot be checked: $1,100 No Limit Hold'em 1A $500K GTD - $40 Rake Discount for Entries Before 10:10 a.m. publishes no level structure."
+    },
+    {
+     "a": "r176",
+     "b": "r184",
+     "a_start": "10:10",
+     "b_start": "14:00",
+     "detail": "$1,100 No Limit Hold'em 1A $500K GTD - $40 Rake Discount for Entries Before 10:10 a.m. (10:10) and Milestone Satellite to $3,000 NLH (14:00) cannot be checked: $1,100 No Limit Hold'em 1A $500K GTD - $40 Rake Discount for Entries Before 10:10 a.m. publishes no level structure."
+    },
+    {
+     "a": "r176",
+     "b": "r185",
+     "a_start": "10:10",
+     "b_start": "18:10",
+     "detail": "$1,100 No Limit Hold'em 1A $500K GTD - $40 Rake Discount for Entries Before 10:10 a.m. (10:10) and $1,100 No Limit Hold'em 1B $500K GTD - $40 Rake Discount for Entries Before 6:10 p.m. (18:10) cannot be checked: $1,100 No Limit Hold'em 1A $500K GTD - $40 Rake Discount for Entries Before 10:10 a.m. publishes no level structure."
+    },
+    {
+     "a": "r176",
+     "b": "r186",
+     "a_start": "10:10",
+     "b_start": "19:00",
+     "detail": "$1,100 No Limit Hold'em 1A $500K GTD - $40 Rake Discount for Entries Before 10:10 a.m. (10:10) and Milestone Satellite to $3,000 NLH (19:00) cannot be checked: $1,100 No Limit Hold'em 1A $500K GTD - $40 Rake Discount for Entries Before 10:10 a.m. publishes no level structure."
+    },
+    {
+     "a": "r177",
+     "b": "r179",
+     "a_start": "11:00",
+     "b_start": "12:00",
+     "detail": "Seniors NLH Championship (3 Day) (11:00) and No Limit Hold'em Day 1A (12:00) cannot be checked: Seniors NLH Championship (3 Day) publishes no level structure."
+    },
+    {
+     "a": "r177",
+     "b": "r182",
+     "a_start": "11:00",
+     "b_start": "12:10",
+     "detail": "Seniors NLH Championship (3 Day) (11:00) and $600 Pot Limit Omaha Double Board Bomb Pot $25K GTD (1Day) (12:10) cannot be checked: Seniors NLH Championship (3 Day) publishes no level structure."
+    },
+    {
+     "a": "r177",
+     "b": "r183",
+     "a_start": "11:00",
+     "b_start": "13:00",
+     "detail": "Seniors NLH Championship (3 Day) (11:00) and NLH High Roller (2 Day) (13:00) cannot be checked: Seniors NLH Championship (3 Day) publishes no level structure."
+    },
+    {
+     "a": "r177",
+     "b": "r184",
+     "a_start": "11:00",
+     "b_start": "14:00",
+     "detail": "Seniors NLH Championship (3 Day) (11:00) and Milestone Satellite to $3,000 NLH (14:00) cannot be checked: Seniors NLH Championship (3 Day) publishes no level structure."
+    },
+    {
+     "a": "r177",
+     "b": "r185",
+     "a_start": "11:00",
+     "b_start": "18:10",
+     "detail": "Seniors NLH Championship (3 Day) (11:00) and $1,100 No Limit Hold'em 1B $500K GTD - $40 Rake Discount for Entries Before 6:10 p.m. (18:10) cannot be checked: Seniors NLH Championship (3 Day) publishes no level structure."
+    },
+    {
+     "a": "r177",
+     "b": "r186",
+     "a_start": "11:00",
+     "b_start": "19:00",
+     "detail": "Seniors NLH Championship (3 Day) (11:00) and Milestone Satellite to $3,000 NLH (19:00) cannot be checked: Seniors NLH Championship (3 Day) publishes no level structure."
+    },
+    {
+     "a": "r178",
+     "b": "r179",
+     "a_start": "11:00",
+     "b_start": "12:00",
+     "detail": "Wynn Mixed Championship (2 Day) (11:00) and No Limit Hold'em Day 1A (12:00) cannot be checked: Wynn Mixed Championship (2 Day) publishes no level structure."
+    },
+    {
+     "a": "r178",
+     "b": "r182",
+     "a_start": "11:00",
+     "b_start": "12:10",
+     "detail": "Wynn Mixed Championship (2 Day) (11:00) and $600 Pot Limit Omaha Double Board Bomb Pot $25K GTD (1Day) (12:10) cannot be checked: Wynn Mixed Championship (2 Day) publishes no level structure."
+    },
+    {
+     "a": "r178",
+     "b": "r183",
+     "a_start": "11:00",
+     "b_start": "13:00",
+     "detail": "Wynn Mixed Championship (2 Day) (11:00) and NLH High Roller (2 Day) (13:00) cannot be checked: Wynn Mixed Championship (2 Day) publishes no level structure."
+    },
+    {
+     "a": "r178",
+     "b": "r184",
+     "a_start": "11:00",
+     "b_start": "14:00",
+     "detail": "Wynn Mixed Championship (2 Day) (11:00) and Milestone Satellite to $3,000 NLH (14:00) cannot be checked: Wynn Mixed Championship (2 Day) publishes no level structure."
+    },
+    {
+     "a": "r178",
+     "b": "r185",
+     "a_start": "11:00",
+     "b_start": "18:10",
+     "detail": "Wynn Mixed Championship (2 Day) (11:00) and $1,100 No Limit Hold'em 1B $500K GTD - $40 Rake Discount for Entries Before 6:10 p.m. (18:10) cannot be checked: Wynn Mixed Championship (2 Day) publishes no level structure."
+    },
+    {
+     "a": "r178",
+     "b": "r186",
+     "a_start": "11:00",
+     "b_start": "19:00",
+     "detail": "Wynn Mixed Championship (2 Day) (11:00) and Milestone Satellite to $3,000 NLH (19:00) cannot be checked: Wynn Mixed Championship (2 Day) publishes no level structure."
+    },
+    {
+     "a": "r179",
+     "b": "r182",
+     "a_start": "12:00",
+     "b_start": "12:10",
+     "detail": "No Limit Hold'em Day 1A (12:00) and $600 Pot Limit Omaha Double Board Bomb Pot $25K GTD (1Day) (12:10) cannot be checked: No Limit Hold'em Day 1A publishes no level structure."
+    },
+    {
+     "a": "r179",
+     "b": "r183",
+     "a_start": "12:00",
+     "b_start": "13:00",
+     "detail": "No Limit Hold'em Day 1A (12:00) and NLH High Roller (2 Day) (13:00) cannot be checked: No Limit Hold'em Day 1A publishes no level structure."
+    },
+    {
+     "a": "r179",
+     "b": "r184",
+     "a_start": "12:00",
+     "b_start": "14:00",
+     "detail": "No Limit Hold'em Day 1A (12:00) and Milestone Satellite to $3,000 NLH (14:00) cannot be checked: No Limit Hold'em Day 1A publishes no level structure."
+    },
+    {
+     "a": "r179",
+     "b": "r185",
+     "a_start": "12:00",
+     "b_start": "18:10",
+     "detail": "No Limit Hold'em Day 1A (12:00) and $1,100 No Limit Hold'em 1B $500K GTD - $40 Rake Discount for Entries Before 6:10 p.m. (18:10) cannot be checked: No Limit Hold'em Day 1A publishes no level structure."
+    },
+    {
+     "a": "r179",
+     "b": "r186",
+     "a_start": "12:00",
+     "b_start": "19:00",
+     "detail": "No Limit Hold'em Day 1A (12:00) and Milestone Satellite to $3,000 NLH (19:00) cannot be checked: No Limit Hold'em Day 1A publishes no level structure."
+    },
+    {
+     "a": "r183",
+     "b": "r184",
+     "a_start": "13:00",
+     "b_start": "14:00",
+     "detail": "NLH High Roller (2 Day) (13:00) and Milestone Satellite to $3,000 NLH (14:00) cannot be checked: NLH High Roller (2 Day) publishes no level structure."
+    },
+    {
+     "a": "r183",
+     "b": "r185",
+     "a_start": "13:00",
+     "b_start": "18:10",
+     "detail": "NLH High Roller (2 Day) (13:00) and $1,100 No Limit Hold'em 1B $500K GTD - $40 Rake Discount for Entries Before 6:10 p.m. (18:10) cannot be checked: NLH High Roller (2 Day) publishes no level structure."
+    },
+    {
+     "a": "r183",
+     "b": "r186",
+     "a_start": "13:00",
+     "b_start": "19:00",
+     "detail": "NLH High Roller (2 Day) (13:00) and Milestone Satellite to $3,000 NLH (19:00) cannot be checked: NLH High Roller (2 Day) publishes no level structure."
+    },
+    {
+     "a": "r184",
+     "b": "r185",
+     "a_start": "14:00",
+     "b_start": "18:10",
+     "detail": "Milestone Satellite to $3,000 NLH (14:00) and $1,100 No Limit Hold'em 1B $500K GTD - $40 Rake Discount for Entries Before 6:10 p.m. (18:10) cannot be checked: Milestone Satellite to $3,000 NLH publishes no level structure."
+    },
+    {
+     "a": "r184",
+     "b": "r186",
+     "a_start": "14:00",
+     "b_start": "19:00",
+     "detail": "Milestone Satellite to $3,000 NLH (14:00) and Milestone Satellite to $3,000 NLH (19:00) cannot be checked: Milestone Satellite to $3,000 NLH publishes no level structure."
+    },
+    {
+     "a": "r185",
+     "b": "r186",
+     "a_start": "18:10",
+     "b_start": "19:00",
+     "detail": "$1,100 No Limit Hold'em 1B $500K GTD - $40 Rake Discount for Entries Before 6:10 p.m. (18:10) and Milestone Satellite to $3,000 NLH (19:00) cannot be checked: $1,100 No Limit Hold'em 1B $500K GTD - $40 Rake Discount for Entries Before 6:10 p.m. publishes no level structure."
+    }
+   ],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 5,
    "conflicts_join_in_progress": 0,
    "alternatives": []
@@ -5523,6 +7940,241 @@
      "detail": "No Limit Hold'em and No Limit Hold'em Day 1B both start at 12:00 - one table cannot seat a player twice, so no published schedule can put both on one day"
     }
    ],
+   "undecidable_pairs": [
+    {
+     "a": "r187",
+     "b": "r188",
+     "a_start": "10:00",
+     "b_start": "10:10",
+     "detail": "Milestone Satellite to $3,000 NLH (10:00) and $1,100 No Limit Hold'em 1C $500K GTD (10:10) cannot be checked: Milestone Satellite to $3,000 NLH publishes no level structure."
+    },
+    {
+     "a": "r187",
+     "b": "r189",
+     "a_start": "10:00",
+     "b_start": "12:00",
+     "detail": "Milestone Satellite to $3,000 NLH (10:00) and Limit Omaha 8 Championship (2 Day) (12:00) cannot be checked: Milestone Satellite to $3,000 NLH publishes no level structure."
+    },
+    {
+     "a": "r187",
+     "b": "r190",
+     "a_start": "10:00",
+     "b_start": "12:00",
+     "detail": "Milestone Satellite to $3,000 NLH (10:00) and No Limit Hold'em (12:00) cannot be checked: Milestone Satellite to $3,000 NLH publishes no level structure."
+    },
+    {
+     "a": "r187",
+     "b": "r191",
+     "a_start": "10:00",
+     "b_start": "12:00",
+     "detail": "Milestone Satellite to $3,000 NLH (10:00) and No Limit Hold'em Day 1B (12:00) cannot be checked: Milestone Satellite to $3,000 NLH publishes no level structure."
+    },
+    {
+     "a": "r187",
+     "b": "r193",
+     "a_start": "10:00",
+     "b_start": "13:00",
+     "detail": "Milestone Satellite to $3,000 NLH (10:00) and NLH 6-Max (13:00) cannot be checked: Milestone Satellite to $3,000 NLH publishes no level structure."
+    },
+    {
+     "a": "r187",
+     "b": "r194",
+     "a_start": "10:00",
+     "b_start": "14:00",
+     "detail": "Milestone Satellite to $3,000 NLH (10:00) and Milestone Satellite to $5,000 Seniors High Roller (14:00) cannot be checked: Milestone Satellite to $3,000 NLH publishes no level structure."
+    },
+    {
+     "a": "r187",
+     "b": "r195",
+     "a_start": "10:00",
+     "b_start": "18:00",
+     "detail": "Milestone Satellite to $3,000 NLH (10:00) and NLH Turbo (18:00) cannot be checked: Milestone Satellite to $3,000 NLH publishes no level structure."
+    },
+    {
+     "a": "r187",
+     "b": "r196",
+     "a_start": "10:00",
+     "b_start": "18:10",
+     "detail": "Milestone Satellite to $3,000 NLH (10:00) and $1,100 No Limit Hold'em 1D $500K GTD (18:10) cannot be checked: Milestone Satellite to $3,000 NLH publishes no level structure."
+    },
+    {
+     "a": "r188",
+     "b": "r189",
+     "a_start": "10:10",
+     "b_start": "12:00",
+     "detail": "$1,100 No Limit Hold'em 1C $500K GTD (10:10) and Limit Omaha 8 Championship (2 Day) (12:00) cannot be checked: $1,100 No Limit Hold'em 1C $500K GTD publishes no level structure."
+    },
+    {
+     "a": "r188",
+     "b": "r190",
+     "a_start": "10:10",
+     "b_start": "12:00",
+     "detail": "$1,100 No Limit Hold'em 1C $500K GTD (10:10) and No Limit Hold'em (12:00) cannot be checked: $1,100 No Limit Hold'em 1C $500K GTD publishes no level structure."
+    },
+    {
+     "a": "r188",
+     "b": "r191",
+     "a_start": "10:10",
+     "b_start": "12:00",
+     "detail": "$1,100 No Limit Hold'em 1C $500K GTD (10:10) and No Limit Hold'em Day 1B (12:00) cannot be checked: $1,100 No Limit Hold'em 1C $500K GTD publishes no level structure."
+    },
+    {
+     "a": "r188",
+     "b": "r193",
+     "a_start": "10:10",
+     "b_start": "13:00",
+     "detail": "$1,100 No Limit Hold'em 1C $500K GTD (10:10) and NLH 6-Max (13:00) cannot be checked: $1,100 No Limit Hold'em 1C $500K GTD publishes no level structure."
+    },
+    {
+     "a": "r188",
+     "b": "r194",
+     "a_start": "10:10",
+     "b_start": "14:00",
+     "detail": "$1,100 No Limit Hold'em 1C $500K GTD (10:10) and Milestone Satellite to $5,000 Seniors High Roller (14:00) cannot be checked: $1,100 No Limit Hold'em 1C $500K GTD publishes no level structure."
+    },
+    {
+     "a": "r188",
+     "b": "r195",
+     "a_start": "10:10",
+     "b_start": "18:00",
+     "detail": "$1,100 No Limit Hold'em 1C $500K GTD (10:10) and NLH Turbo (18:00) cannot be checked: $1,100 No Limit Hold'em 1C $500K GTD publishes no level structure."
+    },
+    {
+     "a": "r188",
+     "b": "r196",
+     "a_start": "10:10",
+     "b_start": "18:10",
+     "detail": "$1,100 No Limit Hold'em 1C $500K GTD (10:10) and $1,100 No Limit Hold'em 1D $500K GTD (18:10) cannot be checked: $1,100 No Limit Hold'em 1C $500K GTD publishes no level structure."
+    },
+    {
+     "a": "r189",
+     "b": "r193",
+     "a_start": "12:00",
+     "b_start": "13:00",
+     "detail": "Limit Omaha 8 Championship (2 Day) (12:00) and NLH 6-Max (13:00) cannot be checked: Limit Omaha 8 Championship (2 Day) publishes no level structure."
+    },
+    {
+     "a": "r189",
+     "b": "r194",
+     "a_start": "12:00",
+     "b_start": "14:00",
+     "detail": "Limit Omaha 8 Championship (2 Day) (12:00) and Milestone Satellite to $5,000 Seniors High Roller (14:00) cannot be checked: Limit Omaha 8 Championship (2 Day) publishes no level structure."
+    },
+    {
+     "a": "r189",
+     "b": "r195",
+     "a_start": "12:00",
+     "b_start": "18:00",
+     "detail": "Limit Omaha 8 Championship (2 Day) (12:00) and NLH Turbo (18:00) cannot be checked: Limit Omaha 8 Championship (2 Day) publishes no level structure."
+    },
+    {
+     "a": "r189",
+     "b": "r196",
+     "a_start": "12:00",
+     "b_start": "18:10",
+     "detail": "Limit Omaha 8 Championship (2 Day) (12:00) and $1,100 No Limit Hold'em 1D $500K GTD (18:10) cannot be checked: Limit Omaha 8 Championship (2 Day) publishes no level structure."
+    },
+    {
+     "a": "r190",
+     "b": "r193",
+     "a_start": "12:00",
+     "b_start": "13:00",
+     "detail": "No Limit Hold'em (12:00) and NLH 6-Max (13:00) cannot be checked: No Limit Hold'em publishes no level structure."
+    },
+    {
+     "a": "r190",
+     "b": "r194",
+     "a_start": "12:00",
+     "b_start": "14:00",
+     "detail": "No Limit Hold'em (12:00) and Milestone Satellite to $5,000 Seniors High Roller (14:00) cannot be checked: No Limit Hold'em publishes no level structure."
+    },
+    {
+     "a": "r190",
+     "b": "r195",
+     "a_start": "12:00",
+     "b_start": "18:00",
+     "detail": "No Limit Hold'em (12:00) and NLH Turbo (18:00) cannot be checked: No Limit Hold'em publishes no level structure."
+    },
+    {
+     "a": "r190",
+     "b": "r196",
+     "a_start": "12:00",
+     "b_start": "18:10",
+     "detail": "No Limit Hold'em (12:00) and $1,100 No Limit Hold'em 1D $500K GTD (18:10) cannot be checked: No Limit Hold'em publishes no level structure."
+    },
+    {
+     "a": "r191",
+     "b": "r193",
+     "a_start": "12:00",
+     "b_start": "13:00",
+     "detail": "No Limit Hold'em Day 1B (12:00) and NLH 6-Max (13:00) cannot be checked: No Limit Hold'em Day 1B publishes no level structure."
+    },
+    {
+     "a": "r191",
+     "b": "r194",
+     "a_start": "12:00",
+     "b_start": "14:00",
+     "detail": "No Limit Hold'em Day 1B (12:00) and Milestone Satellite to $5,000 Seniors High Roller (14:00) cannot be checked: No Limit Hold'em Day 1B publishes no level structure."
+    },
+    {
+     "a": "r191",
+     "b": "r195",
+     "a_start": "12:00",
+     "b_start": "18:00",
+     "detail": "No Limit Hold'em Day 1B (12:00) and NLH Turbo (18:00) cannot be checked: No Limit Hold'em Day 1B publishes no level structure."
+    },
+    {
+     "a": "r191",
+     "b": "r196",
+     "a_start": "12:00",
+     "b_start": "18:10",
+     "detail": "No Limit Hold'em Day 1B (12:00) and $1,100 No Limit Hold'em 1D $500K GTD (18:10) cannot be checked: No Limit Hold'em Day 1B publishes no level structure."
+    },
+    {
+     "a": "r193",
+     "b": "r194",
+     "a_start": "13:00",
+     "b_start": "14:00",
+     "detail": "NLH 6-Max (13:00) and Milestone Satellite to $5,000 Seniors High Roller (14:00) cannot be checked: NLH 6-Max publishes no level structure."
+    },
+    {
+     "a": "r193",
+     "b": "r195",
+     "a_start": "13:00",
+     "b_start": "18:00",
+     "detail": "NLH 6-Max (13:00) and NLH Turbo (18:00) cannot be checked: NLH 6-Max publishes no level structure."
+    },
+    {
+     "a": "r193",
+     "b": "r196",
+     "a_start": "13:00",
+     "b_start": "18:10",
+     "detail": "NLH 6-Max (13:00) and $1,100 No Limit Hold'em 1D $500K GTD (18:10) cannot be checked: NLH 6-Max publishes no level structure."
+    },
+    {
+     "a": "r194",
+     "b": "r195",
+     "a_start": "14:00",
+     "b_start": "18:00",
+     "detail": "Milestone Satellite to $5,000 Seniors High Roller (14:00) and NLH Turbo (18:00) cannot be checked: Milestone Satellite to $5,000 Seniors High Roller publishes no level structure."
+    },
+    {
+     "a": "r194",
+     "b": "r196",
+     "a_start": "14:00",
+     "b_start": "18:10",
+     "detail": "Milestone Satellite to $5,000 Seniors High Roller (14:00) and $1,100 No Limit Hold'em 1D $500K GTD (18:10) cannot be checked: Milestone Satellite to $5,000 Seniors High Roller publishes no level structure."
+    },
+    {
+     "a": "r195",
+     "b": "r196",
+     "a_start": "18:00",
+     "b_start": "18:10",
+     "detail": "NLH Turbo (18:00) and $1,100 No Limit Hold'em 1D $500K GTD (18:10) cannot be checked: NLH Turbo publishes no level structure."
+    }
+   ],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 3,
    "conflicts_join_in_progress": 0,
    "alternatives": []
@@ -5827,6 +8479,353 @@
      "detail": "NLH Mystery Bounty Day 1B starts 19:00 and its entry closes 19:00, while $200 NLH PokerAtlas Valuetown Bounty $20K GTD (1Day) - PokerAtlas PRO member $20 rake discount's own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
+   "undecidable_pairs": [
+    {
+     "a": "r197",
+     "b": "r198",
+     "a_start": "10:10",
+     "b_start": "11:00",
+     "detail": "$1,100 No Limit Hold'em 1E $500K GTD (10:10) and NLH Mystery Bounty Day 1A (11:00) cannot be checked: $1,100 No Limit Hold'em 1E $500K GTD publishes no level structure."
+    },
+    {
+     "a": "r197",
+     "b": "r199",
+     "a_start": "10:10",
+     "b_start": "11:00",
+     "detail": "$1,100 No Limit Hold'em 1E $500K GTD (10:10) and Seniors High Roller (3 Day) (11:00) cannot be checked: $1,100 No Limit Hold'em 1E $500K GTD publishes no level structure."
+    },
+    {
+     "a": "r197",
+     "b": "r200",
+     "a_start": "10:10",
+     "b_start": "12:00",
+     "detail": "$1,100 No Limit Hold'em 1E $500K GTD (10:10) and Milestone Satellite to $1,600 Mystery Bounty (12:00) cannot be checked: $1,100 No Limit Hold'em 1E $500K GTD publishes no level structure."
+    },
+    {
+     "a": "r197",
+     "b": "r203",
+     "a_start": "10:10",
+     "b_start": "13:00",
+     "detail": "$1,100 No Limit Hold'em 1E $500K GTD (10:10) and NLH 6-Max (13:00) cannot be checked: $1,100 No Limit Hold'em 1E $500K GTD publishes no level structure."
+    },
+    {
+     "a": "r197",
+     "b": "r204",
+     "a_start": "10:10",
+     "b_start": "13:00",
+     "detail": "$1,100 No Limit Hold'em 1E $500K GTD (10:10) and PLO (13:00) cannot be checked: $1,100 No Limit Hold'em 1E $500K GTD publishes no level structure."
+    },
+    {
+     "a": "r197",
+     "b": "r205",
+     "a_start": "10:10",
+     "b_start": "13:00",
+     "detail": "$1,100 No Limit Hold'em 1E $500K GTD (10:10) and TORSE Championship (2 Day) (13:00) cannot be checked: $1,100 No Limit Hold'em 1E $500K GTD publishes no level structure."
+    },
+    {
+     "a": "r197",
+     "b": "r206",
+     "a_start": "10:10",
+     "b_start": "17:00",
+     "detail": "$1,100 No Limit Hold'em 1E $500K GTD (10:10) and Milestone Satellite to $1,600 Mystery Bounty (17:00) cannot be checked: $1,100 No Limit Hold'em 1E $500K GTD publishes no level structure."
+    },
+    {
+     "a": "r197",
+     "b": "r207",
+     "a_start": "10:10",
+     "b_start": "17:10",
+     "detail": "$1,100 No Limit Hold'em 1E $500K GTD (10:10) and $200 NLH PokerAtlas Valuetown Bounty $20K GTD (1Day) - PokerAtlas PRO member $20 rake discount (17:10) cannot be checked: $1,100 No Limit Hold'em 1E $500K GTD publishes no level structure."
+    },
+    {
+     "a": "r197",
+     "b": "r208",
+     "a_start": "10:10",
+     "b_start": "18:00",
+     "detail": "$1,100 No Limit Hold'em 1E $500K GTD (10:10) and NLH 6-Max Turbo (18:00) cannot be checked: $1,100 No Limit Hold'em 1E $500K GTD publishes no level structure."
+    },
+    {
+     "a": "r197",
+     "b": "r209",
+     "a_start": "10:10",
+     "b_start": "19:00",
+     "detail": "$1,100 No Limit Hold'em 1E $500K GTD (10:10) and NLH Mystery Bounty Day 1B (19:00) cannot be checked: $1,100 No Limit Hold'em 1E $500K GTD publishes no level structure."
+    },
+    {
+     "a": "r198",
+     "b": "r200",
+     "a_start": "11:00",
+     "b_start": "12:00",
+     "detail": "NLH Mystery Bounty Day 1A (11:00) and Milestone Satellite to $1,600 Mystery Bounty (12:00) cannot be checked: NLH Mystery Bounty Day 1A publishes no level structure."
+    },
+    {
+     "a": "r198",
+     "b": "r203",
+     "a_start": "11:00",
+     "b_start": "13:00",
+     "detail": "NLH Mystery Bounty Day 1A (11:00) and NLH 6-Max (13:00) cannot be checked: NLH Mystery Bounty Day 1A publishes no level structure."
+    },
+    {
+     "a": "r198",
+     "b": "r204",
+     "a_start": "11:00",
+     "b_start": "13:00",
+     "detail": "NLH Mystery Bounty Day 1A (11:00) and PLO (13:00) cannot be checked: NLH Mystery Bounty Day 1A publishes no level structure."
+    },
+    {
+     "a": "r198",
+     "b": "r205",
+     "a_start": "11:00",
+     "b_start": "13:00",
+     "detail": "NLH Mystery Bounty Day 1A (11:00) and TORSE Championship (2 Day) (13:00) cannot be checked: NLH Mystery Bounty Day 1A publishes no level structure."
+    },
+    {
+     "a": "r198",
+     "b": "r206",
+     "a_start": "11:00",
+     "b_start": "17:00",
+     "detail": "NLH Mystery Bounty Day 1A (11:00) and Milestone Satellite to $1,600 Mystery Bounty (17:00) cannot be checked: NLH Mystery Bounty Day 1A publishes no level structure."
+    },
+    {
+     "a": "r198",
+     "b": "r207",
+     "a_start": "11:00",
+     "b_start": "17:10",
+     "detail": "NLH Mystery Bounty Day 1A (11:00) and $200 NLH PokerAtlas Valuetown Bounty $20K GTD (1Day) - PokerAtlas PRO member $20 rake discount (17:10) cannot be checked: NLH Mystery Bounty Day 1A publishes no level structure."
+    },
+    {
+     "a": "r198",
+     "b": "r208",
+     "a_start": "11:00",
+     "b_start": "18:00",
+     "detail": "NLH Mystery Bounty Day 1A (11:00) and NLH 6-Max Turbo (18:00) cannot be checked: NLH Mystery Bounty Day 1A publishes no level structure."
+    },
+    {
+     "a": "r198",
+     "b": "r209",
+     "a_start": "11:00",
+     "b_start": "19:00",
+     "detail": "NLH Mystery Bounty Day 1A (11:00) and NLH Mystery Bounty Day 1B (19:00) cannot be checked: NLH Mystery Bounty Day 1A publishes no level structure."
+    },
+    {
+     "a": "r199",
+     "b": "r200",
+     "a_start": "11:00",
+     "b_start": "12:00",
+     "detail": "Seniors High Roller (3 Day) (11:00) and Milestone Satellite to $1,600 Mystery Bounty (12:00) cannot be checked: Seniors High Roller (3 Day) publishes no level structure."
+    },
+    {
+     "a": "r199",
+     "b": "r203",
+     "a_start": "11:00",
+     "b_start": "13:00",
+     "detail": "Seniors High Roller (3 Day) (11:00) and NLH 6-Max (13:00) cannot be checked: Seniors High Roller (3 Day) publishes no level structure."
+    },
+    {
+     "a": "r199",
+     "b": "r204",
+     "a_start": "11:00",
+     "b_start": "13:00",
+     "detail": "Seniors High Roller (3 Day) (11:00) and PLO (13:00) cannot be checked: Seniors High Roller (3 Day) publishes no level structure."
+    },
+    {
+     "a": "r199",
+     "b": "r205",
+     "a_start": "11:00",
+     "b_start": "13:00",
+     "detail": "Seniors High Roller (3 Day) (11:00) and TORSE Championship (2 Day) (13:00) cannot be checked: Seniors High Roller (3 Day) publishes no level structure."
+    },
+    {
+     "a": "r199",
+     "b": "r206",
+     "a_start": "11:00",
+     "b_start": "17:00",
+     "detail": "Seniors High Roller (3 Day) (11:00) and Milestone Satellite to $1,600 Mystery Bounty (17:00) cannot be checked: Seniors High Roller (3 Day) publishes no level structure."
+    },
+    {
+     "a": "r199",
+     "b": "r207",
+     "a_start": "11:00",
+     "b_start": "17:10",
+     "detail": "Seniors High Roller (3 Day) (11:00) and $200 NLH PokerAtlas Valuetown Bounty $20K GTD (1Day) - PokerAtlas PRO member $20 rake discount (17:10) cannot be checked: Seniors High Roller (3 Day) publishes no level structure."
+    },
+    {
+     "a": "r199",
+     "b": "r208",
+     "a_start": "11:00",
+     "b_start": "18:00",
+     "detail": "Seniors High Roller (3 Day) (11:00) and NLH 6-Max Turbo (18:00) cannot be checked: Seniors High Roller (3 Day) publishes no level structure."
+    },
+    {
+     "a": "r199",
+     "b": "r209",
+     "a_start": "11:00",
+     "b_start": "19:00",
+     "detail": "Seniors High Roller (3 Day) (11:00) and NLH Mystery Bounty Day 1B (19:00) cannot be checked: Seniors High Roller (3 Day) publishes no level structure."
+    },
+    {
+     "a": "r200",
+     "b": "r203",
+     "a_start": "12:00",
+     "b_start": "13:00",
+     "detail": "Milestone Satellite to $1,600 Mystery Bounty (12:00) and NLH 6-Max (13:00) cannot be checked: Milestone Satellite to $1,600 Mystery Bounty publishes no level structure."
+    },
+    {
+     "a": "r200",
+     "b": "r204",
+     "a_start": "12:00",
+     "b_start": "13:00",
+     "detail": "Milestone Satellite to $1,600 Mystery Bounty (12:00) and PLO (13:00) cannot be checked: Milestone Satellite to $1,600 Mystery Bounty publishes no level structure."
+    },
+    {
+     "a": "r200",
+     "b": "r205",
+     "a_start": "12:00",
+     "b_start": "13:00",
+     "detail": "Milestone Satellite to $1,600 Mystery Bounty (12:00) and TORSE Championship (2 Day) (13:00) cannot be checked: Milestone Satellite to $1,600 Mystery Bounty publishes no level structure."
+    },
+    {
+     "a": "r200",
+     "b": "r206",
+     "a_start": "12:00",
+     "b_start": "17:00",
+     "detail": "Milestone Satellite to $1,600 Mystery Bounty (12:00) and Milestone Satellite to $1,600 Mystery Bounty (17:00) cannot be checked: Milestone Satellite to $1,600 Mystery Bounty publishes no level structure."
+    },
+    {
+     "a": "r200",
+     "b": "r207",
+     "a_start": "12:00",
+     "b_start": "17:10",
+     "detail": "Milestone Satellite to $1,600 Mystery Bounty (12:00) and $200 NLH PokerAtlas Valuetown Bounty $20K GTD (1Day) - PokerAtlas PRO member $20 rake discount (17:10) cannot be checked: Milestone Satellite to $1,600 Mystery Bounty publishes no level structure."
+    },
+    {
+     "a": "r200",
+     "b": "r208",
+     "a_start": "12:00",
+     "b_start": "18:00",
+     "detail": "Milestone Satellite to $1,600 Mystery Bounty (12:00) and NLH 6-Max Turbo (18:00) cannot be checked: Milestone Satellite to $1,600 Mystery Bounty publishes no level structure."
+    },
+    {
+     "a": "r200",
+     "b": "r209",
+     "a_start": "12:00",
+     "b_start": "19:00",
+     "detail": "Milestone Satellite to $1,600 Mystery Bounty (12:00) and NLH Mystery Bounty Day 1B (19:00) cannot be checked: Milestone Satellite to $1,600 Mystery Bounty publishes no level structure."
+    },
+    {
+     "a": "r203",
+     "b": "r206",
+     "a_start": "13:00",
+     "b_start": "17:00",
+     "detail": "NLH 6-Max (13:00) and Milestone Satellite to $1,600 Mystery Bounty (17:00) cannot be checked: NLH 6-Max publishes no level structure."
+    },
+    {
+     "a": "r203",
+     "b": "r207",
+     "a_start": "13:00",
+     "b_start": "17:10",
+     "detail": "NLH 6-Max (13:00) and $200 NLH PokerAtlas Valuetown Bounty $20K GTD (1Day) - PokerAtlas PRO member $20 rake discount (17:10) cannot be checked: NLH 6-Max publishes no level structure."
+    },
+    {
+     "a": "r203",
+     "b": "r208",
+     "a_start": "13:00",
+     "b_start": "18:00",
+     "detail": "NLH 6-Max (13:00) and NLH 6-Max Turbo (18:00) cannot be checked: NLH 6-Max publishes no level structure."
+    },
+    {
+     "a": "r203",
+     "b": "r209",
+     "a_start": "13:00",
+     "b_start": "19:00",
+     "detail": "NLH 6-Max (13:00) and NLH Mystery Bounty Day 1B (19:00) cannot be checked: NLH 6-Max publishes no level structure."
+    },
+    {
+     "a": "r204",
+     "b": "r206",
+     "a_start": "13:00",
+     "b_start": "17:00",
+     "detail": "PLO (13:00) and Milestone Satellite to $1,600 Mystery Bounty (17:00) cannot be checked: PLO publishes no level structure."
+    },
+    {
+     "a": "r204",
+     "b": "r207",
+     "a_start": "13:00",
+     "b_start": "17:10",
+     "detail": "PLO (13:00) and $200 NLH PokerAtlas Valuetown Bounty $20K GTD (1Day) - PokerAtlas PRO member $20 rake discount (17:10) cannot be checked: PLO publishes no level structure."
+    },
+    {
+     "a": "r204",
+     "b": "r208",
+     "a_start": "13:00",
+     "b_start": "18:00",
+     "detail": "PLO (13:00) and NLH 6-Max Turbo (18:00) cannot be checked: PLO publishes no level structure."
+    },
+    {
+     "a": "r204",
+     "b": "r209",
+     "a_start": "13:00",
+     "b_start": "19:00",
+     "detail": "PLO (13:00) and NLH Mystery Bounty Day 1B (19:00) cannot be checked: PLO publishes no level structure."
+    },
+    {
+     "a": "r205",
+     "b": "r206",
+     "a_start": "13:00",
+     "b_start": "17:00",
+     "detail": "TORSE Championship (2 Day) (13:00) and Milestone Satellite to $1,600 Mystery Bounty (17:00) cannot be checked: TORSE Championship (2 Day) publishes no level structure."
+    },
+    {
+     "a": "r205",
+     "b": "r207",
+     "a_start": "13:00",
+     "b_start": "17:10",
+     "detail": "TORSE Championship (2 Day) (13:00) and $200 NLH PokerAtlas Valuetown Bounty $20K GTD (1Day) - PokerAtlas PRO member $20 rake discount (17:10) cannot be checked: TORSE Championship (2 Day) publishes no level structure."
+    },
+    {
+     "a": "r205",
+     "b": "r208",
+     "a_start": "13:00",
+     "b_start": "18:00",
+     "detail": "TORSE Championship (2 Day) (13:00) and NLH 6-Max Turbo (18:00) cannot be checked: TORSE Championship (2 Day) publishes no level structure."
+    },
+    {
+     "a": "r205",
+     "b": "r209",
+     "a_start": "13:00",
+     "b_start": "19:00",
+     "detail": "TORSE Championship (2 Day) (13:00) and NLH Mystery Bounty Day 1B (19:00) cannot be checked: TORSE Championship (2 Day) publishes no level structure."
+    },
+    {
+     "a": "r206",
+     "b": "r207",
+     "a_start": "17:00",
+     "b_start": "17:10",
+     "detail": "Milestone Satellite to $1,600 Mystery Bounty (17:00) and $200 NLH PokerAtlas Valuetown Bounty $20K GTD (1Day) - PokerAtlas PRO member $20 rake discount (17:10) cannot be checked: Milestone Satellite to $1,600 Mystery Bounty publishes no level structure."
+    },
+    {
+     "a": "r206",
+     "b": "r208",
+     "a_start": "17:00",
+     "b_start": "18:00",
+     "detail": "Milestone Satellite to $1,600 Mystery Bounty (17:00) and NLH 6-Max Turbo (18:00) cannot be checked: Milestone Satellite to $1,600 Mystery Bounty publishes no level structure."
+    },
+    {
+     "a": "r206",
+     "b": "r209",
+     "a_start": "17:00",
+     "b_start": "19:00",
+     "detail": "Milestone Satellite to $1,600 Mystery Bounty (17:00) and NLH Mystery Bounty Day 1B (19:00) cannot be checked: Milestone Satellite to $1,600 Mystery Bounty publishes no level structure."
+    },
+    {
+     "a": "r208",
+     "b": "r209",
+     "a_start": "18:00",
+     "b_start": "19:00",
+     "detail": "NLH 6-Max Turbo (18:00) and NLH Mystery Bounty Day 1B (19:00) cannot be checked: NLH 6-Max Turbo publishes no level structure."
+    }
+   ],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 6,
    "conflicts_join_in_progress": 0,
    "alternatives": []
@@ -6033,6 +9032,185 @@
      "detail": "NLH Mystery Bounty Day 1D starts 19:00 and its entry closes 19:00, while $200 No Limit Hold'em Bounty $8K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
+   "undecidable_pairs": [
+    {
+     "a": "r211",
+     "b": "r212",
+     "a_start": "11:00",
+     "b_start": "11:10",
+     "detail": "NLH Mystery Bounty Day 1C (11:00) and $600 No Limit Hold'em 1A $150K GTD - $20 Rake Discount for Entries Before 11:10 a.m. (11:10) cannot be checked: NLH Mystery Bounty Day 1C publishes no level structure."
+    },
+    {
+     "a": "r211",
+     "b": "r213",
+     "a_start": "11:00",
+     "b_start": "12:00",
+     "detail": "NLH Mystery Bounty Day 1C (11:00) and No Limit Hold'em (12:00) cannot be checked: NLH Mystery Bounty Day 1C publishes no level structure."
+    },
+    {
+     "a": "r211",
+     "b": "r215",
+     "a_start": "11:00",
+     "b_start": "13:00",
+     "detail": "NLH Mystery Bounty Day 1C (11:00) and Mixed Triple Draw (A-5, 2-7, Badugi) (13:00) cannot be checked: NLH Mystery Bounty Day 1C publishes no level structure."
+    },
+    {
+     "a": "r211",
+     "b": "r216",
+     "a_start": "11:00",
+     "b_start": "13:00",
+     "detail": "NLH Mystery Bounty Day 1C (11:00) and NLH 8-Max (13:00) cannot be checked: NLH Mystery Bounty Day 1C publishes no level structure."
+    },
+    {
+     "a": "r211",
+     "b": "r218",
+     "a_start": "11:00",
+     "b_start": "17:10",
+     "detail": "NLH Mystery Bounty Day 1C (11:00) and $200 No Limit Hold'em Bounty $8K GTD (1Day) (17:10) cannot be checked: NLH Mystery Bounty Day 1C publishes no level structure."
+    },
+    {
+     "a": "r211",
+     "b": "r219",
+     "a_start": "11:00",
+     "b_start": "18:00",
+     "detail": "NLH Mystery Bounty Day 1C (11:00) and 5-Card PLO Turbo (18:00) cannot be checked: NLH Mystery Bounty Day 1C publishes no level structure."
+    },
+    {
+     "a": "r211",
+     "b": "r220",
+     "a_start": "11:00",
+     "b_start": "19:00",
+     "detail": "NLH Mystery Bounty Day 1C (11:00) and NLH Mystery Bounty Day 1D (19:00) cannot be checked: NLH Mystery Bounty Day 1C publishes no level structure."
+    },
+    {
+     "a": "r212",
+     "b": "r213",
+     "a_start": "11:10",
+     "b_start": "12:00",
+     "detail": "$600 No Limit Hold'em 1A $150K GTD - $20 Rake Discount for Entries Before 11:10 a.m. (11:10) and No Limit Hold'em (12:00) cannot be checked: $600 No Limit Hold'em 1A $150K GTD - $20 Rake Discount for Entries Before 11:10 a.m. publishes no level structure."
+    },
+    {
+     "a": "r212",
+     "b": "r215",
+     "a_start": "11:10",
+     "b_start": "13:00",
+     "detail": "$600 No Limit Hold'em 1A $150K GTD - $20 Rake Discount for Entries Before 11:10 a.m. (11:10) and Mixed Triple Draw (A-5, 2-7, Badugi) (13:00) cannot be checked: $600 No Limit Hold'em 1A $150K GTD - $20 Rake Discount for Entries Before 11:10 a.m. publishes no level structure."
+    },
+    {
+     "a": "r212",
+     "b": "r216",
+     "a_start": "11:10",
+     "b_start": "13:00",
+     "detail": "$600 No Limit Hold'em 1A $150K GTD - $20 Rake Discount for Entries Before 11:10 a.m. (11:10) and NLH 8-Max (13:00) cannot be checked: $600 No Limit Hold'em 1A $150K GTD - $20 Rake Discount for Entries Before 11:10 a.m. publishes no level structure."
+    },
+    {
+     "a": "r212",
+     "b": "r218",
+     "a_start": "11:10",
+     "b_start": "17:10",
+     "detail": "$600 No Limit Hold'em 1A $150K GTD - $20 Rake Discount for Entries Before 11:10 a.m. (11:10) and $200 No Limit Hold'em Bounty $8K GTD (1Day) (17:10) cannot be checked: $600 No Limit Hold'em 1A $150K GTD - $20 Rake Discount for Entries Before 11:10 a.m. publishes no level structure."
+    },
+    {
+     "a": "r212",
+     "b": "r219",
+     "a_start": "11:10",
+     "b_start": "18:00",
+     "detail": "$600 No Limit Hold'em 1A $150K GTD - $20 Rake Discount for Entries Before 11:10 a.m. (11:10) and 5-Card PLO Turbo (18:00) cannot be checked: $600 No Limit Hold'em 1A $150K GTD - $20 Rake Discount for Entries Before 11:10 a.m. publishes no level structure."
+    },
+    {
+     "a": "r212",
+     "b": "r220",
+     "a_start": "11:10",
+     "b_start": "19:00",
+     "detail": "$600 No Limit Hold'em 1A $150K GTD - $20 Rake Discount for Entries Before 11:10 a.m. (11:10) and NLH Mystery Bounty Day 1D (19:00) cannot be checked: $600 No Limit Hold'em 1A $150K GTD - $20 Rake Discount for Entries Before 11:10 a.m. publishes no level structure."
+    },
+    {
+     "a": "r213",
+     "b": "r215",
+     "a_start": "12:00",
+     "b_start": "13:00",
+     "detail": "No Limit Hold'em (12:00) and Mixed Triple Draw (A-5, 2-7, Badugi) (13:00) cannot be checked: No Limit Hold'em publishes no level structure."
+    },
+    {
+     "a": "r213",
+     "b": "r216",
+     "a_start": "12:00",
+     "b_start": "13:00",
+     "detail": "No Limit Hold'em (12:00) and NLH 8-Max (13:00) cannot be checked: No Limit Hold'em publishes no level structure."
+    },
+    {
+     "a": "r213",
+     "b": "r218",
+     "a_start": "12:00",
+     "b_start": "17:10",
+     "detail": "No Limit Hold'em (12:00) and $200 No Limit Hold'em Bounty $8K GTD (1Day) (17:10) cannot be checked: No Limit Hold'em publishes no level structure."
+    },
+    {
+     "a": "r213",
+     "b": "r219",
+     "a_start": "12:00",
+     "b_start": "18:00",
+     "detail": "No Limit Hold'em (12:00) and 5-Card PLO Turbo (18:00) cannot be checked: No Limit Hold'em publishes no level structure."
+    },
+    {
+     "a": "r213",
+     "b": "r220",
+     "a_start": "12:00",
+     "b_start": "19:00",
+     "detail": "No Limit Hold'em (12:00) and NLH Mystery Bounty Day 1D (19:00) cannot be checked: No Limit Hold'em publishes no level structure."
+    },
+    {
+     "a": "r215",
+     "b": "r218",
+     "a_start": "13:00",
+     "b_start": "17:10",
+     "detail": "Mixed Triple Draw (A-5, 2-7, Badugi) (13:00) and $200 No Limit Hold'em Bounty $8K GTD (1Day) (17:10) cannot be checked: Mixed Triple Draw (A-5, 2-7, Badugi) publishes no level structure."
+    },
+    {
+     "a": "r215",
+     "b": "r219",
+     "a_start": "13:00",
+     "b_start": "18:00",
+     "detail": "Mixed Triple Draw (A-5, 2-7, Badugi) (13:00) and 5-Card PLO Turbo (18:00) cannot be checked: Mixed Triple Draw (A-5, 2-7, Badugi) publishes no level structure."
+    },
+    {
+     "a": "r215",
+     "b": "r220",
+     "a_start": "13:00",
+     "b_start": "19:00",
+     "detail": "Mixed Triple Draw (A-5, 2-7, Badugi) (13:00) and NLH Mystery Bounty Day 1D (19:00) cannot be checked: Mixed Triple Draw (A-5, 2-7, Badugi) publishes no level structure."
+    },
+    {
+     "a": "r216",
+     "b": "r218",
+     "a_start": "13:00",
+     "b_start": "17:10",
+     "detail": "NLH 8-Max (13:00) and $200 No Limit Hold'em Bounty $8K GTD (1Day) (17:10) cannot be checked: NLH 8-Max publishes no level structure."
+    },
+    {
+     "a": "r216",
+     "b": "r219",
+     "a_start": "13:00",
+     "b_start": "18:00",
+     "detail": "NLH 8-Max (13:00) and 5-Card PLO Turbo (18:00) cannot be checked: NLH 8-Max publishes no level structure."
+    },
+    {
+     "a": "r216",
+     "b": "r220",
+     "a_start": "13:00",
+     "b_start": "19:00",
+     "detail": "NLH 8-Max (13:00) and NLH Mystery Bounty Day 1D (19:00) cannot be checked: NLH 8-Max publishes no level structure."
+    },
+    {
+     "a": "r219",
+     "b": "r220",
+     "a_start": "18:00",
+     "b_start": "19:00",
+     "detail": "5-Card PLO Turbo (18:00) and NLH Mystery Bounty Day 1D (19:00) cannot be checked: 5-Card PLO Turbo publishes no level structure."
+    }
+   ],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 3,
    "conflicts_join_in_progress": 0,
    "alternatives": []
@@ -6137,6 +9315,45 @@
      "detail": "NLH Turbo starts 20:00 and its entry closes 20:00, while $200 No Limit Hold'em Bounty $8K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
+   "undecidable_pairs": [
+    {
+     "a": "r221",
+     "b": "r222",
+     "a_start": "11:10",
+     "b_start": "12:00",
+     "detail": "$600 No Limit Hold'em 1B $150K GTD (11:10) and No Limit Hold'em (12:00) cannot be checked: $600 No Limit Hold'em 1B $150K GTD publishes no level structure."
+    },
+    {
+     "a": "r221",
+     "b": "r224",
+     "a_start": "11:10",
+     "b_start": "17:10",
+     "detail": "$600 No Limit Hold'em 1B $150K GTD (11:10) and $200 No Limit Hold'em Bounty $8K GTD (1Day) (17:10) cannot be checked: $600 No Limit Hold'em 1B $150K GTD publishes no level structure."
+    },
+    {
+     "a": "r221",
+     "b": "r225",
+     "a_start": "11:10",
+     "b_start": "20:00",
+     "detail": "$600 No Limit Hold'em 1B $150K GTD (11:10) and NLH Turbo (20:00) cannot be checked: $600 No Limit Hold'em 1B $150K GTD publishes no level structure."
+    },
+    {
+     "a": "r222",
+     "b": "r224",
+     "a_start": "12:00",
+     "b_start": "17:10",
+     "detail": "No Limit Hold'em (12:00) and $200 No Limit Hold'em Bounty $8K GTD (1Day) (17:10) cannot be checked: No Limit Hold'em publishes no level structure."
+    },
+    {
+     "a": "r222",
+     "b": "r225",
+     "a_start": "12:00",
+     "b_start": "20:00",
+     "detail": "No Limit Hold'em (12:00) and NLH Turbo (20:00) cannot be checked: No Limit Hold'em publishes no level structure."
+    }
+   ],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 1,
    "conflicts_join_in_progress": 0,
    "alternatives": []
@@ -6191,6 +9408,17 @@
    "fallback_kind": null,
    "fallback_note": "This is the only sheet-reviewed candidate on this date, so the day is planned around it alone.",
    "conflicts": [],
+   "undecidable_pairs": [
+    {
+     "a": "r226",
+     "b": "r227",
+     "a_start": "11:10",
+     "b_start": "17:10",
+     "detail": "$600 No Limit Hold'em 1C $150K GTD (11:10) and $200 No Limit Hold'em Bounty $8K GTD (1Day) (17:10) cannot be checked: $600 No Limit Hold'em 1C $150K GTD publishes no level structure."
+    }
+   ],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 0,
    "conflicts_join_in_progress": 0,
    "alternatives": []
@@ -6254,6 +9482,9 @@
      "detail": "$200 No Limit Hold'em Bounty $8K GTD (1Day) starts 17:10 and its entry closes 21:40, while $600 No Limit Hold'em $30K GTD (1Day)'s own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
+   "undecidable_pairs": [],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 1,
    "conflicts_join_in_progress": 0,
    "alternatives": [
@@ -6328,6 +9559,9 @@
      "detail": "$200 No Limit Hold'em Bounty $8K GTD (1Day) starts 17:10 and its entry closes 21:40, while $400 No Limit Hold'em $15K GTD (1Day)'s own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
+   "undecidable_pairs": [],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 1,
    "conflicts_join_in_progress": 0,
    "alternatives": [
@@ -6402,6 +9636,9 @@
      "detail": "$200 No Limit Hold'em Bounty $8K GTD (1Day) starts 17:10 and its entry closes 21:40, while $400 No Limit Hold'em $15K GTD (1Day)'s own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
+   "undecidable_pairs": [],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 1,
    "conflicts_join_in_progress": 0,
    "alternatives": [
@@ -6522,6 +9759,9 @@
      "detail": "$260 NLH Milestone Satellite (1Day) - Awards 1 in 5 (20%) Direct Entry into Event # 08 starts 18:10 and its entry closes 20:25, while $260 NLH Milestone Satellite (1Day) - Awards 1 in 5 (20%) Direct Entry into Event # 08's own table can run as late as 02:15 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
+   "undecidable_pairs": [],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 3,
    "conflicts_join_in_progress": 0,
    "alternatives": [
@@ -6630,6 +9870,24 @@
      "detail": "$260 NLH Milestone Satellite (1Day) - Awards 1 in 5 (20%) Direct Entry into Event # 08 starts 18:10 and its entry closes 20:25, while $260 NLH Milestone Satellite (1Day) - Awards 1 in 5 (20%) Direct Entry into Event # 08's own table can run as late as 02:15 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
+   "undecidable_pairs": [
+    {
+     "a": "r238",
+     "b": "r239",
+     "a_start": "11:10",
+     "b_start": "15:10",
+     "detail": "$1,100 No Limit Hold'em 1A $300K GTD - Ante Up Championship (11:10) and $260 NLH Milestone Satellite (1Day) - Awards 1 in 5 (20%) Direct Entry into Event # 08 (15:10) cannot be checked: $1,100 No Limit Hold'em 1A $300K GTD - Ante Up Championship publishes no level structure."
+    },
+    {
+     "a": "r238",
+     "b": "r240",
+     "a_start": "11:10",
+     "b_start": "18:10",
+     "detail": "$1,100 No Limit Hold'em 1A $300K GTD - Ante Up Championship (11:10) and $260 NLH Milestone Satellite (1Day) - Awards 1 in 5 (20%) Direct Entry into Event # 08 (18:10) cannot be checked: $1,100 No Limit Hold'em 1A $300K GTD - Ante Up Championship publishes no level structure."
+    }
+   ],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 1,
    "conflicts_join_in_progress": 0,
    "alternatives": [
@@ -6728,6 +9986,24 @@
      "detail": "$260 NLH Milestone Satellite (1Day) - Awards 1 in 5 (20%) Direct Entry into Event # 08 starts 18:10 and its entry closes 20:25, while $260 NLH Milestone Satellite (1Day) - Awards 1 in 5 (20%) Direct Entry into Event # 08's own table can run as late as 02:15 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
+   "undecidable_pairs": [
+    {
+     "a": "r241",
+     "b": "r242",
+     "a_start": "11:10",
+     "b_start": "15:10",
+     "detail": "$1,100 No Limit Hold'em 1B $300K GTD - Ante Up Championship (11:10) and $260 NLH Milestone Satellite (1Day) - Awards 1 in 5 (20%) Direct Entry into Event # 08 (15:10) cannot be checked: $1,100 No Limit Hold'em 1B $300K GTD - Ante Up Championship publishes no level structure."
+    },
+    {
+     "a": "r241",
+     "b": "r243",
+     "a_start": "11:10",
+     "b_start": "18:10",
+     "detail": "$1,100 No Limit Hold'em 1B $300K GTD - Ante Up Championship (11:10) and $260 NLH Milestone Satellite (1Day) - Awards 1 in 5 (20%) Direct Entry into Event # 08 (18:10) cannot be checked: $1,100 No Limit Hold'em 1B $300K GTD - Ante Up Championship publishes no level structure."
+    }
+   ],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 1,
    "conflicts_join_in_progress": 0,
    "alternatives": [
@@ -6792,6 +10068,17 @@
    "fallback_kind": null,
    "fallback_note": "This is the only sheet-reviewed candidate on this date, so the day is planned around it alone.",
    "conflicts": [],
+   "undecidable_pairs": [
+    {
+     "a": "r244",
+     "b": "r245",
+     "a_start": "11:10",
+     "b_start": "17:10",
+     "detail": "$1,100 No Limit Hold'em 1C $300K GTD - Ante Up Championship (11:10) and $200 No Limit Hold'em Bounty $8K GTD (1Day) (17:10) cannot be checked: $1,100 No Limit Hold'em 1C $300K GTD - Ante Up Championship publishes no level structure."
+    }
+   ],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 0,
    "conflicts_join_in_progress": 0,
    "alternatives": []
@@ -6900,6 +10187,9 @@
      "detail": "$200 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry into Event # 20 starts 18:10 and its entry closes 19:55, while $200 NLH Milestone Satellite (1Day) - Awards Direct Entry into Event # 20's own table can run as late as 02:15 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
+   "undecidable_pairs": [],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 3,
    "conflicts_join_in_progress": 0,
    "alternatives": [
@@ -7029,6 +10319,9 @@
      "detail": "$200 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry into Event # 20 starts 18:10 and its entry closes 19:55, while $200 NLH Milestone Satellite (1Day) - Awards Direct Entry into Event # 20's own table can run as late as 02:15 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
+   "undecidable_pairs": [],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 3,
    "conflicts_join_in_progress": 0,
    "alternatives": [
@@ -7137,6 +10430,24 @@
      "detail": "$200 No Limit Hold'em Bounty $8K GTD (1Day) starts 17:10 and its entry closes 21:40, while $200 NLH Milestone Satellite (1Day) - Awards Direct Entry into Event # 20's own table can run as late as 02:15 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
+   "undecidable_pairs": [
+    {
+     "a": "r254",
+     "b": "r255",
+     "a_start": "11:10",
+     "b_start": "15:10",
+     "detail": "$1,600 No Limit Hold'em MSPT 1A $400K GTD - $40 Reduced Rake until the start of Level 4 (11:10) and $200 NLH Milestone Satellite (1Day) - Awards Direct Entry into Event # 20 (15:10) cannot be checked: $1,600 No Limit Hold'em MSPT 1A $400K GTD - $40 Reduced Rake until the start of Level 4 publishes no level structure."
+    },
+    {
+     "a": "r254",
+     "b": "r256",
+     "a_start": "11:10",
+     "b_start": "17:10",
+     "detail": "$1,600 No Limit Hold'em MSPT 1A $400K GTD - $40 Reduced Rake until the start of Level 4 (11:10) and $200 No Limit Hold'em Bounty $8K GTD (1Day) (17:10) cannot be checked: $1,600 No Limit Hold'em MSPT 1A $400K GTD - $40 Reduced Rake until the start of Level 4 publishes no level structure."
+    }
+   ],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 1,
    "conflicts_join_in_progress": 0,
    "alternatives": [
@@ -7290,6 +10601,24 @@
      "detail": "$200 NLH PokerAtlas Valuetown Bounty $20K GTD (1Day) - PokerAtlas PRO member $20 rake discount starts 17:10 and its entry closes 21:40, while $200 NLH Milestone Satellite (1Day) - Awards Direct Entry into Event # 20's own table can run as late as 02:15 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
+   "undecidable_pairs": [
+    {
+     "a": "r258",
+     "b": "r259",
+     "a_start": "11:10",
+     "b_start": "15:10",
+     "detail": "$1,600 No Limit Hold'em MSPT 1B $400K GTD (11:10) and $200 NLH Milestone Satellite (1Day) - Awards Direct Entry into Event # 20 (15:10) cannot be checked: $1,600 No Limit Hold'em MSPT 1B $400K GTD publishes no level structure."
+    },
+    {
+     "a": "r258",
+     "b": "r260",
+     "a_start": "11:10",
+     "b_start": "17:10",
+     "detail": "$1,600 No Limit Hold'em MSPT 1B $400K GTD (11:10) and $200 NLH PokerAtlas Valuetown Bounty $20K GTD (1Day) - PokerAtlas PRO member $20 rake discount (17:10) cannot be checked: $1,600 No Limit Hold'em MSPT 1B $400K GTD publishes no level structure."
+    }
+   ],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 3,
    "conflicts_join_in_progress": 1,
    "alternatives": [
@@ -7355,6 +10684,17 @@
    "fallback_kind": null,
    "fallback_note": "This is the only sheet-reviewed candidate on this date, so the day is planned around it alone.",
    "conflicts": [],
+   "undecidable_pairs": [
+    {
+     "a": "r261",
+     "b": "r262",
+     "a_start": "11:10",
+     "b_start": "17:10",
+     "detail": "$1,600 No Limit Hold'em MSPT 1C $400K GTD (11:10) and $200 No Limit Hold'em Bounty $8K GTD (1Day) (17:10) cannot be checked: $1,600 No Limit Hold'em MSPT 1C $400K GTD publishes no level structure."
+    }
+   ],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 0,
    "conflicts_join_in_progress": 0,
    "alternatives": []
@@ -7422,6 +10762,9 @@
      "detail": "$250 No Limit Hold'em 1B $75K GTD (1Day) - Day 1 Payouts with 5% advancing to Day 2 - $10 Reduced Rake for Entry before 5:10 PM starts 17:10 and its entry closes 21:40, while $250 No Limit Hold'em 1A $75K GTD (1Day) - Day 1 Payouts with 5% advancing to Day 2 - $10 Reduced Rake for Entry before 11:10 AM's own table can run as late as 03:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
+   "undecidable_pairs": [],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 1,
    "conflicts_join_in_progress": 0,
    "alternatives": []
@@ -7489,6 +10832,9 @@
      "detail": "$250 No Limit Hold'em 1D $75K GTD (1Day) - Day 1 Payouts with 5% advancing to Day 2 starts 17:10 and its entry closes 21:40, while $250 No Limit Hold'em 1C $75K GTD (1Day) - Day 1 Payouts with 5% advancing to Day 2's own table can run as late as 03:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
+   "undecidable_pairs": [],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 1,
    "conflicts_join_in_progress": 0,
    "alternatives": []
@@ -7552,6 +10898,9 @@
      "detail": "$200 No Limit Hold'em Bounty $8K GTD (1Day) - Show Your CES Badge - $10 Rake Discount starts 17:10 and its entry closes 21:40, while $400 No Limit Hold'em $15K GTD (1Day)'s own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
+   "undecidable_pairs": [],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 1,
    "conflicts_join_in_progress": 0,
    "alternatives": []
@@ -7617,6 +10966,9 @@
      "detail": "$300 No Limit Hold'em 1B $100K GTD (1Day) - Show Your CES Badge - $10 Rake Discount starts 17:10 and its entry closes 20:40, while $300 No Limit Hold'em 1A $100K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
+   "undecidable_pairs": [],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 1,
    "conflicts_join_in_progress": 0,
    "alternatives": []
@@ -7682,6 +11034,9 @@
      "detail": "$300 No Limit Hold'em 1D $100K GTD (1Day) - Show Your CES Badge - $10 Rake Discount starts 17:10 and its entry closes 20:40, while $300 No Limit Hold'em 1C $100K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
+   "undecidable_pairs": [],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 1,
    "conflicts_join_in_progress": 0,
    "alternatives": []
@@ -7712,7 +11067,7 @@
     {
      "id": "r276",
      "start": "17:10",
-     "name": "$300 No Limit Hold'em 1F $100K GTD (1Day) - Show Your CES Badge - $10 Rake Discount",
+     "name": "$300 No Limit Hold'em 1F $100K GTD (1Day)",
      "series": "Venetian DeepStack Extravaganza NYE",
      "venue": "The Venetian Resort",
      "buy_in_usd": 300,
@@ -7744,9 +11099,12 @@
      "b_start": "17:10",
      "kind": "unplannable",
      "gap_min": -735,
-     "detail": "$300 No Limit Hold'em 1F $100K GTD (1Day) - Show Your CES Badge - $10 Rake Discount starts 17:10 and its entry closes 20:40, while $300 No Limit Hold'em 1E $100K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
+     "detail": "$300 No Limit Hold'em 1F $100K GTD (1Day) starts 17:10 and its entry closes 20:40, while $300 No Limit Hold'em 1E $100K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
+   "undecidable_pairs": [],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 1,
    "conflicts_join_in_progress": 0,
    "alternatives": []
@@ -7812,6 +11170,9 @@
      "detail": "$200 No Limit Hold'em Bounty $8K GTD (1Day) starts 17:10 and its entry closes 21:40, while $400 No Limit Hold'em Seniors $20K GTD (1Day) - must be 50+ years of age's own table can run as late as 01:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
+   "undecidable_pairs": [],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 1,
    "conflicts_join_in_progress": 0,
    "alternatives": [
@@ -7876,6 +11237,17 @@
    "fallback_kind": null,
    "fallback_note": "No sheet-reviewed candidate on this date.",
    "conflicts": [],
+   "undecidable_pairs": [
+    {
+     "a": "r280",
+     "b": "r281",
+     "a_start": "12:00",
+     "b_start": "17:00",
+     "detail": "No Limit Hold'em Day 1A (12:00) and No Limit Hold'em Day 1B (17:00) cannot be checked: No Limit Hold'em Day 1A publishes no level structure."
+    }
+   ],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 0,
    "conflicts_join_in_progress": 0,
    "alternatives": []
@@ -7929,6 +11301,17 @@
    "fallback_kind": null,
    "fallback_note": "No sheet-reviewed candidate on this date.",
    "conflicts": [],
+   "undecidable_pairs": [
+    {
+     "a": "r282",
+     "b": "r283",
+     "a_start": "12:00",
+     "b_start": "17:00",
+     "detail": "No Limit Hold'em Day 1C (12:00) and No Limit Hold'em Day 1D (17:00) cannot be checked: No Limit Hold'em Day 1C publishes no level structure."
+    }
+   ],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 0,
    "conflicts_join_in_progress": 0,
    "alternatives": []
@@ -7982,6 +11365,17 @@
    "fallback_kind": null,
    "fallback_note": "No sheet-reviewed candidate on this date.",
    "conflicts": [],
+   "undecidable_pairs": [
+    {
+     "a": "r284",
+     "b": "r285",
+     "a_start": "12:00",
+     "b_start": "17:00",
+     "detail": "No Limit Hold'em Day 1E (12:00) and No Limit Hold'em Day 1F (17:00) cannot be checked: No Limit Hold'em Day 1E publishes no level structure."
+    }
+   ],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 0,
    "conflicts_join_in_progress": 0,
    "alternatives": []
@@ -8036,6 +11430,17 @@
    "fallback_kind": null,
    "fallback_note": "No sheet-reviewed candidate on this date.",
    "conflicts": [],
+   "undecidable_pairs": [
+    {
+     "a": "r286",
+     "b": "r288",
+     "a_start": "11:00",
+     "b_start": "18:00",
+     "detail": "No Limit Hold'em Day 1A (11:00) and Milestone Satellite to $600 NLH (18:00) cannot be checked: No Limit Hold'em Day 1A publishes no level structure."
+    }
+   ],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 0,
    "conflicts_join_in_progress": 0,
    "alternatives": []
@@ -8089,6 +11494,17 @@
    "fallback_kind": null,
    "fallback_note": "No sheet-reviewed candidate on this date.",
    "conflicts": [],
+   "undecidable_pairs": [
+    {
+     "a": "r289",
+     "b": "r290",
+     "a_start": "11:00",
+     "b_start": "18:00",
+     "detail": "No Limit Hold'em Day 1B (11:00) and NLH Turbo (18:00) cannot be checked: No Limit Hold'em Day 1B publishes no level structure."
+    }
+   ],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 0,
    "conflicts_join_in_progress": 0,
    "alternatives": []
@@ -8142,6 +11558,17 @@
    "fallback_kind": null,
    "fallback_note": "No sheet-reviewed candidate on this date.",
    "conflicts": [],
+   "undecidable_pairs": [
+    {
+     "a": "r291",
+     "b": "r292",
+     "a_start": "11:00",
+     "b_start": "18:00",
+     "detail": "No Limit Hold'em Day 1C (11:00) and No Limit Hold'em Day 1D (18:00) cannot be checked: No Limit Hold'em Day 1C publishes no level structure."
+    }
+   ],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 0,
    "conflicts_join_in_progress": 0,
    "alternatives": []
@@ -8195,6 +11622,17 @@
    "fallback_kind": null,
    "fallback_note": "No sheet-reviewed candidate on this date.",
    "conflicts": [],
+   "undecidable_pairs": [
+    {
+     "a": "r293",
+     "b": "r295",
+     "a_start": "12:00",
+     "b_start": "18:00",
+     "detail": "No Limit Hold'em (12:00) and NLH Turbo (18:00) cannot be checked: No Limit Hold'em publishes no level structure."
+    }
+   ],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 0,
    "conflicts_join_in_progress": 0,
    "alternatives": []
@@ -8268,6 +11706,31 @@
    "fallback_kind": null,
    "fallback_note": "No sheet-reviewed candidate on this date.",
    "conflicts": [],
+   "undecidable_pairs": [
+    {
+     "a": "r296",
+     "b": "r297",
+     "a_start": "11:00",
+     "b_start": "13:00",
+     "detail": "No Limit Hold'em Day 1A (11:00) and PLO (13:00) cannot be checked: No Limit Hold'em Day 1A publishes no level structure."
+    },
+    {
+     "a": "r296",
+     "b": "r298",
+     "a_start": "11:00",
+     "b_start": "18:00",
+     "detail": "No Limit Hold'em Day 1A (11:00) and NLH Turbo (18:00) cannot be checked: No Limit Hold'em Day 1A publishes no level structure."
+    },
+    {
+     "a": "r297",
+     "b": "r298",
+     "a_start": "13:00",
+     "b_start": "18:00",
+     "detail": "PLO (13:00) and NLH Turbo (18:00) cannot be checked: PLO publishes no level structure."
+    }
+   ],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 0,
    "conflicts_join_in_progress": 0,
    "alternatives": []
@@ -8341,6 +11804,31 @@
    "fallback_kind": null,
    "fallback_note": "No sheet-reviewed candidate on this date.",
    "conflicts": [],
+   "undecidable_pairs": [
+    {
+     "a": "r299",
+     "b": "r300",
+     "a_start": "11:00",
+     "b_start": "13:00",
+     "detail": "No Limit Hold'em Day 1B (11:00) and Mixed Game (TORSE) (13:00) cannot be checked: No Limit Hold'em Day 1B publishes no level structure."
+    },
+    {
+     "a": "r299",
+     "b": "r301",
+     "a_start": "11:00",
+     "b_start": "18:00",
+     "detail": "No Limit Hold'em Day 1B (11:00) and NLH Turbo (18:00) cannot be checked: No Limit Hold'em Day 1B publishes no level structure."
+    },
+    {
+     "a": "r300",
+     "b": "r301",
+     "a_start": "13:00",
+     "b_start": "18:00",
+     "detail": "Mixed Game (TORSE) (13:00) and NLH Turbo (18:00) cannot be checked: Mixed Game (TORSE) publishes no level structure."
+    }
+   ],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 0,
    "conflicts_join_in_progress": 0,
    "alternatives": []
@@ -8414,6 +11902,31 @@
    "fallback_kind": null,
    "fallback_note": "No sheet-reviewed candidate on this date.",
    "conflicts": [],
+   "undecidable_pairs": [
+    {
+     "a": "r302",
+     "b": "r303",
+     "a_start": "11:00",
+     "b_start": "13:00",
+     "detail": "No Limit Hold'em Day 1C (11:00) and Mixed Triple Draw (A-5, 2-7, Badugi) (13:00) cannot be checked: No Limit Hold'em Day 1C publishes no level structure."
+    },
+    {
+     "a": "r302",
+     "b": "r304",
+     "a_start": "11:00",
+     "b_start": "18:00",
+     "detail": "No Limit Hold'em Day 1C (11:00) and NLH Turbo (18:00) cannot be checked: No Limit Hold'em Day 1C publishes no level structure."
+    },
+    {
+     "a": "r303",
+     "b": "r304",
+     "a_start": "13:00",
+     "b_start": "18:00",
+     "detail": "Mixed Triple Draw (A-5, 2-7, Badugi) (13:00) and NLH Turbo (18:00) cannot be checked: Mixed Triple Draw (A-5, 2-7, Badugi) publishes no level structure."
+    }
+   ],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 0,
    "conflicts_join_in_progress": 0,
    "alternatives": []
@@ -8488,6 +12001,31 @@
    "fallback_kind": null,
    "fallback_note": "No sheet-reviewed candidate on this date.",
    "conflicts": [],
+   "undecidable_pairs": [
+    {
+     "a": "r305",
+     "b": "r307",
+     "a_start": "11:00",
+     "b_start": "13:00",
+     "detail": "No Limit Hold'em Day 1A (11:00) and Mixed Game (TOE) (13:00) cannot be checked: No Limit Hold'em Day 1A publishes no level structure."
+    },
+    {
+     "a": "r305",
+     "b": "r308",
+     "a_start": "11:00",
+     "b_start": "18:00",
+     "detail": "No Limit Hold'em Day 1A (11:00) and Milestone Satellite to $800 NLH (18:00) cannot be checked: No Limit Hold'em Day 1A publishes no level structure."
+    },
+    {
+     "a": "r307",
+     "b": "r308",
+     "a_start": "13:00",
+     "b_start": "18:00",
+     "detail": "Mixed Game (TOE) (13:00) and Milestone Satellite to $800 NLH (18:00) cannot be checked: Mixed Game (TOE) publishes no level structure."
+    }
+   ],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 0,
    "conflicts_join_in_progress": 0,
    "alternatives": []
@@ -8562,6 +12100,31 @@
    "fallback_kind": null,
    "fallback_note": "No sheet-reviewed candidate on this date.",
    "conflicts": [],
+   "undecidable_pairs": [
+    {
+     "a": "r309",
+     "b": "r310",
+     "a_start": "11:00",
+     "b_start": "13:00",
+     "detail": "No Limit Hold'em Day 1B (11:00) and Big O (13:00) cannot be checked: No Limit Hold'em Day 1B publishes no level structure."
+    },
+    {
+     "a": "r309",
+     "b": "r311",
+     "a_start": "11:00",
+     "b_start": "18:00",
+     "detail": "No Limit Hold'em Day 1B (11:00) and Milestone Satellite to $800 NLH (18:00) cannot be checked: No Limit Hold'em Day 1B publishes no level structure."
+    },
+    {
+     "a": "r310",
+     "b": "r311",
+     "a_start": "13:00",
+     "b_start": "18:00",
+     "detail": "Big O (13:00) and Milestone Satellite to $800 NLH (18:00) cannot be checked: Big O publishes no level structure."
+    }
+   ],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 0,
    "conflicts_join_in_progress": 0,
    "alternatives": []
@@ -8615,6 +12178,17 @@
    "fallback_kind": null,
    "fallback_note": "No sheet-reviewed candidate on this date.",
    "conflicts": [],
+   "undecidable_pairs": [
+    {
+     "a": "r312",
+     "b": "r313",
+     "a_start": "11:00",
+     "b_start": "18:00",
+     "detail": "No Limit Hold'em Day 1C (11:00) and No Limit Hold'em Day 1D (18:00) cannot be checked: No Limit Hold'em Day 1C publishes no level structure."
+    }
+   ],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 0,
    "conflicts_join_in_progress": 0,
    "alternatives": []
@@ -8688,6 +12262,31 @@
    "fallback_kind": null,
    "fallback_note": "No sheet-reviewed candidate on this date.",
    "conflicts": [],
+   "undecidable_pairs": [
+    {
+     "a": "r314",
+     "b": "r316",
+     "a_start": "12:00",
+     "b_start": "13:00",
+     "detail": "Seniors No Limit Hold'em 50+ (12:00) and PLO Double Board Bomb Pot (13:00) cannot be checked: Seniors No Limit Hold'em 50+ publishes no level structure."
+    },
+    {
+     "a": "r314",
+     "b": "r317",
+     "a_start": "12:00",
+     "b_start": "18:00",
+     "detail": "Seniors No Limit Hold'em 50+ (12:00) and NLH Turbo (18:00) cannot be checked: Seniors No Limit Hold'em 50+ publishes no level structure."
+    },
+    {
+     "a": "r316",
+     "b": "r317",
+     "a_start": "13:00",
+     "b_start": "18:00",
+     "detail": "PLO Double Board Bomb Pot (13:00) and NLH Turbo (18:00) cannot be checked: PLO Double Board Bomb Pot publishes no level structure."
+    }
+   ],
+   "second_entry_id": null,
+   "second_entry_note": "",
    "conflicts_unplannable": 0,
    "conflicts_join_in_progress": 0,
    "alternatives": []
@@ -8695,5 +12294,7 @@
  ],
  "earliest_listed_start": "09:10",
  "overlap_pairs": 170,
+ "undecidable_total": 477,
+ "conflicts_total": 170,
  "note": "Every end time here is the end of the event's own printed level table (levels x level length plus the published breaks), compared as minutes from the start day's midnight. It is a MAXIMUM, not an official finish time: no sheet in the series prints an end clock, and an event ends when its field is paid - or, for a satellite, when its seats are awarded - which can be much earlier. Of the 93 rows the official page labels \"(1Day)\", 87 carry a table that runs past midnight and 70 cannot fit inside a day at all (flag F75). A table spanning more than one playing day bounds its first day not at all, so those rows carry no ceiling and their day is never paired. A day names one primary candidate (subject to written rules) and, only where the primary cannot run past the second event's entry deadline, a conditional fallback labelled from the start or as a join in progress. Everything else on that date is listed as an alternative to the primary, never as an addition to it."
 }

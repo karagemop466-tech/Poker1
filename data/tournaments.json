@@ -70,6 +70,8 @@
    "payout_excerpt": null,
    "est_end": "08:55",
    "est_duration_min": 1305,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #10 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -158,6 +160,8 @@
    "payout_excerpt": null,
    "est_end": "09:55",
    "est_duration_min": 1005,
+   "est_end_abs_min": 2035,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #9 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -246,6 +250,8 @@
    "payout_excerpt": null,
    "est_end": "08:55",
    "est_duration_min": 1305,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #10 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -334,6 +340,8 @@
    "payout_excerpt": null,
    "est_end": "09:55",
    "est_duration_min": 1005,
+   "est_end_abs_min": 2035,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #9 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -419,6 +427,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "02:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1615,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #5 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -508,6 +518,8 @@
    "payout_excerpt": null,
    "est_end": "09:45",
    "est_duration_min": 1305,
+   "est_end_abs_min": 2025,
+   "est_end_days_after": 1,
    "note": "Continuation of the event above - no new entry. Official event page row.",
    "flags": [],
    "sources": [
@@ -595,6 +607,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "19:25",
    "est_duration_min": 555,
+   "est_end_abs_min": 1165,
+   "est_end_days_after": 0,
    "note": "Read from the official event page and structure sheet #18 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -682,6 +696,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "19:25",
    "est_duration_min": 555,
+   "est_end_abs_min": 1165,
+   "est_end_days_after": 0,
    "note": "Read from the official event page and structure sheet #18 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -769,6 +785,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "19:25",
    "est_duration_min": 555,
+   "est_end_abs_min": 1165,
+   "est_end_days_after": 0,
    "note": "Read from the official event page and structure sheet #18 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -854,6 +872,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "02:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1615,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #29 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -942,6 +962,8 @@
    "payout_excerpt": null,
    "est_end": "08:55",
    "est_duration_min": 1305,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #2 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -1030,6 +1052,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #30 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -1118,6 +1142,8 @@
    "payout_excerpt": null,
    "est_end": "08:55",
    "est_duration_min": 1305,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #2 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -1205,6 +1231,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #1 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -1294,6 +1322,8 @@
    "payout_excerpt": null,
    "est_end": "08:45",
    "est_duration_min": 1305,
+   "est_end_abs_min": 1965,
+   "est_end_days_after": 1,
    "note": "Continuation of the event above - no new entry. Official event page row.",
    "flags": [],
    "sources": [
@@ -1379,6 +1409,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "02:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1615,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #6 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -1466,6 +1498,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #1 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -1551,6 +1585,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "02:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1615,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #5 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -1638,6 +1674,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #1 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -1826,6 +1864,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "02:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1615,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #7 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -2218,6 +2258,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #1 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -2408,6 +2450,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "02:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1615,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #11 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -2597,6 +2641,8 @@
    "payout_excerpt": "pay 12.5% of the field",
    "est_end": "03:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1675,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #26 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -2789,6 +2835,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #8 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -2980,6 +3028,8 @@
    "payout_excerpt": null,
    "est_end": "08:55",
    "est_duration_min": 1305,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #3 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -3068,6 +3118,8 @@
    "payout_excerpt": "pay 12.5% of the field",
    "est_end": "03:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1675,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #22 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -3155,6 +3207,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #1 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -3451,6 +3505,8 @@
    "payout_excerpt": null,
    "est_end": "08:55",
    "est_duration_min": 1305,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #3 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -3846,6 +3902,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #1 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -4037,6 +4095,8 @@
    "payout_excerpt": null,
    "est_end": "08:55",
    "est_duration_min": 1305,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #3 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -4064,7 +4124,7 @@
    "start": "12:00",
    "kind": "entry",
    "event_no": null,
-   "name": "Limit Omaha 8/5/stud 8",
+   "name": "Limit Omaha 8/Stud 8",
    "buy_in_usd": 600,
    "guarantee_usd": null,
    "prize_text": null,
@@ -4429,6 +4489,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #1 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -4516,6 +4578,8 @@
    "payout_excerpt": "pays 15% of the field",
    "est_end": "01:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1555,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #17 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -4605,6 +4669,8 @@
    "payout_excerpt": null,
    "est_end": "08:45",
    "est_duration_min": 1305,
+   "est_end_abs_min": 1965,
+   "est_end_days_after": 1,
    "note": "Continuation of the event above - no new entry. Official event page row.",
    "flags": [],
    "sources": [
@@ -4795,6 +4861,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #1 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -5091,6 +5159,8 @@
    "payout_excerpt": null,
    "est_end": "08:55",
    "est_duration_min": 1305,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #12 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -5178,6 +5248,8 @@
    "payout_excerpt": "pay 12.5% of the field",
    "est_end": "03:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1675,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #28 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -5371,6 +5443,8 @@
    "payout_excerpt": null,
    "est_end": "09:55",
    "est_duration_min": 1005,
+   "est_end_abs_min": 2035,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #13 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -5663,6 +5737,8 @@
    "payout_excerpt": null,
    "est_end": "08:55",
    "est_duration_min": 1305,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #12 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -5957,6 +6033,8 @@
    "payout_excerpt": null,
    "est_end": "09:55",
    "est_duration_min": 1005,
+   "est_end_abs_min": 2035,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #13 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -6354,6 +6432,8 @@
    "payout_excerpt": null,
    "est_end": "08:55",
    "est_duration_min": 1305,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #12 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -6443,6 +6523,8 @@
    "payout_excerpt": null,
    "est_end": "04:55",
    "est_duration_min": 705,
+   "est_end_abs_min": 1735,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #14 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -6839,6 +6921,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "02:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1615,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #7 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -6928,6 +7012,8 @@
    "payout_excerpt": null,
    "est_end": "09:45",
    "est_duration_min": 1305,
+   "est_end_abs_min": 2025,
+   "est_end_days_after": 1,
    "note": "Continuation of the event above - no new entry. Official event page row.",
    "flags": [],
    "sources": [
@@ -7116,6 +7202,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #15 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -7714,6 +7802,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "02:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1615,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #11 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -8009,6 +8099,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #15 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -8300,6 +8392,8 @@
    "payout_excerpt": "pays 15% of the field",
    "est_end": "01:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1555,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #17 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -8492,6 +8586,8 @@
    "payout_excerpt": null,
    "est_end": "03:15",
    "est_duration_min": 665,
+   "est_end_abs_min": 1635,
+   "est_end_days_after": 1,
    "note": "Milestone satellite: \"A Player who accumulates 200,000 in tournament chips (\"The Milestone\") or more will instantly receive direct entry into the $800 No Limit Hold'em LIPS ladies Event #39.\" Open to female players who must be 21+ and hold a Venetian Rewards card.",
    "flags": [],
    "sources": [
@@ -8585,6 +8681,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #15 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -8877,6 +8975,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "01:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1555,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #31 on 2026-11-16.",
    "flags": [
     "The structure sheet withholds two separate amounts from the buy-in: the house fee (Rake + Staff) and a flat fee for Vegas Connected, INC, DBA Ladies International Poker Series (LIPS). house_fee_usd stores the pure house fee only; the LIPS flat fee is stored separately in lips_fee_usd. The prize pool is the buy-in less both withholdings."
@@ -9065,6 +9165,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "02:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1615,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #16 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -9560,6 +9662,8 @@
    "payout_excerpt": null,
    "est_end": "03:15",
    "est_duration_min": 665,
+   "est_end_abs_min": 1635,
+   "est_end_days_after": 1,
    "note": "Milestone satellite: \"A Player who accumulates 200,000 in tournament chips (\"The Milestone\") or more will instantly receive direct entry into the $800 No Limit Hold'em LIPS ladies Event #39.\" Open to female players who must be 21+ and hold a Venetian Rewards card.",
    "flags": [],
    "sources": [
@@ -9653,6 +9757,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #15 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -10039,6 +10145,8 @@
    "payout_excerpt": null,
    "est_end": "07:15",
    "est_duration_min": 1265,
+   "est_end_abs_min": 1875,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #32 on 2026-11-16.",
    "flags": [
     "The structure sheet withholds two separate amounts from the buy-in: the house fee (Rake + Staff) and a flat fee for Vegas Connected, INC, DBA Ladies International Poker Series (LIPS). house_fee_usd stores the pure house fee only; the LIPS flat fee is stored separately in lips_fee_usd. The prize pool is the buy-in less both withholdings."
@@ -10233,6 +10341,8 @@
    "payout_excerpt": "pay 12.5% of the field",
    "est_end": "03:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1675,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #27 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -10321,6 +10431,8 @@
    "payout_excerpt": null,
    "est_end": "03:15",
    "est_duration_min": 665,
+   "est_end_abs_min": 1635,
+   "est_end_days_after": 1,
    "note": "Milestone satellite: \"A Player who accumulates 200,000 in tournament chips (\"The Milestone\") or more will instantly receive direct entry into the $2,200 No Limit Hold'em PokerAtlas Championship Title Event #47.\"",
    "flags": [],
    "sources": [
@@ -10414,6 +10526,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #15 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -10597,6 +10711,8 @@
    "payout_excerpt": null,
    "est_end": "07:05",
    "est_duration_min": 1265,
+   "est_end_abs_min": 1865,
+   "est_end_days_after": 1,
    "note": "Continuation of the event above - no new entry. Official event page row.",
    "flags": [
     "The structure sheet withholds two separate amounts from the buy-in: the house fee (Rake + Staff) and a flat fee for Vegas Connected, INC, DBA Ladies International Poker Series (LIPS). house_fee_usd stores the pure house fee only; the LIPS flat fee is stored separately in lips_fee_usd. The prize pool is the buy-in less both withholdings."
@@ -10780,6 +10896,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "02:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1615,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #33 on 2026-11-16.",
    "flags": [
     "The structure sheet withholds two separate amounts from the buy-in: the house fee (Rake + Staff) and a flat fee for Vegas Connected, INC, DBA Ladies International Poker Series (LIPS). house_fee_usd stores the pure house fee only; the LIPS flat fee is stored separately in lips_fee_usd. The prize pool is the buy-in less both withholdings."
@@ -10974,6 +11092,8 @@
    "payout_excerpt": null,
    "est_end": "03:15",
    "est_duration_min": 665,
+   "est_end_abs_min": 1635,
+   "est_end_days_after": 1,
    "note": "Milestone satellite: \"A Player who accumulates 200,000 in tournament chips (\"The Milestone\") or more will instantly receive direct entry into the $2,200 No Limit Hold'em PokerAtlas Championship Title Event #47.\"",
    "flags": [],
    "sources": [
@@ -11163,6 +11283,8 @@
    "payout_excerpt": null,
    "est_end": "16:05",
    "est_duration_min": 1265,
+   "est_end_abs_min": 2405,
+   "est_end_days_after": 1,
    "note": "Continuation of the event above - no new entry. Official event page row.",
    "flags": [
     "The structure sheet withholds two separate amounts from the buy-in: the house fee (Rake + Staff) and a flat fee for Vegas Connected, INC, DBA Ladies International Poker Series (LIPS). house_fee_usd stores the pure house fee only; the LIPS flat fee is stored separately in lips_fee_usd. The prize pool is the buy-in less both withholdings."
@@ -11254,6 +11376,8 @@
    "payout_excerpt": null,
    "est_end": "04:55",
    "est_duration_min": 525,
+   "est_end_abs_min": 1735,
+   "est_end_days_after": 1,
    "note": "Milestone satellite: \"A Player who accumulates 200,000 in tournament chips (\"The Milestone\") or more will instantly receive direct entry into the $2,200 No Limit Hold'em PokerAtlas Championship Title Event #47.\" The sheet prints a start time per event number (45: 8:10 PM, 46: 9:10 AM, 48: 12:10 PM) and \"Late Registration: 6 levels\".",
    "flags": [],
    "sources": [
@@ -11349,6 +11473,8 @@
    "payout_excerpt": null,
    "est_end": "17:55",
    "est_duration_min": 525,
+   "est_end_abs_min": 1075,
+   "est_end_days_after": 0,
    "note": "Milestone satellite: \"A Player who accumulates 200,000 in tournament chips (\"The Milestone\") or more will instantly receive direct entry into the $2,200 No Limit Hold'em PokerAtlas Championship Title Event #47.\" The sheet prints a start time per event number (45: 8:10 PM, 46: 9:10 AM, 48: 12:10 PM) and \"Late Registration: 6 levels\".",
    "flags": [],
    "sources": [
@@ -11543,6 +11669,8 @@
    "payout_excerpt": null,
    "est_end": "07:15",
    "est_duration_min": 1265,
+   "est_end_abs_min": 1875,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #21 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -11632,6 +11760,8 @@
    "payout_excerpt": null,
    "est_end": "20:55",
    "est_duration_min": 525,
+   "est_end_abs_min": 1255,
+   "est_end_days_after": 0,
    "note": "Milestone satellite: \"A Player who accumulates 200,000 in tournament chips (\"The Milestone\") or more will instantly receive direct entry into the $2,200 No Limit Hold'em PokerAtlas Championship Title Event #47.\" The sheet prints a start time per event number (45: 8:10 PM, 46: 9:10 AM, 48: 12:10 PM) and \"Late Registration: 6 levels\".",
    "flags": [],
    "sources": [
@@ -11764,7 +11894,7 @@
    "start": "14:00",
    "kind": "entry",
    "event_no": null,
-   "name": "Milestone Satellite to $10,400 World Championship 1A/8",
+   "name": "Milestone Satellite to $10,400 World Championship 1A/B",
    "buy_in_usd": 1100,
    "guarantee_usd": null,
    "prize_text": "75 Seats",
@@ -12052,7 +12182,7 @@
    "start": "16:00",
    "kind": "entry",
    "event_no": null,
-   "name": "Milestone Satellite to $10,400 Ladies NLH Championship",
+   "name": "Milestone Satellite to $1,100 Ladies NLH Championship",
    "buy_in_usd": 200,
    "guarantee_usd": null,
    "prize_text": "10 Seats",
@@ -12216,6 +12346,8 @@
    "payout_excerpt": null,
    "est_end": "10:55",
    "est_duration_min": 1005,
+   "est_end_abs_min": 2095,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #37 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -12243,7 +12375,7 @@
    "start": "19:00",
    "kind": "entry",
    "event_no": null,
-   "name": "Milestone Satellite to $10,400 World Championship 1A/8",
+   "name": "Milestone Satellite to $10,400 World Championship 1A/B",
    "buy_in_usd": 1100,
    "guarantee_usd": null,
    "prize_text": "25 Seats",
@@ -12509,6 +12641,8 @@
    "payout_excerpt": null,
    "est_end": "07:15",
    "est_duration_min": 1265,
+   "est_end_abs_min": 1875,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #20 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -12536,7 +12670,7 @@
    "start": "11:00",
    "kind": "entry",
    "event_no": null,
-   "name": "Ladies NIH Championship (2 Day)",
+   "name": "Ladies NLH Championship (2 Day)",
    "buy_in_usd": 1100,
    "guarantee_usd": 250000,
    "prize_text": null,
@@ -13214,6 +13348,8 @@
    "payout_excerpt": null,
    "est_end": "10:05",
    "est_duration_min": 1265,
+   "est_end_abs_min": 2045,
+   "est_end_days_after": 1,
    "note": "Continuation of the event above - no new entry. Official event page row.",
    "flags": [],
    "sources": [
@@ -13382,6 +13518,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #15 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -13572,6 +13710,8 @@
    "payout_excerpt": null,
    "est_end": "07:15",
    "est_duration_min": 1265,
+   "est_end_abs_min": 1875,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #20 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -13662,6 +13802,8 @@
    "payout_excerpt": null,
    "est_end": "08:05",
    "est_duration_min": 1265,
+   "est_end_abs_min": 1925,
+   "est_end_days_after": 1,
    "note": "Continuation of the event above - no new entry. Official event page row.",
    "flags": [],
    "sources": [
@@ -14337,6 +14479,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #15 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -14566,7 +14710,7 @@
    "start": "21:00",
    "kind": "entry",
    "event_no": null,
-   "name": "NIH Turbo",
+   "name": "NLH Turbo",
    "buy_in_usd": 600,
    "guarantee_usd": 50000,
    "prize_text": null,
@@ -14644,7 +14788,7 @@
    "est_duration_min": null,
    "note": "Buy-in, guarantee, starting chips and level count from the official WPT World Championship schedule PDF. Entry rule, fee split and starting stack from block 12 of the official structures PDF.",
    "flags": [
-    "The $600 NLH Turbo structure sheet lists \"Monday, December 14, 2026 at 9 p.m.\" for the $600 turbo; this row is printed by the schedule PDF as \"NIH Turbo\" with a $600 buy-in and a $50,000 guarantee."
+    "The $600 NLH Turbo structure sheet lists \"Monday, December 14, 2026 at 9 p.m.\" for the $600 turbo; the schedule PDF prints this row as \"NLH Turbo\" with a $600 buy-in and a $50,000 guarantee. (Name corrected 2026-11-17 from the transcription \"NIH Turbo\" - no official document ever printed NIH; PR #52 session ca6d75b1 found it and session df94b75e verified the correction against data/snapshots/wpt_sched.txt.)"
    ],
    "sources": [
     {
@@ -14732,6 +14876,8 @@
    "payout_excerpt": null,
    "est_end": "07:05",
    "est_duration_min": 1265,
+   "est_end_abs_min": 1865,
+   "est_end_days_after": 1,
    "note": "Continuation of the event above - no new entry. Official event page row.",
    "flags": [],
    "sources": [
@@ -15106,6 +15252,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "02:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1615,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #34 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -15473,6 +15621,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #15 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -15602,7 +15752,7 @@
    "start": "19:00",
    "kind": "entry",
    "event_no": null,
-   "name": "NIH $500 Bounty Turbo",
+   "name": "NLH $500 Bounty Turbo",
    "buy_in_usd": 1600,
    "guarantee_usd": 100000,
    "prize_text": null,
@@ -15867,6 +16017,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "02:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1615,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #11 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -16339,6 +16491,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #15 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -16366,7 +16520,7 @@
    "start": "18:00",
    "kind": "entry",
    "event_no": null,
-   "name": "Milestone Satellite to $25K NIH High Roller",
+   "name": "Milestone Satellite to $25K NLH High Roller",
    "buy_in_usd": 3000,
    "guarantee_usd": null,
    "prize_text": null,
@@ -16738,6 +16892,8 @@
    "payout_excerpt": null,
    "est_end": "07:55",
    "est_duration_min": 1305,
+   "est_end_abs_min": 1915,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #35 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -17286,6 +17442,8 @@
    "payout_excerpt": "pay 12.5% of the field",
    "est_end": "03:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1675,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #23 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -17577,6 +17735,8 @@
    "payout_excerpt": null,
    "est_end": "10:55",
    "est_duration_min": 1005,
+   "est_end_abs_min": 2095,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #36 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -17868,6 +18028,8 @@
    "payout_excerpt": null,
    "est_end": "07:55",
    "est_duration_min": 1305,
+   "est_end_abs_min": 1915,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #35 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -18639,6 +18801,8 @@
    "payout_excerpt": null,
    "est_end": "10:55",
    "est_duration_min": 1005,
+   "est_end_abs_min": 2095,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #36 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -18728,6 +18892,8 @@
    "payout_excerpt": null,
    "est_end": "07:55",
    "est_duration_min": 1305,
+   "est_end_abs_min": 1915,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #35 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -19685,6 +19851,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #8 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -19979,6 +20147,8 @@
    "payout_excerpt": null,
    "est_end": "08:45",
    "est_duration_min": 1305,
+   "est_end_abs_min": 1965,
+   "est_end_days_after": 1,
    "note": "Continuation of the event above - no new entry. Official event page row.",
    "flags": [],
    "sources": [
@@ -20171,6 +20341,8 @@
    "payout_excerpt": null,
    "est_end": "08:55",
    "est_duration_min": 1305,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #4 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -20721,6 +20893,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #1 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -21014,6 +21188,8 @@
    "payout_excerpt": null,
    "est_end": "08:55",
    "est_duration_min": 1305,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #4 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -21282,6 +21458,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #1 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -21477,6 +21655,8 @@
    "payout_excerpt": null,
    "est_end": "08:55",
    "est_duration_min": 1305,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #4 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -21564,6 +21744,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #1 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -21654,6 +21836,8 @@
    "payout_excerpt": null,
    "est_end": "08:45",
    "est_duration_min": 1305,
+   "est_end_abs_min": 1965,
+   "est_end_days_after": 1,
    "note": "Continuation of the event above - no new entry. Official event page row.",
    "flags": [],
    "sources": [
@@ -21739,6 +21923,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "02:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1615,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #7 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -21826,6 +22012,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #1 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -21911,6 +22099,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "02:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1615,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #1 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -21998,6 +22188,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Clause 06 mentions re-entry for Event #29 only (\"The $20 discount can be applied to the initial entry or any subsequent re-entry\"). Event #29 is listed as re-entry; the other events on this sheet have no re-entry clause of their own. Flagged for confirmation.",
    "flags": [],
    "sources": [
@@ -22083,6 +22275,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "02:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1615,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #1 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -22170,6 +22364,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Clause 06 mentions re-entry for Event #29 only (\"The $20 discount can be applied to the initial entry or any subsequent re-entry\"). Event #29 is listed as re-entry; the other events on this sheet have no re-entry clause of their own. Flagged for confirmation.",
    "flags": [],
    "sources": [
@@ -22257,6 +22453,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "02:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1615,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #3 on 2026-11-16.",
    "flags": [
     "Official page typo: the New York Year's Eve event page prints this row as \"Saturday, December 26, 2025\". The series header reads \"December 24, 2026 - January 10, 2027\" and the printed weekday (Saturday) matches December 26, 2026, so the row is stored with the year 2026 and the printed year is treated as a typo."
@@ -22347,6 +22545,8 @@
    "payout_excerpt": null,
    "est_end": "02:15",
    "est_duration_min": 665,
+   "est_end_abs_min": 1575,
+   "est_end_days_after": 1,
    "note": "Milestone satellite to the Ante Up Championship. The sheet prints start times per event number (06, 09 and 11 at 3:10 PM; 07, 10 and 12 at 6:10 PM) and \"Late Registration: 6 levels + Break (~5:25 PM or ~ 8:25 PM)\". The official event page describes the prize as \"1 in 5 (20%) Direct Entry into Event # 08\".",
    "flags": [
     "Official page typo: the New York Year's Eve event page prints this row as \"Saturday, December 26, 2025\". The series header reads \"December 24, 2026 - January 10, 2027\" and the printed weekday (Saturday) matches December 26, 2026, so the row is stored with the year 2026 and the printed year is treated as a typo."
@@ -22443,6 +22643,8 @@
    "payout_excerpt": null,
    "est_end": "05:15",
    "est_duration_min": 665,
+   "est_end_abs_min": 1755,
+   "est_end_days_after": 1,
    "note": "Milestone satellite to the Ante Up Championship. The sheet prints start times per event number (06, 09 and 11 at 3:10 PM; 07, 10 and 12 at 6:10 PM) and \"Late Registration: 6 levels + Break (~5:25 PM or ~ 8:25 PM)\". The official event page describes the prize as \"1 in 5 (20%) Direct Entry into Event # 08\".",
    "flags": [
     "Official page typo: the New York Year's Eve event page prints this row as \"Saturday, December 26, 2025\". The series header reads \"December 24, 2026 - January 10, 2027\" and the printed weekday (Saturday) matches December 26, 2026, so the row is stored with the year 2026 and the printed year is treated as a typo."
@@ -22539,6 +22741,8 @@
    "payout_excerpt": null,
    "est_end": "08:55",
    "est_duration_min": 1305,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #6 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -22627,6 +22831,8 @@
    "payout_excerpt": null,
    "est_end": "02:15",
    "est_duration_min": 665,
+   "est_end_abs_min": 1575,
+   "est_end_days_after": 1,
    "note": "Milestone satellite to the Ante Up Championship. The sheet prints start times per event number (06, 09 and 11 at 3:10 PM; 07, 10 and 12 at 6:10 PM) and \"Late Registration: 6 levels + Break (~5:25 PM or ~ 8:25 PM)\". The official event page describes the prize as \"1 in 5 (20%) Direct Entry into Event # 08\".",
    "flags": [],
    "sources": [
@@ -22721,6 +22927,8 @@
    "payout_excerpt": null,
    "est_end": "05:15",
    "est_duration_min": 665,
+   "est_end_abs_min": 1755,
+   "est_end_days_after": 1,
    "note": "Milestone satellite to the Ante Up Championship. The sheet prints start times per event number (06, 09 and 11 at 3:10 PM; 07, 10 and 12 at 6:10 PM) and \"Late Registration: 6 levels + Break (~5:25 PM or ~ 8:25 PM)\". The official event page describes the prize as \"1 in 5 (20%) Direct Entry into Event # 08\".",
    "flags": [],
    "sources": [
@@ -22815,6 +23023,8 @@
    "payout_excerpt": null,
    "est_end": "08:55",
    "est_duration_min": 1305,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #6 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -22903,6 +23113,8 @@
    "payout_excerpt": null,
    "est_end": "02:15",
    "est_duration_min": 665,
+   "est_end_abs_min": 1575,
+   "est_end_days_after": 1,
    "note": "Milestone satellite to the Ante Up Championship. The sheet prints start times per event number (06, 09 and 11 at 3:10 PM; 07, 10 and 12 at 6:10 PM) and \"Late Registration: 6 levels + Break (~5:25 PM or ~ 8:25 PM)\". The official event page describes the prize as \"1 in 5 (20%) Direct Entry into Event # 08\".",
    "flags": [],
    "sources": [
@@ -22997,6 +23209,8 @@
    "payout_excerpt": null,
    "est_end": "05:15",
    "est_duration_min": 665,
+   "est_end_abs_min": 1755,
+   "est_end_days_after": 1,
    "note": "Milestone satellite to the Ante Up Championship. The sheet prints start times per event number (06, 09 and 11 at 3:10 PM; 07, 10 and 12 at 6:10 PM) and \"Late Registration: 6 levels + Break (~5:25 PM or ~ 8:25 PM)\". The official event page describes the prize as \"1 in 5 (20%) Direct Entry into Event # 08\".",
    "flags": [],
    "sources": [
@@ -23091,6 +23305,8 @@
    "payout_excerpt": null,
    "est_end": "08:55",
    "est_duration_min": 1305,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #6 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -23178,6 +23394,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Clause 06 mentions re-entry for Event #29 only (\"The $20 discount can be applied to the initial entry or any subsequent re-entry\"). Event #29 is listed as re-entry; the other events on this sheet have no re-entry clause of their own. Flagged for confirmation.",
    "flags": [],
    "sources": [
@@ -23267,6 +23485,8 @@
    "payout_excerpt": null,
    "est_end": "08:45",
    "est_duration_min": 1305,
+   "est_end_abs_min": 1965,
+   "est_end_days_after": 1,
    "note": "Continuation of the event above - no new entry. Official event page row.",
    "flags": [],
    "sources": [
@@ -23352,6 +23572,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "02:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1615,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #12 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -23440,6 +23662,8 @@
    "payout_excerpt": null,
    "est_end": "02:15",
    "est_duration_min": 665,
+   "est_end_abs_min": 1575,
+   "est_end_days_after": 1,
    "note": "Milestone satellite to the MSPT. The sheet prints start times per event number (15, 18, 21 and 24 at 3:10 PM; 23 at 10:10 AM) and \"Late Registration: 6 levels + Break (~5:25 PM or 12:25 PM)\".",
    "flags": [],
    "sources": [
@@ -23535,6 +23759,8 @@
    "payout_excerpt": null,
    "est_end": "02:55",
    "est_duration_min": 525,
+   "est_end_abs_min": 1615,
+   "est_end_days_after": 1,
    "note": "Milestone satellite (turbo) to the MSPT. \"Late Registration: 6 levels + Break (~7:55 PM)\". \"$30 of the $200 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $170 of every $200 Buy In.\"",
    "flags": [],
    "sources": [
@@ -23630,6 +23856,8 @@
    "payout_excerpt": null,
    "est_end": "07:45",
    "est_duration_min": 1305,
+   "est_end_abs_min": 1905,
+   "est_end_days_after": 1,
    "note": "Continuation of the event above - no new entry. Official event page row.",
    "flags": [],
    "sources": [
@@ -23715,6 +23943,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "02:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1615,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #1 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -23803,6 +24033,8 @@
    "payout_excerpt": null,
    "est_end": "02:15",
    "est_duration_min": 665,
+   "est_end_abs_min": 1575,
+   "est_end_days_after": 1,
    "note": "Milestone satellite to the MSPT. The sheet prints start times per event number (15, 18, 21 and 24 at 3:10 PM; 23 at 10:10 AM) and \"Late Registration: 6 levels + Break (~5:25 PM or 12:25 PM)\".",
    "flags": [],
    "sources": [
@@ -23898,6 +24130,8 @@
    "payout_excerpt": null,
    "est_end": "02:55",
    "est_duration_min": 525,
+   "est_end_abs_min": 1615,
+   "est_end_days_after": 1,
    "note": "Milestone satellite (turbo) to the MSPT. \"Late Registration: 6 levels + Break (~7:55 PM)\". \"$30 of the $200 Buy-In is withheld for house fees (Rake + Staff). The prize pool consists of $170 of every $200 Buy In.\"",
    "flags": [],
    "sources": [
@@ -23993,6 +24227,8 @@
    "payout_excerpt": null,
    "est_end": "08:55",
    "est_duration_min": 1305,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #8 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -24081,6 +24317,8 @@
    "payout_excerpt": null,
    "est_end": "02:15",
    "est_duration_min": 665,
+   "est_end_abs_min": 1575,
+   "est_end_days_after": 1,
    "note": "Milestone satellite to the MSPT. The sheet prints start times per event number (15, 18, 21 and 24 at 3:10 PM; 23 at 10:10 AM) and \"Late Registration: 6 levels + Break (~5:25 PM or 12:25 PM)\".",
    "flags": [],
    "sources": [
@@ -24174,6 +24412,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Clause 06 mentions re-entry for Event #29 only (\"The $20 discount can be applied to the initial entry or any subsequent re-entry\"). Event #29 is listed as re-entry; the other events on this sheet have no re-entry clause of their own. Flagged for confirmation.",
    "flags": [],
    "sources": [
@@ -24262,6 +24502,8 @@
    "payout_excerpt": null,
    "est_end": "21:15",
    "est_duration_min": 665,
+   "est_end_abs_min": 1275,
+   "est_end_days_after": 0,
    "note": "Milestone satellite to the MSPT. The sheet prints start times per event number (15, 18, 21 and 24 at 3:10 PM; 23 at 10:10 AM) and \"Late Registration: 6 levels + Break (~5:25 PM or 12:25 PM)\".",
    "flags": [],
    "sources": [
@@ -24357,6 +24599,8 @@
    "payout_excerpt": null,
    "est_end": "08:55",
    "est_duration_min": 1305,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #8 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -24445,6 +24689,8 @@
    "payout_excerpt": null,
    "est_end": "02:15",
    "est_duration_min": 665,
+   "est_end_abs_min": 1575,
+   "est_end_days_after": 1,
    "note": "Milestone satellite to the MSPT. The sheet prints start times per event number (15, 18, 21 and 24 at 3:10 PM; 23 at 10:10 AM) and \"Late Registration: 6 levels + Break (~5:25 PM or 12:25 PM)\".",
    "flags": [],
    "sources": [
@@ -24540,6 +24786,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #9 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -24629,6 +24877,8 @@
    "payout_excerpt": null,
    "est_end": "08:55",
    "est_duration_min": 1305,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #8 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -24716,6 +24966,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Clause 06 mentions re-entry for Event #29 only (\"The $20 discount can be applied to the initial entry or any subsequent re-entry\"). Event #29 is listed as re-entry; the other events on this sheet have no re-entry clause of their own. Flagged for confirmation.",
    "flags": [],
    "sources": [
@@ -24806,6 +25058,8 @@
    "payout_excerpt": null,
    "est_end": "08:45",
    "est_duration_min": 1305,
+   "est_end_abs_min": 1965,
+   "est_end_days_after": 1,
    "note": "Continuation of the event above - no new entry. The stored time comes from structure sheet #8 clause 3; the official event page prints 11:10 AM for this row, which is recorded as a flag on the row.",
    "flags": [
     "Two official sources disagree on this start time. The New Year's Eve event page prints \"Monday, January 4, 2027 | 11:10 AM | 20 | $1,600 No Limit Hold'em MSPT Day 2 Restart\" (re-read live on 2026-11-17), while structure sheet #8 clause 3 prints \"Day 2 will resume at 11:00 AM combining all remaining players from 1A, 1B, and 1C\". The row is stored at the earlier 11:00 AM so that a player planning around it cannot be late for either reading; confirm with the poker room before travelling. The sheet's own \"Late Registration: 9 levels + Break (~ 5:55 PM)\" is measured from the 11:10 AM Day 1 flights, not from this restart, so it does not settle the question."
@@ -24897,6 +25151,8 @@
    "payout_excerpt": null,
    "est_end": "03:55",
    "est_duration_min": 1005,
+   "est_end_abs_min": 1675,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #15 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -24986,6 +25242,8 @@
    "payout_excerpt": null,
    "est_end": "09:55",
    "est_duration_min": 1005,
+   "est_end_abs_min": 2035,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #15 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -25075,6 +25333,8 @@
    "payout_excerpt": null,
    "est_end": "03:55",
    "est_duration_min": 1005,
+   "est_end_abs_min": 1675,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #15 on 2026-11-16.",
    "flags": [
     "Official page typo: the New Year's Eve event page prints \"Tuesaday, January 5, 2027\" for this row. January 5, 2027 is a Tuesday, so the stored date is unchanged."
@@ -25166,6 +25426,8 @@
    "payout_excerpt": null,
    "est_end": "09:55",
    "est_duration_min": 1005,
+   "est_end_abs_min": 2035,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #15 on 2026-11-16.",
    "flags": [
     "Official page typo: the New Year's Eve event page prints \"Tuesaday, January 5, 2027\" for this row. January 5, 2027 is a Tuesday, so the stored date is unchanged."
@@ -25253,6 +25515,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "02:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1615,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #11 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -25343,6 +25607,8 @@
    "payout_excerpt": null,
    "est_end": "04:45",
    "est_duration_min": 1005,
+   "est_end_abs_min": 1725,
+   "est_end_days_after": 1,
    "note": "Continuation of the event above - no new entry. Official event page row.",
    "flags": [],
    "sources": [
@@ -25431,6 +25697,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Clause 06 mentions re-entry for Event #29 only (\"The $20 discount can be applied to the initial entry or any subsequent re-entry\"). Event #29 is listed as re-entry; the other events on this sheet have no re-entry clause of their own. Flagged for confirmation.",
    "flags": [],
    "sources": [
@@ -25519,6 +25787,8 @@
    "payout_excerpt": null,
    "est_end": "08:55",
    "est_duration_min": 1305,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #13 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -25607,6 +25877,8 @@
    "payout_excerpt": null,
    "est_end": "09:55",
    "est_duration_min": 1005,
+   "est_end_abs_min": 2035,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #14 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -25695,6 +25967,8 @@
    "payout_excerpt": null,
    "est_end": "08:55",
    "est_duration_min": 1305,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #13 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -25783,6 +26057,8 @@
    "payout_excerpt": null,
    "est_end": "09:55",
    "est_duration_min": 1005,
+   "est_end_abs_min": 2035,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #14 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -25871,6 +26147,8 @@
    "payout_excerpt": null,
    "est_end": "08:55",
    "est_duration_min": 1305,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #13 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -25898,7 +26176,7 @@
    "start": "17:10",
    "kind": "entry",
    "event_no": 30,
-   "name": "$300 No Limit Hold'em 1F $100K GTD (1Day) - Show Your CES Badge - $10 Rake Discount",
+   "name": "$300 No Limit Hold'em 1F $100K GTD (1Day)",
    "buy_in_usd": 300,
    "guarantee_usd": 100000,
    "prize_text": null,
@@ -25959,6 +26237,8 @@
    "payout_excerpt": null,
    "est_end": "09:55",
    "est_duration_min": 1005,
+   "est_end_abs_min": 2035,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #14 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -26046,6 +26326,8 @@
    "payout_excerpt": "pays 15% of the field",
    "est_end": "01:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1555,
+   "est_end_days_after": 1,
    "note": "Read from the official event page and structure sheet #10 on 2026-11-16.",
    "flags": [],
    "sources": [
@@ -26135,6 +26417,8 @@
    "payout_excerpt": null,
    "est_end": "09:45",
    "est_duration_min": 1305,
+   "est_end_abs_min": 2025,
+   "est_end_days_after": 1,
    "note": "Continuation of the event above - no new entry. Official event page row.",
    "flags": [],
    "sources": [
@@ -26222,6 +26506,8 @@
    "payout_excerpt": "pays 12.5% of the field",
    "est_end": "08:55",
    "est_duration_min": 945,
+   "est_end_abs_min": 1975,
+   "est_end_days_after": 1,
    "note": "Clause 06 mentions re-entry for Event #29 only (\"The $20 discount can be applied to the initial entry or any subsequent re-entry\"). Event #29 is listed as re-entry; the other events on this sheet have no re-entry clause of their own. Flagged for confirmation.",
    "flags": [],
    "sources": [
@@ -29404,6 +29690,9 @@
   "bellagio_poker": "https://bellagio.mgmresorts.com/en/casino/poker.html",
   "bellagio_terms": "https://bellagio.mgmresorts.com/en/terms-and-conditions.html",
   "bellagio_faq": "https://bellagio.mgmresorts.com/en/faq.html",
+  "bellagio_fri_pdf": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt9cf95b0e60ec253e/6af491a3a9851d75c40be840/mgm-bellagio-poker-fridays-$600-nlh.pdf",
+  "bellagio_sat_pdf": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt6d47974bf5a7d9b6/6af491a391a6e8e4230c9e07/mgm-bellagio-poker-saturdays-$1000-nlh.pdf",
+  "bellagio_sun_pdf": "https://assets.contentstack.io/v3/assets/bltc6ce635bc4868eb2/blt07fcf1244a6da661/6af491a339e2b4f6b76a86ad/mgm-bellagio-poker-sundays-$400-horse.pdf",
   "aria": "https://aria.mgmresorts.com/en.html",
   "aria_poker": "https://aria.mgmresorts.com/en/casino/poker.html",
   "aria_terms": "https://aria.mgmresorts.com/en/terms-and-conditions.html",
@@ -29411,6 +29700,10 @@
   "caesars": "https://www.caesars.com/caesars-palace",
   "caesars_poker_article": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
   "caesars_faq": "https://www.caesars.com/caesars-palace/faqs",
-  "caesars_disclaimer": "https://www.caesars.com/corporate/disclaimer"
+  "caesars_daily_flyer": "https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf",
+  "caesars_casino": "https://www.caesars.com/caesars-palace/casino",
+  "caesars_poker_page": "https://www.caesars.com/caesars-palace/casino/poker",
+  "caesars_disclaimer": "https://www.caesars.com/corporate/disclaimer",
+  "clark_county_tle_guide": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf"
  }
 }

@@ -31,6 +31,18 @@ h2 { font-size: 20px; margin: 26px 0 8px; }
 h3 { font-size: 17px; margin: 18px 0 6px; }
 p.lead { color: var(--muted); margin-top: 0; }
 a { color: var(--accent); }
+/* Trip diary: one line per playable day */
+#trip-diary { margin-bottom: 28px; }
+#trip-diary ul.diary { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
+#trip-diary ul.diary > li { margin: 0; }
+#trip-diary h3 { margin: 0 0 8px; font-size: 1rem; }
+#trip-diary li ul { list-style: none; margin: 0; padding: 0; }
+#trip-diary li ul > li { margin: 0 0 8px; font-size: .95rem; }
+#trip-diary li ul > li > strong { text-transform: uppercase; font-size: .7rem; letter-spacing: .04em;
+  display: block; opacity: .7; }
+@media print { #trip-diary ul.diary { grid-template-columns: 1fr; } }
+
 .card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; margin: 14px 0; }
 .grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
 .kpi .num { font-size: 28px; font-weight: 700; }
