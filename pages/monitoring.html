@@ -491,6 +491,14 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
      date range, the venue, the series, the entry status, the buy-in range, the
      labels and the single-entry toggle, so the same behaviour is available
      everywhere. */
+  function vegasDate() {
+    var parts = new Intl.DateTimeFormat("en-US", {
+      timeZone: "America/Los_Angeles", year: "numeric", month: "2-digit", day: "2-digit"
+    }).formatToParts(new Date());
+    function part(type) { return parts.find(function (p) { return p.type === type; }).value; }
+    return part("year") + "-" + part("month") + "-" + part("day");
+  }
+
   function Filters(host, opts) {
     opts = opts || {};
     var el = document.createElement("div");
@@ -531,6 +539,9 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
     var status = select("status", opts.statuses || [], "Any entry rule");
     var single = input("single-only", "checkbox", {});
     single.checked = !!opts.strict;
+    var today = vegasDate();
+    var future = input("future-only", "checkbox", {});
+    future.checked = !!opts.upcoming;
     var reset = document.createElement("button");
     reset.type = "button"; reset.textContent = "Reset filters";
 
@@ -554,6 +565,11 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
     tl.textContent = "Written freezeout confirmed";
     tog.appendChild(single); tog.appendChild(tl);
     row2.appendChild(tog);
+    if (opts.upcoming) {
+      var futureField = field("Today and later (Las Vegas)", future);
+      futureField.className = "field toggle";
+      row2.appendChild(futureField);
+    }
     var actions = document.createElement("div");
     actions.className = "actions";
     actions.appendChild(reset);
@@ -599,6 +615,7 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
         var hay = JSON.stringify(row).toLowerCase();
         if (hay.indexOf(query) < 0) return false;
       }
+      if (future.checked && row.date < today) return false;
       if (from.value && row.date < from.value) return false;
       if (to.value && row.date > to.value) return false;
       if (venue.value && row.venue !== venue.value) return false;
@@ -618,6 +635,7 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
     function describe() {
       var bits = [];
       if (q.value.trim()) bits.push('search "' + q.value.trim() + '"');
+      if (future.checked) bits.push("Las Vegas dates from " + today);
       if (from.value) bits.push("from " + dateShort(from.value));
       if (to.value) bits.push("to " + dateShort(to.value));
       if (venue.value) bits.push(venue.value);
@@ -640,10 +658,12 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
     [q, from, to, buyMin, buyMax].forEach(function (c) { c.addEventListener("input", fire); });
     [venue, series, status].forEach(function (c) { c.addEventListener("change", fire); });
     single.addEventListener("change", fire);
+    future.addEventListener("change", fire);
     if (labelBox) labelBox.querySelectorAll("input").forEach(function (c) { c.addEventListener("change", fire); });
     reset.addEventListener("click", function () {
       q.value = ""; from.value = ""; to.value = ""; buyMin.value = ""; buyMax.value = "";
       venue.value = ""; series.value = ""; status.value = ""; single.checked = !!opts.strict;
+      future.checked = !!opts.upcoming;
       if (labelBox) labelBox.querySelectorAll("input").forEach(function (c) { c.checked = false; });
       fire();
     });
@@ -690,7 +710,10 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
       var flagged = rows.filter(function (r) { return (r.flags || []).length; }).length;
       var dates = {};
       rows.forEach(function (r) { dates[r.date] = 1; });
+      var today = vegasDate();
+      var upcoming = rows.filter(function (r) { return r.entry_status === "CAND" && r.date >= today; }).length;
       document.getElementById("kpis").innerHTML =
+        kpi(upcoming, "single-entry candidates today or later (Las Vegas dates)") +
         kpi(rows.length, "official rows in this dataset") +
         kpi(c.SE, "written freezeouts confirmed") +
         kpi(c.CAND || 0, "sheet reviewed; entry cap not stated") +
@@ -714,7 +737,8 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
     var labels = Array.from(new Set(rows.reduce(function (a, r) { return a.concat(r.labels || []); }, []))).sort();
     return Filters(host, {
       venues: venues, series: series, statuses: statuses, labels: labels,
-      strict: opts.strict, showStatus: opts.showStatus !== false
+      strict: opts.strict,
+      showStatus: opts.showStatus !== false, upcoming: opts.upcoming
     });
   }
 
@@ -753,7 +777,7 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
       var rows = d.rows.filter(function (r) { return r.entry_status === "SE" || r.entry_status === "CAND"; });
       var main = document.getElementById("content");
       var count = document.getElementById("count");
-      var filters = tournamentFilters(document.getElementById("filters"), rows, {strict:true});
+      var filters = tournamentFilters(document.getElementById("filters"), rows, { strict:true, upcoming:true });
       var tbl = table(main, rows, tournamentColumns(true), {
         sortKey: "date", sortDir: 1, predicate: filters.matches, countEl: count
       });
@@ -1003,7 +1027,7 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
       var lbl = document.createElement("label");
       lbl.htmlFor = "hotel-walk30";
       lbl.appendChild(walk30);
-      lbl.appendChild(document.createTextNode(" ≤30 min walk to a poker room"));
+      lbl.appendChild(document.createTextNode(" ≤30 min walk to the Venetian poker room"));
       var count = document.createElement("span");
       count.className = "small"; count.id = "hotel-count";
       bar.appendChild(q); bar.appendChild(lbl); bar.appendChild(count);
@@ -1012,7 +1036,7 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
         sortKey: "true", sortDir: 1, filterInput: q, countEl: count,
         predicate: function (r) {
           if (!walk30.checked) return true;
-          return r.walk_to_venetian_within_30 === true || r.walk_to_wynn_within_30 === true;
+          return r.walk_to_venetian_within_30 === true;
         }
       });
       walk30.addEventListener("change", handle.redraw);

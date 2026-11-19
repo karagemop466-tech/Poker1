@@ -93,7 +93,7 @@ PAGES = {
 """),
     "pages/single-entry.html": ("Single entry", "singleEntry", """
 <h1>Freezeout shortlist</h1>
-<p class="lead">Only written whole-event rules qualify. There are no confirmed rows in this snapshot. Switch off “Written freezeout confirmed” to inspect candidates by date. A silent sheet is not a prohibition.</p>
+<p class="lead">Only written whole-event rules qualify. There are no confirmed rows in this snapshot. Switch off “Written freezeout confirmed” to inspect candidates by date. Today and later uses Las Vegas dates and includes today’s earlier starts; clear it to inspect past events. A silent sheet is not a prohibition.</p>
 <div class="card callout">Guarantee ÷ total entry fee describes the advertised pool, not expected winnings. Bounty prizes and satellite seats are not comparable to ordinary cash payouts.</div>
 """ + FILTERS + """
 <div class="toolbar"><span class="small">""" + COUNT + """</span></div>
@@ -181,6 +181,7 @@ of a poker room, or search any column.</p>
 <div id="content"></div>
 """),
     "pages/flagged.html": ("Flagged for review", "flagged", """
+<h1>Flagged for Review</h1>
 <div id="content"></div>
 """),
     "pages/strip-rooms.html": ("Strip rooms", "strips", """
