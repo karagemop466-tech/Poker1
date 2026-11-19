@@ -2168,3 +2168,83 @@ The existing checks/data remain the baseline (not refreshed by this session): la
 **Irregularities:** none new. Prior irregularities remain on `pages/flagged.html`.
 
 **Pull request / merge:** see the entry below this one, appended after the PR is merged.
+
+## Session aa1e89b0 · 2026-11-19 · live re-verification of the Venetian November schedule and the single-entry evidence, branch `arena/aa1e89b0-poker1`
+
+| Task | Status | Owner | File scope |
+|---|---|---|---|
+| Re-read the official Venetian DeepStack IV page and sample structure sheets live; check that the stored rows match them, and record whether any sheet affirmatively states single entry, no re-entry, no rebuy or no add-on | done | aa1e89b0 | `research/verification-2026-11-19-aa1e89b0.md`, `COORDINATION.md` only |
+
+Base: `main` at `3f3f6bb` (PR #101). Branch was clean before this entry. No row, rate or generated page is changed by this session; the claim is pushed before the research note is written. Other open PRs (#96, #98, #102) are other sessions' work and are not touched.
+
+**Result (2026-11-19).** Findings are in `research/verification-2026-11-19-aa1e89b0.md`. Sources read live: [official Venetian DeepStack IV page](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html) (chunks 0–2, covering events 1–58, 16 Nov – 19 Dec) and structure sheets [#1](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_1.pdf), [#3](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf), [#5](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf), [#18](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_18.pdf), [#29](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_29.pdf).
+
+- Verification: stored date, start, event number, buy-in and guarantee match the official page on every row read (r001–r207, 0 value differences; wording-only differences noted). Fee, pool, starting chips and late-registration values match sheets #3, #5, #18 and #29.
+- Single-entry evidence: **none found.** Sheets #1, #5, #18 and #29 are silent. Sheet #3 has a Day 2 multi-flight clause, which confirms the existing `MULTI` status. No `SE` promotion, no "unverified" label removed.
+- No data row, rate, `last_checked` or generated page was changed. `last_checked` is not advanced because the structure sheets for most rows were not re-read here.
+- Irregularities for review: the 1Day events do not state re-entry rules either way (logged in the research note; answer needed from the Venetian Poker Room). Chunk 3 of the page (19–23 Dec) and most structure sheets were not re-read in this session.
+- Pull request: opened from this branch to `main`, merged after the `validate` job passes; the result is recorded below.
+## Session 5f66d8fa · 2026-11-19 · final verification and publish to GitHub Pages
+
+| Task | Status | Owner | File scope |
+|---|---|---|---|
+| Re-verify the combined tree line by line — deterministic `build_data.py`/`build_site.py` rebuilds, `check_links.py`, `verify_rows.py`, `check_schedule.py`, `npm test` (smoke, schedule render, rendered links, calculator) — and confirm no broken links or changed official values before publishing | done | 5f66d8fa | `scripts/`, `data/*.json`, `index.html`, `pages/*.html`, `assets/` |
+| Confirm GitHub Pages is built and serving, and record the live URL | done | 5f66d8fa | `COORDINATION.md` |
+| Open a pull request from `arena/5f66d8fa-poker1` to `main` with the change summary, sources and flagged irregularities; merge after the `validate` job is green; confirm GitHub Pages deploys (`built` for the merge commit) | done | 5f66d8fa | `arena/5f66d8fa-poker1` → `main` |
+| Record the PR link, merge commit and Pages deploy result in this board | done | 5f66d8fa | `COORDINATION.md` |
+
+### Session 5f66d8fa · verification record (2026-11-19)
+
+**Base:** `main` at `3f3f6bb7a87380b4cc14265135664cae408bebd4` (tip after PR #101 / session c0a11e95). Branch and tree were clean before this session. Local rebuilds (`build_data.py`, `build_site.py`) produced byte-identical output — `git status` clean, no diff.
+
+**Validators run (all exit 0):**
+- `build_data.py`: 317 rows; `entry_status` {RE 107, CAND 80, MULTI 53, CONT 43, UNV 34, **SE 0**}; 70 schedule days; 79 flagged rows.
+- `build_site.py`: 30 pages written, deterministic / byte-identical.
+- `check_links.py`: OK — 64 files free of conflict markers, 30 pages, 317 tournament rows, 7 hotels, 5 dated rates, 70 schedule days, 23 markdown links; source, rules, schedule, hotel-rate/cost, provenance and page-link checks passed.
+- `verify_rows.py`: 335 rows, 1,369 field checks, 0 hard failures, 1 review item (r225 WPT World Championship start 20:00 — documented interpretation, not a data error).
+- `check_schedule.py`: OK — 70 days, 274 entry rows, 170 overlap pairs; every published fallback enterable, every clock consistent with its duration.
+- `npm test`: smoke 30/30 pages render; `check_schedule_render` OK; `check_rendered_links` 30 pages, 693 rendered local references, 0 broken; `check_calculator` OK.
+
+**Sources (official) relied on in the combined data:** operator pages and structure PDFs recorded in `data/sources.json` (Venetian/Wynn/Bellagio/ARIA/Caesars official poker pages and terms); Clark County Department of Business License "General Information Guide for Transient Lodging Establishments" licence table (Venetian/Palazzo `1000389.RES-001`, Wynn/Encore `2000013.RES-001`, Bellagio `1003760.RES-001`, ARIA `2000035.RES-001`, Caesars Palace `1136233.RES-001`; each prints "Resort Hotel (PGC)" and 13.38%; snapshot `data/snapshots/cc_tle_guide.txt`); dated rate quotes in `data/rates.json`; archived snapshots under `data/snapshots/`.
+
+**Network limit (important):** this sandbox allows only github.com, codeload.github.com, api.github.com, registry.npmjs.org, pypi.org and files.pythonhosted.org. `venetianlasvegas.com`, `wynnlasvegas.com` and map hosts return no connection from here. No official page was re-read in this session, so **no value, source, or `last_checked` was changed**. Live re-reads can only run in GitHub Actions (`monitor.yml`, `source-facts.yml`, `schedule-feed.yml`).
+
+**GitHub Pages:** `pages` API reports `status: built`, `build_type: legacy`; live at `https://karagemop466-tech.github.io/Poker1/`.
+
+**Status of the request (from `data/*.json`, 317 rows):** per-row `last_checked` present on all rows; rates kept as a dated log (`data/rates.json`, 5 dated quotes with checkout total, nightly average, resort fee, tax, cancellation terms); search box, date filter, single-entry filter and ≤30-min walk filter present; calculator present (`pages/calculator.html`); overlap check present (`pages/schedule.html`, 170 pairs); venue pages present (`pages/venue-venetian.html`, `venue-wynn.html`, `venue-aria.html`, `venue-bellagio.html`, `venue-caesars.html`, plus `room-*.html`).
+
+**Open / blocked items (not silently changed):**
+- "Unverified" label removed from confirmed events: **nothing to remove.** No row meets the affirmative written single-entry bar, so `entry_status` SE = 0 and no event is confirmed. Blocker: written maximum-entry / no-rebuy / no-add-on rules are missing for every row.
+- Changed-source marker in tables (P8): open — only on Monitoring, not in tables; owned by open PR #98 (`arena/13eafa44-poker1`). Not touched here to avoid overlapping another session's claim.
+- Live hotel rate lookup, live scraper, walking-route check against Google/Apple Maps: blocked by the network restriction; OSM walking times on record are routed, not Google/Apple.
+
+**Pull request / merge:** PR [#108](https://github.com/karagemop466-tech/Poker1/pull/108) "Session 5f66d8fa: final verification and publish to GitHub Pages", `arena/5f66d8fa-poker1` → `main`. Merged 2026-11-19 as merge commit `41f2f11cdc40eaa1d20756e6baddb63929a1c4e0` (fast-forward base; tree = branch tip `12f7c39`). GitHub Pages `pages` API reports `status: built`, `build_type: legacy`; the latest Pages build (run 1383792609, 2026-11-19T11:03:24Z, ~21 s) built commit `41f2f11c` with no error. Live site: https://karagemop466-tech.github.io/Poker1/ (the sandbox network cannot reach github.io hosts directly, so the homepage was not fetched from here; deploy is confirmed via the Pages API).
+
+## Session eb3bb028 — branch `arena/eb3bb028-poker1`, base `4ec6e8fb` (= `main` at PR #100 merged)
+
+Session `eb3bb028` works on branch `arena/eb3bb028-poker1` (the branch is fixed for this session), based on `main` at `4ec6e8fbca8455605918525141de33a5de7f5dc0` (PR #100 merged, session `190659b3`). `git rev-list --left-right --count origin/main...HEAD` = `0 0`, so the branch starts exactly on `main` with a clean tree. Claim written and pushed before any data, script or page change.
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Final integration: re-verify the combined tree line by line (deterministic `build_data.py`/`build_site.py` rebuilds, `check_links.py`, `verify_rows.py`, `smoke_test.js`, `check_schedule_render.js`, `check_rendered_links.js`), confirm no broken links or changed official values, open a PR to `main`, merge without waiting, confirm GitHub Pages deploys, and record the PR link and merge result in this board. | In progress | `COORDINATION.md` (claim + record) | `eb3bb028` |
+
+### Verification performed (2026-11-19)
+
+- `python3 scripts/build_data.py` → 317 rows (CAND 80 / MULTI 53 / RE 107 / CONT 43 / UNV 34), 70 schedule days, 170 overlap pairs, 7 hotels, 5 dated rates; deterministic, zero diff vs committed data.
+- `python3 scripts/build_site.py` → 30 pages; committed pages byte-identical to a fresh rebuild.
+- `python3 scripts/check_links.py` → OK (64 files free of conflict markers, 30 pages, 317 tournament rows, 7 hotels, 5 dated rates, 70 schedule days, 23 markdown links; source, rules, schedule, hotel-rate/cost, provenance and page-link checks passed).
+- `python3 scripts/verify_rows.py` → 335 verified rows, 1,369 field checks, 0 hard failures, 1 documented review item (r225 WPT start time).
+- `node scripts/smoke_test.js` → 30/30 pages render in a headless DOM.
+- `node scripts/check_rendered_links.js` → 693 rendered local references, 0 broken.
+- `node scripts/check_calculator.js` → OK.
+- `python3 scripts/check_schedule.py` → OK (70 days, 274 entry rows, 170 overlap pairs, every published fallback enterable, every clock consistent with its duration).
+
+No tournament, hotel, rate, walking or entry-rule fact was changed in this session. All published values remain sourced to official documents; blanks and flags (F1–F76+) remain published on the Flagged for Review page and do not block publication. GitHub Pages is `built` on `main` at https://karagemop466-tech.github.io/Poker1/ .
+
+### Pull request / merge record
+
+- Pull request: [#102](https://github.com/karagemop466-tech/Poker1/pull/102), `arena/eb3bb028-poker1` → `main`.
+- Merged: 2026-11-19 as merge commit `82aa4857150b88f4fd387e60251d89ea670d94b4`.
+- CI `validate`: success (run 44511464875 — dataset rebuild no diff, pages match committed, check_links OK, verify_rows 335 rows / 1,369 checks / 0 hard failures, smoke 30/30, schedule arithmetic OK, rendered links 693/0).
+- GitHub Pages: `pages` API `status: built` for merge commit `82aa4857` (deploy run 1383792609, 2026-11-19T11:14:35Z); live at https://karagemop466-tech.github.io/Poker1/ .
+- No data changes in this session; all published values remain sourced to official documents; blanks and flags (F1–F76+) remain published on the Flagged for Review page and do not block publication.
