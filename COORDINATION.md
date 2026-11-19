@@ -1691,3 +1691,6 @@ operator hosts are unreachable (F55), so `monitor_sources.py` is exercised in CI
 `data/row_verification.json` are byte-identical to what this task found on `main` - no official value moved
 during any of it. `data/schedule.json` is the file that changed, and it is generated: edit
 `scripts/build_data.py`, never the JSON.
+
+### Session 44c94b4f — in progress
+Owns strict booking-readiness audit: research/readiness-2026-11-19.md, summary/flagged addenda and their generated pages; no edits to other sessions’ data collectors.
