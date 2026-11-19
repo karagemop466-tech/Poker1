@@ -116,6 +116,10 @@ const bodyRows = (w, scope) => w.document.querySelectorAll(scope + " tbody tr").
         date: "2026-11-19", source_url: changedSource, source_changed_at: "2026-11-19T06:06:15Z",
         reason: "official source page printed different values on its last re-check"
       }, {
+        id: "r007", kind: "tournament", name: "$200 NLH RaceDay Stack (1Day) - Race to finish before the Race",
+        date: "2026-11-19", source_url: "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+        source_changed_at: "2026-11-19T06:06:15Z", reason: "official source page printed different values on its last re-check"
+      }, {
         id: "r008", kind: "tournament", name: "$200 NLH RaceDay Stack (1Day) - Race to finish before the Race",
         date: "2026-11-20", diff: { buy_in_usd: [200, 250] }, reason: "dataset value differs from its previous snapshot"
       }]
@@ -131,11 +135,13 @@ const bodyRows = (w, scope) => w.document.querySelectorAll(scope + " tbody tr").
   const changedTr = Array.from(changedPage.document.querySelectorAll("#content tbody tr"))
     .find((tr) => tr.textContent.includes("RaceDay Stack"));
   const changedText = changedTr ? changedTr.textContent : "";
-  const changedLink = changedTr && Array.from(changedTr.querySelectorAll("a"))
-    .find((a) => a.textContent.includes("changed official source"));
+  const changedLinks = changedTr ? Array.from(changedTr.querySelectorAll("a"))
+    .filter((a) => a.textContent.includes("changed official source")) : [];
+  const changedHrefs = changedLinks.map((a) => a.href);
   check("confirmed source change is marked on its tournament row", !!changedTr && changedText.includes("Source changed — re-check"), changedText);
-  check("row marker exposes the monitor timestamp and official source link", !!changedTr && changedText.includes("2026-11-19T06:06:15Z") && !!changedLink && changedLink.href === changedSource,
-        changedLink ? changedLink.href : "missing timestamp or source link");
+  check("row marker exposes timestamps and every changed official source URL", !!changedTr && changedText.includes("2026-11-19T06:06:15Z") &&
+        changedHrefs.includes(changedSource) && changedHrefs.includes("https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf"),
+        changedHrefs.join(" | ") || "missing timestamp or source link");
   const diffOnlyTr = Array.from(changedPage.document.querySelectorAll("#content tbody tr"))
     .find((tr) => tr.textContent.includes("Nov 20, 2026"));
   check("snapshot-only row differences do not claim an official source change", !!diffOnlyTr && !diffOnlyTr.textContent.includes("Source changed — re-check"),

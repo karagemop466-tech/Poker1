@@ -776,22 +776,25 @@ header.site nav a {color:#d9ebe4}
       // source_url. A raw/cosmetic source fetch or a dataset snapshot diff must
       // never be presented as an official page change.
       if (!change || !change.source_url || (change.kind && change.kind !== "tournament")) return;
-      byId[change.id] = change;
+      if (!byId[change.id]) byId[change.id] = [];
+      byId[change.id].push(change);
     });
     rows.forEach(function (row) {
-      row._source_change = byId[row.id] || null;
+      row._source_changes = byId[row.id] || [];
       row._source_change_as_of = changes && changes.checked_at || "not recorded";
     });
     return rows;
   }
 
   function sourceChangeCell(row) {
-    var change = row._source_change;
-    if (!change) return "";
-    var when = change.source_changed_at || row._source_change_as_of || "not recorded";
+    var changes = row._source_changes || [];
+    if (!changes.length) return "";
     return "<br><span class='chip warn'>Source changed — re-check</span>" +
-      "<br><span class='small'>Monitor record: " + esc(when) + " · " +
-      '<a href="' + esc(change.source_url) + '" target="_blank" rel="noopener">changed official source</a></span>';
+      changes.map(function (change) {
+        var when = change.source_changed_at || row._source_change_as_of || "not recorded";
+        return "<br><span class='small'>Monitor record: " + esc(when) + " · " +
+          '<a href="' + esc(change.source_url) + '" target="_blank" rel="noopener">changed official source</a></span>';
+      }).join("");
   }
 
   function tournamentColumns(withRules) {
