@@ -2058,10 +2058,15 @@ The existing checks/data remain the baseline (not refreshed by this session): la
 | Claim the integration scope on branch `arena/190659b3-poker1` (based on `main` at `de35436e`, PR #94): re-verify the combined tree line by line — deterministic `build_data.py`/`build_site.py` rebuilds, `check_links.py`, `verify_rows.py`, `smoke_test.js`, `check_schedule_render.js`, `check_rendered_links.js` — and confirm no broken links or changed official values before publishing | done | 190659b3 | `scripts/`, `data/*.json`, `index.html`, `pages/*.html`, `assets/`, `COORDINATION.md` |
 | Re-check cited official pages that are readable today (Venetian DSE IV event page, Wynn poker page) against the archived snapshots read on 2026-11-17; log any moved value as a change item rather than editing a row | done | 190659b3 | `data/snapshots/`, `FLAGGED.md` (log only) |
 | Open a pull request from `arena/190659b3-poker1` to `main` with the change summary, sources and flagged irregularities; merge after the `validate` job is green; confirm GitHub Pages deploys (`built` for the merge commit) | opened — PR #97, awaiting green `validate` | `arena/190659b3-poker1` → `main` | all branch files + `COORDINATION.md` |
-| Record the PR link, merge commit and Pages deploy result in this board | planned | `COORDINATION.md` | `COORDINATION.md` |
+| Record the PR link, merge commit and Pages deploy result in this board | done — PR #97 merged as `eb6df26125f8e3bf858a4b43349d492cabf4e291` (2026-11-19T06:19:40Z); Pages `built` for main after the merge; live at https://karagemop466-tech.github.io/Poker1/ | `COORDINATION.md` | `COORDINATION.md` |
 
-**Read-only exploration only before this claim commit:** `build_data.py` and `build_site.py` rebuilds were byte-identical to the committed tree; `check_links.py` OK; `verify_rows.py` 324 rows / 1,282 checks / 0 hard failures (r225 documented review item retained); `smoke_test.js` 30/30 pages; `check_schedule_render.js` OK; `check_rendered_links.js` 693 references / 0 broken. No data file, row value or retrieval timestamp was changed. `git status` was clean at every step.
+### Session 190659b3 · merge record
 
-Live site before this session's merge: https://karagemop466-tech.github.io/Poker1/ (Pages `built` for `main` at `de35436e`, legacy branch build).
-
-Claim written 2026-11-19 and pushed before any implementation work, per the shared-task-board rules. No other session has an open claim on this branch; open PRs on `main` (#79/#81/#82 noted on the d6bc5df2 record) are not taken over here.
+| Item | Result |
+|---|---|
+| Pull request | [#97](https://github.com/karagemop466-tech/Poker1/pull/97) "Session 190659b3: final integration — verified tree, no data changes, publish to GitHub Pages", `arena/190659b3-poker1` → `main` |
+| Merged | 2026-11-19T06:19:40Z as merge commit `eb6df26125f8e3bf858a4b43349d492cabf4e291` (fast-forward base; tree = branch tip `caabf44`) |
+| CI `validate` | Run 44469701480, **success**: dataset rebuild + no diff; pages match committed; check_links OK; verify_rows 324 rows / 1,282 checks / 0 hard failures (r225 documented review item retained); date-and-start pairing OK; official-source re-check (90 fetched, 0 published-value changes, 6 fetch errors incl. 2 inactive sources); smoke 30/30; schedule arithmetic OK; rendered links 693/0 |
+| GitHub Pages | `built` for `main` after merge commit eb6df261 (legacy branch build, `https://karagemop466-tech.github.io/Poker1/`); homepage re-fetched and serving |
+| Data changes | None — no row value, source, or retrieval timestamp was changed; `build_data.py`/`build_site.py` deterministic |
+| Flagged irregularities | F1–F76+ remain published on `pages/flagged.html` with official-source links; evidence gaps (no written whole-event freezeout, no same-stay live checkout quote, no timed walking times) are "needs review", not blockers; no nonrefundable decision supported |
