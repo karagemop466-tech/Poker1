@@ -93,6 +93,8 @@ Re-verified after the second merge: all 12 gates in this record pass; `build_dat
 
 **Integration pull request:** https://github.com/karagemop466-tech/Poker1/pull/95 (`arena/ab7e4d46-poker1` → `main`). Merge result and Pages deploy are recorded below once the pull request is merged.
 
+**Third sync — current `main` (13560bb) and the 2026-11-19 monitor run (b234def).** `main` moved again (PRs #93–#94); merged, with main's NYE 9:40 PM and restart registration rules kept on the three-value `estimate_end`. The scheduled monitor committed a fresh official-source snapshot run to this branch (98 sources, 90 fetched; 6 MGM-family timeouts, recorded as errors, not as "no value"). Its four "facts changed" entries (`v_nov_struct_30`, `v_dse_series_page`, `sp_poker_page`, `v_poker_page`) were re-verified against the new snapshots: `verify_rows` 0 hard failures, `verify_against_snapshots` clean, and `build_data` regenerates byte-identical data, so no published value moved. The changed text re-prints the same figures (e.g. $40 house fee of $200, $8,000 guarantee). Logged as a monitor irregularity, not a data change.
+
 **Open items carried to review (not blocking, see Flagged for Review):** F78/F79 of PR #79 (WPT Fall Festival card,
 calendar-view quote); Q-J5 (Bellagio single-entry reading); the six MGM-family timeouts; no live re-fetch from this sandbox.
 
