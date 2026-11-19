@@ -2075,7 +2075,7 @@ The existing checks/data remain the baseline (not refreshed by this session): la
 
 | Task | Status | Owner | File scope |
 |---|---|---|---|
-| Surface only confirmed official-source value changes beside affected tournament rows on single-entry, separate-section, unverified, and venue event tables; show monitor as-of date and link every changed official URL. Add a deterministic headless regression fixture. | Done | 1c61c2b8 | `assets/app.js`, `index.html`, `pages/*.html` (generated), `scripts/ui_test.js`, `package.json`, `COORDINATION.md` |
+| Surface only confirmed official-source value changes beside affected tournament rows on single-entry, separate-section, unverified, and venue event tables; show monitor as-of date and link every changed official URL. Add a deterministic headless regression fixture. | Implemented locally; superseded by PR #110 | 1c61c2b8 | `assets/app.js`, `index.html`, `pages/*.html` (generated), `scripts/ui_test.js`, `package.json`, `COORDINATION.md` |
 
 Read the shared coordination board and current main baseline before claiming. Existing `data/changes.json` is empty as of 2026-11-17; `data/change_log.json` separately lists raw page churn and has no confirmed printed-value changes. This task did not label cosmetic fetch changes as event changes, advance `last_checked`, or change source values. The sandbox's outbound domain allowlist excludes poker operators, so no new official-source re-fetch was possible; the UI fixture uses the already-listed [Venetian official event page](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html) only as a synthetic changed-source link, not as a new fact. Renderer source is embedded into the checked-in static pages; `scripts/build_site.py` regenerated all pages deterministically.
 
@@ -2215,3 +2215,7 @@ Merged the latest `origin/main` after PRs #102 and #111. The conflict again was 
 ### Session 1c61c2b8 · fourth main reconciliation
 
 Merged the latest `origin/main` after PR #104 (live-source re-read, docs only). The append-only coordination sections conflicted at EOF; both were retained. No UI or generated-page conflict occurred.
+
+### Session 1c61c2b8 · P8 duplicate-work handoff
+
+After implementation, discovered active PR [#110](https://github.com/karagemop466-tech/Poker1/pull/110) from session 957764d3, explicitly delivering P8 with broader coverage (single-entry, separate, unverified, venue, schedule and search). Its diff had no row alert at the start of this session but now carries the integrated implementation; to avoid duplicate/conflicting renderer changes, PR [#103](https://github.com/karagemop466-tech/Poker1/pull/103) was closed without merge. Sent the #110 owner a concrete request to retain every official source URL when multiple confirmed changed-source records share one event ID; this branch's synthetic test exercises two URLs on one row. No data or verification timestamp was changed. Local `npm test`, `check_links.py`, `check_schedule.py`, and `verify_rows.py` passed on this branch before handoff.
