@@ -2160,3 +2160,13 @@ Base: `main` at `3f3f6bb` (PR #101). Branch was clean before this entry. No row,
 - Live hotel rate lookup, live scraper, walking-route check against Google/Apple Maps: blocked by the network restriction; OSM walking times on record are routed, not Google/Apple.
 
 **Pull request / merge:** PR [#108](https://github.com/karagemop466-tech/Poker1/pull/108) "Session 5f66d8fa: final verification and publish to GitHub Pages", `arena/5f66d8fa-poker1` → `main`. Merged 2026-11-19 as merge commit `41f2f11cdc40eaa1d20756e6baddb63929a1c4e0` (fast-forward base; tree = branch tip `12f7c39`). GitHub Pages `pages` API reports `status: built`, `build_type: legacy`; the latest Pages build (run 1383792609, 2026-11-19T11:03:24Z, ~21 s) built commit `41f2f11c` with no error. Live site: https://karagemop466-tech.github.io/Poker1/ (the sandbox network cannot reach github.io hosts directly, so the homepage was not fetched from here; deploy is confirmed via the Pages API).
+
+### Session aa1e89b0 · merge record (2026-11-19)
+
+| Item | Result |
+|---|---|
+| Pull request | [#104](https://github.com/karagemop466-tech/Poker1/pull/104) `arena/aa1e89b0-poker1` → `main`, merged as `244c48a9ef56bbc1794d338ec576a3d86070ffa8` at 2026-11-19T11:17:58Z (after merging `origin/main` once to clear a conflict in this board; both sides kept). |
+| CI `validate` | Run 44512267264, success (rebuild with no data diff, check_links, verify_rows, schedule and smoke tests). |
+| Pages | [Deploy run 44513557587](https://github.com/karagemop466-tech/Poker1/actions/runs/44513557587) succeeded on `main`. The new research page was fetched from the live site and renders. The Pages build API was rate-limited from this session, so the `built` status was not read directly. |
+| Data changes | None. No row, rate, `last_checked` value or generated page was changed. |
+| Still open (not resolved by this session) | No written single-entry, no-rebuy or no-add-on clause for any event; the 1Day events do not state re-entry rules either way; the Venetian page's chunk 3 and most structure sheets were not re-read; hotel live rates, Google/Apple walking times and the trip budget remain blocked by the lack of booking-engine and map access. |
