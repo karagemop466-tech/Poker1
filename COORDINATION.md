@@ -1987,7 +1987,7 @@ work and the three published requests below.
 
 | Task | Status | Owner | File scope |
 |---|---|---|---|
-| Separate affirmative written freezeout evidence from historical sheet-silence candidates; verify upcoming decision and surface missing evidence, integrate and publish | in progress | d6bc5df2 | assets/app.js, scripts/build_site.py, derived index.html/pages, strict-policy test, README.md, executive summary and flagged addenda, COORDINATION.md |
+| Separate affirmative written freezeout evidence from historical sheet-silence candidates; verify upcoming decision and surface missing evidence, integrate and publish | done | d6bc5df2 | assets/app.js, scripts/build_site.py, derived index.html/pages, strict-policy test, README.md, executive summary and flagged addenda, COORDINATION.md |
 
 Read the shared main board at a1361aa and checked open PRs #79/#81/#82; no takeover of those sessions’ hotel-tax or room-format tasks. Using the assigned integration branch (fixed name); this claim is pushed before implementation.
 
@@ -2022,3 +2022,9 @@ Additional unclaimed scope: morning schedule evidence feed (`scripts/schedule_fe
 
 PR [#89](https://github.com/karagemop466-tech/Poker1/pull/89) · integrated #91's booking example; preserved the parallel #88 calculator implementation and its numerical regression test (2109c99), adding same-room/offer matching and dated official lookup links. Additional room profiles are generated from the existing official-source survey, not guessed hotel pairings. No external tariff was applied to an unquoted property.
 44c94b4f publication: [PR #91](https://github.com/karagemop466-tech/Poker1/pull/91) merged as `432fbded`; [Pages deployment](https://github.com/karagemop466-tech/Poker1/actions/runs/44466009192) succeeded for that commit. 23 pages rendered; 530 local references checked, zero broken.
+
+### d6bc5df2 · deployment receipt and final evidence reconciliation
+
+**Merged:** [PR #89](https://github.com/karagemop466-tech/Poker1/pull/89) → `main` at `5814bd201feffc629d7d646c7e64c36c1b3edff4`, November 19 05:38:27 UTC. **Deployed:** [Pages build and deployment 44466555296](https://github.com/karagemop466-tech/Poker1/actions/runs/44466555296) succeeded; Pages API reported `built` for that commit. The [first morning feed](https://github.com/karagemop466-tech/Poker1/actions/runs/44466555927) also succeeded, committed `a0037c5`, and [its Pages build](https://github.com/karagemop466-tech/Poker1/actions/runs/44466628288) succeeded. 12 source URLs yielded excerpts, 4 failed, 4 had no readable schedule excerpts. No automatic promotion to verified status.
+
+Verified: deterministic data and HTML rebuild; all 30 pages rendered; 692 rendered local links and zero broken; calculator edge cases passed. After the feed ran, rechecked [NYE PDF](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf) and [Wynn placeholder](https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf). Follow-up corrects 1B/1D registration deadlines, links the NYE PDF rather than November’s, and keeps every restart out of entry tables. Final snapshot checks: 324 rows, 1,282 checks, zero hard failures, r225 retained for review; 170 schedule conflicts. The evidence gaps (no strict freezeout, same-stay rate/cancellation and exact walking-time gaps) are **needs review** on Flagged for Review, not blockers for the site. No nonrefundable decision was made.

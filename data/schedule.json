@@ -10737,7 +10737,7 @@
       "multi-flight",
       "rake-discount"
      ],
-     "late_reg_close": "15:40",
+     "late_reg_close": "21:40",
      "est_end": "09:55",
      "est_duration_min": 1005,
      "est_end_next_day": true,
@@ -10758,8 +10758,8 @@
      "a_end": "03:55 (+1 day)",
      "b_start": "17:10",
      "kind": "unplannable",
-     "gap_min": -735,
-     "detail": "$250 No Limit Hold'em 1B $75K GTD (1Day) - Day 1 Payouts with 5% advancing to Day 2 - $10 Reduced Rake for Entry before 5:10 PM starts 17:10 and its entry closes 15:40, while $250 No Limit Hold'em 1A $75K GTD (1Day) - Day 1 Payouts with 5% advancing to Day 2 - $10 Reduced Rake for Entry before 11:10 AM's own table can run as late as 03:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
+     "gap_min": -375,
+     "detail": "$250 No Limit Hold'em 1B $75K GTD (1Day) - Day 1 Payouts with 5% advancing to Day 2 - $10 Reduced Rake for Entry before 5:10 PM starts 17:10 and its entry closes 21:40, while $250 No Limit Hold'em 1A $75K GTD (1Day) - Day 1 Payouts with 5% advancing to Day 2 - $10 Reduced Rake for Entry before 11:10 AM's own table can run as late as 03:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
    "undecidable_pairs": [],
@@ -10807,7 +10807,7 @@
       "multi-flight",
       "rake-discount"
      ],
-     "late_reg_close": "15:40",
+     "late_reg_close": "21:40",
      "est_end": "09:55",
      "est_duration_min": 1005,
      "est_end_next_day": true,
@@ -10828,8 +10828,8 @@
      "a_end": "03:55 (+1 day)",
      "b_start": "17:10",
      "kind": "unplannable",
-     "gap_min": -735,
-     "detail": "$250 No Limit Hold'em 1D $75K GTD (1Day) - Day 1 Payouts with 5% advancing to Day 2 starts 17:10 and its entry closes 15:40, while $250 No Limit Hold'em 1C $75K GTD (1Day) - Day 1 Payouts with 5% advancing to Day 2's own table can run as late as 03:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
+     "gap_min": -375,
+     "detail": "$250 No Limit Hold'em 1D $75K GTD (1Day) - Day 1 Payouts with 5% advancing to Day 2 starts 17:10 and its entry closes 21:40, while $250 No Limit Hold'em 1C $75K GTD (1Day) - Day 1 Payouts with 5% advancing to Day 2's own table can run as late as 03:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
    "undecidable_pairs": [],
@@ -11209,7 +11209,7 @@
      "est_duration_min": null,
      "est_end_next_day": false,
      "duration_basis": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     },
     {
      "id": "r281",
@@ -11229,7 +11229,7 @@
      "est_duration_min": null,
      "est_end_next_day": false,
      "duration_basis": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     }
    ],
    "primary_id": null,
@@ -11273,7 +11273,7 @@
      "est_duration_min": null,
      "est_end_next_day": false,
      "duration_basis": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     },
     {
      "id": "r283",
@@ -11293,7 +11293,7 @@
      "est_duration_min": null,
      "est_end_next_day": false,
      "duration_basis": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     }
    ],
    "primary_id": null,
@@ -11337,7 +11337,7 @@
      "est_duration_min": null,
      "est_end_next_day": false,
      "duration_basis": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     },
     {
      "id": "r285",
@@ -11357,7 +11357,7 @@
      "est_duration_min": null,
      "est_end_next_day": false,
      "duration_basis": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     }
    ],
    "primary_id": null,
@@ -11401,7 +11401,7 @@
      "est_duration_min": null,
      "est_end_next_day": false,
      "duration_basis": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     },
     {
      "id": "r288",
@@ -11422,7 +11422,7 @@
      "est_duration_min": null,
      "est_end_next_day": false,
      "duration_basis": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     }
    ],
    "primary_id": null,
@@ -11466,7 +11466,7 @@
      "est_duration_min": null,
      "est_end_next_day": false,
      "duration_basis": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     },
     {
      "id": "r290",
@@ -11486,7 +11486,7 @@
      "est_duration_min": null,
      "est_end_next_day": false,
      "duration_basis": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     }
    ],
    "primary_id": null,
@@ -11530,7 +11530,7 @@
      "est_duration_min": null,
      "est_end_next_day": false,
      "duration_basis": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     },
     {
      "id": "r292",
@@ -11550,7 +11550,7 @@
      "est_duration_min": null,
      "est_end_next_day": false,
      "duration_basis": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     }
    ],
    "primary_id": null,
@@ -11594,7 +11594,7 @@
      "est_duration_min": null,
      "est_end_next_day": false,
      "duration_basis": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     },
     {
      "id": "r295",
@@ -11614,7 +11614,7 @@
      "est_duration_min": null,
      "est_end_next_day": false,
      "duration_basis": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     }
    ],
    "primary_id": null,
@@ -11658,7 +11658,7 @@
      "est_duration_min": null,
      "est_end_next_day": false,
      "duration_basis": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     },
     {
      "id": "r297",
@@ -11678,7 +11678,7 @@
      "est_duration_min": null,
      "est_end_next_day": false,
      "duration_basis": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     },
     {
      "id": "r298",
@@ -11698,7 +11698,7 @@
      "est_duration_min": null,
      "est_end_next_day": false,
      "duration_basis": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     }
    ],
    "primary_id": null,
@@ -11756,7 +11756,7 @@
      "est_duration_min": null,
      "est_end_next_day": false,
      "duration_basis": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     },
     {
      "id": "r300",
@@ -11776,7 +11776,7 @@
      "est_duration_min": null,
      "est_end_next_day": false,
      "duration_basis": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     },
     {
      "id": "r301",
@@ -11796,7 +11796,7 @@
      "est_duration_min": null,
      "est_end_next_day": false,
      "duration_basis": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     }
    ],
    "primary_id": null,
@@ -11854,7 +11854,7 @@
      "est_duration_min": null,
      "est_end_next_day": false,
      "duration_basis": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     },
     {
      "id": "r303",
@@ -11874,7 +11874,7 @@
      "est_duration_min": null,
      "est_end_next_day": false,
      "duration_basis": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     },
     {
      "id": "r304",
@@ -11894,7 +11894,7 @@
      "est_duration_min": null,
      "est_end_next_day": false,
      "duration_basis": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     }
    ],
    "primary_id": null,
@@ -11952,7 +11952,7 @@
      "est_duration_min": null,
      "est_end_next_day": false,
      "duration_basis": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     },
     {
      "id": "r307",
@@ -11972,7 +11972,7 @@
      "est_duration_min": null,
      "est_end_next_day": false,
      "duration_basis": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     },
     {
      "id": "r308",
@@ -11993,7 +11993,7 @@
      "est_duration_min": null,
      "est_end_next_day": false,
      "duration_basis": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     }
    ],
    "primary_id": null,
@@ -12051,7 +12051,7 @@
      "est_duration_min": null,
      "est_end_next_day": false,
      "duration_basis": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     },
     {
      "id": "r310",
@@ -12071,7 +12071,7 @@
      "est_duration_min": null,
      "est_end_next_day": false,
      "duration_basis": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     },
     {
      "id": "r311",
@@ -12092,7 +12092,7 @@
      "est_duration_min": null,
      "est_end_next_day": false,
      "duration_basis": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     }
    ],
    "primary_id": null,
@@ -12150,7 +12150,7 @@
      "est_duration_min": null,
      "est_end_next_day": false,
      "duration_basis": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     },
     {
      "id": "r313",
@@ -12170,7 +12170,7 @@
      "est_duration_min": null,
      "est_end_next_day": false,
      "duration_basis": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     }
    ],
    "primary_id": null,
@@ -12214,7 +12214,7 @@
      "est_duration_min": null,
      "est_end_next_day": false,
      "duration_basis": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     },
     {
      "id": "r316",
@@ -12234,7 +12234,7 @@
      "est_duration_min": null,
      "est_end_next_day": false,
      "duration_basis": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     },
     {
      "id": "r317",
@@ -12254,7 +12254,7 @@
      "est_duration_min": null,
      "est_end_next_day": false,
      "duration_basis": null,
-     "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "source": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     }
    ],
    "primary_id": null,

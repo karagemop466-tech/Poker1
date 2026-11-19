@@ -465,10 +465,10 @@
    "lips_fee_usd": null,
    "prize_pool_usd": 240,
    "gtd_multiple": null,
-   "entry_status": "MULTI",
+   "entry_status": "CONT",
    "rules": {
     "single_entry": {
-     "value": "not single entry",
+     "value": "unknown",
      "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #10",
@@ -478,7 +478,7 @@
      "clause": "08"
     },
     "re_entry": {
-     "value": "possible for later flights",
+     "value": "not mentioned",
      "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #10",
@@ -506,12 +506,12 @@
      "clause": "06"
     }
    },
-   "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
+   "entry_rule": "Continuation row (Day 2 / final table). No new entry is possible.",
    "labels": [
     "multi-flight",
     "continuation"
    ],
-   "late_reg_close": "15:40",
+   "late_reg_close": null,
    "levels": 30,
    "level_minutes": 40,
    "starting_chips": null,
@@ -1269,10 +1269,10 @@
    "lips_fee_usd": null,
    "prize_pool_usd": 330,
    "gtd_multiple": null,
-   "entry_status": "MULTI",
+   "entry_status": "CONT",
    "rules": {
     "single_entry": {
-     "value": "not single entry",
+     "value": "unknown",
      "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #2",
@@ -1282,7 +1282,7 @@
      "clause": "08"
     },
     "re_entry": {
-     "value": "possible for later flights",
+     "value": "not mentioned",
      "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #2",
@@ -1310,12 +1310,12 @@
      "clause": "06"
     }
    },
-   "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
+   "entry_rule": "Continuation row (Day 2 / final table). No new entry is possible.",
    "labels": [
     "multi-flight",
     "continuation"
    ],
-   "late_reg_close": "17:55",
+   "late_reg_close": null,
    "levels": 30,
    "level_minutes": 40,
    "starting_chips": null,
@@ -4616,10 +4616,10 @@
    "lips_fee_usd": null,
    "prize_pool_usd": 330,
    "gtd_multiple": null,
-   "entry_status": "MULTI",
+   "entry_status": "CONT",
    "rules": {
     "single_entry": {
-     "value": "not single entry",
+     "value": "unknown",
      "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #3",
@@ -4629,7 +4629,7 @@
      "clause": "08"
     },
     "re_entry": {
-     "value": "possible for later flights",
+     "value": "not mentioned",
      "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #3",
@@ -4657,12 +4657,12 @@
      "clause": "06"
     }
    },
-   "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
+   "entry_rule": "Continuation row (Day 2 / final table). No new entry is possible.",
    "labels": [
     "multi-flight",
     "continuation"
    ],
-   "late_reg_close": "17:55",
+   "late_reg_close": null,
    "levels": 30,
    "level_minutes": 40,
    "starting_chips": null,
@@ -6959,10 +6959,10 @@
    "lips_fee_usd": null,
    "prize_pool_usd": 690,
    "gtd_multiple": null,
-   "entry_status": "MULTI",
+   "entry_status": "CONT",
    "rules": {
     "single_entry": {
-     "value": "not single entry",
+     "value": "unknown",
      "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #12",
@@ -6972,7 +6972,7 @@
      "clause": "08"
     },
     "re_entry": {
-     "value": "possible for later flights",
+     "value": "not mentioned",
      "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #12",
@@ -7000,12 +7000,12 @@
      "clause": "06"
     }
    },
-   "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
+   "entry_rule": "Continuation row (Day 2 / final table). No new entry is possible.",
    "labels": [
     "multi-flight",
     "continuation"
    ],
-   "late_reg_close": "15:40",
+   "late_reg_close": null,
    "levels": 30,
    "level_minutes": 40,
    "starting_chips": null,
@@ -10704,7 +10704,7 @@
     "two-day",
     "continuation"
    ],
-   "late_reg_close": "16:55",
+   "late_reg_close": null,
    "levels": 29,
    "level_minutes": 40,
    "starting_chips": null,
@@ -11276,7 +11276,7 @@
     "two-day",
     "continuation"
    ],
-   "late_reg_close": "16:55",
+   "late_reg_close": null,
    "levels": 29,
    "level_minutes": 40,
    "starting_chips": null,
@@ -13294,10 +13294,10 @@
    "lips_fee_usd": null,
    "prize_pool_usd": 1975,
    "gtd_multiple": null,
-   "entry_status": "MULTI",
+   "entry_status": "CONT",
    "rules": {
     "single_entry": {
-     "value": "not single entry",
+     "value": "unknown",
      "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #21",
@@ -13307,7 +13307,7 @@
      "clause": "08"
     },
     "re_entry": {
-     "value": "possible for later flights",
+     "value": "not mentioned",
      "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #21",
@@ -13335,13 +13335,13 @@
      "clause": "06"
     }
    },
-   "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
+   "entry_rule": "Continuation row (Day 2 / final table). No new entry is possible.",
    "labels": [
     "multi-flight",
     "title-event",
     "continuation"
    ],
-   "late_reg_close": "16:55",
+   "late_reg_close": null,
    "levels": 29,
    "level_minutes": 40,
    "starting_chips": null,
@@ -13748,10 +13748,10 @@
    "lips_fee_usd": null,
    "prize_pool_usd": 1975,
    "gtd_multiple": null,
-   "entry_status": "MULTI",
+   "entry_status": "CONT",
    "rules": {
     "single_entry": {
-     "value": "not single entry",
+     "value": "unknown",
      "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #21",
@@ -13761,7 +13761,7 @@
      "clause": "08"
     },
     "re_entry": {
-     "value": "possible for later flights",
+     "value": "not mentioned",
      "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #21",
@@ -13789,13 +13789,13 @@
      "clause": "06"
     }
    },
-   "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
+   "entry_rule": "Continuation row (Day 2 / final table). No new entry is possible.",
    "labels": [
     "multi-flight",
     "title-event",
     "continuation"
    ],
-   "late_reg_close": "16:55",
+   "late_reg_close": null,
    "levels": 29,
    "level_minutes": 40,
    "starting_chips": null,
@@ -14822,10 +14822,10 @@
    "lips_fee_usd": null,
    "prize_pool_usd": 960,
    "gtd_multiple": null,
-   "entry_status": "MULTI",
+   "entry_status": "CONT",
    "rules": {
     "single_entry": {
-     "value": "not single entry",
+     "value": "unknown",
      "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #20",
@@ -14835,7 +14835,7 @@
      "clause": "08"
     },
     "re_entry": {
-     "value": "possible for later flights",
+     "value": "not mentioned",
      "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #20",
@@ -14863,13 +14863,13 @@
      "clause": "06"
     }
    },
-   "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
+   "entry_rule": "Continuation row (Day 2 / final table). No new entry is possible.",
    "labels": [
     "multi-flight",
     "seniors-50-plus",
     "continuation"
    ],
-   "late_reg_close": "16:55",
+   "late_reg_close": null,
    "levels": 29,
    "level_minutes": 40,
    "starting_chips": null,
@@ -20093,10 +20093,10 @@
    "lips_fee_usd": null,
    "prize_pool_usd": 960,
    "gtd_multiple": null,
-   "entry_status": "MULTI",
+   "entry_status": "CONT",
    "rules": {
     "single_entry": {
-     "value": "not single entry",
+     "value": "unknown",
      "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #35",
@@ -20106,7 +20106,7 @@
      "clause": "08"
     },
     "re_entry": {
-     "value": "possible for later flights",
+     "value": "not mentioned",
      "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #35",
@@ -20134,13 +20134,13 @@
      "clause": "06"
     }
    },
-   "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
+   "entry_rule": "Continuation row (Day 2 / final table). No new entry is possible.",
    "labels": [
     "multi-flight",
     "rake-discount",
     "continuation"
    ],
-   "late_reg_close": "16:55",
+   "late_reg_close": null,
    "levels": 30,
    "level_minutes": 40,
    "starting_chips": null,
@@ -21782,10 +21782,10 @@
    "lips_fee_usd": null,
    "prize_pool_usd": 505,
    "gtd_multiple": null,
-   "entry_status": "MULTI",
+   "entry_status": "CONT",
    "rules": {
     "single_entry": {
-     "value": "not single entry",
+     "value": "unknown",
      "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #4",
@@ -21795,7 +21795,7 @@
      "clause": "08"
     },
     "re_entry": {
-     "value": "possible for later flights",
+     "value": "not mentioned",
      "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #4",
@@ -21823,13 +21823,13 @@
      "clause": "06"
     }
    },
-   "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
+   "entry_rule": "Continuation row (Day 2 / final table). No new entry is possible.",
    "labels": [
     "multi-flight",
     "rake-discount",
     "continuation"
    ],
-   "late_reg_close": "17:55",
+   "late_reg_close": null,
    "levels": 30,
    "level_minutes": 40,
    "starting_chips": null,
@@ -22109,6 +22109,10 @@
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
     },
     {
+     "label": "Official schedule PDF",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf"
+    },
+    {
      "label": "Structure sheet #1",
      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_1.pdf"
     }
@@ -22194,6 +22198,10 @@
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
     },
     {
+     "label": "Official schedule PDF",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf"
+    },
+    {
      "label": "Structure sheet #2",
      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_2.pdf"
     }
@@ -22275,6 +22283,10 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
+    },
+    {
+     "label": "Official schedule PDF",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #1",
@@ -22360,6 +22372,10 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
+    },
+    {
+     "label": "Official schedule PDF",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #2",
@@ -22449,6 +22465,10 @@
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
     },
     {
+     "label": "Official schedule PDF",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf"
+    },
+    {
      "label": "Structure sheet #3",
      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_3.pdf"
     }
@@ -22535,6 +22555,10 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
+    },
+    {
+     "label": "Official schedule PDF",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #4",
@@ -22631,6 +22655,10 @@
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
     },
     {
+     "label": "Official schedule PDF",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf"
+    },
+    {
      "label": "Structure sheet #4",
      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_4.pdf"
     }
@@ -22723,6 +22751,10 @@
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
     },
     {
+     "label": "Official schedule PDF",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf"
+    },
+    {
      "label": "Structure sheet #6",
      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_6.pdf"
     }
@@ -22807,6 +22839,10 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
+    },
+    {
+     "label": "Official schedule PDF",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #4",
@@ -22901,6 +22937,10 @@
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
     },
     {
+     "label": "Official schedule PDF",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf"
+    },
+    {
      "label": "Structure sheet #4",
      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_4.pdf"
     }
@@ -22993,6 +23033,10 @@
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
     },
     {
+     "label": "Official schedule PDF",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf"
+    },
+    {
      "label": "Structure sheet #6",
      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_6.pdf"
     }
@@ -23077,6 +23121,10 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
+    },
+    {
+     "label": "Official schedule PDF",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #4",
@@ -23171,6 +23219,10 @@
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
     },
     {
+     "label": "Official schedule PDF",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf"
+    },
+    {
      "label": "Structure sheet #4",
      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_4.pdf"
     }
@@ -23263,6 +23315,10 @@
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
     },
     {
+     "label": "Official schedule PDF",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf"
+    },
+    {
      "label": "Structure sheet #6",
      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_6.pdf"
     }
@@ -23348,6 +23404,10 @@
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
     },
     {
+     "label": "Official schedule PDF",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf"
+    },
+    {
      "label": "Structure sheet #2",
      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_2.pdf"
     }
@@ -23372,10 +23432,10 @@
    "lips_fee_usd": null,
    "prize_pool_usd": 960,
    "gtd_multiple": null,
-   "entry_status": "MULTI",
+   "entry_status": "CONT",
    "rules": {
     "single_entry": {
-     "value": "not single entry",
+     "value": "unknown",
      "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #6",
@@ -23385,7 +23445,7 @@
      "clause": "08"
     },
     "re_entry": {
-     "value": "possible for later flights",
+     "value": "not mentioned",
      "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #6",
@@ -23413,12 +23473,12 @@
      "clause": "06"
     }
    },
-   "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
+   "entry_rule": "Continuation row (Day 2 / final table). No new entry is possible.",
    "labels": [
     "multi-flight",
     "continuation"
    ],
-   "late_reg_close": "17:55",
+   "late_reg_close": null,
    "levels": 30,
    "level_minutes": 40,
    "starting_chips": null,
@@ -23433,6 +23493,10 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
+    },
+    {
+     "label": "Official schedule PDF",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #6",
@@ -23516,6 +23580,10 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
+    },
+    {
+     "label": "Official schedule PDF",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #12",
@@ -23602,6 +23670,10 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
+    },
+    {
+     "label": "Official schedule PDF",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #5",
@@ -23697,6 +23769,10 @@
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
     },
     {
+     "label": "Official schedule PDF",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf"
+    },
+    {
      "label": "Structure sheet #7",
      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_7.pdf"
     }
@@ -23727,10 +23803,10 @@
    "lips_fee_usd": null,
    "prize_pool_usd": 960,
    "gtd_multiple": null,
-   "entry_status": "MULTI",
+   "entry_status": "CONT",
    "rules": {
     "single_entry": {
-     "value": "not single entry",
+     "value": "unknown",
      "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #6",
@@ -23740,7 +23816,7 @@
      "clause": "08"
     },
     "re_entry": {
-     "value": "possible for later flights",
+     "value": "not mentioned",
      "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #6",
@@ -23768,12 +23844,12 @@
      "clause": "06"
     }
    },
-   "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
+   "entry_rule": "Continuation row (Day 2 / final table). No new entry is possible.",
    "labels": [
     "multi-flight",
     "continuation"
    ],
-   "late_reg_close": "17:55",
+   "late_reg_close": null,
    "levels": 30,
    "level_minutes": 40,
    "starting_chips": null,
@@ -23788,6 +23864,10 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
+    },
+    {
+     "label": "Official schedule PDF",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #6",
@@ -23871,6 +23951,10 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
+    },
+    {
+     "label": "Official schedule PDF",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #1",
@@ -23957,6 +24041,10 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
+    },
+    {
+     "label": "Official schedule PDF",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #5",
@@ -24052,6 +24140,10 @@
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
     },
     {
+     "label": "Official schedule PDF",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf"
+    },
+    {
      "label": "Structure sheet #7",
      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_7.pdf"
     }
@@ -24145,6 +24237,10 @@
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
     },
     {
+     "label": "Official schedule PDF",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf"
+    },
+    {
      "label": "Structure sheet #8",
      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_8.pdf"
     }
@@ -24229,6 +24325,10 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
+    },
+    {
+     "label": "Official schedule PDF",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #5",
@@ -24322,6 +24422,10 @@
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
     },
     {
+     "label": "Official schedule PDF",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf"
+    },
+    {
      "label": "Structure sheet #2",
      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_2.pdf"
     }
@@ -24406,6 +24510,10 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
+    },
+    {
+     "label": "Official schedule PDF",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #5",
@@ -24501,6 +24609,10 @@
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
     },
     {
+     "label": "Official schedule PDF",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf"
+    },
+    {
      "label": "Structure sheet #8",
      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_8.pdf"
     }
@@ -24585,6 +24697,10 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
+    },
+    {
+     "label": "Official schedule PDF",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #5",
@@ -24680,6 +24796,10 @@
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
     },
     {
+     "label": "Official schedule PDF",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf"
+    },
+    {
      "label": "Structure sheet #9",
      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_9.pdf"
     }
@@ -24767,6 +24887,10 @@
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
     },
     {
+     "label": "Official schedule PDF",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf"
+    },
+    {
      "label": "Structure sheet #8",
      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_8.pdf"
     }
@@ -24852,6 +24976,10 @@
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
     },
     {
+     "label": "Official schedule PDF",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf"
+    },
+    {
      "label": "Structure sheet #2",
      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_2.pdf"
     }
@@ -24876,10 +25004,10 @@
    "lips_fee_usd": null,
    "prize_pool_usd": 1420,
    "gtd_multiple": null,
-   "entry_status": "MULTI",
+   "entry_status": "CONT",
    "rules": {
     "single_entry": {
-     "value": "not single entry",
+     "value": "unknown",
      "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #8",
@@ -24889,7 +25017,7 @@
      "clause": "08"
     },
     "re_entry": {
-     "value": "possible for later flights",
+     "value": "not mentioned",
      "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #8",
@@ -24917,13 +25045,13 @@
      "clause": "06"
     }
    },
-   "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
+   "entry_rule": "Continuation row (Day 2 / final table). No new entry is possible.",
    "labels": [
     "multi-flight",
     "rake-discount",
     "continuation"
    ],
-   "late_reg_close": "17:55",
+   "late_reg_close": null,
    "levels": 30,
    "level_minutes": 40,
    "starting_chips": null,
@@ -24940,6 +25068,10 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
+    },
+    {
+     "label": "Official schedule PDF",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #8",
@@ -25029,6 +25161,10 @@
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
     },
     {
+     "label": "Official schedule PDF",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf"
+    },
+    {
      "label": "Structure sheet #15",
      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_15.pdf"
     }
@@ -25099,7 +25235,7 @@
     "multi-flight",
     "rake-discount"
    ],
-   "late_reg_close": "15:40",
+   "late_reg_close": "21:40",
    "levels": 30,
    "level_minutes": 30,
    "starting_chips": 40000,
@@ -25114,6 +25250,10 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
+    },
+    {
+     "label": "Official schedule PDF",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #15",
@@ -25205,6 +25345,10 @@
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
     },
     {
+     "label": "Official schedule PDF",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf"
+    },
+    {
      "label": "Structure sheet #15",
      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_15.pdf"
     }
@@ -25275,7 +25419,7 @@
     "multi-flight",
     "rake-discount"
    ],
-   "late_reg_close": "15:40",
+   "late_reg_close": "21:40",
    "levels": 30,
    "level_minutes": 30,
    "starting_chips": 40000,
@@ -25292,6 +25436,10 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
+    },
+    {
+     "label": "Official schedule PDF",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #15",
@@ -25377,6 +25525,10 @@
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
     },
     {
+     "label": "Official schedule PDF",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf"
+    },
+    {
      "label": "Structure sheet #11",
      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_11.pdf"
     }
@@ -25401,10 +25553,10 @@
    "lips_fee_usd": null,
    "prize_pool_usd": 200,
    "gtd_multiple": null,
-   "entry_status": "MULTI",
+   "entry_status": "CONT",
    "rules": {
     "single_entry": {
-     "value": "not single entry",
+     "value": "unknown",
      "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight. Players who cash on Day 1 but bust before making Day 2 may play another flight.\"",
      "source": {
       "label": "Structure sheet #15",
@@ -25414,7 +25566,7 @@
      "clause": "08"
     },
     "re_entry": {
-     "value": "possible for later flights",
+     "value": "not mentioned",
      "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight. Players who cash on Day 1 but bust before making Day 2 may play another flight.\"",
      "source": {
       "label": "Structure sheet #15",
@@ -25442,13 +25594,13 @@
      "clause": "06"
     }
    },
-   "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
+   "entry_rule": "Continuation row (Day 2 / final table). No new entry is possible.",
    "labels": [
     "multi-flight",
     "rake-discount",
     "continuation"
    ],
-   "late_reg_close": "15:40",
+   "late_reg_close": null,
    "levels": 30,
    "level_minutes": 30,
    "starting_chips": null,
@@ -25463,6 +25615,10 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
+    },
+    {
+     "label": "Official schedule PDF",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #15",
@@ -25551,6 +25707,10 @@
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
     },
     {
+     "label": "Official schedule PDF",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf"
+    },
+    {
      "label": "Structure sheet #2",
      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_2.pdf"
     }
@@ -25635,6 +25795,10 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
+    },
+    {
+     "label": "Official schedule PDF",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #13",
@@ -25723,6 +25887,10 @@
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
     },
     {
+     "label": "Official schedule PDF",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf"
+    },
+    {
      "label": "Structure sheet #14",
      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_14.pdf"
     }
@@ -25807,6 +25975,10 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
+    },
+    {
+     "label": "Official schedule PDF",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #13",
@@ -25895,6 +26067,10 @@
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
     },
     {
+     "label": "Official schedule PDF",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf"
+    },
+    {
      "label": "Structure sheet #14",
      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_14.pdf"
     }
@@ -25979,6 +26155,10 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
+    },
+    {
+     "label": "Official schedule PDF",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #13",
@@ -26067,6 +26247,10 @@
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
     },
     {
+     "label": "Official schedule PDF",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf"
+    },
+    {
      "label": "Structure sheet #14",
      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_14.pdf"
     }
@@ -26152,6 +26336,10 @@
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
     },
     {
+     "label": "Official schedule PDF",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf"
+    },
+    {
      "label": "Structure sheet #10",
      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_10.pdf"
     }
@@ -26176,10 +26364,10 @@
    "lips_fee_usd": null,
    "prize_pool_usd": 240,
    "gtd_multiple": null,
-   "entry_status": "MULTI",
+   "entry_status": "CONT",
    "rules": {
     "single_entry": {
-     "value": "not single entry",
+     "value": "unknown",
      "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #13",
@@ -26189,7 +26377,7 @@
      "clause": "08"
     },
     "re_entry": {
-     "value": "possible for later flights",
+     "value": "not mentioned",
      "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
      "source": {
       "label": "Structure sheet #13",
@@ -26217,12 +26405,12 @@
      "clause": "06"
     }
    },
-   "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
+   "entry_rule": "Continuation row (Day 2 / final table). No new entry is possible.",
    "labels": [
     "multi-flight",
     "continuation"
    ],
-   "late_reg_close": "15:40",
+   "late_reg_close": null,
    "levels": 30,
    "level_minutes": 40,
    "starting_chips": null,
@@ -26237,6 +26425,10 @@
     {
      "label": "Official event page",
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
+    },
+    {
+     "label": "Official schedule PDF",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf"
     },
     {
      "label": "Structure sheet #13",
@@ -26324,6 +26516,10 @@
      "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html"
     },
     {
+     "label": "Official schedule PDF",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf"
+    },
+    {
      "label": "Structure sheet #2",
      "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_2.pdf"
     }
@@ -26351,30 +26547,30 @@
    "rules": {
     "single_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "re_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "add_on": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "fee": {
      "value": "not published",
@@ -26408,7 +26604,7 @@
     },
     {
      "label": "Official structures PDF (placeholder: COMING SOON)",
-     "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     }
    ],
    "verified_on": "2026-11-17",
@@ -26434,30 +26630,30 @@
    "rules": {
     "single_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "re_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "add_on": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "fee": {
      "value": "not published",
@@ -26491,7 +26687,7 @@
     },
     {
      "label": "Official structures PDF (placeholder: COMING SOON)",
-     "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     }
    ],
    "verified_on": "2026-11-17",
@@ -26517,30 +26713,30 @@
    "rules": {
     "single_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "re_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "add_on": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "fee": {
      "value": "not published",
@@ -26574,7 +26770,7 @@
     },
     {
      "label": "Official structures PDF (placeholder: COMING SOON)",
-     "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     }
    ],
    "verified_on": "2026-11-17",
@@ -26600,30 +26796,30 @@
    "rules": {
     "single_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "re_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "add_on": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "fee": {
      "value": "not published",
@@ -26657,7 +26853,7 @@
     },
     {
      "label": "Official structures PDF (placeholder: COMING SOON)",
-     "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     }
    ],
    "verified_on": "2026-11-17",
@@ -26683,30 +26879,30 @@
    "rules": {
     "single_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "re_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "add_on": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "fee": {
      "value": "not published",
@@ -26740,7 +26936,7 @@
     },
     {
      "label": "Official structures PDF (placeholder: COMING SOON)",
-     "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     }
    ],
    "verified_on": "2026-11-17",
@@ -26766,30 +26962,30 @@
    "rules": {
     "single_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "re_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "add_on": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "fee": {
      "value": "not published",
@@ -26823,7 +27019,7 @@
     },
     {
      "label": "Official structures PDF (placeholder: COMING SOON)",
-     "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     }
    ],
    "verified_on": "2026-11-17",
@@ -26849,30 +27045,30 @@
    "rules": {
     "single_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "re_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "add_on": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "fee": {
      "value": "not published",
@@ -26906,7 +27102,7 @@
     },
     {
      "label": "Official structures PDF (placeholder: COMING SOON)",
-     "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     }
    ],
    "verified_on": "2026-11-17",
@@ -26928,34 +27124,34 @@
    "house_fee_pct": null,
    "prize_pool_usd": null,
    "gtd_multiple": null,
-   "entry_status": "UNV",
+   "entry_status": "CONT",
    "rules": {
     "single_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "re_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "add_on": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "fee": {
      "value": "not published",
@@ -26967,7 +27163,7 @@
      "retrieved_on": "2026-11-17"
     }
    },
-   "entry_rule": "Entry rule not verified: the official structures PDF for this series is still a placeholder.",
+   "entry_rule": "Continuation: not a new entry.",
    "labels": [
     "series",
     "continuation"
@@ -26990,7 +27186,7 @@
     },
     {
      "label": "Official structures PDF (placeholder: COMING SOON)",
-     "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     }
    ],
    "verified_on": "2026-11-17",
@@ -27016,30 +27212,30 @@
    "rules": {
     "single_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "re_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "add_on": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "fee": {
      "value": "not published",
@@ -27074,7 +27270,7 @@
     },
     {
      "label": "Official structures PDF (placeholder: COMING SOON)",
-     "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     }
    ],
    "verified_on": "2026-11-17",
@@ -27100,30 +27296,30 @@
    "rules": {
     "single_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "re_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "add_on": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "fee": {
      "value": "not published",
@@ -27157,7 +27353,7 @@
     },
     {
      "label": "Official structures PDF (placeholder: COMING SOON)",
-     "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     }
    ],
    "verified_on": "2026-11-17",
@@ -27183,30 +27379,30 @@
    "rules": {
     "single_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "re_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "add_on": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "fee": {
      "value": "not published",
@@ -27238,7 +27434,7 @@
     },
     {
      "label": "Official structures PDF (placeholder: COMING SOON)",
-     "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     }
    ],
    "verified_on": "2026-11-17",
@@ -27264,30 +27460,30 @@
    "rules": {
     "single_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "re_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "add_on": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "fee": {
      "value": "not published",
@@ -27321,7 +27517,7 @@
     },
     {
      "label": "Official structures PDF (placeholder: COMING SOON)",
-     "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     }
    ],
    "verified_on": "2026-11-17",
@@ -27347,30 +27543,30 @@
    "rules": {
     "single_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "re_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "add_on": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "fee": {
      "value": "not published",
@@ -27404,7 +27600,7 @@
     },
     {
      "label": "Official structures PDF (placeholder: COMING SOON)",
-     "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     }
    ],
    "verified_on": "2026-11-17",
@@ -27430,30 +27626,30 @@
    "rules": {
     "single_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "re_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "add_on": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "fee": {
      "value": "not published",
@@ -27485,7 +27681,7 @@
     },
     {
      "label": "Official structures PDF (placeholder: COMING SOON)",
-     "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     }
    ],
    "verified_on": "2026-11-17",
@@ -27507,34 +27703,34 @@
    "house_fee_pct": null,
    "prize_pool_usd": null,
    "gtd_multiple": null,
-   "entry_status": "UNV",
+   "entry_status": "CONT",
    "rules": {
     "single_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "re_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "add_on": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "fee": {
      "value": "not published",
@@ -27546,7 +27742,7 @@
      "retrieved_on": "2026-11-17"
     }
    },
-   "entry_rule": "Entry rule not verified: the official structures PDF for this series is still a placeholder.",
+   "entry_rule": "Continuation: not a new entry.",
    "labels": [
     "series",
     "continuation"
@@ -27569,7 +27765,7 @@
     },
     {
      "label": "Official structures PDF (placeholder: COMING SOON)",
-     "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     }
    ],
    "verified_on": "2026-11-17",
@@ -27595,30 +27791,30 @@
    "rules": {
     "single_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "re_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "add_on": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "fee": {
      "value": "not published",
@@ -27650,7 +27846,7 @@
     },
     {
      "label": "Official structures PDF (placeholder: COMING SOON)",
-     "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     }
    ],
    "verified_on": "2026-11-17",
@@ -27676,30 +27872,30 @@
    "rules": {
     "single_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "re_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "add_on": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "fee": {
      "value": "not published",
@@ -27733,7 +27929,7 @@
     },
     {
      "label": "Official structures PDF (placeholder: COMING SOON)",
-     "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     }
    ],
    "verified_on": "2026-11-17",
@@ -27759,30 +27955,30 @@
    "rules": {
     "single_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "re_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "add_on": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "fee": {
      "value": "not published",
@@ -27814,7 +28010,7 @@
     },
     {
      "label": "Official structures PDF (placeholder: COMING SOON)",
-     "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     }
    ],
    "verified_on": "2026-11-17",
@@ -27840,30 +28036,30 @@
    "rules": {
     "single_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "re_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "add_on": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "fee": {
      "value": "not published",
@@ -27895,7 +28091,7 @@
     },
     {
      "label": "Official structures PDF (placeholder: COMING SOON)",
-     "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     }
    ],
    "verified_on": "2026-11-17",
@@ -27921,30 +28117,30 @@
    "rules": {
     "single_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "re_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "add_on": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "fee": {
      "value": "not published",
@@ -27978,7 +28174,7 @@
     },
     {
      "label": "Official structures PDF (placeholder: COMING SOON)",
-     "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     }
    ],
    "verified_on": "2026-11-17",
@@ -28004,30 +28200,30 @@
    "rules": {
     "single_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "re_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "add_on": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "fee": {
      "value": "not published",
@@ -28059,7 +28255,7 @@
     },
     {
      "label": "Official structures PDF (placeholder: COMING SOON)",
-     "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     }
    ],
    "verified_on": "2026-11-17",
@@ -28085,30 +28281,30 @@
    "rules": {
     "single_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "re_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "add_on": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "fee": {
      "value": "not published",
@@ -28140,7 +28336,7 @@
     },
     {
      "label": "Official structures PDF (placeholder: COMING SOON)",
-     "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     }
    ],
    "verified_on": "2026-11-17",
@@ -28166,30 +28362,30 @@
    "rules": {
     "single_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "re_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "add_on": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "fee": {
      "value": "not published",
@@ -28223,7 +28419,7 @@
     },
     {
      "label": "Official structures PDF (placeholder: COMING SOON)",
-     "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     }
    ],
    "verified_on": "2026-11-17",
@@ -28249,30 +28445,30 @@
    "rules": {
     "single_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "re_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "add_on": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "fee": {
      "value": "not published",
@@ -28304,7 +28500,7 @@
     },
     {
      "label": "Official structures PDF (placeholder: COMING SOON)",
-     "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     }
    ],
    "verified_on": "2026-11-17",
@@ -28330,30 +28526,30 @@
    "rules": {
     "single_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "re_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "add_on": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "fee": {
      "value": "not published",
@@ -28385,7 +28581,7 @@
     },
     {
      "label": "Official structures PDF (placeholder: COMING SOON)",
-     "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     }
    ],
    "verified_on": "2026-11-17",
@@ -28411,30 +28607,30 @@
    "rules": {
     "single_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "re_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "add_on": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "fee": {
      "value": "not published",
@@ -28468,7 +28664,7 @@
     },
     {
      "label": "Official structures PDF (placeholder: COMING SOON)",
-     "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     }
    ],
    "verified_on": "2026-11-17",
@@ -28490,34 +28686,34 @@
    "house_fee_pct": null,
    "prize_pool_usd": null,
    "gtd_multiple": null,
-   "entry_status": "UNV",
+   "entry_status": "CONT",
    "rules": {
     "single_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "re_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "add_on": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "fee": {
      "value": "not published",
@@ -28529,7 +28725,7 @@
      "retrieved_on": "2026-11-17"
     }
    },
-   "entry_rule": "Entry rule not verified: the official structures PDF for this series is still a placeholder.",
+   "entry_rule": "Continuation: not a new entry.",
    "labels": [
     "series",
     "continuation"
@@ -28552,7 +28748,7 @@
     },
     {
      "label": "Official structures PDF (placeholder: COMING SOON)",
-     "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     }
    ],
    "verified_on": "2026-11-17",
@@ -28578,30 +28774,30 @@
    "rules": {
     "single_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "re_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "add_on": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "fee": {
      "value": "not published",
@@ -28633,7 +28829,7 @@
     },
     {
      "label": "Official structures PDF (placeholder: COMING SOON)",
-     "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     }
    ],
    "verified_on": "2026-11-17",
@@ -28659,30 +28855,30 @@
    "rules": {
     "single_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "re_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "add_on": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "fee": {
      "value": "not published",
@@ -28717,7 +28913,7 @@
     },
     {
      "label": "Official structures PDF (placeholder: COMING SOON)",
-     "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     }
    ],
    "verified_on": "2026-11-17",
@@ -28743,30 +28939,30 @@
    "rules": {
     "single_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "re_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "add_on": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "fee": {
      "value": "not published",
@@ -28800,7 +28996,7 @@
     },
     {
      "label": "Official structures PDF (placeholder: COMING SOON)",
-     "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     }
    ],
    "verified_on": "2026-11-17",
@@ -28826,30 +29022,30 @@
    "rules": {
     "single_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "re_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "add_on": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "fee": {
      "value": "not published",
@@ -28881,7 +29077,7 @@
     },
     {
      "label": "Official structures PDF (placeholder: COMING SOON)",
-     "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     }
    ],
    "verified_on": "2026-11-17",
@@ -28907,30 +29103,30 @@
    "rules": {
     "single_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "re_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "add_on": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "fee": {
      "value": "not published",
@@ -28965,7 +29161,7 @@
     },
     {
      "label": "Official structures PDF (placeholder: COMING SOON)",
-     "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     }
    ],
    "verified_on": "2026-11-17",
@@ -28991,30 +29187,30 @@
    "rules": {
     "single_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "re_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "add_on": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "fee": {
      "value": "not published",
@@ -29048,7 +29244,7 @@
     },
     {
      "label": "Official structures PDF (placeholder: COMING SOON)",
-     "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     }
    ],
    "verified_on": "2026-11-17",
@@ -29074,30 +29270,30 @@
    "rules": {
     "single_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "re_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "add_on": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "fee": {
      "value": "not published",
@@ -29131,7 +29327,7 @@
     },
     {
      "label": "Official structures PDF (placeholder: COMING SOON)",
-     "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     }
    ],
    "verified_on": "2026-11-17",
@@ -29157,30 +29353,30 @@
    "rules": {
     "single_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "re_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "add_on": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "fee": {
      "value": "not published",
@@ -29212,7 +29408,7 @@
     },
     {
      "label": "Official structures PDF (placeholder: COMING SOON)",
-     "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     }
    ],
    "verified_on": "2026-11-17",
@@ -29234,34 +29430,34 @@
    "house_fee_pct": null,
    "prize_pool_usd": null,
    "gtd_multiple": null,
-   "entry_status": "UNV",
+   "entry_status": "CONT",
    "rules": {
     "single_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "re_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "add_on": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "fee": {
      "value": "not published",
@@ -29273,7 +29469,7 @@
      "retrieved_on": "2026-11-17"
     }
    },
-   "entry_rule": "Entry rule not verified: the official structures PDF for this series is still a placeholder.",
+   "entry_rule": "Continuation: not a new entry.",
    "labels": [
     "series",
     "continuation"
@@ -29296,7 +29492,7 @@
     },
     {
      "label": "Official structures PDF (placeholder: COMING SOON)",
-     "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     }
    ],
    "verified_on": "2026-11-17",
@@ -29322,30 +29518,30 @@
    "rules": {
     "single_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "re_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "add_on": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "fee": {
      "value": "not published",
@@ -29377,7 +29573,7 @@
     },
     {
      "label": "Official structures PDF (placeholder: COMING SOON)",
-     "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     }
    ],
    "verified_on": "2026-11-17",
@@ -29403,30 +29599,30 @@
    "rules": {
     "single_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "re_entry": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "add_on": {
      "value": "unknown",
-     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
+     "excerpt": "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
      "source": {
-      "label": "Official Wynn Signature Series schedule PDF",
-      "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf"
+      "label": "Official structures placeholder",
+      "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
      },
-     "retrieved_on": "2026-11-17"
+     "retrieved_on": "2026-11-19"
     },
     "fee": {
      "value": "not published",
@@ -29458,7 +29654,7 @@
     },
     {
      "label": "Official structures PDF (placeholder: COMING SOON)",
-     "url": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
+     "url": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf"
     }
    ],
    "verified_on": "2026-11-17",
@@ -29471,6 +29667,7 @@
   "dse_nov_page": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
   "dse_dec_page": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
   "dse_nov_sched": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+  "dse_dec_sched": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf",
   "dse_nov_struct": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_{}.pdf",
   "dse_dec_struct": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_{}.pdf",
   "venetian_poker": "https://www.venetianlasvegas.com/resort/casino/poker.html",
@@ -29482,7 +29679,7 @@
   "wpt_sched": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
   "wpt_struct": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
   "wss_sched": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf",
-  "wss_struct": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf",
+  "wss_struct": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf",
   "wynn_daily_poster": "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf",
   "wynn_daily_struct": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
   "wynn_poker": "https://www.wynnlasvegas.com/casino/poker",

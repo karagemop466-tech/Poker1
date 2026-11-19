@@ -4,8 +4,8 @@
    "venue": "Venetian",
    "label": "Venetian DeepStack Extravaganza IV — official event page",
    "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
-   "attempted_at": null,
-   "read_at": "2026-11-17",
+   "attempted_at": "2026-11-19T05:38:35+00:00",
+   "read_at": "2026-11-19T05:38:35+00:00",
    "excerpts": [
     "Monday, November 16, 2026 · 11:10 AM · 1 · $300 No Limit Hold'em 1A $75K GTD · View",
     "Monday, November 16, 2026 · 5:10 PM · 1 · $300 No Limit Hold'em 1B $75K GTD · View",
@@ -106,14 +106,14 @@
    ],
    "digest": "21ab0ad253885f7b00ffd9dd20bd1e258287ead267b3d04334ae708f50b464aa",
    "changed": false,
-   "status": "Archived"
+   "status": "Fetched"
   },
   {
    "venue": "Venetian",
    "label": "Venetian DeepStack Extravaganza NYE — official event page",
    "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
-   "attempted_at": null,
-   "read_at": "2026-11-17",
+   "attempted_at": "2026-11-19T05:38:35+00:00",
+   "read_at": "2026-11-19T05:38:35+00:00",
    "excerpts": [
     "Thursday, December 24, 2026 · 11:10 AM · 1 · $400 No Limit Hold'em $15K GTD (1Day) · View",
     "Thursday, December 24, 2026 · 5:10 PM · 2 · $200 No Limit Hold'em Bounty $8K GTD (1Day) · View",
@@ -167,14 +167,14 @@
    ],
    "digest": "3ddabc14c59b8ce32f08135353f45f7b8bd78e5684c4741514aa421bff3ed9d7",
    "changed": false,
-   "status": "Archived"
+   "status": "Fetched"
   },
   {
    "venue": "Venetian",
    "label": "Venetian DeepStack IV official schedule PDF",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
-   "attempted_at": null,
-   "read_at": "2026-11-17",
+   "attempted_at": "2026-11-19T05:38:35+00:00",
+   "read_at": "2026-11-19T05:38:35+00:00",
    "excerpts": [
     "NOVEMBER 16 · 1 $300 NO LIMIT HOLD'EM 1A 11:10 AM 3:40 PM $75,000 30,000 40 TROPHY + BRONZE COIN · 1 $300 NO LIMIT HOLD'EM 1B 5:10 PM 8:40 PM $75,000 30,000 30 TROPHY + BRONZE COIN · TUESDAY, · NOVEMBER 17",
     "1 $300 NO LIMIT HOLD'EM 1A 11:10 AM 3:40 PM $75,000 30,000 40 TROPHY + BRONZE COIN · 1 $300 NO LIMIT HOLD'EM 1B 5:10 PM 8:40 PM $75,000 30,000 30 TROPHY + BRONZE COIN · TUESDAY, · NOVEMBER 17 · 1 $300 NO LIMIT HOLD'EM 1C 11:10 AM 3:40 PM $75,000 30,000 40 TROPHY + BRONZE COIN",
@@ -274,38 +274,89 @@
    ],
    "digest": "a57b0d730bc76c04e92c5548de9c8368f494b0e7cee47d12dfd029aa2baa83f8",
    "changed": false,
-   "status": "Archived"
+   "status": "Fetched"
   },
   {
    "venue": "Venetian",
    "label": "Venetian DeepStack NYE official schedule PDF (candidate URL)",
    "source": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf",
-   "attempted_at": null,
-   "read_at": null,
-   "excerpts": [],
-   "digest": null,
+   "attempted_at": "2026-11-19T05:38:35+00:00",
+   "read_at": "2026-11-19T05:38:35+00:00",
+   "excerpts": [
+    "DECEMBER 24 · 1 $400 NO LIMIT HOLD'EM (1DAY) 11:10 AM 3:40 PM $15,000 30,000 30 BRONZE COIN · 2 $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 5:10 PM 9:40 PM $8,000 25,000 30 BRONZE COIN · FRIDAY · DECEMBER 25",
+    "1 $400 NO LIMIT HOLD'EM (1DAY) 11:10 AM 3:40 PM $15,000 30,000 30 BRONZE COIN · 2 $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 5:10 PM 9:40 PM $8,000 25,000 30 BRONZE COIN · FRIDAY · DECEMBER 25 · 3 $400 NO LIMIT HOLD'EM (1DAY) 11:10 AM 3:40 PM $15,000 30,000 30 BRONZE COIN",
+    "DECEMBER 25 · 3 $400 NO LIMIT HOLD'EM (1DAY) 11:10 AM 3:40 PM $15,000 30,000 30 BRONZE COIN · 4 $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 5:10 PM 9:40 PM $8,000 25,000 30 BRONZE COIN · SATURDAY · DECEMBER 26",
+    "3 $400 NO LIMIT HOLD'EM (1DAY) 11:10 AM 3:40 PM $15,000 30,000 30 BRONZE COIN · 4 $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 5:10 PM 9:40 PM $8,000 25,000 30 BRONZE COIN · SATURDAY · DECEMBER 26 · 5",
+    "$500 BOUNTIES IN THE MONEY · 11:10 AM 4:55 PM $40,000 40,000 30 SILVER COIN · 6 $260 NLH MILESTONE SATELLITE (1DAY) AWARDS 1 IN 5 (20%) DIRECT ENTRY INTO EVENT #08 3:10 PM 5:25 PM 4 SEATS 20,000 20 · 7 $260 NLH MILESTONE SATELLITE (1DAY) AWARDS 1 IN 5 (20%) DIRECT ENTRY INTO EVENT #08 6:10 PM 8:25 PM 4 SEATS 20,000 20 · SUNDAY",
+    "11:10 AM 4:55 PM $40,000 40,000 30 SILVER COIN · 6 $260 NLH MILESTONE SATELLITE (1DAY) AWARDS 1 IN 5 (20%) DIRECT ENTRY INTO EVENT #08 3:10 PM 5:25 PM 4 SEATS 20,000 20 · 7 $260 NLH MILESTONE SATELLITE (1DAY) AWARDS 1 IN 5 (20%) DIRECT ENTRY INTO EVENT #08 6:10 PM 8:25 PM 4 SEATS 20,000 20 · SUNDAY · DECEMBER 27",
+    "6 $260 NLH MILESTONE SATELLITE (1DAY) AWARDS 1 IN 5 (20%) DIRECT ENTRY INTO EVENT #08 3:10 PM 5:25 PM 4 SEATS 20,000 20 · 7 $260 NLH MILESTONE SATELLITE (1DAY) AWARDS 1 IN 5 (20%) DIRECT ENTRY INTO EVENT #08 6:10 PM 8:25 PM 4 SEATS 20,000 20 · SUNDAY · DECEMBER 27 · 8 $1,100 NO LIMIT HOLD'EM 1A ANTE UP CHAMPIONSHIP 11:10 AM 5:55 PM $300,000 40,000 40 TROPHY + GOLD COIN",
+    "DECEMBER 27 · 8 $1,100 NO LIMIT HOLD'EM 1A ANTE UP CHAMPIONSHIP 11:10 AM 5:55 PM $300,000 40,000 40 TROPHY + GOLD COIN · 9 $260 NLH MILESTONE SATELLITE (1DAY) AWARDS 1 IN 5 (20%) DIRECT ENTRY INTO EVENT #08 3:10 PM 5:25 PM 4 SEATS 20,000 20 · 10 $260 NLH MILESTONE SATELLITE (1DAY) AWARDS 1 IN 5 (20%) DIRECT ENTRY INTO EVENT #08 6:10 PM 8:25 PM 4 SEATS 20,000 20 · MONDAY",
+    "8 $1,100 NO LIMIT HOLD'EM 1A ANTE UP CHAMPIONSHIP 11:10 AM 5:55 PM $300,000 40,000 40 TROPHY + GOLD COIN · 9 $260 NLH MILESTONE SATELLITE (1DAY) AWARDS 1 IN 5 (20%) DIRECT ENTRY INTO EVENT #08 3:10 PM 5:25 PM 4 SEATS 20,000 20 · 10 $260 NLH MILESTONE SATELLITE (1DAY) AWARDS 1 IN 5 (20%) DIRECT ENTRY INTO EVENT #08 6:10 PM 8:25 PM 4 SEATS 20,000 20 · MONDAY · DECEMBER 28",
+    "9 $260 NLH MILESTONE SATELLITE (1DAY) AWARDS 1 IN 5 (20%) DIRECT ENTRY INTO EVENT #08 3:10 PM 5:25 PM 4 SEATS 20,000 20 · 10 $260 NLH MILESTONE SATELLITE (1DAY) AWARDS 1 IN 5 (20%) DIRECT ENTRY INTO EVENT #08 6:10 PM 8:25 PM 4 SEATS 20,000 20 · MONDAY · DECEMBER 28 · 8 $1,100 NO LIMIT HOLD'EM 1B ANTE UP CHAMPIONSHIP 11:10 AM 5:55 PM $300,000 40,000 40 TROPHY + GOLD COIN",
+    "DECEMBER 28 · 8 $1,100 NO LIMIT HOLD'EM 1B ANTE UP CHAMPIONSHIP 11:10 AM 5:55 PM $300,000 40,000 40 TROPHY + GOLD COIN · 11 $260 NLH MILESTONE SATELLITE (1DAY) AWARDS 1 IN 5 (20%) DIRECT ENTRY INTO EVENT #08 3:10 PM 5:25 PM 4 SEATS 20,000 20 · 12 $260 NLH MILESTONE SATELLITE (1DAY) AWARDS 1 IN 5 (20%) DIRECT ENTRY INTO EVENT #08 6:10 PM 8:25 PM 4 SEATS 20,000 20 · TUESDAY",
+    "8 $1,100 NO LIMIT HOLD'EM 1B ANTE UP CHAMPIONSHIP 11:10 AM 5:55 PM $300,000 40,000 40 TROPHY + GOLD COIN · 11 $260 NLH MILESTONE SATELLITE (1DAY) AWARDS 1 IN 5 (20%) DIRECT ENTRY INTO EVENT #08 3:10 PM 5:25 PM 4 SEATS 20,000 20 · 12 $260 NLH MILESTONE SATELLITE (1DAY) AWARDS 1 IN 5 (20%) DIRECT ENTRY INTO EVENT #08 6:10 PM 8:25 PM 4 SEATS 20,000 20 · TUESDAY · DECEMBER 29",
+    "11 $260 NLH MILESTONE SATELLITE (1DAY) AWARDS 1 IN 5 (20%) DIRECT ENTRY INTO EVENT #08 3:10 PM 5:25 PM 4 SEATS 20,000 20 · 12 $260 NLH MILESTONE SATELLITE (1DAY) AWARDS 1 IN 5 (20%) DIRECT ENTRY INTO EVENT #08 6:10 PM 8:25 PM 4 SEATS 20,000 20 · TUESDAY · DECEMBER 29 · 8 $1,100 NO LIMIT HOLD'EM 1C ANTE UP CHAMPIONSHIP 11:10 AM 5:55 PM $300,000 40,000 40 TROPHY + GOLD COIN",
+    "DECEMBER 29 · 8 $1,100 NO LIMIT HOLD'EM 1C ANTE UP CHAMPIONSHIP 11:10 AM 5:55 PM $300,000 40,000 40 TROPHY + GOLD COIN · 13 $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 5:10 PM 9:40 PM $8,000 25,000 30 BRONZE COIN · WEDNESDAY · DECEMBER 30",
+    "8 $1,100 NO LIMIT HOLD'EM 1C ANTE UP CHAMPIONSHIP 11:10 AM 5:55 PM $300,000 40,000 40 TROPHY + GOLD COIN · 13 $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 5:10 PM 9:40 PM $8,000 25,000 30 BRONZE COIN · WEDNESDAY · DECEMBER 30 · 8",
+    "STREAMED FINAL TABLE (POKERGO) · 11:00 AM TROPHY + GOLD COIN · 14 $600 NO LIMIT HOLD'EM (1DAY) 11:10 AM 4:55 PM $50,000 40,000 30 SILVER COIN · 15 $200 NLH MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY TO EVENT #20 3:10 PM 5:25 PM 2 SEATS 20,000 20 · 16 $200 NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY TO EVENT #20 6:10 PM 7:55 PM 2 SEATS 20,000 15",
+    "11:00 AM TROPHY + GOLD COIN · 14 $600 NO LIMIT HOLD'EM (1DAY) 11:10 AM 4:55 PM $50,000 40,000 30 SILVER COIN · 15 $200 NLH MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY TO EVENT #20 3:10 PM 5:25 PM 2 SEATS 20,000 20 · 16 $200 NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY TO EVENT #20 6:10 PM 7:55 PM 2 SEATS 20,000 15 · THURSDAY",
+    "14 $600 NO LIMIT HOLD'EM (1DAY) 11:10 AM 4:55 PM $50,000 40,000 30 SILVER COIN · 15 $200 NLH MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY TO EVENT #20 3:10 PM 5:25 PM 2 SEATS 20,000 20 · 16 $200 NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY TO EVENT #20 6:10 PM 7:55 PM 2 SEATS 20,000 15 · THURSDAY · DECEMBER 31",
+    "15 $200 NLH MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY TO EVENT #20 3:10 PM 5:25 PM 2 SEATS 20,000 20 · 16 $200 NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY TO EVENT #20 6:10 PM 7:55 PM 2 SEATS 20,000 15 · THURSDAY · DECEMBER 31 · 8 $1,100 NO LIMIT HOLD'EM ANTE UP DAY 3 RESTART STREAMED FINAL TABLE (POKERGO) 10:00 AM TROPHY + GOLD COIN",
+    "DECEMBER 31 · 8 $1,100 NO LIMIT HOLD'EM ANTE UP DAY 3 RESTART STREAMED FINAL TABLE (POKERGO) 10:00 AM TROPHY + GOLD COIN · 17 $400 NO LIMIT HOLD'EM (1DAY) 11:10 AM 3:40 PM $15,000 30,000 30 BRONZE COIN · 18 $200 NLH MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY TO EVENT #20 3:10 PM 5:25 PM 2 SEATS 20,000 20 · 19 $200 NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY TO EVENT #20 6:10 PM 7:55 PM 2 SEATS 20,000 15",
+    "8 $1,100 NO LIMIT HOLD'EM ANTE UP DAY 3 RESTART STREAMED FINAL TABLE (POKERGO) 10:00 AM TROPHY + GOLD COIN · 17 $400 NO LIMIT HOLD'EM (1DAY) 11:10 AM 3:40 PM $15,000 30,000 30 BRONZE COIN · 18 $200 NLH MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY TO EVENT #20 3:10 PM 5:25 PM 2 SEATS 20,000 20 · 19 $200 NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY TO EVENT #20 6:10 PM 7:55 PM 2 SEATS 20,000 15 · FRIDAY",
+    "17 $400 NO LIMIT HOLD'EM (1DAY) 11:10 AM 3:40 PM $15,000 30,000 30 BRONZE COIN · 18 $200 NLH MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY TO EVENT #20 3:10 PM 5:25 PM 2 SEATS 20,000 20 · 19 $200 NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY TO EVENT #20 6:10 PM 7:55 PM 2 SEATS 20,000 15 · FRIDAY · JANUARY 1",
+    "18 $200 NLH MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY TO EVENT #20 3:10 PM 5:25 PM 2 SEATS 20,000 20 · 19 $200 NLH TURBO MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY TO EVENT #20 6:10 PM 7:55 PM 2 SEATS 20,000 15 · FRIDAY · JANUARY 1 · 20 $1,600 NO LIMIT HOLD'EM MSPT 1A $40 REDUCED RAKE UNTIL THE START OF LEVEL 4 11:10 AM 5:55 PM $400,000 40,000 40 TROPHY + GOLD COIN",
+    "JANUARY 1 · 20 $1,600 NO LIMIT HOLD'EM MSPT 1A $40 REDUCED RAKE UNTIL THE START OF LEVEL 4 11:10 AM 5:55 PM $400,000 40,000 40 TROPHY + GOLD COIN · 21 $200 NLH MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY TO EVENT #20 3:10 PM 5:25 PM 2 SEATS 20,000 20 · 22 $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 5:10 PM 9:40 PM $8,000 25,000 30 BRONZE COIN · The Venetian® and other trademarks are used under license.",
+    "20 $1,600 NO LIMIT HOLD'EM MSPT 1A $40 REDUCED RAKE UNTIL THE START OF LEVEL 4 11:10 AM 5:55 PM $400,000 40,000 40 TROPHY + GOLD COIN · 21 $200 NLH MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY TO EVENT #20 3:10 PM 5:25 PM 2 SEATS 20,000 20 · 22 $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 5:10 PM 9:40 PM $8,000 25,000 30 BRONZE COIN · The Venetian® and other trademarks are used under license. · Must have a Venetian Rewards card to participate. Visit venetianlasvegas.com for a complete",
+    "21 $200 NLH MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY TO EVENT #20 3:10 PM 5:25 PM 2 SEATS 20,000 20 · 22 $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 5:10 PM 9:40 PM $8,000 25,000 30 BRONZE COIN · The Venetian® and other trademarks are used under license. · Must have a Venetian Rewards card to participate. Visit venetianlasvegas.com for a complete · listing of rake and staff fees. The Venetian Resort Las Vegas management reserves all rights.",
+    "JANUARY 2 · 23 $200 NLH MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY TO EVENT #20 10:10 AM 12:25 PM 2 SEATS 20,000 20 · 20 $1,600 NO LIMIT HOLD'EM MSPT 1B 11:10 AM 5:55 PM $400,000 40,000 40 TROPHY + GOLD COIN · 24 $200 NLH MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY TO EVENT #20 3:10 PM 5:25 PM 2 SEATS 20,000 20 · 25 $200 NLH POKERATLAS VALUETOWN BOUNTY (1DAY) POKERATLAS PRO MEMBER $20 RAKE DISCOUNT 5:10 PM 9:40 PM $20,000 25,000 30 BRONZE COIN",
+    "23 $200 NLH MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY TO EVENT #20 10:10 AM 12:25 PM 2 SEATS 20,000 20 · 20 $1,600 NO LIMIT HOLD'EM MSPT 1B 11:10 AM 5:55 PM $400,000 40,000 40 TROPHY + GOLD COIN · 24 $200 NLH MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY TO EVENT #20 3:10 PM 5:25 PM 2 SEATS 20,000 20 · 25 $200 NLH POKERATLAS VALUETOWN BOUNTY (1DAY) POKERATLAS PRO MEMBER $20 RAKE DISCOUNT 5:10 PM 9:40 PM $20,000 25,000 30 BRONZE COIN · SUNDAY",
+    "20 $1,600 NO LIMIT HOLD'EM MSPT 1B 11:10 AM 5:55 PM $400,000 40,000 40 TROPHY + GOLD COIN · 24 $200 NLH MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY TO EVENT #20 3:10 PM 5:25 PM 2 SEATS 20,000 20 · 25 $200 NLH POKERATLAS VALUETOWN BOUNTY (1DAY) POKERATLAS PRO MEMBER $20 RAKE DISCOUNT 5:10 PM 9:40 PM $20,000 25,000 30 BRONZE COIN · SUNDAY · JANUARY 3",
+    "24 $200 NLH MILESTONE SATELLITE (1DAY) AWARDS DIRECT ENTRY TO EVENT #20 3:10 PM 5:25 PM 2 SEATS 20,000 20 · 25 $200 NLH POKERATLAS VALUETOWN BOUNTY (1DAY) POKERATLAS PRO MEMBER $20 RAKE DISCOUNT 5:10 PM 9:40 PM $20,000 25,000 30 BRONZE COIN · SUNDAY · JANUARY 3 · 20 $1,600 NO LIMIT HOLD'EM MSPT 1C 11:10 AM 5:55 PM $400,000 40,000 40 TROPHY + GOLD COIN",
+    "JANUARY 3 · 20 $1,600 NO LIMIT HOLD'EM MSPT 1C 11:10 AM 5:55 PM $400,000 40,000 40 TROPHY + GOLD COIN · 26 $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 5:10 PM 9:40 PM $8,000 25,000 30 BRONZE COIN · MONDAY · JANUARY 4",
+    "20 $1,600 NO LIMIT HOLD'EM MSPT 1C 11:10 AM 5:55 PM $400,000 40,000 40 TROPHY + GOLD COIN · 26 $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 5:10 PM 9:40 PM $8,000 25,000 30 BRONZE COIN · MONDAY · JANUARY 4 · 20 $1,600 NO LIMIT HOLD'EM MSPT DAY 2 RESTART 11:00 AM TROPHY + GOLD COIN",
+    "JANUARY 4 · 20 $1,600 NO LIMIT HOLD'EM MSPT DAY 2 RESTART 11:00 AM TROPHY + GOLD COIN · 27 · $250 NO LIMIT HOLD'EM 1A · DAY 1 PAYOUTS WITH 5% ADVANCING TO DAY 2",
+    "$10 REDUCED RAKE FOR ALL DAY 1A ENTRIES · BEFORE 11:10 AM · 11:10 AM 3:40 PM $75,000 40,000 30/40 TROPHY + BRONZE COIN · 27 · $250 NO LIMIT HOLD'EM 1B",
+    "BEFORE 11:10 AM · 11:10 AM 3:40 PM $75,000 40,000 30/40 TROPHY + BRONZE COIN · 27 · $250 NO LIMIT HOLD'EM 1B · DAY 1 PAYOUTS WITH 5% ADVANCING TO DAY 2",
+    "BEFORE 5:10 PM · 5:10 PM 9:40 PM $75,000 40,000 30/40 TROPHY + BRONZE COIN · TUESDAY · JANUARY 5 · 27 $250 NO LIMIT HOLD'EM 1C DAY 1 PAYOUTS WITH 5% ADVANCING TO DAY 2 11:10 AM 3:40 PM $75,000 40,000 30/40 TROPHY + BRONZE COIN",
+    "JANUARY 5 · 27 $250 NO LIMIT HOLD'EM 1C DAY 1 PAYOUTS WITH 5% ADVANCING TO DAY 2 11:10 AM 3:40 PM $75,000 40,000 30/40 TROPHY + BRONZE COIN · 27 $250 NO LIMIT HOLD'EM 1D DAY 1 PAYOUTS WITH 5% ADVANCING TO DAY 2 5:10 PM 9:40 PM $75,000 40,000 30/40 TROPHY + BRONZE COIN · WEDNESDAY · JANUARY 6",
+    "27 $250 NO LIMIT HOLD'EM 1C DAY 1 PAYOUTS WITH 5% ADVANCING TO DAY 2 11:10 AM 3:40 PM $75,000 40,000 30/40 TROPHY + BRONZE COIN · 27 $250 NO LIMIT HOLD'EM 1D DAY 1 PAYOUTS WITH 5% ADVANCING TO DAY 2 5:10 PM 9:40 PM $75,000 40,000 30/40 TROPHY + BRONZE COIN · WEDNESDAY · JANUARY 6 · 28 $400 NO LIMIT HOLD'EM (1DAY) 11:10 AM 4:55 PM $15,000 40,000 30 BRONZE COIN",
+    "JANUARY 6 · 28 $400 NO LIMIT HOLD'EM (1DAY) 11:10 AM 4:55 PM $15,000 40,000 30 BRONZE COIN · 27 $250 NO LIMIT HOLD'EM DAY 2 RESTART 12:00 PM 40 TROPHY + BRONZE COIN · 29 $200 NO LIMIT HOLD'EM BOUNTY (1DAY) SHOW YOUR CES BADGE–10 RAKE DISCOUNT 5:10 PM 9:40 PM $8,000 25,000 30 BRONZE COIN · THURSDAY",
+    "28 $400 NO LIMIT HOLD'EM (1DAY) 11:10 AM 4:55 PM $15,000 40,000 30 BRONZE COIN · 27 $250 NO LIMIT HOLD'EM DAY 2 RESTART 12:00 PM 40 TROPHY + BRONZE COIN · 29 $200 NO LIMIT HOLD'EM BOUNTY (1DAY) SHOW YOUR CES BADGE–10 RAKE DISCOUNT 5:10 PM 9:40 PM $8,000 25,000 30 BRONZE COIN · THURSDAY · JANUARY 7",
+    "27 $250 NO LIMIT HOLD'EM DAY 2 RESTART 12:00 PM 40 TROPHY + BRONZE COIN · 29 $200 NO LIMIT HOLD'EM BOUNTY (1DAY) SHOW YOUR CES BADGE–10 RAKE DISCOUNT 5:10 PM 9:40 PM $8,000 25,000 30 BRONZE COIN · THURSDAY · JANUARY 7 · 30 $300 NO LIMIT HOLD'EM DAY 1A 11:10 AM 3:40 PM $100,000 30,000 40 TROPHY + BRONZE COIN",
+    "JANUARY 7 · 30 $300 NO LIMIT HOLD'EM DAY 1A 11:10 AM 3:40 PM $100,000 30,000 40 TROPHY + BRONZE COIN · 30 $300 NO LIMIT HOLD'EM DAY 1B SHOW YOUR CES BADGE–$10 RAKE DISCOUNT 5:10 PM 8:40 PM $100,000 30,000 30 TROPHY + BRONZE COIN · FRIDAY · JANUARY 8",
+    "30 $300 NO LIMIT HOLD'EM DAY 1A 11:10 AM 3:40 PM $100,000 30,000 40 TROPHY + BRONZE COIN · 30 $300 NO LIMIT HOLD'EM DAY 1B SHOW YOUR CES BADGE–$10 RAKE DISCOUNT 5:10 PM 8:40 PM $100,000 30,000 30 TROPHY + BRONZE COIN · FRIDAY · JANUARY 8 · 30 $300 NO LIMIT HOLD'EM DAY 1C 11:10 AM 3:40 PM $100,000 30,000 40 TROPHY + BRONZE COIN",
+    "JANUARY 8 · 30 $300 NO LIMIT HOLD'EM DAY 1C 11:10 AM 3:40 PM $100,000 30,000 40 TROPHY + BRONZE COIN · 30 $300 NO LIMIT HOLD'EM DAY 1D SHOW YOUR CES BADGE–$10 RAKE DISCOUNT 5:10 PM 8:40 PM $100,000 30,000 30 TROPHY + BRONZE COIN · SATURDAY · JANUARY 9",
+    "30 $300 NO LIMIT HOLD'EM DAY 1C 11:10 AM 3:40 PM $100,000 30,000 40 TROPHY + BRONZE COIN · 30 $300 NO LIMIT HOLD'EM DAY 1D SHOW YOUR CES BADGE–$10 RAKE DISCOUNT 5:10 PM 8:40 PM $100,000 30,000 30 TROPHY + BRONZE COIN · SATURDAY · JANUARY 9 · 30 $300 NO LIMIT HOLD'EM DAY 1E 11:10 AM 3:40 PM $100,000 30,000 40 TROPHY + BRONZE COIN",
+    "JANUARY 9 · 30 $300 NO LIMIT HOLD'EM DAY 1E 11:10 AM 3:40 PM $100,000 30,000 40 TROPHY + BRONZE COIN · 30 $300 NO LIMIT HOLD'EM DAY 1F 5:10 PM 8:40 PM $100,000 30,000 30 TROPHY + BRONZE COIN · SUNDAY · JANUARY 10",
+    "30 $300 NO LIMIT HOLD'EM DAY 1E 11:10 AM 3:40 PM $100,000 30,000 40 TROPHY + BRONZE COIN · 30 $300 NO LIMIT HOLD'EM DAY 1F 5:10 PM 8:40 PM $100,000 30,000 30 TROPHY + BRONZE COIN · SUNDAY · JANUARY 10 · 31 $400 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS OF AGE TO PARTICIPATE 10:10 AM 3:55 PM $20,000 40,000 30 BRONZE COIN",
+    "JANUARY 10 · 31 $400 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS OF AGE TO PARTICIPATE 10:10 AM 3:55 PM $20,000 40,000 30 BRONZE COIN · 30 $300 NO LIMIT HOLD'EM DAY 2 RESTART 12:00 PM TROPHY + BRONZE COIN · 32 $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 5:10 PM 9:40 PM $8,000 25,000 30 BRONZE COIN",
+    "31 $400 NO LIMIT HOLD'EM SENIORS (1DAY) MUST BE 50+ YEARS OF AGE TO PARTICIPATE 10:10 AM 3:55 PM $20,000 40,000 30 BRONZE COIN · 30 $300 NO LIMIT HOLD'EM DAY 2 RESTART 12:00 PM TROPHY + BRONZE COIN · 32 $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 5:10 PM 9:40 PM $8,000 25,000 30 BRONZE COIN",
+    "30 $300 NO LIMIT HOLD'EM DAY 2 RESTART 12:00 PM TROPHY + BRONZE COIN · 32 $200 NO LIMIT HOLD'EM BOUNTY (1DAY) 5:10 PM 9:40 PM $8,000 25,000 30 BRONZE COIN"
+   ],
+   "digest": "c2da71819f20d7d55b293c9be6dcec085d321d7dfa681d82021b19c201a42d93",
    "changed": false,
-   "status": "Not captured"
+   "status": "Fetched"
   },
   {
    "venue": "Wynn",
    "label": "Wynn Las Vegas official poker room page",
    "source": "https://www.wynnlasvegas.com/casino/poker",
-   "attempted_at": null,
-   "read_at": "2026-11-17",
+   "attempted_at": "2026-11-19T05:38:35+00:00",
+   "read_at": "2026-11-19T05:38:35+00:00",
    "excerpts": [
     "DAILY POKER TOURNAMENTS · Our popular slate of daily tournaments runs twice a day during non-event timeframes, offering a total of $200,000 in guaranteed prize pools weekly. Tournaments include the $40,000 guaranteed NLH Rebuy on Friday and a $10,000 guaranteed event every evening at 6 p.m. Please visit the links for full schedule and structures. · *Please note that the Daily Tournament schedule will be suspended during each Wynn Signature, Wynn Millions, and Classic tournament series. Thank you. · View Schedule · Structures"
    ],
    "digest": "e2df2e329ee117c696c42ea93b2118b9d1a7877fce00d8a86c1a2d1fddea89f6",
    "changed": false,
-   "status": "Archived"
+   "status": "Fetched"
   },
   {
    "venue": "Wynn",
    "label": "WPT World Championship official schedule PDF",
    "source": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
-   "attempted_at": null,
-   "read_at": "2026-11-17",
+   "attempted_at": "2026-11-19T05:38:35+00:00",
+   "read_at": "2026-11-19T05:38:35+00:00",
    "excerpts": [
     "2 p.m. · 4 p.m. · 7 p.m. · 9 p.m. · GUARANTEE",
     "4 p.m. · 7 p.m. · 9 p.m. · GUARANTEE · $400,000",
@@ -316,14 +367,14 @@
    ],
    "digest": "80a7d1a2245b91e7cf2c2bae8ea5554bbf058651ab282ac2cf546f89d8890e3f",
    "changed": false,
-   "status": "Archived"
+   "status": "Fetched"
   },
   {
    "venue": "Wynn",
    "label": "Wynn Signature Series official schedule PDF",
    "source": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf",
-   "attempted_at": null,
-   "read_at": "2026-11-17",
+   "attempted_at": "2026-11-19T05:38:36+00:00",
+   "read_at": "2026-11-19T05:38:36+00:00",
    "excerpts": [
     "DATE DAY TIME EVENT GUARANTEE ENTRY CHIPS LEVELS · 1/11 MON 12 P.M. NO LIMIT HOLD'EM DAY 1A $400 40,000 30/40 · 1/11 MON 5 P.M. NO LIMIT HOLD'EM DAY 1B $400 40,000 30/40 · 1/12 TUE 12 P.M. NO LIMIT HOLD'EM DAY 1C $400 40,000 30/40 · 1/12 TUE 5 P.M. NO LIMIT HOLD'EM DAY 1D $400 40,000 30/40",
     "1/11 MON 12 P.M. NO LIMIT HOLD'EM DAY 1A $400 40,000 30/40 · 1/11 MON 5 P.M. NO LIMIT HOLD'EM DAY 1B $400 40,000 30/40 · 1/12 TUE 12 P.M. NO LIMIT HOLD'EM DAY 1C $400 40,000 30/40 · 1/12 TUE 5 P.M. NO LIMIT HOLD'EM DAY 1D $400 40,000 30/40 · 1/13 WED 12 P.M. NO LIMIT HOLD'EM DAY 1E $400 40,000 30/40",
@@ -366,14 +417,14 @@
    ],
    "digest": "35bd6bc194274e33a85e34bb84451be1e66c14bc5651223a1e6fbec74c4ca74f",
    "changed": false,
-   "status": "Archived"
+   "status": "Fetched"
   },
   {
    "venue": "Wynn",
    "label": "Wynn daily tournaments official schedule PDF",
    "source": "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf",
-   "attempted_at": null,
-   "read_at": "2026-11-17",
+   "attempted_at": "2026-11-19T05:38:36+00:00",
+   "read_at": "2026-11-19T05:38:36+00:00",
    "excerpts": [
     "$10,000 GUARANTEE · Monday–Thursday • $200 NLH • 12 p.m. · $25,000 GUARANTEE · Saturday • $200 NLH • 12 p.m. · $40,000 GUARANTEE",
     "$25,000 GUARANTEE · Saturday • $200 NLH • 12 p.m. · $40,000 GUARANTEE · Friday • $240 NLH Rebuy • 12 p.m. · NIGHTLY",
@@ -383,75 +434,74 @@
    ],
    "digest": "3ac425889fcfdb0fcd5a82fa1c575e7ec2ee9e5d5b2381bf50531d9a0c6449de",
    "changed": false,
-   "status": "Archived"
+   "status": "Fetched"
   },
   {
    "venue": "Venetian",
    "label": "Venetian DeepStack series overview (current and next series dates) — official page",
    "source": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament.html",
-   "attempted_at": null,
-   "read_at": "2026-11-17",
+   "attempted_at": "2026-11-19T05:38:36+00:00",
+   "read_at": "2026-11-19T05:38:36+00:00",
    "excerpts": [
-    "WPT Fall Championship · Final Table live streamed Nov 10 at 12:00 PM · $600 No Limit Hold'em $300K GTD Nov 12-15 · View Poker Tournament Schedule · |",
     "PokerAtlas Championship Title Event · Final Table live streamed Dec 14 at 12pm · $1,100 No Limit Hold'em Seniors $300K GTD Dec 13-15 · Must be 50+ years of age to particpate · $1,100 No Limit Hold'em $500K GTD Dec 17-20",
-    "Ante Up Championship · Final Table live streamed Dec 31 at 11am · $1,600 No Limit Hold'em MSPT $400K GTD Jan 1-4 · View Structure Sheets and Results · DeepStack Showdown Poker Series"
+    "Ante Up Championship · Final Table live streamed Dec 31 at 11am · $1,600 No Limit Hold'em MSPT $400K GTD Jan 1-4 · View Poker Tournament Schedule · |"
    ],
-   "digest": "6e8e810f4762fcb0db919c3d3b7cbcfd0131a7867bbff5568ece46bacc698722",
-   "changed": false,
-   "status": "Archived"
+   "digest": "7e5218883e8b1ae660be4f692c1d6479812ff98fb99c00261affb7be37630e1c",
+   "changed": true,
+   "status": "Fetched"
   },
   {
    "venue": "Other",
    "label": "Bellagio poker room page (weekly tournament flyers) — official page",
    "source": "https://bellagio.mgmresorts.com/en/casino/poker.html",
-   "attempted_at": null,
+   "attempted_at": "2026-11-19T05:38:36+00:00",
    "read_at": null,
    "excerpts": [],
    "digest": null,
    "changed": false,
-   "status": "Not captured"
+   "status": "Fetch failed; review source"
   },
   {
    "venue": "Other",
    "label": "Caesars Palace daily poker tournament article (official, dated 2026-07-17)",
    "source": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
-   "attempted_at": null,
-   "read_at": "2026-11-17",
+   "attempted_at": "2026-11-19T05:38:36+00:00",
+   "read_at": "2026-11-19T05:38:36+00:00",
    "excerpts": [
     "What Are the Daily Tournament Schedules at Caesars Palace Poker Room? · At Caesars Palace, the daily schedule runs like clockwork. You will find four No-Limit Hold’em tournaments each day at 10 a.m., 2 p.m., 6 p.m. and 9 p.m. Every event carries a $100 buy-in, starts you with 20,000 chips, and features a $1,000 guaranteed prize pool. Blinds increase every 20 minutes to keep the pace lively, and a $50 add-on at the first break gives you an extra 15,000 chips if you want a deeper run. It's an easy, low-commitment way to jump in and chase some serious fun. · What Are the Daily Tournament Schedules at Horseshoe Las Vegas? · At Horseshoe Las Vegas, the tournament slate ups the ante with six daily No-Limit Hold’em games. The times at 9 a.m., 11 a.m., 2 p.m., 5 p.m., 8 p.m. and 11 p.m. provide plenty of opportunity throughout the day to grab a seat. A mixture of buy-ins, levels and guarantees caters to all participants, from quick sessions to those that want deeper strategic play. · With tournaments held daily throughout the year, getting a seat is straightforward. However, from late May through mid-July, when the World Series of Poker comes to town, the game’s most prestigious tournament transforms Vegas into the epicenter of global poker.",
     "What Are the Daily Tournament Schedules at Horseshoe Las Vegas? · At Horseshoe Las Vegas, the tournament slate ups the ante with six daily No-Limit Hold’em games. The times at 9 a.m., 11 a.m., 2 p.m., 5 p.m., 8 p.m. and 11 p.m. provide plenty of opportunity throughout the day to grab a seat. A mixture of buy-ins, levels and guarantees caters to all participants, from quick sessions to those that want deeper strategic play. · With tournaments held daily throughout the year, getting a seat is straightforward. However, from late May through mid-July, when the World Series of Poker comes to town, the game’s most prestigious tournament transforms Vegas into the epicenter of global poker. · Horseshoe serves as a hub for the event, alongside · Paris Las Vegas"
    ],
    "digest": "965df2195ee18a8e912c6527018fd24be7eb8f714da58cd9af63bc00128a2839",
    "changed": false,
-   "status": "Archived"
+   "status": "Fetched"
   },
   {
    "venue": "MGM Grand",
    "label": "MGM Grand — official poker page (links the weekly schedule and the $120 structure sheet)",
    "source": "https://mgmgrand.mgmresorts.com/en/casino/poker-tables.html",
-   "attempted_at": null,
+   "attempted_at": "2026-11-19T05:38:36+00:00",
    "read_at": null,
    "excerpts": [],
    "digest": null,
    "changed": false,
-   "status": "Not captured"
+   "status": "Fetch failed; review source"
   },
   {
    "venue": "Mandalay Bay",
    "label": "Mandalay Bay — official poker page",
    "source": "https://mandalaybay.mgmresorts.com/en/casino/poker-tables.html",
-   "attempted_at": null,
+   "attempted_at": "2026-11-19T05:38:37+00:00",
    "read_at": null,
    "excerpts": [],
    "digest": null,
    "changed": false,
-   "status": "Not captured"
+   "status": "Fetch failed; review source"
   },
   {
    "venue": "Orleans",
    "label": "The Orleans — official poker room page (links the 2026 daily schedule PDF)",
    "source": "https://orleans.boydgaming.com/play/poker-room",
-   "attempted_at": null,
+   "attempted_at": "2026-11-19T05:38:38+00:00",
    "read_at": null,
    "excerpts": [],
    "digest": null,
@@ -462,8 +512,8 @@
    "venue": "Orleans",
    "label": "The Orleans — 2026 daily tournament schedule and structures (official PDF)",
    "source": "https://orleans.boydgaming.com/-/media/project/boyd/property/lasvegas/orleans/pdf/2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf?rev=6a96aa7ef9fc428bb65c06f9e4d554b0",
-   "attempted_at": null,
-   "read_at": "2026-11-17",
+   "attempted_at": "2026-11-19T05:38:39+00:00",
+   "read_at": "2026-11-19T05:38:39+00:00",
    "excerpts": [
     "26 40,000 80,000 80,000 · Sundays @ 11:05am · • Registration opens one (1) hour prior to the start of · the tournament. · • A player’s card is required to register. The forms of",
     "Poker Room staff. · Mon, Tues, Wed and Thurs @ 11:05am · $100 Buy In · 25,000 Chips · 20 Minute Levels",
@@ -477,26 +527,26 @@
    ],
    "digest": "e90f60d52ef98b5b90c75e5b35dca0408410a8ca4ed9457066bee8bdba02d5af",
    "changed": false,
-   "status": "Archived"
+   "status": "Fetched"
   },
   {
    "venue": "South Point",
    "label": "South Point — official poker room page (daily times and buy-ins)",
    "source": "https://southpointcasino.com/casino/poker-room",
-   "attempted_at": null,
-   "read_at": "2026-11-17",
+   "attempted_at": "2026-11-19T05:38:40+00:00",
+   "read_at": "2026-11-19T05:38:40+00:00",
    "excerpts": [
     "South Point Hotel and Casino has a 24-hour non-smoking poker room. South Point Poker Room offers all of the most popular poker games and a variety of betting limits. Games featured are $4-8, $8-16 Limit Texas Hold'em, $4-$8, $8-16 Omaha 8/B, and $1-2, $2-3, $3-5 blind No-Limit Texas Hold'em games. Mixed Games, Stud and Omaha spread upon request. · We feature tournaments daily with aggressive guarantees at 10:10 am, 2:10 pm, 6:10 pm and 10:10 pm with buy-ins of $120 and $300. · Room rates are available with 4 hours of cash play for our out-of-town guests and parking is always free! · With all of the above, along with the service provided by our courteous, professional staff, we are certain you'll find your poker playing experience an enjoyable one! · Sign up to the waiting list is now available via the Bravo Poker App."
    ],
    "digest": "91edf9a8174b22a08d3d0a23f2fea9be5b0519ba00b936ac8560e4af41c20f14",
    "changed": false,
-   "status": "Archived"
+   "status": "Fetched"
   },
   {
    "venue": "South Point",
    "label": "South Point — official daily tournament schedule page (images only on 2026-11-17)",
    "source": "https://southpointcasino.com/casino/poker-room/daily-tournament-schedule",
-   "attempted_at": null,
+   "attempted_at": "2026-11-19T05:38:41+00:00",
    "read_at": null,
    "excerpts": [],
    "digest": null,
@@ -507,7 +557,7 @@
    "venue": "Resorts World",
    "label": "Resorts World official casino events page (closure check: no poker event listed)",
    "source": "https://www.rwlasvegas.com/gaming/casino-events/",
-   "attempted_at": null,
+   "attempted_at": "2026-11-19T05:38:41+00:00",
    "read_at": null,
    "excerpts": [],
    "digest": null,
@@ -518,7 +568,7 @@
    "venue": "Planet Hollywood",
    "label": "Planet Hollywood official property page (closure check)",
    "source": "https://www.caesars.com/planet-hollywood",
-   "attempted_at": null,
+   "attempted_at": "2026-11-19T05:38:41+00:00",
    "read_at": null,
    "excerpts": [],
    "digest": null,
@@ -529,12 +579,12 @@
    "venue": "ARIA",
    "label": "ARIA official poker room page",
    "source": "https://aria.mgmresorts.com/en/casino/poker.html",
-   "attempted_at": null,
+   "attempted_at": "2026-11-19T05:38:41+00:00",
    "read_at": null,
    "excerpts": [],
    "digest": null,
    "changed": false,
-   "status": "Not captured"
+   "status": "Fetch failed; review source"
   }
  ]
 }

@@ -28,6 +28,7 @@ SRC = {
     "dse_nov_page": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
     "dse_dec_page": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
     "dse_nov_sched": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-nov-2026-schedule.pdf",
+    "dse_dec_sched": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf",
     "dse_nov_struct": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_{}.pdf",
     "dse_dec_struct": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_{}.pdf",
     "venetian_poker": "https://www.venetianlasvegas.com/resort/casino/poker.html",
@@ -39,7 +40,7 @@ SRC = {
     "wpt_sched": "https://cdn.wynnresorts.com/image/upload/v1757097329/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Schedule.pdf",
     "wpt_struct": "https://cdn.wynnresorts.com/image/upload/v1750864036/visitwynn_pdfs_files/Poker/WPT/WPT_World_Championship_Structures.pdf",
     "wss_sched": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Schedule.pdf",
-    "wss_struct": "https://cdn.wynnresorts.com/image/upload/v1753296112/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf",
+    "wss_struct": "https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf",
     "wynn_daily_poster": "https://cdn.wynnresorts.com/image/upload/v1752011166/visitwynn_pdfs_files/Poker/Daily%20Tournaments/poker-daily-tournament-poster.pdf",
     "wynn_daily_struct": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
     "wynn_poker": "https://www.wynnlasvegas.com/casino/poker",
@@ -1282,7 +1283,7 @@ def build_venetian(rows, series_key, series, page_key, sheet_key, sched_key, str
         labels = list(sheet.get("labels", []))
         if continuation:
             labels.append("continuation")
-        if continuation and status == "CAND":
+        if continuation:
             status = "CONT"
         buy = sheet["buy"]
         start_time = start
@@ -1292,6 +1293,10 @@ def build_venetian(rows, series_key, series, page_key, sheet_key, sched_key, str
                           "11": "15:10", "12": "18:10",
                           "15": "15:10", "18": "15:10", "21": "15:10", "23": "10:10", "24": "15:10"}[str(no)]
         late_text = sheet.get("late_by_event", {}).get(no, sheet.get("late"))
+        if continuation:
+            late_text = None  # Day 1 registration is not available at a restart.
+        elif series_key == "dec" and no == 27 and start == "17:10":
+            late_text = "9:40 PM"  # NYE schedule PDF, flights 1B and 1D.
         est_end, est_min, est_offset_days = estimate_end(
             start_time, sheet["levels"], sheet["lmin"],
             level_min2=sheet.get("lmin2"), level_min2_from=sheet.get("lmin2_from"))
@@ -1588,24 +1593,24 @@ def build_wynn():
             "prize_text": "10 Seats" if "Milestone Satellite" in name else None,
             "house_fee_usd": None, "house_fee_pct": None, "prize_pool_usd": None,
             "gtd_multiple": round(gtd / buy, 1) if gtd and buy else None,
-            "entry_status": "UNV",
+            "entry_status": "CONT" if kind == "continuation" else "UNV",
             "rules": {
                 "single_entry": rule_field("unknown",
                     "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" "
-                    "placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
-                    "Official Wynn Signature Series schedule PDF", SRC["wss_sched"]),
+                    "placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
+                    "Official structures placeholder", SRC["wss_struct"], retrieved="2026-11-19"),
                 "re_entry": rule_field("unknown",
                     "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" "
-                    "placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
-                    "Official Wynn Signature Series schedule PDF", SRC["wss_sched"]),
+                    "placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
+                    "Official structures placeholder", SRC["wss_struct"], retrieved="2026-11-19"),
                 "add_on": rule_field("unknown",
                     "The official Wynn Signature Series Structures PDF published by Wynn contains a \"COMING SOON\" "
-                    "placeholder and no structure sheets (read on 2026-11-17). Entry rule unknown.",
-                    "Official Wynn Signature Series schedule PDF", SRC["wss_sched"]),
+                    "placeholder and no structure sheets (read on 2026-11-19). Entry rule unknown.",
+                    "Official structures placeholder", SRC["wss_struct"], retrieved="2026-11-19"),
                 "fee": rule_field("not published", "Fee breakdown is not published for this event.",
                                   "Official Wynn Signature Series schedule PDF", SRC["wss_sched"]),
             },
-            "entry_rule": "Entry rule not verified: the official structures PDF for this series is still a placeholder.",
+            "entry_rule": "Continuation: not a new entry." if kind == "continuation" else "Entry rule not verified: the official structures PDF for this series is still a placeholder.",
             "labels": ["series"] + (["satellite"] if "Milestone Satellite" in name else [])
                       + (["continuation"] if kind == "continuation" else []),
             "late_reg_close": None, "levels": None, "level_minutes": None,
@@ -2606,7 +2611,7 @@ def main():
     rows += build_venetian(DSE_NOV, "nov", "Venetian DeepStack Extravaganza IV", "dse_nov_page",
                            NOV_SHEETS, "dse_nov_sched", "dse_nov_struct")
     rows += build_venetian(DSE_NYE, "dec", "Venetian DeepStack Extravaganza NYE", "dse_dec_page",
-                           DEC_SHEETS, None, "dse_dec_struct")
+                           DEC_SHEETS, "dse_dec_sched", "dse_dec_struct")
     rows += build_wynn()
     rows.sort(key=lambda x: (x["date"], x["start"], x["name"]))
     for i, row in enumerate(rows, 1):
