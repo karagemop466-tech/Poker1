@@ -4,6 +4,12 @@ Published so you can review each item. Flags do not block the merge. Every flag 
 official source it came from, and every flagged row carries the flag in `data/tournaments.json` so the
 row itself says what is odd about it.
 
+## Morning feed · first production check
+
+On November 19 the feed read schedule-related excerpts from **12 of 20 operator URLs**; four requests failed and four returned no usable schedule excerpt. These are URL counts, not room counts or confirmed tournaments. The [morning feed](pages/daily.html) names each source, attempt time and last readable capture. A failed fetch does not establish that a room closed.
+
+The [official NYE schedule PDF](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/dse-dec-2026-schedule.pdf) is readable and confirms Dec 26 within the 2026–27 series and the Jan 4 MSPT restart at 11 AM (the event page differs). It lists registration close at **9:40 PM**, not 3:40 PM, for the Jan 4 and 5 evening flights of event 27. The affected flights were corrected; day-one cutoffs no longer appear on Venetian restarts. The [Wynn Signature structure file](https://cdn.wynnresorts.com/image/upload/v1762299460/visitwynn_pdfs_files/Poker/Wynn%20Signature%20Series/Wynn_Signature_Series_Structures.pdf) still reads “COMING SOON” on November 19; none of its entry rows can be promoted.
+
 ## Booking blockers · November 19
 
 - **Written freezeout policy:** a sheet with no re-entry clause is not a written prohibition on buying more chips. The 80 candidates no longer appear under “confirmed.” For a concrete case see [event 10 rules](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_6.pdf). Its published starting stack is 40,000. All 52 Venetian sheets’ recorded starting stacks have been reconciled to their printed headers; earlier candidate rankings and stack values are superseded.

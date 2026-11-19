@@ -70,7 +70,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 300,
    "guarantee_usd": null,
-   "entry_status": "MULTI",
+   "entry_status": "CONT",
    "buy_in": "house fee $60 of the $300 buy-in; prize pool $240",
    "flags": 0
   },
@@ -178,7 +178,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 400,
    "guarantee_usd": null,
-   "entry_status": "MULTI",
+   "entry_status": "CONT",
    "buy_in": "house fee $70 of the $400 buy-in; prize pool $330",
    "flags": 0
   },
@@ -598,7 +598,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 400,
    "guarantee_usd": null,
-   "entry_status": "MULTI",
+   "entry_status": "CONT",
    "buy_in": "house fee $70 of the $400 buy-in; prize pool $330",
    "flags": 0
   },
@@ -886,7 +886,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 800,
    "guarantee_usd": null,
-   "entry_status": "MULTI",
+   "entry_status": "CONT",
    "buy_in": "house fee $110 of the $800 buy-in; prize pool $690",
    "flags": 0
   },
@@ -1666,7 +1666,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 2200,
    "guarantee_usd": null,
-   "entry_status": "MULTI",
+   "entry_status": "CONT",
    "buy_in": "house fee $225 of the $2,200 buy-in; prize pool $1975",
    "flags": 0
   },
@@ -1726,7 +1726,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 2200,
    "guarantee_usd": null,
-   "entry_status": "MULTI",
+   "entry_status": "CONT",
    "buy_in": "house fee $225 of the $2,200 buy-in; prize pool $1975",
    "flags": 0
   },
@@ -1858,7 +1858,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 1100,
    "guarantee_usd": null,
-   "entry_status": "MULTI",
+   "entry_status": "CONT",
    "buy_in": "house fee $140 of the $1,100 buy-in; prize pool $960",
    "flags": 0
   },
@@ -2518,7 +2518,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 1100,
    "guarantee_usd": null,
-   "entry_status": "MULTI",
+   "entry_status": "CONT",
    "buy_in": "house fee $140 of the $1,100 buy-in; prize pool $960",
    "flags": 0
   },
@@ -2734,7 +2734,7 @@
    "series": "Venetian DeepStack Extravaganza IV",
    "buy_in_usd": 600,
    "guarantee_usd": null,
-   "entry_status": "MULTI",
+   "entry_status": "CONT",
    "buy_in": "house fee $95 of the $600 buy-in; prize pool $505",
    "flags": 0
   },
@@ -2950,7 +2950,7 @@
    "series": "Venetian DeepStack Extravaganza NYE",
    "buy_in_usd": 1100,
    "guarantee_usd": null,
-   "entry_status": "MULTI",
+   "entry_status": "CONT",
    "buy_in": "house fee $140 of the $1,100 buy-in; prize pool $960",
    "flags": 0
   },
@@ -2998,7 +2998,7 @@
    "series": "Venetian DeepStack Extravaganza NYE",
    "buy_in_usd": 1100,
    "guarantee_usd": null,
-   "entry_status": "MULTI",
+   "entry_status": "CONT",
    "buy_in": "house fee $140 of the $1,100 buy-in; prize pool $960",
    "flags": 0
   },
@@ -3154,7 +3154,7 @@
    "series": "Venetian DeepStack Extravaganza NYE",
    "buy_in_usd": 1600,
    "guarantee_usd": null,
-   "entry_status": "MULTI",
+   "entry_status": "CONT",
    "buy_in": "house fee $180 of the $1,600 buy-in; prize pool $1420",
    "flags": 1
   },
@@ -3226,7 +3226,7 @@
    "series": "Venetian DeepStack Extravaganza NYE",
    "buy_in_usd": 250,
    "guarantee_usd": null,
-   "entry_status": "MULTI",
+   "entry_status": "CONT",
    "buy_in": "house fee $50 of the $250 buy-in; prize pool $200",
    "flags": 0
   },
@@ -3334,7 +3334,7 @@
    "series": "Venetian DeepStack Extravaganza NYE",
    "buy_in_usd": 300,
    "guarantee_usd": null,
-   "entry_status": "MULTI",
+   "entry_status": "CONT",
    "buy_in": "house fee $60 of the $300 buy-in; prize pool $240",
    "flags": 0
   },
@@ -3442,7 +3442,7 @@
    "series": "Wynn Signature Series",
    "buy_in_usd": null,
    "guarantee_usd": null,
-   "entry_status": "UNV",
+   "entry_status": "CONT",
    "buy_in": "not published",
    "flags": 1
   },
@@ -3526,7 +3526,7 @@
    "series": "Wynn Signature Series",
    "buy_in_usd": null,
    "guarantee_usd": null,
-   "entry_status": "UNV",
+   "entry_status": "CONT",
    "buy_in": "not published",
    "flags": 1
   },
@@ -3670,7 +3670,7 @@
    "series": "Wynn Signature Series",
    "buy_in_usd": null,
    "guarantee_usd": null,
-   "entry_status": "UNV",
+   "entry_status": "CONT",
    "buy_in": "not published",
    "flags": 1
   },
@@ -3778,7 +3778,7 @@
    "series": "Wynn Signature Series",
    "buy_in_usd": null,
    "guarantee_usd": null,
-   "entry_status": "UNV",
+   "entry_status": "CONT",
    "buy_in": "not published",
    "flags": 1
   },
