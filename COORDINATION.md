@@ -2071,15 +2071,16 @@ The existing checks/data remain the baseline (not refreshed by this session): la
 | Data changes | None — no row value, source, or retrieval timestamp was changed; `build_data.py`/`build_site.py` deterministic |
 | Flagged irregularities | F1–F76+ remain published on `pages/flagged.html` with official-source links; evidence gaps (no written whole-event freezeout, no same-stay live checkout quote, no timed walking times) are "needs review", not blockers; no nonrefundable decision supported |
 
-## Session f63fc90d · 2026-11-19 · row-level source-change markers
+## Session f63fc90d · 2026-11-19 · P8 handoff
 
-**Claim on the fixed current branch:** `arena/f63fc90d-poker1`, based on `main` at `3f3f6bb7a87380b4cc14265135664cae408bebd4` (PR #101 merged). This session takes over **only** P8 (surface source-changed rows in tournament views) from the stale PR #98 claim: GitHub reports PR #98's last commit at 2026-11-19T06:00:23Z, with no newer commits as of this claim at 10:57 UTC, exceeding the board's 60-minute handoff threshold. The rest of PR #98's integration scope is not claimed.
+This session is on the fixed branch `arena/f63fc90d-poker1`, based on `main` at `3f3f6bb7a87380b4cc14265135664cae408bebd4` (PR #101 merged). At 10:57 UTC, the main-branch board showed the P8 row-marker task as still unclaimed apart from stale PR #98, whose last commit was 2026-11-19T06:00:23Z; this session therefore claimed only P8. After the claim was pushed, PR [#103](https://github.com/karagemop466-tech/Poker1/pull/103) became visible. Its session `1c61c2b8` has a task-claim commit at 10:50 and an implementation commit at 10:56, both earlier than this session's claim, and remains active. To avoid overlapping the earlier owner's work, this session relinquishes P8 and discarded its uncommitted renderer/test draft; no source values, tournament rows, or `last_checked` dates were changed on this branch.
 
 | Task | Status | Owner | File scope |
 |---|---|---|---|
-| Join `data/changes.json` source-change records to each tournament row; show an explicit re-check marker and dated official source link on event tables and other event listings; add a synthetic headless regression test; update P8 status. Do not alter tournament facts or `last_checked`. | In progress | `f63fc90d` | `assets/app.js`, `assets/style.css`, `scripts/check_source_change_badges.js`, `package.json`, generated `index.html` and `pages/*.html`, `SUGGESTIONS.md`, `COORDINATION.md` |
+| P8: show confirmed changed-source markers beside matching tournament event rows. | Handed off to active PR #103; not implemented on this branch. | `f63fc90d` → `1c61c2b8` | `COORDINATION.md` only |
+| Request: after PR #103 is merged, update the P8 row in `SUGGESTIONS.md` from open to Built; it is not included in PR #103's current file list. | Requested; no overlapping edit made. | `1c61c2b8` | `SUGGESTIONS.md` |
 
-No official-source value or retrieval date will be changed by this UI task. The source-change state is read from the existing monitor output and is not treated as a new source re-check. This branch is the active integration workspace; no other branch is being created or switched to.
+This handoff does not treat the separate 2026-11-19 provenance audit as a row-level monitor run. No official-source re-fetch or retrieval-date change was made in this session.
 
 ## Session c0a11e95 · 2026-11-19 · status audit against the request, branch `arena/c0a11e95-poker1`
 
