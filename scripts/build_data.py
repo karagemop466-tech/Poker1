@@ -808,58 +808,66 @@ WPT_STRUCTS = {
 
 # ---------- Wynn Signature Series schedule rows (official schedule PDF, structures not yet published) ----------
 # date, time, name, buy-in, guarantee, published chips, published levels, kind, flags
-# The official schedule prints a guarantee only for the NLH Turbo ($10,000) and the Sunday
-# NLH events ($30,000). The multi-day Day 1x main events print a buy-in, chips and levels but
-# NO guarantee, and the structures PDF is a "COMING SOON" placeholder. Their guarantee is left
-# blank (None) and flagged rather than inferred.
-WSS_GTD_UNVERIFIED = ("Guarantee left blank: the official Wynn Signature Series schedule PDF prints "
-                      "a buy-in, starting chips and levels for this event but no guarantee amount, and the "
-                      "structures PDF is a \"COMING SOON\" placeholder. No official value was available, so "
-                      "no guarantee is published for this row.")
+WSS_REREAD_ON = "2026-11-19"  # day the official WSS schedule/structures PDFs were re-read; stamps these rows' last_checked
+# The official schedule prints a guarantee for the NLH Turbo ($10,000) and the Sunday NLH
+# events ($30,000), and - corrected on 2026-11-19 - for the multi-day main events as well:
+# the re-read of the SAME file (byte-identical per the 2026-11-19 provenance fetch) with a
+# table-structure renderer recovers the merged GUARANTEE cells the line extractor had been
+# dropping, so each Day-1 flight row now carries the guarantee printed on its own row
+# ($150,000 Jan 11-13, $250,000 Jan 14-16, $100,000 Jan 18-20, $300,000 Jan 21-23).
+# Single events whose official row leaves the GUARANTEE cell blank (PLO, TORSE, Mixed Triple
+# Draw, TOE, Big O, PLO Bomb Pot) stay blank - nothing is inferred. Capture:
+# data/snapshots/wss_sched_reread_20261119.txt; irregularity: FLAGGED.md F83.
+# The structures PDF is still a "COMING SOON" placeholder (re-read 2026-11-19), so entry
+# rules remain unverified for every row of this series.
+WSS_GTD_REREAD = ("Guarantee read from the event's own row of the official schedule PDF "
+                  "(table-structure re-read 2026-11-19; the line-only extraction used for the "
+                  "2026-11-16 capture dropped the merged guarantee cell, see data/snapshots/"
+                  "wss_sched_reread_20261119.txt and FLAGGED.md F83).")
 WSS = [
- ("2027-01-11","12:00","No Limit Hold'em Day 1A",400,None,40000,"30/40","entry",[WSS_GTD_UNVERIFIED]),
- ("2027-01-11","17:00","No Limit Hold'em Day 1B",400,None,40000,"30/40","entry",[WSS_GTD_UNVERIFIED]),
- ("2027-01-12","12:00","No Limit Hold'em Day 1C",400,None,40000,"30/40","entry",[WSS_GTD_UNVERIFIED]),
- ("2027-01-12","17:00","No Limit Hold'em Day 1D",400,None,40000,"30/40","entry",[WSS_GTD_UNVERIFIED]),
- ("2027-01-13","12:00","No Limit Hold'em Day 1E",400,None,40000,"30/40","entry",[WSS_GTD_UNVERIFIED]),
- ("2027-01-13","17:00","No Limit Hold'em Day 1F",400,None,40000,"30/40","entry",[WSS_GTD_UNVERIFIED]),
- ("2027-01-14","11:00","No Limit Hold'em Day 1A",600,None,40000,"40","entry",[WSS_GTD_UNVERIFIED]),
+ ("2027-01-11","12:00","No Limit Hold'em Day 1A",400,150000,40000,"30/40","entry",[WSS_GTD_REREAD]),
+ ("2027-01-11","17:00","No Limit Hold'em Day 1B",400,150000,40000,"30/40","entry",[WSS_GTD_REREAD]),
+ ("2027-01-12","12:00","No Limit Hold'em Day 1C",400,150000,40000,"30/40","entry",[WSS_GTD_REREAD]),
+ ("2027-01-12","17:00","No Limit Hold'em Day 1D",400,150000,40000,"30/40","entry",[WSS_GTD_REREAD]),
+ ("2027-01-13","12:00","No Limit Hold'em Day 1E",400,150000,40000,"30/40","entry",[WSS_GTD_REREAD]),
+ ("2027-01-13","17:00","No Limit Hold'em Day 1F",400,150000,40000,"30/40","entry",[WSS_GTD_REREAD]),
+ ("2027-01-14","11:00","No Limit Hold'em Day 1A",600,250000,40000,"40","entry",[WSS_GTD_REREAD]),
  ("2027-01-14","13:00","No Limit Hold'em Day 2",None,None,None,None,"continuation",
   ["Continuation row. The official schedule PDF prints no buy-in, guarantee, chips or levels for this row."]),
  ("2027-01-14","18:00","Milestone Satellite to $600 NLH",125,None,20000,"20","entry",
   ["Prize printed as \"10 Seats\". Schedule footnote: \"Winners will receive direct entry to the corresponding "
    "event(s) for which it was held. See structure sheet for details.\""]),
- ("2027-01-15","11:00","No Limit Hold'em Day 1B",600,None,40000,"40","entry",[WSS_GTD_UNVERIFIED]),
+ ("2027-01-15","11:00","No Limit Hold'em Day 1B",600,250000,40000,"40","entry",[WSS_GTD_REREAD]),
  ("2027-01-15","18:00","NLH Turbo",200,10000,25000,"20","entry",[]),
- ("2027-01-16","11:00","No Limit Hold'em Day 1C",600,None,40000,"40","entry",[WSS_GTD_UNVERIFIED]),
- ("2027-01-16","18:00","No Limit Hold'em Day 1D",600,None,40000,"20/40","entry",[WSS_GTD_UNVERIFIED]),
+ ("2027-01-16","11:00","No Limit Hold'em Day 1C",600,250000,40000,"40","entry",[WSS_GTD_REREAD]),
+ ("2027-01-16","18:00","No Limit Hold'em Day 1D",600,250000,40000,"20/40","entry",[WSS_GTD_REREAD]),
  ("2027-01-17","12:00","No Limit Hold'em",400,30000,30000,"30","entry",[]),
  ("2027-01-17","13:00","No Limit Hold'em Day 2",None,None,None,None,"continuation",
   ["Continuation row. The official schedule PDF prints no buy-in, guarantee, chips or levels for this row."]),
  ("2027-01-17","18:00","NLH Turbo",200,10000,25000,"20","entry",[]),
- ("2027-01-18","11:00","No Limit Hold'em Day 1A",400,None,40000,"40","entry",[WSS_GTD_UNVERIFIED]),
+ ("2027-01-18","11:00","No Limit Hold'em Day 1A",400,100000,40000,"40","entry",[WSS_GTD_REREAD]),
  ("2027-01-18","13:00","PLO",400,None,30000,"30","entry",[]),
  ("2027-01-18","18:00","NLH Turbo",200,10000,25000,"20","entry",[]),
- ("2027-01-19","11:00","No Limit Hold'em Day 1B",400,None,40000,"40","entry",[WSS_GTD_UNVERIFIED]),
+ ("2027-01-19","11:00","No Limit Hold'em Day 1B",400,100000,40000,"40","entry",[WSS_GTD_REREAD]),
  ("2027-01-19","13:00","Mixed Game (TORSE)",400,None,35000,"30","entry",[]),
  ("2027-01-19","18:00","NLH Turbo",200,10000,25000,"20","entry",[]),
- ("2027-01-20","11:00","No Limit Hold'em Day 1C",400,None,40000,"40","entry",[WSS_GTD_UNVERIFIED]),
+ ("2027-01-20","11:00","No Limit Hold'em Day 1C",400,100000,40000,"40","entry",[WSS_GTD_REREAD]),
  ("2027-01-20","13:00","Mixed Triple Draw (A-5, 2-7, Badugi)",400,None,35000,"30","entry",[]),
  ("2027-01-20","18:00","NLH Turbo",200,10000,25000,"20","entry",[]),
- ("2027-01-21","11:00","No Limit Hold'em Day 1A",800,None,40000,"40","entry",[WSS_GTD_UNVERIFIED]),
+ ("2027-01-21","11:00","No Limit Hold'em Day 1A",800,300000,40000,"40","entry",[WSS_GTD_REREAD]),
  ("2027-01-21","12:00","No Limit Hold'em Day 2",None,None,None,None,"continuation",
   ["Continuation row. The official schedule PDF prints no buy-in, guarantee, chips or levels for this row."]),
  ("2027-01-21","13:00","Mixed Game (TOE)",400,None,35000,"30","entry",[]),
  ("2027-01-21","18:00","Milestone Satellite to $800 NLH",160,None,20000,"20","entry",
   ["Prize printed as \"10 Seats\". Schedule footnote: \"Winners will receive direct entry to the corresponding "
    "event(s) for which it was held. See structure sheet for details.\""]),
- ("2027-01-22","11:00","No Limit Hold'em Day 1B",800,None,40000,"40","entry",[WSS_GTD_UNVERIFIED]),
+ ("2027-01-22","11:00","No Limit Hold'em Day 1B",800,300000,40000,"40","entry",[WSS_GTD_REREAD]),
  ("2027-01-22","13:00","Big O",400,None,30000,"30","entry",[]),
  ("2027-01-22","18:00","Milestone Satellite to $800 NLH",160,None,20000,"20","entry",
   ["Prize printed as \"10 Seats\". Schedule footnote: \"Winners will receive direct entry to the corresponding "
    "event(s) for which it was held. See structure sheet for details.\""]),
- ("2027-01-23","11:00","No Limit Hold'em Day 1C",800,None,40000,"40","entry",[WSS_GTD_UNVERIFIED]),
- ("2027-01-23","18:00","No Limit Hold'em Day 1D",800,None,40000,"20/40","entry",[WSS_GTD_UNVERIFIED]),
+ ("2027-01-23","11:00","No Limit Hold'em Day 1C",800,300000,40000,"40","entry",[WSS_GTD_REREAD]),
+ ("2027-01-23","18:00","No Limit Hold'em Day 1D",800,300000,40000,"20/40","entry",[WSS_GTD_REREAD]),
  ("2027-01-24","12:00","Seniors No Limit Hold'em 50+",400,30000,30000,"30","entry",[]),
  ("2027-01-24","13:00","No Limit Hold'em Day 2",None,None,None,None,"continuation",
   ["Continuation row. The official schedule PDF prints no buy-in, guarantee, chips or levels for this row."]),
@@ -1617,11 +1625,18 @@ def build_wynn():
             "starting_chips": chips, "levels_published": levels_pub,
             "est_end": None, "est_duration_min": None,
             "note": "Buy-in, guarantee, starting chips and level count from the official Wynn Signature Series "
-                    "schedule PDF.",
+                    "schedule PDF, re-read 2026-11-19 (table-structure capture of the same file; see "
+                    "data/snapshots/wss_sched_reread_20261119.txt).",
             "flags": flags,
             "sources": [{"label": "Official schedule PDF", "url": SRC["wss_sched"]},
                         {"label": "Official structures PDF (placeholder: COMING SOON)", "url": SRC["wss_struct"]}],
-            "verified_on": VERIFIED_ON, "last_checked": LAST_CHECKED,
+            "verified_on": VERIFIED_ON,
+            # The series' official schedule PDF and the structures placeholder were both
+            # re-read on 2026-11-19; every row of this series was re-checked against its
+            # source that day, so these rows' last_checked carries the re-read date.
+            # Rows of other series keep their own dates; no date here is advanced
+            # without the source having actually been read.
+            "last_checked": WSS_REREAD_ON,
         })
     return out
 
