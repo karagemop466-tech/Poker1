@@ -1,3 +1,39 @@
+# Session 0f038248 — branch `arena/0f038248-poker1` (base `f5ecde0` = current `main`)
+
+Session `0f038248` works on branch `arena/0f038248-poker1` (fixed for this session). Base `f5ecde0`
+(`git rev-list --left-right --count origin/main...HEAD` = `0 0`), tree clean, `build_data.py` and
+`build_site.py` regenerate byte-identical output at the base. Claim written and pushed before any data,
+script or page change.
+
+**Board state read at claim time.** One open pull request: **#113** (`arena/98241f2f-poker1`, "record
+PR #106 merge result (COORDINATION.md only)", `mergeable: CONFLICTING`, last updated 2026-11-19T11:25:48Z
+— more than 10 hours, well past the 60-minute staleness window). Its whole diff is `COORDINATION.md`, and
+its record (PR #106 merge) is already on `main`; it is dispositioned in task 5 below rather than left
+conflicting and unexplained. The earlier `in progress` lines of sessions `f3a84f9b`, `cd330ba8`, `ce9941b8`,
+`9aad3bd2`, `206debc0`, `a8efe220`, `06ac8c98`, `eb3bb028` and `be98ede8` are superseded by their own merge
+records on `main` (PRs #96, #102, #106, #112, #117 and the work before them); no unmerged active claim was
+found, so no other session's file is edited.
+
+Dataset at the base: 317 tournament rows — `RE` 107, `CAND` 80, `MULTI` 53, `CONT` 43, `UNV` 34 (0 `SE`);
+`last_checked` 2026-11-17 on 279 rows and 2026-11-19 on the 38 Wynn Signature Series rows;
+`data/monitoring.json` `checked_at: 2026-11-19T16:45:28Z` from the real Actions fetch (109 sources,
+99 ok, 4 rows marked source-changed).
+
+| # | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| 1 | Dated live re-read (2026-11-19) of the official sources that gate every remaining decision: the Wynn Signature Series structures PDF + schedule PDF + Wynn poker page (the 34 `UNV` rows), the Venetian DSE IV November listing + the structure sheets behind the `CAND`/`MULTI` entry-rule clauses + the Venetian poker page. Record match/diff per field with links; advance `last_checked` only on documents actually re-read today; remove an "unverified" label only where a newly read official document prints the confirmation - nothing inferred. | in progress | 0f038248 | new `research/verification-2026-11-19-0f038248.md`, `scripts/build_data.py` (re-read dates/excerpts only), generated `data/*.json`, regenerated `pages/*.html` + `index.html`, `FLAGGED.md`, `QUESTIONS.md`, `COORDINATION.md` |
+| 2 | P3 (open proposal): publish the spend-advantage reading per row. The request separates events by whether a player can gain an advantage by spending more money, but the site currently encodes that only implicitly in `entry_status`. Derive a descriptive `spend_advantage` value for every row from the clause excerpt already stored on it (priced subsequent buy-in / rebuy or add-on printed / bag-a-flight penalty only / sheet silent), print it with the excerpt and retrieval date it came from, add a "no spend-based advantage printed" filter to the tournament tables, and keep the `SE` promotion gate untouched. New validator rule: the derived value must be consistent with its excerpt, or the build fails. | in progress | 0f038248 | `scripts/build_data.py`, `assets/app.js`, `assets/style.css` (filter chip), `scripts/check_links.py`, new `scripts/spend_advantage.py` + `scripts/test_spend_advantage.py`, generated `data/*.json`, regenerated `index.html` + `pages/*.html`, `README.md`, `SUGGESTIONS.md` (P3 line), `EXECUTIVE_SUMMARY.md`, `COORDINATION.md` |
+| 3 | P14 (open proposal): the scheduled monitor builds its facts signature from a line-only text render, which F83 proved silently drops merged PDF table cells - a published guarantee moved and `facts_changed` stayed false. Give the capture a table/layout render next to the line render and build the facts signature from the union of both, so a merged-cell change cannot pass invisibly; re-baseline deliberately in the same commit with a dated note. | in progress | 0f038248 | `scripts/check_source_facts.py`, `scripts/monitor_sources.py`, new `scripts/test_facts_capture.py`, `data/source_baseline.json` (re-baselined by the script, documented), `COORDINATION.md` |
+| 4 | P12 remainder (open option): make the monitor workflow fail loudly when `data/monitor_last_run.txt` starts with "Refusing to run" instead of leaving the refusal to a reader, and alert on a run where every source is unreachable. | in progress | 0f038248 | `.github/workflows/monitor.yml`, `COORDINATION.md` |
+| 5 | Stale-PR disposition for #113 (`98241f2f`, COORDINATION.md only, conflicting, >10 h): verify line by line that its recorded content is on `main`, then close it with a disposition comment - no silent discard. | in progress | 0f038248 | `COORDINATION.md`, PR #113 comment |
+| 6 | Final integration: rebuild, run every gate (python + npm, incl. the new tests), confirm no broken link, open a PR to `main`, merge after a green `validate`, confirm the Pages deploy, record PR link + merge + deploy here and on the Flagged page. | in progress | 0f038248 | all of the above + `COORDINATION.md` |
+
+Rules this session follows: no official value changes except from a document actually re-read and quoted;
+anything that cannot be confirmed stays blank and flagged; `last_checked` advances only on sources re-read;
+shared outputs are integrated here because no other session is active on them.
+
+---
+
 # Session f3a84f9b — branch `arena/f3a84f9b-poker1` (base `3f3f6bb` = `main` after PR #101)
 
 Session `f3a84f9b` works on branch `arena/f3a84f9b-poker1` (fixed for this session), based on `main` at
