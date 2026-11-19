@@ -15,9 +15,14 @@ def build_schedule(rows, verified_on, archives=None):
     unordered same-day pairs are surfaced because neither actual finish is known.
     """
     days = {}
+    continuations = {}
     for row in rows:
         if row.get("kind") == "entry":
             days.setdefault(row["date"], []).append(row)
+        elif row.get("kind") == "continuation":
+            # A restart is useful information, not another entry or a primary.
+            days.setdefault(row["date"], [])
+            continuations.setdefault(row["date"], []).append(row)
     if any(r.get("entry_status") == "SE" for events in days.values() for r in events):
         archives = load_archives() if archives is None else archives
         for events in days.values():
@@ -76,6 +81,16 @@ def build_schedule(rows, verified_on, archives=None):
                 "est_end": None, "est_duration_min": None, "est_end_next_day": False, "duration_basis": None,
                 "source": (e.get("sources") or [{}])[-1].get("url"),
             } for e in events],
+            "continuations": [{
+                "id": e["id"], "start": e["start"], "name": e["name"],
+                "series": e.get("series"), "venue": e.get("venue"),
+                "entry_status": e.get("entry_status"), "note": e.get("note"),
+                "source": (e.get("sources") or [{}])[-1].get("url"),
+            } for e in sorted(continuations.get(day_date, []),
+                              key=lambda e: (e["start"], e["name"], e["id"]))],
+            "continuation_note": ("Restarts are not new entry opportunities. If you qualified for a restart, "
+                                  "it may overlap another event; the finish is unknown."
+                                  if continuations.get(day_date) else None),
             "primary_id": primary["id"] if primary else None,
             "fallback_id": fallback["id"] if fallback else None,
             "fallback_kind": "conditional" if fallback else None,

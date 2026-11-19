@@ -76,8 +76,22 @@ class ConditionalScheduleTests(unittest.TestCase):
         row = event("restart", "11:00", "CONT")
         row["kind"] = "continuation"
         result = self.build([row, event("entry", "12:00")])
-        self.assertEqual(["entry"], [r["id"] for r in result["days"][0]["events"]])
-        self.assertIn("previous day's event", result["days"][0]["cross_day_warning"])
+        day = result["days"][0]
+        self.assertEqual(["entry"], [r["id"] for r in day["events"]])
+        self.assertEqual(["restart"], [r["id"] for r in day["continuations"]])
+        self.assertIn("not new entry", day["continuation_note"])
+        self.assertIn("previous day's event", day["cross_day_warning"])
+        self.assertIsNone(day["primary_id"])
+        self.assertEqual([], day["conflicts"])
+
+    def test_date_with_only_a_continuation_is_preserved(self):
+        restart = event("restart", "11:00", "CONT")
+        restart["kind"] = "continuation"
+        day = self.build([restart])["days"][0]
+        self.assertEqual("2026-11-26", day["date"])
+        self.assertEqual([], day["events"])
+        self.assertEqual(["restart"], [r["id"] for r in day["continuations"]])
+        self.assertIsNone(day["primary_id"])
 
     def test_deterministic_and_preserves_input(self):
         rows = [event("B", "17:00"), event("A", "11:00")]
