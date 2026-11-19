@@ -1714,3 +1714,13 @@ Integration PR: [#87](https://github.com/karagemop466-tech/Poker1/pull/87). Depl
 **Post-merge confirmation (2026-11-19):** [PR #87](https://github.com/karagemop466-tech/Poker1/pull/87) merged as `d383f48d86070efe9b946d983135c6bda45a5c2a`. The GitHub Pages build API reports `built` for that exact commit, and [Pages deployment run 44465791063](https://github.com/karagemop466-tech/Poker1/actions/runs/44465791063) concluded successfully. The separate main-branch validation run is [44465791728](https://github.com/karagemop466-tech/Poker1/actions/runs/44465791728).
 
 44c94b4f publication: [PR #91](https://github.com/karagemop466-tech/Poker1/pull/91) merged as `432fbded`; [Pages deployment](https://github.com/karagemop466-tech/Poker1/actions/runs/44466009192) succeeded for that commit. 23 pages rendered; 530 local references checked, zero broken.
+
+## Session 406c2e71 — 2026-11-19 (branch `arena/406c2e71-poker1`)
+
+Branch `arena/406c2e71-poker1` is fixed by Arena. Read `COORDINATION.md` on `main` (`519adff`) and checked active open PRs (`#88` `0d8855ce`, `#89` `d6bc5df2`, `#93` `f70bc581`) as well as stale >30h PRs (`#79` `df94b75e`, `#81` `2157d288`, `#82` `ce9941b8`). Active PRs `#88` and `#89` currently own `scripts/build_data.py`, `assets/app.js`, generated `data/`, `index.html`, `pages/*.html`, and shared decision docs, so this session claims only a disjoint live-verification research scope until those active PRs complete:
+
+| Task | Status | Owner | File scope |
+|---|---|---|---|
+| Live 2026-11-19 official-source re-verification across operator tournament pages, structure PDFs, hotel fee/tax/booking pages, and Strip poker rooms (recording live-read excerpts, fresh hotel rate quotes, Caesars/MGM/Wynn/Venetian policy checks, and Wynn Signature Series structure check) | in progress | 406c2e71 | `research/verification-2026-11-19-406c2e71.md`, `COORDINATION.md` |
+| Stale-PR (`>60 min` rule: `#79`, `#81`, `#82` are >30h idle) audit & final integration once active PRs `#88`, `#89`, and `#93` complete (including `#93`'s logged P8 request for per-row source-change badges and live-verified hotel/rate/daily/workflow updates) | unclaimed until `#88`/`#89`/`#93` finish | 406c2e71 (logged intent; no shared files touched while `#88`/`#89` are active) | deferred until active owners finish |
+
