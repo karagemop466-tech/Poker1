@@ -1,9 +1,123 @@
 {
   "verified_on": "2026-11-17",
-  "method": "Each published numeric/date/time value was searched in the raw official document text archived under data/snapshots/. Missing = UNVERIFIED. Entry status was cross-checked against the independently parsed sheet verdict (structure_rules.json) or the WPT registration wording.",
+  "method": "Each published numeric/date/time value was searched in the raw official document text archived under data/snapshots/. Missing = UNVERIFIED. Entry status was cross-checked against the independently parsed sheet verdict (structure_rules.json) or the WPT registration wording. The daily feed (data/daily.json) is checked the same way against the document its own source_url points at, and every text span it prints in quotes must appear verbatim in that document.",
   "rows_checked": 324,
-  "field_checks": 1296,
+  "field_checks": 1383,
   "hard_failures": [],
   "review_items": 1,
-  "rate_arithmetic_failures": []
+  "rate_arithmetic_failures": [],
+  "daily_feed_rows": 11,
+  "daily_feed_checks": 87,
+  "daily_feed": [
+    {
+      "id": "daily-mon-thu",
+      "venue": "Wynn Las Vegas",
+      "name": "$200 No Limit Hold'em (daily)",
+      "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "snapshot": "w_daily_struct",
+      "checked": 8,
+      "failed": [],
+      "review": []
+    },
+    {
+      "id": "daily-fri",
+      "venue": "Wynn Las Vegas",
+      "name": "$240 No Limit Hold'em Rebuy & Add-on (daily)",
+      "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "snapshot": "w_daily_struct",
+      "checked": 8,
+      "failed": [],
+      "review": []
+    },
+    {
+      "id": "daily-weekend",
+      "venue": "Wynn Las Vegas",
+      "name": "$200 No Limit Hold'em (daily)",
+      "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "snapshot": "w_daily_struct",
+      "checked": 8,
+      "failed": [],
+      "review": []
+    },
+    {
+      "id": "daily-nightly",
+      "venue": "Wynn Las Vegas",
+      "name": "$160 No Limit Hold'em nightly (daily)",
+      "source": "https://cdn.wynnresorts.com/image/upload/v1752011191/visitwynn_pdfs_files/Poker/Daily%20Tournaments/Poker-All_Daily_Structures.pdf",
+      "snapshot": "w_daily_struct",
+      "checked": 8,
+      "failed": [],
+      "review": []
+    },
+    {
+      "id": "bellagio-fri",
+      "venue": "Bellagio",
+      "name": "$600 No Limit Hold'em (Fridays)",
+      "source": null,
+      "snapshot": "b_fri_pdf",
+      "checked": 7,
+      "failed": [],
+      "review": []
+    },
+    {
+      "id": "bellagio-sat",
+      "venue": "Bellagio",
+      "name": "$1,000 No Limit Hold'em (Saturdays)",
+      "source": null,
+      "snapshot": "b_sat_pdf",
+      "checked": 9,
+      "failed": [],
+      "review": []
+    },
+    {
+      "id": "bellagio-sun",
+      "venue": "Bellagio",
+      "name": "$400 H.O.R.S.E. (Sundays)",
+      "source": null,
+      "snapshot": "b_sun_pdf",
+      "checked": 7,
+      "failed": [],
+      "review": []
+    },
+    {
+      "id": "caesars-1000",
+      "venue": "Caesars Palace",
+      "name": "$100 No Limit Hold'em (daily, 10 a.m.)",
+      "source": null,
+      "snapshot": "c_daily_flyer",
+      "checked": 8,
+      "failed": [],
+      "review": []
+    },
+    {
+      "id": "caesars-1400",
+      "venue": "Caesars Palace",
+      "name": "$160 No Limit Hold'em (daily, 2 p.m.)",
+      "source": null,
+      "snapshot": "c_daily_flyer",
+      "checked": 8,
+      "failed": [],
+      "review": []
+    },
+    {
+      "id": "caesars-1800",
+      "venue": "Caesars Palace",
+      "name": "$100 No Limit Hold'em (daily, 6 p.m.)",
+      "source": null,
+      "snapshot": "c_daily_flyer",
+      "checked": 8,
+      "failed": [],
+      "review": []
+    },
+    {
+      "id": "caesars-2100",
+      "venue": "Caesars Palace",
+      "name": "$160 No Limit Hold'em (daily, 9 p.m.)",
+      "source": null,
+      "snapshot": "c_daily_flyer",
+      "checked": 8,
+      "failed": [],
+      "review": []
+    }
+  ]
 }

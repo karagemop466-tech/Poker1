@@ -157,6 +157,17 @@ def collect_dataset():
         for index, item in enumerate(strips.get(group, []), 1):
             for src in (item.get("sources") or []):
                 add(src.get("url"), "strip-room", "%s%02d" % (group, index), item.get("name") or item.get("property"), {})
+    # PR #66 (session 1ebc7e08): the other-rooms survey (pages/other-rooms.html) publishes an
+    # event row per recurring format and a finding per room, each with its own official
+    # citations. Neither was monitored, so a room's "$120 buy-in" or its "no poker room
+    # published" claim could go stale unseen.
+    others = load("other_rooms.json") or {}
+    for group, prefix in (("events", "or-ev"), ("rooms", "or-rm")):
+        for index, item in enumerate(others.get(group, []), 1):
+            ident = item.get("id") or "%s%02d" % (prefix, index)
+            for src in (item.get("sources") or []):
+                add(src.get("url"), "other-room", ident, item.get("name") or ident, {})
+            add(item.get("source"), "other-room", ident, item.get("name") or ident, {})
     daily = load("daily.json") or {"rows": []}
     for index, row in enumerate(daily["rows"], 1):
         for url in urls_of(row):

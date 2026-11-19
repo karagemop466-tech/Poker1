@@ -1841,3 +1841,71 @@ self-contradictory.
 
 **Open PRs left alone deliberately.** #73, #78, #79 and #80 were all updated within minutes of this
 session's integration, so none met the >60-minute takeover rule. They belong to their own sessions.
+
+
+## Session df94b75e — claim (branch `arena/df94b75e-poker1`, base `5de6d8d` = `main` after PR #69/#70)
+
+Claim written 2026-11-17 and pushed before any implementation, per the shared-task-board rules.
+All open PRs (#46, #51, #52, #53, #64, #66) are from sessions whose claims are many hours old with
+no recent commits, so under the 60-minute takeover rule this session takes over their outstanding
+work and the three published requests below.
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| REQUEST 1 (session 206debc0): fix the midnight-wrap in `est_end` — 137 rows render an end time before their start; 24/24 conditional fallbacks are impossible sequences; 231 real conflicts unflagged | Claimed | `scripts/build_data.py`, `assets/app.js`, regenerated `data/*`, `pages/*`, `index.html` | `df94b75e` |
+| REQUEST 2 (session 206debc0): `check_source_facts.py` refuses to run (non-official host `www.rwlasvegas.com` in manifest); workflow masks the refusal via `tee` without `pipefail` | Claimed | `scripts/check_source_facts.py`, `.github/workflows/source-facts.yml` | `df94b75e` |
+| REQUEST 3 (session 206debc0, minor): `pages/flagged.html` prints the template `<h1>` and the Markdown file's own title — doubled heading | Claimed | `scripts/build_site.py`, regenerated `pages/flagged.html` | `df94b75e` |
+| Take over and integrate the stale open PRs where their work is still unique and verified; close or supersede the rest with disposition notes; re-verify the combination line by line; PR to `main`, merge, confirm Pages | Claimed | `scripts/*`, `data/*`, `pages/*`, `assets/*`, `index.html`, decision docs, `research/*` | `df94b75e` |
+
+### Session df94b75e — completion record (2026-11-17)
+
+| Task | Status | Result |
+|---|---|---|
+| REQUEST 1 — midnight-wrap in `est_end` | **Done** | All schedule comparisons run in absolute minutes (`end_abs_min`, date ordinal). Past-midnight estimates render "(next day)" (137 rows), no impossible fallback can be proposed (0 vs 24 before), 249 overlaps flagged vs 14 before (incl. 4 cross-day), and a day whose primary runs past midnight says so instead of naming a fallback. |
+| REQUEST 2 — source-facts refusal + masked failure | **Done** | `www.rwlasvegas.com` added to `OFFICIAL_HOSTS`; `set -eo pipefail` added so a refusal fails the job. Proven end-to-end: pushing the fix triggered the workflow, which fetched **every official source** and pushed refreshed snapshots back to this branch (`481f90b`) instead of refusing. The dead-baseline bug (PR #66) fixed in the same area. |
+| REQUEST 3 — doubled `<h1>` on markdown pages | **Done** | `markdownPage` drops the md file's own leading H1 (the template prints the page title). Affects all five markdown pages, not just flagged. Smoke test now fails a page with more than one `<h1>` or an H1 inside `#content`. |
+| Takeover of stale open PRs (60-minute rule) | **Done** | PRs #66, #64, #46 fully ported; PR #51/#52/#53's verified substance ported (8 row corrections re-verified against the official PDF first); their tooling preserved as labelled manual scripts. Details below. |
+
+#### Takeover dispositions (PRs #46, #51, #52, #53, #64, #66 — all CONFLICTING, sessions gone for hours)
+
+| PR | Session | Disposition |
+|---|---|---|
+| #66 monitor repair | `1ebc7e08` | **Ported in full** (commit `9780c64`): dead baseline lookup (`baseline_hashes.json` wrapper), other-rooms survey coverage (91 -> 99 monitored URLs), monitor.yml concurrency/timeout/push-retry. |
+| #64 daily feed + county tax | `c7a324a6` | **Ported in full** by 3-way merge (commit `1d9d9a9`): 11 daily formats across 3 rooms, room tax verified from the Clark County licensing record at all 7 hotels, addresses for Bellagio/ARIA, verify_rows daily-feed checks (335 rows / 1392 checks / 0 hard failures), Jan 9 1F CES-clause name fix (re-verified myself against `v_dse_dec_page.txt`). Its flags renumbered F75-F81; its F57 superseded by main's F59. Its proposal to store the MSPT restart at 11:10 is **not applied** — F55's conservative 11:00 stands. |
+| #46 walking names | `bb9a3717` | **Ported in full** (commit `8f0ff65`): `hotel_name` display field, notes naming the real destination. Found and fixed a duplicate `room_rate_note` key in the Wynn and Encore generator dicts (merge artifact silently dropping the F37 re-check note). |
+| #51 line-by-line verification | `d94b191b` | Only its COORDINATION claim text remained on its branch; its row-level verification work is on main via PR #60. Claim recorded here; nothing else to merge. |
+| #52 live re-verification | `ca6d75b1` | Its WPT sheet join is on main via PR #36/#60. **Its 8 name corrections were re-verified against `data/snapshots/wpt_sched.txt` and applied** (commit `2427f6e`): no official document ever printed "NIH". Its time proposals (MSPT 11:10) not applied (F55). `scripts/verify_live.py` preserved as a labelled manual tool. |
+| #53 row-level verification | `d57243e7` | Its two time corrections overlap #52 (MSPT not applied; r225 keeps the schedule time with its published conflict). `scripts/verify_live_rows.py`, `scripts/ui_test.js` preserved as labelled manual tools. Its evidence-based last-checked display is on main already (`last_checked` per row). |
+
+**Irregularities found and flagged during the takeover**
+
+1. **Duplicate `room_rate_note` keys** in the Wynn and Encore hotel dicts of `scripts/build_data.py` (Python keeps the last, silently dropping the booking-engine re-check note). Fixed in `8f0ff65`; no value changed.
+2. **A false justification note** on the Dec 14 turbo row claimed the schedule PDF prints "NIH Turbo". `grep` over every archived official snapshot finds no "NIH" anywhere; the name was a hand transcription error and the note was wrong. Fixed with provenance (`2427f6e`).
+3. **Flag-number collision F58** (conflict-markers row AND nightly-average row). The nightly-average row is now **F82**; every cross-reference updated (docs, generator, `research/verification-2026-11-17.md` pointer). Full numbering map is in FLAGGED.md.
+4. **Two time conflicts stored under two different tie-break policies** (r263 keeps the earlier reading, r225 keeps the schedule PDF's later reading). Both conflicts are published on their rows with both printed texts; the inconsistency is left for human review rather than silently reconciled.
+
+**Merge-conflict resolution with main (2026-11-17, sessions a8efe220/9aad3bd2/65397e8b landed while this branch was in flight)**
+
+`git merge origin/main` brought in parallel fixes to the same three requests. Nothing from either side was discarded:
+- `build_schedule` keeps **main's** fallback guard and same-day overlap scan (same-start pairs, unknown-duration pairs, richer pair fields) and gains this branch's **cross-day** overlap flagging and past-midnight fallback note; both `est_end_next_day` (main) and `est_next_day` (this branch) are emitted.
+- `check_links.py`'s schedule validator learned the cross-day rule (pairs are validated in absolute time over the whole dataset; continuation rows excluded), so the gate matches the generator exactly (275 overlap pairs published and checked, incl. 4 cross-day).
+- `check_source_facts.py` keeps this branch's superset (contentstack + clarkcounty hosts, PR #66's baseline-wrapper fix) plus main's bare `rwlasvegas.com` entry.
+- Flag numbering reconciled to **main's IDs**: F58 nightly-average (returned from this branch's F82 detour), F61 conflict-markers, F62 overlap-arithmetic (a8efe220) - see the numbering note in FLAGGED.md. The `data/other_rooms.json` survey registry (F60-F74) is documented as a separate namespace whose numeric overlap with the ledger predates this merge and is left to its owning session.
+- QUESTIONS.md keeps both added sections (this branch's Q-F1..Q-F5, main's renamed Q-G1..Q-G3); Q-G3 now notes the cross-day flags.
+- COORDINATION.md keeps both session records in full.
+
+**Verification performed (2026-11-17)**
+
+- `python3 scripts/build_data.py` -> 317 tournament rows + 11 daily formats, 70 schedule days, 79 flagged, 7 hotels (all seven with verified 13.38% county room tax), 5 dated rate quotes.
+- `python3 scripts/build_site.py` -> 23 pages. `python3 scripts/check_links.py` -> OK (incl. "56 files free of conflict markers").
+- `python3 scripts/verify_rows.py` -> 335 rows, **1,392 field checks, 0 hard failures** (incl. the new daily-feed quote checker).
+- `npm run test:smoke` -> 23/23 (with the new single-`<h1>` guard).
+- Independent row checks in this session: the Jan 9 1F CES clause against `v_dse_dec_page.txt`; the 8 WPT name corrections against `wpt_sched.txt`; the r263/r225 time conflicts left as documented.
+
+**Sources re-read or newly archived (2026-11-17)**
+
+- https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf (county licensing table: tax rate + address rows; archived `data/snapshots/clark_county_tle_guide.txt`)
+- https://assets.contentstack.io/... mgm-bellagio-poker-fridays/saturdays/sundays structure PDFs (linked from the official Bellagio poker page; archived)
+- https://www.caesars.com/content/dam/empire/clv/casino/poker/tournament-schedule/clv-poker-daily-nlh-tournament-flyer-2026.pdf (Caesars Palace daily schedule; archived)
+- https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html (archived `v_dse_dec_page.txt`)
+- WPT World Championship schedule PDF (archived `wpt_sched.txt`)

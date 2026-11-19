@@ -533,7 +533,7 @@
   "r045": {
    "date": "2026-12-01",
    "start": "12:00",
-   "name": "Limit Omaha 8/5/stud 8",
+   "name": "Limit Omaha 8/Stud 8",
    "venue": "Wynn Las Vegas",
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 600,
@@ -1493,7 +1493,7 @@
   "r125": {
    "date": "2026-12-12",
    "start": "14:00",
-   "name": "Milestone Satellite to $10,400 World Championship 1A/8",
+   "name": "Milestone Satellite to $10,400 World Championship 1A/B",
    "venue": "Wynn Las Vegas",
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 1100,
@@ -1529,7 +1529,7 @@
   "r128": {
    "date": "2026-12-12",
    "start": "16:00",
-   "name": "Milestone Satellite to $10,400 Ladies NLH Championship",
+   "name": "Milestone Satellite to $1,100 Ladies NLH Championship",
    "venue": "Wynn Las Vegas",
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 200,
@@ -1553,7 +1553,7 @@
   "r130": {
    "date": "2026-12-12",
    "start": "19:00",
-   "name": "Milestone Satellite to $10,400 World Championship 1A/8",
+   "name": "Milestone Satellite to $10,400 World Championship 1A/B",
    "venue": "Wynn Las Vegas",
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 1100,
@@ -1589,7 +1589,7 @@
   "r133": {
    "date": "2026-12-13",
    "start": "11:00",
-   "name": "Ladies NIH Championship (2 Day)",
+   "name": "Ladies NLH Championship (2 Day)",
    "venue": "Wynn Las Vegas",
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 1100,
@@ -1841,7 +1841,7 @@
   "r154": {
    "date": "2026-12-14",
    "start": "21:00",
-   "name": "NIH Turbo",
+   "name": "NLH Turbo",
    "venue": "Wynn Las Vegas",
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 600,
@@ -1973,7 +1973,7 @@
   "r165": {
    "date": "2026-12-15",
    "start": "19:00",
-   "name": "NIH $500 Bounty Turbo",
+   "name": "NLH $500 Bounty Turbo",
    "venue": "Wynn Las Vegas",
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 1600,
@@ -2069,7 +2069,7 @@
   "r173": {
    "date": "2026-12-16",
    "start": "18:00",
-   "name": "Milestone Satellite to $25K NIH High Roller",
+   "name": "Milestone Satellite to $25K NLH High Roller",
    "venue": "Wynn Las Vegas",
    "series": "WPT World Championship (Wynn)",
    "buy_in_usd": 3000,
@@ -3305,7 +3305,7 @@
   "r276": {
    "date": "2027-01-09",
    "start": "17:10",
-   "name": "$300 No Limit Hold'em 1F $100K GTD (1Day) - Show Your CES Badge - $10 Rake Discount",
+   "name": "$300 No Limit Hold'em 1F $100K GTD (1Day)",
    "venue": "The Venetian Resort",
    "series": "Venetian DeepStack Extravaganza NYE",
    "buy_in_usd": 300,

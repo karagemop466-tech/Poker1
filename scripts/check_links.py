@@ -29,7 +29,7 @@ REQUIRED_SITE_DOCS = (
     "README.md",
 )
 # Exact hosts, not substring matches: data rows must point to official venue / operator sources.
-OFFICIAL_SOURCE_HOSTS = {
+OPERATOR_SOURCE_HOSTS = {
     "www.venetianlasvegas.com",
     "www.wynnlasvegas.com",
     "cdn.wynnresorts.com",
@@ -39,16 +39,19 @@ OFFICIAL_SOURCE_HOSTS = {
     # MGM Resorts' shared corporate pages (parking, portfolio-wide fee text).
     # Property pages stay on each property's own subdomain.
     "www.mgmresorts.com",
+    # MGM Resorts' own digital-asset host. Accepted because the only documents served
+    # from it in this dataset are the three Bellagio poker structure PDFs linked directly
+    # from bellagio.mgmresorts.com/en/casino/poker.html; the link is published by the
+    # property, not chosen by us (PR #64 / session c7a324a6, superseding the earlier F40
+    # treatment that cited the flyers only through the official page).
+    "assets.contentstack.io",
     # Session 0d069ce0: the official property domains behind pages/other-rooms.html. Each is the
-    # operator's own site for the property. The contentstack CDN that hosts the MGM PDFs is
-    # deliberately not added, matching the existing F40 treatment of the Bellagio flyers: those
-    # PDFs are cited through the official page that links them, never as a source host.
+    # operator's own site for the property.
     "mgmgrand.mgmresorts.com",
     "mandalaybay.mgmresorts.com",
     "orleans.boydgaming.com",
     "southpointcasino.com",
-    # Session 88793bf4 (Strip-room survey): the Resorts World operator page. The MGM PDFs stay
-    # un-approved (F40); see FLAGGED.md S9.
+    # Session 88793bf4 (Strip-room survey): the Resorts World operator page.
     "www.rwlasvegas.com",
 }
 
@@ -60,6 +63,8 @@ GOVERNMENT_SOURCE_HOSTS = {
     "www.clarkcountynv.gov",
     "clarkcountynv.gov",
 }
+# One approved-operator set for the source check (name used by the link checker).
+OFFICIAL_SOURCE_HOSTS = OPERATOR_SOURCE_HOSTS
 TOURNAMENT_STATUSES = {"SE", "MULTI", "RE", "REBUY", "CONT", "UNV"}
 TOURNAMENT_KINDS = {"entry", "continuation"}
 RULE_FIELDS = ("single_entry", "re_entry", "add_on", "fee")

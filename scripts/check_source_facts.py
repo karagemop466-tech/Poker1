@@ -74,16 +74,21 @@ OFFICIAL_HOSTS = (
     "aria.mgmresorts.com",
     "www.caesars.com",
     "caesars.com",
+    # MGM's own asset host; only used for the Bellagio structure PDFs that the official
+    # Bellagio poker page links.
+    "assets.contentstack.io",
+    # Clark County Department of Business License: the taxing/licensing authority whose
+    # table records each Strip resort's address and room-tax class. A government record,
+    # not an operator page - the site labels it as such.
+    "www.clarkcountynv.gov",
     # Session 0d069ce0: official property domains behind pages/other-rooms.html.
     "mgmgrand.mgmresorts.com",
     "mandalaybay.mgmresorts.com",
     "orleans.boydgaming.com",
     "southpointcasino.com",
-    # Resorts World Las Vegas official casino-events page behind data/other_rooms.json.
-    # Added by session 9aad3bd2; session 2157d288 independently hit the same gap. Without
-    # this host the weekly provenance check exited before checking anything, and because
-    # source-facts.yml piped its output through `tee` without `pipefail` the refusal was
-    # recorded in monitor_last_run.txt while the job still reported success.
+    # Session df94b75e: official Resorts World Las Vegas domain behind
+    # pages/strip-rooms.html (data id strip_rwlv_events). Its absence made this
+    # script refuse to run on main (REQUEST 2, session 206debc0).
     "www.rwlasvegas.com",
     "rwlasvegas.com",
 
@@ -221,7 +226,12 @@ def main():
     assert_official(sources)
 
     prev_log = {s["id"]: s for s in load_json(CHANGE_LOG, {"sources": []}).get("sources", [])}
-    baseline = load_json(BASELINE, {})
+    # PR #66 (session 1ebc7e08): the file is {"note", "captured_utc", "hashes": {id: sha256}};
+    # reading the wrapper made every lookup miss, so changed_vs_baseline was false for every
+    # source forever (the "dead baseline lookup").
+    baseline_doc = load_json(BASELINE, {})
+    baseline = baseline_doc.get("hashes", baseline_doc) if isinstance(baseline_doc, dict) else {}
+    baseline_captured = baseline_doc.get("captured_utc") if isinstance(baseline_doc, dict) else None
     ids = set(args.id) if args.id else None
 
     out = []
@@ -310,8 +320,11 @@ def main():
             rec["changed"] = True
             rec["last_changed_utc"] = rec["last_checked_utc"]
             changed.append(sid)
-        if rec["sha256"] and baseline.get(sid) and rec["sha256"] != baseline[sid]:
-            rec["changed_vs_baseline"] = True
+        if rec["sha256"] and baseline.get(sid):
+            rec["baseline_sha256"] = baseline[sid]
+            rec["baseline_captured_utc"] = baseline_captured
+            if rec["sha256"] != baseline[sid]:
+                rec["changed_vs_baseline"] = True
 
         # Meaningful change: did any published number, date, time or rule word move?
         rec["facts_signature"] = facts_signature(text) if rec.get("extracted_chars") else []

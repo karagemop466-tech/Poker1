@@ -1573,7 +1573,7 @@
     {
      "id": "r045",
      "start": "12:00",
-     "name": "Limit Omaha 8/5/stud 8",
+     "name": "Limit Omaha 8/Stud 8",
      "series": "WPT World Championship (Wynn)",
      "venue": "Wynn Las Vegas",
      "buy_in_usd": 600,
@@ -1665,7 +1665,7 @@
      "b": "r045",
      "a_start": "11:00",
      "b_start": "12:00",
-     "detail": "No Limit Hold'em Day 1C (11:00) and Limit Omaha 8/5/stud 8 (12:00) cannot be checked: No Limit Hold'em Day 1C publishes no level structure."
+     "detail": "No Limit Hold'em Day 1C (11:00) and Limit Omaha 8/Stud 8 (12:00) cannot be checked: No Limit Hold'em Day 1C publishes no level structure."
     },
     {
      "a": "r043",
@@ -1693,7 +1693,7 @@
      "b": "r045",
      "a_start": "11:10",
      "b_start": "12:00",
-     "detail": "$400 No Limit Hold'em 1C $75K GTD (11:10) and Limit Omaha 8/5/stud 8 (12:00) cannot be checked: $400 No Limit Hold'em 1C $75K GTD publishes no level structure."
+     "detail": "$400 No Limit Hold'em 1C $75K GTD (11:10) and Limit Omaha 8/Stud 8 (12:00) cannot be checked: $400 No Limit Hold'em 1C $75K GTD publishes no level structure."
     },
     {
      "a": "r044",
@@ -1721,21 +1721,21 @@
      "b": "r046",
      "a_start": "12:00",
      "b_start": "13:00",
-     "detail": "Limit Omaha 8/5/stud 8 (12:00) and PLO (13:00) cannot be checked: Limit Omaha 8/5/stud 8 publishes no level structure."
+     "detail": "Limit Omaha 8/Stud 8 (12:00) and PLO (13:00) cannot be checked: Limit Omaha 8/Stud 8 publishes no level structure."
     },
     {
      "a": "r045",
      "b": "r047",
      "a_start": "12:00",
      "b_start": "17:00",
-     "detail": "Limit Omaha 8/5/stud 8 (12:00) and No Limit Hold'em Day 1D (17:00) cannot be checked: Limit Omaha 8/5/stud 8 publishes no level structure."
+     "detail": "Limit Omaha 8/Stud 8 (12:00) and No Limit Hold'em Day 1D (17:00) cannot be checked: Limit Omaha 8/Stud 8 publishes no level structure."
     },
     {
      "a": "r045",
      "b": "r048",
      "a_start": "12:00",
      "b_start": "17:10",
-     "detail": "Limit Omaha 8/5/stud 8 (12:00) and $200 No Limit Hold'em Bounty $8K GTD (1Day) (17:10) cannot be checked: Limit Omaha 8/5/stud 8 publishes no level structure."
+     "detail": "Limit Omaha 8/Stud 8 (12:00) and $200 No Limit Hold'em Bounty $8K GTD (1Day) (17:10) cannot be checked: Limit Omaha 8/Stud 8 publishes no level structure."
     },
     {
      "a": "r046",
@@ -4829,7 +4829,7 @@
     {
      "id": "r125",
      "start": "14:00",
-     "name": "Milestone Satellite to $10,400 World Championship 1A/8",
+     "name": "Milestone Satellite to $10,400 World Championship 1A/B",
      "series": "WPT World Championship (Wynn)",
      "venue": "Wynn Las Vegas",
      "buy_in_usd": 1100,
@@ -4849,7 +4849,7 @@
     {
      "id": "r128",
      "start": "16:00",
-     "name": "Milestone Satellite to $10,400 Ladies NLH Championship",
+     "name": "Milestone Satellite to $1,100 Ladies NLH Championship",
      "series": "WPT World Championship (Wynn)",
      "venue": "Wynn Las Vegas",
      "buy_in_usd": 200,
@@ -4891,7 +4891,7 @@
     {
      "id": "r130",
      "start": "19:00",
-     "name": "Milestone Satellite to $10,400 World Championship 1A/8",
+     "name": "Milestone Satellite to $10,400 World Championship 1A/B",
      "series": "WPT World Championship (Wynn)",
      "venue": "Wynn Las Vegas",
      "buy_in_usd": 1100,
@@ -4987,7 +4987,7 @@
      "b_start": "14:00",
      "kind": "unplannable",
      "gap_min": -235,
-     "detail": "Milestone Satellite to $10,400 World Championship 1A/8 starts 14:00 and its entry closes 14:00, while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47's own table can run as late as 17:55 and no source prints an earlier end - so nothing published supports planning both on one day"
+     "detail": "Milestone Satellite to $10,400 World Championship 1A/B starts 14:00 and its entry closes 14:00, while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47's own table can run as late as 17:55 and no source prints an earlier end - so nothing published supports planning both on one day"
     },
     {
      "a": "r120",
@@ -4998,7 +4998,7 @@
      "b_start": "16:00",
      "kind": "unplannable",
      "gap_min": -115,
-     "detail": "Milestone Satellite to $10,400 Ladies NLH Championship starts 16:00 and its entry closes 16:00, while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47's own table can run as late as 17:55 and no source prints an earlier end - so nothing published supports planning both on one day"
+     "detail": "Milestone Satellite to $1,100 Ladies NLH Championship starts 16:00 and its entry closes 16:00, while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47's own table can run as late as 17:55 and no source prints an earlier end - so nothing published supports planning both on one day"
     },
     {
      "a": "r123",
@@ -5020,7 +5020,7 @@
      "b_start": "14:00",
      "kind": "unplannable",
      "gap_min": -415,
-     "detail": "Milestone Satellite to $10,400 World Championship 1A/8 starts 14:00 and its entry closes 14:00, while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47's own table can run as late as 20:55 and no source prints an earlier end - so nothing published supports planning both on one day"
+     "detail": "Milestone Satellite to $10,400 World Championship 1A/B starts 14:00 and its entry closes 14:00, while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47's own table can run as late as 20:55 and no source prints an earlier end - so nothing published supports planning both on one day"
     },
     {
      "a": "r123",
@@ -5031,7 +5031,7 @@
      "b_start": "16:00",
      "kind": "unplannable",
      "gap_min": -295,
-     "detail": "Milestone Satellite to $10,400 Ladies NLH Championship starts 16:00 and its entry closes 16:00, while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47's own table can run as late as 20:55 and no source prints an earlier end - so nothing published supports planning both on one day"
+     "detail": "Milestone Satellite to $1,100 Ladies NLH Championship starts 16:00 and its entry closes 16:00, while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47's own table can run as late as 20:55 and no source prints an earlier end - so nothing published supports planning both on one day"
     },
     {
      "a": "r123",
@@ -5053,7 +5053,7 @@
      "b_start": "19:00",
      "kind": "unplannable",
      "gap_min": -115,
-     "detail": "Milestone Satellite to $10,400 World Championship 1A/8 starts 19:00 and its entry closes 19:00, while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47's own table can run as late as 20:55 and no source prints an earlier end - so nothing published supports planning both on one day"
+     "detail": "Milestone Satellite to $10,400 World Championship 1A/B starts 19:00 and its entry closes 19:00, while $260 NLH Turbo Milestone Satellite (1Day) - Awards Direct Entry to Event # 47's own table can run as late as 20:55 and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
    "undecidable_pairs": [
@@ -5083,14 +5083,14 @@
      "b": "r125",
      "a_start": "10:00",
      "b_start": "14:00",
-     "detail": "No Limit Hold'em (10:00) and Milestone Satellite to $10,400 World Championship 1A/8 (14:00) cannot be checked: No Limit Hold'em publishes no level structure."
+     "detail": "No Limit Hold'em (10:00) and Milestone Satellite to $10,400 World Championship 1A/B (14:00) cannot be checked: No Limit Hold'em publishes no level structure."
     },
     {
      "a": "r121",
      "b": "r128",
      "a_start": "10:00",
      "b_start": "16:00",
-     "detail": "No Limit Hold'em (10:00) and Milestone Satellite to $10,400 Ladies NLH Championship (16:00) cannot be checked: No Limit Hold'em publishes no level structure."
+     "detail": "No Limit Hold'em (10:00) and Milestone Satellite to $1,100 Ladies NLH Championship (16:00) cannot be checked: No Limit Hold'em publishes no level structure."
     },
     {
      "a": "r121",
@@ -5104,7 +5104,7 @@
      "b": "r130",
      "a_start": "10:00",
      "b_start": "19:00",
-     "detail": "No Limit Hold'em (10:00) and Milestone Satellite to $10,400 World Championship 1A/8 (19:00) cannot be checked: No Limit Hold'em publishes no level structure."
+     "detail": "No Limit Hold'em (10:00) and Milestone Satellite to $10,400 World Championship 1A/B (19:00) cannot be checked: No Limit Hold'em publishes no level structure."
     },
     {
      "a": "r121",
@@ -5132,14 +5132,14 @@
      "b": "r125",
      "a_start": "10:10",
      "b_start": "14:00",
-     "detail": "$2,200 No Limit Hold'em 1A $1 Mill GTD - PokerAtlas Championship title event (10:10) and Milestone Satellite to $10,400 World Championship 1A/8 (14:00) cannot be checked: $2,200 No Limit Hold'em 1A $1 Mill GTD - PokerAtlas Championship title event publishes no level structure."
+     "detail": "$2,200 No Limit Hold'em 1A $1 Mill GTD - PokerAtlas Championship title event (10:10) and Milestone Satellite to $10,400 World Championship 1A/B (14:00) cannot be checked: $2,200 No Limit Hold'em 1A $1 Mill GTD - PokerAtlas Championship title event publishes no level structure."
     },
     {
      "a": "r122",
      "b": "r128",
      "a_start": "10:10",
      "b_start": "16:00",
-     "detail": "$2,200 No Limit Hold'em 1A $1 Mill GTD - PokerAtlas Championship title event (10:10) and Milestone Satellite to $10,400 Ladies NLH Championship (16:00) cannot be checked: $2,200 No Limit Hold'em 1A $1 Mill GTD - PokerAtlas Championship title event publishes no level structure."
+     "detail": "$2,200 No Limit Hold'em 1A $1 Mill GTD - PokerAtlas Championship title event (10:10) and Milestone Satellite to $1,100 Ladies NLH Championship (16:00) cannot be checked: $2,200 No Limit Hold'em 1A $1 Mill GTD - PokerAtlas Championship title event publishes no level structure."
     },
     {
      "a": "r122",
@@ -5153,7 +5153,7 @@
      "b": "r130",
      "a_start": "10:10",
      "b_start": "19:00",
-     "detail": "$2,200 No Limit Hold'em 1A $1 Mill GTD - PokerAtlas Championship title event (10:10) and Milestone Satellite to $10,400 World Championship 1A/8 (19:00) cannot be checked: $2,200 No Limit Hold'em 1A $1 Mill GTD - PokerAtlas Championship title event publishes no level structure."
+     "detail": "$2,200 No Limit Hold'em 1A $1 Mill GTD - PokerAtlas Championship title event (10:10) and Milestone Satellite to $10,400 World Championship 1A/B (19:00) cannot be checked: $2,200 No Limit Hold'em 1A $1 Mill GTD - PokerAtlas Championship title event publishes no level structure."
     },
     {
      "a": "r122",
@@ -5167,14 +5167,14 @@
      "b": "r125",
      "a_start": "13:00",
      "b_start": "14:00",
-     "detail": "PLO (13:00) and Milestone Satellite to $10,400 World Championship 1A/8 (14:00) cannot be checked: PLO publishes no level structure."
+     "detail": "PLO (13:00) and Milestone Satellite to $10,400 World Championship 1A/B (14:00) cannot be checked: PLO publishes no level structure."
     },
     {
      "a": "r124",
      "b": "r128",
      "a_start": "13:00",
      "b_start": "16:00",
-     "detail": "PLO (13:00) and Milestone Satellite to $10,400 Ladies NLH Championship (16:00) cannot be checked: PLO publishes no level structure."
+     "detail": "PLO (13:00) and Milestone Satellite to $1,100 Ladies NLH Championship (16:00) cannot be checked: PLO publishes no level structure."
     },
     {
      "a": "r124",
@@ -5188,7 +5188,7 @@
      "b": "r130",
      "a_start": "13:00",
      "b_start": "19:00",
-     "detail": "PLO (13:00) and Milestone Satellite to $10,400 World Championship 1A/8 (19:00) cannot be checked: PLO publishes no level structure."
+     "detail": "PLO (13:00) and Milestone Satellite to $10,400 World Championship 1A/B (19:00) cannot be checked: PLO publishes no level structure."
     },
     {
      "a": "r124",
@@ -5202,56 +5202,56 @@
      "b": "r128",
      "a_start": "14:00",
      "b_start": "16:00",
-     "detail": "Milestone Satellite to $10,400 World Championship 1A/8 (14:00) and Milestone Satellite to $10,400 Ladies NLH Championship (16:00) cannot be checked: Milestone Satellite to $10,400 World Championship 1A/8 publishes no level structure."
+     "detail": "Milestone Satellite to $10,400 World Championship 1A/B (14:00) and Milestone Satellite to $1,100 Ladies NLH Championship (16:00) cannot be checked: Milestone Satellite to $10,400 World Championship 1A/B publishes no level structure."
     },
     {
      "a": "r125",
      "b": "r129",
      "a_start": "14:00",
      "b_start": "18:10",
-     "detail": "Milestone Satellite to $10,400 World Championship 1A/8 (14:00) and $2,200 No Limit Hold'em 1B $1 Mill GTD - PokerAtlas Championship title event (18:10) cannot be checked: Milestone Satellite to $10,400 World Championship 1A/8 publishes no level structure."
+     "detail": "Milestone Satellite to $10,400 World Championship 1A/B (14:00) and $2,200 No Limit Hold'em 1B $1 Mill GTD - PokerAtlas Championship title event (18:10) cannot be checked: Milestone Satellite to $10,400 World Championship 1A/B publishes no level structure."
     },
     {
      "a": "r125",
      "b": "r130",
      "a_start": "14:00",
      "b_start": "19:00",
-     "detail": "Milestone Satellite to $10,400 World Championship 1A/8 (14:00) and Milestone Satellite to $10,400 World Championship 1A/8 (19:00) cannot be checked: Milestone Satellite to $10,400 World Championship 1A/8 publishes no level structure."
+     "detail": "Milestone Satellite to $10,400 World Championship 1A/B (14:00) and Milestone Satellite to $10,400 World Championship 1A/B (19:00) cannot be checked: Milestone Satellite to $10,400 World Championship 1A/B publishes no level structure."
     },
     {
      "a": "r125",
      "b": "r131",
      "a_start": "14:00",
      "b_start": "21:00",
-     "detail": "Milestone Satellite to $10,400 World Championship 1A/8 (14:00) and NLH Turbo (21:00) cannot be checked: Milestone Satellite to $10,400 World Championship 1A/8 publishes no level structure."
+     "detail": "Milestone Satellite to $10,400 World Championship 1A/B (14:00) and NLH Turbo (21:00) cannot be checked: Milestone Satellite to $10,400 World Championship 1A/B publishes no level structure."
     },
     {
      "a": "r128",
      "b": "r129",
      "a_start": "16:00",
      "b_start": "18:10",
-     "detail": "Milestone Satellite to $10,400 Ladies NLH Championship (16:00) and $2,200 No Limit Hold'em 1B $1 Mill GTD - PokerAtlas Championship title event (18:10) cannot be checked: Milestone Satellite to $10,400 Ladies NLH Championship publishes no level structure."
+     "detail": "Milestone Satellite to $1,100 Ladies NLH Championship (16:00) and $2,200 No Limit Hold'em 1B $1 Mill GTD - PokerAtlas Championship title event (18:10) cannot be checked: Milestone Satellite to $1,100 Ladies NLH Championship publishes no level structure."
     },
     {
      "a": "r128",
      "b": "r130",
      "a_start": "16:00",
      "b_start": "19:00",
-     "detail": "Milestone Satellite to $10,400 Ladies NLH Championship (16:00) and Milestone Satellite to $10,400 World Championship 1A/8 (19:00) cannot be checked: Milestone Satellite to $10,400 Ladies NLH Championship publishes no level structure."
+     "detail": "Milestone Satellite to $1,100 Ladies NLH Championship (16:00) and Milestone Satellite to $10,400 World Championship 1A/B (19:00) cannot be checked: Milestone Satellite to $1,100 Ladies NLH Championship publishes no level structure."
     },
     {
      "a": "r128",
      "b": "r131",
      "a_start": "16:00",
      "b_start": "21:00",
-     "detail": "Milestone Satellite to $10,400 Ladies NLH Championship (16:00) and NLH Turbo (21:00) cannot be checked: Milestone Satellite to $10,400 Ladies NLH Championship publishes no level structure."
+     "detail": "Milestone Satellite to $1,100 Ladies NLH Championship (16:00) and NLH Turbo (21:00) cannot be checked: Milestone Satellite to $1,100 Ladies NLH Championship publishes no level structure."
     },
     {
      "a": "r129",
      "b": "r130",
      "a_start": "18:10",
      "b_start": "19:00",
-     "detail": "$2,200 No Limit Hold'em 1B $1 Mill GTD - PokerAtlas Championship title event (18:10) and Milestone Satellite to $10,400 World Championship 1A/8 (19:00) cannot be checked: $2,200 No Limit Hold'em 1B $1 Mill GTD - PokerAtlas Championship title event publishes no level structure."
+     "detail": "$2,200 No Limit Hold'em 1B $1 Mill GTD - PokerAtlas Championship title event (18:10) and Milestone Satellite to $10,400 World Championship 1A/B (19:00) cannot be checked: $2,200 No Limit Hold'em 1B $1 Mill GTD - PokerAtlas Championship title event publishes no level structure."
     },
     {
      "a": "r129",
@@ -5265,7 +5265,7 @@
      "b": "r131",
      "a_start": "19:00",
      "b_start": "21:00",
-     "detail": "Milestone Satellite to $10,400 World Championship 1A/8 (19:00) and NLH Turbo (21:00) cannot be checked: Milestone Satellite to $10,400 World Championship 1A/8 publishes no level structure."
+     "detail": "Milestone Satellite to $10,400 World Championship 1A/B (19:00) and NLH Turbo (21:00) cannot be checked: Milestone Satellite to $10,400 World Championship 1A/B publishes no level structure."
     }
    ],
    "second_entry_id": null,
@@ -5312,7 +5312,7 @@
     {
      "id": "r133",
      "start": "11:00",
-     "name": "Ladies NIH Championship (2 Day)",
+     "name": "Ladies NLH Championship (2 Day)",
      "series": "WPT World Championship (Wynn)",
      "venue": "Wynn Las Vegas",
      "buy_in_usd": 1100,
@@ -5483,7 +5483,7 @@
      "b_start": "11:00",
      "kind": "unplannable",
      "gap_min": 0,
-     "detail": "Ladies NIH Championship (2 Day) and No Limit Hold'em Day 1A both start at 11:00 - one table cannot seat a player twice, so no published schedule can put both on one day"
+     "detail": "Ladies NLH Championship (2 Day) and No Limit Hold'em Day 1A both start at 11:00 - one table cannot seat a player twice, so no published schedule can put both on one day"
     },
     {
      "a": "r133",
@@ -5494,7 +5494,7 @@
      "b_start": "11:00",
      "kind": "unplannable",
      "gap_min": 0,
-     "detail": "Ladies NIH Championship (2 Day) and TORSE (2 Day) both start at 11:00 - one table cannot seat a player twice, so no published schedule can put both on one day"
+     "detail": "Ladies NLH Championship (2 Day) and TORSE (2 Day) both start at 11:00 - one table cannot seat a player twice, so no published schedule can put both on one day"
     },
     {
      "a": "r133",
@@ -5505,7 +5505,7 @@
      "b_start": "11:00",
      "kind": "unplannable",
      "gap_min": 0,
-     "detail": "Ladies NIH Championship (2 Day) and WPT World Championship Day 1A $1,000,000 Added both start at 11:00 - one table cannot seat a player twice, so no published schedule can put both on one day"
+     "detail": "Ladies NLH Championship (2 Day) and WPT World Championship Day 1A $1,000,000 Added both start at 11:00 - one table cannot seat a player twice, so no published schedule can put both on one day"
     },
     {
      "a": "r134",
@@ -5569,7 +5569,7 @@
      "b": "r133",
      "a_start": "10:10",
      "b_start": "11:00",
-     "detail": "$1,100 No Limit Hold'em Seniors 1A $300K GTD - must be 50+ years of age (10:10) and Ladies NIH Championship (2 Day) (11:00) cannot be checked: $1,100 No Limit Hold'em Seniors 1A $300K GTD - must be 50+ years of age publishes no level structure."
+     "detail": "$1,100 No Limit Hold'em Seniors 1A $300K GTD - must be 50+ years of age (10:10) and Ladies NLH Championship (2 Day) (11:00) cannot be checked: $1,100 No Limit Hold'em Seniors 1A $300K GTD - must be 50+ years of age publishes no level structure."
     },
     {
      "a": "r132",
@@ -5625,28 +5625,28 @@
      "b": "r137",
      "a_start": "11:00",
      "b_start": "12:00",
-     "detail": "Ladies NIH Championship (2 Day) (11:00) and Milestone Satellite to $10,400 World Championship 1B (12:00) cannot be checked: Ladies NIH Championship (2 Day) publishes no level structure."
+     "detail": "Ladies NLH Championship (2 Day) (11:00) and Milestone Satellite to $10,400 World Championship 1B (12:00) cannot be checked: Ladies NLH Championship (2 Day) publishes no level structure."
     },
     {
      "a": "r133",
      "b": "r138",
      "a_start": "11:00",
      "b_start": "12:00",
-     "detail": "Ladies NIH Championship (2 Day) (11:00) and PLO Day 1A (12:00) cannot be checked: Ladies NIH Championship (2 Day) publishes no level structure."
+     "detail": "Ladies NLH Championship (2 Day) (11:00) and PLO Day 1A (12:00) cannot be checked: Ladies NLH Championship (2 Day) publishes no level structure."
     },
     {
      "a": "r133",
      "b": "r141",
      "a_start": "11:00",
      "b_start": "17:10",
-     "detail": "Ladies NIH Championship (2 Day) (11:00) and $300 No Limit Hold'em Bounty $15K GTD (1Day) (17:10) cannot be checked: Ladies NIH Championship (2 Day) publishes no level structure."
+     "detail": "Ladies NLH Championship (2 Day) (11:00) and $300 No Limit Hold'em Bounty $15K GTD (1Day) (17:10) cannot be checked: Ladies NLH Championship (2 Day) publishes no level structure."
     },
     {
      "a": "r133",
      "b": "r142",
      "a_start": "11:00",
      "b_start": "18:00",
-     "detail": "Ladies NIH Championship (2 Day) (11:00) and Milestone Satellite to $10,400 World Championship 1B/C (18:00) cannot be checked: Ladies NIH Championship (2 Day) publishes no level structure."
+     "detail": "Ladies NLH Championship (2 Day) (11:00) and Milestone Satellite to $10,400 World Championship 1B/C (18:00) cannot be checked: Ladies NLH Championship (2 Day) publishes no level structure."
     },
     {
      "a": "r134",
@@ -5953,7 +5953,7 @@
     {
      "id": "r154",
      "start": "21:00",
-     "name": "NIH Turbo",
+     "name": "NLH Turbo",
      "series": "WPT World Championship (Wynn)",
      "venue": "Wynn Las Vegas",
      "buy_in_usd": 600,
@@ -6051,7 +6051,7 @@
      "b_start": "21:00",
      "kind": "unplannable",
      "gap_min": -715,
-     "detail": "NIH Turbo starts 21:00 and its entry closes 21:00, while $300 No Limit Hold'em Bounty $15K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
+     "detail": "NLH Turbo starts 21:00 and its entry closes 21:00, while $300 No Limit Hold'em Bounty $15K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
    "undecidable_pairs": [
@@ -6116,7 +6116,7 @@
      "b": "r154",
      "a_start": "10:10",
      "b_start": "21:00",
-     "detail": "$1,100 No Limit Hold'em Seniors 1B $300K GTD - must be 50+ years of age (10:10) and NIH Turbo (21:00) cannot be checked: $1,100 No Limit Hold'em Seniors 1B $300K GTD - must be 50+ years of age publishes no level structure."
+     "detail": "$1,100 No Limit Hold'em Seniors 1B $300K GTD - must be 50+ years of age (10:10) and NLH Turbo (21:00) cannot be checked: $1,100 No Limit Hold'em Seniors 1B $300K GTD - must be 50+ years of age publishes no level structure."
     },
     {
      "a": "r145",
@@ -6165,7 +6165,7 @@
      "b": "r154",
      "a_start": "11:00",
      "b_start": "21:00",
-     "detail": "No Limit Hold'em Day 1B (11:00) and NIH Turbo (21:00) cannot be checked: No Limit Hold'em Day 1B publishes no level structure."
+     "detail": "No Limit Hold'em Day 1B (11:00) and NLH Turbo (21:00) cannot be checked: No Limit Hold'em Day 1B publishes no level structure."
     },
     {
      "a": "r146",
@@ -6214,7 +6214,7 @@
      "b": "r154",
      "a_start": "11:00",
      "b_start": "21:00",
-     "detail": "WPT World Championship Day 1B $1,000,000 Added (11:00) and NIH Turbo (21:00) cannot be checked: WPT World Championship Day 1B $1,000,000 Added publishes no level structure."
+     "detail": "WPT World Championship Day 1B $1,000,000 Added (11:00) and NLH Turbo (21:00) cannot be checked: WPT World Championship Day 1B $1,000,000 Added publishes no level structure."
     },
     {
      "a": "r147",
@@ -6242,7 +6242,7 @@
      "b": "r154",
      "a_start": "12:00",
      "b_start": "21:00",
-     "detail": "Milestone Satellite to $10,400 World Championship 1C (12:00) and NIH Turbo (21:00) cannot be checked: Milestone Satellite to $10,400 World Championship 1C publishes no level structure."
+     "detail": "Milestone Satellite to $10,400 World Championship 1C (12:00) and NLH Turbo (21:00) cannot be checked: Milestone Satellite to $10,400 World Championship 1C publishes no level structure."
     },
     {
      "a": "r148",
@@ -6270,7 +6270,7 @@
      "b": "r154",
      "a_start": "12:00",
      "b_start": "21:00",
-     "detail": "Mixed Triple Draw (A-5, 2-7, Badugi) (2 Day) (12:00) and NIH Turbo (21:00) cannot be checked: Mixed Triple Draw (A-5, 2-7, Badugi) (2 Day) publishes no level structure."
+     "detail": "Mixed Triple Draw (A-5, 2-7, Badugi) (2 Day) (12:00) and NLH Turbo (21:00) cannot be checked: Mixed Triple Draw (A-5, 2-7, Badugi) (2 Day) publishes no level structure."
     },
     {
      "a": "r149",
@@ -6298,7 +6298,7 @@
      "b": "r154",
      "a_start": "12:00",
      "b_start": "21:00",
-     "detail": "PLO Day 1B (12:00) and NIH Turbo (21:00) cannot be checked: PLO Day 1B publishes no level structure."
+     "detail": "PLO Day 1B (12:00) and NLH Turbo (21:00) cannot be checked: PLO Day 1B publishes no level structure."
     },
     {
      "a": "r152",
@@ -6312,14 +6312,14 @@
      "b": "r154",
      "a_start": "18:00",
      "b_start": "21:00",
-     "detail": "Milestone Satellite to $10,400 World Championship 1C (18:00) and NIH Turbo (21:00) cannot be checked: Milestone Satellite to $10,400 World Championship 1C publishes no level structure."
+     "detail": "Milestone Satellite to $10,400 World Championship 1C (18:00) and NLH Turbo (21:00) cannot be checked: Milestone Satellite to $10,400 World Championship 1C publishes no level structure."
     },
     {
      "a": "r153",
      "b": "r154",
      "a_start": "19:00",
      "b_start": "21:00",
-     "detail": "PLO Turbo (19:00) and NIH Turbo (21:00) cannot be checked: PLO Turbo publishes no level structure."
+     "detail": "PLO Turbo (19:00) and NLH Turbo (21:00) cannot be checked: PLO Turbo publishes no level structure."
     }
    ],
    "second_entry_id": null,
@@ -6476,7 +6476,7 @@
     {
      "id": "r165",
      "start": "19:00",
-     "name": "NIH $500 Bounty Turbo",
+     "name": "NLH $500 Bounty Turbo",
      "series": "WPT World Championship (Wynn)",
      "venue": "Wynn Las Vegas",
      "buy_in_usd": 1600,
@@ -6564,7 +6564,7 @@
      "b_start": "19:00",
      "kind": "unplannable",
      "gap_min": -475,
-     "detail": "NIH $500 Bounty Turbo starts 19:00 and its entry closes 19:00, while $1,100 No Limit Hold'em Progressive Knock-Out Bounty $75K GTD (1Day)'s own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
+     "detail": "NLH $500 Bounty Turbo starts 19:00 and its entry closes 19:00, while $1,100 No Limit Hold'em Progressive Knock-Out Bounty $75K GTD (1Day)'s own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     },
     {
      "a": "r163",
@@ -6586,7 +6586,7 @@
      "b_start": "19:00",
      "kind": "unplannable",
      "gap_min": -835,
-     "detail": "NIH $500 Bounty Turbo starts 19:00 and its entry closes 19:00, while $300 No Limit Hold'em Bounty $15K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
+     "detail": "NLH $500 Bounty Turbo starts 19:00 and its entry closes 19:00, while $300 No Limit Hold'em Bounty $15K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
    "undecidable_pairs": [
@@ -6630,7 +6630,7 @@
      "b": "r165",
      "a_start": "11:00",
      "b_start": "19:00",
-     "detail": "Milestone Satellite to $10,400 World Championship 1C/Day 2 (11:00) and NIH $500 Bounty Turbo (19:00) cannot be checked: Milestone Satellite to $10,400 World Championship 1C/Day 2 publishes no level structure."
+     "detail": "Milestone Satellite to $10,400 World Championship 1C/Day 2 (11:00) and NLH $500 Bounty Turbo (19:00) cannot be checked: Milestone Satellite to $10,400 World Championship 1C/Day 2 publishes no level structure."
     },
     {
      "a": "r158",
@@ -6672,7 +6672,7 @@
      "b": "r165",
      "a_start": "11:00",
      "b_start": "19:00",
-     "detail": "WPT World Championship Day 1C $1,000,000 Added (11:00) and NIH $500 Bounty Turbo (19:00) cannot be checked: WPT World Championship Day 1C $1,000,000 Added publishes no level structure."
+     "detail": "WPT World Championship Day 1C $1,000,000 Added (11:00) and NLH $500 Bounty Turbo (19:00) cannot be checked: WPT World Championship Day 1C $1,000,000 Added publishes no level structure."
     },
     {
      "a": "r160",
@@ -6700,7 +6700,7 @@
      "b": "r165",
      "a_start": "12:00",
      "b_start": "19:00",
-     "detail": "Big O (12:00) and NIH $500 Bounty Turbo (19:00) cannot be checked: Big O publishes no level structure."
+     "detail": "Big O (12:00) and NLH $500 Bounty Turbo (19:00) cannot be checked: Big O publishes no level structure."
     },
     {
      "a": "r162",
@@ -6721,14 +6721,14 @@
      "b": "r165",
      "a_start": "13:00",
      "b_start": "19:00",
-     "detail": "PLO Progressive Bounty (PKO) (13:00) and NIH $500 Bounty Turbo (19:00) cannot be checked: PLO Progressive Bounty (PKO) publishes no level structure."
+     "detail": "PLO Progressive Bounty (PKO) (13:00) and NLH $500 Bounty Turbo (19:00) cannot be checked: PLO Progressive Bounty (PKO) publishes no level structure."
     },
     {
      "a": "r164",
      "b": "r165",
      "a_start": "18:00",
      "b_start": "19:00",
-     "detail": "Milestone Satellite to $10,400 World Championship Day 2 (18:00) and NIH $500 Bounty Turbo (19:00) cannot be checked: Milestone Satellite to $10,400 World Championship Day 2 publishes no level structure."
+     "detail": "Milestone Satellite to $10,400 World Championship Day 2 (18:00) and NLH $500 Bounty Turbo (19:00) cannot be checked: Milestone Satellite to $10,400 World Championship Day 2 publishes no level structure."
     }
    ],
    "second_entry_id": null,
@@ -6868,7 +6868,7 @@
     {
      "id": "r173",
      "start": "18:00",
-     "name": "Milestone Satellite to $25K NIH High Roller",
+     "name": "Milestone Satellite to $25K NLH High Roller",
      "series": "WPT World Championship (Wynn)",
      "venue": "Wynn Las Vegas",
      "buy_in_usd": 3000,
@@ -6984,7 +6984,7 @@
      "b_start": "18:00",
      "kind": "unplannable",
      "gap_min": -535,
-     "detail": "Milestone Satellite to $25K NIH High Roller starts 18:00 and its entry closes 18:00, while $600 No Limit Hold'em Bounty $50K GTD (1Day) - $200 bounties to start & $500 bounties in the money's own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
+     "detail": "Milestone Satellite to $25K NLH High Roller starts 18:00 and its entry closes 18:00, while $600 No Limit Hold'em Bounty $50K GTD (1Day) - $200 bounties to start & $500 bounties in the money's own table can run as late as 02:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     },
     {
      "a": "r167",
@@ -7028,7 +7028,7 @@
      "b_start": "18:00",
      "kind": "unplannable",
      "gap_min": -895,
-     "detail": "Milestone Satellite to $25K NIH High Roller starts 18:00 and its entry closes 18:00, while $300 No Limit Hold'em Bounty $15K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
+     "detail": "Milestone Satellite to $25K NLH High Roller starts 18:00 and its entry closes 18:00, while $300 No Limit Hold'em Bounty $15K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     },
     {
      "a": "r172",
@@ -7061,7 +7061,7 @@
      "b_start": "18:00",
      "kind": "unplannable",
      "gap_min": 0,
-     "detail": "Milestone Satellite to $25K NIH High Roller and Milestone Satellite to $3,000 NLH both start at 18:00 - one table cannot seat a player twice, so no published schedule can put both on one day"
+     "detail": "Milestone Satellite to $25K NLH High Roller and Milestone Satellite to $3,000 NLH both start at 18:00 - one table cannot seat a player twice, so no published schedule can put both on one day"
     }
    ],
    "undecidable_pairs": [
@@ -7105,7 +7105,7 @@
      "b": "r173",
      "a_start": "11:00",
      "b_start": "18:00",
-     "detail": "No Limit Hold'em Day 1A (11:00) and Milestone Satellite to $25K NIH High Roller (18:00) cannot be checked: No Limit Hold'em Day 1A publishes no level structure."
+     "detail": "No Limit Hold'em Day 1A (11:00) and Milestone Satellite to $25K NLH High Roller (18:00) cannot be checked: No Limit Hold'em Day 1A publishes no level structure."
     },
     {
      "a": "r166",
@@ -7147,7 +7147,7 @@
      "b": "r173",
      "a_start": "12:00",
      "b_start": "18:00",
-     "detail": "PLO Double Board Bomb Pot (12:00) and Milestone Satellite to $25K NIH High Roller (18:00) cannot be checked: PLO Double Board Bomb Pot publishes no level structure."
+     "detail": "PLO Double Board Bomb Pot (12:00) and Milestone Satellite to $25K NLH High Roller (18:00) cannot be checked: PLO Double Board Bomb Pot publishes no level structure."
     },
     {
      "a": "r168",
@@ -7175,7 +7175,7 @@
      "b": "r173",
      "a_start": "13:00",
      "b_start": "18:00",
-     "detail": "HORSE (13:00) and Milestone Satellite to $25K NIH High Roller (18:00) cannot be checked: HORSE publishes no level structure."
+     "detail": "HORSE (13:00) and Milestone Satellite to $25K NLH High Roller (18:00) cannot be checked: HORSE publishes no level structure."
     },
     {
      "a": "r170",
@@ -7203,7 +7203,7 @@
      "b": "r173",
      "a_start": "13:00",
      "b_start": "18:00",
-     "detail": "PLO 6-Max (13:00) and Milestone Satellite to $25K NIH High Roller (18:00) cannot be checked: PLO 6-Max publishes no level structure."
+     "detail": "PLO 6-Max (13:00) and Milestone Satellite to $25K NLH High Roller (18:00) cannot be checked: PLO 6-Max publishes no level structure."
     },
     {
      "a": "r171",
@@ -7224,7 +7224,7 @@
      "b": "r175",
      "a_start": "18:00",
      "b_start": "19:00",
-     "detail": "Milestone Satellite to $25K NIH High Roller (18:00) and No Limit Hold'em Day 1B (19:00) cannot be checked: Milestone Satellite to $25K NIH High Roller publishes no level structure."
+     "detail": "Milestone Satellite to $25K NLH High Roller (18:00) and No Limit Hold'em Day 1B (19:00) cannot be checked: Milestone Satellite to $25K NLH High Roller publishes no level structure."
     },
     {
      "a": "r174",
@@ -11067,7 +11067,7 @@
     {
      "id": "r276",
      "start": "17:10",
-     "name": "$300 No Limit Hold'em 1F $100K GTD (1Day) - Show Your CES Badge - $10 Rake Discount",
+     "name": "$300 No Limit Hold'em 1F $100K GTD (1Day)",
      "series": "Venetian DeepStack Extravaganza NYE",
      "venue": "The Venetian Resort",
      "buy_in_usd": 300,
@@ -11099,7 +11099,7 @@
      "b_start": "17:10",
      "kind": "unplannable",
      "gap_min": -735,
-     "detail": "$300 No Limit Hold'em 1F $100K GTD (1Day) - Show Your CES Badge - $10 Rake Discount starts 17:10 and its entry closes 20:40, while $300 No Limit Hold'em 1E $100K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
+     "detail": "$300 No Limit Hold'em 1F $100K GTD (1Day) starts 17:10 and its entry closes 20:40, while $300 No Limit Hold'em 1E $100K GTD (1Day)'s own table can run as late as 08:55 (+1 day) and no source prints an earlier end - so nothing published supports planning both on one day"
     }
    ],
    "undecidable_pairs": [],
