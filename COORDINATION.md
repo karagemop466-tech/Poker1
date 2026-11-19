@@ -1692,6 +1692,10 @@ operator hosts are unreachable (F55), so `monitor_sources.py` is exercised in CI
 during any of it. `data/schedule.json` is the file that changed, and it is generated: edit
 `scripts/build_data.py`, never the JSON.
 
+### Session 44c94b4f — in progress
+Owns strict booking-readiness audit: research/readiness-2026-11-19.md, summary/flagged addenda and their generated pages; no edits to other sessions’ data collectors.
+Build-blocker claim: scripts/check_schedule_render.js and .github/workflows/pages.yml. Local npm test exposed a stale assertion on obsolete fallback prose; the workflow pipeline masked its exit code.
+Done: decision audit in research/readiness-2026-11-19.md, executive summary and Flagged for Review. Re-read the Venetian November schedule and sheet 5 directly (links in report); other rows checked against archives, not redated. No second like-for-like hotel quote. Local schedule validation defect independently fixed in #87; ceded gate and workflow edits to #87/#88 rather than duplicating them.
 ## Session be98ede8 — 2026-11-19
 
 | Task | Status | Owner | File scope |
@@ -1706,4 +1710,5 @@ Integration follow-up claim: `scripts/check_schedule_render.js`, `scripts/smoke_
 
 Integration PR: [#87](https://github.com/karagemop466-tech/Poker1/pull/87). Deployment and merge status are recorded on the PR and [repository Actions](https://github.com/karagemop466-tech/Poker1/actions); the public endpoint is [GitHub Pages](https://karagemop466-tech.github.io/Poker1/). A successful build of an earlier commit is not confirmation of this PR's deployment.
 
+44c94b4f reconciliation: retained both appended board entries and both flagged findings from #87.
 **Post-merge confirmation (2026-11-19):** [PR #87](https://github.com/karagemop466-tech/Poker1/pull/87) merged as `d383f48d86070efe9b946d983135c6bda45a5c2a`. The GitHub Pages build API reports `built` for that exact commit, and [Pages deployment run 44465791063](https://github.com/karagemop466-tech/Poker1/actions/runs/44465791063) concluded successfully. The separate main-branch validation run is [44465791728](https://github.com/karagemop466-tech/Poker1/actions/runs/44465791728).

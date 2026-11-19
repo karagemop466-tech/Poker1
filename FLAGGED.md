@@ -141,6 +141,9 @@ is quietly fixed.
 whole-event table as a first-day finish (the rule on `main` before this change) yields 271 pairs; the 101 extra
 pairs rest on a table its own clause 3 cannot bound, so they are refused rather than asserted. Guards added: `scripts/check_schedule.py` (re-derives the plan independently) and a render-level check in `scripts/smoke_test.js` that fails if any rendered line shows a finish before its start without a next-day marker. |
 
+## Booking hold · November 19, 2026
+
+The single-entry filter includes rows classified from sheet silence. It does not establish that extra purchases are prohibited. In the [event 12 sheet](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf), clauses 1–10 state the fee and payout but no maximum entries, rebuy ban or add-on ban. Keep this candidate out of a strict booking decision until written terms address all three. The [official schedule](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html) establishes when the event starts, not when it will finish.
 ## Upcoming list is not a live availability check
 
 | Item | Official source | Handling |

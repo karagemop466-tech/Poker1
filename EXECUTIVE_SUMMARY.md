@@ -1,5 +1,15 @@
 # Executive Summary: Las Vegas Strip Poker Plan
 
+## Booking decision · November 19, 2026
+
+**Hold nonrefundable bookings.** None of the 80 rows classified as single entry in the archived series table has a written no-add-on rule in its structured evidence: all 80 say “not mentioned.” The site's single-entry list and day plan are therefore leads, not a shortlist of confirmed freezeouts under the stricter policy. This does not mean those events allow add-ons.
+
+**One upcoming candidate, not a recommendation:** The [Venetian schedule](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html) lists event 12 on Thursday, November 26 at 11:10 AM. Its [official structure sheet](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf), read in full on November 19, confirms a $300 total entry ($58 withheld), $10,000 guarantee, 40,000 starting chips, 30-minute levels, registration through approximately 4:55 PM and payouts to 12.5% of the field. The guarantee is 33.3 times one entry fee; that is not a return forecast. None of its ten clauses specifies one entry per person or expressly prohibits rebuys and add-ons. Obtain a written event-specific ruling before promoting it. Do not schedule the 5:10 PM bounty as a second entry on the assumption the first event finishes by then.
+
+**Hotel comparison:** For November 26–29, two adults, the November 16 [Palazzo booking-engine observation](https://www.venetianlasvegas.com/book) was $2,412.44 at checkout ($804.15/night including resort fee and tax). One $300 tournament entry plus that stay would be $2,712.44 before parking and other spending. Do not multiply the rounded nightly average to reconstruct checkout. This is a historical quote, not today's availability. The log contains no competing property for that same stay. Capture a second refundable checkout for those dates and occupancy, including its cancellation deadline and parking, before naming a best hotel. An interior route does not establish a timed walk from the guest room.
+
+## Archived series audit
+
 *Checked 2026-11-17 · Data: `data/tournaments.json`, `data/hotels.json`, `data/schedule.json`,
 `data/daily.json`, `data/rates.json`, `data/venues.json`, `data/walking.json`*
 
@@ -13,7 +23,7 @@ re-checked on 2026-11-17.
 
 - **317 official rows are now published across 70 dates**, from Nov 16, 2026 to Jan 24, 2027. Every row
   carries the official URL it was read from and the excerpt that supports each rule field.
-- **80 rows are verified single entry.** 60 award cash, and 20 are milestone satellites that award a
+- **80 rows were classified single entry by sheet silence, not an explicit freezeout rule.** 60 award cash, and 20 are milestone satellites that award a
   **seat** into a bigger event rather than cash. Every one of the 80 is a Venetian row: all 37
   DeepStack Extravaganza IV structure sheets and all 15 New Year's Eve sheets have been read, so every
   Venetian row carries a verified entry rule from the sheet the operator publishes for it.
