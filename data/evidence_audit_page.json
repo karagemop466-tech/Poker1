@@ -10,9 +10,9 @@
    "daily_rows": 11,
    "affirmative_single_entry_documents": 0,
    "monitor": {
-    "checked_at_utc": "2026-11-19T16:45:28Z",
+    "checked_at_utc": "2026-11-19T22:48:50Z",
     "sources": 138,
-    "raw_changed": 22,
+    "raw_changed": 23,
     "facts_changed": 0,
     "zero_fact_pages": 31,
     "content_status_facts_changed": 4

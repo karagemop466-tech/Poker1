@@ -15,7 +15,8 @@
      "prize_text": null,
      "entry_status": "MULTI",
      "labels": [
-      "multi-flight"
+      "multi-flight",
+      "effectively single entry"
      ],
      "late_reg_close": "15:40",
      "est_end": "08:55",
@@ -35,7 +36,8 @@
      "prize_text": null,
      "entry_status": "MULTI",
      "labels": [
-      "multi-flight"
+      "multi-flight",
+      "effectively single entry"
      ],
      "late_reg_close": "20:40",
      "est_end": "09:55",
@@ -79,7 +81,8 @@
      "prize_text": null,
      "entry_status": "MULTI",
      "labels": [
-      "multi-flight"
+      "multi-flight",
+      "effectively single entry"
      ],
      "late_reg_close": "15:40",
      "est_end": "08:55",
@@ -99,7 +102,8 @@
      "prize_text": null,
      "entry_status": "MULTI",
      "labels": [
-      "multi-flight"
+      "multi-flight",
+      "effectively single entry"
      ],
      "late_reg_close": "20:40",
      "est_end": "09:55",
@@ -319,7 +323,8 @@
      "prize_text": null,
      "entry_status": "MULTI",
      "labels": [
-      "multi-flight"
+      "multi-flight",
+      "effectively single entry"
      ],
      "late_reg_close": "17:55",
      "est_end": "08:55",
@@ -384,7 +389,8 @@
      "prize_text": null,
      "entry_status": "MULTI",
      "labels": [
-      "multi-flight"
+      "multi-flight",
+      "effectively single entry"
      ],
      "late_reg_close": "17:55",
      "est_end": "08:55",
@@ -1164,7 +1170,8 @@
      "prize_text": null,
      "entry_status": "MULTI",
      "labels": [
-      "multi-flight"
+      "multi-flight",
+      "effectively single entry"
      ],
      "late_reg_close": "17:55",
      "est_end": "08:55",
@@ -1376,7 +1383,8 @@
      "prize_text": null,
      "entry_status": "MULTI",
      "labels": [
-      "multi-flight"
+      "multi-flight",
+      "effectively single entry"
      ],
      "late_reg_close": "17:55",
      "est_end": "08:55",
@@ -1561,7 +1569,8 @@
      "prize_text": null,
      "entry_status": "MULTI",
      "labels": [
-      "multi-flight"
+      "multi-flight",
+      "effectively single entry"
      ],
      "late_reg_close": "17:55",
      "est_end": "08:55",
@@ -1966,7 +1975,8 @@
      "prize_text": null,
      "entry_status": "MULTI",
      "labels": [
-      "multi-flight"
+      "multi-flight",
+      "effectively single entry"
      ],
      "late_reg_close": "15:40",
      "est_end": "08:55",
@@ -2006,7 +2016,8 @@
      "prize_text": null,
      "entry_status": "MULTI",
      "labels": [
-      "multi-flight"
+      "multi-flight",
+      "effectively single entry"
      ],
      "late_reg_close": "20:40",
      "est_end": "09:55",
@@ -2162,7 +2173,8 @@
      "prize_text": null,
      "entry_status": "MULTI",
      "labels": [
-      "multi-flight"
+      "multi-flight",
+      "effectively single entry"
      ],
      "late_reg_close": "15:40",
      "est_end": "08:55",
@@ -2200,7 +2212,8 @@
      "prize_text": null,
      "entry_status": "MULTI",
      "labels": [
-      "multi-flight"
+      "multi-flight",
+      "effectively single entry"
      ],
      "late_reg_close": "20:40",
      "est_end": "09:55",
@@ -2348,7 +2361,8 @@
      "prize_text": null,
      "entry_status": "MULTI",
      "labels": [
-      "multi-flight"
+      "multi-flight",
+      "effectively single entry"
      ],
      "late_reg_close": "15:40",
      "est_end": "08:55",
@@ -2369,7 +2383,8 @@
      "entry_status": "MULTI",
      "labels": [
       "multi-flight",
-      "turbo"
+      "turbo",
+      "effectively single entry"
      ],
      "late_reg_close": "19:25",
      "est_end": "04:55",
@@ -4777,7 +4792,8 @@
      "entry_status": "MULTI",
      "labels": [
       "multi-flight",
-      "title-event"
+      "title-event",
+      "effectively single entry"
      ],
      "late_reg_close": "16:55",
      "est_end": "07:15",
@@ -4879,7 +4895,8 @@
      "entry_status": "MULTI",
      "labels": [
       "multi-flight",
-      "title-event"
+      "title-event",
+      "effectively single entry"
      ],
      "late_reg_close": "23:10",
      "est_end": "10:55",
@@ -5300,7 +5317,8 @@
      "entry_status": "MULTI",
      "labels": [
       "multi-flight",
-      "seniors-50-plus"
+      "seniors-50-plus",
+      "effectively single entry"
      ],
      "late_reg_close": "16:55",
      "est_end": "07:15",
@@ -5782,7 +5800,8 @@
      "entry_status": "MULTI",
      "labels": [
       "multi-flight",
-      "seniors-50-plus"
+      "seniors-50-plus",
+      "effectively single entry"
      ],
      "late_reg_close": "16:55",
      "est_end": "07:15",
@@ -7266,7 +7285,8 @@
      "entry_status": "MULTI",
      "labels": [
       "multi-flight",
-      "rake-discount"
+      "rake-discount",
+      "effectively single entry"
      ],
      "late_reg_close": "16:55",
      "est_end": "07:55",
@@ -7404,7 +7424,8 @@
      "entry_status": "MULTI",
      "labels": [
       "multi-flight",
-      "rake-discount"
+      "rake-discount",
+      "effectively single entry"
      ],
      "late_reg_close": "23:10",
      "est_end": "10:55",
@@ -7755,7 +7776,8 @@
      "entry_status": "MULTI",
      "labels": [
       "multi-flight",
-      "rake-discount"
+      "rake-discount",
+      "effectively single entry"
      ],
      "late_reg_close": "16:55",
      "est_end": "07:55",
@@ -7891,7 +7913,8 @@
      "entry_status": "MULTI",
      "labels": [
       "multi-flight",
-      "rake-discount"
+      "rake-discount",
+      "effectively single entry"
      ],
      "late_reg_close": "23:10",
      "est_end": "10:55",
@@ -8194,7 +8217,8 @@
      "entry_status": "MULTI",
      "labels": [
       "multi-flight",
-      "rake-discount"
+      "rake-discount",
+      "effectively single entry"
      ],
      "late_reg_close": "16:55",
      "est_end": "07:55",
@@ -8867,7 +8891,8 @@
      "entry_status": "MULTI",
      "labels": [
       "multi-flight",
-      "rake-discount"
+      "rake-discount",
+      "effectively single entry"
      ],
      "late_reg_close": "17:55",
      "est_end": "08:55",
@@ -9230,7 +9255,8 @@
      "entry_status": "MULTI",
      "labels": [
       "multi-flight",
-      "rake-discount"
+      "rake-discount",
+      "effectively single entry"
      ],
      "late_reg_close": "17:55",
      "est_end": "08:55",
@@ -9373,7 +9399,8 @@
      "entry_status": "MULTI",
      "labels": [
       "multi-flight",
-      "rake-discount"
+      "rake-discount",
+      "effectively single entry"
      ],
      "late_reg_close": "17:55",
      "est_end": "08:55",
@@ -9779,7 +9806,8 @@
      "prize_text": null,
      "entry_status": "MULTI",
      "labels": [
-      "multi-flight"
+      "multi-flight",
+      "effectively single entry"
      ],
      "late_reg_close": "17:55",
      "est_end": "08:55",
@@ -9895,7 +9923,8 @@
      "prize_text": null,
      "entry_status": "MULTI",
      "labels": [
-      "multi-flight"
+      "multi-flight",
+      "effectively single entry"
      ],
      "late_reg_close": "17:55",
      "est_end": "08:55",
@@ -10011,7 +10040,8 @@
      "prize_text": null,
      "entry_status": "MULTI",
      "labels": [
-      "multi-flight"
+      "multi-flight",
+      "effectively single entry"
      ],
      "late_reg_close": "17:55",
      "est_end": "08:55",
@@ -10340,7 +10370,8 @@
      "entry_status": "MULTI",
      "labels": [
       "multi-flight",
-      "rake-discount"
+      "rake-discount",
+      "effectively single entry"
      ],
      "late_reg_close": "17:55",
      "est_end": "08:55",
@@ -10466,7 +10497,8 @@
      "entry_status": "MULTI",
      "labels": [
       "multi-flight",
-      "rake-discount"
+      "rake-discount",
+      "effectively single entry"
      ],
      "late_reg_close": "17:55",
      "est_end": "08:55",
@@ -10616,7 +10648,8 @@
      "entry_status": "MULTI",
      "labels": [
       "multi-flight",
-      "rake-discount"
+      "rake-discount",
+      "effectively single entry"
      ],
      "late_reg_close": "17:55",
      "est_end": "08:55",
@@ -10681,7 +10714,8 @@
      "entry_status": "MULTI",
      "labels": [
       "multi-flight",
-      "rake-discount"
+      "rake-discount",
+      "effectively single entry"
      ],
      "late_reg_close": "15:40",
      "est_end": "03:55",
@@ -10702,7 +10736,8 @@
      "entry_status": "MULTI",
      "labels": [
       "multi-flight",
-      "rake-discount"
+      "rake-discount",
+      "effectively single entry"
      ],
      "late_reg_close": "21:40",
      "est_end": "09:55",
@@ -10751,7 +10786,8 @@
      "entry_status": "MULTI",
      "labels": [
       "multi-flight",
-      "rake-discount"
+      "rake-discount",
+      "effectively single entry"
      ],
      "late_reg_close": "15:40",
      "est_end": "03:55",
@@ -10772,7 +10808,8 @@
      "entry_status": "MULTI",
      "labels": [
       "multi-flight",
-      "rake-discount"
+      "rake-discount",
+      "effectively single entry"
      ],
      "late_reg_close": "21:40",
      "est_end": "09:55",
@@ -10886,7 +10923,8 @@
      "prize_text": null,
      "entry_status": "MULTI",
      "labels": [
-      "multi-flight"
+      "multi-flight",
+      "effectively single entry"
      ],
      "late_reg_close": "15:40",
      "est_end": "08:55",
@@ -10906,7 +10944,8 @@
      "prize_text": null,
      "entry_status": "MULTI",
      "labels": [
-      "multi-flight"
+      "multi-flight",
+      "effectively single entry"
      ],
      "late_reg_close": "20:40",
      "est_end": "09:55",
@@ -10954,7 +10993,8 @@
      "prize_text": null,
      "entry_status": "MULTI",
      "labels": [
-      "multi-flight"
+      "multi-flight",
+      "effectively single entry"
      ],
      "late_reg_close": "15:40",
      "est_end": "08:55",
@@ -10974,7 +11014,8 @@
      "prize_text": null,
      "entry_status": "MULTI",
      "labels": [
-      "multi-flight"
+      "multi-flight",
+      "effectively single entry"
      ],
      "late_reg_close": "20:40",
      "est_end": "09:55",
@@ -11022,7 +11063,8 @@
      "prize_text": null,
      "entry_status": "MULTI",
      "labels": [
-      "multi-flight"
+      "multi-flight",
+      "effectively single entry"
      ],
      "late_reg_close": "15:40",
      "est_end": "08:55",
@@ -11042,7 +11084,8 @@
      "prize_text": null,
      "entry_status": "MULTI",
      "labels": [
-      "multi-flight"
+      "multi-flight",
+      "effectively single entry"
      ],
      "late_reg_close": "20:40",
      "est_end": "09:55",

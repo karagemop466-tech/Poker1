@@ -402,6 +402,18 @@ header.site nav a {color:#d9ebe4}
         '<a href="' + esc(f.source.url) + '" target="_blank" rel="noopener">' + esc(f.source.url) + "</a>" +
         (f.retrieved_on ? " &middot; retrieved " + esc(f.retrieved_on) : "") + "</span>");
     });
+    /* P3 descriptive flag (never a reclassification): multi-flight events whose
+       flights all cost the same and whose sheet prints no bust-and-re-enter
+       penalty. The row stays MULTI and out of the single-entry shortlist. */
+    var fp = row.flight_pricing;
+    if (fp) {
+      parts.push("<strong>" + esc(fp.flag) + "</strong>" +
+        '<br><span class="small">' + esc(fp.excerpt) + "</span>" +
+        '<br><span class="small">' + esc(fp.silence_note) + "</span>" +
+        (fp.source ? '<br><span class="small">' + esc(fp.source.label) + " &middot; " +
+          '<a href="' + esc(fp.source.url) + '" target="_blank" rel="noopener">' + esc(fp.source.url) + "</a>" +
+          (fp.retrieved_on ? " &middot; retrieved " + esc(fp.retrieved_on) : "") + "</span>" : ""));
+    }
     return "<span class='small'>" + parts.join("<hr>") + "</span>";
   }
 
@@ -889,7 +901,14 @@ header.site nav a {color:#d9ebe4}
       { id: "status", label: "Entry rule", key: "entry_status", html: function (r) { return statusChip(r.entry_status); } },
       { id: "spend", label: "Spend advantage", key: "spend_advantage", sort: null,
         html: function (r) { return spendCell(r); } },
-      { id: "checked", label: "Last checked", key: "last_checked", html: function (r) { return "<span class='small'>" + esc(r.last_checked) + "</span>" + srcBadge(r); } }
+      { id: "checked", label: "Last checked", key: "last_checked", html: function (r) {
+          var out = "<span class='small'>" + esc(r.last_checked) + "</span>" + srcBadge(r);
+          if (r.recheck && r.recheck.on) {
+            out += "<br><span class='small muted'>re-checked " + esc(r.recheck.on) + " &middot; " +
+              esc((r.recheck.what || "").slice(0, 180)) + "...</span>";
+          }
+          return out;
+        } }
     ];
     if (withRules) {
       cols.push({ id: "rule", label: "Entry rule (official)", key: "entry_rule", sort: null, html: function (r) { return "<span class='small'>" + esc(r.entry_rule) + "</span>"; } });

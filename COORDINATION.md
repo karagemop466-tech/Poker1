@@ -1,3 +1,100 @@
+# Session cebd4457 — branch `arena/cebd4457-poker1` (base `f5ecde0` = `main` after PR #118)
+
+Session `cebd4457` works on branch `arena/cebd4457-poker1` (fixed for this session), based on `main` at
+`f5ecde040b29e402aea7b739eabd28727b1c7859` (PR #118 merged). `git rev-list --left-right --count
+origin/main...HEAD` = `0 0`; clean tree at claim time. Claim written and pushed before any data,
+script or page change.
+
+**Board state read at claim time.** One open PR: **#113** (`arena/98241f2f-poker1`, board-record only
+(COORDINATION.md +11 lines), CONFLICTING, last commit 2026-11-19T11:25:48Z — more than 60 minutes stale).
+Its content (record of PR #106's merge result) is preserved by this session per the takeover rule; the PR
+will be closed with a disposition comment, no work discarded. No other session holds an open claim.
+
+| # | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| 1 | Claim + board read (this section, pushed first). | **done** | cebd4457 | `COORDINATION.md` |
+| 2 | Apply the pending 2026-11-19 live re-reads to the data layer: sessions `336fb2af` and `98241f2f` both re-read the official Venetian DSE IV November page live on 2026-11-19 (94/94 rows matched each, independently) and recorded the result "for the data owner to apply through `build_data.py`". Independently re-read the official sources live from this session (page-fetch tool), confirm row-by-row, and advance `last_checked` to 2026-11-19 **only** on rows whose official source was actually re-read and matched. No value changes. | **done 2026-11-19** (see work record) | cebd4457 | `scripts/build_data.py`, generated `data/*.json`, generated `pages/*.html`, `research/verification-2026-11-19-cebd4457.md`, `COORDINATION.md` |
+| 3 | Stale-PR disposition for #113 (98241f2f, board-record only): adopt its record content into this board, close the PR with a disposition comment. | **done 2026-11-19** (record preserved below; PR closed) | cebd4457 | `COORDINATION.md`, PR #113 comment |
+| 4 | SUGGESTIONS P3 (open, low): publish an **"effectively single entry" descriptive flag** on multi-flight rows whose structure sheet prices every flight at the same amount and imposes no penalty on a player who re-enters a later flight — a flag beside the existing classification, never a reclassification: the ranking and `SE` bar are unchanged, and the flag always carries the sheet clause that supports it plus the explicit note that the sheet is silent on a whole-event freezeout rule. | **done 2026-11-19** (see work record) | cebd4457 | `scripts/build_data.py`, generated `data/*.json`, `scripts/check_links.py` (flag-evidence check), `scripts/build_site.py`/`assets/app.js` (chip + tooltip), generated pages, `SUGGESTIONS.md` (P3 status), `COORDINATION.md` |
+| 5 | Final integration for this session: rebuild data + pages deterministically, run the full gate set (python + npm), run the unit tests, write the dated verification record, open PR to `main`, merge after green `validate`, confirm Pages deploy, record PR link + merge + deploy here. | in progress — this PR | cebd4457 | all of the above + `COORDINATION.md` |
+
+No official value is changed except where this session (or a merged session's recorded re-read, adopted
+with its evidence) actually re-read the source; anything that cannot be confirmed stays blank and flagged.
+`last_checked` advances only on sources actually re-read. Files of still-active sessions are not edited:
+none found beyond stale PR #113 above.
+
+### Session cebd4457 — work record (2026-11-19)
+
+**Live re-verification (2026-11-19) — all complete; full record in `research/verification-2026-11-19-cebd4457.md`:**
+DSE IV listing 94/94 rows match (5 wording-only name re-renders; the stored dated captures are kept);
+DSE NYE listing 49/49 match (official typos DATE_TYPO_DEC26 / DATE_TYPO_TUESDAY / MSPT_DAY2_START_CONFLICT
+unchanged); WPT schedule PDF 136/136 match (the Dec 3/Dec 5 Day 2 misprint and "Dec. 18 Wednesday"
+unchanged); WPT structures PDF 8/8 blocks verbatim (entry caps: Prime "One entry plus one re-entry per
+flight to Level 10", WC "Four (4) Entries maximum"); Venetian sheets #1/#5/#10/#29 fully re-read (18
+rows); sheet #30 fully re-read (r012 confirmed identical to its snapshot); Venetian resort-fee +
+hotel-terms pages and the Wynn parking page unchanged.
+
+**Monitor "source changed" marks (data/changes.json, 2026-11-19) — all four re-checked live:**
+`r012`, `rooms03`, `formats05` = false alarms (bytes re-rendered; every published value and excerpt
+identical; the change log's facts diffs are empty). `caesars` = REAL change: the corporate disclaimer's
+Hotel Disclaimer now prints "a daily resort fee between **$45-$60** plus applicable tax" where the
+2026-11-17 read recorded "**$45-$50**". Both readings are quoted with their dates in the hotel row's
+`resort_fee_note`, the source label, FLAGGED U3 and the research file; the Caesars Palace fee stays
+blank (the range is portfolio-wide and names no property, so it is never used as this property's fee).
+The monitor baseline for that page still holds the old facts and will keep marking it until re-accepted
+through `monitor_sources.py --accept-baseline` after a real fetched run (CI) — deliberate; marks are CI
+output and are never hand-edited.
+
+**Stamping applied (strict rule, unified with `0f038248`'s merged `REREAD` semantics):** a row's
+`last_checked` and its rule excerpts' `retrieved_on` advance to `2026-11-19` only when that row's own
+cited document was re-read live in full that day — 195 rows total: 38 WSS + 136 WPT (schedule +
+structures PDFs, this session) + 21 Venetian rows citing sheets #1/#5/#8/#10/#29/#30 (sheets #5/#8/#10
+were re-read by session `0f038248` with their per-sheet evidence in `REREAD`; sheets #1/#29/#30 by this
+session — #30 as the r012 source-change re-check). The other 122 rows keep `2026-11-17` and each
+carries a dated per-row `recheck` record (listing re-read 94/94 + 49/49 today; sheets fact-hash checked
+by the monitor, not fully re-read). `verified_on` keeps 2026-11-17. A field-diff against the previous
+`data/tournaments.json` confirms only `last_checked`, rule `retrieved_on`, `recheck`, `flight_pricing`
+and label additions changed — no published value moved.
+
+**P3 built:** 43 MULTI rows / 12 multi-flight events carry `flight_pricing` (the clause-08 excerpt
+"Any player who bags chips for Day 2 may not play a subsequent flight.", the uniform flight price, an
+explicit silence note that the sheet prints no whole-event entry limit, and the source with retrieval
+date) plus an "effectively single entry" label chip (filterable in Format). Never a reclassification:
+rows keep `entry_status` MULTI and stay out of the single-entry shortlist and the ranking;
+`check_links.py` asserts flagged rows are MULTI and keep the multi-flight label. Excluded by
+construction: the three PokerAtlas Valuetown bounty rows (sheets explicitly price later buy-ins:
+"All subsequent buy in's after the initial buy in will be $200") and the seven WPT MULTI rows (sheets
+print entry caps). `SUGGESTIONS.md` P3 marked built.
+
+**Hotel rechecks (P9):** venetian/palazzo/wynn/encore re-read 2026-11-19 (all figures unchanged);
+caesars re-read (the disclaimer change above; its parking-page claims stay dated 2026-11-17 and say so
+explicitly); bellagio/aria unchanged (2026-11-17). Hotel `last_checked` stays 2026-11-17 — no live rate
+is ever re-quoted by hand; only the booking engine produces a quote.
+
+**Merged with `main` (PRs #123/#124, sessions `0fa351db`/`0f038248`) without discarding either
+side:** `0f038248`'s per-row `spend_advantage` reading (their P3 build) coexists with this session's
+`flight_pricing` flag (the two cover the same 43 clause-8 rows from different angles); their `REREAD`
+dict drives all Venetian stamps (extended with this session's sheets #1/#29/#30); their WSS/F85
+placeholder notes, P14 facts capture and P12 monitor guard are untouched. Generated `data/` + `pages/`
+regenerated from the merged scripts.
+
+**Gates (all green):** build_data (317 rows: 80 CAND / 53 MULTI / 107 RE / 43 CONT / 34 UNV), check_links
+OK (new flight_pricing + recheck validators), verify_rows 335 rows / 1386 checks / 0 hard failures /
+1 review (r225, re-confirmed live: 8 p.m. schedule PDF vs 6 p.m. structures PDF, published conflict),
+verify_against_snapshots OK (r263 MSPT conflict recorded on the row), check_schedule OK (70 days, 170
+overlap pairs), build_site 31 pages, `npm test` 5/5 (1662 rendered local references, 0 broken),
+9 × `test_*.py` OK.
+
+**PR #113 disposition — completed (verified, nothing discarded).** The stale board-record-only PR
+(98241f2f's PR #106 merge record) was taken over per the 60-minute rule; at takeover time this session
+preserved its content (commit `8e7372b`) before integration. Session `0f038248` then completed the
+disposition on `main` the same day: the record was adopted onto `main` (their session block below) and
+PR #113 was **closed at 2026-11-19T22:31:35Z with a disposition comment** (verified via `gh pr view
+113`). Nothing was lost either way; the adopted copy on `main` is authoritative.
+
+
+---
+
 # Session 0f038248 — branch `arena/0f038248-poker1` (base `f5ecde0` = current `main`)
 
 Session `0f038248` works on branch `arena/0f038248-poker1` (fixed for this session). Base `f5ecde0`
