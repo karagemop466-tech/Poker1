@@ -61,7 +61,8 @@
    },
    "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
    "labels": [
-    "multi-flight"
+    "multi-flight",
+    "effectively single entry"
    ],
    "late_reg_close": "15:40",
    "levels": 30,
@@ -89,7 +90,18 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19",
+   "flight_pricing": {
+    "flag": "effectively single entry (descriptive only - not a confirmed one-entry freezeout)",
+    "all_flights_same_buy_in_usd": 300,
+    "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
+    "silence_note": "The sheet prints one price for every flight and bars only a bagged player from a later flight; it is silent on a whole-event entry limit and on whether a player who busts a flight may enter a later one. The row stays MULTI and is excluded from the single-entry shortlist and the ranking.",
+    "source": {
+     "label": "Structure sheet #10",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf"
+    },
+    "retrieved_on": "2026-11-17"
+   }
   },
   {
    "id": "r002",
@@ -151,7 +163,8 @@
    },
    "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
    "labels": [
-    "multi-flight"
+    "multi-flight",
+    "effectively single entry"
    ],
    "late_reg_close": "20:40",
    "levels": 30,
@@ -179,7 +192,23 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
+   "flight_pricing": {
+    "flag": "effectively single entry (descriptive only - not a confirmed one-entry freezeout)",
+    "all_flights_same_buy_in_usd": 300,
+    "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
+    "silence_note": "The sheet prints one price for every flight and bars only a bagged player from a later flight; it is silent on a whole-event entry limit and on whether a player who busts a flight may enter a later one. The row stays MULTI and is excluded from the single-entry shortlist and the ranking.",
+    "source": {
+     "label": "Structure sheet #9",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf"
+    },
+    "retrieved_on": "2026-11-17"
+   }
   },
   {
    "id": "r003",
@@ -241,7 +270,8 @@
    },
    "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
    "labels": [
-    "multi-flight"
+    "multi-flight",
+    "effectively single entry"
    ],
    "late_reg_close": "15:40",
    "levels": 30,
@@ -269,7 +299,18 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19",
+   "flight_pricing": {
+    "flag": "effectively single entry (descriptive only - not a confirmed one-entry freezeout)",
+    "all_flights_same_buy_in_usd": 300,
+    "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
+    "silence_note": "The sheet prints one price for every flight and bars only a bagged player from a later flight; it is silent on a whole-event entry limit and on whether a player who busts a flight may enter a later one. The row stays MULTI and is excluded from the single-entry shortlist and the ranking.",
+    "source": {
+     "label": "Structure sheet #10",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_10.pdf"
+    },
+    "retrieved_on": "2026-11-17"
+   }
   },
   {
    "id": "r004",
@@ -331,7 +372,8 @@
    },
    "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
    "labels": [
-    "multi-flight"
+    "multi-flight",
+    "effectively single entry"
    ],
    "late_reg_close": "20:40",
    "levels": 30,
@@ -359,7 +401,23 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
+   "flight_pricing": {
+    "flag": "effectively single entry (descriptive only - not a confirmed one-entry freezeout)",
+    "all_flights_same_buy_in_usd": 300,
+    "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
+    "silence_note": "The sheet prints one price for every flight and bars only a bagged player from a later flight; it is silent on a whole-event entry limit and on whether a player who busts a flight may enter a later one. The row stays MULTI and is excluded from the single-entry shortlist and the ranking.",
+    "source": {
+     "label": "Structure sheet #9",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_9.pdf"
+    },
+    "retrieved_on": "2026-11-17"
+   }
   },
   {
    "id": "r005",
@@ -446,7 +504,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r006",
@@ -537,7 +595,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r007",
@@ -626,7 +684,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r008",
@@ -715,7 +778,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r009",
@@ -804,7 +872,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r010",
@@ -891,7 +964,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r011",
@@ -953,7 +1026,8 @@
    },
    "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
    "labels": [
-    "multi-flight"
+    "multi-flight",
+    "effectively single entry"
    ],
    "late_reg_close": "17:55",
    "levels": 30,
@@ -981,7 +1055,23 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
+   "flight_pricing": {
+    "flag": "effectively single entry (descriptive only - not a confirmed one-entry freezeout)",
+    "all_flights_same_buy_in_usd": 400,
+    "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
+    "silence_note": "The sheet prints one price for every flight and bars only a bagged player from a later flight; it is silent on a whole-event entry limit and on whether a player who busts a flight may enter a later one. The row stays MULTI and is excluded from the single-entry shortlist and the ranking.",
+    "source": {
+     "label": "Structure sheet #2",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_2.pdf"
+    },
+    "retrieved_on": "2026-11-17"
+   }
   },
   {
    "id": "r012",
@@ -1071,7 +1161,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r013",
@@ -1133,7 +1223,8 @@
    },
    "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
    "labels": [
-    "multi-flight"
+    "multi-flight",
+    "effectively single entry"
    ],
    "late_reg_close": "17:55",
    "levels": 30,
@@ -1161,7 +1252,23 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
+   "flight_pricing": {
+    "flag": "effectively single entry (descriptive only - not a confirmed one-entry freezeout)",
+    "all_flights_same_buy_in_usd": 400,
+    "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
+    "silence_note": "The sheet prints one price for every flight and bars only a bagged player from a later flight; it is silent on a whole-event entry limit and on whether a player who busts a flight may enter a later one. The row stays MULTI and is excluded from the single-entry shortlist and the ranking.",
+    "source": {
+     "label": "Structure sheet #2",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_2.pdf"
+    },
+    "retrieved_on": "2026-11-17"
+   }
   },
   {
    "id": "r014",
@@ -1250,7 +1357,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r015",
@@ -1341,7 +1448,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r016",
@@ -1428,7 +1540,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r017",
@@ -1517,7 +1634,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r018",
@@ -1604,7 +1721,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r019",
@@ -1693,7 +1810,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r020",
@@ -1792,7 +1909,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 600,
    "structure_days": "Day 1A-E: 30 minutes per level until 12.5% or less of the field remains. Day 1F: 20 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter.",
    "structure_payout": "Each Day 1 will play until 12.5% or less of the field remains. Only players who advance to Day 2 will be considered \"in the money\".",
@@ -1883,7 +2000,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r022",
@@ -1980,7 +2102,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 600,
    "structure_days": "30 minutes per level until a winner is declared.",
    "structure_payout": "Single day event; the structure sheet publishes no Day 1 payout structure.",
@@ -2081,7 +2203,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 400,
    "structure_days": "30 minutes per level until a winner is declared.",
    "structure_payout": "Single day event; the structure sheet publishes no Day 1 payout structure.",
@@ -2184,7 +2306,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 600,
    "structure_days": "Day 1A-E: 30 minutes per level until 12.5% or less of the field remains. Day 1F: 20 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter.",
    "structure_payout": "Each Day 1 will play until 12.5% or less of the field remains. Only players who advance to Day 2 will be considered \"in the money\".",
@@ -2277,7 +2399,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r026",
@@ -2376,7 +2498,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 600,
    "structure_days": "Day 1A-E: 30 minutes per level until 12.5% or less of the field remains. Day 1F: 20 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter.",
    "structure_payout": "Each Day 1 will play until 12.5% or less of the field remains. Only players who advance to Day 2 will be considered \"in the money\".",
@@ -2469,7 +2591,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r028",
@@ -2566,7 +2693,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 600,
    "structure_days": "30 minutes per level until a winner is declared.",
    "structure_payout": "Single day event; the structure sheet publishes no Day 1 payout structure.",
@@ -2660,7 +2787,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r030",
@@ -2759,7 +2891,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 600,
    "structure_days": "Day 1A-E: 30 minutes per level until 12.5% or less of the field remains. Day 1F: 20 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter.",
    "structure_payout": "Each Day 1 will play until 12.5% or less of the field remains. Only players who advance to Day 2 will be considered \"in the money\".",
@@ -2854,7 +2986,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r032",
@@ -2953,7 +3090,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 600,
    "structure_days": "Day 1A-E: 30 minutes per level until 12.5% or less of the field remains. Day 1F: 20 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter.",
    "structure_payout": "Each Day 1 will play until 12.5% or less of the field remains. Only players who advance to Day 2 will be considered \"in the money\".",
@@ -3019,7 +3156,8 @@
    },
    "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
    "labels": [
-    "multi-flight"
+    "multi-flight",
+    "effectively single entry"
    ],
    "late_reg_close": "17:55",
    "levels": 30,
@@ -3047,7 +3185,23 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
+   "flight_pricing": {
+    "flag": "effectively single entry (descriptive only - not a confirmed one-entry freezeout)",
+    "all_flights_same_buy_in_usd": 400,
+    "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
+    "silence_note": "The sheet prints one price for every flight and bars only a bagged player from a later flight; it is silent on a whole-event entry limit and on whether a player who busts a flight may enter a later one. The row stays MULTI and is excluded from the single-entry shortlist and the ranking.",
+    "source": {
+     "label": "Structure sheet #3",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf"
+    },
+    "retrieved_on": "2026-11-17"
+   }
   },
   {
    "id": "r034",
@@ -3137,7 +3291,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r035",
@@ -3226,7 +3385,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r036",
@@ -3327,7 +3486,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 600,
    "structure_days": "Day 1A-E: 30 minutes per level until 12.5% or less of the field remains. Day 1F: 20 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter.",
    "structure_payout": "Each Day 1 will play until 12.5% or less of the field remains. Only players who advance to Day 2 will be considered \"in the money\".",
@@ -3430,7 +3589,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 800,
    "structure_days": "Day 1A-1E: 30 minutes per level until 12.5% or less of the field remains. Day 1F: 20 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until nine (9) players remain. Day 3: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter.",
    "structure_payout": "Each Day 1 will play until 12.5% or less of the field remains. Only players who advance to Day 2 will be considered \"in the money\".",
@@ -3496,7 +3655,8 @@
    },
    "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
    "labels": [
-    "multi-flight"
+    "multi-flight",
+    "effectively single entry"
    ],
    "late_reg_close": "17:55",
    "levels": 30,
@@ -3524,7 +3684,23 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
+   "flight_pricing": {
+    "flag": "effectively single entry (descriptive only - not a confirmed one-entry freezeout)",
+    "all_flights_same_buy_in_usd": 400,
+    "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
+    "silence_note": "The sheet prints one price for every flight and bars only a bagged player from a later flight; it is silent on a whole-event entry limit and on whether a player who busts a flight may enter a later one. The row stays MULTI and is excluded from the single-entry shortlist and the ranking.",
+    "source": {
+     "label": "Structure sheet #3",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf"
+    },
+    "retrieved_on": "2026-11-17"
+   }
   },
   {
    "id": "r039",
@@ -3621,7 +3797,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 600,
    "structure_days": "30 minutes per level until a winner is declared.",
    "structure_payout": "Single day event; the structure sheet publishes no Day 1 payout structure.",
@@ -3727,7 +3903,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "structure_payout": "Each Day 1 will play until 12.5% or less of the field remains. Only players who advance to Day 2 will be considered \"in the money\".",
    "structure_breaks": "20-minute levels: 10-minute break every 4 levels of play. 30-minute levels: 15-minute break every 4 levels of play. 40-minute levels: 15-minute break every 3 levels of play."
   },
@@ -3828,7 +4004,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 800,
    "structure_days": "Day 1A-1E: 30 minutes per level until 12.5% or less of the field remains. Day 1F: 20 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until nine (9) players remain. Day 3: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter.",
    "structure_payout": "Each Day 1 will play until 12.5% or less of the field remains. Only players who advance to Day 2 will be considered \"in the money\".",
@@ -3921,7 +4097,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r043",
@@ -4020,7 +4196,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 800,
    "structure_days": "Day 1A-1E: 30 minutes per level until 12.5% or less of the field remains. Day 1F: 20 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until nine (9) players remain. Day 3: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter.",
    "structure_payout": "Each Day 1 will play until 12.5% or less of the field remains. Only players who advance to Day 2 will be considered \"in the money\".",
@@ -4086,7 +4262,8 @@
    },
    "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
    "labels": [
-    "multi-flight"
+    "multi-flight",
+    "effectively single entry"
    ],
    "late_reg_close": "17:55",
    "levels": 30,
@@ -4114,7 +4291,23 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
+   "flight_pricing": {
+    "flag": "effectively single entry (descriptive only - not a confirmed one-entry freezeout)",
+    "all_flights_same_buy_in_usd": 400,
+    "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
+    "silence_note": "The sheet prints one price for every flight and bars only a bagged player from a later flight; it is silent on a whole-event entry limit and on whether a player who busts a flight may enter a later one. The row stays MULTI and is excluded from the single-entry shortlist and the ranking.",
+    "source": {
+     "label": "Structure sheet #3",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_3.pdf"
+    },
+    "retrieved_on": "2026-11-17"
+   }
   },
   {
    "id": "r045",
@@ -4211,7 +4404,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 600,
    "structure_days": "30 minutes per level until a winner is declared.",
    "structure_payout": "Single day event; the structure sheet publishes no Day 1 payout structure.",
@@ -4312,7 +4505,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 1100,
    "structure_days": "30 minutes per level until a winner is declared.",
    "structure_payout": "Single day event; the structure sheet publishes no Day 1 payout structure.",
@@ -4415,7 +4608,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 800,
    "structure_days": "Day 1A-1E: 30 minutes per level until 12.5% or less of the field remains. Day 1F: 20 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until nine (9) players remain. Day 3: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter.",
    "structure_payout": "Each Day 1 will play until 12.5% or less of the field remains. Only players who advance to Day 2 will be considered \"in the money\".",
@@ -4508,7 +4701,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r049",
@@ -4597,7 +4790,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r050",
@@ -4688,7 +4886,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r051",
@@ -4787,7 +4990,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 800,
    "structure_days": "Day 1A-1E: 30 minutes per level until 12.5% or less of the field remains. Day 1F: 20 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until nine (9) players remain. Day 3: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter.",
    "structure_payout": "Each Day 1 will play until 12.5% or less of the field remains. Only players who advance to Day 2 will be considered \"in the money\".",
@@ -4880,7 +5083,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r053",
@@ -4981,7 +5184,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 800,
    "structure_days": "Day 1A-1E: 30 minutes per level until 12.5% or less of the field remains. Day 1F: 20 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until nine (9) players remain. Day 3: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter.",
    "structure_payout": "Each Day 1 will play until 12.5% or less of the field remains. Only players who advance to Day 2 will be considered \"in the money\".",
@@ -5084,7 +5287,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 1600,
    "structure_days": "Day 1: 40 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter.",
    "structure_payout": "Each Day 1 will play until 12.5% or less of the field remains. Only players who advance to Day 2 will be considered \"in the money\".",
@@ -5150,7 +5353,8 @@
    },
    "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
    "labels": [
-    "multi-flight"
+    "multi-flight",
+    "effectively single entry"
    ],
    "late_reg_close": "15:40",
    "levels": 30,
@@ -5178,7 +5382,23 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
+   "flight_pricing": {
+    "flag": "effectively single entry (descriptive only - not a confirmed one-entry freezeout)",
+    "all_flights_same_buy_in_usd": 800,
+    "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
+    "silence_note": "The sheet prints one price for every flight and bars only a bagged player from a later flight; it is silent on a whole-event entry limit and on whether a player who busts a flight may enter a later one. The row stays MULTI and is excluded from the single-entry shortlist and the ranking.",
+    "source": {
+     "label": "Structure sheet #12",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf"
+    },
+    "retrieved_on": "2026-11-17"
+   }
   },
   {
    "id": "r056",
@@ -5267,7 +5487,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r057",
@@ -5370,7 +5595,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "structure_payout": "Each Day 1 will play until 12.5% or less of the field remains. Only players who advance to Day 2 will be considered \"in the money\".",
    "structure_breaks": "20-minute levels: 10-minute break every 4 levels of play. 30-minute levels: 15-minute break every 4 levels of play. 40-minute levels: 15-minute break every 3 levels of play."
   },
@@ -5434,7 +5659,8 @@
    },
    "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
    "labels": [
-    "multi-flight"
+    "multi-flight",
+    "effectively single entry"
    ],
    "late_reg_close": "20:40",
    "levels": 30,
@@ -5462,7 +5688,23 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
+   "flight_pricing": {
+    "flag": "effectively single entry (descriptive only - not a confirmed one-entry freezeout)",
+    "all_flights_same_buy_in_usd": 800,
+    "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
+    "silence_note": "The sheet prints one price for every flight and bars only a bagged player from a later flight; it is silent on a whole-event entry limit and on whether a player who busts a flight may enter a later one. The row stays MULTI and is excluded from the single-entry shortlist and the ranking.",
+    "source": {
+     "label": "Structure sheet #13",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf"
+    },
+    "retrieved_on": "2026-11-17"
+   }
   },
   {
    "id": "r059",
@@ -5561,7 +5803,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 400,
    "structure_days": "20 minutes per level until completion."
   },
@@ -5662,7 +5904,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 1600,
    "structure_days": "Day 1: 40 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter.",
    "structure_payout": "Each Day 1 will play until 12.5% or less of the field remains. Only players who advance to Day 2 will be considered \"in the money\".",
@@ -5728,7 +5970,8 @@
    },
    "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
    "labels": [
-    "multi-flight"
+    "multi-flight",
+    "effectively single entry"
    ],
    "late_reg_close": "15:40",
    "levels": 30,
@@ -5756,7 +5999,23 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
+   "flight_pricing": {
+    "flag": "effectively single entry (descriptive only - not a confirmed one-entry freezeout)",
+    "all_flights_same_buy_in_usd": 800,
+    "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
+    "silence_note": "The sheet prints one price for every flight and bars only a bagged player from a later flight; it is silent on a whole-event entry limit and on whether a player who busts a flight may enter a later one. The row stays MULTI and is excluded from the single-entry shortlist and the ranking.",
+    "source": {
+     "label": "Structure sheet #12",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf"
+    },
+    "retrieved_on": "2026-11-17"
+   }
   },
   {
    "id": "r062",
@@ -5853,7 +6112,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 600,
    "structure_days": "30 minutes per level until a winner is declared.",
    "structure_payout": "Single day event; the structure sheet publishes no Day 1 payout structure.",
@@ -5960,7 +6219,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "structure_payout": "Each Day 1 will play until 12.5% or less of the field remains. Only players who advance to Day 2 will be considered \"in the money\".",
    "structure_breaks": "20-minute levels: 10-minute break every 4 levels of play. 30-minute levels: 15-minute break every 4 levels of play. 40-minute levels: 15-minute break every 3 levels of play."
   },
@@ -6024,7 +6283,8 @@
    },
    "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
    "labels": [
-    "multi-flight"
+    "multi-flight",
+    "effectively single entry"
    ],
    "late_reg_close": "20:40",
    "levels": 30,
@@ -6052,7 +6312,23 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
+   "flight_pricing": {
+    "flag": "effectively single entry (descriptive only - not a confirmed one-entry freezeout)",
+    "all_flights_same_buy_in_usd": 800,
+    "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
+    "silence_note": "The sheet prints one price for every flight and bars only a bagged player from a later flight; it is silent on a whole-event entry limit and on whether a player who busts a flight may enter a later one. The row stays MULTI and is excluded from the single-entry shortlist and the ranking.",
+    "source": {
+     "label": "Structure sheet #13",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_13.pdf"
+    },
+    "retrieved_on": "2026-11-17"
+   }
   },
   {
    "id": "r065",
@@ -6151,7 +6427,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 400,
    "structure_days": "20 minutes per level until completion."
   },
@@ -6256,7 +6532,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "structure_payout": "Each Day 1 will play until 12.5% or less of the field remains. Only players who advance to Day 2 will be considered \"in the money\".",
    "structure_breaks": "15-minute break every 3 levels of play."
   },
@@ -6358,7 +6634,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 1100,
    "structure_payout": "One in eight (1-in-8) entries will be in the money (approximately 12.5%). $10,400 will be withheld from the prize pool and issued to first place in the form of an entry to the December 2027 WPT World Championship.",
    "structure_breaks": "40-minute levels: 15-minute break every 3 levels of play. 75-minute break after level 9 (approximately 5:30 p.m.). 60-minute levels: 15-minute break every 2 levels of play."
@@ -6423,7 +6699,8 @@
    },
    "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
    "labels": [
-    "multi-flight"
+    "multi-flight",
+    "effectively single entry"
    ],
    "late_reg_close": "15:40",
    "levels": 30,
@@ -6451,7 +6728,23 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
+   "flight_pricing": {
+    "flag": "effectively single entry (descriptive only - not a confirmed one-entry freezeout)",
+    "all_flights_same_buy_in_usd": 800,
+    "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
+    "silence_note": "The sheet prints one price for every flight and bars only a bagged player from a later flight; it is silent on a whole-event entry limit and on whether a player who busts a flight may enter a later one. The row stays MULTI and is excluded from the single-entry shortlist and the ranking.",
+    "source": {
+     "label": "Structure sheet #12",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_12.pdf"
+    },
+    "retrieved_on": "2026-11-17"
+   }
   },
   {
    "id": "r069",
@@ -6514,7 +6807,8 @@
    "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
    "labels": [
     "multi-flight",
-    "turbo"
+    "turbo",
+    "effectively single entry"
    ],
    "late_reg_close": "19:25",
    "levels": 30,
@@ -6542,7 +6836,23 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
+   "flight_pricing": {
+    "flag": "effectively single entry (descriptive only - not a confirmed one-entry freezeout)",
+    "all_flights_same_buy_in_usd": 800,
+    "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
+    "silence_note": "The sheet prints one price for every flight and bars only a bagged player from a later flight; it is silent on a whole-event entry limit and on whether a player who busts a flight may enter a later one. The row stays MULTI and is excluded from the single-entry shortlist and the ranking.",
+    "source": {
+     "label": "Structure sheet #14",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_14.pdf"
+    },
+    "retrieved_on": "2026-11-17"
+   }
   },
   {
    "id": "r070",
@@ -6641,7 +6951,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 600,
    "structure_days": "20 minutes per level until a winner is declared.",
    "structure_payout": "Single day event; the structure sheet publishes no Day 1 payout structure.",
@@ -6746,7 +7056,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 1600,
    "structure_days": "Day 1A: 40 minutes per level until 12.5% or less of the field remains. Day 1B: 20 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter.",
    "structure_payout": "Only players who advance to Day 2 will be considered \"in the money\". In the event that the number of paid entries does not generate at least the Guaranteed prize pool, after the deduction of the Tournament fees and service charge, $325,000 of the Guarantee will be designated for the Tournament prize pool and $175,000 of the Guarantee will be designated for the Bounty prize pool.",
@@ -6850,7 +7160,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 1100,
    "structure_payout": "One in eight (1-in-8) entries will be in the money (approximately 12.5%). $10,400 will be withheld from the prize pool and issued to first place in the form of an entry to the December 2027 WPT World Championship.",
    "structure_breaks": "40-minute levels: 15-minute break every 3 levels of play. 75-minute break after level 9 (approximately 5:30 p.m.). 60-minute levels: 15-minute break every 2 levels of play."
@@ -6940,7 +7250,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r074",
@@ -7031,7 +7346,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r075",
@@ -7130,7 +7450,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 200,
    "structure_days": "20 minutes per level until completion."
   },
@@ -7221,7 +7541,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r077",
@@ -7322,7 +7647,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 1600,
    "structure_days": "Day 1A: 40 minutes per level until 12.5% or less of the field remains. Day 1B: 20 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter.",
    "structure_payout": "Only players who advance to Day 2 will be considered \"in the money\". In the event that the number of paid entries does not generate at least the Guaranteed prize pool, after the deduction of the Tournament fees and service charge, $325,000 of the Guarantee will be designated for the Tournament prize pool and $175,000 of the Guarantee will be designated for the Bounty prize pool.",
@@ -7425,7 +7750,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 400,
    "structure_days": "20 minutes per level until completion."
   },
@@ -7526,7 +7851,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 600,
    "structure_days": "20 minutes per level until a winner is declared.",
    "structure_payout": "Single day event; the structure sheet publishes no Day 1 payout structure.",
@@ -7627,7 +7952,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 1100,
    "structure_days": "Day 1: Fifteen (15) levels of 40 minutes each. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
   },
@@ -7729,7 +8054,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 1100,
    "structure_payout": "One in eight (1-in-8) entries will be in the money (approximately 12.5%). $10,400 will be withheld from the prize pool and issued to first place in the form of an entry to the December 2027 WPT World Championship.",
    "structure_breaks": "40-minute levels: 15-minute break every 3 levels of play. 75-minute break after level 9 (approximately 5:30 p.m.). 60-minute levels: 15-minute break every 2 levels of play."
@@ -7821,7 +8146,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r083",
@@ -7926,7 +8256,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "structure_payout": "Only players who advance to Day 2 will be considered \"in the money\". In the event that the number of paid entries does not generate at least the Guaranteed prize pool, after the deduction of the Tournament fees and service charge, $325,000 of the Guarantee will be designated for the Tournament prize pool and $175,000 of the Guarantee will be designated for the Bounty prize pool.",
    "structure_breaks": "40-minute levels: 15-minute break every 3 levels of play."
   },
@@ -8027,7 +8357,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 1600,
    "structure_days": "30 minutes per level until a winner is declared."
   },
@@ -8118,7 +8448,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r086",
@@ -8217,7 +8552,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 1600,
    "structure_days": "25 minutes per level until completion."
   },
@@ -8318,7 +8653,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 600,
    "structure_days": "20 minutes per level until a winner is declared.",
    "structure_payout": "Single day event; the structure sheet publishes no Day 1 payout structure.",
@@ -8411,7 +8746,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r089",
@@ -8511,7 +8851,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 1100,
    "structure_payout": "One in eight (1-in-8) entries will be in the money (approximately 12.5%). $10,400 will be withheld from the prize pool and issued to first place in the form of an entry to the December 2027 WPT World Championship.",
    "structure_breaks": "40-minute levels: 15-minute break every 3 levels of play. 75-minute break after level 9 (approximately 5:30 p.m.). 60-minute levels: 15-minute break every 2 levels of play."
@@ -8606,6 +8946,11 @@
    ],
    "verified_on": "2026-11-17",
    "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
    "satellite": {
     "seats_awarded": 2,
     "target_event": "Event #39 ($800 No Limit Hold'em LIPS Ladies)",
@@ -8700,7 +9045,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r092",
@@ -8799,7 +9149,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 1100,
    "structure_days": "25 minutes per level until completion."
   },
@@ -8900,7 +9250,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 600,
    "structure_days": "20 minutes per level until a winner is declared.",
    "structure_payout": "Single day event; the structure sheet publishes no Day 1 payout structure.",
@@ -8996,7 +9346,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r095",
@@ -9093,7 +9448,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 1600,
    "structure_days": "Day 1: 40 minutes per level until the tournament is \u201cin the money\u201d. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
   },
@@ -9184,7 +9539,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r097",
@@ -9287,7 +9647,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "structure_payout": "One in eight (1-in-8) entries will be in the money (approximately 12.5%). $10,400 will be withheld from the prize pool and issued to first place in the form of an entry to the December 2027 WPT World Championship.",
    "structure_breaks": "40-minute levels: 15-minute break every 3 levels of play. 75-minute break after level 9 (approximately 5:30 p.m.). 60-minute levels: 15-minute break every 2 levels of play."
   },
@@ -9386,7 +9746,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 800,
    "structure_days": "30 minutes per level until a winner is declared."
   },
@@ -9487,7 +9847,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 3000,
    "structure_days": "30 minutes per level until a winner is declared."
   },
@@ -9588,7 +9948,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 1100,
    "structure_days": "25 minutes per level until completion."
   },
@@ -9682,6 +10042,11 @@
    ],
    "verified_on": "2026-11-17",
    "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
    "satellite": {
     "seats_awarded": 2,
     "target_event": "Event #39 ($800 No Limit Hold'em LIPS Ladies)",
@@ -9776,7 +10141,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r103",
@@ -9875,7 +10245,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 1100,
    "structure_days": "25 minutes per level until completion."
   },
@@ -9976,7 +10346,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 600,
    "structure_days": "20 minutes per level until a winner is declared.",
    "structure_payout": "Single day event; the structure sheet publishes no Day 1 payout structure.",
@@ -10072,7 +10442,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 400
   },
   {
@@ -10166,7 +10536,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r107",
@@ -10268,7 +10643,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "structure_payout": "One in eight (1-in-8) entries will be in the money (approximately 12.5%). $10,400 will be withheld from the prize pool and issued to first place in the form of an entry to the December 2027 WPT World Championship.",
    "structure_breaks": "40-minute levels: 15-minute break every 3 levels of play. 75-minute break after level 9 (approximately 5:30 p.m.). 60-minute levels: 15-minute break every 2 levels of play."
   },
@@ -10360,7 +10735,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r109",
@@ -10451,6 +10831,11 @@
    ],
    "verified_on": "2026-11-17",
    "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
    "satellite": {
     "seats_awarded": 2,
     "target_event": "Event #47 ($2,200 No Limit Hold'em PokerAtlas Championship Title Event)",
@@ -10545,7 +10930,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r111",
@@ -10637,7 +11027,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 400
   },
   {
@@ -10732,7 +11122,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r113",
@@ -10824,7 +11219,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 400
   },
   {
@@ -10917,7 +11312,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r115",
@@ -11019,7 +11419,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "structure_payout": "One in eight (1-in-8) entries will be in the money (approximately 12.5%). $10,400 will be withheld from the prize pool and issued to first place in the form of an entry to the December 2027 WPT World Championship.",
    "structure_breaks": "40-minute levels: 15-minute break every 3 levels of play. 75-minute break after level 9 (approximately 5:30 p.m.). 60-minute levels: 15-minute break every 2 levels of play."
   },
@@ -11112,6 +11512,11 @@
    ],
    "verified_on": "2026-11-17",
    "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
    "satellite": {
     "seats_awarded": 2,
     "target_event": "Event #47 ($2,200 No Limit Hold'em PokerAtlas Championship Title Event)",
@@ -11209,7 +11614,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 400
   },
   {
@@ -11304,7 +11709,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r119",
@@ -11396,6 +11806,11 @@
    ],
    "verified_on": "2026-11-17",
    "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
    "satellite": {
     "seats_awarded": 2,
     "target_event": "Event #47 ($2,200 No Limit Hold'em PokerAtlas Championship Title Event)",
@@ -11493,6 +11908,11 @@
    ],
    "verified_on": "2026-11-17",
    "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
    "satellite": {
     "seats_awarded": 2,
     "target_event": "Event #47 ($2,200 No Limit Hold'em PokerAtlas Championship Title Event)",
@@ -11595,7 +12015,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 800,
    "structure_days": "30 minutes per level until a winner is declared."
   },
@@ -11660,7 +12080,8 @@
    "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
    "labels": [
     "multi-flight",
-    "title-event"
+    "title-event",
+    "effectively single entry"
    ],
    "late_reg_close": "16:55",
    "levels": 29,
@@ -11688,7 +12109,23 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
+   "flight_pricing": {
+    "flag": "effectively single entry (descriptive only - not a confirmed one-entry freezeout)",
+    "all_flights_same_buy_in_usd": 2200,
+    "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
+    "silence_note": "The sheet prints one price for every flight and bars only a bagged player from a later flight; it is silent on a whole-event entry limit and on whether a player who busts a flight may enter a later one. The row stays MULTI and is excluded from the single-entry shortlist and the ranking.",
+    "source": {
+     "label": "Structure sheet #21",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf"
+    },
+    "retrieved_on": "2026-11-17"
+   }
   },
   {
    "id": "r123",
@@ -11780,6 +12217,11 @@
    ],
    "verified_on": "2026-11-17",
    "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
    "satellite": {
     "seats_awarded": 2,
     "target_event": "Event #47 ($2,200 No Limit Hold'em PokerAtlas Championship Title Event)",
@@ -11882,7 +12324,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 3000,
    "structure_days": "30 minutes per level until a winner is declared."
   },
@@ -11983,7 +12425,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 1100,
    "structure_days": "25 minutes per level until completion."
   },
@@ -12067,7 +12509,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r127",
@@ -12170,7 +12612,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "structure_payout": "One in eight (1-in-8) entries will be in the money (approximately 12.5%). $10,400 will be withheld from the prize pool and issued to first place in the form of an entry to the December 2027 WPT World Championship.",
    "structure_breaks": "40-minute levels: 15-minute break every 3 levels of play. 75-minute break after level 9 (approximately 5:30 p.m.). 60-minute levels: 15-minute break every 2 levels of play."
   },
@@ -12272,7 +12714,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 200,
    "structure_days": "20 minutes per level until completion."
   },
@@ -12337,7 +12779,8 @@
    "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
    "labels": [
     "multi-flight",
-    "title-event"
+    "title-event",
+    "effectively single entry"
    ],
    "late_reg_close": "23:10",
    "levels": 30,
@@ -12365,7 +12808,23 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
+   "flight_pricing": {
+    "flag": "effectively single entry (descriptive only - not a confirmed one-entry freezeout)",
+    "all_flights_same_buy_in_usd": 2200,
+    "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
+    "silence_note": "The sheet prints one price for every flight and bars only a bagged player from a later flight; it is silent on a whole-event entry limit and on whether a player who busts a flight may enter a later one. The row stays MULTI and is excluded from the single-entry shortlist and the ranking.",
+    "source": {
+     "label": "Structure sheet #37",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_37.pdf"
+    },
+    "retrieved_on": "2026-11-17"
+   }
   },
   {
    "id": "r130",
@@ -12464,7 +12923,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 1100,
    "structure_days": "25 minutes per level until completion."
   },
@@ -12565,7 +13024,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 600,
    "structure_days": "20 minutes per level until a winner is declared.",
    "structure_payout": "Single day event; the structure sheet publishes no Day 1 payout structure.",
@@ -12632,7 +13091,8 @@
    "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
    "labels": [
     "multi-flight",
-    "seniors-50-plus"
+    "seniors-50-plus",
+    "effectively single entry"
    ],
    "late_reg_close": "16:55",
    "levels": 29,
@@ -12660,7 +13120,23 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
+   "flight_pricing": {
+    "flag": "effectively single entry (descriptive only - not a confirmed one-entry freezeout)",
+    "all_flights_same_buy_in_usd": 1100,
+    "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
+    "silence_note": "The sheet prints one price for every flight and bars only a bagged player from a later flight; it is silent on a whole-event entry limit and on whether a player who busts a flight may enter a later one. The row stays MULTI and is excluded from the single-entry shortlist and the ranking.",
+    "source": {
+     "label": "Structure sheet #20",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_20.pdf"
+    },
+    "retrieved_on": "2026-11-17"
+   }
   },
   {
    "id": "r133",
@@ -12762,7 +13238,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 11100,
    "structure_days": "Day 1: 40 minutes per level until the tournament is \u201cin the money\u201d. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
   },
@@ -12863,7 +13339,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 800,
    "structure_days": "Day 1: 40 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
   },
@@ -12965,7 +13441,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 1100,
    "structure_days": "Day 1: Fifteen (15) levels of 40 minutes each. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter.",
    "structure_payout": "Payout structure not transcribed for this block; see the official WPT structures PDF.",
@@ -13071,7 +13547,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 10400,
    "structure_days": "Day 1: Eight (8) levels of 60 minutes each. Day 2: Five (5) levels of 90 minutes each. Day 3-4: Six (6) levels of 90 minutes each. Day 5: 90 minutes per level until the final 6 players remain. Final Table: 90 minutes per level until two (2) players remain, 45 minutes per level thereafter."
   },
@@ -13172,7 +13648,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 1100,
    "structure_days": "25 minutes per level until completion."
   },
@@ -13273,7 +13749,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 1600,
    "structure_days": "Day 1: 40 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
   },
@@ -13367,7 +13843,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r140",
@@ -13448,7 +13929,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r141",
@@ -13537,7 +14018,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r142",
@@ -13636,7 +14122,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 1100,
    "structure_days": "25 minutes per level until completion."
   },
@@ -13701,7 +14187,8 @@
    "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
    "labels": [
     "multi-flight",
-    "seniors-50-plus"
+    "seniors-50-plus",
+    "effectively single entry"
    ],
    "late_reg_close": "16:55",
    "levels": 29,
@@ -13729,7 +14216,23 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
+   "flight_pricing": {
+    "flag": "effectively single entry (descriptive only - not a confirmed one-entry freezeout)",
+    "all_flights_same_buy_in_usd": 1100,
+    "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
+    "silence_note": "The sheet prints one price for every flight and bars only a bagged player from a later flight; it is silent on a whole-event entry limit and on whether a player who busts a flight may enter a later one. The row stays MULTI and is excluded from the single-entry shortlist and the ranking.",
+    "source": {
+     "label": "Structure sheet #20",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_20.pdf"
+    },
+    "retrieved_on": "2026-11-17"
+   }
   },
   {
    "id": "r144",
@@ -13821,7 +14324,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r145",
@@ -13920,7 +14428,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 800,
    "structure_days": "Day 1: 40 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
   },
@@ -14024,7 +14532,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 10400,
    "structure_days": "Day 1: Eight (8) levels of 60 minutes each. Day 2: Five (5) levels of 90 minutes each. Day 3-4: Six (6) levels of 90 minutes each. Day 5: 90 minutes per level until the final 6 players remain. Final Table: 90 minutes per level until two (2) players remain, 45 minutes per level thereafter."
   },
@@ -14125,7 +14633,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 1100,
    "structure_days": "25 minutes per level until completion."
   },
@@ -14224,7 +14732,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 1100,
    "structure_days": "Day 1: Fifteen (15) levels of 40 minutes each. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
   },
@@ -14325,7 +14833,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 1600,
    "structure_days": "Day 1: 40 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
   },
@@ -14409,7 +14917,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r151",
@@ -14498,7 +15006,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r152",
@@ -14597,7 +15110,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 1100,
    "structure_days": "25 minutes per level until completion."
   },
@@ -14698,7 +15211,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 1100,
    "structure_days": "20 minutes per level until a winner is declared."
   },
@@ -14801,7 +15314,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 600,
    "structure_days": "20 minutes per level until a winner is declared."
   },
@@ -14895,7 +15408,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r156",
@@ -14995,7 +15513,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 1100,
    "structure_days": "25 minutes per level until completion."
   },
@@ -15077,7 +15595,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r158",
@@ -15179,7 +15697,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 10400,
    "structure_days": "Day 1: Eight (8) levels of 60 minutes each. Day 2: Five (5) levels of 90 minutes each. Day 3-4: Six (6) levels of 90 minutes each. Day 5: 90 minutes per level until the final 6 players remain. Final Table: 90 minutes per level until two (2) players remain, 45 minutes per level thereafter."
   },
@@ -15271,7 +15789,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r160",
@@ -15368,7 +15891,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 1100,
    "structure_days": "30 minutes per level until a winner is declared."
   },
@@ -15450,7 +15973,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r162",
@@ -15549,7 +16072,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 3000,
    "structure_days": "30 minutes per level until a winner is declared."
   },
@@ -15640,7 +16163,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r164",
@@ -15740,7 +16268,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 1100,
    "structure_days": "25 minutes per level until completion."
   },
@@ -15842,7 +16370,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 1600,
    "structure_days": "20 minutes per level until a winner is declared."
   },
@@ -15945,7 +16473,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 1100,
    "structure_days": "Day 1A: 40 minutes per level until 12.5% or less of the field remains. Day 1B: 20 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
   },
@@ -16036,7 +16564,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r168",
@@ -16135,7 +16668,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 800,
    "structure_days": "30 minutes per level. 20 minutes per level when the event is \u201cin the money\u201d. 15 minutes per level when six (6) players remain until a winner is declared."
   },
@@ -16218,7 +16751,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r170",
@@ -16317,7 +16850,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 800,
    "structure_days": "30 minutes per level until a winner is declared."
   },
@@ -16419,7 +16952,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 10500,
    "structure_days": "Levels 1-6: 30 minutes per level. Levels 7 and above: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
   },
@@ -16510,7 +17043,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r173",
@@ -16612,7 +17150,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 3000,
    "structure_days": "25 minutes per level until completion."
   },
@@ -16715,7 +17253,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 400,
    "structure_days": "20 minutes per level until completion."
   },
@@ -16818,7 +17356,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 1100,
    "structure_days": "Day 1A: 40 minutes per level until 12.5% or less of the field remains. Day 1B: 20 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
   },
@@ -16883,7 +17421,8 @@
    "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
    "labels": [
     "multi-flight",
-    "rake-discount"
+    "rake-discount",
+    "effectively single entry"
    ],
    "late_reg_close": "16:55",
    "levels": 30,
@@ -16911,7 +17450,23 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
+   "flight_pricing": {
+    "flag": "effectively single entry (descriptive only - not a confirmed one-entry freezeout)",
+    "all_flights_same_buy_in_usd": 1100,
+    "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
+    "silence_note": "The sheet prints one price for every flight and bars only a bagged player from a later flight; it is silent on a whole-event entry limit and on whether a player who busts a flight may enter a later one. The row stays MULTI and is excluded from the single-entry shortlist and the ranking.",
+    "source": {
+     "label": "Structure sheet #35",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf"
+    },
+    "retrieved_on": "2026-11-17"
+   }
   },
   {
    "id": "r177",
@@ -17010,7 +17565,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 1100,
    "structure_days": "Day 1: 40-minute per level until the tournament is \u201cin the money\u201d. Day 2: 40 minutes per level until 9 players remain. Day 3: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
   },
@@ -17109,7 +17664,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 1600,
    "structure_days": "Day 1: Fifteen (15) levels of 40 minutes each. Day 2: 60 minutes per level until two (2) players remain, 30 minutes per level thereafter."
   },
@@ -17210,7 +17765,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 3000,
    "structure_days": "Day 1: 40 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until nine (9) players remain. Day 3: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
   },
@@ -17292,7 +17847,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r181",
@@ -17371,7 +17926,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r182",
@@ -17461,7 +18016,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r183",
@@ -17560,7 +18120,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 25800,
    "structure_days": "Day 1: Fifteen (15) 40-minute levels. Day 2: 60 minutes per level until two (2) players remain, 30 minutes per level thereafter."
   },
@@ -17661,7 +18221,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 400,
    "structure_days": "20 minutes per level until completion."
   },
@@ -17726,7 +18286,8 @@
    "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
    "labels": [
     "multi-flight",
-    "rake-discount"
+    "rake-discount",
+    "effectively single entry"
    ],
    "late_reg_close": "23:10",
    "levels": 30,
@@ -17754,7 +18315,23 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
+   "flight_pricing": {
+    "flag": "effectively single entry (descriptive only - not a confirmed one-entry freezeout)",
+    "all_flights_same_buy_in_usd": 1100,
+    "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
+    "silence_note": "The sheet prints one price for every flight and bars only a bagged player from a later flight; it is silent on a whole-event entry limit and on whether a player who busts a flight may enter a later one. The row stays MULTI and is excluded from the single-entry shortlist and the ranking.",
+    "source": {
+     "label": "Structure sheet #36",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf"
+    },
+    "retrieved_on": "2026-11-17"
+   }
   },
   {
    "id": "r186",
@@ -17853,7 +18430,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 400,
    "structure_days": "20 minutes per level until completion."
   },
@@ -17954,7 +18531,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 400,
    "structure_days": "15 minutes per level until completion."
   },
@@ -18019,7 +18596,8 @@
    "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
    "labels": [
     "multi-flight",
-    "rake-discount"
+    "rake-discount",
+    "effectively single entry"
    ],
    "late_reg_close": "16:55",
    "levels": 30,
@@ -18047,7 +18625,23 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
+   "flight_pricing": {
+    "flag": "effectively single entry (descriptive only - not a confirmed one-entry freezeout)",
+    "all_flights_same_buy_in_usd": 1100,
+    "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
+    "silence_note": "The sheet prints one price for every flight and bars only a bagged player from a later flight; it is silent on a whole-event entry limit and on whether a player who busts a flight may enter a later one. The row stays MULTI and is excluded from the single-entry shortlist and the ranking.",
+    "source": {
+     "label": "Structure sheet #35",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf"
+    },
+    "retrieved_on": "2026-11-17"
+   }
   },
   {
    "id": "r189",
@@ -18144,7 +18738,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 1600,
    "structure_days": "Day 1: Fifteen (15) levels of 40 minutes each. Day 2: 60 minutes per level until two (2) players remain, 30 minutes per level thereafter."
   },
@@ -18243,7 +18837,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 600,
    "structure_days": "30 minutes per level until a winner is declared."
   },
@@ -18344,7 +18938,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 3000,
    "structure_days": "Day 1: 40 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until nine (9) players remain. Day 3: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
   },
@@ -18425,7 +19019,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r193",
@@ -18524,7 +19118,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 10500,
    "structure_days": "Levels 1-6: 30 minutes per level. Levels 7 and above: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
   },
@@ -18626,7 +19220,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 600,
    "structure_days": "20 minutes per level until completion."
   },
@@ -18727,7 +19321,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 1100,
    "structure_days": "20 minutes per level until a winner is declared."
   },
@@ -18792,7 +19386,8 @@
    "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
    "labels": [
     "multi-flight",
-    "rake-discount"
+    "rake-discount",
+    "effectively single entry"
    ],
    "late_reg_close": "23:10",
    "levels": 30,
@@ -18820,7 +19415,23 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
+   "flight_pricing": {
+    "flag": "effectively single entry (descriptive only - not a confirmed one-entry freezeout)",
+    "all_flights_same_buy_in_usd": 1100,
+    "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
+    "silence_note": "The sheet prints one price for every flight and bars only a bagged player from a later flight; it is silent on a whole-event entry limit and on whether a player who busts a flight may enter a later one. The row stays MULTI and is excluded from the single-entry shortlist and the ranking.",
+    "source": {
+     "label": "Structure sheet #36",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_36.pdf"
+    },
+    "retrieved_on": "2026-11-17"
+   }
   },
   {
    "id": "r197",
@@ -18883,7 +19494,8 @@
    "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
    "labels": [
     "multi-flight",
-    "rake-discount"
+    "rake-discount",
+    "effectively single entry"
    ],
    "late_reg_close": "16:55",
    "levels": 30,
@@ -18911,7 +19523,23 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
+   "flight_pricing": {
+    "flag": "effectively single entry (descriptive only - not a confirmed one-entry freezeout)",
+    "all_flights_same_buy_in_usd": 1100,
+    "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
+    "silence_note": "The sheet prints one price for every flight and bars only a bagged player from a later flight; it is silent on a whole-event entry limit and on whether a player who busts a flight may enter a later one. The row stays MULTI and is excluded from the single-entry shortlist and the ranking.",
+    "source": {
+     "label": "Structure sheet #35",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_35.pdf"
+    },
+    "retrieved_on": "2026-11-17"
+   }
   },
   {
    "id": "r198",
@@ -19012,7 +19640,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 1600,
    "structure_days": "Day 1A &1C: 40 minutes per level until 12.5% or less of the field remains. Day 1B & 1D: 20 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
   },
@@ -19113,7 +19741,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 5000,
    "structure_days": "Day 1: Eight (8) 60-minute levels. Day 2: Eight (8) 60-minute levels. Day 3: 60 minutes per level until two (2) players remain, 30 minutes per level thereafter."
   },
@@ -19216,7 +19844,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 300,
    "structure_days": "20 minutes per level until completion."
   },
@@ -19298,7 +19926,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r202",
@@ -19377,7 +20005,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r203",
@@ -19474,7 +20102,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 3000,
    "structure_days": "30 minutes per level until a winner is declared."
   },
@@ -19575,7 +20203,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 10500,
    "structure_days": "Levels 1-6: 30 minutes per level. Levels 7 and above: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
   },
@@ -19674,7 +20302,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 1600,
    "structure_days": "Day 1: Fifteen (15) levels of 40 minutes each. Day 2: 60 minutes per level until two (2) players remain, 30 minutes per level thereafter."
   },
@@ -19777,7 +20405,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 300,
    "structure_days": "20 minutes per level until completion."
   },
@@ -19870,7 +20498,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r208",
@@ -19969,7 +20602,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 600,
    "structure_days": "20 minutes per level until a winner is declared."
   },
@@ -20072,7 +20705,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 1600,
    "structure_days": "Day 1A &1C: 40 minutes per level until 12.5% or less of the field remains. Day 1B & 1D: 20 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
   },
@@ -20166,7 +20799,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r211",
@@ -20267,7 +20905,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 1600,
    "structure_days": "Day 1A &1C: 40 minutes per level until 12.5% or less of the field remains. Day 1B & 1D: 20 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
   },
@@ -20332,7 +20970,8 @@
    "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
    "labels": [
     "multi-flight",
-    "rake-discount"
+    "rake-discount",
+    "effectively single entry"
    ],
    "late_reg_close": "17:55",
    "levels": 30,
@@ -20360,7 +20999,23 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
+   "flight_pricing": {
+    "flag": "effectively single entry (descriptive only - not a confirmed one-entry freezeout)",
+    "all_flights_same_buy_in_usd": 600,
+    "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
+    "silence_note": "The sheet prints one price for every flight and bars only a bagged player from a later flight; it is silent on a whole-event entry limit and on whether a player who busts a flight may enter a later one. The row stays MULTI and is excluded from the single-entry shortlist and the ranking.",
+    "source": {
+     "label": "Structure sheet #4",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf"
+    },
+    "retrieved_on": "2026-11-17"
+   }
   },
   {
    "id": "r213",
@@ -20457,7 +21112,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 600,
    "structure_days": "30 minutes per level until a winner is declared."
   },
@@ -20539,7 +21194,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r215",
@@ -20638,7 +21293,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 600,
    "structure_days": "30 minutes per level until a winner is declared.",
    "structure_payout": "Single day event; the structure sheet publishes no Day 1 payout structure.",
@@ -20741,7 +21396,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 10500,
    "structure_days": "Levels 1-6: 30 minutes per level. Levels 7 and above: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
   },
@@ -20823,7 +21478,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r218",
@@ -20912,7 +21567,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r219",
@@ -21011,7 +21666,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 600,
    "structure_days": "20 minutes per level until a winner is declared."
   },
@@ -21114,7 +21769,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 1600,
    "structure_days": "Day 1A &1C: 40 minutes per level until 12.5% or less of the field remains. Day 1B & 1D: 20 minutes per level until 12.5% or less of the field remains. Day 2: 40 minutes per level until two (2) players remain, 30 minutes per level thereafter."
   },
@@ -21179,7 +21834,8 @@
    "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
    "labels": [
     "multi-flight",
-    "rake-discount"
+    "rake-discount",
+    "effectively single entry"
    ],
    "late_reg_close": "17:55",
    "levels": 30,
@@ -21207,7 +21863,23 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
+   "flight_pricing": {
+    "flag": "effectively single entry (descriptive only - not a confirmed one-entry freezeout)",
+    "all_flights_same_buy_in_usd": 600,
+    "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
+    "silence_note": "The sheet prints one price for every flight and bars only a bagged player from a later flight; it is silent on a whole-event entry limit and on whether a player who busts a flight may enter a later one. The row stays MULTI and is excluded from the single-entry shortlist and the ranking.",
+    "source": {
+     "label": "Structure sheet #4",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf"
+    },
+    "retrieved_on": "2026-11-17"
+   }
   },
   {
    "id": "r222",
@@ -21304,7 +21976,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 1100,
    "structure_days": "30 minutes per level until a winner is declared."
   },
@@ -21388,7 +22060,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r224",
@@ -21477,7 +22149,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r225",
@@ -21579,7 +22251,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17",
+   "last_checked": "2026-11-19",
    "house_fee_basis_usd": 600,
    "structure_days": "20 minutes per level until a winner is declared.",
    "structure_payout": "Single day event; the structure sheet publishes no Day 1 payout structure.",
@@ -21646,7 +22318,8 @@
    "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
    "labels": [
     "multi-flight",
-    "rake-discount"
+    "rake-discount",
+    "effectively single entry"
    ],
    "late_reg_close": "17:55",
    "levels": 30,
@@ -21674,7 +22347,23 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
+   "flight_pricing": {
+    "flag": "effectively single entry (descriptive only - not a confirmed one-entry freezeout)",
+    "all_flights_same_buy_in_usd": 600,
+    "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
+    "silence_note": "The sheet prints one price for every flight and bars only a bagged player from a later flight; it is silent on a whole-event entry limit and on whether a player who busts a flight may enter a later one. The row stays MULTI and is excluded from the single-entry shortlist and the ranking.",
+    "source": {
+     "label": "Structure sheet #4",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_4.pdf"
+    },
+    "retrieved_on": "2026-11-17"
+   }
   },
   {
    "id": "r227",
@@ -21763,7 +22452,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r228",
@@ -21855,7 +22544,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r229",
@@ -21942,7 +22636,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r230",
@@ -22031,7 +22730,7 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-19"
   },
   {
    "id": "r231",
@@ -22118,7 +22817,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r232",
@@ -22207,7 +22911,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r233",
@@ -22294,7 +23003,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r234",
@@ -22383,7 +23097,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r235",
@@ -22474,7 +23193,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r236",
@@ -22567,6 +23291,11 @@
    ],
    "verified_on": "2026-11-17",
    "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
    "satellite": {
     "seats_awarded": 4,
     "target_event": "Event #08 ($1,100 No Limit Hold'em Ante Up Championship)",
@@ -22665,6 +23394,11 @@
    ],
    "verified_on": "2026-11-17",
    "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
    "satellite": {
     "seats_awarded": 4,
     "target_event": "Event #08 ($1,100 No Limit Hold'em Ante Up Championship)",
@@ -22732,7 +23466,8 @@
    },
    "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
    "labels": [
-    "multi-flight"
+    "multi-flight",
+    "effectively single entry"
    ],
    "late_reg_close": "17:55",
    "levels": 30,
@@ -22760,7 +23495,23 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
+   "flight_pricing": {
+    "flag": "effectively single entry (descriptive only - not a confirmed one-entry freezeout)",
+    "all_flights_same_buy_in_usd": 1100,
+    "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
+    "silence_note": "The sheet prints one price for every flight and bars only a bagged player from a later flight; it is silent on a whole-event entry limit and on whether a player who busts a flight may enter a later one. The row stays MULTI and is excluded from the single-entry shortlist and the ranking.",
+    "source": {
+     "label": "Structure sheet #6",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_6.pdf"
+    },
+    "retrieved_on": "2026-11-17"
+   }
   },
   {
    "id": "r239",
@@ -22851,6 +23602,11 @@
    ],
    "verified_on": "2026-11-17",
    "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
    "satellite": {
     "seats_awarded": 4,
     "target_event": "Event #08 ($1,100 No Limit Hold'em Ante Up Championship)",
@@ -22947,6 +23703,11 @@
    ],
    "verified_on": "2026-11-17",
    "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
    "satellite": {
     "seats_awarded": 4,
     "target_event": "Event #08 ($1,100 No Limit Hold'em Ante Up Championship)",
@@ -23014,7 +23775,8 @@
    },
    "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
    "labels": [
-    "multi-flight"
+    "multi-flight",
+    "effectively single entry"
    ],
    "late_reg_close": "17:55",
    "levels": 30,
@@ -23042,7 +23804,23 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
+   "flight_pricing": {
+    "flag": "effectively single entry (descriptive only - not a confirmed one-entry freezeout)",
+    "all_flights_same_buy_in_usd": 1100,
+    "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
+    "silence_note": "The sheet prints one price for every flight and bars only a bagged player from a later flight; it is silent on a whole-event entry limit and on whether a player who busts a flight may enter a later one. The row stays MULTI and is excluded from the single-entry shortlist and the ranking.",
+    "source": {
+     "label": "Structure sheet #6",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_6.pdf"
+    },
+    "retrieved_on": "2026-11-17"
+   }
   },
   {
    "id": "r242",
@@ -23133,6 +23911,11 @@
    ],
    "verified_on": "2026-11-17",
    "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
    "satellite": {
     "seats_awarded": 4,
     "target_event": "Event #08 ($1,100 No Limit Hold'em Ante Up Championship)",
@@ -23229,6 +24012,11 @@
    ],
    "verified_on": "2026-11-17",
    "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
    "satellite": {
     "seats_awarded": 4,
     "target_event": "Event #08 ($1,100 No Limit Hold'em Ante Up Championship)",
@@ -23296,7 +24084,8 @@
    },
    "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
    "labels": [
-    "multi-flight"
+    "multi-flight",
+    "effectively single entry"
    ],
    "late_reg_close": "17:55",
    "levels": 30,
@@ -23324,7 +24113,23 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
+   "flight_pricing": {
+    "flag": "effectively single entry (descriptive only - not a confirmed one-entry freezeout)",
+    "all_flights_same_buy_in_usd": 1100,
+    "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
+    "silence_note": "The sheet prints one price for every flight and bars only a bagged player from a later flight; it is silent on a whole-event entry limit and on whether a player who busts a flight may enter a later one. The row stays MULTI and is excluded from the single-entry shortlist and the ranking.",
+    "source": {
+     "label": "Structure sheet #6",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_6.pdf"
+    },
+    "retrieved_on": "2026-11-17"
+   }
   },
   {
    "id": "r245",
@@ -23413,7 +24218,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r246",
@@ -23504,7 +24314,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r247",
@@ -23591,7 +24406,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r248",
@@ -23682,6 +24502,11 @@
    ],
    "verified_on": "2026-11-17",
    "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
    "satellite": {
     "seats_awarded": 2,
     "target_event": "Event #20 ($1,600 No Limit Hold'em MSPT)",
@@ -23779,6 +24604,11 @@
    ],
    "verified_on": "2026-11-17",
    "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
    "satellite": {
     "seats_awarded": 2,
     "target_event": "Event #20 ($1,600 No Limit Hold'em MSPT)",
@@ -23875,7 +24705,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r251",
@@ -23962,7 +24797,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r252",
@@ -24053,6 +24893,11 @@
    ],
    "verified_on": "2026-11-17",
    "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
    "satellite": {
     "seats_awarded": 2,
     "target_event": "Event #20 ($1,600 No Limit Hold'em MSPT)",
@@ -24150,6 +24995,11 @@
    ],
    "verified_on": "2026-11-17",
    "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
    "satellite": {
     "seats_awarded": 2,
     "target_event": "Event #20 ($1,600 No Limit Hold'em MSPT)",
@@ -24218,7 +25068,8 @@
    "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
    "labels": [
     "multi-flight",
-    "rake-discount"
+    "rake-discount",
+    "effectively single entry"
    ],
    "late_reg_close": "17:55",
    "levels": 30,
@@ -24246,7 +25097,23 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
+   "flight_pricing": {
+    "flag": "effectively single entry (descriptive only - not a confirmed one-entry freezeout)",
+    "all_flights_same_buy_in_usd": 1600,
+    "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
+    "silence_note": "The sheet prints one price for every flight and bars only a bagged player from a later flight; it is silent on a whole-event entry limit and on whether a player who busts a flight may enter a later one. The row stays MULTI and is excluded from the single-entry shortlist and the ranking.",
+    "source": {
+     "label": "Structure sheet #8",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_8.pdf"
+    },
+    "retrieved_on": "2026-11-17"
+   }
   },
   {
    "id": "r255",
@@ -24337,6 +25204,11 @@
    ],
    "verified_on": "2026-11-17",
    "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
    "satellite": {
     "seats_awarded": 2,
     "target_event": "Event #20 ($1,600 No Limit Hold'em MSPT)",
@@ -24431,7 +25303,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r257",
@@ -24522,6 +25399,11 @@
    ],
    "verified_on": "2026-11-17",
    "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
    "satellite": {
     "seats_awarded": 2,
     "target_event": "Event #20 ($1,600 No Limit Hold'em MSPT)",
@@ -24590,7 +25472,8 @@
    "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
    "labels": [
     "multi-flight",
-    "rake-discount"
+    "rake-discount",
+    "effectively single entry"
    ],
    "late_reg_close": "17:55",
    "levels": 30,
@@ -24618,7 +25501,23 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
+   "flight_pricing": {
+    "flag": "effectively single entry (descriptive only - not a confirmed one-entry freezeout)",
+    "all_flights_same_buy_in_usd": 1600,
+    "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
+    "silence_note": "The sheet prints one price for every flight and bars only a bagged player from a later flight; it is silent on a whole-event entry limit and on whether a player who busts a flight may enter a later one. The row stays MULTI and is excluded from the single-entry shortlist and the ranking.",
+    "source": {
+     "label": "Structure sheet #8",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_8.pdf"
+    },
+    "retrieved_on": "2026-11-17"
+   }
   },
   {
    "id": "r259",
@@ -24709,6 +25608,11 @@
    ],
    "verified_on": "2026-11-17",
    "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
    "satellite": {
     "seats_awarded": 2,
     "target_event": "Event #20 ($1,600 No Limit Hold'em MSPT)",
@@ -24805,7 +25709,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r261",
@@ -24868,7 +25777,8 @@
    "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
    "labels": [
     "multi-flight",
-    "rake-discount"
+    "rake-discount",
+    "effectively single entry"
    ],
    "late_reg_close": "17:55",
    "levels": 30,
@@ -24896,7 +25806,23 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
+   "flight_pricing": {
+    "flag": "effectively single entry (descriptive only - not a confirmed one-entry freezeout)",
+    "all_flights_same_buy_in_usd": 1600,
+    "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
+    "silence_note": "The sheet prints one price for every flight and bars only a bagged player from a later flight; it is silent on a whole-event entry limit and on whether a player who busts a flight may enter a later one. The row stays MULTI and is excluded from the single-entry shortlist and the ranking.",
+    "source": {
+     "label": "Structure sheet #8",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_8.pdf"
+    },
+    "retrieved_on": "2026-11-17"
+   }
   },
   {
    "id": "r262",
@@ -24985,7 +25911,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r263",
@@ -25079,7 +26010,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r264",
@@ -25142,7 +26078,8 @@
    "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
    "labels": [
     "multi-flight",
-    "rake-discount"
+    "rake-discount",
+    "effectively single entry"
    ],
    "late_reg_close": "15:40",
    "levels": 30,
@@ -25170,7 +26107,23 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
+   "flight_pricing": {
+    "flag": "effectively single entry (descriptive only - not a confirmed one-entry freezeout)",
+    "all_flights_same_buy_in_usd": 250,
+    "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight. Players who cash on Day 1 but bust before making Day 2 may play another flight.\"",
+    "silence_note": "The sheet prints one price for every flight and bars only a bagged player from a later flight; it is silent on a whole-event entry limit and on whether a player who busts a flight may enter a later one. The row stays MULTI and is excluded from the single-entry shortlist and the ranking.",
+    "source": {
+     "label": "Structure sheet #15",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_15.pdf"
+    },
+    "retrieved_on": "2026-11-17"
+   }
   },
   {
    "id": "r265",
@@ -25233,7 +26186,8 @@
    "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
    "labels": [
     "multi-flight",
-    "rake-discount"
+    "rake-discount",
+    "effectively single entry"
    ],
    "late_reg_close": "21:40",
    "levels": 30,
@@ -25261,7 +26215,23 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
+   "flight_pricing": {
+    "flag": "effectively single entry (descriptive only - not a confirmed one-entry freezeout)",
+    "all_flights_same_buy_in_usd": 250,
+    "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight. Players who cash on Day 1 but bust before making Day 2 may play another flight.\"",
+    "silence_note": "The sheet prints one price for every flight and bars only a bagged player from a later flight; it is silent on a whole-event entry limit and on whether a player who busts a flight may enter a later one. The row stays MULTI and is excluded from the single-entry shortlist and the ranking.",
+    "source": {
+     "label": "Structure sheet #15",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_15.pdf"
+    },
+    "retrieved_on": "2026-11-17"
+   }
   },
   {
    "id": "r266",
@@ -25324,7 +26294,8 @@
    "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
    "labels": [
     "multi-flight",
-    "rake-discount"
+    "rake-discount",
+    "effectively single entry"
    ],
    "late_reg_close": "15:40",
    "levels": 30,
@@ -25354,7 +26325,23 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
+   "flight_pricing": {
+    "flag": "effectively single entry (descriptive only - not a confirmed one-entry freezeout)",
+    "all_flights_same_buy_in_usd": 250,
+    "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight. Players who cash on Day 1 but bust before making Day 2 may play another flight.\"",
+    "silence_note": "The sheet prints one price for every flight and bars only a bagged player from a later flight; it is silent on a whole-event entry limit and on whether a player who busts a flight may enter a later one. The row stays MULTI and is excluded from the single-entry shortlist and the ranking.",
+    "source": {
+     "label": "Structure sheet #15",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_15.pdf"
+    },
+    "retrieved_on": "2026-11-17"
+   }
   },
   {
    "id": "r267",
@@ -25417,7 +26404,8 @@
    "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
    "labels": [
     "multi-flight",
-    "rake-discount"
+    "rake-discount",
+    "effectively single entry"
    ],
    "late_reg_close": "21:40",
    "levels": 30,
@@ -25447,7 +26435,23 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
+   "flight_pricing": {
+    "flag": "effectively single entry (descriptive only - not a confirmed one-entry freezeout)",
+    "all_flights_same_buy_in_usd": 250,
+    "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight. Players who cash on Day 1 but bust before making Day 2 may play another flight.\"",
+    "silence_note": "The sheet prints one price for every flight and bars only a bagged player from a later flight; it is silent on a whole-event entry limit and on whether a player who busts a flight may enter a later one. The row stays MULTI and is excluded from the single-entry shortlist and the ranking.",
+    "source": {
+     "label": "Structure sheet #15",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_15.pdf"
+    },
+    "retrieved_on": "2026-11-17"
+   }
   },
   {
    "id": "r268",
@@ -25534,7 +26538,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r269",
@@ -25626,7 +26635,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r270",
@@ -25716,7 +26730,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r271",
@@ -25778,7 +26797,8 @@
    },
    "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
    "labels": [
-    "multi-flight"
+    "multi-flight",
+    "effectively single entry"
    ],
    "late_reg_close": "15:40",
    "levels": 30,
@@ -25806,7 +26826,23 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
+   "flight_pricing": {
+    "flag": "effectively single entry (descriptive only - not a confirmed one-entry freezeout)",
+    "all_flights_same_buy_in_usd": 300,
+    "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
+    "silence_note": "The sheet prints one price for every flight and bars only a bagged player from a later flight; it is silent on a whole-event entry limit and on whether a player who busts a flight may enter a later one. The row stays MULTI and is excluded from the single-entry shortlist and the ranking.",
+    "source": {
+     "label": "Structure sheet #13",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_13.pdf"
+    },
+    "retrieved_on": "2026-11-17"
+   }
   },
   {
    "id": "r272",
@@ -25868,7 +26904,8 @@
    },
    "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
    "labels": [
-    "multi-flight"
+    "multi-flight",
+    "effectively single entry"
    ],
    "late_reg_close": "20:40",
    "levels": 30,
@@ -25896,7 +26933,23 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
+   "flight_pricing": {
+    "flag": "effectively single entry (descriptive only - not a confirmed one-entry freezeout)",
+    "all_flights_same_buy_in_usd": 300,
+    "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
+    "silence_note": "The sheet prints one price for every flight and bars only a bagged player from a later flight; it is silent on a whole-event entry limit and on whether a player who busts a flight may enter a later one. The row stays MULTI and is excluded from the single-entry shortlist and the ranking.",
+    "source": {
+     "label": "Structure sheet #14",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_14.pdf"
+    },
+    "retrieved_on": "2026-11-17"
+   }
   },
   {
    "id": "r273",
@@ -25958,7 +27011,8 @@
    },
    "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
    "labels": [
-    "multi-flight"
+    "multi-flight",
+    "effectively single entry"
    ],
    "late_reg_close": "15:40",
    "levels": 30,
@@ -25986,7 +27040,23 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
+   "flight_pricing": {
+    "flag": "effectively single entry (descriptive only - not a confirmed one-entry freezeout)",
+    "all_flights_same_buy_in_usd": 300,
+    "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
+    "silence_note": "The sheet prints one price for every flight and bars only a bagged player from a later flight; it is silent on a whole-event entry limit and on whether a player who busts a flight may enter a later one. The row stays MULTI and is excluded from the single-entry shortlist and the ranking.",
+    "source": {
+     "label": "Structure sheet #13",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_13.pdf"
+    },
+    "retrieved_on": "2026-11-17"
+   }
   },
   {
    "id": "r274",
@@ -26048,7 +27118,8 @@
    },
    "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
    "labels": [
-    "multi-flight"
+    "multi-flight",
+    "effectively single entry"
    ],
    "late_reg_close": "20:40",
    "levels": 30,
@@ -26076,7 +27147,23 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
+   "flight_pricing": {
+    "flag": "effectively single entry (descriptive only - not a confirmed one-entry freezeout)",
+    "all_flights_same_buy_in_usd": 300,
+    "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
+    "silence_note": "The sheet prints one price for every flight and bars only a bagged player from a later flight; it is silent on a whole-event entry limit and on whether a player who busts a flight may enter a later one. The row stays MULTI and is excluded from the single-entry shortlist and the ranking.",
+    "source": {
+     "label": "Structure sheet #14",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_14.pdf"
+    },
+    "retrieved_on": "2026-11-17"
+   }
   },
   {
    "id": "r275",
@@ -26138,7 +27225,8 @@
    },
    "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
    "labels": [
-    "multi-flight"
+    "multi-flight",
+    "effectively single entry"
    ],
    "late_reg_close": "15:40",
    "levels": 30,
@@ -26166,7 +27254,23 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
+   "flight_pricing": {
+    "flag": "effectively single entry (descriptive only - not a confirmed one-entry freezeout)",
+    "all_flights_same_buy_in_usd": 300,
+    "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
+    "silence_note": "The sheet prints one price for every flight and bars only a bagged player from a later flight; it is silent on a whole-event entry limit and on whether a player who busts a flight may enter a later one. The row stays MULTI and is excluded from the single-entry shortlist and the ranking.",
+    "source": {
+     "label": "Structure sheet #13",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_13.pdf"
+    },
+    "retrieved_on": "2026-11-17"
+   }
   },
   {
    "id": "r276",
@@ -26228,7 +27332,8 @@
    },
    "entry_rule": "Not single entry: structure sheet allows or implies a further entry (multi-flight or later buy-in).",
    "labels": [
-    "multi-flight"
+    "multi-flight",
+    "effectively single entry"
    ],
    "late_reg_close": "20:40",
    "levels": 30,
@@ -26256,7 +27361,23 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   },
+   "flight_pricing": {
+    "flag": "effectively single entry (descriptive only - not a confirmed one-entry freezeout)",
+    "all_flights_same_buy_in_usd": 300,
+    "excerpt": "Clause 08: \"Any player who bags chips for Day 2 may not play a subsequent flight.\" Later entry after busting is not addressed; exclude from the strict shortlist.",
+    "silence_note": "The sheet prints one price for every flight and bars only a bagged player from a later flight; it is silent on a whole-event entry limit and on whether a player who busts a flight may enter a later one. The row stays MULTI and is excluded from the single-entry shortlist and the ranking.",
+    "source": {
+     "label": "Structure sheet #14",
+     "url": "https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_14.pdf"
+    },
+    "retrieved_on": "2026-11-17"
+   }
   },
   {
    "id": "r277",
@@ -26345,7 +27466,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r278",
@@ -26436,7 +27562,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r279",
@@ -26525,7 +27656,12 @@
     }
    ],
    "verified_on": "2026-11-17",
-   "last_checked": "2026-11-17"
+   "last_checked": "2026-11-17",
+   "recheck": {
+    "on": "2026-11-19",
+    "url": "https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-dec-2026.html",
+    "what": "The official series listing page was re-read row by row on 2026-11-19 (session cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily source monitor re-fetched it and its extracted facts show no change), so the row's last_checked stays 2026-11-17."
+   }
   },
   {
    "id": "r280",

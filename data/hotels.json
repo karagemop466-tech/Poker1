@@ -75,9 +75,9 @@
    },
    "last_checked": "2026-11-17",
    "recheck": {
-    "on": "2026-11-17",
+    "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
-    "what": "Hotel terms re-read in full: the $55 resort fee plus tax, the 13.38% Clark County Room Tax, the $20 / $25 / $40 parking fees, the $150 per-night incidental deposit, the $50 additional-guest charge, the $100 plus tax early check-out charge and the prepaid non-refundable rule are all still printed exactly as published."
+    "what": "Hotel terms page and Resort Fee page both re-read live on 2026-11-19 (session cebd4457): the $55 resort fee plus tax, the five printed fee inclusions, the 13.38% Clark County Room Tax, the $20 / $25 / $40 parking fees, the $150 per-night incidental deposit, the $50 additional-guest charge, the $100 plus tax early check-out charge and the prepaid non-refundable rule are all still printed exactly as published on 2026-11-17."
    },
    "walk_to_venetian_status": "internal",
    "walk_to_venetian_within_30": true,
@@ -154,9 +154,9 @@
    },
    "last_checked": "2026-11-17",
    "recheck": {
-    "on": "2026-11-17",
+    "on": "2026-11-19",
     "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
-    "what": "The same terms page was re-read; it governs The Venetian and The Palazzo as one resort, so the Palazzo row inherits the confirmed figures."
+    "what": "The same terms and resort-fee pages were re-read live on 2026-11-19; they govern The Venetian and The Palazzo as one resort, so the Palazzo row inherits the confirmed figures."
    },
    "walk_to_venetian_status": "internal",
    "walk_to_venetian_within_30": true,
@@ -222,9 +222,9 @@
    "tax_source_url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf",
    "last_checked": "2026-11-17",
    "recheck": {
-    "on": "2026-11-17",
+    "on": "2026-11-19",
     "url": "https://www.wynnlasvegas.com/about-us/parking",
-    "what": "The dedicated parking page was read and confirms the $25 non-registered self-parking day, the $40 valet day up to 24 hours and the complimentary parking for registered Resort and Tower Suite guests - and it adds a fact no earlier pass had: \"Complimentary self-parking is extended to Wynn Poker Room guests\"."
+    "what": "Parking page re-read live on 2026-11-19 (session cebd4457): the $25 non-registered self-parking day (first three hours complimentary), the $40 valet day up to 24 hours and the complimentary parking for registered Resort and Tower Suite guests (subject to availability) are unchanged, and \"Complimentary self-parking is extended to Wynn Poker Room guests (please visit the Poker Room for details)\" still prints."
    },
    "walk_to_venetian_status": "verified",
    "walk_to_venetian_within_30": true,
@@ -286,9 +286,9 @@
    "tax_source_url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf",
    "last_checked": "2026-11-17",
    "recheck": {
-    "on": "2026-11-17",
+    "on": "2026-11-19",
     "url": "https://www.wynnlasvegas.com/about-us/parking",
-    "what": "The Wynn parking page covers Wynn and Encore together (\"one integrated resort\"), so the same statements apply here; the poker room is inside Encore."
+    "what": "The Wynn parking page (re-read live 2026-11-19) covers Wynn and Encore together (\"one integrated resort\"), so the same statements apply here; the poker room is inside Encore."
    },
    "walk_to_venetian_status": "verified",
    "walk_to_venetian_within_30": true,
@@ -442,7 +442,7 @@
    "booking_url": "https://www.caesars.com/book/hotel-calendar?propCode=CLV",
    "resort_fee_usd": null,
    "resort_fee_status": "unverified",
-   "resort_fee_note": "Read on 2026-11-17: the Caesars Palace property pages and the Caesars Palace FAQ do not print a resort-fee amount for this property. The Caesars corporate disclaimer states only that \"Room reservations are subject to a daily resort fee between $45-$50 plus applicable tax\" across the Caesars portfolio, which does not name Caesars Palace, so it is not used as this property's fee.",
+   "resort_fee_note": "Read on 2026-11-17: the Caesars Palace property pages and the Caesars Palace FAQ do not print a resort-fee amount for this property. The Caesars corporate disclaimer states only a portfolio-wide range that does not name Caesars Palace, so it is not used as this property's fee. The disclaimer's printed range changed between reads: \"a daily resort fee between $45-$50 plus applicable tax\" on 2026-11-17 (research/verification-2026-11-17-structure-sheets.md) and \"a daily resort fee between $45-$60 plus applicable tax\" when the page was re-read live on 2026-11-19 (session cebd4457; the daily source monitor also flagged this page's facts as changed on 2026-11-19 in data/changes.json). The current quote is the 2026-11-19 reading; both readings are dated so the movement is visible. The property's own fee stays blank either way.",
    "clark_county_tax_pct": 13.38,
    "tax_status": "verified",
    "tax_note": "Taxing authority: licence 1136233.RES-001, \"Caesars Palace\", 3570 Las Vegas Blvd S, Las Vegas NV, status Licensed, transient lodging tax rate 13.38%, category Resort Hotel (PGC) (Clark County Department of Business License, General Information Guide for Transient Lodging Establishments, Appendix III and the licensed-establishment table; the licensed-establishment table as of April 2021). Appendix III sets the combined rate for a Resort Hotel in the Stadium District and Primary Gaming Corridor at 13.38% (5.5 + 2 + 1 + 1 + 3 + .88), rates effective 3-1-17. No Caesars page read prints a room-tax percentage; the taxing authority is the source. The resort fee for this property is still unverified (blank).",
@@ -463,7 +463,7 @@
      "url": "https://www.caesars.com/caesars-palace/faqs"
     },
     {
-     "label": "Caesars corporate disclaimer: portfolio-wide $45-$50 resort-fee range, not property-specific (official)",
+     "label": "Caesars corporate disclaimer: portfolio-wide $45-$60 resort-fee range (re-read 2026-11-19; printed $45-$50 when read 2026-11-17), not property-specific (official)",
      "url": "https://www.caesars.com/corporate/disclaimer"
     },
     {
@@ -488,9 +488,9 @@
    "tax_source_url": "https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf",
    "last_checked": "2026-11-17",
    "recheck": {
-    "on": "2026-11-17",
-    "url": "https://www.caesars.com/caesars-palace/things-to-do/parking",
-    "what": "The parking URL redirects to the Things To Do page and prints no parking content, so the parking value stays blank. That page does print \"FREE 48-Hour Cancellation*\" and \"Best Rate Guarantee\"; the asterisked terms are not on the page, so only the headline is recorded."
+    "on": "2026-11-19",
+    "url": "https://www.caesars.com/corporate/disclaimer",
+    "what": "The corporate disclaimer was re-read live on 2026-11-19 (session cebd4457) after the daily source monitor marked this page's published facts as changed: the Hotel Disclaimer now prints \"a daily resort fee between $45-$60 plus applicable tax\" where the 2026-11-17 read recorded \"$45-$50\". The range is portfolio-wide and names no property, so the Caesars Palace fee stays blank. The parking-page claims recorded on 2026-11-17 (parking URL redirects to Things To Do; \"FREE 48-Hour Cancellation*\" headline) were not re-read on 2026-11-19."
    },
    "walk_to_venetian_status": "verified",
    "walk_to_venetian_within_30": true,

@@ -13,15 +13,82 @@ will be closed with a disposition comment, no work discarded. No other session h
 | # | Task | Status | Owner | File scope |
 |---|---|---|---|---|
 | 1 | Claim + board read (this section, pushed first). | **done** | cebd4457 | `COORDINATION.md` |
-| 2 | Apply the pending 2026-11-19 live re-reads to the data layer: sessions `336fb2af` and `98241f2f` both re-read the official Venetian DSE IV November page live on 2026-11-19 (94/94 rows matched each, independently) and recorded the result "for the data owner to apply through `build_data.py`". Independently re-read the official sources live from this session (page-fetch tool), confirm row-by-row, and advance `last_checked` to 2026-11-19 **only** on rows whose official source was actually re-read and matched. No value changes. | in progress | cebd4457 | `scripts/build_data.py`, generated `data/*.json`, generated `pages/*.html`, `research/verification-2026-11-19-cebd4457.md`, `COORDINATION.md` |
-| 3 | Stale-PR disposition for #113 (98241f2f, board-record only): adopt its record content into this board, close the PR with a disposition comment. | in progress | cebd4457 | `COORDINATION.md`, PR #113 comment |
-| 4 | SUGGESTIONS P3 (open, low): publish an **"effectively single entry" descriptive flag** on multi-flight rows whose structure sheet prices every flight at the same amount and imposes no penalty on a player who re-enters a later flight — a flag beside the existing classification, never a reclassification: the ranking and `SE` bar are unchanged, and the flag always carries the sheet clause that supports it plus the explicit note that the sheet is silent on a whole-event freezeout rule. | in progress | cebd4457 | `scripts/build_data.py`, generated `data/*.json`, `scripts/check_links.py` (flag-evidence check), `scripts/build_site.py`/`assets/app.js` (chip + tooltip), generated pages, `SUGGESTIONS.md` (P3 status), `COORDINATION.md` |
-| 5 | Final integration for this session: rebuild data + pages deterministically, run the full gate set (python + npm), run the unit tests, write the dated verification record, open PR to `main`, merge after green `validate`, confirm Pages deploy, record PR link + merge + deploy here. | in progress | cebd4457 | all of the above + `COORDINATION.md` |
+| 2 | Apply the pending 2026-11-19 live re-reads to the data layer: sessions `336fb2af` and `98241f2f` both re-read the official Venetian DSE IV November page live on 2026-11-19 (94/94 rows matched each, independently) and recorded the result "for the data owner to apply through `build_data.py`". Independently re-read the official sources live from this session (page-fetch tool), confirm row-by-row, and advance `last_checked` to 2026-11-19 **only** on rows whose official source was actually re-read and matched. No value changes. | **done 2026-11-19** (see work record) | cebd4457 | `scripts/build_data.py`, generated `data/*.json`, generated `pages/*.html`, `research/verification-2026-11-19-cebd4457.md`, `COORDINATION.md` |
+| 3 | Stale-PR disposition for #113 (98241f2f, board-record only): adopt its record content into this board, close the PR with a disposition comment. | **done 2026-11-19** (record preserved below; PR closed) | cebd4457 | `COORDINATION.md`, PR #113 comment |
+| 4 | SUGGESTIONS P3 (open, low): publish an **"effectively single entry" descriptive flag** on multi-flight rows whose structure sheet prices every flight at the same amount and imposes no penalty on a player who re-enters a later flight — a flag beside the existing classification, never a reclassification: the ranking and `SE` bar are unchanged, and the flag always carries the sheet clause that supports it plus the explicit note that the sheet is silent on a whole-event freezeout rule. | **done 2026-11-19** (see work record) | cebd4457 | `scripts/build_data.py`, generated `data/*.json`, `scripts/check_links.py` (flag-evidence check), `scripts/build_site.py`/`assets/app.js` (chip + tooltip), generated pages, `SUGGESTIONS.md` (P3 status), `COORDINATION.md` |
+| 5 | Final integration for this session: rebuild data + pages deterministically, run the full gate set (python + npm), run the unit tests, write the dated verification record, open PR to `main`, merge after green `validate`, confirm Pages deploy, record PR link + merge + deploy here. | in progress — this PR | cebd4457 | all of the above + `COORDINATION.md` |
 
 No official value is changed except where this session (or a merged session's recorded re-read, adopted
 with its evidence) actually re-read the source; anything that cannot be confirmed stays blank and flagged.
 `last_checked` advances only on sources actually re-read. Files of still-active sessions are not edited:
 none found beyond stale PR #113 above.
+
+### Session cebd4457 — work record (2026-11-19)
+
+**Live re-verification (2026-11-19) — all complete; full record in `research/verification-2026-11-19-cebd4457.md`:**
+DSE IV listing 94/94 rows match (5 wording-only name re-renders; the stored dated captures are kept);
+DSE NYE listing 49/49 match (official typos DATE_TYPO_DEC26 / DATE_TYPO_TUESDAY / MSPT_DAY2_START_CONFLICT
+unchanged); WPT schedule PDF 136/136 match (the Dec 3/Dec 5 Day 2 misprint and "Dec. 18 Wednesday"
+unchanged); WPT structures PDF 8/8 blocks verbatim (entry caps: Prime "One entry plus one re-entry per
+flight to Level 10", WC "Four (4) Entries maximum"); Venetian sheets #1/#5/#10/#29 fully re-read (18
+rows); sheet #30 fully re-read (r012 confirmed identical to its snapshot); Venetian resort-fee +
+hotel-terms pages and the Wynn parking page unchanged.
+
+**Monitor "source changed" marks (data/changes.json, 2026-11-19) — all four re-checked live:**
+`r012`, `rooms03`, `formats05` = false alarms (bytes re-rendered; every published value and excerpt
+identical; the change log's facts diffs are empty). `caesars` = REAL change: the corporate disclaimer's
+Hotel Disclaimer now prints "a daily resort fee between **$45-$60** plus applicable tax" where the
+2026-11-17 read recorded "**$45-$50**". Both readings are quoted with their dates in the hotel row's
+`resort_fee_note`, the source label, FLAGGED U3 and the research file; the Caesars Palace fee stays
+blank (the range is portfolio-wide and names no property, so it is never used as this property's fee).
+The monitor baseline for that page still holds the old facts and will keep marking it until re-accepted
+through `monitor_sources.py --accept-baseline` after a real fetched run (CI) — deliberate; marks are CI
+output and are never hand-edited.
+
+**Stamping applied (strict rule):** 193 rows at `2026-11-19` (38 WSS + 136 WPT + 19 Venetian: the 18
+rows on sheets #1/#5/#10/#29 plus r012 on sheet #30); 124 rows keep `2026-11-17` and each carries a
+dated per-row `recheck` record (listing re-read 94/94 + 49/49 today; sheets fact-hash checked by the
+monitor, not fully re-read). `verified_on` and every rule-clause `retrieved_on` keep 2026-11-17. A
+field-diff against the previous `data/tournaments.json` confirms only `last_checked`, `recheck`,
+`flight_pricing` and label additions changed — no published value moved.
+
+**P3 built:** 43 MULTI rows / 12 multi-flight events carry `flight_pricing` (the clause-08 excerpt
+"Any player who bags chips for Day 2 may not play a subsequent flight.", the uniform flight price, an
+explicit silence note that the sheet prints no whole-event entry limit, and the source with retrieval
+date) plus an "effectively single entry" label chip (filterable in Format). Never a reclassification:
+rows keep `entry_status` MULTI and stay out of the single-entry shortlist and the ranking;
+`check_links.py` asserts flagged rows are MULTI and keep the multi-flight label. Excluded by
+construction: the three PokerAtlas Valuetown bounty rows (sheets explicitly price later buy-ins:
+"All subsequent buy in's after the initial buy in will be $200") and the seven WPT MULTI rows (sheets
+print entry caps). `SUGGESTIONS.md` P3 marked built.
+
+**Hotel rechecks (P9):** venetian/palazzo/wynn/encore re-read 2026-11-19 (all figures unchanged);
+caesars re-read (the disclaimer change above; its parking-page claims stay dated 2026-11-17 and say so
+explicitly); bellagio/aria unchanged (2026-11-17). Hotel `last_checked` stays 2026-11-17 — no live rate
+is ever re-quoted by hand; only the booking engine produces a quote.
+
+**Gates (all green):** build_data (317 rows: 80 CAND / 53 MULTI / 107 RE / 43 CONT / 34 UNV), check_links
+OK (new flight_pricing + recheck validators), verify_rows 335 rows / 1386 checks / 0 hard failures /
+1 review (r225, re-confirmed live: 8 p.m. schedule PDF vs 6 p.m. structures PDF, published conflict),
+verify_against_snapshots OK (r263 MSPT conflict recorded on the row), check_schedule OK (70 days, 170
+overlap pairs), build_site 31 pages, `npm test` 5/5 (1662 rendered local references, 0 broken),
+9 × `test_*.py` OK.
+
+**PR #113 disposition:** stale (board-record-only for PR #106, CONFLICTING, >60 min with no commits;
+takeover rule). Its record is preserved verbatim in the table below and the PR is closed with a
+disposition comment — no content discarded.
+
+#### Session 98241f2f — pull request and merge record (2026-11-19) — preserved from PR #113
+
+| Item | Result |
+|---|---|
+| Pull request | [#106](https://github.com/karagemop466-tech/Poker1/pull/106) "Session 98241f2f: live re-read of Venetian DSE IV listing (research only, 94/94 matched)", `arena/98241f2f-poker1` → `main` |
+| Merged | 2026-11-19T11:23:56Z as merge commit `7a9218d8633669340aaca876bcb3bf8a969d4c9b` (merged via `gh pr merge 106 --merge`, not auto-merge) |
+| Conflicts handled | `COORDINATION.md` conflicted twice because main moved while CI ran (PRs #102, #104, #111). Each time the branch merged `origin/main`, kept all of main's records, and re-appended only this session's sections. No other session's text was removed or altered. |
+| CI `validate` on head `e7bfee9` (before the last merge) | Run 44513622208: success, every step ✓. (Rebuild with no diff; check_links; source re-check; row/date pairing.) |
+| GitHub Pages | Live homepage re-fetched 2026-11-19 after the merge and serving the current build (`https://karagemop466-tech.github.io/Poker1/`). The Actions API returned HTTP 403 rate-limit, so the `built` status for `7a9218d` could not be read through the API; this is recorded as unconfirmed by API, confirmed by the live page. |
+| Data changes | None. No value, source, `last_checked` or retrieval date was changed in `data/`. |
+
 
 ---
 

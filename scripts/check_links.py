@@ -346,6 +346,35 @@ for index, row in enumerate(tournament_rows, 1):
     elif est_end is None and row.get("est_end_abs_min") is not None:
         problems.append(f"{where} {identity}: est_end_abs_min without an est_end")
 
+    # P3 descriptive flag (built 2026-11-19): flight_pricing may only appear beside a
+    # MULTI multi-flight classification and must never reclassify it. It carries the
+    # sheet's clause excerpt and the explicit silence note, plus its source.
+    fp = row.get("flight_pricing")
+    if fp is not None:
+        if row.get("entry_status") != "MULTI":
+            problems.append(f"{where} {identity}: flight_pricing must never appear on a non-MULTI row")
+        if "multi-flight" not in (row.get("labels") or []):
+            problems.append(f"{where} {identity}: flight_pricing rows must keep the multi-flight label")
+        if not isinstance(fp, dict):
+            problems.append(f"{where} {identity}: flight_pricing must be an object")
+        else:
+            for key in ("flag", "excerpt", "silence_note", "source", "retrieved_on"):
+                if not fp.get(key):
+                    problems.append(f"{where} {identity}: flight_pricing.{key} must be non-empty")
+            check_date(fp.get("retrieved_on"), f"{where} {identity} flight_pricing.retrieved_on")
+            check_sources("data/tournaments.json", {"sources": [fp.get("source")]} if fp.get("source") else {},
+                          f"{identity} flight_pricing")
+            if not is_number(fp.get("all_flights_same_buy_in_usd")):
+                problems.append(f"{where} {identity}: flight_pricing.all_flights_same_buy_in_usd must be a number")
+
+    # A recheck record is a dated statement about what was re-read; it must be complete.
+    rc = row.get("recheck")
+    if rc is not None:
+        if not isinstance(rc, dict) or not rc.get("what") or not rc.get("url"):
+            problems.append(f"{where} {identity}: recheck must carry on/url/what")
+        else:
+            check_date(rc.get("on"), f"{where} {identity} recheck.on", required=True)
+
 # Hotels: property-specific costs are only stated when every input is verified.
 hotel_by_id = {}
 quote_by_hotel = {}
@@ -371,6 +400,13 @@ for index, row in enumerate(hotel_rows, 1):
         problems.append(f"{where} {identity}: name must be non-empty text")
     check_date(row.get("last_checked"), f"{where} {identity} last_checked", required=True)
     check_sources("data/hotels.json", row, identity)
+    # The hotel recheck record (P9): a dated list of what was actually opened again.
+    rc = row.get("recheck")
+    if rc is not None:
+        if not isinstance(rc, dict) or not rc.get("what") or not rc.get("url"):
+            problems.append(f"{where} {identity}: recheck must carry on/url/what")
+        else:
+            check_date(rc.get("on"), f"{where} {identity} recheck.on", required=True)
 
     for field in ("room_rate_usd", "resort_fee_usd", "clark_county_tax_pct",
                   "true_cost_per_night_usd", "parking_usd_per_day", "walk_to_venetian_min"):

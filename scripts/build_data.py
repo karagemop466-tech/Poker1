@@ -809,6 +809,15 @@ WPT_STRUCTS = {
 # ---------- Wynn Signature Series schedule rows (official schedule PDF, structures not yet published) ----------
 # date, time, name, buy-in, guarantee, published chips, published levels, kind, flags
 WSS_REREAD_ON = "2026-11-19"  # day the official WSS schedule/structures PDFs were re-read; stamps these rows' last_checked
+# 2026-11-19 live re-verification pass (session cebd4457): every source behind the WPT rows (the schedule PDF
+# and the structures PDF) was re-read in full that day, so those rows carry this stamp too.
+WPT_REREAD_ON = "2026-11-19"
+# Venetian November rows are stamped only when BOTH of their cited sources were re-read in full on 2026-11-19:
+# the series listing page (row by row, 94/94 printed rows matched) AND the row's own structure-sheet PDF.
+# These sheets were re-read in full that day (sheet #30 as the r012 source-change re-check; sheets #1/#5/#10/#29
+# as the fact-hash spot checks). Other Nov/Dec rows keep 2026-11-17 and get a dated recheck record instead.
+NOV_REREAD_SHEETS = {1, 5, 10, 29, 30}
+REREAD_ON = "2026-11-19"
 # The official schedule prints a guarantee for the NLH Turbo ($10,000) and the Sunday NLH
 # events ($30,000), and - corrected on 2026-11-19 - for the multi-day main events as well:
 # the re-read of the SAME file (byte-identical per the 2026-11-19 provenance fetch) with a
@@ -1274,6 +1283,48 @@ def rule_field(value, excerpt, source_label, source_url, clause=None, retrieved=
     return out
 
 
+def mark_flight_pricing(rows):
+    """P3 (built 2026-11-19, session cebd4457): descriptive 'effectively single entry' flag.
+
+    Flags multi-flight events whose flights ALL cost the same and whose structure sheet only
+    bars a bagged player from a later flight (clause 08: "Any player who bags chips for Day 2
+    may not play a subsequent flight."), staying silent on a whole-event entry limit. This is
+    a descriptive flag beside the classification, NEVER a reclassification: flagged rows keep
+    entry_status MULTI and are excluded from the single-entry shortlist and the ranking.
+    Not flagged: rows whose sheet explicitly prices later buy-ins (the Valuetown clause-07
+    sheets), and the WPT rows whose sheets print entry caps ("One entry plus one re-entry per
+    flight", "Four (4) Entries maximum")."""
+    groups = {}
+    for r in rows:
+        if r.get("entry_status") == "MULTI":
+            groups.setdefault((r.get("series"), r.get("event_no")), []).append(r)
+    for key, grp in groups.items():
+        if len(grp) < 2:
+            continue
+        buys = {r.get("buy_in_usd") for r in grp}
+        if len(buys) != 1:
+            continue
+        if not all("may not play a subsequent flight"
+                   in ((r.get("rules", {}).get("single_entry") or {}).get("excerpt") or "") for r in grp):
+            continue
+        for r in grp:
+            se = r["rules"]["single_entry"]
+            r["flight_pricing"] = {
+                "flag": "effectively single entry (descriptive only - not a confirmed one-entry freezeout)",
+                "all_flights_same_buy_in_usd": sorted(buys)[0],
+                "excerpt": se.get("excerpt"),
+                "silence_note": ("The sheet prints one price for every flight and bars only a bagged player from "
+                                 "a later flight; it is silent on a whole-event entry limit and on whether a "
+                                 "player who busts a flight may enter a later one. The row stays MULTI and is "
+                                 "excluded from the single-entry shortlist and the ranking."),
+                "source": se.get("source"),
+                "retrieved_on": se.get("retrieved_on", LAST_CHECKED),
+            }
+            if "effectively single entry" not in r["labels"]:
+                r["labels"].append("effectively single entry")
+    return rows
+
+
 def build_venetian(rows, series_key, series, page_key, sheet_key, sched_key, struct_key):
     out = []
     with open(os.path.join(DATA, "structure_rules.json"), encoding="utf8") as f:
@@ -1394,8 +1445,22 @@ def build_venetian(rows, series_key, series, page_key, sheet_key, sched_key, str
             "est_end_days_after": est_offset_days,
             "note": note,
             "flags": flags,
-            "sources": srcs, "verified_on": VERIFIED_ON, "last_checked": LAST_CHECKED,
+            "sources": srcs, "verified_on": VERIFIED_ON,
+            # Stamped 2026-11-19 only when the row's own structure sheet AND the series
+            # listing page were both re-read in full that day (see NOV_REREAD_SHEETS).
+            "last_checked": (REREAD_ON if series_key == "nov" and sheet_no in NOV_REREAD_SHEETS
+                             else LAST_CHECKED),
         }
+        if not (series_key == "nov" and sheet_no in NOV_REREAD_SHEETS):
+            row["recheck"] = {
+                "on": REREAD_ON,
+                "url": SRC[page_key],
+                "what": ("The official series listing page was re-read row by row on 2026-11-19 (session "
+                         "cebd4457) and every printed value for this row still matches (Nov 94/94, Dec 49/49). "
+                         "This row's structure-sheet PDF was NOT re-read in full on 2026-11-19 (the daily "
+                         "source monitor re-fetched it and its extracted facts show no change), so the "
+                         "row's last_checked stays 2026-11-17."),
+            }
         if sheet.get("seats"):
             row["satellite"] = {
                 "seats_awarded": sheet["seats"],
@@ -1569,7 +1634,7 @@ def build_wynn():
                      "schedule PDF. " + ("Entry rule, fee split and starting stack from %s of the official "
                      "structures PDF." % sid if sheet_row else "No structure sheet is published for this row.")),
             "flags": flags,
-            "sources": srcs, "verified_on": VERIFIED_ON, "last_checked": LAST_CHECKED,
+            "sources": srcs, "verified_on": VERIFIED_ON, "last_checked": WPT_REREAD_ON,
         }
         # The fee percentage is computed against the entry the structure sheet
         # actually prices (``house_fee_basis_usd``), which is the row's buy-in on
@@ -1990,33 +2055,39 @@ def cc_tax_note(hotel_id, extra=None):
 # What was opened again on 2026-11-17, per property, so a reader can tell a re-read from a
 # carry-over. A field with no entry here was not re-read on that date.
 HOTEL_RECHECK = {
-    "venetian": {"on": "2026-11-17", "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
-                 "what": "Hotel terms re-read in full: the $55 resort fee plus tax, the 13.38% Clark County Room "
-                         "Tax, the $20 / $25 / $40 parking fees, the $150 per-night incidental deposit, the $50 "
-                         "additional-guest charge, the $100 plus tax early check-out charge and the prepaid "
-                         "non-refundable rule are all still printed exactly as published."},
-    "palazzo": {"on": "2026-11-17", "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
-                "what": "The same terms page was re-read; it governs The Venetian and The Palazzo as one resort, "
-                        "so the Palazzo row inherits the confirmed figures."},
-    "wynn": {"on": "2026-11-17", "url": "https://www.wynnlasvegas.com/about-us/parking",
-             "what": "The dedicated parking page was read and confirms the $25 non-registered self-parking day, the "
-                     "$40 valet day up to 24 hours and the complimentary parking for registered Resort and Tower "
-                     "Suite guests - and it adds a fact no earlier pass had: \"Complimentary self-parking is "
-                     "extended to Wynn Poker Room guests\"."},
-    "encore": {"on": "2026-11-17", "url": "https://www.wynnlasvegas.com/about-us/parking",
-               "what": "The Wynn parking page covers Wynn and Encore together (\"one integrated resort\"), so the "
-                       "same statements apply here; the poker room is inside Encore."},
+    "venetian": {"on": "2026-11-19", "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+                 "what": "Hotel terms page and Resort Fee page both re-read live on 2026-11-19 (session cebd4457): "
+                         "the $55 resort fee plus tax, the five printed fee inclusions, the 13.38% Clark County "
+                         "Room Tax, the $20 / $25 / $40 parking fees, the $150 per-night incidental deposit, the "
+                         "$50 additional-guest charge, the $100 plus tax early check-out charge and the prepaid "
+                         "non-refundable rule are all still printed exactly as published on 2026-11-17."},
+    "palazzo": {"on": "2026-11-19", "url": "https://www.venetianlasvegas.com/legal/hotel-terms-and-conditions.html",
+                "what": "The same terms and resort-fee pages were re-read live on 2026-11-19; they govern The "
+                        "Venetian and The Palazzo as one resort, so the Palazzo row inherits the confirmed figures."},
+    "wynn": {"on": "2026-11-19", "url": "https://www.wynnlasvegas.com/about-us/parking",
+             "what": "Parking page re-read live on 2026-11-19 (session cebd4457): the $25 non-registered "
+                     "self-parking day (first three hours complimentary), the $40 valet day up to 24 hours and "
+                     "the complimentary parking for registered Resort and Tower Suite guests (subject to "
+                     "availability) are unchanged, and \"Complimentary self-parking is extended to Wynn Poker "
+                     "Room guests (please visit the Poker Room for details)\" still prints."},
+    "encore": {"on": "2026-11-19", "url": "https://www.wynnlasvegas.com/about-us/parking",
+               "what": "The Wynn parking page (re-read live 2026-11-19) covers Wynn and Encore together "
+                       "(\"one integrated resort\"), so the same statements apply here; the poker room is "
+                       "inside Encore."},
     "bellagio": {"on": "2026-11-17", "url": "https://bellagio.mgmresorts.com/en/parking.html",
                  "what": "Official parking URL re-tried: the property returns its 'Oops! We can\'t find that page' "
                          "error, so there is no Bellagio parking or fee value to publish."},
     "aria": {"on": "2026-11-17", "url": "https://aria.mgmresorts.com/en/guest-services/parking.html",
              "what": "Official parking URL re-tried: the property returns its 'Oops! We can\'t find that page' "
                      "error, so there is no ARIA parking or fee value to publish."},
-    "caesars": {"on": "2026-11-17", "url": "https://www.caesars.com/caesars-palace/things-to-do/parking",
-                "what": "The parking URL redirects to the Things To Do page and prints no parking content, so the "
-                        "parking value stays blank. That page does print \"FREE 48-Hour Cancellation*\" and \"Best "
-                        "Rate Guarantee\"; the asterisked terms are not on the page, so only the headline is "
-                        "recorded."},
+    "caesars": {"on": "2026-11-19", "url": "https://www.caesars.com/corporate/disclaimer",
+                "what": "The corporate disclaimer was re-read live on 2026-11-19 (session cebd4457) after the "
+                        "daily source monitor marked this page's published facts as changed: the Hotel Disclaimer "
+                        "now prints \"a daily resort fee between $45-$60 plus applicable tax\" where the "
+                        "2026-11-17 read recorded \"$45-$50\". The range is portfolio-wide and names no "
+                        "property, so the Caesars Palace fee stays blank. The parking-page claims recorded on "
+                        "2026-11-17 (parking URL redirects to Things To Do; \"FREE 48-Hour Cancellation*\" "
+                        "headline) were not re-read on 2026-11-19."},
 }
 
 HOTELS = [
@@ -2295,10 +2366,14 @@ HOTELS = [
   "booking_url": "https://www.caesars.com/book/hotel-calendar?propCode=CLV",
   "resort_fee_usd": None, "resort_fee_status": "unverified",
   "resort_fee_note": "Read on 2026-11-17: the Caesars Palace property pages and the Caesars Palace FAQ do not print "
-                     "a resort-fee amount for this property. The Caesars corporate disclaimer states only that "
-                     "\"Room reservations are subject to a daily resort fee between $45-$50 plus applicable tax\" "
-                     "across the Caesars portfolio, which does not name Caesars Palace, so it is not used as this "
-                     "property's fee.",
+                     "a resort-fee amount for this property. The Caesars corporate disclaimer states only a "
+                     "portfolio-wide range that does not name Caesars Palace, so it is not used as this property's "
+                     "fee. The disclaimer's printed range changed between reads: \"a daily resort fee between "
+                     "$45-$50 plus applicable tax\" on 2026-11-17 (research/verification-2026-11-17-structure-sheets.md) "
+                     "and \"a daily resort fee between $45-$60 plus applicable tax\" when the page was re-read live on "
+                     "2026-11-19 (session cebd4457; the daily source monitor also flagged this page's facts as changed "
+                     "on 2026-11-19 in data/changes.json). The current quote is the 2026-11-19 reading; both readings "
+                     "are dated so the movement is visible. The property's own fee stays blank either way.",
   "clark_county_tax_pct": CC_TAX_RATE, "tax_status": "verified",
   "tax_note": cc_tax_note("caesars", "No Caesars page read prints a room-tax percentage; the taxing authority is the "
                                      "source. The resort fee for this property is still unverified (blank)."),
@@ -2321,7 +2396,8 @@ HOTELS = [
                        "before a true cost is calculated.",
   "sources": [{"label": "Caesars Palace FAQ: check-in/out times and 48-hour cancellation (official)",
                "url": SRC["caesars_faq"]},
-              {"label": "Caesars corporate disclaimer: portfolio-wide $45-$50 resort-fee range, not property-specific (official)",
+              {"label": "Caesars corporate disclaimer: portfolio-wide $45-$60 resort-fee range (re-read 2026-11-19; "
+                        "printed $45-$50 when read 2026-11-17), not property-specific (official)",
                "url": SRC["caesars_disclaimer"]},
               {"label": "Caesars Palace official page incl. address (official)", "url": SRC["caesars"]},
               {"label": "Caesars Palace poker page: 24/7 room and the daily tournament schedule link (official)", "url": SRC["caesars_poker_page"]},
@@ -2628,6 +2704,7 @@ def main():
     rows += build_venetian(DSE_NYE, "dec", "Venetian DeepStack Extravaganza NYE", "dse_dec_page",
                            DEC_SHEETS, "dse_dec_sched", "dse_dec_struct")
     rows += build_wynn()
+    mark_flight_pricing(rows)  # P3 descriptive flag; never changes entry_status
     rows.sort(key=lambda x: (x["date"], x["start"], x["name"]))
     for i, row in enumerate(rows, 1):
         row["id"] = "r%03d" % i
