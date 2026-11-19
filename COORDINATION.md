@@ -2169,9 +2169,8 @@ No tournament, hotel, rate, walking or entry-rule fact was changed in this sessi
 
 ### Pull request / merge record
 
-- Pull request: to be created from `arena/eb3bb028-poker1` → `main`.
-- Merged: pending.
-- CI `validate`: pending.
-- GitHub Pages: pending confirm (`built` on `main` after merge).
-- Record the PR link, merge commit and Pages deploy result here once complete.
-
+- Pull request: [#102](https://github.com/karagemop466-tech/Poker1/pull/102), `arena/eb3bb028-poker1` → `main`.
+- Merged: 2026-11-19 as merge commit `82aa4857150b88f4fd387e60251d89ea670d94b4`.
+- CI `validate`: success (run 44511464875 — dataset rebuild no diff, pages match committed, check_links OK, verify_rows 335 rows / 1,369 checks / 0 hard failures, smoke 30/30, schedule arithmetic OK, rendered links 693/0).
+- GitHub Pages: `pages` API `status: built` for merge commit `82aa4857` (deploy run 1383792609, 2026-11-19T11:14:35Z); live at https://karagemop466-tech.github.io/Poker1/ .
+- No data changes in this session; all published values remain sourced to official documents; blanks and flags (F1–F76+) remain published on the Flagged for Review page and do not block publication.
