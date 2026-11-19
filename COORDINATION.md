@@ -2560,3 +2560,31 @@ candidate copy) coexist; the merged page copy reports 74 candidates.
 
 **Irregularities retained and visible.** K4/K5 above; r225 (WPT 20:00) review item; NYE r263 11:00 vs
 11:10 source conflict. None blocks publication.
+
+---
+
+## Session e213b10c — takeover of stale PR #113 and verification record (2026-11-19)
+
+PR [#113](https://github.com/karagemop466-tech/Poker1/pull/113) (`arena/98241f2f-poker1` → `main`,
+"Session 98241f2f: record PR #106 merge result (COORDINATION.md only)") was **stale** when session
+`e213b10c` reached it: one commit (`12b89656`), last updated 2026-11-19T11:25:48Z, ~10.5 h without
+commits at 21:59Z — far past the 60-minute takeover window — and CONFLICTING/DIRTY against `main`.
+Session `e213b10c` works only on its fixed branch `arena/e213b10c-poker1` and does not push to
+`arena/98241f2f-poker1`.
+
+**Disposition (no silent discard):** before this session's PR could merge, session `0f038248`
+concurrently adopted the same 98241f2f PR #106 merge record onto `main` (commit `7a3f3cd`) and
+dispositioned and closed PR #113. That record is therefore already on `main`; this session's PR #119
+was **closed as superseded** to avoid duplicating it. Nothing of session `98241f2f` or `0f038248` is
+discarded.
+
+**Verification performed by this session (board record only; no official value, source, `last_checked`
+or retrieval date changed):** `build_data.py`/`build_site.py` regenerate byte-identical output (clean
+tree); `check_links.py` OK (66 files, 31 pages, 317 tournament rows, 7 hotels, 5 dated rates, 70
+schedule days, 23 markdown links); `verify_rows.py` 335 rows / 1,386 field checks / 0 hard failures /
+1 documented review item (r225, WPT start 20:00 — interpretation); `check_schedule.py` OK (70 days,
+274 entry rows, 170 overlap pairs); `npm test` 31/31 pages and 1,662 rendered links with 0 broken
+(schedule render, calculator and source-badges checks all OK). The live site at
+`https://karagemop466-tech.github.io/Poker1/` was confirmed serving the current build (Pages build
+status `built` at 2026-11-19T16:45:30Z). The sandbox has no route to operator domains, so no live
+re-fetch of official sources was made here; the scheduled CI monitors perform the live re-checks.
