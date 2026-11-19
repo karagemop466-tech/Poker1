@@ -1,3 +1,30 @@
+# Session a3822303 — branch `arena/a3822303-poker1` (base `f5ecde0` = `main` at 2026-11-19 16:45Z)
+
+Session `a3822303` works on branch `arena/a3822303-poker1` (fixed for this session), based on `main`
+at `f5ecde040b29e402aea7b739eabd28727b1c7859` (the 16:45Z monitoring refresh). `git rev-list
+--left-right --count origin/main...HEAD` = `0 0`; clean tree. This claim is written and pushed
+before any data, script or page change.
+
+**Board state read at claim time (2026-11-19 ~22:00 UTC).** Open pull requests: **#113**
+(`arena/98241f2f-poker1`, "record PR #106 merge result", COORDINATION.md only) — last commit
+2026-11-19T11:25:48Z, **>10 hours stale**, far past the 60-minute rule; it is taken over below
+with its record preserved verbatim. No other PR is open. Sessions `cd330ba8`, `957764d3` and
+`f3a84f9b` ended earlier today (their deliverables landed via PRs #96/#106/#112/#116); their
+old "in progress" lines are superseded by the completion records in this board. Main is green:
+`Monitor official sources` succeeded at ~16:45Z, Pages `built` for `f5ecde0`.
+
+| # | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| 1 | Take over stale PR #113 (98241f2f, board-only, >60 min stale): carry its PR-#106 merge record into this branch verbatim, note the handoff here, and land it with this session's integration PR. | in progress | a3822303 | `COORDINATION.md` |
+| 2 | Dated live re-read of the blocked official sources with the page-fetch tool (the sandbox shell cannot reach operator hosts): (a) the Wynn Signature Series Structures PDF — the standing "COMING SOON" placeholder (F22/I4) that keeps 38 rows unverified, and the Wynn Signature Series schedule; (b) fresh Caesars Palace resort-fee sources (I7/F47 — the only hotel fee still unverified); (c) one Venetian DSE structure sheet spot re-read. Log every match and difference with links; remove an "unverified" label only where a newly read official document affirms the value — nothing inferred. | in progress | a3822303 | new `research/verification-2026-11-19-a3822303.md`, `QUESTIONS.md` (I4/I7 dated answer lines), `COORDINATION.md`; `data/*` + generated pages **only if** a promotion is fully evidenced (via `build_data.py`) |
+| 3 | S16 (Still open): print-friendly views of the schedule and the single-entry list — print stylesheet with page-break rules, verified by rendering; update the S16 status line. | in progress | a3822303 | `assets/style.css`, `assets/app.js` (print control only if needed), `scripts/check_links.py` only if a new gate is required, `SUGGESTIONS.md`, generated pages (regenerated only), `COORDINATION.md` |
+| 4 | Final integration: rebuild (`build_data.py`, `build_site.py`), run every gate (python unittests, `check_links.py`, `verify_rows.py`, `verify_against_snapshots.py`, `check_schedule.py`, `npm test`, monitor `--print`), open a PR to `main`, merge after green `validate`, confirm GitHub Pages deploys, and record the PR link, merge result and deploy status here. | in progress | a3822303 | all of the above + `COORDINATION.md` |
+
+No official value is changed except with a freshly read official source linked on the row;
+anything unconfirmed stays blank and flagged. `last_checked` advances only for sources actually
+re-read. Shared outputs (table data, index/navigation) change only through the deterministic
+generators in task 4. Files owned by other active sessions: none found (only the stale #113 above).
+
 # Session f3a84f9b — branch `arena/f3a84f9b-poker1` (base `3f3f6bb` = `main` after PR #101)
 
 Session `f3a84f9b` works on branch `arena/f3a84f9b-poker1` (fixed for this session), based on `main` at
