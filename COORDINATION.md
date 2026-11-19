@@ -1712,3 +1712,5 @@ Integration PR: [#87](https://github.com/karagemop466-tech/Poker1/pull/87). Depl
 
 44c94b4f reconciliation: retained both appended board entries and both flagged findings from #87.
 **Post-merge confirmation (2026-11-19):** [PR #87](https://github.com/karagemop466-tech/Poker1/pull/87) merged as `d383f48d86070efe9b946d983135c6bda45a5c2a`. The GitHub Pages build API reports `built` for that exact commit, and [Pages deployment run 44465791063](https://github.com/karagemop466-tech/Poker1/actions/runs/44465791063) concluded successfully. The separate main-branch validation run is [44465791728](https://github.com/karagemop466-tech/Poker1/actions/runs/44465791728).
+
+44c94b4f publication: [PR #91](https://github.com/karagemop466-tech/Poker1/pull/91) merged as `432fbded`; [Pages deployment](https://github.com/karagemop466-tech/Poker1/actions/runs/44466009192) succeeded for that commit. 23 pages rendered; 530 local references checked, zero broken.
