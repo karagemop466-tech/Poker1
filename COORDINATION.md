@@ -2702,3 +2702,37 @@ re-fetch of official sources was made here; the scheduled CI monitors perform th
 was dispositioned (its content adopted by session `0f038248`; PR #119 recorded the takeover without
 duplication). All verification gates pass on the tree; no unverified value was promoted and nothing
 was inferred.
+
+## Session dd06081b · 2026-11-19 · requirement coverage audit, date filter and entry-plan calculator, branch `arena/dd06081b-poker1`
+
+Session `dd06081b` works on branch `arena/dd06081b-poker1` (fixed for this session), based on `main` at
+`f5ecde0` (PR #117 merged, PR #118 = payouts page). `git rev-list --left-right --count origin/main...HEAD`
+= `0 0`; clean tree. This claim was written and pushed before any data, script or page change.
+
+**Baseline re-verified before claiming** (no diff, no failures): `build_data.py` and `build_site.py`
+regenerate byte-identical output; `check_links.py` OK (31 pages, 317 rows, 62 hotel/rate/walk checks);
+`verify_rows.py` 335 rows / 1386 field checks / 0 hard failures / 1 documented review item (r225);
+`verify_against_snapshots.py` 0 unexplained mismatches; `check_schedule.py` OK (70 days, 170 overlap
+pairs); `python3 -m unittest` 67 tests OK; `npm test` 31/31 pages, 1,662 rendered links, 0 broken.
+
+**Board state read at claim time.** Only open PR **#113** (`arena/98241f2f-poker1`, `COORDINATION.md`
+only, CONFLICTING, last commit 2026-11-19T11:25:45Z — >60 minutes stale). Its content is a board-only
+merge record whose deliverable (PR #106) is already on `main`; it is left to its own session and not
+taken over. Scheduled runs at the base are green: "Monitor official sources" run 44568281882 (success,
+7m36s) and `pages-build-deployment` 44569694683 (success).
+
+| # | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| 1 | Live re-read of the official pages whose values the published rows depend on, plus the pages the monitor flagged as changed on 2026-11-19 (Caesars/Horseshoe strip poker page, Caesars disclaimer, Wynn poker page, Wynn Signature Series structures, Venetian DSE IV listing). Record every match/difference with the URL and the read date; change a published value only where the official page prints it. | in progress | dd06081b | new `research/requirements-audit-dd06081b.md`, `data/*.json` only via `scripts/build_data.py`, `COORDINATION.md` |
+| 2 | Requirement coverage audit: one row per requirement line in the request, each marked done / partial / blocked with the file and page that satisfies it and the official source where a value is involved. | in progress | dd06081b | new `REQUIREMENTS.md`, `scripts/build_site.py` (one page body + NAV), `assets/app.js` (one renderer), `scripts/check_links.py` (one `KNOWN_PAGES` line) |
+| 3 | Date filter: quick day presets (today, this weekend, next 7/30 days, all) plus a per-date chip picker fed from the dataset dates, added to the shared filter bar so every tournament table and the schedule page get it. Headless test. | in progress | dd06081b | `assets/app.js`, `assets/style.css`, new `scripts/check_date_filter.js`, `package.json`, generated pages |
+| 4 | Trip calculator: price the entry side from the schedule's own primary event per night in the selected stay window (no typed buy-in), with the manual entries × buy-in box kept as the visible alternative and labelled as such. Headless test. | in progress | dd06081b | `assets/app.js`, new `scripts/check_entry_plan.js`, `package.json`, generated pages |
+| 5 | Final integration for this round: rebuild, run every gate (python + npm), open PR to `main`, merge after green `validate`, confirm Pages deploy, record PR link + merge + deploy here. | unclaimed | — | all of the above + `COORDINATION.md` |
+
+**Network limit, stated up front:** this sandbox's own HTTP route reaches only github.com, codeload,
+api.github.com, registry.npmjs.org, pypi.org and files.pythonhosted.org. Operator pages are read with
+the page-fetch tool, not `curl`; `scripts/monitor_sources.py` therefore records this host as unable to
+reach them and reports the last real fetch. No row value, source URL or `last_checked` is advanced on
+the strength of a fetch that did not happen.
+
+No official value is changed except by reading the official page in this session and quoting it.
