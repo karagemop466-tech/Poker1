@@ -1716,3 +1716,8 @@ Integration follow-up claim: `scripts/check_schedule_render.js`, `scripts/smoke_
 Integration PR: [#87](https://github.com/karagemop466-tech/Poker1/pull/87). Deployment and merge status are recorded on the PR and [repository Actions](https://github.com/karagemop466-tech/Poker1/actions); the public endpoint is [GitHub Pages](https://karagemop466-tech.github.io/Poker1/). A successful build of an earlier commit is not confirmation of this PR's deployment.
 
 Integration conflict with PR #87: retained both claims, its Vegas-local upcoming toggle, render gate and historical toggle test; combined defaults with the stricter freezeout filter and regenerated HTML. PR #88 overlaps the calculator independently; coordinate at integration rather than overwriting its tests.
+**Post-merge confirmation (2026-11-19):** [PR #87](https://github.com/karagemop466-tech/Poker1/pull/87) merged as `d383f48d86070efe9b946d983135c6bda45a5c2a`. The GitHub Pages build API reports `built` for that exact commit, and [Pages deployment run 44465791063](https://github.com/karagemop466-tech/Poker1/actions/runs/44465791063) concluded successfully. The separate main-branch validation run is [44465791728](https://github.com/karagemop466-tech/Poker1/actions/runs/44465791728).
+
+Retained PR #90’s deploy receipt when it arrived during integration. Aborted an unnecessary flattening rebase rather than replay main’s already merged #87 commits; pulled against the integrated main tip before push.
+
+Additional unclaimed scope: morning schedule evidence feed (`scripts/schedule_feed.py`, `.github/workflows/schedule-feed.yml`, `data/schedule_feed.json`, daily page) and executive decision presentation. This feed does not edit any reviewed tournament or rate.
