@@ -1691,3 +1691,17 @@ operator hosts are unreachable (F55), so `monitor_sources.py` is exercised in CI
 `data/row_verification.json` are byte-identical to what this task found on `main` - no official value moved
 during any of it. `data/schedule.json` is the file that changed, and it is generated: edit
 `scripts/build_data.py`, never the JSON.
+
+## Session be98ede8 — 2026-11-19
+
+| Task | Status | Owner | File scope |
+|---|---|---|---|
+| Distinguish upcoming verified tournament dates from historical rows without changing official data | In progress | be98ede8 | `assets/app.js`, generated `index.html` and `pages/*.html`, `scripts/check_upcoming.js`, `package.json`, `FLAGGED.md`, `COORDINATION.md` |
+
+Branch `arena/be98ede8-poker1` is fixed by Arena. Existing open integration PRs own their data and workflow changes; this session does not take over those tasks. This is one session, not a parallel branch launch; the existing board on main remains the shared board.
+
+Integration follow-up claim: `scripts/check_schedule_render.js`, `scripts/smoke_test.js`, `scripts/build_site.py`. The inherited schedule render test expects obsolete prose after PR #85, while the current plan stores per-date explanations. Replace that assertion with a comparison against the schedule fixture; leave the generated schedule and other agents' pending changes untouched.
+
+**Implementation done; integration checks passed locally.** The landing count and default date filter use Las Vegas dates and preserve historical rows. The copy distinguishes schedule candidates from an affirmative written single-entry policy. No official facts or retrieval timestamps were rewritten. Snapshot validation: 324 rows, 1,296 field checks, zero hard failures, one documented Wynn time interpretation; date/time pairing produced zero unexplained mismatches. Schedule check: 70 days, 170 overlap pairs; smoke: 23 pages; rendered links: 530 local references, zero broken. The stale schedule render assertion is replaced by per-day fallback-note and badge checks. Government/operator/booking URLs are not reachable from this sandbox; GitHub's scheduled monitoring is a separate network-enabled check, not proof of booked rates or available seats.
+
+Integration PR: [#87](https://github.com/karagemop466-tech/Poker1/pull/87). Deployment and merge status are recorded on the PR and [repository Actions](https://github.com/karagemop466-tech/Poker1/actions); the public endpoint is [GitHub Pages](https://karagemop466-tech.github.io/Poker1/). A successful build of an earlier commit is not confirmation of this PR's deployment.
