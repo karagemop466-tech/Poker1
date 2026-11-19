@@ -66,9 +66,9 @@ AUDITED_ON = "2026-11-19"
 AFFIRMATIVE_SE = [
     r"re-?entry is (?:not|n't) allowed",
     r"no re-?entry",
-    r"no re-?buys?",
+    r"no re[\s-]?buys?",
     r"no re-?buy",
-    r"no add-?ons?",
+    r"no add[\s-]?ons?",
     r"single entry only",
     r"one entry only",
     r"freeze-?out",
@@ -82,10 +82,13 @@ FURTHER_ENTRY = [
     r"re-?entries will be available",
     r"registration and re-?entries",
     r"unlimited re-?entry",
-    r"unlimited \$?[\d,]+ rebuys?",
+    r"(?:unlimited\s+)?(?:\$?[\d,]+\s+)?(?:rebuys?|re-buys?|rebuy\b)",
     r"rebuys and add-?ons",
     r"add-?on per entry",
-    r"subsequent buy-?in",
+    r"subsequent buy[\s-]?in",
+    r"all subsequent buy[\s-]?in",
+    r"rebuys? and add-?ons",
+    r"players will start with [\d,]+ in tournament chips\. unlimited",
     r"subsequent flight",
     r"\$[\d,]+ add-?on",
     r"one \(1\) add-?on",
@@ -161,12 +164,16 @@ def document_blocks(text):
     # A document opens with its own general terms before the first event block.
     # Those terms are numbered 1..N too, so they must be one of the candidate
     # owners, or a clause-3 quote resolves to the wrong set of sentences.
-    if starts and starts[0] > 0:
+    general_terms = starts and starts[0] > 0
+    if general_terms:
         starts = [0] + starts
     out = []
     for j, s in enumerate(starts):
         e = starts[j + 1] if j + 1 < len(starts) else len(lines)
-        heading = lines[s].strip()[:80] if lines[s].strip() else "General tournament terms (before the first event block)"
+        if j == 0 and general_terms:
+            heading = "General tournament terms (printed before the first event block)"
+        else:
+            heading = lines[s].strip()[:80] if lines[s].strip() else "(untitled block)"
         out.append((s + 1, e, heading, norm("\n".join(lines[s:e]))))
     return out
 
