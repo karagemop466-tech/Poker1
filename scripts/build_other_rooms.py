@@ -52,6 +52,7 @@ EXCAL_PAGE = "https://excalibur.mgmresorts.com/en/casino.html"
 SAHARA_PAGE = "https://www.saharalasvegas.com/casino"
 RW_PAGE = "https://www.rwlasvegas.com/gaming/"
 FB_PAGE = "https://www.fontainebleaulasvegas.com/casino/"
+WESTGATE_PAGE = "https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/casino/poker/"
 STRAT_PAGE = "https://thestrat.com/casino"
 MIRAGE_PAGE = "https://www.hardrockvegas.com/"
 
@@ -269,7 +270,7 @@ for item in ORL:
         fee_split="$%s withheld per entry for admin, staffing and promotions" % item["withheld"],
         entry_status="RE_ADD" if item.get("addon") else "RE",
         labels=item["labels"],
-        status_note="The official structure sheet prints re-entry until %s.%s" % (
+        status_note="The October-named PDF prints re-entry until %s; current validity is unverified.%s" % (
             item["level_close"],
             " It also prints a one-time $100 add-on for 25,000 chips." if item.get("addon") else ""),
         rules=orleans_rules(item["name"], item["level_close"], item["approx"],
@@ -316,14 +317,33 @@ ROOMS = [
                             "state-of-the-art furnishings and 25 LED TV's\" and \"The Orleans "
                             "Poker Room is open daily 24 hours and features Texas Hold'Em, "
                             "Omaha Hi-Lo and 7-Card Stud.\"",
-        "schedule_status": "published",
-        "schedule_note": "The official page links the \"2026 Orleans Poker Daily Schedule\" PDF. "
-                         "All four parts were read on 2026-11-17: a weekday grid plus a "
-                         "structure sheet for every event on it.",
+        "schedule_status": "October-named PDF - current validity unverified",
+        "schedule_note": "The linked PDF filename refers to October 2026; its printed grid has no "
+                         "validity period. It was read on 2026-11-17 but is not proof of the "
+                         "current or November schedule; call the room to confirm.",
         "sources": [src("Official Orleans poker room page", ORL_PAGE),
                     src("2026 Orleans Poker Daily Schedule (official PDF)", ORL_SCHED)],
         "events": ORLEANS_EVENTS,
         "findings": [],
+    },
+    {
+        "id": "westgate",
+        "name": "Westgate Las Vegas Resort & Casino",
+        "operator": "Westgate Resorts",
+        "strip_status": "near the Strip; walking time unverified",
+        "strip_note": "No hotel-to-room walking time or Strip proximity is assumed.",
+        "poker_room_status": "confirmed",
+        "poker_room_quote": "\"Tournaments are available every day\". Poker room: (702) 732-5223. "
+                            "Official page read 2026-11-19.",
+        "schedule_status": "daily tournaments confirmed; details unverified",
+        "schedule_note": "The official room page does not give a specific tournament time, buy-in, "
+                         "guarantee or entry terms. Ask the room for a current event-specific structure.",
+        "sources": [src("Official Westgate poker room page (read 2026-11-19)", WESTGATE_PAGE)],
+        "events": [],
+        "findings": [{"text": "The room states that tournaments are available every day and gives "
+                               "(702) 732-5223. The time, price and entry terms of a reported $70 "
+                               "format are not confirmed by this page.",
+                      "source": src("Official Westgate poker room page", WESTGATE_PAGE)}],
     },
     {
         "id": "south-point",
@@ -617,8 +637,8 @@ FLAGS = [
      "The file is named 2026_orleans_october_poker_daily_tournaments_schedule_ada.pdf, while "
      "the official page links it as \"2026 Orleans Poker Daily Schedule\". Nothing inside the "
      "PDF prints a month, a year or a date range.",
-     "The events are stored as a recurring weekly schedule with no dates. Which period the "
-     "printed grid covers is not stated on the source, so no period is claimed.",
+     "The October-named PDF has an unconfirmed validity period and is "
+     "not proof that the grid is current in November. Contact the room before relying on it.",
      ORL_SCHED),
     ("F66", "The Orleans PDF points at a dead URL",
      "The PDF's own footer prints: \"For tournament structures or questions, contact a Poker "
@@ -628,8 +648,8 @@ FLAGS = [
      "The live official page used instead is https://orleans.boydgaming.com/play/poker-room, "
      "which is where the PDF itself is linked from.",
      ORL_PAGE),
-    ("F67", "No Orleans daily event is single entry",
-     "Every one of the thirteen structure sheets in the official PDF prints the same clause: "
+    ("F67", "The October-named Orleans PDF describes re-entry",
+     "Each of the thirteen structure sheets in the linked PDF prints the same clause: "
      "\"Late entries and re-entries are available until the start of Level ...\". The Sunday "
      "Special additionally prints \"One-Time Add-On: $100 = 25,000 Chips\".",
      "All thirteen Orleans rows are stored with a re-entry rule and kept out of the "
@@ -686,7 +706,7 @@ FLAGS = [
 ]
 
 STATUS_CHIPS = {
-    "SE": ("ok", "Single entry - no clause permitting a further entry"),
+    "SE": ("ok", "Single entry - affirmatively confirmed for this event"),
     "RE": ("bad", "Re-entry allowed"),
     "ADD": ("bad", "Add-on sold"),
     "RE_ADD": ("bad", "Re-entry and add-on"),
@@ -695,7 +715,8 @@ STATUS_CHIPS = {
 }
 
 METHOD = (
-    "Every room in this survey was checked against its own official website on 2026-11-17. A row "
+    "The original survey was checked against official websites on 2026-11-17; the added Westgate "
+    "record was checked on 2026-11-19. A row "
     "is published only where an official page or an official PDF prints the value. Where the "
     "official source publishes a schedule as images with no text, nothing is transcribed and the "
     "gap is recorded instead. Third-party schedules were found for several of these rooms and "
@@ -761,115 +782,73 @@ def build_dataset():
 # Page generation
 # --------------------------------------------------------------------------------------
 def windows_section():
-    """Compare the stay windows that actually have a dated official quote.
-
-    Reads data/schedule.json and data/rates.json read-only; it edits neither.
-    """
+    """Show historical stay observations without ranking unlike dates/rooms."""
     try:
         with open(os.path.join(ROOT, "data", "schedule.json"), encoding="utf-8") as fh:
             schedule = json.load(fh)
         with open(os.path.join(ROOT, "data", "rates.json"), encoding="utf-8") as fh:
             rates = json.load(fh)
     except (OSError, ValueError):
-        return "<p class=\"small muted\">The trip-window comparison could not be built because " \
-               "the schedule or rate log could not be read.</p>"
-
-    se_by_date = OrderedDict()
-    for day in schedule.get("days", []):
-        se = [e for e in day.get("events", []) if e.get("entry_status") == "CAND"]
-        se_by_date[day["date"]] = se
-
-    rows = []
-    for entry in rates.get("entries", []):
-        arrival, departure = entry.get("arrival"), entry.get("departure")
+        return '<p class="small muted">The dated quote log is unavailable.</p>'
+    out = ['<p class="small">These are historical checkout observations for different dates '
+           'and rooms, not like-for-like hotel offers or current prices. Confirm availability, '
+           'cancellation terms, parking and all other charges before booking. An event count is '
+           'not a playable itinerary; entry rules, overlaps and travel must be checked.</p>',
+           '<table><thead><tr><th>Dated stay and occupancy</th><th>Nights</th>'
+           '<th>Historical checkout / night</th><th>Historical checkout total</th>'
+           '<th>Strictly confirmed entry options</th><th>Unverified sheet-review candidates</th>'
+           '<th>Official source and retrieval date</th></tr></thead><tbody>']
+    for q in sorted(rates.get("entries", []), key=lambda r: r.get("arrival", "")):
+        arrival, departure = q.get("arrival"), q.get("departure")
         if not arrival or not departure:
             continue
-        nights = [d for d in se_by_date if arrival <= d < departure]
-        events = [e for d in nights for e in se_by_date[d]]
-        rows.append({
-            "arrival": arrival, "departure": departure, "nights": entry.get("nights"),
-            "property": entry.get("property"), "room": entry.get("room"),
-            "occupancy": entry.get("occupancy"),
-            "true_cost": entry.get("true_cost_per_night_usd"),
-            "checkout": entry.get("checkout_total_usd"),
-            "se_events": len(events),
-            "se_days": sum(bool(se_by_date[d]) for d in nights),
-            "se_names": sorted({e.get("name", "") for e in events}),
-            "source": entry.get("source"),
-            "retrieved": entry.get("retrieved_on") or entry.get("logged_on"),
-        })
-    if not rows:
-        return "<p class=\"small muted\">No dated official quote is logged yet, so no window can be compared.</p>"
-
-    out = ['<table><thead><tr><th>Stay window (dated official quote)</th><th>Nights</th>'
-           '<th>True cost / night</th><th>Checkout total</th><th>Days in the window holding a '
-           'sheet-reviewed candidate event</th><th>Sheet-reviewed candidate entries</th>'
-           '<th>Source</th></tr></thead><tbody>']
-    for row in sorted(rows, key=lambda r: r["arrival"]):
-        out.append(
-            "<tr><td><strong>%s &rarr; %s</strong><br><span class=\"small\">%s · %s · %s</span></td>"
-            "<td>%s</td><td>%s</td><td>%s</td><td>%s of %s</td><td>%s</td>"
-            "<td><a href=\"%s\">official booking engine</a><br><span class=\"small\">quote read %s</span></td></tr>"
-            % (esc(row["arrival"]), esc(row["departure"]), esc(row["property"]), esc(row["room"]),
-               esc(row["occupancy"]), esc(row["nights"]), money(row["true_cost"]),
-               money(row["checkout"]), esc(row["se_days"]), esc(row["nights"]),
-               esc(row["se_events"]), esc(row["source"]), esc(row["retrieved"])))
-    out.append("</tbody></table>")
-
-    best_event = max(rows, key=lambda r: (r["se_events"], -r["true_cost"]))
-    best_cost = min((r for r in rows if r["se_events"]), key=lambda r: r["true_cost"]) \
-        if any(r["se_events"] for r in rows) else None
-    names = ", ".join(best_event["se_names"]) if best_event["se_names"] else "none"
-    out.append("<div class=\"card callout\"><strong>What the dated quotes say.</strong> Of the "
-               "stay windows that carry an official quote, <strong>%s &rarr; %s</strong> holds "
-               "the most sheet-reviewed candidate entries (%s) at %s per night. %s"
-               "<br><br><strong>This is a comparison of published values, not a recommendation of "
-               "dates.</strong> The trip dates and the nightly budget are still your decision "
-               "(QUESTIONS.md D3 and D4); this table only prices the windows that were actually "
-               "quoted, so the choice can be made like-for-like.</div>"
-               % (esc(best_event["arrival"]), esc(best_event["departure"]),
-                  esc(best_event["se_events"]), money(best_event["true_cost"]),
-                  ("The cheapest quoted window that holds any sheet-reviewed candidate event is "
-                   "<strong>%s &rarr; %s</strong> at %s per night."
-                    % (esc(best_cost["arrival"]), esc(best_cost["departure"]),
-                       money(best_cost["true_cost"]))) if best_cost else ""))
-    out.append("<p class=\"small\">Sheet-reviewed candidate events counted in the busiest window: %s.</p>"
-               % esc(names))
+        events = [e for day in schedule.get("days", []) if arrival <= day.get("date", "") < departure
+                  for e in day.get("events", [])]
+        strict = sum(e.get("entry_status") == "SE" for e in events)
+        candidate = sum(e.get("entry_status") == "CAND" for e in events)
+        out.append('<tr><td><strong>%s &rarr; %s</strong><br><span class="small">%s · %s · %s</span></td>'
+                   '<td>%s</td><td>%s</td><td>%s</td><td>%s</td><td>%s</td>'
+                   '<td><a href="%s">official booking engine</a><br><span class="small">quote read %s</span></td></tr>'
+                   % (esc(arrival), esc(departure), esc(q.get("property")), esc(q.get("room")),
+                      esc(q.get("occupancy")), esc(q.get("nights")), money(q.get("true_cost_per_night_usd")),
+                      money(q.get("checkout_total_usd")), strict, candidate, esc(q.get("source")),
+                      esc(q.get("retrieved_on") or q.get("logged_on"))))
+    out.append('</tbody></table>')
     return "\n".join(out)
 
 
 def render_page(data):
-    css = open(os.path.join(ROOT, "assets", "style.css"), encoding="utf-8").read()
-    js = open(os.path.join(ROOT, "assets", "app.js"), encoding="utf-8").read()
+    with open(os.path.join(ROOT, "assets", "style.css"), encoding="utf-8") as fh:
+        css = fh.read()
+    with open(os.path.join(ROOT, "assets", "app.js"), encoding="utf-8") as fh:
+        js = fh.read()
     counts = data["counts"]
 
     head = """
 <h1>Other Las Vegas poker rooms</h1>
-<p class="lead">Every Strip and near-Strip poker room outside the two this site already covers,
-checked against its own website on 2026-11-17. A row appears only where the operator publishes
-the value. Blank means unverified, never estimated.</p>
+<p class="lead">A survey of additional Las Vegas poker rooms using operator sources, mostly read on
+2026-11-17; Westgate was added on 2026-11-19. Schedules and rates change. Blank means unverified.</p>
 <div class="card callout"><strong>Method.</strong> %s</div>
 <h2>Headline</h2>
 <ul>
-  <li><strong>MGM Grand's $120 dailies are the only events in this survey whose structure sheet
-      prints no re-entry clause.</strong> Read end to end, the sheet allows late registration
-      until Level 8 and nothing that permits a further entry. But $11 of the $120 buys 10,000
-      extra starting chips on a 15,000 base, so spending more buys a bigger stack. Under the
-      brief's own rule that belongs in the separate section, and that is where it sits here
-      (F62).</li>
-  <li><strong>Every Orleans daily event allows re-entry.</strong> All thirteen structure sheets
-      in the official PDF print the same late-entry and re-entry clause, and the Sunday Special
-      also sells a one-time $100 add-on (F67).</li>
+  <li><strong>MGM Grand's $120 structure sheet offers extra chips for an optional $11 gratuity.</strong>
+      The sheet states late registration until Level 8 but does not affirm an event-wide entry
+      limit. The paid 10,000-chip advantage on a 15,000 base excludes it from the strict
+      single-entry shortlist regardless of the re-entry rule (F62).</li>
+  <li><strong>The October-named Orleans PDF describes re-entry.</strong> Its thirteen sheets also
+      include a Sunday $100 add-on, but the PDF does not establish whether the grid is current.
+      Confirm the schedule and terms with the room before attending (F65, F67).</li>
+  <li><strong>Westgate confirms daily tournaments</strong>, but its room page does not specify the
+      rumored $70 event's time or entry policy. Call (702) 732-5223 for current terms.</li>
   <li><strong>South Point and Horseshoe run daily tournaments but publish nothing readable about
       them.</strong> South Point's schedule and rules sheets are images (F68); Horseshoe's page
       confirms six daily tournaments and prints no time, buy-in or structure (F69).</li>
-  <li><strong>Eight properties publish no live poker room at all</strong> on their own casino
-      pages (F70), and the MGM poker hub links two of them, Luxor and Excalibur, to pages that
-      list no poker room (F71).</li>
+  <li><strong>Eight property pages did not list a live poker room</strong> when checked (F70).
+      That is not proof that a room does not exist; verify directly before visiting.</li>
   <li><strong>No walking time is published for these rooms</strong>, so none is stated here (F72).</li>
 </ul>
 <div class="grid">
-  <div class="card tile"><h3>%s</h3><p>rooms surveyed on their own sites, 2026-11-17</p></div>
+  <div class="card tile"><h3>%s</h3><p>rooms surveyed on operator sites, 2026-11-17 to 2026-11-19</p></div>
   <div class="card tile"><h3>%s</h3><p>publish a live poker room</p></div>
   <div class="card tile"><h3>%s</h3><p>publish a readable tournament schedule</p></div>
   <div class="card tile"><h3>%s</h3><p>recurring event rows stored, all with an official source</p></div>
@@ -975,9 +954,8 @@ the value. Blank means unverified, never estimated.</p>
         "<h2 id=\"fees\">3. Registration and fee splits</h2>", "\n".join(fee_rows),
         "<h2 id=\"gaps\">4. Findings from rooms with no readable schedule</h2>", "\n".join(findings),
         "<h2 id=\"flags\">5. Irregularities and blank values (F60-F74)</h2>", "\n".join(flag_rows),
-        "<h2 id=\"windows\">6. What these windows cost, like for like</h2>",
-        "<p class=\"small\">Built from the dated official rate log and the per-day schedule. "
-        "Every figure below is a published value; nothing is forecast.</p>", windows_section(),
+        "<h2 id=\"windows\">6. Historical dated stay observations</h2>",
+        "<p class=\"small\">Different dates and rooms are not like-for-like. Nothing is forecast.</p>", windows_section(),
         "<h2 id=\"next\">7. What is still missing</h2>",
         "<ul>"
         "<li><strong>Walking times.</strong> No routed walking record exists yet for any of these "
@@ -988,8 +966,8 @@ the value. Blank means unverified, never estimated.</p>
         "page publishes no number for the poker room).</li>"
         "<li><strong>MGM Grand Saturday $150.</strong> No structure sheet is published, so its "
         "entry rule is still unverified (F63).</li>"
-        "<li><strong>The Orleans period.</strong> The PDF prints no month or date range, so the "
-        "grid is stored as recurring and cannot be tied to a trip date (F65).</li>"
+        "<li><strong>The Orleans period.</strong> The filename references October 2026 but the "
+        "grid itself has no validity dates; confirm whether it is current (F65).</li>"
         "</ul>",
         "<p class=\"small\"><a href=\"venues.html\">Back to the venue list →</a></p>",
         "</div>",

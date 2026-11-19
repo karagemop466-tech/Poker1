@@ -18,7 +18,7 @@ Scope: independently re-read selected operator sources and compare the generated
 - The archived walking matrix is a route estimate between resort coordinates, not a measured guest-room-to-seat journey. Several **internal** routes have no time but were marked `within_30_min: true` on the contemporaneous main snapshot. Interior location is not proof of a walk of 30 minutes or less; keep that field unknown until timed.
 - [Wynn's official poker page](https://www.wynnlasvegas.com/casino/poker) names Signature, Millions and Classic series in its daily-tournament suspension notice. The wording inspected did not explicitly name WPT; do not silently extend that particular notice to WPT without further evidence.
 - [Westgate's official poker page](https://www.westgateresorts.com/hotels/nevada/las-vegas/westgate-las-vegas-resort-casino/casino/poker/), read on 19 November, confirms daily tournaments and telephone **(702) 732-5223**. It does not establish the time, price or freezeout terms of the rumored $70 event. Call or obtain the official event-specific structure rather than promoting third-party listings as confirmed.
-- The Orleans schedule archive carries an October 2026 period. It is historical evidence, not confirmation that the same weekly grid is current for a November trip.
+- The Orleans schedule PDF's filename refers to October 2026, while its readable grid does not itself print a validity period. Its being linked from a current page does not confirm that the weekly grid applies to a November trip; ask the room before relying on it.
 
 ## Monitoring
 
