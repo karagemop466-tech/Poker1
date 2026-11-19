@@ -1,3 +1,38 @@
+# Session f3a84f9b — branch `arena/f3a84f9b-poker1` (base `3f3f6bb` = `main` after PR #101)
+
+Session `f3a84f9b` works on branch `arena/f3a84f9b-poker1` (fixed for this session), based on `main` at
+`3f3f6bb` (PR #101 merged). Clean tree; `build_data.py`/`build_site.py` regenerate byte-identical output;
+`check_links.py` and `verify_rows.py` pass at the base (317 rows: 80 CAND / 67 MULTI+SE / 107 RE / 43 CONT /
+34 UNV; r225 documented). Claim written and pushed before any data, script or page change.
+
+**Board state read at claim time.** Open pull requests: **#96** (`arena/cd330ba8-poker1`, DRAFT, "Audit event
+evidence and harden source-monitor reporting", last commit 2026-11-19T06:07:25Z) and **#98**
+(`arena/13eafa44-poker1`, "Integration … PR #79/#81/#82 takeover", CONFLICTING, last commit 2026-11-19T06:00:23Z).
+Both are ~5 h without commits — more than the 60-minute stale-claim window in the coordination rules. #98's
+ported substance (NLH renames `2427f6e`, Bellagio/Caesars dailies and county tax via PR #95, trip diary and
+booking links via PRs #87/#89/#94, schedule-assertion fix via PR #87) is already on `main`; it is stale-conflicting.
+
+**Stale-run discovery driving task 2.** Scheduled workflow "Monitor official sources" failed on the main push
+at `1e7da3a` (2026-11-19T05:58Z, run 44468765019): the step "Check every official source, including its
+content" exited non-zero, while the same script offline (`--print`) passes in the validate job of every later
+PR. So a single misbehaving live source can abort the whole scheduled re-check — exactly the schedule
+requirement ("automatic re-check of each official URL on a schedule"). `data/monitoring.json` and
+`data/changes.json` on main still carry `checked_at: 2026-11-17` from a sandbox fallback run.
+
+| # | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| 1 | Take over stale draft PR #96 (cd330ba8, >4 h stale): merge its branch into `arena/f3a84f9b-poker1`, resolve conflicts against current main without discarding either side, run its evidence regressions plus the whole gate set. Handoff noted per the >60-minute rule. | in progress | f3a84f9b | all files of PR #96: `scripts/{build_other_rooms,extract_rules}.py`, new `scripts/{conditional_schedule,entry_evidence,quote_provenance,travel_evidence,venetian_evidence}.py` + tests, `.github/workflows/{monitor,pages,source-facts}.yml`, `research/verification-2026-11-19-cd330ba8.md`, `COORDINATION.md` |
+| 2 | Harden `scripts/monitor_sources.py` so one failing source is recorded (per-source guard) instead of crashing the scheduled monitor (run 44468765019); offline unit test wired into validate. | in progress | f3a84f9b | `scripts/monitor_sources.py`, new `scripts/test_monitor_sources_guard.py`, `package.json`/workflow test wiring if needed, `COORDINATION.md` |
+| 3 | SUGGESTIONS P8 (f70bc581's open request): surface `data/changes.json` per-row marks inside every tournament table — "Source changed — re-check" with the monitor timestamp, and an explicit "no change as of <changes.checked_at>" state; headless fixture test for the marked row; regenerate derived pages; close P8. | in progress | f3a84f9b | `assets/app.js`, `assets/style.css`, new `scripts/check_source_badges.js`, `package.json`, derived `index.html` + `pages/*.html`, `SUGGESTIONS.md`, `COORDINATION.md` |
+| 4 | Dated re-check of the structure-sheet gaps (2026-11-19): re-fetch the Wynn Signature Series schedule/structures PDFs (first read today: structures still a "COMING SOON" placeholder) and the Venetian DSE IV page + structure sheet #5 for the Nov 26 Event 12 candidate; log matches/differences with links; remove "unverified" only where a newly read official sheet confirms a value — none inferred. Update the QUESTIONS I4 answer line with the dated re-check. | in progress | f3a84f9b | new `research/verification-2026-11-19-f3a84f9b.md`, `QUESTIONS.md`, `COORDINATION.md` |
+| 5 | Refresh the row-level monitoring state through CI: dispatch "Monitor official sources" on this branch so `data/monitoring.json` + `data/changes.json` carry a real fetch dated today (the sandbox has no route to operator domains; the dispatch is the only honest refresh). If the dispatch API is blocked from here, record that and rely on tonight's 15:17 UTC cron plus the fix from task 2. | in progress | f3a84f9b | `data/monitoring.json`, `data/changes.json` (written by the workflow), `COORDINATION.md` |
+| 6 | Stale-PR disposition for #98 (13eafa44): verify item-by-item that every ported value is on `main`, carry over its unique record document, close the PR with a disposition note — no silent discard. | in progress | f3a84f9b | `research/integration-2026-11-19-13eafa44.md` (adopt), `COORDINATION.md`, PR #98 comment |
+| 7 | Final integration for this round: rebuild, run every gate (python + npm), open PR to `main`, merge after green `validate`, confirm Pages deploy, record PR link + merge + deploy here. | in progress | f3a84f9b | all of the above + `COORDINATION.md` |
+
+No official value is changed except by adopting a merged session's already-verified value with its source link;
+anything that cannot be confirmed stays blank and flagged. `last_checked` advances only on sources actually
+re-read. Files of still-active sessions are not edited: none found beyond the two stale PRs above.
+
 # Session ab7e4d46 — branch `arena/ab7e4d46-poker1` (base `a1361aa` = `main` at PR #85)
 
 Session `ab7e4d46` works on branch `arena/ab7e4d46-poker1` (fixed for this session), based on `main` at
