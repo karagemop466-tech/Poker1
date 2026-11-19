@@ -94,6 +94,47 @@
     if (s === "CONT") return '<span class="chip info">Continuation</span>';
     return '<span class="chip warn">Unverified</span>';
   }
+  /* The spend-advantage reading of the row - derived by the build from the clause
+     excerpt stored on that row (scripts/spend_advantage.py), never by this script.
+     The chip colour follows the verdict: red when the document prices a way to buy
+     more chances, amber for silence in a document that was read, grey when there is
+     no document to read. A row is never called single entry from this. */
+  var SPEND_CLASS = {
+    "further-entry-priced": "bad", "rebuy-or-reentry-printed": "bad",
+    "later-flight-printed": "bad", "no-further-entry-clause": "warn",
+    "no-structure-sheet": "info", "continuation": "info"
+  };
+  function spendCell(row) {
+    var sa = row.spend_advantage;
+    if (!sa) return '<span class="muted">not derived</span>';
+    var out = '<span class="chip ' + (SPEND_CLASS[sa.value] || "info") + '">' + esc(sa.label) + "</span>" +
+      '<br><span class="small">' + esc(sa.reading) + "</span>";
+    if (sa.excerpt) {
+      out += '<br><span class="small"><em>' + esc(sa.excerpt) + "</em>" +
+        (sa.source && sa.source.url
+          ? '<br><a href="' + esc(sa.source.url) + '" target="_blank" rel="noopener">' +
+            esc(sa.source.label || sa.source.url) + "</a>"
+          : "") +
+        (sa.retrieved_on ? " &middot; read " + esc(sa.retrieved_on) : "") + "</span>";
+    }
+    return out;
+  }
+  function spendCounts(rows) {
+    var order = ["further-entry-priced", "rebuy-or-reentry-printed", "later-flight-printed",
+                 "no-further-entry-clause", "no-structure-sheet", "continuation"];
+    var n = {};
+    rows.forEach(function (r) { var v = (r.spend_advantage || {}).value; if (v) n[v] = (n[v] || 0) + 1; });
+    return order.filter(function (v) { return n[v]; })
+      .map(function (v) { return n[v] + " &middot; " + SPEND_LABELS[v]; });
+  }
+  var SPEND_LABELS = {
+    "further-entry-priced": "later buy-in priced on the sheet",
+    "rebuy-or-reentry-printed": "further entries sold during the event",
+    "later-flight-printed": "another flight entry allowed unless chips bagged",
+    "no-further-entry-clause": "no further-entry or add-on clause printed",
+    "no-structure-sheet": "no structure sheet on file",
+    "continuation": "continuation row, no entry sold"
+  };
   function routeLinks(r) {
     var out = '<a href="' + esc(r.route_link) + '" target="_blank" rel="noopener">OSM routing query</a>';
     (r.cross_check || []).forEach(function (c) {
@@ -392,6 +433,7 @@
     var status = select("status", opts.statuses || [], "Any entry rule");
     var single = input("single-only", "checkbox", {});
     single.checked = !!opts.strict;
+    var spend = input("spend-none", "checkbox", {});
     var today = vegasDate();
     var future = input("future-only", "checkbox", {});
     future.checked = !!opts.upcoming;
@@ -418,6 +460,14 @@
     tl.textContent = "Written freezeout confirmed";
     tog.appendChild(single); tog.appendChild(tl);
     row2.appendChild(tog);
+    var tog2 = document.createElement("div");
+    tog2.className = "field toggle";
+    var tl2 = document.createElement("label");
+    tl2.setAttribute("for", "spend-none");
+    tl2.textContent = "Sheet prints no further-entry or add-on clause";
+    tl2.title = "Derived from the structure-sheet excerpt on each row: the sheet was read and none of its clauses prices a later buy-in, a rebuy or an add-on. Silence in the document - not a written one-entry rule.";
+    tog2.appendChild(spend); tog2.appendChild(tl2);
+    row2.appendChild(tog2);
     if (opts.upcoming) {
       var futureField = field("Today and later (Las Vegas)", future);
       futureField.className = "field toggle";
@@ -475,6 +525,7 @@
       if (series.value && row.series !== series.value) return false;
       if (status.value && row.entry_status !== status.value) return false;
       if (single.checked && row.entry_status !== "SE") return false;
+      if (spend.checked && !((row.spend_advantage || {}).value === "no-further-entry-clause")) return false;
       var lo = num(buyMin.value), hi = num(buyMax.value);
       if (lo != null && !(row.buy_in_usd != null && row.buy_in_usd >= lo)) return false;
       if (hi != null && !(row.buy_in_usd != null && row.buy_in_usd <= hi)) return false;
@@ -495,6 +546,7 @@
       if (series.value) bits.push(series.value);
       if (status.value) bits.push(status.value);
       if (single.checked) bits.push("single entry only");
+      if (spend.checked) bits.push("sheet prints no further-entry or add-on clause");
       if (lo2() != null) bits.push("buy-in ≥ " + money(lo2()));
       if (hi2() != null) bits.push("buy-in ≤ " + money(hi2()));
       var labs = selectedLabels();
@@ -511,11 +563,13 @@
     [q, from, to, buyMin, buyMax].forEach(function (c) { c.addEventListener("input", fire); });
     [venue, series, status].forEach(function (c) { c.addEventListener("change", fire); });
     single.addEventListener("change", fire);
+    spend.addEventListener("change", fire);
     future.addEventListener("change", fire);
     if (labelBox) labelBox.querySelectorAll("input").forEach(function (c) { c.addEventListener("change", fire); });
     reset.addEventListener("click", function () {
       q.value = ""; from.value = ""; to.value = ""; buyMin.value = ""; buyMax.value = "";
       venue.value = ""; series.value = ""; status.value = ""; single.checked = !!opts.strict;
+      spend.checked = false;
       future.checked = !!opts.upcoming;
       if (labelBox) labelBox.querySelectorAll("input").forEach(function (c) { c.checked = false; });
       fire();
@@ -610,6 +664,8 @@
       { id: "format", label:"Format", key:"labels", html:function(r){return (r.labels || []).map(esc).join(" · ");}},
       { id: "mult", label: "Guarantee ÷ buy-in", key: "gtd_multiple", num: true, html: function (r) { return mult(r.gtd_multiple); } },
       { id: "status", label: "Entry rule", key: "entry_status", html: function (r) { return statusChip(r.entry_status); } },
+      { id: "spend", label: "Spend advantage", key: "spend_advantage", sort: null,
+        html: function (r) { return spendCell(r); } },
       { id: "checked", label: "Last checked", key: "last_checked", html: function (r) { return "<span class='small'>" + esc(r.last_checked) + "</span>" + srcBadge(r); } }
     ];
     if (withRules) {
@@ -709,6 +765,26 @@
       diary.appendChild(list);
       main.parentNode.insertBefore(diary, main);
 
+      /* The one statement this page can honestly make about entry rules. Every row here
+         is a candidate because its structure sheet was read and printed no clause either
+         way - which is the strongest reading the public documents support, and it is not
+         a written one-entry rule. The count is computed from the rows, never typed in. */
+      var silent = rows.filter(function (r) { return (r.spend_advantage || {}).value === "no-further-entry-clause"; }).length;
+      var gate = document.createElement("p");
+      gate.className = "small";
+      gate.innerHTML = "<strong>What this list can say, and what it cannot.</strong> " + silent +
+        " of the " + rows.length + " rows on this page carry the reading <em>sheet read in full, no " +
+        "later buy-in, rebuy or add-on clause printed</em>; " +
+        rows.filter(function (r) { return (r.spend_advantage || {}).advantage === "yes"; }).length +
+        " print a clause that prices one and are kept in the " +
+        '<a href="' + BASE + 'pages/separate-section.html">separate section</a>. ' +
+        "Silence in a structure sheet is the strongest evidence these pages will use for a " +
+        "single-entry candidate: it is not a confirmation, and the verified-single-entry status " +
+        "stays empty until the room answers in writing (<a href=\"" + BASE + "pages/questions.html\">question list</a>). " +
+        "Tick \u201cSheet prints no further-entry or add-on clause\u201d to see only the rows the " +
+        "documents leave open.";
+      main.parentNode.insertBefore(gate, main);
+
       var filters = tournamentFilters(document.getElementById("filters"), rows, { strict:true, upcoming:true });
       var tbl = table(main, rows, tournamentColumns(true), {
         sortKey: "date", sortDir: 1, predicate: filters.matches, countEl: count
@@ -722,6 +798,21 @@
       var rows = d.rows.filter(function (r) { return r.entry_status === "MULTI" || r.entry_status === "RE"; });
       var main = document.getElementById("content");
       var count = document.getElementById("count");
+      /* Why each row is here, in the source's own words. The exclusion the trip rule
+         asks for is "money buys an advantage", and the official documents answer that
+         in three different ways, which have different consequences at the table: a
+         priced later buy-in, re-entries sold while the event runs, and a further
+         starting flight that is barred only for a player who bagged chips. Counting
+         them apart is the only honest way to keep the section a section - the site
+         does not get to decide that one of the three is harmless. */
+      var split = document.createElement("p");
+      split.className = "small";
+      split.innerHTML = "<strong>Why these rows are kept out of the ranking, by what the official " +
+        "sheet actually prints:</strong> " + spendCounts(rows).join(" &nbsp;&middot;&nbsp; ") +
+        ". Every one of them is excluded because a clause the room printed prices or permits a " +
+        "further entry; the reading above quotes that clause on each row. None of this is an " +
+        "operator statement about a one-entry policy.";
+      main.parentNode.insertBefore(split, main);
       var filters = tournamentFilters(document.getElementById("filters"), rows);
       var tbl = table(main, rows, tournamentColumns(true), {
         sortKey: "date", sortDir: 1, predicate: filters.matches, countEl: count
@@ -1457,6 +1548,22 @@
           kpi(flagged.length, "rows carrying a source flag") +
           "</div>";
         html += "<p class='small'>Last check: " + esc(mon.checked_at) + ". " + esc(mon.note) + "</p>";
+        /* What a "changed" verdict is actually compared against. The facts signature is the
+           union of the reading-order and layout renders of a document; a baseline written
+           before that still holds the older, line-only signature, and this run says which
+           of the two it measured against rather than letting the count imply the stronger
+           check. (F83: the line render cannot see a merged table cell.) */
+        if (mon.facts_algo) {
+          html += "<p class='small'><strong>Facts signature: " + esc(mon.facts_algo) + ".</strong> " +
+            (mon.sources_facts_legacy_baseline
+              ? esc(mon.sources_facts_legacy_baseline) + " of " + esc(mon.sources_total) +
+                " sources are still measured against a baseline written by the reading-order " +
+                "extractor, so a value only a layout render can see cannot move their verdict yet; " +
+                "the monitor re-accepts a baseline by hand, after the flagged rows have been read."
+              : "every source with a baseline is measured against a baseline written by the same " +
+                "extractor, so a difference means a published value moved, not a parser changed.") +
+            "</p>";
+        }
         if (mon.network_unavailable) {
           html += "<div class='card callout'><strong>This result is a network blackout, not a source outage.</strong> " +
             "The machine that produced the row-level check below reached none of the official hosts at all. " +

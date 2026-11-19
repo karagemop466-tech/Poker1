@@ -125,25 +125,79 @@ def fetch(url, timeout=60):
         return resp.status, resp.read()
 
 
-def pdf_to_text(data):
+#: Which extractor built a facts signature. Stored on every log entry and every
+#: baseline entry: a signature from a different extractor is not a comparison, and
+#: saying "no" to a comparison is honest while comparing across extractors is not.
+#: v1 union reason (F83): the reading-order render of a PDF drops the contents of
+#: merged table cells, which is exactly how four whole-event guarantees on the Wynn
+#: Signature Series schedule went unseen on 2026-11-16/17. The layout render keeps a
+#: row's cells together, so the facts signature is now taken from both.
+FACTS_ALGO = "line+layout-union-v1"
+
+
+def pdf_renders(data):
+    """Both text renders of one PDF, as {"line", "layout", "layout_error"}.
+
+    "line" is the reading-order render every archived snapshot and every quote check
+    is built from - it stays byte-identical to what ``pdf_to_text`` returned before,
+    so no existing check moves. "layout" is the same pages rendered by position,
+    which keeps the cells of one printed row on one text line. Either render can be
+    empty (no pypdf, a broken file, a page that raises); the caller then falls back
+    to what it has, and records that it did.
+    """
     try:
         from pypdf import PdfReader
     except Exception:
         try:
             from PyPDF2 import PdfReader
         except Exception:
-            return ""
+            return {"line": "", "layout": "", "layout_error": "pypdf not installed"}
     try:
         reader = PdfReader(io.BytesIO(data))
-    except Exception:
-        return ""
-    out = []
+    except Exception as e:  # noqa: BLE001 - a PDF the extractor cannot open
+        return {"line": "", "layout": "", "layout_error": "%s: %s" % (type(e).__name__, e)}
+    line, layout, layout_err = [], [], None
     for page in reader.pages:
         try:
-            out.append(page.extract_text() or "")
+            line.append(page.extract_text() or "")
         except Exception:
-            out.append("")
-    return "\n".join(out)
+            line.append("")
+        try:
+            layout.append(page.extract_text(extraction_mode="layout") or "")
+        except Exception as e:  # noqa: BLE001 - old pypdf without layout mode, or a page that fails
+            layout.append("")
+            layout_err = layout_err or ("%s: %s" % (type(e).__name__, e))
+    return {"line": "\n".join(line), "layout": "\n".join(layout), "layout_error": layout_err}
+
+
+def pdf_to_text(data):
+    """The reading-order render alone - the snapshot text every quote check uses."""
+    return pdf_renders(data)["line"]
+
+
+def facts_union(*texts):
+    """Every fact line any render shows, normalised, de-duplicated and sorted.
+
+    A line counts as the same fact in both renders only after whitespace collapsing,
+    so the union adds the layout render's *extra* rows without losing the line
+    render's existing ones. That is the property the merged-cell defect broke: a
+    number the reading-order render cannot see still reaches the signature.
+    """
+    seen, out = set(), []
+    for text in texts:
+        for line in facts_signature(text or ""):
+            key = line.lower()
+            if key in seen:
+                continue
+            seen.add(key)
+            out.append(line)
+    return sorted(out)
+
+
+def facts_only_in(layout_text, line_text):
+    """Fact lines the layout render shows and the reading-order render does not."""
+    known = {l.lower() for l in facts_signature(line_text or "")}
+    return [l for l in facts_signature(layout_text or "") if l.lower() not in known]
 
 
 def html_to_text(data):
@@ -190,10 +244,56 @@ def facts_signature(text):
     return sorted(out)
 
 
+def is_pdf(url, data):
+    return url.lower().split("?")[0].endswith(".pdf") or data[:5] == b"%PDF-"
+
+
 def to_text(url, data):
-    if url.lower().split("?")[0].endswith(".pdf") or data[:5] == b"%PDF-":
-        return pdf_to_text(data)
+    """The reading-order render - the snapshot text every quote check is built from."""
+    if is_pdf(url, data):
+        return pdf_renders(data)["line"]
     return html_to_text(data)
+
+
+def layout_text(url, data):
+    """The layout render of a PDF body, or "" - and it never raises.
+
+    The second render is evidence, not a dependency: if a PDF can be read in the
+    reading-order mode and not in the layout mode (an old pypdf, one damaged page), the
+    facts signature simply falls back to the render that worked, and the run reports the
+    reason instead of failing. A caller that wants both renders in one parse uses
+    ``pdf_renders`` directly.
+    """
+    if not is_pdf(url, data):
+        return ""
+    try:
+        return pdf_renders(data)["layout"]
+    except Exception:  # noqa: BLE001 - never let a second render break a fetch
+        return ""
+
+
+def body_renders(url, data):
+    """The snapshot render plus, for a PDF, the layout render the facts union needs.
+
+    HTML has no second render, so its facts come from the one text the job already
+    used - the union only ever adds evidence, never removes it.
+    """
+    if is_pdf(url, data):
+        r = pdf_renders(data)
+        return {"line": r["line"], "layout": r["layout"], "layout_error": r["layout_error"]}
+    return {"line": html_to_text(data), "layout": "", "layout_error": None}
+
+
+def facts_comparable(entry):
+    """True only when a stored signature was produced by this same extractor.
+
+    A baseline written by the line-only extractor is not a different answer, it is a
+    different question: comparing it with a union signature reports every PDF source
+    as changed and marks hundreds of rows nobody touched. So the job records that it
+    could not compare, and the next run - against a baseline written by this
+    extractor - compares for real.
+    """
+    return bool(entry) and entry.get("facts_algo") == FACTS_ALGO
 
 
 def write_snapshot(sid, text):
@@ -202,6 +302,23 @@ def write_snapshot(sid, text):
     with open(path, "w", encoding="utf-8") as f:
         f.write(text)
     return path
+
+
+def read_layout_snapshot(sid):
+    """The archived layout render of a source, or "" when none was captured.
+
+    Written beside the line render (``<id>.layout.txt``) by the fetch path. It is never
+    substituted for the line render: the quote checks and the pair checks are built
+    from the file they were built from before, and only the facts signature reads both.
+    """
+    path = os.path.join(SNAP, sid + ".layout.txt")
+    if os.path.exists(path):
+        try:
+            with open(path, encoding="utf-8") as f:
+                return f.read()
+        except Exception:
+            return ""
+    return ""
 
 
 def load_json(path, default):
@@ -291,8 +408,12 @@ def main():
                 if rec["sha256"] != prev.get("sha256"):
                     rec["last_changed_utc"] = rec["last_checked_utc"]
                     rec["changed"] = True
-                rec["facts_checked"] = len(facts_signature(text))
-                rec["facts_signature"] = facts_signature(text)
+                layout = read_layout_snapshot(sid)
+                rec["facts_signature_line"] = facts_signature(text)
+                rec["facts_signature"] = facts_union(text, layout)
+                rec["facts_checked"] = len(rec["facts_signature"])
+                rec["facts_algo"] = FACTS_ALGO
+                rec["facts_layout_only"] = len(facts_only_in(layout, text))
             out.append(rec)
             continue
 
@@ -300,9 +421,18 @@ def main():
             status, data = fetch(s["url"], args.timeout)
             rec["http_status"] = status
             rec["bytes"] = len(data)
-            text = to_text(s["url"], data)
+            renders = body_renders(s["url"], data)
+            text = renders["line"]
             rec["extracted_chars"] = len(text)
             write_snapshot(sid, text)
+            # The second render is archived too, so a reviewer can see what the
+            # reading-order render could not, instead of taking the signature on trust.
+            if renders["layout"].strip():
+                write_snapshot(sid + ".layout", renders["layout"])
+            rec["facts_algo"] = FACTS_ALGO
+            rec["facts_layout_only"] = len(facts_only_in(renders["layout"], text))
+            if renders["layout_error"]:
+                rec["facts_layout_error"] = renders["layout_error"]
             # Hash the bytes actually served, so a changed file is detected even
             # when the extracted text happens to be identical.
             rec["sha256"] = hashlib.sha256(data).hexdigest()
@@ -327,11 +457,34 @@ def main():
                 rec["changed_vs_baseline"] = True
 
         # Meaningful change: did any published number, date, time or rule word move?
-        rec["facts_signature"] = facts_signature(text) if rec.get("extracted_chars") else []
+        # Two signatures are kept. `facts_signature` is the union of both renders - the
+        # one that can see a merged table cell (F83). `facts_signature_line` is the
+        # reading-order render alone, i.e. the definition every signature already on
+        # file was built with. The comparison then always runs like-for-like: against a
+        # union baseline the union, against an older baseline the line-only list. A
+        # cross-extractor diff would answer "which library ran", not "did a value move",
+        # and refusing to run the comparison at all would blind the monitor for a day.
+        if rec.get("extracted_chars"):
+            layout_text = renders.get("layout", "")
+            line_facts = facts_signature(text)
+            rec["facts_signature_line"] = line_facts
+            rec["facts_signature"] = facts_union(text, layout_text)
+        else:
+            rec["facts_signature_line"] = []
+            rec["facts_signature"] = []
         rec["facts_checked"] = len(rec["facts_signature"])
         if prev.get("facts_signature") is not None and rec["facts_signature"]:
-            old_facts = set(prev["facts_signature"])
-            new_facts = set(rec["facts_signature"])
+            if facts_comparable(prev):
+                old_facts, basis = set(prev["facts_signature"]), "union of both renders"
+            else:
+                # The stored signature predates this extractor: use the definition it
+                # was actually built with, which is this run's line-only list.
+                old = prev.get("facts_signature_line")
+                old_facts = set(old if old is not None else prev["facts_signature"])
+                basis = "reading-order render only (baseline predates %s)" % FACTS_ALGO
+            rec["facts_compare"] = basis
+            new_facts = set(rec["facts_signature"] if basis.startswith("union")
+                            else rec["facts_signature_line"])
             added = sorted(new_facts - old_facts)[:8]
             removed = sorted(old_facts - new_facts)[:8]
             if added or removed:
@@ -342,12 +495,21 @@ def main():
     log = {
         "generated_utc": now_utc(),
         "mode": "offline" if args.offline else "fetch",
+        "facts_algo": FACTS_ALGO,
         "source_count": len(out),
         "changed_ids": changed,
         "facts_changed_ids": [r["id"] for r in out if r.get("facts_changed")],
+        # What the second render bought: how many sources show published fact lines that
+        # the reading-order render does not print at all. This is the F83 class of change
+        # made visible, counted rather than asserted.
+        "sources_with_layout_only_facts": sum(1 for r in out if r.get("facts_layout_only")),
+        "facts_layout_only_lines": sum(r.get("facts_layout_only") or 0 for r in out),
         "error_count": len(errors),
         "note": ("Snapshot hashes let the site flag any row whose official source has changed "
-                 "since the row's values were captured. Blank/absent snapshots are never guessed."),
+                 "since the row's values were captured. Blank/absent snapshots are never guessed. "
+                 "Facts are the union of the reading-order and layout renders of a PDF "
+                 "(" + FACTS_ALGO + "); a signature stored by an older extractor is compared "
+                 "against the same extractor's output, never across the two."),
         "sources": out,
     }
     os.makedirs(DATA, exist_ok=True)
