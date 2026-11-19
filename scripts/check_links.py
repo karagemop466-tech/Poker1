@@ -19,6 +19,8 @@ import sys
 from urllib.parse import unquote, urlparse
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(ROOT, "scripts"))
+import spend_advantage  # noqa: E402  the derived column this file re-derives
 problems = []
 REQUIRED_SITE_DOCS = (
     "EXECUTIVE_SUMMARY.md",
@@ -196,6 +198,44 @@ def check_rule_objects(where, identity, rules):
         check_date(value.get("retrieved_on"), f"{where} {identity} rules.{field} retrieved_on", required=True)
 
 
+def check_spend_advantage(where, identity, row):
+    """The spend-advantage column must be exactly what the clause text on this row yields.
+
+    The column is a reading of excerpts the build already stores, so it can never be
+    edited by hand: this re-derives it from the row and compares every field. It also
+    holds the one rule that keeps the reading honest - a row whose own document prices
+    or permits a further entry cannot carry the verified single-entry status, and a row
+    whose document was read but printed nothing may be called silent, never allowed.
+    """
+    got = row.get("spend_advantage")
+    if not isinstance(got, dict):
+        problems.append(f"{where} {identity}: spend_advantage must be the derived object")
+        return
+    expect = spend_advantage.classify({k: row.get(k) for k in ("kind", "rules")})
+    if expect is None:
+        problems.append(f"{where} {identity}: no rule field to derive spend_advantage from")
+        return
+    for field in ("value", "advantage", "label", "reading", "excerpt", "retrieved_on"):
+        if got.get(field) != expect[field]:
+            problems.append(f"{where} {identity}: spend_advantage.{field} does not match the "
+                            f"excerpt stored on the row (published {got.get(field)!r}, "
+                            f"derived {expect[field]!r})")
+    if got.get("source") != expect["source"]:
+        problems.append(f"{where} {identity}: spend_advantage.source must be the source of the "
+                        "excerpt it quotes")
+    # A quote that is not one of the row's own excerpts is a quote nobody can trace.
+    stored = [v.get("excerpt") for v in (row.get("rules") or {}).values() if isinstance(v, dict)]
+    if got.get("excerpt") not in stored:
+        problems.append(f"{where} {identity}: spend_advantage.excerpt is not an excerpt stored on the row")
+    if row.get("entry_status") == "SE" and got.get("advantage") == "yes":
+        problems.append(f"{where} {identity}: a row whose document prices a further entry cannot be "
+                        "classified SE")
+    if got.get("value") == "no-further-entry-clause" and (row.get("rules") or {}).get(
+            "re_entry", {}).get("value") != "not mentioned":
+        problems.append(f"{where} {identity}: 'no clause printed' requires a rule field that reads "
+                        "'not mentioned', not a guess from other wording")
+
+
 for rel in REQUIRED_SITE_DOCS:
     if not os.path.isfile(os.path.join(ROOT, rel)):
         problems.append(f"{rel}: required Markdown content for the deployed dashboard is missing")
@@ -272,6 +312,7 @@ for index, row in enumerate(tournament_rows, 1):
     entry_rule = str(row.get("entry_rule", "")).lower()
     sources = row.get("sources") if isinstance(row.get("sources"), list) else []
     check_rule_objects(where, identity, row.get("rules"))
+    check_spend_advantage(where, identity, row)
     if row.get("kind") == "continuation" and status != "CONT":
         problems.append(f"{where} {identity}: a continuation is not an entry opportunity")
     if row.get("venue") == "The Venetian Resort" and row.get("kind") == "entry" and row.get("late_reg_close") and row["late_reg_close"] < row["start"]:
