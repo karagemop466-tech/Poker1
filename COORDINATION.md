@@ -2376,3 +2376,34 @@ links with 0 broken, schedule arithmetic OK). GitHub Pages: the build of `08f088
 **built** (workflow run 44528192205), so `pages/payouts.html` is live on the published site.
 Claim **S18/P4 complete**: data layer (`f0d2a74`), page + validator + app.js + docs (`1d2a4e6`,
 rebased as `6d634e0`).
+
+# Session d8a1f37f — branch `arena/d8a1f37f-poker1` (base `f5ecde0` = `main`)
+
+Session `d8a1f37f` works on branch `arena/d8a1f37f-poker1` (fixed by Arena), based on `main` at
+`f5ecde0` ("chore: refresh source monitoring result"). `git rev-list --left-right --count
+origin/main...HEAD` = `0 0`; working tree clean. This claim is written and pushed **before** any
+data, script or page change.
+
+**Board state read at claim time (2026-11-19 21:57 UTC).** Open pull requests: **#113**
+(`arena/98241f2f-poker1`, "record PR #106 merge result", COORDINATION.md only, last commit
+2026-11-19T11:25:48Z — 10 h 31 m without commits, beyond the 60-minute stale-claim window; its
+*content* is already on `main` in the session-98241f2f record, so it adds nothing but a duplicate
+block). All other "in progress" lines on this board belong to sessions whose PRs are merged
+(#112, #117, #118) or closed. No live claim conflicts with this scope.
+
+**Network note.** Unlike the sandbox bash network (GitHub/PyPI only), this session's page-fetch
+tool **can** read the operator domains live. Every re-read below was done with that tool and is
+quoted with its fetch date; the archived snapshots in `data/snapshots/` remain the validator's
+evidence base.
+
+| # | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| 1 | **Entry-label evidence audit (`UNV` / `CAND` / `RE`).** Re-derive every row's entry rule from the archived official documents with a new re-runnable auditor: an `SE` row needs an affirmative whole-event one-entry/no-re-entry/no-add-on quote; a row labelled `UNV` must have a document that genuinely publishes nothing; a row labelled `RE` must quote its re-entry clause. Publish the per-row verdict and any mislabel as a review item. | in progress | d8a1f37f | new `scripts/audit_entry_labels.py`, new `data/entry_evidence_audit.json`, `COORDINATION.md` |
+| 2 | **Live dated re-read of the documents gating the two open evidence gaps** (Wynn Signature Series Structures PDF — I4; Wynn daily structures where the sheet prints "Re-entry is NOT allowed"), plus a verdict on the monitor's 4 "facts changed" marks dated 2026-11-19. Record matches/differences with quotes and links; change a published value only where the official document now prints it. | in progress | d8a1f37f | new `research/verification-2026-11-19-d8a1f37f.md`, `QUESTIONS.md` (I4 + the monitor flags), `data/snapshots/` (new captures only), `data/*.json` only where a source now prints the value, `COORDINATION.md` |
+| 3 | Publish the audit: a compact "Evidence audit" block on the Flagged for Review page and the verdict in the executive summary/README where it changes the decision; every mislabel or blank stays visible with its source link. | in progress | d8a1f37f | `scripts/build_site.py` (review page block), `FLAGGED.md`/`README.md` if the wording must change, generated `index.html` + `pages/*.html`, `COORDINATION.md` |
+| 4 | Final integration: rebuild (`build_data.py`, `build_site.py`) to a no-diff state, run every gate (python + npm), open a PR to `main`, merge after the `validate` job is green, confirm the Pages deploy, and record the PR/merge/deploy here. | in progress | d8a1f37f | all of the above + `COORDINATION.md` |
+
+No published tournament, hotel, rate, walking or entry-rule value is changed unless an official
+document read on the date of the change prints it; every such change records its quote, source URL
+and retrieval date. Blanks and flags stay published on the Flagged for Review page and do not block
+publication. Files outside this scope are not edited; PR #113 is not modified.
