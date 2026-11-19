@@ -2345,6 +2345,18 @@ Changes to `data/*.json`, `pages/*.html`, `assets/`, `scripts/` and `FLAGGED.md`
 **Not done in this session (honest limits):** the other 36 November sheets and the 15 December (NYE) sheets were not re-read live. The sandbox bash network cannot reach the official hosts, so only the page-fetch tool could read them. Google/Apple walking checks, live hotel rate lookups and a Strip-wide search are out of scope for this claim and were not attempted.
 
 **Files changed:** `research/live-reread-98241f2f/` (new: README, TSV listing, two read-only checkers) and `COORDINATION.md` only.
+
+### Session 98241f2f — pull request and merge record (2026-11-19)
+
+| Item | Result |
+|---|---|
+| Pull request | [#106](https://github.com/karagemop466-tech/Poker1/pull/106) "Session 98241f2f: live re-read of Venetian DSE IV listing (research only, 94/94 matched)", `arena/98241f2f-poker1` → `main` |
+| Merged | 2026-11-19T11:23:56Z as merge commit `7a9218d8633669340aaca876bcb3bf8a969d4c9b` (merged via `gh pr merge 106 --merge`, not auto-merge) |
+| Conflicts handled | `COORDINATION.md` conflicted twice because main moved while CI ran (PRs #102, #104, #111). Each time the branch merged `origin/main`, kept all of main's records, and re-appended only this session's sections. No other session's text was removed or altered. |
+| CI `validate` on head `e7bfee9` (before the last merge) | Run 44513622208: success, every step ✓. (Rebuild with no diff; check_links; source re-check; row/date pairing.) |
+| GitHub Pages | Live homepage re-fetched 2026-11-19 after the merge and serving the current build (`https://karagemop466-tech.github.io/Poker1/`). The Actions API returned HTTP 403 rate-limit, so the `built` status for `7a9218d` could not be read through the API; this is recorded as unconfirmed by API, confirmed by the live page. |
+| Data changes | None. No value, source, `last_checked` or retrieval date was changed in `data/`. |
+
 ## Session 97fc7805 · 2026-11-19 · payout transparency (S18 / P4), branch `arena/97fc7805-poker1`
 
 Session `97fc7805` works on branch `arena/97fc7805-poker1` (fixed for this session), based on `main` at
