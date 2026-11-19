@@ -880,13 +880,9 @@ header.site nav a {color:#d9ebe4}
     reset.addEventListener("click", function () {
       q.value = ""; from.value = ""; to.value = ""; buyMin.value = ""; buyMax.value = "";
       venue.value = ""; series.value = ""; status.value = ""; single.checked = !!opts.strict;
-<<<<<<< HEAD
       spend.checked = false;
-      future.checked = !!opts.upcoming;
-=======
       future.checked = !!opts.upcoming; presets.value = "";
       dayList.querySelectorAll("input").forEach(function (c) { c.checked = false; });
->>>>>>> 8ca33be (Session dd06081b: date selector, plan-priced trip calculator, requirements page)
       if (labelBox) labelBox.querySelectorAll("input").forEach(function (c) { c.checked = false; });
       fire();
     });
