@@ -144,3 +144,8 @@ pairs rest on a table its own clause 3 cannot bound, so they are refused rather 
 ## Booking hold · November 19, 2026
 
 The single-entry filter includes rows classified from sheet silence. It does not establish that extra purchases are prohibited. In the [event 12 sheet](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf), clauses 1–10 state the fee and payout but no maximum entries, rebuy ban or add-on ban. Keep this candidate out of a strict booking decision until written terms address all three. The [official schedule](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html) establishes when the event starts, not when it will finish.
+## Upcoming list is not a live availability check
+
+| Item | Official source | Handling |
+|---|---|---|
+| A date on today's list does not establish that registration is still open, that the event is unchanged, or that seats remain. A zero count does not establish that no room has a tournament. | [Venetian DeepStack schedule](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html); [Wynn poker room](https://www.wynnlasvegas.com/casino/poker) | The confirmed single-entry list defaults to today and later in Las Vegas and preserves historical rows behind the date toggle. Check the row's official schedule and structure before paying. Recurring formats without confirmed dates are not promoted into dated events. |
