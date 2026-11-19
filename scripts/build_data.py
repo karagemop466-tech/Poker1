@@ -18,6 +18,26 @@ os.makedirs(DATA, exist_ok=True)
 VERIFIED_ON = "2026-11-17"
 LAST_CHECKED = "2026-11-17"
 
+# Official documents re-read live on 2026-11-19, keyed by (series key, structure
+# sheet number). Only the rows that cite that sheet get the later date: a row's
+# last_checked and its rule excerpts' retrieval dates advance when *that document*
+# was opened again, never because a neighbour's was. What the re-read found is
+# written out per sheet, so a reader sees the clause rather than a bare date.
+# Evidence and the field-by-field comparison:
+# research/verification-2026-11-19-0f038248.md.
+REREAD = {
+    ("nov", 5): ("2026-11-19",
+                 "its ten numbered clauses still print no re-entry, rebuy, add-on or "
+                 "multi-flight clause, so no written one-entry limit is published for this event"),
+    ("nov", 8): ("2026-11-19",
+                 "clause 07 still prices every buy-in after the initial one at $200, and its "
+                 "thirteen numbered clauses print no add-on and no one-entry limit"),
+    ("nov", 10): ("2026-11-19",
+                  "clause 08 still reads \"Any player who bags chips for Day 2 may not play a "
+                  "subsequent flight.\", the heading still reads \"Day A+C @ 11:10 AM with Day 2 "
+                  "@ 12:00 PM\", and the sheet ends \"SEE OTHER STRUCTURE SHEET FOR DAYS B+D\""),
+}
+
 VEN = "The Venetian Resort"
 WYN = "Wynn Las Vegas"
 
@@ -1281,6 +1301,10 @@ def build_venetian(rows, series_key, series, page_key, sheet_key, sched_key, str
     for (date, start, no, name, gtd, sheet_no) in rows:
         published = printed[f"v_{series_key}_struct_{sheet_no:02d}"]
         sheet = sheet_key[sheet_no]
+        # A re-read of this sheet's own official document, if there was one; the date
+        # is what lets `last_checked` and the retrieval dates move for these rows only.
+        reread = REREAD.get((series_key, sheet_no))
+        retrieved = reread[0] if reread else LAST_CHECKED
         continuation = "Restart" in name or "Final Table" in name
         status = sheet["status"]
         ex = sheet.get("ex", EX_SE)
@@ -1324,16 +1348,17 @@ def build_venetian(rows, series_key, series, page_key, sheet_key, sched_key, str
             "single_entry": rule_field(
                 "not stated" if status == "CAND" else ("not single entry" if status in ("MULTI", "RE", "REBUY") else "unknown"),
                 ex, "Structure sheet #%d" % sheet_no, struct_url,
-                clause="08" if "Clause 08" in ex else ("07" if "Clause 07" in ex else ("06" if "Clause 06" in ex else None))),
+                clause="08" if "Clause 08" in ex else ("07" if "Clause 07" in ex else ("06" if "Clause 06" in ex else None)),
+                retrieved=retrieved),
             "re_entry": rule_field(
                 "allowed" if status in ("RE", "REBUY") else ("possible for later flights" if status == "MULTI" else "not mentioned"),
-                ex, "Structure sheet #%d" % sheet_no, struct_url),
+                ex, "Structure sheet #%d" % sheet_no, struct_url, retrieved=retrieved),
             "add_on": rule_field(
                 "allowed" if status == "REBUY" else "not mentioned",
-                ex, "Structure sheet #%d" % sheet_no, struct_url),
+                ex, "Structure sheet #%d" % sheet_no, struct_url, retrieved=retrieved),
             "fee": rule_field(
                 "house fee $%d of the $%s buy-in; prize pool $%d" % (sheet["fee"], format(buy, ","), sheet["pool"]),
-                fee_ex, "Structure sheet #%d" % sheet_no, struct_url, clause="06"),
+                fee_ex, "Structure sheet #%d" % sheet_no, struct_url, clause="06", retrieved=retrieved),
         }
         srcs = [{"label": "Official event page", "url": SRC[page_key]},
                 {"label": "Structure sheet #%d" % sheet_no, "url": struct_url}]
@@ -1361,6 +1386,13 @@ def build_venetian(rows, series_key, series, page_key, sheet_key, sched_key, str
             note = "Continuation of the event above - no new entry. Official event page row."
         else:
             note = "Read from the official event page and structure sheet #%d on 2026-11-16." % sheet_no
+        if reread:
+            # What the 2026-11-19 fetch actually found, printed on the row it belongs to:
+            # every compared field matched, and the entry-rule wording is quoted, not summarised.
+            note += (" Re-read %s: structure sheet #%d was fetched again and compared field by "
+                     "field - the buy-in, guarantee, fee split, prize pool, starting stack, level "
+                     "count and length, late-registration deadline and payout clause all match "
+                     "what is published here, and %s." % (reread[0], sheet_no, reread[1]))
         row = {
             "id": None,
             "series": series, "venue": VEN, "date": date, "start": start_time,
@@ -1394,7 +1426,9 @@ def build_venetian(rows, series_key, series, page_key, sheet_key, sched_key, str
             "est_end_days_after": est_offset_days,
             "note": note,
             "flags": flags,
-            "sources": srcs, "verified_on": VERIFIED_ON, "last_checked": LAST_CHECKED,
+            # Advances to the re-read date only for rows whose own structure sheet
+            # was opened again on that date (see REREAD above).
+            "sources": srcs, "verified_on": VERIFIED_ON, "last_checked": retrieved,
         }
         if sheet.get("seats"):
             row["satellite"] = {
@@ -2631,6 +2665,14 @@ def main():
     rows.sort(key=lambda x: (x["date"], x["start"], x["name"]))
     for i, row in enumerate(rows, 1):
         row["id"] = "r%03d" % i
+
+    # The spend-advantage reading every table prints next to the entry rule. Derived
+    # from the clause excerpt already stored on the row - no new fact, and it never
+    # moves an entry_status. scripts/spend_advantage.py; re-checked on every build by
+    # scripts/check_links.py.
+    import spend_advantage
+    for row in rows:
+        row["spend_advantage"] = spend_advantage.classify(row)
 
     with open(os.path.join(DATA, "tournaments.json"), "w") as f:
         json.dump({"verified_on": VERIFIED_ON, "rows": rows, "sources": SRC}, f, indent=1)
