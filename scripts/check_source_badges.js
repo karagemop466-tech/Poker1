@@ -87,7 +87,13 @@ const wait = (ms) => new Promise((r) => setTimeout(r, ms));
   const real = JSON.parse(fs.readFileSync(path.join(ROOT, "data/changes.json"), "utf8"));
   const chips2 = Array.from(w2.document.querySelectorAll("#events td"))
     .filter((td) => /source changed - re-check/.test(text(td)));
-  assert.equal(chips2.length, 0, "nothing is marked while changes.json lists no changed row");
+  // The expected count comes from the files on disk, not from a fixed zero: the monitor
+  // legitimately lists changed Venetian rows (2026-11-19 refresh), and each must be marked.
+  const changedIds = new Set((real.changed || []).map((c) => c.id));
+  const dataRows = JSON.parse(fs.readFileSync(path.join(ROOT, "data/tournaments.json"), "utf8")).rows;
+  const expectedMarks = dataRows.filter((r) => /Venetian/.test(r.venue) && changedIds.has(r.id)).length;
+  assert.equal(chips2.length, expectedMarks,
+    "the Venetian marks equal the changed Venetian rows listed in changes.json (" + expectedMarks + ")");
   if (real.checked_at) {
     const dated = Array.from(w2.document.querySelectorAll("#events td"))
       .filter((td) => (text(td).match(new RegExp("no source change as of " + real.checked_at)) || []).length > 0);
