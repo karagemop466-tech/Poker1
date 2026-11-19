@@ -16,7 +16,7 @@ will be closed with a disposition comment, no work discarded. No other session h
 | 2 | Apply the pending 2026-11-19 live re-reads to the data layer: sessions `336fb2af` and `98241f2f` both re-read the official Venetian DSE IV November page live on 2026-11-19 (94/94 rows matched each, independently) and recorded the result "for the data owner to apply through `build_data.py`". Independently re-read the official sources live from this session (page-fetch tool), confirm row-by-row, and advance `last_checked` to 2026-11-19 **only** on rows whose official source was actually re-read and matched. No value changes. | **done 2026-11-19** (see work record) | cebd4457 | `scripts/build_data.py`, generated `data/*.json`, generated `pages/*.html`, `research/verification-2026-11-19-cebd4457.md`, `COORDINATION.md` |
 | 3 | Stale-PR disposition for #113 (98241f2f, board-record only): adopt its record content into this board, close the PR with a disposition comment. | **done 2026-11-19** (record preserved below; PR closed) | cebd4457 | `COORDINATION.md`, PR #113 comment |
 | 4 | SUGGESTIONS P3 (open, low): publish an **"effectively single entry" descriptive flag** on multi-flight rows whose structure sheet prices every flight at the same amount and imposes no penalty on a player who re-enters a later flight — a flag beside the existing classification, never a reclassification: the ranking and `SE` bar are unchanged, and the flag always carries the sheet clause that supports it plus the explicit note that the sheet is silent on a whole-event freezeout rule. | **done 2026-11-19** (see work record) | cebd4457 | `scripts/build_data.py`, generated `data/*.json`, `scripts/check_links.py` (flag-evidence check), `scripts/build_site.py`/`assets/app.js` (chip + tooltip), generated pages, `SUGGESTIONS.md` (P3 status), `COORDINATION.md` |
-| 5 | Final integration for this session: rebuild data + pages deterministically, run the full gate set (python + npm), run the unit tests, write the dated verification record, open PR to `main`, merge after green `validate`, confirm Pages deploy, record PR link + merge + deploy here. | in progress — this PR | cebd4457 | all of the above + `COORDINATION.md` |
+| 5 | Final integration for this session: rebuild data + pages deterministically, run the full gate set (python + npm), run the unit tests, write the dated verification record, open PR to `main`, merge after green `validate`, confirm Pages deploy, record PR link + merge + deploy here. | **done 2026-11-19** (see integration record below) | cebd4457 | all of the above + `COORDINATION.md` |
 
 No official value is changed except where this session (or a merged session's recorded re-read, adopted
 with its evidence) actually re-read the source; anything that cannot be confirmed stays blank and flagged.
@@ -70,6 +70,17 @@ print entry caps). `SUGGESTIONS.md` P3 marked built.
 caesars re-read (the disclaimer change above; its parking-page claims stay dated 2026-11-17 and say so
 explicitly); bellagio/aria unchanged (2026-11-17). Hotel `last_checked` stays 2026-11-17 — no live rate
 is ever re-quoted by hand; only the booking engine produces a quote.
+
+### Session cebd4457 — integration record (2026-11-19)
+
+| Item | Result |
+|---|---|
+| Pull request | [#127](https://github.com/karagemop466-tech/Poker1/pull/127) "2026-11-19 re-verification stamps (195 rows), monitor-mark dispositions incl. a real Caesars change, P3 flight-pricing flag, integration", `arena/cebd4457-poker1` → `main` |
+| Merged | 2026-11-19T23:06:35Z as merge commit `640682b5e84a42d08d9f4781c32d679031f6f89d` (via `gh pr merge 127 --merge`, not auto-merge) |
+| CI `validate` | green on both heads (the first head passed in 8m24s; after main moved again through PRs #119/#126/#128 the branch merged `origin/main` — keeping `fee_clause_quote` and `mark_flight_pricing` side by side and refreshing `data/entry_evidence_audit.json` against the stamped rows — and `validate` passed again before the merge). |
+| GitHub Pages | Deploy workflow for the merge commit succeeded (run 44634752143). Live site re-fetched after the deploy: `data/tournaments.json` serves the new build (stamped rows at `2026-11-19`, `flight_pricing` + `spend_advantage` on the 43 clause-8 rows, per-row `recheck` records, both P3 readings rendered). |
+| Conflicts handled | Two rounds, both on shared files (`COORDINATION.md`, `SUGGESTIONS.md`, `assets/app.js`, `scripts/build_data.py`, generated `data/`+`pages/`): every other session's content kept; generated files regenerated from the merged scripts and verified by field-diff (only stamps, rule `retrieved_on` moves, `recheck`/`flight_pricing` additions, re-read-evidence note appends and derived `spend_advantage` dates moved). No other session's text was removed or altered. |
+| Data changes | Only the dated stamps/fields listed above; **no published value changed**. |
 
 **Merged with `main` (PRs #123/#124, sessions `0fa351db`/`0f038248`) without discarding either
 side:** `0f038248`'s per-row `spend_advantage` reading (their P3 build) coexists with this session's
