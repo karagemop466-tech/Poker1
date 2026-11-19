@@ -2070,3 +2070,41 @@ The existing checks/data remain the baseline (not refreshed by this session): la
 | GitHub Pages | `built` for `main` after merge commit eb6df261 (legacy branch build, `https://karagemop466-tech.github.io/Poker1/`); homepage re-fetched and serving |
 | Data changes | None — no row value, source, or retrieval timestamp was changed; `build_data.py`/`build_site.py` deterministic |
 | Flagged irregularities | F1–F76+ remain published on `pages/flagged.html` with official-source links; evidence gaps (no written whole-event freezeout, no same-stay live checkout quote, no timed walking times) are "needs review", not blockers; no nonrefundable decision supported |
+
+## Session 957764d3 — 2026-11-19 · final integration, stale-PR takeover, P8 visibility
+
+Session `957764d3`, branch `arena/957764d3-poker1`, started from `main` at `4ec6e8f` (PR #100 merged).
+`git rev-list --left-right --count origin/main...HEAD` = `0 0` at claim time; the tree was clean and
+`python3 scripts/build_data.py` / `build_site.py` reproduced the committed files with no diff.
+
+**Takeover basis (60-minute rule).** Two pull requests were open when this session started and both
+belong to sessions whose last commit is more than four hours old with no commits since:
+
+| PR | Owning session | Last commit on its branch | Age at claim time |
+|---|---|---|---|
+| [#98](https://github.com/karagemop466-tech/Poker1/pull/98) "Integration: 2026-11-19 final-integration session (13eafa44) — PR #79/#81/#82 takeover" | `13eafa44` | `004acda6` 2026-11-19T06:00:23Z | ~4h 49m |
+| [#96](https://github.com/karagemop466-tech/Poker1/pull/96) (draft) "Audit event evidence and harden source-monitor reporting" | `cd330ba8` | `648db90e` 2026-11-19T06:07:25Z | ~4h 42m |
+
+Both claims are therefore abandoned under the board rule ("if a session crashes or its claim is more
+than 60 minutes old with no commits, any other session may take over the task and note the handoff in
+the log"). This session takes over the **substance** of both branches, re-verifies every value it
+brings against the official source itself, and merges — no branch is discarded by omission, and each
+disposition is written down below and in the pull request.
+
+| Task | Status | File scope | Owner |
+|---|---|---|---|
+| Take over PR #98 (final-integration branch): merge its verified additions — county room tax at all seven hotels, Bellagio + Caesars daily formats, trip diary, dated booking links, rate timestamps, Las Vegas morning re-check, walking-table naming — and re-verify every changed value against the official document that prints it | **in progress** | `scripts/build_data.py`, `scripts/build_site.py`, `scripts/check_links.py`, `scripts/check_source_facts.py`, `scripts/monitor_sources.py`, `data/*.json`, `assets/app.js`, `assets/style.css`, `index.html`, `pages/*.html`, `FLAGGED.md`, `research/integration-2026-11-19-13eafa44.md`, `COORDINATION.md` | `957764d3` |
+| Take over PR #96 (evidence-audit branch, draft): its independent evidence gates, rule-excerpt provenance checks, conditional-overlap model and source-monitor hardening — merge only the parts that pass against current `main` | **in progress** | `scripts/entry_evidence.py`, `scripts/venetian_evidence.py`, `scripts/quote_provenance.py`, `scripts/conditional_schedule.py`, `scripts/travel_evidence.py`, `scripts/test_*.py`, `scripts/extract_rules.py`, `scripts/build_other_rooms.py`, `.github/workflows/*.yml`, `research/verification-2026-11-19-cd330ba8.md`, `COORDINATION.md` | `957764d3` |
+| SUGGESTIONS P8 (requested by session `f70bc581`, which deliberately did not implement it): show a per-row "Source changed — re-check" mark on tournament tables by joining `data/changes.json` to the row, dated with that file's own `checked_at`, without advancing `last_checked` | **in progress** | `assets/app.js`, `assets/style.css`, `data/changes.json` (read-only), `index.html`, `pages/*.html`, `scripts/ui_test.js`, `SUGGESTIONS.md`, `COORDINATION.md` | `957764d3` |
+| Final integration: deterministic rebuild of data and pages, every gate green (`check_links`, `verify_rows`, `check_schedule`, `verify_against_snapshots`, `smoke_test`, `check_schedule_render`, `check_rendered_links`, `check_calculator`), no broken links, PR to `main`, merge without waiting, confirm GitHub Pages deploys and record the PR link and merge result here | **pending** | all of the above + `COORDINATION.md` | `957764d3` |
+
+**Files this session will not edit.** No live session holds a claim, so none are excluded; the two
+takeovers above are the whole shared-output scope. Official values are never invented: where a value
+cannot be confirmed from an official document it stays blank and is flagged on the Flagged for Review
+page. `last_checked` is advanced only for a row whose source was actually re-read in this session.
+
+**Live-verification channel.** This sandbox has no TCP route to the operator domains (`curl` to
+`www.venetianlasvegas.com` and `www.wynnlasvegas.com` fails with `SSL_ERROR_SYSCALL`, and
+`github.io` is unreachable too), but the agent's page-fetch tool does reach them. Every official
+source re-read in this session is therefore quoted from a page fetch, with its URL, and the reading
+date is 2026-11-19.
