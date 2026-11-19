@@ -1,8 +1,7 @@
 # Las Vegas Strip Poker Plan
 
 A decision dashboard for single-entry poker tournaments on the Las Vegas Strip and walkable hotels.
-Snapshot date: **2026-11-17** (every official tournament page, structure PDF, hotel-policy page and
-booking-engine quote was re-fetched on that date; see `REVIEW.md` §9 and `research/verification-2026-11-17.md`).
+Field-by-field dataset verification date: **2026-11-17**; this is not a claim that every source was freshly re-read then or since. The scheduled monitor last ran **2026-11-19 16:45 UTC**: 99 of 109 official sources answered, and four source fact signatures changed, marking four rows for re-check. A monitor fetch is not a manual re-verification; changed rows remain flagged until their values are checked against the official page. See [Monitoring](pages/monitoring.html), [Flagged for Review](pages/flagged.html), `REVIEW.md` §9 and `research/verification-2026-11-17.md`.
 
 Live site: https://karagemop466-tech.github.io/Poker1/
 
