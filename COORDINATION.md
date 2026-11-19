@@ -2376,3 +2376,20 @@ links with 0 broken, schedule arithmetic OK). GitHub Pages: the build of `08f088
 **built** (workflow run 44528192205), so `pages/payouts.html` is live on the published site.
 Claim **S18/P4 complete**: data layer (`f0d2a74`), page + validator + app.js + docs (`1d2a4e6`,
 rebased as `6d634e0`).
+
+## Session 0fa351db · 2026-11-19 · candidate itinerary wording and filter regression
+
+Branch `arena/0fa351db-poker1`, based on `main` at `f5ecde040b29e402aea7b739eabd28727b1c7859` (Arena-fixed branch; no other branch will be created or used). Read the current coordination board and checked the repository status before claiming. The relevant prior site/UI tasks on `assets/app.js` are recorded complete; no current active owner claims this scope.
+
+| Task | Status | Owner | File scope |
+|---|---|---|---|
+| Correct the single-entry page's itinerary copy so its candidate-only primary events are never described as verified freezeouts or playable commitments; add a rendered regression test covering the strict-confirmed toggle and selected-date filtering. Correct the README's stale all-sources-re-fetched date without promoting monitor availability into source verification. | **done 2026-11-19** | 0fa351db | `assets/app.js`, `scripts/check_single_entry_render.js` (new), `package.json`, `README.md`, generated `index.html` and `pages/*.html`, `COORDINATION.md` |
+
+### Completion record · 2026-11-19
+
+- Corrected the trip-plan header and explanatory text: scheduled primary events are labeled candidate vs. written-confirmed from their stored entry status; candidate rows now explicitly say policy unconfirmed and are not presented as a playable or booking-ready plan. Current snapshot: **0 written-confirmed rows, 80 candidates**. Corrected diary finish rendering to pass the full schedule record to the formatter, preserving estimated clock times and next-day indication.
+- Added `scripts/check_single_entry_render.js` to `npm test`. It renders the page without network calls; checks candidate warnings, SE-only strict filtering, candidate exposure when cleared, one-day date filtering, and finish estimates.
+- Updated README provenance: 2026-11-17 remains the field-by-field dataset verification date. It now accurately distinguishes that from the monitor run on 2026-11-19 16:45 UTC (99/109 answered; four fact signatures and four rows flagged). The monitor result is [GitHub Actions run 44568281882](https://github.com/karagemop466-tech/Poker1/actions/runs/44568281882). A monitor fetch is not described as manual source confirmation.
+- Source scope/limitations: no tournament, hotel, rate, rule, or `last_checked` value was edited. This session did not re-read operator sites; it used the committed row status and schedule records and preserved their official source links. A local `check_source_facts.py` attempt returned 0 fetched sources and 96 network errors (operator domains are unreachable from this environment); its incidental log-file change was reverted and no failure output was treated as evidence. The monitor source-change flags remain for manual official-page re-checks.
+- Verification: `npm test` passed (31/31 rendered pages, 1,662 internal links, calculator, monitoring badges, and the new candidate/date filter regression); all nine `scripts/test_*.py` test modules passed; `check_links.py`, `verify_rows.py` (335 rows, 1,386 fields, 0 hard failures; one documented interpretation item), `verify_against_snapshots.py` (0 unexplained mismatches), and `check_schedule.py` (70 days, 170 overlap pairs) passed. `git diff --check` passed.
+- Irregularities retained, not suppressed: monitor reports four changed source facts/rows and unreachable/error sources; existing WPT r225 20:00 start remains a documented interpretation review item; Venetian NYE r263 11:00 vs printed 11:10 conflict and three 2025→2026 date differences remain flagged. No unsupported value was adjusted.
