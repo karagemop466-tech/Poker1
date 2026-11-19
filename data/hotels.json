@@ -80,7 +80,7 @@
     "what": "Hotel terms re-read in full: the $55 resort fee plus tax, the 13.38% Clark County Room Tax, the $20 / $25 / $40 parking fees, the $150 per-night incidental deposit, the $50 additional-guest charge, the $100 plus tax early check-out charge and the prepaid non-refundable rule are all still printed exactly as published."
    },
    "walk_to_venetian_status": "internal",
-   "walk_to_venetian_within_30": true,
+   "walk_to_venetian_within_30": null,
    "walk_to_wynn_min": 16,
    "walk_to_wynn_within_30": true
   },
@@ -159,7 +159,7 @@
     "what": "The same terms page was re-read; it governs The Venetian and The Palazzo as one resort, so the Palazzo row inherits the confirmed figures."
    },
    "walk_to_venetian_status": "internal",
-   "walk_to_venetian_within_30": true,
+   "walk_to_venetian_within_30": null,
    "walk_to_wynn_min": 14,
    "walk_to_wynn_within_30": true
   },
@@ -229,7 +229,7 @@
    "walk_to_venetian_status": "verified",
    "walk_to_venetian_within_30": true,
    "walk_to_wynn_min": null,
-   "walk_to_wynn_within_30": true
+   "walk_to_wynn_within_30": null
   },
   {
    "id": "encore",
@@ -293,7 +293,7 @@
    "walk_to_venetian_status": "verified",
    "walk_to_venetian_within_30": true,
    "walk_to_wynn_min": null,
-   "walk_to_wynn_within_30": true
+   "walk_to_wynn_within_30": null
   },
   {
    "id": "bellagio",

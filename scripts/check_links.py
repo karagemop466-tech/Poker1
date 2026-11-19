@@ -19,6 +19,11 @@ import sys
 from urllib.parse import unquote, urlparse
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# The independent travel-evidence gate (ported from PR #96) states the walking rule in
+# one place, so this validator and the unit tests cannot drift apart.
+sys.path.insert(0, os.path.join(ROOT, "scripts"))
+from travel_evidence import walk_evidence_errors  # noqa: E402
+
 problems = []
 REQUIRED_SITE_DOCS = (
     "EXECUTIVE_SUMMARY.md",
@@ -387,6 +392,18 @@ for index, row in enumerate(hotel_rows, 1):
         problems.append(f"{where} {identity}: a walk over 30 minutes must be flagged walk_to_venetian_within_30 = false")
     if walk is not None and not is_number(walk):
         problems.append(f"{where} {identity}: walk_to_venetian_min must be a number or blank")
+    # F92: the hotel's own 30-minute verdict must agree with the walking record it is taken
+    # from. A hotel with no routed time (the room is inside the same resort) must not carry
+    # a verdict at all: true, false and blank are the only allowed values, and a blank is
+    # only allowed when there is no routed time.
+    verdict = row.get("walk_to_venetian_within_30")
+    if verdict not in (True, False, None):
+        problems.append(f"{where} {identity}: walk_to_venetian_within_30 must be true, false or blank")
+    if walk is None and verdict is not None:
+        problems.append(f"{where} {identity}: walk_to_venetian_within_30 must be blank when there is "
+                        f"no routed walking time (F92)")
+    if is_number(walk) and verdict is not (walk <= 30):
+        problems.append(f"{where} {identity}: walk_to_venetian_within_30 must match the routed time")
 
     fee_status = row.get("resort_fee_status")
     if fee_status not in ("verified", "unverified", "conditional"):
@@ -559,6 +576,13 @@ for index, row in enumerate(walking_rows, 1):
     check_number(row.get("minutes"), f"{where} minutes")
     if is_number(row.get("minutes")) and row["minutes"] > 30 and row.get("within_30_min") is not False:
         problems.append(f"{where}: a walking time over 30 minutes must be marked within_30_min = false")
+    # F92: an untimed walk must not be given a verdict. The independent travel-evidence
+    # gate (scripts/travel_evidence.py, ported from PR #96) states the rule: a 30-minute
+    # verdict is only allowed when there is a finite, non-negative measured or estimated
+    # time, and it must agree with that time.
+    walk_errors = walk_evidence_errors(row)
+    for message in walk_errors:
+        problems.append(f"{where}: {message}")
     if row.get("status") == "verified" and is_number(row.get("minutes")) and not row.get("sources"):
         problems.append(f"{where}: a routed walking time must cite the routing and geocoding sources")
 

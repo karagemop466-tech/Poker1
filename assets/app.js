@@ -1031,7 +1031,8 @@
       var lbl = document.createElement("label");
       lbl.htmlFor = "hotel-walk30";
       lbl.appendChild(walk30);
-      lbl.appendChild(document.createTextNode(" ≤30 min walk to the Venetian poker room"));
+      lbl.appendChild(document.createTextNode(" ≤30 min walk to the Venetian poker room" +
+        " (a walk inside the same resort is not timed and is kept, with its time left unknown)"));
       var count = document.createElement("span");
       count.className = "small"; count.id = "hotel-count";
       bar.appendChild(q); bar.appendChild(lbl); bar.appendChild(count);
@@ -1040,7 +1041,9 @@
         sortKey: "true", sortDir: 1, filterInput: q, countEl: count,
         predicate: function (r) {
           if (!walk30.checked) return true;
-          return r.walk_to_venetian_within_30 === true;
+          // null = no routed time (the poker room is inside the same resort, so no street
+          // walk is timed). That is an unknown, not a failure, so the row is kept (F92).
+          return r.walk_to_venetian_within_30 !== false;
         }
       });
       walk30.addEventListener("change", handle.redraw);
@@ -1068,8 +1071,9 @@
           "coordinates and the poker-room coordinate, then rounded up to the whole minute; every row cites the " +
           "geocoding lookup and the routing query it came from, plus the official statement that fixes where the " +
           "poker room is. Walks inside one resort are marked internal rather than timed, because no street route " +
-          "is involved. The 30-minute rule is applied to every routed time: rows over it stay in the table, " +
-          "flagged, so nothing is hidden.</p>";
+          "is involved, and their time is left unknown rather than being filled in - an interior walk is not a " +
+          "measured 30-minute walk. The 30-minute rule is applied to every routed time: rows over it stay in the " +
+          "table, flagged, so nothing is hidden.</p>";
         var wcols = [
           { id: "hotel", label: "Hotel", key: "hotel_name", html: function (r) { return "<strong>" + esc(r.hotel_name || r.hotel) + "</strong>"; } },
           { id: "venue", label: "Poker room", key: "venue", html: function (r) {

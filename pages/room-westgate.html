@@ -1,0 +1,1870 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Westgate Las Vegas Resort &amp; Casino · Las Vegas Strip Poker Plan</title>
+<style>
+:root {
+  --ink: #1d2433;
+  --muted: #5b6474;
+  --line: #e3e7ee;
+  --bg: #f6f8fb;
+  --card: #ffffff;
+  --accent: #1f6feb;
+  --ok: #1a7f37;
+  --warn: #9a6700;
+  --bad: #b42318;
+  --chip-ok: #e6f4ea;
+  --chip-warn: #fff4d6;
+  --chip-bad: #fde8e7;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--ink); background: var(--bg); line-height: 1.5;
+}
+header.site {
+  background: #0f1b2d; color: #fff; padding: 14px 20px;
+  display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; justify-content: space-between;
+}
+header.site .brand { font-weight: 700; font-size: 18px; color: #fff; text-decoration: none; }
+header.site nav { display: flex; flex-wrap: wrap; gap: 6px 14px; }
+header.site nav a { color: #cfe1ff; text-decoration: none; font-size: 14px; }
+header.site nav a:hover, header.site nav a.active { color: #fff; text-decoration: underline; }
+main { max-width: 1200px; margin: 0 auto; padding: 22px 18px 60px; }
+h1 { font-size: 26px; margin: 4px 0 6px; }
+h2 { font-size: 20px; margin: 26px 0 8px; }
+h3 { font-size: 17px; margin: 18px 0 6px; }
+p.lead { color: var(--muted); margin-top: 0; }
+a { color: var(--accent); }
+/* Trip diary: one line per playable day */
+#trip-diary { margin-bottom: 28px; }
+#trip-diary ul.diary { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
+#trip-diary ul.diary > li { margin: 0; }
+#trip-diary h3 { margin: 0 0 8px; font-size: 1rem; }
+#trip-diary li ul { list-style: none; margin: 0; padding: 0; }
+#trip-diary li ul > li { margin: 0 0 8px; font-size: .95rem; }
+#trip-diary li ul > li > strong { text-transform: uppercase; font-size: .7rem; letter-spacing: .04em;
+  display: block; opacity: .7; }
+@media print { #trip-diary ul.diary { grid-template-columns: 1fr; } }
+
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; margin: 14px 0; }
+.grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.kpi .num { font-size: 28px; font-weight: 700; }
+.kpi .label { color: var(--muted); font-size: 13px; }
+.tile { display: block; text-decoration: none; color: var(--ink); }
+.tile:hover { border-color: var(--accent); }
+.tile h3 { margin-top: 0; color: var(--accent); }
+.tile p { margin: 4px 0 0; color: var(--muted); font-size: 14px; }
+.callout { border-left: 4px solid var(--warn); background: var(--chip-warn); padding: 12px 14px; border-radius: 6px; }
+.toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 10px 0; }
+.toolbar input, .toolbar select {
+  padding: 7px 10px; border: 1px solid var(--line); border-radius: 6px; font-size: 14px; background: #fff;
+}
+.table-wrap { overflow-x: auto; background: #fff; border: 1px solid var(--line); border-radius: 10px; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { background: #f0f3f8; position: sticky; top: 0; cursor: pointer; white-space: nowrap; }
+th.nosort { cursor: default; }
+tr:hover td { background: #fafcff; }
+td.num, th.num { text-align: right; white-space: nowrap; }
+.chip { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 12px; font-weight: 600; white-space: nowrap; }
+.chip.ok { background: var(--chip-ok); color: var(--ok); }
+.chip.warn { background: var(--chip-warn); color: var(--warn); }
+.chip.bad { background: var(--chip-bad); color: var(--bad); }
+.chip.info { background: #e8f0fe; color: var(--accent); }
+.muted { color: var(--muted); }
+.small { font-size: 12.5px; color: var(--muted); }
+.md h1 { font-size: 24px; }
+.md table { margin: 10px 0; }
+.md td, .md th { border: 1px solid var(--line); }
+.md pre, .md code { background: #f0f3f8; border-radius: 4px; padding: 1px 4px; font-size: 13px; }
+.notice { font-size: 13px; color: var(--muted); margin: 8px 0; }
+.day { margin: 12px 0; }
+.day h3 { margin-bottom: 4px; }
+footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20px; }
+
+/* ---------- advanced filter bar ---------- */
+.filters {
+  background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+  padding: 12px 14px; margin: 12px 0;
+}
+.filters .row { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: flex-end; margin-bottom: 8px; }
+.filters .field { display: flex; flex-direction: column; gap: 3px; }
+.filters label { font-size: 11.5px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); }
+.filters input, .filters select {
+  padding: 6px 9px; border: 1px solid var(--line); border-radius: 6px; font-size: 13.5px; background: #fff; min-width: 120px;
+}
+.filters input[type="search"] { min-width: 260px; }
+.filters .toggle { flex-direction: row; align-items: center; gap: 6px; }
+.filters .toggle label { text-transform: none; font-size: 13px; color: var(--ink); }
+.filters .labels { display: flex; flex-wrap: wrap; gap: 6px; }
+.filters .labels label {
+  display: inline-flex; align-items: center; gap: 5px; border: 1px solid var(--line);
+  border-radius: 999px; padding: 3px 10px; font-size: 12.5px; text-transform: none; color: var(--ink); cursor: pointer;
+}
+.filters .actions { display: flex; gap: 8px; align-items: center; margin-left: auto; }
+.filters button {
+  border: 1px solid var(--line); background: #fff; border-radius: 6px; padding: 6px 12px;
+  font-size: 13.5px; cursor: pointer;
+}
+.filters button:hover { border-color: var(--accent); color: var(--accent); }
+.filters .summary { font-size: 12.5px; color: var(--muted); margin-top: 4px; }
+
+/* ---------- venue / search / calculator / monitoring ---------- */
+.venue-card { border-left: 4px solid var(--accent); }
+.result { border-bottom: 1px solid var(--line); padding: 10px 0; }
+.result:last-child { border-bottom: 0; }
+.result .title { font-weight: 600; }
+.result .meta { font-size: 12.5px; color: var(--muted); }
+.form-grid { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); }
+.form-grid label { display: block; font-size: 12px; color: var(--muted); margin-bottom: 3px; }
+.form-grid input, .form-grid select {
+  width: 100%; padding: 8px 10px; border: 1px solid var(--line); border-radius: 6px; font-size: 14px; background: #fff;
+}
+.calc-out { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); margin-top: 12px; }
+.calc-out .box { border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; background: #fbfcfe; }
+.calc-out .box .n { font-size: 20px; font-weight: 700; }
+.calc-out .box .l { font-size: 12px; color: var(--muted); }
+.day-chip { border: 1px solid var(--line); border-radius: 999px; padding: 4px 12px; font-size: 13px; background: #fff; }
+.status-dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 6px; }
+.status-dot.ok { background: var(--ok); }
+.status-dot.warn { background: var(--warn); }
+.status-dot.bad { background: var(--bad); }
+.calendar { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+.diary { list-style: none; padding: 0; display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+.diary .card { margin: 0; }
+.diary .card h3 { margin-top: 0; }
+.calendar .slot { border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; background: #fff; }
+.calendar .slot .d { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: .04em; }
+.calendar .slot .t { font-size: 18px; font-weight: 700; margin: 2px 0; }
+
+/* ---------- print-friendly views (S16) ----------
+   Ctrl/Cmd-P on any page: navigation, search, filters and buttons are dropped,
+   tables repeat their header sheet after sheet and never split a row mid-way,
+   status chips become outlines so they survive a black-and-white printer, and
+   every external link prints its URL so a paper copy still carries the official
+   source behind each row. */
+@media print {
+  @page { margin: 14mm 12mm; }
+
+  body { background: #fff; color: #000; font-size: 10.5pt; line-height: 1.4; }
+
+  /* Drop interactive chrome; the verification footer stays for provenance. */
+  header.site, #filters, .filters, .toolbar, button { display: none !important; }
+  footer { border-top: 1px solid #999; font-size: 8.5pt; padding: 6px 0 0; text-align: left; }
+
+  main { max-width: none; margin: 0; padding: 0; }
+  main::before {
+    content: "Las Vegas Strip Poker Plan · https://karagemop466-tech.github.io/Poker1/ · printed view — verify each value against the live site before travel.";
+    display: block; font-size: 8pt; color: #555; margin-bottom: 8px;
+  }
+
+  a { color: #000; text-decoration: none; }
+  /* Paper keeps the source: every external link prints its URL once. */
+  main a[href^="http"]::after, footer a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 7pt; font-weight: 400; color: #555; word-break: break-all;
+  }
+
+  /* Tables: full width, header repeated on every sheet, no split rows. */
+  .table-wrap { overflow: visible !important; border: none; border-radius: 0; }
+  table { font-size: 9.5pt; page-break-inside: auto; }
+  thead { display: table-header-group; }
+  tfoot { display: table-footer-group; }
+  th { position: static !important; background: transparent !important; border-bottom: 2px solid #444; }
+  tr, li, .card, .day, .result, .slot, .kpi, .box, .callout { page-break-inside: avoid; }
+
+  /* Section rhythm without wasting sheets. */
+  h1 { font-size: 20pt; }
+  h2 { font-size: 14pt; border-bottom: 1px solid #ccc; padding-bottom: 2px; }
+  h3 { font-size: 12pt; }
+  h1, h2, h3 { page-break-after: avoid; }
+  p, .lead { orphans: 3; widows: 3; }
+
+  /* Status chips become outlines so they stay legible without colour. */
+  .chip { background: #fff !important; border: 1px solid currentColor; }
+
+  .card { border-color: #999; }
+  .grid { gap: 8px; }
+  .md pre, .md code { white-space: pre-wrap; word-break: break-word; }
+}
+
+/* Briefing dashboard */
+body { --accent:#126551; --bg:#f4f6f2; --ink:#182d2a; --line:#d5dfd9; }
+header.site { background:#123c35; padding-inline:max(20px, calc((100% - 1160px)/2)); }
+header.site nav a {color:#d9ebe4}
+.briefing {border-top:4px solid #24745b; padding:clamp(20px,4vw,44px); background:#e4efe6; border-radius:5px;}
+.briefing h1 {font:600 clamp(2.1rem,5vw,3.4rem)/1.1 Georgia,serif; letter-spacing:-.035em; margin:10px 0;}
+.briefing p:not(.eyebrow) {max-width:620px; font-size:1.08rem;}
+.eyebrow {font-size:.72rem;letter-spacing:.12em;color:#326e5b;font-weight:750;margin:0}
+.home-search label {display:block;font-size:.85rem;font-weight:650;margin-bottom:4px}
+.home-search div {display:flex;max-width:560px;gap:6px}.home-search input {min-width:0;flex:1;padding:10px 12px;border:1px solid #a2b3a7;border-radius:5px;font:inherit}.home-search button {background:#12513f;color:white;border:0;border-radius:5px;padding:0 20px;font:inherit;cursor:pointer}
+.decision,.desk {display:flex;gap:12px 20px;align-items:center;flex-wrap:wrap;padding:16px 18px;border:1px solid var(--line);border-radius:5px;background:#fff;}
+.decision {margin-top:14px;background:#fffbef;border-color:#ded4b6}.decision strong{color:#7d531d}.decision span{flex:1 1 350px}.decision a,.path a,.desk a {font-weight:600; color:#12513f}
+#kpis .card {margin:0;border-radius:6px}.kpi .num {font-variant-numeric:tabular-nums;color:#185641}
+.path-grid {display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:14px}.path {padding:22px;background:#fff;border:1px solid var(--line);border-radius:6px}.path h3{margin:10px 0 4px;font-size:1.25rem}.path p{color:#51615c}.path a{display:block;margin-top:6px}.desk a {text-underline-offset:3px}
+
+</style>
+</head>
+<body data-page="roomProfile">
+<div id="site-header"></div>
+<main>
+<h1>Westgate Las Vegas Resort &amp; Casino</h1><div id="content" data-room="westgate"></div>
+</main>
+<footer id="site-footer"></footer>
+<script>
+/* Shared site logic. Data is read from JSON and Markdown files in the repo.
+   Every path is relative so the site works under a GitHub Pages project URL. */
+(function () {
+  "use strict";
+
+  var IN_PAGES = /\/pages\//.test(location.pathname);
+  var BASE = IN_PAGES ? "../" : "./";
+
+  var NAV = [
+    ["index.html", "Home"],
+    ["pages/single-entry.html", "Single entry"],
+    ["pages/separate-section.html", "Separate section"],
+    ["pages/unverified.html", "Unverified"],
+    ["pages/daily.html", "Daily feed"],
+    ["pages/schedule.html", "Schedule"],
+    ["pages/hotels.html", "Hotels"],
+    ["pages/calculator.html", "Calculator"],
+    ["pages/venues.html", "Venues"],
+    ["pages/strip-rooms.html", "Strip rooms"],
+    ["pages/other-rooms.html", "Other rooms"],
+    ["pages/search.html", "Search"],
+    ["pages/monitoring.html", "Monitoring"],
+    ["pages/summary.html", "Summary"],
+    ["pages/questions.html", "Questions"],
+    ["pages/suggestions.html", "Suggestions"],
+    ["pages/flagged.html", "Flagged"],
+    ["pages/review.html", "Review"]
+  ];
+
+  var DOCS = [
+    ["EXECUTIVE_SUMMARY.md", "Executive summary"],
+    ["QUESTIONS.md", "Questions"],
+    ["SUGGESTIONS.md", "Suggestions"],
+    ["FLAGGED.md", "Flagged for review"],
+    ["REVIEW.md", "Repo review and sources"],
+    ["README.md", "README"]
+  ];
+
+  function esc(s) {
+    return String(s == null ? "" : s)
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+  function money(v) {
+    if (v == null || v === "") return '<span class="muted">blank</span>';
+    return "$" + Number(v).toLocaleString("en-US");
+  }
+  function pct(v) { return v == null ? '<span class="muted">n/a</span>' : v.toFixed(2).replace(/\.?0+$/, "") + "%"; }
+  function mult(v) { return v == null ? '<span class="muted">n/a</span>' : v.toLocaleString("en-US") + "x"; }
+  function dateFmt(iso) {
+    if (!iso) return '<span class="muted">blank</span>';
+    var d = new Date(iso + "T12:00:00Z");
+    return d.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric", year: "numeric", timeZone: "UTC" });
+  }
+  function dateShort(iso) {
+    if (!iso) return "";
+    var d = new Date(iso + "T12:00:00Z");
+    return d.toLocaleDateString("en-US", { month: "short", day: "numeric", timeZone: "UTC" });
+  }
+  function timeFmt(hhmm) {
+    if (!hhmm) return "";
+    var p = hhmm.split(":"), h = +p[0], m = p[1];
+    var ap = h >= 12 ? "PM" : "AM";
+    var hh = h % 12 === 0 ? 12 : h % 12;
+    return hh + ":" + m + " " + ap;
+  }
+  /* An `est_end` is stored time-only, so an event whose estimated duration crosses
+     midnight prints an end time that reads earlier than its own start (11:10 AM ->
+     02:55 AM). Comparing clock text would make an impossible sequence look playable,
+     and printing "02:55 AM" after an 11:10 AM start reads like a typo. Both the
+     comparison (in scripts/build_data.py) and this label use the absolute minute
+     offset built from start + est_duration_min, and the wrap is stated, never implied. */
+  function endFmt(row) {
+    var s = row && (row.est_end || row.end);
+    if (!s) return "";
+    var start = row.start || "";
+    var dur = row.est_duration_min;
+    var wraps = row.est_end_next_day === true;
+    if (!wraps && dur != null && start) wraps = toMinJS(start) + (+dur) >= 1440;
+    return timeFmt(s) + (wraps ? " (next day)" : "");
+  }
+  function toMinJS(hhmm) {
+    if (!hhmm) return 0;
+    var p = String(hhmm).split(":");
+    return (+p[0]) * 60 + (+p[1] || 0);
+  }
+  function statusChip(s) {
+    if (s === "CAND") return '<span class="chip warn">Freezeout not confirmed</span>';
+    if (s === "SE") return '<span class="chip ok">Single entry (verified)</span>';
+    if (s === "MULTI") return '<span class="chip warn">Possible multiple entries</span>';
+    if (s === "RE") return '<span class="chip bad">Re-entry offered</span>';
+    if (s === "REBUY") return '<span class="chip bad">Rebuy / add-on</span>';
+    if (s === "CONT") return '<span class="chip info">Continuation</span>';
+    return '<span class="chip warn">Unverified</span>';
+  }
+  function routeLinks(r) {
+    var out = '<a href="' + esc(r.route_link) + '" target="_blank" rel="noopener">OSM routing query</a>';
+    (r.cross_check || []).forEach(function (c) {
+      var name = /Google/.test(c.label) ? "Google Maps" : (/Apple/.test(c.label) ? "Apple Maps" : c.label);
+      out += '<br><a href="' + esc(c.url) + '" target="_blank" rel="noopener">' + esc(name) + "</a>";
+    });
+    return '<span class="small">' + out + "</span>";
+  }
+
+  function srcLinks(sources) {
+    return (sources || []).map(function (s) {
+      return '<a href="' + esc(s.url) + '" target="_blank" rel="noopener">' + esc(s.label) + "</a>";
+    }).join("<br>");
+  }
+  function walkCell(min, status, within) {
+    if (min == null) return '<span class="muted">inside the resort</span>';
+    return min + " min " + (within === false ? '<span class="chip bad">over 30</span>' : '<span class="chip ok">within 30</span>');
+  }
+  function flagsHtml(row) {
+    var f = row.flags || [];
+    if (!f.length) return "";
+    return '<div class="small" style="margin-top:4px">' + f.map(function (x) {
+      return '<span class="chip warn" style="white-space:normal;display:block;margin-top:4px">' + esc(x) + "</span>";
+    }).join("") + "</div>";
+  }
+  function datedBookingLink(r) {
+    if (r.source.startsWith("https://www.venetianlasvegas.com/") && r.occupancy === "2 adults") {
+      var url = new URL("https://www.venetianlasvegas.com/booking");
+      Object.entries({arrival_date:r.arrival, departure_date:r.departure, "adults[]":2, "children[]":0, view:"calendar"}).forEach(function(kv){url.searchParams.set(kv[0], kv[1]);});
+      return '<a href="' + esc(url.href) + '">Recheck these dates · 2 adults</a>';
+    }
+    return '<a href="' + esc(r.source) + '">Official booking engine</a>';
+  }
+  function ruleCell(row) {
+    var parts = [];
+    ["single_entry", "re_entry", "add_on", "fee"].forEach(function (k) {
+      var f = (row.rules || {})[k];
+      if (!f) return;
+      parts.push("<strong>" + esc(k.replace(/_/g, " ")) + ":</strong> " + esc(f.value) +
+        '<br><span class="small">' + esc(f.excerpt) + "</span>" +
+        '<br><span class="small">' + esc(f.source.label) + " &middot; " +
+        '<a href="' + esc(f.source.url) + '" target="_blank" rel="noopener">' + esc(f.source.url) + "</a>" +
+        (f.retrieved_on ? " &middot; retrieved " + esc(f.retrieved_on) : "") + "</span>");
+    });
+    return "<span class='small'>" + parts.join("<hr>") + "</span>";
+  }
+
+  function getJSON(path) {
+    return fetch(BASE + path, { cache: "no-cache" }).then(function (r) {
+      if (!r.ok) throw new Error("Could not load " + path + " (" + r.status + ")");
+      return r.json();
+    });
+  }
+  function getText(path) {
+    return fetch(BASE + path, { cache: "no-cache" }).then(function (r) {
+      if (!r.ok) throw new Error("Could not load " + path + " (" + r.status + ")");
+      return r.text();
+    });
+  }
+  function getJSONSafe(path) { return getJSON(path).catch(function () { return null; }); }
+  function getTextSafe(path) { return getText(path).catch(function () { return ""; }); }
+
+  /* ---------- tiny Markdown renderer (headings, lists, tables, bold, links, code) ---------- */
+
+  /* The Markdown documents are written for a reader at the repository root, so they
+     link to `pages/calculator.html`, `data/rates.json`, `README.md` and so on. The
+     same documents are also rendered *inside* `/pages/*.html`, where a raw relative
+     link would resolve to `/pages/pages/calculator.html` and 404. Rewrite repo-relative
+     links against BASE so one Markdown file works from both locations. Absolute URLs,
+     root-absolute paths, fragments and mailto links are left exactly as written. */
+  function mdHref(href) {
+    if (!href) return href;
+    if (/^(?:[a-z][a-z0-9+.-]*:|\/\/|\/|#)/i.test(href)) return href;
+    if (/^\.\.?\//.test(href)) return href;          // already relative to the current page
+    return BASE + href;
+  }
+
+  function inline(t) {
+    t = esc(t);    t = t.replace(/`([^`]+)`/g, "<code>$1</code>");
+    t = t.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+    t = t.replace(/\*([^*]+)\*/g, "<em>$1</em>");
+    t = t.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, function (m, label, url) {
+      var href = mdHref(url.replace(/&amp;/g, "&"));
+      var ext = /^https?:/.test(href);
+      return '<a href="' + href + '"' + (ext ? ' target="_blank" rel="noopener"' : "") + ">" + label + "</a>";
+    });
+    return t;
+  }
+  function renderMarkdown(src) {
+    var lines = src.replace(/\r/g, "").split("\n"), out = [], i = 0;
+    while (i < lines.length) {
+      var line = lines[i];
+      if (/^\s*$/.test(line)) { i++; continue; }
+      if (/^---+\s*$/.test(line)) { out.push("<hr>"); i++; continue; }
+      var h = /^(#{1,4})\s+(.*)$/.exec(line);
+      if (h) { var lvl = h[1].length; out.push("<h" + lvl + ">" + inline(h[2]) + "</h" + lvl + ">"); i++; continue; }
+      if (/^\|/.test(line)) {
+        var rows = [];
+        while (i < lines.length && /^\|/.test(lines[i])) { rows.push(lines[i]); i++; }
+        // Split on unescaped pipes only. A cell may contain a literal "|" written as "\|" (a time
+        // table such as "January 4, 2027 | 11:10 AM | 20 | ..."), and splitting on those made a
+        // three-column row render with six cells. The escape is removed after the split.
+        var cells = function (r) {
+          return r.replace(/^\||\|\s*$/g, "").split(/(?<!\\)\|/).map(function (c) {
+            return c.replace(/\\\|/g, "|").trim();
+          });
+        };
+        var head = cells(rows[0]);
+        var body = rows.slice(2).map(cells);
+        var html = '<div class="table-wrap"><table><thead><tr>' + head.map(function (c) { return "<th>" + inline(c) + "</th>"; }).join("") + "</tr></thead><tbody>";
+        body.forEach(function (r) { html += "<tr>" + r.map(function (c) { return "<td>" + inline(c) + "</td>"; }).join("") + "</tr>"; });
+        html += "</tbody></table></div>";
+        out.push(html);
+        continue;
+      }
+      if (/^\s*[-*]\s+/.test(line)) {
+        var items = [];
+        while (i < lines.length && /^\s*[-*]\s+/.test(lines[i])) { items.push(lines[i].replace(/^\s*[-*]\s+/, "")); i++; }
+        out.push("<ul>" + items.map(function (x) { return "<li>" + inline(x) + "</li>"; }).join("") + "</ul>");
+        continue;
+      }
+      if (/^\s*\d+\.\s+/.test(line)) {
+        var nitems = [];
+        while (i < lines.length && /^\s*\d+\.\s+/.test(lines[i])) { nitems.push(lines[i].replace(/^\s*\d+\.\s+/, "")); i++; }
+        out.push("<ol>" + nitems.map(function (x) { return "<li>" + inline(x) + "</li>"; }).join("") + "</ol>");
+        continue;
+      }
+      var para = [];
+      while (i < lines.length && !/^\s*$/.test(lines[i]) && !/^(#|\||\s*[-*]\s|\s*\d+\.\s|---)/.test(lines[i])) { para.push(lines[i]); i++; }
+      if (para.length === 0) { para.push(lines[i]); i++; }
+      out.push("<p>" + inline(para.join(" ")) + "</p>");
+    }
+    return out.join("\n");
+  }
+
+  /* ---------- generic sortable, filterable table ---------- */
+  function table(container, rows, cols, opts) {
+    opts = opts || {};
+    var state = { key: opts.sortKey || null, dir: opts.sortDir || -1 };
+    var wrap = document.createElement("div");
+    wrap.className = "table-wrap";
+    var t = document.createElement("table");
+    wrap.appendChild(t);
+    container.appendChild(wrap);
+    function value(r, c) { return c.sort ? c.sort(r) : r[c.key]; }
+    function draw() {
+      var q = (opts.filterInput ? opts.filterInput.value : "").toLowerCase();
+      var sel = opts.filterSelect ? opts.filterSelect.value : "";
+      var list = rows.filter(function (r) {
+        if (opts.predicate && !opts.predicate(r)) return false;
+        if (sel && opts.filterField && String(r[opts.filterField]) !== sel) return false;
+        if (!q) return true;
+        return cols.some(function (c) { return c.text && String(c.text(r) || "").toLowerCase().indexOf(q) >= 0; }) ||
+               JSON.stringify(r).toLowerCase().indexOf(q) >= 0;
+      });
+      if (state.key) {
+        var col = cols.filter(function (c) { return c.id === state.key; })[0];
+        if (col) {
+          list = list.slice().sort(function (a, b) {
+            var va = value(a, col), vb = value(b, col);
+            if (va == null && vb == null) return 0;
+            if (va == null) return 1;
+            if (vb == null) return -1;
+            if (typeof va === "number" && typeof vb === "number") return (va - vb) * state.dir;
+            return String(va).localeCompare(String(vb)) * state.dir;
+          });
+        }
+      }
+      var head = "<thead><tr>" + cols.map(function (c) {
+        var arrow = state.key === c.id ? (state.dir > 0 ? " ▲" : " ▼") : "";
+        var cls = (c.num ? "num " : "") + (c.sort === null ? "nosort" : "");
+        return '<th class="' + cls.trim() + '" data-id="' + c.id + '">' + esc(c.label) + arrow + "</th>";
+      }).join("") + "</tr></thead>";
+      var body = "<tbody>" + list.map(function (r) {
+        return "<tr>" + cols.map(function (c) {
+          var cls = c.num ? ' class="num"' : "";
+          return "<td" + cls + ">" + (c.html ? c.html(r) : esc(r[c.key])) + "</td>";
+        }).join("") + "</tr>";
+      }).join("") + "</tbody>";
+      t.innerHTML = head + body;
+      var count = opts.countEl;
+      if (count) count.textContent = list.length + " of " + rows.length + " rows";
+      if (opts.onDraw) opts.onDraw(list);
+      Array.prototype.forEach.call(t.querySelectorAll("th"), function (th) {
+        th.addEventListener("click", function () {
+          var id = th.getAttribute("data-id");
+          var c = cols.filter(function (x) { return x.id === id; })[0];
+          if (!c || c.sort === null) return;
+          if (state.key === id) state.dir = -state.dir; else { state.key = id; state.dir = -1; }
+          draw();
+        });
+      });
+    }
+    if (opts.filterInput) opts.filterInput.addEventListener("input", draw);
+    if (opts.filterSelect) opts.filterSelect.addEventListener("change", draw);
+    draw();
+    return { redraw: draw, rows: function () { return rows; } };
+  }
+
+  /* ---------- advanced filter bar ----------
+     One component used by every tournament table. It owns the text query, the
+     date range, the venue, the series, the entry status, the buy-in range, the
+     labels and the single-entry toggle, so the same behaviour is available
+     everywhere. */
+  function vegasDate() {
+    var parts = new Intl.DateTimeFormat("en-US", {
+      timeZone: "America/Los_Angeles", year: "numeric", month: "2-digit", day: "2-digit"
+    }).formatToParts(new Date());
+    function part(type) { return parts.find(function (p) { return p.type === type; }).value; }
+    return part("year") + "-" + part("month") + "-" + part("day");
+  }
+
+  function Filters(host, opts) {
+    opts = opts || {};
+    var el = document.createElement("div");
+    el.className = "filters";
+    var listeners = [];
+
+    function field(label, control) {
+      var w = document.createElement("div");
+      w.className = "field";
+      var l = document.createElement("label");
+      l.textContent = label;
+      l.setAttribute("for", control.id);
+      w.appendChild(l);
+      w.appendChild(control);
+      return w;
+    }
+    function input(id, type, attrs) {
+      var i = document.createElement("input");
+      i.id = id; i.type = type;
+      Object.keys(attrs || {}).forEach(function (k) { i.setAttribute(k, attrs[k]); });
+      return i;
+    }
+    function select(id, values, allLabel) {
+      var s = document.createElement("select");
+      s.id = id;
+      s.innerHTML = '<option value="">' + esc(allLabel) + "</option>" +
+        values.map(function (v) { return '<option value="' + esc(v) + '">' + esc(v) + "</option>"; }).join("");
+      return s;
+    }
+
+    var q = input("q", "search", { placeholder: "Search name, series, note, source" });
+    var from = input("date-from", "date", {});
+    var to = input("date-to", "date", {});
+    var buyMin = input("buy-min", "number", { min: "0", step: "50", placeholder: "min" });
+    var buyMax = input("buy-max", "number", { min: "0", step: "50", placeholder: "max" });
+    var venue = select("venue", opts.venues || [], "All venues");
+    var series = select("series", opts.series || [], "All series");
+    var status = select("status", opts.statuses || [], "Any entry rule");
+    var single = input("single-only", "checkbox", {});
+    single.checked = !!opts.strict;
+    var today = vegasDate();
+    var future = input("future-only", "checkbox", {});
+    future.checked = !!opts.upcoming;
+    var reset = document.createElement("button");
+    reset.type = "button"; reset.textContent = "Reset filters";
+
+    var row1 = document.createElement("div");
+    row1.className = "row";
+    row1.appendChild(field("Search", q));
+    row1.appendChild(field("From date", from));
+    row1.appendChild(field("To date", to));
+    row1.appendChild(field("Min buy-in", buyMin));
+    row1.appendChild(field("Max buy-in", buyMax));
+
+    var row2 = document.createElement("div");
+    row2.className = "row";
+    row2.appendChild(field("Venue", venue));
+    if ((opts.series || []).length) row2.appendChild(field("Series", series));
+    if ((opts.statuses || []).length) row2.appendChild(field("Entry rule", status));
+    var tog = document.createElement("div");
+    tog.className = "field toggle";
+    var tl = document.createElement("label");
+    tl.setAttribute("for", "single-only");
+    tl.textContent = "Written freezeout confirmed";
+    tog.appendChild(single); tog.appendChild(tl);
+    row2.appendChild(tog);
+    if (opts.upcoming) {
+      var futureField = field("Today and later (Las Vegas)", future);
+      futureField.className = "field toggle";
+      row2.appendChild(futureField);
+    }
+    var actions = document.createElement("div");
+    actions.className = "actions";
+    actions.appendChild(reset);
+    row2.appendChild(actions);
+
+    el.appendChild(row1);
+    el.appendChild(row2);
+
+    var labelBox = null;
+    if ((opts.labels || []).length) {
+      labelBox = document.createElement("div");
+      labelBox.className = "field";
+      var ll = document.createElement("label");
+      ll.textContent = "Labels";
+      var box = document.createElement("div");
+      box.className = "labels";
+      opts.labels.forEach(function (lab) {
+        var l = document.createElement("label");
+        var cb = input("label-" + lab.replace(/\W+/g, "-"), "checkbox", { value: lab });
+        l.appendChild(cb);
+        l.appendChild(document.createTextNode(" " + lab));
+        box.appendChild(l);
+      });
+      labelBox.appendChild(ll);
+      labelBox.appendChild(box);
+      el.appendChild(labelBox);
+    }
+
+    var summary = document.createElement("div");
+    summary.className = "summary";
+    el.appendChild(summary);
+    host.appendChild(el);
+
+    function selectedLabels() {
+      if (!labelBox) return [];
+      return Array.prototype.slice.call(labelBox.querySelectorAll("input:checked")).map(function (i) { return i.value; });
+    }
+    function num(v) { var n = parseFloat(v); return isNaN(n) ? null : n; }
+
+    function matches(row) {
+      var query = q.value.trim().toLowerCase();
+      if (query) {
+        var hay = JSON.stringify(row).toLowerCase();
+        if (hay.indexOf(query) < 0) return false;
+      }
+      if (future.checked && row.date < today) return false;
+      if (from.value && row.date < from.value) return false;
+      if (to.value && row.date > to.value) return false;
+      if (venue.value && row.venue !== venue.value) return false;
+      if (series.value && row.series !== series.value) return false;
+      if (status.value && row.entry_status !== status.value) return false;
+      if (single.checked && row.entry_status !== "SE") return false;
+      var lo = num(buyMin.value), hi = num(buyMax.value);
+      if (lo != null && !(row.buy_in_usd != null && row.buy_in_usd >= lo)) return false;
+      if (hi != null && !(row.buy_in_usd != null && row.buy_in_usd <= hi)) return false;
+      var labs = selectedLabels();
+      if (labs.length) {
+        var have = row.labels || [];
+        if (!labs.every(function (l) { return have.indexOf(l) >= 0; })) return false;
+      }
+      return true;
+    }
+    function describe() {
+      var bits = [];
+      if (q.value.trim()) bits.push('search "' + q.value.trim() + '"');
+      if (future.checked) bits.push("Las Vegas dates from " + today);
+      if (from.value) bits.push("from " + dateShort(from.value));
+      if (to.value) bits.push("to " + dateShort(to.value));
+      if (venue.value) bits.push(venue.value);
+      if (series.value) bits.push(series.value);
+      if (status.value) bits.push(status.value);
+      if (single.checked) bits.push("single entry only");
+      if (lo2() != null) bits.push("buy-in ≥ " + money(lo2()));
+      if (hi2() != null) bits.push("buy-in ≤ " + money(hi2()));
+      var labs = selectedLabels();
+      if (labs.length) bits.push("labels: " + labs.join(", "));
+      return bits.length ? "Active: " + bits.join(" · ") : "No filters active - showing every row.";
+    }
+    function lo2() { return num(buyMin.value); }
+    function hi2() { return num(buyMax.value); }
+
+    function fire() {
+      summary.textContent = describe();
+      listeners.forEach(function (fn) { fn(); });
+    }
+    [q, from, to, buyMin, buyMax].forEach(function (c) { c.addEventListener("input", fire); });
+    [venue, series, status].forEach(function (c) { c.addEventListener("change", fire); });
+    single.addEventListener("change", fire);
+    future.addEventListener("change", fire);
+    if (labelBox) labelBox.querySelectorAll("input").forEach(function (c) { c.addEventListener("change", fire); });
+    reset.addEventListener("click", function () {
+      q.value = ""; from.value = ""; to.value = ""; buyMin.value = ""; buyMax.value = "";
+      venue.value = ""; series.value = ""; status.value = ""; single.checked = !!opts.strict;
+      future.checked = !!opts.upcoming;
+      if (labelBox) labelBox.querySelectorAll("input").forEach(function (c) { c.checked = false; });
+      fire();
+    });
+    fire();
+
+    return {
+      el: el,
+      matches: matches,
+      onChange: function (fn) { listeners.push(fn); },
+      reset: function () { reset.click(); }
+    };
+  }
+
+  /* ---------- nav ---------- */
+  function renderNav() {
+    var here = location.pathname.replace(/\/index\.html$/, "/");
+    var html = '<header class="site"><a class="brand" href="' + BASE + 'index.html">Las Vegas Strip Poker Plan</a><nav>';
+    NAV.forEach(function (n) {
+      var active = here.endsWith("/" + n[0]) || (n[0] === "index.html" && (here.endsWith("/") && !IN_PAGES));
+      html += '<a href="' + BASE + n[0] + '"' + (active ? ' class="active"' : "") + ">" + esc(n[1]) + "</a>";
+    });
+    html += "</nav></header>";
+    var el = document.getElementById("site-header");
+    if (el) el.outerHTML = html;
+    var f = document.getElementById("site-footer");
+    if (f) f.innerHTML = "Data verified against official sources on " + checkedOn + ". Blank cells are unverified, and no value is inferred. " +
+      '<a href="' + BASE + 'pages/flagged.html">Flagged for review</a> · ' +
+      '<a href="' + BASE + 'pages/monitoring.html">Monitoring</a>.';
+  }
+
+  // The verification date printed in the footer is read from the dataset itself,
+  // so the site can never claim a fresher check than data/tournaments.json says.
+  var checkedOn = "2026-11-17";
+
+  /* ---------- page renderers ---------- */
+  var PAGES = {};
+
+  PAGES.index = function () {
+    Promise.all([getJSON("data/tournaments.json"), getJSON("data/hotels.json"), getJSON("data/daily.json")]).then(function (res) {
+      var rows = res[0].rows, hotels = res[1].rows, daily = res[2].rows;
+      var c = { SE: 0, MULTI: 0, RE: 0, UNV: 0 };
+      rows.forEach(function (r) { c[r.entry_status] = (c[r.entry_status] || 0) + 1; });
+      var verifiedFees = hotels.filter(function (h) { return h.resort_fee_status === "verified"; }).length;
+      var flagged = rows.filter(function (r) { return (r.flags || []).length; }).length;
+      var dates = {};
+      rows.forEach(function (r) { dates[r.date] = 1; });
+      var today = vegasDate();
+      var upcoming = rows.filter(function (r) { return r.entry_status === "CAND" && r.date >= today; }).length;
+      document.getElementById("kpis").innerHTML =
+        kpi(c.SE, "written freezeouts confirmed") +
+        kpi(upcoming, "upcoming candidates · Las Vegas dates") +
+        kpi(rows.length, "series rows reviewed") +
+        kpi(hotels.length, "hotels in the comparison");
+    }).catch(showErr);
+  };
+  function kpi(n, label) {
+    return '<div class="card kpi"><div class="num">' + esc(n) + '</div><div class="label">' + esc(label) + "</div></div>";
+  }
+
+  function tournamentFilters(host, rows, opts) {
+    opts = opts || {};
+    var venues = Array.from(new Set(rows.map(function (r) { return r.venue; }))).sort();
+    var series = Array.from(new Set(rows.map(function (r) { return r.series; }))).sort();
+    var statuses = Array.from(new Set(rows.map(function (r) { return r.entry_status; }))).sort();
+    var labels = Array.from(new Set(rows.reduce(function (a, r) { return a.concat(r.labels || []); }, []))).sort();
+    return Filters(host, {
+      venues: venues, series: series, statuses: statuses, labels: labels,
+      strict: opts.strict,
+      showStatus: opts.showStatus !== false, upcoming: opts.upcoming
+    });
+  }
+
+  function tournamentColumns(withRules) {
+    var cols = [
+      { id: "date", label: "Date", key: "date", sort: function (r) { return r.date + r.start; }, html: function (r) { return dateFmt(r.date); } },
+      { id: "start", label: "Start", key: "start", html: function (r) { return timeFmt(r.start); } },
+      { id: "finish", label: "Estimated finish", key: "est_duration_min", num: true, sort: function (r) {
+          return r.est_duration_min == null ? null : toMinJS(r.start) + (+r.est_duration_min);
+        }, html: function (r) {
+          return r.est_end ? endFmt(r) + "<br><span class='small muted'>estimate, not official</span>"
+                           : '<span class="muted">no published structure</span>';
+        } },
+      { id: "name", label: "Event", key: "name", html: function (r) {
+          return "<strong>" + esc(r.name) + "</strong><br><span class='small'>" + esc(r.series) +
+            (r.event_no ? " · Event " + esc(r.event_no) : "") + " · " + esc(r.venue) +
+            (r.prize_text ? "<br>Prize: " + esc(r.prize_text) : "") + "</span>" + flagsHtml(r);
+        } },
+      { id: "buy", label: "Buy-in", key: "buy_in_usd", num: true, html: function (r) { return money(r.buy_in_usd); } },
+      { id: "gtd", label: "Guarantee", key: "guarantee_usd", num: true, html: function (r) { return money(r.guarantee_usd); } },
+      { id: "structure", label:"Structure", key:"starting_chips", html:function(r){return [r.starting_chips && r.starting_chips.toLocaleString("en-US")+" chips", r.level_minutes && r.level_minutes+" min levels", r.late_reg_close && "Late reg: "+timeFmt(r.late_reg_close), r.payout_excerpt].filter(Boolean).map(esc).join("<br>");}},
+      { id: "format", label:"Format", key:"labels", html:function(r){return (r.labels || []).map(esc).join(" · ");}},
+      { id: "mult", label: "Guarantee ÷ buy-in", key: "gtd_multiple", num: true, html: function (r) { return mult(r.gtd_multiple); } },
+      { id: "status", label: "Entry rule", key: "entry_status", html: function (r) { return statusChip(r.entry_status); } },
+      { id: "checked", label: "Last checked", key: "last_checked", html: function (r) { return "<span class='small'>" + esc(r.last_checked) + "</span>"; } }
+    ];
+    if (withRules) {
+      cols.push({ id: "rule", label: "Entry rule (official)", key: "entry_rule", sort: null, html: function (r) { return "<span class='small'>" + esc(r.entry_rule) + "</span>"; } });
+      cols.push({ id: "detail", label: "Rule excerpts and source", key: "rules", sort: null, html: function (r) { return ruleCell(r); } });
+    }
+    cols.push({ id: "note", label: "Notes", key: "note", sort: null, html: function (r) { return "<span class='small'>" + esc(r.note) + "</span>"; } });
+    cols.push({ id: "src", label: "Sources", key: "sources", sort: null, html: function (r) { return "<span class='small'>" + srcLinks(r.sources) + "</span>"; } });
+    return cols;
+  }
+
+  PAGES.singleEntry = function () {
+    Promise.all([getJSON("data/tournaments.json"), getJSON("data/schedule.json")]).then(function (res) {
+      var d = res[0];
+      var rows = res[0].rows.filter(function (r) { return r.entry_status === "SE" || r.entry_status === "CAND"; });
+      var sched = res[1];
+      var main = document.getElementById("content");
+      var count = document.getElementById("count");
+
+      /* ---- Trip diary -------------------------------------------------------
+         One row per day that actually holds a verified single-entry event: the
+         event chosen as that day's primary, the conditional fallback behind it,
+         and - the thing that decides whether the fallback is real - the last
+         moment registration closes as the official sheet prints it. Nothing here
+         is a forecast: a finish is an estimate and is labelled as one, and where
+         two events cannot be compared at all, this says so instead of pairing
+         them up. */
+      var byId = {};
+      res[0].rows.forEach(function (r) { byId[r.id] = r; });
+      var days = sched.days.filter(function (d) { return d.primary_id; });
+
+      function regLine(o) {
+        if (!o) return "";
+        var parts = [];
+        if (o.late_reg_close) parts.push("registration closes " + esc(o.late_reg_close));
+        var row = byId[o.id] || {};
+        if (row.late_reg_text) parts.push('"' + esc(row.late_reg_text) + '"');
+        return parts.length ? " · " + parts.join(" · ") : "";
+      }
+
+      function dayLine(o, isPrimary, isSequence) {
+        if (!o) return "";
+        var finish = o.est_end_label || o.est_end;
+        var lead = isPrimary ? "Play"
+          : (isSequence ? "Then play" : "Only if you bust out or finish early");
+        return "<li><strong>" + lead + "</strong> · " +
+          timeFmt(o.start) + " · " + esc(o.name) + " · " + money(o.buy_in_usd) +
+          (o.guarantee_usd ? " · GTD " + money(o.guarantee_usd) : (o.prize_text ? " · " + esc(o.prize_text) : "")) +
+          regLine(o) +
+          (finish ? " · estimated finish about " + endFmt(finish) : " · no finish estimate published") +
+          ' · <a href="' + esc(o.source) + '" target="_blank" rel="noopener">source</a></li>';
+      }
+
+      var diary = document.createElement("div");
+      diary.id = "trip-diary";
+      diary.innerHTML =
+        '<h2>Trip diary &mdash; one line per playable day</h2>' +
+        '<p class="small">' + days.length + ' of the ' + sched.days.length +
+        ' dates in this dataset hold at least one verified single-entry event. Each line names the ' +
+        "event chosen as that day's primary and, where one is printed, the later single-entry event on " +
+        "the same date &mdash; labelled either a sequence that can be planned or a chance that depends " +
+        "on being eliminated in time. " +
+        "<strong>Under the published level structures, no day's primary is estimated to finish before " +
+        "another single-entry event on that date starts</strong>, so " +
+        sched.days.filter(function (d) { return d.fallback_id; }).length +
+        " of these dates offer a true two-event sequence. The " +
+        sched.days.filter(function (d) { return d.second_entry_id; }).length +
+        " dates marked <em>second entry</em> are different: a second single-entry event is printed on " +
+        "the same date, but the primary may still be running when it starts, so entering it is a " +
+        "chance that depends on being eliminated in time, not a plan. Each line prints the " +
+        "registration deadline that decides it. Finish times are <em>estimates</em> computed from the " +
+        "printed structure, never official finish times, and " + sched.undecidable_total +
+        " same-day pairs cannot be checked at all because the sheet prints a level length with no " +
+        "level count.</p>";
+      var list = document.createElement("ul");
+      list.className = "diary";
+      list.innerHTML = days.map(function (d) {
+        var prim = d.events.filter(function (o) { return o.id === d.primary_id; })[0];
+        var fb = d.events.filter(function (o) {
+          return o.id === (d.fallback_id || d.second_entry_id);
+        })[0];
+        var fbIsSequence = !!d.fallback_id;
+        return '<li class="card"><h3>' + dateFmt(d.date) + "</h3><ul>" +
+          dayLine(prim, true) + dayLine(fb, false, fbIsSequence) + "</ul>" +
+          (fbIsSequence
+            ? (d.fallback_note ? '<p class="small muted">' + esc(d.fallback_note) + "</p>" : "")
+            : (d.second_entry_note ? '<p class="small muted">' + esc(d.second_entry_note) + "</p>" : "")) +
+          "</li>";
+      }).join("");
+      diary.appendChild(list);
+      main.parentNode.insertBefore(diary, main);
+
+      var filters = tournamentFilters(document.getElementById("filters"), rows, { strict:true, upcoming:true });
+      var tbl = table(main, rows, tournamentColumns(true), {
+        sortKey: "date", sortDir: 1, predicate: filters.matches, countEl: count
+      });
+      filters.onChange(function () { tbl.redraw(); });
+    }).catch(showErr);
+  };
+
+  PAGES.separate = function () {
+    getJSON("data/tournaments.json").then(function (d) {
+      var rows = d.rows.filter(function (r) { return r.entry_status === "MULTI" || r.entry_status === "RE"; });
+      var main = document.getElementById("content");
+      var count = document.getElementById("count");
+      var filters = tournamentFilters(document.getElementById("filters"), rows);
+      var tbl = table(main, rows, tournamentColumns(true), {
+        sortKey: "date", sortDir: 1, predicate: filters.matches, countEl: count
+      });
+      filters.onChange(function () { tbl.redraw(); });
+    }).catch(showErr);
+  };
+
+  PAGES.unverified = function () {
+    getJSON("data/tournaments.json").then(function (d) {
+      var rows = d.rows.filter(function (r) { return r.entry_status === "UNV"; });
+      var main = document.getElementById("content");
+      var count = document.getElementById("count");
+      var filters = tournamentFilters(document.getElementById("filters"), rows);
+      var tbl = table(main, rows, tournamentColumns(true), {
+        sortKey: "date", sortDir: 1, predicate: filters.matches, countEl: count
+      });
+      filters.onChange(function () { tbl.redraw(); });
+    }).catch(showErr);
+  };
+
+  PAGES.daily = function () {
+    // Bot commits do not always trigger a branch-mode Pages rebuild. On the live
+    // project site read the same public main-branch JSON, falling back to its dated copy.
+    var feedRequest = location.hostname === "karagemop466-tech.github.io"
+      ? fetch("https://api.github.com/repos/karagemop466-tech/Poker1/contents/data/schedule_feed.json?ref=main", {headers:{Accept:"application/vnd.github.raw+json"}}).then(function(r){if(!r.ok) throw Error(r.status);return r.json();}).catch(function(){return getJSON("data/schedule_feed.json");})
+      : getJSON("data/schedule_feed.json");
+    feedRequest.then(function(feed){
+      table(document.getElementById("feed"), feed.rooms, [
+        {id:"source",label:"Official schedule",key:"label",html:function(r){return srcLinks([{url:r.source,label:r.label}]);}},
+        {id:"status",label:"Latest attempt",key:"status",html:function(r){return esc(r.status) + (r.changed ? " · changed since prior capture" : "") + "<br>" + esc(r.attempted_at || "archive seed");}},
+        {id:"read",label:"Last readable capture",key:"read_at"},
+        {id:"text",label:"Published excerpts (not classified)",sort:null,html:function(r){return r.excerpts.length ? "<details><summary>"+r.excerpts.length+" excerpts</summary><ul>"+r.excerpts.map(function(x){return "<li>"+esc(x)+"</li>";}).join("")+"</ul></details>" : "Unverified";}}
+      ], {filterInput:document.getElementById("feed-q")});
+    }).catch(showErr);
+    Promise.all([getJSON("data/daily.json"), getJSON("data/tournaments.json")]).then(function (res) {
+      var daily = res[0].rows, rows = res[1].rows;
+      var main = document.getElementById("content");
+      document.getElementById("note").innerHTML =
+        "<strong>" + esc(res[0].note) + "</strong>" +
+        "<br><br>Sources: " + srcLinks(res[0].sources);
+      var dayNames = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+      // days is stored as a string like "Monday-Thursday", "Friday", "Saturday-Sunday" or "Monday-Sunday"
+      function dayRuns(daysStr, dayFull) {
+        var order = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+        var idx = order.indexOf(dayFull);
+        if (idx < 0) return false;
+        if (String(daysStr) === "Daily") return true;
+        var parts = String(daysStr).split("-");
+        if (parts.length === 1) return parts[0] === dayFull;
+        var a = order.indexOf(parts[0]), b = order.indexOf(parts[1]);
+        if (a < 0 || b < 0) return false;
+        return idx >= a && idx <= b;
+      }
+      var calendar = '<div class="calendar">' + dayNames.map(function (d, i) {
+        var todays = daily.filter(function (x) { return dayRuns(x.days, d); });
+        return '<div class="slot"><div class="d">' + d + "</div>" + (todays.length
+          ? todays.map(function (x) {
+              return '<div class="t">' + timeFmt(x.start) + "</div><div class='small'><strong>" +
+                esc(x.room || "") + "</strong><br>" + esc(x.name) +
+                "<br>" + money(x.buy_in_usd) + " · GTD " + money(x.guarantee_usd) + "</div>";
+            }).join("<hr>")
+          : "<div class='small muted'>No daily format published for this weekday.</div>") + "</div>";
+      }).join("") + "</div>";
+      main.innerHTML = "<h2>Weekly format map</h2>" + calendar + "<h2>Published formats</h2>";
+      function regCell(r) {
+        if (r.late) return timeFmt(r.late) + '<br><span class="small muted">printed on the sheet</span>';
+        return '<span class="muted">no clock time printed</span><br><span class="small">' +
+          "closes at level " + esc(r.late_reg_level) + "<br>" + esc(r.late_reg_text || "") + "</span>";
+      }
+      var cols = [
+        { id: "room", label: "Room", key: "room", html: function (r) { return "<strong>" + esc(r.room || "") + "</strong>"; } },
+        { id: "name", label: "Format", key: "name", html: function (r) { return "<strong>" + esc(r.name) + "</strong><br><span class='small'>" + esc(r.days) + "</span>" + (r.note_extra ? "<br><span class='small'>" + esc(r.note_extra) + "</span>" : ""); } },
+        { id: "start", label: "Start", key: "start", html: function (r) { return timeFmt(r.start); } },
+        { id: "buy", label: "Buy-in", key: "buy_in_usd", num: true, html: function (r) { return money(r.buy_in_usd); } },
+        { id: "gtd", label: "Guarantee", key: "guarantee_usd", num: true, html: function (r) { return money(r.guarantee_usd); } },
+        { id: "status", label: "Entry rule", key: "status", html: function (r) { return statusChip(r.status); } },
+        { id: "late", label: "Registration closes", key: "late", html: regCell },
+        { id: "levels", label: "Levels × minutes", key: "levels", num: true, html: function (r) { return r.levels + " × " + r.lmin + " min"; } },
+        { id: "fee", label: "Fee split", key: "fee", sort: null, html: function (r) { return "<span class='small'>" + esc(r.fee) + "</span>"; } },
+        { id: "ex", label: "Rule excerpt", key: "ex", sort: null, html: function (r) { return "<span class='small'>" + esc(r.ex) + "<br>" + esc(r.stack || "") + (r.flags ? "<br><span class='chip warn'>" + esc(r.flags[0]) + "</span>" : "") + "</span>"; } },
+        { id: "src", label: "Source document", key: "source", sort: null, html: function (r) {
+            var out = '<a href="' + esc(r.source) + '" target="_blank" rel="noopener">official document</a>';
+            if (r.page) out += '<br><a href="' + esc(r.page) + '" target="_blank" rel="noopener">official poker page</a>';
+            if (r.document_url && r.document_url !== r.source) out += '<br><span class="small">document: ' + esc(r.document_url) + "</span>";
+            if (r.retrieved_on) out += '<br><span class="small muted">retrieved ' + esc(r.retrieved_on) + "</span>";
+            return '<span class="small">' + out + "</span>";
+          } }
+      ];
+      cols.push({id:"checked",label:"Last checked",html:function(){return esc(res[0].verified_on);}}, {id:"source",label:"Sources",html:function(){return srcLinks(res[0].sources);}});
+      table(main, daily, cols, { sortKey: "start", sortDir: 1 });
+      var susp = rows.filter(function (r) { return r.venue === "Wynn Las Vegas"; });
+      var note = document.getElementById("series-note");
+      if (note) {
+        note.innerHTML = "<strong>Series dates that can suspend the daily schedule:</strong> " +
+          esc(susp.length) + " Wynn rows are published between 2026-11-27 and 2027-01-24 " +
+          "(WPT World Championship and Wynn Signature Series), which is when Wynn says its daily "
+          + "schedule is suspended. Check the " +
+          '<a href="' + BASE + 'pages/schedule.html">schedule</a> before planning around a daily format.';
+      }
+    }).catch(showErr);
+  };
+
+  PAGES.schedule = function () {
+    Promise.all([getJSON("data/schedule.json"), getJSON("data/tournaments.json")]).then(function (res) {
+      var sched = res[0], rows = res[1].rows;
+      var main = document.getElementById("content");
+      document.getElementById("note").textContent = sched.note;
+      document.getElementById("earliest").textContent = timeFmt(sched.earliest_listed_start);
+      var kpi = document.getElementById("overlap-kpi");
+      if (kpi) {
+        var seqDays = sched.days.filter(function (d) { return d.fallback_id; }).length;
+        var chanceDays = sched.days.filter(function (d) { return d.second_entry_id; }).length;
+        kpi.textContent = sched.conflicts_total + " overlapping pair(s) flagged across the " +
+          sched.days.length + " dates, and " + sched.undecidable_total +
+          " pair(s) that cannot be checked because an event publishes no level structure. " +
+          seqDays + " date(s) offer two events that can genuinely be played in sequence; " +
+          chanceDays + " further date(s) print a second single-entry event that the primary may " +
+          "still be running when it starts, so those are shown as a conditional second entry, " +
+          "never as a sequence.";
+      }
+
+      var byId = {};
+      rows.forEach(function (r) { byId[r.id] = r; });
+
+      var picker = document.createElement("div");
+      picker.className = "toolbar";
+      var sel = document.createElement("select");
+      sel.id = "day-picker";
+      sel.innerHTML = '<option value="">Jump to a date…</option>' +
+        sched.days.map(function (d) { return '<option value="' + d.date + '">' + esc(dateFmt(d.date)) + "</option>"; }).join("");
+      var prev = document.createElement("button"); prev.type = "button"; prev.textContent = "◀ Previous day";
+      var next = document.createElement("button"); next.type = "button"; next.textContent = "Next day ▶";
+      var count = document.createElement("span"); count.id = "count"; count.className = "small";
+      picker.appendChild(sel); picker.appendChild(prev); picker.appendChild(next); picker.appendChild(count);
+      main.parentNode.insertBefore(picker, main);
+
+      function render() {
+        main.innerHTML = sched.days.map(function (day) {
+          var list = day.events.map(function (o) {
+            var row = byId[o.id] || {};
+            var chip = o.entry_status === "CAND" ? statusChip("CAND") : o.entry_status === "SE" ? '<span class="chip ok">Single entry</span>' :
+              (o.entry_status === "CONT" ? '<span class="chip info">Continuation</span>' :
+                (o.entry_status === "MULTI" ? '<span class="chip warn">Possible multiple entries</span>' :
+                  (o.entry_status === "RE" ? '<span class="chip bad">Re-entry</span>' : '<span class="chip warn">Unverified</span>')));
+            var finish = !o.est_end ? "" :
+              (o.duration_basis === "no_day_bound"
+                ? " · its table spans more than one playing day (the flight ends at about 12.5% of the field,"
+                  + " not at a printed clock), so this day has no ceiling to plan against"
+                : (o.duration_basis === "satellite_maximum"
+                    ? " · table ends no later than " + endFmt(o) +
+                      " - its sheet concludes it as soon as the remaining seats are awarded"
+                    : " · table ends no later than " + endFmt(o) + " - no end time is printed, and it ends"
+                      + " once the field is paid"));
+            var marks = [];
+            if (day.primary_id === o.id) marks.push('<span class="chip warn">Conditional primary</span>');
+            if (day.fallback_id === o.id) marks.push('<span class="chip info">Conditional fallback' +
+              (day.fallback_kind === "join in progress" ? " - join in progress" : "") + "</span>");
+            return "<li><strong>" + timeFmt(o.start) + "</strong> · " + esc(o.name) + " · " + money(o.buy_in_usd) +
+              (o.guarantee_usd ? " · GTD " + money(o.guarantee_usd) : "") +
+              (o.prize_text ? " · " + esc(o.prize_text) : "") +
+              " " + chip + " " + marks.join(" ") +
+              '<br><span class="small">' + esc(o.series) + " · " + esc(o.venue) + finish +
+              ' · <a href="' + esc(o.source) + '" target="_blank" rel="noopener">source</a></span>' +
+              ((row.flags || []).length ? '<br><span class="chip warn">' + esc(row.flags[0]) + "</span>" : "") +
+              "</li>";
+          }).join("");
+          var bad = day.conflicts.filter(function (c) { return c.kind === "unplannable"; });
+          var late = day.conflicts.filter(function (c) { return c.kind === "join_in_progress"; });
+          var notes = [];
+          if (bad.length) notes.push('<span class="chip bad">' + bad.length +
+            " pair(s) no published schedule can support</span> " + esc(bad[0].detail));
+          if (late.length) notes.push('<span class="chip warn">' + late.length +
+            " pair(s) sensible only as a join in progress</span> " + esc(late[0].detail));
+          var conflicts = notes.length
+            ? '<div class="small" style="margin-top:6px">' + notes.join("<br>") + "</div>"
+            : "";
+          var alts = (day.alternatives || []).map(function (a) {
+            return "<li><strong>" + timeFmt(a.start) + "</strong> · " + esc(a.name) + " · " +
+              money(a.buy_in_usd) + (a.guarantee_usd ? " · GTD " + money(a.guarantee_usd) : "") +
+              ' · entry closes ' + timeFmt(a.entry_closes) +
+              (a.late_reg_published ? "" : " (no published cut-off: treated as closing at the start)") +
+              '<br><span class="small">' + esc(a.note) + "</span></li>";
+          }).join("");
+          var altBox = alts
+            ? '<div class="small" style="margin-top:6px"><strong>Alternatives on this date</strong>' +
+              ' - each of these is played <em>instead of</em> the primary, never as well:<ul>' + alts + "</ul></div>"
+            : "";
+          /* A finish that crosses midnight ends the playing day. State it as a fact about the
+             day, so the reader is never left to infer it from a bare clock time (see the
+             schedule page intro), and never sees a pair of same-date events proposed as one
+             sequence. */
+          var prim = day.primary_id
+            ? day.events.filter(function (o) { return o.id === day.primary_id; })[0] || null
+            : null;
+          var wraps = prim && (prim.est_end_next_day === true ||
+            (prim.est_duration_min != null && toMinJS(prim.start) + (+prim.est_duration_min) >= 1440));
+          var midnight = wraps
+            ? '<div class="small"><span class="chip info">past midnight</span> ' +
+              'The published structure has this day’s event running after midnight, so no later event can be ' +
+              'played on this date; the day plan does not propose one. The finish shown is an estimate from the ' +
+              'printed level table, never an official finish time.</div>'
+            : "";
+          var fallback = day.fallback_note
+            ? '<div class="small muted">' + esc(day.fallback_note) + "</div>" : "";
+          var second = day.second_entry_note
+            ? '<div class="small muted">' + esc(day.second_entry_note) + "</div>" : "";
+          return '<div class="card day" id="day-' + day.date + '"><h3>' + dateFmt(day.date) + "</h3><ul>" + list +
+            "</ul>" + conflicts + midnight + altBox + fallback + "</div>";
+        }).join("");
+      }
+      render();
+
+      var idx = 0;
+      function jump(delta) {
+        idx = Math.min(Math.max(idx + delta, 0), sched.days.length - 1);
+        var day = sched.days[idx];
+        sel.value = day.date;
+        var target = document.getElementById("day-" + day.date);
+        if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+      sel.addEventListener("change", function () {
+        var d = sched.days.filter(function (x) { return x.date === sel.value; })[0];
+        if (!d) return;
+        idx = sched.days.indexOf(d);
+        var target = document.getElementById("day-" + d.date);
+        if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+      prev.addEventListener("click", function () { jump(-1); });
+      next.addEventListener("click", function () { jump(1); });
+      count.textContent = sched.days.length + " dates";
+    }).catch(showErr);
+  };
+
+  PAGES.hotels = function () {
+    Promise.all([getJSON("data/hotels.json"), getJSON("data/walking.json"), getJSON("data/rates.json")]).then(function (res) {
+      var rows = res[0].rows, walking = res[1].rows, rates = res[2].entries;
+      var main = document.getElementById("content");
+      document.getElementById("method").textContent = res[0].method;
+      var chip = function (s) {
+        if (s === "verified") return '<span class="chip ok">Verified</span>';
+        if (s === "estimated") return '<span class="chip info">Estimate</span>';
+        if (s === "conditional") return '<span class="chip warn">Conditional</span>';
+        return '<span class="chip warn">Unverified</span>';
+      };
+      var notPub = '<span class="muted">not published on an official source</span>';
+      var cols = [
+        { id: "name", label: "Hotel", key: "name", html: function (r) { return "<strong>" + esc(r.name) + "</strong><br><span class='small'>" + esc(r.address_note) + "</span>"; } },
+        { id: "fee", label: "Resort fee / night", key: "resort_fee_usd", num: true, html: function (r) { return chip(r.resort_fee_status) + "<br>" + money(r.resort_fee_usd) + "<br><span class='small'>" + esc(r.resort_fee_note) + "</span>"; } },
+        { id: "rate", label: "Room rate / night", key: "room_rate_usd", num: true, html: function (r) { return chip(r.room_rate_status) + "<br>" + money(r.room_rate_usd) + "<br><span class='small'>" + esc(r.room_rate_note) + "</span>"; } },
+        { id: "tax", label: "Room tax", key: "clark_county_tax_pct", num: true, html: function (r) { return (r.clark_county_tax_pct == null ? '<span class="muted">Unverified</span>' : r.clark_county_tax_pct + "%") + " " + chip(r.tax_status) + "<br><span class='small'>" + esc(r.tax_note) + "</span>"; } },
+        { id: "parking", label: "Parking / day", key: "parking_usd_per_day", num: true, html: function (r) { return money(r.parking_usd_per_day) + "<br><span class='small'>" + esc(r.parking_note) + "</span>"; } },
+        { id: "cancel", label: "Cancellation / check-in", key: "cancellation_note", sort: null, html: function (r) { return "<span class='small'>" + esc(r.cancellation_note) + "<br><br>" + esc(r.check_in_out) + "</span>"; } },
+        { id: "book", label: "Official booking link", key: "booking_url", sort: null,
+          html: function (r) {
+            var url = r.booking_url;
+            var a = dFrom.value, b = dTo.value;
+            if (a && b && BOOKING[r.id]) {
+              var n = 0;
+              url = BOOKING[r.id].replace(/%s/g, function () { return ++n === 1 ? a : b; });
+              return '<a href="' + esc(url) + '" target="_blank" rel="noopener">open these dates on the official engine</a><br><span class="small">The date parameters are the pattern the official engine itself served for the logged quote in the rate log.</span>';
+            }
+            return '<a href="' + esc(url) + '" target="_blank" rel="noopener">official booking page</a>' +
+              '<br><span class="small">' + (a && b
+                ? "This property's engine has no date-parameter pattern that an official page read here confirms, so no dates are added to the link."
+                : "Pick arrival and departure dates above to build the dated link where the official engine supports it.") + "</span>";
+          } },
+        { id: "checked", label: "Last checked", key: "last_checked" },
+        { id: "true", label: "True cost / night", key: "true_cost_per_night_usd", num: true, html: function (r) { return r.true_cost_per_night_usd == null ? '<span class="muted">blank (rate unverified)</span>' : money(r.true_cost_per_night_usd); } },
+        { id: "park", label: "Parking / night", key: "parking_usd_per_day", num: true,
+          html: function (r) {
+            if (r.parking_usd_per_day == null && r.parking_valet_usd == null) return notPub;
+            return "<span class='small'>self" + (r.parking_usd_per_day == null ? " not published" : " " + money(r.parking_usd_per_day)) +
+              (r.parking_valet_usd == null ? "" : "<br>valet " + money(r.parking_valet_usd)) + "</span>" +
+              (r.parking_poker_note ? "<br><span class='chip ok'>poker room guests park free</span>" : "") +
+              "<br><span class='small'>" + esc(r.parking_note) + "</span>";
+          } },
+        { id: "extra", label: "Other mandatory charges", key: "incidentals_usd_per_night", num: true,
+          html: function (r) {
+            var bits = [];
+            if (r.incidentals_usd_per_night != null) bits.push("incidental deposit " + money(r.incidentals_usd_per_night) + " / night");
+            if (r.extra_guest_usd_per_night != null) bits.push("each guest beyond two " + money(r.extra_guest_usd_per_night) + " / night");
+            if (r.early_checkout_fee_usd != null) bits.push("early check-out " + money(r.early_checkout_fee_usd) + " plus tax");
+            if (!bits.length) return notPub;
+            return "<span class='small'>" + bits.join("<br>") + "</span>" +
+              (r.incidentals_note ? "<br><span class='small'>" + esc(r.incidentals_note) + "</span>" : "");
+          } },
+        { id: "cancel", label: "Cancellation and deposit", key: "cancellation_note", sort: null,
+          html: function (r) { return "<span class='small'>" + esc(r.cancellation_note || "no official cancellation term read") + "</span>"; } },
+        { id: "walkv", label: "Walk to Venetian poker room", key: "walk_to_venetian_min", num: true,
+          html: function (r) { return walkCell(r.walk_to_venetian_min, r.walk_to_venetian_status, r.walk_to_venetian_within_30); },
+          text: function (r) { return r.walk_to_venetian_min == null ? "not published" : String(r.walk_to_venetian_min); } },
+        { id: "walkw", label: "Walk to Wynn poker room", key: "walk_to_wynn_min", num: true, html: function (r) { return walkCell(r.walk_to_wynn_min, "verified", r.walk_to_wynn_within_30); } },
+        { id: "checked", label: "Last checked", key: "last_checked", html: function (r) {
+            return esc(r.last_checked) + (r.recheck && r.recheck.on && r.recheck.on !== r.last_checked
+              ? "<br><span class='small'>fees re-read " + esc(r.recheck.on) + "</span>" : ""); } },
+        { id: "src", label: "Sources", key: "sources", sort: null, html: function (r) { return "<span class='small'>" + srcLinks(r.sources) + "</span>"; } }
+      ];
+
+      /* Official booking links for the dates you pick. Only the Venetian/Palazzo engine has a
+         date-parameter pattern that was actually read on an official page and is recorded in the
+         rate log, so only it carries the dates; the others link their own booking page with no
+         invented parameters. Nothing is priced here - a rate is only published when the engine
+         printed a checkout total, and every such quote is in the dated rate log below. */
+      var BOOKING = {
+        venetian: "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date=%s&children[]=0&departure_date=%s&view=calendar",
+        palazzo: "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date=%s&children[]=0&departure_date=%s&view=calendar"
+      };
+      var dates = document.createElement("div");
+      dates.className = "toolbar";
+      var dFrom = document.createElement("input");
+      dFrom.type = "date"; dFrom.id = "stay-from";
+      var dTo = document.createElement("input");
+      dTo.type = "date"; dTo.id = "stay-to";
+      var bookNote = document.createElement("span");
+      bookNote.className = "small";
+      [["Arrival", dFrom], ["Departure", dTo]].forEach(function (pair) {
+        var l = document.createElement("label");
+        l.textContent = pair[0];
+        l.style.marginRight = "4px";
+        dates.appendChild(l);
+        dates.appendChild(pair[1]);
+      });
+      dates.appendChild(bookNote);
+      main.appendChild(dates);
+
+      /* filter bar: the ≤30-minute walking rule and a text box across every column */
+      /* Official booking links for the dates you pick. Only the Venetian/Palazzo engine
+         has a date-parameter pattern that was actually read on an official page and is
+         recorded in the source manifest, so only that one carries the dates; the others
+         link their own booking page with no invented parameters. */
+      var BOOKING = {
+        venetian: "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date=%s&children[]=0&departure_date=%s&view=calendar",
+        palazzo: "https://www.venetianlasvegas.com/booking?adults[]=2&arrival_date=%s&children[]=0&departure_date=%s&view=calendar"
+      };
+      var dates = document.createElement("div");
+      dates.className = "toolbar";
+      var dFrom = document.createElement("input");
+      dFrom.type = "date"; dFrom.id = "stay-from";
+      var dTo = document.createElement("input");
+      dTo.type = "date"; dTo.id = "stay-to";
+      var bookNote = document.createElement("span");
+      bookNote.className = "small";
+      [["Arrival", dFrom], ["Departure", dTo]].forEach(function (pair) {
+        var l = document.createElement("label");
+        l.textContent = pair[0];
+        l.style.marginRight = "4px";
+        dates.appendChild(l);
+        dates.appendChild(pair[1]);
+      });
+      dates.appendChild(bookNote);
+      main.appendChild(dates);
+
+      var bar = document.createElement("div");
+      bar.className = "toolbar";
+      var q = document.createElement("input");
+      q.type = "search"; q.id = "hotel-q"; q.placeholder = "Filter hotels: fee, tax, parking, walk, resort…";
+      q.style.minWidth = "280px";
+      var walk30 = document.createElement("input");
+      walk30.type = "checkbox"; walk30.id = "hotel-walk30";
+      var lbl = document.createElement("label");
+      lbl.htmlFor = "hotel-walk30";
+      lbl.appendChild(walk30);
+      lbl.appendChild(document.createTextNode(" ≤30 min walk to the Venetian poker room" +
+        " (a walk inside the same resort is not timed and is kept, with its time left unknown)"));
+      var count = document.createElement("span");
+      count.className = "small"; count.id = "hotel-count";
+      bar.appendChild(q); bar.appendChild(lbl); bar.appendChild(count);
+      main.appendChild(bar);
+      var handle = table(main, rows, cols, {
+        sortKey: "true", sortDir: 1, filterInput: q, countEl: count,
+        predicate: function (r) {
+          if (!walk30.checked) return true;
+          // null = no routed time (the poker room is inside the same resort, so no street
+          // walk is timed). That is an unknown, not a failure, so the row is kept (F92).
+          return r.walk_to_venetian_within_30 !== false;
+        }
+      });
+      walk30.addEventListener("change", handle.redraw);
+      function refreshBooking() {
+        if (dFrom.value && dTo.value) {
+          bookNote.textContent = "Showing official booking links for " + dateFmt(dFrom.value) +
+            " to " + dateFmt(dTo.value) + ". Nothing is priced here: a rate is only published on "
+            + "this site when the engine printed a checkout total, and every such quote is in the "
+            + "dated rate log below with the date it was read.";
+        } else {
+          bookNote.textContent = "Pick arrival and departure dates to open each property's own "
+            + "booking engine on those dates. Rates are never estimated here - the true cost per "
+            + "night is only ever the engine's own checkout total divided by the nights.";
+        }
+        handle.redraw();
+      }
+      dFrom.addEventListener("change", refreshBooking);
+      dTo.addEventListener("change", refreshBooking);
+      refreshBooking();
+
+      var w = document.getElementById("walking");
+      if (w) {
+        w.innerHTML = "<h2>Walking records</h2>" +
+          "<p class='small'>Times are routed on the OpenStreetMap foot network between the geocoded property " +
+          "coordinates and the poker-room coordinate, then rounded up to the whole minute; every row cites the " +
+          "geocoding lookup and the routing query it came from, plus the official statement that fixes where the " +
+          "poker room is. Walks inside one resort are marked internal rather than timed, because no street route " +
+          "is involved, and their time is left unknown rather than being filled in - an interior walk is not a " +
+          "measured 30-minute walk. The 30-minute rule is applied to every routed time: rows over it stay in the " +
+          "table, flagged, so nothing is hidden.</p>";
+        var wcols = [
+          { id: "hotel", label: "Hotel", key: "hotel_name", html: function (r) { return "<strong>" + esc(r.hotel_name || r.hotel) + "</strong>"; } },
+          { id: "venue", label: "Poker room", key: "venue", html: function (r) {
+              return esc(r.venue) + (r.destination ? '<br><span class="small">' + esc(r.destination) + "</span>" : ""); } },
+          { id: "minutes", label: "Minutes", key: "minutes", num: true, html: function (r) { return r.minutes == null ? '<span class="muted">internal</span>' : r.minutes + (r.within_30_min === false ? ' <span class="chip bad">over 30</span>' : ' <span class="chip ok">within 30</span>'); } },
+          { id: "metres", label: "Metres", key: "metres", num: true },
+          { id: "status", label: "Status", key: "status" },
+          { id: "note", label: "Note", key: "note", sort: null, html: function (r) { return "<span class='small'>" + esc(r.note) + "</span>"; } },
+          { id: "route", label: "Route", key: "route_link", sort: null, html: function (r) { return routeLinks(r); } },
+          { id: "src", label: "Sources", key: "sources", sort: null, html: function (r) { return "<span class='small'>" + srcLinks(r.sources) + "</span>"; } }
+        ];
+        table(w, walking, wcols, { sortKey: "minutes", sortDir: 1 });
+      }
+
+      var rl = document.getElementById("rates");
+      if (rl) {
+        rl.innerHTML = "<h2>Dated rate log</h2><p class='small'>Every quote is stored with the date it was taken, so a later " +
+          "rate can be compared against it instead of replacing it.</p>";
+        var rcols = [
+          { id: "arrival", label: "Arrival", key: "arrival", html: function (r) { return dateFmt(r.arrival); } },
+          { id: "departure", label: "Departure", key: "departure", html: function (r) { return dateFmt(r.departure); } },
+          { id: "nights", label: "Nights", key: "nights", num: true },
+          { id: "avg", label: "Published average / night", key: "nightly_average_usd", num: true, html: function (r) { return money(r.nightly_average_usd); } },
+          { id: "checkout", label: "Checkout total", key: "checkout_total_usd", num: true, html: function (r) { return money(r.checkout_total_usd); } },
+          { id: "taxes", label: "Taxes", key: "taxes_total_usd", num: true, html: function (r) { return money(r.taxes_total_usd); } },
+          { id: "true", label: "True cost / night", key: "true_cost_per_night_usd", num: true, html: function (r) { return money(r.true_cost_per_night_usd); } },
+          { id: "room", label: "Room", key: "room", sort: null, html: function (r) { return "<span class='small'>" + esc(r.room) + " · " + esc(r.occupancy) + "<br>" + esc(r.caveat) + "</span>"; } },
+          { id: "src", label: "Source", key: "source", sort: null, html: function (r) { return datedBookingLink(r); } }
+        ];
+        table(rl, rates, rcols, { sortKey: "arrival", sortDir: -1 });
+      }
+    }).catch(showErr);
+  };
+
+  /* ---------- trip cost calculator: entries x buy-in + nights x true hotel cost ---------- */
+  PAGES.calculator = function () {
+    Promise.all([getJSON("data/hotels.json"), getJSON("data/rates.json"),
+                 getJSON("data/tournaments.json")]).then(function (res) {
+      var hotels = res[0].rows, rates = res[1].entries, rows = res[2].rows;
+      var main = document.getElementById("content");
+
+      main.innerHTML =
+        '<div class="card">' +
+        '<div class="form-grid">' +
+        '<div><label for="c-quote">Verified stay quote (dated rate log)</label><select id="c-quote"></select></div>' +
+        '<div><label for="c-entries">Tournament entries</label><input type="number" id="c-entries" min="0" step="1" value="1"></div>' +
+        '<div><label for="c-buyin">Assumed entry fee each (USD)</label><input type="number" id="c-buyin" min="0" step="0.01" value="300"></div>' +
+        '<div><label for="c-parkdays">Parking days at the hotel</label><input type="number" id="c-parkdays" min="0" step="1" value="0"></div>' +
+        '<div><label for="c-extra">Other spend for the trip (USD)</label><input type="number" id="c-extra" min="0" step="0.01" value="0"></div>' +
+        '</div>' +
+        '<div class="calc-out" id="c-out"></div>' +
+        '<p class="small" id="c-note"></p>' +
+        '</div>' +
+        '<div class="card"><h2>What is in the selected window</h2><div id="c-window"></div></div>' +
+        '<div class="card"><h2>Logged quotes for the same dates and occupancy</h2><div id="c-compare"></div></div>';
+
+      var quoteSel = document.getElementById("c-quote");
+      quoteSel.innerHTML = rates.map(function (r, i) {
+        return '<option value="' + i + '">' + esc(r.property) + " · " + esc(r.room) + " · " +
+          esc(dateShort(r.arrival)) + "–" + esc(dateShort(r.departure)) + ", " + r.nights + " nights · " +
+          money(r.checkout_total_usd) + " total</option>";
+      }).join("");
+
+      var els = {
+        quote: quoteSel,
+        entries: document.getElementById("c-entries"),
+        buyin: document.getElementById("c-buyin"),
+        parkdays: document.getElementById("c-parkdays"),
+        extra: document.getElementById("c-extra")
+      };
+      function num(input) { return input.validity.valid && Number.isFinite(input.valueAsNumber) ? input.valueAsNumber : null; }
+      function money2(v) { return "$" + Number(v).toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+
+      function calc() {
+        var q = rates[+els.quote.value];
+        var out = document.getElementById("c-out");
+        var note = document.getElementById("c-note");
+        if (!q) { out.innerHTML = ""; note.textContent = "No dated quote is logged yet."; return; }
+        var hotel = hotels.filter(function (h) { return h.id === q.hotel_id; })[0] || null;
+        var entries = num(els.entries);
+        var buyin = num(els.buyin);
+        var parkdays = num(els.parkdays);
+        var extra = num(els.extra);
+        var parkRate = hotel ? hotel.parking_usd_per_day : null;
+        var parking = parkdays === 0 ? 0 : (parkRate == null || parkdays == null ? null : parkRate * parkdays);
+        var entryTotal = entries === 0 ? 0 : (buyin == null || entries == null ? null : entries * buyin);
+        var hotelTotal = q.checkout_total_usd;
+        var total = [hotelTotal, entryTotal, parking, extra].includes(null) ? null : hotelTotal + entryTotal + parking + extra;
+
+        var box = function (label, value, hint) {
+          return '<div class="box"><div class="n">' + (value == null ? '<span class="muted">n/a</span>' : value) +
+            '</div><div class="l">' + esc(label) + (hint ? "<br>" + esc(hint) : "") + "</div></div>";
+        };
+        out.innerHTML =
+          box("Nights", String(q.nights), esc(q.room)) +
+          box("Hotel total (engine quote)", money2(hotelTotal), "room + resort fee + tax, as the engine totals it") +
+          box("True hotel cost / night", money2(q.true_cost_per_night_usd), "checkout total ÷ nights") +
+          box("Tournament entries", entryTotal == null ? null : money2(entryTotal), (entries == null ? "?" : entries) + " × " + (buyin == null ? "?" : money2(buyin))) +
+          box("Parking", parking == null ? null : money2(parking), parkdays ? parkdays + " day(s) × " + (parkRate == null ? "unverified" : money2(parkRate)) : "none entered") +
+          box("Other spend", extra == null ? null : money2(extra), "as entered") +
+          box("Trip total", total == null ? null : money2(total), "entries × buy-in + nights × true hotel cost + parking + other") +
+          box("Per night, all in", total == null ? null : money2(total / q.nights), "trip total ÷ nights");
+
+        var msgs = [];
+        msgs.push("Rate timestamp: quote read from the official booking engine on " + q.retrieved_on + ".");
+        if (q.cancellation_note) msgs.push("Cancellation: " + q.cancellation_note);
+        if (parkRate == null && parkdays) {
+          msgs.push("The trip total is unavailable because the parking price is unverified.");
+        }
+        if ([entries, buyin, parkdays, extra].includes(null)) msgs.push("Enter nonnegative amounts and whole counts. A buy-in is not needed for zero entries.");
+        msgs.push("The hotel line moves with availability; re-check the booking engine before paying. " +
+                  "Nothing here is a forecast of winnings.");
+        note.textContent = msgs.join(" ");
+
+        /* what the selected window holds, from the verified dataset */
+        var win = document.getElementById("c-window");
+        // Departure-day events may be playable, but the stay does not cover that night.
+        var inWindow = rows.filter(function (r) { return r.date >= q.arrival && r.date < q.departure; });
+        var se = inWindow.filter(function (r) { return r.entry_status === "SE" && r.kind === "entry"; });
+        var comparable = se.filter(function (r) {
+          return r.buy_in_usd > 0 && r.guarantee_usd > 0 && r.rules && r.rules.fee && r.rules.fee.excerpt &&
+            !(r.labels || []).some(function (l) { return /satellite|bounty|flight/i.test(l); });
+        });
+        var richest = comparable.slice().sort(function (a, b) {
+          return b.guarantee_usd / b.buy_in_usd - a.guarantee_usd / a.buy_in_usd;
+        })[0];
+        win.innerHTML =
+          '<p class="small">' + esc(dateFmt(q.arrival)) + " to " + esc(dateFmt(q.departure)) + " (checkout day excluded): " +
+          se.length + " verified single-entry options on " + new Set(se.map(function (r) { return r.date; })).size +
+          " dates. This is an option count, not a playable sequence; transfers, arrival time and overlaps still matter.</p>" +
+          (richest ? '<p class="small">Largest guaranteed pool ÷ total entry fee among comparable single-entry events: ' + esc(richest.name) +
+            " on " + esc(dateFmt(richest.date)) + " (" + mult(richest.guarantee_usd / richest.buy_in_usd) +
+            "). Descriptive ratio only, not a forecast. " + srcLinks(richest.sources) + "</p>" :
+            '<p class="small">No comparable single-entry event with a confirmed fee and cash guarantee in this window. Satellites, bounties and flights are not ranked here.</p>') +
+          '<p class="small"><a href="' + BASE + 'pages/schedule.html">Open the day-by-day schedule</a> for the day plan: one primary per date, what can replace it, and what cannot be paired.</p>';
+
+        /* like-for-like comparison */
+        var cmp = document.getElementById("c-compare");
+        var cols = [
+          { id: "prop", label: "Property", key: "property" },
+          { id: "room", label: "Room", key: "room", sort: null, html: function (r) { return "<span class='small'>" + esc(r.room) + "</span>"; } },
+          { id: "window", label: "Stay", key: "arrival", html: function (r) { return dateShort(r.arrival) + "–" + dateShort(r.departure) + "<br><span class='small'>" + r.nights + " nights, " + esc(r.occupancy) + "</span>"; } },
+          { id: "avg", label: "Nightly average (room + fee)", key: "nightly_average_usd", num: true, html: function (r) { return money2(r.nightly_average_usd) + (r.room_only_average_usd != null ? "<br><span class='small'>room only " + money2(r.room_only_average_usd) + "</span>" : ""); } },
+          { id: "fee", label: "Resort fee / night", key: "resort_fee_per_night_usd", num: true, html: function (r) { return money2(r.resort_fee_per_night_usd); } },
+          { id: "tax", label: "Tax total", key: "taxes_total_usd", num: true, html: function (r) { return money2(r.taxes_total_usd); } },
+          { id: "total", label: "Checkout total", key: "checkout_total_usd", num: true, html: function (r) { return money2(r.checkout_total_usd); } },
+          { id: "true", label: "True cost / night", key: "true_cost_per_night_usd", num: true, html: function (r) { return "<strong>" + money2(r.true_cost_per_night_usd) + "</strong>"; } },
+          { id: "cancel", label: "Cancellation", key: "cancellation_note", sort: null, html: function (r) { return "<span class='small'>" + esc(r.cancellation_note || "not stated in the quote") + "</span>"; } },
+          { id: "stamp", label: "Rate timestamp", key: "retrieved_on", html: function (r) { return "<span class='small'>read " + esc(r.retrieved_on) + "<br>logged " + esc(r.logged_on) + "</span>"; } },
+          { id: "source", label: "Official source", sort: null, html: function (r) { return srcLinks([{ url: r.source, label: "Booking engine" }]) + "<br>" + datedBookingLink(r); } }
+        ];
+        var matching = rates.filter(function (r) {
+          return r.arrival === q.arrival && r.departure === q.departure && r.occupancy === q.occupancy && r.room === q.room && r.offer === q.offer;
+        });
+        cmp.innerHTML = '<p class="small">' + (matching.length < 2 ? "No second matching quote. " : "") +
+          'These are dated observations, not current offers. Only the selected room and offer are shown; reconfirm cancellation terms.</p>';
+        table(cmp, matching, cols, { sortKey: "true", sortDir: 1 });
+      }
+
+      quoteSel.addEventListener("change", calc);
+      ["entries", "buyin", "parkdays", "extra"].forEach(function (k) { els[k].addEventListener("input", calc); });
+      calc();
+    }).catch(showErr);
+  };
+
+  PAGES.roomProfile = function () {
+    var main = document.getElementById("content");
+    getJSON("data/other_rooms.json").then(function(d){
+      var r = d.rooms.find(function(room){return room.id === main.dataset.room;});
+      main.innerHTML = '<p class="lead">'+esc(r.schedule_note)+'</p><p>'+srcLinks(r.sources)+'</p><h2>Published formats</h2>';
+      var events = d.events.filter(function(e){return e.room_id === r.id;});
+      if (events.length) table(main, events, [
+        {id:"format",label:"Event",key:"name"},{id:"days",label:"Days",html:function(e){return esc(e.weekdays.join(", "));}},
+        {id:"start",label:"Start",key:"start"},{id:"buy",label:"Entry fee",html:function(e){return money(e.buy_in_usd);}},
+        {id:"gtd",label:"Guarantee",html:function(e){return money(e.guarantee_usd);}},
+        {id:"rules",label:"Rules",key:"status_note"},{id:"read",label:"Last checked",key:"last_checked"},
+        {id:"source",label:"Sources",html:function(e){return srcLinks(e.sources);}}
+      ]); else main.insertAdjacentHTML("beforeend", "<p>No dated entry or verified recurring format in this room’s dataset.</p>");
+      main.insertAdjacentHTML("beforeend", '<h2>Hotels</h2><p>No comparable checkout and verified walk to this room are on file. <a href="hotels.html">Review the hotel log</a>.</p>');
+    }).catch(showErr);
+  };
+
+  PAGES.venues = function () {
+    Promise.all([getJSON("data/venues.json"), getJSON("data/tournaments.json"), getJSON("data/hotels.json"), getJSON("data/walking.json")]).then(function (res) {
+      var venues = res[0].rows, rows = res[1].rows, hotels = res[2].rows, walking = res[3].rows;
+      var main = document.getElementById("content");
+      main.innerHTML = venues.map(function (v) {
+        var vr = rows.filter(function (r) { return r.venue === v.name; });
+        var se = vr.filter(function (r) { return r.entry_status === "SE"; }).length;
+        var hs = hotels.filter(function (h) { return (v.hotel_ids || []).indexOf(h.id) >= 0; });
+        var wk = walking.filter(function (w) { return w.venue === v.name; });
+        return '<div class="card venue-card">' +
+          "<h3>" + esc(v.name) + "</h3>" +
+          '<p class="small">' + esc(v.note) + "</p>" +
+          "<p><strong>Poker room:</strong> " + (v.poker_room ? esc(v.poker_room) : '<span class="muted">not published on an official source read in this session</span>') + "</p>" +
+          "<p><strong>Address:</strong> " + (v.address ? esc(v.address) : '<span class="muted">unverified</span>') + "</p>" +
+          "<p><strong>Hotels here:</strong> " + (hs.length ? hs.map(function (h) { return esc(h.name); }).join(", ") : '<span class="muted">none listed</span>') + "</p>" +
+          "<p><strong>Tournament rows:</strong> " + vr.length + " (" + se + " single entry, verified)</p>" +
+          "<p><strong>Walking records:</strong> " + wk.length + "</p>" +
+          '<p><a href="' + BASE + 'pages/venue-' + esc(v.id) + '.html">Open ' + esc(v.name) + " venue page</a> " +
+          "· Official links: " + srcLinks((v.official_links || []).map(function (u) { return { label: u, url: u }; })) + "</p>" +
+          "</div>";
+      }).join("");
+    }).catch(showErr);
+  };
+
+  PAGES.venue = function (venueId) {
+    Promise.all([getJSON("data/venues.json"), getJSON("data/tournaments.json"), getJSON("data/hotels.json"), getJSON("data/walking.json")]).then(function (res) {
+      var venues = res[0].rows, rows = res[1].rows, hotels = res[2].rows, walking = res[3].rows;
+      var v = venues.filter(function (x) { return x.id === venueId; })[0];
+      var main = document.getElementById("content");
+      if (!v) { main.innerHTML = '<div class="card callout">Unknown venue.</div>'; return; }
+      var vr = rows.filter(function (r) { return r.venue === v.name; });
+      var hs = hotels.filter(function (h) { return (v.hotel_ids || []).indexOf(h.id) >= 0; });
+      var wk = walking.filter(function (w) { return w.venue === v.name; });
+      main.innerHTML =
+        '<div class="card venue-card"><h3>' + esc(v.name) + "</h3>" +
+        '<p class="small">' + esc(v.note) + "</p>" +
+        "<p><strong>Poker room:</strong> " + (v.poker_room ? esc(v.poker_room) : '<span class="muted">not published</span>') + "</p>" +
+        "<p><strong>Address:</strong> " + (v.address ? esc(v.address) : '<span class="muted">unverified</span>') + "</p>" +
+        "<p>Official links: " + srcLinks((v.official_links || []).map(function (u) { return { label: u, url: u }; })) + "</p>" +
+        "</div>";
+      var hsec = document.getElementById("hotels");
+      if (hsec && hs.length) {
+        hsec.innerHTML = "<h2>Hotels at this venue</h2>";
+        table(hsec, hs, [
+          { id: "name", label: "Hotel", key: "name", html: function (r) { return "<strong>" + esc(r.name) + "</strong>"; } },
+          { id: "fee", label: "Resort fee", key: "resort_fee_usd", num: true, html: function (r) { return money(r.resort_fee_usd) + " <span class='small'>(" + esc(r.resort_fee_status) + ")</span>"; } },
+          { id: "tax", label: "Room tax", key: "clark_county_tax_pct", num: true, html: function (r) { return r.clark_county_tax_pct == null ? '<span class="muted">unverified</span>' : r.clark_county_tax_pct + "%"; } },
+          { id: "walk", label: "Walk to Venetian room", key: "walk_to_venetian_min", num: true, html: function (r) { return walkCell(r.walk_to_venetian_min, r.walk_to_venetian_status, r.walk_to_venetian_within_30); } },
+          { id: "walkw", label: "Walk to Wynn room", key: "walk_to_wynn_min", num: true, html: function (r) { return walkCell(r.walk_to_wynn_min, "verified", r.walk_to_wynn_within_30); } },
+          { id: "src", label: "Sources", key: "sources", sort: null, html: function (r) { return "<span class='small'>" + srcLinks(r.sources) + "</span>"; } }
+        ], { sortKey: "name", sortDir: 1 });
+      }
+      var wsec = document.getElementById("walking");
+      if (wsec && wk.length) {
+        wsec.innerHTML = "<h2>Walking records</h2>";
+        table(wsec, wk, [
+          { id: "hotel", label: "Hotel", key: "hotel_name", html: function (r) { return "<strong>" + esc(r.hotel_name || r.hotel) + "</strong>"; } },
+          { id: "from", label: "From", key: "from", sort: null },
+          { id: "minutes", label: "Minutes", key: "minutes", num: true, html: function (r) { return r.minutes == null ? '<span class="muted">unverified</span>' : r.minutes; } },
+          { id: "note", label: "Note", key: "note", sort: null, html: function (r) { return "<span class='small'>" + esc(r.note) + "</span>"; } },
+          { id: "route", label: "Route", key: "route_link", sort: null, html: function (r) { return routeLinks(r); } }
+        ], { sortKey: "hotel", sortDir: 1 });
+      }
+      var tsec = document.getElementById("events");
+      if (tsec) {
+        var filters = tournamentFilters(document.getElementById("filters"), vr);
+        var tbl = table(tsec, vr, tournamentColumns(true), {
+          sortKey: "date", sortDir: 1, predicate: filters.matches, countEl: document.getElementById("count")
+        });
+        filters.onChange(function () { tbl.redraw(); });
+      }
+    }).catch(showErr);
+  };
+
+  PAGES.search = function () {
+    var results = document.getElementById("results");
+    var input = document.getElementById("q");
+    input.value = new URLSearchParams(location.search).get("q") || "";
+    var summary = document.getElementById("summary");
+    Promise.all([
+      getJSON("data/tournaments.json"), getJSON("data/hotels.json"), getJSON("data/venues.json"),
+      getJSON("data/daily.json"), getJSON("data/walking.json"), getJSON("data/rates.json"),
+      getJSONSafe("data/other_rooms.json")
+    ].concat(DOCS.map(function (d) { return getTextSafe(d[0]); }))).then(function (res) {
+      var rows = res[0].rows, hotels = res[1].rows, venues = res[2].rows, daily = res[3].rows;
+      var walking = res[4].rows, rates = res[5].entries;
+      /* The strip-room survey is a separate file (undated weekday formats), so it is
+         searched as its own block instead of being merged into the dated tournament rows. */
+      var otherRooms = (res[6] && res[6].rooms) || [];
+      var otherEvents = (res[6] && res[6].events) || [];
+      var docs = DOCS.map(function (d, i) { return { file: d[0], title: d[1], text: res[7 + i] || "" }; });
+
+      function block(title, items) {
+        if (!items.length) return "";
+        return "<h3>" + esc(title) + " (" + items.length + ")</h3>" + items.join("");
+      }
+      function run() {
+        var q = input.value.trim().toLowerCase();
+        if (!q) { results.innerHTML = '<div class="card callout">Type to search every tournament, hotel, venue, daily format, walking record, rate log entry and document on this site.</div>'; summary.textContent = ""; return; }
+        var hitT = rows.filter(function (r) { return JSON.stringify(r).toLowerCase().indexOf(q) >= 0; }).slice(0, 60)
+          .map(function (r) {
+            return '<div class="result"><div class="title">' + esc(r.name) + "</div><div class='meta'>" +
+              esc(r.date) + " " + esc(r.start) + " · " + esc(r.venue) + " · " + esc(r.entry_status) +
+              (r.buy_in_usd ? " · " + money(r.buy_in_usd) : "") + " · <a href='" + BASE + "pages/schedule.html'>schedule</a></div></div>";
+          });
+        var hitH = hotels.filter(function (h) { return JSON.stringify(h).toLowerCase().indexOf(q) >= 0; })
+          .map(function (h) {
+            return '<div class="result"><div class="title">' + esc(h.name) + "</div><div class='meta'>" +
+              esc(h.resort_fee_status) + " resort fee · <a href='" + BASE + "pages/hotels.html'>hotels</a></div></div>";
+          });
+        var hitV = venues.filter(function (v) { return JSON.stringify(v).toLowerCase().indexOf(q) >= 0; })
+          .map(function (v) {
+            return '<div class="result"><div class="title">' + esc(v.name) + "</div><div class='meta'>venue · <a href='" +
+              BASE + "pages/venue-" + esc(v.id) + ".html'>venue page</a></div></div>";
+          });
+        var hitD = daily.filter(function (d) { return JSON.stringify(d).toLowerCase().indexOf(q) >= 0; })
+          .map(function (d) {
+            return '<div class="result"><div class="title">' + esc(d.name) + "</div><div class='meta'>" + esc(d.days) +
+              " · <a href='" + BASE + "pages/daily.html'>daily feed</a></div></div>";
+          });
+        var hitW = walking.filter(function (w) { return JSON.stringify(w).toLowerCase().indexOf(q) >= 0; })
+          .map(function (w) {
+            return '<div class="result"><div class="title">' + esc(w.hotel_name || w.hotel) + " → " + esc(w.venue) + " poker room</div><div class='meta'>walking · " + esc(w.destination || "") + " · <a href='" + BASE + "pages/hotels.html'>hotels</a></div></div>";
+          });
+        var hitR = rates.filter(function (r) { return JSON.stringify(r).toLowerCase().indexOf(q) >= 0; })
+          .map(function (r) {
+            return '<div class="result"><div class="title">' + esc(r.room) + "</div><div class='meta'>rate log " +
+              esc(r.arrival) + " → " + esc(r.departure) + " · " + money(r.checkout_total_usd) + "</div></div>";
+          });
+        var hitO = otherRooms.filter(function (o) { return JSON.stringify(o).toLowerCase().indexOf(q) >= 0; })
+          .map(function (o) {
+            return '<div class="result"><div class="title">' + esc(o.name) + "</div><div class='meta'>" +
+              esc(o.strip_status) + " · poker room " + esc(o.poker_room_status) + " · schedule " +
+              esc(o.schedule_status) + " · <a href='" + BASE + "pages/other-rooms.html'>other rooms</a></div></div>";
+          });
+        var roomName = {};
+        otherRooms.forEach(function (r) { roomName[r.id] = r.name; });
+        var hitOE = otherEvents.filter(function (o) { return JSON.stringify(o).toLowerCase().indexOf(q) >= 0; })
+          .map(function (o) {
+            var weekdays = (o.weekdays || []).join(", ");
+            return '<div class="result"><div class="title">' + esc(o.name) + "</div><div class='meta'>" +
+              esc(roomName[o.room_id] || o.room_id) + (weekdays ? " · " + esc(weekdays) : "") +
+              " · " + esc(o.entry_status) +
+              " · <a href='" + BASE + "pages/other-rooms.html'>other rooms</a></div></div>";
+          });
+        var hitDocs = docs.filter(function (d) { return d.text.toLowerCase().indexOf(q) >= 0; })
+          .map(function (d) {
+            var idx = d.text.toLowerCase().indexOf(q);
+            var start = Math.max(0, idx - 90);
+            var snippet = d.text.slice(start, idx + 140).replace(/\s+/g, " ");
+            return '<div class="result"><div class="title">' + esc(d.title) + "</div><div class='meta'>" +
+              esc(snippet) + "…</div></div>";
+          });
+        results.innerHTML = block("Tournaments", hitT) + block("Hotels", hitH) + block("Venues", hitV) +
+          block("Daily formats", hitD) + block("Walking records", hitW) + block("Rate log", hitR) +
+          block("Other poker rooms", hitO) + block("Other-room events", hitOE) +
+          block("Documents", hitDocs) ||
+          '<div class="card callout">Nothing matched " ' + esc(q) + ' ".</div>';
+        summary.textContent = "Search covers " + rows.length + " tournament rows, " + hotels.length + " hotels, " +
+          venues.length + " venues, " + daily.length + " daily formats, " + walking.length + " walking records, " +
+          rates.length + " rate log entries, " + otherRooms.length + " surveyed other poker rooms, " +
+          otherEvents.length + " other-room events and " + docs.length + " documents.";
+      }
+      input.addEventListener("input", run);
+      run();
+    }).catch(showErr);
+  };
+
+  PAGES.monitoring = function () {
+    Promise.all([
+      getJSONSafe("data/monitoring.json"), getJSONSafe("data/changes.json"), getJSON("data/tournaments.json"),
+      getJSONSafe("data/change_log.json")
+    ]).then(function (res) {
+      var mon = res[0], ch = res[1], rows = res[2].rows, prov = res[3];
+      var main = document.getElementById("content");
+      var flagged = rows.filter(function (r) { return (r.flags || []).length; });
+      var html = "";
+      if (mon) {
+        html += "<div class='grid'>" +
+          kpi(mon.sources_ok + " / " + mon.sources_total, "official sources reachable") +
+          kpi(mon.sources_unreachable, "unreachable on the last check") +
+          kpi(mon.sources_http_error, "HTTP errors on the last check") +
+          kpi(mon.rows_changed, "rows changed since the last snapshot") +
+          kpi(mon.rows_added + " / " + mon.rows_removed, "rows added / removed") +
+          kpi(flagged.length, "rows carrying a source flag") +
+          "</div>";
+        html += "<p class='small'>Last check: " + esc(mon.checked_at) + ". " + esc(mon.note) + "</p>";
+        if (mon.network_unavailable) {
+          html += "<div class='card callout'><strong>This result is a network blackout, not a source outage.</strong> " +
+            "The machine that produced the row-level check below reached none of the official hosts at all. " +
+            "Read the scheduled weekly provenance check underneath instead: it runs from GitHub Actions, " +
+            "where the operator domains answer, and it compares the money, date, time and entry-rule text " +
+            "printed on each page rather than the raw bytes.</div>";
+        }
+        if (prov && prov.sources) {
+          var fetched = prov.sources.filter(function (s) { return s.http_status && s.http_status >= 200 && s.http_status < 400; });
+          var inactive = prov.sources.filter(function (s) { return s.error && /inactive/i.test(String(s.error)); });
+          var errored = prov.sources.filter(function (s) { return s.error && !/inactive/i.test(String(s.error)); });
+          var factsMoved = prov.sources.filter(function (s) { return s.facts_changed; });
+          html += "<h2>Scheduled provenance check</h2>" +
+            "<p class='small'>Generated " + esc(prov.generated_utc) + " by the <em>Check official source facts</em> " +
+            "workflow, which fetches every official document from GitHub Actions. A raw page change is common " +
+            "because operator pages rotate promotions and cookie text; a <em>published-value</em> change is the " +
+            "event that matters.</p><div class='grid'>" +
+            kpi(fetched.length + " / " + prov.sources.length, "official documents fetched") +
+            kpi(factsMoved.length, "documents whose printed values changed") +
+            kpi(inactive.length, "documents marked inactive") +
+            kpi(errored.length, "documents that timed out or errored") +
+            "</div>";
+          var problems = prov.sources.filter(function (s) { return s.error || s.facts_changed; });
+          if (problems.length) {
+            html += "<div class='card'><table class='data'><thead><tr><th>Official document</th>" +
+              "<th>HTTP</th><th>Printed values changed</th><th>Note</th></tr></thead><tbody>";
+            problems.forEach(function (s) {
+              html += "<tr><td><a href='" + esc(s.url) + "' target='_blank' rel='noopener'>" + esc(s.label || s.url) + "</a></td>" +
+                "<td>" + (s.http_status == null ? "—" : esc(s.http_status)) + "</td>" +
+                "<td>" + (s.facts_changed ? "yes" : "no") + "</td><td class='small'>" + esc(s.error || "") + "</td></tr>";
+            });
+            html += "</tbody></table></div>";
+          } else {
+            html += "<div class='card callout'>No printed value moved on the last provenance check and no document errored.</div>";
+          }
+        }
+      } else {
+        html += "<div class='card callout'>No monitoring result is stored yet. The monitoring job writes data/monitoring.json after it checks every official source.</div>";
+      }
+      if (ch) {
+        var changed = ch.changed || [], added = ch.added || [], removed = ch.removed || [];
+        html += "<h2>Changed rows</h2>";
+        if (!changed.length && !added.length && !removed.length) {
+          html += "<div class='card callout'>No row changed since the snapshot in data/row_snapshot.json (" + esc(ch.checked_at) + ").</div>";
+        } else {
+          var list = added.map(function (r) { return ["added", r]; })
+            .concat(removed.map(function (r) { return ["removed", r]; }))
+            .concat(changed.map(function (r) { return ["changed", r]; }));
+          html += list.map(function (x) {
+            var kind = x[0], r = x[1];
+            var detail = r.diff ? Object.keys(r.diff).map(function (k) {
+              return esc(k) + ": " + esc(JSON.stringify(r.diff[k][0])) + " → " + esc(JSON.stringify(r.diff[k][1]));
+            }).join("<br>") : "";
+            return '<div class="result"><span class="chip ' + (kind === "removed" ? "bad" : (kind === "added" ? "ok" : "warn")) + '">' +
+              kind + '</span> <div class="title">' + esc(r.name) + "</div><div class='meta'>" + esc(r.id) + " · " + esc(r.date) +
+              "</div>" + (detail ? "<div class='meta'>" + detail + "</div>" : "") + "</div>";
+          }).join("");
+        }
+      }
+      main.innerHTML = html;
+      var tsec = document.getElementById("flagged");
+      if (tsec) {
+        tsec.innerHTML =
+          "<p class='small'>A flag records a printed irregularity in an official source - a typo, a conflict between two " +
+          "official pages, or a source that cannot be reconciled. Every flag keeps its own source text.</p>";
+        table(tsec, flagged, [
+          { id: "date", label: "Date", key: "date", html: function (r) { return dateFmt(r.date); } },
+          { id: "name", label: "Event", key: "name", html: function (r) { return "<strong>" + esc(r.name) + "</strong><br><span class='small'>" + esc(r.series) + "</span>"; } },
+          { id: "flag", label: "Flag", key: "flags", sort: null, html: function (r) { return flagsHtml(r); } },
+          { id: "src", label: "Sources", key: "sources", sort: null, html: function (r) { return "<span class='small'>" + srcLinks(r.sources) + "</span>"; } }
+        ], { sortKey: "date", sortDir: 1 });
+      }
+      var ssec = document.getElementById("sources");
+      if (ssec && mon) {
+        var urls = Object.keys(mon.sources).map(function (u) { return { url: u, s: mon.sources[u] }; });
+        ssec.innerHTML = "<h2>Source status</h2>";
+        table(ssec, urls, [
+          { id: "status", label: "Status", key: "s", sort: null, html: function (r) {
+              var cls = r.s.status === "ok" ? "ok" : (r.s.status === "http-error" ? "bad" : "warn");
+              return '<span class="status-dot ' + cls + '"></span>' + esc(r.s.status) +
+                (r.s.http_status ? " (" + r.s.http_status + ")" : "") + (r.s.error ? "<br><span class='small'>" + esc(r.s.error) + "</span>" : "");
+            } },
+          { id: "url", label: "Official URL", key: "url", sort: null, html: function (r) { return '<a href="' + esc(r.url) + '" target="_blank" rel="noopener">' + esc(r.url) + "</a>"; } }
+        ], { sortKey: "status", sortDir: 1 });
+      }
+    }).catch(showErr);
+  };
+
+  function markdownPage(file) {
+    return function () {
+      getText(file).then(function (t) {
+        // The page template already prints the page <h1>. Drop a leading "# Title" line from
+        // the document so a markdown-backed page does not show its title twice. The looser
+        // pattern matters: a document whose heading has no space after the "#" was still
+        // rendering two stacked titles, and the smoke test now fails on more than one <h1>.
+        t = t.replace(/^\s*#[^\r\n]*\r?\n+/, "");
+        document.getElementById("content").innerHTML = '<div class="md">' + renderMarkdown(t) + "</div>";
+      }).catch(showErr);
+    };
+  }
+  /* Strip-wide survey: rooms and formats that the venue pages do not cover (data/strip_rooms.json). */
+  PAGES.strips = function () {
+    var main = document.getElementById("content");
+    getJSON("data/strip_rooms.json").then(function (d) {
+      var roomById = {};
+      d.rooms.forEach(function (r) { roomById[r.id] = r; });
+      function blank(v) { return v ? esc(v) : '<span class="muted">blank</span>'; }
+      function roomName(id) { return roomById[id] ? esc(roomById[id].name) : esc(id); }
+      main.innerHTML =
+        '<p class="lead">Official poker-room facts for the Strip rooms that the venue pages do not cover, read on ' +
+        esc(d.verified_on) + ". Every value is quoted from an operator page, PDF or article linked in its row. " +
+        "A closure that is only reported in the press is listed separately and is never shown as confirmed.</p>" +
+        "<h2>Rooms</h2><div id=\"strip-rooms\"></div>" +
+        "<h2>Tournament formats</h2><p class=\"small\">Recurring formats have no calendar date on the official sources, so none is turned into a dated row. " +
+        "A format is kept out of the single-entry ranking when it sells extra chips for extra money (separate section).</p><div id=\"strip-formats\"></div>" +
+        "<h2>Reported changes (not confirmed on an official page)</h2><div id=\"strip-reported\"></div>" +
+        "<h2>Coverage</h2><div class=\"card\"><p class=\"small\">" + esc(d.strip_coverage.basis) + "</p>" +
+        "<p class=\"small\"><strong>Not surveyed in this session:</strong> " + esc(d.strip_coverage.not_surveyed.join(", ")) + ".</p>" +
+        "<p class=\"small\">Source: " + srcLinks([d.strip_coverage.source]) + "</p></div>";
+
+      table(document.getElementById("strip-rooms"), d.rooms, [
+        { id: "name", label: "Room", key: "name", html: function (r) { return "<strong>" + esc(r.name) + "</strong>"; } },
+        { id: "status", label: "Status", key: "status", sort: null, html: function (r) {
+            var cls = String(r.status).indexOf("reported") === 0 ? "bad" : "ok";
+            return '<span class="chip ' + cls + '">' + esc(r.status) + "</span>"; } },
+        { id: "hours", label: "Hours", key: "hours", sort: null, html: function (r) { return blank(r.hours); } },
+        { id: "contact", label: "Contact", key: "contact", sort: null, html: function (r) { return blank(r.contact); } },
+        { id: "summary", label: "Tournaments (as published)", key: "tournament_summary", sort: null, html: function (r) { return "<span class='small'>" + esc(r.tournament_summary) + "</span>"; } },
+        { id: "src", label: "Official sources", key: "sources", sort: null, html: function (r) { return srcLinks(r.sources); } }
+      ], { sortKey: "name", sortDir: 1 });
+
+      table(document.getElementById("strip-formats"), d.formats, [
+        { id: "name", label: "Format", key: "name", html: function (r) { return "<strong>" + esc(r.name) + "</strong><br><span class='small'>" + esc(r.days) + "</span>"; } },
+        { id: "venue", label: "Room", key: "venue", html: function (r) { return roomName(r.venue); } },
+        { id: "start", label: "Start times", key: "start", html: function (r) { return r.times.map(timeFmt).join(", "); } },
+        { id: "buy", label: "Buy-in", key: "buy_in_usd", num: true, html: function (r) { return money(r.buy_in_usd); } },
+        { id: "gtd", label: "Guarantee", key: "guarantee_usd", num: true, html: function (r) { return money(r.guarantee_usd); } },
+        { id: "chips", label: "Starting chips", key: "starting_chips", num: true, html: function (r) {
+            return r.starting_chips ? Number(r.starting_chips).toLocaleString("en-US") + "<br><span class='small'>" + esc(r.chips_note) + "</span>" : blank(r.chips_note); } },
+        { id: "fee", label: "Fee split", key: "fee_split", sort: null, html: function (r) { return "<span class='small'>" + blank(r.fee_split) + "</span>"; } },
+        { id: "late", label: "Late registration", key: "late_registration", sort: null, html: function (r) { return "<span class='small'>" + blank(r.late_registration) + "</span>"; } },
+        { id: "status", label: "Single-entry status", key: "status", sort: null, html: function (r) {
+            return statusChip(r.status) + "<br><span class='small'>" + esc(r.single_entry) + "</span>" +
+              (r.separate_reason ? "<br><span class='small'><strong>Separate section:</strong> " + esc(r.separate_reason) + "</span>" : ""); } },
+        { id: "excerpt", label: "Source excerpt", key: "excerpt", sort: null, html: function (r) { return "<span class='small'>" + esc(r.excerpt) + "</span>"; } },
+        { id: "src", label: "Official sources", key: "sources", sort: null, html: function (r) { return srcLinks(r.sources) + "<br><span class='small'>Read " + esc(r.retrieved_on) + "</span>"; } }
+      ], { sortKey: "start", sortDir: 1 });
+
+      table(document.getElementById("strip-reported"), d.reported_changes, [
+        { id: "room", label: "Room", key: "venue", html: function (r) { return roomName(r.venue); } },
+        { id: "change", label: "Reported change", key: "change", sort: null, html: function (r) { return esc(r.change); } },
+        { id: "by", label: "Reported by", key: "reported_by", sort: null, html: function (r) { return "<span class='small'>" + esc(r.reported_by) + "</span>"; } },
+        { id: "conf", label: "Official confirmation", key: "official_confirmed", sort: null, html: function (r) { return '<span class="chip warn">Not confirmed on an official page</span>'; } },
+        { id: "flag", label: "Flag", key: "flag", sort: null, html: function (r) { return '<a href="' + BASE + 'pages/flagged.html">' + esc(r.flag) + '</a>'; } },
+        { id: "link", label: "Report", key: "url", sort: null, html: function (r) { return '<a href="' + esc(r.url) + '" target="_blank" rel="noopener">Read the report</a>'; } }
+      ], { sortKey: "room", sortDir: 1 });
+    }).catch(showErr);
+  };
+
+  // pages/other-rooms.html is generated statically by scripts/build_other_rooms.py, so the
+  // tables are already in the HTML and there is nothing to render at run time. The renderer
+  // exists because the validator requires one renderer per data-page, and it uses the
+  // dataset to stamp the page with the counts and the verification date, and to say so on
+  // the page if the dataset cannot be read (the tables stay: they were built from that file).
+  PAGES.otherRooms = function () {
+    getJSON("data/other_rooms.json").then(function (data) {
+      var main = document.getElementById("content");
+      if (!main || !data || !data.counts) return;
+      var stamp = document.createElement("p");
+      stamp.className = "small";
+      stamp.textContent = "Dataset: " + data.counts.events + " recurring events across " +
+        data.counts.rooms_surveyed + " rooms surveyed, verified " + data.verified_on + ".";
+      main.parentNode.insertBefore(stamp, main.nextSibling);
+    }).catch(function () {
+      var main = document.getElementById("content");
+      if (!main) return;
+      var note = document.createElement("p");
+      note.className = "small";
+      note.textContent = "data/other_rooms.json could not be read; the tables below are the " +
+        "copy generated with the site.";
+      main.parentNode.insertBefore(note, main.nextSibling);
+    });
+  };
+
+  PAGES.summary = markdownPage("EXECUTIVE_SUMMARY.md");
+  PAGES.questions = markdownPage("QUESTIONS.md");
+  PAGES.suggestions = markdownPage("SUGGESTIONS.md");
+  PAGES.flagged = markdownPage("FLAGGED.md");
+  PAGES.review = markdownPage("REVIEW.md");
+
+  function showErr(e) {
+    var main = document.getElementById("content");
+    if (main) main.innerHTML = '<div class="card callout">Could not load this page: ' + esc(e.message) + "</div>";
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    renderNav();
+    var page = document.body.getAttribute("data-page");
+    if (!page) return;
+    if (page.indexOf("venue:") === 0) PAGES.venue(page.slice("venue:".length));
+    else if (PAGES[page]) PAGES[page]();
+  });
+})();
+
+</script>
+</body>
+</html>

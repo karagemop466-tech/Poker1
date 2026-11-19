@@ -52,7 +52,8 @@ Live site: https://karagemop466-tech.github.io/Poker1/
   hotel-to-poker-room rows records the OpenStreetMap foot-network time between geocoded coordinates,
   links the geocoding lookup and the routing query, quotes the official statement that fixes where the
   poker room is, and marks walks inside one resort as `internal` instead of timing them. The 30-minute
-  rule is applied and the three hotels that fail it stay listed and flagged.
+  rule is applied to every routed time and the four pairs that fail it stay listed and flagged; an
+  untimed interior walk keeps its verdict **blank** rather than being counted as a pass.
 - Every table row links to an official source, and every rule field keeps the clause text it came from.
 
 ## Rebuild and check

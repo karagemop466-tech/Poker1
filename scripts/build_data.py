@@ -2591,7 +2591,11 @@ for hotel_id, points in OSM_LOOKUP.items():
             "metres": metres if not internal else 0,
             "minutes": minutes,
             "status": status,
-            "within_30_min": (minutes is None) or (minutes <= 30),
+            # F92: an untimed internal walk is an unknown, not a pass. The 30-minute rule can
+            # only be applied to a routed time; the row's note says the room is in the same
+            # building, but no interior walking time is published or timed, so the verdict
+            # stays blank rather than being filled in.
+            "within_30_min": None if minutes is None else (minutes <= 30),
             "note": note,
             "official_fact": OFFICIAL_INTERIOR.get((hotel_id, venue)),
             "route_link": OSM_ROUTE % ("%s,%s" % (OSM_LOOKUP[hotel_id]["lon"], OSM_LOOKUP[hotel_id]["lat"]),
@@ -2768,10 +2772,13 @@ def main():
         w = walk_by_key.get((h["id"], VEN))
         h["walk_to_venetian_min"] = w["minutes"] if w else None
         h["walk_to_venetian_status"] = w["status"] if w else "unverified"
-        h["walk_to_venetian_within_30"] = bool(w and w.get("within_30_min"))
+        # Tri-state: true (routed and inside the limit), false (routed and over it),
+        # null (no routed time - the room is inside the same resort, so no street walk
+        # is timed and the rule cannot be applied to it).
+        h["walk_to_venetian_within_30"] = w.get("within_30_min") if w else None
         ww = walk_by_key.get((h["id"], WYN)) or {}
         h["walk_to_wynn_min"] = ww.get("minutes")
-        h["walk_to_wynn_within_30"] = bool(ww.get("within_30_min"))
+        h["walk_to_wynn_within_30"] = ww.get("within_30_min")
         hotels.append(h)
     with open(os.path.join(DATA, "hotels.json"), "w") as f:
         json.dump({"verified_on": VERIFIED_ON, "rows": hotels,

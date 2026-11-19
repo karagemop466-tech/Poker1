@@ -1,3 +1,27 @@
+# Session cd330ba8 — independent evidence audit and integration claim
+
+**Claimed 2026-11-19 05:30 UTC.** Branch `arena/cd330ba8-poker1` is fixed by Arena; no
+other branch will be created, renamed, checked out, or pushed. This file already exists on
+`main` at base `a1361aa`, before this session's work. The three open PRs #79, #81, #82 and
+remaining old “in progress” lines have had no commits since 2026-11-17 (>60 minutes); later
+completion records in this board supersede the old lines. This claim does not take over or
+merge those other sessions' PRs. If another active claim is discovered, request a handoff here.
+
+| Task | Status | Owner | File scope |
+|---|---|---|---|
+| Audit official evidence and correct unsupported single-entry confirmations and dependent trip recommendations; require affirmative evidence before marking confirmed. Preserve verified event facts and publish the limitations. | **In progress** | `cd330ba8` | `scripts/build_data.py`, `scripts/build_site.py`, `scripts/check_links.py`, `scripts/verify_rows.py`, `scripts/check_schedule.py`, new focused tests under `scripts/`, `assets/app.js`, generated `data/*.json`, generated `index.html` and `pages/*.html`, `README.md`, `EXECUTIVE_SUMMARY.md`, `FLAGGED.md`, `QUESTIONS.md`, `SUGGESTIONS.md`, `REVIEW.md`, new `research/verification-2026-11-19-cd330ba8.md`, `COORDINATION.md` |
+| Correct the source-sheet extractor's omission-as-confirmation classification and the independent verifier; ensure the morning monitor is accurately timed and does not hide errors. | **In progress** | `cd330ba8` | `scripts/extract_rules.py`, `scripts/verify_rows.py`, `scripts/monitor_sources.py` if needed, generated `data/structure_rules.json`, `.github/workflows/monitor.yml`, `.github/workflows/source-facts.yml`, focused tests under `scripts/`, `COORDINATION.md` |
+| Correct the other-rooms page’s stale single-entry and unlike-date claims, and include the newly checked Westgate official source without inventing a schedule. | **In progress** | `cd330ba8` | `scripts/build_other_rooms.py`, `data/other_rooms.json`, `pages/other-rooms.html`, relevant tests and coordination |
+| Final integration: test the generator, validation, page rendering and links, document source evidence and irregularities, open/merge a PR, and confirm Pages deployment. | **In progress** | `cd330ba8` | Same scope; `.github/workflows/pages.yml` only if a regression gate is needed |
+
+**Parallel-session handoff requested at 2026-11-19 05:42 UTC.** The first fetch after the above claim discovered recent merged work and active [PR #94](https://github.com/karagemop466-tech/Poker1/pull/94) and [PR #88](https://github.com/karagemop466-tech/Poker1/pull/88) covering overlapping generator, validator, renderer and documentation paths. Requested a handoff on both PRs. Changes already made locally are retained in the Git autostash, not imposed over the newer work. Overlapping implementation is paused pending handoff; proceeding with disjoint evidence research, a new independent evidence-gate test module, and the separately claimed monitor workflows. The weekly source-facts retry loop also needs to fail visibly when every rebase/push attempt fails. We will preserve their corrections and integration records. The branch was rebased onto `main` after discovering the overlap.
+
+Initial observation (to verify and correct): [Venetian structure sheet #16](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_16.pdf)
+contains no express one-entry limit, no-rebuy rule, or no-add-on rule; omission is not the
+written confirmation required by the brief. A document being read is not proof of a prohibition.
+
+---
+
 # Session ab7e4d46 — branch `arena/ab7e4d46-poker1` (base `a1361aa` = `main` at PR #85)
 
 Session `ab7e4d46` works on branch `arena/ab7e4d46-poker1` (fixed for this session), based on `main` at
