@@ -230,6 +230,47 @@ Carried from PR #79. F75 and F76 of that session are renumbered J75 and J76 beca
 | F84 | **The archived county licensing snapshot is itself lossy, and one earlier session’s “correction” was an artifact of that archive.** `data/snapshots/cc_tle_guide.txt` (the monitor’s line render of the Clark County TLE guide, fetched 2026-11-17) prints the Venetian/Palazzo licence as `1003089.RES-001`, truncates its DBA to “… Palazzo Resort Hotel Casin” and garbles the Caesars Palace address to “35/0 Las Vegas Blvd S”. Re-reading the live PDF on 2026-11-19 (table render) shows the document actually prints `1000389.RES-001 \| Venetian Resort Hotel Casino / Palazzo Resort Hotel Casino \| 3325 Las Vegas Blvd S` and `1136233.RES-001 \| Caesars Palace \| 3570 Las Vegas Blvd S`. PR #98 proposed “correcting” `main` from `1000389` to `1003089` on the strength of the corrupted archive; that change is the snapshot defect, not a fix, and was not ported. | [Clark County TLE guide PDF](https://www.clarkcountynv.gov/adobe/assets/urn:aaid:aem:689ef54f-ec0d-4bb6-b8ea-05a82887561f/original/as/genl-info-guide-for-tles-july-2021.pdf), licensed-establishment table (the T–V range of the alphabetical listing), re-read 2026-11-19; compared with `data/snapshots/cc_tle_guide.txt` line 1088 | No published value changes: every licence number, address and rate the site cites (`1000389.RES-001` Venetian/Palazzo, `2000013.RES-001` Wynn/Encore, `1003760.RES-001` Bellagio, `2000035.RES-001` Aria, `1136233.RES-001` and 3570 for Caesars) matches the live PDF, and the Venetian terms independently print 13.38%. Same lesson as F83: the line render is evidence about the extractor, not the document — before any row is corrected from a snapshot, the snapshot’s own claims get re-read at source. P14 (table-structure capture) covers this file too. |
 
 
+## K. Found on 2026-11-19 (session d8a1f37f: the entry-label evidence audit)
+
+These were found by `scripts/audit_entry_labels.py`, which re-derives every quoted span in the dataset
+from the archived official document its row cites. Findings that changed a published value are recorded
+in [K1–K3](#k1k3--fixed-in-this-session); the monitor defects in K4 and K5 remain **open** and are
+published here, not fixed silently.
+
+### K1–K3 · Fixed in this session
+
+| # | What was wrong | The document's own words | Resolution |
+|---|---|---|---|
+| K1 | Six rows (r232, r234, r245, r256, r262, r279) said *"No re-entry, rebuy, add-on or multi-flight clause appears anywhere on this structure sheet"* while citing a sheet that prints one. | [Sheet 01, clause 6](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_dec_2026-structure_2.pdf): *"The $20 discount can be applied to the initial entry or any **subsequent re-entry**."* | Reclassified `CAND` → `RE`; the excerpt now quotes the sentence. Candidate count 80 → 74. |
+| K2 | Three fee quotes could not be found in their own PDF, and sheet #28's fee was cited as clause 06 when it is clause 05. | [#28](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_28.pdf): *"... Buy-In for house fees (Rake + Staff). **Prize pool consists of** $510 of every $600 Buy In."* [#21](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_21.pdf): *"$1,975 of every $2,200 Buy In"* (comma-printed). | The fee excerpt is now lifted from the sheet's own sentence, with the sheet's own clause number. |
+| K3 | Four rows carried a "source changed - re-check" mark derived from an empty facts hash: the fetcher had extracted no money, date, time or entry-rule word, so a non-empty baseline read as a change. | `data/monitoring.json`: `facts_sha256 = e3b0c442…b855` (the SHA-256 of the empty string) for those sources, with `sources_facts_changed = 0`. | Published here as a monitor defect (K4) instead of a row change. |
+
+### K4 · Open · A page that yields no facts can never be flagged, and can be falsely flagged
+
+31 monitored URLs returned a facts hash equal to the SHA-256 of the empty string on the 2026-11-19 check,
+including the Wynn Signature Series structures PDF (the document that gates 38 rows), the Caesars daily
+flyer, the Caesars Palace casino pages and the Venetian resort map. Two consequences:
+
+- **Never flagged:** the placeholder document that gates I4 yields zero facts, so a monitor that compares
+  facts alone will never notice Wynn publishing the real sheets. Only a raw-body or size change reveals it.
+- **Falsely flagged:** where the *baseline* recorded a non-empty hash and the re-check extracts nothing,
+  the empty hash differs and the row is marked as changed even though no published value was read.
+
+**How to review:** open `data/monitoring.json`, filter `facts_sha256` to
+`e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855`, and compare each URL with
+`data/source_baseline.json`. Any URL in both lists has the defect.
+
+### K5 · Open · Distinct official URLs returning one identical body
+
+| URLs sharing one body | Body | What it means |
+|---|---|---|
+| 6 Caesars URLs ([corporate disclaimer](https://www.caesars.com/corporate/disclaimer), [Horseshoe casino](https://www.caesars.com/horseshoe-las-vegas/casino), [Paris casino](https://www.caesars.com/paris-las-vegas/casino), [Planet Hollywood](https://www.caesars.com/planet-hollywood), [Planet Hollywood casino](https://www.caesars.com/planet-hollywood/casino), [poker tournaments article](https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip)) | 5,871 bytes, `0f680e9c…` | At most one of these is the page it names; the rest are a consent wall or shared shell. Any row value that claims to come from one of them needs a human re-read. |
+| [Caesars Palace casino](https://www.caesars.com/caesars-palace/casino) and [casino/poker](https://www.caesars.com/caesars-palace/casino/poker) | 99,256 bytes, `c62c6be6…` | Same issue, different shell. |
+| Two Wynn Signature Series structures URLs (`v1753296112` and `v1762299460`) | 169,399 bytes, `ad6f3a56…` | Both serve the same placeholder - consistent with I4, not a defect in itself, but it confirms the placeholder is the only content. |
+
+**A published value is never changed on the strength of a page in this table.** Every value must be
+re-read by a human from the official URL before it is edited.
+
 ## Booking hold · November 19, 2026
 
 The single-entry filter includes rows classified from sheet silence. It does not establish that extra purchases are prohibited. In the [event 12 sheet](https://www.venetianlasvegas.com/content/dam/vlvweb/casino/poker/deepstack/2026/structures/dse_nov_2026-structure_5.pdf), clauses 1–10 state the fee and payout but no maximum entries, rebuy ban or add-on ban. Keep this candidate out of a strict booking decision until written terms address all three. The [official schedule](https://www.venetianlasvegas.com/resort/casino/poker/deepstack-extravaganza-poker-tournament/dse-nov-2026.html) establishes when the event starts, not when it will finish.
