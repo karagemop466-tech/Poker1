@@ -80,11 +80,23 @@ def sha(value):
 
 
 def fingerprint(row):
-    """The published values of a row, in the shape the snapshot file stores."""
+    """The published values of a row, in the shape the snapshot file stores.
+
+    Every read is a ``.get``: a row that a future build leaves incomplete must be
+    reported as a data problem by the verifiers, not crash the scheduled monitor
+    (the 2026-11-19T05:58Z run died with one source that misbehaved; this loop
+    is the other place a single row can take the whole check down). For a row that
+    carries every field the output is byte-identical to the previous version, so
+    data/row_snapshot.json comparisons do not move.
+    """
+    rules = row.get("rules") or {}
+    fee = rules.get("fee") if isinstance(rules, dict) else None
     return {
-        "date": row["date"], "start": row["start"], "name": row["name"], "venue": row["venue"],
-        "series": row["series"], "buy_in_usd": row["buy_in_usd"], "guarantee_usd": row["guarantee_usd"],
-        "entry_status": row["entry_status"], "buy_in": row["rules"]["fee"]["value"],
+        "date": row.get("date"), "start": row.get("start"), "name": row.get("name"),
+        "venue": row.get("venue"), "series": row.get("series"), "buy_in_usd": row.get("buy_in_usd"),
+        "guarantee_usd": row.get("guarantee_usd"),
+        "entry_status": row.get("entry_status"),
+        "buy_in": (fee or {}).get("value") if isinstance(fee, dict) else None,
         "flags": len(row.get("flags") or []),
     }
 
@@ -134,7 +146,7 @@ def collect_dataset():
     tournaments = load("tournaments.json") or {"rows": []}
     for row in tournaments["rows"]:
         for url in urls_of(row):
-            add(url, "tournament", row["id"], row["name"], {"date": row["date"]})
+            add(url, "tournament", row.get("id"), row.get("name"), {"date": row.get("date")})
     hotels = load("hotels.json") or {"rows": []}
     for row in hotels["rows"]:
         for url in urls_of(row):
@@ -183,34 +195,52 @@ def check_url(url, want_body):
     record = {"status": "unreachable", "http_status": None, "elapsed_ms": None,
               "error": None, "bytes": None, "sha256": None, "facts_sha256": None, "facts_count": None}
     try:
-        req = Request(url, method="GET", headers={
-            "User-Agent": USER_AGENT,
-            "Accept": "text/html,application/pdf,application/xhtml+xml,*/*",
-            "Accept-Language": "en-US,en;q=0.9",
-        })
-        with urlopen(req, timeout=TIMEOUT) as resp:
-            code = getattr(resp, "status", 200)
-            body = resp.read(BODY_CAP if want_body else 2048)
-        record["status"] = "ok" if 200 <= code < 400 else "http-error"
-        record["http_status"] = code
-        record["elapsed_ms"] = int((time.time() - started) * 1000)
-        if want_body and 200 <= code < 400:
-            record["truncated"] = len(body) >= BODY_CAP
-            text = csf.to_text(url, body)
-            facts = csf.facts_signature(text)
-            record["bytes"] = len(body)
-            record["sha256"] = sha(text)
-            record["facts_sha256"] = sha("\n".join(facts))
-            record["facts_count"] = len(facts)
+        return _check_url_once(url, want_body, started, record)
     except HTTPError as e:
         record["status"] = "http-error"
         record["http_status"] = e.code
         record["elapsed_ms"] = int((time.time() - started) * 1000)
         record["error"] = str(e)
+        return record
     except (URLError, OSError, ValueError) as e:  # noqa: BLE001 - network conditions vary
         record["status"] = "unreachable"
         record["elapsed_ms"] = int((time.time() - started) * 1000)
         record["error"] = "%s: %s" % (type(e).__name__, e)
+        return record
+    except Exception as e:  # noqa: BLE001 - one bad source must never abort the run
+        # HTTPException from a half-sent response, a decoder that chokes, anything.
+        # The old code let these kill the whole scheduled check (run 44468765019,
+        # 2026-11-19T05:58Z, failed on one step over one source). Record it as an
+        # http-error so availability counts, the report and the site keep working,
+        # and the `unexpected` flag tells the reader this was not a plain HTTP 4xx/5xx.
+        record["status"] = "http-error"
+        record["elapsed_ms"] = int((time.time() - started) * 1000)
+        record["error"] = "%s: %s" % (type(e).__name__, e)
+        record["unexpected"] = True
+        return record
+
+
+def _check_url_once(url, want_body, started, record):
+    """One fetch of one source. Exceptions are handled by check_url's guard."""
+    req = Request(url, method="GET", headers={
+        "User-Agent": USER_AGENT,
+        "Accept": "text/html,application/pdf,application/xhtml+xml,*/*",
+        "Accept-Language": "en-US,en;q=0.9",
+    })
+    with urlopen(req, timeout=TIMEOUT) as resp:
+        code = getattr(resp, "status", 200)
+        body = resp.read(BODY_CAP if want_body else 2048)
+    record["status"] = "ok" if 200 <= code < 400 else "http-error"
+    record["http_status"] = code
+    record["elapsed_ms"] = int((time.time() - started) * 1000)
+    if want_body and 200 <= code < 400:
+        record["truncated"] = len(body) >= BODY_CAP
+        text = csf.to_text(url, body)
+        facts = csf.facts_signature(text)
+        record["bytes"] = len(body)
+        record["sha256"] = sha(text)
+        record["facts_sha256"] = sha("\n".join(facts))
+        record["facts_count"] = len(facts)
     return record
 
 
@@ -320,7 +350,13 @@ def main():
     baseline = load("source_baseline.json") or {"sources": {}}
     checked = {}
     for url in urls:
-        checked[url] = check_url(url, args.content)
+        try:
+            checked[url] = check_url(url, args.content)
+        except Exception as e:  # noqa: BLE001 - the run must finish for the other sources' sake
+            checked[url] = {"status": "http-error", "http_status": None, "elapsed_ms": None,
+                            "error": "check crashed and was contained: %s: %s" % (type(e).__name__, e),
+                            "bytes": None, "sha256": None, "facts_sha256": None, "facts_count": None,
+                            "unexpected": True}
         if args.as_print:
             print("  %-12s %s" % (checked[url]["status"], url))
     http_reachable = sum(1 for v in checked.values() if v["status"] != "unreachable")
