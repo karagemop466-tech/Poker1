@@ -1645,6 +1645,34 @@
     if (main) main.innerHTML = '<div class="card callout">Could not load this page: ' + esc(e.message) + "</div>";
   }
 
+  /* S16 print-friendly views: a discoverable "Print this page" control on the two
+     paper-first views (the schedule and the single-entry list). The @media print
+       stylesheet drops every button, so the control itself never reaches paper, and
+     it is added AFTER the page renderer runs so a re-render of the filter bar
+     cannot take it with the bar's innerHTML. */
+  function addPrintControl() {
+    if (document.getElementById("s16-print")) return;
+    var btn = document.createElement("button");
+    btn.id = "s16-print";
+    btn.type = "button";
+    btn.className = "s16-print";
+    btn.textContent = "Print this page";
+    btn.addEventListener("click", function () { window.print(); });
+    /* Anchor on the one node the renderers never replace: the template's <h1>.
+       The filter bar and the toolbar are re-filled asynchronously by the page
+       renderer (it waits on data/*.json), so appending inside either one would
+       be wiped a tick after this runs. */
+    var h1 = document.querySelector("#content h1, main h1");
+    if (h1 && h1.parentNode) h1.parentNode.insertBefore(btn, h1.nextSibling);
+    else {
+      var filters = document.getElementById("filters");
+      var toolbar = document.querySelector(".toolbar");
+      if (filters && filters.parentNode) filters.parentNode.insertBefore(btn, filters.nextSibling);
+      else if (toolbar) toolbar.parentNode.insertBefore(btn, toolbar.nextSibling);
+      else document.body.appendChild(btn);
+    }
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     renderNav();
     /* The footer date is the dataset's own verification date, not a constant the
@@ -1664,5 +1692,6 @@
     if (!page) return;
     if (page.indexOf("venue:") === 0) PAGES.venue(page.slice("venue:".length));
     else if (PAGES[page]) PAGES[page]();
+    if (page === "schedule" || page === "singleEntry") addPrintControl();
   });
 })();

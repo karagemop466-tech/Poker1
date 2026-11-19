@@ -9,7 +9,7 @@
     "test:smoke": "node scripts/smoke_test.js",
     "test:schedule": "node scripts/check_schedule_render.js",
     "test:links": "node scripts/check_rendered_links.js",
-    "test": "node scripts/smoke_test.js && node scripts/check_schedule_render.js && node scripts/check_rendered_links.js && node scripts/check_calculator.js && node scripts/check_source_badges.js",
+    "test": "node scripts/smoke_test.js && node scripts/check_schedule_render.js && node scripts/check_rendered_links.js && node scripts/check_calculator.js && node scripts/check_source_badges.js && node scripts/check_print_views.js",
     "test:calculator": "node scripts/check_calculator.js",
     "test:badges": "node scripts/check_source_badges.js"
   },
