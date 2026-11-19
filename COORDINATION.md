@@ -2109,3 +2109,31 @@ The existing checks/data remain the baseline (not refreshed by this session): la
 **Irregularities:** none new. Prior irregularities remain on `pages/flagged.html`.
 
 **Pull request / merge:** see the entry below this one, appended after the PR is merged.
+
+## Session 352aa7e6 · 2026-11-19 · status audit, branch `arena/352aa7e6-poker1`
+
+| Task | Status | Owner | File scope |
+|---|---|---|---|
+| Audit `main` (`3f3f6bb`) against the request, rebuild, run local validators, record blockers. No shared output edited. | done | 352aa7e6 | `COORDINATION.md` only |
+| Re-read official pages (Venetian, Wynn, Google/Apple maps, OSM geocoding) | **blocked** — `venetianlasvegas.com`, `wynnlasvegas.com`, `google.com`, `nominatim.openstreetmap.org` returned no connection from this sandbox (HTTP 000). | — | — |
+| Per-row changed-source marker (P8) | **not claimed** — owned by open PR #98 (`arena/13eafa44-poker1`). | — | — |
+| Open integration PRs | PR #102 (`arena/eb3bb028-poker1`, "final integration — verified tree, no data changes") and PR #98 are open; PR #96 is draft. This session does **not** open a competing integration PR. | — | — |
+
+**Validators on this tree (all passed, no diff):** `build_data.py` and `build_site.py` rebuild byte-identical; `check_links.py` OK (317 rows, 7 hotels, 5 dated rates, 70 schedule days, 23 Markdown links); `verify_rows.py` run; `check_schedule.py` OK (170 overlap pairs, every published fallback enterable).
+
+**Data changes:** none. No official value, source, or `last_checked` was altered, because no official page could be re-read.
+
+**Request status (from `data/*.json`, unchanged from the c0a11e95 audit):**
+- Single-entry (SE) rows: 0 of 317. No row has the affirmative written whole-event one-entry, no-rebuy, no-add-on evidence the booking rule requires. Nothing is removed from "unverified" because nothing is confirmed.
+- Hotel rate log: 5 dated official quotes; true nightly cost is only computed from engine checkout totals.
+- Walking times: routed OSM foot times on record, not Google/Apple Maps; 3 hotels fail the 30-minute rule and are flagged.
+- Live scraper, live hotel-rate lookup, Google/Apple walking checks: not implemented in a runnable form here; they require network to official and map hosts.
+
+**Blockers needing the owner's decision (not resolved by this session):**
+1. Allow outbound access to the official Venetian/Wynn hosts (and a maps/geocoding host) for this sandbox, or run the re-read in GitHub Actions only.
+2. Obtain written maximum-entry / no-rebuy / no-add-on text for each candidate event from the official structure sheet before any SE label is applied.
+3. Obtain a same-stay itemized checkout quote for each hotel before any like-for-like comparison.
+
+**Irregularities:** none new. Prior irregularities remain on `pages/flagged.html`.
+
+**Pull request / merge:** none opened by this session; PR #102 and PR #98 already carry the integration scope. Nothing was merged to `main`.
