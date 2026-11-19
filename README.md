@@ -28,6 +28,13 @@ Live site: https://karagemop466-tech.github.io/Poker1/
     dated official-engine quotes, with what the chosen stay window holds.
   - `venues.html` and `venue-*.html` - one page per poker room with its hotels and events.
   - `search.html` - one search box across every row, hotel, venue, rate entry and document.
+  - Every tournament table's filter bar carries a **date selector** - presets (today, tomorrow, this
+    weekend, next 7/30 days) plus a tick list of the dates the dataset actually holds - and the
+    calculator prices the entry side from the day plan by default, one entry per night at that date's
+    published primary's own buy-in, with a source link per line.
+  - `requirements.html` - the requirement-by-requirement audit (`REQUIREMENTS.md`): each line of the
+    brief marked done, partial or blocked, with the file that implements it, the page where it can be
+    seen and the official source behind any value.
   - `monitoring.html` - source health, changed rows and every printed source flag.
   - `evidence-audit.html` - the independent check of the one value that decides the ranking: whether
     each event is really single entry. Every quoted span in the dataset is re-derived from the archived
@@ -81,6 +88,9 @@ python3 scripts/check_links.py       # data schema, official hosts, rule objects
 python3 scripts/audit_entry_labels.py # re-derive every entry label from the sentence its document prints
 python3 scripts/monitor_sources.py   # check every official URL, report changed rows
 node scripts/smoke_test.js           # render every page in a headless DOM (needs jsdom)
+node scripts/check_date_filter.js    # date presets and the per-date tick list narrow the table
+node scripts/check_calculator.js     # plan-priced entry total recomputed from the published rows
+python3 research/requirements-audit-dd06081b/compare_wss_live_20261119.py  # 38/38 Wynn rows vs live capture
 ```
 
 The Pages workflow (`.github/workflows/pages.yml`) rebuilds the data and the pages on every pull

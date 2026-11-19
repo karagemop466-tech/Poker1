@@ -2702,3 +2702,141 @@ re-fetch of official sources was made here; the scheduled CI monitors perform th
 was dispositioned (its content adopted by session `0f038248`; PR #119 recorded the takeover without
 duplication). All verification gates pass on the tree; no unverified value was promoted and nothing
 was inferred.
+
+## Session dd06081b · 2026-11-19 · requirement coverage audit, date filter and entry-plan calculator, branch `arena/dd06081b-poker1`
+
+Session `dd06081b` works on branch `arena/dd06081b-poker1` (fixed for this session), based on `main` at
+`f5ecde0` (PR #117 merged, PR #118 = payouts page). `git rev-list --left-right --count origin/main...HEAD`
+= `0 0`; clean tree. This claim was written and pushed before any data, script or page change.
+
+**Baseline re-verified before claiming** (no diff, no failures): `build_data.py` and `build_site.py`
+regenerate byte-identical output; `check_links.py` OK (31 pages, 317 rows, 62 hotel/rate/walk checks);
+`verify_rows.py` 335 rows / 1386 field checks / 0 hard failures / 1 documented review item (r225);
+`verify_against_snapshots.py` 0 unexplained mismatches; `check_schedule.py` OK (70 days, 170 overlap
+pairs); `python3 -m unittest` 67 tests OK; `npm test` 31/31 pages, 1,662 rendered links, 0 broken.
+
+**Board state read at claim time.** Only open PR **#113** (`arena/98241f2f-poker1`, `COORDINATION.md`
+only, CONFLICTING, last commit 2026-11-19T11:25:45Z — >60 minutes stale). Its content is a board-only
+merge record whose deliverable (PR #106) is already on `main`; it is left to its own session and not
+taken over. Scheduled runs at the base are green: "Monitor official sources" run 44568281882 (success,
+7m36s) and `pages-build-deployment` 44569694683 (success).
+
+| # | Task | Status | Owner | File scope |
+|---|---|---|---|---|
+| 1 | Live re-read of the official pages whose values the published rows depend on, plus the pages the monitor flagged as changed on 2026-11-19 (Caesars/Horseshoe strip poker page, Caesars disclaimer, Wynn poker page, Wynn Signature Series structures, Venetian DSE IV listing). Record every match/difference with the URL and the read date; change a published value only where the official page prints it. | in progress | dd06081b | new `research/requirements-audit-dd06081b.md`, `data/*.json` only via `scripts/build_data.py`, `COORDINATION.md` |
+| 2 | Requirement coverage audit: one row per requirement line in the request, each marked done / partial / blocked with the file and page that satisfies it and the official source where a value is involved. | in progress | dd06081b | new `REQUIREMENTS.md`, `scripts/build_site.py` (one page body + NAV), `assets/app.js` (one renderer), `scripts/check_links.py` (one `KNOWN_PAGES` line) |
+| 3 | Date filter: quick day presets (today, this weekend, next 7/30 days, all) plus a per-date chip picker fed from the dataset dates, added to the shared filter bar so every tournament table and the schedule page get it. Headless test. | in progress | dd06081b | `assets/app.js`, `assets/style.css`, new `scripts/check_date_filter.js`, `package.json`, generated pages |
+| 4 | Trip calculator: price the entry side from the schedule's own primary event per night in the selected stay window (no typed buy-in), with the manual entries × buy-in box kept as the visible alternative and labelled as such. Headless test. | in progress | dd06081b | `assets/app.js`, new `scripts/check_entry_plan.js`, `package.json`, generated pages |
+| 5 | Final integration for this round: rebuild, run every gate (python + npm), open PR to `main`, merge after green `validate`, confirm Pages deploy, record PR link + merge + deploy here. | **in progress** (PR #121 open, `validate` green; three rebases onto a fast-moving `main` recorded below) | dd06081b | all of the above + `COORDINATION.md` |
+| 5 | Final integration for this round: rebuild, run every gate (python + npm), open PR to `main`, merge after green `validate`, confirm Pages deploy, record PR link + merge + deploy here. | in progress | dd06081b | all of the above + `COORDINATION.md` |
+| 6 | Repo review of the requirement coverage: one written finding per defect found by reading the repo against the brief (missing audit, free-text-only date filter, typed-buy-in calculator, missing January series, duplicated workflow comment, monitor mark without a value change, Wynn structures URL drift), each with its handling. | **done** | dd06081b | `REVIEW.md` §10, `.github/workflows/pages.yml` (duplicate comment only), `REQUIREMENTS.md`, `research/requirements-audit-dd06081b/` |
+
+**Task 1–4 completion record (2026-11-19).**
+
+*Sources read live in this session* (page-fetch tool, one call per page, 2026-11-19):
+Venetian DSE IV event page (4 chunks, 89 printed rows), structure sheets #5, #6 and #30 (each in full),
+Venetian poker room page, Venetian resort-fee page ($55 + tax), Venetian series hub, Venetian
+DeepStack Showdown event page (4 chunks) and its sheet #7, Wynn poker room page, Wynn Signature Series
+schedule (full table-structure capture archived verbatim at
+`research/requirements-audit-dd06081b/wss_sched_live_20261119.md`), both published versions of the
+Wynn Signature Series structures PDF, and the Caesars/Horseshoe east-side article.
+
+*Verification performed*, all re-runnable:
+* `python3 research/requirements-audit-dd06081b/compare_wss_live_20261119.py` → 38 printed rows =
+  38 published rows, **0 mismatches** on date, start, buy-in, guarantee, starting chips and printed
+  levels; 3 recorded name word-order notes (r300, r307, r314) that change no value.
+* `python3 scripts/build_data.py` + `build_site.py` → deterministic; the only data diff is none.
+* `python3 scripts/check_links.py` → OK (68 files, **32 pages**, 317 rows, 7 hotels, 5 rates, 70 days).
+* `python3 scripts/verify_rows.py` → 335 rows, 1,386 field checks, 0 hard failures, 1 documented
+  review item (r225, unchanged).
+* `python3 scripts/verify_against_snapshots.py` → 0 unexplained mismatches.
+* `python3 scripts/check_schedule.py` → OK (70 days, 274 entry rows, 170 overlap pairs).
+* `python3 -m unittest discover -s scripts` → 67 tests OK.
+* `npm test` → **32/32 pages** rendered, 1,739 rendered local references with 0 broken, schedule render
+  OK, calculator OK (plan mode recomputed from the rows), date filter OK (42 dates), source badges OK.
+
+*No official value, source URL or `last_checked` was changed.* The dataset still rebuilds byte-identical:
+317 rows, same counts. What is new is measurement and tooling, not data.
+
+*Irregularities published for review* (all in `FLAGGED.md` §K, none blocking):
+1. **F85** — `data/monitoring.json` marks sheet #30 "facts-changed" and `data/changes.json` marks row
+   `r012`, although the live sheet prints every published value unchanged and the provenance fetch
+   recorded the same bytes. The facts baseline's stored hash for that one URL does not equal the hash of
+   the facts the archive holds (its neighbours match exactly). Left in place on purpose: rewriting the
+   baseline here would hide the next real change. Fix proposed as SUGGESTIONS P16.
+2. **F86** — Wynn's poker page now links a *second* version id of the Signature Series structures PDF;
+   the dataset cites the other one. Both read today, both still "COMING SOON", so no row can move.
+3. **F87** — **the Venetian DeepStack Showdown, January 11 – February 14, 2027, is not in this dataset.**
+   The series hub advertises it and the event page prints 59 dated rows with per-row structure sheets.
+   Not added here: `scripts/verify_rows.py` maps sheets only through the `dse_nov_2026-structure_N` /
+   `dse_dec_2026-structure_N` patterns, so rows added without extending the extractor and verifier would
+   be values no gate could check. Published as QUESTIONS I18 and SUGGESTIONS P15 (top of the open list).
+
+*Honest limits.* The sandbox's own HTTP route cannot reach the operator domains (`curl` to
+`www.venetianlasvegas.com` fails at TLS, exit 35), so every source above was read with the page-fetch
+tool; `scripts/monitor_sources.py --print` on this host correctly reports the last real fetch instead of
+a fresh one. Google/Apple walking verification, live hotel quotes for new dates and any promotion of a
+candidate to a confirmed freezeout remain not obtainable from an official source (see `REQUIREMENTS.md`
+§4).
+
+**Network limit, stated up front:** this sandbox's own HTTP route reaches only github.com, codeload,
+api.github.com, registry.npmjs.org, pypi.org and files.pythonhosted.org. Operator pages are read with
+the page-fetch tool, not `curl`; `scripts/monitor_sources.py` therefore records this host as unable to
+reach them and reports the last real fetch. No row value, source URL or `last_checked` is advanced on
+the strength of a fetch that did not happen.
+
+No official value is changed except by reading the official page in this session and quoting it.
+
+**Task 1–4 completion record (2026-11-19).**
+
+*Sources read live in this session* (page-fetch tool, one call per page, 2026-11-19):
+Venetian DSE IV event page (4 chunks, 89 printed rows), structure sheets #5, #6 and #30 (each in full),
+Venetian poker room page, Venetian resort-fee page ($55 + tax), Venetian series hub, Venetian
+DeepStack Showdown event page (4 chunks) and its sheet #7, Wynn poker room page, Wynn Signature Series
+schedule (full table-structure capture archived verbatim at
+`research/requirements-audit-dd06081b/wss_sched_live_20261119.md`), both published versions of the
+Wynn Signature Series structures PDF, and the Caesars/Horseshoe east-side article.
+
+*Verification performed*, all re-runnable: the Wynn live comparator (38 printed rows = 38 published
+rows, **0 mismatches** on date, start, buy-in, guarantee, starting chips and printed levels; 3 recorded
+name word-order notes that change no value); `build_data.py` + `build_site.py` deterministic;
+`check_links.py` OK (68 files, **32 pages**, 317 rows); `verify_rows.py` 335 rows / 1,386 field checks /
+0 hard failures / 1 documented review item (r225); `verify_against_snapshots.py` 0 unexplained
+mismatches; `check_schedule.py` OK (70 days, 274 entry rows, 170 overlap pairs); 67 Python tests OK;
+`npm test` **32/32 pages**, 1,739 rendered references with 0 broken, calculator OK (plan mode
+recomputed from the rows), date filter OK (42 dates), source badges OK, and the sibling session's
+single-entry render check OK.
+
+*No official value, source URL or `last_checked` was changed.* The dataset rebuilds byte-identical:
+317 rows, same counts. What is new is measurement, review and tooling, not data.
+
+*Irregularities published for review* (all in `FLAGGED.md` §K, none blocking; numbered after the
+sibling session's F85/F86 so two flags never share an id):
+1. **F87** — `data/monitoring.json` marks sheet #30 "facts-changed" and `data/changes.json` marks row
+   `r012`, although the live sheet prints every published value unchanged and the provenance fetch
+   recorded `facts_changed: false` with an empty diff. Measured cause: hashing the stored line-render
+   signature of all 98 sources, exactly **2** disagree with `data/source_baseline.json` (#30 and
+   `v_dse_series_page`); the other 96 reproduce their baseline hashes exactly. Left in place on purpose: rewriting the baseline here would hide the next
+   real change (SUGGESTIONS P19).
+2. **F88** — Wynn's poker page now links a *second* version id of the Signature Series structures PDF;
+   both read today, both still "COMING SOON", so no row can move.
+3. **F89** — **the Venetian DeepStack Showdown, January 11 – February 14, 2027, is not in this
+   dataset.** Not added here because `scripts/verify_rows.py` maps sheets only through the
+   `dse_nov_2026-structure_N` / `dse_dec_2026-structure_N` patterns, so rows added without extending
+   the extractor and verifier would be values no gate could check. Published as QUESTIONS I18 and
+   SUGGESTIONS P18 (top of this session's open list).
+
+*Rebase conflicts, recorded per the board rules:* `main` moved three times while this PR was open
+(PR #120, PR #123, PR #124 + the 2026-11-19 snapshot refresh that added `*.layout.txt` captures).
+Each rebase was resolved by keeping **both** sides — the sibling session's sections and test
+(`scripts/check_single_entry_render.js`) were kept in `COORDINATION.md`, `EXECUTIVE_SUMMARY.md`,
+`FLAGGED.md`, `SUGGESTIONS.md`, `REVIEW.md` and `package.json`, with this session's content appended,
+and the generated `pages/*.html` were regenerated rather than hand-merged so the inlined renderer is
+consistent. One duplicate of an already-existing section heading was renumbered (`REVIEW.md` §11) to
+avoid two "## 10" sections. Nothing from another session was discarded.
+
+*Honest limits.* The sandbox's own HTTP route cannot reach the operator domains (`curl` to
+`www.venetianlasvegas.com` fails at TLS, exit 35), so every source above was read with the page-fetch
+tool; `scripts/monitor_sources.py --print` on this host correctly reports the last real fetch instead of
+a fresh one. Google/Apple walking verification, live hotel quotes for new dates and any promotion of a
+candidate to a confirmed freezeout remain not obtainable from an official source (`REQUIREMENTS.md` §4).

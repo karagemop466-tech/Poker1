@@ -112,6 +112,11 @@ footer { color: var(--muted); font-size: 12.5px; text-align: center; padding: 20
 }
 .filters button:hover { border-color: var(--accent); color: var(--accent); }
 .filters .summary { font-size: 12.5px; color: var(--muted); margin-top: 4px; }
+/* Per-date chips: only the dates this dataset actually holds, so a reader can pick a
+   real day instead of typing one and seeing an empty table. */
+.filters .labels.dates { max-height: 132px; overflow-y: auto; padding: 2px 2px 2px 0; }
+.filters .day-chip { font-size: 12px; }
+.filters .day-chip input { margin-right: 2px; }
 
 /* ---------- venue / search / calculator / monitoring ---------- */
 .venue-card { border-left: 4px solid var(--accent); }
@@ -251,6 +256,7 @@ header.site nav a {color:#d9ebe4}
     ["pages/questions.html", "Questions"],
     ["pages/suggestions.html", "Suggestions"],
     ["pages/flagged.html", "Flagged"],
+    ["pages/requirements.html", "Requirements"],
     ["pages/review.html", "Review"]
   ];
 
@@ -260,6 +266,7 @@ header.site nav a {color:#d9ebe4}
     ["SUGGESTIONS.md", "Suggestions"],
     ["FLAGGED.md", "Flagged for review"],
     ["REVIEW.md", "Repo review and sources"],
+    ["REQUIREMENTS.md", "Requirement coverage"],
     ["README.md", "README"]
   ];
 
@@ -592,7 +599,9 @@ header.site nav a {color:#d9ebe4}
         return '<th class="' + cls.trim() + '" data-id="' + c.id + '">' + esc(c.label) + arrow + "</th>";
       }).join("") + "</tr></thead>";
       var body = "<tbody>" + list.map(function (r) {
-        return "<tr>" + cols.map(function (c) {
+        // The row's date and id are on the <tr> so a date filter and any headless
+        // check can assert what is actually on screen, not just what was filtered.
+        return '<tr data-date="' + esc(r.date || "") + '" data-id="' + esc(r.id || "") + '">' + cols.map(function (c) {
           var cls = c.num ? ' class="num"' : "";
           return "<td" + cls + ">" + (c.html ? c.html(r) : esc(r[c.key])) + "</td>";
         }).join("") + "</tr>";
@@ -664,6 +673,34 @@ header.site nav a {color:#d9ebe4}
     var q = input("q", "search", { placeholder: "Search name, series, note, source" });
     var from = input("date-from", "date", {});
     var to = input("date-to", "date", {});
+    /* Date selector. Two ways in, because they answer different questions:
+       - the presets answer "what can I play this weekend / in the next month";
+       - the per-date chips list the dates this dataset actually holds, so a reader
+         picks a day that has events instead of typing one and seeing nothing.
+       Both drive the same from/to pair, so the rest of the bar keeps one code path
+       and the summary line always states the date filter in force. */
+    var presets = document.createElement("select");
+    presets.id = "date-preset";
+    presets.innerHTML = '<option value="">Any date</option>' +
+      '<option value="today">Today (Las Vegas)</option>' +
+      '<option value="tomorrow">Tomorrow (Las Vegas)</option>' +
+      '<option value="weekend">This weekend (Fri-Sun)</option>' +
+      '<option value="next7">Next 7 days</option>' +
+      '<option value="next30">Next 30 days</option>' +
+      '<option value="picked">Only the dates I ticked</option>';
+    var presetDays = (opts.dates || []).slice().sort();
+    var dayBox = document.createElement("div");
+    dayBox.className = "field";
+    var dayLabel = document.createElement("label");
+    dayLabel.textContent = "Pick days";
+    var dayList = document.createElement("div");
+    dayList.className = "labels dates";
+    dayList.innerHTML = presetDays.map(function (d) {
+      return '<label class="day-chip"><input type="checkbox" value="' + esc(d) + '"> ' + esc(dateShort(d)) +
+        ' <span class="muted">' + esc(d.slice(0, 4)) + "</span></label>";
+    }).join("");
+    dayBox.appendChild(dayLabel);
+    dayBox.appendChild(dayList);
     var buyMin = input("buy-min", "number", { min: "0", step: "50", placeholder: "min" });
     var buyMax = input("buy-max", "number", { min: "0", step: "50", placeholder: "max" });
     var venue = select("venue", opts.venues || [], "All venues");
@@ -681,6 +718,7 @@ header.site nav a {color:#d9ebe4}
     var row1 = document.createElement("div");
     row1.className = "row";
     row1.appendChild(field("Search", q));
+    row1.appendChild(field("Date", presets));
     row1.appendChild(field("From date", from));
     row1.appendChild(field("To date", to));
     row1.appendChild(field("Min buy-in", buyMin));
@@ -718,6 +756,7 @@ header.site nav a {color:#d9ebe4}
 
     el.appendChild(row1);
     el.appendChild(row2);
+    if (presetDays.length) el.appendChild(dayBox);
 
     var labelBox = null;
     if ((opts.labels || []).length) {
@@ -759,6 +798,8 @@ header.site nav a {color:#d9ebe4}
       if (future.checked && row.date < today) return false;
       if (from.value && row.date < from.value) return false;
       if (to.value && row.date > to.value) return false;
+      var picked = pickedDays();
+      if (picked.length && picked.indexOf(row.date) < 0) return false;
       if (venue.value && row.venue !== venue.value) return false;
       if (series.value && row.series !== series.value) return false;
       if (status.value && row.entry_status !== status.value) return false;
@@ -778,8 +819,11 @@ header.site nav a {color:#d9ebe4}
       var bits = [];
       if (q.value.trim()) bits.push('search "' + q.value.trim() + '"');
       if (future.checked) bits.push("Las Vegas dates from " + today);
+      if (presets.value) bits.push("preset: " + presets.options[presets.selectedIndex].textContent);
       if (from.value) bits.push("from " + dateShort(from.value));
       if (to.value) bits.push("to " + dateShort(to.value));
+      var picked = pickedDays();
+      if (picked.length) bits.push(picked.length + " ticked day(s): " + picked.map(dateShort).join(", "));
       if (venue.value) bits.push(venue.value);
       if (series.value) bits.push(series.value);
       if (status.value) bits.push(status.value);
@@ -793,12 +837,44 @@ header.site nav a {color:#d9ebe4}
     }
     function lo2() { return num(buyMin.value); }
     function hi2() { return num(buyMax.value); }
+    function pickedDays() {
+      return Array.prototype.slice.call(dayList.querySelectorAll("input:checked")).map(function (i) { return i.value; });
+    }
+    // Offset from the Las Vegas calendar day, not from the reader's clock: a preset
+    // must mean the same day for a reader in Tokyo and one in Las Vegas.
+    function vegasPlus(days) {
+      var base = new Date(vegasDate() + "T12:00:00Z");
+      return new Date(base.getTime() + (days * 86400000)).toISOString().slice(0, 10);
+    }
+    /* Presets write into from/to, so one predicate governs every date question.
+       "This weekend" is the coming Friday through Sunday in Las Vegas time, which
+       is the window the recurring weekend formats sit in. */
+    function applyPreset() {
+      var v = presets.value;
+      var t = vegasDate();
+      if (v === "today") { from.value = t; to.value = t; }
+      else if (v === "tomorrow") { from.value = vegasPlus(1); to.value = vegasPlus(1); }
+      else if (v === "weekend") {
+        var dow = new Date(t + "T12:00:00Z").getUTCDay(); // 0 Sun .. 6 Sat
+        var toFri = (5 - dow + 7) % 7;
+        from.value = vegasPlus(toFri);
+        to.value = vegasPlus(toFri + 2);
+      }
+      else if (v === "next7") { from.value = t; to.value = vegasPlus(7); }
+      else if (v === "next30") { from.value = t; to.value = vegasPlus(30); }
+      else if (v === "picked") { from.value = ""; to.value = ""; }
+    }
 
     function fire() {
       summary.textContent = describe();
       listeners.forEach(function (fn) { fn(); });
     }
     [q, from, to, buyMin, buyMax].forEach(function (c) { c.addEventListener("input", fire); });
+    presets.addEventListener("change", function () { applyPreset(); fire(); });
+    dayList.addEventListener("change", function () {
+      if (pickedDays().length) presets.value = "picked"; else presets.value = "";
+      fire();
+    });
     [venue, series, status].forEach(function (c) { c.addEventListener("change", fire); });
     single.addEventListener("change", fire);
     spend.addEventListener("change", fire);
@@ -808,7 +884,8 @@ header.site nav a {color:#d9ebe4}
       q.value = ""; from.value = ""; to.value = ""; buyMin.value = ""; buyMax.value = "";
       venue.value = ""; series.value = ""; status.value = ""; single.checked = !!opts.strict;
       spend.checked = false;
-      future.checked = !!opts.upcoming;
+      future.checked = !!opts.upcoming; presets.value = "";
+      dayList.querySelectorAll("input").forEach(function (c) { c.checked = false; });
       if (labelBox) labelBox.querySelectorAll("input").forEach(function (c) { c.checked = false; });
       fire();
     });
@@ -876,6 +953,7 @@ header.site nav a {color:#d9ebe4}
     var labels = Array.from(new Set(rows.reduce(function (a, r) { return a.concat(r.labels || []); }, []))).sort();
     return Filters(host, {
       venues: venues, series: series, statuses: statuses, labels: labels,
+      dates: Array.from(new Set(rows.map(function (r) { return r.date; }))),
       strict: opts.strict,
       showStatus: opts.showStatus !== false, upcoming: opts.upcoming
     });
@@ -1469,6 +1547,9 @@ header.site nav a {color:#d9ebe4}
         '<div class="card">' +
         '<div class="form-grid">' +
         '<div><label for="c-quote">Verified stay quote (dated rate log)</label><select id="c-quote"></select></div>' +
+        '<div><label for="c-mode">Entry side priced from</label><select id="c-mode">' +
+          '<option value="plan">The day plan (schedule primary per night)</option>' +
+          '<option value="manual">Entries x buy-in I type</option></select></div>' +
         '<div><label for="c-entries">Tournament entries</label><input type="number" id="c-entries" min="0" step="1" value="1"></div>' +
         '<div><label for="c-buyin">Assumed entry fee each (USD)</label><input type="number" id="c-buyin" min="0" step="0.01" value="300"></div>' +
         '<div><label for="c-parkdays">Parking days at the hotel</label><input type="number" id="c-parkdays" min="0" step="1" value="0"></div>' +
@@ -1477,6 +1558,7 @@ header.site nav a {color:#d9ebe4}
         '<div class="calc-out" id="c-out"></div>' +
         '<p class="small" id="c-note"></p>' +
         '</div>' +
+        '<div class="card" id="c-plan"></div>' +
         '<div class="card"><h2>What is in the selected window</h2><div id="c-window"></div></div>' +
         '<div class="card"><h2>Logged quotes for the same dates and occupancy</h2><div id="c-compare"></div></div>';
 
@@ -1488,6 +1570,7 @@ header.site nav a {color:#d9ebe4}
       }).join("");
 
       var els = {
+        mode: document.getElementById("c-mode"),
         quote: quoteSel,
         entries: document.getElementById("c-entries"),
         buyin: document.getElementById("c-buyin"),
@@ -1496,6 +1579,40 @@ header.site nav a {color:#d9ebe4}
       };
       function num(input) { return input.validity.valid && Number.isFinite(input.valueAsNumber) ? input.valueAsNumber : null; }
       function money2(v) { return "$" + Number(v).toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
+
+      /* The plan side. One entry per night is the shape of a single-entry trip, so the
+         priced entry side is: for each night of the selected stay, the event this site
+         already publishes as that date's primary, at that event's own printed buy-in.
+         A night whose date holds no primary contributes nothing and is reported, never
+         filled with an assumed buy-in. Two limits are printed with the number: a primary
+         is a candidate pending a written freezeout rule, and the last night's event may
+         be a multi-day Day 1 whose Day 2 falls after checkout. */
+      function planFor(q) {
+        var inWindow = rows.filter(function (r) {
+          return r.date >= q.arrival && r.date < q.departure && r.entry_status !== "CONT";
+        });
+        var byDate = {};
+        inWindow.forEach(function (r) {
+          if (!byDate[r.date]) byDate[r.date] = [];
+          byDate[r.date].push(r);
+        });
+        var picked = [];
+        for (var d = q.arrival; d < q.departure; d = nextDay(d)) {
+          var list = byDate[d] || [];
+          if (!list.length) { picked.push({ date: d, row: null }); continue; }
+          var prefer = list.filter(function (r) { return r.entry_status === "SE" || r.entry_status === "CAND"; });
+          var pool = prefer.length ? prefer : list;
+          pool.sort(function (a, b) { return String(a.start).localeCompare(String(b.start)); });
+          picked.push({ date: d, row: pool[0] });
+        }
+        var priced = picked.filter(function (p) { return p.row && p.row.buy_in_usd != null; });
+        var total = priced.reduce(function (n, p) { return n + p.row.buy_in_usd; }, 0);
+        return { nights: picked, priced: priced, total: total };
+      }
+      function nextDay(iso) {
+        var d = new Date(iso + "T12:00:00Z");
+        return new Date(d.getTime() + 86400000).toISOString().slice(0, 10);
+      }
 
       function calc() {
         var q = rates[+els.quote.value];
@@ -1509,7 +1626,11 @@ header.site nav a {color:#d9ebe4}
         var extra = num(els.extra);
         var parkRate = hotel ? hotel.parking_usd_per_day : null;
         var parking = parkdays === 0 ? 0 : (parkRate == null || parkdays == null ? null : parkRate * parkdays);
-        var entryTotal = entries === 0 ? 0 : (buyin == null || entries == null ? null : entries * buyin);
+        var plan = planFor(q);
+        var planMode = els.mode.value === "plan";
+        var entryTotal = planMode
+          ? (plan.priced.length ? plan.total : null)
+          : (entries === 0 ? 0 : (buyin == null || entries == null ? null : entries * buyin));
         var hotelTotal = q.checkout_total_usd;
         var total = [hotelTotal, entryTotal, parking, extra].includes(null) ? null : hotelTotal + entryTotal + parking + extra;
 
@@ -1521,7 +1642,10 @@ header.site nav a {color:#d9ebe4}
           box("Nights", String(q.nights), esc(q.room)) +
           box("Hotel total (engine quote)", money2(hotelTotal), "room + resort fee + tax, as the engine totals it") +
           box("True hotel cost / night", money2(q.true_cost_per_night_usd), "checkout total ÷ nights") +
-          box("Tournament entries", entryTotal == null ? null : money2(entryTotal), (entries == null ? "?" : entries) + " × " + (buyin == null ? "?" : money2(buyin))) +
+          box("Tournament entries", entryTotal == null ? null : money2(entryTotal),
+              planMode
+                ? plan.priced.length + " x printed buy-in, one per night (schedule primary)"
+                : (entries == null ? "?" : entries) + " × " + (buyin == null ? "?" : money2(buyin))) +
           box("Parking", parking == null ? null : money2(parking), parkdays ? parkdays + " day(s) × " + (parkRate == null ? "unverified" : money2(parkRate)) : "none entered") +
           box("Other spend", extra == null ? null : money2(extra), "as entered") +
           box("Trip total", total == null ? null : money2(total), "entries × buy-in + nights × true hotel cost + parking + other") +
@@ -1533,10 +1657,39 @@ header.site nav a {color:#d9ebe4}
         if (parkRate == null && parkdays) {
           msgs.push("The trip total is unavailable because the parking price is unverified.");
         }
-        if ([entries, buyin, parkdays, extra].includes(null)) msgs.push("Enter nonnegative amounts and whole counts. A buy-in is not needed for zero entries.");
+        if (!planMode && [entries, buyin, parkdays, extra].includes(null)) msgs.push("Enter nonnegative amounts and whole counts. A buy-in is not needed for zero entries.");
+        if (planMode) {
+          var blankNights = plan.nights.filter(function (p) { return !p.row || p.row.buy_in_usd == null; });
+          msgs.push("The entry side prices one entry per night: " + plan.priced.length + " of the " + plan.nights.length +
+            " nights in this stay from the event the schedule already lists as that date's primary, at its own printed buy-in.");
+          if (blankNights.length) {
+            msgs.push(blankNights.length + " night(s) hold no priced primary in this dataset, so they add nothing to the total rather than an assumed fee.");
+          }
+          msgs.push("A primary is a candidate pending a written one-entry ruling from the poker room, and a Day 1 on the last night may require a Day 2 after checkout. Neither is a reservation.");
+        }
         msgs.push("The hotel line moves with availability; re-check the booking engine before paying. " +
                   "Nothing here is a forecast of winnings.");
         note.textContent = msgs.join(" ");
+
+        /* night-by-night entry plan, so the entry total is auditable line by line */
+        var planBox = document.getElementById("c-plan");
+        if (planBox) {
+          planBox.innerHTML = "<h2>Entry plan for this stay</h2>" +
+            '<p class="small">One line per night. The event is the date\'s primary in the published day plan; ' +
+            "the fee is that event's own printed buy-in; the source link opens the official document.</p>" +
+            '<div class="table-wrap"><table class="data"><thead><tr><th>Night</th><th>Event</th>' +
+            "<th>Start</th><th>Buy-in</th><th>Guarantee</th><th>Entry rule</th><th>Source</th></tr></thead><tbody>" +
+            plan.nights.map(function (p) {
+              if (!p.row) return "<tr><td>" + esc(dateFmt(p.date)) + '</td><td colspan="6"><span class="muted">no event in this dataset</span></td></tr>';
+              var r = p.row;
+              return "<tr><td>" + esc(dateFmt(p.date)) + "</td><td><strong>" + esc(r.name) + "</strong><br><span class='small'>" +
+                esc(r.series) + "</span></td><td>" + esc(timeFmt(r.start)) + "</td><td>" + money(r.buy_in_usd) +
+                "</td><td>" + money(r.guarantee_usd) + "</td><td>" + statusChip(r.entry_status) +
+                "</td><td>" + srcLinks(r.sources) + "</td></tr>";
+            }).join("") +
+            '<tr><td colspan="3"><strong>Priced entry total</strong></td><td><strong>' +
+            money2(plan.total) + '</strong></td><td colspan="3"></td></tr></tbody></table></div>';
+        }
 
         /* what the selected window holds, from the verified dataset */
         var win = document.getElementById("c-window");
@@ -1585,6 +1738,14 @@ header.site nav a {color:#d9ebe4}
 
       quoteSel.addEventListener("change", calc);
       ["entries", "buyin", "parkdays", "extra"].forEach(function (k) { els[k].addEventListener("input", calc); });
+      els.mode.addEventListener("change", function () {
+        var manual = els.mode.value === "manual";
+        els.entries.disabled = !manual;
+        els.buyin.disabled = !manual;
+        calc();
+      });
+      els.entries.disabled = true;
+      els.buyin.disabled = true;
       calc();
     }).catch(showErr);
   };
@@ -2173,6 +2334,7 @@ header.site nav a {color:#d9ebe4}
 
   PAGES.flagged = markdownPage("FLAGGED.md");
   PAGES.review = markdownPage("REVIEW.md");
+  PAGES.requirements = markdownPage("REQUIREMENTS.md");
 
   function showErr(e) {
     var main = document.getElementById("content");
