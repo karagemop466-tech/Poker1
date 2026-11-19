@@ -1691,3 +1691,11 @@ operator hosts are unreachable (F55), so `monitor_sources.py` is exercised in CI
 `data/row_verification.json` are byte-identical to what this task found on `main` - no official value moved
 during any of it. `data/schedule.json` is the file that changed, and it is generated: edit
 `scripts/build_data.py`, never the JSON.
+
+## Session be98ede8 — 2026-11-19
+
+| Task | Status | Owner | File scope |
+|---|---|---|---|
+| Distinguish upcoming verified tournament dates from historical rows without changing official data | In progress | be98ede8 | `assets/app.js`, generated `index.html` and `pages/*.html`, `scripts/check_upcoming.js`, `package.json`, `FLAGGED.md`, `COORDINATION.md` |
+
+Branch `arena/be98ede8-poker1` is fixed by Arena. Existing open integration PRs own their data and workflow changes; this session does not take over those tasks. This is one session, not a parallel branch launch; the existing board on main remains the shared board.
