@@ -127,6 +127,22 @@ class EvidenceGateTests(unittest.TestCase):
         self.row["event_scope"]["excerpt"] = "Event Number: 12 (never printed here)"
         self.assert_rejected()
 
+    def test_scope_does_not_match_a_buy_in_or_date(self):
+        for wrong_heading in ("Event #2 — $12 entry", "Event 2 on 12 January"):
+            with self.subTest(heading=wrong_heading):
+                self.archives[URL] += "\n" + wrong_heading
+                self.row["event_scope"]["excerpt"] = wrong_heading
+                self.assert_rejected()
+
+    def test_conflicting_clause_elsewhere_in_same_document_fails_closed(self):
+        for contradiction in ("This is not a single-entry tournament.",
+                              "No re-entry after level 8.",
+                              "One entry per player per flight.",
+                              "An optional purchase provides additional chips."):
+            with self.subTest(clause=contradiction):
+                self.archives[URL] = DOC + "\n" + contradiction
+                self.assert_rejected()
+
     def test_current_production_se_labels_must_pass(self):
         root = Path(__file__).resolve().parent.parent
         rows = json.loads((root / "data/tournaments.json").read_text())["rows"]

@@ -78,7 +78,20 @@ NEGATION_OF_CLAIM = re.compile(
 CONTRADICTION = re.compile(
     r"\b(?:unlimited|permitted|allowed)\s+(?:re[ -]?entr(?:y|ies)|re[ -]?buys?|add[ -]?ons?)\b"
     r"|\b(?:re[ -]?entr(?:y|ies)|re[ -]?buys?|add[ -]?ons?)\s+(?:is|are)\s+(?:allowed|permitted)\b"
-    r"|\bsubsequent\s+re[ -]?entr(?:y|ies)\b", re.I)
+    r"|\bsubsequent\s+re[ -]?entr(?:y|ies)\b"
+    r"|\bnot\s+(?:a\s+)?(?:single[ -]entry|freeze[ -]?out)\s+(?:event|tournament|format)\b"
+    r"|\b(?:one|1)\s+entry\s+per\s+(?:player|person)\s+(?:per|each)\s+flight\b"
+    r"|\bno\s+(?:re[ -]?entr(?:y|ies)|re[ -]?buys?|add[ -]?ons?)\s+(?:after|before|until|unless|except)\b"
+    r"|\b(?:optional|voluntary)\s+.{0,100}\b(?:chips|stack)\b", re.I | re.S)
+
+
+def scoped_event_numbers(quote):
+    """Read event numbers, not unrelated dates or amounts later in a heading."""
+    multiple = re.search(r"\bevent\s+numbers?\s*:\s*((?:(?:\d{1,3}|,|/|&|\band\b|\s)+))", quote, re.I)
+    if multiple:
+        return {int(n) for n in re.findall(r"\b\d{1,3}\b", multiple.group(1))}
+    single = re.search(r"\bevent\s*(?:no\.?|#)?\s*(\d{1,3})\b", quote, re.I)
+    return {int(single.group(1))} if single else set()
 
 
 def strict_single_entry_errors(row, archives=None):
@@ -120,12 +133,11 @@ def strict_single_entry_errors(row, archives=None):
         return quote, url
 
     scope_quote, scope_url = excerpt_from_archive("event_scope", row.get("event_scope"))
-    event_match = re.search(r"\bevent\s*(?:numbers?|no\.?|#)?\s*[:#]?\s*([^\n]*)", scope_quote, re.I)
     try:
         event_no = int(row.get("event_no"))
     except (ValueError, TypeError):
         event_no = None
-    scope_numbers = {int(n) for n in re.findall(r"\b\d{1,3}\b", event_match.group(1))} if event_match else set()
+    scope_numbers = scoped_event_numbers(scope_quote)
     if event_no is None or event_no not in scope_numbers:
         errors.append("event_scope: quotation does not identify this event number")
     rules = row.get("rules") or {}
