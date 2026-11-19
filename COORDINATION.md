@@ -1695,3 +1695,4 @@ during any of it. `data/schedule.json` is the file that changed, and it is gener
 ### Session 44c94b4f — in progress
 Owns strict booking-readiness audit: research/readiness-2026-11-19.md, summary/flagged addenda and their generated pages; no edits to other sessions’ data collectors.
 Build-blocker claim: scripts/check_schedule_render.js and .github/workflows/pages.yml. Local npm test exposed a stale assertion on obsolete fallback prose; the workflow pipeline masked its exit code.
+Done: decision audit in research/readiness-2026-11-19.md, executive summary and Flagged for Review. Re-read the Venetian November schedule and sheet 5 directly (links in report); other rows checked against archives, not redated. No second like-for-like hotel quote. Local schedule validation defect independently fixed in #87; ceded gate and workflow edits to #87/#88 rather than duplicating them.
