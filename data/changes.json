@@ -1,5 +1,5 @@
 {
- "checked_at": "2026-11-19",
+ "checked_at": "2026-11-20",
  "sources_facts_changed": 4,
  "sources_raw_changed": 4,
  "added": [],
@@ -27,11 +27,11 @@
    "date": null,
    "reason": "official source page printed different values on its last re-check",
    "source_url": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
-   "source_changed_at": "2026-11-19T22:48:50Z",
+   "source_changed_at": "2026-11-20T16:21:06Z",
    "diff": {
     "official source verified against": [
      "2026-11-17T00:44:11Z",
-     "2026-11-19T22:48:50Z (https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip)"
+     "2026-11-20T16:21:06Z (https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip)"
     ]
    }
   },
@@ -42,11 +42,11 @@
    "date": null,
    "reason": "official source page printed different values on its last re-check",
    "source_url": "https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip",
-   "source_changed_at": "2026-11-19T22:48:50Z",
+   "source_changed_at": "2026-11-20T16:21:06Z",
    "diff": {
     "official source verified against": [
      "2026-11-17T00:44:11Z",
-     "2026-11-19T22:48:50Z (https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip)"
+     "2026-11-20T16:21:06Z (https://www.caesars.com/las-vegas/explore/casino/poker-tournaments-las-vegas-strip)"
     ]
    }
   },
